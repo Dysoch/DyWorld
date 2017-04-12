@@ -1,0 +1,3 @@
+module("config")
+
+Debug = true

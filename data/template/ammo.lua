@@ -2,12 +2,13 @@ require "data/template-data/main"
 require "data/template-data/tech"
 require "data/prefix"
 
-function DyWorld_Ammo_Recipe(NAME, CRAFTTIME, RESULTCOUNT)
+function DyWorld_Ammo_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED))
   local result =
   {
     type = "recipe",
     name = NAME,
     energy_required = CRAFTTIME,
+	enabled = ENABLED,
     ingredients = {},
     result = NAME,
     result_count = RESULTCOUNT
@@ -73,7 +74,7 @@ data:extend(
 	if v.Recipe then
 		data:extend(
 			{
-				DyWorld_Ammo_Recipe(v.Name, v.Recipe_Craft_Time, v.Recipe_Results_Count)
+				DyWorld_Ammo_Recipe(v.Name, v.Recipe_Craft_Time, v.Recipe_Results_Count, v.Recipe_Without_Tech),
 			})
 		data.raw.recipe[v.Name].ingredients = {}
 		for _,z in pairs(v.Recipe_Ingredients) do

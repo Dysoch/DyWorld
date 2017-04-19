@@ -8,6 +8,7 @@ function DyWorld_Lab_Tool_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
     type = "recipe",
     name = NAME,
     energy_required = CRAFTTIME,
+	enabled = ENABLED,
     ingredients = {},
     result = NAME,
     result_count = RESULTCOUNT,

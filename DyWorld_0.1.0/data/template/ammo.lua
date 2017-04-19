@@ -2,7 +2,7 @@ require "data/template-data/main"
 require "data/template-data/tech"
 require "data/prefix"
 
-function DyWorld_Ammo_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED))
+function DyWorld_Ammo_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   local result =
   {
     type = "recipe",

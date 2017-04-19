@@ -535,3 +535,54 @@ Data_Table_Armor = {
 		Resistance_Ingredients = {{type = "physical", decrease = 0, percent = 0 }},
 	},
 }
+
+Data_Table_Tools = {
+	{
+		Name = dyworld_prefix.."tool-01",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"wood", 3},{"raw-wood",1}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Durability = 1000,
+		Damage = 1,
+		Speed = 2,
+	},
+	{
+		Name = dyworld_prefix.."tool-02",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"stone", 3},{"raw-wood",1}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Durability = 2500,
+		Damage = 2,
+		Speed = 2.5,
+	},
+	{
+		Name = dyworld_prefix.."tool-03",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{dyworld_prefix.."tool-02", 1},{"copper-plate",3}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Durability = 3500,
+		Damage = 2.5,
+		Speed = 5,
+	},
+	{
+		Name = dyworld_prefix.."tool-04",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{dyworld_prefix.."tool-03", 1},{"iron-plate",5}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Durability = 5000,
+		Damage = 5,
+		Speed = 3,
+	},
+}

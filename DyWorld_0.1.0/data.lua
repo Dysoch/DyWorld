@@ -6,6 +6,7 @@ require("data.keys")
 require("data.edits.ammo")
 require("data.edits.items")
 require("data.edits.recipes") 
+require("data.edits.resource") 
 require("data.edits.techs")
 
 -- Templates
@@ -19,6 +20,7 @@ require("data.template.tech") --must be after main-tech!
 require("data.template.lab")
 require("data.template.gun-turret")
 require("data.template.armor")
+require("data.template.tools")
 --require("data.template.furnace-burner")
 --require("data.template.furnace-electric")
 

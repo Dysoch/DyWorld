@@ -1,0 +1,9 @@
+require "data/prefix"
+
+Disable_Recipes = {"firearm-magazine", "piercing-rounds-magazine", "lab"}
+
+for k,v in pairs(Disable_Recipes) do
+	if not data.raw["recipe"][v].hidden then
+		data.raw["recipe"][v].hidden = true
+	end
+end		

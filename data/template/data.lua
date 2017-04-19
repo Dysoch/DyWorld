@@ -1,4 +1,5 @@
-require "data/data-templates"
+require "data/template-data/main"
+require "data/template-data/tech"
 require "data/prefix"
 
 function DyWorld_Damage_Type(NAME)

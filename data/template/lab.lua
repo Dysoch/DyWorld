@@ -1,4 +1,5 @@
-require "data/data-templates"
+require "data/template-data/main"
+require "data/template-data/tech"
 require "data/prefix"
 
 function DyWorld_Lab_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)

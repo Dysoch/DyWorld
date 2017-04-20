@@ -65,9 +65,8 @@ Data_Table_Tech = {
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-"..primitive},
 		Effects = true,
-		Effects_Ingredients = {"iron-axe"},
-		Base_Edit = true,
-		Base_Edit_Name = "iron-axe",
+		Effects_Ingredients = {dyworld_prefix.."tool-04"},
+		Base_Edit = false,
 		Ingredients = {{dyworld_prefix.."lab-tool-iron", 1}},
 	},
 	{

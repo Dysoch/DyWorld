@@ -21,7 +21,7 @@ require("data.template.lab")
 require("data.template.gun-turret")
 require("data.template.armor")
 require("data.template.tools")
---require("data.template.furnace-burner")
+require("data.template.furnace-burner")
 --require("data.template.furnace-electric")
 
 -- Tech

@@ -400,7 +400,7 @@ Data_Table_Gun_Turret = {
 
 Data_Table_Armor = {
 	{
-		Name = dyworld_prefix.."backback-01",
+		Name = dyworld_prefix.."backpack-01",
 		--Icon = --todo
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 1,
@@ -415,7 +415,7 @@ Data_Table_Armor = {
 		Resistance_Ingredients = {{type = "physical", decrease = 0, percent = 0 }},
 	},
 	{
-		Name = dyworld_prefix.."backback-02",
+		Name = dyworld_prefix.."backpack-02",
 		--Icon = --todo
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 1,
@@ -430,7 +430,7 @@ Data_Table_Armor = {
 		Resistance_Ingredients = {{type = "physical", decrease = 0, percent = 0 }},
 	},
 	{
-		Name = dyworld_prefix.."backback-03",
+		Name = dyworld_prefix.."backpack-03",
 		--Icon = --todo
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 1,
@@ -445,7 +445,7 @@ Data_Table_Armor = {
 		Resistance_Ingredients = {{type = "physical", decrease = 0, percent = 0 }},
 	},
 	{
-		Name = dyworld_prefix.."backback-04",
+		Name = dyworld_prefix.."backpack-04",
 		--Icon = --todo
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 1,
@@ -579,10 +579,43 @@ Data_Table_Tools = {
 		Recipe_Craft_Time = 1,
 		Recipe_Ingredients = {{dyworld_prefix.."tool-03", 1},{"iron-plate",5}},
 		Recipe_Results_Count = 1,
-		Recipe_Without_Tech = true,
+		Recipe_Without_Tech = false,
 		Stack = 50,
 		Durability = 5000,
 		Damage = 5,
 		Speed = 3,
+	},
+}
+
+Data_Table_Furnace_Burner = {
+	{
+		Name = dyworld_prefix.."furnace-burner-01",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"wood", 3},{"raw-wood",1}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Health = 50,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = "250kW",
+		Speed = 0.5,
+		Effectivity = 0.75,
+		Pollution = 0.05,
+	},
+	{
+		Name = dyworld_prefix.."furnace-burner-02",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"wood", 3},{"raw-wood",1}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Health = 100,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = "200kW",
+		Speed = 0.75,
+		Effectivity = 1,
+		Pollution = 0.08,
 	},
 }

@@ -1,6 +1,6 @@
 require "data/prefix"
 
-Recipe_T2_Tech = {"boiler", "steam-engine", "electric-mining-drill", "electronic-circuit", "inserter", "offshore-pump", "pipe", "pipe-to-ground", "small-electric-pole", "assembling-machine-1", "repair-pack", "transport-belt", "science-pack-1", "science-pack-2", "pistol", "stone-furnace", "iron-gear-wheel", "iron-stick", "burner-inserter", "copper-cable", "burner-mining-drill"}
+Recipe_T2_Tech = {"boiler", "steam-engine", "electric-mining-drill", "electronic-circuit", "inserter", "offshore-pump", "pipe", "pipe-to-ground", "small-electric-pole", "assembling-machine-1", "repair-pack", "transport-belt", "science-pack-1", "science-pack-2", "pistol", "iron-gear-wheel", "iron-stick", "burner-inserter", "copper-cable"}
 Recipe_T3_Tech = {"radar"}
 
 for k,v in pairs(Recipe_T2_Tech) do

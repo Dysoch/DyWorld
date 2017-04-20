@@ -21,9 +21,9 @@ function DyWorld_Transport_Belt_Item(NAME, STACK)
   {
     type = "item",
     name = NAME,
-    icon = "__base__/graphics/icons/lab.png",
+    icon = "__base__/graphics/icons/transport-belt.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "production-machine",
+    subgroup = "belt",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

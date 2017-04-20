@@ -634,3 +634,40 @@ Data_Table_Transport_Belt = {
 		Speed = 0.01625,
 	},
 }
+
+Data_Table_Miner_Burner = {
+	{
+		Name = dyworld_prefix.."drill-burner-1",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"wood", 3}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Health = 100,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Speed = 0.25,
+		Effectivity = 0.75,
+		Pollution = 5,
+		Energy = "250kW",
+		Power = 1.5,
+		Radius = 0.99,
+	},
+	{
+		Name = dyworld_prefix.."drill-burner-2",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{dyworld_prefix.."drill-burner-1", 1},{"iron-plate", 3}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Health = 150,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Speed = 0.3,
+		Effectivity = 1,
+		Pollution = 10,
+		Energy = "350kW",
+		Power = 2.5,
+		Radius = 0.99,
+	},
+}

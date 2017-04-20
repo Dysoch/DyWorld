@@ -619,3 +619,18 @@ Data_Table_Furnace_Burner = {
 		Pollution = 0.08,
 	},
 }
+
+Data_Table_Transport_Belt = {
+	{
+		Name = dyworld_prefix.."transport-belt-01",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"wood", 3}},
+		Recipe_Results_Count = 4,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Health = 50,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Speed = 0.01625,
+	},
+}

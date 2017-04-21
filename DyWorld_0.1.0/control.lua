@@ -117,11 +117,9 @@ end)
 
 -- ontick hooks
 script.on_event(defines.events.on_tick, function(event)
-	if event.tick%60==1 then
+	if event.tick%(60*60*5)==1 then
 		for k,v in pairs(global.players) do
-			if v.State_Stats_GUI then
-				gui_1.toggleGui(v.PlayerInfo, v.PlayerID)
-			end
+			stats_functions.BodySkills(v.PlayerID)
 		end
 	end
 end)
@@ -129,14 +127,7 @@ end)
 -- keybinding hooks
 script.on_event("DyWorld_Stats", function(event)
 	local player = game.players[event.player_index]
-	if not global.players[event.player_index].State_Stats_GUI then
-		global.players[event.player_index].State_Stats_GUI = true
-	else 
-		global.players[event.player_index].State_Stats_GUI = false
-		if player.gui.top.dyworld_stats_gui then
-			player.gui.top.dyworld_stats_gui.destroy()
-		end
-	end
+	gui_1.toggleGui(player, event.player_index)
 end)
 script.on_event("DyWorld_RoadMap", function(event)
     local player = game.players[event.player_index]

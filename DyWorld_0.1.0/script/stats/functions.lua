@@ -54,5 +54,7 @@ function BodySkills(id)
 	global.players[id].physical.speed = math.floor((((p1*25)+(p2*50)+(m1*10))/(1000*mp))+1)
 	global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000*mp))+1)
 	global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000*mp))+1)
-	game.players[id].character_health_bonus = math.floor(100+((p1*5)+(p2*2)+(m1*5)+p3)) -- testing now!
+	game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
+	game.players[id].character_running_speed_modifier = ((((p1*10)+p2+(p3*2)+(m2*5)+m3)/2500)-0.0076)
+	game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/10)
 end

@@ -52,6 +52,7 @@ function toggleGui(player, id)
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_research", (global.stats.research or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_ghostbuild", (global.stats.ghostbuild or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_ghostmined", (global.stats.ghostmined or 0)}}
+	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_researchlevel", (global.dyworld.ResearchLevel)}}
 	-- labels for stats_2
 	frameflow2.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.body"}}
 	frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_physical"}}
@@ -68,6 +69,8 @@ function toggleGui(player, id)
 	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_knowledge", (global.players[id].mystical.knowledge)}}
 	-- labels for stats_3
 	frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3"}}
-	frameflow3.add{type = "label", caption = "HP Bonus: 100 + "..math.floor((p1*5)+(p2*2)+(m1*5)+p3)}
+	frameflow3.add{type = "label", caption = "Health: 100 + "..game.players[id].character_health_bonus}
+	frameflow3.add{type = "label", caption = "Running Speed: 1 + "..game.players[id].character_running_speed_modifier}
+	frameflow3.add{type = "label", caption = "Loot Pickup Range: 1 + "..math.floor(game.players[id].character_loot_pickup_distance_bonus)}
 	end
 end

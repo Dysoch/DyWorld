@@ -86,7 +86,9 @@ script.on_event(defines.events.on_sector_scanned, function(event)
 end)
 
 script.on_event(defines.events.on_entity_died, function(event)
-	stats_functions.IncrementerGlobal("killed", 1)
+	if event.force.name == "player" then
+		stats_functions.IncrementerGlobal("killed", 1)
+	end
 end)
 
 script.on_event(defines.events.on_research_finished, function(event)

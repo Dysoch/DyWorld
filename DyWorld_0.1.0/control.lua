@@ -113,6 +113,12 @@ script.on_event(defines.events.on_chunk_generated, function(event)
 	if math.random(1,5)==3 then
 		generation.Ruins_Spawner(event)
 	end
+	if math.random(1,5)==3 and config.Hell then
+		generation.Hell_Spawner(event)
+	end
+	if global.dyworld.Chunks <= 100 then
+		generation.Ship_Spawner(event)
+	end
 end)
 
 --script.on_event(defines.events.on_gui_click, gui_click.onClick)

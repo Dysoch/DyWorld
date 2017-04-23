@@ -8,6 +8,9 @@ function Game()
 			Research = {},
 			Players = 0,
 			Chunks = 0,
+			Generation_Ship_1 = false,
+			Generation_Ship_2 = false,
+			Generation_Ship_3 = false,
 			ResearchLevel = "Primitive",
 		}
 	debug("Created global.dyworld")

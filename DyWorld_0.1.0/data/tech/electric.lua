@@ -27,7 +27,15 @@ function DyWorld_Electric_Damage(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
     order = dyworld_prefix.."electric-damage-"..Level
   }
   if Level == 1 then
-    result.prerequisites = {dyworld_prefix.."tech-"..basic}
+    result.prerequisites = {"military"}
+  elseif Level == 11 then
+    result.prerequisites = {dyworld_prefix.."tech-"..intermediate, dyworld_prefix.."electric-damage-"..(Level - 1)}
+  elseif Level == 31 then
+    result.prerequisites = {dyworld_prefix.."tech-"..enhanced, dyworld_prefix.."electric-damage-"..(Level - 1)}
+  elseif Level == 61 then
+    result.prerequisites = {dyworld_prefix.."tech-"..advanced, dyworld_prefix.."electric-damage-"..(Level - 1)}
+  elseif Level == 101 then
+    result.prerequisites = {dyworld_prefix.."tech-"..godlike, dyworld_prefix.."electric-damage-"..(Level - 1)}
   else
     result.prerequisites = {dyworld_prefix.."electric-damage-"..(Level - 1)}
   end
@@ -73,7 +81,15 @@ function DyWorld_Electric_Speed(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
     order = dyworld_prefix.."electric-speed-"..Level
   }
   if Level == 1 then
-    result.prerequisites = {dyworld_prefix.."tech-"..basic}
+    result.prerequisites = {"military"}
+  elseif Level == 11 then
+    result.prerequisites = {dyworld_prefix.."tech-"..intermediate, dyworld_prefix.."electric-speed-"..(Level - 1)}
+  elseif Level == 31 then
+    result.prerequisites = {dyworld_prefix.."tech-"..enhanced, dyworld_prefix.."electric-speed-"..(Level - 1)}
+  elseif Level == 61 then
+    result.prerequisites = {dyworld_prefix.."tech-"..advanced, dyworld_prefix.."electric-speed-"..(Level - 1)}
+  elseif Level == 101 then
+    result.prerequisites = {dyworld_prefix.."tech-"..godlike, dyworld_prefix.."electric-speed-"..(Level - 1)}
   else
     result.prerequisites = {dyworld_prefix.."electric-speed-"..(Level - 1)}
   end
@@ -121,5 +137,13 @@ for i=61,100 do
 {
   DyWorld_Electric_Damage(i, 1, 1, 1, 1, (i*500), (i*1)),
   DyWorld_Electric_Speed(i, 1, 1, 1, 1, (i*500), (i*2)),
+})
+end
+
+for i=101,500 do
+ data:extend(
+{
+  DyWorld_Electric_Damage(i, 1, 1, 1, 1, (i*1000), (i*1)),
+  DyWorld_Electric_Speed(i, 1, 1, 1, 1, (i*1000), (i*2)),
 })
 end

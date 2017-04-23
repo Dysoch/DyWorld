@@ -27,5 +27,6 @@ require("data.template.burner-miner")
 --require("data.template.furnace-electric")
 
 -- Tech
+require("data.template-data.tech-edits")
 require("data.tech.electric")
 require("data.tech.sniper")

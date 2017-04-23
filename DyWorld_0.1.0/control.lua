@@ -145,9 +145,16 @@ script.on_event("DyWorld_Debug_LOG", function(event)
     for _, NAME in pairs(global.debug) do
 		PlayerPrint(NAME)
 	end
+    gui_0.toggleGui(player)
 end)
 script.on_event("DyWorld_Debug", function(event)
     local player = game.players[event.player_index]
-    gui_0.toggleGui(player)
+	global.DyWorld_Debug = {}
+	global.DyWorld_Debug.Tech = {}
+    for _, v in pairs(game.forces.player.technologies) do
+		table.insert(global.DyWorld_Debug.Tech,v.name)
+		game.write_file("DyWorld/Debug/Techs.txt", v.name.."\n", true, event.player_index)
+	end
+	--game.write_file("DyWorld/Debug/Techs.txt", tostring(global.DyWorld_Debug.Tech))
 end)
 end

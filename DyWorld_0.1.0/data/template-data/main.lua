@@ -42,10 +42,12 @@ Data_Table_Data = {
 }
 
 Data_Table_Ammo = {
+	-- Type 1 = normal ammo
+	-- Type 2 = beam
 	{
 		Name = dyworld_prefix.."ammo-basic-01",
 		--Icon = --todo
-		Recipe = true,
+		Type = 1,
 		Recipe_Craft_Time = 1,
 		Recipe_Ingredients = {{"stone", 2}},
 		Recipe_Results_Count = 5,
@@ -64,7 +66,7 @@ Data_Table_Ammo = {
 	{
 		Name = dyworld_prefix.."ammo-basic-02",
 		--Icon = --todo
-		Recipe = true,
+		Type = 1,
 		Recipe_Craft_Time = 2.5,
 		Recipe_Ingredients = {{"copper-plate", 2}},
 		Recipe_Results_Count = 3,
@@ -83,7 +85,7 @@ Data_Table_Ammo = {
 	{
 		Name = dyworld_prefix.."ammo-basic-03",
 		--Icon = --todo
-		Recipe = true,
+		Type = 1,
 		Recipe_Craft_Time = 4,
 		Recipe_Ingredients = {{"iron-plate", 2}},
 		Recipe_Results_Count = 2,
@@ -102,7 +104,7 @@ Data_Table_Ammo = {
 	{
 		Name = dyworld_prefix.."ammo-basic-04",
 		--Icon = --todo
-		Recipe = true,
+		Type = 1,
 		Recipe_Craft_Time = 5,
 		Recipe_Ingredients = {{"steel-plate", 2}},
 		Recipe_Results_Count = 1,
@@ -121,7 +123,7 @@ Data_Table_Ammo = {
 	{
 		Name = dyworld_prefix.."ammo-sniper-01",
 		--Icon = --todo
-		Recipe = true,
+		Type = 1,
 		Recipe_Craft_Time = 5,
 		Recipe_Ingredients = {{"stone", 4}},
 		Recipe_Results_Count = 2,
@@ -140,7 +142,7 @@ Data_Table_Ammo = {
 	{
 		Name = dyworld_prefix.."ammo-sniper-02",
 		--Icon = --todo
-		Recipe = true,
+		Type = 1,
 		Recipe_Craft_Time = 5,
 		Recipe_Ingredients = {{"copper-plate", 4}},
 		Recipe_Results_Count = 1,
@@ -159,7 +161,7 @@ Data_Table_Ammo = {
 	{
 		Name = dyworld_prefix.."ammo-sniper-03",
 		--Icon = --todo
-		Recipe = true,
+		Type = 1,
 		Recipe_Craft_Time = 5,
 		Recipe_Ingredients = {{"iron-plate", 4}},
 		Recipe_Results_Count = 1,
@@ -178,7 +180,7 @@ Data_Table_Ammo = {
 	{
 		Name = dyworld_prefix.."ammo-sniper-04",
 		--Icon = --todo
-		Recipe = true,
+		Type = 1,
 		Recipe_Craft_Time = 5,
 		Recipe_Ingredients = {{"steel-plate", 4}},
 		Recipe_Results_Count = 1,
@@ -194,56 +196,107 @@ Data_Table_Ammo = {
 		Stack_Size = 100,
 		Subgroup = "ammo",
 	},
+	{
+		Name = dyworld_prefix.."ammo-electric-01",
+		--Icon = --todo
+		Type = 1,
+		Recipe_Craft_Time = 5,
+		Recipe_Ingredients = {{"steel-plate", 4}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Category = "electric",
+		Projectile = dyworld_prefix.."projectile-electric-01",
+		Speed = 5,
+		Repeat_Count = 500,
+		Direction_Deviation = 0.1,
+		Range_Deviation = 0.75,
+		Range = 50,
+		Mag_Size = 500,
+		Stack_Size = 100,
+		Subgroup = "ammo",
+	},
 }
 
 Data_Table_Projectiles = {
+	-- Type 1 = bullets
+	-- Type 2 = lightning
+	-- Type 3 = lasers
 	{
 		Name = dyworld_prefix.."projectile-basic-01",
 		Projectile_Type = 1,
 		Dmg = 1,
 		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-basic-02",
 		Projectile_Type = 1,
 		Dmg = 3,
 		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-basic-03",
 		Projectile_Type = 1,
 		Dmg = 5,
 		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-basic-04",
 		Projectile_Type = 1,
 		Dmg = 8,
 		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-sniper-01",
 		Projectile_Type = 1,
 		Dmg = 5,
 		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-sniper-02",
 		Projectile_Type = 1,
 		Dmg = 10,
 		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-sniper-03",
 		Projectile_Type = 1,
 		Dmg = 15,
 		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-sniper-04",
 		Projectile_Type = 1,
 		Dmg = 30,
 		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-electric-01",
+		Projectile_Type = 2,
+		Dmg = 0.005,
+		DmgType= "electric",
+		Tint = {r=125, g=249, b=255}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-01",
+		Projectile_Type = 3,
+		Dmg = 0.005,
+		DmgType= "laser",
+		Tint = {r=0, g=249, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-01",
+		Projectile_Type = 3,
+		Dmg = 0.005,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
 	},
 }
 
@@ -669,5 +722,44 @@ Data_Table_Miner_Burner = {
 		Energy = "350kW",
 		Power = 2.5,
 		Radius = 0.99,
+	},
+}
+
+Data_Table_Gun = {
+	{
+		Name = dyworld_prefix.."gun-pistol",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"stone", 2}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Category = "bullet",
+		Cooldown = (60/4),
+		Range = 15,
+		Stack_Size = 5,
+	},
+	{
+		Name = dyworld_prefix.."gun-sniper",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"stone", 2}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Category = "sniper",
+		Cooldown = (60*2),
+		Range = 100,
+		Stack_Size = 1,
+	},
+	{
+		Name = dyworld_prefix.."gun-electric",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"stone", 2}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Category = "electric",
+		Cooldown = (60*1),
+		Range = 50,
+		Stack_Size = 1,
 	},
 }

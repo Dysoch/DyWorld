@@ -20,6 +20,7 @@ require("data.template.tech") --must be after main-tech!
 require("data.template.lab")
 require("data.template.gun-turret")
 require("data.template.armor")
+require("data.template.gun")
 require("data.template.tools")
 require("data.template.transport-belt")
 require("data.template.furnace-burner")

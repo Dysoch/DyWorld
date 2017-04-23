@@ -16,7 +16,7 @@ function DyWorld_Ammo_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   return result
 end
 
-function DyWorld_Ammo_Item(NAME, CATEGORY, REPEAT, PROJECTILE, SPEED, DD, RD, RANGE, MAG_SIZE, SUBGROUP, STACK_SIZE)
+function DyWorld_Ammo_Item_1(NAME, CATEGORY, REPEAT, PROJECTILE, SPEED, DD, RD, RANGE, MAG_SIZE, SUBGROUP, STACK_SIZE)
   local result =
   {
     type = "ammo",
@@ -67,18 +67,20 @@ function DyWorld_Ammo_Item(NAME, CATEGORY, REPEAT, PROJECTILE, SPEED, DD, RD, RA
 end
 
 for k,v in pairs(Data_Table_Ammo) do
-data:extend(
+	if v.Type == 1 then
+	data:extend(
 	{
-		DyWorld_Ammo_Item(v.Name, v.Category, v.Repeat_Count, v.Projectile, v.Speed, v.Direction_Deviation, v.Range_Deviation, v.Range, v.Mag_Size, v.Subgroup, v.Stack_Size)
+		DyWorld_Ammo_Item_1(v.Name, v.Category, v.Repeat_Count, v.Projectile, v.Speed, v.Direction_Deviation, v.Range_Deviation, v.Range, v.Mag_Size, v.Subgroup, v.Stack_Size),
+		DyWorld_Ammo_Recipe(v.Name, v.Recipe_Craft_Time, v.Recipe_Results_Count, v.Recipe_Without_Tech),
 	})
-	if v.Recipe then
-		data:extend(
-			{
-				DyWorld_Ammo_Recipe(v.Name, v.Recipe_Craft_Time, v.Recipe_Results_Count, v.Recipe_Without_Tech),
-			})
-		data.raw.recipe[v.Name].ingredients = {}
-		for _,z in pairs(v.Recipe_Ingredients) do
-			table.insert(data.raw.recipe[v.Name].ingredients,z)
-		end
+	elseif v.Type == 2 then -- TODO!
+	data:extend(
+	{
+		DyWorld_Ammo_Item_2(v.Name, v.Category, v.Repeat_Count, v.Projectile, v.Speed, v.Direction_Deviation, v.Range_Deviation, v.Range, v.Mag_Size, v.Subgroup, v.Stack_Size),
+		DyWorld_Ammo_Recipe(v.Name, v.Recipe_Craft_Time, v.Recipe_Results_Count, v.Recipe_Without_Tech),
+	})
+	end
+	for _,z in pairs(v.Recipe_Ingredients) do
+		table.insert(data.raw.recipe[v.Name].ingredients,z)
 	end
 end

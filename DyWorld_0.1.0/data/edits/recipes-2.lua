@@ -4,21 +4,13 @@ Recipe_T2_Tech = {"boiler", "steam-engine", "electric-mining-drill", "electronic
 Recipe_T3_Tech = {"radar"}
 
 for k,v in pairs(Recipe_T2_Tech) do
-	if data.raw["recipe"][v].enabled then
-		data.raw["recipe"][v].enabled = false
-	else
-		data.raw["recipe"][v].enabled = false
-	end
+	data.raw["recipe"][v].enabled = false
 	local result = {type = "unlock-recipe", recipe = v}
 	table.insert(data.raw.technology[dyworld_prefix.."tech-"..basic].effects, result)
 end	
 
 for k,v in pairs(Recipe_T3_Tech) do
-	if data.raw["recipe"][v].enabled then
-		data.raw["recipe"][v].enabled = false
-	else
-		data.raw["recipe"][v].enabled = false
-	end
+	data.raw["recipe"][v].enabled = false
 	local result = {type = "unlock-recipe", recipe = v}
 	table.insert(data.raw.technology[dyworld_prefix.."tech-"..intermediate].effects, result)
 end

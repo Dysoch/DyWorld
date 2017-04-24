@@ -110,7 +110,7 @@ function DyWorld_Gun_Turret_Entity(NAME, HEALTH, TINT, INV, AUTOAMMO, ATTACKSPEE
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    
+    turret_base_has_direction = true,
     attack_parameters =
     {
       type = "projectile",
@@ -135,8 +135,9 @@ function DyWorld_Gun_Turret_Entity(NAME, HEALTH, TINT, INV, AUTOAMMO, ATTACKSPEE
       turn_range = TURNRANGEMIN/TURNRANGEMAX,
       sound = make_heavy_gunshot_sounds(),
     },
-
-    call_for_help_radius = 40
+    prepare_range = (MAXRANGE+10),
+    shoot_in_prepare_state = true,
+    call_for_help_radius = (MAXRANGE+10),
   }
   return result
 end

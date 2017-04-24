@@ -7,7 +7,7 @@ function DyWorld_Tech(NAME, ICON, COUNT, TIME)
   {
     type = "technology",
     name = NAME,
-    icon = ICON,
+    icon = "__base__/graphics/technology/steel-processing.png",
     effects =
     {
       

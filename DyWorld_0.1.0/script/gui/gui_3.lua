@@ -14,7 +14,11 @@ function toggleGui(player)
 	scroll.style.top_padding = 5
 	scroll.style.bottom_padding = 5
 	scroll.style.maximal_height = 300
-		frameflow.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_roadmap_gui.roadmap_999", (global.RoadmapTotal)}}
+		if global.RoadmapTotal == 100 then
+			frameflow.add{type = "label", style = "dyworld_stats_divider_header_label", caption = "Testing Phase! (Playing, Balancing and Graphics)"}
+		else
+			frameflow.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_roadmap_gui.roadmap_999", (global.RoadmapTotal)}}
+		end
 		for k,v in pairs(global.Roadmap) do
 			scroll.add{type = "label", caption = "("..v.Progress.."%) "..v.Name.."" }
 		end

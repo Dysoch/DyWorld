@@ -69,8 +69,12 @@ function toggleGui(player, id)
 	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_knowledge", (global.players[id].mystical.knowledge)}}
 	-- labels for stats_3
 	frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3"}}
-	frameflow3.add{type = "label", caption = "Health: 100 + "..game.players[id].character_health_bonus}
+	if debug_test then
+		frameflow3.add{type = "label", caption = "Health: 100000 + "..game.players[id].character_health_bonus}
+	else
+		frameflow3.add{type = "label", caption = "Health: 100 + "..game.players[id].character_health_bonus}
+	end
 	frameflow3.add{type = "label", caption = "Running Speed: 1 + "..game.players[id].character_running_speed_modifier}
-	frameflow3.add{type = "label", caption = "Loot Pickup Range: 1 + "..math.floor(game.players[id].character_loot_pickup_distance_bonus)}
+	frameflow3.add{type = "label", caption = "Loot Pickup Range: 2 + "..math.floor(game.players[id].character_loot_pickup_distance_bonus)}
 	end
 end

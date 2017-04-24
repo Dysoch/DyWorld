@@ -47,7 +47,7 @@ Data_Table_Main_Tech = {
 		Time = 600,
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-"..advanced},
-		Ingredients = {{"alien-science-pack", 1}},
+		Ingredients = {{"science-pack-3", 1}},
 	},
 }
 

@@ -129,6 +129,10 @@ script.on_event(defines.events.on_tick, function(event)
 		for k,v in pairs(global.players) do
 			stats_functions.BodySkills(v.PlayerID)
 		end
+		stats_functions.GlobalSkillsReset()
+		for k,v in pairs(global.players) do
+			stats_functions.GlobalSkills(v.PlayerID)
+		end
 	end
 end)
 
@@ -148,9 +152,7 @@ script.on_event("DyWorld_Skills", function(event)
 end)
 if config.Debug then
 script.on_event("DyWorld_Debug_LOG", function(event)
-    for _, NAME in pairs(global.debug) do
-		PlayerPrint(NAME)
-	end
+    local player = game.players[event.player_index]
     gui_0.toggleGui(player)
 end)
 script.on_event("DyWorld_Debug", function(event)

@@ -58,3 +58,29 @@ function BodySkills(id)
 	game.players[id].character_running_speed_modifier = ((((p1*10)+p2+(p3*2)+(m2*5)+m3)/2500)-0.0076)
 	game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/10)
 end
+
+function GlobalSkillsReset()
+	global.dyworld.Strength = 0
+	global.dyworld.Endurance = 0
+	global.dyworld.Speed = 0
+	global.dyworld.Creations = 0
+	global.dyworld.Implants = 0
+	global.dyworld.Spirit = 0
+	global.dyworld.Intelligence = 0
+	global.dyworld.Wisdom = 0
+	global.dyworld.Guile = 0
+	global.dyworld.Knowledge = 0
+end
+
+function GlobalSkills(id)
+	global.dyworld.Strength = global.dyworld.Strength + global.players[id].physical.strength
+	global.dyworld.Endurance = global.dyworld.Endurance + global.players[id].physical.endurance
+	global.dyworld.Speed = global.dyworld.Speed + global.players[id].physical.speed
+	global.dyworld.Creations = global.dyworld.Creations + global.players[id].physical.creations
+	global.dyworld.Implants = global.dyworld.Implants + global.players[id].physical.implants
+	global.dyworld.Spirit = global.dyworld.Spirit + global.players[id].mystical.spirit
+	global.dyworld.Intelligence = global.dyworld.Intelligence + global.players[id].mystical.intelligence
+	global.dyworld.Wisdom = global.dyworld.Wisdom + global.players[id].mystical.wisdom
+	global.dyworld.Guile = global.dyworld.Guile + global.players[id].mystical.guile
+	global.dyworld.Knowledge = global.dyworld.Knowledge + global.players[id].mystical.knowledge
+end

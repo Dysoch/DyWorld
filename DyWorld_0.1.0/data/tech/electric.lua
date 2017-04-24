@@ -1,6 +1,6 @@
 require "data/prefix"
 
-function DyWorld_Electric_Damage(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
+function DyWorld_Electric_Damage(Level, Pack1, Pack2, Pack3, Count, Time)
   local result =
   {
     type = "technology",
@@ -48,13 +48,10 @@ function DyWorld_Electric_Damage(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
   if Pack3 ~= 0 then
     table.insert(result.unit.ingredients, {"science-pack-3", Pack3})
   end
-  if Pack4 ~= 0 then
-    table.insert(result.unit.ingredients, {"alien-science-pack", Pack4})
-  end
   return result
 end
 
-function DyWorld_Electric_Speed(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
+function DyWorld_Electric_Speed(Level, Pack1, Pack2, Pack3, Count, Time)
   local result =
   {
     type = "technology",
@@ -102,48 +99,45 @@ function DyWorld_Electric_Speed(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
   if Pack3 ~= 0 then
     table.insert(result.unit.ingredients, {"science-pack-3", Pack3})
   end
-  if Pack4 ~= 0 then
-    table.insert(result.unit.ingredients, {"alien-science-pack", Pack4})
-  end
   return result
 end
 
 for i=1,10 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 0, 0, 0, (i*50), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 0, 0, 0, (i*50), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 0, 0, (i*50), (i*1)),
+  DyWorld_Electric_Speed(i, 1, 0, 0, (i*50), (i*2)),
 })
 end
 
 for i=11,30 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 1, 0, 0, (i*100), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 1, 0, 0, (i*100), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 1, 0, (i*100), (i*1)),
+  DyWorld_Electric_Speed(i, 1, 1, 0, (i*100), (i*2)),
 })
 end
 
 for i=31,60 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 1, 1, 0, (i*200), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 1, 1, 0, (i*200), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 1, 1, (i*200), (i*1)),
+  DyWorld_Electric_Speed(i, 1, 1, 1, (i*200), (i*2)),
 })
 end
 
 for i=61,100 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 1, 1, 1, (i*500), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 1, 1, 1, (i*500), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 1, 1, (i*500), (i*1)),
+  DyWorld_Electric_Speed(i, 1, 1, 1, (i*500), (i*2)),
 })
 end
 
 for i=101,500 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 1, 1, 1, (i*1000), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 1, 1, 1, (i*1000), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 1, 1, (i*1000), (i*1)),
+  DyWorld_Electric_Speed(i, 1, 1, 1, (i*1000), (i*2)),
 })
 end

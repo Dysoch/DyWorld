@@ -329,7 +329,7 @@ Data_Table_Lab = {
 		Tech = true,
 		Tech_Name = dyworld_prefix.."tech-"..basic,
 		Recipe_Ingredients = {{"stone",5},{"iron-ore",2},{"copper-ore",2}},
-		Lab_Ingredients = {"science-pack-1", "science-pack-2", "science-pack-3", "alien-science-pack"}
+		Lab_Ingredients = {"science-pack-1", "science-pack-2", "science-pack-3"}
 	},
 	{
 		Name = dyworld_prefix.."lab-3-"..enhanced,

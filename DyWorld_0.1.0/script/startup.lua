@@ -1,5 +1,7 @@
 module("startup", package.seeall)
 
+Forces = {"sulfoids", "racides", "acidicus", "zeptipods", "plastumia", "fulgura"}
+
 function Game()
 	if not global.dyworld then
 		global.dyworld = 
@@ -12,6 +14,16 @@ function Game()
 			Generation_Ship_2 = false,
 			Generation_Ship_3 = false,
 			ResearchLevel = "Primitive",
+			Strength = 0,
+			Endurance = 0,
+			Speed = 0,
+			Creations = 0,
+			Implants = 0,
+			Spirit = 0,
+			Intelligence = 0,
+			Wisdom = 0,
+			Guile = 0,
+			Knowledge = 0,
 		}
 	debug("Created global.dyworld")
 	end
@@ -24,6 +36,10 @@ function Game()
 	end
 	game.forces.player.ghost_time_to_live = (60*60*60*24) -- 24 hour live time
 	game.forces.player.deconstruction_time_to_live = (60*60*60*24) -- 24 hour live time
+	for k,v in pairs(Forces) do
+		game.create_force(v)
+		--debug("Created force: "..v)
+	end
 end
 
 function startup(PLAYER, ID)
@@ -59,7 +75,7 @@ function startup(PLAYER, ID)
 				stats = {},
 			}
 		}
-	debug("Created global.players, and added "..ID.."to the table with blank stats")
+	debug("Created global.players, and added "..ID.." to the table with blank stats")
 	else
 		global.players[ID] = 
 		{

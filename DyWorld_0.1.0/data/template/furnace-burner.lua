@@ -54,10 +54,14 @@ function DyWorld_Furnace_Burner_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, EFFECT
     {
       {
         type = "fire",
-        percent = 80
+        percent = 90
       },
       {
         type = "explosion",
+        percent = 30
+      },
+      {
+        type = "impact",
         percent = 30
       }
     },
@@ -71,6 +75,7 @@ function DyWorld_Furnace_Burner_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, EFFECT
     energy_source =
     {
       type = "burner",
+      fuel_category = "chemical",
       effectivity = EFFECTIVITY,
       fuel_inventory_size = 1,
       emissions = POLLUTION,
@@ -88,36 +93,82 @@ function DyWorld_Furnace_Burner_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, EFFECT
     },
     animation =
     {
-      filename = "__base__/graphics/entity/stone-furnace/stone-furnace.png",
-      priority = "extra-high",
-      width = 81,
-      height = 64,
-      frame_count = 1,
-      shift = {0.515625, 0.0625},
-	  tint = TINT
-    },
-    working_visualisations =
-    {
+    layers =
       {
-        north_position = {0.0, 0.0},
-        east_position = {0.0, 0.0},
-        south_position = {0.0, 0.0},
-        west_position = {0.0, 0.0},
-        animation =
         {
-          filename = "__base__/graphics/entity/stone-furnace/stone-furnace-fire.png",
+        filename = "__base__/graphics/entity/stone-furnace/stone-furnace.png",
+        priority = "extra-high",
+        width = 81,
+        height = 64,
+        frame_count = 1,
+        shift = {0.515625, 0.0625},
+	    tint = TINT,
+        hr_version = {
+          filename = "__base__/graphics/entity/stone-furnace/hr-stone-furnace.png",
           priority = "extra-high",
-          line_length = 8,
-          width = 22,
-          height = 87,
-          frame_count = 48,
-          axially_symmetrical = false,
-          direction_count = 1,
-          shift = {0.0625, -0.453125},
+          width = 151,
+          height = 146,
+          frame_count = 1,
+          shift = util.by_pixel(-0.25, 6),
+          scale = 0.5,
+		  tint = TINT
+          }
         },
-        light = {intensity = 1, size = 1}
+        {
+        filename = "__base__/graphics/entity/stone-furnace/stone-furnace-shadow.png",
+        priority = "extra-high",
+        width = 81,
+        height = 64,
+        frame_count = 1,
+        draw_as_shadow = true,
+        shift = {0.515625, 0.0625},
+        hr_version = {
+          filename = "__base__/graphics/entity/stone-furnace/hr-stone-furnace-shadow.png",
+          priority = "extra-high",
+          width = 164,
+          height = 74,
+          frame_count = 1,
+          draw_as_shadow = true,
+          shift = util.by_pixel(14.5, 13),
+          scale = 0.5
+          }
+        }
       }
     },
+    working_visualisations =
+      {
+        {
+          north_position = {0.0, 0.0},
+          east_position = {0.0, 0.0},
+          south_position = {0.0, 0.0},
+          west_position = {0.0, 0.0},
+          animation =
+          {
+            filename = "__base__/graphics/entity/stone-furnace/stone-furnace-fire.png",
+            priority = "extra-high",
+            line_length = 8,
+            width = 20,
+            height = 49,
+            frame_count = 48,
+            axially_symmetrical = false,
+            direction_count = 1,
+            shift = util.by_pixel(2, 5.5),
+            hr_version = {
+              filename = "__base__/graphics/entity/stone-furnace/hr-stone-furnace-fire.png",
+              priority = "extra-high",
+              line_length = 8,
+              width = 41,
+              height = 100,
+              frame_count = 48,
+              axially_symmetrical = false,
+              direction_count = 1,
+              shift = util.by_pixel(-0.75, 5.5),
+              scale = 0.5
+            }
+          },
+        light = {intensity = 1, size = 1, color = {r=1.0, g=1.0, b=1.0}}
+        }
+      },
     fast_replaceable_group = "furnace"
   }
   return result

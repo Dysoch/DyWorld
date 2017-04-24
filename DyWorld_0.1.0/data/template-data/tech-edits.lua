@@ -25,7 +25,6 @@ Data_Table_Main_Tech_Edits = {
 	{	Name = "energy-shield-equipment", Tech = "Intermediate", TechEdit = false},
 	{	Name = "power-armor-2", Tech = "Intermediate", TechEdit = false},
 	{	Name = "laser-turrets", Tech = "Intermediate", TechEdit = false},
-	{	Name = "automated-construction", Tech = "Intermediate", TechEdit = false},
 	{	Name = "automation-3", Tech = "Intermediate", TechEdit = false},
 	{	Name = "logistics-3", Tech = "Intermediate", TechEdit = false},
 	{	Name = "military-3", Tech = "Intermediate", TechEdit = false},
@@ -52,7 +51,7 @@ Data_Table_Main_Tech_Edits = {
 	{	Name = "laser-turret-damage-1", Tech = "Intermediate", TechEdit = true},
 	{	Name = "laser-turret-speed-1", Tech = "Intermediate", TechEdit = true},
 	{	Name = "rocket-silo", Tech = "Intermediate", TechEdit = true},
-	{	Name = "follower-robot-count-8", Tech = "Intermediate", TechEdit = true},
+	{	Name = "follower-robot-count-7", Tech = "Intermediate", TechEdit = true},
 	{	Name = "energy-shield-mk2-equipment", Tech = "Intermediate", TechEdit = true},
 	{	Name = "battery-mk2-equipment", Tech = "Intermediate", TechEdit = true},
 }

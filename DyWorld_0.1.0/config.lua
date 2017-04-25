@@ -1,6 +1,6 @@
 module("config")
 
-Debug = true
+Debug = false
 -- Debug, mostly used by Dysoch to read game info. No need to enable this!
 
 Hell = false 

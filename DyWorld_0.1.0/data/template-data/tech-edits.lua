@@ -56,10 +56,32 @@ Data_Table_Main_Tech_Edits = {
 	{	Name = "battery-mk2-equipment", Tech = "Intermediate", TechEdit = true},
 }
 
+Data_Table_Tech_Edit_Base = {
+	{
+		Name = "stone-walls",
+		Clear_Tech_Ingredients = true,
+		New_Ingredients = {{dyworld_prefix.."lab-tool-stone", 1}}
+	},
+	{
+		Name = "landfill",
+		Clear_Tech_Ingredients = true,
+		New_Ingredients = {{dyworld_prefix.."lab-tool-stone", 1},{dyworld_prefix.."lab-tool-coal", 1}}
+	},
+}
+
 data.raw.technology[dyworld_prefix.."tech-"..basic].prerequisites = {}
 data.raw.technology[dyworld_prefix.."tech-"..intermediate].prerequisites = {}
 data.raw.technology[dyworld_prefix.."tech-"..enhanced].prerequisites = {}
 data.raw.technology[dyworld_prefix.."tech-"..advanced].prerequisites = {}
+
+for k,v in pairs(Data_Table_Tech_Edit_Base) do
+	if v.Clear_Tech_Ingredients then
+		data.raw.technology[v.Name].unit.ingredients = {}
+	end
+	for _,z in pairs(v.New_Ingredients) do
+		table.insert(data.raw.technology[v.Name].unit.ingredients,z)
+	end
+end
 
 for k,v in pairs(Data_Table_Main_Tech_Edits) do
 	if v.TechEdit then

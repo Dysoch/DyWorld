@@ -153,7 +153,7 @@ data:extend(
 	for _,z in pairs(v.Lab_Ingredients) do
 		table.insert(data.raw.lab[v.Name].inputs,z)
 	end
-	if v.Name == dyworld_prefix_t.."lab-1-"..primitive then
+	if v.Name == dyworld_prefix.."lab-1-"..primitive then
 		data.raw.lab[v.Name].energy_source = {type = "burner", effectivity = 1000, fuel_inventory_size = 1}
 	end
 	if v.Tech then

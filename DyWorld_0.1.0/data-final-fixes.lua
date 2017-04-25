@@ -51,7 +51,10 @@ for k,v in pairs(Recipe_T3_Tech) do
 end
 
 for k,v in pairs(Disable_Recipes) do
-	if not data.raw["recipe"][v].hidden then
+	if data.raw["recipe"][v].normal then
+		data.raw["recipe"][v].normal.hidden = true
+		data.raw["recipe"][v].expensive.hidden = true
+	else
 		data.raw["recipe"][v].hidden = true
 	end
 end		

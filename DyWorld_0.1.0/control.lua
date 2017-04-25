@@ -10,7 +10,7 @@ require "script/stats/functions"
 require "script/generation/world-generation"
 
 debugger = false
-debug_test = true
+debug_test = false
 
 function debug(str, statement)
 local seconds = math.floor(game.tick/60)

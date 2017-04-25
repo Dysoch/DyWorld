@@ -1,0 +1,57 @@
+[size=200]Documentation:[/size]
+[size=150]Stats, Attributes and Skills[/size]
+[b]Stats:[/b]
+Basically everything you do in the game is registered. This is game wide (also multiplayer games) and player side.
+Game wide it registers how much is killed by players, how many robots build and mine and the research counter.
+Player side this is build, mined and crafted. This can differ per person, and is totally intended for their attributes.
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/stats-1.png[/img]
+
+[b]Attributes:[/b]
+Attributes are player specific, meaning each player has different attributes. So one can be strong and nimble, while an other is smarter, and more knowledgeable. 
+There are 2 major groups of attributes:
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/stats-2.png[/img]
+And these attributes give bonuses to your player (player specific, so all have different bonuses)
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/stats-3.png[/img]
+Everything has its purpose. Everything is used in Skills, which are unlocked in Basic Stage.
+[spoiler=formulas that calculate attributes and bonuses]
+These are the formula's that are currently in the game (might be out of date after an update!)
+[code]
+Strength: (((Mined)+(Build/5)+(Crafted/25)+(Implants*75)+(Endurance*100)+(Intelligence*25)+(gsp/50))/(1000*PlayersCreated))+1
+Endurance: (((Crafted/25)+(Mined/25)+(Build/5)+(Killed)+(Implants*50)+(gsp/50))/(1000*PlayersCreated))+1
+Speed: (((Strength*25)+(Endurance*50)+(Spirit*10))/(1000*PlayersCreated))+1
+Creations: ((Build+Crafted)+(GhostBuild/25))/(1000*PlayersCreated)
+Spirit: (((Strength*35)+((GhostBuild+GhostMined)/5)+(Killed/25)+Scanned)/(1000*PlayersCreated))+1
+Intelligence: ((((Creations+Guile)*5)+Scanned)/(1000*PlayersCreated))+1
+Wisdom: ((((Spirit+Intelligence+Guile)*25)+((Crafted+Mined+Build+Killed+Scanned+GhostBuild+GhostMined)/25))/(1000*PlayersCreated))+1
+Guile: ((((Crafted+Mined)/25)+((Build+(GhostBuild/100))/50)+Killed)/(1000*PlayersCreated))+1
+Knowledge: (((Spirit*5)+(Intelligence*50)+(Wisdom*40)+(Guile*10)+(Research))/(1000*PlayersCreated))+1
+Health Bonus: ((Strength*5)+(Endurance*2)+(Spirit*5)+Speed+(Killed/250))-13
+Running Speed Bonus: (((Strength*10)+Endurance+(Speed*2)+(Intelligence*5)+Wisdom)/2500)-0.0076
+Loot Pickup Distance Bonus: ((p4*5)+(Endurance*3)+Speed+Spirit+Intelligence+Wisdom)/10
+[/code]
+[/spoiler]
+
+[b]Skills:[/b]
+Not much is known about this part yet. It is still being developed!
+
+[size=150]Stages:[/size]
+DyWorld has multiple stages. This is game wide and depends on your technology level. This means a new player joining a late game can benefit from all the rewards it has, but still die quite soon (dieing is something to get used to in the beginning!)
+[b]Primitive Stage:[/b]
+This is the stage at where you start. This is a incredible hard stage, since you are fragile, and without many defences! Basically everything is burner tech, and SUPER polluting! This means you have to be careful, since you arent ready for a fight with the natives yet.
+Exploration in this stage is strongly "forbidden". What it basically means, if you explore to far in this stage, the strongest and baddest enemies will start to spawn, and you will be dead quick. Stay close to your base, which has not that many objects yet (since they pollute so so much), and slowly build. This is a long start, and designed to give the player(s) a sense of death impending. The decisions you make here shape the rest of your game!
+Tools you use here are very primitive, meaning probably wood or stone. Mining is slow with those tools, so use a burner miner soon. You dont have access to any form of power yet, but you have some turrets to defend you. They are probably weak, and need maintenance quite often. They have a habit of shooting each other while defending. Eventually you will learn the right way to use your turrets (you have plenty of types at you disposal). This stage is also used to get ready for the Skills, which unlock in the Basic Stage!
+
+[b]Basic Stage:[/b]
+This is the Factorio stage. Meaning, this is the old, base game. This part is known to all, and is used to get ready for the later stsages, which are intensely challenging! Please not, some recipes are disabled, forever! This is done so their items can not be used in DyWorld, because they wouldnt fit in there.
+
+[b]Intermediate Stage:[/b]
+Coming Soon!
+
+[b]Enhanced Stage:[/b]
+This is the part of the game where you start to enhance your body with Implants. These increase all your attributes quite bigly, and are thus used to make your skills stronger. More info about this stage to come soon!
+
+[b]Advanced Stage:[/b]
+Coming Soon!
+
+[b]Godlike Stage:[/b]
+Coming Soon!

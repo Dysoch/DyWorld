@@ -1,0 +1,79 @@
+[size=200]Changelog:[/size]
+The changelog is grouped per release, and each release is grouped per stage, so you can see what that stage holds
+
+[b]DyWorld 0.1.0: [/b]
+[list]
+[*] World/Gameplay:
+[list]
+[*] Added in ruins generation. Currently this holds a test entity (scorchmark) to test durability
+[*] Added in Hell settings. This can be changed in the config, and basically sets your entire world on fire! Used to test the generation script to its fullest, and might be a fun way to play
+[*] Added in spaceship ruins. They might hold loot. Currently 3 are spawned, always!
+[*] Added in statistics, attributes and bonuses. Use [i]Numpad 1[/i] to see the GUI
+[/list]
+[*] Primitive Stage:
+[list]
+[*] Added in groundwork for all updates, updates should be quicker
+[*] Added in a Sniper Gun
+[*] Added in a Electric Gun
+[*] Added in a Basic Pistol, weaker and slower then the normal Pistol
+[*] Added in 4 Pistol Ammo types
+[*] Added in 4 Sniper Ammo types
+[*] Added in 1 Electric Ammo type
+[*] Added in basic items and entities to start the game: Burner Mining Drills (2), Furnaces (2), Transport Belt, Tools (4), Burner Assembling Machine
+[*] Added in a new lab, Primitive Research Lab (Burner). This uses basic resources to research and is used to progress slowly in the beginning.
+[*] Added in 3 turrets. 2 normal ones, and 1 sniper. They all have arcs to fire in.
+[/list]
+[*] Basic Stage:
+[list]
+[*] Added in Sniper Damage Research: 1-10
+[*] Added in Sniper Shooting Speed Research: 1-10
+[*] Added in Electric Damage Research: 1-10
+[*] Added in Electric Shooting Speed Research: 1-10
+[/list]
+[*] Intermediate Stage:
+[list]
+[*] Added in Sniper Damage Research: 11-30
+[*] Added in Sniper Shooting Speed Research: 11-30
+[*] Added in Electric Damage Research: 11-30
+[*] Added in Electric Shooting Speed Research: 11-30
+[/list]
+[*] Enhanced Stage:
+[list]
+[*] Added in Sniper Damage Research: 31-60
+[*] Added in Sniper Shooting Speed Research: 31-60
+[*] Added in Electric Damage Research: 31-60
+[*] Added in Electric Shooting Speed Research: 31-60
+[*] Added in Power Armor Mk 3,4 and 5
+[/list]
+[*] Advanced Stage:
+[list]
+[*] Added in Sniper Damage Research: 61-100
+[*] Added in Sniper Shooting Speed Research: 61-100
+[*] Added in Electric Damage Research: 61-100
+[*] Added in Electric Shooting Speed Research: 61-100
+[*] Added in Power Armor Mk 6
+[/list]
+[*] Godlike Stage:
+[list]
+[*] Added in Sniper Damage Research: 101-500
+[*] Added in Sniper Shooting Speed Research: 101-500
+[*] Added in Electric Damage Research: 101-500
+[*] Added in Electric Shooting Speed Research: 101-500
+[*] Added in Power Armor Mk 7
+[/list]
+[*] General Changes:
+[list]
+[*] Added in General Researchs. These Researches are required to advanced to the next stage. A lot of technologies have been changed to have dependencies on that!
+[*] Stacksize Iron Ore: 50 > 200
+[*] Stacksize Copper Ore: 50 > 200
+[*] Stacksize Iron Plate: 100 > 200
+[*] Stacksize Copper Plate: 100 > 200
+[*] Stacksize Stone: 50 > 200
+[*] Stacksize Wood: 50 > 200
+[*] Stacksize Raw Wood: 50 > 200
+[*] Stacksize Coal: 50 > 200
+[*] Following recipes has been hidden forever to be able to only use DyWorld recipes: Iron Axe, Steel Axe, Burner Miner Drill, Stone Furnace, Piercing Bullet Ammo, Basic Ammo
+[*] All projectiles now have collision boxes. This means they travel through the world, and damage the first thing they hit. Makes combat more realistic!
+[*] Hardness of resources have been doubled. This is so you cannot mine copper and iron with your hands anymore. Use the new tools
+[/list]
+[/list]

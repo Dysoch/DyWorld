@@ -1,0 +1,18 @@
+[spoiler=colliding bullets]
+all bullets, and basically all projectiles, now collide with other objects!
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/colliding-bullets-1.png[/img]
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/colliding-bullets-2.png[/img]
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/colliding-bullets-3.png[/img]
+[/spoiler]
+[spoiler=turrets with arcs]
+all turrets now have a fire arc. This means they only fire in that range, and not in the rest!
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/turret-1.png[/img]
+sniper turret:
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/turret-2.png[/img]
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/turret-3.png[/img]
+[/spoiler]
+[spoiler=backpacks]
+there are now backpacks, that increase your inventory size. they have no resistances!
+[img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/backpack-1.png[/img][img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/backpack-2.png[/img][img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/backpack-3.png[/img][img]https://dl.dropboxusercontent.com/u/42129428/DyWorld/Alpha%200.1.0/backpack-4.png[/img]
+[/spoiler]
+

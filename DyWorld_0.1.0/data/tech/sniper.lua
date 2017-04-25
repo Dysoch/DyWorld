@@ -62,7 +62,7 @@ function DyWorld_Sniper_Speed(Level, Pack1, Pack2, Pack3, Count, Time)
       {
         type = "gun-speed",
         ammo_category = "sniper",
-        modifier = tostring(Level/200)
+        modifier = tostring(Level/(200+(Level-1)))
       }
     },
     prerequisites = {dyworld_prefix.."tech-"..basic},

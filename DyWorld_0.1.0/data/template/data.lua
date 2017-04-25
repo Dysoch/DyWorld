@@ -1,6 +1,45 @@
-require "data/template-data/main"
-require "data/template-data/tech"
 require "data/prefix"
+
+Data_Table_Data = {
+	{
+		Name = "sniper",
+		Type = "ammo"
+	},
+	{
+		Name = "electric",
+		Type = "ammo"
+	},
+	{
+		Name = dyworld_prefix.."armor-01",
+		Type = "equipment_grid",
+		Width = 15,
+		Height = 10,
+	},
+	{
+		Name = dyworld_prefix.."armor-02",
+		Type = "equipment_grid",
+		Width = 15,
+		Height = 15,
+	},
+	{
+		Name = dyworld_prefix.."armor-03",
+		Type = "equipment_grid",
+		Width = 20,
+		Height = 15,
+	},
+	{
+		Name = dyworld_prefix.."armor-04",
+		Type = "equipment_grid",
+		Width = 20,
+		Height = 20,
+	},
+	{
+		Name = dyworld_prefix.."armor-05",
+		Type = "equipment_grid",
+		Width = 25,
+		Height = 20,
+	},
+}
 
 function DyWorld_Damage_Type(NAME)
   local result =

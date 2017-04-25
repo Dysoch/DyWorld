@@ -1,6 +1,37 @@
-require "data/template-data/main"
-require "data/template-data/tech"
 require "data/prefix"
+
+Data_Table_Furnace_Burner = {
+	{
+		Name = dyworld_prefix.."furnace-burner-01",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"wood", 3},{"raw-wood",1},{"stone",5}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Health = 50,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = "250kW",
+		Speed = 0.5,
+		Effectivity = 0.75,
+		Pollution = 0.05,
+	},
+	{
+		Name = dyworld_prefix.."furnace-burner-02",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{dyworld_prefix.."furnace-burner-01", 1},{"iron-plate",5}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Health = 100,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = "200kW",
+		Speed = 0.75,
+		Effectivity = 1,
+		Pollution = 0.08,
+	},
+}
 
 function DyWorld_Furnace_Burner_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   local result =

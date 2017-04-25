@@ -1,6 +1,53 @@
-require "data/template-data/main"
-require "data/template-data/tech"
 require "data/prefix"
+
+Data_Table_Lab = {
+	{
+		Name = dyworld_prefix.."lab-1-"..primitive,
+		Health = 50,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = "1W",
+		Speed = 1,
+		Modules = 0,
+		Stack = 10,
+		Craft_Time = 10,
+		Result_Count = 1,
+		Recipe_Without_Tech = true,
+		Recipe_Ingredients = {{"stone",15},{"iron-plate",2},{"copper-plate",2}},
+		Lab_Ingredients = {dyworld_prefix.."lab-tool-stone", dyworld_prefix.."lab-tool-copper", dyworld_prefix.."lab-tool-iron", dyworld_prefix.."lab-tool-coal"}
+	},--[[
+	{
+		Name = dyworld_prefix.."lab-2-"..basic,
+		Health = 250,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = "50kW",
+		Speed = 1,
+		Modules = 2,
+		Stack = 10,
+		Craft_Time = 10,
+		Result_Count = 1,
+		Recipe_Without_Tech = false,
+		Tech = true,
+		Tech_Name = dyworld_prefix.."tech-"..basic,
+		Recipe_Ingredients = {{"stone",5},{"iron-ore",2},{"copper-ore",2}},
+		Lab_Ingredients = {"science-pack-1", "science-pack-2", "science-pack-3"}
+	},
+	{
+		Name = dyworld_prefix.."lab-3-"..enhanced,
+		Health = 2500,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = "750kW",
+		Speed = 1.5,
+		Modules = 4,
+		Stack = 10,
+		Craft_Time = 10,
+		Result_Count = 1,
+		Recipe_Without_Tech = false,
+		Tech = true,
+		Tech_Name = dyworld_prefix.."tech-"..enhanced,
+		Recipe_Ingredients = {{"stone",5},{"iron-ore",2},{"copper-ore",2}},
+		Lab_Ingredients = {"stone", "iron-ore", "copper-ore", "coal"}
+	},]]--
+}
 
 function DyWorld_Lab_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   local result =

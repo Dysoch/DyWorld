@@ -1,6 +1,43 @@
-require "data/template-data/main"
-require "data/template-data/tech"
 require "data/prefix"
+
+Data_Table_Gun = {
+	{
+		Name = dyworld_prefix.."gun-pistol",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"iron-plate", 2},{"copper-plate", 1}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Category = "bullet",
+		Cooldown = (60/4),
+		Range = 15,
+		Stack_Size = 5,
+	},
+	{
+		Name = dyworld_prefix.."gun-sniper",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{dyworld_prefix.."gun-pistol", 1},{"copper-plate", 8},{"iron-plate", 20}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Category = "sniper",
+		Cooldown = (60*2),
+		Range = 100,
+		Stack_Size = 1,
+	},
+	{
+		Name = dyworld_prefix.."gun-electric",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{dyworld_prefix.."gun-sniper", 1},{"wood", 5},{"copper-plate", 3},{"iron-plate", 9}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = true,
+		Category = "electric",
+		Cooldown = (60*1),
+		Range = 50,
+		Stack_Size = 1,
+	},
+}
 
 function DyWorld_Gun_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   local result =

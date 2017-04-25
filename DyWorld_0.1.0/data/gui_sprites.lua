@@ -13,10 +13,10 @@ data.raw["gui-style"].default["dyworld_stats_divider_header_label"] = {
     parent = "label_style",
     font_color = {r = 0, g = 0, b = 155},
     font = "default-large-semibold",
-    top_padding = 10,
+    top_padding = 0,
     bottom_padding = 10,
-    left_padding = 25,
-    right_padding = 25
+    left_padding = 0,
+    right_padding = 0
 }
 
 data.raw["gui-style"].default["dyworld_stats_list_flow"] = {

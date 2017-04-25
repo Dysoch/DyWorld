@@ -1,6 +1,19 @@
-require "data/template-data/main"
-require "data/template-data/tech"
 require "data/prefix"
+
+Data_Table_Transport_Belt = {
+	{
+		Name = dyworld_prefix.."transport-belt-01",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{"wood", 3}},
+		Recipe_Results_Count = 4,
+		Recipe_Without_Tech = true,
+		Stack = 50,
+		Health = 50,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Speed = 0.01625,
+	},
+}
 
 function DyWorld_Transport_Belt_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   local result =

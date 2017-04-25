@@ -32,13 +32,14 @@ function Game()
 		game.forces.player.character_trash_slot_count = 50
 		game.forces.player.character_logistic_slot_count = 50
 		game.forces.player.auto_character_trash_slots = true
-		game.forces.player.character_health_bonus = 99900
+		game.forces.player.character_health_bonus = 99750
 	end
 	game.forces.player.ghost_time_to_live = (60*60*60*24) -- 24 hour live time
 	game.forces.player.deconstruction_time_to_live = (60*60*60*24) -- 24 hour live time
 	for k,v in pairs(Forces) do
 		game.create_force(v)
 		--debug("Created force: "..v)
+		--TO DO: Added friend forces between them!
 	end
 end
 

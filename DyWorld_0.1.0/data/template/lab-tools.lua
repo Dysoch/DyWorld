@@ -1,6 +1,43 @@
-require "data/template-data/main"
-require "data/template-data/tech"
 require "data/prefix"
+
+Data_Table_Lab_Tool = {
+	{
+		Name = dyworld_prefix.."lab-tool-stone",
+		Stack = 200,
+		Durability = 1,
+		Craft_Time = 10,
+		Result_Count = 1,
+		Recipe_Without_Tech = true,
+		Recipe_Ingredients = {{"stone",1}},
+	},
+	{
+		Name = dyworld_prefix.."lab-tool-copper",
+		Stack = 200,
+		Durability = 1,
+		Craft_Time = 10,
+		Result_Count = 1,
+		Recipe_Without_Tech = true,
+		Recipe_Ingredients = {{"copper-ore",1}},
+	},
+	{
+		Name = dyworld_prefix.."lab-tool-iron",
+		Stack = 200,
+		Durability = 1,
+		Craft_Time = 10,
+		Result_Count = 1,
+		Recipe_Without_Tech = true,
+		Recipe_Ingredients = {{"iron-ore",1}},
+	},
+	{
+		Name = dyworld_prefix.."lab-tool-coal",
+		Stack = 200,
+		Durability = 1,
+		Craft_Time = 10,
+		Result_Count = 1,
+		Recipe_Without_Tech = true,
+		Recipe_Ingredients = {{"coal",1}},
+	},
+}
 
 function DyWorld_Lab_Tool_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   local result =

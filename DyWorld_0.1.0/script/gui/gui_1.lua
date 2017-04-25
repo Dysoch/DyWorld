@@ -72,7 +72,7 @@ function toggleGui(player, id)
 	if debug_test then
 		frameflow3.add{type = "label", caption = "Health: 100000 + "..game.players[id].character_health_bonus}
 	else
-		frameflow3.add{type = "label", caption = "Health: 100 + "..game.players[id].character_health_bonus}
+		frameflow3.add{type = "label", caption = "Health: 250 + "..game.players[id].character_health_bonus}
 	end
 	frameflow3.add{type = "label", caption = "Running Speed: 1 + "..game.players[id].character_running_speed_modifier}
 	frameflow3.add{type = "label", caption = "Loot Pickup Range: 2 + "..math.floor(game.players[id].character_loot_pickup_distance_bonus)}

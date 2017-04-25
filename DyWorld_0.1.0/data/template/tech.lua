@@ -1,4 +1,3 @@
-require "data/template-data/main"
 require "data/template-data/tech"
 require "data/prefix"
 

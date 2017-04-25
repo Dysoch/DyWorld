@@ -1,5 +1,3 @@
-require "data/template-data/main"
-require "data/template-data/tech"
 require "data/prefix"
 
 function DyWorld_Furnace_Electric_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)

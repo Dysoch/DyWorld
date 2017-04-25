@@ -1,6 +1,87 @@
-require "data/template-data/main"
-require "data/template-data/tech"
 require "data/prefix"
+
+Data_Table_Projectiles = {
+	-- Type 1 = bullets
+	-- Type 2 = lightning
+	-- Type 3 = lasers
+	{
+		Name = dyworld_prefix.."projectile-basic-01",
+		Projectile_Type = 1,
+		Dmg = 1,
+		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-basic-02",
+		Projectile_Type = 1,
+		Dmg = 3,
+		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-basic-03",
+		Projectile_Type = 1,
+		Dmg = 5,
+		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-basic-04",
+		Projectile_Type = 1,
+		Dmg = 8,
+		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-sniper-01",
+		Projectile_Type = 1,
+		Dmg = 5,
+		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-sniper-02",
+		Projectile_Type = 1,
+		Dmg = 10,
+		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-sniper-03",
+		Projectile_Type = 1,
+		Dmg = 15,
+		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-sniper-04",
+		Projectile_Type = 1,
+		Dmg = 30,
+		DmgType= "physical",
+		Tint = {r=1.0, g=1.0, b=1.0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-electric-01",
+		Projectile_Type = 2,
+		Dmg = 0.005,
+		DmgType= "electric",
+		Tint = {r=125, g=249, b=255}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-01",
+		Projectile_Type = 3,
+		Dmg = 0.005,
+		DmgType= "laser",
+		Tint = {r=0, g=249, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-01",
+		Projectile_Type = 3,
+		Dmg = 0.005,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+}
 
 function DyWorld_Projectile_1(NAME, DMG, DMGTYPE, TINT)
 	local result =

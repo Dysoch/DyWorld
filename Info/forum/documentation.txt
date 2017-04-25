@@ -41,6 +41,9 @@ This is the stage at where you start. This is a incredible hard stage, since you
 Exploration in this stage is strongly "forbidden". What it basically means, if you explore to far in this stage, the strongest and baddest enemies will start to spawn, and you will be dead quick. Stay close to your base, which has not that many objects yet (since they pollute so so much), and slowly build. This is a long start, and designed to give the player(s) a sense of death impending. The decisions you make here shape the rest of your game!
 Tools you use here are very primitive, meaning probably wood or stone. Mining is slow with those tools, so use a burner miner soon. You dont have access to any form of power yet, but you have some turrets to defend you. They are probably weak, and need maintenance quite often. They have a habit of shooting each other while defending. Eventually you will learn the right way to use your turrets (you have plenty of types at you disposal). This stage is also used to get ready for the Skills, which unlock in the Basic Stage!
 
+You start with absolutely nothing, have to defend while working your way up (was in my test attacked in about 10 minutes with a sizable force, so get guns, turrets and defences up as soon as possible!)
+Everything is hard, but worth it. The bonuses you get after a while are strong, and help you defend and attack!
+
 [b]Basic Stage:[/b]
 This is the Factorio stage. Meaning, this is the old, base game. This part is known to all, and is used to get ready for the later stsages, which are intensely challenging! Please not, some recipes are disabled, forever! This is done so their items can not be used in DyWorld, because they wouldnt fit in there.
 
@@ -54,4 +57,4 @@ This is the part of the game where you start to enhance your body with Implants.
 Coming Soon!
 
 [b]Godlike Stage:[/b]
-Coming Soon!
+The stage in where you are considered a godlike being. Your power is unrivaled. You run quick, shoot like a madman, and can kill thousands of weaker natives in seconds. The larger and more durable ones are still hard, but manageable

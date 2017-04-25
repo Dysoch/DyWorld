@@ -1,6 +1,6 @@
 module("generation", package.seeall)
 
-Ruins = {"small-scorchmark"}
+Ruins = {"small-scorchmark", "stone-rock", "red-desert-rock-big-01"}
 Hell = {"fire-flame"}
 
 local keysetRuins = {}

@@ -22,6 +22,7 @@ require("data.template.gun")
 require("data.template.tools")
 require("data.template.transport-belt")
 require("data.template.furnace-burner")
+require("data.template.assembling-burner")
 require("data.template.burner-miner")
 --require("data.template.furnace-electric")
 

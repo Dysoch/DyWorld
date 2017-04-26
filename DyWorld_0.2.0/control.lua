@@ -1,6 +1,7 @@
 require "config"
 require "roadmap"
 require "script/startup"
+require "script/migration"
 require "script/gui/gui_0"
 require "script/gui/gui_1"
 require "script/gui/gui_2"
@@ -34,6 +35,10 @@ script.on_init(function()
 	startup.Game()
 end)
 
+script.on_configuration_changed(function()
+	migration.Migrate_To_Next_Version()
+end)
+
 -- player hooks
 script.on_event(defines.events.on_player_created, function(event)
 	local player = game.players[event.player_index]
@@ -56,10 +61,17 @@ end)
 script.on_event(defines.events.on_player_respawned, function(event)
 	local player = game.players[event.player_index]	
 	local ID = event.player_index
+	global.players[ID].Alive = true
 	game.players[ID].get_inventory(defines.inventory.player_main).clear()
 	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
 	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
 	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
+end)
+
+script.on_event(defines.events.on_player_died, function(event)
+	local player = game.players[event.player_index]	
+	local ID = event.player_index
+	global.players[ID].Alive = false
 end)
 
 -- game event hooks
@@ -137,11 +149,15 @@ end)
 script.on_event(defines.events.on_tick, function(event)
 	if event.tick%(60*60*5)==1 then
 		for k,v in pairs(global.players) do
-			stats_functions.BodySkills(v.PlayerID)
+			if v.Alive then
+				stats_functions.BodySkills(v.PlayerID)
+			end
 		end
 		stats_functions.GlobalSkillsReset()
 		for k,v in pairs(global.players) do
-			stats_functions.GlobalSkills(v.PlayerID)
+			if v.Alive then
+				stats_functions.GlobalSkills(v.PlayerID)
+			end
 		end
 	end
 end)

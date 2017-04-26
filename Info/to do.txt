@@ -1,6 +1,2 @@
-change time of landfill tech 30 > 5
-radar to basic technology (seperate)
-on player respawn, clear inventory
-min range 180 degree = 0 
-change plastic stack > 200
-for when player dies, add check to bodyskills so it doesnt crash
+things added here i will make into a issue soon, this is just seen after playing the game myself!
+

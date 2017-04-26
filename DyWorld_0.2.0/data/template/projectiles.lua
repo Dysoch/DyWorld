@@ -2,8 +2,9 @@ require "data/prefix"
 
 Data_Table_Projectiles = {
 	-- Type 1 = bullets
-	-- Type 2 = lightning
-	-- Type 3 = lasers
+	-- Type 2 = sniper bullets
+	-- Type 3 = lightning
+	-- Type 4 = lasers
 	{
 		Name = dyworld_prefix.."projectile-basic-01",
 		Projectile_Type = 1,
@@ -34,49 +35,49 @@ Data_Table_Projectiles = {
 	},
 	{
 		Name = dyworld_prefix.."projectile-sniper-01",
-		Projectile_Type = 1,
+		Projectile_Type = 2,
 		Dmg = 5,
 		DmgType= "physical",
 		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-sniper-02",
-		Projectile_Type = 1,
+		Projectile_Type = 2,
 		Dmg = 10,
 		DmgType= "physical",
 		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-sniper-03",
-		Projectile_Type = 1,
+		Projectile_Type = 2,
 		Dmg = 15,
 		DmgType= "physical",
 		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-sniper-04",
-		Projectile_Type = 1,
+		Projectile_Type = 2,
 		Dmg = 30,
 		DmgType= "physical",
 		Tint = {r=1.0, g=1.0, b=1.0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-electric-01",
-		Projectile_Type = 2,
+		Projectile_Type = 3,
 		Dmg = 0.005,
 		DmgType= "electric",
 		Tint = {r=125, g=249, b=255}
 	},
 	{
 		Name = dyworld_prefix.."projectile-laser-01",
-		Projectile_Type = 3,
+		Projectile_Type = 4,
 		Dmg = 0.005,
 		DmgType= "laser",
 		Tint = {r=0, g=249, b=0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-laser-01",
-		Projectile_Type = 3,
+		Projectile_Type = 4,
 		Dmg = 0.005,
 		DmgType= "laser",
 		Tint = {r=125, g=0, b=0}
@@ -125,6 +126,42 @@ function DyWorld_Projectile_2(NAME, DMG, DMGTYPE, TINT)
     name = NAME,
     flags = {"not-on-map"},
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    acceleration = 0,
+    direction_only = true,
+    piercing_damage = DMG,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          type = "damage",
+          damage = {amount = DMG, type = DMGTYPE}
+        }
+      }
+    },
+    animation =
+    {
+      filename = "__base__/graphics/entity/bullet/bullet.png",
+      tint = TINT,
+      frame_count = 1,
+      width = 3,
+      height = 50,
+      priority = "high"
+	}
+  }
+  return result
+end
+
+function DyWorld_Projectile_3(NAME, DMG, DMGTYPE, TINT)
+	local result =
+  {
+    type = "projectile",
+    name = NAME,
+    flags = {"not-on-map"},
+    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0.05,
     direction_only = true,
     action =
@@ -166,7 +203,7 @@ function DyWorld_Projectile_2(NAME, DMG, DMGTYPE, TINT)
   return result
 end
 
-function DyWorld_Projectile_3(NAME, DMG, DMGTYPE, TINT)
+function DyWorld_Projectile_4(NAME, DMG, DMGTYPE, TINT)
 	local result =
   {
     type = "projectile",
@@ -224,6 +261,11 @@ for k,v in pairs(Data_Table_Projectiles) do
 	data:extend(
 	{
 		DyWorld_Projectile_3(v.Name, v.Dmg, v.DmgType, v.Tint)
+	})
+	elseif v.Projectile_Type == 4 then
+	data:extend(
+	{
+		DyWorld_Projectile_4(v.Name, v.Dmg, v.DmgType, v.Tint)
 	})
 	end
 end

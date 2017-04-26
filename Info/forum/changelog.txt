@@ -18,7 +18,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Stacksize: Plastic Bar: 50 > 200
 [*] Stacksize: Pipe: 50 > 100
 [*] Stacksize: Underground Pipe: 50 > 100
-[*] 
+[*] Changed sniper projectiles to be piercing, if damage is greater then health of target, it will keep going
 [/list]
 [*] Bug Fixes:
 [list]

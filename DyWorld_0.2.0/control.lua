@@ -34,6 +34,7 @@ script.on_init(function()
 	startup.Game()
 end)
 
+-- player hooks
 script.on_event(defines.events.on_player_created, function(event)
 	local player = game.players[event.player_index]
 	if (#game.players <= 1) then
@@ -50,6 +51,15 @@ script.on_event(defines.events.on_player_created, function(event)
 	player.print({"dyworld-startup-1"})
 	startup.startup(player, event.player_index)
 	player.print({"dyworld-startup-2"})
+end)
+
+script.on_event(defines.events.on_player_respawned, function(event)
+	local player = game.players[event.player_index]	
+	local ID = event.player_index
+	game.players[ID].get_inventory(defines.inventory.player_main).clear()
+	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
+	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
+	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
 end)
 
 -- game event hooks

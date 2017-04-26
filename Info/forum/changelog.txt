@@ -1,7 +1,33 @@
 [size=200]Changelog:[/size]
-The changelog is grouped per release, and each release is grouped per stage, so you can see what that stage holds
+
+[b]DyWorld 0.2.0: [/b]
+CURRENTLY UNRELEASED!
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+[list]
+[*] World/Gameplay:
+[list]
+[*] 
+[/list]
+[*] General Changes:
+[list]
+[*] Changed minimum range of Turret Mk1a: 5 > 0
+[*] Changed recipe of military science pack: piercing ammo > iron basic ammo
+[*] Stacksize: All Transport Belts: 100 > 200
+[*] Stacksize: Steel Plate: 100 > 200
+[*] Stacksize: Stone Bricks: 100 > 200
+[*] Stacksize: Plastic Bar: 50 > 200
+[*] Stacksize: Pipe: 50 > 100
+[*] Stacksize: Underground Pipe: 50 > 100
+[*] 
+[/list]
+[*] Bug Fixes:
+[list]
+[*] Fixed bug in Multiplayer when you die and the Attributes get calculated when dead thus crashing the game
+[/list]
+[/list]
 
 [b]DyWorld 0.1.0: [/b]
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 [list]
 [*] World/Gameplay:
 [list]
@@ -9,9 +35,6 @@ The changelog is grouped per release, and each release is grouped per stage, so 
 [*] Added in Hell settings. This can be changed in the config, and basically sets your entire world on fire! Used to test the generation script to its fullest, and might be a fun way to play
 [*] Added in spaceship ruins. They might hold loot. Currently 3 are spawned, always!
 [*] Added in statistics, attributes and bonuses. Use [i]Numpad 1[/i] to see the GUI
-[/list]
-[*] Primitive Stage:
-[list]
 [*] Added in groundwork for all updates, updates should be quicker
 [*] Added in a Sniper Gun
 [*] Added in a Electric Gun
@@ -22,48 +45,15 @@ The changelog is grouped per release, and each release is grouped per stage, so 
 [*] Added in basic items and entities to start the game: Burner Mining Drills (2), Furnaces (2), Transport Belt, Tools (4), Burner Assembling Machine
 [*] Added in a new lab, Primitive Research Lab (Burner). This uses basic resources to research and is used to progress slowly in the beginning.
 [*] Added in 3 turrets. 2 normal ones, and 1 sniper. They all have arcs to fire in.
-[/list]
-[*] Basic Stage:
-[list]
-[*] Added in Sniper Damage Research: 1-10
-[*] Added in Sniper Shooting Speed Research: 1-10
-[*] Added in Electric Damage Research: 1-10
-[*] Added in Electric Shooting Speed Research: 1-10
-[/list]
-[*] Intermediate Stage:
-[list]
-[*] Added in Sniper Damage Research: 11-30
-[*] Added in Sniper Shooting Speed Research: 11-30
-[*] Added in Electric Damage Research: 11-30
-[*] Added in Electric Shooting Speed Research: 11-30
-[/list]
-[*] Enhanced Stage:
-[list]
-[*] Added in Sniper Damage Research: 31-60
-[*] Added in Sniper Shooting Speed Research: 31-60
-[*] Added in Electric Damage Research: 31-60
-[*] Added in Electric Shooting Speed Research: 31-60
-[*] Added in Power Armor Mk 3,4 and 5
-[/list]
-[*] Advanced Stage:
-[list]
-[*] Added in Sniper Damage Research: 61-100
-[*] Added in Sniper Shooting Speed Research: 61-100
-[*] Added in Electric Damage Research: 61-100
-[*] Added in Electric Shooting Speed Research: 61-100
-[*] Added in Power Armor Mk 6
-[/list]
-[*] Godlike Stage:
-[list]
-[*] Added in Sniper Damage Research: 101-500
-[*] Added in Sniper Shooting Speed Research: 101-500
-[*] Added in Electric Damage Research: 101-500
-[*] Added in Electric Shooting Speed Research: 101-500
-[*] Added in Power Armor Mk 7
+[*] Added in Sniper Damage Research: 1-500
+[*] Added in Sniper Shooting Speed Research: 1-500
+[*] Added in Electric Damage Research: 1-500
+[*] Added in Electric Shooting Speed Research: 1-500
+[*] Added in Power Armor Mk 3, 4, 5, 6 and 7
+[*] Added in General Researchs. These Researches are required to advanced to the next stage. A lot of technologies have been changed to have dependencies on that!
 [/list]
 [*] General Changes:
 [list]
-[*] Added in General Researchs. These Researches are required to advanced to the next stage. A lot of technologies have been changed to have dependencies on that!
 [*] Stacksize Iron Ore: 50 > 200
 [*] Stacksize Copper Ore: 50 > 200
 [*] Stacksize Iron Plate: 100 > 200

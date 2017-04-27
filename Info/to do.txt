@@ -1,2 +1,6 @@
 things added here i will make into a issue soon, this is just seen after playing the game myself!
 
+change intermediate tech (these techs after): Power armor mk 2, logistic system, military 4, portable fusion, combat robotic 3, effect transmission, automation 3, logistic 3, speed module 3, effeciently module 3
+change intermediate tech ingredients: add red, green and blue science packs
+locale sniper/electric shooting speed and damage rename
+electric ammo projectile change to not make craters

@@ -35,9 +35,12 @@ for k,v in pairs(Disable_Recipes) do
 	else
 		data.raw["recipe"][v].hidden = true
 	end
-end		
+end	
 
-local piercing = {type = "unlock-recipe",recipe = "piercing-rounds-magazine"}
-local piercing_replacement = {type = "unlock-recipe",recipe = dyworld_prefix.."ammo-basic-03"}
-table.remove(data.raw.technology["military-2"].effects,piercing)
-table.remove(data.raw.technology["military-2"].effects,piercing)
+local military_science_1 = {dyworld_prefix.."ammo-basic-03", 1}
+local military_science_2 = {"grenade", 1}
+local military_science_3 = {"gun-turret", 1}
+data.raw.recipe["military-science-pack"].ingredients = {}
+table.insert(data.raw.recipe["military-science-pack"].ingredients,military_science_1)
+table.insert(data.raw.recipe["military-science-pack"].ingredients,military_science_2)
+table.insert(data.raw.recipe["military-science-pack"].ingredients,military_science_3)

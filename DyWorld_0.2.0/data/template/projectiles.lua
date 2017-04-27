@@ -173,17 +173,8 @@ function DyWorld_Projectile_3(NAME, DMG, DMGTYPE, TINT)
         target_effects =
         {
           {
-            type = "create-entity",
-            entity_name = "explosion"
-          },
-          {
             type = "damage",
             damage = {amount = DMG, type = DMGTYPE}
-          },
-          {
-            type = "create-entity",
-            entity_name = "small-scorchmark",
-            check_buildability = true
           }
         }
       }

@@ -23,7 +23,7 @@ Data_Table_Main_Tech = {
 		Time = 10,
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-"..basic},
-		Ingredients = {{"science-pack-1", 1}},
+		Ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
 	},
 	{
 		Name = dyworld_prefix.."tech-"..enhanced,

@@ -26,6 +26,9 @@ require("data.template.assembling-burner")
 require("data.template.burner-miner")
 --require("data.template.furnace-electric")
 
+-- Enemies
+require("data.template.enemy-melee")
+
 -- Tech
 require("data.template-data.tech-edits")
 require("data.tech.electric")

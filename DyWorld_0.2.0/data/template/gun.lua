@@ -9,7 +9,7 @@ Data_Table_Gun = {
 		Recipe_Results_Count = 1,
 		Recipe_Without_Tech = true,
 		Category = "bullet",
-		Cooldown = (60/4),
+		Cooldown = (60/2),
 		Range = 15,
 		Stack_Size = 5,
 	},

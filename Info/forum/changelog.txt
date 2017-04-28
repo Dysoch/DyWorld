@@ -21,11 +21,12 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Stacksize: Pipe: 50 > 100
 [*] Stacksize: Underground Pipe: 50 > 100
 [*] Changed sniper projectiles to be piercing, if damage is greater then health of target, it will keep going
-[*] Changed Tech Tree. Moved some technologies to after Intermediate Technologies. This should help progression.
+[*] Changed Tech Tree. Moved some technologies to after Intermediate Technologies. This should help progression
 [*] Changed Intermediated Technologies to use red, green and blue science packs
 [*] Removed scorchmarks from electric gun. This had a chance to lag the game, now not anymore
 [*] Changed Basic Pistol shooting speed: 4/s > 2/s
 [*] Changed Pickaxes crafting times: Stone 1 > 2, Copper 1 > 4, Iron 1 > 6.5
+[*] Changed attributes and bonuses formula's to be more progressive
 [/list]
 [*] Bug Fixes:
 [list]

@@ -3,6 +3,7 @@
 [b]DyWorld 0.2.0: [/b]
 CURRENTLY UNRELEASED!
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
 [list]
 [*] World/Gameplay:
 [list]
@@ -37,6 +38,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 
 [b]DyWorld 0.1.0: [/b]
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
 [list]
 [*] World/Gameplay:
 [list]

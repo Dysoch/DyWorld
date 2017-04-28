@@ -58,6 +58,7 @@ function startup(PLAYER, ID)
 				PlayerInfo = PLAYER, 
 				PlayerID = ID,
 				State_Stats_GUI = false,
+				Alive = true,
 				physical =
 				{
 					strength = 1,
@@ -84,6 +85,7 @@ function startup(PLAYER, ID)
 			PlayerInfo = PLAYER, 
 			PlayerID = ID,
 			State_Stats_GUI = false,
+			Alive = true,
 			physical =
 			{
 				strength = 1,

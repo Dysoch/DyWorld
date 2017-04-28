@@ -147,7 +147,7 @@ end)
 
 -- ontick hooks
 script.on_event(defines.events.on_tick, function(event)
-	if event.tick%(60*60*5)==1 and global.dyworld.Players~= 0 then
+	if event.tick%(60*60*5)==1 and global.dyworld.Players ~= 0 then
 		for k,v in pairs(global.players) do
 			if v.Alive then
 				stats_functions.BodySkills(v.PlayerID)

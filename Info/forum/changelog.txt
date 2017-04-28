@@ -8,6 +8,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] World/Gameplay:
 [list]
 [*] Added in Steel Axe
+[*] Added in 3 laser turrets. Same arcs as gun turrets, 2 normal, 1 sniper
 [/list]
 [*] General Changes:
 [list]
@@ -28,6 +29,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Changed Basic Pistol shooting speed: 4/s > 2/s
 [*] Changed Pickaxes crafting times: Stone 1 > 2, Copper 1 > 4, Iron 1 > 6.5
 [*] Changed attributes and bonuses formula's to be more progressive
+[*] Following recipes has been hidden forever to be able to only use DyWorld recipes: Laser Turret
 [/list]
 [*] Bug Fixes:
 [list]

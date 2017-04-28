@@ -17,7 +17,7 @@ require("data.template.main-tech")
 require("data.template.tech") --must be after main-tech!
 require("data.template.lab")
 require("data.template.turret-gun")
---require("data.template.turret-laser")
+require("data.template.turret-laser")
 require("data.template.armor")
 require("data.template.gun")
 require("data.template.tools")

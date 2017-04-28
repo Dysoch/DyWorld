@@ -4,7 +4,7 @@ require "data/prefix"
 Recipe_T2_Tech = {"boiler", "steam-engine", "electric-mining-drill", "electronic-circuit", "inserter", "offshore-pump", "pipe", "pipe-to-ground", "small-electric-pole", "assembling-machine-1", "repair-pack", "transport-belt", "science-pack-1", "science-pack-2", "pistol", "iron-gear-wheel", "iron-stick", "burner-inserter", "lab", "copper-cable"}
 Recipe_T3_Tech = {"radar"}
 
-Disable_Recipes = {"firearm-magazine", "piercing-rounds-magazine", "iron-axe", "steel-axe", "burner-mining-drill", "stone-furnace"}
+Disable_Recipes = {"firearm-magazine", "piercing-rounds-magazine", "iron-axe", "steel-axe", "burner-mining-drill", "stone-furnace", "laser-turret"}
 
 for k,v in pairs(Recipe_T2_Tech) do
 	if data.raw["recipe"][v].normal then

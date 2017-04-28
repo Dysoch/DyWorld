@@ -31,6 +31,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Bug Fixes:
 [list]
 [*] Fixed bug in Multiplayer when you die and the Attributes get calculated when dead thus crashing the game
+[*] Fixed issue with dedicated servers where no players were created yet
 [/list]
 [/list]
 

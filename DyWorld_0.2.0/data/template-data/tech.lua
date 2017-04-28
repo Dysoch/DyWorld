@@ -68,7 +68,7 @@ Data_Table_Tech = {
 	{
 		Name = dyworld_prefix.."tech-tools-1",
 		Icon = data.raw["mining-tool"]["iron-axe"].icon,
-		Count = 50,
+		Count = 25,
 		Time = 2,
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-"..primitive},
@@ -76,6 +76,18 @@ Data_Table_Tech = {
 		Effects_Ingredients = {dyworld_prefix.."tool-04"},
 		Base_Edit = false,
 		Ingredients = {{dyworld_prefix.."lab-tool-iron", 1}},
+	},
+	{
+		Name = dyworld_prefix.."tech-tools-2",
+		Icon = data.raw["mining-tool"]["iron-axe"].icon,
+		Count = 50,
+		Time = 5,
+		PreReq = true,
+		PreReq_Tech = {"steel-processing", dyworld_prefix.."tech-tools-1"},
+		Effects = true,
+		Effects_Ingredients = {dyworld_prefix.."tool-05"},
+		Base_Edit = false,
+		Ingredients = {{"science-pack-1", 1}},
 	},
 	{
 		Name = dyworld_prefix.."tech-armor-1",

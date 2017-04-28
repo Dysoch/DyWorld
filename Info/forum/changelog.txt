@@ -6,14 +6,14 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [list]
 [*] World/Gameplay:
 [list]
-[*] 
+[*] Added in Steel Axe
 [/list]
 [*] General Changes:
 [list]
 [*] Changed minimum range of Turret Mk1a: 5 > 0
 [*] Changed arc of Turret Mk1a: 180° > 170°
 [*] Changed arc of Sniper Turret 45° (was 50° i believe)
-[*] Changed recipe of military science pack: piercing ammo > iron basic ammo
+[*] Changed recipe of military science pack: piercing ammo > iron basic ammo (can be automated now)
 [*] Stacksize: All Transport Belts: 100 > 200
 [*] Stacksize: Steel Plate: 100 > 200
 [*] Stacksize: Stone Bricks: 100 > 200
@@ -25,6 +25,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Changed Intermediated Technologies to use red, green and blue science packs
 [*] Removed scorchmarks from electric gun. This had a chance to lag the game, now not anymore
 [*] Changed Basic Pistol shooting speed: 4/s > 2/s
+[*] Changed Pickaxes crafting times: Stone 1 > 2, Copper 1 > 4, Iron 1 > 6.5
 [/list]
 [*] Bug Fixes:
 [list]

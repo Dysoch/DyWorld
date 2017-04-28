@@ -16,7 +16,7 @@ Data_Table_Tools = {
 	{
 		Name = dyworld_prefix.."tool-02",
 		--Icon = --todo
-		Recipe_Craft_Time = 1,
+		Recipe_Craft_Time = 2,
 		Recipe_Ingredients = {{"stone", 3},{"raw-wood",1}},
 		Recipe_Results_Count = 1,
 		Recipe_Without_Tech = true,
@@ -28,7 +28,7 @@ Data_Table_Tools = {
 	{
 		Name = dyworld_prefix.."tool-03",
 		--Icon = --todo
-		Recipe_Craft_Time = 1,
+		Recipe_Craft_Time = 4,
 		Recipe_Ingredients = {{dyworld_prefix.."tool-02", 1},{"copper-plate",3}},
 		Recipe_Results_Count = 1,
 		Recipe_Without_Tech = true,
@@ -40,7 +40,7 @@ Data_Table_Tools = {
 	{
 		Name = dyworld_prefix.."tool-04",
 		--Icon = --todo
-		Recipe_Craft_Time = 1,
+		Recipe_Craft_Time = 6.5,
 		Recipe_Ingredients = {{dyworld_prefix.."tool-03", 1},{"iron-plate",5}},
 		Recipe_Results_Count = 1,
 		Recipe_Without_Tech = false,
@@ -48,6 +48,18 @@ Data_Table_Tools = {
 		Durability = 5000,
 		Damage = 5,
 		Speed = 3,
+	},
+	{
+		Name = dyworld_prefix.."tool-05",
+		--Icon = --todo
+		Recipe_Craft_Time = 8,
+		Recipe_Ingredients = {{dyworld_prefix.."tool-04", 1},{"steel-plate",5}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = false,
+		Stack = 50,
+		Durability = 10000,
+		Damage = 7.5,
+		Speed = 5,
 	},
 }
 

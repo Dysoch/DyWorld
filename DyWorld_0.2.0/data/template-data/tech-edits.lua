@@ -24,7 +24,7 @@ Data_Table_Main_Tech_Edits = {
 	{	Name = "exoskeleton-equipment", Tech = "Intermediate", TechEdit = false},
 	{	Name = "night-vision-equipment", Tech = "Intermediate", TechEdit = false},
 	{	Name = "energy-shield-equipment", Tech = "Intermediate", TechEdit = false},
-	{	Name = "power-armor-1", Tech = "Intermediate", TechEdit = false},
+	{	Name = "power-armor", Tech = "Intermediate", TechEdit = false},
 	{	Name = "power-armor-2", Tech = "Intermediate", TechEdit = true},
 	{	Name = "laser-turrets", Tech = "Intermediate", TechEdit = false},
 	{	Name = "automation-2", Tech = "Intermediate", TechEdit = false},

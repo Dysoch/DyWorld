@@ -1,2 +1,4 @@
 things added here i will make into a issue soon, this is just seen after playing the game myself!
 
+change speed formula
+remove players from formula's

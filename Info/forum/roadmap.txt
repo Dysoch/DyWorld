@@ -1,0 +1,29 @@
+Here is the roadmap for the coming versions:
+Check the [url=https://forums.factorio.com/viewtopic.php?f=43&t=44762]changelog[/url] what has been done already
+
+[b]DyWorld 0.2.0:[/b]
+[i]Primitive Stage Update[/i]
+[list]
+[*] General bugfixes and balancing found after playing myself together with [url=https://forums.factorio.com/memberlist.php?mode=viewprofile&u=3166]Bonsai[/url]
+[*] Laser turrets like the gun turrets, 3 types of arcs
+[*] Steel Axe
+[*] First iteration of new enemies. They will spawn differently then base game, they will use my own generation script so i can specify how many are spawned in world to not make the world too deadly (while still keeping it deadly :D )
+[*] Primitive tech tree and recipe enhancements and additions
+[*] New bonuses for the players
+[*] The first loot from enemies, used in some armor and guns
+[/list]
+
+[b]DyWorld 0.3.0:[/b]
+[i]Basic Stage Update[/i]
+[list]
+[*] General bugfixes and balancing found after playing myself together with [url=https://forums.factorio.com/memberlist.php?mode=viewprofile&u=3166]Bonsai[/url]
+[*] New resources
+[*] Recipe changes to use those new resources
+[*] Second iteration of new enemies. Think huge amount of resistances and health!
+[*] Basic tech tree and recipe enhancements and additions
+[*] Skills! use skills to smite down your enemies! (1 or 2 skills to test functionality)
+[/list]
+
+
+List will be updated when i think of more for these updates
+Let me know what you think in the [url=https://forums.factorio.com/viewtopic.php?f=43&t=44328]General Discussion [/url]

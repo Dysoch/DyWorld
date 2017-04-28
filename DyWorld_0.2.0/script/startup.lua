@@ -14,7 +14,8 @@ function Game()
 			Generation_Ship_1 = false,
 			Generation_Ship_2 = false,
 			Generation_Ship_3 = false,
-			ResearchLevel = "Primitive",
+			Research_Level_String = "Primitive",
+			Research_Level_Var = 1,
 			Strength = 0,
 			Endurance = 0,
 			Speed = 0,
@@ -25,6 +26,13 @@ function Game()
 			Wisdom = 0,
 			Guile = 0,
 			Knowledge = 0,
+			Spawner_Zeptipod = 0,
+			Spawner_Plastumia = 0,
+			Spawner_Fulgura = 0,
+			Spawner_Acidicus = 0,
+			Spawner_Racides = 0,
+			Spawner_Sulfoids = 0,
+			Spawner_Sanguisugea = 0,
 		}
 	debug("Created global.dyworld")
 	end

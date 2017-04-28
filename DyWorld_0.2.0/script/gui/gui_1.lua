@@ -52,7 +52,7 @@ function toggleGui(player, id)
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_research", (global.stats.research or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_ghostbuild", (global.stats.ghostbuild or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_ghostmined", (global.stats.ghostmined or 0)}}
-	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_researchlevel", (global.dyworld.ResearchLevel)}}
+	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_researchlevel", (global.dyworld.Research_Level_String)}}
 	-- labels for stats_2
 	frameflow2.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.body"}}
 	frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_physical"}}

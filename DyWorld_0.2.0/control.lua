@@ -116,16 +116,23 @@ end)
 script.on_event(defines.events.on_research_finished, function(event)
 	stats_functions.IncrementerGlobal("research", game.forces.player.technologies[event.research.name].research_unit_count, event.research.name)
 	if event.research.name == "dyworld-tech-basic" then
-		global.dyworld.ResearchLevel = "Basic"
+		global.dyworld.Research_Level_String = "Basic"
+		global.dyworld.Research_Level_Var = 2
 		for _,player in pairs(game.players) do
 			player.enable_flashlight()
 		end
 	elseif event.research.name == "dyworld-tech-intermediate" then
-		global.dyworld.ResearchLevel = "Intermediate"
+		global.dyworld.Research_Level_String = "Intermediate"
+		global.dyworld.Research_Level_Var = 3
 	elseif event.research.name == "dyworld-tech-enhanced" then
-		global.dyworld.ResearchLevel = "Enhanced"
+		global.dyworld.Research_Level_String = "Enhanced"
+		global.dyworld.Research_Level_Var = 4
 	elseif event.research.name == "dyworld-tech-advanced" then
-		global.dyworld.ResearchLevel = "Advanced"
+		global.dyworld.Research_Level_String = "Advanced"
+		global.dyworld.Research_Level_Var = 5
+	elseif event.research.name == "dyworld-tech-godlike" then
+		global.dyworld.Research_Level_String = "Godlike"
+		global.dyworld.Research_Level_Var = 6
 	end
 end)
 

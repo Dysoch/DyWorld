@@ -91,7 +91,7 @@ Data_Table_Tech = {
 	},
 	{
 		Name = dyworld_prefix.."tech-armor-1",
-		Icon = data.raw.item["iron-chest"].icon,
+		Icon = data.raw.armor["power-armor-2"].icon,
 		Count = 500,
 		Time = 5,
 		PreReq = true,
@@ -103,7 +103,7 @@ Data_Table_Tech = {
 	},
 	{
 		Name = dyworld_prefix.."tech-armor-2",
-		Icon = data.raw.item["iron-chest"].icon,
+		Icon = data.raw.armor["power-armor-2"].icon,
 		Count = 1000,
 		Time = 5,
 		PreReq = true,
@@ -115,7 +115,7 @@ Data_Table_Tech = {
 	},
 	{
 		Name = dyworld_prefix.."tech-armor-3",
-		Icon = data.raw.item["iron-chest"].icon,
+		Icon = data.raw.item["power-armor-2"].icon,
 		Count = 1500,
 		Time = 5,
 		PreReq = true,
@@ -127,7 +127,7 @@ Data_Table_Tech = {
 	},
 	{
 		Name = dyworld_prefix.."tech-armor-4",
-		Icon = data.raw.item["iron-chest"].icon,
+		Icon = data.raw.armor["power-armor-2"].icon,
 		Count = 2000,
 		Time = 5,
 		PreReq = true,
@@ -139,7 +139,7 @@ Data_Table_Tech = {
 	},
 	{
 		Name = dyworld_prefix.."tech-armor-5",
-		Icon = data.raw.item["iron-chest"].icon,
+		Icon = data.raw.armor["power-armor-2"].icon,
 		Count = 1500,
 		Time = 5,
 		PreReq = true,
@@ -151,7 +151,7 @@ Data_Table_Tech = {
 	},
 	{
 		Name = dyworld_prefix.."tech-turret-1",
-		Icon = data.raw["mining-tool"]["iron-axe"].icon,
+		Icon = data.raw.item["gun-turret"].icon,
 		Count = 25,
 		Time = 5,
 		PreReq = true,
@@ -163,7 +163,7 @@ Data_Table_Tech = {
 	},
 	{
 		Name = dyworld_prefix.."tech-turret-2",
-		Icon = data.raw["mining-tool"]["iron-axe"].icon,
+		Icon = data.raw.item["gun-turret"].icon,
 		Count = 50,
 		Time = 5,
 		PreReq = true,
@@ -175,7 +175,7 @@ Data_Table_Tech = {
 	},
 	{
 		Name = dyworld_prefix.."tech-turret-3",
-		Icon = data.raw["mining-tool"]["iron-axe"].icon,
+		Icon = data.raw.item["gun-turret"].icon,
 		Count = 100,
 		Time = 5,
 		PreReq = true,
@@ -232,5 +232,17 @@ Data_Table_Tech = {
 		Effects_Ingredients = {dyworld_prefix.."drill-electric-4"},
 		Base_Edit = false,
 		Ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}},
+	},
+	{
+		Name = dyworld_prefix.."roboport-1",
+		Icon = data.raw["item"]["roboport"].icon,
+		Count = 500,
+		Time = 30,
+		PreReq = true,
+		PreReq_Tech = {dyworld_prefix.."tech-"..intermediate},
+		Effects = true,
+		Effects_Ingredients = {dyworld_prefix.."roboport-1"},
+		Base_Edit = false,
+		Ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}},
 	},
 }

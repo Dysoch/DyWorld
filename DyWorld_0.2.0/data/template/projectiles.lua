@@ -72,21 +72,21 @@ Data_Table_Projectiles = {
 	{
 		Name = dyworld_prefix.."projectile-laser-01",
 		Projectile_Type = 4,
-		Dmg = 10,
+		Dmg = 15,
 		DmgType= "laser",
 		Tint = {r=125, g=0, b=0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-laser-02",
 		Projectile_Type = 4,
-		Dmg = 15,
+		Dmg = 20,
 		DmgType= "laser",
 		Tint = {r=125, g=0, b=0}
 	},
 	{
 		Name = dyworld_prefix.."projectile-laser-03",
 		Projectile_Type = 5,
-		Dmg = 40,
+		Dmg = 60,
 		DmgType= "laser",
 		Tint = {r=0, g=125, b=0}
 	},

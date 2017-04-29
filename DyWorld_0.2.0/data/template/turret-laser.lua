@@ -211,7 +211,7 @@ function DyWorld_Laser_Turret_Entity(NAME, HEALTH, TINT, AMMO, SPEED, DMGMOD, MI
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-
+    turret_base_has_direction = true,
     attack_parameters =
     {
       type = "projectile",

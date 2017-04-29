@@ -9,6 +9,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [list]
 [*] Added in Steel Axe
 [*] Added in 3 laser turrets. Same arcs as gun turrets, 2 normal, 1 sniper
+[*] Each "Main" technology will add another toolbelt
 [/list]
 [*] General Changes:
 [list]
@@ -22,6 +23,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Stacksize: Plastic Bar: 50 > 200
 [*] Stacksize: Pipe: 50 > 100
 [*] Stacksize: Underground Pipe: 50 > 100
+[*] Stacksize: Landfill: 100 > 200
 [*] Changed sniper projectiles to be piercing, if damage is greater then health of target, it will keep going
 [*] Changed Tech Tree. Moved some technologies to after Intermediate Technologies. This should help progression
 [*] Changed Intermediated Technologies to use red, green and blue science packs

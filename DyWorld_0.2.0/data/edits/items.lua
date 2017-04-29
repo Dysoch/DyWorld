@@ -16,6 +16,7 @@ StackSizes = {
 	{Name = "express-transport-belt", Amount = 200, Type = "item"},
 	{Name = "stone-brick", Amount = 200, Type = "item"},
 	{Name = "plastic-bar", Amount = 200, Type = "item"},
+	{Name = "landfill", Amount = 200, Type = "item"},
 }
 
 for k,v in pairs(StackSizes) do

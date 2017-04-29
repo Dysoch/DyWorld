@@ -9,7 +9,10 @@ function DyWorld_Main_Tech(NAME, COUNT, TIME)
     icon = "__base__/graphics/technology/steel-processing.png", -- temp
     effects =
     {
-      
+      {
+        type = "num-quick-bars",
+        modifier = 1
+      }
     },
     prerequisites = {},
     unit =
@@ -35,5 +38,8 @@ data:extend(
 	end
 	for _,z in pairs(v.Ingredients) do
 		table.insert(data.raw.technology[v.Name].unit.ingredients,z)
+	end
+	if v.Name == dyworld_prefix.."tech-"..primitive then
+		data.raw.technology[dyworld_prefix.."tech-"..primitive].effects = {}
 	end
 end

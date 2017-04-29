@@ -1,9 +1,8 @@
 module("migration", package.seeall)
-
-Enemies = {, , , , , }
+require "script/startup"
 
 function Migrate_To_Next_Version()
-	if not global.dyworld.Version then
+	if not global.dyworld.Version or global.dyworld.Version == "0.1.1" then
 		for k,v in pairs(global.players) do
 			v.Alive = true
 		end
@@ -29,6 +28,18 @@ function Migrate_To_Next_Version()
 			global.dyworld.Spawner_Racides = 0
 			global.dyworld.Spawner_Sulfoids = 0
 			global.dyworld.Spawner_Sanguisugea = 0
+		end
+		for k,v in pairs(startup.Forces) do
+			if not game.forces[v.Name] then
+				game.create_force(v.Name)
+			end
+		end
+		for k,v in pairs(startup.Forces) do
+			for _,z in pairs(v.Friends) do
+				game.forces[v.Name].set_friend(z, true)
+			end
+		end
 		global.dyworld.Version = "0.2.0" 
+		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
 	end
 end

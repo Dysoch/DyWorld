@@ -26,6 +26,7 @@ require("data.template.furnace-burner")
 require("data.template.assembling-burner")
 require("data.template.miner-burner")
 require("data.template.miner-electric")
+require("data.template.roboport")
 --require("data.template.furnace-electric")
 
 -- Enemies

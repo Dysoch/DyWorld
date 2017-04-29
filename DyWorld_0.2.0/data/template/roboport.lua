@@ -2,7 +2,6 @@ require "data/prefix"
 
 Data_Table_Roboport = {
 	{
-	{
 		Name = dyworld_prefix.."roboport-1",
 		--Icon = --todo
 		Recipe_Craft_Time = 60,
@@ -13,7 +12,7 @@ Data_Table_Roboport = {
 		Health = 1000,
 		Tint = {r=0.500, g=0.500, b=0.500},
 		Energy = 500,
-		Radius_Construct = 200,
+		Radius_Construct = 250,
 		Radius_Logistic = 50,
 		Slots = 10,
 	},

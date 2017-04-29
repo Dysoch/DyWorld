@@ -55,6 +55,8 @@ Data_Table_Main_Tech_Edits = {
 	{	Name = dyworld_prefix.."tech-armor-3", Tech = "Advanced", TechEdit = false},
 	{	Name = dyworld_prefix.."tech-armor-4", Tech = "Godlike", TechEdit = false},
 	{	Name = dyworld_prefix.."tech-armor-5", Tech = "Godlike", TechEdit = true},
+	{	Name = dyworld_prefix.."tech-drill-2", Tech = "Intermediate", TechEdit = false},
+	{	Name = dyworld_prefix.."tech-drill-3", Tech = "Enhanced", TechEdit = false},
 	{	Name = "laser-turret-damage-1", Tech = "Intermediate", TechEdit = true},
 	{	Name = "laser-turret-speed-1", Tech = "Intermediate", TechEdit = true},
 	{	Name = "rocket-silo", Tech = "Intermediate", TechEdit = true},

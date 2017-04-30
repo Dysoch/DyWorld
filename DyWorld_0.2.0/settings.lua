@@ -1,6 +1,7 @@
 
---settings.startup["DyWorld.debug"].value
---settings.global["DyWorld.hell"].value
+--settings.startup["DyWorld-debug"].value
+--settings.global["DyWorld-hell"].value
+--settings.global["DyWorld-enemy-war"].value
 
 -- can use: "runtime-global", "startup"
 
@@ -16,5 +17,11 @@ data:extend({
 		name = "DyWorld-hell",
 		setting_type = "runtime-global",
 		default_value = false,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld-enemy-war",
+		setting_type = "runtime-global",
+		default_value = true,
 	},
 })

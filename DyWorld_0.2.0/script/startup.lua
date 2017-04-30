@@ -74,12 +74,14 @@ function Game()
 	end
 	game.forces.player.ghost_time_to_live = (60*60*60*24) -- 24 hour live time
 	game.forces.player.deconstruction_time_to_live = (60*60*60*24) -- 24 hour live time
-	for k,v in pairs(Forces) do
-		game.create_force(v.Name)
-	end
-	for k,v in pairs(Forces) do
-		for _,z in pairs(v.Friends) do
-			game.forces[v.Name].set_friend(z, true)
+	if settings.global["DyWorld-enemy-war"].value then
+		for k,v in pairs(Forces) do
+			game.create_force(v.Name)
+		end
+		for k,v in pairs(Forces) do
+			for _,z in pairs(v.Friends) do
+				game.forces[v.Name].set_friend(z, true)
+			end
 		end
 	end
 end

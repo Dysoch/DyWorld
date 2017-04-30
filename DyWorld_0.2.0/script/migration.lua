@@ -29,14 +29,16 @@ function Migrate_To_Next_Version()
 			global.dyworld.Spawner_Sulfoids = 0
 			global.dyworld.Spawner_Sanguisugea = 0
 		end
-		for k,v in pairs(startup.Forces) do
-			if not game.forces[v.Name] then
-				game.create_force(v.Name)
+		if settings.global["DyWorld-enemy-war"].value then
+			for k,v in pairs(startup.Forces) do
+				if not game.forces[v.Name] then
+					game.create_force(v.Name)
+				end
 			end
-		end
-		for k,v in pairs(startup.Forces) do
-			for _,z in pairs(v.Friends) do
-				game.forces[v.Name].set_friend(z, true)
+			for k,v in pairs(startup.Forces) do
+				for _,z in pairs(v.Friends) do
+					game.forces[v.Name].set_friend(z, true)
+				end
 			end
 		end
 		global.dyworld.Version = "0.2.0" 

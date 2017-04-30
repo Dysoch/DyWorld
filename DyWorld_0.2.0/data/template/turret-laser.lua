@@ -20,6 +20,8 @@ Data_Table_Laser_Turret = {
 		Result_Count = 1,
 		Recipe_Without_Tech = true,
 		Recipe_Ingredients = {{"stone",15},{"iron-plate",5},{"copper-plate",2}},
+		Resistance = true,
+		Resistance_Ingredients = {{type = "physical", decrease = 10, percent = 15 },{type = "acid", decrease = 10, percent = 15},{type = "explosion", decrease = 50, percent = 50},{type = "fire", decrease = 10, percent = 50},{type = "laser", decrease = 100, percent = 99}},
 	},
 	{
 		Name = dyworld_prefix.."turret-laser-basic-02",
@@ -40,10 +42,12 @@ Data_Table_Laser_Turret = {
 		Result_Count = 1,
 		Recipe_Without_Tech = true,
 		Recipe_Ingredients = {{"stone",15},{"iron-plate",5},{"copper-plate",2}},
+		Resistance = true,
+		Resistance_Ingredients = {{type = "physical", decrease = 10, percent = 15 },{type = "acid", decrease = 10, percent = 15},{type = "explosion", decrease = 50, percent = 50},{type = "fire", decrease = 10, percent = 50},{type = "laser", decrease = 100, percent = 99}},
 	},
 	{
 		Name = dyworld_prefix.."turret-laser-sniper-01",
-		Health = 1500,
+		Health = 2500,
 		Tint = {r=0.500, g=0.500, b=0.500},
 		Attack_Speed = (60/1.5),
 		Ammo_Cat = "laser",
@@ -60,6 +64,8 @@ Data_Table_Laser_Turret = {
 		Result_Count = 1,
 		Recipe_Without_Tech = true,
 		Recipe_Ingredients = {{"stone",15},{"iron-plate",5},{"copper-plate",2}},
+		Resistance = true,
+		Resistance_Ingredients = {{type = "physical", decrease = 10, percent = 15 },{type = "acid", decrease = 10, percent = 15},{type = "explosion", decrease = 50, percent = 50},{type = "fire", decrease = 10, percent = 50},{type = "laser", decrease = 100, percent = 99}},
 	},
 }
 
@@ -101,6 +107,9 @@ function DyWorld_Laser_Turret_Entity(NAME, HEALTH, TINT, AMMO, SPEED, DMGMOD, MI
     flags = { "placeable-player", "placeable-enemy", "player-creation"},
     minable = { mining_time = 0.5, result = NAME },
     max_health = HEALTH,
+    resistances =
+    {
+    },
     corpse = "medium-remnants",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{ -1, -1}, {1, 1}},
@@ -259,5 +268,10 @@ data:extend(
 	})
 	for _,z in pairs(v.Recipe_Ingredients) do
 		table.insert(data.raw.recipe[v.Name].ingredients,z)
+	end
+	if v.Resistance then
+		for _,z in pairs(v.Resistance_Ingredients) do
+			table.insert(data.raw.armor[v.Name].resistances,z)
+		end
 	end
 end

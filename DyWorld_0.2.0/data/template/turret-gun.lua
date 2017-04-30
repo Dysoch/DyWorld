@@ -20,6 +20,8 @@ Data_Table_Gun_Turret = {
 		Result_Count = 1,
 		Recipe_Without_Tech = true,
 		Recipe_Ingredients = {{"stone",15},{"iron-plate",5},{"copper-plate",2},{dyworld_prefix.."gun-pistol",1}},
+		Resistance = true,
+		Resistance_Ingredients = {{type = "physical", decrease = 50, percent = 85 },{type = "acid", decrease = 5, percent = 25},{type = "explosion", decrease = 50, percent = 50},{type = "fire", decrease = 50, percent = 10}},
 	},
 	{
 		Name = dyworld_prefix.."turret-basic-02",
@@ -40,10 +42,12 @@ Data_Table_Gun_Turret = {
 		Result_Count = 1,
 		Recipe_Without_Tech = false,
 		Recipe_Ingredients = {{"stone",15},{"iron-plate",15},{"copper-plate",12},{dyworld_prefix.."gun-pistol",1}},
+		Resistance = true,
+		Resistance_Ingredients = {{type = "physical", decrease = 50, percent = 85 },{type = "acid", decrease = 5, percent = 25},{type = "explosion", decrease = 50, percent = 50},{type = "fire", decrease = 50, percent = 10}},
 	},
 	{
 		Name = dyworld_prefix.."turret-sniper-01",
-		Health = 250,
+		Health = 1000,
 		Tint = {r=0.500, g=0.500, b=0.500},
 		Inventory = 1,
 		Auto_Ammo = 10,
@@ -60,6 +64,8 @@ Data_Table_Gun_Turret = {
 		Result_Count = 1,
 		Recipe_Without_Tech = false,
 		Recipe_Ingredients = {{"stone",15},{dyworld_prefix.."gun-sniper",1},{"iron-plate",5},{"copper-plate",2}},
+		Resistance = true,
+		Resistance_Ingredients = {{type = "physical", decrease = 50, percent = 85 },{type = "acid", decrease = 5, percent = 25},{type = "explosion", decrease = 50, percent = 50},{type = "fire", decrease = 50, percent = 10}},
 	},
 }
 
@@ -101,6 +107,9 @@ function DyWorld_Gun_Turret_Entity(NAME, HEALTH, TINT, INV, AUTOAMMO, ATTACKSPEE
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.5, result = NAME},
     max_health = HEALTH,
+    resistances =
+    {
+    },
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
     selection_box = {{-1, -1 }, {1, 1}},
@@ -212,5 +221,10 @@ data:extend(
 	})
 	for _,z in pairs(v.Recipe_Ingredients) do
 		table.insert(data.raw.recipe[v.Name].ingredients,z)
+	end
+	if v.Resistance then
+		for _,z in pairs(v.Resistance_Ingredients) do
+			table.insert(data.raw.armor[v.Name].resistances,z)
+		end
 	end
 end

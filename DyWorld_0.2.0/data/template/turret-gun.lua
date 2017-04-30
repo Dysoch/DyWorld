@@ -224,7 +224,7 @@ data:extend(
 	end
 	if v.Resistance then
 		for _,z in pairs(v.Resistance_Ingredients) do
-			table.insert(data.raw.armor[v.Name].resistances,z)
+			table.insert(data.raw["ammo-turret"][v.Name].resistances,z)
 		end
 	end
 end

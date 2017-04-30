@@ -65,7 +65,7 @@ function Game()
 		}
 	debug("Created global.dyworld")
 	end
-	if debug_test then
+	if settings.startup["DyWorld-debug"].value then
 		game.forces.player.maximum_following_robot_count = 500
 		game.forces.player.character_trash_slot_count = 50
 		game.forces.player.character_logistic_slot_count = 50
@@ -153,9 +153,6 @@ function startup(PLAYER, ID)
 	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
 	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
 	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
-	if debug_test then
-		game.players[ID].insert{name="deconstruction-planner",count=1}
-	end
 	debug("Startup done")
 end
 

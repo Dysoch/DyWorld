@@ -1,4 +1,3 @@
-require "config"
 
 
 for k,v in pairs(data.raw["projectile"]) do

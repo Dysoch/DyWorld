@@ -1,4 +1,3 @@
-require "config"
 require "roadmap"
 require "script/startup"
 require "script/migration"
@@ -142,7 +141,7 @@ script.on_event(defines.events.on_chunk_generated, function(event)
 	if math.random(1,5)==3 then
 		generation.Ruins_Spawner(event)
 	end
-	if math.random(1,5)==3 and config.Hell then
+	if math.random(1,5)==3 and settings.global["DyWorld-hell"].value then
 		generation.Hell_Spawner(event)
 	end
 	if global.dyworld.Chunks <= 100 then
@@ -183,7 +182,7 @@ script.on_event("DyWorld_Skills", function(event)
     gui_2.toggleGui(player)
 	stats_functions.BodySkills(event.player_index)
 end)
-if config.Debug then
+if settings.startup["DyWorld-debug"].value then
 script.on_event("DyWorld_Debug_LOG", function(event)
     local player = game.players[event.player_index]
     gui_0.toggleGui(player)

@@ -15,6 +15,10 @@ data:extend({
 		name = "DyWorld_RoadMap",
 		key_sequence = "PAD 3"
 	},
+})
+if settings.startup["DyWorld-debug"].value then
+data:extend({
+	-- keybindings debug
 	{
 		type = "custom-input",
 		name = "DyWorld_Debug",
@@ -26,3 +30,4 @@ data:extend({
 		key_sequence = "PAD /"
 	},
 })
+end

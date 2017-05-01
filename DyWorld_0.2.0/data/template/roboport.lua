@@ -16,6 +16,36 @@ Data_Table_Roboport = {
 		Radius_Logistic = 50,
 		Slots = 10,
 	},
+	{
+		Name = dyworld_prefix.."roboport-2",
+		--Icon = --todo
+		Recipe_Craft_Time = 60,
+		Recipe_Ingredients = {{"roboport", 1},{"processing-unit", 75},{"steel-plate", 200}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = false,
+		Stack = 50,
+		Health = 1000,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = 500,
+		Radius_Construct = 500,
+		Radius_Logistic = 0,
+		Slots = 10,
+	},
+	{
+		Name = dyworld_prefix.."roboport-3",
+		--Icon = --todo
+		Recipe_Craft_Time = 60,
+		Recipe_Ingredients = {{"roboport", 1},{"processing-unit", 100},{"steel-plate", 100}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = false,
+		Stack = 50,
+		Health = 1000,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = 500,
+		Radius_Construct = 100,
+		Radius_Logistic = 100,
+		Slots = 10,
+	},
 }
 
 function DyWorld_Roboport_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)

@@ -8,7 +8,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] World/Gameplay:
 [list]
 [*] Added in Steel Axe
-[*] Added in 3 laser turrets. Same arcs as gun turrets, 2 normal, 1 sniper
+[*] Added in 6 laser turrets. 4 normal, 2 sniper
 [*] Each "Main" technology will add another toolbelt
 [*] Added in 4 electric mining drills to work with the new hardness of resources
 [*] Added in 3 new roboports

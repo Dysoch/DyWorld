@@ -87,6 +87,7 @@ function DyWorld_Roboport_Entity(NAME, HEALTH, TINT, ENERGY, RADIUS_LOGISTIC, RA
     minable = {hardness = 0.2, mining_time = 0.5, result = NAME},
     max_health = HEALTH,
     corpse = "big-remnants",
+    fast_replaceable_group = "roboport",
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
     selection_box = {{-2, -2}, {2, 2}},
     resistances =
@@ -105,11 +106,11 @@ function DyWorld_Roboport_Entity(NAME, HEALTH, TINT, ENERGY, RADIUS_LOGISTIC, RA
     {
       type = "electric",
       usage_priority = "secondary-input",
-      input_flow_limit = (tostring(ENERGY*50).."MW"),
+      input_flow_limit = (tostring(ENERGY/20).."MW"),
       buffer_capacity = (tostring(ENERGY).."MJ")
     },
     recharge_minimum = (tostring(ENERGY/0.4).."MJ"),
-    energy_usage = (tostring(ENERGY/0.5).."kW"),
+    energy_usage = (tostring(ENERGY/2).."kW"),
     -- per one charge slot
     charging_energy = (tostring(ENERGY*10).."kW"),
     logistics_radius = RADIUS_LOGISTIC,
@@ -230,6 +231,8 @@ function DyWorld_Roboport_Entity(NAME, HEALTH, TINT, ENERGY, RADIUS_LOGISTIC, RA
   }
   return result
 end
+
+data.raw["roboport"]["roboport"].fast_replaceable_group = "roboport"
 
 for k,v in pairs(Data_Table_Roboport) do
 data:extend(

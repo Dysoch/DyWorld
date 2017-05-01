@@ -1,7 +1,7 @@
 module("generation", package.seeall)
 
 Ruins = {"small-scorchmark", "stone-rock", "red-desert-rock-big-01"}
-Hell = {"fire-flame"}
+Hell = {"dyworld-hell-fire-flame"}
 
 local keysetRuins = {}
 local keysetHell = {}
@@ -30,7 +30,7 @@ function Hell_Spawner(event)
 		PosX = event.area.left_top.x+math.random(-319,319)
 		PosY = event.area.left_top.y+math.random(-319,319)
 		if game.surfaces[1].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then 
-			game.surfaces[1].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.player}
+			game.surfaces[1].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.neutral}
 		end
 	end
 	--debug("Generator: Created "..BuildEntity.." at "..PosX..", "..PosY)

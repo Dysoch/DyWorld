@@ -16,6 +16,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [/list]
 [*] General Changes:
 [list]
+[*] Changed Hell mode to be more, well, hellish :D
 [*] Changed minimum range of Turret Mk1a: 5 > 0
 [*] Changed arc of Turret Mk1a: 180° > 170°
 [*] Changed arc of Sniper Turret 45° (was 50° i believe)

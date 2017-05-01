@@ -28,6 +28,9 @@ require("data.template.miner-electric")
 require("data.template.roboport")
 --require("data.template.furnace-electric")
 
+-- Normals
+require("data.generation.fire")
+
 -- Enemies
 require("data.template.enemy-melee")
 

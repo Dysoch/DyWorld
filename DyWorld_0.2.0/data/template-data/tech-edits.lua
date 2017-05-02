@@ -4,6 +4,7 @@ Data_Table_Main_Tech_Edits = {
 	{	Name = dyworld_prefix.."tech-chests-1", Tech = "Basic", TechEdit = false},
 	{	Name = dyworld_prefix.."tech-tools-1", Tech = "Basic", TechEdit = false},
 	{	Name = dyworld_prefix.."tech-turret-2", Tech = "Basic", TechEdit = false},
+	{	Name = dyworld_prefix.."tech-primitive-construction", Tech = "Basic", TechEdit = false},
 	{	Name = "landfill", Tech = "Basic", TechEdit = false},
 	{	Name = "stone-walls", Tech = "Basic", TechEdit = false},
 	{	Name = "gates", Tech = "Intermediate", TechEdit = false},

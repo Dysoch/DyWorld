@@ -270,4 +270,16 @@ Data_Table_Tech = {
 		Base_Edit = false,
 		Ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"military-science-pack", 1}},
 	},
+	{
+		Name = dyworld_prefix.."tech-primitive-construction",
+		Icon = data.raw.item["gun-turret"].icon,
+		Count = Resource_Water and 20 or 100,
+		Time = 5,
+		PreReq = true,
+		PreReq_Tech = {dyworld_prefix.."tech-"..primitive},
+		Effects = true,
+		Effects_Ingredients = {dyworld_prefix.."construction-robot-1", dyworld_prefix.."logistic-storage-1", dyworld_prefix.."roboport-primitive"},
+		Base_Edit = false,
+		Ingredients = {{dyworld_prefix.."lab-tool-iron", 1},{dyworld_prefix.."lab-tool-copper", 1}},
+	},
 }

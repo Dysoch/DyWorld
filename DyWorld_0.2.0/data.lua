@@ -26,6 +26,8 @@ require("data.template.assembling-burner")
 require("data.template.miner-burner")
 require("data.template.miner-electric")
 require("data.template.roboport")
+require("data.template.robot-construction")
+require("data.template.logistics-storage")
 --require("data.template.furnace-electric")
 
 -- Normals

@@ -16,7 +16,7 @@ Data_Table_Gun_Turret = {
 		Turn_Min_Range = 170,
 		Turn_Max_Range = 360,
 		Stack = 100,
-		Craft_Time = 10,
+		Recipe_Craft_Time = 10,
 		Result_Count = 1,
 		Recipe_Without_Tech = true,
 		Recipe_Ingredients = {{"stone",15},{"iron-plate",5},{"copper-plate",2},{dyworld_prefix.."gun-pistol",1}},
@@ -38,7 +38,7 @@ Data_Table_Gun_Turret = {
 		Turn_Min_Range = 90,
 		Turn_Max_Range = 360,
 		Stack = 100,
-		Craft_Time = 10,
+		Recipe_Craft_Time = 10,
 		Result_Count = 1,
 		Recipe_Without_Tech = false,
 		Recipe_Ingredients = {{"stone",15},{"iron-plate",15},{"copper-plate",12},{dyworld_prefix.."gun-pistol",1}},
@@ -60,7 +60,7 @@ Data_Table_Gun_Turret = {
 		Turn_Min_Range = 45,
 		Turn_Max_Range = 360,
 		Stack = 50,
-		Craft_Time = 10,
+		Recipe_Craft_Time = 10,
 		Result_Count = 1,
 		Recipe_Without_Tech = false,
 		Recipe_Ingredients = {{"stone",15},{dyworld_prefix.."gun-sniper",1},{"iron-plate",5},{"copper-plate",2}},
@@ -217,7 +217,7 @@ data:extend(
 	{
 		DyWorld_Gun_Turret_Entity(v.Name, v.Health, v.Tint, v.Inventory, v.Auto_Ammo, v.Attack_Speed_1, v.Ammo_Cat, v.Attack_Speed_2, v.Dmg_Mod, v.Min_Range, v.Max_Range, v.Turn_Min_Range, v.Turn_Max_Range),
 		DyWorld_Gun_Turret_Item(v.Name, v.Stack),
-		DyWorld_Gun_Turret_Recipe(v.Name, v.Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
+		DyWorld_Gun_Turret_Recipe(v.Name, v.Recipe_Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
 	})
 	for _,z in pairs(v.Recipe_Ingredients) do
 		table.insert(data.raw.recipe[v.Name].ingredients,z)

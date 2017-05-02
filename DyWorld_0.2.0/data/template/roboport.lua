@@ -239,7 +239,7 @@ data:extend(
 	{
 		DyWorld_Roboport_Entity(v.Name, v.Health, v.Tint, v.Energy, v.Radius_Logistic, v.Radius_Construct, v.Slots),
 		DyWorld_Roboport_Item(v.Name, v.Stack),
-		DyWorld_Roboport_Recipe(v.Name, v.Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
+		DyWorld_Roboport_Recipe(v.Name, v.Recipe_Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
 	})
 	for _,z in pairs(v.Recipe_Ingredients) do
 		table.insert(data.raw.recipe[v.Name].ingredients,z)

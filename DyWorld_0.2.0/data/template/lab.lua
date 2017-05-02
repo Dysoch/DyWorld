@@ -9,7 +9,7 @@ Data_Table_Lab = {
 		Speed = 1,
 		Modules = 0,
 		Stack = 10,
-		Craft_Time = 10,
+		Recipe_Craft_Time = 10,
 		Result_Count = 1,
 		Recipe_Without_Tech = true,
 		Recipe_Ingredients = {{"stone",15},{"iron-plate",2},{"copper-plate",2}},
@@ -23,7 +23,7 @@ Data_Table_Lab = {
 		Speed = 1,
 		Modules = 2,
 		Stack = 10,
-		Craft_Time = 10,
+		Recipe_Craft_Time = 10,
 		Result_Count = 1,
 		Recipe_Without_Tech = false,
 		Tech = true,
@@ -39,7 +39,7 @@ Data_Table_Lab = {
 		Speed = 1.5,
 		Modules = 4,
 		Stack = 10,
-		Craft_Time = 10,
+		Recipe_Craft_Time = 10,
 		Result_Count = 1,
 		Recipe_Without_Tech = false,
 		Tech = true,
@@ -145,7 +145,7 @@ data:extend(
 	{
 		DyWorld_Lab_Entity(v.Name, v.Health, v.Tint, v.Energy, v.Speed, v.Modules),
 		DyWorld_Lab_Item(v.Name, v.Stack),
-		DyWorld_Lab_Recipe(v.Name, v.Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
+		DyWorld_Lab_Recipe(v.Name, v.Recipe_Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
 	})
 	for _,z in pairs(v.Recipe_Ingredients) do
 		table.insert(data.raw.recipe[v.Name].ingredients,z)

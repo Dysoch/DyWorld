@@ -177,7 +177,7 @@ data:extend(
 	{
 		
 		DyWorld_Armor_Item(v.Name, v.Stack, v.Inventory_Extra, v.Durability),
-		DyWorld_Armor_Recipe(v.Name, v.Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
+		DyWorld_Armor_Recipe(v.Name, v.Recipe_Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
 	})
 	for _,z in pairs(v.Recipe_Ingredients) do
 		table.insert(data.raw.recipe[v.Name].ingredients,z)

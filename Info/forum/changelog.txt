@@ -39,6 +39,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Changed attributes and bonuses formula's to be more progressive
 [*] Added in resistances for: Gun Turrets, Laser Turrets and Power Armors
 [*] Following recipes has been hidden forever to be able to only use DyWorld recipes: Laser Turret
+[*] Burner inserter now available from the start
 [/list]
 [*] Bug Fixes:
 [list]

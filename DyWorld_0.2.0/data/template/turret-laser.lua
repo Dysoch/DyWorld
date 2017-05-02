@@ -312,7 +312,9 @@ function DyWorld_Laser_Turret_Entity(NAME, HEALTH, TINT, AMMO, SPEED, DMGMOD, MI
               {
                 type = "projectile",
                 projectile = PROJECTILE,
-                starting_speed = PROJECTILE_SPEED
+                starting_speed = PROJECTILE_SPEED,
+                range_deviation = 0.1,
+				max_range = MAXRANGE,
               }
             }
           }

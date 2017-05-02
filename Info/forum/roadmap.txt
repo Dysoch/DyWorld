@@ -11,6 +11,7 @@ Check the [url=https://forums.factorio.com/viewtopic.php?f=43&t=44762]changelog[
 [*] Primitive tech tree and recipe enhancements and additions
 [*] New bonuses for the players
 [*] The first loot from enemies, used in some armor and guns
+[*] New ore system, makes the game quite a bit harder
 [/list]
 
 [b]DyWorld 0.3.0:[/b]
@@ -22,7 +23,6 @@ Check the [url=https://forums.factorio.com/viewtopic.php?f=43&t=44762]changelog[
 [*] Second iteration of new enemies. Think huge amount of resistances and health!
 [*] Basic tech tree and recipe enhancements and additions
 [*] Skills! use skills to smite down your enemies! (1 or 2 skills to test functionality)
-[*] New ore system, makes the game quite a bit harder
 [*] New water system
 [/list]
 

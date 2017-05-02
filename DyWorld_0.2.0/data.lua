@@ -38,3 +38,7 @@ require("data.template.enemy-melee")
 require("data.template-data.tech-edits")
 require("data.tech.electric")
 require("data.tech.sniper")
+
+if settings.startup["DyWorld-resource-water"].value then
+require("data.optional.resource-water")
+end

@@ -1,4 +1,5 @@
 require "data/prefix"
+Resource_Water = settings.startup["DyWorld-resource-water"].value
 
 Data_Table_Main_Tech = {
 	{
@@ -11,7 +12,7 @@ Data_Table_Main_Tech = {
 	},
 	{
 		Name = dyworld_prefix.."tech-"..basic,
-		Count = 200,
+		Count = Resource_Water and 40 or 200,
 		Time = 5,
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-"..primitive},
@@ -55,7 +56,7 @@ Data_Table_Tech = {
 	{
 		Name = dyworld_prefix.."tech-chests-1",
 		Icon = data.raw["mining-tool"]["iron-axe"].icon,
-		Count = 25,
+		Count = Resource_Water and 5 or 25,
 		Time = 1,
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-"..primitive},
@@ -68,7 +69,7 @@ Data_Table_Tech = {
 	{
 		Name = dyworld_prefix.."tech-tools-1",
 		Icon = data.raw["mining-tool"]["iron-axe"].icon,
-		Count = 25,
+		Count = Resource_Water and 5 or 25,
 		Time = 2,
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-"..primitive},
@@ -152,7 +153,7 @@ Data_Table_Tech = {
 	{
 		Name = dyworld_prefix.."tech-turret-1",
 		Icon = data.raw.item["gun-turret"].icon,
-		Count = 25,
+		Count = Resource_Water and 5 or 25,
 		Time = 5,
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-"..primitive},
@@ -164,7 +165,7 @@ Data_Table_Tech = {
 	{
 		Name = dyworld_prefix.."tech-turret-2",
 		Icon = data.raw.item["gun-turret"].icon,
-		Count = 50,
+		Count = Resource_Water and 10 or 50,
 		Time = 5,
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-turret-1"},
@@ -176,7 +177,7 @@ Data_Table_Tech = {
 	{
 		Name = dyworld_prefix.."tech-turret-3",
 		Icon = data.raw.item["gun-turret"].icon,
-		Count = 100,
+		Count = Resource_Water and 20 or 100,
 		Time = 5,
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-turret-2", "steel-processing"},

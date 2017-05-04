@@ -39,6 +39,10 @@ Data_Table_Data = {
 		Width = 25,
 		Height = 20,
 	},
+	{
+		Name = "primitive-crafting",
+		Type = "recipe"
+	},
 }
 
 function DyWorld_Damage_Type(NAME)

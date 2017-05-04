@@ -11,17 +11,19 @@ data:extend(
   {
     type = "recipe",
     name = "dyworld-stone-to-iron",
-    category = "crafting-with-fluid",
+    category = "primitive-crafting",
     ingredients = {{"stone", 3}},
-    result = "iron-plate",
+    result = "iron-ore",
     result_count = 1
   },
   {
     type = "recipe",
     name = "dyworld-stone-to-copper",
-    category = "crafting-with-fluid",
+    category = "primitive-crafting",
     ingredients = {{"stone", 2}},
-    result = "copper-plate",
+    result = "copper-ore",
     result_count = 1
   },
 })
+
+data.raw.recipe["burner-inserter"].ingredients = {{"stone", 1},{"iron-plate", 2}}

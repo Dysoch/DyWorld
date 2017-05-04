@@ -10,7 +10,6 @@ Check the [url=https://forums.factorio.com/viewtopic.php?f=43&t=44762]changelog[
 [*] First iteration of new enemies. They will spawn differently then base game, they will use my own generation script so i can specify how many are spawned in world to not make the world too deadly (while still keeping it deadly :D )
 [*] Primitive tech tree and recipe enhancements and additions
 [*] New bonuses for the players
-[*] The first loot from enemies, used in some armor and guns
 [*] New ore system, makes the game quite a bit harder
 [/list]
 
@@ -24,6 +23,7 @@ Check the [url=https://forums.factorio.com/viewtopic.php?f=43&t=44762]changelog[
 [*] Basic tech tree and recipe enhancements and additions
 [*] Skills! use skills to smite down your enemies! (1 or 2 skills to test functionality)
 [*] New water system
+[*] The first loot from enemies, used in some armor and guns
 [/list]
 
 

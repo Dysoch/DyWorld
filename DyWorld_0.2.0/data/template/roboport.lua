@@ -56,9 +56,9 @@ Data_Table_Roboport = {
 		Stack = 50,
 		Health = 100,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = 50,
+		Energy = 10,
 		Radius_Construct = 100,
-		Radius_Logistic = 0,
+		Radius_Logistic = 10,
 		Slots = 4,
 	},
 }

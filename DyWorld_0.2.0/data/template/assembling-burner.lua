@@ -116,7 +116,7 @@ function DyWorld_Assembling_Burner_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, EFF
         },
       },
     },
-    crafting_categories = {"crafting"},
+    crafting_categories = {"crafting", "primitive-crafting"},
     energy_source =
     {
       type = "burner",

@@ -9,12 +9,14 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [list]
 [*] Added in Steel Axe
 [*] Added in 6 laser turrets. 4 normal, 2 sniper
-[*] Each "Main" technology will add another toolbelt
+[*] Enhanced and Godlike technology will add another toolbelt bringing the total to 4 toolbelts
 [*] Added in 4 electric mining drills to work with the new hardness of resources
-[*] Added in 3 new roboports
+[*] Added in 5 new roboports. 1 primitive with slow robots, 3 enhanced roboports, and 1 godlike with immense radius
+[*] Added in 9 solar panels
+[*] Added in 9 accumulators
+[*] Added in 5 radars, they all larger radiuses and the godlike one is insanely quick
 [*] Moved config into mod settings. Everything can be changed from the game itself
 [*] Certain resources require water to mine. Can be switched off if you want. When on, changes the primitive stage
-[*] Added in a primitive roboport. They can only build, use it in the beginning of the game. Robots are slow!
 [/list]
 [*] General Changes:
 [list]
@@ -38,7 +40,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Changed Pickaxes crafting times: Stone 1 > 2, Copper 1 > 4, Iron 1 > 6.5
 [*] Changed attributes and bonuses formula's to be more progressive
 [*] Added in resistances for: Gun Turrets, Laser Turrets and Power Armors
-[*] Following recipes has been hidden forever to be able to only use DyWorld recipes: Laser Turret
+[*] Following recipes has been hidden forever to be able to only use DyWorld recipes: Laser Turret, Radar
 [*] Burner inserter now available from the start
 [/list]
 [*] Bug Fixes:

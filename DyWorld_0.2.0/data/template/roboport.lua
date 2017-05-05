@@ -61,6 +61,21 @@ Data_Table_Roboport = {
 		Radius_Logistic = 10,
 		Slots = 4,
 	},
+	{
+		Name = dyworld_prefix.."roboport-godlike",
+		--Icon = --todo
+		Recipe_Craft_Time = 30,
+		Recipe_Ingredients = {{dyworld_prefix.."roboport-3", 5},{"iron-plate", 50},{"copper-plate", 40}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = false,
+		Stack = 50,
+		Health = 250000,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = 10,
+		Radius_Construct = 2500,
+		Radius_Logistic = 2500,
+		Slots = 14,
+	},
 }
 
 function DyWorld_Roboport_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)

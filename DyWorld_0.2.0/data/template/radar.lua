@@ -174,4 +174,7 @@ data:extend(
 	for _,z in pairs(v.Recipe_Ingredients) do
 		table.insert(data.raw.recipe[v.Name].ingredients,z)
 	end
+	if v.Name == dyworld_prefix.."radar-godlike" then 
+		data.raw.radar[dyworld_prefix.."radar-godlike"].energy_per_sector = (tostring(math.floor(v.Energy))).."kJ"
+	end
 end

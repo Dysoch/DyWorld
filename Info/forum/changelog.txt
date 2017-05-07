@@ -7,6 +7,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [list]
 [*] World/Gameplay:
 [list]
+[*] Since there are a lot of new items, made new item groups and added all items to their own row
 [*] Added in Steel Axe
 [*] Added in 6 laser turrets. 4 normal, 2 sniper
 [*] Enhanced and Godlike technology will add another toolbelt bringing the total to 4 toolbelts
@@ -18,10 +19,13 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Added in 9 accumulators
 [*] Added in 5 radars, they all larger radiuses and the godlike one is insanely quick
 [*] Moved config into mod settings. Everything can be changed from the game itself
-[*] Certain resources require water to mine. Can be switched off if you want. When on, changes the primitive stage
+[*] Certain resources require water to mine. Can be switched off if you want. When on, changes the primitive stage to be semi less painfull
+[*] Added in crafting speed, robot follower count and reach distance to player bonuses (per player differently!)
+[*] Added in mining speed bonus to player bonuses. You start the game with a 25% speed reduction, to make the game slightly (but not too much) harder in the beginning. Keep mining, and it will go positive, and go to insane heights (per player differently!)
 [/list]
 [*] General Changes:
 [list]
+[*] Balanced sniper and electric damage and shooting speed techs
 [*] Changed Hell mode to be more, well, hellish :D
 [*] Changed minimum range of Turret Mk1a: 5 > 0
 [*] Changed arc of Turret Mk1a: 180° > 170°
@@ -40,7 +44,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Removed scorchmarks from electric gun. This had a chance to lag the game, now not anymore
 [*] Changed Basic Pistol shooting speed: 4/s > 2/s
 [*] Changed Pickaxes crafting times: Stone 1 > 2, Copper 1 > 4, Iron 1 > 6.5
-[*] Changed attributes and bonuses formula's to be more progressive
+[*] Changed attributes and bonuses formula's to be more progressive and immersive
 [*] Added in resistances for: Gun Turrets, Laser Turrets and Power Armors
 [*] Following recipes has been hidden forever to be able to only use DyWorld recipes: Laser Turret, Radar
 [*] Burner inserter now available from the start

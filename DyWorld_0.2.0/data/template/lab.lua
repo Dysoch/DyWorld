@@ -70,7 +70,7 @@ function DyWorld_Lab_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/lab.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "production-machine",
+    subgroup = dyworld_prefix.."lab",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

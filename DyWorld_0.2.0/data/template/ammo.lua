@@ -20,7 +20,7 @@ Data_Table_Ammo = {
 		Range = 15,
 		Mag_Size = 12.5,
 		Stack_Size = 100,
-		Subgroup = "ammo",
+		Subgroup = dyworld_prefix.."ammo-basic",
 	},
 	{
 		Name = dyworld_prefix.."ammo-basic-02",
@@ -39,7 +39,7 @@ Data_Table_Ammo = {
 		Range = 20,
 		Mag_Size = 5,
 		Stack_Size = 100,
-		Subgroup = "ammo",
+		Subgroup = dyworld_prefix.."ammo-basic",
 	},
 	{
 		Name = dyworld_prefix.."ammo-basic-03",
@@ -58,7 +58,7 @@ Data_Table_Ammo = {
 		Range = 25,
 		Mag_Size = 10,
 		Stack_Size = 100,
-		Subgroup = "ammo",
+		Subgroup = dyworld_prefix.."ammo-basic",
 	},
 	{
 		Name = dyworld_prefix.."ammo-basic-04",
@@ -77,7 +77,7 @@ Data_Table_Ammo = {
 		Range = 35,
 		Mag_Size = 15,
 		Stack_Size = 100,
-		Subgroup = "ammo",
+		Subgroup = dyworld_prefix.."ammo-basic",
 	},
 	{
 		Name = dyworld_prefix.."ammo-sniper-01",
@@ -96,7 +96,7 @@ Data_Table_Ammo = {
 		Range = 100,
 		Mag_Size = 2.5,
 		Stack_Size = 100,
-		Subgroup = "ammo",
+		Subgroup = dyworld_prefix.."ammo-sniper",
 	},
 	{
 		Name = dyworld_prefix.."ammo-sniper-02",
@@ -115,7 +115,7 @@ Data_Table_Ammo = {
 		Range = 100,
 		Mag_Size = 2.5,
 		Stack_Size = 100,
-		Subgroup = "ammo",
+		Subgroup = dyworld_prefix.."ammo-sniper",
 	},
 	{
 		Name = dyworld_prefix.."ammo-sniper-03",
@@ -134,7 +134,7 @@ Data_Table_Ammo = {
 		Range = 100,
 		Mag_Size = 2.5,
 		Stack_Size = 100,
-		Subgroup = "ammo",
+		Subgroup = dyworld_prefix.."ammo-sniper",
 	},
 	{
 		Name = dyworld_prefix.."ammo-sniper-04",
@@ -153,7 +153,7 @@ Data_Table_Ammo = {
 		Range = 100,
 		Mag_Size = 2.5,
 		Stack_Size = 100,
-		Subgroup = "ammo",
+		Subgroup = dyworld_prefix.."ammo-sniper",
 	},
 	{
 		Name = dyworld_prefix.."ammo-electric-01",
@@ -172,7 +172,7 @@ Data_Table_Ammo = {
 		Range = 50,
 		Mag_Size = 500,
 		Stack_Size = 100,
-		Subgroup = "ammo",
+		Subgroup = dyworld_prefix.."ammo-electric",
 	},
 }
 

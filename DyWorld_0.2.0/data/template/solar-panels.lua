@@ -132,7 +132,7 @@ function DyWorld_Solar_Panels_Item(DATA)
     name = DATA.Name,
     icon = "__base__/graphics/icons/solar-panel.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "energy",
+    subgroup = dyworld_prefix.."solar",
     order = DATA.Name,
     place_result = DATA.Name,
     stack_size = DATA.Stack,

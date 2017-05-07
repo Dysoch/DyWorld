@@ -60,7 +60,7 @@ function DyWorld_Lab_Tool_Item(NAME, STACK, DURABILITY)
     name = NAME,
     icon = "__base__/graphics/icons/science-pack-1.png",
     flags = {"goes-to-main-inventory"},
-    subgroup = "science-pack",
+    subgroup = dyworld_prefix.."lab-tool",
     order = NAME,
     stack_size = STACK,
     durability = DURABILITY,

@@ -99,7 +99,7 @@ function DyWorld_Roboport_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/roboport.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "logistic-network",
+    subgroup = dyworld_prefix.."roboport",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

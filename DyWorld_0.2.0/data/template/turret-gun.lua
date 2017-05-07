@@ -90,7 +90,7 @@ function DyWorld_Gun_Turret_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/gun-turret.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "defensive-structure",
+    subgroup = dyworld_prefix.."turret-gun",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

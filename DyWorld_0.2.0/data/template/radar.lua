@@ -94,7 +94,7 @@ function DyWorld_Radar_Item(DATA)
     name = DATA.Name,
     icon = "__base__/graphics/icons/radar.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "defensive-structure",
+    subgroup = dyworld_prefix.."radar",
     order = DATA.Name,
     place_result = DATA.Name,
     stack_size = DATA.Stack,

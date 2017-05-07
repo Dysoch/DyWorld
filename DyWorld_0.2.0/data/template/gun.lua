@@ -60,7 +60,7 @@ function DyWorld_Gun_Item(NAME, CATEGORY, COOLDOWN, RANGE, STACK_SIZE)
     name = NAME,
     icon = "__base__/graphics/icons/pistol.png",
     flags = {"goes-to-main-inventory"},
-    subgroup = "gun",
+    subgroup = dyworld_prefix.."gun",
     order = NAME,
     attack_parameters =
     {
@@ -83,7 +83,7 @@ function DyWorld_Gun_Item(NAME, CATEGORY, COOLDOWN, RANGE, STACK_SIZE)
       range = RANGE,
       sound = make_light_gunshot_sounds(),
     },
-    stack_size = 5
+    stack_size = STACK_SIZE
   }
   return result
 end

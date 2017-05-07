@@ -52,7 +52,7 @@ function DyWorld_Robot_Construction_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/construction-robot.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "logistic-network",
+    subgroup = dyworld_prefix.."robot-construction",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

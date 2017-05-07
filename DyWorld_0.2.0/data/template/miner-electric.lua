@@ -92,7 +92,7 @@ function DyWorld_Miner_Electric_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/burner-mining-drill.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "extraction-machine",
+    subgroup = dyworld_prefix.."extraction",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

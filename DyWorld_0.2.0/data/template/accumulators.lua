@@ -132,7 +132,7 @@ function DyWorld_Accumulators_Item(DATA)
     name = DATA.Name,
     icon = "__base__/graphics/icons/accumulator.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "energy",
+    subgroup = dyworld_prefix.."accumulator",
     order = DATA.Name,
     place_result = DATA.Name,
     stack_size = DATA.Stack,

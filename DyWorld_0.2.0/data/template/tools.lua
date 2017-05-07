@@ -98,7 +98,7 @@ function DyWorld_Tools_Item(NAME, DAMAGE, SPEED, STACK, DURA)
       }
     },
     durability = DURA,
-    subgroup = "tool",
+    subgroup = dyworld_prefix.."tools",
     order = NAME,
     speed = SPEED,
     stack_size = STACK

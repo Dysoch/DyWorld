@@ -36,7 +36,7 @@ function DyWorld_Logistic_Storage_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/logistic-chest-storage.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "logistic-network",
+    subgroup = dyworld_prefix.."chest-storage",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

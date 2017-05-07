@@ -36,7 +36,7 @@ function DyWorld_Transport_Belt_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/transport-belt.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "belt",
+    subgroup = dyworld_prefix.."transport-belts",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

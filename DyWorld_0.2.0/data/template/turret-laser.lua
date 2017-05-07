@@ -156,7 +156,7 @@ function DyWorld_Laser_Turret_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/laser-turret.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "defensive-structure",
+    subgroup = dyworld_prefix.."turret-laser",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

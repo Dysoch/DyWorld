@@ -2,6 +2,7 @@
 -- Core Stuff
 require("data.gui_sprites")
 require("data.keys")
+require("data.item-groups")
 require("data.edits.ammo")
 require("data.edits.items")
 require("data.edits.resource") 

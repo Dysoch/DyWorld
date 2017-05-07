@@ -15,6 +15,7 @@ Data_Table_Armor = {
 		Grid = dyworld_prefix.."armor-01",
 		Resistance = false,
 		Resistance_Ingredients = {{type = "physical", decrease = 0, percent = 0 }},
+		Subgroup = dyworld_prefix.."backpack"
 	},
 	{
 		Name = dyworld_prefix.."backpack-02",
@@ -30,6 +31,7 @@ Data_Table_Armor = {
 		Grid = dyworld_prefix.."armor-01",
 		Resistance = false,
 		Resistance_Ingredients = {{type = "physical", decrease = 0, percent = 0 }},
+		Subgroup = dyworld_prefix.."backpack"
 	},
 	{
 		Name = dyworld_prefix.."backpack-03",
@@ -45,6 +47,7 @@ Data_Table_Armor = {
 		Grid = dyworld_prefix.."armor-01",
 		Resistance = false,
 		Resistance_Ingredients = {{type = "physical", decrease = 0, percent = 0 }},
+		Subgroup = dyworld_prefix.."backpack"
 	},
 	{
 		Name = dyworld_prefix.."backpack-04",
@@ -60,6 +63,7 @@ Data_Table_Armor = {
 		Grid = dyworld_prefix.."armor-01",
 		Resistance = false,
 		Resistance_Ingredients = {{type = "physical", decrease = 0, percent = 0 }},
+		Subgroup = dyworld_prefix.."backpack"
 	},
 	{
 		Name = dyworld_prefix.."armor-01",
@@ -75,6 +79,7 @@ Data_Table_Armor = {
 		Grid = dyworld_prefix.."armor-01",
 		Resistance = true,
 		Resistance_Ingredients = {{type = "physical", decrease = 10, percent = 60 },{type = "acid", decrease = 10, percent = 50},{type = "explosion", decrease = 60, percent = 60},{type = "fire", decrease = 10, percent = 75}},
+		Subgroup = dyworld_prefix.."armor"
 	},
 	{
 		Name = dyworld_prefix.."armor-02",
@@ -90,6 +95,7 @@ Data_Table_Armor = {
 		Grid = dyworld_prefix.."armor-02",
 		Resistance = true,
 		Resistance_Ingredients = {{type = "physical", decrease = 15, percent = 70 },{type = "acid", decrease = 10, percent = 60},{type = "explosion", decrease = 60, percent = 70},{type = "fire", decrease = 10, percent = 80}},
+		Subgroup = dyworld_prefix.."armor"
 	},
 	
 	{
@@ -106,6 +112,7 @@ Data_Table_Armor = {
 		Grid = dyworld_prefix.."armor-03",
 		Resistance = true,
 		Resistance_Ingredients = {{type = "physical", decrease = 20, percent = 75 },{type = "acid", decrease = 10, percent = 70},{type = "explosion", decrease = 60, percent = 80},{type = "fire", decrease = 10, percent = 85}},
+		Subgroup = dyworld_prefix.."armor"
 	},
 	{
 		Name = dyworld_prefix.."armor-04",
@@ -121,6 +128,7 @@ Data_Table_Armor = {
 		Grid = dyworld_prefix.."armor-04",
 		Resistance = true,
 		Resistance_Ingredients = {{type = "physical", decrease = 25, percent = 80 },{type = "acid", decrease = 20, percent = 80},{type = "explosion", decrease = 120, percent = 90},{type = "fire", decrease = 20, percent = 90}},
+		Subgroup = dyworld_prefix.."armor"
 	},
 	{
 		Name = dyworld_prefix.."armor-05",
@@ -136,6 +144,7 @@ Data_Table_Armor = {
 		Grid = dyworld_prefix.."armor-05",
 		Resistance = true,
 		Resistance_Ingredients = {{type = "physical", decrease = 40, percent = 85 },{type = "acid", decrease = 40, percent = 90},{type = "explosion", decrease = 240, percent = 95},{type = "fire", decrease = 40, percent = 95}},
+		Subgroup = dyworld_prefix.."armor"
 	},
 }
 
@@ -153,7 +162,7 @@ function DyWorld_Armor_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   return result
 end
 
-function DyWorld_Armor_Item(NAME, STACK, INV, DURA)
+function DyWorld_Armor_Item(NAME, STACK, INV, DURA, SUBGROUP)
   local result =
   {
     type = "armor",
@@ -164,7 +173,7 @@ function DyWorld_Armor_Item(NAME, STACK, INV, DURA)
     {
     },
     durability = DURA,
-    subgroup = "armor",
+    subgroup = SUBGROUP,
     order = NAME,
     stack_size = STACK,
     inventory_size_bonus = INV
@@ -176,7 +185,7 @@ for k,v in pairs(Data_Table_Armor) do
 data:extend(
 	{
 		
-		DyWorld_Armor_Item(v.Name, v.Stack, v.Inventory_Extra, v.Durability),
+		DyWorld_Armor_Item(v.Name, v.Stack, v.Inventory_Extra, v.Durability, v.Subgroup),
 		DyWorld_Armor_Recipe(v.Name, v.Recipe_Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
 	})
 	for _,z in pairs(v.Recipe_Ingredients) do

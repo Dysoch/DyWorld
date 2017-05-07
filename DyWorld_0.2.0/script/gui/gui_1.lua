@@ -76,5 +76,9 @@ function toggleGui(player, id)
 	end
 	frameflow3.add{type = "label", caption = "Running Speed: 1 + "..game.players[id].character_running_speed_modifier}
 	frameflow3.add{type = "label", caption = "Loot Pickup Range: 2 + "..math.floor(game.players[id].character_loot_pickup_distance_bonus)}
+	frameflow3.add{type = "label", caption = "Robot Follower Count Bonus: "..math.floor(game.players[id].character_maximum_following_robot_count_bonus)}
+	frameflow3.add{type = "label", caption = "Mining Speed Bonus: 1 + "..game.players[id].character_mining_speed_modifier}
+	frameflow3.add{type = "label", caption = "Crafting Speed Bonus: 1 + "..game.players[id].character_crafting_speed_modifier}
+	frameflow3.add{type = "label", caption = "Reach Distance Bonus: "..math.floor(game.players[id].character_reach_distance_bonus)}
 	end
 end

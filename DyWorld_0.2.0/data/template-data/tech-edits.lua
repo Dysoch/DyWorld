@@ -1,4 +1,5 @@
 require "data/prefix"
+Resource_Water = settings.startup["DyWorld-resource-water"].value
 
 Data_Table_Main_Tech_Edits = {
 	{	Name = dyworld_prefix.."tech-chests-1", Tech = "Basic", TechEdit = false},
@@ -83,6 +84,8 @@ Data_Table_Tech_Edit_Base = {
 	},
 }
 
+data.raw.technology["landfill"].unit.count = Resource_Water and 10 or 50
+data.raw.technology["landfill"].unit.time = Resource_Water and 10 or 30
 data.raw.technology[dyworld_prefix.."tech-"..basic].prerequisites = {}
 data.raw.technology[dyworld_prefix.."tech-"..intermediate].prerequisites = {}
 data.raw.technology[dyworld_prefix.."tech-"..enhanced].prerequisites = {}

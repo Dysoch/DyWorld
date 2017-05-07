@@ -68,7 +68,7 @@ Data_Table_Radar = {
 		Health = 250000,
 		Tint = {r=0.500, g=0.500, b=0.500},
 		Energy = (300*0.1),
-		Scan = 1000,
+		Scan = 500,
 		Sight = 10
 	},
 }
@@ -178,3 +178,14 @@ data:extend(
 		data.raw.radar[dyworld_prefix.."radar-godlike"].energy_per_sector = (tostring(math.floor(v.Energy))).."kJ"
 	end
 end
+
+Radar_1 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-basic"}
+Radar_2 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-intermediate"}
+Radar_3 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-enhanced"}
+Radar_4 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-advanced"}
+Radar_5 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-godlike"}
+table.insert(data.raw.technology[dyworld_prefix.."tech-"..basic].effects, Radar_1)
+table.insert(data.raw.technology[dyworld_prefix.."tech-"..intermediate].effects, Radar_2)
+table.insert(data.raw.technology[dyworld_prefix.."tech-"..enhanced].effects, Radar_3)
+table.insert(data.raw.technology[dyworld_prefix.."tech-"..advanced].effects, Radar_4)
+table.insert(data.raw.technology[dyworld_prefix.."tech-"..godlike].effects, Radar_5)

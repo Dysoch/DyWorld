@@ -52,17 +52,6 @@ Data_Table_Main_Tech = {
 	},
 }
 
-Radar_1 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-basic"}
-Radar_2 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-intermediate"}
-Radar_3 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-enhanced"}
-Radar_4 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-advanced"}
-Radar_5 = {type = "unlock-recipe", recipe = dyworld_prefix.."radar-godlike"}
-table.insert(data.raw.technology[dyworld_prefix.."tech-"..basic].effects, Radar_1)
-table.insert(data.raw.technology[dyworld_prefix.."tech-"..intermediate].effects, Radar_2)
-table.insert(data.raw.technology[dyworld_prefix.."tech-"..enhanced].effects, Radar_3)
-table.insert(data.raw.technology[dyworld_prefix.."tech-"..advanced].effects, Radar_4)
-table.insert(data.raw.technology[dyworld_prefix.."tech-"..godlike].effects, Radar_5)
-
 Data_Table_Tech = {
 	{
 		Name = dyworld_prefix.."tech-chests-1",
@@ -265,7 +254,7 @@ Data_Table_Tech = {
 		PreReq = true,
 		PreReq_Tech = {dyworld_prefix.."tech-"..godlike},
 		Effects = true,
-		Effects_Ingredients = {dyworld_prefix.."roboport-godlike"},
+		Effects_Ingredients = {dyworld_prefix.."roboport-godlike", dyworld_prefix.."construction-robot-godlike", dyworld_prefix.."logistic-robot-godlike"},
 		Base_Edit = false,
 		Ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1},{"production-science-pack", 1},{"space-science-pack", 1}},
 	},

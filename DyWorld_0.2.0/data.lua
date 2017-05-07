@@ -30,6 +30,7 @@ require("data.template.accumulators")
 require("data.template.roboport")
 require("data.template.radar")
 require("data.template.robot-construction")
+require("data.template.robot-logistic")
 require("data.template.logistics-storage")
 --require("data.template.furnace-electric")
 

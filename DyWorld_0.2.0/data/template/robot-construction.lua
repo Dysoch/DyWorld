@@ -15,6 +15,20 @@ Data_Table_Robot_Construction = {
 		Speed = 0.015,
 		Energy = 5
 	},
+	{
+		Name = dyworld_prefix.."construction-robot-godlike",
+		--Icon = --todo
+		Recipe_Craft_Time = 2,
+		Recipe_Ingredients = {{"wood", 1},{"iron-plate", 7},{"copper-plate", 4}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = false,
+		Stack = 50,
+		Health = 100,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Slots = 1,
+		Speed = 0.5,
+		Energy = 5
+	},
 }
 
 function DyWorld_Robot_Construction_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
@@ -238,6 +252,10 @@ data:extend(
 		table.insert(data.raw.recipe[v.Name].ingredients,z)
 	end
 	if v.Name == dyworld_prefix.."construction-robot-1" then
+		data.raw["construction-robot"][v.Name].energy_per_tick = "0.01kJ"
+		data.raw["construction-robot"][v.Name].energy_per_move = "1kJ"
+	end
+	if v.Name == dyworld_prefix.."construction-robot-godlike" then
 		data.raw["construction-robot"][v.Name].energy_per_tick = "0.01kJ"
 		data.raw["construction-robot"][v.Name].energy_per_move = "1kJ"
 	end

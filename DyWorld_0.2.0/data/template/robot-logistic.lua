@@ -38,7 +38,7 @@ function DyWorld_Robot_Logistic_Item(DATA)
     name = DATA.Name,
     icon = "__base__/graphics/icons/construction-robot.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "robot-logistic",
+    subgroup = dyworld_prefix.."robot-logistic",
     order = DATA.Name,
     place_result = DATA.Name,
     stack_size = DATA.Stack,

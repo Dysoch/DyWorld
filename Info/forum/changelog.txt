@@ -1,4 +1,5 @@
 [size=200]Changelog:[/size]
+Changelog as of: May 8th, 00:48 UTC(+1, DST)
 
 [b]DyWorld 0.2.0: [/b]
 CURRENTLY UNRELEASED!

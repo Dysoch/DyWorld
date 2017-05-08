@@ -1,6 +1,7 @@
 
 --settings.startup["DyWorld-debug"].value
 --settings.startup["DyWorld-resource-water"].value
+--settings.startup["DyWorld-modules"].value
 --settings.global["DyWorld-hell"].value
 --settings.global["DyWorld-enemy-war"].value
 
@@ -16,6 +17,12 @@ data:extend({
 	{
 		type = "bool-setting",
 		name = "DyWorld-resource-water",
+		setting_type = "startup",
+		default_value = true,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld-modules",
 		setting_type = "startup",
 		default_value = true,
 	},

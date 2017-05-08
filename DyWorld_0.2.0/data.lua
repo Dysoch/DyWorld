@@ -49,3 +49,7 @@ require("data.tech.sniper")
 if settings.startup["DyWorld-resource-water"].value then
 require("data.optional.resource-water")
 end
+
+if settings.startup["DyWorld-modules"].value then
+require("data.optional.modules")
+end

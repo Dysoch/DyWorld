@@ -135,6 +135,21 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = dyworld_prefix.."warfare"
 	},
+	{
+		Name = dyworld_prefix.."module-speed",
+		Type = "sub",
+		Main = dyworld_prefix.."items"
+	},
+	{
+		Name = dyworld_prefix.."module-productivity",
+		Type = "sub",
+		Main = dyworld_prefix.."items"
+	},
+	{
+		Name = dyworld_prefix.."module-effectivity",
+		Type = "sub",
+		Main = dyworld_prefix.."items"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME)

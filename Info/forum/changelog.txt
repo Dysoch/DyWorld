@@ -1,8 +1,8 @@
 [size=200]Changelog:[/size]
-Changelog as of: May 8th, 00:48 UTC(+1, DST)
+Changelog as of: May 8th, 10:30 UTC(+1, DST)
 
 [b]DyWorld 0.2.0: [/b]
-CURRENTLY UNRELEASED!
+Released on May 8th, 10:30 UTC(+1, DST)
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 
 [list]
@@ -19,6 +19,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Added in 9 solar panels
 [*] Added in 9 accumulators
 [*] Added in 5 radars, they all larger radiuses and the godlike one is insanely quick
+[*] [WIP] Added in 75 modules. All modules have 25 tiers. This is currently a testing feature, would love feedback
 [*] Moved config into mod settings. Everything can be changed from the game itself
 [*] Certain resources require water to mine. Can be switched off if you want. When on, changes the primitive stage to be semi less painfull
 [*] Added in crafting speed, robot follower count and reach distance to player bonuses (per player differently!)

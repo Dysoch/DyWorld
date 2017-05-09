@@ -12,7 +12,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [/list]
 [*] General Changes:
 [list]
-[*] 
+[*] Tweaked sniper and electric damage and shooting speed researches (reduced count for beginning, plus new formula for count)
 [/list]
 [*] Bug Fixes:
 [list]
@@ -46,7 +46,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [/list]
 [*] General Changes:
 [list]
-[*] Balanced sniper and electric damage and shooting speed techs
+[*] Tweaked sniper and electric damage and shooting speed researches
 [*] Changed Hell mode to be more, well, hellish :D
 [*] Changed minimum range of Turret Mk1a: 5 > 0
 [*] Changed arc of Turret Mk1a: 180° > 170°

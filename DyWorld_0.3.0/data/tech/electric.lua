@@ -1,6 +1,6 @@
 require "data/prefix"
 
-function DyWorld_Electric_Damage(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
+function DyWorld_Electric_Damage(Level, Pack1, Pack2, Pack3, Pack4, Time)
   local result =
   {
     type = "technology",
@@ -17,7 +17,7 @@ function DyWorld_Electric_Damage(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
     prerequisites = {dyworld_prefix.."tech-"..basic},
     unit =
     {
-      count = Count,
+      count = math.floor((10*(Level*1.5))-Level),
       ingredients =
       {
       },
@@ -53,15 +53,17 @@ function DyWorld_Electric_Damage(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
   end
   if Level <= 15 then
 	result.unit.time = 5
+	result.unit.count = 10+Level
   elseif Level <= 30 then
 	result.unit.time = 15
+	result.unit.count = 50+Level
   elseif Level <= 50 then
 	result.unit.time = 30
   end
   return result
 end
 
-function DyWorld_Electric_Speed(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
+function DyWorld_Electric_Speed(Level, Pack1, Pack2, Pack3, Pack4, Time)
   local result =
   {
     type = "technology",
@@ -78,7 +80,7 @@ function DyWorld_Electric_Speed(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
     prerequisites = {dyworld_prefix.."tech-"..basic},
     unit =
     {
-      count = Count,
+      count = math.floor((10*(Level*1.5))-Level),
       ingredients =
       {
       },
@@ -114,8 +116,10 @@ function DyWorld_Electric_Speed(Level, Pack1, Pack2, Pack3, Pack4, Count, Time)
   end
   if Level <= 15 then
 	result.unit.time = 5
+	result.unit.count = 10+Level
   elseif Level <= 30 then
 	result.unit.time = 15
+	result.unit.count = 50+Level
   elseif Level <= 50 then
 	result.unit.time = 30
   end
@@ -125,39 +129,39 @@ end
 for i=1,10 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 0, 0, 0, (i*50), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 0, 0, 0, (i*50), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 0, 0, 0, (i*1)),
+  DyWorld_Electric_Speed(i, 1, 0, 0, 0, (i*2)),
 })
 end
 
 for i=11,30 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 1, 0, 1, (i*50), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 1, 0, 1, (i*50), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 1, 0, 1, (i*1)),
+  DyWorld_Electric_Speed(i, 1, 1, 0, 1, (i*2)),
 })
 end
 
 for i=31,60 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 1, 1, 2, (i*50), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 1, 1, 2, (i*50), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 1, 1, 2, (i*1)),
+  DyWorld_Electric_Speed(i, 1, 1, 1, 2, (i*2)),
 })
 end
 
 for i=61,100 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 1, 1, 5, (i*50), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 1, 1, 5, (i*50), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 1, 1, 5, (i*1)),
+  DyWorld_Electric_Speed(i, 1, 1, 1, 5, (i*2)),
 })
 end
 
 for i=101,500 do
  data:extend(
 {
-  DyWorld_Electric_Damage(i, 1, 1, 1, 10, (i*50), (i*1)),
-  DyWorld_Electric_Speed(i, 1, 1, 1, 10, (i*50), (i*2)),
+  DyWorld_Electric_Damage(i, 1, 1, 1, 10, (i*1)),
+  DyWorld_Electric_Speed(i, 1, 1, 1, 10, (i*2)),
 })
 end

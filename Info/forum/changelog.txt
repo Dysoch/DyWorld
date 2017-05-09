@@ -16,7 +16,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [/list]
 [*] Bug Fixes:
 [list]
-[*] 
+[*] Fixed recipe bug of accumulators
 [/list]
 [/list]
 

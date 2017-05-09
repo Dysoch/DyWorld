@@ -155,6 +155,17 @@ function startup(PLAYER, ID)
 	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
 	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
 	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
+	if settings.startup["DyWorld-debug"].value then
+		game.players[ID].insert{name="substation",count=100}
+		game.players[ID].insert{name="medium-electric-pole",count=100}
+		game.players[ID].insert{name="dyworld-radar-godlike",count=50}
+		game.players[ID].insert{name="dyworld-accumulator-9",count=500}
+		game.players[ID].insert{name="dyworld-solar-9",count=500}
+		game.players[ID].insert{name="dyworld-armor-05",count=1}
+		game.players[ID].insert{name="dyworld-roboport-godlike",count=50}
+		game.players[ID].insert{name="dyworld-construction-robot-godlike",count=500}
+		game.players[ID].insert{name="dyworld-logistic-robot-godlike",count=500}
+	end
 	debug("Startup done")
 end
 

@@ -28,8 +28,8 @@ end
 function Hell_Spawner(event)
 	noise.Perlin_Load()
     for i=1,(math.random(20,100)) do
-		PosX = event.area.left_top.x+math.random(31)
-		PosY = event.area.left_top.y+math.random(31)
+		PosX = event.area.left_top.x+math.random((-32*1.5),(31*1.5))
+		PosY = event.area.left_top.y+math.random((-32*1.5),(31*1.5))
         for j=1,(math.random(20,100)) do
 			BuildEntity = Hell[keysetHell[math.random(#keysetHell)]]
 			PosX2 = PosX+noise.Perlin_Noise(i/10, j/10, 0.3)

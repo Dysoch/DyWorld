@@ -7,6 +7,7 @@ require "script/gui/gui_2"
 require "script/gui/gui_3"
 require "script/gui/gui_click"
 require "script/stats/functions"
+require "script/generation/noise"
 require "script/generation/world-generation"
 
 debugger = false

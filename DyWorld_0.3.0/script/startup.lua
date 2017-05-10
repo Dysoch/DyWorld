@@ -67,9 +67,6 @@ function Game()
 	end
 	if settings.startup["DyWorld-debug"].value then
 		game.forces.player.maximum_following_robot_count = 500
-		game.forces.player.character_trash_slot_count = 50
-		game.forces.player.character_logistic_slot_count = 50
-		game.forces.player.auto_character_trash_slots = true
 		game.forces.player.character_health_bonus = 99750
 	end
 	game.forces.player.ghost_time_to_live = (60*60*60*24) -- 24 hour live time
@@ -157,6 +154,9 @@ function startup(PLAYER, ID)
 	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
 	if settings.startup["DyWorld-debug"].value then
 		game.players[ID].insert{name="substation",count=100}
+		game.players[ID].insert{name="logistic-chest-storage",count=100}
+		game.players[ID].insert{name="logistic-chest-requester",count=100}
+		game.players[ID].insert{name="logistic-chest-passive-provider",count=100}
 		game.players[ID].insert{name="medium-electric-pole",count=100}
 		game.players[ID].insert{name="dyworld-radar-godlike",count=50}
 		game.players[ID].insert{name="dyworld-accumulator-9",count=500}
@@ -165,6 +165,8 @@ function startup(PLAYER, ID)
 		game.players[ID].insert{name="dyworld-roboport-godlike",count=50}
 		game.players[ID].insert{name="dyworld-construction-robot-godlike",count=500}
 		game.players[ID].insert{name="dyworld-logistic-robot-godlike",count=500}
+		game.players[ID].insert{name="dyworld-module-productivity-25",count=100}
+		game.players[ID].insert{name="dyworld-module-speed-25",count=100}
 	end
 	debug("Startup done")
 end

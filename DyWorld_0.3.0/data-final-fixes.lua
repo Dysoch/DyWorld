@@ -17,3 +17,42 @@ for k,v in pairs(data.raw["ammo"]) do
 	end
 end
 
+if settings.startup["DyWorld-debug"].value then
+Stacksize_Increase_Factor = 1000
+	for k, v in pairs(data.raw.item) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+	for k, v in pairs(data.raw.ammo) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+	for k, v in pairs(data.raw.gun) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+	for k, v in pairs(data.raw["repair-tool"]) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+	for k, v in pairs(data.raw["mining-tool"]) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+	for k, v in pairs(data.raw.tool) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+	for k, v in pairs(data.raw["capsule"]) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+	for k, v in pairs(data.raw["module"]) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+	for k, v in pairs(data.raw["tool"]) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+end

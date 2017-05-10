@@ -13,7 +13,7 @@ function DyWorld_Module_Speed_Item(Level)
     order = (100+Level),
     stack_size = 50,
     default_request_amount = 10,
-    effect = { speed = {bonus = (Level/10)}, consumption = {bonus = (0.2+(Level/10))}}
+    effect = { speed = {bonus = (((Level*1.5)/10)*Level)}, consumption = {bonus = (0.2+((Level/10)-Level))}}
   }
   return result
 end
@@ -54,10 +54,10 @@ function DyWorld_Module_Productivity_Item(Level)
     default_request_amount = 10,
     effect = 
     {
-      productivity = {bonus = (0.04*Level)},
-      consumption = {bonus = (0.2*Level)},
-      pollution = {bonus = (0.05*Level)},
-      speed = {bonus = (-0.1*Level)}
+      productivity = {bonus = ((0.04*Level)*(Level*0.75))},
+      consumption = {bonus = (0.2+((Level/10)-(Level*0.5)))},
+      pollution = {bonus = (0.05*(Level+(Level/25)))},
+      speed = {bonus = (-2.5+(Level/5))}
     },
     limitation = productivitymodulelimitation(),
     limitation_message_key = "production-module-usable-only-on-intermediates"

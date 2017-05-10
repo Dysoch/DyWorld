@@ -68,8 +68,8 @@ Data_Table_Radar = {
 		Health = 250000,
 		Tint = {r=0.500, g=0.500, b=0.500},
 		Energy = (300*0.1),
-		Scan = 500,
-		Sight = 10
+		Scan = 250,
+		Sight = 25
 	},
 }
 

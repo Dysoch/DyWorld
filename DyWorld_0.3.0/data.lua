@@ -39,6 +39,7 @@ require("data.template.logistics-storage")
 require("data.generation.fire")
 
 -- Enemies
+require("data.template.enemy-base")
 require("data.template.enemy-melee")
 
 -- Tech

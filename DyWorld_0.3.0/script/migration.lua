@@ -44,4 +44,9 @@ function Migrate_To_Next_Version()
 		global.dyworld.Version = "0.2.0" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
 	end
+	if global.dyworld.Version == "0.2.0" then
+	
+		global.dyworld.Version = "0.3.0" 
+		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
+	end
 end

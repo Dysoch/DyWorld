@@ -7,6 +7,7 @@ require "script/gui/gui_2"
 require "script/gui/gui_3"
 require "script/gui/gui_click"
 require "script/stats/functions"
+require "script/generation/enemies"
 require "script/generation/noise"
 require "script/generation/world-generation"
 
@@ -147,6 +148,16 @@ script.on_event(defines.events.on_chunk_generated, function(event)
 	end
 	if global.dyworld.Chunks <= 100 then
 		generation.Ship_Spawner(event)
+	end
+	if global.dyworld.Spawner_Sanguisugea <= 50 then
+		if global.dyworld.Chunks >= (1000+(global.dyworld.Spawner_Sanguisugea*75)) then
+			enemies.Sanguisugea_Spawner(event)
+		end
+	end
+	if global.dyworld.Spawner_Zeptipod <= 25 then
+		if global.dyworld.Chunks >= (2500+(global.dyworld.Spawner_Zeptipod*500)) then
+			enemies.Zeptipod_Spawner(event)
+		end
 	end
 end)
 

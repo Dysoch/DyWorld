@@ -35,7 +35,7 @@ function Game()
 	if not global.dyworld then
 		global.dyworld = 
 		{
-			Version = "0.2.0",
+			Version = "0.3.0",
 			Items = {},
 			Research = {},
 			Players = 0,

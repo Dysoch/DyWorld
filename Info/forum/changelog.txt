@@ -9,6 +9,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] World/Gameplay:
 [list]
 [*] Added toggle for running speed boost, since it can go to insane heights and might be hard to walk around machines then (Numpad 9 for toggle)
+[*] Added more bonuses! Inventory slots (max 440 slots, so total 500 (50 rows)), build distance and resource reach distance
 [/list]
 [*] General Changes:
 [list]

@@ -60,7 +60,14 @@ function BodySkills(id)
 	game.players[id].character_mining_speed_modifier = ((((p1*25)+(p2*15)+gsm)/5000)-0.2582) -- or -0.008
 	game.players[id].character_crafting_speed_modifier = ((((p4*25)+(p3*15)+gsc)/5000)-0.0032) -- or -0.008
 	game.players[id].character_reach_distance_bonus = math.floor((gsp+gsb+(p2*5)+(m1*2))/5000)
-	if global.players[event.player_index].Speed_Boost then
+	game.players[id].character_build_distance_bonus = math.floor((gsp+gsb+gsc+(p2*5)+(m1*2))/7500)
+	game.players[id].character_resource_reach_distance_bonus = math.floor((gsp+gsm+(p2*5)+(m1*2))/10000)
+	if math.floor((p1)/5) <= 440 then
+		game.players[id].character_inventory_slots_bonus = math.floor((p1)/5)
+	else
+		game.players[id].character_inventory_slots_bonus = 440
+	end
+	if global.players[id].Speed_Boost then
 		game.players[id].character_running_speed_modifier = ((((p1*10)+p2+(p3*2)+(m2*5)+m3)/2000)-0.0095)
 	else
 		game.players[id].character_running_speed_modifier = 0

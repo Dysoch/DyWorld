@@ -8,7 +8,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [list]
 [*] World/Gameplay:
 [list]
-[*] 
+[*] Added toggle for running speed boost, since it can go to insane heights and might be hard to walk around machines then (Numpad 9 for toggle)
 [/list]
 [*] General Changes:
 [list]
@@ -16,7 +16,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [/list]
 [*] Bug Fixes:
 [list]
-[*] 
+[*] Fixed bug with internal war of enemies where normal enemy force would attack all of them
 [/list]
 [/list]
 

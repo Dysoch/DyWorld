@@ -29,6 +29,10 @@ Forces = {
 		Name = "sanguisugea", 
 		Friends = {"enemy", "racides", "acidicus", "zeptipods", "plastumia", "fulgura", "sulfoids"},
 	},
+	{
+		Name = "enemy", 
+		Friends = {"racides", "plastumia", "fulgura", "sulfoids"},
+	},
 }
 
 function Game()
@@ -73,7 +77,9 @@ function Game()
 	game.forces.player.deconstruction_time_to_live = (60*60*60*24) -- 24 hour live time
 	if settings.global["DyWorld-enemy-war"].value then
 		for k,v in pairs(Forces) do
-			game.create_force(v.Name)
+			if not v.Name == "enemy" then
+				game.create_force(v.Name)
+			end
 		end
 		for k,v in pairs(Forces) do
 			for _,z in pairs(v.Friends) do
@@ -98,6 +104,7 @@ function startup(PLAYER, ID)
 				PlayerID = ID,
 				State_Stats_GUI = false,
 				Alive = true,
+				Speed_Boost = true,
 				physical =
 				{
 					strength = 1,
@@ -125,6 +132,7 @@ function startup(PLAYER, ID)
 			PlayerID = ID,
 			State_Stats_GUI = false,
 			Alive = true,
+			Speed_Boost = true,
 			physical =
 			{
 				strength = 1,

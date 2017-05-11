@@ -45,7 +45,22 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.2.0" then
-	
+		global.dyworld.Version = "0.2.1" 
+		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
+	end
+	if global.dyworld.Version == "0.2.1" then
+		if settings.global["DyWorld-enemy-war"].value then
+			for k,v in pairs(startup.Forces) do
+				if v.Name == "enemy" then
+					for _,z in pairs(v.Friends) do
+						game.forces[v.Name].set_friend(z, true)
+					end
+				end
+			end
+		end
+		for k,v in pairs(global.players) do
+			v.Speed_Boost = true
+		end
 		global.dyworld.Version = "0.3.0" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
 	end

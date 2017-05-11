@@ -55,12 +55,16 @@ function BodySkills(id)
 	global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000))+1)
 	global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000))+1)
 	game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
-	game.players[id].character_running_speed_modifier = ((((p1*10)+p2+(p3*2)+(m2*5)+m3)/2000)-0.0095)
 	game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50)
 	game.players[id].character_maximum_following_robot_count_bonus = math.floor(((p1*2)+(p2*10)+(p3*3)+(p4*1.5)+(m1*10)+(m2*3)+(m3*2)+(m4*25))/250)
 	game.players[id].character_mining_speed_modifier = ((((p1*25)+(p2*15)+gsm)/5000)-0.2582) -- or -0.008
 	game.players[id].character_crafting_speed_modifier = ((((p4*25)+(p3*15)+gsc)/5000)-0.0032) -- or -0.008
 	game.players[id].character_reach_distance_bonus = math.floor((gsp+gsb+(p2*5)+(m1*2))/5000)
+	if global.players[event.player_index].Speed_Boost then
+		game.players[id].character_running_speed_modifier = ((((p1*10)+p2+(p3*2)+(m2*5)+m3)/2000)-0.0095)
+	else
+		game.players[id].character_running_speed_modifier = 0
+	end
 end
 
 function GlobalSkillsReset()

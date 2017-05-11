@@ -1,5 +1,5 @@
 [size=200]Changelog:[/size]
-Changelog as of: May 8th, 10:30 UTC(+1, DST)
+Changelog as of: May 11th, 09:30 UTC(+1, DST)
 
 [b]DyWorld 0.3.0: [/b]
 CURRENTLY UNRELEASED!
@@ -12,13 +12,28 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [/list]
 [*] General Changes:
 [list]
-[*] Tweaked sniper and electric damage and shooting speed researches (reduced count for beginning, plus new formula for count)
 [*] Balanced modules
+[/list]
+[*] Bug Fixes:
+[list]
+[*] 
+[/list]
+[/list]
+
+[b]DyWorld 0.2.1: [/b]
+Released on May 11th, 09:30 UTC(+1, DST)
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
+[list]
+[*] General Changes:
+[list]
+[*] Tweaked sniper and electric damage and shooting speed researches (reduced count for beginning, plus new formula for count)
 [*] Reduced scan radius of godlike radar, but increased active sight radius
 [/list]
 [*] Bug Fixes:
 [list]
 [*] Fixed recipe bug of accumulators
+[*] Fixed Factorio 0.15.10 bug with burner mining drill (graphical)
 [/list]
 [/list]
 

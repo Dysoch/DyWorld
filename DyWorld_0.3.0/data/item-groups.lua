@@ -150,6 +150,21 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = dyworld_prefix.."items"
 	},
+	{
+		Name = dyworld_prefix.."inserter-fast",
+		Type = "sub",
+		Main = dyworld_prefix.."logistics"
+	},
+	{
+		Name = dyworld_prefix.."inserter-long",
+		Type = "sub",
+		Main = dyworld_prefix.."logistics"
+	},
+	{
+		Name = dyworld_prefix.."inserter-stack",
+		Type = "sub",
+		Main = dyworld_prefix.."logistics"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME)

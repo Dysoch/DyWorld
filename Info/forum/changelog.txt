@@ -11,10 +11,14 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Added toggle for running speed boost, since it can go to insane heights and might be hard to walk around machines then (Numpad 9 for toggle)
 [*] Added more bonuses! Inventory slots (max 440 slots, so total 500 (50 rows)), build distance and resource reach distance
 [*] Added 12 new inserters. 4, fast, 4 long handed and 4 stack. 1 of each unlocked after a main tech starting with intermediate
+[*] Added 4 new transport belts, 5 splitters and 5 underground belts
+[*] Added 4 new locomotives
+[*] Added 9 new laser turrets
 [/list]
 [*] General Changes:
 [list]
 [*] Balanced modules
+[*] Reworked Tech Tree
 [/list]
 [*] Bug Fixes:
 [list]

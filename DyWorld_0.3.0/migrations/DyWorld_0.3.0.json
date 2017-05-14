@@ -1,0 +1,20 @@
+{
+  "entity":
+  [
+    ["dyworld-turret-laser-basic-01", "dyworld-turret-laser-1-basic-1"],
+    ["dyworld-turret-laser-basic-02", "dyworld-turret-laser-1-basic-2"],
+    ["dyworld-turret-laser-basic-03", "dyworld-turret-laser-2-basic-1"],
+    ["dyworld-turret-laser-basic-04", "dyworld-turret-laser-2-basic-2"],
+    ["dyworld-turret-laser-sniper-01", "dyworld-turret-laser-1-sniper-1"],
+    ["dyworld-turret-laser-sniper-02", "dyworld-turret-laser-2-sniper-1"]
+  ],
+  "item":
+  [
+    ["dyworld-turret-laser-basic-01", "dyworld-turret-laser-1-basic-1"],
+    ["dyworld-turret-laser-basic-02", "dyworld-turret-laser-1-basic-2"],
+    ["dyworld-turret-laser-basic-03", "dyworld-turret-laser-2-basic-1"],
+    ["dyworld-turret-laser-basic-04", "dyworld-turret-laser-2-basic-2"],
+    ["dyworld-turret-laser-sniper-01", "dyworld-turret-laser-1-sniper-1"],
+    ["dyworld-turret-laser-sniper-02", "dyworld-turret-laser-2-sniper-1"]
+  ]
+}

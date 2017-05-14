@@ -84,7 +84,7 @@ function DyWorld_Transport_Belt_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/transport-belt.png",
     flags = {"goes-to-quickbar"},
-    subgroup = dyworld_prefix.."transport-belts",
+    subgroup = dyworld_prefix.."transport-belt",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,
@@ -155,7 +155,7 @@ data:extend(
 	{
 		DyWorld_Transport_Belt_Entity(v.Name, v.Health, v.Tint, v.Speed),
 		DyWorld_Transport_Belt_Item(v.Name, v.Stack),
-		DyWorld_Transport_Belt_Recipe(v.Name, v.Recipe_Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
+		DyWorld_Transport_Belt_Recipe(v.Name, v.Recipe_Craft_Time, v.Recipe_Results_Count, v.Recipe_Without_Tech),
 	})
 	for _,z in pairs(v.Recipe_Ingredients) do
 		table.insert(data.raw.recipe[v.Name].ingredients,z)

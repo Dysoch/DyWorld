@@ -70,46 +70,109 @@ Data_Table_Projectiles = {
 		Tint = {r=125, g=249, b=255}
 	},
 	{
-		Name = dyworld_prefix.."projectile-laser-01",
+		Name = dyworld_prefix.."projectile-laser-basic-01",
 		Projectile_Type = 4,
 		Dmg = 15,
 		DmgType= "laser",
 		Tint = {r=125, g=0, b=0}
 	},
 	{
-		Name = dyworld_prefix.."projectile-laser-02",
+		Name = dyworld_prefix.."projectile-laser-basic-02",
 		Projectile_Type = 4,
 		Dmg = 20,
 		DmgType= "laser",
 		Tint = {r=125, g=0, b=0}
 	},
 	{
-		Name = dyworld_prefix.."projectile-laser-03",
+		Name = dyworld_prefix.."projectile-laser-basic-03",
+		Projectile_Type = 4,
+		Dmg = 30,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-basic-04",
+		Projectile_Type = 4,
+		Dmg = 40,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-basic-05",
+		Projectile_Type = 4,
+		Dmg = 60,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-basic-06",
+		Projectile_Type = 4,
+		Dmg = 80,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-basic-07",
+		Projectile_Type = 4,
+		Dmg = 120,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-basic-08",
+		Projectile_Type = 4,
+		Dmg = 160,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-basic-09",
+		Projectile_Type = 4,
+		Dmg = 240,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-basic-10",
+		Projectile_Type = 4,
+		Dmg = 320,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-sniper-01",
 		Projectile_Type = 5,
 		Dmg = 60,
 		DmgType= "laser",
 		Tint = {r=125, g=0, b=0}
 	},
 	{
-		Name = dyworld_prefix.."projectile-laser-04",
-		Projectile_Type = 4,
-		Dmg = 30,
-		DmgType= "laser",
-		Tint = {r=0, g=0, b=125}
-	},
-	{
-		Name = dyworld_prefix.."projectile-laser-05",
-		Projectile_Type = 4,
-		Dmg = 40,
-		DmgType= "laser",
-		Tint = {r=0, g=0, b=125}
-	},
-	{
-		Name = dyworld_prefix.."projectile-laser-06",
+		Name = dyworld_prefix.."projectile-laser-sniper-02",
 		Projectile_Type = 5,
-		Dmg = 120,
+		Dmg = 90,
 		DmgType= "laser",
-		Tint = {r=0, g=0, b=125}
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-sniper-03",
+		Projectile_Type = 5,
+		Dmg = 140,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-sniper-04",
+		Projectile_Type = 5,
+		Dmg = 210,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
+	},
+	{
+		Name = dyworld_prefix.."projectile-laser-sniper-05",
+		Projectile_Type = 5,
+		Dmg = 350,
+		DmgType= "laser",
+		Tint = {r=125, g=0, b=0}
 	},
 }
 

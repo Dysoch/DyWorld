@@ -121,7 +121,17 @@ Data_Table_Item_Group = {
 		Main = dyworld_prefix.."personal"
 	},
 	{
-		Name = dyworld_prefix.."transport-belts",
+		Name = dyworld_prefix.."transport-belt",
+		Type = "sub",
+		Main = dyworld_prefix.."logistics"
+	},
+	{
+		Name = dyworld_prefix.."transport-splitter",
+		Type = "sub",
+		Main = dyworld_prefix.."logistics"
+	},
+	{
+		Name = dyworld_prefix.."transport-underground",
 		Type = "sub",
 		Main = dyworld_prefix.."logistics"
 	},
@@ -162,6 +172,11 @@ Data_Table_Item_Group = {
 	},
 	{
 		Name = dyworld_prefix.."inserter-stack",
+		Type = "sub",
+		Main = dyworld_prefix.."logistics"
+	},
+	{
+		Name = dyworld_prefix.."railway",
 		Type = "sub",
 		Main = dyworld_prefix.."logistics"
 	},

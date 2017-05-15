@@ -10,9 +10,9 @@ for k,v in pairs(T1_Tech) do
 	table.insert(data.raw.technology[v].prerequisites, dyworld_prefix.."tech-"..primitive)
 end
 
-for k,v in pairs(T2_Tech) do
+--[[for k,v in pairs(T2_Tech) do
 	if not data.raw.technology[v].prerequisites then
 		data.raw.technology[v].prerequisites = {}
 	end
 	table.insert(data.raw.technology[v].prerequisites, dyworld_prefix.."tech-"..basic)
-end
+end]]--

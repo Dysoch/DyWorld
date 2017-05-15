@@ -61,7 +61,12 @@ Data_Table_Item_Group = {
 		Main = dyworld_prefix.."machines"
 	},
 	{
-		Name = dyworld_prefix.."furnace",
+		Name = dyworld_prefix.."furnace-burner",
+		Type = "sub",
+		Main = dyworld_prefix.."machines"
+	},
+	{
+		Name = dyworld_prefix.."furnace-electric",
 		Type = "sub",
 		Main = dyworld_prefix.."machines"
 	},

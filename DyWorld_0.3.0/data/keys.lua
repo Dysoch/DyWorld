@@ -20,6 +20,11 @@ data:extend({
 		name = "DyWorld_Running_Speed_Toggle",
 		key_sequence = "PAD 9"
 	},
+	{
+		type = "custom-input",
+		name = "DyWorld_Mining_Speed_Toggle",
+		key_sequence = "PAD 9"
+	},
 })
 
 if settings.startup["DyWorld-debug"].value then

@@ -60,6 +60,7 @@ function Migrate_To_Next_Version()
 		end
 		for k,v in pairs(global.players) do
 			v.Speed_Boost = true
+			v.Mining_Boost = true
 		end
 		global.dyworld.Version = "0.3.0" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})

@@ -54,7 +54,7 @@ function DyWorld_Furnace_Burner_Item(NAME, STACK)
     name = NAME,
     icon = "__base__/graphics/icons/stone-furnace.png",
     flags = {"goes-to-quickbar"},
-    subgroup = dyworld_prefix.."furnace",
+    subgroup = dyworld_prefix.."furnace-burner",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,

@@ -14,6 +14,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Added 4 new transport belts, 5 splitters and 5 underground belts
 [*] Added 4 new locomotives
 [*] Added 9 new laser turrets
+[*] Added 4 more mining drills, and changed the old ones completely! (different speeds and radiuses)
 [/list]
 [*] General Changes:
 [list]

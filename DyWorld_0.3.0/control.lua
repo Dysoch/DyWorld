@@ -203,6 +203,15 @@ script.on_event("DyWorld_Running_Speed_Toggle", function(event)
 	end
 	stats_functions.BodySkills(event.player_index)
 end)
+script.on_event("DyWorld_Mining_Speed_Toggle", function(event)
+    local player = game.players[event.player_index]
+	if global.players[event.player_index].Mining_Boost then
+		global.players[event.player_index].Mining_Boost = false
+	else
+		global.players[event.player_index].Mining_Boost = true
+	end
+	stats_functions.BodySkills(event.player_index)
+end)
 if settings.startup["DyWorld-debug"].value then
 script.on_event("DyWorld_Debug_LOG", function(event)
     local player = game.players[event.player_index]

@@ -191,7 +191,9 @@ function DyWorld_Transport_Underground_Entity(NAME, HEALTH, TINT, SPEED, RANGE)
         }
 
       }
-    }
+    },
+    ending_patch = ending_patch_prototype
+  }
   return result
 end
 

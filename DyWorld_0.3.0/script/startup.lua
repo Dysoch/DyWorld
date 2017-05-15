@@ -31,7 +31,7 @@ Forces = {
 	},
 	{
 		Name = "enemy", 
-		Friends = {"racides", "plastumia", "fulgura", "sulfoids"},
+		Friends = {"enemy", "racides", "plastumia", "fulgura", "sulfoids"},
 	},
 }
 
@@ -83,7 +83,7 @@ function Game()
 		end
 		for k,v in pairs(Forces) do
 			for _,z in pairs(v.Friends) do
-				game.forces[v.Name].set_friend(z, true)
+				--game.forces[v.Name].set_friend(z, true)
 			end
 		end
 	end
@@ -105,6 +105,7 @@ function startup(PLAYER, ID)
 				State_Stats_GUI = false,
 				Alive = true,
 				Speed_Boost = true,
+				Mining_Boost = true,
 				physical =
 				{
 					strength = 1,
@@ -133,6 +134,7 @@ function startup(PLAYER, ID)
 			State_Stats_GUI = false,
 			Alive = true,
 			Speed_Boost = true,
+			Mining_Boost = true,
 			physical =
 			{
 				strength = 1,

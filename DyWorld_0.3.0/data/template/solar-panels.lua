@@ -11,7 +11,7 @@ Data_Table_Solar_Panels = {
 		Stack = 50,
 		Health = 500,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (60*10),
+		Energy = (60*4),
 	},
 	{
 		Name = dyworld_prefix.."solar-2",
@@ -23,7 +23,7 @@ Data_Table_Solar_Panels = {
 		Stack = 50,
 		Health = 1000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (60*20),
+		Energy = (60*8),
 	},
 	{
 		Name = dyworld_prefix.."solar-3",
@@ -35,7 +35,7 @@ Data_Table_Solar_Panels = {
 		Stack = 50,
 		Health = 2000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (60*40),
+		Energy = (60*16),
 	},
 	{
 		Name = dyworld_prefix.."solar-4",
@@ -47,7 +47,7 @@ Data_Table_Solar_Panels = {
 		Stack = 50,
 		Health = 5000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (60*80),
+		Energy = (60*32),
 	},
 	{
 		Name = dyworld_prefix.."solar-5",
@@ -59,7 +59,7 @@ Data_Table_Solar_Panels = {
 		Stack = 50,
 		Health = 10000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (60*160),
+		Energy = (60*64),
 	},
 	{
 		Name = dyworld_prefix.."solar-6",
@@ -71,7 +71,7 @@ Data_Table_Solar_Panels = {
 		Stack = 50,
 		Health = 20000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (60*320),
+		Energy = (60*128),
 	},
 	{
 		Name = dyworld_prefix.."solar-7",
@@ -83,7 +83,7 @@ Data_Table_Solar_Panels = {
 		Stack = 50,
 		Health = 50000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (60*640),
+		Energy = (60*256),
 	},
 	{
 		Name = dyworld_prefix.."solar-8",
@@ -95,7 +95,7 @@ Data_Table_Solar_Panels = {
 		Stack = 50,
 		Health = 100000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (60*1280),
+		Energy = (60*512),
 	},
 	{
 		Name = dyworld_prefix.."solar-9",
@@ -107,7 +107,7 @@ Data_Table_Solar_Panels = {
 		Stack = 50,
 		Health = 200000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (60*2560),
+		Energy = (60*1024),
 	},
 }
 

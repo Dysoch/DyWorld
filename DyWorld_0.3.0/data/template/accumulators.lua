@@ -11,7 +11,7 @@ Data_Table_Accumulators = {
 		Stack = 50,
 		Health = 500,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (5*10),
+		Energy = (5*4),
 	},
 	{
 		Name = dyworld_prefix.."accumulator-2",
@@ -23,7 +23,7 @@ Data_Table_Accumulators = {
 		Stack = 50,
 		Health = 1000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (5*20),
+		Energy = (5*8),
 	},
 	{
 		Name = dyworld_prefix.."accumulator-3",
@@ -35,7 +35,7 @@ Data_Table_Accumulators = {
 		Stack = 50,
 		Health = 2000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (5*40),
+		Energy = (5*16),
 	},
 	{
 		Name = dyworld_prefix.."accumulator-4",
@@ -47,7 +47,7 @@ Data_Table_Accumulators = {
 		Stack = 50,
 		Health = 5000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (5*80),
+		Energy = (5*32),
 	},
 	{
 		Name = dyworld_prefix.."accumulator-5",
@@ -59,7 +59,7 @@ Data_Table_Accumulators = {
 		Stack = 50,
 		Health = 10000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (5*160),
+		Energy = (5*64),
 	},
 	{
 		Name = dyworld_prefix.."accumulator-6",
@@ -71,7 +71,7 @@ Data_Table_Accumulators = {
 		Stack = 50,
 		Health = 20000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (5*320),
+		Energy = (5*128),
 	},
 	{
 		Name = dyworld_prefix.."accumulator-7",
@@ -83,7 +83,7 @@ Data_Table_Accumulators = {
 		Stack = 50,
 		Health = 50000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (5*640),
+		Energy = (5*256),
 	},
 	{
 		Name = dyworld_prefix.."accumulator-8",
@@ -95,7 +95,7 @@ Data_Table_Accumulators = {
 		Stack = 50,
 		Health = 100000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (5*1280),
+		Energy = (5*512),
 	},
 	{
 		Name = dyworld_prefix.."accumulator-9",
@@ -107,7 +107,7 @@ Data_Table_Accumulators = {
 		Stack = 50,
 		Health = 200000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = (5*2560),
+		Energy = (5*1024),
 	},
 }
 

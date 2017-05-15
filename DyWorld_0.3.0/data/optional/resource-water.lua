@@ -1,9 +1,9 @@
 
 
 
-data.raw.resource["iron-ore"].minable.fluid_amount = 10
+data.raw.resource["iron-ore"].minable.fluid_amount = 75
 data.raw.resource["iron-ore"].minable.required_fluid = "water"
-data.raw.resource["copper-ore"].minable.fluid_amount = 10
+data.raw.resource["copper-ore"].minable.fluid_amount = 50
 data.raw.resource["copper-ore"].minable.required_fluid = "water"
 
 data:extend(

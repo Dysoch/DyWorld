@@ -2,7 +2,7 @@
 Changelog as of: May 11th, 09:30 UTC(+1, DST)
 
 [b]DyWorld 0.3.0: [/b]
-CURRENTLY UNRELEASED!
+CURRENTLY UNRELEASED! Scheduled release for May 22th, 12:00 UTC(+1, DST)
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 
 [list]
@@ -15,11 +15,14 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Added 4 new locomotives
 [*] Added 9 new laser turrets
 [*] Added 4 more mining drills, and changed the old ones completely! (different speeds and radiuses)
+[*] Added 4 new electric furnaces
+[*] Added in first 2 enemy bases, spawned with my generator
 [/list]
 [*] General Changes:
 [list]
-[*] Balanced modules
-[*] Reworked Tech Tree
+[*] Balanced modules to correct stats, and reduced amount of each module from 25 till 10
+[*] Reworked Tech Tree completely
+[*] Changed crafting time of grenade 8 > 1 second
 [/list]
 [*] Bug Fixes:
 [list]

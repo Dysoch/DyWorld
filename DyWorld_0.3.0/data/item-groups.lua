@@ -3,27 +3,33 @@ require "data/prefix"
 Data_Table_Item_Group = {
 	{
 		Name = dyworld_prefix.."machines",
-		Type = "main"
+		Type = "main",
+		Icon = dyworld_path_item_group.."machines.png"
 	},
 	{
 		Name = dyworld_prefix.."energy",
-		Type = "main"
+		Type = "main",
+		Icon = dyworld_path_item_group.."energy.png"
 	},
 	{
 		Name = dyworld_prefix.."warfare",
-		Type = "main"
+		Type = "main",
+		Icon = dyworld_path_item_group.."warfare.png"
 	},
 	{
 		Name = dyworld_prefix.."items",
-		Type = "main"
+		Type = "main",
+		Icon = dyworld_path_item_group.."items.png"
 	},
 	{
 		Name = dyworld_prefix.."logistics",
-		Type = "main"
+		Type = "main",
+		Icon = dyworld_path_item_group.."logistics.png"
 	},
 	{
 		Name = dyworld_prefix.."personal",
-		Type = "main"
+		Type = "main",
+		Icon = dyworld_path_item_group.."personal.png"
 	},
 	{
 		Name = dyworld_prefix.."accumulator",
@@ -56,7 +62,12 @@ Data_Table_Item_Group = {
 		Main = dyworld_prefix.."warfare"
 	},
 	{
-		Name = dyworld_prefix.."assembling",
+		Name = dyworld_prefix.."assembling-burner",
+		Type = "sub",
+		Main = dyworld_prefix.."machines"
+	},
+	{
+		Name = dyworld_prefix.."assembling-electric",
 		Type = "sub",
 		Main = dyworld_prefix.."machines"
 	},
@@ -86,12 +97,22 @@ Data_Table_Item_Group = {
 		Main = dyworld_prefix.."items"
 	},
 	{
+		Name = dyworld_prefix.."intermediates",
+		Type = "sub",
+		Main = dyworld_prefix.."items"
+	},
+	{
 		Name = dyworld_prefix.."chest-storage",
 		Type = "sub",
 		Main = dyworld_prefix.."logistics"
 	},
 	{
-		Name = dyworld_prefix.."extraction",
+		Name = dyworld_prefix.."extraction-burner",
+		Type = "sub",
+		Main = dyworld_prefix.."machines"
+	},
+	{
+		Name = dyworld_prefix.."extraction-electric",
 		Type = "sub",
 		Main = dyworld_prefix.."machines"
 	},
@@ -187,12 +208,12 @@ Data_Table_Item_Group = {
 	},
 }
 
-function DyWorld_Item_Main_Group(NAME)
+function DyWorld_Item_Main_Group(NAME, ICON)
   local result =
   {
     type = "item-group",
     name = NAME,
-    icon = "__core__/graphics/questionmark.png",
+    icon = ICON,
     icon_size = 64,
     order = "z-"..NAME,
   }
@@ -214,7 +235,7 @@ for k,v in pairs(Data_Table_Item_Group) do
 	if v.Type == "main" then
 		data:extend(
 			{
-				DyWorld_Item_Main_Group(v.Name)
+				DyWorld_Item_Main_Group(v.Name, v.Icon)
 			})
 	elseif v.Type == "sub" then
 		data:extend(

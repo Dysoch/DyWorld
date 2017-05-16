@@ -1,24 +1,37 @@
 require "data/prefix"
 
-Data_Table_Assembling_Burner = {
+Data_Table_Assembling_Electric = {
 	{
-		Name = dyworld_prefix.."assembling-machine-burner-01",
+		Name = dyworld_prefix.."assembling-machine-electric-01",
 		--Icon = --todo
 		Recipe_Craft_Time = 1,
-		Recipe_Ingredients = {{"wood", 3},{"iron-plate",5},{"stone",5}},
+		Recipe_Ingredients = {{"assembling-machine-3", 1},{"iron-plate",5},{"stone",5}},
 		Recipe_Results_Count = 1,
-		Recipe_Without_Tech = true,
+		Recipe_Without_Tech = false,
 		Stack = 50,
-		Health = 150,
+		Health = 5000,
 		Tint = {r=0.500, g=0.500, b=0.500},
-		Energy = "250kW",
-		Speed = 0.5,
-		Effectivity = 0.75,
-		Pollution = 0.05,
+		Energy = "450kW",
+		Speed = 2.5,
+		Pollution = 7,
+	},
+	{
+		Name = dyworld_prefix.."assembling-machine-electric-02",
+		--Icon = --todo
+		Recipe_Craft_Time = 1,
+		Recipe_Ingredients = {{dyworld_prefix.."assembling-machine-electric-01", 1},{"iron-plate",5},{"stone",5}},
+		Recipe_Results_Count = 1,
+		Recipe_Without_Tech = false,
+		Stack = 50,
+		Health = 25000,
+		Tint = {r=0.500, g=0.500, b=0.500},
+		Energy = "950kW",
+		Speed = 5,
+		Pollution = 12,
 	},
 }
 
-function DyWorld_Assembling_Burner_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
+function DyWorld_Assembling_Electric_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   local result =
   {
     type = "recipe",
@@ -32,14 +45,14 @@ function DyWorld_Assembling_Burner_Recipe(NAME, CRAFTTIME, RESULTCOUNT, ENABLED)
   return result
 end
 
-function DyWorld_Assembling_Burner_Item(NAME, STACK)
+function DyWorld_Assembling_Electric_Item(NAME, STACK)
   local result =
   {
     type = "item",
     name = NAME,
     icon = "__base__/graphics/icons/assembling-machine-1.png",
     flags = {"goes-to-quickbar"},
-    subgroup = dyworld_prefix.."assembling-burner",
+    subgroup = dyworld_prefix.."assembling-electric",
     order = NAME,
     place_result = NAME,
     stack_size = STACK,
@@ -47,7 +60,7 @@ function DyWorld_Assembling_Burner_Item(NAME, STACK)
   return result
 end
 
-function DyWorld_Assembling_Burner_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, EFFECTIVITY, POLLUTION)
+function DyWorld_Assembling_Electric_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, POLLUTION)
   local result =
   {
     type = "assembling-machine",
@@ -68,6 +81,28 @@ function DyWorld_Assembling_Burner_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, EFF
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fast_replaceable_group = "assembling-machine",
+    fluid_boxes =
+    {
+      {
+        production_type = "input",
+        pipe_picture = assembler2pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 10,
+        base_level = -1,
+        pipe_connections = {{ type="input", position = {0, -2} }},
+        secondary_draw_orders = { north = -1 }
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler2pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 10,
+        base_level = 1,
+        pipe_connections = {{ type="output", position = {0, 2} }},
+        secondary_draw_orders = { north = -1 }
+      },
+      off_when_no_fluid_recipe = true
+    },
     animation =
     {
       layers =
@@ -116,29 +151,16 @@ function DyWorld_Assembling_Burner_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, EFF
         },
       },
     },
-    crafting_categories = {"crafting", "primitive-crafting"},
+    crafting_categories = {"crafting", "primitive-crafting", "advanced-crafting", "crafting-with-fluid"},
     energy_source =
     {
-      type = "burner",
-      fuel_category = "chemical",
-      effectivity = EFFECTIVITY,
-      fuel_inventory_size = 1,
-      emissions = POLLUTION,
-      smoke =
-      {
-        {
-          name = "smoke",
-          deviation = {0.1, 0.1},
-          frequency = 5,
-          position = {0.0, -0.8},
-          starting_vertical_speed = 0.08,
-          starting_frame_deviation = 60
-        }
-      }
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions = 0.04 / POLLUTION
     },
     energy_usage = ENERGY,
     crafting_speed = SPEED,
-    ingredient_count = 5,
+    ingredient_count = 10,
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -161,12 +183,12 @@ function DyWorld_Assembling_Burner_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, EFF
   return result
 end
 
-for k,v in pairs(Data_Table_Assembling_Burner) do
+for k,v in pairs(Data_Table_Assembling_Electric) do
 data:extend(
 	{
-		DyWorld_Assembling_Burner_Entity(v.Name, v.Health, v.Tint, v.Energy, v.Speed, v.Effectivity, v.Pollution),
-		DyWorld_Assembling_Burner_Item(v.Name, v.Stack),
-		DyWorld_Assembling_Burner_Recipe(v.Name, v.Recipe_Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
+		DyWorld_Assembling_Electric_Entity(v.Name, v.Health, v.Tint, v.Energy, v.Speed, v.Pollution),
+		DyWorld_Assembling_Electric_Item(v.Name, v.Stack),
+		DyWorld_Assembling_Electric_Recipe(v.Name, v.Recipe_Craft_Time, v.Result_Count, v.Recipe_Without_Tech),
 	})
 	for _,z in pairs(v.Recipe_Ingredients) do
 		table.insert(data.raw.recipe[v.Name].ingredients,z)

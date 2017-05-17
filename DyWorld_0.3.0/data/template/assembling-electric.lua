@@ -5,7 +5,7 @@ Data_Table_Assembling_Electric = {
 		Name = dyworld_prefix.."assembling-machine-electric-01",
 		--Icon = --todo
 		Recipe_Craft_Time = 1,
-		Recipe_Ingredients = {{"assembling-machine-3", 1},{"iron-plate",5},{"stone",5}},
+		Recipe_Ingredients = {{"assembling-machine-3", 1},{dyworld_prefix_intermediate.."steel-stick", 25},{dyworld_prefix_intermediate.."rotor", 5}},
 		Recipe_Results_Count = 1,
 		Recipe_Without_Tech = false,
 		Stack = 50,
@@ -19,7 +19,7 @@ Data_Table_Assembling_Electric = {
 		Name = dyworld_prefix.."assembling-machine-electric-02",
 		--Icon = --todo
 		Recipe_Craft_Time = 1,
-		Recipe_Ingredients = {{dyworld_prefix.."assembling-machine-electric-01", 1},{"iron-plate",5},{"stone",5}},
+		Recipe_Ingredients = {{dyworld_prefix.."assembling-machine-electric-01", 1},{dyworld_prefix_intermediate.."steel-gear", 15},{dyworld_prefix_intermediate.."rotor", 5}},
 		Recipe_Results_Count = 1,
 		Recipe_Without_Tech = false,
 		Stack = 50,
@@ -151,7 +151,7 @@ function DyWorld_Assembling_Electric_Entity(NAME, HEALTH, TINT, ENERGY, SPEED, P
         },
       },
     },
-    crafting_categories = {"crafting", "primitive-crafting", "advanced-crafting", "crafting-with-fluid"},
+    crafting_categories = {"crafting", "advanced-crafting", "crafting-with-fluid"},
     energy_source =
     {
       type = "electric",

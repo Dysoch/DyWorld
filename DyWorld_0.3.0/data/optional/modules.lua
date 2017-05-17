@@ -34,8 +34,12 @@ function DyWorld_Module_Speed_Recipe(Level)
   }
   if Level == 1 then
 	result.ingredients = {{"advanced-circuit", 5}, {"electronic-circuit", 5}}
-  elseif Level >= 4 then
+  elseif Level == 4 or Level == 5 then
 	result.ingredients = {{dyworld_prefix.."module-speed-"..(Level-1), 1},{"advanced-circuit", (5*Level)}, {"processing-unit", (4*(Level-3))}}
+  elseif Level == 6 or Level == 7 or Level == 8 then
+	result.ingredients = {{dyworld_prefix.."module-speed-"..(Level-1), 1},{"processing-unit", (5*Level)}, {dyworld_prefix_intermediate.."processing-advanced", (4*(Level-3))}}
+  elseif Level == 9 or Level == 10 then
+	result.ingredients = {{dyworld_prefix.."module-speed-"..(Level-1), 1},{dyworld_prefix_intermediate.."processing-advanced", (5*Level)}, {dyworld_prefix_intermediate.."processing-logic", (4*(Level-3))}}
   end
   return result
 end
@@ -101,8 +105,12 @@ function DyWorld_Module_Productivity_Recipe(Level)
   }
   if Level == 1 then
 	result.ingredients = {{"advanced-circuit", 5}, {"electronic-circuit", 5}}
-  elseif Level >= 4 then
+  elseif Level == 4 or Level == 5 then
 	result.ingredients = {{dyworld_prefix.."module-productivity-"..(Level-1), 1},{"advanced-circuit", (5*Level)}, {"processing-unit", (4*(Level-3))}}
+  elseif Level == 6 or Level == 7 or Level == 8 then
+	result.ingredients = {{dyworld_prefix.."module-productivity-"..(Level-1), 1},{"processing-unit", (5*Level)}, {dyworld_prefix_intermediate.."processing-advanced", (4*(Level-3))}}
+  elseif Level == 9 or Level == 10 then
+	result.ingredients = {{dyworld_prefix.."module-productivity-"..(Level-1), 1},{dyworld_prefix_intermediate.."processing-advanced", (5*Level)}, {dyworld_prefix_intermediate.."processing-logic", (4*(Level-3))}}
   end
   return result
 end
@@ -142,8 +150,12 @@ function DyWorld_Module_Effectivity_Recipe(Level)
   }
   if Level == 1 then
 	result.ingredients = {{"advanced-circuit", 5}, {"electronic-circuit", 5}}
-  elseif Level >= 4 then
+  elseif Level == 4 or Level == 5 then
 	result.ingredients = {{dyworld_prefix.."module-effectivity-"..(Level-1), 1},{"advanced-circuit", (5*Level)}, {"processing-unit", (4*(Level-3))}}
+  elseif Level == 6 or Level == 7 or Level == 8 then
+	result.ingredients = {{dyworld_prefix.."module-effectivity-"..(Level-1), 1},{"processing-unit", (5*Level)}, {dyworld_prefix_intermediate.."processing-advanced", (4*(Level-3))}}
+  elseif Level == 9 or Level == 10 then
+	result.ingredients = {{dyworld_prefix.."module-effectivity-"..(Level-1), 1},{dyworld_prefix_intermediate.."processing-advanced", (5*Level)}, {dyworld_prefix_intermediate.."processing-logic", (4*(Level-3))}}
   end
   return result
 end

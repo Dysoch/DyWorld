@@ -62,3 +62,7 @@ end
 if settings.startup["DyWorld-modules"].value then
 require("data.optional.modules")
 end
+
+for k,v in pairs(data.raw.unit) do
+	v.loot = {}
+end

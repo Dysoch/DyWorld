@@ -163,6 +163,7 @@ function startup(PLAYER, ID)
 	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
 	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
 	if settings.startup["DyWorld-debug"].value then
+		global.players[ID].physical.implants = 5000
 		game.players[ID].insert{name="substation",count=100}
 		game.players[ID].insert{name="logistic-chest-storage",count=100}
 		game.players[ID].insert{name="logistic-chest-requester",count=100}
@@ -175,8 +176,8 @@ function startup(PLAYER, ID)
 		game.players[ID].insert{name="dyworld-roboport-godlike",count=50}
 		game.players[ID].insert{name="dyworld-construction-robot-godlike",count=500}
 		game.players[ID].insert{name="dyworld-logistic-robot-godlike",count=500}
-		game.players[ID].insert{name="dyworld-module-productivity-25",count=100}
-		game.players[ID].insert{name="dyworld-module-speed-25",count=100}
+		game.players[ID].insert{name="dyworld-module-productivity-10",count=100}
+		game.players[ID].insert{name="dyworld-module-speed-10",count=100}
 	end
 	debug("Startup done")
 end

@@ -1,6 +1,6 @@
 require "data/prefix"
 
-Recipe_T2_Tech = {"boiler", "steam-engine", "electric-mining-drill", "electronic-circuit", "inserter", "offshore-pump", "pipe", "pipe-to-ground", "small-electric-pole", "assembling-machine-1", "repair-pack", "transport-belt", "science-pack-1", "science-pack-2", "pistol", "iron-gear-wheel", "iron-stick", "lab", "copper-cable"}
+Recipe_T2_Tech = {"boiler", "steam-engine", "electric-mining-drill", "inserter", "offshore-pump", "pipe", "pipe-to-ground", "small-electric-pole", "assembling-machine-1", "repair-pack", "transport-belt", "science-pack-1", "science-pack-2", "pistol", "lab"}
 --Recipe_T3_Tech = {}
 
 Disable_Recipes = {"firearm-magazine", "piercing-rounds-magazine", "iron-axe", "steel-axe", "burner-mining-drill", "stone-furnace", "laser-turret", "radar"}
@@ -43,3 +43,14 @@ data.raw.recipe["military-science-pack"].ingredients = {}
 table.insert(data.raw.recipe["military-science-pack"].ingredients,military_science_1)
 table.insert(data.raw.recipe["military-science-pack"].ingredients,military_science_2)
 table.insert(data.raw.recipe["military-science-pack"].ingredients,military_science_3)
+
+local loot1 = {
+  item = dyworld_prefix_intermediate.."crystal",
+  probability = 0.02,
+  count_min = 1,
+  count_max = 2,
+}
+
+for k,v in pairs(data.raw.unit) do
+	table.insert(v.loot, loot1)
+end

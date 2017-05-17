@@ -19,15 +19,15 @@ Data_Table_Robot_Construction = {
 		Name = dyworld_prefix.."construction-robot-godlike",
 		--Icon = --todo
 		Recipe_Craft_Time = 2,
-		Recipe_Ingredients = {{"wood", 1},{"iron-plate", 7},{"copper-plate", 4}},
+		Recipe_Ingredients = {{"construction-robot", 1},{dyworld_prefix_intermediate.."processing-advanced", 7},{dyworld_prefix_intermediate.."processing-logic", 4},{dyworld_prefix_intermediate.."logistic-unit", 25}},
 		Recipe_Results_Count = 1,
 		Recipe_Without_Tech = false,
 		Stack = 50,
 		Health = 100,
 		Tint = {r=0.500, g=0.500, b=0.500},
 		Slots = 1,
-		Speed = 0.5,
-		Energy = 5
+		Speed = 0.75,
+		Energy = 500
 	},
 }
 

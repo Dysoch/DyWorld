@@ -2,209 +2,209 @@ require "data/prefix"
 
 Data_Table_Item_Group = {
 	{
-		Name = dyworld_prefix.."machines",
+		Name = "machines",
 		Type = "main",
-		Icon = dyworld_path_item_group.."machines.png"
+		Icon = "machines.png"
 	},
 	{
-		Name = dyworld_prefix.."energy",
+		Name = "energy",
 		Type = "main",
-		Icon = dyworld_path_item_group.."energy.png"
+		Icon = "energy.png"
 	},
 	{
-		Name = dyworld_prefix.."warfare",
+		Name = "warfare",
 		Type = "main",
-		Icon = dyworld_path_item_group.."warfare.png"
+		Icon = "warfare.png"
 	},
 	{
-		Name = dyworld_prefix.."items",
+		Name = "items",
 		Type = "main",
-		Icon = dyworld_path_item_group.."items.png"
+		Icon = "items.png"
 	},
 	{
-		Name = dyworld_prefix.."logistics",
+		Name = "logistics",
 		Type = "main",
-		Icon = dyworld_path_item_group.."logistics.png"
+		Icon = "logistics.png"
 	},
 	{
-		Name = dyworld_prefix.."personal",
+		Name = "personal",
 		Type = "main",
-		Icon = dyworld_path_item_group.."personal.png"
+		Icon = "personal.png"
 	},
 	{
-		Name = dyworld_prefix.."accumulator",
+		Name = "accumulator",
 		Type = "sub",
-		Main = dyworld_prefix.."energy"
+		Main = "energy"
 	},
 	{
-		Name = dyworld_prefix.."ammo-basic",
+		Name = "ammo-basic",
 		Type = "sub",
-		Main = dyworld_prefix.."warfare"
+		Main = "warfare"
 	},
 	{
-		Name = dyworld_prefix.."ammo-electric",
+		Name = "ammo-electric",
 		Type = "sub",
-		Main = dyworld_prefix.."warfare"
+		Main = "warfare"
 	},
 	{
-		Name = dyworld_prefix.."ammo-sniper",
+		Name = "ammo-sniper",
 		Type = "sub",
-		Main = dyworld_prefix.."warfare"
+		Main = "warfare"
 	},
 	{
-		Name = dyworld_prefix.."backpack",
+		Name = "backpack",
 		Type = "sub",
-		Main = dyworld_prefix.."personal"
+		Main = "personal"
 	},
 	{
-		Name = dyworld_prefix.."armor",
+		Name = "armor",
 		Type = "sub",
-		Main = dyworld_prefix.."warfare"
+		Main = "warfare"
 	},
 	{
-		Name = dyworld_prefix.."assembling-burner",
+		Name = "assembling-burner",
 		Type = "sub",
-		Main = dyworld_prefix.."machines"
+		Main = "machines"
 	},
 	{
-		Name = dyworld_prefix.."assembling-electric",
+		Name = "assembling-electric",
 		Type = "sub",
-		Main = dyworld_prefix.."machines"
+		Main = "machines"
 	},
 	{
-		Name = dyworld_prefix.."furnace-burner",
+		Name = "furnace-burner",
 		Type = "sub",
-		Main = dyworld_prefix.."machines"
+		Main = "machines"
 	},
 	{
-		Name = dyworld_prefix.."furnace-electric",
+		Name = "furnace-electric",
 		Type = "sub",
-		Main = dyworld_prefix.."machines"
+		Main = "machines"
 	},
 	{
-		Name = dyworld_prefix.."gun",
+		Name = "gun",
 		Type = "sub",
-		Main = dyworld_prefix.."warfare"
+		Main = "warfare"
 	},
 	{
-		Name = dyworld_prefix.."lab",
+		Name = "lab",
 		Type = "sub",
-		Main = dyworld_prefix.."machines"
+		Main = "machines"
 	},
 	{
-		Name = dyworld_prefix.."lab-tool",
+		Name = "lab-tool",
 		Type = "sub",
-		Main = dyworld_prefix.."items"
+		Main = "items"
 	},
 	{
-		Name = dyworld_prefix.."intermediates",
+		Name = "intermediates",
 		Type = "sub",
-		Main = dyworld_prefix.."items"
+		Main = "items"
 	},
 	{
-		Name = dyworld_prefix.."chest-storage",
+		Name = "chest-storage",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."extraction-burner",
+		Name = "extraction-burner",
 		Type = "sub",
-		Main = dyworld_prefix.."machines"
+		Main = "machines"
 	},
 	{
-		Name = dyworld_prefix.."extraction-electric",
+		Name = "extraction-electric",
 		Type = "sub",
-		Main = dyworld_prefix.."machines"
+		Main = "machines"
 	},
 	{
-		Name = dyworld_prefix.."radar",
+		Name = "radar",
 		Type = "sub",
-		Main = dyworld_prefix.."warfare"
+		Main = "warfare"
 	},
 	{
-		Name = dyworld_prefix.."roboport",
+		Name = "roboport",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."robot-construction",
+		Name = "robot-construction",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."robot-logistic",
+		Name = "robot-logistic",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."solar",
+		Name = "solar",
 		Type = "sub",
-		Main = dyworld_prefix.."energy"
+		Main = "energy"
 	},
 	{
-		Name = dyworld_prefix.."tools",
+		Name = "tools",
 		Type = "sub",
-		Main = dyworld_prefix.."personal"
+		Main = "personal"
 	},
 	{
-		Name = dyworld_prefix.."transport-belt",
+		Name = "transport-belt",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."transport-splitter",
+		Name = "transport-splitter",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."transport-underground",
+		Name = "transport-underground",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."turret-gun",
+		Name = "turret-gun",
 		Type = "sub",
-		Main = dyworld_prefix.."warfare"
+		Main = "warfare"
 	},
 	{
-		Name = dyworld_prefix.."turret-laser",
+		Name = "turret-laser",
 		Type = "sub",
-		Main = dyworld_prefix.."warfare"
+		Main = "warfare"
 	},
 	{
-		Name = dyworld_prefix.."module-speed",
+		Name = "module-speed",
 		Type = "sub",
-		Main = dyworld_prefix.."items"
+		Main = "items"
 	},
 	{
-		Name = dyworld_prefix.."module-productivity",
+		Name = "module-productivity",
 		Type = "sub",
-		Main = dyworld_prefix.."items"
+		Main = "items"
 	},
 	{
-		Name = dyworld_prefix.."module-effectivity",
+		Name = "module-effectivity",
 		Type = "sub",
-		Main = dyworld_prefix.."items"
+		Main = "items"
 	},
 	{
-		Name = dyworld_prefix.."inserter-fast",
+		Name = "inserter-fast",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."inserter-long",
+		Name = "inserter-long",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."inserter-stack",
+		Name = "inserter-stack",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 	{
-		Name = dyworld_prefix.."railway",
+		Name = "railway",
 		Type = "sub",
-		Main = dyworld_prefix.."logistics"
+		Main = "logistics"
 	},
 }
 
@@ -212,10 +212,10 @@ function DyWorld_Item_Main_Group(NAME, ICON)
   local result =
   {
     type = "item-group",
-    name = NAME,
-    icon = ICON,
+    name = dyworld_prefix..NAME,
+    icon = dyworld_path_item_group..ICON,
     icon_size = 64,
-    order = "z-"..NAME,
+    order = "z-"..dyworld_prefix..NAME,
   }
   return result
 end
@@ -224,9 +224,9 @@ function DyWorld_Item_Sub_Group(NAME, MAIN)
   local result =
   {
     type = "item-subgroup",
-    name = NAME,
-    group = MAIN,
-    order = NAME
+    name = dyworld_prefix..NAME,
+    group = dyworld_prefix..MAIN,
+    order = dyworld_prefix..NAME
   }
   return result
 end

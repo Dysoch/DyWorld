@@ -16,26 +16,26 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
-		name = "DyWorld-resource-water",
+		name = "DyWorld-Defense",
 		setting_type = "startup",
-		default_value = true,
-	},
-	{
-		type = "bool-setting",
-		name = "DyWorld-modules",
-		setting_type = "startup",
-		default_value = true,
-	},
-	{
-		type = "bool-setting",
-		name = "DyWorld-hell",
-		setting_type = "runtime-global",
 		default_value = false,
 	},
 	{
 		type = "bool-setting",
-		name = "DyWorld-enemy-war",
-		setting_type = "runtime-global",
-		default_value = true,
+		name = "DyWorld-Enemies",
+		setting_type = "startup",
+		default_value = false,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld-Modules",
+		setting_type = "startup",
+		default_value = false,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld-Warfare",
+		setting_type = "startup",
+		default_value = false,
 	},
 })

@@ -31,7 +31,7 @@ Forces = {
 	},
 	{
 		Name = "enemy", 
-		Friends = {"enemy", "racides", "plastumia", "fulgura", "sulfoids"},
+		Friends = {"sanguisugea", "racides", "plastumia", "fulgura", "sulfoids"},
 	},
 }
 
@@ -75,18 +75,6 @@ function Game()
 	end
 	game.forces.player.ghost_time_to_live = (60*60*60*24) -- 24 hour live time
 	game.forces.player.deconstruction_time_to_live = (60*60*60*24) -- 24 hour live time
-	if settings.global["DyWorld-enemy-war"].value then
-		for k,v in pairs(Forces) do
-			if not v.Name == "enemy" then
-				game.create_force(v.Name)
-			end
-		end
-		for k,v in pairs(Forces) do
-			for _,z in pairs(v.Friends) do
-				--game.forces[v.Name].set_friend(z, true)
-			end
-		end
-	end
 end
 
 function startup(PLAYER, ID)
@@ -106,6 +94,9 @@ function startup(PLAYER, ID)
 				Alive = true,
 				Speed_Boost = true,
 				Mining_Boost = true,
+				Level = 0,
+				XP = 0,
+				XP_LevelUp = 100,
 				physical =
 				{
 					strength = 1,
@@ -135,6 +126,9 @@ function startup(PLAYER, ID)
 			Alive = true,
 			Speed_Boost = true,
 			Mining_Boost = true,
+			Level = 0,
+			XP = 0,
+			XP_LevelUp = 100,
 			physical =
 			{
 				strength = 1,

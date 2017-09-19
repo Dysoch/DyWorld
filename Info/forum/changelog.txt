@@ -17,12 +17,15 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon[/url] or [url=http:/
 [*] Added 4 more mining drills, and changed the old ones completely! (different speeds and radiuses)
 [*] Added 4 new electric furnaces
 [*] Added in first 2 enemy bases, spawned with my generator
+[*] Added in 23 intermediates
+[*] Added loot to all units: Crystal, drop chance is 5%, used for godlike stuff
 [/list]
 [*] General Changes:
 [list]
 [*] Balanced modules to correct stats, and reduced amount of each module from 25 till 10
 [*] Reworked Tech Tree completely
 [*] Changed crafting time of grenade 8 > 1 second
+[*] Changed recipes of all DyWorld items to use intermediates
 [/list]
 [*] Bug Fixes:
 [list]

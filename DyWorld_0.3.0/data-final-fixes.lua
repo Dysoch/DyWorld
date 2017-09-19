@@ -39,10 +39,6 @@ Stacksize_Increase_Factor = 100
 		v.default_request_amount = v.stack_size
 		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
 	end
-	for k, v in pairs(data.raw.tool) do
-		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
-	end
 	for k, v in pairs(data.raw["capsule"]) do
 		v.default_request_amount = v.stack_size
 		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
@@ -52,6 +48,10 @@ Stacksize_Increase_Factor = 100
 		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
 	end
 	for k, v in pairs(data.raw["tool"]) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+	end
+	for k, v in pairs(data.raw["rail-planner"]) do
 		v.default_request_amount = v.stack_size
 		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
 	end

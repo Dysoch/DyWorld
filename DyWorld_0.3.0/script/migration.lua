@@ -29,18 +29,6 @@ function Migrate_To_Next_Version()
 			global.dyworld.Spawner_Sulfoids = 0
 			global.dyworld.Spawner_Sanguisugea = 0
 		end
-		if settings.global["DyWorld-enemy-war"].value then
-			for k,v in pairs(startup.Forces) do
-				if not game.forces[v.Name] then
-					game.create_force(v.Name)
-				end
-			end
-			for k,v in pairs(startup.Forces) do
-				for _,z in pairs(v.Friends) do
-					game.forces[v.Name].set_friend(z, true)
-				end
-			end
-		end
 		global.dyworld.Version = "0.2.0" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
 	end
@@ -49,18 +37,12 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.2.1" then
-		if settings.global["DyWorld-enemy-war"].value then
-			for k,v in pairs(startup.Forces) do
-				if v.Name == "enemy" then
-					for _,z in pairs(v.Friends) do
-						game.forces[v.Name].set_friend(z, true)
-					end
-				end
-			end
-		end
 		for k,v in pairs(global.players) do
 			v.Speed_Boost = true
 			v.Mining_Boost = true
+			v.Level = 0
+			v.XP = 0
+			v.XP_LevelUp = 100
 		end
 		global.dyworld.Version = "0.3.0" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})

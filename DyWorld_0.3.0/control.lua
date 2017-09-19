@@ -7,7 +7,6 @@ require "script/gui/gui_2"
 require "script/gui/gui_3"
 require "script/gui/gui_click"
 require "script/stats/functions"
-require "script/generation/enemies"
 require "script/generation/noise"
 require "script/generation/world-generation"
 
@@ -43,17 +42,6 @@ end)
 -- player hooks
 script.on_event(defines.events.on_player_created, function(event)
 	local player = game.players[event.player_index]
-	if (#game.players <= 1) then
-		--game.show_message_dialog{text = {"msg-intro-0"}}
-		--game.show_message_dialog{text = {"msg-intro-1"}}
-		--game.show_message_dialog{text = {"msg-intro-2"}}
-		--game.show_message_dialog{text = {"msg-intro-3"}}
-	else
-		--player.print({"msg-intro-0"})
-		--player.print({"msg-intro-1"})
-		--player.print({"msg-intro-2"})
-		--player.print({"msg-intro-3"})
-	end
 	player.print({"dyworld-startup-1"})
 	startup.startup(player, event.player_index)
 	player.print({"dyworld-startup-2"})
@@ -79,21 +67,25 @@ end)
 script.on_event(defines.events.on_player_crafted_item, function(event)
 	stats_functions.IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
 	stats_functions.IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
+	stats_functions.XP_Level(event.player_index)
 end)
 
 script.on_event(defines.events.on_player_mined_item, function(event)
 	stats_functions.IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
 	stats_functions.IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
+	stats_functions.XP_Level(event.player_index)
 end)
 
 script.on_event(defines.events.on_picked_up_item, function(event)
 	stats_functions.IncrementerGlobal("pickup", event.item_stack.count, event.item_stack.name)
 	stats_functions.IncrementerPersonal("pickup", event.item_stack.count, event.player_index, event.item_stack.name)
+	stats_functions.XP_Level(event.player_index)
 end)
 
 script.on_event(defines.events.on_built_entity, function(event)
 	stats_functions.IncrementerGlobal("build", 1)
 	stats_functions.IncrementerPersonal("build", 1, event.player_index)
+	stats_functions.XP_Level(event.player_index)
 end)
 
 script.on_event(defines.events.on_robot_mined, function(event)
@@ -143,21 +135,8 @@ script.on_event(defines.events.on_chunk_generated, function(event)
 	if math.random(1,5)==3 then
 		generation.Ruins_Spawner(event)
 	end
-	if math.random(1,5)==3 and settings.global["DyWorld-hell"].value then
-		generation.Hell_Spawner(event)
-	end
 	if global.dyworld.Chunks <= 100 then
 		generation.Ship_Spawner(event)
-	end
-	if global.dyworld.Spawner_Sanguisugea <= 50 then
-		if global.dyworld.Chunks >= (1000+(global.dyworld.Spawner_Sanguisugea*75)) then
-			enemies.Sanguisugea_Spawner(event)
-		end
-	end
-	if global.dyworld.Spawner_Zeptipod <= 25 then
-		if global.dyworld.Chunks >= (2500+(global.dyworld.Spawner_Zeptipod*500)) then
-			enemies.Zeptipod_Spawner(event)
-		end
 	end
 end)
 
@@ -169,11 +148,7 @@ script.on_event(defines.events.on_tick, function(event)
 		for k,v in pairs(global.players) do
 			if v.Alive then
 				stats_functions.BodySkills(v.PlayerID)
-			end
-		end
-		stats_functions.GlobalSkillsReset()
-		for k,v in pairs(global.players) do
-			if v.Alive then
+				stats_functions.GlobalSkillsReset()
 				stats_functions.GlobalSkills(v.PlayerID)
 			end
 		end

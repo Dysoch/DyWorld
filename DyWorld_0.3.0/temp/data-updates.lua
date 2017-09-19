@@ -44,13 +44,37 @@ table.insert(data.raw.recipe["military-science-pack"].ingredients,military_scien
 table.insert(data.raw.recipe["military-science-pack"].ingredients,military_science_2)
 table.insert(data.raw.recipe["military-science-pack"].ingredients,military_science_3)
 
-local loot1 = {
-  item = dyworld_prefix_intermediate.."crystal",
-  probability = 0.02,
-  count_min = 1,
-  count_max = 2,
+Loot_Table = {
+	{
+		Name = dyworld_prefix_intermediate.."crystal",
+		Chance = 0.02,
+		Max_Count = 2,
+	},
+	{
+		Name = dyworld_prefix_intermediate.."crystai",
+		Chance = 0.03,
+		Max_Count = 4,
+	},
+	{
+		Name = dyworld_prefix_intermediate.."chitin",
+		Chance = 0.10,
+		Max_Count = 10,
+	},
+	{
+		Name = dyworld_prefix_intermediate.."obsidian",
+		Chance = 0.05,
+		Max_Count = 4,
+	},
 }
 
-for k,v in pairs(data.raw.unit) do
-	table.insert(v.loot, loot1)
+for k,v in pairs(Loot_Table) do
+	for _,z in pairs(data.raw.unit) do	
+		loottable = {
+			item = v.Name,
+			probability = v.Chance,
+			count_min = 1,
+			count_max = v.Max_Count,
+		}
+		table.insert(z.loot, loottable)
+	end
 end

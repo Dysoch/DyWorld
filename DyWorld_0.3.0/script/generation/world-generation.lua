@@ -2,15 +2,10 @@ module("generation", package.seeall)
 require "script/generation/noise"
 
 Ruins = {"small-scorchmark", "stone-rock", "red-desert-rock-big-01"}
-Hell = {"dyworld-hell-fire-flame"}
 
 local keysetRuins = {}
-local keysetHell = {}
 for k in pairs(Ruins) do
     table.insert(keysetRuins, k)
-end
-for k in pairs(Hell) do
-    table.insert(keysetHell, k)
 end
 
 function Ruins_Spawner(event)
@@ -24,48 +19,6 @@ function Ruins_Spawner(event)
 	end
 	--debug("Generator: Created "..BuildEntity.." at "..PosX..", "..PosY)
 end
-
-function Hell_Spawner(event)
-	noise.Perlin_Load()
-    for i=1,(math.random(20,100)) do
-		PosX = event.area.left_top.x+math.random((-32*1.5),(31*1.5))
-		PosY = event.area.left_top.y+math.random((-32*1.5),(31*1.5))
-        for j=1,(math.random(20,100)) do
-			BuildEntity = Hell[keysetHell[math.random(#keysetHell)]]
-			PosX2 = PosX+noise.Perlin_Noise(i/10, j/10, 0.3)
-			PosY2 = PosY+noise.Perlin_Noise(i/10, j/10, 0.3)
-			if math.random(25) == 5 then
-				if game.surfaces[1].can_place_entity{name=(BuildEntity), position={PosX2,PosY2}} then 
-					game.surfaces[1].create_entity{name=(BuildEntity), position={PosX2,PosY2}, force=game.forces.neutral}
-				end
-			end
-		end
-	end
-	--debug("Generator: Created "..BuildEntity.." at "..PosX..", "..PosY)
-end
-
---function Hell_Spawner(event) --OLD ONE!
-	--for i = 1, (math.random(20,100)) do
-		--BuildEntity = Hell[keysetHell[math.random(#keysetHell)]]
-		--PosX = event.area.left_top.x+math.random(-319,319)
-		--PosY = event.area.left_top.y+math.random(-319,319)
-		--if game.surfaces[1].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then 
-			--game.surfaces[1].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.neutral}
-		--end
-	--end
-	--debug("Generator: Created "..BuildEntity.." at "..PosX..", "..PosY)
---end
-
---[[function love.draw(  )
-    for i=1,500 do
-        for j=1,500 do
-            local x = Perlin_Noise(i/10, j/10, 0.3)
-            local y = Perlin_Noise(i/10, j/10, 0.3)
-            love.graphics.setColor(math.floor(x*255), math.floor(x*255), math.floor(x*255))
-            love.graphics.rectangle("fill", 5*(i-1), 5*(j-1), 5, 5)
-        end
-    end
-end]]--
 
 function Ship_Spawner(event)
 	PosX = event.area.left_top.x

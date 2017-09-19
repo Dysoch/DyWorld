@@ -23,6 +23,20 @@ function IncrementerPersonal(NAME, AMOUNT, ID, ITEMNAME)
 	end
 end
 
+function XP_Level(ID)
+	local player = game.players[ID]
+	if not global.players[ID].XP then 
+		global.players[ID].XP = 1 
+	else
+		global.players[ID].XP = global.players[ID].XP + 1
+	end
+	if global.players[ID].XP == global.players[ID].XP_LevelUp then
+		global.players[ID].Level = global.players[ID].Level + 1
+		global.players[ID].XP_LevelUp = math.floor(global.players[ID].XP_LevelUp*1.75)
+		player.print({"dyworld-levelup", (global.players[ID].Level)})
+	end
+end
+
 function BodySkills(id)
 	local mp = global.dyworld.Players
 	local gsc = global.players[id].stats.crafted or 1
@@ -44,37 +58,41 @@ function BodySkills(id)
 	local m3 = global.players[id].mystical.wisdom
 	local m4 = global.players[id].mystical.guile
 	local m5 = global.players[id].mystical.knowledge
-	-- p5 is done with research and crafting! implants will be installed, each with a base number to increase the value
-	global.players[id].physical.creations = math.floor(((gsb+gsc)+(gsgb/25))/(1000))
-	global.players[id].mystical.guile = math.floor(((((gsc+gsm)/25)+((gsb+(gsgb/100))/50)+gsk)/(1000))+1)
-	global.players[id].mystical.intelligence = math.floor(((((p4+m4)*5)+gss)/(1000))+1)
-	global.players[id].physical.endurance = math.floor((((gsc/25)+(gsm/25)+(gsb/5)+(gsk)+(p5*50)+(gsp/50))/(1000))+1)
-	global.players[id].physical.strength = math.floor((((gsm)+(gsb/5)+(gsc/25)+(p5*75)+(p2*100)+(m2*25)+(gsp/50))/(1000))+1)
-	global.players[id].mystical.spirit = math.floor((((p1*35)+((gsgb+gsgm)/5)+(gsk/25)+gss)/(1000))+1)
-	global.players[id].physical.speed = math.floor((((p1*25)+(p2*50)+(m1*10)+gsk+gss)/(1000))+1)
-	global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000))+1)
-	global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000))+1)
-	game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
-	game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50)
-	game.players[id].character_maximum_following_robot_count_bonus = math.floor(((p1*2)+(p2*10)+(p3*3)+(p4*1.5)+(m1*10)+(m2*3)+(m3*2)+(m4*25))/250)
-	game.players[id].character_crafting_speed_modifier = ((((p4*25)+(p3*15)+gsc)/5000)-0.0032) -- or -0.008
-	game.players[id].character_reach_distance_bonus = math.floor((gsp+gsb+(p2*5)+(m1*2))/5000)
-	game.players[id].character_build_distance_bonus = math.floor((gsp+gsb+gsc+(p2*5)+(m1*2))/7500)
-	game.players[id].character_resource_reach_distance_bonus = math.floor((gsp+gsm+(p2*5)+(m1*2))/10000)
-	if math.floor((p1)/5) <= 440 then
-		game.players[id].character_inventory_slots_bonus = math.floor((p1)/5)
-	else
-		game.players[id].character_inventory_slots_bonus = 440
+	if global.players[id].Level >= 2 then 
+		-- p5 is done with research and crafting! implants will be installed, each with a base number to increase the value
+		global.players[id].physical.creations = math.floor(((gsb+gsc)+(gsgb/25))/(1000))
+		global.players[id].mystical.guile = math.floor(((((gsc+gsm)/25)+((gsb+(gsgb/100))/50)+gsk)/(1000))+1)
+		global.players[id].mystical.intelligence = math.floor(((((p4+m4)*5)+gss)/(1000))+1)
+		global.players[id].physical.endurance = math.floor((((gsc/25)+(gsm/25)+(gsb/5)+(gsk)+(p5*50)+(gsp/50))/(1000))+1)
+		global.players[id].physical.strength = math.floor((((gsm)+(gsb/5)+(gsc/25)+(p5*75)+(p2*100)+(m2*25)+(gsp/50))/(1000))+1)
+		global.players[id].mystical.spirit = math.floor((((p1*35)+((gsgb+gsgm)/5)+(gsk/25)+gss)/(1000))+1)
+		global.players[id].physical.speed = math.floor((((p1*25)+(p2*50)+(m1*10)+gsk+gss)/(1000))+1)
+		global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000))+1)
+		global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000))+1)
 	end
-	if global.players[id].Speed_Boost then
-		game.players[id].character_running_speed_modifier = ((((p1*10)+p2+(p3*2)+(m2*5)+m3)/2000)-0.0095)
-	else
-		game.players[id].character_running_speed_modifier = 0
-	end
-	if global.players[id].Mining_Boost then
-		game.players[id].character_mining_speed_modifier = ((((p1*25)+(p2*15)+gsm)/5000)-0.2582) -- or -0.008
-	else
-		game.players[id].character_mining_speed_modifier = 0
+	if global.players[id].Level >= 5 then 
+		game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
+		game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50)
+		game.players[id].character_maximum_following_robot_count_bonus = math.floor(((p1*2)+(p2*10)+(p3*3)+(p4*1.5)+(m1*10)+(m2*3)+(m3*2)+(m4*25))/250)
+		game.players[id].character_crafting_speed_modifier = ((((p4*25)+(p3*15)+gsc)/5000)-0.0032) -- or -0.008
+		game.players[id].character_reach_distance_bonus = math.floor((gsp+gsb+(p2*5)+(m1*2))/5000)
+		game.players[id].character_build_distance_bonus = math.floor((gsp+gsb+gsc+(p2*5)+(m1*2))/7500)
+		game.players[id].character_resource_reach_distance_bonus = math.floor((gsp+gsm+(p2*5)+(m1*2))/10000)
+		if math.floor((p1)/5) <= 440 then
+			game.players[id].character_inventory_slots_bonus = math.floor((p1)/5)
+		else
+			game.players[id].character_inventory_slots_bonus = 440
+		end
+		if global.players[id].Speed_Boost then
+			game.players[id].character_running_speed_modifier = ((((p1*10)+p2+(p3*2)+(m2*5)+m3)/2000)-0.0095)
+		else
+			game.players[id].character_running_speed_modifier = 0
+		end
+		if global.players[id].Mining_Boost then
+			game.players[id].character_mining_speed_modifier = ((((p1*25)+(p2*15)+gsm)/5000)-0.2582) -- or -0.008
+		else
+			game.players[id].character_mining_speed_modifier = 0
+		end
 	end
 end
 

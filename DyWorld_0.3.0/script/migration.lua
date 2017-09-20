@@ -20,15 +20,6 @@ function Migrate_To_Next_Version()
 		elseif global.dyworld.Research_Level_String == "Godlike" then
 			global.dyworld.Research_Level_Var = 6
 		end
-		if not global.dyworld.Spawner_Zeptiods then
-			global.dyworld.Spawner_Zeptipod = 0
-			global.dyworld.Spawner_Plastumia = 0
-			global.dyworld.Spawner_Fulgura = 0
-			global.dyworld.Spawner_Acidicus = 0
-			global.dyworld.Spawner_Racides = 0
-			global.dyworld.Spawner_Sulfoids = 0
-			global.dyworld.Spawner_Sanguisugea = 0
-		end
 		global.dyworld.Version = "0.2.0" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
 	end
@@ -38,8 +29,6 @@ function Migrate_To_Next_Version()
 	end
 	if global.dyworld.Version == "0.2.1" then
 		for k,v in pairs(global.players) do
-			v.Speed_Boost = true
-			v.Mining_Boost = true
 			v.Level = 0
 			v.XP = 0
 			v.XP_LevelUp = 100

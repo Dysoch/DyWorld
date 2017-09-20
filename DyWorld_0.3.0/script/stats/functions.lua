@@ -32,6 +32,7 @@ function XP_Level(ID)
 	end
 	if global.players[ID].XP == global.players[ID].XP_LevelUp then
 		global.players[ID].Level = global.players[ID].Level + 1
+		--global.players[ID].XP = 0
 		global.players[ID].XP_LevelUp = math.floor(global.players[ID].XP_LevelUp*1.75)
 		player.print({"dyworld-levelup", (global.players[ID].Level)})
 	end
@@ -82,16 +83,6 @@ function BodySkills(id)
 			game.players[id].character_inventory_slots_bonus = math.floor((p1)/5)
 		else
 			game.players[id].character_inventory_slots_bonus = 440
-		end
-		if global.players[id].Speed_Boost then
-			game.players[id].character_running_speed_modifier = ((((p1*10)+p2+(p3*2)+(m2*5)+m3)/2000)-0.0095)
-		else
-			game.players[id].character_running_speed_modifier = 0
-		end
-		if global.players[id].Mining_Boost then
-			game.players[id].character_mining_speed_modifier = ((((p1*25)+(p2*15)+gsm)/5000)-0.2582) -- or -0.008
-		else
-			game.players[id].character_mining_speed_modifier = 0
 		end
 	end
 end

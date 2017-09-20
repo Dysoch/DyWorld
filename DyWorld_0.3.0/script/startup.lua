@@ -1,40 +1,5 @@
 module("startup", package.seeall)
 
-Forces = {
-	{
-		Name = "sulfoids", 
-		Friends = {"enemy", "fulgura", "sanguisugea", "zeptipods"},
-	},
-	{
-		Name = "fulgura", 
-		Friends = {"enemy", "sanguisugea", "zeptipods", "acidicus"},
-	},
-	{
-		Name = "plastumia", 
-		Friends = {"enemy", "sanguisugea", "zeptipods"},
-	},
-	{
-		Name = "zeptipods", 
-		Friends = {"sulfoids", "fulgura", "plastumia", "sanguisugea"},
-	},
-	{
-		Name = "acidicus", 
-		Friends = {"racides", "fulgura", "sanguisugea"},
-	},
-	{
-		Name = "racides", 
-		Friends = {"enemy", "sanguisugea"},
-	},
-	{
-		Name = "sanguisugea", 
-		Friends = {"enemy", "racides", "acidicus", "zeptipods", "plastumia", "fulgura", "sulfoids"},
-	},
-	{
-		Name = "enemy", 
-		Friends = {"sanguisugea", "racides", "plastumia", "fulgura", "sulfoids"},
-	},
-}
-
 function Game()
 	if not global.dyworld then
 		global.dyworld = 
@@ -59,13 +24,6 @@ function Game()
 			Wisdom = 0,
 			Guile = 0,
 			Knowledge = 0,
-			Spawner_Zeptipod = 0,
-			Spawner_Plastumia = 0,
-			Spawner_Fulgura = 0,
-			Spawner_Acidicus = 0,
-			Spawner_Racides = 0,
-			Spawner_Sulfoids = 0,
-			Spawner_Sanguisugea = 0,
 		}
 	debug("Created global.dyworld")
 	end
@@ -149,29 +107,16 @@ function startup(PLAYER, ID)
 		}
 	debug("New player created, and added "..ID.." to global.players with blank stats")
 	end
-	if global.dyworld.ResearchLevel == "Primitive" then
-		game.players[ID].disable_flashlight()
-	end
 	game.players[ID].get_inventory(defines.inventory.player_main).clear()
 	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
 	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
 	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
 	if settings.startup["DyWorld-debug"].value then
-		global.players[ID].physical.implants = 5000
 		game.players[ID].insert{name="substation",count=100}
 		game.players[ID].insert{name="logistic-chest-storage",count=100}
 		game.players[ID].insert{name="logistic-chest-requester",count=100}
 		game.players[ID].insert{name="logistic-chest-passive-provider",count=100}
 		game.players[ID].insert{name="medium-electric-pole",count=100}
-		game.players[ID].insert{name="dyworld-radar-godlike",count=50}
-		game.players[ID].insert{name="dyworld-accumulator-9",count=500}
-		game.players[ID].insert{name="dyworld-solar-9",count=500}
-		game.players[ID].insert{name="dyworld-armor-05",count=1}
-		game.players[ID].insert{name="dyworld-roboport-godlike",count=50}
-		game.players[ID].insert{name="dyworld-construction-robot-godlike",count=500}
-		game.players[ID].insert{name="dyworld-logistic-robot-godlike",count=500}
-		game.players[ID].insert{name="dyworld-module-productivity-10",count=100}
-		game.players[ID].insert{name="dyworld-module-speed-10",count=100}
 	end
 	debug("Startup done")
 end

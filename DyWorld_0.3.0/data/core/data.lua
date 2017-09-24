@@ -1,0 +1,5 @@
+require("data.core.gui_sprites")
+require("data.core.keys")
+require("data.core.item-groups")
+require("data.core.tile.noise-layers")
+require("data.core.tile.tiles")

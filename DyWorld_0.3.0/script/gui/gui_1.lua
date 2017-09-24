@@ -2,7 +2,15 @@ module("gui_1", package.seeall)
 -- gui_1 is the stats menu
 require "script/stats/functions"
 
-function toggleGui(player, id)
+function closeGUI(player, id)
+	if player.gui.top.dyworld_stats_1_gui then
+		player.gui.top.dyworld_stats_1_gui.destroy()
+		player.gui.top.dyworld_stats_2_gui.destroy()
+		player.gui.top.dyworld_stats_3_gui.destroy()
+	end
+end
+
+function openGui(player, id)
 	local mp = global.dyworld.Players
 	local gsc = global.players[id].stats.crafted or 1
 	local gsm = global.players[id].stats.mined or 1
@@ -23,11 +31,6 @@ function toggleGui(player, id)
 	local m3 = global.players[id].mystical.wisdom
 	local m4 = global.players[id].mystical.guile
 	local m5 = global.players[id].mystical.knowledge
-	if player.gui.top.dyworld_stats_1_gui then
-		player.gui.top.dyworld_stats_1_gui.destroy()
-		player.gui.top.dyworld_stats_2_gui.destroy()
-		player.gui.top.dyworld_stats_3_gui.destroy()
-	else
 	local frame1 = player.gui.top.add{type = "frame", name = "dyworld_stats_1_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
 	local frame2 = player.gui.top.add{type = "frame", name = "dyworld_stats_2_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
 	local frame3 = player.gui.top.add{type = "frame", name = "dyworld_stats_3_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
@@ -36,10 +39,13 @@ function toggleGui(player, id)
 	local frameflow3 = frame3.add{type = "flow", style = "dyworld_stats_list_flow", name = "flow", direction = "vertical"}
 	stats_functions.BodySkills(id)
 	-- labels for stats_1
-	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_1"}}
+	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_1", (game.players[id].name)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_level", (global.players[id].Level or 0)}}
-	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xp", (global.players[id].XP or 0)}}
-	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xplevel", (global.players[id].XP_LevelUp or 0)}}
+	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xp"}}
+	frameflow1.add{type = "progressbar", size = 26, value = (global.players[id].XP/global.players[id].XP_LevelUp)}
+	--frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xp", (global.players[id].XP or 0)}}
+	--frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xplevel", (global.players[id].XP_LevelUp or 0)}}
+	--frameflow1.add{type = "label", caption = "XP TO LEVEL FRACT: "..(global.players[id].XP/global.players[id].XP_LevelUp)}
 	if (#game.players <= 1) then
 		frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_crafted", (global.players[id].stats.crafted or 0)}}
 		frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_mined", (global.players[id].stats.mined or 0)}}
@@ -55,28 +61,23 @@ function toggleGui(player, id)
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_research", (global.stats.research or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_ghostbuild", (global.stats.ghostbuild or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_ghostmined", (global.stats.ghostmined or 0)}}
-	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_researchlevel", (global.dyworld.Research_Level_String)}}
 	-- labels for stats_2
-	if global.players[id].Level >= 2 then 
-		frameflow2.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.body"}}
-		frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_physical"}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_strength", (global.players[id].physical.strength)}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_endurance", (global.players[id].physical.endurance)}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_speed", (global.players[id].physical.speed)}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_creations", (global.players[id].physical.creations)}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_implants", (global.players[id].physical.implants)}}
-		frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_mystical"}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_spirit", (global.players[id].mystical.spirit)}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_intelligence", (global.players[id].mystical.intelligence)}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_wisdom", (global.players[id].mystical.wisdom)}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_guile", (global.players[id].mystical.guile)}}
-		frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_knowledge", (global.players[id].mystical.knowledge)}}
-	else
-		frameflow2.add{type = "label", caption = {"dyworld-gui-lowlevel", (2)}}
-	end
+	frameflow2.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.body", (game.players[id].name)}}
+	frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_physical"}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_strength", (global.players[id].physical.strength)}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_endurance", (global.players[id].physical.endurance)}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_speed", (global.players[id].physical.speed)}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_creations", (global.players[id].physical.creations)}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_implants", (global.players[id].physical.implants)}}
+	frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_mystical"}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_spirit", (global.players[id].mystical.spirit)}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_intelligence", (global.players[id].mystical.intelligence)}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_wisdom", (global.players[id].mystical.wisdom)}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_guile", (global.players[id].mystical.guile)}}
+	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_knowledge", (global.players[id].mystical.knowledge)}}
 	-- labels for stats_3
 	if global.players[id].Level >= 5 then 
-		frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3"}}
+		frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3", (game.players[id].name)}}
 		if debug_test then
 			frameflow3.add{type = "label", caption = "Health: 100000 + "..game.players[id].character_health_bonus}
 		else
@@ -93,6 +94,5 @@ function toggleGui(player, id)
 		frameflow3.add{type = "label", caption = "Resource Reach Distance: "..math.floor(game.players[id].character_resource_reach_distance_bonus)}
 	else
 		frameflow3.add{type = "label", caption = {"dyworld-gui-lowlevel", (5)}}
-	end
 	end
 end

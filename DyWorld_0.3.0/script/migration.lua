@@ -32,7 +32,10 @@ function Migrate_To_Next_Version()
 			v.Level = 0
 			v.XP = 0
 			v.XP_LevelUp = 100
+			Stats_GUI_Freq = 1
 		end
+		global.dyworld.XP = 0
+		global.dyworld.Level = 0
 		global.dyworld.Version = "0.3.0" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
 	end

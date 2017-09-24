@@ -17,7 +17,7 @@ for k,v in pairs(data.raw["ammo"]) do
 	end
 end
 
-if settings.startup["DyWorld-debug"].value then
+if settings.startup["DyWorld_Debug"].value then
 Stacksize_Increase_Factor = 100
 	for k, v in pairs(data.raw.item) do
 		v.default_request_amount = v.stack_size

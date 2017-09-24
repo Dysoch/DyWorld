@@ -19,6 +19,9 @@ function toggleGui(player)
 			scrollbar_debug.add{type = "label", caption = NAME}
 		end
 		frameflow2.add{type = "label", caption = "Players: "..global.dyworld.Players}
+		for k,v in pairs(global.players) do
+			frameflow2.add{type = "label", caption = game.players[v.PlayerID].name.." level: "..tostring(v.Level)}
+		end
 		frameflow2.add{type = "label", caption = "Chunks: "..global.dyworld.Chunks}
 		frameflow2.add{type = "label", caption = "Global Strength: "..global.dyworld.Strength}
 		frameflow2.add{type = "label", caption = "Global Endurance: "..global.dyworld.Endurance}
@@ -30,6 +33,8 @@ function toggleGui(player)
 		frameflow2.add{type = "label", caption = "Global Wisdom: "..global.dyworld.Wisdom}
 		frameflow2.add{type = "label", caption = "Global Guile: "..global.dyworld.Guile}
 		frameflow2.add{type = "label", caption = "Global Knowledge: "..global.dyworld.Knowledge}
+		frameflow2.add{type = "label", caption = "Global XP: "..global.dyworld.XP}
+		frameflow2.add{type = "label", caption = "Global Level: "..global.dyworld.Level}
 		frameflow2.add{type = "label", caption = "Ship_1 Spawned: "..tostring(global.dyworld.Generation_Ship_1)}
 		frameflow2.add{type = "label", caption = "Ship_2 Spawned: "..tostring(global.dyworld.Generation_Ship_2)}
 		frameflow2.add{type = "label", caption = "Ship_3 Spawned: "..tostring(global.dyworld.Generation_Ship_3)}

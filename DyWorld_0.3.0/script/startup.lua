@@ -24,10 +24,12 @@ function Game()
 			Wisdom = 0,
 			Guile = 0,
 			Knowledge = 0,
+			Level = 0,
+			XP = 0,
 		}
 	debug("Created global.dyworld")
 	end
-	if settings.startup["DyWorld-debug"].value then
+	if settings.startup["DyWorld_Debug"].value then
 		game.forces.player.maximum_following_robot_count = 500
 		game.forces.player.character_health_bonus = 99750
 	end
@@ -49,6 +51,7 @@ function startup(PLAYER, ID)
 				PlayerInfo = PLAYER, 
 				PlayerID = ID,
 				State_Stats_GUI = false,
+				Stats_GUI_Freq = 1,
 				Alive = true,
 				Speed_Boost = true,
 				Mining_Boost = true,
@@ -81,6 +84,7 @@ function startup(PLAYER, ID)
 			PlayerInfo = PLAYER, 
 			PlayerID = ID,
 			State_Stats_GUI = false,
+			Stats_GUI_Freq = 1,
 			Alive = true,
 			Speed_Boost = true,
 			Mining_Boost = true,
@@ -111,7 +115,7 @@ function startup(PLAYER, ID)
 	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
 	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
 	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
-	if settings.startup["DyWorld-debug"].value then
+	if settings.startup["DyWorld_Debug"].value then
 		game.players[ID].insert{name="substation",count=100}
 		game.players[ID].insert{name="logistic-chest-storage",count=100}
 		game.players[ID].insert{name="logistic-chest-requester",count=100}

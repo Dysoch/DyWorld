@@ -1,5 +1,6 @@
 module("stats_functions", package.seeall)
 require "roadmap"
+require "script/database/leveled-recipes"
 
 function IncrementerGlobal(NAME, AMOUNT, ITEMNAME)
 	local ITEMNAME2 = ITEMNAME or "nil"
@@ -23,18 +24,72 @@ function IncrementerPersonal(NAME, AMOUNT, ID, ITEMNAME)
 	end
 end
 
-function XP_Level(ID)
-	local player = game.players[ID]
+function XP_Small(ID)
+	if not global.players[ID].XP then 
+		global.players[ID].XP = 0.1 
+	else
+		global.players[ID].XP = global.players[ID].XP + 0.1
+		global.dyworld.XP = global.dyworld.XP + 0.1
+	end
+	Level_Up(ID)
+end
+
+function XP_Full(ID)
 	if not global.players[ID].XP then 
 		global.players[ID].XP = 1 
 	else
 		global.players[ID].XP = global.players[ID].XP + 1
+		global.dyworld.XP = global.dyworld.XP + 1
 	end
-	if global.players[ID].XP == global.players[ID].XP_LevelUp then
+	Level_Up(ID)
+end
+
+function XP_All_Small()
+	for k,v in pairs(global.players) do
+		if not v.XP then 
+			v.XP = 0.1 
+		else
+			v.XP = v.XP + 0.1
+			global.dyworld.XP = global.dyworld.XP + 0.1
+		end
+		Level_Up(k)
+	end
+end
+
+function XP_All_Full()
+	for k,v in pairs(global.players) do
+		if not v.XP then 
+			v.XP = 1 
+		else
+			v.XP = v.XP + 1
+			global.dyworld.XP = global.dyworld.XP + 1
+		end
+		Level_Up(k)
+	end
+end
+
+function Level_Up(ID)
+	if global.players[ID].XP >= global.players[ID].XP_LevelUp then
 		global.players[ID].Level = global.players[ID].Level + 1
-		--global.players[ID].XP = 0
-		global.players[ID].XP_LevelUp = math.floor(global.players[ID].XP_LevelUp*1.75)
-		player.print({"dyworld-levelup", (global.players[ID].Level)})
+		global.dyworld.Level = global.dyworld.Level + 1
+		global.players[ID].XP = global.players[ID].XP - global.players[ID].XP_LevelUp
+		global.players[ID].XP_LevelUp = math.floor(global.players[ID].XP_LevelUp*1.25)
+		PlayerPrint({"dyworld-levelup", (global.players[ID].Level), (game.players[ID].name)})
+		LevelUnlock(ID, global.players[ID].Level)
+	end
+end
+
+function LevelUnlock(ID, LEVEL)
+	local player = game.players[ID]
+	for _,data in pairs(LvLed_Recipes.RecipeUnlock) do
+		if math.floor(global.dyworld.Level / global.dyworld.Players) >= data.Level then
+			for _,player in pairs(game.players) do
+				if not player.force.recipes[data.Recipe].enabled then
+					player.force.recipes[data.Recipe].enabled = true
+					player.print({"dyworld-level-unlock", {"item-name."..data.Recipe}})
+				end
+			end
+		end
 	end
 end
 
@@ -59,18 +114,16 @@ function BodySkills(id)
 	local m3 = global.players[id].mystical.wisdom
 	local m4 = global.players[id].mystical.guile
 	local m5 = global.players[id].mystical.knowledge
-	if global.players[id].Level >= 2 then 
-		-- p5 is done with research and crafting! implants will be installed, each with a base number to increase the value
-		global.players[id].physical.creations = math.floor(((gsb+gsc)+(gsgb/25))/(1000))
-		global.players[id].mystical.guile = math.floor(((((gsc+gsm)/25)+((gsb+(gsgb/100))/50)+gsk)/(1000))+1)
-		global.players[id].mystical.intelligence = math.floor(((((p4+m4)*5)+gss)/(1000))+1)
-		global.players[id].physical.endurance = math.floor((((gsc/25)+(gsm/25)+(gsb/5)+(gsk)+(p5*50)+(gsp/50))/(1000))+1)
-		global.players[id].physical.strength = math.floor((((gsm)+(gsb/5)+(gsc/25)+(p5*75)+(p2*100)+(m2*25)+(gsp/50))/(1000))+1)
-		global.players[id].mystical.spirit = math.floor((((p1*35)+((gsgb+gsgm)/5)+(gsk/25)+gss)/(1000))+1)
-		global.players[id].physical.speed = math.floor((((p1*25)+(p2*50)+(m1*10)+gsk+gss)/(1000))+1)
-		global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000))+1)
-		global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000))+1)
-	end
+	-- p5 is done with research and crafting! implants will be installed, each with a base number to increase the value
+	global.players[id].physical.creations = math.floor(((gsb+gsc)+(gsgb/25))/(1000))
+	global.players[id].mystical.guile = math.floor(((((gsc+gsm)/25)+((gsb+(gsgb/100))/50)+gsk)/(1000))+1)
+	global.players[id].mystical.intelligence = math.floor(((((p4+m4)*5)+gss)/(1000))+1)
+	global.players[id].physical.endurance = math.floor((((gsc/25)+(gsm/25)+(gsb/5)+(gsk)+(p5*50)+(gsp/50))/(1000))+1)
+	global.players[id].physical.strength = math.floor((((gsm)+(gsb/5)+(gsc/25)+(p5*75)+(p2*100)+(m2*25)+(gsp/50))/(1000))+1)
+	global.players[id].mystical.spirit = math.floor((((p1*35)+((gsgb+gsgm)/5)+(gsk/25)+gss)/(1000))+1)
+	global.players[id].physical.speed = math.floor((((p1*25)+(p2*50)+(m1*10)+gsk+gss)/(1000))+1)
+	global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000))+1)
+	global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000))+1)
 	if global.players[id].Level >= 5 then 
 		game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
 		game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50)

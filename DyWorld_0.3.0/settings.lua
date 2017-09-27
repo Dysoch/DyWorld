@@ -9,7 +9,7 @@
 --settings.startup["DyWorld_Logistics"].value
 --settings.startup["DyWorld_Extraction"].value
 --settings.startup["DyWorld_Story"].value
---settings.global["DyWorld-hell"].value
+--settings.global["DyWorld_Needs"].value
 --settings.player["DyWorld_User_Tick_Stat_GUI"].value
 
 -- can use: "runtime-global", "startup"
@@ -73,10 +73,16 @@ data:extend({
 		type = "bool-setting",
 		name = "DyWorld_Story",
 		setting_type = "startup",
+		default_value = false,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld_Needs",
+		setting_type = "runtime-global",
 		default_value = true,
 	},
 	{
-		type = "string-setting",
+		type = "int-setting",
 		name = "DyWorld_User_Tick_Stat_GUI",
 		setting_type = "runtime-per-user",
 		default_value = 1,

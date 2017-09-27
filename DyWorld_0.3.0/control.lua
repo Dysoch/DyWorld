@@ -1,10 +1,13 @@
 require "roadmap"
+require "script/functions"
 require "script/startup"
 require "script/migration"
 require "script/gui/gui_0"
 require "script/gui/gui_1"
 require "script/gui/gui_2"
 require "script/gui/gui_3"
+require "script/gui/gui_4"
+require "script/gui/gui_5"
 require "script/gui/gui_click"
 require "script/stats/functions"
 require "script/generation/noise"
@@ -49,6 +52,7 @@ script.on_event(defines.events.on_player_created, function(event)
 			player.print({"dyworld-startup-story-wip"})
 		end
 	end
+	debug(game.players[event.player_index].name.." joined the game")
 end)
 
 script.on_event(defines.events.on_player_respawned, function(event)
@@ -59,12 +63,16 @@ script.on_event(defines.events.on_player_respawned, function(event)
 	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
 	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
 	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
+	global.players[ID].Food = 100
+	global.players[ID].Water = 100
+	debug(game.players[event.player_index].name.." respawned")
 end)
 
 script.on_event(defines.events.on_player_died, function(event)
 	local player = game.players[event.player_index]	
 	local ID = event.player_index
 	global.players[ID].Alive = false
+	debug(game.players[event.player_index].name.." died")
 end)
 
 -- game event hooks
@@ -72,24 +80,28 @@ script.on_event(defines.events.on_player_crafted_item, function(event)
 	stats_functions.IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
 	stats_functions.IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
 	stats_functions.XP_Full(event.player_index)
+	stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.1), (event.item_stack.count*0.15))
 end)
 
 script.on_event(defines.events.on_player_mined_item, function(event)
 	stats_functions.IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
 	stats_functions.IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
 	stats_functions.XP_Full(event.player_index)
+	stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.15), (event.item_stack.count*0.25))
 end)
 
 script.on_event(defines.events.on_picked_up_item, function(event)
 	stats_functions.IncrementerGlobal("pickup", event.item_stack.count, event.item_stack.name)
 	stats_functions.IncrementerPersonal("pickup", event.item_stack.count, event.player_index, event.item_stack.name)
 	stats_functions.XP_Full(event.player_index)
+	stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.05), (event.item_stack.count*0.025))
 end)
 
 script.on_event(defines.events.on_built_entity, function(event)
 	stats_functions.IncrementerGlobal("build", 1)
 	stats_functions.IncrementerPersonal("build", 1, event.player_index)
 	stats_functions.XP_Full(event.player_index)
+	stats_functions.Needs_Work(event.player_index, 0.1, 0.05)
 end)
 
 script.on_event(defines.events.on_robot_mined, function(event)
@@ -119,6 +131,7 @@ script.on_event(defines.events.on_research_finished, function(event)
 	for i=1,(game.forces.player.technologies[event.research.name].research_unit_count) do
 		stats_functions.XP_All_Full()
 	end
+	debug("Finished "..event.research.name.." research")
 end)
 
 -- random generation
@@ -145,8 +158,46 @@ script.on_event(defines.events.on_tick, function(event)
 			end
 		end
 	end
+	if event.tick%(60*60*1)==1 and global.dyworld.Players ~= 0 then
+		for k,v in pairs(global.players) do
+			if v.Alive then
+				if settings.startup["DyWorld_Story"].value or settings.global["DyWorld_Needs"].value then
+					stats_functions.Needs_Timed(v.PlayerID)
+				end
+			end
+		end
+	end
+	if event.tick%(60*1)==1 and global.dyworld.Players ~= 0 then
+		for k,v in pairs(global.players) do
+			if v.Alive then
+				if settings.startup["DyWorld_Story"].value or settings.global["DyWorld_Needs"].value then
+					if not v.State_Stats_GUI then
+						local player = game.players[v.PlayerID]
+						gui_4.RefreshGUI(player, v.PlayerID)
+					else
+						local player = game.players[v.PlayerID]
+						gui_4.CloseGUI(player, v.PlayerID)
+					end
+				end
+				--v.PosX = game.players[v.PlayerID].position.x
+				--v.PosY = game.players[v.PlayerID].position.y
+			end
+		end
+	end
+	if global.dyworld.Players ~= 0 and event.tick%(15*1)==1 then --might be script heavy, but updates always instantly
+		for k,v in pairs(global.players) do
+			if v.Alive then
+				v.PosX = game.players[v.PlayerID].position.x
+				v.PosY = game.players[v.PlayerID].position.y
+				if v.State_Distance_GUI then
+					local player = game.players[v.PlayerID]
+					gui_5.RefreshGUI(player, v.PlayerID)
+				end
+			end
+		end
+	end
 	for k,v in pairs(global.players) do
-		if v.State_Stats_GUI then
+		if v.State_Stats_GUI and v.Alive then
 			if event.tick%(60*v.Stats_GUI_Freq)==1 then
 			local player = game.players[v.PlayerID]
 				gui_1.closeGUI(player, v.PlayerID)
@@ -167,6 +218,17 @@ script.on_event("DyWorld_Stats", function(event)
 	else
 		global.players[event.player_index].State_Stats_GUI = true
 		gui_1.openGui(player, event.player_index)
+		gui_4.CloseGUI(player, event.player_index)
+	end
+end)
+script.on_event("DyWorld_Distance", function(event)
+	local player = game.players[event.player_index]
+	if global.players[event.player_index].State_Distance_GUI then
+		global.players[event.player_index].State_Distance_GUI = false
+		gui_5.CloseGUI(player, event.player_index)
+	else
+		global.players[event.player_index].State_Distance_GUI = true
+		gui_5.RefreshGUI(player, event.player_index)
 	end
 end)
 script.on_event("DyWorld_RoadMap", function(event)

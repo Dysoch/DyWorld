@@ -52,7 +52,7 @@ function XP_All_Small()
 			v.XP = v.XP + 0.1
 			global.dyworld.XP = global.dyworld.XP + 0.1
 		end
-		Level_Up(k)
+		Level_Up(v.PlayerID)
 	end
 end
 
@@ -64,7 +64,7 @@ function XP_All_Full()
 			v.XP = v.XP + 1
 			global.dyworld.XP = global.dyworld.XP + 1
 		end
-		Level_Up(k)
+		Level_Up(v.PlayerID)
 	end
 end
 
@@ -75,6 +75,7 @@ function Level_Up(ID)
 		global.players[ID].XP = global.players[ID].XP - global.players[ID].XP_LevelUp
 		global.players[ID].XP_LevelUp = math.floor(global.players[ID].XP_LevelUp*1.25)
 		PlayerPrint({"dyworld-levelup", (global.players[ID].Level), (game.players[ID].name)})
+		debug(game.players[ID].name.." leveled up to level "..global.players[ID].Level)
 		LevelUnlock(ID, global.players[ID].Level)
 	end
 end
@@ -87,6 +88,7 @@ function LevelUnlock(ID, LEVEL)
 				if not player.force.recipes[data.Recipe].enabled then
 					player.force.recipes[data.Recipe].enabled = true
 					player.print({"dyworld-level-unlock", {"item-name."..data.Recipe}})
+					debug("Unlocked: "..data.Recipe)
 				end
 			end
 		end
@@ -164,4 +166,20 @@ function GlobalSkills(id)
 	global.dyworld.Wisdom = global.dyworld.Wisdom + global.players[id].mystical.wisdom
 	global.dyworld.Guile = global.dyworld.Guile + global.players[id].mystical.guile
 	global.dyworld.Knowledge = global.dyworld.Knowledge + global.players[id].mystical.knowledge
+end
+
+function Needs_Timed(ID)
+	local player = game.players[ID]
+	global.players[ID].Food = global.players[ID].Food - global.players[ID].Food_Use
+	global.players[ID].Water = global.players[ID].Water - global.players[ID].Water_Use
+	if global.players[ID].Food <= 0 then global.players[ID].Food = 0 end
+	if global.players[ID].Water <= 0 then global.players[ID].Water = 0 end
+end
+
+function Needs_Work(ID, AMOUNT1, AMOUNT2)
+	local player = game.players[ID]
+	global.players[ID].Food = global.players[ID].Food - AMOUNT1
+	global.players[ID].Water = global.players[ID].Water - AMOUNT2
+	if global.players[ID].Food <= 0 then global.players[ID].Food = 0 end
+	if global.players[ID].Water <= 0 then global.players[ID].Water = 0 end
 end

@@ -22,21 +22,42 @@ function Migrate_To_Next_Version()
 		end
 		global.dyworld.Version = "0.2.0" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
+		debug({"new-dyworld-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.2.0" then
 		global.dyworld.Version = "0.2.1" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
+		debug({"new-dyworld-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.2.1" then
 		for k,v in pairs(global.players) do
 			v.Level = 0
 			v.XP = 0
 			v.XP_LevelUp = 100
-			Stats_GUI_Freq = 1
+			v.Stats_GUI_Freq = 1
+			v.Food = 100
+			v.Food_Max = 100
+			v.Food_Use = 1
+			v.Water = 100
+			v.Water_Max = 100
+			v.Water_Use = 1
+			v.PosX = 0
+			v.PosY = 0
+			v.State_Distance_GUI = false
+			v.Ship_1_Visited = false
+			v.Ship_2_Visited = false
+			v.Ship_3_Visited = false
 		end
 		global.dyworld.XP = 0
 		global.dyworld.Level = 0
+		global.dyworld.Generation_Ship_1_PosX = 0
+		global.dyworld.Generation_Ship_1_PosY = 0
+		global.dyworld.Generation_Ship_2_PosX = 0
+		global.dyworld.Generation_Ship_2_PosY = 0
+		global.dyworld.Generation_Ship_3_PosX = 0
+		global.dyworld.Generation_Ship_3_PosY = 0
 		global.dyworld.Version = "0.3.0" 
 		PlayerPrint({"new-dyworld-version", (global.dyworld.Version)})
+		debug({"new-dyworld-version", (global.dyworld.Version)})
 	end
 end

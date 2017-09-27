@@ -3,12 +3,17 @@ data:extend({
 	{
 		type = "custom-input",
 		name = "DyWorld_Stats",
-		key_sequence = "PAD 1"
+		key_sequence = "PAD 7"
 	},
 	{
 		type = "custom-input",
 		name = "DyWorld_Skills",
-		key_sequence = "PAD 2"
+		key_sequence = "PAD 8"
+	},
+	{
+		type = "custom-input",
+		name = "DyWorld_Distance",
+		key_sequence = "PAD 9"
 	},
 	{
 		type = "custom-input",

@@ -10,8 +10,14 @@ function Game()
 			Players = 0,
 			Chunks = 0,
 			Generation_Ship_1 = false,
+			Generation_Ship_1_PosX = 0,
+			Generation_Ship_1_PosY = 0,
 			Generation_Ship_2 = false,
+			Generation_Ship_2_PosX = 0,
+			Generation_Ship_2_PosY = 0,
 			Generation_Ship_3 = false,
+			Generation_Ship_3_PosX = 0,
+			Generation_Ship_3_PosY = 0,
 			Research_Level_String = "Primitive",
 			Research_Level_Var = 1,
 			Strength = 0,
@@ -51,13 +57,25 @@ function startup(PLAYER, ID)
 				PlayerInfo = PLAYER, 
 				PlayerID = ID,
 				State_Stats_GUI = false,
+				State_Distance_GUI = false,
 				Stats_GUI_Freq = 1,
+				Ship_1_Visited = false,
+				Ship_2_Visited = false,
+				Ship_3_Visited = false,
 				Alive = true,
 				Speed_Boost = true,
 				Mining_Boost = true,
 				Level = 0,
 				XP = 0,
 				XP_LevelUp = 100,
+				Food = 100,
+				Food_Max = 100,
+				Food_Use = 1,
+				Water = 100,
+				Water_Max = 100,
+				Water_Use = 1,
+				PosX = 0,
+				PosY = 0,
 				physical =
 				{
 					strength = 1,
@@ -77,20 +95,32 @@ function startup(PLAYER, ID)
 				stats = {},
 			}
 		}
-	debug("Created global.players, and added "..ID.." to the table with blank stats")
+	debug("Created global.players, and added "..game.players[ID].name.." to the table with blank stats with ID: "..ID)
 	else
 		global.players[ID] = 
 		{
 			PlayerInfo = PLAYER, 
 			PlayerID = ID,
 			State_Stats_GUI = false,
+			State_Distance_GUI = false,
 			Stats_GUI_Freq = 1,
+			Ship_1_Visited = false,
+			Ship_2_Visited = false,
+			Ship_3_Visited = false,
 			Alive = true,
 			Speed_Boost = true,
 			Mining_Boost = true,
 			Level = 0,
 			XP = 0,
 			XP_LevelUp = 100,
+			Food = 100,
+			Food_Max = 100,
+			Food_Use = 1,
+			Water = 100,
+			Water_Max = 100,
+			Water_Use = 1,
+			PosX = 0,
+			PosY = 0,
 			physical =
 			{
 				strength = 1,
@@ -109,7 +139,7 @@ function startup(PLAYER, ID)
 			},
 			stats = {},
 		}
-	debug("New player created, and added "..ID.." to global.players with blank stats")
+	debug("New player created, and added "..game.players[ID].name.." to global.players with blank stats with ID: "..ID)
 	end
 	game.players[ID].get_inventory(defines.inventory.player_main).clear()
 	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
@@ -130,4 +160,5 @@ function Prototype()
 	for k,v in pairs(game.item_prototypes) do
 		table.insert(global.dyworld.Items, v.name)
 	end
+	debug("Exported Item Prototypes")
 end

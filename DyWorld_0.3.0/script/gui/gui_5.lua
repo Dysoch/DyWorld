@@ -25,9 +25,9 @@ function RefreshGUI(player, id)
 			global.players[id].Ship_1_Visited = true
 		end
 		if functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_3_PosX, global.dyworld.Generation_Ship_3_PosY) >= 1000 then
-			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_km", (3), (functions.Round(functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_1_PosX, global.dyworld.Generation_Ship_1_PosY)/1000, 3))}}
+			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_km", (1), (functions.Round(functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_1_PosX, global.dyworld.Generation_Ship_1_PosY)/1000, 3))}}
 		else
-			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_m", (3), (math.floor(functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_1_PosX, global.dyworld.Generation_Ship_1_PosY)))}}
+			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_m", (1), (math.floor(functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_1_PosX, global.dyworld.Generation_Ship_1_PosY)))}}
 		end
 	end
 	if not global.players[id].Ship_2_Visited then
@@ -35,9 +35,9 @@ function RefreshGUI(player, id)
 			global.players[id].Ship_2_Visited = true
 		end
 		if functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_3_PosX, global.dyworld.Generation_Ship_3_PosY) >= 1000 then
-			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_km", (3), (functions.Round(functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_2_PosX, global.dyworld.Generation_Ship_2_PosY)/1000, 3))}}
+			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_km", (2), (functions.Round(functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_2_PosX, global.dyworld.Generation_Ship_2_PosY)/1000, 3))}}
 		else
-			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_m", (3), (math.floor(functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_2_PosX, global.dyworld.Generation_Ship_2_PosY)))}}
+			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_m", (2), (math.floor(functions.getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_2_PosX, global.dyworld.Generation_Ship_2_PosY)))}}
 		end
 	end
 	if not global.players[id].Ship_3_Visited then

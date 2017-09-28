@@ -47,9 +47,9 @@ script.on_event(defines.events.on_player_created, function(event)
 	local player = game.players[event.player_index]
 	startup.startup(player, event.player_index)
 	if not game.players[event.player_index].name == "Dysoch" then
-		player.print({"dyworld-startup-1", (game.players[event.player_index].name)})
+		player.print({"dyworld.startup-1", (game.players[event.player_index].name)})
 		if settings.startup["DyWorld_Story"].value then
-			player.print({"dyworld-startup-story-wip"})
+			player.print({"dyworld.startup-story-wip"})
 		end
 	end
 	debug(game.players[event.player_index].name.." joined the game")
@@ -161,7 +161,7 @@ script.on_event(defines.events.on_tick, function(event)
 	if event.tick%(60*60*1)==1 and global.dyworld.Players ~= 0 then
 		for k,v in pairs(global.players) do
 			if v.Alive then
-				if settings.startup["DyWorld_Story"].value or settings.global["DyWorld_Needs"].value then
+				if settings.startup["DyWorld_Story"].value or settings.startup["DyWorld_Needs"].value then
 					stats_functions.Needs_Timed(v.PlayerID)
 				end
 			end
@@ -170,7 +170,7 @@ script.on_event(defines.events.on_tick, function(event)
 	if event.tick%(60*1)==1 and global.dyworld.Players ~= 0 then
 		for k,v in pairs(global.players) do
 			if v.Alive then
-				if settings.startup["DyWorld_Story"].value or settings.global["DyWorld_Needs"].value then
+				if settings.startup["DyWorld_Story"].value or settings.startup["DyWorld_Needs"].value then
 					if not v.State_Stats_GUI then
 						local player = game.players[v.PlayerID]
 						gui_4.RefreshGUI(player, v.PlayerID)
@@ -244,7 +244,7 @@ end)
 script.on_event("DyWorld_Debug", function(event)
 	if settings.startup["DyWorld_Debug"].value or game.players[event.player_index].name == "Dysoch" then
 		local player = game.players[event.player_index]
-		gui_0.toggleGui(player)
+		gui_0.toggleGui(player, event.player_index)
 	end
 end)
 script.on_event("DyWorld_Debug_LOG", function(event)

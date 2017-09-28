@@ -21,12 +21,12 @@ function Ruins_Spawner(event)
 end
 
 function Ship_Spawner(event)
-	PosX1 = event.area.left_top.x+math.random(-63,63)
-	PosY1 = event.area.left_top.y+math.random(-63,63)
-	PosX2 = event.area.left_top.x+math.random(-63,63)
-	PosY2 = event.area.left_top.y+math.random(-63,63)
-	PosX3 = event.area.left_top.x+math.random(-63,63)
-	PosY3 = event.area.left_top.y+math.random(-63,63)
+	PosX1 = 0+math.random(-150,150)
+	PosY1 = 0+math.random(-150,150)
+	PosX2 = 0+math.random(-150,150)
+	PosY2 = 0+math.random(-150,150)
+	PosX3 = 0+math.random(-150,150)
+	PosY3 = 0+math.random(-150,150)
 	BuildEntity1 = "big-ship-wreck-1"
 	BuildEntity2 = "big-ship-wreck-2"
 	BuildEntity3 = "big-ship-wreck-3"

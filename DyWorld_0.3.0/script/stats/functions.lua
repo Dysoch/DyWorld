@@ -74,7 +74,7 @@ function Level_Up(ID)
 		global.dyworld.Level = global.dyworld.Level + 1
 		global.players[ID].XP = global.players[ID].XP - global.players[ID].XP_LevelUp
 		global.players[ID].XP_LevelUp = math.floor(global.players[ID].XP_LevelUp*1.25)
-		PlayerPrint({"dyworld-levelup", (global.players[ID].Level), (game.players[ID].name)})
+		PlayerPrint({"dyworld.levelup", (global.players[ID].Level), (game.players[ID].name)})
 		debug(game.players[ID].name.." leveled up to level "..global.players[ID].Level)
 		LevelUnlock(ID, global.players[ID].Level)
 	end
@@ -87,7 +87,7 @@ function LevelUnlock(ID, LEVEL)
 			for _,player in pairs(game.players) do
 				if not player.force.recipes[data.Recipe].enabled then
 					player.force.recipes[data.Recipe].enabled = true
-					player.print({"dyworld-level-unlock", {"item-name."..data.Recipe}})
+					player.print({"dyworld.level-unlock", {"item-name."..data.Recipe}})
 					debug("Unlocked: "..data.Recipe)
 				end
 			end

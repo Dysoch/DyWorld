@@ -40,7 +40,6 @@ function openGui(player, id)
 	stats_functions.BodySkills(id)
 	-- labels for stats_1
 	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_1", (game.players[id].name)}}
-	frameflow1.add{type = "label", caption = game.players[id].name.." Position: "..math.floor(tostring(global.players[id].PosX))..", "..math.floor(tostring(global.players[id].PosY))}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_level", (global.players[id].Level or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xp"}}
 	frameflow1.add{type = "progressbar", size = 26, value = (global.players[id].XP/global.players[id].XP_LevelUp)}
@@ -56,7 +55,7 @@ function openGui(player, id)
 		frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_mined_mp", (global.players[id].stats.mined or 0), (global.stats.mined or 0)}}
 		frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_build_mp", (global.players[id].stats.build or 0), (global.stats.build or 0)}}
 	end
-	if settings.startup["DyWorld_Story"].value or settings.global["DyWorld_Needs"].value then
+	if settings.startup["DyWorld_Story"].value or settings.startup["DyWorld_Needs"].value then
 		frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_needs_gui.title"}}
 		frameflow1.add{type = "label", caption = {"dyworld_needs_gui.food"}}
 		frameflow1.add{type = "progressbar", size = 26, value = (global.players[id].Food/global.players[id].Food_Max)}
@@ -101,6 +100,6 @@ function openGui(player, id)
 		frameflow3.add{type = "label", caption = "Build Distance: "..math.floor(game.players[id].character_build_distance_bonus)}
 		frameflow3.add{type = "label", caption = "Resource Reach Distance: "..math.floor(game.players[id].character_resource_reach_distance_bonus)}
 	else
-		frameflow3.add{type = "label", caption = {"dyworld-gui-lowlevel", (5)}}
+		frameflow3.add{type = "label", caption = {"dyworld.gui-lowlevel", (5)}}
 	end
 end

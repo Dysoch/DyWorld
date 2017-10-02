@@ -1,5 +1,6 @@
 dyworld_prefix = "dyworld-"
 dyworld_prefix_intermediate = "dyworld-intermediate-"
+dyworld_debug_prefix = "dyworld-debug-"
 primitive = "primitive"
 basic = "basic"
 intermediate = "intermediate"

@@ -35,7 +35,8 @@ function Ship_Spawner(event)
 	Ship_3_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity3, {PosX3,PosY3}, 250, 250)
 	if not global.dyworld.Generation_Ship_1 then 
 		Ship_1_Created = game.surfaces[1].create_entity{name=(BuildEntity1), position=Ship_1_Pos, force=game.forces.player}
-		Ship_1_Created.insert{name="stone", count=math.random(100)}
+		Ship_1_Created.insert{name="landfill", count=math.random(200)}
+		Ship_1_Created.insert{name="stone", count=math.random(200)}
 		if math.random(1,10) == 5 then
 			Ship_1_Created.insert{name="iron-ore", count=math.random(100)}
 		end

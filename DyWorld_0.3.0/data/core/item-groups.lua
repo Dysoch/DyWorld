@@ -102,6 +102,36 @@ Data_Table_Item_Group = {
 		Main = "items"
 	},
 	{
+		Name = "seeds",
+		Type = "sub",
+		Main = "items"
+	},
+	{
+		Name = "food-raw",
+		Type = "sub",
+		Main = "items"
+	},
+	{
+		Name = "food-cooked",
+		Type = "sub",
+		Main = "items"
+	},
+	{
+		Name = "hydration",
+		Type = "sub",
+		Main = "items"
+	},
+	{
+		Name = "oxygen",
+		Type = "sub",
+		Main = "items"
+	},
+	{
+		Name = "debug",
+		Type = "sub",
+		Main = "items"
+	},
+	{
 		Name = "chest-storage",
 		Type = "sub",
 		Main = "logistics"

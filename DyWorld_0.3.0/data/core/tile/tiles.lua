@@ -108,7 +108,7 @@ data:extend(
     name = "rocks",
     collision_mask =
     {
-      "water-tile",
+      --"water-tile",
       "item-layer",
       "resource-layer",
       "player-layer",

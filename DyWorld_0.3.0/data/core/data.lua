@@ -9,6 +9,7 @@ require("data.core.entities.projectiles")
 require("data.core.debug.armor")
 require("data.core.debug.equipment")
 require("data.core.debug.mining-tools")
+require("data.core.fluids.fluids")
 
 -- Edits
 require("data.core.edits.ammo")

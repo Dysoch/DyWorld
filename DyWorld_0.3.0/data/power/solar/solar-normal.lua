@@ -4,11 +4,16 @@ local Data_Table_Looped = {
 	{
 		Name = "solar-normal-",
 		Icon = "__base__/graphics/icons/solar-panel.png",
+		Tech_Icon = "__base__/graphics/technology/solar-energy.png",
 		Recipe = true,
-		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 5,
 		Recipe_Result_Count = 1,
 		Recipe_Ingredients = {{"solar-panel", 1},{"advanced-circuit", 5}},
+		Recipe_Without_Tech = false,
+		Tech_Count = 500,
+		Tech_Time = 30,
+		Tech_PreReq = "solar-energy",
+		Tech_Ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
 		Stack = 50,
 		Subgroup = "solar",
 		Item_Place = "quickbar",
@@ -31,5 +36,11 @@ for i=1,Tiered_Entities do
 		--for _,z in pairs(v.Recipe_Ingredients) do
 			--table.insert(data.raw.recipe[dyworld_prefix..v.Name..tostring(i)].ingredients,z)
 		--end
+		if v.Recipe_Without_Tech == false then
+		data:extend(
+		{
+			DyWorld_Technology(v, i),
+		})
+		end
 	end
 end

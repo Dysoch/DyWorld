@@ -772,3 +772,321 @@ function DyWorld_Entity_Accumulators(DATA, NMB)
   }
   return result
 end
+
+function DyWorld_Entity_Construction_Robot(DATA, NMB)
+  local result =
+  {
+    type = "construction-robot",
+    name = dyworld_prefix..DATA.Name..tostring(NMB),
+	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
+    icons =
+	{
+	  {
+		icon = "__base__/graphics/icons/construction-robot.png",
+		tint = Color_Tier[NMB],
+	  },
+	},
+    flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
+    minable = {hardness = (0.1*NMB), mining_time = (0.1*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    max_health = (DATA.Health*NMB),
+    resistances = { { type = "fire", percent = 85 } },
+    collision_box = {{0, 0}, {0, 0}},
+    selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
+    max_payload_size = 1,
+    speed = (DATA.Speed*NMB),
+    transfer_distance = 0.5,
+    max_energy = tostring((DATA.Max_Energy*NMB)).."MJ",
+    energy_per_tick = tostring((DATA.Tick_Energy/NMB)).."kJ",
+    speed_multiplier_when_out_of_energy = 0.2,
+    energy_per_move = tostring(DATA.Move_Energy).."kJ",
+    min_to_charge = 0.2,
+    max_to_charge = 0.95,
+    working_light = {intensity = 0.8, size = 3, color = {r = 0.8, g = 0.8, b = 0.8}},
+    idle =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 32,
+      height = 36,
+      frame_count = 1,
+      shift = {0, -0.15625},
+      direction_count = 16,
+	  tint = Color_Tier[NMB],
+    },
+    in_motion =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 32,
+      height = 36,
+      frame_count = 1,
+      shift = {0, -0.15625},
+      direction_count = 16,
+      y = 36,
+	  tint = Color_Tier[NMB],
+    },
+    shadow_idle =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 50,
+      height = 24,
+      frame_count = 1,
+      shift = {1.09375, 0.59375},
+      direction_count = 16
+    },
+    shadow_in_motion =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 50,
+      height = 24,
+      frame_count = 1,
+      shift = {1.09375, 0.59375},
+      direction_count = 16
+    },
+    working =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot-working.png",
+      priority = "high",
+      line_length = 2,
+      width = 28,
+      height = 36,
+      frame_count = 2,
+      shift = {0, -0.15625},
+      direction_count = 16,
+      animation_speed = 0.3,
+	  tint = Color_Tier[NMB],
+    },
+    shadow_working =
+    {
+      stripes = util.multiplystripes(2,
+      {
+        {
+          filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
+          width_in_frames = 16,
+          height_in_frames = 1,
+        }
+      }),
+      priority = "high",
+      width = 50,
+      height = 24,
+      frame_count = 2,
+      shift = {1.09375, 0.59375},
+      direction_count = 16
+    },
+    smoke =
+    {
+      filename = "__base__/graphics/entity/smoke-construction/smoke-01.png",
+      width = 39,
+      height = 32,
+      frame_count = 19,
+      line_length = 19,
+      shift = {0.078125, -0.15625},
+      animation_speed = 0.3,
+    },
+    sparks =
+    {
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-01.png",
+        width = 39,
+        height = 34,
+        frame_count = 19,
+        line_length = 19,
+        shift = {-0.109375, 0.3125},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-02.png",
+        width = 36,
+        height = 32,
+        frame_count = 19,
+        line_length = 19,
+        shift = {0.03125, 0.125},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-03.png",
+        width = 42,
+        height = 29,
+        frame_count = 19,
+        line_length = 19,
+        shift = {-0.0625, 0.203125},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-04.png",
+        width = 40,
+        height = 35,
+        frame_count = 19,
+        line_length = 19,
+        shift = {-0.0625, 0.234375},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-05.png",
+        width = 39,
+        height = 29,
+        frame_count = 19,
+        line_length = 19,
+        shift = {-0.109375, 0.171875},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-06.png",
+        width = 44,
+        height = 36,
+        frame_count = 19,
+        line_length = 19,
+        shift = {0.03125, 0.3125},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+    },
+    working_sound = flying_robot_sounds(),
+    cargo_centered = {0.0, 0.2},
+    construction_vector = {0.30, 0.22},
+  }
+  return result
+end
+
+function DyWorld_Entity_Logistic_Robot(DATA, NMB)
+  local result =
+  {
+    type = "logistic-robot",
+    name = dyworld_prefix..DATA.Name..tostring(NMB),
+	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
+    icons =
+	{
+	  {
+		icon = "__base__/graphics/icons/logistic-robot.png",
+		tint = Color_Tier[NMB],
+	  },
+	},
+    flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
+    minable = {hardness = (0.1*NMB), mining_time = (0.1*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    max_health = (DATA.Health*NMB),
+    resistances = { { type = "fire", percent = 85 } },
+    collision_box = {{0, 0}, {0, 0}},
+    selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
+    max_payload_size = 1,
+    speed = (DATA.Speed*NMB),
+    transfer_distance = 0.5,
+    max_energy = tostring((DATA.Max_Energy*NMB)).."MJ",
+    energy_per_tick = tostring((DATA.Tick_Energy/NMB)).."kJ",
+    speed_multiplier_when_out_of_energy = 0.2,
+    energy_per_move = tostring(DATA.Move_Energy).."kJ",
+    min_to_charge = 0.2,
+    max_to_charge = 0.95,
+    working_light = {intensity = 0.8, size = 3, color = {r = 0.8, g = 0.8, b = 0.8}},
+    idle =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+      direction_count = 16,
+      y = 42,
+	  tint = Color_Tier[NMB],
+    },
+    idle_with_cargo =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+      direction_count = 16,
+	  tint = Color_Tier[NMB],
+    },
+    in_motion =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+      direction_count = 16,
+      y = 126,
+	  tint = Color_Tier[NMB],
+    },
+    in_motion_with_cargo =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+      direction_count = 16,
+      y = 84,
+	  tint = Color_Tier[NMB],
+    },
+    shadow_idle =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 59,
+      height = 23,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16,
+      y = 23
+    },
+    shadow_idle_with_cargo =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 59,
+      height = 23,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16
+    },
+    shadow_in_motion =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 59,
+      height = 23,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16,
+      y = 23
+    },
+    shadow_in_motion_with_cargo =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 59,
+      height = 23,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16
+    },
+    working_sound = flying_robot_sounds(),
+    cargo_centered = {0.0, 0.2},
+  }
+  return result
+end

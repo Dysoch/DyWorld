@@ -15,6 +15,22 @@ function DyWorld_Recipe(DATA, NMB)
 		result.name = dyworld_prefix..DATA.Name..tostring(NMB)
 		result.result = dyworld_prefix..DATA.Name..tostring(NMB)
 		result.energy_required = DATA.Recipe_Craft_Time * NMB
+		if DATA.Recipe_Ingredients then
+			for _,z in pairs(DATA.Recipe_Ingredients) do
+				table.insert(result.ingredients,z)
+			end
+			if NMB == 1 then
+				table.insert(result.ingredients,DATA.Recipe_First_Ingredient)
+			else
+				table.insert(result.ingredients,{dyworld_prefix..DATA.Name..tostring(NMB-1), 1})
+			end
+		end
+	else 
+		if DATA.Recipe_Ingredients then
+			for _,z in pairs(DATA.Recipe_Ingredients) do
+				table.insert(result.ingredients,z)
+			end
+		end		
 	end
   return result
 end
@@ -631,11 +647,15 @@ function DyWorld_Entity_Assembling_Electric(DATA, NMB)
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions = 0.04 / (POLLUTION*NMB)
+      emissions = 0.04 / (DATA.Pollution*NMB)
     },
-    energy_usage = tostring(DATA.Energy).."kW",
+    energy_usage = tostring((DATA.Energy*NMB)).."kW",
     crafting_speed = (DATA.Speed*NMB),
     ingredient_count = 25,
+    module_specification =
+    {
+      module_slots = DATA.Module
+    },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -680,7 +700,7 @@ function DyWorld_Entity_Accumulators(DATA, NMB)
     energy_source =
     {
       type = "electric",
-      buffer_capacity = (tostring(DATA.Energy*NMB)).."MJ",
+      buffer_capacity = (tostring(math.floor((DATA.Energy*NMB)*1.75))).."MJ",
       usage_priority = "terciary",
       input_flow_limit = (tostring((DATA.Energy*60)*NMB)).."kW",
       output_flow_limit = (tostring((DATA.Energy*60)*NMB)).."kW"

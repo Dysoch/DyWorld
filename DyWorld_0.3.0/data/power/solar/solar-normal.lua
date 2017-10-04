@@ -8,7 +8,8 @@ local Data_Table_Looped = {
 		Recipe = true,
 		Recipe_Craft_Time = 5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"solar-panel", 1},{"advanced-circuit", 5}},
+		Recipe_First_Ingredient = {"solar-panel", 1},
+		Recipe_Ingredients = {{"advanced-circuit", 5}},
 		Recipe_Without_Tech = false,
 		Tech_Count = 500,
 		Tech_Time = 30,
@@ -33,9 +34,6 @@ for i=1,Tiered_Entities do
 			DyWorld_Item(v, i),
 			DyWorld_Recipe(v, i),
 		})
-		--for _,z in pairs(v.Recipe_Ingredients) do
-			--table.insert(data.raw.recipe[dyworld_prefix..v.Name..tostring(i)].ingredients,z)
-		--end
 		if v.Recipe_Without_Tech == false then
 		data:extend(
 		{

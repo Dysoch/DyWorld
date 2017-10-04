@@ -49,7 +49,7 @@ data:extend({
 		type = "bool-setting",
 		name = "DyWorld_Processing",
 		setting_type = "startup",
-		default_value = false,
+		default_value = true,
 	},
 	{
 		type = "bool-setting",

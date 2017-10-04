@@ -1,0 +1,1 @@
+require("data.power.solar.solar-normal")

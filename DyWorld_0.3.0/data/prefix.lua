@@ -8,7 +8,9 @@ enhanced = "enhanced"
 advanced = "advanced"
 godlike = "godlike"
 
-
+-- amount of tiers for entities
+-- can only be max of Color_Tier!!!!!!!!!!!!
+Tiered_Entities = 9
 
 -- graphical
 dyworld_path_icon = "__DyWorld__/graphics/icons/"

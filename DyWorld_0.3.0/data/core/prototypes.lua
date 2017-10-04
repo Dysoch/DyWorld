@@ -1,6 +1,6 @@
 require "data/prefix"
 
-function DyWorld_Recipe(DATA)
+function DyWorld_Recipe(DATA, NMB)
   local result =
   {
     type = "recipe",
@@ -11,15 +11,19 @@ function DyWorld_Recipe(DATA)
     result = dyworld_prefix..DATA.Name,
     result_count = DATA.Recipe_Results_Count,
   }
+	if NMB then
+		result.name = dyworld_prefix..DATA.Name..tostring(NMB)
+		result.result = dyworld_prefix..DATA.Name..tostring(NMB)
+		result.energy_required = DATA.Recipe_Craft_Time * NMB
+	end
   return result
 end
 
-function DyWorld_Item(DATA)
+function DyWorld_Item(DATA, NMB)
   local result =
   {
     type = "item",
     name = dyworld_prefix..DATA.Name,
-    icon = DATA.Icon,
     flags = {"goes-to-quickbar"},
     subgroup = dyworld_prefix..DATA.Subgroup,
     order = DATA.Name,
@@ -29,6 +33,24 @@ function DyWorld_Item(DATA)
 		result.flags = {"goes-to-quickbar"}
 	else
 		result.flags = {"goes-to-main-inventory"}
+	end
+	if NMB then
+		result.name = dyworld_prefix..DATA.Name..tostring(NMB)
+		result.localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))}
+		result.order = DATA.Name..tostring(NMB)
+		result.icons = {{
+			icon = DATA.Icon,
+			tint = Color_Tier[NMB]
+		}}
+	else 
+		result.icon = DATA.Icon
+	end
+	if DATA.Entity then
+		if NMB then
+			result.place_result = dyworld_prefix..DATA.Name..tostring(NMB)
+		else
+			result.place_result = dyworld_prefix..DATA.Name
+		end
 	end
   return result
 end
@@ -156,15 +178,22 @@ function DyWorld_Projectile_2(DATA, NMB)
   return result
 end
 
-function DyWorld_Entity_Solar_Panels(DATA)
+function DyWorld_Entity_Solar_Panels(DATA, NMB)
   local result =
   {
     type = "solar-panel",
-    name = DATA.Name,
-    icon = "__base__/graphics/icons/solar-panel.png",
+    name = dyworld_prefix..DATA.Name..tostring(NMB),
+	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
+    icons =
+	{
+	  {
+		icon = "__base__/graphics/icons/solar-panel.png",
+		tint = Color_Tier[NMB],
+	  },
+	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = DATA.Name},
-    max_health = DATA.Health,
+    minable = {hardness = (0.2*NMB), mining_time = (0.5*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    max_health = DATA.Health*NMB,
     corpse = "big-remnants",
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
@@ -180,9 +209,9 @@ function DyWorld_Entity_Solar_Panels(DATA)
       priority = "high",
       width = 104,
       height = 96,
-	  tint = DATA.Tint,
+	  tint = Color_Tier[NMB],
     },
-    production = (tostring(DATA.Energy)).."kW"
+    production = (tostring(DATA.Energy*(NMB*1.5))).."kW"
   }
   return result
 end

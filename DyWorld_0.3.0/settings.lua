@@ -55,7 +55,7 @@ data:extend({
 		type = "bool-setting",
 		name = "DyWorld_Power",
 		setting_type = "startup",
-		default_value = false,
+		default_value = true,
 	},
 	{
 		type = "bool-setting",

@@ -114,14 +114,18 @@ function DyWorld_Technology(DATA, NMB)
 			tint = Color_Tier[NMB]
 		}}
 		result.effects = {{type = "unlock-recipe", recipe = dyworld_prefix..DATA.Name..tostring(NMB)}}
-		if DATA.PreReq_Tech then
-			result.prerequisites = {dyworld_prefix..DATA.Name..tostring(NMB-1)}
+		if DATA.Tech_PreReq then
+			if NMB == 1 then
+				result.prerequisites = {DATA.Tech_PreReq}
+			else
+				result.prerequisites = {dyworld_prefix..DATA.Name..tostring(NMB-1)}
+			end
 		end
 	else 
 		result.icon = DATA.Tech_Icon
 		result.effects = {{type = "unlock-recipe", recipe = dyworld_prefix..DATA.Name}}
-		if DATA.PreReq_Tech then
-			result.prerequisites = {DATA.PreReq_Tech}
+		if DATA.Tech_PreReq then
+			result.prerequisites = {DATA.Tech_PreReq}
 		end
 	end
 	if DATA.Tech_Ingredients then

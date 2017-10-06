@@ -69,10 +69,21 @@ script.on_event(defines.events.on_player_respawned, function(event)
 end)
 
 script.on_event(defines.events.on_player_died, function(event)
-	local player = game.players[event.player_index]	
 	local ID = event.player_index
 	global.players[ID].Alive = false
 	debug(game.players[event.player_index].name.." died")
+end)
+
+script.on_event(defines.events.on_player_joined_game, function(event)
+	local ID = event.player_index
+	global.players[ID].Playing = true
+	debug(game.players[event.player_index].name.." Joined Game")
+end)
+
+script.on_event(defines.events.on_player_left_game, function(event)
+	local ID = event.player_index
+	global.players[ID].Playing = false
+	debug(game.players[event.player_index].name.." Left Game")
 end)
 
 -- game event hooks
@@ -152,7 +163,7 @@ script.on_event(defines.events.on_tick, function(event)
 	if event.tick%(60*60*5)==1 and global.dyworld.Players ~= 0 then
 		stats_functions.GlobalSkillsReset()
 		for k,v in pairs(global.players) do
-			if v.Alive then
+			if v.Alive and v.Playing then
 				stats_functions.BodySkills(v.PlayerID)
 				stats_functions.GlobalSkills(v.PlayerID)
 			end
@@ -160,7 +171,7 @@ script.on_event(defines.events.on_tick, function(event)
 	end
 	if event.tick%(60*60*1)==1 and global.dyworld.Players ~= 0 then
 		for k,v in pairs(global.players) do
-			if v.Alive then
+			if v.Alive and v.Playing then
 				if settings.startup["DyWorld_Story"].value or settings.startup["DyWorld_Needs"].value then
 					stats_functions.Needs_Timed(v.PlayerID)
 				end
@@ -169,7 +180,7 @@ script.on_event(defines.events.on_tick, function(event)
 	end
 	if event.tick%(60*1)==1 and global.dyworld.Players ~= 0 then
 		for k,v in pairs(global.players) do
-			if v.Alive then
+			if v.Alive and v.Playing then
 				if settings.startup["DyWorld_Story"].value or settings.startup["DyWorld_Needs"].value then
 					if not v.State_Stats_GUI then
 						local player = game.players[v.PlayerID]
@@ -186,7 +197,7 @@ script.on_event(defines.events.on_tick, function(event)
 	end
 	if global.dyworld.Players ~= 0 and event.tick%(15*1)==1 then --might be script heavy, but updates always instantly
 		for k,v in pairs(global.players) do
-			if v.Alive then
+			if v.Alive and v.Playing then
 				v.PosX = game.players[v.PlayerID].position.x
 				v.PosY = game.players[v.PlayerID].position.y
 				if v.State_Distance_GUI then
@@ -197,7 +208,7 @@ script.on_event(defines.events.on_tick, function(event)
 		end
 	end
 	for k,v in pairs(global.players) do
-		if v.State_Stats_GUI and v.Alive then
+		if v.State_Stats_GUI and v.Alive and v.Playing then
 			if event.tick%(60*v.Stats_GUI_Freq)==1 then
 			local player = game.players[v.PlayerID]
 				gui_1.closeGUI(player, v.PlayerID)

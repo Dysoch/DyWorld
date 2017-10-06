@@ -47,6 +47,7 @@ function Migrate_To_Next_Version()
 			v.Ship_1_Visited = false
 			v.Ship_2_Visited = false
 			v.Ship_3_Visited = false
+			v.Playing = true
 		end
 		global.dyworld.XP = 0
 		global.dyworld.Level = 0

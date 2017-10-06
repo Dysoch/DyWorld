@@ -37,7 +37,7 @@ data:extend({
 		type = "bool-setting",
 		name = "DyWorld_Modules",
 		setting_type = "startup",
-		default_value = false,
+		default_value = true,
 	},
 	{
 		type = "bool-setting",
@@ -61,13 +61,13 @@ data:extend({
 		type = "bool-setting",
 		name = "DyWorld_Logistics",
 		setting_type = "startup",
-		default_value = false,
+		default_value = true,
 	},
 	{
 		type = "bool-setting",
 		name = "DyWorld_Extraction",
 		setting_type = "startup",
-		default_value = false,
+		default_value = true,
 	},
 	{
 		type = "bool-setting",
@@ -79,7 +79,7 @@ data:extend({
 		type = "bool-setting",
 		name = "DyWorld_Needs",
 		setting_type = "startup",
-		default_value = true,
+		default_value = false,
 	},
 	{
 		type = "int-setting",

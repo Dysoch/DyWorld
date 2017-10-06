@@ -152,6 +152,42 @@ function DyWorld_Technology(DATA, NMB)
   return result
 end
 
+function DyWorld_Mining_Tool(DATA, NMB)
+  local result =
+  {
+    type = "mining-tool",
+	name = dyworld_prefix..DATA.Name..tostring(NMB),
+	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/iron-axe.png",
+		tint = Color_Tier[NMB]
+	  }
+	},
+    flags = {"goes-to-main-inventory"},
+    action =
+    {
+      type="direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+            type = "damage",
+            damage = { amount = DATA.Dmg*NMB , type = "physical"}
+        }
+      }
+    },
+    durability = DATA.Durability*NMB,
+    subgroup = dyworld_prefix.."tools",
+    order = dyworld_prefix..DATA.Name..tostring(NMB),
+    speed = DATA.Speed*NMB,
+    stack_size = DATA.Stack or 200,
+  }
+  return result
+end
+
 function DyWorld_Projectile_1(DATA, NMB)
 	local result =
   {

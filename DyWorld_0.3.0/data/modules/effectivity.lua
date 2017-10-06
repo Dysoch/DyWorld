@@ -5,7 +5,13 @@ function DyWorld_Module_Effectivity_Item(Level)
   {
     type = "module",
     name = dyworld_prefix.."module-effectivity-"..Level,
-    icon = "__base__/graphics/icons/effectivity-module.png",
+	icons =
+	{
+	  {
+		icon = "__base__/graphics/icons/effectivity-module.png",
+		tint = Color_Tier[Level]
+	  }
+	},
     flags = {"goes-to-main-inventory"},
     subgroup = dyworld_prefix.."module-effectivity",
     category = "effectivity",
@@ -45,7 +51,7 @@ function DyWorld_Module_Effectivity_Recipe(Level)
   return result
 end
 
-for i=1,10 do
+for i=1,9 do
  data:extend(
 {
   DyWorld_Module_Effectivity_Item(i),

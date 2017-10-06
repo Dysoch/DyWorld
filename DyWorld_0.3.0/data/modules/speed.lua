@@ -5,7 +5,13 @@ function DyWorld_Module_Speed_Item(Level)
   {
     type = "module",
     name = dyworld_prefix.."module-speed-"..Level,
-    icon = "__base__/graphics/icons/speed-module.png",
+	icons =
+	{
+	  {
+		icon = "__base__/graphics/icons/speed-module.png",
+		tint = Color_Tier[Level]
+	  }
+	},
     flags = {"goes-to-main-inventory"},
     subgroup = dyworld_prefix.."module-speed",
     category = "speed",
@@ -44,7 +50,7 @@ function DyWorld_Module_Speed_Recipe(Level)
   return result
 end
 
-for i=1,10 do
+for i=1,9 do
  data:extend(
 {
   DyWorld_Module_Speed_Item(i),

@@ -10,7 +10,6 @@
 --settings.startup["DyWorld_Extraction"].value
 --settings.startup["DyWorld_Story"].value
 --settings.startup["DyWorld_Needs"].value
---settings.player["DyWorld_User_Tick_Stat_GUI"].value
 
 -- can use: "runtime-global", "startup"
 
@@ -80,13 +79,5 @@ data:extend({
 		name = "DyWorld_Needs",
 		setting_type = "startup",
 		default_value = false,
-	},
-	{
-		type = "int-setting",
-		name = "DyWorld_User_Tick_Stat_GUI",
-		setting_type = "runtime-per-user",
-		default_value = 1,
-		minimum_value = 1,
-		maximum_value = 3600,
 	},
 })

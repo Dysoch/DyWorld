@@ -38,6 +38,8 @@ script.on_init(function()
 	startup.Game()
 end)
 
+-- setting hooks
+
 script.on_configuration_changed(function()
 	migration.Migrate_To_Next_Version()
 end)
@@ -52,7 +54,7 @@ script.on_event(defines.events.on_player_created, function(event)
 			player.print({"dyworld.startup-story-wip"})
 		end
 	end
-	debug(game.players[event.player_index].name.." joined the game")
+	debug(game.players[event.player_index].name.." created")
 end)
 
 script.on_event(defines.events.on_player_respawned, function(event)
@@ -77,13 +79,13 @@ end)
 script.on_event(defines.events.on_player_joined_game, function(event)
 	local ID = event.player_index
 	global.players[ID].Playing = true
-	debug(game.players[event.player_index].name.." Joined Game")
+	debug(game.players[event.player_index].name.." joined game")
 end)
 
 script.on_event(defines.events.on_player_left_game, function(event)
 	local ID = event.player_index
 	global.players[ID].Playing = false
-	debug(game.players[event.player_index].name.." Left Game")
+	debug(game.players[event.player_index].name.." left game")
 end)
 
 -- game event hooks
@@ -207,9 +209,9 @@ script.on_event(defines.events.on_tick, function(event)
 			end
 		end
 	end
-	for k,v in pairs(global.players) do
-		if v.State_Stats_GUI and v.Alive and v.Playing then
-			if event.tick%(60*v.Stats_GUI_Freq)==1 then
+	if event.tick%(60*1)==1 then
+		for k,v in pairs(global.players) do
+			if v.State_Stats_GUI and v.Alive and v.Playing then
 			local player = game.players[v.PlayerID]
 				gui_1.closeGUI(player, v.PlayerID)
 				gui_1.openGui(player, v.PlayerID)
@@ -222,7 +224,6 @@ end)
 script.on_event("DyWorld_Stats", function(event)
 	local player = game.players[event.player_index]
 	gui_1.closeGUI(player, event.player_index)
-	global.players[event.player_index].Stats_GUI_Freq = settings.player["DyWorld_User_Tick_Stat_GUI"].value
 	if global.players[event.player_index].State_Stats_GUI then
 		global.players[event.player_index].State_Stats_GUI = false
 		gui_1.closeGUI(player, event.player_index)
@@ -270,3 +271,18 @@ script.on_event("DyWorld_Debug_LOG", function(event)
 		--game.write_file("DyWorld/Debug/Techs.txt", tostring(global.DyWorld_Debug.Tech))
 	end
 end)
+
+--remote calls
+remote.add_interface("DyWorld",
+{  
+	Debug_Items = function()
+		game.players[1].insert{name="dyworld-debug-armor",count=1}
+		game.players[1].insert{name="dyworld-debug-axe",count=1000}
+		game.players[1].insert{name="dyworld-debug-battery-equipment",count=10}
+		game.players[1].insert{name="dyworld-debug-exoskeleton-equipment",count=1}
+		game.players[1].insert{name="dyworld-debug-fusion-equipment",count=10}
+		game.players[1].insert{name="dyworld-debug-laser-defense-equipment",count=1}
+		game.players[1].insert{name="dyworld-debug-roboport-equipment",count=1}
+		game.players[1].insert{name="dyworld-debug-shield-equipment",count=10}
+	end
+})

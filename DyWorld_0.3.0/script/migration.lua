@@ -34,7 +34,6 @@ function Migrate_To_Next_Version()
 			v.Level = 0
 			v.XP = 0
 			v.XP_LevelUp = 100
-			v.Stats_GUI_Freq = 1
 			v.Food = 100
 			v.Food_Max = 100
 			v.Food_Use = 1

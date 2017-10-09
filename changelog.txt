@@ -9,6 +9,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] Fixed Level up when player wasnt playing on server but still leveled up.
 [*] Fixed getting XP when everybody gets XP, even dead players. Now only those alive get XP
 [*] Added back intermediates, with new ones!!!
+[*] Fixed advanced steel axe research cluttering the technology screen
 [/list]
 
 [b]DyWorld 0.3.0: [/b]

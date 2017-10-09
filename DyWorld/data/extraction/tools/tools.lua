@@ -2,7 +2,7 @@ require "data/prefix"
 
 local Data_Table_Looped = {
 	{
-		Name = "mining-tool",
+		Name = "mining-tool-",
 		Icon = "__base__/graphics/icons/iron-axe.png",
 		Tech_Icon = "__base__/graphics/technology/steel-processing.png",
 		Recipe = true,

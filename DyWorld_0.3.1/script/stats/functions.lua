@@ -46,25 +46,33 @@ end
 
 function XP_All_Small()
 	for k,v in pairs(global.players) do
-		if not v.XP then 
-			v.XP = 0.1 
-		else
-			v.XP = v.XP + 0.1
-			global.dyworld.XP = global.dyworld.XP + 0.1
+		if v.Alive then
+			if not v.XP then 
+				v.XP = 0.1 
+			else
+				v.XP = v.XP + 0.1
+				global.dyworld.XP = global.dyworld.XP + 0.1
+			end
+			if v.Playing then
+				Level_Up(v.PlayerID)
+			end
 		end
-		Level_Up(v.PlayerID)
 	end
 end
 
 function XP_All_Full()
 	for k,v in pairs(global.players) do
-		if not v.XP then 
-			v.XP = 1 
-		else
-			v.XP = v.XP + 1
-			global.dyworld.XP = global.dyworld.XP + 1
+		if v.Alive then
+			if not v.XP then 
+				v.XP = 1 
+			else
+				v.XP = v.XP + 1
+				global.dyworld.XP = global.dyworld.XP + 1
+			end
+			if v.Playing then
+				Level_Up(v.PlayerID)
+			end
 		end
-		Level_Up(v.PlayerID)
 	end
 end
 

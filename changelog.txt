@@ -1,0 +1,30 @@
+[size=200]Changelog:[/size]
+Changelog as of: October 8th 2017, 11:00 UTC(+1, DST)
+
+[b]DyWorld 0.3.1: [/b]
+Released October 8th 2017, 11:00 UTC(+1, DST)
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
+[list]
+[*] Fixed Level up when player wasnt playing on server but still leveled up.
+[*] Fixed getting XP when everybody gets XP, even dead players. Now only those alive get XP
+[/list]
+
+[b]DyWorld 0.3.0: [/b]
+Released October 8th 2017, 11:00 UTC(+1, DST)
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
+[list]
+[*] Completely new setup and rewrite
+[*] Improved Statistics and Level window
+[*] New level mechanic. still in WIP state, but will be used for unlocks, bonuses and more
+[*] Needs system. Still under construction, but working already a bit (at least the losing hunger and thirst stats) Currently off normally, since doenst add any gameplay yet that works like it should
+[*] Tiered Entites and Items: because of the rewrite, i changed the setup how this is done. It is still in its early stages, but works fine. It adds 9 tiers of multiple machines and items with technologies and graphicals automatically. Currently supported: Assembling Machines, Solar Panels, Accumulators, Logistics Bots, Construction Bots, Mining Tools. (recipes are currently not good. Will be fixed in 0.3.1 update!)
+[*] Added a distance window. This works with the map tags you make on the map screen, but also helps you find the shipwrecks
+[*] Shipwrecks are now closed but way more random. One can be close to you, while other 2 are 500 meters away.
+[*] loads of changes in the scripts to make everything more fluent. Including, but not limited to, refreshing stats window (every sec), better calculations and much more
+[*] First basic items of the needs system. they are of no use yet!
+[*] probably more, but working on this over the course of 4 months every now and then :) 
+[/list]
+
+[b] All released before 0.3.0 have no changelog anymore, since too much has changed! [/b]

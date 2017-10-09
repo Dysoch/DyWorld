@@ -83,23 +83,19 @@ function openGui(player, id)
 	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_guile", (global.players[id].mystical.guile)}}
 	frameflow2.add{type = "label", caption = {"dyworld_stats_gui.body_knowledge", (global.players[id].mystical.knowledge)}}
 	-- labels for stats_3
-	if global.players[id].Level >= 5 then 
-		frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3", (game.players[id].name)}}
-		if debug_test then
-			frameflow3.add{type = "label", caption = "Health: 100000 + "..game.players[id].character_health_bonus}
-		else
-			frameflow3.add{type = "label", caption = "Health: 250 + "..game.players[id].character_health_bonus}
-		end
-		frameflow3.add{type = "label", caption = "Inventory Slots: 60 + "..game.players[id].character_inventory_slots_bonus}
-		frameflow3.add{type = "label", caption = "Running Speed: "..(game.players[id].character_running_speed_modifier+1)}
-		frameflow3.add{type = "label", caption = "Loot Pickup Range: "..math.floor(game.players[id].character_loot_pickup_distance_bonus+2)}
-		frameflow3.add{type = "label", caption = "Robot Follower Count: "..math.floor(game.players[id].character_maximum_following_robot_count_bonus)}
-		frameflow3.add{type = "label", caption = "Mining Speed: "..(game.players[id].character_mining_speed_modifier+1)}
-		frameflow3.add{type = "label", caption = "Crafting Speed: "..(game.players[id].character_crafting_speed_modifier+1)}
-		frameflow3.add{type = "label", caption = "Reach Distance: "..math.floor(game.players[id].character_reach_distance_bonus)}
-		frameflow3.add{type = "label", caption = "Build Distance: "..math.floor(game.players[id].character_build_distance_bonus)}
-		frameflow3.add{type = "label", caption = "Resource Reach Distance: "..math.floor(game.players[id].character_resource_reach_distance_bonus)}
+	frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3", (game.players[id].name)}}
+	if debug_test then
+		frameflow3.add{type = "label", caption = "Health: 100000 + "..game.players[id].character_health_bonus}
 	else
-		frameflow3.add{type = "label", caption = {"dyworld.gui-lowlevel", (5)}}
+		frameflow3.add{type = "label", caption = "Health: 250 + "..game.players[id].character_health_bonus}
 	end
+	frameflow3.add{type = "label", caption = "Inventory Slots: 60 + "..game.players[id].character_inventory_slots_bonus}
+	frameflow3.add{type = "label", caption = "Running Speed: "..(game.players[id].character_running_speed_modifier+1)}
+	frameflow3.add{type = "label", caption = "Loot Pickup Range: "..math.floor(game.players[id].character_loot_pickup_distance_bonus+2)}
+	frameflow3.add{type = "label", caption = "Robot Follower Count: "..math.floor(game.players[id].character_maximum_following_robot_count_bonus)}
+	frameflow3.add{type = "label", caption = "Mining Speed: "..(game.players[id].character_mining_speed_modifier+1)}
+	frameflow3.add{type = "label", caption = "Crafting Speed: "..(game.players[id].character_crafting_speed_modifier+1)}
+	frameflow3.add{type = "label", caption = "Reach Distance: "..math.floor(game.players[id].character_reach_distance_bonus)}
+	frameflow3.add{type = "label", caption = "Build Distance: "..math.floor(game.players[id].character_build_distance_bonus)}
+	frameflow3.add{type = "label", caption = "Resource Reach Distance: "..math.floor(game.players[id].character_resource_reach_distance_bonus)}
 end

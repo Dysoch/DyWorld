@@ -61,6 +61,9 @@ function Migrate_To_Next_Version()
 		debug({"dyworld.new-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.3.0" then
+		for k,v in pairs(global.players) do
+			v.Level = v.Level + 1
+		end
 		global.dyworld.Version = "0.3.1" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 		debug({"dyworld.new-version", (global.dyworld.Version)})

@@ -10,6 +10,11 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] Fixed getting XP when everybody gets XP, even dead players. Now only those alive get XP
 [*] Added back intermediates, with new ones!!!
 [*] Fixed advanced steel axe research cluttering the technology screen
+[*] Level System: Starting level is now level 1
+[*] Level System: leveling is now slower. XP needed for level 2 is now between 100 and 200 instead of 100 (its randomized at the moment of your characters creation (aka joining or starting game)
+[*] Level System: XP needed for next level is now random. Somewhere between 125% and 225% of previous level. No 2 levels are the same increase or 2 games are the same
+[*] Bonuses: Now available from the start instead of level 5
+[*] Bonuses: Crafting speed bonus increases much slower
 [/list]
 
 [b]DyWorld 0.3.0: [/b]

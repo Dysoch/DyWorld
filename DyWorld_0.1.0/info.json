@@ -1,9 +1,0 @@
-{
-	"name": "DyWorld",
-	"version": "0.1.0",
-	"factorio_version": "0.15",
-	"title": "DyWorld",
-	"author": "Dysoch",
-	"description": "CURRENTLY IN ALPHA!!!! DyWorld, the spiritual successor of DyTech. Added features are intensive, but mainly adding a RPG style element to the game, with a nice background story.",
-	"dependencies": ["base"]
-}

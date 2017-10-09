@@ -35,5 +35,7 @@ if settings.startup["DyWorld_Warfare"].value then
 end
 
 for k,v in pairs(data.raw.unit) do
-	v.loot = {}
+	if not v.loot then
+		v.loot = {}
+	end
 end

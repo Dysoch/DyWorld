@@ -32,6 +32,9 @@ function DyWorld_Recipe(DATA, NMB)
 			end
 		end		
 	end
+	if DATA.Recipe_Category then
+		result.category = DATA.Recipe_Category
+	end
   return result
 end
 

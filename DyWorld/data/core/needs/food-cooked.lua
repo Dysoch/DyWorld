@@ -35,8 +35,5 @@ data:extend(
 		{
 			DyWorld_Recipe(v),
 		})
-		--for _,z in pairs(v.Recipe_Ingredients) do
-			--table.insert(data.raw.recipe[v.Name].ingredients,z)
-		--end
 	end
 end

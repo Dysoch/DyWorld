@@ -8,6 +8,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [list]
 [*] Fixed Level up when player wasnt playing on server but still leveled up.
 [*] Fixed getting XP when everybody gets XP, even dead players. Now only those alive get XP
+[*] Added back intermediates, with new ones!!!
 [/list]
 
 [b]DyWorld 0.3.0: [/b]

@@ -4,26 +4,21 @@ function DyWorld_Recipe(DATA, NMB)
   local result =
   {
     type = "recipe",
-    name = dyworld_prefix..DATA.Name,
+    name = dy..DATA.Name,
     energy_required = DATA.Recipe_Craft_Time,
 	enabled = DATA.Recipe_Without_Tech,
     ingredients = {},
-    result = dyworld_prefix..DATA.Name,
+    result = dy..DATA.Name,
     result_count = DATA.Recipe_Results_Count,
   }
 	if NMB then
-		result.name = dyworld_prefix..DATA.Name..tostring(NMB)
-		result.result = dyworld_prefix..DATA.Name..tostring(NMB)
+		result.name = dy..DATA.Name..tostring(NMB)
+		result.result = dy..DATA.Name..tostring(NMB)
 		result.energy_required = DATA.Recipe_Craft_Time * NMB
-		if DATA.Recipe_Ingredients then
-			for _,z in pairs(DATA.Recipe_Ingredients) do
-				table.insert(result.ingredients,z)
-			end
-			if NMB == 1 then
-				table.insert(result.ingredients,DATA.Recipe_First_Ingredient)
-			else
-				table.insert(result.ingredients,{dyworld_prefix..DATA.Name..tostring(NMB-1), 1})
-			end
+		if NMB == 1 then
+			table.insert(result.ingredients,DATA.Recipe_First_Ingredient)
+		else
+			table.insert(result.ingredients,{dy..DATA.Name..tostring(NMB-1), 1})
 		end
 	else 
 		if DATA.Recipe_Ingredients then
@@ -42,9 +37,9 @@ function DyWorld_Item(DATA, NMB)
   local result =
   {
     type = "item",
-    name = dyworld_prefix..DATA.Name,
+    name = dy..DATA.Name,
     flags = {"goes-to-quickbar"},
-    subgroup = dyworld_prefix..DATA.Subgroup,
+    subgroup = dy..DATA.Subgroup,
     order = DATA.Name,
     stack_size = DATA.Stack or 200,
   }
@@ -54,7 +49,7 @@ function DyWorld_Item(DATA, NMB)
 		result.flags = {"goes-to-main-inventory"}
 	end
 	if NMB then
-		result.name = dyworld_prefix..DATA.Name..tostring(NMB)
+		result.name = dy..DATA.Name..tostring(NMB)
 		result.localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))}
 		result.order = DATA.Name..tostring(NMB)
 		result.icons = {{
@@ -66,9 +61,9 @@ function DyWorld_Item(DATA, NMB)
 	end
 	if DATA.Entity then
 		if NMB then
-			result.place_result = dyworld_prefix..DATA.Name..tostring(NMB)
+			result.place_result = dy..DATA.Name..tostring(NMB)
 		else
-			result.place_result = dyworld_prefix..DATA.Name
+			result.place_result = dy..DATA.Name
 		end
 	end
   return result
@@ -78,7 +73,7 @@ function DyWorld_Fluid(DATA)
   local result =
   {
     type = "fluid",
-    name = dyworld_prefix..DATA.Name,
+    name = dy..DATA.Name,
     icon = DATA.Icon,
     default_temperature = DATA.Def_Temp,
     max_temperature = DATA.Max_Temp,
@@ -107,7 +102,7 @@ function DyWorld_Technology(DATA, NMB)
   local result =
   {
     type = "technology",
-    name = dyworld_prefix..DATA.Name,
+    name = dy..DATA.Name,
     effects =
     {
     },
@@ -121,28 +116,28 @@ function DyWorld_Technology(DATA, NMB)
       time = DATA.Tech_Time
     },
     upgrade = true,
-    order = dyworld_prefix..DATA.Name,
+    order = dy..DATA.Name,
   }
 	if NMB then
-		result.name = dyworld_prefix..DATA.Name..tostring(NMB)
-		result.order = dyworld_prefix..DATA.Name..tostring(NMB)
+		result.name = dy..DATA.Name..tostring(NMB)
+		result.order = dy..DATA.Name..tostring(NMB)
 		result.localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))}
 		result.order = DATA.Name..tostring(NMB)
 		result.icons = {{
 			icon = DATA.Tech_Icon,
 			tint = Color_Tier[NMB]
 		}}
-		result.effects = {{type = "unlock-recipe", recipe = dyworld_prefix..DATA.Name..tostring(NMB)}}
+		result.effects = {{type = "unlock-recipe", recipe = dy..DATA.Name..tostring(NMB)}}
 		if DATA.Tech_PreReq then
 			if NMB == 1 then
 				result.prerequisites = {DATA.Tech_PreReq}
 			else
-				result.prerequisites = {dyworld_prefix..DATA.Name..tostring(NMB-1)}
+				result.prerequisites = {dy..DATA.Name..tostring(NMB-1)}
 			end
 		end
 	else 
 		result.icon = DATA.Tech_Icon
-		result.effects = {{type = "unlock-recipe", recipe = dyworld_prefix..DATA.Name}}
+		result.effects = {{type = "unlock-recipe", recipe = dy..DATA.Name}}
 		if DATA.Tech_PreReq then
 			result.prerequisites = {DATA.Tech_PreReq}
 		end
@@ -159,7 +154,7 @@ function DyWorld_Mining_Tool(DATA, NMB)
   local result =
   {
     type = "mining-tool",
-	name = dyworld_prefix..DATA.Name..tostring(NMB),
+	name = dy..DATA.Name..tostring(NMB),
 	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
 	icons = 
 	{
@@ -183,8 +178,8 @@ function DyWorld_Mining_Tool(DATA, NMB)
       }
     },
     durability = DATA.Durability*NMB,
-    subgroup = dyworld_prefix.."tools",
-    order = dyworld_prefix..DATA.Name..tostring(NMB),
+    subgroup = dy.."tools",
+    order = dy..DATA.Name..tostring(NMB),
     speed = DATA.Speed*NMB,
     stack_size = DATA.Stack or 200,
   }
@@ -195,7 +190,7 @@ function DyWorld_Projectile_1(DATA, NMB)
 	local result =
   {
     type = "projectile",
-    name = dyworld_prefix..DATA.Name,
+    name = dy..DATA.Name,
     flags = {"not-on-map"},
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0,
@@ -224,11 +219,11 @@ function DyWorld_Projectile_1(DATA, NMB)
 	}
   }
 	if NMB then
-		result.name = dyworld_prefix..DATA.Name..NMB
+		result.name = dy..DATA.Name..NMB
 		result.action.action_delivery.target_effects.damage = {amount = (DATA.Dmg_Mod * NMB), type = DATA.DmgType}
 	end
 	if DATA.Piercing then
-		result.name = dyworld_prefix..DATA.Name.."piercing-"..NMB
+		result.name = dy..DATA.Name.."piercing-"..NMB
 		result.piercing_damage = (DATA.Dmg_Mod * NMB)
 	end
 	return result
@@ -238,7 +233,7 @@ function DyWorld_Projectile_2(DATA, NMB)
 	local result =
   {
     type = "projectile",
-    name = dyworld_prefix..DATA.Name,
+    name = dy..DATA.Name,
     flags = {"not-on-map"},
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0.05,
@@ -275,11 +270,11 @@ function DyWorld_Projectile_2(DATA, NMB)
     },
   }
 	if NMB then
-		result.name = dyworld_prefix..DATA.Name..NMB
+		result.name = dy..DATA.Name..NMB
 		result.action.action_delivery.target_effects[2].damage = {amount = (DATA.Dmg_Mod * NMB), type = DATA.DmgType}
 	end
 	if DATA.Piercing then
-		result.name = dyworld_prefix..DATA.Name.."piercing-"..NMB
+		result.name = dy..DATA.Name.."piercing-"..NMB
 		result.piercing_damage = (DATA.Dmg_Mod * NMB)
 	end
   return result
@@ -289,7 +284,7 @@ function DyWorld_Entity_Solar_Panels(DATA, NMB)
   local result =
   {
     type = "solar-panel",
-    name = dyworld_prefix..DATA.Name..tostring(NMB),
+    name = dy..DATA.Name..tostring(NMB),
 	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
     icons =
 	{
@@ -299,7 +294,7 @@ function DyWorld_Entity_Solar_Panels(DATA, NMB)
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = (0.2*NMB), mining_time = (0.5*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    minable = {hardness = (0.2*NMB), mining_time = (0.5*NMB), result = dy..DATA.Name..tostring(NMB)},
     max_health = DATA.Health*NMB,
     corpse = "big-remnants",
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
@@ -327,7 +322,7 @@ function DyWorld_Entity_Furnace_Burner(DATA, NMB)
   local result =
   {
     type = "furnace",
-    name = dyworld_prefix..DATA.Name..tostring(NMB),
+    name = dy..DATA.Name..tostring(NMB),
 	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
     icons =
 	{
@@ -337,7 +332,7 @@ function DyWorld_Entity_Furnace_Burner(DATA, NMB)
 	  },
 	},
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = (0.5*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    minable = {mining_time = (0.5*NMB), result = dy..DATA.Name..tostring(NMB)},
     max_health = (DATA.Health*NMB),
     corpse = "medium-remnants",
     repair_sound = { filename = "__base__/sound/manual-repair-simple.ogg" },
@@ -477,7 +472,7 @@ function DyWorld_Entity_Furnace_Electric(DATA, NMB)
   local result =
   {
     type = "furnace",
-    name = dyworld_prefix..DATA.Name..tostring(NMB),
+    name = dy..DATA.Name..tostring(NMB),
 	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
     icons =
 	{
@@ -487,7 +482,7 @@ function DyWorld_Entity_Furnace_Electric(DATA, NMB)
 	  },
 	},
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = (0.5*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    minable = {mining_time = (0.5*NMB), result = dy..DATA.Name..tostring(NMB)},
     max_health = (DATA.Health*NMB),
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -587,7 +582,7 @@ function DyWorld_Entity_Assembling_Electric(DATA, NMB)
   local result =
   {
     type = "assembling-machine",
-    name = dyworld_prefix..DATA.Name..tostring(NMB),
+    name = dy..DATA.Name..tostring(NMB),
 	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
     icons =
 	{
@@ -597,7 +592,7 @@ function DyWorld_Entity_Assembling_Electric(DATA, NMB)
 	  },
 	},
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = (0.2*NMB), mining_time = (0.5*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    minable = {hardness = (0.2*NMB), mining_time = (0.5*NMB), result = dy..DATA.Name..tostring(NMB)},
     max_health = (DATA.Health*NMB),
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -721,7 +716,7 @@ function DyWorld_Entity_Accumulators(DATA, NMB)
   local result =
   {
     type = "accumulator",
-    name = dyworld_prefix..DATA.Name..tostring(NMB),
+    name = dy..DATA.Name..tostring(NMB),
 	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
     icons =
 	{
@@ -731,7 +726,7 @@ function DyWorld_Entity_Accumulators(DATA, NMB)
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = (0.2*NMB), mining_time = (0.5*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    minable = {hardness = (0.2*NMB), mining_time = (0.5*NMB), result = dy..DATA.Name..tostring(NMB)},
     max_health = (DATA.Health*NMB),
     corpse = "medium-remnants",
     collision_box = {{-0.9, -0.9}, {0.9, 0.9}},
@@ -816,7 +811,7 @@ function DyWorld_Entity_Construction_Robot(DATA, NMB)
   local result =
   {
     type = "construction-robot",
-    name = dyworld_prefix..DATA.Name..tostring(NMB),
+    name = dy..DATA.Name..tostring(NMB),
 	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
     icons =
 	{
@@ -826,7 +821,7 @@ function DyWorld_Entity_Construction_Robot(DATA, NMB)
 	  },
 	},
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {hardness = (0.1*NMB), mining_time = (0.1*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    minable = {hardness = (0.1*NMB), mining_time = (0.1*NMB), result = dy..DATA.Name..tostring(NMB)},
     max_health = (DATA.Health*NMB),
     resistances = { { type = "fire", percent = 85 } },
     collision_box = {{0, 0}, {0, 0}},
@@ -1002,7 +997,7 @@ function DyWorld_Entity_Logistic_Robot(DATA, NMB)
   local result =
   {
     type = "logistic-robot",
-    name = dyworld_prefix..DATA.Name..tostring(NMB),
+    name = dy..DATA.Name..tostring(NMB),
 	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
     icons =
 	{
@@ -1012,7 +1007,7 @@ function DyWorld_Entity_Logistic_Robot(DATA, NMB)
 	  },
 	},
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {hardness = (0.1*NMB), mining_time = (0.1*NMB), result = dyworld_prefix..DATA.Name..tostring(NMB)},
+    minable = {hardness = (0.1*NMB), mining_time = (0.1*NMB), result = dy..DATA.Name..tostring(NMB)},
     max_health = (DATA.Health*NMB),
     resistances = { { type = "fire", percent = 85 } },
     collision_box = {{0, 0}, {0, 0}},

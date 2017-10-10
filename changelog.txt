@@ -15,6 +15,8 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] Level System: XP needed for next level is now random. Somewhere between 125% and 225% of previous level. No 2 levels are the same increase or 2 games are the same
 [*] Bonuses: Now available from the start instead of level 5
 [*] Bonuses: Crafting speed bonus increases much slower
+[*] Changed the way recipes are handled. This makes it easier to add correct recipes and balance them
+[*] Added in correct recipes for all items and entities
 [/list]
 
 [b]DyWorld 0.3.0: [/b]

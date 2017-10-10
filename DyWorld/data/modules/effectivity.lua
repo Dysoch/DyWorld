@@ -4,7 +4,7 @@ function DyWorld_Module_Effectivity_Item(Level)
   local result =
   {
     type = "module",
-    name = dyworld_prefix.."module-effectivity-"..Level,
+    name = dy.."module-effectivity-"..Level,
 	icons =
 	{
 	  {
@@ -13,7 +13,7 @@ function DyWorld_Module_Effectivity_Item(Level)
 	  }
 	},
     flags = {"goes-to-main-inventory"},
-    subgroup = dyworld_prefix.."module-effectivity",
+    subgroup = dy.."module-effectivity",
     category = "effectivity",
     tier = Level,
     order = (100+Level),
@@ -29,18 +29,24 @@ function DyWorld_Module_Effectivity_Recipe(Level)
   local result =
   {
     type = "recipe",
-    name = dyworld_prefix.."module-effectivity-"..Level,
+    name = dy.."module-effectivity-"..Level,
     enabled = true,
     ingredients =
     {
-      {dyworld_prefix.."module-effectivity-"..(Level-1), 1},
+      {dy.."module-effectivity-"..(Level-1), 1},
       {"advanced-circuit", (5*Level)},
     },
     energy_required = (10+(Level*5)),
-    result = dyworld_prefix.."module-effectivity-"..Level,
+    result = dy.."module-effectivity-"..Level,
   }
   if Level == 1 then
 	result.ingredients = {{"advanced-circuit", 5}, {"electronic-circuit", 5}}
+  elseif Level == 4 or Level == 5 then
+	result.ingredients = {{dy.."module-effectivity-"..(Level-1), 1},{"advanced-circuit", (5*Level)}, {"processing-unit", (4*(Level-3))}}
+  elseif Level == 6 or Level == 7 or Level == 8 then
+	result.ingredients = {{dy.."module-effectivity-"..(Level-1), 1},{"processing-unit", (5*Level)}, {dy.."processing-advanced", (4*(Level-3))}}
+  elseif Level == 9 or Level == 10 then
+	result.ingredients = {{dy.."module-effectivity-"..(Level-1), 1},{dy.."processing-advanced", (5*Level)}, {dy.."processing-logic", (4*(Level-3))}}
   end
   return result
 end

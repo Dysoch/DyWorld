@@ -9,7 +9,6 @@ local Data_Table_Looped = {
 		Recipe_Craft_Time = 5,
 		Recipe_Result_Count = 1,
 		Recipe_First_Ingredient = {"assembling-machine-3", 1},
-		Recipe_Ingredients = {{"advanced-circuit", 5}},
 		Recipe_Without_Tech = false,
 		Tech_Count = 300,
 		Tech_Time = 60,

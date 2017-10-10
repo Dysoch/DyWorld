@@ -51,7 +51,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 4.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{dyworld_prefix.."frame", 1},{"electronic-circuit", 4},{"copper-cable", 9}},
+		Recipe_Ingredients = {{dy.."frame", 1},{"electronic-circuit", 4},{"copper-cable", 9}},
 	},
 	{
 		Name = "blade",
@@ -84,7 +84,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 15,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{dyworld_prefix.."processing-advanced", 4},{"copper-cable", 25},{dyworld_prefix.."crystal", 1}},
+		Recipe_Ingredients = {{dy.."processing-advanced", 4},{"copper-cable", 25},{dy.."crystal", 1}},
 		Tech_Name = "advanced-electronics-2",
 	},
 	{
@@ -96,7 +96,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 10,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"processing-unit", 3},{"advanced-circuit", 1},{dyworld_prefix.."steel-stick", 4},{dyworld_prefix.."binding-steel", 1}}, 
+		Recipe_Ingredients = {{"processing-unit", 3},{"advanced-circuit", 1},{dy.."steel-stick", 4},{dy.."binding-steel", 1}}, 
 		Tech_Name = "advanced-electronics-2",
 	},
 	{
@@ -109,7 +109,7 @@ local Data_Table = {
 		Recipe_Craft_Time = 2,
 		Recipe_Category = "smelting",
 		Recipe_Result_Count = 5,
-		Recipe_Ingredients = {{dyworld_prefix.."sand", 3}},
+		Recipe_Ingredients = {{dy.."sand", 3}},
 	},
 	{
 		Name = "rotor",
@@ -120,7 +120,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 1.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{dyworld_prefix.."blade", 4},{"iron-stick", 2},{"copper-cable",3},{dyworld_prefix.."frame", 1}},
+		Recipe_Ingredients = {{dy.."blade", 4},{"iron-stick", 2},{"copper-cable",3},{dy.."frame", 1}},
 	},
 	{
 		Name = "stone-gear",
@@ -154,7 +154,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 2.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"copper-plate", 8},{dyworld_prefix.."binding-copper", 2},{dyworld_prefix.."steel-stick", 5}},
+		Recipe_Ingredients = {{"copper-plate", 8},{dy.."binding-copper", 2},{dy.."steel-stick", 5}},
 		Tech_Name = "solar-energy",
 	},
 	{
@@ -223,7 +223,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 0.5,
 		Recipe_Result_Count = 4,
-		Recipe_Ingredients = {{dyworld_prefix.."chitin", 2}},
+		Recipe_Ingredients = {{dy.."chitin", 2}},
 	},
 	{
 		Name = "logistic-unit",
@@ -269,7 +269,7 @@ local Data_Table = {
 		Recipe_Craft_Time = 2.5,
 		Recipe_Category = "smelting",
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{dyworld_prefix.."resin", 1}},
+		Recipe_Ingredients = {{dy.."resin", 1}},
 	},
 	{
 		Name = "controller",
@@ -280,7 +280,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 10,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{dyworld_prefix.."housing", 1}, {"iron-plate",3}, {"steel-plate",1}, {"copper-cable",4}, {"advanced-circuit",3}, {"electronic-circuit",5}, {"plastic-bar",3}},
+		Recipe_Ingredients = {{dy.."housing", 1}, {"iron-plate",3}, {"steel-plate",1}, {"copper-cable",4}, {"advanced-circuit",3}, {"electronic-circuit",5}, {"plastic-bar",3}},
 		Tech_Name = "advanced-electronics",
 	},
 	{
@@ -304,7 +304,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 2.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{dyworld_prefix.."housing", 1}, {"iron-plate",3}},
+		Recipe_Ingredients = {{dy.."housing", 1}, {"iron-plate",3}},
 		Tech_Name = "steel-processing",
 	},
 }
@@ -320,7 +320,7 @@ data:extend(
 			DyWorld_Recipe(v),
 		})
 		if not v.Recipe_Without_Tech then
-			local result = {type = "unlock-recipe", recipe = dyworld_prefix..v.Name}
+			local result = {type = "unlock-recipe", recipe = dy..v.Name}
 			table.insert(data.raw.technology[v.Tech_Name].effects,result)
 		end
 	end

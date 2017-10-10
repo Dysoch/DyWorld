@@ -22,12 +22,10 @@ function Migrate_To_Next_Version()
 		end
 		global.dyworld.Version = "0.2.0" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
-		debug({"dyworld.new-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.2.0" then
 		global.dyworld.Version = "0.2.1" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
-		debug({"dyworld.new-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.2.1" then
 		for k,v in pairs(global.players) do
@@ -58,7 +56,6 @@ function Migrate_To_Next_Version()
 		global.dyworld.Generation_Ship_3_PosY = 0
 		global.dyworld.Version = "0.3.0" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
-		debug({"dyworld.new-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.3.0" then
 		for k,v in pairs(global.players) do
@@ -66,6 +63,9 @@ function Migrate_To_Next_Version()
 		end
 		global.dyworld.Version = "0.3.1" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
-		debug({"dyworld.new-version", (global.dyworld.Version)})
+	end
+	if global.dyworld.Version == "0.3.1" then
+		global.dyworld.Version = "0.4.0" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end
 end

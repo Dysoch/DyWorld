@@ -1,8 +1,8 @@
 [size=200]Changelog:[/size]
-Changelog as of: October 8th 2017, 11:00 UTC(+1, DST)
+Changelog as of: October 10th 2017, 11:30 UTC(+1, DST)
 
-[b]DyWorld 0.3.1: [/b]
-Released October 8th 2017, 11:00 UTC(+1, DST)
+[spoiler=DyWorld 0.3.1]
+Released October 10th 2017, 11:30 UTC(+1, DST)
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 
 [list]
@@ -17,9 +17,9 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] Bonuses: Crafting speed bonus increases much slower
 [*] Changed the way recipes are handled. This makes it easier to add correct recipes and balance them
 [*] Added in correct recipes for all items and entities
-[/list]
+[/list][/spoiler]
 
-[b]DyWorld 0.3.0: [/b]
+[spoiler=DyWorld 0.3.0]
 Released October 8th 2017, 11:00 UTC(+1, DST)
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 
@@ -34,6 +34,6 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] loads of changes in the scripts to make everything more fluent. Including, but not limited to, refreshing stats window (every sec), better calculations and much more
 [*] First basic items of the needs system. they are of no use yet!
 [*] probably more, but working on this over the course of 4 months every now and then :) 
-[/list]
+[/list][/spoiler]
 
 [b] All released before 0.3.0 have no changelog anymore, since too much has changed! [/b]

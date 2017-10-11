@@ -95,7 +95,15 @@ function LevelUnlock(ID, LEVEL)
 			for _,player in pairs(game.players) do
 				if not player.force.recipes[data.Recipe].enabled then
 					player.force.recipes[data.Recipe].enabled = true
-					player.print({"dyworld.level-unlock", {"item-name."..data.Recipe}})
+					if data.type == 1 then
+						player.print({"dyworld.level-unlock", {"recipe-name."..data.Recipe}})
+					elseif data.type == 2 then
+						player.print({"dyworld.level-unlock", {"fluid-name."..data.Recipe}})
+					elseif data.type == 3 then
+						player.print({"dyworld.level-unlock", {"entity-name."..data.Recipe}})
+					else
+						player.print({"dyworld.level-unlock", {"item-name."..data.Recipe}})
+					end
 					debug("Unlocked: "..data.Recipe)
 				end
 			end

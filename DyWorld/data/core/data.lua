@@ -28,3 +28,6 @@ require("data.core.needs.food-raw")
 require("data.core.needs.hydration")
 require("data.core.needs.seeds")
 require("data.core.needs.greenhouse")
+
+-- Water System
+require("data.core.water-system.recipes")

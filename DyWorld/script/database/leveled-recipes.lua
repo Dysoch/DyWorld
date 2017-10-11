@@ -5,6 +5,7 @@ RecipeUnlock  =
 	{
 		Recipe = "dyworld-greenhouse", 
 		Level = 2, 
+		type = 3,
 	},
 	{
 		Recipe = "dyworld-sugar", 
@@ -29,6 +30,22 @@ RecipeUnlock  =
 	{
 		Recipe = "centrifuge", 
 		Level = 7, 
+		type = 3,
+	},
+	{
+		Recipe = "dyworld-water-seperation", 
+		Level = 7, 
+		type = 1,
+	},
+	{
+		Recipe = "dyworld-sludge-seperation", 
+		Level = 7, 
+		type = 1,
+	},
+	{
+		Recipe = "dyworld-acid-seperation", 
+		Level = 7, 
+		type = 1,
 	},
 	{
 		Recipe = "piercing-rounds-magazine", 

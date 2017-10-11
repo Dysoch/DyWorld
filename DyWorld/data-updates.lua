@@ -6,6 +6,7 @@ data:extend(
   {
     type = "recipe",
     name = dy.."void-"..v.name,
+	localised_name = {"looped-name.void", "fluid-name."..v.name},
 	icons = {
 	  {
 		icon = v.icon,

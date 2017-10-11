@@ -1,6 +1,14 @@
 [size=200]Changelog:[/size]
 Changelog as of: October 10th 2017, 11:30 UTC(+1, DST)
 
+[spoiler=DyWorld 0.4.0]
+Released October 10th 2017, 11:30 UTC(+1, DST)
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
+[list]
+[*] Added 18 new roboports
+[/list][/spoiler]
+
 [spoiler=DyWorld 0.3.1]
 Released October 10th 2017, 11:30 UTC(+1, DST)
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]

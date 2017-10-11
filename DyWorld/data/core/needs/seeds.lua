@@ -8,9 +8,10 @@ local Data_Table = {
 		Subgroup = "seeds",
 		Stack = 200,
 		Recipe = true,
-		Recipe_Without_Tech = true,
-		Recipe_Craft_Time = 30,
-		Recipe_Result_Count = 1,
+		Recipe_Ingredients = {{dy.."wheat", 1}},
+		Recipe_Without_Tech = false,
+		Recipe_Craft_Time = 1,
+		Recipe_Result_Count = 5,
 	},
 }
 

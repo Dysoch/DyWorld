@@ -27,6 +27,8 @@ local Recipe_Table = {
 
 for k,v in pairs(Recipe_Table) do
 	for _,z in pairs(v) do
-		table.insert(data.raw.recipe[k].ingredients,z)	
+		if data.raw.recipe[k] then
+			table.insert(data.raw.recipe[k].ingredients,z)	
+		end
 	end
 end

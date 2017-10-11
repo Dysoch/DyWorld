@@ -3,6 +3,34 @@ module("LvLed_Recipes", package.seeall)
 RecipeUnlock  = 
 {
 	{
+		Recipe = "dyworld-greenhouse", 
+		Level = 2, 
+	},
+	{
+		Recipe = "dyworld-sugar", 
+		Level = 6, 
+	},
+	{
+		Recipe = "dyworld-flour", 
+		Level = 5, 
+	},
+	{
+		Recipe = "dyworld-bread", 
+		Level = 5, 
+	},
+	{
+		Recipe = "dyworld-wheat", 
+		Level = 4, 
+	},
+	{
+		Recipe = "dyworld-carrot", 
+		Level = 3, 
+	},
+	{
+		Recipe = "centrifuge", 
+		Level = 7, 
+	},
+	{
 		Recipe = "piercing-rounds-magazine", 
 		Level = 10, 
 	},

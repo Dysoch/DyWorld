@@ -47,6 +47,7 @@ function startup(PLAYER, ID)
 	debug("Starting Startup")
 	if not global.stats then global.stats = {} debug("Created global.stats") end
 	global.dyworld.Players = global.dyworld.Players + 1
+	global.dyworld.Level = global.dyworld.Level + 1
 	--Prototype()
 	if not global.players then
 	debug("No global.players, creating new one")

@@ -72,6 +72,11 @@ Data_Table_Item_Group = {
 		Main = "machines"
 	},
 	{
+		Name = "assembling-special",
+		Type = "sub",
+		Main = "machines"
+	},
+	{
 		Name = "furnace-burner",
 		Type = "sub",
 		Main = "machines"
@@ -152,7 +157,12 @@ Data_Table_Item_Group = {
 		Main = "warfare"
 	},
 	{
-		Name = "roboport",
+		Name = "roboport-construction",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "roboport-logistic",
 		Type = "sub",
 		Main = "logistics"
 	},
@@ -242,10 +252,10 @@ function DyWorld_Item_Main_Group(NAME, ICON)
   local result =
   {
     type = "item-group",
-    name = dyworld_prefix..NAME,
+    name = dy..NAME,
     icon = dyworld_path_item_group..ICON,
     icon_size = 64,
-    order = "z-"..dyworld_prefix..NAME,
+    order = "z-"..dy..NAME,
   }
   return result
 end
@@ -254,9 +264,9 @@ function DyWorld_Item_Sub_Group(NAME, MAIN)
   local result =
   {
     type = "item-subgroup",
-    name = dyworld_prefix..NAME,
-    group = dyworld_prefix..MAIN,
-    order = dyworld_prefix..NAME
+    name = dy..NAME,
+    group = dy..MAIN,
+    order = dy..NAME
   }
   return result
 end

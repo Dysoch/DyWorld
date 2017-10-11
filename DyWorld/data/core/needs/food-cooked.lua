@@ -8,7 +8,7 @@ local Data_Table = {
 		Subgroup = "food-cooked",
 		Stack = 200,
 		Recipe = true,
-		Recipe_Without_Tech = true,
+		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 30,
 		Recipe_Result_Count = 1,
 	},
@@ -20,8 +20,10 @@ local Data_Table = {
 		Stack = 200,
 		Recipe = true,
 		Recipe_Without_Tech = true,
-		Recipe_Craft_Time = 30,
-		Recipe_Result_Count = 1,
+		Recipe_Craft_Time = 1,
+		Recipe_Category = "smelting",
+		Recipe_Ingredients = {{"raw-fish", 1}},
+		Recipe_Result_Count = 2,
 	},
 }
 

@@ -7,6 +7,8 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 
 [list]
 [*] Added 18 new roboports
+[*] Added fluid void recipes for all fluids (including other mods)
+[*] Changed centrifuge. Now available earlier and cheaper so you can use it for the new recipes
 [/list][/spoiler]
 
 [spoiler=DyWorld 0.3.1]

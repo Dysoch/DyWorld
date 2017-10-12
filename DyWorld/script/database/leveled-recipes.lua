@@ -8,6 +8,14 @@ RecipeUnlock  =
 		type = 3,
 	},
 	{
+		Recipe = "dyworld-wood-creation-1", 
+		Level = 2, 
+	},
+	{
+		Recipe = "dyworld-wood-creation-2", 
+		Level = 9, 
+	},
+	{
 		Recipe = "dyworld-sugar", 
 		Level = 6, 
 	},
@@ -21,6 +29,10 @@ RecipeUnlock  =
 	},
 	{
 		Recipe = "dyworld-wheat", 
+		Level = 4, 
+	},
+	{
+		Recipe = "dyworld-wheat-seed", 
 		Level = 4, 
 	},
 	{
@@ -46,6 +58,19 @@ RecipeUnlock  =
 		Recipe = "dyworld-acid-seperation", 
 		Level = 7, 
 		type = 1,
+	},
+	{
+		Recipe = "dyworld-fertilizer-seperation", 
+		Level = 7, 
+		type = 1,
+	},
+	{
+		Recipe = "dyworld-wheat-farming-2", 
+		Level = 9, 
+	},
+	{
+		Recipe = "dyworld-carrot-farming-2", 
+		Level = 9, 
 	},
 	{
 		Recipe = "piercing-rounds-magazine", 

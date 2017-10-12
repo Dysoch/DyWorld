@@ -27,7 +27,9 @@ require("data.core.needs.food-cooked")
 require("data.core.needs.food-raw")
 require("data.core.needs.hydration")
 require("data.core.needs.seeds")
+require("data.core.needs.wood")
 require("data.core.needs.greenhouse")
+require("data.core.needs.farm-recipes")
 
 -- Water System
 require("data.core.water-system.recipes")

@@ -38,9 +38,9 @@ data:extend(
     },
     results=
     {
-      {type = "item", name = "stone", amount = 4},
-      {type = "item", name = "iron-ore", amount = 1},
-      {type = "item", name = "copper-ore", amount = 1},
+      {type = "item", name = "stone", amount_min = 1, amount_max = 4, probability = 1},
+      {type = "item", name = "iron-ore", amount_min = 1, amount_max = 2, probability = 0.6},
+      {type = "item", name = "copper-ore", amount_min = 1, amount_max = 1, probability = 0.4},
     },
     subgroup = "fluid-recipes",
     order = dy.."sludge-seperation",
@@ -62,5 +62,24 @@ data:extend(
     },
     subgroup = "fluid-recipes",
     order = dy.."acid-seperation",
+  },
+  {
+    type = "recipe",
+    name = dy.."fertilizer-seperation",
+	icon = dyworld_path_icon_temp,
+    category = "centrifuging",
+    energy_required = 5,
+	enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = dy.."sewage", amount = 250},
+    },
+    results=
+    {
+      {type = "fluid", name = dy.."fertilized-water", amount = 100},
+      {type = "fluid", name = dy.."sludge", amount = 150},
+    },
+    subgroup = "fluid-recipes",
+    order = dy.."fertilizer-seperation",
   },
 })

@@ -11,7 +11,7 @@ data:extend(
     ingredients =
     {
       {type = "fluid", name = "water", amount = 10},
-      {type = "fluid", name = dy.."wood-seed", amount = 1},
+      {type = "item", name = dy.."wood-seed", amount = 1},
     },
     result = "raw-wood",
 	result_count = 3,
@@ -25,7 +25,7 @@ data:extend(
     ingredients =
     {
       {type = "fluid", name = dy.."fertilized-water", amount = 10},
-      {type = "fluid", name = dy.."wood-seed", amount = 1},
+      {type = "item", name = dy.."wood-seed", amount = 1},
     },
     result = "raw-wood",
 	result_count = 5,

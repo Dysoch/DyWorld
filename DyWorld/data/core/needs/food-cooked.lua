@@ -3,7 +3,7 @@ require "data/prefix"
 local Data_Table = {
 	{
 		Name = "bread",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."bread.png",
 		Item_Place = nil,
 		Subgroup = "food-cooked",
 		Stack = 200,
@@ -14,7 +14,7 @@ local Data_Table = {
 	},
 	{
 		Name = "fish",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."fish.png",
 		Item_Place = nil,
 		Subgroup = "food-cooked",
 		Stack = 200,

@@ -11,7 +11,7 @@ data:extend(
     ingredients =
     {
       {type = "fluid", name = dy.."fertilized-water", amount = 10},
-      {type = "fluid", name = dy.."wheat-seed", amount = 1},
+      {type = "item", name = dy.."wheat-seed", amount = 1},
     },
     result = dy.."wheat",
 	result_count = 5,
@@ -25,7 +25,7 @@ data:extend(
     ingredients =
     {
       {type = "fluid", name = dy.."fertilized-water", amount = 10},
-      {type = "fluid", name = dy.."carrot", amount = 1},
+      {type = "item", name = dy.."carrot", amount = 1},
     },
     result = dy.."carrot",
 	result_count = 4,

@@ -21,13 +21,13 @@ local Data_Table = {
 	},
 	{
 		Name = "obsidian",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."obsidian.png",
 		Stack = 50,
 		Subgroup = "intermediates",
 	},
 	{
 		Name = "sand",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."sand.png",
 		Stack = 500,
 		Subgroup = "intermediates",
 	},
@@ -159,7 +159,7 @@ local Data_Table = {
 	},
 	{
 		Name = "battery-pack",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."battery-pack.png",
 		Stack = 50,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -170,7 +170,7 @@ local Data_Table = {
 	},
 	{
 		Name = "steel-stick",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."steel-stick.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -182,7 +182,7 @@ local Data_Table = {
 	},
 	{
 		Name = "stone-stick",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."stone-stick.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -193,7 +193,7 @@ local Data_Table = {
 	},
 	{
 		Name = "binding-copper",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."binding-copper.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -204,7 +204,7 @@ local Data_Table = {
 	},
 	{
 		Name = "binding-iron",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."binding-iron.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -215,7 +215,7 @@ local Data_Table = {
 	},
 	{
 		Name = "binding-steel",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."binding-steel.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -227,7 +227,7 @@ local Data_Table = {
 	},
 	{
 		Name = "binding-chitin",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."binding-chitin.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -238,7 +238,7 @@ local Data_Table = {
 	},
 	{
 		Name = "logistic-unit",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."logistic-unit.png",
 		Stack = 50,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -250,7 +250,7 @@ local Data_Table = {
 	},
 	{
 		Name = "wood-stick",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."wood-stick.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -261,7 +261,7 @@ local Data_Table = {
 	},
 	{
 		Name = "resin",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."resin.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -272,7 +272,7 @@ local Data_Table = {
 	},
 	{
 		Name = "rubber",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."rubber.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -284,7 +284,7 @@ local Data_Table = {
 	},
 	{
 		Name = "controller",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."controller.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -296,7 +296,7 @@ local Data_Table = {
 	},
 	{
 		Name = "housing",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."housing.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -308,7 +308,7 @@ local Data_Table = {
 	},
 	{
 		Name = "intake",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."intake.png",
 		Stack = 200,
 		Subgroup = "intermediates",
 		Recipe = true,
@@ -317,6 +317,12 @@ local Data_Table = {
 		Recipe_Result_Count = 1,
 		Recipe_Ingredients = {{dy.."housing", 1}, {"iron-plate",3}},
 		Tech_Name = "steel-processing",
+	},
+	{
+		Name = "wood-seed",
+		Icon = dyworld_path_icon.."intake.png",
+		Stack = 200,
+		Subgroup = "intermediates",
 	},
 }
 

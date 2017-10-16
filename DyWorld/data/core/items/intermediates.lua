@@ -318,12 +318,6 @@ local Data_Table = {
 		Recipe_Ingredients = {{dy.."housing", 1}, {"iron-plate",3}},
 		Tech_Name = "steel-processing",
 	},
-	{
-		Name = "wood-seed",
-		Icon = dyworld_path_icon.."intake.png",
-		Stack = 200,
-		Subgroup = "intermediates",
-	},
 }
 
 for k,v in pairs(Data_Table) do

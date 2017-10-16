@@ -13,6 +13,18 @@ local Data_Table = {
 		Recipe_Craft_Time = 1,
 		Recipe_Result_Count = 5,
 	},
+	{
+		Name = "wood-seed",
+		Icon = dyworld_path_icon_temp,
+		Item_Place = nil,
+		Subgroup = "seeds",
+		Stack = 200,
+		Recipe = true,
+		Recipe_Ingredients = {{"raw-wood", 1}},
+		Recipe_Without_Tech = false,
+		Recipe_Craft_Time = 1,
+		Recipe_Result_Count = 3,
+	},
 }
 
 for k,v in pairs(Data_Table) do

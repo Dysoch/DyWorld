@@ -12,6 +12,10 @@ RecipeUnlock  =
 		Level = 2, 
 	},
 	{
+		Recipe = "dyworld-wood-seed", 
+		Level = 2, 
+	},
+	{
 		Recipe = "dyworld-wood-creation-2", 
 		Level = 9, 
 	},
@@ -61,6 +65,16 @@ RecipeUnlock  =
 	},
 	{
 		Recipe = "dyworld-fertilizer-seperation", 
+		Level = 7, 
+		type = 1,
+	},
+	{
+		Recipe = "dyworld-basic-clean-oil-processing", 
+		Level = 7, 
+		type = 1,
+	},
+	{
+		Recipe = "dyworld-advanced-clean-oil-processing", 
 		Level = 7, 
 		type = 1,
 	},

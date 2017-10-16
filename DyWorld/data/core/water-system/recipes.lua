@@ -48,17 +48,27 @@ data:extend(
   {
     type = "recipe",
     name = dy.."acid-seperation",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
+	  },
+	},
     category = "centrifuging",
-    energy_required = 5,
-	enabled = false,
+    enabled = false,
+    energy_required = 2.5,
     ingredients =
     {
-      {type = "fluid", name = dy.."acid", amount = 250},
+      {type = "fluid", name = dy.."acid", amount = 100},
     },
-    results=
+    results =
     {
-      {type = "fluid", name = "sulfuric-acid", amount = 100},
+      {type = "fluid", name = "sulfuric-acid", amount = 60},
+      {type = "fluid", name = dy.."sludge", amount = 15},
+      {type = "fluid", name = dy.."water-clean", amount = 25},
     },
     subgroup = "fluid-recipes",
     order = dy.."acid-seperation",
@@ -81,5 +91,65 @@ data:extend(
     },
     subgroup = "fluid-recipes",
     order = dy.."fertilizer-seperation",
+  },
+  {
+    type = "recipe",
+    name = dy.."basic-clean-oil-processing",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/crude-oil.png",
+	  },
+	},
+    category = "centrifuging",
+    enabled = false,
+    energy_required = 2.5,
+    ingredients =
+    {
+      {type = "fluid", name = dy.."clean-oil", amount = 60}
+    },
+    results =
+    {
+      {type = "fluid", name = "heavy-oil", amount = 15},
+      {type = "fluid", name = "light-oil", amount = 15},
+      {type = "fluid", name = "petroleum-gas", amount = 20},
+      {type = "fluid", name = dy.."sewage", amount = 10},
+    },
+    subgroup = "fluid-recipes",
+    order = dy.."basic-clean-oil-processing"
+  },
+  {
+    type = "recipe",
+    name = dy.."advanced-clean-oil-processing",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/crude-oil.png",
+	  },
+	},
+    category = "centrifuging",
+    enabled = false,
+    energy_required = 2.5,
+    ingredients =
+    {
+      {type = "fluid", name = dy.."clean-oil", amount = 75},
+      {type = "fluid", name = dy.."water-clean", amount = 25},
+    },
+    results =
+    {
+      {type = "fluid", name = "heavy-oil", amount = 20},
+      {type = "fluid", name = "light-oil", amount = 20},
+      {type = "fluid", name = "petroleum-gas", amount = 25},
+      {type = "fluid", name = dy.."sewage", amount = 15},
+      {type = "fluid", name = dy.."acid", amount = 20},
+    },
+    subgroup = "fluid-recipes",
+    order = dy.."advanced-clean-oil-processing"
   },
 })

@@ -73,6 +73,15 @@ local Data_Table = {
 		Color_Flow = {r=255, g=10, b=10},
 		Barrel = true,
 	},
+	{
+		Name = "clean-oil",
+		Icon = "__base__/graphics/icons/fluid/crude-oil.png",
+		Def_Temp = 25,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0, b=0},
+		Color_Flow = {r=0.5, g=0.5, b=0.5},
+		Barrel = true,
+	},
 }
 
 for k,v in pairs(Data_Table) do

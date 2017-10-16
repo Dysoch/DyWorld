@@ -49,8 +49,13 @@ RecipeUnlock  =
 		type = 3,
 	},
 	{
-		Recipe = "dyworld-water-seperation", 
+		Recipe = "dyworld-water-seperation-1", 
 		Level = 7, 
+		type = 1,
+	},
+	{
+		Recipe = "dyworld-water-seperation-2", 
+		Level = 9, 
 		type = 1,
 	},
 	{

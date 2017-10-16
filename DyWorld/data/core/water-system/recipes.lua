@@ -4,7 +4,7 @@ data:extend(
 {
   {
     type = "recipe",
-    name = dy.."water-seperation",
+    name = dy.."water-seperation-1",
 	icon = dyworld_path_icon_temp,
     category = "centrifuging",
     energy_required = 5,
@@ -21,6 +21,25 @@ data:extend(
       {type = "fluid", name = dy.."acid", amount = 5},
       {type = "fluid", name = "crude-oil", amount = 5},
       {type = "fluid", name = dy.."methane", amount = 2.5},
+    },
+    subgroup = "fluid-recipes",
+    order = dy.."water-seperation",
+  },
+  {
+    type = "recipe",
+    name = dy.."water-seperation-2",
+	icon = dyworld_path_icon_temp,
+    category = "centrifuging",
+    energy_required = 30,
+	enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "water", amount = 250},
+    },
+    results=
+    {
+      {type = "fluid", name = dy.."hydrogen", amount = 250},
+      {type = "fluid", name = dy.."oxygen", amount = 500},
     },
     subgroup = "fluid-recipes",
     order = dy.."water-seperation",
@@ -55,6 +74,8 @@ data:extend(
 	  },
 	  {
 	    icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
+        scale = 0.5,
+        shift = {4, -8}
 	  },
 	},
     category = "centrifuging",
@@ -102,6 +123,8 @@ data:extend(
 	  },
 	  {
 	    icon = "__base__/graphics/icons/fluid/crude-oil.png",
+        scale = 0.5,
+        shift = {4, -8}
 	  },
 	},
     category = "centrifuging",
@@ -131,6 +154,8 @@ data:extend(
 	  },
 	  {
 	    icon = "__base__/graphics/icons/fluid/crude-oil.png",
+        scale = 0.5,
+        shift = {4, -8}
 	  },
 	},
     category = "centrifuging",

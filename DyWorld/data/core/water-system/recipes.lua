@@ -58,8 +58,8 @@ data:extend(
     results=
     {
       {type = "item", name = "stone", amount_min = 1, amount_max = 4, probability = 1},
-      {type = "item", name = "iron-ore", amount_min = 1, amount_max = 2, probability = 0.6},
-      {type = "item", name = "copper-ore", amount_min = 1, amount_max = 1, probability = 0.4},
+      {type = "item", name = "iron-ore", amount_min = 1, amount_max = 2, probability = 0.25},
+      {type = "item", name = "copper-ore", amount_min = 1, amount_max = 1, probability = 0.125},
     },
     subgroup = "fluid-recipes",
     order = dy.."sludge-seperation",

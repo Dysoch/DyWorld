@@ -10,6 +10,7 @@
 --settings.startup["DyWorld_Extraction"].value
 --settings.startup["DyWorld_Story"].value
 --settings.startup["DyWorld_Needs"].value
+--settings.startup["DyWorld_Metallurgy"].value
 
 -- can use: "runtime-global", "startup"
 
@@ -79,5 +80,11 @@ data:extend({
 		name = "DyWorld_Needs",
 		setting_type = "startup",
 		default_value = false,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld_Metallurgy",
+		setting_type = "startup",
+		default_value = true,
 	},
 })

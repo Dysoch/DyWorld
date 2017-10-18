@@ -24,3 +24,7 @@ data.raw.recipe["sulfur"].ingredients = {
     {type = "fluid", name = "petroleum-gas", amount = 20},
 	{type = "fluid", name = "dyworld-sewage", amount = 40},
 }
+
+if settings.startup["DyWorld_Logistics"].value then
+data.raw.recipe["transport-belt"].enabled = false
+end

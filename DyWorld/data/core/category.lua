@@ -5,6 +5,10 @@ local Data_Table = {
 		Name = dy.."farming",
 		Type = "recipe"
 	},
+	{
+		Name = dy.."blast-furnace",
+		Type = "recipe"
+	},
 }
 
 function DyWorld_Damage_Type(NAME)

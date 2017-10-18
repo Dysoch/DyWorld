@@ -1,9 +1,9 @@
 
 require("data.core.prototypes")
+require("data.core.belt-pictures")
 require("data.core.gui_sprites")
 require("data.core.keys")
 require("data.core.category")
-require("data.core.item-groups")
 require("data.core.tile.noise-layers")
 require("data.core.tile.tiles")
 require("data.core.entities.projectiles")
@@ -12,6 +12,15 @@ require("data.core.debug.equipment")
 require("data.core.debug.mining-tools")
 require("data.core.fluids.fluids")
 require("data.core.items.intermediates")
+
+-- Item Groups
+require("data.core.item-groups.energy")
+require("data.core.item-groups.items")
+require("data.core.item-groups.logistics")
+require("data.core.item-groups.machines")
+require("data.core.item-groups.metallurgy")
+require("data.core.item-groups.personal")
+require("data.core.item-groups.warfare")
 
 -- Edits
 require("data.core.edits.ammo")

@@ -2,6 +2,10 @@
 -- Core Stuff
 require("data.core.data")
 
+if settings.startup["DyWorld_Metallurgy"].value then
+	require("data.metallurgy.data")
+end
+
 if settings.startup["DyWorld_Defense"].value then
 	require("data.defense.data")
 end

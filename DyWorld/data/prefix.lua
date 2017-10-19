@@ -45,39 +45,57 @@ Material_Colors = {
 -- Material Properties (for metallurgy and other stuff)
 Materials = {
 	Iron = {
-		Density = 7.85,
+		Density = 7.874,
 		Melting_Point = 1538,
 		Boiling_Point = 2862,
-		Hardness = 4,
+		Hardness = 4.5, --17.55
+		Elasticity = 13.4,
+		Strength_Yield = 130,
+		Strength_Ultimate = 200,
 	},
 	Copper = {
 		Density = 8.94,
 		Melting_Point = 1084,
 		Boiling_Point = 2562,
-		Hardness = 3,
+		Hardness = 2.75, --12.23
+		Elasticity = 16.0,
+		Strength_Yield = 70,
+		Strength_Ultimate = 220,
 	},
 	Steel = {
-		Density = 7.85,
-		Melting_Point = 1084,
-		Boiling_Point = 2562,
-		Hardness = 3,
+		Density = 7.8,
+		Melting_Point = 1425,
+		Boiling_Point = 2862,
+		Hardness = 5, --19.5
+		Elasticity = 29.5,
+		Strength_Yield = 250,
+		Strength_Ultimate = 400,
 	},
 	Stainless_Steel = {
-		Density = 8,
-		Melting_Point = 1084,
-		Boiling_Point = 2562,
-		Hardness = 3,
+		Density = 8.19,
+		Melting_Point = 1510,
+		Boiling_Point = 2862,
+		Hardness = 8.5, --34
+		Elasticity = 29.2,
+		Strength_Yield = 520,
+		Strength_Ultimate = 860,
 	},
 	Wood = {
 		Density = 7.5,
-		Melting_Point = 1084,
-		Boiling_Point = 2562,
-		Hardness = 3,
+		Melting_Point = nil,
+		Boiling_Point = nil,
+		Hardness = 2.25, --8.44
+		Elasticity = 11,
+		Strength_Yield = 0,
+		Strength_Ultimate = 40,
 	},
 	Stone = {
 		Density = 2.55,
 		Melting_Point = 100,
 		Boiling_Point = 5000,
-		Hardness = 3,
+		Hardness = 5, --6.37
+		Elasticity = 1,
+		Strength_Yield = 0,
+		Strength_Ultimate = 15,
 	},
 }

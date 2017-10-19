@@ -1,5 +1,8 @@
 require "data/prefix"
 
+-- speed = (Ultimate / (Hardness + Density))
+-- health = (((Density * Hardness) - Elasticity) + Ultimate)
+
 local Data_Table = {
 	{
 		Name = "copper-transport-belt",
@@ -11,12 +14,12 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Stack = 200,
 		Subgroup = "transport-belt",
-		Order = "3",
+		Order = "copper",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = 50,
+		Health = math.floor(((Materials.Copper.Density * Materials.Copper.Hardness) - Materials.Copper.Elasticity) + Materials.Copper.Strength_Ultimate),
 		Tint = Material_Colors.Copper,
-		Item_Per_Sec = 10,
+		Item_Per_Sec = math.floor(Materials.Copper.Strength_Ultimate / (Materials.Copper.Hardness + Materials.Copper.Density)),
 	},
 	{
 		Name = "stone-transport-belt",
@@ -28,12 +31,12 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Stack = 200,
 		Subgroup = "transport-belt",
-		Order = "2",
+		Order = "stone",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = 50,
+		Health = math.floor(((Materials.Stone.Density * Materials.Stone.Hardness) - Materials.Stone.Elasticity) + Materials.Stone.Strength_Ultimate),
 		Tint = Material_Colors.Stone,
-		Item_Per_Sec = 7.5,
+		Item_Per_Sec = math.floor(Materials.Stone.Strength_Ultimate / (Materials.Stone.Hardness + Materials.Stone.Density))+1,
 	},
 	{
 		Name = "wood-transport-belt",
@@ -45,12 +48,12 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Stack = 200,
 		Subgroup = "transport-belt",
-		Order = "1",
+		Order = "wood",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = 50,
+		Health = math.floor(((Materials.Wood.Density * Materials.Wood.Hardness) - Materials.Wood.Elasticity) + Materials.Wood.Strength_Ultimate),
 		Tint = Material_Colors.Wood,
-		Item_Per_Sec = 4,
+		Item_Per_Sec = math.floor(Materials.Wood.Strength_Ultimate / (Materials.Wood.Hardness + Materials.Wood.Density)),
 	},
 }
 	

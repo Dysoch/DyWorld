@@ -1,5 +1,7 @@
 require "data/prefix"
 
+-- range = (((Ultimate + Yield) / Elasticity) - Hardness)
+
 local Data_Table = {
 	{
 		Name = "copper-underground-belt",
@@ -11,13 +13,13 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Stack = 200,
 		Subgroup = "transport-underground",
-		Order = "3",
+		Order = "copper",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = 50,
+		Health = math.floor(((Materials.Copper.Density * Materials.Copper.Hardness) - Materials.Copper.Elasticity) + Materials.Copper.Strength_Ultimate),
 		Tint = Material_Colors.Copper,
-		Item_Per_Sec = 10,
-		Range = 4,
+		Item_Per_Sec = math.floor(Materials.Copper.Strength_Ultimate / (Materials.Copper.Hardness + Materials.Copper.Density)),
+		Range = math.floor(((Materials.Copper.Strength_Ultimate + Materials.Copper.Strength_Yield) / Materials.Copper.Elasticity) - Materials.Copper.Hardness),
 	},
 	{
 		Name = "stone-underground-belt",
@@ -29,13 +31,13 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Stack = 200,
 		Subgroup = "transport-underground",
-		Order = "2",
+		Order = "stone",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = 100,
+		Health = math.floor(((Materials.Stone.Density * Materials.Stone.Hardness) - Materials.Stone.Elasticity) + Materials.Stone.Strength_Ultimate),
 		Tint = Material_Colors.Stone,
-		Item_Per_Sec = 7.5,
-		Range = 10,
+		Item_Per_Sec = math.floor(Materials.Stone.Strength_Ultimate / (Materials.Stone.Hardness + Materials.Stone.Density))+1,
+		Range = math.floor(((Materials.Stone.Strength_Ultimate + Materials.Stone.Strength_Yield) / Materials.Stone.Elasticity) - Materials.Stone.Hardness),
 	},
 	{
 		Name = "wood-underground-belt",
@@ -47,13 +49,13 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Stack = 200,
 		Subgroup = "transport-underground",
-		Order = "1",
+		Order = "wood",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = 5,
+		Health = math.floor(((Materials.Wood.Density * Materials.Wood.Hardness) - Materials.Wood.Elasticity) + Materials.Wood.Strength_Ultimate),
 		Tint = Material_Colors.Wood,
-		Item_Per_Sec = 4,
-		Range = 3,
+		Item_Per_Sec = math.floor(Materials.Wood.Strength_Ultimate / (Materials.Wood.Hardness + Materials.Wood.Density)),
+		Range = math.floor(((Materials.Wood.Strength_Ultimate + Materials.Wood.Strength_Yield) / Materials.Wood.Elasticity) - Materials.Wood.Hardness)+1,
 	},
 }
 	

@@ -15,6 +15,40 @@ data.raw["splitter"]["express-splitter"].localised_name = {"edits-name.express-s
 
 
 
+data.raw["transport-belt"]["transport-belt"].speed = (math.floor(Materials.Iron.Strength_Ultimate / (Materials.Iron.Hardness + Materials.Iron.Density))/426.67)
+data.raw["transport-belt"]["fast-transport-belt"].speed = (math.floor(Materials.Steel.Strength_Ultimate / (Materials.Steel.Hardness + Materials.Steel.Density))/426.67)
+data.raw["transport-belt"]["express-transport-belt"].speed = (math.floor(Materials.Stainless_Steel.Strength_Ultimate / (Materials.Stainless_Steel.Hardness + Materials.Stainless_Steel.Density))/426.67)
+
+data.raw["underground-belt"]["underground-belt"].speed = (math.floor(Materials.Iron.Strength_Ultimate / (Materials.Iron.Hardness + Materials.Iron.Density))/426.67)
+data.raw["underground-belt"]["fast-underground-belt"].speed = (math.floor(Materials.Steel.Strength_Ultimate / (Materials.Steel.Hardness + Materials.Steel.Density))/426.67)
+data.raw["underground-belt"]["express-underground-belt"].speed = (math.floor(Materials.Stainless_Steel.Strength_Ultimate / (Materials.Stainless_Steel.Hardness + Materials.Stainless_Steel.Density))/426.67)
+
+data.raw["splitter"]["splitter"].speed = (math.floor(Materials.Iron.Strength_Ultimate / (Materials.Iron.Hardness + Materials.Iron.Density))/426.67)
+data.raw["splitter"]["fast-splitter"].speed = (math.floor(Materials.Steel.Strength_Ultimate / (Materials.Steel.Hardness + Materials.Steel.Density))/426.67)
+data.raw["splitter"]["express-splitter"].speed = (math.floor(Materials.Stainless_Steel.Strength_Ultimate / (Materials.Stainless_Steel.Hardness + Materials.Stainless_Steel.Density))/426.67)
+
+
+
+data.raw["transport-belt"]["transport-belt"].max_health = math.floor(((Materials.Iron.Density * Materials.Iron.Hardness) - Materials.Iron.Elasticity) + Materials.Iron.Strength_Ultimate)
+data.raw["transport-belt"]["fast-transport-belt"].max_health = math.floor(((Materials.Steel.Density * Materials.Steel.Hardness) - Materials.Steel.Elasticity) + Materials.Steel.Strength_Ultimate)
+data.raw["transport-belt"]["express-transport-belt"].max_health = math.floor(((Materials.Stainless_Steel.Density * Materials.Stainless_Steel.Hardness) - Materials.Stainless_Steel.Elasticity) + Materials.Stainless_Steel.Strength_Ultimate)
+
+data.raw["underground-belt"]["underground-belt"].max_health = math.floor(((Materials.Iron.Density * Materials.Iron.Hardness) - Materials.Iron.Elasticity) + Materials.Iron.Strength_Ultimate)
+data.raw["underground-belt"]["fast-underground-belt"].max_health = math.floor(((Materials.Steel.Density * Materials.Steel.Hardness) - Materials.Steel.Elasticity) + Materials.Steel.Strength_Ultimate)
+data.raw["underground-belt"]["express-underground-belt"].max_health = math.floor(((Materials.Stainless_Steel.Density * Materials.Stainless_Steel.Hardness) - Materials.Stainless_Steel.Elasticity) + Materials.Stainless_Steel.Strength_Ultimate)
+
+data.raw["splitter"]["splitter"].max_health = math.floor(((Materials.Iron.Density * Materials.Iron.Hardness) - Materials.Iron.Elasticity) + Materials.Iron.Strength_Ultimate)
+data.raw["splitter"]["fast-splitter"].max_health = math.floor(((Materials.Steel.Density * Materials.Steel.Hardness) - Materials.Steel.Elasticity) + Materials.Steel.Strength_Ultimate)
+data.raw["splitter"]["express-splitter"].max_health = math.floor(((Materials.Stainless_Steel.Density * Materials.Stainless_Steel.Hardness) - Materials.Stainless_Steel.Elasticity) + Materials.Stainless_Steel.Strength_Ultimate)
+
+
+
+data.raw["underground-belt"]["underground-belt"].max_distance = math.floor(((Materials.Iron.Strength_Ultimate + Materials.Iron.Strength_Yield) / Materials.Iron.Elasticity) - Materials.Iron.Hardness)
+data.raw["underground-belt"]["fast-underground-belt"].max_distance = math.floor(((Materials.Steel.Strength_Ultimate + Materials.Steel.Strength_Yield) / Materials.Steel.Elasticity) - Materials.Steel.Hardness)
+data.raw["underground-belt"]["express-underground-belt"].max_distance = math.floor(((Materials.Stainless_Steel.Strength_Ultimate + Materials.Stainless_Steel.Strength_Yield) / Materials.Stainless_Steel.Elasticity) - Materials.Stainless_Steel.Hardness)
+
+
+
 data.raw["transport-belt"]["transport-belt"].belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors.Iron)
 data.raw["transport-belt"]["transport-belt"].belt_vertical = DyWorld_basic_belt_vertical(Material_Colors.Iron)
 data.raw["transport-belt"]["transport-belt"].ending_top = DyWorld_basic_belt_ending_top(Material_Colors.Iron)

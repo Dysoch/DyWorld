@@ -17,6 +17,7 @@ data:extend(
 	},
     energy_required = 1,
 	category = "crafting-with-fluid",
+	subgroup = dy.."zzz-void-recipes",
     enabled = true,
     ingredients =
     {
@@ -27,3 +28,9 @@ data:extend(
 }
 )
 end	
+
+for k,v in pairs(data.raw.unit) do
+	if not v.loot then
+		v.loot = {}
+	end
+end

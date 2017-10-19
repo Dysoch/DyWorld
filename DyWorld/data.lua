@@ -10,10 +10,6 @@ if settings.startup["DyWorld_Defense"].value then
 	require("data.defense.data")
 end
 
-if settings.startup["DyWorld_Enemies"].value then
-	require("data.enemies.data")
-end
-
 if settings.startup["DyWorld_Extraction"].value then
 	require("data.extraction.data")
 end
@@ -36,10 +32,4 @@ end
 
 if settings.startup["DyWorld_Warfare"].value then
 	require("data.warfare.data")
-end
-
-for k,v in pairs(data.raw.unit) do
-	if not v.loot then
-		v.loot = {}
-	end
 end

@@ -11,6 +11,7 @@ local Data_Table_Looped = {
 		Recipe_First_Ingredient = {"electric-mining-drill", 1},
 		Recipe_Without_Tech = false,
 		Entity = true,
+		Health = 250,
 		Item_Place = "quickbar",
 		Tech_Count = 100,
 		Tech_Time = 15,
@@ -31,6 +32,7 @@ local Data_Table_Looped = {
 		Recipe_First_Ingredient = {"electric-mining-drill", 2},
 		Recipe_Without_Tech = false,
 		Entity = true,
+		Health = 500,
 		Item_Place = "quickbar",
 		Tech_Count = 250,
 		Tech_Time = 30,
@@ -51,6 +53,7 @@ local Data_Table_Looped = {
 		Recipe_First_Ingredient = {"electric-mining-drill", 3},
 		Recipe_Without_Tech = false,
 		Entity = true,
+		Health = 750,
 		Item_Place = "quickbar",
 		Tech_Count = 500,
 		Tech_Time = 45,
@@ -71,6 +74,7 @@ local Data_Table_Looped = {
 		Recipe_First_Ingredient = {"electric-mining-drill", 4},
 		Recipe_Without_Tech = false,
 		Entity = true,
+		Health = 1000,
 		Item_Place = "quickbar",
 		Tech_Count = 1000,
 		Tech_Time = 60,
@@ -87,7 +91,7 @@ for i=1,Tiered_Entities do
 	for k,v in pairs(Data_Table_Looped) do
 	data:extend(
 		{
-			DyWorld_Entity_Electric_Drill(v, i)
+			DyWorld_Entity_Electric_Drill(v, i),
 			DyWorld_Item(v, i),
 			DyWorld_Recipe(v, i),
 		})

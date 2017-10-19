@@ -9,7 +9,6 @@ data:extend(
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy.."blast-furnace"},
     corpse = "big-remnants",
-    dying_explosion = "huge-explosion",
 	collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     crafting_categories = {dy.."blast-furnace"},

@@ -32,3 +32,52 @@ Color_Tier = {
 	[8] = {r=255, g=165, b=0}, --orange
 	[9] = {r=255, g=192, b=203}, --pink
 }
+
+Material_Colors = {
+	Iron = {r=255, g=192, b=203},
+	Copper = {r=255, g=192, b=203},
+	Steel = {r=255, g=192, b=203},
+	Stainless_Steel = {r=255, g=192, b=203},
+	Wood = {r=255, g=192, b=203},
+	Stone = {r=255, g=192, b=203},
+}
+
+-- Material Properties (for metallurgy and other stuff)
+Materials = {
+	Iron = {
+		Density = 7.85,
+		Melting_Point = 1538,
+		Boiling_Point = 2862,
+		Hardness = 4,
+	},
+	Copper = {
+		Density = 8.94,
+		Melting_Point = 1084,
+		Boiling_Point = 2562,
+		Hardness = 3,
+	},
+	Steel = {
+		Density = 7.85,
+		Melting_Point = 1084,
+		Boiling_Point = 2562,
+		Hardness = 3,
+	},
+	Stainless_Steel = {
+		Density = 8,
+		Melting_Point = 1084,
+		Boiling_Point = 2562,
+		Hardness = 3,
+	},
+	Wood = {
+		Density = 7.5,
+		Melting_Point = 1084,
+		Boiling_Point = 2562,
+		Hardness = 3,
+	},
+	Stone = {
+		Density = 2.55,
+		Melting_Point = 100,
+		Boiling_Point = 5000,
+		Hardness = 3,
+	},
+}

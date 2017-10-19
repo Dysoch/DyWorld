@@ -30,7 +30,7 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."molten-rock", amount = 10, minimum_temperature = 1150},
+      {type = "fluid", name = dy.."molten-rock", amount = 10, minimum_temperature = Materials.Iron.Melting_Point},
       {type = "item", name = "iron-ore", amount = 1},
     },
     results=

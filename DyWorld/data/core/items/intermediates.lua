@@ -200,7 +200,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 0.5,
 		Recipe_Result_Count = 4,
-		Recipe_Ingredients = {{"copper-plate", 1},{"copper-cable", 3}},
+		Recipe_Ingredients = {{"copper-plate", 1},{"copper-cable", 2}},
 	},
 	{
 		Name = "binding-iron",

@@ -19,8 +19,8 @@ data.raw.corpse["medium-spitter-corpse"].localised_name = {"edits-name.medium-sp
 data.raw.corpse["big-spitter-corpse"].localised_name = {"edits-name.big-spitter-corpse"}
 data.raw.corpse["behemoth-spitter-corpse"].localised_name = {"edits-name.behemoth-spitter-corpse"}
 
-data.raw["unit-spawner"].["biter-spawner"].localised_name = {"edits-name.biter-spawner"}
-data.raw["unit-spawner"].["spitter-spawner"].localised_name = {"edits-name.spitter-spawner"}
+data.raw["unit-spawner"]["biter-spawner"].localised_name = {"edits-name.biter-spawner"}
+data.raw["unit-spawner"]["spitter-spawner"].localised_name = {"edits-name.spitter-spawner"}
 
 data.raw.corpse["biter-spawner-corpse"].localised_name = {"edits-name.biter-spawner-corpse"}
 data.raw.corpse["spitter-spawner-corpse"].localised_name = {"edits-name.spitter-spawner-corpse"}

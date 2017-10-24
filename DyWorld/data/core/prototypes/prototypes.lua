@@ -80,6 +80,119 @@ function DyWorld_Item(DATA, NMB)
   return result
 end
 
+function DyWorld_Item_Ore(DATA)
+  local result =
+  {
+    type = "item",
+    name = DATA.Name.."-ore",
+	icon = DATA.Icon_1,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."metal-ore",
+    stack_size = DATA.Stack or 200,
+	order = DATA.Name,
+  }
+  return result
+end
+
+function DyWorld_Item_Plate(DATA)
+  local result =
+  {
+    type = "item",
+    name = DATA.Name.."-plate",
+	icon = DATA.Icon_2,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."metal-plate",
+    stack_size = DATA.Stack or 200,
+	order = DATA.Name,
+  }
+  return result
+end
+
+function DyWorld_Autoplace(DATA)
+  local result =
+  {
+    type = "autoplace-control",
+    name = DATA.Name.."-ore",
+    richness = true,
+    order = DATA.Name.."-ore",
+  }
+  return result
+end
+
+function DyWorld_Noise_Layer(DATA)
+  local result =
+  {
+    type = "noise-layer",
+    name = DATA.Name.."-ore",
+  }
+  return result
+end
+
+function DyWorld_Resource(DATA)
+  local result =
+  {
+    type = "resource",
+    name = DATA.Name.."-ore",
+	icon = DATA.Icon_1,
+    flags = {"placeable-neutral"},
+    order = DATA.Name.."-ore",
+    minable =
+    {
+      hardness = DATA.Mining_Hardness,
+      mining_particle = "stone-particle",
+      mining_time = DATA.Mining_Time,
+      result = DATA.Name.."-ore",
+    },
+    collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
+    selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
+    autoplace =
+    {
+      control = DATA.Name.."-ore",
+      sharpness = 1,
+      richness_multiplier = 1500,
+      richness_multiplier_distance_bonus = 30,
+      richness_base = 500,
+      coverage = 0.01,
+      peaks =
+      {
+        {
+          noise_layer = DATA.Name.."-ore",
+          noise_octaves_difference = -1.5,
+          noise_persistence = 0.3,
+        },
+      },
+      starting_area_size = 600 * 0.005,
+      starting_area_amount = 500
+    },
+    stage_counts = {5000, 3000, 1500, 800, 400, 100, 50, 10},
+    stages =
+    {
+      sheet =
+      {
+        filename = "__base__/graphics/entity/iron-ore/iron-ore.png",
+        priority = "extra-high",
+        width = 64,
+        height = 64,
+        frame_count = 8,
+        variation_count = 8,
+		tint = DATA.Tint,
+        hr_version = {
+          filename = "__base__/graphics/entity/iron-ore/hr-iron-ore.png",
+          priority = "extra-high",
+          width = 128,
+          height = 128,
+          frame_count = 8,
+          variation_count = 8,
+          scale = 0.5,
+		  tint = DATA.Tint,
+        }
+      }
+    },
+    map_color = DATA.Tint,
+  }
+  return result
+end
+
 function DyWorld_Fluid(DATA)
   local result =
   {
@@ -2204,11 +2317,12 @@ function DyWorld_Entity_Electric_Drill(DATA, NMB)
   return result
 end
 
-function DyWorld_Entity_Transport_Belt(DATA)
-  local result =
+function DyWorld_Transport_Belt(DATA)
+data:extend(
+{
   {
     type = "transport-belt",
-    name = dy..DATA.Name,
+    name = dy..DATA.Name.."-transport-belt",
     icons =
 	{
 	  {
@@ -2217,7 +2331,7 @@ function DyWorld_Entity_Transport_Belt(DATA)
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name},
+    minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name.."-transport-belt"},
     max_health = DATA.Health,
     corpse = "small-remnants",
     resistances =
@@ -2275,15 +2389,10 @@ function DyWorld_Entity_Transport_Belt(DATA)
     circuit_connector_sprites = transport_belt_circuit_connector_sprites,
     circuit_wire_connection_point = transport_belt_circuit_wire_connection_point,
     circuit_wire_max_distance = transport_belt_circuit_wire_max_distance
-  }
-  return result
-end
-
-function DyWorld_Entity_Underground_Belt(DATA)
-  local result =
+  },
   {
     type = "underground-belt",
-    name = dy..DATA.Name,
+    name = dy..DATA.Name.."-underground-belt",
     icons =
 	{
 	  {
@@ -2292,7 +2401,7 @@ function DyWorld_Entity_Underground_Belt(DATA)
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name},
+    minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name.."-underground-belt"},
     max_health = DATA.Health,
     max_distance = DATA.Range,
     underground_sprite =
@@ -2390,15 +2499,10 @@ function DyWorld_Entity_Underground_Belt(DATA)
 
       }
     },
-  }
-  return result
-end
-
-function DyWorld_Entity_Splitter(DATA)
-  local result =
+  },
   {
     type = "splitter",
-    name = dy..DATA.Name,
+    name = dy..DATA.Name.."-splitter",
     icons =
 	{
 	  {
@@ -2407,7 +2511,7 @@ function DyWorld_Entity_Splitter(DATA)
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name},
+    minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name.."-splitter"},
     max_health = DATA.Health,
     corpse = "medium-remnants",
     resistances =
@@ -2528,6 +2632,309 @@ function DyWorld_Entity_Splitter(DATA)
         }
       },
     },
-  }
-  return result
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-transport-belt",
+	icons = {{icon = "__base__/graphics/icons/transport-belt.png", tint = DATA.Tint}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."transport-belt",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-transport-belt",
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-underground-belt",
+	icons = {{icon = "__base__/graphics/icons/underground-belt.png", tint = DATA.Tint}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."transport-underground",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-underground-belt",
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-splitter",
+	icons = {{icon = "__base__/graphics/icons/splitter.png", tint = DATA.Tint}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."transport-splitter",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-splitter",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-transport-belt",
+    energy_required = 0.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-transport-belt",
+    result_count = 2,
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-underground-belt",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-transport-belt", DATA.Range}},
+    result = dy..DATA.Name.."-underground-belt",
+    result_count = 2,
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-splitter",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-transport-belt", 2},{"electronic-circuit", 2}},
+    result = dy..DATA.Name.."-splitter",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 2}
+		local result_2 = {DATA.Name, 3}
+		local result_3 = {DATA.Name, 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 2}
+		local result_2 = {DATA.Name.."-plate", 3}
+		local result_3 = {DATA.Name.."-plate", 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+	end
+end
+
+function DyWorld_Transport_Pipe(DATA)
+data:extend(
+{
+  {
+    type = "pipe",
+    name = dy..DATA.Name.."-pipe",
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/pipe.png", 
+		tint = DATA.Tint
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-pipe"},
+    max_health = DATA.Health,
+    corpse = "small-remnants",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 80
+      },
+      {
+        type = "impact",
+        percent = 30
+      }
+    },
+    fast_replaceable_group = "pipe",
+    collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    fluid_box =
+    {
+      base_area = (DATA.Capacity / 100),
+      pipe_connections =
+      {
+        { position = {0, -1} },
+        { position = {1, 0} },
+        { position = {0, 1} },
+        { position = {-1, 0} }
+      },
+    },
+	vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    pictures = DyWorld_pipepictures(DATA.Tint),
+    working_sound =
+    {
+      sound = {
+        {
+          filename = "__base__/sound/pipe.ogg",
+          volume = 0.85
+        },
+      },
+      match_volume_to_activity = true,
+      max_sounds_per_type = 3
+    },
+
+    horizontal_window_bounding_box = {{-0.25, -0.28125}, {0.25, 0.15625}},
+    vertical_window_bounding_box = {{-0.28125, -0.5}, {0.03125, 0.125}}
+  },
+  {
+    type = "pipe-to-ground",
+    name = dy..DATA.Name.."-pipe-to-ground",
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/pipe-to-ground.png",
+		tint = DATA.Tint
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-pipe-to-ground"},
+    max_health = DATA.Health,
+    corpse = "small-remnants",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 80
+      },
+      {
+        type = "impact",
+        percent = 40
+      }
+
+    },
+    collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    fluid_box =
+    {
+      base_area = (DATA.Capacity / 100),
+      pipe_covers = DyWorld_pipecoverspictures(DATA.Tint),
+      pipe_connections =
+      {
+        { position = {0, -1} },
+        {
+          position = {0, 1},
+          max_underground_distance = DATA.Range
+        }
+      },
+    },
+    underground_sprite =
+    {
+      filename = "__core__/graphics/arrows/underground-lines.png",
+      priority = "extra-high-no-scale",
+      width = 64,
+      height = 64,
+      scale = 0.5
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    pictures =
+    {
+      up =
+      {
+        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-up.png",
+        priority = "high",
+        width = 64,
+        height = 64, --, shift = {0.10, -0.04}
+		tint = DATA.Tint,
+        hr_version =
+        {
+           filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-up.png",
+           priority = "extra-high",
+           width = 128,
+           height = 128,
+           scale = 0.5,
+		   tint = DATA.Tint,
+        }
+      },
+      down =
+      {
+        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-down.png",
+        priority = "high",
+        width = 64,
+        height = 64, --, shift = {0.05, 0}
+		tint = DATA.Tint,
+        hr_version =
+        {
+           filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-down.png",
+           priority = "extra-high",
+           width = 128,
+           height = 128,
+           scale = 0.5,
+		   tint = DATA.Tint,
+        }
+      },
+      left =
+      {
+        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-left.png",
+        priority = "high",
+        width = 64,
+        height = 64, --, shift = {-0.12, 0.1}
+		tint = DATA.Tint,
+        hr_version =
+        {
+           filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-left.png",
+           priority = "extra-high",
+           width = 128,
+           height = 128,
+           scale = 0.5,
+		   tint = DATA.Tint,
+        }
+      },
+      right =
+      {
+        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-right.png",
+        priority = "high",
+        width = 64,
+        height = 64, --, shift = {0.1, 0.1}
+		tint = DATA.Tint,
+        hr_version =
+        {
+           filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-right.png",
+           priority = "extra-high",
+           width = 128,
+           height = 128,
+           scale = 0.5,
+		   tint = DATA.Tint,
+        }
+      },
+    }
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-pipe",
+	icons = {{icon = "__base__/graphics/icons/pipe.png", tint = DATA.Tint}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."pipe-normal",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-pipe",
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-pipe-to-ground",
+	icons = {{icon = "__base__/graphics/icons/pipe-to-ground.png", tint = DATA.Tint}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."pipe-underground",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-pipe-to-ground",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-pipe",
+    energy_required = 0.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-pipe",
+    result_count = 1,
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-pipe-to-ground",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-pipe", DATA.Range}},
+    result = dy..DATA.Name.."-pipe-to-ground",
+    result_count = 2,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 2}
+		local result_2 = {DATA.Name, 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 2}
+		local result_2 = {DATA.Name.."-plate", 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
+	end
 end

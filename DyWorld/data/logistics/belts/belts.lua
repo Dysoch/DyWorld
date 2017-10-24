@@ -1,69 +1,94 @@
 require "data/prefix"
 
--- speed = (Ultimate / (Hardness + Density))
--- health = (((Density * Hardness) - Elasticity) + Ultimate)
-
 local Data_Table = {
 	{
-		Name = "copper-transport-belt",
-		Icons = {{icon = "__base__/graphics/icons/transport-belt.png", tint = Material_Colors.Copper}},
-		Recipe = true,
-		Recipe_Craft_Time = 0.5,
-		Recipe_Result_Count = 2,
-		Recipe_Ingredients = {{"copper-plate", 2},{dy.."binding-copper", 1}},
-		Recipe_Without_Tech = false,
-		Stack = 200,
-		Subgroup = "transport-belt",
-		Order = "copper",
-		Item_Place = "quickbar",
-		Entity = true,
-		Health = math.floor(((Materials.Copper.Density * Materials.Copper.Hardness) - Materials.Copper.Elasticity) + Materials.Copper.Strength_Ultimate),
+		Name = "copper",
 		Tint = Material_Colors.Copper,
-		Item_Per_Sec = math.floor(Materials.Copper.Strength_Ultimate / (Materials.Copper.Hardness + Materials.Copper.Density)),
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Copper"),
+		Range = DyWorld_Material_Formulas(2, "Copper"),
+		Health = DyWorld_Material_Formulas(3, "Copper"),
 	},
 	{
-		Name = "stone-transport-belt",
-		Icons = {{icon = "__base__/graphics/icons/transport-belt.png", tint = Material_Colors.Stone}},
-		Recipe = true,
-		Recipe_Craft_Time = 0.5,
-		Recipe_Result_Count = 3,
-		Recipe_Ingredients = {{"stone", 2},{dy.."stone-stick", 1}},
-		Recipe_Without_Tech = true,
-		Stack = 200,
-		Subgroup = "transport-belt",
-		Order = "stone",
-		Item_Place = "quickbar",
-		Entity = true,
-		Health = math.floor(((Materials.Stone.Density * Materials.Stone.Hardness) - Materials.Stone.Elasticity) + Materials.Stone.Strength_Ultimate),
+		Name = "stone",
 		Tint = Material_Colors.Stone,
-		Item_Per_Sec = math.floor(Materials.Stone.Strength_Ultimate / (Materials.Stone.Hardness + Materials.Stone.Density))+1,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Stone"),
+		Range = DyWorld_Material_Formulas(2, "Stone"),
+		Health = DyWorld_Material_Formulas(3, "Stone"),
 	},
 	{
-		Name = "wood-transport-belt",
-		Icons = {{icon = "__base__/graphics/icons/transport-belt.png", tint = Material_Colors.Wood}},
-		Recipe = true,
-		Recipe_Craft_Time = 0.5,
-		Recipe_Result_Count = 5,
-		Recipe_Ingredients = {{"wood", 4},{dy.."wood-stick", 1}},
-		Recipe_Without_Tech = true,
-		Stack = 200,
-		Subgroup = "transport-belt",
-		Order = "wood",
-		Item_Place = "quickbar",
-		Entity = true,
-		Health = math.floor(((Materials.Wood.Density * Materials.Wood.Hardness) - Materials.Wood.Elasticity) + Materials.Wood.Strength_Ultimate),
+		Name = "wood",
 		Tint = Material_Colors.Wood,
-		Item_Per_Sec = math.floor(Materials.Wood.Strength_Ultimate / (Materials.Wood.Hardness + Materials.Wood.Density)),
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Wood"),
+		Range = DyWorld_Material_Formulas(2, "Wood"),
+		Health = DyWorld_Material_Formulas(3, "Wood"),
+	},
+	{
+		Name = "chromium",
+		Tint = Material_Colors.Chromium,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Chromium"),
+		Range = DyWorld_Material_Formulas(2, "Chromium"),
+		Health = DyWorld_Material_Formulas(3, "Chromium"),
+	},
+	{
+		Name = "tin",
+		Tint = Material_Colors.Tin,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Tin"),
+		Range = (DyWorld_Material_Formulas(2, "Tin")+2),
+		Health = DyWorld_Material_Formulas(3, "Tin"),
+	},
+	{
+		Name = "silver",
+		Tint = Material_Colors.Silver,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Silver"),
+		Range = DyWorld_Material_Formulas(2, "Silver"),
+		Health = DyWorld_Material_Formulas(3, "Silver"),
+	},
+	{
+		Name = "gold",
+		Tint = Material_Colors.Gold,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Gold"),
+		Range = DyWorld_Material_Formulas(2, "Gold"),
+		Health = DyWorld_Material_Formulas(3, "Gold"),
+	},
+	{
+		Name = "lead",
+		Tint = Material_Colors.Lead,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Lead"),
+		Range = DyWorld_Material_Formulas(2, "Lead"),
+		Health = DyWorld_Material_Formulas(3, "Lead"),
 	},
 }
 	
 for k,v in pairs(Data_Table) do
-	data:extend(
-		{
-			DyWorld_Entity_Transport_Belt(v),
-			DyWorld_Item(v),
-			DyWorld_Recipe(v),
-		})
+	DyWorld_Transport_Belt(v)
 end
 
 DyWorld_Add_To_Tech("logistics", dy.."copper-transport-belt")
+DyWorld_Add_To_Tech("logistics", dy.."lead-transport-belt")
+DyWorld_Add_To_Tech("logistics", dy.."silver-transport-belt")
+DyWorld_Add_To_Tech("logistics", dy.."gold-transport-belt")
+DyWorld_Add_To_Tech("logistics", dy.."tin-transport-belt")
+DyWorld_Add_To_Tech("logistics", dy.."chromium-transport-belt")
+
+DyWorld_Add_To_Tech("logistics", dy.."copper-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."lead-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."silver-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."gold-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."tin-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."chromium-underground-belt")
+
+DyWorld_Add_To_Tech("logistics", dy.."copper-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."lead-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."silver-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."gold-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."tin-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."chromium-splitter")
+
+data.raw.recipe[dy.."stone-transport-belt"].enabled = true
+data.raw.recipe[dy.."wood-transport-belt"].enabled = true
+
+data.raw.recipe[dy.."stone-underground-belt"].enabled = true
+data.raw.recipe[dy.."wood-underground-belt"].enabled = true
+
+data.raw.recipe[dy.."stone-splitter"].enabled = true
+data.raw.recipe[dy.."wood-splitter"].enabled = true

@@ -15,37 +15,37 @@ data.raw["splitter"]["express-splitter"].localised_name = {"edits-name.express-s
 
 
 
-data.raw["transport-belt"]["transport-belt"].speed = (math.floor(Materials.Iron.Strength_Ultimate / (Materials.Iron.Hardness + Materials.Iron.Density))/426.67)
-data.raw["transport-belt"]["fast-transport-belt"].speed = (math.floor(Materials.Steel.Strength_Ultimate / (Materials.Steel.Hardness + Materials.Steel.Density))/426.67)
-data.raw["transport-belt"]["express-transport-belt"].speed = (math.floor(Materials.Stainless_Steel.Strength_Ultimate / (Materials.Stainless_Steel.Hardness + Materials.Stainless_Steel.Density))/426.67)
+data.raw["transport-belt"]["transport-belt"].speed = (DyWorld_Material_Formulas(1, "Iron")/426.67)
+data.raw["transport-belt"]["fast-transport-belt"].speed = (DyWorld_Material_Formulas(1, "Steel")/426.67)
+data.raw["transport-belt"]["express-transport-belt"].speed = (DyWorld_Material_Formulas(1, "Stainless_Steel")/426.67)
 
-data.raw["underground-belt"]["underground-belt"].speed = (math.floor(Materials.Iron.Strength_Ultimate / (Materials.Iron.Hardness + Materials.Iron.Density))/426.67)
-data.raw["underground-belt"]["fast-underground-belt"].speed = (math.floor(Materials.Steel.Strength_Ultimate / (Materials.Steel.Hardness + Materials.Steel.Density))/426.67)
-data.raw["underground-belt"]["express-underground-belt"].speed = (math.floor(Materials.Stainless_Steel.Strength_Ultimate / (Materials.Stainless_Steel.Hardness + Materials.Stainless_Steel.Density))/426.67)
+data.raw["underground-belt"]["underground-belt"].speed = (DyWorld_Material_Formulas(1, "Iron")/426.67)
+data.raw["underground-belt"]["fast-underground-belt"].speed = (DyWorld_Material_Formulas(1, "Steel")/426.67)
+data.raw["underground-belt"]["express-underground-belt"].speed = (DyWorld_Material_Formulas(1, "Stainless_Steel")/426.67)
 
-data.raw["splitter"]["splitter"].speed = (math.floor(Materials.Iron.Strength_Ultimate / (Materials.Iron.Hardness + Materials.Iron.Density))/426.67)
-data.raw["splitter"]["fast-splitter"].speed = (math.floor(Materials.Steel.Strength_Ultimate / (Materials.Steel.Hardness + Materials.Steel.Density))/426.67)
-data.raw["splitter"]["express-splitter"].speed = (math.floor(Materials.Stainless_Steel.Strength_Ultimate / (Materials.Stainless_Steel.Hardness + Materials.Stainless_Steel.Density))/426.67)
-
-
-
-data.raw["transport-belt"]["transport-belt"].max_health = math.floor(((Materials.Iron.Density * Materials.Iron.Hardness) - Materials.Iron.Elasticity) + Materials.Iron.Strength_Ultimate)
-data.raw["transport-belt"]["fast-transport-belt"].max_health = math.floor(((Materials.Steel.Density * Materials.Steel.Hardness) - Materials.Steel.Elasticity) + Materials.Steel.Strength_Ultimate)
-data.raw["transport-belt"]["express-transport-belt"].max_health = math.floor(((Materials.Stainless_Steel.Density * Materials.Stainless_Steel.Hardness) - Materials.Stainless_Steel.Elasticity) + Materials.Stainless_Steel.Strength_Ultimate)
-
-data.raw["underground-belt"]["underground-belt"].max_health = math.floor(((Materials.Iron.Density * Materials.Iron.Hardness) - Materials.Iron.Elasticity) + Materials.Iron.Strength_Ultimate)
-data.raw["underground-belt"]["fast-underground-belt"].max_health = math.floor(((Materials.Steel.Density * Materials.Steel.Hardness) - Materials.Steel.Elasticity) + Materials.Steel.Strength_Ultimate)
-data.raw["underground-belt"]["express-underground-belt"].max_health = math.floor(((Materials.Stainless_Steel.Density * Materials.Stainless_Steel.Hardness) - Materials.Stainless_Steel.Elasticity) + Materials.Stainless_Steel.Strength_Ultimate)
-
-data.raw["splitter"]["splitter"].max_health = math.floor(((Materials.Iron.Density * Materials.Iron.Hardness) - Materials.Iron.Elasticity) + Materials.Iron.Strength_Ultimate)
-data.raw["splitter"]["fast-splitter"].max_health = math.floor(((Materials.Steel.Density * Materials.Steel.Hardness) - Materials.Steel.Elasticity) + Materials.Steel.Strength_Ultimate)
-data.raw["splitter"]["express-splitter"].max_health = math.floor(((Materials.Stainless_Steel.Density * Materials.Stainless_Steel.Hardness) - Materials.Stainless_Steel.Elasticity) + Materials.Stainless_Steel.Strength_Ultimate)
+data.raw["splitter"]["splitter"].speed = (DyWorld_Material_Formulas(1, "Iron")/426.67)
+data.raw["splitter"]["fast-splitter"].speed = (DyWorld_Material_Formulas(1, "Steel")/426.67)
+data.raw["splitter"]["express-splitter"].speed = (DyWorld_Material_Formulas(1, "Stainless_Steel")/426.67)
 
 
 
-data.raw["underground-belt"]["underground-belt"].max_distance = math.floor(((Materials.Iron.Strength_Ultimate + Materials.Iron.Strength_Yield) / Materials.Iron.Elasticity) - Materials.Iron.Hardness)
-data.raw["underground-belt"]["fast-underground-belt"].max_distance = math.floor(((Materials.Steel.Strength_Ultimate + Materials.Steel.Strength_Yield) / Materials.Steel.Elasticity) - Materials.Steel.Hardness)
-data.raw["underground-belt"]["express-underground-belt"].max_distance = math.floor(((Materials.Stainless_Steel.Strength_Ultimate + Materials.Stainless_Steel.Strength_Yield) / Materials.Stainless_Steel.Elasticity) - Materials.Stainless_Steel.Hardness)
+data.raw["transport-belt"]["transport-belt"].max_health = DyWorld_Material_Formulas(3, "Iron")
+data.raw["transport-belt"]["fast-transport-belt"].max_health = DyWorld_Material_Formulas(3, "Steel")
+data.raw["transport-belt"]["express-transport-belt"].max_health = DyWorld_Material_Formulas(3, "Stainless_Steel")
+
+data.raw["underground-belt"]["underground-belt"].max_health = DyWorld_Material_Formulas(3, "Iron")
+data.raw["underground-belt"]["fast-underground-belt"].max_health = DyWorld_Material_Formulas(3, "Steel")
+data.raw["underground-belt"]["express-underground-belt"].max_health = DyWorld_Material_Formulas(3, "Stainless_Steel")
+
+data.raw["splitter"]["splitter"].max_health = DyWorld_Material_Formulas(3, "Iron")
+data.raw["splitter"]["fast-splitter"].max_health = DyWorld_Material_Formulas(3, "Steel")
+data.raw["splitter"]["express-splitter"].max_health = DyWorld_Material_Formulas(3, "Stainless_Steel")
+
+
+
+data.raw["underground-belt"]["underground-belt"].max_distance = DyWorld_Material_Formulas(2, "Iron")
+data.raw["underground-belt"]["fast-underground-belt"].max_distance = DyWorld_Material_Formulas(2, "Steel")
+data.raw["underground-belt"]["express-underground-belt"].max_distance = DyWorld_Material_Formulas(2, "Stainless_Steel")
 
 
 
@@ -638,4 +638,86 @@ data.raw["splitter"]["express-splitter"].structure =
       },
     }
 
+data.raw["pipe"]["pipe"].pictures = DyWorld_pipepictures(Material_Colors.Stone)
+data.raw["pipe-to-ground"]["pipe-to-ground"].pictures =
+    {
+      up =
+      {
+        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-up.png",
+        priority = "high",
+        width = 64,
+        height = 64, --, shift = {0.10, -0.04}
+		tint = Material_Colors.Stone,
+        hr_version =
+        {
+           filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-up.png",
+           priority = "extra-high",
+           width = 128,
+           height = 128,
+           scale = 0.5,
+		   tint = Material_Colors.Stone,
+        }
+      },
+      down =
+      {
+        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-down.png",
+        priority = "high",
+        width = 64,
+        height = 64, --, shift = {0.05, 0}
+		tint = Material_Colors.Stone,
+        hr_version =
+        {
+           filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-down.png",
+           priority = "extra-high",
+           width = 128,
+           height = 128,
+           scale = 0.5,
+		   tint = Material_Colors.Stone,
+        }
+      },
+      left =
+      {
+        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-left.png",
+        priority = "high",
+        width = 64,
+        height = 64, --, shift = {-0.12, 0.1}
+		tint = Material_Colors.Stone,
+        hr_version =
+        {
+           filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-left.png",
+           priority = "extra-high",
+           width = 128,
+           height = 128,
+           scale = 0.5,
+		   tint = Material_Colors.Stone,
+        }
+      },
+      right =
+      {
+        filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-right.png",
+        priority = "high",
+        width = 64,
+        height = 64, --, shift = {0.1, 0.1}
+		tint = Material_Colors.Stone,
+        hr_version =
+        {
+           filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-right.png",
+           priority = "extra-high",
+           width = 128,
+           height = 128,
+           scale = 0.5,
+		   tint = Material_Colors.Stone,
+        }
+      },
+    }
 
+data.raw["pipe"]["pipe"].localised_name = {"edits-name.pipe"}
+data.raw["pipe-to-ground"]["pipe-to-ground"].localised_name = {"edits-name.pipe-to-ground"}
+	
+data.raw["pipe"]["pipe"].max_health = DyWorld_Material_Formulas(3, "Stone")
+data.raw["pipe-to-ground"]["pipe-to-ground"].max_health = DyWorld_Material_Formulas(3, "Stone")
+
+data.raw["pipe"]["pipe"].fluid_box.base_area = (DyWorld_Material_Formulas(4, "Stone") / 100)
+data.raw["pipe-to-ground"]["pipe-to-ground"].fluid_box.base_area = (DyWorld_Material_Formulas(4, "Stone") / 100)
+
+data.raw["pipe-to-ground"]["pipe-to-ground"].fluid_box.pipe_connections[2].max_underground_distance = DyWorld_Material_Formulas(2, "Stone")

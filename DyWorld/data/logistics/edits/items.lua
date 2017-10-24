@@ -1,4 +1,14 @@
+require "data/prefix"
 
+
+data.raw.item["pipe"].order = "stone"
+data.raw.item["pipe-to-ground"].order = "stone"
+
+data.raw.item["pipe"].subgroup = dy.."pipe-normal"
+data.raw.item["pipe-to-ground"].subgroup = dy.."pipe-underground"
+
+data.raw.item["pipe"].localised_name = {"edits-name.pipe"}
+data.raw.item["pipe-to-ground"].localised_name = {"edits-name.pipe-to-ground"}
 
 
 data.raw.item["transport-belt"].order = "iron"
@@ -112,3 +122,20 @@ data.raw.item["express-splitter"].icons =
 	  },
 	} 
 table.remove(data.raw.item["express-splitter"], icon)
+
+data.raw.item["pipe"].icons =
+	{
+	  {
+		icon = "__base__/graphics/icons/pipe.png",
+		tint = Material_Colors.Stone,
+	  },
+	} 
+table.remove(data.raw.item["pipe"], icon)
+data.raw.item["pipe-to-ground"].icons =
+	{
+	  {
+		icon = "__base__/graphics/icons/pipe-to-ground.png",
+		tint = Material_Colors.Stone,
+	  },
+	} 
+table.remove(data.raw.item["pipe-to-ground"], icon)

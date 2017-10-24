@@ -66,6 +66,16 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "logistics"
 	},
+	{
+		Name = "pipe-normal",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "pipe-underground",
+		Type = "sub",
+		Main = "logistics"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

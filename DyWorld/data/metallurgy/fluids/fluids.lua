@@ -29,7 +29,7 @@ local Data_Table = {
 		Barrel = false,
 	},
 	{
-		Name = "molten-steel",
+		Name = "molten-steel-normal",
 		Icon = dyworld_path_icon_temp,
 		Def_Temp = Materials.Steel.Melting_Point,
 		Max_Temp = Materials.Steel.Boiling_Point,
@@ -38,7 +38,7 @@ local Data_Table = {
 		Barrel = false,
 	},
 	{
-		Name = "molten-stainless-steel",
+		Name = "molten-steel-stainless",
 		Icon = dyworld_path_icon_temp,
 		Def_Temp = Materials.Stainless_Steel.Melting_Point,
 		Max_Temp = Materials.Stainless_Steel.Boiling_Point,

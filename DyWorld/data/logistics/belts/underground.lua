@@ -1,7 +1,5 @@
 require "data/prefix"
 
--- range = (((Ultimate + Yield) / Elasticity) - Hardness)
-
 local Data_Table = {
 	{
 		Name = "copper-underground-belt",
@@ -16,10 +14,10 @@ local Data_Table = {
 		Order = "copper",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = math.floor(((Materials.Copper.Density * Materials.Copper.Hardness) - Materials.Copper.Elasticity) + Materials.Copper.Strength_Ultimate),
 		Tint = Material_Colors.Copper,
-		Item_Per_Sec = math.floor(Materials.Copper.Strength_Ultimate / (Materials.Copper.Hardness + Materials.Copper.Density)),
-		Range = math.floor(((Materials.Copper.Strength_Ultimate + Materials.Copper.Strength_Yield) / Materials.Copper.Elasticity) - Materials.Copper.Hardness),
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Copper"),
+		Range = DyWorld_Material_Formulas(2, "Copper"),
+		Health = DyWorld_Material_Formulas(3, "Copper"),
 	},
 	{
 		Name = "stone-underground-belt",
@@ -34,10 +32,10 @@ local Data_Table = {
 		Order = "stone",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = math.floor(((Materials.Stone.Density * Materials.Stone.Hardness) - Materials.Stone.Elasticity) + Materials.Stone.Strength_Ultimate),
 		Tint = Material_Colors.Stone,
-		Item_Per_Sec = math.floor(Materials.Stone.Strength_Ultimate / (Materials.Stone.Hardness + Materials.Stone.Density))+1,
-		Range = math.floor(((Materials.Stone.Strength_Ultimate + Materials.Stone.Strength_Yield) / Materials.Stone.Elasticity) - Materials.Stone.Hardness),
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Stone"),
+		Range = DyWorld_Material_Formulas(2, "Stone"),
+		Health = DyWorld_Material_Formulas(3, "Stone"),
 	},
 	{
 		Name = "wood-underground-belt",
@@ -52,10 +50,10 @@ local Data_Table = {
 		Order = "wood",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = math.floor(((Materials.Wood.Density * Materials.Wood.Hardness) - Materials.Wood.Elasticity) + Materials.Wood.Strength_Ultimate),
 		Tint = Material_Colors.Wood,
-		Item_Per_Sec = math.floor(Materials.Wood.Strength_Ultimate / (Materials.Wood.Hardness + Materials.Wood.Density)),
-		Range = math.floor(((Materials.Wood.Strength_Ultimate + Materials.Wood.Strength_Yield) / Materials.Wood.Elasticity) - Materials.Wood.Hardness)+1,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Wood"),
+		Range = DyWorld_Material_Formulas(2, "Wood"),
+		Health = DyWorld_Material_Formulas(3, "Wood"),
 	},
 }
 	
@@ -69,3 +67,8 @@ for k,v in pairs(Data_Table) do
 end
 
 DyWorld_Add_To_Tech("logistics", dy.."copper-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."lead-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."silver-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."gold-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."tin-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."chromium-underground-belt")

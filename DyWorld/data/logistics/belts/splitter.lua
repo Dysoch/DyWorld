@@ -14,9 +14,9 @@ local Data_Table = {
 		Order = "copper",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = math.floor(((Materials.Copper.Density * Materials.Copper.Hardness) - Materials.Copper.Elasticity) + Materials.Copper.Strength_Ultimate),
 		Tint = Material_Colors.Copper,
-		Item_Per_Sec = math.floor(Materials.Copper.Strength_Ultimate / (Materials.Copper.Hardness + Materials.Copper.Density)),
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Copper"),
+		Health = DyWorld_Material_Formulas(3, "Copper"),
 	},
 	{
 		Name = "stone-splitter",
@@ -31,9 +31,9 @@ local Data_Table = {
 		Order = "stone",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = math.floor(((Materials.Stone.Density * Materials.Stone.Hardness) - Materials.Stone.Elasticity) + Materials.Stone.Strength_Ultimate),
 		Tint = Material_Colors.Stone,
-		Item_Per_Sec = math.floor(Materials.Stone.Strength_Ultimate / (Materials.Stone.Hardness + Materials.Stone.Density))+1,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Stone"),
+		Health = DyWorld_Material_Formulas(3, "Stone"),
 	},
 	{
 		Name = "wood-splitter",
@@ -48,9 +48,9 @@ local Data_Table = {
 		Order = "wood",
 		Item_Place = "quickbar",
 		Entity = true,
-		Health = math.floor(((Materials.Wood.Density * Materials.Wood.Hardness) - Materials.Wood.Elasticity) + Materials.Wood.Strength_Ultimate),
 		Tint = Material_Colors.Wood,
-		Item_Per_Sec = math.floor(Materials.Wood.Strength_Ultimate / (Materials.Wood.Hardness + Materials.Wood.Density)),
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Wood"),
+		Health = DyWorld_Material_Formulas(3, "Wood"),
 	},
 }
 	
@@ -64,3 +64,8 @@ for k,v in pairs(Data_Table) do
 end
 
 DyWorld_Add_To_Tech("logistics", dy.."copper-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."lead-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."silver-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."gold-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."tin-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."chromium-splitter")

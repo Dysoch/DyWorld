@@ -1,6 +1,7 @@
 
-require("data.core.prototypes")
-require("data.core.belt-pictures")
+require("data.core.prototypes.prototypes")
+require("data.core.prototypes.belt-pictures")
+require("data.core.prototypes.pipe-pictures")
 require("data.core.gui_sprites")
 require("data.core.keys")
 require("data.core.category")
@@ -12,6 +13,7 @@ require("data.core.debug.equipment")
 require("data.core.debug.mining-tools")
 require("data.core.fluids.fluids")
 require("data.core.items.intermediates")
+require("data.core.items.resources")
 
 -- Item Groups
 require("data.core.item-groups.energy")

@@ -34,13 +34,35 @@ Color_Tier = {
 }
 
 Material_Colors = {
-	Iron = {r=255, g=192, b=203},
-	Copper = {r=255, g=192, b=203},
-	Steel = {r=255, g=192, b=203},
-	Stainless_Steel = {r=255, g=192, b=203},
-	Wood = {r=255, g=192, b=203},
-	Stone = {r=255, g=192, b=203},
+	Iron = {r=67, g=75, b=77},
+	Copper = {r=184, g=115, b=51},
+	Steel = {r=192, g=192, b=192},
+	Stainless_Steel = {r=224, g=223, b=219},
+	Wood = {r=182, g=155, b=76},
+	Stone = {r=139, g=141, b=122},
+	Chromium = {r=139, g=141, b=122},
+	Tin = {r=139, g=141, b=122},
+	Silver = {r=139, g=141, b=122},
+	Lead = {r=139, g=141, b=122},
+	Gold = {r=139, g=141, b=122},
 }
+
+-- Material Formulas to calculate everything
+function DyWorld_Material_Formulas(TYPE, TABLE)
+	if TYPE == 1 then
+		-- Belt Speed
+		return ((Materials[TABLE].Strength_Ultimate - Materials[TABLE].Strength_Yield) / Materials[TABLE].Density)
+	elseif TYPE == 2 then
+		-- Belt & Pipe Range
+		return math.floor(Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity)
+	elseif TYPE == 3 then
+		-- Health
+		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) + Materials[TABLE].Strength_Yield)
+	elseif TYPE == 4 then
+		-- Pipe Capacity
+		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
+	end
+end
 
 -- Material Properties (for metallurgy and other stuff)
 Materials = {
@@ -48,8 +70,8 @@ Materials = {
 		Density = 7.874,
 		Melting_Point = 1538,
 		Boiling_Point = 2862,
-		Hardness = 4.5, --17.55
-		Elasticity = 13.4,
+		Hardness = 4,
+		Elasticity = 28.5,
 		Strength_Yield = 130,
 		Strength_Ultimate = 200,
 	},
@@ -57,8 +79,8 @@ Materials = {
 		Density = 8.94,
 		Melting_Point = 1084,
 		Boiling_Point = 2562,
-		Hardness = 2.75, --12.23
-		Elasticity = 16.0,
+		Hardness = 3,
+		Elasticity = 17,
 		Strength_Yield = 70,
 		Strength_Ultimate = 220,
 	},
@@ -66,8 +88,8 @@ Materials = {
 		Density = 7.8,
 		Melting_Point = 1425,
 		Boiling_Point = 2862,
-		Hardness = 5, --19.5
-		Elasticity = 29.5,
+		Hardness = 4.25,
+		Elasticity = 20,
 		Strength_Yield = 250,
 		Strength_Ultimate = 400,
 	},
@@ -75,8 +97,8 @@ Materials = {
 		Density = 8.19,
 		Melting_Point = 1510,
 		Boiling_Point = 2862,
-		Hardness = 8.5, --34
-		Elasticity = 29.2,
+		Hardness = 7.75,
+		Elasticity = 18,
 		Strength_Yield = 520,
 		Strength_Ultimate = 860,
 	},
@@ -84,18 +106,63 @@ Materials = {
 		Density = 7.5,
 		Melting_Point = nil,
 		Boiling_Point = nil,
-		Hardness = 2.25, --8.44
+		Hardness = 2.25,
 		Elasticity = 11,
-		Strength_Yield = 0,
+		Strength_Yield = 1,
 		Strength_Ultimate = 40,
 	},
 	Stone = {
-		Density = 2.55,
+		Density = 12.55,
 		Melting_Point = 100,
 		Boiling_Point = 5000,
-		Hardness = 5, --6.37
+		Hardness = 5,
 		Elasticity = 1,
-		Strength_Yield = 0,
+		Strength_Yield = 1,
 		Strength_Ultimate = 15,
+	},
+	Chromium = {
+		Density = 7.19,
+		Melting_Point = 1860,
+		Boiling_Point = 2670,
+		Hardness = 8.5,
+		Elasticity = 36,
+		Strength_Yield = 160,
+		Strength_Ultimate = 280,
+	},
+	Tin = {
+		Density = 7.28,
+		Melting_Point = 232,
+		Boiling_Point = 2600,
+		Hardness = 1.5,
+		Elasticity = 47,
+		Strength_Yield = 9,
+		Strength_Ultimate = 19,
+	},
+	Silver = {
+		Density = 10.49,
+		Melting_Point = 961,
+		Boiling_Point = 2212,
+		Hardness = 2.75,
+		Elasticity = 10.5,
+		Strength_Yield = 55,
+		Strength_Ultimate = 360,
+	},
+	Gold = {
+		Density = 19.32,
+		Melting_Point = 1063,
+		Boiling_Point = 2800,
+		Hardness = 2.75,
+		Elasticity = 10.8,
+		Strength_Yield = 190,
+		Strength_Ultimate = 220,
+	},
+	Lead = {
+		Density = 11.34,
+		Melting_Point = 327,
+		Boiling_Point = 1750,
+		Hardness = 1.5,
+		Elasticity = 2,
+		Strength_Yield = 19,
+		Strength_Ultimate = 32,
 	},
 }

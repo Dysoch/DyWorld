@@ -6,13 +6,13 @@ data:extend(
   {
     type = "recipe",
     name = dy.."void-"..v.name,
-	localised_name = {"looped-name.void", "fluid-name."..v.name},
+	localised_name = {"looped-name.void", {"fluid-name."..v.name}},
 	icons = {
 	  {
-		icon = v.icon,
+		icon = "__DyWorld__/graphics/delete.png",
 	  },
 	  {
-		icon = dyworld_path_icon_temp,
+		icon = v.icon,
 	  },
 	},
     energy_required = 1,

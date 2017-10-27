@@ -4,10 +4,10 @@ data:extend(
 {
   {
     type = "boiler",
-    name = dy.."rock-boiler",
+    name = dy.."rock-boiler-4000",
     icon = "__base__/graphics/icons/boiler.png",
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = dy.."rock-boiler"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy.."rock-boiler-4000"},
     max_health = 2500,
     corpse = "small-remnants",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -29,7 +29,7 @@ data:extend(
     },
     collision_box = {{-1.29, -0.79}, {1.29, 0.79}},
     selection_box = {{-1.5, -1}, {1.5, 1}},
-    target_temperature = 5000,
+    target_temperature = 4000,
     fluid_box =
     {
       base_area = 1,
@@ -65,7 +65,7 @@ data:extend(
       name = dy.."molten-rock",
       amount = 0.0
     },
-    energy_consumption = "0.75MW",
+    energy_consumption = tostring(4000*0.5).."kW",
     energy_source =
     {
       type = "electric",
@@ -442,17 +442,17 @@ data:extend(
   },
   {
 	type = "item",
-    name = dy.."rock-boiler",
+    name = dy.."rock-boiler-4000",
     icon = "__base__/graphics/icons/boiler.png",
 	flags = {"goes-to-quickbar"},
-	order = dy.."blast-furnace",
-	place_result = dy.."rock-boiler",
+	order = dy.."4000-rock-boiler",
+	place_result = dy.."rock-boiler-4000",
 	stack_size = 50,
 	subgroup = dy.."metal-machines",
   },
   {
    	type = "recipe",
-   	name = dy.."rock-boiler",
+   	name = dy.."rock-boiler-4000",
 	energy_required = 10,
     enabled = false,
 	ingredients = 
@@ -463,7 +463,9 @@ data:extend(
 	  {"iron-plate", 5},
 	  {"boiler", 1},
 	},
-   	result = dy.."rock-boiler",
+   	result = dy.."rock-boiler-4000",
   },
 }
 )
+
+DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."rock-boiler-4000")

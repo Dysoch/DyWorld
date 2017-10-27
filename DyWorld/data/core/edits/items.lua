@@ -9,8 +9,8 @@ local StackSizes = {
 	{Name = "wood", Amount = 200, Type = "item"},
 	{Name = "raw-wood", Amount = 200, Type = "item"},
 	{Name = "coal", Amount = 200, Type = "item"},
-	{Name = "pipe", Amount = 100, Type = "item"},
-	{Name = "pipe-to-ground", Amount = 100, Type = "item"},
+	{Name = "pipe", Amount = 200, Type = "item"},
+	{Name = "pipe-to-ground", Amount = 200, Type = "item"},
 	{Name = "transport-belt", Amount = 200, Type = "item"},
 	{Name = "fast-transport-belt", Amount = 200, Type = "item"},
 	{Name = "express-transport-belt", Amount = 200, Type = "item"},
@@ -28,3 +28,8 @@ local StackSizes = {
 for k,v in pairs(StackSizes) do
 	data.raw[v.Type][v.Name].stack_size = v.Amount
 end
+
+data.raw.item["iron-ore"].localised_name = {"edits-name.iron-ore"}
+data.raw.item["copper-ore"].localised_name = {"edits-name.copper-ore"}
+data.raw.item["iron-plate"].localised_name = {"edits-name.iron-plate"}
+data.raw.item["copper-plate"].localised_name = {"edits-name.copper-plate"}

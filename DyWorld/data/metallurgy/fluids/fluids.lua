@@ -3,7 +3,7 @@ require "data/prefix"
 local Data_Table = {
 	{
 		Name = "molten-rock",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."rock.png",
 		Def_Temp = Materials.Stone.Melting_Point,
 		Max_Temp = Materials.Stone.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -12,7 +12,7 @@ local Data_Table = {
 	},
 	{
 		Name = "molten-iron",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."iron.png",
 		Def_Temp = Materials.Iron.Melting_Point,
 		Max_Temp = Materials.Iron.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -21,7 +21,7 @@ local Data_Table = {
 	},
 	{
 		Name = "molten-copper",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."copper.png",
 		Def_Temp = Materials.Copper.Melting_Point,
 		Max_Temp = Materials.Copper.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},

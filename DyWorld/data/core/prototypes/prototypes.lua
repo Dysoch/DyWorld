@@ -2695,6 +2695,12 @@ data:extend(
 		local result_1 = {DATA.Name, 2}
 		local result_2 = {DATA.Name, 3}
 		local result_3 = {DATA.Name, 4}
+		data.raw.item[dy..DATA.Name.."-transport-belt"].localised_name = {"looped-name.belt", {"item-name."..DATA.Name}}
+		data.raw.item[dy..DATA.Name.."-underground-belt"].localised_name = {"looped-name.underground-belt", {"item-name."..DATA.Name}}
+		data.raw.item[dy..DATA.Name.."-splitter"].localised_name = {"looped-name.splitter", {"item-name."..DATA.Name}}
+		data.raw["transport-belt"][dy..DATA.Name.."-transport-belt"].localised_name = {"looped-name.belt", {"item-name."..DATA.Name}}
+		data.raw["underground-belt"][dy..DATA.Name.."-underground-belt"].localised_name = {"looped-name.underground-belt", {"item-name."..DATA.Name}}
+		data.raw["splitter"][dy..DATA.Name.."-splitter"].localised_name = {"looped-name.splitter", {"item-name."..DATA.Name}}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
@@ -2702,6 +2708,12 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 2}
 		local result_2 = {DATA.Name.."-plate", 3}
 		local result_3 = {DATA.Name.."-plate", 4}
+		data.raw.item[dy..DATA.Name.."-transport-belt"].localised_name = {"looped-name.belt", {"item-name."..DATA.Name.."-plate"}}
+		data.raw.item[dy..DATA.Name.."-underground-belt"].localised_name = {"looped-name.underground-belt", {"item-name."..DATA.Name.."-plate"}}
+		data.raw.item[dy..DATA.Name.."-splitter"].localised_name = {"looped-name.splitter", {"item-name."..DATA.Name.."-plate"}}
+		data.raw["transport-belt"][dy..DATA.Name.."-transport-belt"].localised_name = {"looped-name.belt", {"item-name."..DATA.Name.."-plate"}}
+		data.raw["underground-belt"][dy..DATA.Name.."-underground-belt"].localised_name = {"looped-name.underground-belt", {"item-name."..DATA.Name.."-plate"}}
+		data.raw["splitter"][dy..DATA.Name.."-splitter"].localised_name = {"looped-name.splitter", {"item-name."..DATA.Name.."-plate"}}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
@@ -2714,6 +2726,7 @@ data:extend(
   {
     type = "pipe",
     name = dy..DATA.Name.."-pipe",
+	localised_description = {"looped-name.pipe-desc", (DATA.Capacity)},
     icons = 
 	{
 	  {
@@ -2770,6 +2783,7 @@ data:extend(
   {
     type = "pipe-to-ground",
     name = dy..DATA.Name.."-pipe-to-ground",
+	localised_description = {"looped-name.pipe-to-ground-desc", (DATA.Capacity), (DATA.Range)},
     icons = 
 	{
 	  {
@@ -2892,6 +2906,7 @@ data:extend(
   {
     type = "item",
     name = dy..DATA.Name.."-pipe",
+	localised_description = {"looped-name.pipe-desc", (DATA.Capacity)},
 	icons = {{icon = "__base__/graphics/icons/pipe.png", tint = DATA.Tint}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."pipe-normal",
@@ -2902,6 +2917,7 @@ data:extend(
   {
     type = "item",
     name = dy..DATA.Name.."-pipe-to-ground",
+	localised_description = {"looped-name.pipe-to-ground-desc", (DATA.Capacity), (DATA.Range)},
 	icons = {{icon = "__base__/graphics/icons/pipe-to-ground.png", tint = DATA.Tint}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."pipe-underground",
@@ -2931,10 +2947,20 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 2}
 		local result_2 = {DATA.Name, 4}
+		data.raw.item[dy..DATA.Name.."-pipe"].localised_name = {"looped-name.pipe", {"item-name."..DATA.Name}}
+		data.raw.item[dy..DATA.Name.."-pipe-to-ground"].localised_name = {"looped-name.pipe-to-ground", {"item-name."..DATA.Name}}
+		data.raw["pipe"][dy..DATA.Name.."-pipe"].localised_name = {"looped-name.pipe", {"item-name."..DATA.Name}}
+		data.raw["pipe-to-ground"][dy..DATA.Name.."-pipe-to-ground"].localised_name = {"looped-name.pipe-to-ground", {"item-name."..DATA.Name}}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].ingredients, result_2)
 	else
 		local result_1 = {DATA.Name.."-plate", 2}
 		local result_2 = {DATA.Name.."-plate", 4}
+		data.raw.item[dy..DATA.Name.."-pipe"].localised_name = {"looped-name.pipe", {"item-name."..DATA.Name.."-plate"}}
+		data.raw.item[dy..DATA.Name.."-pipe-to-ground"].localised_name = {"looped-name.pipe-to-ground", {"item-name."..DATA.Name.."-plate"}}
+		data.raw["pipe"][dy..DATA.Name.."-pipe"].localised_name = {"looped-name.pipe", {"item-name."..DATA.Name.."-plate"}}
+		data.raw["pipe-to-ground"][dy..DATA.Name.."-pipe-to-ground"].localised_name = {"looped-name.pipe-to-ground", {"item-name."..DATA.Name.."-plate"}}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].ingredients, result_2)
 	end
 end

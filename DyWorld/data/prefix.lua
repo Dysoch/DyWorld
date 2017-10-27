@@ -15,6 +15,7 @@ Tiered_Entities = 9
 
 -- graphical
 dyworld_path_icon = "__DyWorld__/graphics/icons/"
+dyworld_path_fluid = "__DyWorld__/graphics/fluids/"
 dyworld_path_entity = "__DyWorld__/graphics/entity/"
 dyworld_path_tile = "__DyWorld__/graphics/tiles/"
 dyworld_path_item_group = "__DyWorld__/graphics/item-group/"
@@ -34,17 +35,17 @@ Color_Tier = {
 }
 
 Material_Colors = {
-	Iron = {r=67, g=75, b=77},
-	Copper = {r=184, g=115, b=51},
+	Iron = {r=0.56, g=0.57, b=0.58},
+	Copper = {r=0.955, g=0.637, b=0.538},
 	Steel = {r=192, g=192, b=192},
 	Stainless_Steel = {r=224, g=223, b=219},
 	Wood = {r=182, g=155, b=76},
 	Stone = {r=139, g=141, b=122},
-	Chromium = {r=139, g=141, b=122},
-	Tin = {r=139, g=141, b=122},
-	Silver = {r=139, g=141, b=122},
-	Lead = {r=139, g=141, b=122},
-	Gold = {r=139, g=141, b=122},
+	Chromium = {r=0.550, g=0.556, b=0.554},
+	Tin = {r=211, g=212, b=213},
+	Silver = {r=0.972, g=0.96, b=0.915},
+	Lead = {r=159, g=157, b=153},
+	Gold = {r=1, g=0.766, b=0.336},
 }
 
 -- Material Formulas to calculate everything

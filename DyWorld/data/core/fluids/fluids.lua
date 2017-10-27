@@ -3,7 +3,7 @@ require "data/prefix"
 local Data_Table = {
 	{
 		Name = "water-clean",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."clean-water.png",
 		Def_Temp = 15,
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -12,7 +12,7 @@ local Data_Table = {
 	},
 	{
 		Name = "sewage",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."sewage.png",
 		Def_Temp = 15,
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -21,7 +21,7 @@ local Data_Table = {
 	},
 	{
 		Name = "sludge",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."sludge.png",
 		Def_Temp = 15,
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -30,7 +30,7 @@ local Data_Table = {
 	},
 	{
 		Name = "acid",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."acid.png",
 		Def_Temp = 15,
 		Max_Temp = 100,
 		Color_Base = {r=10, g=255, b=10},
@@ -39,7 +39,7 @@ local Data_Table = {
 	},
 	{
 		Name = "methane",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."methane.png",
 		Def_Temp = 15,
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -48,7 +48,7 @@ local Data_Table = {
 	},
 	{
 		Name = "oxygen",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."oxygen.png",
 		Def_Temp = 15,
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -57,7 +57,7 @@ local Data_Table = {
 	},
 	{
 		Name = "hydrogen",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."hydrogen.png",
 		Def_Temp = 15,
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -66,7 +66,7 @@ local Data_Table = {
 	},
 	{
 		Name = "blood",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."blood.png",
 		Def_Temp = 37,
 		Max_Temp = 100,
 		Color_Base = {r=255, g=10, b=10},
@@ -75,7 +75,7 @@ local Data_Table = {
 	},
 	{
 		Name = "clean-oil",
-		Icon = "__base__/graphics/icons/fluid/crude-oil.png",
+		Icon = dyworld_path_fluid.."clean-oil.png",
 		Def_Temp = 25,
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0, b=0},

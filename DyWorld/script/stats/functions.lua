@@ -91,20 +91,23 @@ end
 function LevelUnlock(ID, LEVEL)
 	local player = game.players[ID]
 	for _,data in pairs(LvLed_Recipes.RecipeUnlock) do
-		if math.floor(global.dyworld.Level / global.dyworld.Players) >= data.Level then
+		--if math.floor(global.dyworld.Level / global.dyworld.Players) >= data.Level then
+		if global.dyworld.Level >= data.Level then
 			for _,player in pairs(game.players) do
-				if not player.force.recipes[data.Recipe].enabled then
-					player.force.recipes[data.Recipe].enabled = true
-					if data.type == 1 then
-						player.print({"dyworld.level-unlock", {"recipe-name."..data.Recipe}})
-					elseif data.type == 2 then
-						player.print({"dyworld.level-unlock", {"fluid-name."..data.Recipe}})
-					elseif data.type == 3 then
-						player.print({"dyworld.level-unlock", {"entity-name."..data.Recipe}})
-					else
-						player.print({"dyworld.level-unlock", {"item-name."..data.Recipe}})
+				if player.force.recipes[data.Recipe] then
+					if not player.force.recipes[data.Recipe].enabled then
+						player.force.recipes[data.Recipe].enabled = true
+						if data.type == 1 then
+							player.print({"dyworld.level-unlock", {"recipe-name."..data.Recipe}})
+						elseif data.type == 2 then
+							player.print({"dyworld.level-unlock", {"fluid-name."..data.Recipe}})
+						elseif data.type == 3 then
+							player.print({"dyworld.level-unlock", {"entity-name."..data.Recipe}})
+						else
+							player.print({"dyworld.level-unlock", {"item-name."..data.Recipe}})
+						end
+						debug("Unlocked: "..data.Recipe)
 					end
-					debug("Unlocked: "..data.Recipe)
 				end
 			end
 		end

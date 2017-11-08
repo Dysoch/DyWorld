@@ -4,6 +4,7 @@
 	"factorio_version": "0.15",
 	"title": "DyWorld",
 	"author": "Dysoch",
-	"description": "DyWorld, the spiritual successor of DyTech. Added features are intensive, but mainly adding a RPG style element to the game, with a nice background story.",
+	"homepage": "https://www.facebook.com/DyWorld-1895036517492410/",
+	"description": "DyWorld, the successor of DyTech. Adding new systems, items, fluids, machines and enemies!!!! The Metal system gives items like pipes and transport a real life feeling (metal property specific capacity/speed/range) and the metallurgic system gives a new way to smelt ores. The Attribute system governs you! This means whatever you do, you get stronger from it! Faster crafting speeds, more inventory slots, more health are just some of the bonuses! Also a complete different way to unlock recipes, must like classic RPG's. The mod consists of several modules, which are mods on their own. Each can be shut off, and the game changes accordingly. Some features are permanent however!",
 	"dependencies": ["base"]
 }

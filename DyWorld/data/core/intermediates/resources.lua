@@ -3,8 +3,8 @@ require "data/prefix"
 local Data_Table = {
 	{
 		Name = "chromium",
-		Icon_1 = dyworld_path_icon_temp,
-		Icon_2 = dyworld_path_icon_temp,
+		Icon_1 = dyworld_path_icon.."chromium-ore.png",
+		Icon_2 = dyworld_path_icon.."chromium-plate.png",
 		Mining_Hardness = Materials.Chromium.Hardness,
 		Mining_Time = (Materials.Chromium.Hardness / Materials.Chromium.Density),
 		Tint = Material_Colors.Chromium,
@@ -51,5 +51,49 @@ data:extend(
 		DyWorld_Item_Ore(v),
 		DyWorld_Resource(v),
 		DyWorld_Item_Plate(v),
+		DyWorld_Recipe_Plate(v),
 	})
 end
+
+local function DyWorld_Technology_1(DATA)
+  local result =
+  {
+    type = "technology",
+    name = dy..DATA.Name.."-processing",
+	localised_name = {"looped-name.processing", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  { icon = dyworld_path_icon..DATA.Name.."-plate.png", scale = 2}
+	},
+    effects =
+    {
+	  {type = "unlock-recipe", recipe = DATA.Name.."-plate"},
+    },
+    prerequisites = {"steel-processing"},
+    unit =
+    {
+      count = math.floor(50 * DATA.Mining_Hardness),
+      ingredients =
+      {
+		{"science-pack-1", 1},
+      },
+      time = 15
+    },
+    upgrade = true,
+    order = dy..DATA.Name.."-processing",
+  }
+  return result
+end
+
+for k,v in pairs(Data_Table) do
+data:extend(
+	{
+		DyWorld_Technology_1(v),
+	})
+end
+
+data.raw.resource["tin-ore"].autoplace.richness_base = 2500
+data.raw.resource["tin-ore"].autoplace.starting_area_amount = 2500
+
+data.raw.resource["lead-ore"].autoplace.richness_base = 2000
+data.raw.resource["lead-ore"].autoplace.starting_area_amount = 2000

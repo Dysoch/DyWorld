@@ -1,17 +1,18 @@
 require "data/prefix"
 
 
-data.raw["transport-belt"]["transport-belt"].localised_name = {"edits-name.transport-belt"}
-data.raw["transport-belt"]["fast-transport-belt"].localised_name = {"edits-name.fast-transport-belt"}
-data.raw["transport-belt"]["express-transport-belt"].localised_name = {"edits-name.express-transport-belt"}
 
-data.raw["underground-belt"]["underground-belt"].localised_name = {"edits-name.underground-belt"}
-data.raw["underground-belt"]["fast-underground-belt"].localised_name = {"edits-name.fast-underground-belt"}
-data.raw["underground-belt"]["express-underground-belt"].localised_name = {"edits-name.express-underground-belt"}
+--[[data.raw["transport-belt"]["transport-belt"].localised_name = {"looped-name.belt", {"looped-name.iron"}}
+data.raw["transport-belt"]["fast-transport-belt"].localised_name = {"looped-name.belt", {"looped-name.steel"}}
+data.raw["transport-belt"]["express-transport-belt"].localised_name = {"looped-name.belt", {"looped-name.stainless-steel"}}
 
-data.raw["splitter"]["splitter"].localised_name = {"edits-name.splitter"}
-data.raw["splitter"]["fast-splitter"].localised_name = {"edits-name.fast-splitter"}
-data.raw["splitter"]["express-splitter"].localised_name = {"edits-name.express-splitter"}
+data.raw["underground-belt"]["underground-belt"].localised_name = {"looped-name.underground-belt", {"looped-name.iron"}}
+data.raw["underground-belt"]["fast-underground-belt"].localised_name = {"looped-name.underground-belt", {"looped-name.steel"}}
+data.raw["underground-belt"]["express-underground-belt"].localised_name = {"looped-name.underground-belt", {"looped-name.stainless-steel"}}
+
+data.raw["splitter"]["splitter"].localised_name = {"looped-name.splitter", {"looped-name.iron"}}
+data.raw["splitter"]["fast-splitter"].localised_name = {"looped-name.splitter", {"looped-name.steel"}}
+data.raw["splitter"]["express-splitter"].localised_name = {"looped-name.splitter", {"looped-name.stainless-steel"}}
 
 
 
@@ -720,4 +721,4 @@ data.raw["pipe-to-ground"]["pipe-to-ground"].max_health = DyWorld_Material_Formu
 data.raw["pipe"]["pipe"].fluid_box.base_area = (DyWorld_Material_Formulas(4, "Stone") / 100)
 data.raw["pipe-to-ground"]["pipe-to-ground"].fluid_box.base_area = (DyWorld_Material_Formulas(4, "Stone") / 100)
 
-data.raw["pipe-to-ground"]["pipe-to-ground"].fluid_box.pipe_connections[2].max_underground_distance = DyWorld_Material_Formulas(2, "Stone")
+data.raw["pipe-to-ground"]["pipe-to-ground"].fluid_box.pipe_connections[2].max_underground_distance = DyWorld_Material_Formulas(2, "Stone") ]]--

@@ -12,12 +12,17 @@ Data_Table_Item_Group = {
 		Main = "warfare"
 	},
 	{
-		Name = "ammo-electric",
+		Name = "ammo-basic-piercing",
 		Type = "sub",
 		Main = "warfare"
 	},
 	{
-		Name = "ammo-sniper",
+		Name = "ammo-shotgun",
+		Type = "sub",
+		Main = "warfare"
+	},
+	{
+		Name = "ammo-shotgun-piercing",
 		Type = "sub",
 		Main = "warfare"
 	},
@@ -38,6 +43,11 @@ Data_Table_Item_Group = {
 	},
 	{
 		Name = "turret-gun",
+		Type = "sub",
+		Main = "warfare"
+	},
+	{
+		Name = "turret-shotgun",
 		Type = "sub",
 		Main = "warfare"
 	},

@@ -9,6 +9,20 @@ local Data_Table = {
 		Health = DyWorld_Material_Formulas(3, "Copper"),
 	},
 	{
+		Name = "iron",
+		Tint = Material_Colors.Iron,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Iron"),
+		Range = DyWorld_Material_Formulas(2, "Iron"),
+		Health = DyWorld_Material_Formulas(3, "Iron"),
+	},
+	{
+		Name = "steel",
+		Tint = Material_Colors.Steel,
+		Item_Per_Sec = DyWorld_Material_Formulas(1, "Steel"),
+		Range = DyWorld_Material_Formulas(2, "Steel"),
+		Health = DyWorld_Material_Formulas(3, "Steel"),
+	},
+	{
 		Name = "stone",
 		Tint = Material_Colors.Stone,
 		Item_Per_Sec = DyWorld_Material_Formulas(1, "Stone"),
@@ -33,7 +47,7 @@ local Data_Table = {
 		Name = "tin",
 		Tint = Material_Colors.Tin,
 		Item_Per_Sec = DyWorld_Material_Formulas(1, "Tin"),
-		Range = (DyWorld_Material_Formulas(2, "Tin")+2),
+		Range = DyWorld_Material_Formulas(2, "Tin"),
 		Health = DyWorld_Material_Formulas(3, "Tin"),
 	},
 	{
@@ -64,25 +78,31 @@ for k,v in pairs(Data_Table) do
 end
 
 DyWorld_Add_To_Tech("logistics", dy.."copper-transport-belt")
-DyWorld_Add_To_Tech("logistics", dy.."lead-transport-belt")
-DyWorld_Add_To_Tech("logistics", dy.."silver-transport-belt")
-DyWorld_Add_To_Tech("logistics", dy.."gold-transport-belt")
-DyWorld_Add_To_Tech("logistics", dy.."tin-transport-belt")
-DyWorld_Add_To_Tech("logistics", dy.."chromium-transport-belt")
+DyWorld_Add_To_Tech("logistics", dy.."iron-transport-belt")
+DyWorld_Add_To_Tech("logistics", dy.."steel-transport-belt")
+DyWorld_Add_To_Tech(dy.."lead-processing", dy.."lead-transport-belt")
+DyWorld_Add_To_Tech(dy.."silver-processing", dy.."silver-transport-belt")
+DyWorld_Add_To_Tech(dy.."gold-processing", dy.."gold-transport-belt")
+DyWorld_Add_To_Tech(dy.."tin-processing", dy.."tin-transport-belt")
+DyWorld_Add_To_Tech(dy.."chromium-processing", dy.."chromium-transport-belt")
 
 DyWorld_Add_To_Tech("logistics", dy.."copper-underground-belt")
-DyWorld_Add_To_Tech("logistics", dy.."lead-underground-belt")
-DyWorld_Add_To_Tech("logistics", dy.."silver-underground-belt")
-DyWorld_Add_To_Tech("logistics", dy.."gold-underground-belt")
-DyWorld_Add_To_Tech("logistics", dy.."tin-underground-belt")
-DyWorld_Add_To_Tech("logistics", dy.."chromium-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."iron-underground-belt")
+DyWorld_Add_To_Tech("logistics", dy.."steel-underground-belt")
+DyWorld_Add_To_Tech(dy.."lead-processing", dy.."lead-underground-belt")
+DyWorld_Add_To_Tech(dy.."silver-processing", dy.."silver-underground-belt")
+DyWorld_Add_To_Tech(dy.."gold-processing", dy.."gold-underground-belt")
+DyWorld_Add_To_Tech(dy.."tin-processing", dy.."tin-underground-belt")
+DyWorld_Add_To_Tech(dy.."chromium-processing", dy.."chromium-underground-belt")
 
 DyWorld_Add_To_Tech("logistics", dy.."copper-splitter")
-DyWorld_Add_To_Tech("logistics", dy.."lead-splitter")
-DyWorld_Add_To_Tech("logistics", dy.."silver-splitter")
-DyWorld_Add_To_Tech("logistics", dy.."gold-splitter")
-DyWorld_Add_To_Tech("logistics", dy.."tin-splitter")
-DyWorld_Add_To_Tech("logistics", dy.."chromium-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."iron-splitter")
+DyWorld_Add_To_Tech("logistics", dy.."steel-splitter")
+DyWorld_Add_To_Tech(dy.."lead-processing", dy.."lead-splitter")
+DyWorld_Add_To_Tech(dy.."silver-processing", dy.."silver-splitter")
+DyWorld_Add_To_Tech(dy.."gold-processing", dy.."gold-splitter")
+DyWorld_Add_To_Tech(dy.."tin-processing", dy.."tin-splitter")
+DyWorld_Add_To_Tech(dy.."chromium-processing", dy.."chromium-splitter")
 
 data.raw.recipe[dy.."stone-transport-belt"].enabled = true
 data.raw.recipe[dy.."wood-transport-belt"].enabled = true

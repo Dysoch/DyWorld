@@ -47,7 +47,7 @@ Data_Table_Item_Group = {
 		Main = "logistics"
 	},
 	{
-		Name = "inserter-fast",
+		Name = "inserter-basic",
 		Type = "sub",
 		Main = "logistics"
 	},
@@ -57,7 +57,22 @@ Data_Table_Item_Group = {
 		Main = "logistics"
 	},
 	{
+		Name = "inserter-filter",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
 		Name = "inserter-stack",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "inserter-stack-filter",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "inserter-super",
 		Type = "sub",
 		Main = "logistics"
 	},
@@ -73,6 +88,21 @@ Data_Table_Item_Group = {
 	},
 	{
 		Name = "pipe-underground",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "tank-storage",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "pump-pipe",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "pump-offshore",
 		Type = "sub",
 		Main = "logistics"
 	},

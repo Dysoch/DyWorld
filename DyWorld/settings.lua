@@ -1,6 +1,5 @@
 
 --settings.startup["DyWorld_Debug"].value
---settings.startup["DyWorld_Defense"].value
 --settings.startup["DyWorld_Modules"].value
 --settings.startup["DyWorld_Warfare"].value
 --settings.startup["DyWorld_Processing"].value
@@ -22,12 +21,6 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
-		name = "DyWorld_Defense",
-		setting_type = "startup",
-		default_value = false,
-	},
-	{
-		type = "bool-setting",
 		name = "DyWorld_Modules",
 		setting_type = "startup",
 		default_value = true,
@@ -36,7 +29,7 @@ data:extend({
 		type = "bool-setting",
 		name = "DyWorld_Warfare",
 		setting_type = "startup",
-		default_value = false,
+		default_value = true,
 	},
 	{
 		type = "bool-setting",

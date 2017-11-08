@@ -6,10 +6,6 @@ if settings.startup["DyWorld_Metallurgy"].value then
 	require("data.metallurgy.data")
 end
 
-if settings.startup["DyWorld_Defense"].value then
-	require("data.defense.data")
-end
-
 if settings.startup["DyWorld_Extraction"].value then
 	require("data.extraction.data")
 end

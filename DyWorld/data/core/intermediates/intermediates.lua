@@ -336,3 +336,16 @@ data:extend(
 		end
 	end
 end
+
+data:extend(
+{
+  {
+    type = "item",
+    name = "stainless-steel-plate",
+	icon = dyworld_path_icon_temp,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."metal-plate",
+    stack_size = 200,
+	order = "stainless-steel",
+  },
+})

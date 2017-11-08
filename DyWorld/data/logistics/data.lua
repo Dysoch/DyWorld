@@ -10,10 +10,12 @@ require("data.logistics.robots.construction")
 require("data.logistics.robots.logistic")
 
 require("data.logistics.belts.belts")
---require("data.logistics.belts.underground")
---require("data.logistics.belts.splitter")
 
 require("data.logistics.pipes.pipes")
+require("data.logistics.pipes.pumps")
+require("data.logistics.pipes.storage")
+
+require("data.logistics.inserters.inserters")
 
 
 

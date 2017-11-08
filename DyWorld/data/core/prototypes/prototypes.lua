@@ -108,6 +108,21 @@ function DyWorld_Item_Plate(DATA)
   return result
 end
 
+function DyWorld_Recipe_Plate(DATA)
+  local result =
+  {
+    type = "recipe",
+    name = DATA.Name.."-plate",
+    energy_required = 2,
+	enabled = false,
+	category = "smelting",
+    ingredients = {{DATA.Name.."-ore", 1}},
+    result = DATA.Name.."-plate",
+    result_count = 1,
+  }
+  return result
+end
+
 function DyWorld_Autoplace(DATA)
   local result =
   {
@@ -161,7 +176,7 @@ function DyWorld_Resource(DATA)
           noise_persistence = 0.3,
         },
       },
-      starting_area_size = 600 * 0.005,
+      starting_area_size = 600 * 0.008,
       starting_area_amount = 500
     },
     stage_counts = {5000, 3000, 1500, 800, 400, 100, 50, 10},
@@ -2323,6 +2338,7 @@ data:extend(
   {
     type = "transport-belt",
     name = dy..DATA.Name.."-transport-belt",
+	localised_name = {"looped-name.belt", {"looped-name."..DATA.Name}},
     icons =
 	{
 	  {
@@ -2393,6 +2409,7 @@ data:extend(
   {
     type = "underground-belt",
     name = dy..DATA.Name.."-underground-belt",
+	localised_name = {"looped-name.underground-belt", {"looped-name."..DATA.Name}},
     icons =
 	{
 	  {
@@ -2503,6 +2520,7 @@ data:extend(
   {
     type = "splitter",
     name = dy..DATA.Name.."-splitter",
+	localised_name = {"looped-name.belt", {"looped-name."..DATA.Name}},
     icons =
 	{
 	  {
@@ -2636,6 +2654,7 @@ data:extend(
   {
     type = "item",
     name = dy..DATA.Name.."-transport-belt",
+	localised_name = {"looped-name.belt", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/transport-belt.png", tint = DATA.Tint}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-belt",
@@ -2646,6 +2665,7 @@ data:extend(
   {
     type = "item",
     name = dy..DATA.Name.."-underground-belt",
+	localised_name = {"looped-name.underground-belt", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/underground-belt.png", tint = DATA.Tint}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-underground",
@@ -2656,6 +2676,7 @@ data:extend(
   {
     type = "item",
     name = dy..DATA.Name.."-splitter",
+	localised_name = {"looped-name.splitter", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/splitter.png", tint = DATA.Tint}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-splitter",
@@ -2695,12 +2716,6 @@ data:extend(
 		local result_1 = {DATA.Name, 2}
 		local result_2 = {DATA.Name, 3}
 		local result_3 = {DATA.Name, 4}
-		data.raw.item[dy..DATA.Name.."-transport-belt"].localised_name = {"looped-name.belt", {"item-name."..DATA.Name}}
-		data.raw.item[dy..DATA.Name.."-underground-belt"].localised_name = {"looped-name.underground-belt", {"item-name."..DATA.Name}}
-		data.raw.item[dy..DATA.Name.."-splitter"].localised_name = {"looped-name.splitter", {"item-name."..DATA.Name}}
-		data.raw["transport-belt"][dy..DATA.Name.."-transport-belt"].localised_name = {"looped-name.belt", {"item-name."..DATA.Name}}
-		data.raw["underground-belt"][dy..DATA.Name.."-underground-belt"].localised_name = {"looped-name.underground-belt", {"item-name."..DATA.Name}}
-		data.raw["splitter"][dy..DATA.Name.."-splitter"].localised_name = {"looped-name.splitter", {"item-name."..DATA.Name}}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
@@ -2708,12 +2723,6 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 2}
 		local result_2 = {DATA.Name.."-plate", 3}
 		local result_3 = {DATA.Name.."-plate", 4}
-		data.raw.item[dy..DATA.Name.."-transport-belt"].localised_name = {"looped-name.belt", {"item-name."..DATA.Name.."-plate"}}
-		data.raw.item[dy..DATA.Name.."-underground-belt"].localised_name = {"looped-name.underground-belt", {"item-name."..DATA.Name.."-plate"}}
-		data.raw.item[dy..DATA.Name.."-splitter"].localised_name = {"looped-name.splitter", {"item-name."..DATA.Name.."-plate"}}
-		data.raw["transport-belt"][dy..DATA.Name.."-transport-belt"].localised_name = {"looped-name.belt", {"item-name."..DATA.Name.."-plate"}}
-		data.raw["underground-belt"][dy..DATA.Name.."-underground-belt"].localised_name = {"looped-name.underground-belt", {"item-name."..DATA.Name.."-plate"}}
-		data.raw["splitter"][dy..DATA.Name.."-splitter"].localised_name = {"looped-name.splitter", {"item-name."..DATA.Name.."-plate"}}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
@@ -2726,6 +2735,7 @@ data:extend(
   {
     type = "pipe",
     name = dy..DATA.Name.."-pipe",
+	localised_name = {"looped-name.pipe", {"looped-name."..DATA.Name}},
 	localised_description = {"looped-name.pipe-desc", (DATA.Capacity)},
     icons = 
 	{
@@ -2783,6 +2793,7 @@ data:extend(
   {
     type = "pipe-to-ground",
     name = dy..DATA.Name.."-pipe-to-ground",
+	localised_name = {"looped-name.pipe-to-ground", {"looped-name."..DATA.Name}},
 	localised_description = {"looped-name.pipe-to-ground-desc", (DATA.Capacity), (DATA.Range)},
     icons = 
 	{
@@ -2906,6 +2917,7 @@ data:extend(
   {
     type = "item",
     name = dy..DATA.Name.."-pipe",
+	localised_name = {"looped-name.pipe", {"looped-name."..DATA.Name}},
 	localised_description = {"looped-name.pipe-desc", (DATA.Capacity)},
 	icons = {{icon = "__base__/graphics/icons/pipe.png", tint = DATA.Tint}},
     flags = {"goes-to-quickbar"},
@@ -2917,6 +2929,7 @@ data:extend(
   {
     type = "item",
     name = dy..DATA.Name.."-pipe-to-ground",
+	localised_name = {"looped-name.pipe-to-ground", {"looped-name."..DATA.Name}},
 	localised_description = {"looped-name.pipe-to-ground-desc", (DATA.Capacity), (DATA.Range)},
 	icons = {{icon = "__base__/graphics/icons/pipe-to-ground.png", tint = DATA.Tint}},
     flags = {"goes-to-quickbar"},
@@ -2947,20 +2960,2654 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 2}
 		local result_2 = {DATA.Name, 4}
-		data.raw.item[dy..DATA.Name.."-pipe"].localised_name = {"looped-name.pipe", {"item-name."..DATA.Name}}
-		data.raw.item[dy..DATA.Name.."-pipe-to-ground"].localised_name = {"looped-name.pipe-to-ground", {"item-name."..DATA.Name}}
-		data.raw["pipe"][dy..DATA.Name.."-pipe"].localised_name = {"looped-name.pipe", {"item-name."..DATA.Name}}
-		data.raw["pipe-to-ground"][dy..DATA.Name.."-pipe-to-ground"].localised_name = {"looped-name.pipe-to-ground", {"item-name."..DATA.Name}}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].ingredients, result_2)
 	else
 		local result_1 = {DATA.Name.."-plate", 2}
 		local result_2 = {DATA.Name.."-plate", 4}
-		data.raw.item[dy..DATA.Name.."-pipe"].localised_name = {"looped-name.pipe", {"item-name."..DATA.Name.."-plate"}}
-		data.raw.item[dy..DATA.Name.."-pipe-to-ground"].localised_name = {"looped-name.pipe-to-ground", {"item-name."..DATA.Name.."-plate"}}
-		data.raw["pipe"][dy..DATA.Name.."-pipe"].localised_name = {"looped-name.pipe", {"item-name."..DATA.Name.."-plate"}}
-		data.raw["pipe-to-ground"][dy..DATA.Name.."-pipe-to-ground"].localised_name = {"looped-name.pipe-to-ground", {"item-name."..DATA.Name.."-plate"}}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].ingredients, result_2)
+	end
+end
+
+function DyWorld_Turrets(DATA)
+data:extend(
+{
+  {
+    type = "ammo-turret",
+    name = dy..DATA.Name.."-gun-turret",
+	localised_name = {"looped-name.gun-turret", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/gun-turret.png",
+		tint = DATA.Tint
+	  }
+	},
+    flags = {"placeable-player", "player-creation"},
+    minable = {mining_time = 0.5, result = dy..DATA.Name.."-gun-turret"},
+    max_health = (10 * DATA.Health),
+    corpse = "medium-remnants",
+    collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
+    selection_box = {{-1, -1 }, {1, 1}},
+    rotation_speed = 0.015,
+    preparing_speed = 0.08,
+    folding_speed = 0.08,
+    dying_explosion = "medium-explosion",
+    inventory_size = 3,
+    automated_ammo_count = 10,
+    attacking_speed = 0.5,
+    folded_animation = 
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({frame_count=1, line_length = 1}, DATA.Tint),
+        DyWorld_gun_turret_extension_mask{frame_count=1, line_length = 1},
+        DyWorld_gun_turret_extension_shadow{frame_count=1, line_length = 1}
+      }
+    },
+    preparing_animation = 
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({}, DATA.Tint),
+        DyWorld_gun_turret_extension_mask{},
+        DyWorld_gun_turret_extension_shadow{}
+      }
+    },
+    prepared_animation = DyWorld_gun_turret_attack({frame_count=1}, DATA.Tint),
+    attacking_animation = DyWorld_gun_turret_attack({}, DATA.Tint),
+    folding_animation = 
+    { 
+      layers = 
+      { 
+        DyWorld_gun_turret_extension({run_mode = "backward"}, DATA.Tint),
+        DyWorld_gun_turret_extension_mask{run_mode = "backward"},
+        DyWorld_gun_turret_extension_shadow{run_mode = "backward"}
+      }
+    },
+    base_picture =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
+          priority = "high",
+          width = 90,
+          height = 75,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+          shift = {0, -0.046875},
+		  tint = DATA.Tint,
+        },
+        {
+          filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
+          flags = { "mask" },
+          line_length = 1,
+          width = 52,
+          height = 47,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+          shift = {0, -0.234375},
+          apply_runtime_tint = true
+        }
+      }
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    attack_parameters =
+    {
+      type = "projectile",
+      ammo_category = "bullet",
+      cooldown = (60 / DATA.Attack_Speed),
+      projectile_creation_distance = 1.39375,
+      projectile_center = {0, -0.0875}, -- same as gun_turret_attack shift
+      shell_particle =
+      {
+        name = "shell-particle",
+        direction_deviation = 0.1,
+        speed = 0.1,
+        speed_deviation = 0.03,
+        center = {-0.0625, 0},
+        creation_distance = -1.925,
+        starting_frame_speed = 0.2,
+        starting_frame_speed_deviation = 0.1
+      },
+      range = DATA.Attack_MaxRange,
+      min_range = math.ceil(DATA.Attack_MaxRange * 0.15),
+      turn_range = DATA.Attack_Radius/360,
+      sound = make_heavy_gunshot_sounds(),
+    },
+    prepare_range = math.floor(DATA.Attack_MaxRange + (DATA.Attack_MaxRange / 2 )),
+    shoot_in_prepare_state = true,
+    call_for_help_radius = math.floor(DATA.Attack_MaxRange + (DATA.Attack_MaxRange / 2 ))
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-gun-turret",
+	localised_name = {"looped-name.gun-turret", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = DATA.Tint}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."turret-gun",
+    stack_size = 100,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-gun-turret",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-gun-turret",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 2}},
+    result = dy..DATA.Name.."-gun-turret",
+    result_count = 1,
+  },
+  {
+    type = "ammo-turret",
+    name = dy..DATA.Name.."-shotgun-turret",
+	localised_name = {"looped-name.shotgun-turret", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/gun-turret.png",
+		tint = DATA.Tint
+	  }
+	},
+    flags = {"placeable-player", "player-creation"},
+    minable = {mining_time = 0.5, result = dy..DATA.Name.."-shotgun-turret"},
+    max_health = (10 * DATA.Health),
+    corpse = "medium-remnants",
+    collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
+    selection_box = {{-1, -1 }, {1, 1}},
+    rotation_speed = 0.015,
+    preparing_speed = 0.08,
+    folding_speed = 0.08,
+    dying_explosion = "medium-explosion",
+    inventory_size = 3,
+    automated_ammo_count = 10,
+    attacking_speed = 0.5,
+    folded_animation = 
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({frame_count=1, line_length = 1}, DATA.Tint),
+        DyWorld_gun_turret_extension_mask{frame_count=1, line_length = 1},
+        DyWorld_gun_turret_extension_shadow{frame_count=1, line_length = 1}
+      }
+    },
+    preparing_animation = 
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({}, DATA.Tint),
+        DyWorld_gun_turret_extension_mask{},
+        DyWorld_gun_turret_extension_shadow{}
+      }
+    },
+    prepared_animation = DyWorld_gun_turret_attack({frame_count=1}, DATA.Tint),
+    attacking_animation = DyWorld_gun_turret_attack({}, DATA.Tint),
+    folding_animation = 
+    { 
+      layers = 
+      { 
+        DyWorld_gun_turret_extension({run_mode = "backward"}, DATA.Tint),
+        DyWorld_gun_turret_extension_mask{run_mode = "backward"},
+        DyWorld_gun_turret_extension_shadow{run_mode = "backward"}
+      }
+    },
+    base_picture =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
+          priority = "high",
+          width = 90,
+          height = 75,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+          shift = {0, -0.046875},
+		  tint = DATA.Tint,
+        },
+        {
+          filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
+          flags = { "mask" },
+          line_length = 1,
+          width = 52,
+          height = 47,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+          shift = {0, -0.234375},
+          apply_runtime_tint = true
+        }
+      }
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    attack_parameters =
+    {
+      type = "projectile",
+      ammo_category = "shotgun-shell",
+      cooldown = (60 / DATA.Attack_Speed),
+      projectile_creation_distance = 1.39375,
+      projectile_center = {0, -0.0875}, -- same as gun_turret_attack shift
+      shell_particle =
+      {
+        name = "shell-particle",
+        direction_deviation = 0.1,
+        speed = 0.1,
+        speed_deviation = 0.03,
+        center = {-0.0625, 0},
+        creation_distance = -1.925,
+        starting_frame_speed = 0.2,
+        starting_frame_speed_deviation = 0.1
+      },
+      range = DATA.Attack_MaxRange,
+      min_range = math.ceil(DATA.Attack_MaxRange * 0.15),
+      turn_range = DATA.Attack_Radius/360,
+      sound = make_heavy_gunshot_sounds(),
+    },
+    prepare_range = math.floor(DATA.Attack_MaxRange + (DATA.Attack_MaxRange / 2 )),
+    shoot_in_prepare_state = true,
+    call_for_help_radius = math.floor(DATA.Attack_MaxRange + (DATA.Attack_MaxRange / 2 ))
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-shotgun-turret",
+	localised_name = {"looped-name.shotgun-turret", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = DATA.Tint}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."turret-shotgun",
+    stack_size = 100,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-shotgun-turret",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-shotgun-turret",
+    energy_required = 3.5,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 3}, {dy..DATA.Name.."-gun-turret", 1}},
+    result = dy..DATA.Name.."-shotgun-turret",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
+	end
+end
+
+function DyWorld_Ammo(DATA)
+data:extend(
+{
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-basic-projectile",
+    flags = {"not-on-map"},
+    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    acceleration = 0,
+    direction_only = true,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          type = "damage",
+          damage = {amount = DATA.Dmg_Mod, type = "physical"}
+        }
+      }
+    },
+    animation =
+    {
+      filename = "__base__/graphics/entity/bullet/bullet.png",
+      tint = DATA.Tint,
+      frame_count = 1,
+      width = 3,
+      height = 50,
+      priority = "high"
+	}
+  },
+  {
+    type = "ammo",
+    name = dy..DATA.Name.."-basic-ammo",
+	localised_name = {"looped-name.ammo-basic", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/firearm-magazine.png",
+		tint = DATA.Tint
+	  }
+	},
+    flags = {"goes-to-main-inventory"},
+    ammo_type =
+    {
+      category = "bullet",
+      target_type = "direction",
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery = 
+          {
+            type = "instant",
+            source_effects = 
+            {
+              {
+                type = "create-explosion",
+                entity_name = "explosion-gunshot"
+              }
+            }
+          }
+        },
+        {
+          type = "direct",
+          repeat_count = 1,
+          action_delivery =
+          {
+            type = "projectile",
+            projectile = dy..DATA.Name.."-basic-projectile",
+            starting_speed = 1,
+            direction_deviation = 0.05,
+            range_deviation = 0.15,
+            max_range = DATA.Attack_Range,
+          }
+        }
+      }
+    },
+    magazine_size = DATA.Mag_Size,
+    subgroup = dy.."ammo-basic",
+    order = DATA.Name,
+    stack_size = 200
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-basic-ammo",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-basic-ammo",
+    result_count = 1,
+  },
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-shotgun-projectile",
+    flags = {"not-on-map"},
+    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    acceleration = 0,
+    direction_only = true,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          type = "damage",
+          damage = {amount = DATA.Dmg_Mod, type = "physical"}
+        }
+      }
+    },
+    animation =
+    {
+      filename = "__base__/graphics/entity/bullet/bullet.png",
+      tint = DATA.Tint,
+      frame_count = 1,
+      width = 3,
+      height = 50,
+      priority = "high"
+	}
+  },
+  {
+    type = "ammo",
+    name = dy..DATA.Name.."-shotgun-ammo",
+	localised_name = {"looped-name.ammo-shotgun", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/shotgun-shell.png",
+		tint = DATA.Tint
+	  }
+	},
+    flags = {"goes-to-main-inventory"},
+    ammo_type =
+    {
+      category = "shotgun-shell",
+      target_type = "direction",
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery = 
+          {
+            type = "instant",
+            source_effects = 
+            {
+              {
+                type = "create-explosion",
+                entity_name = "explosion-gunshot"
+              }
+            }
+          }
+        },
+        {
+          type = "direct",
+          repeat_count = 8 + math.floor(DATA.Count),
+          action_delivery =
+          {
+            type = "projectile",
+            projectile = dy..DATA.Name.."-shotgun-projectile",
+            starting_speed = 1,
+            direction_deviation = 0.35,
+            range_deviation = 0.15,
+            max_range = DATA.Attack_Range,
+          }
+        }
+      }
+    },
+    magazine_size = DATA.Mag_Size,
+    subgroup = dy.."ammo-shotgun",
+    order = DATA.Name,
+    stack_size = 200
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-shotgun-ammo",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-shotgun-ammo",
+    result_count = 1,
+  },
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-basic-piercing-projectile",
+    flags = {"not-on-map"},
+    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    acceleration = 0,
+    direction_only = true,
+	piercing_damage = DATA.Dmg_Mod,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          type = "damage",
+          damage = {amount = DATA.Dmg_Mod, type = "physical"}
+        }
+      }
+    },
+    animation =
+    {
+      filename = "__base__/graphics/entity/bullet/bullet.png",
+      tint = DATA.Tint,
+      frame_count = 1,
+      width = 3,
+      height = 50,
+      priority = "high"
+	}
+  },
+  {
+    type = "ammo",
+    name = dy..DATA.Name.."-basic-piercing-ammo",
+	localised_name = {"looped-name.ammo-basic-piercing", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/piercing-rounds-magazine.png",
+		tint = DATA.Tint
+	  }
+	},
+    flags = {"goes-to-main-inventory"},
+    ammo_type =
+    {
+      category = "bullet",
+      target_type = "direction",
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery = 
+          {
+            type = "instant",
+            source_effects = 
+            {
+              {
+                type = "create-explosion",
+                entity_name = "explosion-gunshot"
+              }
+            }
+          }
+        },
+        {
+          type = "direct",
+          repeat_count = 1,
+          action_delivery =
+          {
+            type = "projectile",
+            projectile = dy..DATA.Name.."-basic-piercing-projectile",
+            starting_speed = 1,
+            direction_deviation = 0.05,
+            range_deviation = 0.15,
+            max_range = DATA.Attack_Range,
+          }
+        }
+      }
+    },
+    magazine_size = DATA.Mag_Size,
+    subgroup = dy.."ammo-basic-piercing",
+    order = DATA.Name,
+    stack_size = 200
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-basic-piercing-ammo",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-basic-ammo", 2}},
+    result = dy..DATA.Name.."-basic-piercing-ammo",
+    result_count = 1,
+  },
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-shotgun-piercing-projectile",
+    flags = {"not-on-map"},
+    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    acceleration = 0,
+    direction_only = true,
+	piercing_damage = DATA.Dmg_Mod,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          type = "damage",
+          damage = {amount = DATA.Dmg_Mod, type = "physical"}
+        }
+      }
+    },
+    animation =
+    {
+      filename = "__base__/graphics/entity/bullet/bullet.png",
+      tint = DATA.Tint,
+      frame_count = 1,
+      width = 3,
+      height = 50,
+      priority = "high"
+	}
+  },
+  {
+    type = "ammo",
+    name = dy..DATA.Name.."-shotgun-piercing-ammo",
+	localised_name = {"looped-name.ammo-shotgun-piercing", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/piercing-shotgun-shell.png",
+		tint = DATA.Tint
+	  }
+	},
+    flags = {"goes-to-main-inventory"},
+    ammo_type =
+    {
+      category = "bullet",
+      target_type = "direction",
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery = 
+          {
+            type = "instant",
+            source_effects = 
+            {
+              {
+                type = "create-explosion",
+                entity_name = "explosion-gunshot"
+              }
+            }
+          }
+        },
+        {
+          type = "direct",
+          repeat_count = 12 + math.floor(DATA.Count),
+          action_delivery =
+          {
+            type = "projectile",
+            projectile = dy..DATA.Name.."-shotgun-piercing-projectile",
+            starting_speed = 1,
+            direction_deviation = 0.3,
+            range_deviation = 0.15,
+            max_range = DATA.Attack_Range,
+          }
+        }
+      }
+    },
+    magazine_size = DATA.Mag_Size,
+    subgroup = dy.."ammo-shotgun-piercing",
+    order = DATA.Name,
+    stack_size = 200
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-shotgun-piercing-ammo",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-shotgun-ammo", 2}},
+    result = dy..DATA.Name.."-shotgun-piercing-ammo",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 2}
+		local result_2 = {DATA.Name, 5}
+		local result_3 = {DATA.Name, 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-ammo"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-ammo"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-piercing-ammo"].ingredients, result_3)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-piercing-ammo"].ingredients, result_3)
+	else
+		local result_1 = {DATA.Name.."-plate", 2}
+		local result_2 = {DATA.Name.."-plate", 5}
+		local result_3 = {DATA.Name.."-plate", 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-ammo"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-ammo"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-piercing-ammo"].ingredients, result_3)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-piercing-ammo"].ingredients, result_3)
+	end
+end
+
+function DyWorld_Pumps(DATA)
+data:extend(
+{
+  {
+    type = "offshore-pump",
+    name = dy..DATA.Name.."-offshore-pump",
+	localised_name = {"looped-name.offshore-pump", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/offshore-pump.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation", "filter-directions"},
+    minable = {mining_time = 1, result = dy..DATA.Name.."-offshore-pump"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "small-remnants",
+    fluid = "water",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 70
+      },
+      {
+        type = "impact",
+        percent = 30
+      }
+    },
+    collision_box = {{-0.6, -0.45}, {0.6, 0.3}},
+    selection_box = {{-1, -1.49}, {1, 0.49}},
+    fluid_box =
+    {
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      base_level = 1,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        { position = {0, 1} },
+      },
+    },
+    pumping_speed = Materials[DATA.Table].Strength_Ultimate,
+    tile_width = 1,
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    picture =
+    {
+      north =
+      {
+        filename = "__base__/graphics/entity/offshore-pump/offshore-pump.png",
+        priority = "high",
+        shift = {0.90625, 0.0625},
+        width = 160,
+        height = 102,
+		tint = Material_Colors[DATA.Table]
+      },
+      east =
+      {
+        filename = "__base__/graphics/entity/offshore-pump/offshore-pump.png",
+        priority = "high",
+        shift = {0.90625, 0.0625},
+        x = 160,
+        width = 160,
+        height = 102,
+		tint = Material_Colors[DATA.Table]
+      },
+      south =
+      {
+        filename = "__base__/graphics/entity/offshore-pump/offshore-pump.png",
+        priority = "high",
+        shift = {0.90625, 0.65625},
+        x = 320,
+        width = 160,
+        height = 102,
+		tint = Material_Colors[DATA.Table]
+      },
+      west =
+      {
+        filename = "__base__/graphics/entity/offshore-pump/offshore-pump.png",
+        priority = "high",
+        shift = {1.0, 0.0625},
+        x = 480,
+        width = 160,
+        height = 102,
+		tint = Material_Colors[DATA.Table]
+      }
+    },
+    circuit_wire_connection_points =
+    {
+      {
+        shadow =
+        {
+          red = {2.71875, 0.375},
+          green = {2.5, 0.375},
+        },
+        wire =
+        {
+          red = {0.84375, -0.09375},
+          green = {0.6875, -0.09375},
+        }
+      },
+      {
+        shadow =
+        {
+          red = {0.765625, 0.546875},
+          green = {0.765625, 0.421875},
+        },
+        wire =
+        {
+          red = {-0.28125, -0.09375},
+          green = {-0.28125, -0.21875},
+        }
+      },
+      {
+        shadow =
+        {
+          red = {-0.09375, 0.5625},
+          green = {0.0625, 0.5625},
+        },
+        wire =
+        {
+          red = {-0.90625, -0.53125},
+          green = {-0.75, -0.53125},
+        }
+      },
+      {
+        shadow =
+        {
+          red = {1.78125, -0.46875},
+          green = {1.78125, -0.3125},
+        },
+        wire =
+        {
+          red = {0.34375, -1.40625},
+          green = {0.34375, -1.25},
+        }
+      }
+    },
+    circuit_connector_sprites =
+    {
+      get_circuit_connector_sprites({0.90625, -0.15625}, nil, 0),
+      get_circuit_connector_sprites({0, 0.03125}, nil, 6),
+      get_circuit_connector_sprites({-0.9375, -0.25}, nil, 4),
+      get_circuit_connector_sprites({0.125, -1.3125}, nil, 2),
+    },
+    circuit_wire_max_distance = math.floor(Materials[DATA.Table].Density)
+
+  },
+  {
+    type = "pump",
+    name = dy..DATA.Name.."-pump",
+	localised_name = {"looped-name.pump", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/pump.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {mining_time = 1, result = dy..DATA.Name.."-pump"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    fast_replaceable_group = "pipe",
+    corpse = "small-remnants",
+    collision_box = {{-0.29, -0.79}, {0.29, 0.79}},
+    selection_box = {{-0.5, -1}, {0.5, 1}},
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 80
+      },
+      {
+        type = "impact",
+        percent = 30
+      }
+    },
+    fluid_box =
+    {
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      height = 2,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        { position = {0, -1.5}, type="output" },
+        { position = {0, 1.5}, type="input" },
+      },
+    },
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions = 0.01 / 2.5
+    },
+    energy_usage = "30kW",
+    pumping_speed = Materials[DATA.Table].Strength_Ultimate,
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    animations =
+    {
+      north =
+      {
+        filename = "__base__/graphics/entity/pump/pump-north.png",
+        width = 53,
+        height = 79,
+        line_length =8,
+        frame_count =32,
+        animation_speed = 0.5,
+        shift = util.by_pixel(8.000, 7.500),
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-north.png",
+          width = 103,
+          height = 164,
+          scale = 0.5,
+          line_length =8,
+          frame_count =32,
+          animation_speed = 0.5,
+          shift = util.by_pixel(8, 3.5),
+		  tint = Material_Colors[DATA.Table], 
+        },
+      },
+      east =
+      {
+        filename = "__base__/graphics/entity/pump/pump-east.png",
+        width = 66,
+        height = 60,
+        line_length =8,
+        frame_count =32,
+        animation_speed = 0.5,
+        shift = util.by_pixel(0, 4),
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-east.png",
+          width = 130,
+          height = 109,
+          scale = 0.5,
+          line_length =8,
+          frame_count =32,
+          animation_speed = 0.5,
+          shift = util.by_pixel(-0.5, 1.75),
+		  tint = Material_Colors[DATA.Table], 
+        },
+      },
+
+      south =
+      {
+        filename = "__base__/graphics/entity/pump/pump-south.png",
+        width = 62,
+        height = 87,
+        line_length =8,
+        frame_count =32,
+        animation_speed = 0.5,
+        shift = util.by_pixel(13.5, 0.5),
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-south.png",
+          width = 114,
+          height = 160,
+          scale = 0.5,
+          line_length =8,
+          frame_count =32,
+          animation_speed = 0.5,
+          shift = util.by_pixel(12.5, -8),
+		  tint = Material_Colors[DATA.Table], 
+        },
+      },
+      west =
+      {
+        filename = "__base__/graphics/entity/pump/pump-west.png",
+        width = 69,
+        height = 51,
+        line_length =8,
+        frame_count =32,
+        animation_speed = 0.5,
+        shift = util.by_pixel(0.5, -0.5),
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-west.png",
+          width = 131,
+          height = 111,
+          scale = 0.5,
+          line_length =8,
+          frame_count =32,
+          animation_speed = 0.5,
+          shift = util.by_pixel(-0.25, 1.25),
+		  tint = Material_Colors[DATA.Table], 
+        },
+      },
+    },
+    fluid_wagon_connector_frame_count = 35,
+    fluid_wagon_connector_graphics = require("data.core.prototypes.pump-connector"),
+    fluid_animation =
+    {
+      north =
+      {
+        filename = "__base__/graphics/entity/pump/pump-north-liquid.png",
+        apply_runtime_tint = true,
+        width = 20,
+        height = 13,
+        line_length =8,
+        frame_count =32,
+        shift = util.by_pixel(-0.500, -14.500),
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-north-liquid.png",
+          apply_runtime_tint = true,
+          width = 38,
+          height = 22,
+          scale = 0.5,
+          line_length =8,
+          frame_count =32,
+          shift = util.by_pixel(-0.250, -16.750)
+        }
+      },
+      east =
+      {
+        filename = "__base__/graphics/entity/pump/pump-east-liquid.png",
+        width = 18,
+        height = 24,
+        line_length =8,
+        frame_count =32,
+        shift = util.by_pixel(6.000, -8.000),
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-east-liquid.png",
+          width = 35,
+          height = 46,
+          scale = 0.5,
+          line_length =8,
+          frame_count =32,
+          shift = util.by_pixel(6.250, -8.500)
+        },
+      },
+      south =
+      {
+        filename = "__base__/graphics/entity/pump/pump-south-liquid.png",
+        width = 26,
+        height = 55,
+        line_length =8,
+        frame_count =32,
+        shift = util.by_pixel(3.500, 6.500),
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-south-liquid.png",
+          width = 38,
+          height = 45,
+          scale = 0.5,
+          line_length =8,
+          frame_count =32,
+          shift = util.by_pixel(0.500, -9.250)
+        },
+      },
+      west =
+      {
+        filename = "__base__/graphics/entity/pump/pump-west-liquid.png",
+        width = 18,
+        height = 24,
+        line_length =8,
+        frame_count =32,
+        shift = util.by_pixel(-6.000, -9.000),
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-west-liquid.png",
+          width = 35,
+          height = 47,
+          scale = 0.5,
+          line_length =8,
+          frame_count =32,
+          shift = util.by_pixel(-6.500, -9.500)
+        },
+      }
+    },
+    glass_pictures =
+    {
+      north = {
+        filename = "__base__/graphics/entity/pump/pump-north-glass.png",
+        width = 32,
+        height = 64,
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-north-glass.png",
+          width = 64,
+          height = 128,
+          scale = 0.5,
+        },
+      },
+      east = {
+        filename = "__base__/graphics/entity/pump/pump-east-glass.png",
+        width = 32,
+        height = 32,
+        shift = util.by_pixel(0.000, -16.000),
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-east-glass.png",
+          width = 128,
+          height = 192,
+          scale = 0.5,
+        },
+      },
+      south = {
+        filename = "__base__/graphics/entity/pump/pump-south-glass.png",
+        width = 32,
+        height = 64,
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-south-glass.png",
+          width = 64,
+          height = 128,
+          scale = 0.5,
+        },
+      },
+      west = {
+        filename = "__base__/graphics/entity/pump/pump-west-glass.png",
+        width = 32,
+        height = 96,
+        shift = util.by_pixel(0.000, 15.000),
+        hr_version = {
+          filename = "__base__/graphics/entity/pump/hr-pump-west-glass.png",
+          width = 192,
+          height = 192,
+          scale = 0.5,
+          shift = util.by_pixel(-16.000, 0.000)
+        },
+      }
+    },
+    circuit_wire_connection_points =
+    {
+      {
+        shadow =
+        {
+          red = {0.171875, 0.140625},
+          green = {0.171875, 0.265625},
+        },
+        wire =
+        {
+          red = {-0.53125, -0.15625},
+          green = {-0.53125, 0},
+        }
+      },
+      {
+        shadow =
+        {
+          red = {0.890625, 0.703125},
+          green = {0.75, 0.75},
+        },
+        wire =
+        {
+          red = {0.34375, 0.28125},
+          green = {0.34375, 0.4375},
+        }
+      },
+      {
+        shadow =
+        {
+          red = {0.15625, 0.0625},
+          green = {0.09375, 0.125},
+        },
+        wire =
+        {
+          red = {-0.53125, -0.09375},
+          green = {-0.53125, 0.03125},
+        }
+      },
+      {
+        shadow =
+        {
+          red = {0.796875, 0.703125},
+          green = {0.625, 0.75},
+        },
+        wire =
+        {
+          red = {0.40625, 0.28125},
+          green = {0.40625, 0.4375},
+        }
+      }
+    },
+    circuit_connector_sprites =
+    {
+      get_circuit_connector_sprites({-0.40625, -0.3125}, nil, 24),
+      get_circuit_connector_sprites({0.125, 0.21875}, {0.34375, 0.40625}, 18),
+      get_circuit_connector_sprites({-0.40625, -0.25}, nil, 24),
+      get_circuit_connector_sprites({0.203125, 0.203125}, {0.25, 0.40625}, 18),
+    },
+    circuit_wire_max_distance = math.floor(Materials[DATA.Table].Density)
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-pump",
+	localised_name = {"looped-name.pump", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/pump.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."pump-pipe",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-pump",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-pump",
+    energy_required = 1.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-pipe", 1},{"electronic-circuit", 2},{dy.."gearbox", 1}},
+    result = dy..DATA.Name.."-pump",
+    result_count = 1,
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-offshore-pump",
+	localised_name = {"looped-name.offshore-pump", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/offshore-pump.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."pump-offshore",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-offshore-pump",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-offshore-pump",
+    energy_required = 1.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-pipe", 1},{"electronic-circuit", 2}},
+    result = dy..DATA.Name.."-offshore-pump",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
+	end
+end
+
+function DyWorld_Inserters(DATA)
+data:extend(
+{
+  {
+    type = "inserter",
+    name = dy..DATA.Name.."-basic-inserter",
+	localised_name = {"looped-name.inserter-1", {"looped-name."..DATA.Name}},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-basic-inserter"},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/inserter.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "small-remnants",
+    allow_custom_vectors = false,
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      }
+    },
+    collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+    selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+    pickup_position = {0, -1},
+    insert_position = {0, 1.2},
+    energy_per_movement = 5000,
+    energy_per_rotation = 5000,
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 20),
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      drain = "0.4kW"
+    },
+    fast_replaceable_group = "inserter",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      match_progress_to_activity = true,
+      sound =
+      {
+        {
+          filename = "__base__/sound/inserter-basic-1.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-2.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-3.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-4.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-5.ogg",
+          volume = 0.75
+        }
+      }
+    },
+    hand_base_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-base.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-base.png",
+        priority = "extra-high",
+        width = 32,
+        height = 136,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_closed_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-closed.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-closed.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_open_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-open.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-open.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_base_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-base-shadow.png",
+        priority = "extra-high",
+        width = 32,
+        height = 132,
+        scale = 0.25
+      }
+    },
+    hand_closed_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-closed-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    hand_open_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-open-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    platform_picture =
+    {
+      sheet =
+      {
+        filename = "__base__/graphics/entity/inserter/inserter-platform.png",
+        priority = "extra-high",
+        width = 46,
+        height = 46,
+        shift = {0.09375, 0},
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/inserter/hr-inserter-platform.png",
+          priority = "extra-high",
+          width = 105,
+          height = 79,
+          shift = util.by_pixel(1.5, 7.5-1),
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      }
+    },
+    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_max_distance = inserter_circuit_wire_max_distance,
+    default_stack_control_input_signal = inserter_default_stack_control_input_signal
+  },
+  {
+    type = "inserter",
+    name = dy..DATA.Name.."-long-inserter",
+	localised_name = {"looped-name.inserter-2", {"looped-name."..DATA.Name}},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-long-inserter"},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/long-handed-inserter.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "small-remnants",
+    allow_custom_vectors = false,
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      }
+    },
+    collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+    selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+    pickup_position = {0, -2},
+    insert_position = {0, 2.2},
+    energy_per_movement = 5000,
+    energy_per_rotation = 5000,
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 20),
+    hand_size = 1.5,
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      drain = "0.4kW"
+    },
+    fast_replaceable_group = "inserter",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      match_progress_to_activity = true,
+      sound =
+      {
+        {
+          filename = "__base__/sound/inserter-basic-1.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-2.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-3.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-4.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-5.ogg",
+          volume = 0.75
+        }
+      }
+    },
+    hand_base_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-base.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-base.png",
+        priority = "extra-high",
+        width = 32,
+        height = 136,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_closed_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-closed.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-closed.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_open_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-open.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-open.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_base_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-base-shadow.png",
+        priority = "extra-high",
+        width = 32,
+        height = 132,
+        scale = 0.25
+      }
+    },
+    hand_closed_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-closed-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    hand_open_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-open-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    platform_picture =
+    {
+      sheet =
+      {
+        filename = "__base__/graphics/entity/inserter/inserter-platform.png",
+        priority = "extra-high",
+        width = 46,
+        height = 46,
+        shift = {0.09375, 0},
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/inserter/hr-inserter-platform.png",
+          priority = "extra-high",
+          width = 105,
+          height = 79,
+          shift = util.by_pixel(1.5, 7.5-1),
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      }
+    },
+    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_max_distance = inserter_circuit_wire_max_distance,
+    default_stack_control_input_signal = inserter_default_stack_control_input_signal
+  },
+  {
+    type = "inserter",
+    name = dy..DATA.Name.."-filter-inserter",
+	localised_name = {"looped-name.inserter-3", {"looped-name."..DATA.Name}},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-filter-inserter"},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/filter-inserter.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "small-remnants",
+    allow_custom_vectors = false,
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      }
+    },
+    collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+    selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+    pickup_position = {0, -1},
+    insert_position = {0, 1.2},
+    energy_per_movement = 8000,
+    energy_per_rotation = 8000,
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 20),
+    filter_count = 5,
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      drain = "0.5kW"
+    },
+    fast_replaceable_group = "inserter",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      match_progress_to_activity = true,
+      sound =
+      {
+        {
+          filename = "__base__/sound/inserter-basic-1.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-2.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-3.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-4.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-5.ogg",
+          volume = 0.75
+        }
+      }
+    },
+    hand_base_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-base.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-base.png",
+        priority = "extra-high",
+        width = 32,
+        height = 136,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_closed_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-closed.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-closed.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_open_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-open.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-open.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_base_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-base-shadow.png",
+        priority = "extra-high",
+        width = 32,
+        height = 132,
+        scale = 0.25
+      }
+    },
+    hand_closed_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-closed-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    hand_open_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-open-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    platform_picture =
+    {
+      sheet =
+      {
+        filename = "__base__/graphics/entity/inserter/inserter-platform.png",
+        priority = "extra-high",
+        width = 46,
+        height = 46,
+        shift = {0.09375, 0},
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/inserter/hr-inserter-platform.png",
+          priority = "extra-high",
+          width = 105,
+          height = 79,
+          shift = util.by_pixel(1.5, 7.5-1),
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      }
+    },
+    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_max_distance = inserter_circuit_wire_max_distance,
+    default_stack_control_input_signal = inserter_default_stack_control_input_signal
+  },
+  {
+    type = "inserter",
+    name = dy..DATA.Name.."-stack-inserter",
+	localised_name = {"looped-name.inserter-4", {"looped-name."..DATA.Name}},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-stack-inserter"},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/stack-inserter.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "small-remnants",
+    allow_custom_vectors = false,
+    stack = true,
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      }
+    },
+    collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+    selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+    pickup_position = {0, -1},
+    insert_position = {0, 1.2},
+    energy_per_movement = 20000,
+    energy_per_rotation = 20000,
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 5),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      drain = "1kW"
+    },
+    fast_replaceable_group = "inserter",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      match_progress_to_activity = true,
+      sound =
+      {
+        {
+          filename = "__base__/sound/inserter-basic-1.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-2.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-3.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-4.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-5.ogg",
+          volume = 0.75
+        }
+      }
+    },
+    hand_base_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-base.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-base.png",
+        priority = "extra-high",
+        width = 32,
+        height = 136,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_closed_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-closed.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-closed.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_open_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-open.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-open.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_base_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-base-shadow.png",
+        priority = "extra-high",
+        width = 32,
+        height = 132,
+        scale = 0.25
+      }
+    },
+    hand_closed_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-closed-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    hand_open_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-open-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    platform_picture =
+    {
+      sheet =
+      {
+        filename = "__base__/graphics/entity/inserter/inserter-platform.png",
+        priority = "extra-high",
+        width = 46,
+        height = 46,
+        shift = {0.09375, 0},
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/inserter/hr-inserter-platform.png",
+          priority = "extra-high",
+          width = 105,
+          height = 79,
+          shift = util.by_pixel(1.5, 7.5-1),
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      }
+    },
+    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_max_distance = inserter_circuit_wire_max_distance,
+    default_stack_control_input_signal = inserter_default_stack_control_input_signal
+  },
+  {
+    type = "inserter",
+    name = dy..DATA.Name.."-stack-filter-inserter",
+	localised_name = {"looped-name.inserter-5", {"looped-name."..DATA.Name}},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-stack-filter-inserter"},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/stack-filter-inserter.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "small-remnants",
+    allow_custom_vectors = false,
+    stack = true,
+    filter_count = 2,
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      }
+    },
+    collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+    selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+    pickup_position = {0, -1},
+    insert_position = {0, 1.2},
+    energy_per_movement = 20000,
+    energy_per_rotation = 20000,
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 5),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      drain = "1kW"
+    },
+    fast_replaceable_group = "inserter",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      match_progress_to_activity = true,
+      sound =
+      {
+        {
+          filename = "__base__/sound/inserter-basic-1.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-2.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-3.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-4.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-5.ogg",
+          volume = 0.75
+        }
+      }
+    },
+    hand_base_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-base.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-base.png",
+        priority = "extra-high",
+        width = 32,
+        height = 136,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_closed_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-closed.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-closed.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_open_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-open.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-open.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_base_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-base-shadow.png",
+        priority = "extra-high",
+        width = 32,
+        height = 132,
+        scale = 0.25
+      }
+    },
+    hand_closed_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-closed-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    hand_open_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-open-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    platform_picture =
+    {
+      sheet =
+      {
+        filename = "__base__/graphics/entity/inserter/inserter-platform.png",
+        priority = "extra-high",
+        width = 46,
+        height = 46,
+        shift = {0.09375, 0},
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/inserter/hr-inserter-platform.png",
+          priority = "extra-high",
+          width = 105,
+          height = 79,
+          shift = util.by_pixel(1.5, 7.5-1),
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      }
+    },
+    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_max_distance = inserter_circuit_wire_max_distance,
+    default_stack_control_input_signal = inserter_default_stack_control_input_signal
+  },
+  {
+    type = "inserter",
+    name = dy..DATA.Name.."-super-inserter",
+	localised_name = {"looped-name.inserter-6", {"looped-name."..DATA.Name}},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-super-inserter"},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/stack-filter-inserter.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "small-remnants",
+    allow_custom_vectors = false,
+    stack = true,
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      }
+    },
+    collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+    selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+    pickup_position = {0, -1},
+    insert_position = {0, 1.2},
+    energy_per_movement = 35000,
+    energy_per_rotation = 35000,
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 2.5),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 5),
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      drain = "1.5kW"
+    },
+    fast_replaceable_group = "inserter",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      match_progress_to_activity = true,
+      sound =
+      {
+        {
+          filename = "__base__/sound/inserter-basic-1.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-2.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-3.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-4.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-basic-5.ogg",
+          volume = 0.75
+        }
+      }
+    },
+    hand_base_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-base.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-base.png",
+        priority = "extra-high",
+        width = 32,
+        height = 136,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_closed_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-closed.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-closed.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_open_picture =
+    {
+      filename = "__base__/graphics/entity/inserter/inserter-hand-open.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/inserter/hr-inserter-hand-open.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25,
+		tint = Material_Colors[DATA.Table],
+      }
+    },
+    hand_base_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+      priority = "extra-high",
+      width = 8,
+      height = 33,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-base-shadow.png",
+        priority = "extra-high",
+        width = 32,
+        height = 132,
+        scale = 0.25
+      }
+    },
+    hand_closed_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-closed-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    hand_open_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41,
+      hr_version = {
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-open-shadow.png",
+        priority = "extra-high",
+        width = 72,
+        height = 164,
+        scale = 0.25
+      }
+    },
+    platform_picture =
+    {
+      sheet =
+      {
+        filename = "__base__/graphics/entity/inserter/inserter-platform.png",
+        priority = "extra-high",
+        width = 46,
+        height = 46,
+        shift = {0.09375, 0},
+		tint = Material_Colors[DATA.Table],
+        hr_version = {
+          filename = "__base__/graphics/entity/inserter/hr-inserter-platform.png",
+          priority = "extra-high",
+          width = 105,
+          height = 79,
+          shift = util.by_pixel(1.5, 7.5-1),
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      }
+    },
+    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_max_distance = inserter_circuit_wire_max_distance,
+    default_stack_control_input_signal = inserter_default_stack_control_input_signal
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-basic-inserter",
+	localised_name = {"looped-name.inserter-1", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/inserter.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."inserter-basic",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-basic-inserter",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-basic-inserter",
+    energy_required = 0.5,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 2},{dy.."gearbox", 1}},
+    result = dy..DATA.Name.."-basic-inserter",
+    result_count = 1,
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-long-inserter",
+	localised_name = {"looped-name.inserter-2", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/long-handed-inserter.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."inserter-long",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-long-inserter",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-long-inserter",
+    energy_required = 0.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-basic-inserter", 1}},
+    result = dy..DATA.Name.."-long-inserter",
+    result_count = 1,
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-filter-inserter",
+	localised_name = {"looped-name.inserter-3", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/filter-inserter.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."inserter-filter",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-filter-inserter",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-filter-inserter",
+    energy_required = 0.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-basic-inserter", 1}},
+    result = dy..DATA.Name.."-filter-inserter",
+    result_count = 1,
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-stack-inserter",
+	localised_name = {"looped-name.inserter-4", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/stack-inserter.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."inserter-stack",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-stack-inserter",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-stack-inserter",
+    energy_required = 0.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-basic-inserter", 1},{"advanced-circuit", 2}},
+    result = dy..DATA.Name.."-stack-inserter",
+    result_count = 1,
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-stack-filter-inserter",
+	localised_name = {"looped-name.inserter-5", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/stack-filter-inserter.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."inserter-stack-filter",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-stack-filter-inserter",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-stack-filter-inserter",
+    energy_required = 0.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-stack-inserter", 1},{"processing-unit", 2}},
+    result = dy..DATA.Name.."-stack-filter-inserter",
+    result_count = 1,
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-super-inserter",
+	localised_name = {"looped-name.inserter-6", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/stack-filter-inserter.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."inserter-super",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-super-inserter",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-super-inserter",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-stack-inserter", 1},{dy.."processing-logic", 2}},
+    result = dy..DATA.Name.."-super-inserter",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 2}
+		local result_2 = {DATA.Name, 5}
+		local result_3 = {DATA.Name, 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-long-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-filter-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-inserter"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-filter-inserter"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-super-inserter"].ingredients, result_3)
+	else
+		local result_1 = {DATA.Name.."-plate", 2}
+		local result_2 = {DATA.Name.."-plate", 5}
+		local result_3 = {DATA.Name.."-plate", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-long-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-filter-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-inserter"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-filter-inserter"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-super-inserter"].ingredients, result_3)
+	end
+end
+
+function DyWorld_Storage_Tanks(DATA)
+data:extend(
+{
+  {
+    type = "storage-tank",
+    name = dy..DATA.Name.."-storage-tank",
+	localised_name = {"looped-name.storage-tank", {"looped-name."..DATA.Name}},
+    flags = {"placeable-player", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-storage-tank"},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/storage-tank.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "medium-remnants",
+    collision_box = {{-1.3, -1.3}, {1.3, 1.3}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    fluid_box =
+    {
+      base_area = DyWorld_Material_Formulas(4, DATA.Table),
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        { position = {-1, -2} },
+        { position = {2, 1} },
+        { position = {1, 2} },
+        { position = {-2, -1} },
+      },
+    },
+    two_direction_only = true,
+    window_bounding_box = {{-0.125, 0.6875}, {0.1875, 1.1875}},
+    pictures =
+    {
+      picture =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/storage-tank/storage-tank.png",
+          priority = "extra-high",
+          frames = 2,
+          width = 140,
+          height = 115,
+          shift = {0.6875, 0.109375},
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      fluid_background =
+      {
+        filename = "__base__/graphics/entity/storage-tank/fluid-background.png",
+        priority = "extra-high",
+        width = 32,
+        height = 15
+      },
+      window_background =
+      {
+        filename = "__base__/graphics/entity/storage-tank/window-background.png",
+        priority = "extra-high",
+        width = 17,
+        height = 24
+      },
+      flow_sprite =
+      {
+        filename = "__base__/graphics/entity/pipe/fluid-flow-low-temperature.png",
+        priority = "extra-high",
+        width = 160,
+        height = 20
+      },
+      gas_flow =
+      {
+        filename = "__base__/graphics/entity/pipe/steam.png",
+        priority = "extra-high",
+        line_length = 10,
+        width = 24,
+        height = 15,
+        frame_count = 60,
+        axially_symmetrical = false,
+        direction_count = 1,
+        animation_speed = 0.25,
+        hr_version =
+        {
+          filename = "__base__/graphics/entity/pipe/hr-steam.png",
+          priority = "extra-high",
+          line_length = 10,
+          width = 48,
+          height = 30,
+          frame_count = 60,
+          axially_symmetrical = false,
+          animation_speed = 0.25,
+          direction_count = 1
+        }
+      }
+    },
+    flow_length_in_ticks = 360,
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound = {
+          filename = "__base__/sound/storage-tank.ogg",
+          volume = 0.8
+      },
+      apparent_volume = 1.5,
+      max_sounds_per_type = 3
+    },
+    circuit_wire_connection_points =
+    {
+      {
+        shadow =
+        {
+          red = {2.35938, 0.890625},
+          green = {2.29688, 0.953125},
+        },
+        wire =
+        {
+          red = {-0.40625, -0.375},
+          green = {-0.53125, -0.46875},
+        }
+      },
+      {
+        shadow =
+        {
+          red = {2.35938, 0.890625},
+          green = {2.29688, 0.953125},
+        },
+        wire =
+        {
+          red = {0.46875, -0.53125},
+          green = {0.375, -0.4375},
+        }
+      },
+      {
+        shadow =
+        {
+          red = {2.35938, 0.890625},
+          green = {2.29688, 0.953125},
+        },
+        wire =
+        {
+          red = {-0.40625, -0.375},
+          green = {-0.53125, -0.46875},
+        }
+      },
+      {
+        shadow =
+        {
+          red = {2.35938, 0.890625},
+          green = {2.29688, 0.953125},
+        },
+        wire =
+        {
+          red = {0.46875, -0.53125},
+          green = {0.375, -0.4375},
+        }
+      },
+    },
+    circuit_connector_sprites =
+    {
+      get_circuit_connector_sprites({-0.1875, -0.375}, nil, 7),
+      get_circuit_connector_sprites({0.375, -0.53125}, nil, 1),
+      get_circuit_connector_sprites({-0.1875, -0.375}, nil, 7),
+      get_circuit_connector_sprites({0.375, -0.53125}, nil, 1),
+    },
+    circuit_wire_max_distance = 9
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-storage-tank",
+	localised_name = {"looped-name.storage-tank", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/storage-tank.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."tank-storage",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-storage-tank",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-storage-tank",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-pipe", 2}},
+    result = dy..DATA.Name.."-storage-tank",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 50}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 40}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
+	end
+end
+
+function DyWorld_TEMPLATE(DATA)
+data:extend(
+{
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-ammo"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-ammo"].ingredients, result_1)
 	end
 end

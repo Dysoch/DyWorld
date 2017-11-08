@@ -1,7 +1,7 @@
 require "data/prefix"
 
 
-data.raw.item["pipe"].order = "stone"
+--[[data.raw.item["pipe"].order = "stone"
 data.raw.item["pipe-to-ground"].order = "stone"
 
 data.raw.item["pipe"].subgroup = dy.."pipe-normal"
@@ -34,17 +34,17 @@ data.raw.item["express-splitter"].subgroup = dy.."transport-splitter"
 
 
 
-data.raw.item["transport-belt"].localised_name = {"edits-name.transport-belt"}
-data.raw.item["fast-transport-belt"].localised_name = {"edits-name.fast-transport-belt"}
-data.raw.item["express-transport-belt"].localised_name = {"edits-name.express-transport-belt"}
+data.raw.item["transport-belt"].localised_name = {"looped-name.belt", {"looped-name.iron"}}
+data.raw.item["fast-transport-belt"].localised_name = {"looped-name.belt", {"looped-name.steel"}}
+data.raw.item["express-transport-belt"].localised_name = {"looped-name.belt", {"looped-name.stainless-steel"}}
 
-data.raw.item["underground-belt"].localised_name = {"edits-name.underground-belt"}
-data.raw.item["fast-underground-belt"].localised_name = {"edits-name.fast-underground-belt"}
-data.raw.item["express-underground-belt"].localised_name = {"edits-name.express-underground-belt"}
+data.raw.item["underground-belt"].localised_name = {"looped-name.underground-belt", {"looped-name.iron"}}
+data.raw.item["fast-underground-belt"].localised_name = {"looped-name.underground-belt", {"looped-name.steel"}}
+data.raw.item["express-underground-belt"].localised_name = {"looped-name.underground-belt", {"looped-name.stainless-steel"}}
 
-data.raw.item["splitter"].localised_name = {"edits-name.splitter"}
-data.raw.item["fast-splitter"].localised_name = {"edits-name.fast-splitter"}
-data.raw.item["express-splitter"].localised_name = {"edits-name.express-splitter"}
+data.raw.item["splitter"].localised_name = {"looped-name.splitter", {"looped-name.iron"}}
+data.raw.item["fast-splitter"].localised_name = {"looped-name.splitter", {"looped-name.steel"}}
+data.raw.item["express-splitter"].localised_name = {"looped-name.splitter", {"looped-name.stainless-steel"}}
 
 
 
@@ -138,4 +138,30 @@ data.raw.item["pipe-to-ground"].icons =
 		tint = Material_Colors.Stone,
 	  },
 	} 
-table.remove(data.raw.item["pipe-to-ground"], icon)
+table.remove(data.raw.item["pipe-to-ground"], icon)]]--
+
+table.insert(data.raw.item["pipe-to-ground"].flags, "hidden")
+table.insert(data.raw.item["pipe"].flags, "hidden")
+
+table.insert(data.raw.item["transport-belt"].flags, "hidden")
+table.insert(data.raw.item["fast-transport-belt"].flags, "hidden")
+table.insert(data.raw.item["express-transport-belt"].flags, "hidden")
+
+table.insert(data.raw.item["underground-belt"].flags, "hidden")
+table.insert(data.raw.item["fast-underground-belt"].flags, "hidden")
+table.insert(data.raw.item["express-underground-belt"].flags, "hidden")
+
+table.insert(data.raw.item["splitter"].flags, "hidden")
+table.insert(data.raw.item["fast-splitter"].flags, "hidden")
+table.insert(data.raw.item["express-splitter"].flags, "hidden")
+
+table.insert(data.raw.item["storage-tank"].flags, "hidden")
+table.insert(data.raw.item["offshore-pump"].flags, "hidden")
+table.insert(data.raw.item["pump"].flags, "hidden")
+
+table.insert(data.raw.item["inserter"].flags, "hidden")
+table.insert(data.raw.item["long-handed-inserter"].flags, "hidden")
+table.insert(data.raw.item["fast-inserter"].flags, "hidden")
+table.insert(data.raw.item["filter-inserter"].flags, "hidden")
+table.insert(data.raw.item["stack-inserter"].flags, "hidden")
+table.insert(data.raw.item["stack-filter-inserter"].flags, "hidden")

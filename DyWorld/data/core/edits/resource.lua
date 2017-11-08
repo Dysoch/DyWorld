@@ -8,3 +8,4 @@ data.raw.resource["crude-oil"].minable.hardness = 1]]--
 
 data.raw.resource["iron-ore"].localised_name = {"edits-name.iron-ore"}
 data.raw.resource["copper-ore"].localised_name = {"edits-name.copper-ore"}
+data.raw.resource["uranium-ore"].minable.required_fluid = dy.."acid"

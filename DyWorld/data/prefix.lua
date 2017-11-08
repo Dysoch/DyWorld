@@ -49,19 +49,34 @@ Material_Colors = {
 }
 
 -- Material Formulas to calculate everything
-function DyWorld_Material_Formulas(TYPE, TABLE)
+function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 	if TYPE == 1 then
 		-- Belt Speed
-		return ((Materials[TABLE].Strength_Ultimate - Materials[TABLE].Strength_Yield) / Materials[TABLE].Density)
+		return (((Materials[TABLE].Strength_Ultimate - Materials[TABLE].Strength_Yield) / Materials[TABLE].Density) + 1)
 	elseif TYPE == 2 then
 		-- Belt & Pipe Range
-		return math.floor(Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity)
+		return math.floor((Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity) + 2)
 	elseif TYPE == 3 then
 		-- Health
 		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) + Materials[TABLE].Strength_Yield)
 	elseif TYPE == 4 then
 		-- Pipe Capacity
 		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
+	elseif TYPE == 5 then
+		-- Turret / Ammo Range
+		return math.floor(Materials[TABLE].Density * Materials[TABLE].Hardness)
+	elseif TYPE == 6 then
+		-- Turret Shoot Speed
+		return Round((Materials[TABLE].Elasticity / Materials[TABLE].Hardness), 2)
+	elseif TYPE == 7 then
+		-- Turret Shoot Arc & Mag Size
+		return math.floor(60 + Materials[TABLE].Elasticity)
+	elseif TYPE == 8 then
+		-- Ammo Damage
+		return Round((Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity), 2)
+	elseif TYPE == 9 then
+		-- Inserter Speed
+		return (Materials[TABLE].Hardness / Materials[TABLE].Density)
 	end
 end
 
@@ -167,3 +182,8 @@ Materials = {
 		Strength_Ultimate = 32,
 	},
 }
+
+function Round(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	return math.floor(num * mult + 0.5) / mult
+end

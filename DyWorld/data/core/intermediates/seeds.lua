@@ -2,16 +2,16 @@ require "data/prefix"
 
 local Data_Table = {
 	{
-		Name = "wheat-seed",
+		Name = "wood-seed",
 		Icon = dyworld_path_icon_temp,
 		Item_Place = nil,
 		Subgroup = "seeds",
 		Stack = 200,
 		Recipe = true,
-		Recipe_Ingredients = {{dy.."wheat", 1}},
+		Recipe_Ingredients = {{"raw-wood", 1}},
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 1,
-		Recipe_Result_Count = 5,
+		Recipe_Result_Count = 3,
 	},
 }
 

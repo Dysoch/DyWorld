@@ -2,6 +2,7 @@
 require("data.core.prototypes.prototypes")
 require("data.core.prototypes.belt-pictures")
 require("data.core.prototypes.pipe-pictures")
+require("data.core.prototypes.turret-pictures")
 require("data.core.gui_sprites")
 require("data.core.keys")
 require("data.core.category")
@@ -12,8 +13,12 @@ require("data.core.debug.armor")
 require("data.core.debug.equipment")
 require("data.core.debug.mining-tools")
 require("data.core.fluids.fluids")
-require("data.core.items.intermediates")
-require("data.core.items.resources")
+require("data.core.intermediates.intermediates")
+require("data.core.intermediates.resources")
+require("data.core.intermediates.greenhouse")
+require("data.core.intermediates.seeds")
+require("data.core.intermediates.wood")
+require("data.core.intermediates.fluids")
 
 -- Item Groups
 require("data.core.item-groups.energy")
@@ -33,14 +38,14 @@ require("data.core.edits.resource")
 require("data.core.edits.techs")
 
 -- Needs
+if settings.startup["DyWorld_Story"].value or settings.startup["DyWorld_Needs"].value then
 require("data.core.needs.fluids")
 require("data.core.needs.food-cooked")
 require("data.core.needs.food-raw")
 require("data.core.needs.hydration")
 require("data.core.needs.seeds")
-require("data.core.needs.wood")
-require("data.core.needs.greenhouse")
 require("data.core.needs.farm-recipes")
+end
 
 -- Water System
 require("data.core.water-system.recipes")

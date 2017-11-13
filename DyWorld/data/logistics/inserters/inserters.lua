@@ -1,49 +1,6 @@
 require "data/prefix"
-
-local Data_Table = {
-	{
-		Name = "copper",
-		Table = "Copper",
-	},
-	{
-		Name = "stone",
-		Table = "Stone",
-	},
-	{
-		Name = "iron",
-		Table = "Iron",
-	},
-	{
-		Name = "steel",
-		Table = "Steel",
-	},
-	{
-		Name = "wood",
-		Table = "Wood",
-	},
-	{
-		Name = "chromium",
-		Table = "Chromium",
-	},
-	{
-		Name = "tin",
-		Table = "Tin",
-	},
-	{
-		Name = "silver",
-		Table = "Silver",
-	},
-	{
-		Name = "gold",
-		Table = "Gold",
-	},
-	{
-		Name = "lead",
-		Table = "Lead",
-	},
-}
 	
-for k,v in pairs(Data_Table) do
+for k,v in pairs(Material_Table) do
 	DyWorld_Inserters(v)
 end
 

@@ -29,8 +29,8 @@ local Data_Table = {
 		Barrel = false,
 	},
 	{
-		Name = "molten-steel-normal",
-		Icon = dyworld_path_icon_temp,
+		Name = "molten-steel",
+		Icon = dyworld_path_fluid.."steel.png",
 		Def_Temp = Materials.Steel.Melting_Point,
 		Max_Temp = Materials.Steel.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -39,7 +39,7 @@ local Data_Table = {
 	},
 	{
 		Name = "molten-tin",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."tin.png",
 		Def_Temp = Materials.Tin.Melting_Point,
 		Max_Temp = Materials.Tin.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -48,7 +48,7 @@ local Data_Table = {
 	},
 	{
 		Name = "molten-silver",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."silver.png",
 		Def_Temp = Materials.Silver.Melting_Point,
 		Max_Temp = Materials.Silver.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -57,7 +57,7 @@ local Data_Table = {
 	},
 	{
 		Name = "molten-gold",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."gold.png",
 		Def_Temp = Materials.Gold.Melting_Point,
 		Max_Temp = Materials.Gold.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -66,7 +66,7 @@ local Data_Table = {
 	},
 	{
 		Name = "molten-lead",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."lead.png",
 		Def_Temp = Materials.Lead.Melting_Point,
 		Max_Temp = Materials.Lead.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},
@@ -75,22 +75,22 @@ local Data_Table = {
 	},
 	{
 		Name = "molten-chromium",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."chromium.png",
 		Def_Temp = Materials.Chromium.Melting_Point,
 		Max_Temp = Materials.Chromium.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Barrel = false,
 	},
-	{
+	--[[{
 		Name = "molten-steel-stainless",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_fluid.."steel-stainless.png",
 		Def_Temp = Materials.Stainless_Steel.Melting_Point,
 		Max_Temp = Materials.Stainless_Steel.Boiling_Point,
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Barrel = false,
-	},
+	},]]--
 }
 
 for k,v in pairs(Data_Table) do

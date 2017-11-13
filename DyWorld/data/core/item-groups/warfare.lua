@@ -56,6 +56,11 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "warfare"
 	},
+	{
+		Name = "turret-shotgun-laser",
+		Type = "sub",
+		Main = "warfare"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

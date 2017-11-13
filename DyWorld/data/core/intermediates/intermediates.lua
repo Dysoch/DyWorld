@@ -336,7 +336,7 @@ data:extend(
 		end
 	end
 end
-
+--[[
 data:extend(
 {
   {
@@ -344,8 +344,20 @@ data:extend(
     name = "stainless-steel-plate",
 	icon = dyworld_path_icon_temp,
     flags = {"goes-to-main-inventory"},
-    subgroup = dy.."metal-plate",
+    subgroup = dy.."metal-alloy",
     stack_size = 200,
 	order = "stainless-steel",
   },
-})
+})]]--
+
+data.raw.item["copper-plate"].subgroup = dy.."metal-plate"
+data.raw.item["copper-plate"].order = "copper"
+data.raw.item["iron-plate"].subgroup = dy.."metal-plate"
+data.raw.item["iron-plate"].order = "iron"
+data.raw.item["steel-plate"].subgroup = dy.."metal-plate"
+data.raw.item["steel-plate"].order = "steel"
+
+data.raw.item["copper-ore"].order = "copper"
+data.raw.item["copper-ore"].subgroup = dy.."metal-ore"
+data.raw.item["iron-ore"].order = "iron"
+data.raw.item["iron-ore"].subgroup = dy.."metal-ore"

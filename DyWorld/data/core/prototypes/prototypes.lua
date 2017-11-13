@@ -2332,6 +2332,8 @@ function DyWorld_Entity_Electric_Drill(DATA, NMB)
   return result
 end
 
+-- START OF MATERIAL SYSTEM!
+
 function DyWorld_Transport_Belt(DATA)
 data:extend(
 {
@@ -2343,12 +2345,12 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/transport-belt.png",
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name.."-transport-belt"},
-    max_health = DATA.Health,
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     resistances =
     {
@@ -2377,7 +2379,7 @@ data:extend(
       height = 40,
       frame_count = 16,
       direction_count = 12,
-	  tint = DATA.Tint,
+	  tint = Material_Colors[DATA.Table],
       hr_version =
       {
         filename = "__base__/graphics/entity/transport-belt/hr-transport-belt.png",
@@ -2387,20 +2389,20 @@ data:extend(
         scale = 0.5,
         frame_count = 16,
         direction_count = 12,
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
       }
     },
-    belt_horizontal = DyWorld_basic_belt_horizontal(DATA.Tint),
-    belt_vertical = DyWorld_basic_belt_vertical(DATA.Tint),
-    ending_top = DyWorld_basic_belt_ending_top(DATA.Tint),
-    ending_bottom = DyWorld_basic_belt_ending_bottom(DATA.Tint),
-    ending_side = DyWorld_basic_belt_ending_side(DATA.Tint),
-    starting_top = DyWorld_basic_belt_starting_top(DATA.Tint),
-    starting_bottom = DyWorld_basic_belt_starting_bottom(DATA.Tint),
-    starting_side = DyWorld_basic_belt_starting_side(DATA.Tint),
-    ending_patch = DyWorld_ending_patch_prototype(DATA.Tint),
+    belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
+    belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
+    ending_top = DyWorld_basic_belt_ending_top(Material_Colors[DATA.Table]),
+    ending_bottom = DyWorld_basic_belt_ending_bottom(Material_Colors[DATA.Table]),
+    ending_side = DyWorld_basic_belt_ending_side(Material_Colors[DATA.Table]),
+    starting_top = DyWorld_basic_belt_starting_top(Material_Colors[DATA.Table]),
+    starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
+    starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
+    ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
-    speed = (DATA.Item_Per_Sec/426.67),
+    speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
     connector_frame_sprites = transport_belt_connector_frame_sprites,
     circuit_connector_sprites = transport_belt_circuit_connector_sprites,
     circuit_wire_connection_point = transport_belt_circuit_wire_connection_point,
@@ -2414,13 +2416,12 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/underground-belt.png",
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name.."-underground-belt"},
-    max_health = DATA.Health,
-    max_distance = DATA.Range,
+    minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name.."-underground-belt"},max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    max_distance = DyWorld_Material_Formulas(2, DATA.Table),
     underground_sprite =
     {
       filename = "__core__/graphics/arrows/underground-lines.png",
@@ -2454,17 +2455,17 @@ data:extend(
       },
       max_sounds_per_type = 3
     },
-    belt_horizontal = DyWorld_basic_belt_horizontal(DATA.Tint),
-    belt_vertical = DyWorld_basic_belt_vertical(DATA.Tint),
-    ending_top = DyWorld_basic_belt_ending_top(DATA.Tint),
-    ending_bottom = DyWorld_basic_belt_ending_bottom(DATA.Tint),
-    ending_side = DyWorld_basic_belt_ending_side(DATA.Tint),
-    starting_top = DyWorld_basic_belt_starting_top(DATA.Tint),
-    starting_bottom = DyWorld_basic_belt_starting_bottom(DATA.Tint),
-    starting_side = DyWorld_basic_belt_starting_side(DATA.Tint),
-    ending_patch = DyWorld_ending_patch_prototype(DATA.Tint),
+    belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
+    belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
+    ending_top = DyWorld_basic_belt_ending_top(Material_Colors[DATA.Table]),
+    ending_bottom = DyWorld_basic_belt_ending_bottom(Material_Colors[DATA.Table]),
+    ending_side = DyWorld_basic_belt_ending_side(Material_Colors[DATA.Table]),
+    starting_top = DyWorld_basic_belt_starting_top(Material_Colors[DATA.Table]),
+    starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
+    starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
+    ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
     fast_replaceable_group = "underground-belt",
-    speed = (DATA.Item_Per_Sec/426.67),
+    speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
     structure =
     {
       direction_in =
@@ -2477,7 +2478,7 @@ data:extend(
           width = 57,
           height = 43,
           y = 43,
-		  tint = DATA.Tint,
+		  tint = Material_Colors[DATA.Table],
           hr_version =
           {
             filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure.png",
@@ -2487,7 +2488,7 @@ data:extend(
             height = 85,
             y = 85,
             scale = 0.5,
-			tint = DATA.Tint,
+			tint = Material_Colors[DATA.Table],
           }
         }
       },
@@ -2500,7 +2501,7 @@ data:extend(
           shift = {0.25, 0},
           width = 57,
           height = 43,
-		  tint = DATA.Tint,
+		  tint = Material_Colors[DATA.Table],
           hr_version =
           {
             filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure.png",
@@ -2509,7 +2510,7 @@ data:extend(
             width = 106,
             height = 85,
             scale = 0.5,
-			tint = DATA.Tint,
+			tint = Material_Colors[DATA.Table],
           }
 
         }
@@ -2525,12 +2526,12 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/splitter.png",
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.3, result = dy..DATA.Name.."-splitter"},
-    max_health = DATA.Health,
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "medium-remnants",
     resistances =
     {
@@ -2544,17 +2545,17 @@ data:extend(
     animation_speed_coefficient = 32,
     structure_animation_speed_coefficient = 0.7,
     structure_animation_movement_cooldown = 10,
-    belt_horizontal = DyWorld_basic_belt_horizontal(DATA.Tint),
-    belt_vertical = DyWorld_basic_belt_vertical(DATA.Tint),
-    ending_top = DyWorld_basic_belt_ending_top(DATA.Tint),
-    ending_bottom = DyWorld_basic_belt_ending_bottom(DATA.Tint),
-    ending_side = DyWorld_basic_belt_ending_side(DATA.Tint),
-    starting_top = DyWorld_basic_belt_starting_top(DATA.Tint),
-    starting_bottom = DyWorld_basic_belt_starting_bottom(DATA.Tint),
-    starting_side = DyWorld_basic_belt_starting_side(DATA.Tint),
-    ending_patch = DyWorld_ending_patch_prototype(DATA.Tint),
+    belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
+    belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
+    ending_top = DyWorld_basic_belt_ending_top(Material_Colors[DATA.Table]),
+    ending_bottom = DyWorld_basic_belt_ending_bottom(Material_Colors[DATA.Table]),
+    ending_side = DyWorld_basic_belt_ending_side(Material_Colors[DATA.Table]),
+    starting_top = DyWorld_basic_belt_starting_top(Material_Colors[DATA.Table]),
+    starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
+    starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
+    ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
     fast_replaceable_group = "splitter",
-    speed = (DATA.Item_Per_Sec/426.67),
+    speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
     structure =
     {
       north =
@@ -2566,7 +2567,7 @@ data:extend(
         width = 83,
         height = 36,
         shift = {0.265625, 0},
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
         hr_version =
         {
           filename = "__base__/graphics/entity/splitter/hr-splitter-north.png",
@@ -2577,7 +2578,7 @@ data:extend(
           height = 70,
           shift = {0.25, 0.046875},
           scale = 0.5,
-		  tint = DATA.Tint,
+		  tint = Material_Colors[DATA.Table],
         }
       },
       east =
@@ -2589,7 +2590,7 @@ data:extend(
         width = 51,
         height = 80,
         shift = {0.109375, -0.03125},
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
         hr_version =
         {
           filename = "__base__/graphics/entity/splitter/hr-splitter-east.png",
@@ -2600,7 +2601,7 @@ data:extend(
           height = 157,
           shift = {0.148438, -0.179688},
           scale = 0.5,
-		  tint = DATA.Tint,
+		  tint = Material_Colors[DATA.Table],
         }
       },
       south =
@@ -2612,7 +2613,7 @@ data:extend(
         width = 85,
         height = 35,
         shift = {0.140625, -0.015625},
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
         hr_version =
         {
           filename = "__base__/graphics/entity/splitter/hr-splitter-south.png",
@@ -2623,7 +2624,7 @@ data:extend(
           height = 67,
           shift = {0.140625, 0.0234375},
           scale = 0.5,
-		  tint = DATA.Tint,
+		  tint = Material_Colors[DATA.Table],
         }
       },
       west =
@@ -2635,7 +2636,7 @@ data:extend(
         width = 51,
         height = 78,
         shift = {0.296875, -0.03125},
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
         hr_version =
         {
           filename = "__base__/graphics/entity/splitter/hr-splitter-west.png",
@@ -2646,7 +2647,7 @@ data:extend(
           height = 154,
           shift = {0.203125, -0.109375},
           scale = 0.5,
-		  tint = DATA.Tint,
+		  tint = Material_Colors[DATA.Table],
         }
       },
     },
@@ -2655,7 +2656,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-transport-belt",
 	localised_name = {"looped-name.belt", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/transport-belt.png", tint = DATA.Tint}},
+	icons = {{icon = "__base__/graphics/icons/transport-belt.png", tint = Material_Colors[DATA.Table]}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-belt",
     stack_size = 200,
@@ -2666,7 +2667,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-underground-belt",
 	localised_name = {"looped-name.underground-belt", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/underground-belt.png", tint = DATA.Tint}},
+	icons = {{icon = "__base__/graphics/icons/underground-belt.png", tint = Material_Colors[DATA.Table]}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-underground",
     stack_size = 200,
@@ -2677,7 +2678,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-splitter",
 	localised_name = {"looped-name.splitter", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/splitter.png", tint = DATA.Tint}},
+	icons = {{icon = "__base__/graphics/icons/splitter.png", tint = Material_Colors[DATA.Table]}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-splitter",
     stack_size = 200,
@@ -2698,7 +2699,7 @@ data:extend(
     name = dy..DATA.Name.."-underground-belt",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{dy..DATA.Name.."-transport-belt", DATA.Range}},
+    ingredients = {{dy..DATA.Name.."-transport-belt", DyWorld_Material_Formulas(2, DATA.Table)}},
     result = dy..DATA.Name.."-underground-belt",
     result_count = 2,
   },
@@ -2736,17 +2737,17 @@ data:extend(
     type = "pipe",
     name = dy..DATA.Name.."-pipe",
 	localised_name = {"looped-name.pipe", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-desc", (DATA.Capacity)},
+	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table))},
     icons = 
 	{
 	  {
 		icon = "__base__/graphics/icons/pipe.png", 
-		tint = DATA.Tint
+		tint = Material_Colors[DATA.Table]
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-pipe"},
-    max_health = DATA.Health,
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     resistances =
     {
@@ -2764,7 +2765,7 @@ data:extend(
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fluid_box =
     {
-      base_area = (DATA.Capacity / 100),
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
       pipe_connections =
       {
         { position = {0, -1} },
@@ -2774,7 +2775,7 @@ data:extend(
       },
     },
 	vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    pictures = DyWorld_pipepictures(DATA.Tint),
+    pictures = DyWorld_pipepictures(Material_Colors[DATA.Table]),
     working_sound =
     {
       sound = {
@@ -2794,17 +2795,17 @@ data:extend(
     type = "pipe-to-ground",
     name = dy..DATA.Name.."-pipe-to-ground",
 	localised_name = {"looped-name.pipe-to-ground", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-to-ground-desc", (DATA.Capacity), (DATA.Range)},
+	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table)), (DyWorld_Material_Formulas(2, DATA.Table))},
     icons = 
 	{
 	  {
 		icon = "__base__/graphics/icons/pipe-to-ground.png",
-		tint = DATA.Tint
+		tint = Material_Colors[DATA.Table]
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-pipe-to-ground"},
-    max_health = DATA.Health,
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     resistances =
     {
@@ -2822,14 +2823,14 @@ data:extend(
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fluid_box =
     {
-      base_area = (DATA.Capacity / 100),
-      pipe_covers = DyWorld_pipecoverspictures(DATA.Tint),
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      pipe_covers = DyWorld_pipecoverspictures(Material_Colors[DATA.Table]),
       pipe_connections =
       {
         { position = {0, -1} },
         {
           position = {0, 1},
-          max_underground_distance = DATA.Range
+          max_underground_distance = DyWorld_Material_Formulas(2, DATA.Table)
         }
       },
     },
@@ -2850,7 +2851,7 @@ data:extend(
         priority = "high",
         width = 64,
         height = 64, --, shift = {0.10, -0.04}
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
         hr_version =
         {
            filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-up.png",
@@ -2858,7 +2859,7 @@ data:extend(
            width = 128,
            height = 128,
            scale = 0.5,
-		   tint = DATA.Tint,
+		   tint = Material_Colors[DATA.Table],
         }
       },
       down =
@@ -2867,7 +2868,7 @@ data:extend(
         priority = "high",
         width = 64,
         height = 64, --, shift = {0.05, 0}
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
         hr_version =
         {
            filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-down.png",
@@ -2875,7 +2876,7 @@ data:extend(
            width = 128,
            height = 128,
            scale = 0.5,
-		   tint = DATA.Tint,
+		   tint = Material_Colors[DATA.Table],
         }
       },
       left =
@@ -2884,7 +2885,7 @@ data:extend(
         priority = "high",
         width = 64,
         height = 64, --, shift = {-0.12, 0.1}
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
         hr_version =
         {
            filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-left.png",
@@ -2892,7 +2893,7 @@ data:extend(
            width = 128,
            height = 128,
            scale = 0.5,
-		   tint = DATA.Tint,
+		   tint = Material_Colors[DATA.Table],
         }
       },
       right =
@@ -2901,7 +2902,7 @@ data:extend(
         priority = "high",
         width = 64,
         height = 64, --, shift = {0.1, 0.1}
-		tint = DATA.Tint,
+		tint = Material_Colors[DATA.Table],
         hr_version =
         {
            filename = "__base__/graphics/entity/pipe-to-ground/hr-pipe-to-ground-right.png",
@@ -2909,7 +2910,7 @@ data:extend(
            width = 128,
            height = 128,
            scale = 0.5,
-		   tint = DATA.Tint,
+		   tint = Material_Colors[DATA.Table],
         }
       },
     }
@@ -2918,8 +2919,8 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-pipe",
 	localised_name = {"looped-name.pipe", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-desc", (DATA.Capacity)},
-	icons = {{icon = "__base__/graphics/icons/pipe.png", tint = DATA.Tint}},
+	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table))},
+	icons = {{icon = "__base__/graphics/icons/pipe.png", tint = Material_Colors[DATA.Table]}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."pipe-normal",
     stack_size = 200,
@@ -2930,8 +2931,8 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-pipe-to-ground",
 	localised_name = {"looped-name.pipe-to-ground", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-to-ground-desc", (DATA.Capacity), (DATA.Range)},
-	icons = {{icon = "__base__/graphics/icons/pipe-to-ground.png", tint = DATA.Tint}},
+	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table)), (DyWorld_Material_Formulas(2, DATA.Table))},
+	icons = {{icon = "__base__/graphics/icons/pipe-to-ground.png", tint = Material_Colors[DATA.Table]}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."pipe-underground",
     stack_size = 200,
@@ -2952,7 +2953,7 @@ data:extend(
     name = dy..DATA.Name.."-pipe-to-ground",
     energy_required = 2.5,
 	enabled = false,
-    ingredients = {{dy..DATA.Name.."-pipe", DATA.Range}},
+    ingredients = {{dy..DATA.Name.."-pipe", DyWorld_Material_Formulas(2, DATA.Table)}},
     result = dy..DATA.Name.."-pipe-to-ground",
     result_count = 2,
   },
@@ -2981,12 +2982,12 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/gun-turret.png",
-		tint = DATA.Tint
+		tint = Material_Colors[DATA.Table]
 	  }
 	},
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.5, result = dy..DATA.Name.."-gun-turret"},
-    max_health = (10 * DATA.Health),
+    max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
     selection_box = {{-1, -1 }, {1, 1}},
@@ -3001,7 +3002,7 @@ data:extend(
     {
       layers =
       {
-        DyWorld_gun_turret_extension({frame_count=1, line_length = 1}, DATA.Tint),
+        DyWorld_gun_turret_extension({frame_count=1, line_length = 1}, Material_Colors[DATA.Table]),
         DyWorld_gun_turret_extension_mask{frame_count=1, line_length = 1},
         DyWorld_gun_turret_extension_shadow{frame_count=1, line_length = 1}
       }
@@ -3010,18 +3011,18 @@ data:extend(
     {
       layers =
       {
-        DyWorld_gun_turret_extension({}, DATA.Tint),
+        DyWorld_gun_turret_extension({}, Material_Colors[DATA.Table]),
         DyWorld_gun_turret_extension_mask{},
         DyWorld_gun_turret_extension_shadow{}
       }
     },
-    prepared_animation = DyWorld_gun_turret_attack({frame_count=1}, DATA.Tint),
-    attacking_animation = DyWorld_gun_turret_attack({}, DATA.Tint),
+    prepared_animation = DyWorld_gun_turret_attack({frame_count=1}, Material_Colors[DATA.Table]),
+    attacking_animation = DyWorld_gun_turret_attack({}, Material_Colors[DATA.Table]),
     folding_animation = 
     { 
       layers = 
       { 
-        DyWorld_gun_turret_extension({run_mode = "backward"}, DATA.Tint),
+        DyWorld_gun_turret_extension({run_mode = "backward"}, Material_Colors[DATA.Table]),
         DyWorld_gun_turret_extension_mask{run_mode = "backward"},
         DyWorld_gun_turret_extension_shadow{run_mode = "backward"}
       }
@@ -3039,7 +3040,7 @@ data:extend(
           direction_count = 1,
           frame_count = 1,
           shift = {0, -0.046875},
-		  tint = DATA.Tint,
+		  tint = Material_Colors[DATA.Table],
         },
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
@@ -3060,7 +3061,7 @@ data:extend(
     {
       type = "projectile",
       ammo_category = "bullet",
-      cooldown = (60 / DATA.Attack_Speed),
+      cooldown = (60 / DyWorld_Material_Formulas(6, DATA.Table)),
       projectile_creation_distance = 1.39375,
       projectile_center = {0, -0.0875}, -- same as gun_turret_attack shift
       shell_particle =
@@ -3074,23 +3075,23 @@ data:extend(
         starting_frame_speed = 0.2,
         starting_frame_speed_deviation = 0.1
       },
-      range = DATA.Attack_MaxRange,
-      min_range = math.ceil(DATA.Attack_MaxRange * 0.15),
-      turn_range = DATA.Attack_Radius/360,
+      range = DyWorld_Material_Formulas(5, DATA.Table),
+      min_range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.15),
+      turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
       sound = make_heavy_gunshot_sounds(),
     },
-    prepare_range = math.floor(DATA.Attack_MaxRange + (DATA.Attack_MaxRange / 2 )),
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
     shoot_in_prepare_state = true,
-    call_for_help_radius = math.floor(DATA.Attack_MaxRange + (DATA.Attack_MaxRange / 2 ))
+    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
   },
   {
     type = "item",
     name = dy..DATA.Name.."-gun-turret",
 	localised_name = {"looped-name.gun-turret", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = DATA.Tint}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = Material_Colors[DATA.Table]}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."turret-gun",
-    stack_size = 100,
+    stack_size = 50,
 	order = DATA.Name,
 	place_result = dy..DATA.Name.."-gun-turret",
   },
@@ -3099,7 +3100,7 @@ data:extend(
     name = dy..DATA.Name.."-gun-turret",
     energy_required = 2.5,
 	enabled = false,
-    ingredients = {{"electronic-circuit", 2}},
+    ingredients = {{"electronic-circuit", 3}},
     result = dy..DATA.Name.."-gun-turret",
     result_count = 1,
   },
@@ -3111,12 +3112,12 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/gun-turret.png",
-		tint = DATA.Tint
+		tint = Material_Colors[DATA.Table]
 	  }
 	},
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.5, result = dy..DATA.Name.."-shotgun-turret"},
-    max_health = (10 * DATA.Health),
+    max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
     selection_box = {{-1, -1 }, {1, 1}},
@@ -3131,7 +3132,7 @@ data:extend(
     {
       layers =
       {
-        DyWorld_gun_turret_extension({frame_count=1, line_length = 1}, DATA.Tint),
+        DyWorld_gun_turret_extension({frame_count=1, line_length = 1}, Material_Colors[DATA.Table]),
         DyWorld_gun_turret_extension_mask{frame_count=1, line_length = 1},
         DyWorld_gun_turret_extension_shadow{frame_count=1, line_length = 1}
       }
@@ -3140,18 +3141,18 @@ data:extend(
     {
       layers =
       {
-        DyWorld_gun_turret_extension({}, DATA.Tint),
+        DyWorld_gun_turret_extension({}, Material_Colors[DATA.Table]),
         DyWorld_gun_turret_extension_mask{},
         DyWorld_gun_turret_extension_shadow{}
       }
     },
-    prepared_animation = DyWorld_gun_turret_attack({frame_count=1}, DATA.Tint),
-    attacking_animation = DyWorld_gun_turret_attack({}, DATA.Tint),
+    prepared_animation = DyWorld_gun_turret_attack({frame_count=1}, Material_Colors[DATA.Table]),
+    attacking_animation = DyWorld_gun_turret_attack({}, Material_Colors[DATA.Table]),
     folding_animation = 
     { 
       layers = 
       { 
-        DyWorld_gun_turret_extension({run_mode = "backward"}, DATA.Tint),
+        DyWorld_gun_turret_extension({run_mode = "backward"}, Material_Colors[DATA.Table]),
         DyWorld_gun_turret_extension_mask{run_mode = "backward"},
         DyWorld_gun_turret_extension_shadow{run_mode = "backward"}
       }
@@ -3169,7 +3170,7 @@ data:extend(
           direction_count = 1,
           frame_count = 1,
           shift = {0, -0.046875},
-		  tint = DATA.Tint,
+		  tint = Material_Colors[DATA.Table],
         },
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
@@ -3190,7 +3191,7 @@ data:extend(
     {
       type = "projectile",
       ammo_category = "shotgun-shell",
-      cooldown = (60 / DATA.Attack_Speed),
+      cooldown = (60 / DyWorld_Material_Formulas(6, DATA.Table)),
       projectile_creation_distance = 1.39375,
       projectile_center = {0, -0.0875}, -- same as gun_turret_attack shift
       shell_particle =
@@ -3204,23 +3205,23 @@ data:extend(
         starting_frame_speed = 0.2,
         starting_frame_speed_deviation = 0.1
       },
-      range = DATA.Attack_MaxRange,
-      min_range = math.ceil(DATA.Attack_MaxRange * 0.15),
-      turn_range = DATA.Attack_Radius/360,
+      range = DyWorld_Material_Formulas(5, DATA.Table),
+      min_range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.15),
+      turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
       sound = make_heavy_gunshot_sounds(),
     },
-    prepare_range = math.floor(DATA.Attack_MaxRange + (DATA.Attack_MaxRange / 2 )),
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
     shoot_in_prepare_state = true,
-    call_for_help_radius = math.floor(DATA.Attack_MaxRange + (DATA.Attack_MaxRange / 2 ))
+    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
   },
   {
     type = "item",
     name = dy..DATA.Name.."-shotgun-turret",
 	localised_name = {"looped-name.shotgun-turret", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = DATA.Tint}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = Material_Colors[DATA.Table]}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."turret-shotgun",
-    stack_size = 100,
+    stack_size = 50,
 	order = DATA.Name,
 	place_result = dy..DATA.Name.."-shotgun-turret",
   },
@@ -3229,17 +3230,17 @@ data:extend(
     name = dy..DATA.Name.."-shotgun-turret",
     energy_required = 3.5,
 	enabled = false,
-    ingredients = {{"electronic-circuit", 3}, {dy..DATA.Name.."-gun-turret", 1}},
+    ingredients = {{"electronic-circuit", 4}, {dy..DATA.Name.."-gun-turret", 1}},
     result = dy..DATA.Name.."-shotgun-turret",
     result_count = 1,
   },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
-		local result_1 = {DATA.Name, 5}
+		local result_1 = {DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
 	else
-		local result_1 = {DATA.Name.."-plate", 5}
+		local result_1 = {DATA.Name.."-plate", 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
 	end
@@ -3264,14 +3265,14 @@ data:extend(
         target_effects =
         {
           type = "damage",
-          damage = {amount = DATA.Dmg_Mod, type = "physical"}
+          damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "physical"}
         }
       }
     },
     animation =
     {
       filename = "__base__/graphics/entity/bullet/bullet.png",
-      tint = DATA.Tint,
+      tint = Material_Colors[DATA.Table],
       frame_count = 1,
       width = 3,
       height = 50,
@@ -3286,7 +3287,7 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/firearm-magazine.png",
-		tint = DATA.Tint
+		tint = Material_Colors[DATA.Table]
 	  }
 	},
     flags = {"goes-to-main-inventory"},
@@ -3320,12 +3321,12 @@ data:extend(
             starting_speed = 1,
             direction_deviation = 0.05,
             range_deviation = 0.15,
-            max_range = DATA.Attack_Range,
+            max_range = DyWorld_Material_Formulas(5, DATA.Table),
           }
         }
       }
     },
-    magazine_size = DATA.Mag_Size,
+    magazine_size = DyWorld_Material_Formulas(7, DATA.Table),
     subgroup = dy.."ammo-basic",
     order = DATA.Name,
     stack_size = 200
@@ -3355,14 +3356,14 @@ data:extend(
         target_effects =
         {
           type = "damage",
-          damage = {amount = DATA.Dmg_Mod, type = "physical"}
+          damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "physical"}
         }
       }
     },
     animation =
     {
       filename = "__base__/graphics/entity/bullet/bullet.png",
-      tint = DATA.Tint,
+      tint = Material_Colors[DATA.Table],
       frame_count = 1,
       width = 3,
       height = 50,
@@ -3377,7 +3378,7 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/shotgun-shell.png",
-		tint = DATA.Tint
+		tint = Material_Colors[DATA.Table]
 	  }
 	},
     flags = {"goes-to-main-inventory"},
@@ -3403,7 +3404,7 @@ data:extend(
         },
         {
           type = "direct",
-          repeat_count = 8 + math.floor(DATA.Count),
+          repeat_count = 8 + math.floor(Materials[DATA.Table].Density),
           action_delivery =
           {
             type = "projectile",
@@ -3411,12 +3412,12 @@ data:extend(
             starting_speed = 1,
             direction_deviation = 0.35,
             range_deviation = 0.15,
-            max_range = DATA.Attack_Range,
+            max_range = DyWorld_Material_Formulas(5, DATA.Table),
           }
         }
       }
     },
-    magazine_size = DATA.Mag_Size,
+    magazine_size = DyWorld_Material_Formulas(7, DATA.Table),
     subgroup = dy.."ammo-shotgun",
     order = DATA.Name,
     stack_size = 200
@@ -3437,7 +3438,7 @@ data:extend(
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0,
     direction_only = true,
-	piercing_damage = DATA.Dmg_Mod,
+	piercing_damage = DyWorld_Material_Formulas(8, DATA.Table),
     action =
     {
       type = "direct",
@@ -3447,14 +3448,14 @@ data:extend(
         target_effects =
         {
           type = "damage",
-          damage = {amount = DATA.Dmg_Mod, type = "physical"}
+          damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "physical"}
         }
       }
     },
     animation =
     {
       filename = "__base__/graphics/entity/bullet/bullet.png",
-      tint = DATA.Tint,
+      tint = Material_Colors[DATA.Table],
       frame_count = 1,
       width = 3,
       height = 50,
@@ -3469,7 +3470,7 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/piercing-rounds-magazine.png",
-		tint = DATA.Tint
+		tint = Material_Colors[DATA.Table]
 	  }
 	},
     flags = {"goes-to-main-inventory"},
@@ -3503,12 +3504,12 @@ data:extend(
             starting_speed = 1,
             direction_deviation = 0.05,
             range_deviation = 0.15,
-            max_range = DATA.Attack_Range,
+            max_range = DyWorld_Material_Formulas(5, DATA.Table),
           }
         }
       }
     },
-    magazine_size = DATA.Mag_Size,
+    magazine_size = DyWorld_Material_Formulas(7, DATA.Table),
     subgroup = dy.."ammo-basic-piercing",
     order = DATA.Name,
     stack_size = 200
@@ -3529,7 +3530,7 @@ data:extend(
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0,
     direction_only = true,
-	piercing_damage = DATA.Dmg_Mod,
+	piercing_damage = DyWorld_Material_Formulas(8, DATA.Table),
     action =
     {
       type = "direct",
@@ -3539,14 +3540,14 @@ data:extend(
         target_effects =
         {
           type = "damage",
-          damage = {amount = DATA.Dmg_Mod, type = "physical"}
+          damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "physical"}
         }
       }
     },
     animation =
     {
       filename = "__base__/graphics/entity/bullet/bullet.png",
-      tint = DATA.Tint,
+      tint = Material_Colors[DATA.Table],
       frame_count = 1,
       width = 3,
       height = 50,
@@ -3561,7 +3562,7 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/piercing-shotgun-shell.png",
-		tint = DATA.Tint
+		tint = Material_Colors[DATA.Table]
 	  }
 	},
     flags = {"goes-to-main-inventory"},
@@ -3587,7 +3588,7 @@ data:extend(
         },
         {
           type = "direct",
-          repeat_count = 12 + math.floor(DATA.Count),
+          repeat_count = 12 + math.floor(Materials[DATA.Table].Density),
           action_delivery =
           {
             type = "projectile",
@@ -3595,12 +3596,12 @@ data:extend(
             starting_speed = 1,
             direction_deviation = 0.3,
             range_deviation = 0.15,
-            max_range = DATA.Attack_Range,
+            max_range = DyWorld_Material_Formulas(5, DATA.Table),
           }
         }
       }
     },
-    magazine_size = DATA.Mag_Size,
+    magazine_size = DyWorld_Material_Formulas(7, DATA.Table),
     subgroup = dy.."ammo-shotgun-piercing",
     order = DATA.Name,
     stack_size = 200
@@ -4128,7 +4129,7 @@ data:extend(
     name = dy..DATA.Name.."-pump",
     energy_required = 1.5,
 	enabled = false,
-    ingredients = {{dy..DATA.Name.."-pipe", 1},{"electronic-circuit", 2},{dy.."gearbox", 1}},
+    ingredients = {{dy..DATA.Name.."-pipe", 1},{"electronic-circuit", 5},{dy.."gearbox", 1}},
     result = dy..DATA.Name.."-pump",
     result_count = 1,
   },
@@ -4154,11 +4155,11 @@ data:extend(
   },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
-		local result_1 = {DATA.Name, 2}
+		local result_1 = {DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
 	else
-		local result_1 = {DATA.Name.."-plate", 2}
+		local result_1 = {DATA.Name.."-plate", 8}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
 	end
@@ -4195,8 +4196,8 @@ data:extend(
     insert_position = {0, 1.2},
     energy_per_movement = 5000,
     energy_per_rotation = 5000,
-    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
-    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 20),
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 7.5),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 15),
     energy_source =
     {
       type = "electric",
@@ -4376,8 +4377,8 @@ data:extend(
     insert_position = {0, 2.2},
     energy_per_movement = 5000,
     energy_per_rotation = 5000,
-    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
-    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 20),
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 7.5),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 15),
     hand_size = 1.5,
     energy_source =
     {
@@ -4558,8 +4559,8 @@ data:extend(
     insert_position = {0, 1.2},
     energy_per_movement = 8000,
     energy_per_rotation = 8000,
-    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
-    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 20),
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 8),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 15),
     filter_count = 5,
     energy_source =
     {
@@ -4741,8 +4742,8 @@ data:extend(
     insert_position = {0, 1.2},
     energy_per_movement = 20000,
     energy_per_rotation = 20000,
-    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 5),
-    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 4),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 7.5),
     energy_source =
     {
       type = "electric",
@@ -4924,8 +4925,8 @@ data:extend(
     insert_position = {0, 1.2},
     energy_per_movement = 20000,
     energy_per_rotation = 20000,
-    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 5),
-    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 10),
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 4),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 7.5),
     energy_source =
     {
       type = "electric",
@@ -5106,8 +5107,8 @@ data:extend(
     insert_position = {0, 1.2},
     energy_per_movement = 35000,
     energy_per_rotation = 35000,
-    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 2.5),
-    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 5),
+    extension_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 1.25),
+    rotation_speed = (DyWorld_Material_Formulas(9, DATA.Table) / 2.5),
     energy_source =
     {
       type = "electric",
@@ -5275,7 +5276,7 @@ data:extend(
     name = dy..DATA.Name.."-basic-inserter",
     energy_required = 0.5,
 	enabled = false,
-    ingredients = {{"electronic-circuit", 2},{dy.."gearbox", 1}},
+    ingredients = {{"electronic-circuit", 2}},
     result = dy..DATA.Name.."-basic-inserter",
     result_count = 1,
   },
@@ -5295,7 +5296,7 @@ data:extend(
     name = dy..DATA.Name.."-long-inserter",
     energy_required = 0.5,
 	enabled = false,
-    ingredients = {{dy..DATA.Name.."-basic-inserter", 1}},
+    ingredients = {{dy..DATA.Name.."-basic-inserter", 1},{dy.."gearbox", 1}},
     result = dy..DATA.Name.."-long-inserter",
     result_count = 1,
   },
@@ -5315,7 +5316,7 @@ data:extend(
     name = dy..DATA.Name.."-filter-inserter",
     energy_required = 0.5,
 	enabled = false,
-    ingredients = {{dy..DATA.Name.."-basic-inserter", 1}},
+    ingredients = {{dy..DATA.Name.."-basic-inserter", 1},{dy.."gearbox", 1}},
     result = dy..DATA.Name.."-filter-inserter",
     result_count = 1,
   },
@@ -5335,7 +5336,7 @@ data:extend(
     name = dy..DATA.Name.."-stack-inserter",
     energy_required = 0.5,
 	enabled = false,
-    ingredients = {{dy..DATA.Name.."-basic-inserter", 1},{"advanced-circuit", 2}},
+    ingredients = {{dy..DATA.Name.."-basic-inserter", 1},{dy.."gearbox", 1},{"advanced-circuit", 2}},
     result = dy..DATA.Name.."-stack-inserter",
     result_count = 1,
   },
@@ -5384,7 +5385,7 @@ data:extend(
 		local result_1 = {DATA.Name, 2}
 		local result_2 = {DATA.Name, 5}
 		local result_3 = {DATA.Name, 10}
-		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-inserter"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-long-inserter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-filter-inserter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-inserter"].ingredients, result_2)
@@ -5394,7 +5395,7 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 2}
 		local result_2 = {DATA.Name.."-plate", 5}
 		local result_3 = {DATA.Name.."-plate", 10}
-		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-inserter"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-long-inserter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-filter-inserter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-inserter"].ingredients, result_2)
@@ -5597,6 +5598,744 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 40}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
 	end
+end
+
+function DyWorld_Power_Poles(DATA)
+data:extend(
+{
+  {
+    type = "electric-pole",
+    name = dy..DATA.Name.."-power-pole",
+	localised_name = {"looped-name.power-pole", {"looped-name."..DATA.Name}},
+    flags = {"placeable-player", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-power-pole"},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/medium-electric-pole.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "small-remnants",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 100
+      }
+    },
+    collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    drawing_box = {{-0.5, -2.8}, {0.5, 0.5}},
+    maximum_wire_distance = (math.ceil(Materials[DATA.Table].Density) / 1.5),
+    supply_area_distance = (Materials[DATA.Table].Hardness / 1.5),
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    pictures =
+    {
+      filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png",
+      priority = "high",
+      width = 136,
+      height = 122,
+      direction_count = 4,
+      shift = {1.4, -1.0},
+	  tint = Material_Colors[DATA.Table]
+    },
+    connection_points =
+    {
+      {
+        shadow =
+        {
+          copper = {2.55, 0.4},
+          green = {2.0, 0.4},
+          red = {3.05, 0.4}
+        },
+        wire =
+        {
+          copper = {-0.03, -2.5},
+          green = {-0.35,-2.5},
+          red = {0.25,-2.5}
+        }
+      },
+      {
+        shadow =
+        {
+          copper = {2.9, 0.1},
+          green = {2.6, -0.15},
+          red = {3.25, 0.35}
+        },
+        wire =
+        {
+          copper = {0.05, -2.75},
+          green = {-0.15, -2.9},
+          red = {0.25, -2.55}
+        }
+      },
+      {
+        shadow =
+        {
+          copper = {1.5, -0.2},
+          green = {1.5, -0.55},
+          red = {1.5, 0.1}
+        },
+        wire =
+        {
+          copper = {-0.43, -2.4},
+          green = {-0.43, -2.63},
+          red = {-0.43, -2.2}
+        }
+      },
+      {
+        shadow =
+        {
+          copper = {2.88, 0.2},
+          green = {3.2, -0.1},
+          red = {2.45, 0.4}
+        },
+        wire =
+        {
+          copper = {0, -2.7},
+          green = {0.22, -2.85},
+          red = {-0.24, -2.55}
+        }
+      }
+    },
+    radius_visualisation_picture =
+    {
+      filename = "__base__/graphics/entity/small-electric-pole/electric-pole-radius-visualization.png",
+      width = 12,
+      height = 12,
+      priority = "extra-high-no-scale"
+    },
+  },
+  {
+    type = "electric-pole",
+    name = dy..DATA.Name.."-power-relay",
+	localised_name = {"looped-name.power-relay", {"looped-name."..DATA.Name}},
+    flags = {"placeable-player", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-power-relay"},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/big-electric-pole.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "medium-remnants",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 100
+      }
+    },
+    collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
+    selection_box = {{-1, -1}, {1, 1}},
+    drawing_box = {{-1, -3}, {1, 0.5}},
+    maximum_wire_distance = (math.ceil(Materials[DATA.Table].Density * 10) / 2),
+    supply_area_distance = (Materials[DATA.Table].Hardness / 1.5),
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    pictures =
+    {
+      filename = "__base__/graphics/entity/big-electric-pole/big-electric-pole.png",
+      priority = "high",
+      width = 168,
+      height = 165,
+      direction_count = 4,
+      shift = {1.6, -1.1},
+	  tint = Material_Colors[DATA.Table]
+    },
+    connection_points =
+    {
+      {
+        shadow =
+        {
+          copper = {2.7, 0},
+          green = {1.8, 0},
+          red = {3.6, 0}
+        },
+        wire =
+        {
+          copper = {0, -3.1},
+          green = {-0.6,-3.1},
+          red = {0.6,-3.1}
+        }
+      },
+      {
+        shadow =
+        {
+          copper = {3.1, 0.2},
+          green = {2.3, -0.3},
+          red = {3.8, 0.6}
+        },
+        wire =
+        {
+          copper = {-0.08, -3.15},
+          green = {-0.55, -3.5},
+          red = {0.3, -2.87}
+        }
+      },
+      {
+        shadow =
+        {
+          copper = {2.9, 0.06},
+          green = {3.0, -0.6},
+          red = {3.0, 0.8}
+        },
+        wire =
+        {
+          copper = {-0.1, -3.1},
+          green = {-0.1, -3.55},
+          red = {-0.1, -2.8}
+        }
+      },
+      {
+        shadow =
+        {
+          copper = {3.1, 0.2},
+          green = {3.8, -0.3},
+          red = {2.35, 0.6}
+        },
+        wire =
+        {
+          copper = {0, -3.25},
+          green = {0.45, -3.55},
+          red = {-0.54, -3.0}
+        }
+      }
+    },
+    radius_visualisation_picture =
+    {
+      filename = "__base__/graphics/entity/small-electric-pole/electric-pole-radius-visualization.png",
+      width = 12,
+      height = 12,
+      priority = "extra-high-no-scale"
+    },
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-power-pole",
+	localised_name = {"looped-name.power-pole", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/medium-electric-pole.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."power-pole",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-power-pole",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-power-pole",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{"copper-cable", 4}},
+    result = dy..DATA.Name.."-power-pole",
+    result_count = 2,
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-power-relay",
+	localised_name = {"looped-name.power-relay", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/big-electric-pole.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."power-relay",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-power-relay",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-power-relay",
+    energy_required = 1.5,
+	enabled = false,
+    ingredients = {{"copper-cable", 7}},
+    result = dy..DATA.Name.."-power-relay",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 10}
+		local result_2 = {DATA.Name, 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-pole"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-relay"].ingredients, result_2)
+	else
+		local result_1 = {DATA.Name.."-plate", 8}
+		local result_2 = {DATA.Name.."-plate", 12}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-pole"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-relay"].ingredients, result_2)
+	end
+end
+
+function DyWorld_Laser_Turrets(DATA)
+data:extend(
+{
+  {
+    type = "electric-turret",
+    name = dy..DATA.Name.."-laser-turret",
+	localised_name = {"looped-name.laser-turret", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/laser-turret.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = { "placeable-player", "placeable-enemy", "player-creation"},
+    minable = {mining_time = 0.5, result = dy..DATA.Name.."-laser-turret"},
+    max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
+    corpse = "medium-remnants",
+    collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
+    selection_box = {{ -1, -1}, {1, 1}},
+    rotation_speed = 0.01,
+    preparing_speed = 0.05,
+    dying_explosion = "medium-explosion",
+    folding_speed = 0.05,
+    energy_source =
+    {
+      type = "electric",
+      buffer_capacity = "801kJ",
+      input_flow_limit = "9600kW",
+      drain = "24kW",
+      usage_priority = "primary-input"
+    },
+    folded_animation =
+    {
+      layers =
+      {
+        DyWorld_laser_turret_extension({frame_count=1, line_length = 1}, Material_Colors[DATA.Table]),
+        DyWorld_laser_turret_extension_shadow{frame_count=1, line_length=1},
+        DyWorld_laser_turret_extension_mask({frame_count=1, line_length=1}, Material_Colors[DATA.Table]),
+      }
+    },
+    preparing_animation =
+    {
+      layers =
+      {
+        DyWorld_laser_turret_extension({}, Material_Colors[DATA.Table]),
+        DyWorld_laser_turret_extension_shadow{},
+        DyWorld_laser_turret_extension_mask({},  Material_Colors[DATA.Table]),
+      }
+    },
+    prepared_animation =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-gun.png",
+          line_length = 8,
+          width = 68,
+          height = 68,
+          frame_count = 1,
+          axially_symmetrical = false,
+          direction_count = 64,
+		  tint = Material_Colors[DATA.Table],
+          shift = {-0.03125, -1}
+        },
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-gun-mask.png",
+          flags = { "mask" },
+          line_length = 8,
+          width = 54,
+          height = 44,
+          frame_count = 1,
+          axially_symmetrical = false,
+          apply_runtime_tint = true,
+          direction_count = 64,
+		  tint = Material_Colors[DATA.Table],
+          shift = {-0.03125, -1.3125},
+        },
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-gun-shadow.png",
+          line_length = 8,
+          width = 88,
+          height = 52,
+          frame_count = 1,
+          axially_symmetrical = false,
+          direction_count = 64,
+          draw_as_shadow = true,
+          shift = {1.5, 0}
+        }
+      }
+    },
+    folding_animation = 
+    {
+      layers =
+      {
+        DyWorld_laser_turret_extension({run_mode = "backward"}, Material_Colors[DATA.Table]),
+        DyWorld_laser_turret_extension_shadow{run_mode = "backward"},
+        DyWorld_laser_turret_extension_mask({run_mode = "backward"},  Material_Colors[DATA.Table]),
+      }
+    },
+    base_picture =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-base.png",
+          priority = "high",
+          width = 98,
+          height = 82,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+		  tint = Material_Colors[DATA.Table],
+          shift = {0.015625, 0.03125}
+        },
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-base-mask.png",
+          flags = { "mask" },
+          line_length = 1,
+          width = 54,
+          height = 46,
+          axially_symmetrical = false,
+          apply_runtime_tint = true,
+          direction_count = 1,
+          frame_count = 1,
+		  tint = Material_Colors[DATA.Table],
+          shift = {-0.046875, -0.109375},
+        },
+      }
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    turret_base_has_direction = true,
+    attack_parameters =
+    {
+      type = "projectile",
+      ammo_category = "electric",
+      cooldown = (60 / DyWorld_Material_Formulas(6, DATA.Table)),
+      projectile_center = {-0.09375, -0.2},
+      projectile_creation_distance = 1.4,
+      range = DyWorld_Material_Formulas(5, DATA.Table),
+      min_range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.15),
+      turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
+      damage_modifier = 1,
+      ammo_type =
+      {
+        type = "projectile",
+        category = "laser-turret",
+        energy_consumption = "200kJ",
+        action =
+        {
+          {
+            type = "direct",
+            action_delivery =
+            {
+              {
+                type = "projectile",
+                projectile = dy..DATA.Name.."-laser",
+                starting_speed = 0.35,
+                range_deviation = 0.1,
+				max_range = DyWorld_Material_Formulas(5, DATA.Table),
+              }
+            }
+          }
+        }
+      },
+      sound = make_laser_sounds()
+    },
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
+    shoot_in_prepare_state = true,
+    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
+  },
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-laser",
+    flags = {"not-on-map"},
+    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    acceleration = 0.05,
+    direction_only = true,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+       target_effects =
+        {
+          {
+            type = "create-entity",
+            entity_name = "laser-bubble"
+          },
+          {
+            type = "damage",
+			damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "laser"}
+          }
+        }
+      }
+    },
+    light = {intensity = 0.5, size = 5},
+    animation =
+    {
+      filename = "__base__/graphics/entity/laser/laser-to-tint-medium.png",
+      tint = Material_Colors[DATA.Table],
+      frame_count = 1,
+      width = 12,
+      height = 33,
+      priority = "high",
+      blend_mode = "additive"
+    },
+  },
+  {
+    type = "electric-turret",
+    name = dy..DATA.Name.."-shotgun-laser-turret",
+	localised_name = {"looped-name.shotgun-laser-turret", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/laser-turret.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = { "placeable-player", "placeable-enemy", "player-creation"},
+    minable = {mining_time = 0.5, result = dy..DATA.Name.."-shotgun-laser-turret"},
+    max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
+    corpse = "medium-remnants",
+    collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
+    selection_box = {{ -1, -1}, {1, 1}},
+    rotation_speed = 0.01,
+    preparing_speed = 0.05,
+    dying_explosion = "medium-explosion",
+    folding_speed = 0.05,
+    energy_source =
+    {
+      type = "electric",
+      buffer_capacity = "801kJ",
+      input_flow_limit = "9600kW",
+      drain = "24kW",
+      usage_priority = "primary-input"
+    },
+    folded_animation =
+    {
+      layers =
+      {
+        DyWorld_laser_turret_extension({frame_count=1, line_length = 1}, Material_Colors[DATA.Table]),
+        DyWorld_laser_turret_extension_shadow{frame_count=1, line_length=1},
+        DyWorld_laser_turret_extension_mask({frame_count=1, line_length=1}, Material_Colors[DATA.Table]),
+      }
+    },
+    preparing_animation =
+    {
+      layers =
+      {
+        DyWorld_laser_turret_extension({}, Material_Colors[DATA.Table]),
+        DyWorld_laser_turret_extension_shadow{},
+        DyWorld_laser_turret_extension_mask({},  Material_Colors[DATA.Table]),
+      }
+    },
+    prepared_animation =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-gun.png",
+          line_length = 8,
+          width = 68,
+          height = 68,
+          frame_count = 1,
+          axially_symmetrical = false,
+          direction_count = 64,
+		  tint = Material_Colors[DATA.Table],
+          shift = {-0.03125, -1}
+        },
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-gun-mask.png",
+          flags = { "mask" },
+          line_length = 8,
+          width = 54,
+          height = 44,
+          frame_count = 1,
+          axially_symmetrical = false,
+          apply_runtime_tint = true,
+          direction_count = 64,
+		  tint = Material_Colors[DATA.Table],
+          shift = {-0.03125, -1.3125},
+        },
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-gun-shadow.png",
+          line_length = 8,
+          width = 88,
+          height = 52,
+          frame_count = 1,
+          axially_symmetrical = false,
+          direction_count = 64,
+          draw_as_shadow = true,
+          shift = {1.5, 0}
+        }
+      }
+    },
+    folding_animation = 
+    {
+      layers =
+      {
+        DyWorld_laser_turret_extension({run_mode = "backward"}, Material_Colors[DATA.Table]),
+        DyWorld_laser_turret_extension_shadow{run_mode = "backward"},
+        DyWorld_laser_turret_extension_mask({run_mode = "backward"},  Material_Colors[DATA.Table]),
+      }
+    },
+    base_picture =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-base.png",
+          priority = "high",
+          width = 98,
+          height = 82,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+		  tint = Material_Colors[DATA.Table],
+          shift = {0.015625, 0.03125}
+        },
+        {
+          filename = "__base__/graphics/entity/laser-turret/laser-turret-base-mask.png",
+          flags = { "mask" },
+          line_length = 1,
+          width = 54,
+          height = 46,
+          axially_symmetrical = false,
+          apply_runtime_tint = true,
+          direction_count = 1,
+          frame_count = 1,
+		  tint = Material_Colors[DATA.Table],
+          shift = {-0.046875, -0.109375},
+        },
+      }
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    turret_base_has_direction = true,
+    attack_parameters =
+    {
+      type = "projectile",
+      ammo_category = "electric",
+      cooldown = (60 / DyWorld_Material_Formulas(6, DATA.Table)),
+      projectile_center = {-0.09375, -0.2},
+      projectile_creation_distance = 1.4,
+      range = DyWorld_Material_Formulas(5, DATA.Table),
+      min_range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.15),
+      turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
+      damage_modifier = 1,
+      ammo_type =
+      {
+        type = "projectile",
+        category = "laser-turret",
+        energy_consumption = "200kJ",
+        action =
+        {
+          {
+            type = "direct",
+            repeat_count = 10 + math.floor(Materials[DATA.Table].Density),
+            action_delivery =
+            {
+              {
+                type = "projectile",
+                projectile = dy..DATA.Name.."-shotgun-laser",
+                starting_speed = 0.35,
+				direction_deviation = 0.3,
+				range_deviation = 0.15,
+				max_range = DyWorld_Material_Formulas(5, DATA.Table),
+              }
+            }
+          }
+        }
+      },
+      sound = make_laser_sounds()
+    },
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
+    shoot_in_prepare_state = true,
+    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
+  },
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-shotgun-laser",
+    flags = {"not-on-map"},
+    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    acceleration = 0.05,
+    direction_only = true,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+       target_effects =
+        {
+          {
+            type = "create-entity",
+            entity_name = "laser-bubble"
+          },
+          {
+            type = "damage",
+			damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "laser"}
+          }
+        }
+      }
+    },
+    light = {intensity = 0.5, size = 5},
+    animation =
+    {
+      filename = "__base__/graphics/entity/laser/laser-to-tint-medium.png",
+      tint = Material_Colors[DATA.Table],
+      frame_count = 1,
+      width = 12,
+      height = 33,
+      priority = "high",
+      blend_mode = "additive"
+    },
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-laser-turret",
+	localised_name = {"looped-name.laser-turret", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/laser-turret.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."turret-laser",
+    stack_size = 100,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-laser-turret",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-laser-turret",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 5}, {"battery", 2}},
+    result = dy..DATA.Name.."-laser-turret",
+    result_count = 1,
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-shotgun-laser-turret",
+	localised_name = {"looped-name.shotgun-laser-turret", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/laser-turret.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."turret-shotgun-laser",
+    stack_size = 100,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-shotgun-laser-turret",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-shotgun-laser-turret",
+    energy_required = 3.5,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 3}, {dy..DATA.Name.."-laser-turret", 1}, {"battery", 2}},
+    result = dy..DATA.Name.."-shotgun-laser-turret",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-laser-turret"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-laser-turret"].ingredients, result_1)
+	end
+	DyWorld_Add_To_Tech("laser-turrets", dy..DATA.Name.."-laser-turret")
+	DyWorld_Add_To_Tech("laser-turrets", dy..DATA.Name.."-shotgun-laser-turret")
 end
 
 function DyWorld_TEMPLATE(DATA)

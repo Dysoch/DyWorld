@@ -3,7 +3,7 @@ require "data/prefix"
 local Data_Table = {
 	{
 		Name = "wood-seed",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."wood-seed.png",
 		Item_Place = nil,
 		Subgroup = "seeds",
 		Stack = 200,

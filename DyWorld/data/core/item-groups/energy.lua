@@ -16,6 +16,21 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "energy"
 	},
+	{
+		Name = "power-pole",
+		Type = "sub",
+		Main = "energy"
+	},
+	{
+		Name = "power-relay",
+		Type = "sub",
+		Main = "energy"
+	},
+	{
+		Name = "power-substation",
+		Type = "sub",
+		Main = "energy"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

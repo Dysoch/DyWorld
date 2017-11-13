@@ -5,7 +5,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."water-seperation-1",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid["water"].icon,
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
     category = "centrifuging",
     energy_required = 5,
 	enabled = false,
@@ -28,7 +38,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."water-seperation-2",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid["water"].icon,
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
     category = "centrifuging",
     energy_required = 30,
 	enabled = false,
@@ -47,7 +67,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."sludge-seperation",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."sludge"].icon,
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
     category = "centrifuging",
     energy_required = 5,
 	enabled = false,
@@ -58,8 +88,14 @@ data:extend(
     results=
     {
       {type = "item", name = "stone", amount_min = 1, amount_max = 4, probability = 1},
-      {type = "item", name = "iron-ore", amount_min = 1, amount_max = 2, probability = 0.25},
+      {type = "item", name = "coal", amount_min = 1, amount_max = 4, probability = 0.5},
+      {type = "item", name = "iron-ore", amount_min = 1, amount_max = 2, probability = 0.19},
       {type = "item", name = "copper-ore", amount_min = 1, amount_max = 1, probability = 0.125},
+      {type = "item", name = "gold-ore", amount_min = 1, amount_max = 1, probability = 0.07},
+      {type = "item", name = "tin-ore", amount_min = 1, amount_max = 1, probability = 0.1},
+      {type = "item", name = "silver-ore", amount_min = 1, amount_max = 1, probability = 0.09},
+      {type = "item", name = "lead-ore", amount_min = 1, amount_max = 1, probability = 0.12},
+      {type = "item", name = "chromium-ore", amount_min = 1, amount_max = 1, probability = 0.14},
     },
     subgroup = "fluid-recipes",
     order = dy.."sludge-seperation",
@@ -74,8 +110,8 @@ data:extend(
 	  },
 	  {
 	    icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
-        scale = 0.5,
-        shift = {4, -8}
+        scale = 0.75,
+        shift = {4, 8}
 	  },
 	},
     category = "centrifuging",
@@ -97,7 +133,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."fertilizer-seperation",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."fertilized-water"].icon,
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
     category = "centrifuging",
     energy_required = 5,
 	enabled = false,
@@ -123,8 +169,8 @@ data:extend(
 	  },
 	  {
 	    icon = "__base__/graphics/icons/fluid/crude-oil.png",
-        scale = 0.5,
-        shift = {4, -8}
+        scale = 0.75,
+        shift = {4, 8}
 	  },
 	},
     category = "centrifuging",
@@ -154,8 +200,8 @@ data:extend(
 	  },
 	  {
 	    icon = "__base__/graphics/icons/fluid/crude-oil.png",
-        scale = 0.5,
-        shift = {4, -8}
+        scale = 0.75,
+        shift = {4, 8}
 	  },
 	},
     category = "centrifuging",

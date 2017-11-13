@@ -115,3 +115,54 @@ return
   }
 }
 end
+
+function DyWorld_laser_turret_extension(inputs, TINT)
+return
+{
+  filename = "__base__/graphics/entity/laser-turret/laser-turret-gun-start.png",
+  priority = "medium",
+  width = 66,
+  height = 67,
+  frame_count = inputs.frame_count and inputs.frame_count or 15,
+  line_length = inputs.line_length and inputs.line_length or 0,
+  run_mode = inputs.run_mode and inputs.run_mode or "forward",
+  axially_symmetrical = false,
+  direction_count = 4,
+  tint = TINT,
+  shift = {-0.03125, -0.984375}
+}
+end
+
+function DyWorld_laser_turret_extension_shadow(inputs)
+return
+{
+  filename = "__base__/graphics/entity/laser-turret/laser-turret-gun-start-shadow.png",
+  width = 92,
+  height = 50,
+  frame_count = inputs.frame_count and inputs.frame_count or 15,
+  line_length = inputs.line_length and inputs.line_length or 0,
+  run_mode = inputs.run_mode and inputs.run_mode or "forward",
+  axially_symmetrical = false,
+  direction_count = 4,
+  draw_as_shadow = true,
+  shift = {1.375, 0},
+}
+end
+
+function DyWorld_laser_turret_extension_mask(inputs, TINT)
+return
+{
+  filename = "__base__/graphics/entity/laser-turret/laser-turret-gun-start-mask.png",
+  flags = { "mask" },
+  width = 51,
+  height = 47,
+  frame_count = inputs.frame_count and inputs.frame_count or 15,
+  line_length = inputs.line_length and inputs.line_length or 0,
+  run_mode = inputs.run_mode and inputs.run_mode or "forward",
+  axially_symmetrical = false,
+  apply_runtime_tint = true,
+  direction_count = 4,
+  tint = TINT,
+  shift = {-0.015625, -1.26563},
+}
+end

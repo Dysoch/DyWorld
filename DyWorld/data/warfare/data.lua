@@ -8,3 +8,4 @@ require("data.warfare.edits.recipes")
 require("data.warfare.ammo.bullet")
 
 require("data.warfare.turrets.bullet")
+require("data.warfare.turrets.laser")

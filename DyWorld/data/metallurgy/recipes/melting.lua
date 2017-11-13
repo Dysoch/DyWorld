@@ -5,7 +5,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."molten-rock",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-rock"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 5,
 	enabled = false,
@@ -18,13 +28,23 @@ data:extend(
     {
       {type = "fluid", name = dy.."molten-rock", amount = 125},
     },
-    subgroup = dy.."melting-recipes",
+    subgroup = dy.."sub-recipes",
     order = dy.."molten-rock",
   },
   {
     type = "recipe",
     name = dy.."molten-iron",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-iron"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 0.5,
 	enabled = false,
@@ -44,7 +64,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."molten-copper",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-copper"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 0.5,
 	enabled = false,
@@ -63,8 +93,18 @@ data:extend(
   },
   {
     type = "recipe",
-    name = dy.."molten-steel-normal",
-	icon = dyworld_path_icon_temp,
+    name = dy.."molten-steel",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-steel"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 0.5,
 	enabled = false,
@@ -75,15 +115,25 @@ data:extend(
     },
     results=
     {
-      {type = "fluid", name = dy.."molten-steel-normal", amount = 60},
+      {type = "fluid", name = dy.."molten-steel", amount = 60},
     },
     subgroup = dy.."melting-recipes",
-    order = dy.."molten-steel-normal",
+    order = dy.."molten-steel",
   },
-  {
+  --[[{
     type = "recipe",
     name = dy.."molten-steel-stainless",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-stainless-steel"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 0.5,
 	enabled = false,
@@ -98,11 +148,21 @@ data:extend(
     },
     subgroup = dy.."melting-recipes",
     order = dy.."molten-steel-stainless",
-  },
+  },]]--
   {
     type = "recipe",
     name = dy.."molten-tin",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-tin"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 0.5,
 	enabled = false,
@@ -122,7 +182,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."molten-lead",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-lead"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 0.5,
 	enabled = false,
@@ -142,7 +212,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."molten-gold",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-gold"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 0.5,
 	enabled = false,
@@ -162,7 +242,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."molten-silver",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-silver"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 0.5,
 	enabled = false,
@@ -182,7 +272,17 @@ data:extend(
   {
     type = "recipe",
     name = dy.."molten-chromium",
-	icon = dyworld_path_icon_temp,
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-chromium"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
     category = dy.."blast-furnace",
     energy_required = 0.5,
 	enabled = false,
@@ -204,8 +304,8 @@ data:extend(
 DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-rock")
 DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-iron")
 DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-copper")
-DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-steel-normal")
-DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-steel-stainless")
+DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-steel")
+--DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-steel-stainless")
 DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-tin")
 DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-gold")
 DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-lead")

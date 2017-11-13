@@ -15,13 +15,13 @@ data.raw.recipe["splitter"].hidden = true
 data.raw.recipe["fast-splitter"].hidden = true
 data.raw.recipe["express-splitter"].hidden = true
 
-data.raw.recipe["pipe"].hidden = true
+data.raw.recipe["pipe"].normal.hidden = true
+data.raw.recipe["pipe"].expensive.hidden = true
 data.raw.recipe["pipe-to-ground"].hidden = true
 data.raw.recipe["storage-tank"].hidden = true
 
 data.raw.recipe["offshore-pump"].hidden = true
-data.raw.recipe["pump"].normal.hidden = true
-data.raw.recipe["pump"].expensive.hidden = true
+data.raw.recipe["pump"].hidden = true
 
 data.raw.recipe["inserter"].hidden = true
 data.raw.recipe["long-handed-inserter"].hidden = true

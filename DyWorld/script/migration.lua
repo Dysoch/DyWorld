@@ -65,6 +65,11 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.3.1" then
+		local results = {"automation", "automation-2", "automation-3", "turrets", "laser-turrets", "logistics", "logistics-2", "logistics-3", "military", "military-2", "military-3", "military-4", "steel-processing"}
+			for k,v in pairs(results) do
+				game.players[1].force.technologies[v].researched = false
+				game.players[1].force.technologies[v].researched = true
+			end
 		global.dyworld.Version = "0.4.0" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end

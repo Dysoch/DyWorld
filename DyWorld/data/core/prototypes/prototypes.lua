@@ -4172,6 +4172,7 @@ data:extend(
     type = "inserter",
     name = dy..DATA.Name.."-basic-inserter",
 	localised_name = {"looped-name.inserter-1", {"looped-name."..DATA.Name}},
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-basic-inserter"},
     icons = 
 	{
@@ -4353,6 +4354,7 @@ data:extend(
     type = "inserter",
     name = dy..DATA.Name.."-long-inserter",
 	localised_name = {"looped-name.inserter-2", {"looped-name."..DATA.Name}},
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-long-inserter"},
     icons = 
 	{
@@ -4535,6 +4537,7 @@ data:extend(
     type = "inserter",
     name = dy..DATA.Name.."-filter-inserter",
 	localised_name = {"looped-name.inserter-3", {"looped-name."..DATA.Name}},
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-filter-inserter"},
     icons = 
 	{
@@ -4717,6 +4720,7 @@ data:extend(
     type = "inserter",
     name = dy..DATA.Name.."-stack-inserter",
 	localised_name = {"looped-name.inserter-4", {"looped-name."..DATA.Name}},
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-stack-inserter"},
     icons = 
 	{
@@ -4899,6 +4903,7 @@ data:extend(
     type = "inserter",
     name = dy..DATA.Name.."-stack-filter-inserter",
 	localised_name = {"looped-name.inserter-5", {"looped-name."..DATA.Name}},
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-stack-filter-inserter"},
     icons = 
 	{
@@ -5082,6 +5087,7 @@ data:extend(
     type = "inserter",
     name = dy..DATA.Name.."-super-inserter",
 	localised_name = {"looped-name.inserter-6", {"looped-name."..DATA.Name}},
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-super-inserter"},
     icons = 
 	{

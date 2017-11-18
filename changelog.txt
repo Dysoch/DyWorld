@@ -10,6 +10,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] Moved Accumulators to use the Material System
 [*] Moved Mining Tools to use the Material System
 [*] Moved Mining Drills to use the Material System
+[*] Moved Assembling Machines to use the Material System
 [*] Added Repair Packs that use the Material System
 [*] Added Conductivity to the Material System Properties. Used in anything that uses or creates energy!
 [*] Because of Conductivity add, Power Poles and Relays have been changed, drastically. Stone, Wood and Rubber are not conductive, so they no longer exist!

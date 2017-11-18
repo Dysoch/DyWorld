@@ -166,7 +166,7 @@ function DyWorld_Resource(DATA)
       sharpness = 1,
       richness_multiplier = 1500,
       richness_multiplier_distance_bonus = 30,
-      richness_base = 500,
+      richness_base = 2500,
       coverage = 0.01,
       peaks =
       {
@@ -176,8 +176,8 @@ function DyWorld_Resource(DATA)
           noise_persistence = 0.3,
         },
       },
-      starting_area_size = 600 * 0.008,
-      starting_area_amount = 500
+      starting_area_size = 750 * 0.008,
+      starting_area_amount = 2500
     },
     stage_counts = {5000, 3000, 1500, 800, 400, 100, 50, 10},
     stages =
@@ -292,42 +292,6 @@ end
 function DyWorld_Add_To_Tech(TECH, RECIPE)
 local result = {type = "unlock-recipe", recipe = RECIPE}
 	table.insert(data.raw.technology[TECH].effects, result)
-end
-
-function DyWorld_Mining_Tool(DATA, NMB)
-  local result =
-  {
-    type = "mining-tool",
-	name = dy..DATA.Name..tostring(NMB),
-	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
-	icons = 
-	{
-	  {
-		icon = "__base__/graphics/icons/iron-axe.png",
-		tint = Color_Tier[NMB]
-	  }
-	},
-    flags = {"goes-to-main-inventory"},
-    action =
-    {
-      type="direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-            type = "damage",
-            damage = { amount = DATA.Dmg*NMB , type = "physical"}
-        }
-      }
-    },
-    durability = DATA.Durability*NMB,
-    subgroup = dy.."tools",
-    order = dy..DATA.Name..tostring(NMB),
-    speed = DATA.Speed*NMB,
-    stack_size = DATA.Stack or 200,
-  }
-  return result
 end
 
 function DyWorld_Projectile_1(DATA, NMB)
@@ -2720,6 +2684,13 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 2}
+		local result_2 = {dy..DATA.Name, 3}
+		local result_3 = {dy..DATA.Name, 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
 	else
 		local result_1 = {DATA.Name.."-plate", 2}
 		local result_2 = {DATA.Name.."-plate", 3}
@@ -2727,6 +2698,19 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-transport-belt"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-underground-belt"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-splitter"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-transport-belt")
+		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-underground-belt")
+		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-splitter")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-transport-belt")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-underground-belt")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-splitter")
 	end
 end
 
@@ -2961,6 +2945,11 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 2}
 		local result_2 = {DATA.Name, 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].ingredients, result_2)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 2}
+		local result_2 = {dy..DATA.Name, 4}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].ingredients, result_2)
 	else
@@ -3237,6 +3226,10 @@ data:extend(
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
 	else
@@ -3615,23 +3608,294 @@ data:extend(
     result = dy..DATA.Name.."-shotgun-piercing-ammo",
     result_count = 1,
   },
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-cannon-projectile",
+    flags = {"not-on-map"},
+    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    acceleration = 0,
+    direction_only = true,
+    piercing_damage = (DyWorld_Material_Formulas(8, DATA.Table) * 20),
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "damage",
+            damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 20) , type = "physical"}
+          },
+          {
+            type = "damage",
+            damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 10) , type = "explosion"}
+          },
+          {
+            type = "create-entity",
+            entity_name = "explosion"
+          }
+        }
+      }
+    },
+    final_action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "create-entity",
+            entity_name = "small-scorchmark",
+            check_buildability = true
+          }
+        }
+      }
+    },
+    animation =
+    {
+      filename = "__base__/graphics/entity/bullet/bullet.png",
+      tint = Material_Colors[DATA.Table],
+      frame_count = 1,
+      width = 3,
+      height = 50,
+      priority = "high"
+    },
+  },
+  {
+    type = "ammo",
+    name = dy..DATA.Name.."-cannon-shell",
+	localised_name = {"looped-name.ammo-cannon", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/cannon-shell.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-main-inventory"},
+    ammo_type =
+    {
+      category = "cannon-shell",
+      target_type = "direction",
+      action =
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "projectile",
+          projectile = dy..DATA.Name.."-cannon-projectile",
+          starting_speed = 1,
+          direction_deviation = 0.1,
+          range_deviation = 0.1,
+          max_range = DyWorld_Material_Formulas(5, DATA.Table),
+          source_effects =
+          {
+            type = "create-explosion",
+            entity_name = "explosion-gunshot"
+          },
+        }
+      },
+    },
+    subgroup = dy.."ammo-cannon",
+    order = DATA.Name,
+    stack_size = 200
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-cannon-shell",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{"explosives", 2}},
+    result = dy..DATA.Name.."-cannon-shell",
+    result_count = 1,
+  },
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-cannon-explosive-projectile",
+    flags = {"not-on-map"},
+    collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+    acceleration = 0,
+    direction_only = true,
+    piercing_damage = (DyWorld_Material_Formulas(8, DATA.Table) * 25),
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "damage",
+            damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 25) , type = "physical"}
+          },
+          {
+            type = "damage",
+            damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 25) , type = "explosion"}
+          },
+          {
+            type = "create-entity",
+            entity_name = "explosion"
+          }
+        }
+      }
+    },
+    final_action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "create-entity",
+            entity_name = "big-explosion"
+          },
+          {
+            type = "nested-result",
+            action =
+            {
+              type = "area",
+              perimeter = (DyWorld_Material_Formulas(5, DATA.Table) / 2),
+              action_delivery =
+              {
+                type = "instant",
+                target_effects =
+                {
+                  {
+                    type = "damage",
+                    damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 25), type = "explosion"}
+                  },
+                  {
+                    type = "create-entity",
+                    entity_name = "explosion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    animation =
+    {
+      filename = "__base__/graphics/entity/bullet/bullet.png",
+      tint = Material_Colors[DATA.Table],
+      frame_count = 1,
+      width = 3,
+      height = 50,
+      priority = "high"
+    },
+  },
+  {
+    type = "ammo",
+    name = dy..DATA.Name.."-cannon-explosive-shell",
+	localised_name = {"looped-name.ammo-cannon-explosive", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/cannon-shell.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-main-inventory"},
+    ammo_type =
+    {
+      category = "cannon-shell",
+      target_type = "direction",
+      action =
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "projectile",
+          projectile = dy..DATA.Name.."-cannon-explosive-projectile",
+          starting_speed = 1,
+          direction_deviation = 0.1,
+          range_deviation = 0.1,
+          max_range = DyWorld_Material_Formulas(5, DATA.Table),
+          source_effects =
+          {
+            type = "create-explosion",
+            entity_name = "explosion-gunshot"
+          },
+        }
+      },
+    },
+    subgroup = dy.."ammo-cannon-explosive",
+    order = DATA.Name,
+    stack_size = 200
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-cannon-explosive-shell",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-cannon-shell", 2}},
+    result = dy..DATA.Name.."-cannon-explosive-shell",
+    result_count = 1,
+  },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 2}
 		local result_2 = {DATA.Name, 5}
 		local result_3 = {DATA.Name, 4}
+		local result_4 = {DATA.Name, 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-ammo"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-ammo"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-piercing-ammo"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-piercing-ammo"].ingredients, result_3)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-shell"].ingredients, result_4)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-explosive-shell"].ingredients, result_4)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 2}
+		local result_2 = {dy..DATA.Name, 5}
+		local result_3 = {dy..DATA.Name, 4}
+		local result_4 = {dy..DATA.Name, 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-ammo"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-ammo"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-piercing-ammo"].ingredients, result_3)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-piercing-ammo"].ingredients, result_3)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-shell"].ingredients, result_4)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-explosive-shell"].ingredients, result_4)
 	else
 		local result_1 = {DATA.Name.."-plate", 2}
 		local result_2 = {DATA.Name.."-plate", 5}
 		local result_3 = {DATA.Name.."-plate", 4}
+		local result_4 = {DATA.Name.."-plate", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-ammo"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-ammo"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-piercing-ammo"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-piercing-ammo"].ingredients, result_3)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-shell"].ingredients, result_4)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-explosive-shell"].ingredients, result_4)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-basic-ammo"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-shotgun-ammo"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-basic-piercing-ammo"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-shotgun-piercing-ammo"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-cannon-shell"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-cannon-explosive-shell"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-basic-ammo")
+		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-shotgun-ammo")
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-basic-piercing-ammo")
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-shotgun-piercing-ammo")
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-cannon-shell")
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-cannon-explosive-shell")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-basic-ammo")
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-shotgun-ammo")
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-basic-piercing-ammo")
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-shotgun-piercing-ammo")
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-cannon-shell")
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-cannon-explosive-shell")
 	end
 end
 
@@ -4156,6 +4420,10 @@ data:extend(
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
 	else
@@ -5397,6 +5665,16 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-inserter"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-filter-inserter"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-super-inserter"].ingredients, result_3)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 2}
+		local result_2 = {dy..DATA.Name, 5}
+		local result_3 = {dy..DATA.Name, 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-inserter"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-long-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-filter-inserter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-inserter"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-filter-inserter"].ingredients, result_2)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-super-inserter"].ingredients, result_3)
 	else
 		local result_1 = {DATA.Name.."-plate", 2}
 		local result_2 = {DATA.Name.."-plate", 5}
@@ -5407,6 +5685,28 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-inserter"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-filter-inserter"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-super-inserter"].ingredients, result_3)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-basic-inserter"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-long-inserter"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-filter-inserter"].enabled = true
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-inserter")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-super-inserter")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-basic-inserter")
+		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-long-inserter")
+		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-inserter")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-super-inserter")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-basic-inserter")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-long-inserter")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-inserter")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-super-inserter")
 	end
 end
 
@@ -5600,6 +5900,9 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 50}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 50}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
 	else
 		local result_1 = {DATA.Name.."-plate", 40}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
@@ -5634,8 +5937,8 @@ data:extend(
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     drawing_box = {{-0.5, -2.8}, {0.5, 0.5}},
-    maximum_wire_distance = (math.ceil(Materials[DATA.Table].Density) / 1.5),
-    supply_area_distance = (Materials[DATA.Table].Hardness / 1.5),
+    maximum_wire_distance = DyWorld_Material_Formulas(12, DATA.Table),
+    supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     pictures =
     {
@@ -5739,8 +6042,8 @@ data:extend(
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box = {{-1, -3}, {1, 0.5}},
-    maximum_wire_distance = (math.ceil(Materials[DATA.Table].Density * 10) / 2),
-    supply_area_distance = (Materials[DATA.Table].Hardness / 1.5),
+    maximum_wire_distance = math.floor(DyWorld_Material_Formulas(12, DATA.Table) * 5),
+    supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     pictures =
     {
@@ -5865,11 +6168,26 @@ data:extend(
 		local result_2 = {DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-power-pole"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-power-relay"].ingredients, result_2)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 10}
+		local result_2 = {dy..DATA.Name, 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-pole"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-relay"].ingredients, result_2)
 	else
 		local result_1 = {DATA.Name.."-plate", 8}
 		local result_2 = {DATA.Name.."-plate", 12}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-power-pole"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-power-relay"].ingredients, result_2)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-power-pole"].enabled = true
+		DyWorld_Add_To_Tech("electric-energy-distribution-1", dy..DATA.Name.."-power-relay")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("electric-energy-distribution-1", dy..DATA.Name.."-power-pole")
+		DyWorld_Add_To_Tech("electric-energy-distribution-2", dy..DATA.Name.."-power-relay")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("electric-energy-distribution-2", dy..DATA.Name.."-power-pole")
+		DyWorld_Add_To_Tech("electric-energy-distribution-3", dy..DATA.Name.."-power-relay")
 	end
 end
 
@@ -6335,6 +6653,10 @@ data:extend(
 		local result_1 = {DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-laser-turret"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 20}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-laser-turret"].ingredients, result_1)
 	else
 		local result_1 = {DATA.Name.."-plate", 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
@@ -6344,15 +6666,360 @@ data:extend(
 	DyWorld_Add_To_Tech("laser-turrets", dy..DATA.Name.."-shotgun-laser-turret")
 end
 
+function DyWorld_Mining_Tool(DATA)
+data:extend(
+{
+  {
+    type = "mining-tool",
+	name = dy..DATA.Name.."-mining-tool",
+	localised_name = {"looped-name.mining-tool", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/iron-axe.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-main-inventory"},
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+            type = "damage",
+            damage = { amount = (Materials[DATA.Table].Hardness + 0.1) , type = "physical"}
+        }
+      }
+    },
+    durability = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
+    subgroup = dy.."mining-tool",
+    order = DATA.Name,
+    speed = (Materials[DATA.Table].Elasticity / 2),
+    stack_size = 25,
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-mining-tool",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-mining-tool",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mining-tool"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mining-tool"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mining-tool"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-mining-tool"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech(dy.."mining-tools-1", dy..DATA.Name.."-mining-tool")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech(dy.."mining-tools-2", dy..DATA.Name.."-mining-tool")
+	end
+end
+
+function DyWorld_Repair_Tool(DATA)
+data:extend(
+{
+  {
+    type = "repair-tool",
+	name = dy..DATA.Name.."-repair-tool",
+	localised_name = {"looped-name.repair-tool", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/repair-pack.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."repair-tool",
+    order = DATA.Name,
+    speed = (Materials[DATA.Table].Elasticity / 2),
+    durability = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
+    stack_size = 100
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-repair-tool",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 1}},
+    result = dy..DATA.Name.."-repair-tool",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-repair-tool"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-repair-tool"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-repair-tool"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-repair-tool"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech(dy.."repair-tools-1", dy..DATA.Name.."-repair-tool")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech(dy.."repair-tools-2", dy..DATA.Name.."-repair-tool")
+	end
+end
+
+function DyWorld_Solar(DATA)
+data:extend(
+{
+  {
+    type = "solar-panel",
+	name = dy..DATA.Name.."-solar-normal",
+	localised_name = {"looped-name.solar-normal", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/solar-panel.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-solar-normal"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "big-remnants",
+    collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "solar"
+    },
+    picture =
+    {
+      filename = "__base__/graphics/entity/solar-panel/solar-panel.png",
+      priority = "high",
+      width = 104,
+      height = 96,
+	  tint = Material_Colors[DATA.Table],
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    production = tostring(DyWorld_Material_Formulas(10, DATA.Table)).."kW",
+	fast_replaceable_group = "solar-panel",
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-solar-normal",
+	localised_name = {"looped-name.solar-normal", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/solar-panel.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."solar-2",
+    stack_size = 100,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-solar-normal",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-solar-normal",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy.."solar-cell", math.ceil(DyWorld_Material_Formulas(10, DATA.Table)/10)},{"electronic-circuit", 5}},
+    result = dy..DATA.Name.."-solar-normal",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech("solar-energy", dy..DATA.Name.."-solar-normal")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("solar-energy-2", dy..DATA.Name.."-solar-normal")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("solar-energy-3", dy..DATA.Name.."-solar-normal")
+	end
+end
+
+function DyWorld_Accumulator(DATA)
+data:extend(
+{
+  {
+    type = "accumulator",
+	name = dy..DATA.Name.."-accumulator-normal",
+	localised_name = {"looped-name.accumulator-normal", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/accumulator.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-accumulator-normal"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "medium-remnants",
+    collision_box = {{-0.9, -0.9}, {0.9, 0.9}},
+    selection_box = {{-1, -1}, {1, 1}},
+    energy_source =
+    {
+      type = "electric",
+      buffer_capacity = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table)*10)).."kJ",
+      usage_priority = "terciary",
+      input_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table)*3)).."kW",
+      output_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table)*3)).."kW"
+    },
+    picture =
+    {
+      filename = "__base__/graphics/entity/accumulator/accumulator.png",
+      priority = "extra-high",
+      width = 124,
+      height = 103,
+	  tint = Material_Colors[DATA.Table],
+      shift = {0.6875, -0.203125}
+    },
+    charge_animation =
+    {
+      filename = "__base__/graphics/entity/accumulator/accumulator-charge-animation.png",
+      width = 138,
+      height = 135,
+      line_length = 8,
+      frame_count = 24,
+      shift = {0.46875, -0.640625},
+      animation_speed = 0.5
+    },
+	fast_replaceable_group = "accumulator",
+    charge_cooldown = 30,
+    charge_light = {intensity = 0.3, size = 7, color = {r = 1.0, g = 1.0, b = 1.0}},
+    discharge_animation =
+    {
+      filename = "__base__/graphics/entity/accumulator/accumulator-discharge-animation.png",
+      width = 147,
+      height = 128,
+      line_length = 8,
+      frame_count = 24,
+      shift = {0.390625, -0.53125},
+      animation_speed = 0.5
+    },
+    discharge_cooldown = 60,
+    discharge_light = {intensity = 0.7, size = 7, color = {r = 1.0, g = 1.0, b = 1.0}},
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/accumulator-working.ogg",
+        volume = 1
+      },
+      idle_sound = {
+        filename = "__base__/sound/accumulator-idle.ogg",
+        volume = 0.4
+      },
+      max_sounds_per_type = 5
+    },
+    circuit_wire_connection_point =
+    {
+      shadow =
+      {
+        red = {0.984375, 1.10938},
+        green = {0.890625, 1.10938}
+      },
+      wire =
+      {
+        red = {0.6875, 0.59375},
+        green = {0.6875, 0.71875}
+      }
+    },
+    circuit_connector_sprites = get_circuit_connector_sprites({0.46875, 0.5}, {0.46875, 0.8125}, 26),
+    circuit_wire_max_distance = 9,
+    default_output_signal = {type = "virtual", name = "signal-A"}
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-accumulator-normal",
+	localised_name = {"looped-name.accumulator-normal", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/accumulator.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."accumulator-2",
+    stack_size = 100,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-accumulator-normal",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-accumulator-normal",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy.."battery-pack", math.ceil(DyWorld_Material_Formulas(10, DATA.Table))},{"electronic-circuit", 5}},
+    result = dy..DATA.Name.."-accumulator-normal",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech("electric-energy-accumulators-1", dy..DATA.Name.."-accumulator-normal")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("electric-energy-accumulators-2", dy..DATA.Name.."-accumulator-normal")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("electric-energy-accumulators-3", dy..DATA.Name.."-accumulator-normal")
+	end
+end
+
 function DyWorld_TEMPLATE(DATA)
 data:extend(
 {
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 25}
-		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-ammo"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 20}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
 	else
-		local result_1 = {DATA.Name.."-plate", 25}
-		table.insert(data.raw.recipe[dy..DATA.Name.."-basic-ammo"].ingredients, result_1)
+		local result_1 = {DATA.Name.."-plate", 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-splitter"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-splitter")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-splitter")
 	end
 end

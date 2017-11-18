@@ -1,18 +1,54 @@
 [size=200]Changelog:[/size]
-Changelog as of: October 10th 2017, 11:30 UTC(+1, DST)
 
-[spoiler=DyWorld 0.4.0]
-Released October 10th 2017, 11:30 UTC(+1, DST)
+[spoiler=DyWorld 0.5.0]
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 
 [list]
+[*] Added Cannon Shells and Explosive Cannon Shells using the Material System
+[*] Increased all DyWorld Ores richness by 5x
+[*] Moved Solar Panels to use the Material System
+[*] Moved Accumulators to use the Material System
+[*] Moved Mining Tools to use the Material System
+[*] Added Repair Packs that use the Material System
+[*] Added Conductivity to the Material System Properties. Used in anything that uses or creates energy!
+[*] Because of Conductivity add, Power Poles and Relays have been changed, drastically. Stone, Wood and Rubber are not conductive, so they no longer exist!
+[/list][/spoiler]
+
+[spoiler=DyWorld 0.4.2]
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
+[list]
+[*] Change of the Formula's in preparations for 0.5.0 and alloys. All Transport Belts have different speeds now!
+[*] Unlocked recipe for stone bricks and obsidian for the Forge
+[*] Fixed Crash To Desktop issue with power poles and relays
+[/list][/spoiler]
+
+[spoiler=DyWorld 0.4.1]
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
+[list]
+[*] Added 2 new materials to the Material System: Rubber and Obsidian
+[*] Added a way to smelt stone bricks and obsidian using molten rock
+[*] Moved inserters to their own tab in the crafting window to make the crafting screen a bit smaller
+[*] Fixed inserters not being able to be blueprinted
+[/list][/spoiler]
+
+[spoiler=DyWorld 0.4.0]
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
+[list]
+[*] Added the Material System. This governs materials and their properties. Currently 10 different materials
+[*] Added Inserters (6 types), Transport Belts (normal, underground and splitters), Pumps (offshore and inline), Power Poles (poles and relays), Ammo (basic and shotgun. Normal and piercing for both), Turrets (gun, shotgun, laser and laser shotgun) to the game using the Material System. (resulting in 190 new items and entities!!!!)
+[*] Added 5 new resources (Tin, Lead, Silver, Chromium and Gold)
+[*] Added Metallurgy. The process to refine ore into plates using liquids. This can happen for: Iron, Copper, Steel, Tin, Lead, Silver, Chromium and Gold
 [*] Added 18 new roboports
-[*] Added fluid void recipes for all fluids (including other mods)
+[*] 36 Electric Drills. This is temporary, and will move to the Material System soon
+[*] Added Recycler. This recycles everything (including fluids) into sludge
 [*] Changed centrifuge. Now available earlier and cheaper so you can use it for the new recipes
+[*] Changed recipes of a lot of the base games items, and disabled a few
 [/list][/spoiler]
 
 [spoiler=DyWorld 0.3.1]
-Released October 10th 2017, 11:30 UTC(+1, DST)
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 
 [list]
@@ -30,7 +66,6 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [/list][/spoiler]
 
 [spoiler=DyWorld 0.3.0]
-Released October 8th 2017, 11:00 UTC(+1, DST)
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 
 [list]
@@ -46,4 +81,4 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] probably more, but working on this over the course of 4 months every now and then :) 
 [/list][/spoiler]
 
-[b] All released before 0.3.0 have no changelog anymore, since too much has changed! [/b]
+[b] All released before 0.3.0 have no changelog anymore, since too much has changed and rewritten! [/b]

@@ -7,12 +7,12 @@ Data_Table_Item_Group = {
 		Icon = "personal.png"
 	},
 	{
-		Name = "backpack",
+		Name = "mining-tool",
 		Type = "sub",
 		Main = "personal"
 	},
 	{
-		Name = "tools",
+		Name = "repair-tool",
 		Type = "sub",
 		Main = "personal"
 	},

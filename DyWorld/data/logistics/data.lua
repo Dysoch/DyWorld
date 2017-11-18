@@ -17,6 +17,8 @@ require("data.logistics.pipes.storage")
 
 require("data.logistics.inserters.inserters")
 
+require("data.logistics.tools.repair")
+
 
 
 

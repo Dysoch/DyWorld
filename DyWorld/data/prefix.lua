@@ -16,6 +16,7 @@ Tiered_Entities = 9
 -- graphical
 dyworld_path_icon = "__DyWorld__/graphics/icons/"
 dyworld_path_fluid = "__DyWorld__/graphics/fluids/"
+dyworld_path_tech = "__DyWorld__/graphics/technology/"
 dyworld_path_entity = "__DyWorld__/graphics/entity/"
 dyworld_path_tile = "__DyWorld__/graphics/tiles/"
 dyworld_path_item_group = "__DyWorld__/graphics/item-group/"
@@ -46,13 +47,15 @@ Material_Colors = {
 	Silver = {r=0.972, g=0.96, b=0.915},
 	Lead = {r=159, g=157, b=153},
 	Gold = {r=1, g=0.766, b=0.336},
+	Rubber = {r=128, g=128, b=128},
+	Obsidian = {r=105, g=105, b=105},
 }
 
 -- Material Formulas to calculate everything
 function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 	if TYPE == 1 then
 		-- Belt Speed
-		return (((Materials[TABLE].Strength_Ultimate - Materials[TABLE].Strength_Yield) / Materials[TABLE].Density) + 1)
+		return ((Materials[TABLE].Elasticity / 2) + Materials[TABLE].Density)
 	elseif TYPE == 2 then
 		-- Belt & Pipe Range
 		return math.floor((Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity) + 2)
@@ -64,7 +67,7 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
 	elseif TYPE == 5 then
 		-- Turret / Ammo Range
-		return math.floor(Materials[TABLE].Density * Materials[TABLE].Hardness)
+		return math.floor(((Materials[TABLE].Density * Materials[TABLE].Hardness) / 2) + 5)
 	elseif TYPE == 6 then
 		-- Turret Shoot Speed
 		return Round((Materials[TABLE].Elasticity / Materials[TABLE].Hardness), 2)
@@ -77,15 +80,65 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 	elseif TYPE == 9 then
 		-- Inserter Speed
 		return (Materials[TABLE].Hardness / Materials[TABLE].Density)
+	elseif TYPE == 10 then
+		-- Solar Power
+		return math.floor(Materials[TABLE].Strength_Ultimate * Materials[TABLE].Conductivity)
+	elseif TYPE == 11 then
+		-- Pole/Relay Supply Area
+		return math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Hardness)
+	elseif TYPE == 12 then
+		-- Pole/Relay Wire Reach
+		return math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Density)
 	end
 end
 
 -- Material Properties (for metallurgy and other stuff)
 Materials = {
+	Stone = {
+		Density = 12.55,
+		Hardness = 5,
+		Elasticity = 10,
+		Conductivity = 0,
+		Strength_Yield = 1,
+		Strength_Ultimate = 15,
+		Melting_Point = 100,
+		Boiling_Point = 5000,
+	},
+	Rubber = {
+		Density = 1.2,
+		Hardness = 5,
+		Elasticity = 100,
+		Conductivity = 0,
+		Strength_Yield = 5,
+		Strength_Ultimate = 35,
+		Melting_Point = nil,
+		Boiling_Point = nil,
+	},
+	Obsidian = {
+		Density = 3.6,
+		Hardness = 6,
+		Elasticity = 13.5,
+		Conductivity = 0.25,
+		Strength_Yield = 300,
+		Strength_Ultimate = 450,
+		Melting_Point = nil,
+		Boiling_Point = nil,
+	},
+	Wood = {
+		Density = 7.5,
+		Hardness = 2.25,
+		Elasticity = 11,
+		Conductivity = 0,
+		Strength_Yield = 1,
+		Strength_Ultimate = 40,
+		Melting_Point = nil,
+		Boiling_Point = nil,
+	},
 	Iron = {
 		Density = 7.874,
 		Hardness = 4,
 		Elasticity = 28.5,
+		Conductivity = 1.04,
 		Strength_Yield = 130,
 		Strength_Ultimate = 200,
 		Melting_Point = 1538,
@@ -95,42 +148,17 @@ Materials = {
 		Density = 8.94,
 		Hardness = 3,
 		Elasticity = 17,
+		Conductivity = 5.98,
 		Strength_Yield = 70,
 		Strength_Ultimate = 220,
 		Melting_Point = 1084,
 		Boiling_Point = 2562,
 	},
-	Steel = {
-		Density = 7.8,
-		Hardness = 4.25,
-		Elasticity = 20,
-		Strength_Yield = 250,
-		Strength_Ultimate = 400,
-		Melting_Point = 1425,
-		Boiling_Point = 2862,
-	},
-	Wood = {
-		Density = 7.5,
-		Hardness = 2.25,
-		Elasticity = 11,
-		Strength_Yield = 1,
-		Strength_Ultimate = 40,
-		Melting_Point = nil,
-		Boiling_Point = nil,
-	},
-	Stone = {
-		Density = 12.55,
-		Hardness = 5,
-		Elasticity = 1,
-		Strength_Yield = 1,
-		Strength_Ultimate = 15,
-		Melting_Point = 100,
-		Boiling_Point = 5000,
-	},
 	Chromium = {
 		Density = 7.19,
 		Hardness = 8.5,
 		Elasticity = 36,
+		Conductivity = 5.1,
 		Strength_Yield = 160,
 		Strength_Ultimate = 280,
 		Melting_Point = 1860,
@@ -140,6 +168,7 @@ Materials = {
 		Density = 7.28,
 		Hardness = 1.5,
 		Elasticity = 47,
+		Conductivity = 8.7,
 		Strength_Yield = 9,
 		Strength_Ultimate = 19,
 		Melting_Point = 232,
@@ -149,6 +178,7 @@ Materials = {
 		Density = 10.49,
 		Hardness = 2.75,
 		Elasticity = 10.5,
+		Conductivity = 6.3,
 		Strength_Yield = 55,
 		Strength_Ultimate = 360,
 		Melting_Point = 961,
@@ -158,6 +188,7 @@ Materials = {
 		Density = 19.32,
 		Hardness = 2.75,
 		Elasticity = 10.8,
+		Conductivity = 4.52,
 		Strength_Yield = 190,
 		Strength_Ultimate = 220,
 		Melting_Point = 1063,
@@ -167,30 +198,43 @@ Materials = {
 		Density = 11.34,
 		Hardness = 1.5,
 		Elasticity = 2,
+		Conductivity = 4.87,
 		Strength_Yield = 19,
 		Strength_Ultimate = 32,
 		Melting_Point = 327,
 		Boiling_Point = 1750,
 	},
+	Steel = {
+		Density = 7.8,
+		Hardness = 4.25,
+		Elasticity = 20,
+		Conductivity = 6.21,
+		Strength_Yield = 250,
+		Strength_Ultimate = 400,
+		Melting_Point = 1425,
+		Boiling_Point = 2862,
+	},
 	Stainless_Steel = {
 		-- mix of steel and chromium
-		Density = 13.12,
-		Hardness = 11.16,
-		Elasticity = 49,
-		Strength_Yield = 359,
-		Strength_Ultimate = 595,
-		Melting_Point = 2464,
-		Boiling_Point = 4149,
+		Density = 14.99,
+		Hardness = 12.75,
+		Elasticity = 56,
+		Conductivity = 11.31,
+		Strength_Yield = 410,
+		Strength_Ultimate = 680,
+		Melting_Point = 1643,
+		Boiling_Point = 2766,
 	},
 	Bronze = {
 		-- mix of copper and tin
-		Density = 14.19,
-		Hardness = 3.94,
-		Elasticity = 56,
-		Strength_Yield = 69,
-		Strength_Ultimate = 209,
-		Melting_Point = 987,
-		Boiling_Point = 3872,
+		Density = 16.22,
+		Hardness = 4.50,
+		Elasticity = 64,
+		Conductivity = 14.68,
+		Strength_Yield = 79,
+		Strength_Ultimate = 239,
+		Melting_Point = 658,
+		Boiling_Point = 2581,
 	},
 }
 
@@ -201,16 +245,18 @@ end
 
 Material_Table = {
 	-- Normal Plates
-	{ Name = "copper", Table = "Copper"},
-	{ Name = "stone", Table = "Stone"},
-	{ Name = "iron", Table = "Iron"},
-	{ Name = "steel", Table = "Steel"},
-	{ Name = "wood", Table = "Wood"},
-	{ Name = "chromium", Table = "Chromium"},
-	{ Name = "tin", Table = "Tin"},
-	{ Name = "silver", Table = "Silver"},
-	{ Name = "gold", Table = "Gold"},
-	{ Name = "lead", Table = "Lead"},
+	{ Name = "stone", Table = "Stone", Type = "Primitive"},
+	{ Name = "wood", Table = "Wood", Type = "Primitive"},
+	{ Name = "obsidian", Table = "Obsidian", Type = "Primitive"},
+	{ Name = "rubber", Table = "Rubber", Type = "Primitive"},
+	{ Name = "copper", Table = "Copper", Type = "Basic"},
+	{ Name = "iron", Table = "Iron", Type = "Basic"},
+	{ Name = "chromium", Table = "Chromium", Type = "Basic"},
+	{ Name = "tin", Table = "Tin", Type = "Basic"},
+	{ Name = "silver", Table = "Silver", Type = "Basic"},
+	{ Name = "gold", Table = "Gold", Type = "Basic"},
+	{ Name = "lead", Table = "Lead", Type = "Basic"},
+	{ Name = "steel", Table = "Steel", Type = "Alloy"},
 	-- Alloys
 	--{ Name = "stainless-steel", Table = "Stainless_Steel"},
 	--{ Name = "bronze", Table = "Bronze"},

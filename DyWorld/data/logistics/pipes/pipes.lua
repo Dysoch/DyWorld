@@ -25,5 +25,11 @@ DyWorld_Add_To_Tech(dy.."lead-processing", dy.."lead-pipe-to-ground")
 data.raw.recipe[dy.."wood-pipe"].enabled = true
 data.raw.recipe[dy.."wood-pipe-to-ground"].enabled = true
 
+data.raw.recipe[dy.."rubber-pipe"].enabled = true
+data.raw.recipe[dy.."rubber-pipe-to-ground"].enabled = true
+
+data.raw.recipe[dy.."obsidian-pipe"].enabled = true
+data.raw.recipe[dy.."obsidian-pipe-to-ground"].enabled = true
+
 data.raw.recipe[dy.."stone-pipe"].enabled = true
 data.raw.recipe[dy.."stone-pipe-to-ground"].enabled = true

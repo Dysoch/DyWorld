@@ -15,4 +15,8 @@ DyWorld_Add_To_Tech(dy.."lead-processing", dy.."lead-storage-tank")
 
 data.raw.recipe[dy.."wood-storage-tank"].enabled = true
 
+data.raw.recipe[dy.."obsidian-storage-tank"].enabled = true
+
+data.raw.recipe[dy.."rubber-storage-tank"].enabled = true
+
 data.raw.recipe[dy.."stone-storage-tank"].enabled = true

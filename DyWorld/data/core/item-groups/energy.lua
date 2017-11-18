@@ -7,12 +7,12 @@ Data_Table_Item_Group = {
 		Icon = "energy.png"
 	},
 	{
-		Name = "accumulator",
+		Name = "accumulator-2",
 		Type = "sub",
 		Main = "energy"
 	},
 	{
-		Name = "solar",
+		Name = "solar-2",
 		Type = "sub",
 		Main = "energy"
 	},

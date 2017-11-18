@@ -27,3 +27,9 @@ data.raw.recipe[dy.."wood-gun-turret"].enabled = true
 
 data.raw.recipe[dy.."stone-shotgun-turret"].enabled = true
 data.raw.recipe[dy.."wood-shotgun-turret"].enabled = true
+
+data.raw.recipe[dy.."obsidian-gun-turret"].enabled = true
+data.raw.recipe[dy.."rubber-gun-turret"].enabled = true
+
+data.raw.recipe[dy.."obsidian-shotgun-turret"].enabled = true
+data.raw.recipe[dy.."rubber-shotgun-turret"].enabled = true

@@ -84,7 +84,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 15,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{dy.."processing-advanced", 4},{"copper-cable", 25},{dy.."crystal", 1}},
+		Recipe_Ingredients = {{dy.."processing-advanced", 4},{"gold-plate", 25},{dy.."crystal", 1}},
 		Tech_Name = "advanced-electronics-2",
 	},
 	{
@@ -96,7 +96,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 10,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"processing-unit", 3},{"advanced-circuit", 1},{dy.."steel-stick", 4},{dy.."binding-steel", 1}}, 
+		Recipe_Ingredients = {{"processing-unit", 3},{"advanced-circuit", 1},{"lead-plate", 2},{dy.."steel-stick", 4},{dy.."binding-steel", 1}}, 
 		Tech_Name = "advanced-electronics-2",
 	},
 	{
@@ -148,13 +148,13 @@ local Data_Table = {
 	{
 		Name = "solar-cell",
 		Icon = dyworld_path_icon.."solar-cell.png",
-		Stack = 50,
+		Stack = 1000,
 		Subgroup = "intermediates",
 		Recipe = true,
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 2.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"copper-plate", 3},{dy.."binding-copper", 2},{dy.."steel-stick", 2}},
+		Recipe_Ingredients = {{"copper-plate", 1},{"tin-plate", 2},{dy.."binding-copper", 2},{dy.."steel-stick", 2}},
 		Tech_Name = "solar-energy",
 	},
 	{
@@ -166,7 +166,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 2.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"copper-plate", 3},{dy.."binding-copper", 2},{"battery", 5},{"plastic-bar", 2}},
+		Recipe_Ingredients = {{"tin-plate", 3},{dy.."binding-copper", 2},{"battery", 1},{"plastic-bar", 2}},
 	},
 	{
 		Name = "steel-stick",
@@ -245,7 +245,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 0.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"processing-unit", 3},{"copper-cable", 7},{"iron-plate", 4}},
+		Recipe_Ingredients = {{"processing-unit", 3},{"copper-cable", 7},{"chromium-plate", 4}},
 		Tech_Name = "robotics",
 	},
 	{
@@ -291,7 +291,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 10,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{dy.."housing", 1}, {"iron-plate",3}, {"steel-plate",1}, {"copper-cable",4}, {"advanced-circuit",3}, {"electronic-circuit",5}, {"plastic-bar",3}},
+		Recipe_Ingredients = {{dy.."housing", 1}, {"silver-plate",3}, {"lead-plate",1}, {"copper-cable",4}, {"advanced-circuit",3}, {"electronic-circuit",5}, {"plastic-bar",3}},
 		Tech_Name = "advanced-electronics",
 	},
 	{
@@ -303,7 +303,7 @@ local Data_Table = {
 		Recipe_Without_Tech = false,
 		Recipe_Craft_Time = 2.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"iron-plate",3}, {"steel-plate",1}, {"copper-cable",4}},
+		Recipe_Ingredients = {{"steel-plate",3}, {"lead-plate",1}, {"copper-cable",4}},
 		Tech_Name = "steel-processing",
 	},
 	{

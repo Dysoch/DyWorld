@@ -4,7 +4,7 @@ Data_Table_Item_Group = {
 	{
 		Name = "metallurgy",
 		Type = "main",
-		Icon = "empty.png"
+		Icon = "metallurgy.png"
 	},
 	{
 		Name = "melting-recipes",

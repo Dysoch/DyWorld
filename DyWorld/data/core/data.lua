@@ -20,11 +20,13 @@ require("data.core.intermediates.recycler")
 require("data.core.intermediates.seeds")
 require("data.core.intermediates.wood")
 require("data.core.intermediates.fluids")
+require("data.core.tech.tech")
 
 -- Item Groups
 require("data.core.item-groups.energy")
 require("data.core.item-groups.items")
 require("data.core.item-groups.logistics")
+require("data.core.item-groups.inserters")
 require("data.core.item-groups.machines")
 require("data.core.item-groups.metallurgy")
 require("data.core.item-groups.personal")

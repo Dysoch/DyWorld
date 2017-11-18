@@ -25,5 +25,11 @@ DyWorld_Add_To_Tech(dy.."lead-processing", dy.."lead-offshore-pump")
 data.raw.recipe[dy.."wood-pump"].enabled = true
 data.raw.recipe[dy.."wood-offshore-pump"].enabled = true
 
+data.raw.recipe[dy.."rubber-pump"].enabled = true
+data.raw.recipe[dy.."rubber-offshore-pump"].enabled = true
+
+data.raw.recipe[dy.."obsidian-pump"].enabled = true
+data.raw.recipe[dy.."obsidian-offshore-pump"].enabled = true
+
 data.raw.recipe[dy.."stone-pump"].enabled = true
 data.raw.recipe[dy.."stone-offshore-pump"].enabled = true

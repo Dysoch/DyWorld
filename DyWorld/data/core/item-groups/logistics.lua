@@ -47,36 +47,6 @@ Data_Table_Item_Group = {
 		Main = "logistics"
 	},
 	{
-		Name = "inserter-basic",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "inserter-long",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "inserter-filter",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "inserter-stack",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "inserter-stack-filter",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "inserter-super",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
 		Name = "railway",
 		Type = "sub",
 		Main = "logistics"

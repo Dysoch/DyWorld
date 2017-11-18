@@ -2,74 +2,39 @@ require "data/prefix"
 
 Data_Table_Item_Group = {
 	{
-		Name = "warfare",
+		Name = "inserters",
 		Type = "main",
-		Icon = "warfare.png"
+		Icon = "inserters.png"
 	},
 	{
-		Name = "ammo-basic",
+		Name = "inserter-basic",
 		Type = "sub",
-		Main = "warfare"
+		Main = "inserters"
 	},
 	{
-		Name = "ammo-basic-piercing",
+		Name = "inserter-long",
 		Type = "sub",
-		Main = "warfare"
+		Main = "inserters"
 	},
 	{
-		Name = "ammo-shotgun",
+		Name = "inserter-filter",
 		Type = "sub",
-		Main = "warfare"
+		Main = "inserters"
 	},
 	{
-		Name = "ammo-cannon",
+		Name = "inserter-stack",
 		Type = "sub",
-		Main = "warfare"
+		Main = "inserters"
 	},
 	{
-		Name = "ammo-cannon-explosive",
+		Name = "inserter-stack-filter",
 		Type = "sub",
-		Main = "warfare"
+		Main = "inserters"
 	},
 	{
-		Name = "ammo-shotgun-piercing",
+		Name = "inserter-super",
 		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "armor",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "gun",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "radar",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "turret-gun",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "turret-shotgun",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "turret-laser",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "turret-shotgun-laser",
-		Type = "sub",
-		Main = "warfare"
+		Main = "inserters"
 	},
 }
 

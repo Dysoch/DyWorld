@@ -92,8 +92,8 @@ data:extend(
 	})
 end
 
-data.raw.resource["tin-ore"].autoplace.richness_base = 2500
-data.raw.resource["tin-ore"].autoplace.starting_area_amount = 2500
+data.raw.resource["tin-ore"].autoplace.richness_base = 4500
+data.raw.resource["tin-ore"].autoplace.starting_area_amount = 4500
 
-data.raw.resource["lead-ore"].autoplace.richness_base = 2000
-data.raw.resource["lead-ore"].autoplace.starting_area_amount = 2000
+data.raw.resource["lead-ore"].autoplace.richness_base = 4000
+data.raw.resource["lead-ore"].autoplace.starting_area_amount = 4000

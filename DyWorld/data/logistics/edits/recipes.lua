@@ -30,7 +30,9 @@ data.raw.recipe["filter-inserter"].hidden = true
 data.raw.recipe["stack-inserter"].hidden = true
 data.raw.recipe["stack-filter-inserter"].hidden = true
 
-data.raw.recipe["science-pack-2"].enabled = true
+data.raw.recipe["repair-pack"].hidden = true
+
+data.raw.recipe["science-pack-2"].enabled = false
 
 table.remove(data.raw.recipe["lab"].ingredients,3)
 local result = {dy.."stone-transport-belt", 2}

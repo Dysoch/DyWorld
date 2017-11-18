@@ -40,7 +40,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 3,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"iron-plate", 15},{"iron-stick", 4},{"copper-cable", 12}},
+		Recipe_Ingredients = {{"iron-plate", 5},{"iron-stick", 4},{"copper-cable", 6}},
 	},
 	{
 		Name = "heater",

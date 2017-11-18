@@ -42,22 +42,7 @@ Data_Table_Item_Group = {
 		Main = "machines"
 	},
 	{
-		Name = "drills-electric-1",
-		Type = "sub",
-		Main = "machines"
-	},
-	{
-		Name = "drills-electric-2",
-		Type = "sub",
-		Main = "machines"
-	},
-	{
-		Name = "drills-electric-3",
-		Type = "sub",
-		Main = "machines"
-	},
-	{
-		Name = "drills-electric-4",
+		Name = "drills-electric",
 		Type = "sub",
 		Main = "machines"
 	},

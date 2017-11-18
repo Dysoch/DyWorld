@@ -72,6 +72,22 @@ local Data_Table = {
 		Count = 350,
 		Military = false,
 	},
+	{
+		Name = dy.."electric-miners-1",
+		Icon = {{icon = "__base__/graphics/technology/mining-productivity.png"}},
+		Pre_Req = {"automation"},
+		Tech_Ingredients = 2,
+		Count = 250,
+		Military = false,
+	},
+	{
+		Name = dy.."electric-miners-2",
+		Icon = {{icon = "__base__/graphics/technology/mining-productivity.png"}},
+		Pre_Req = {dy.."electric-miners-1"},
+		Tech_Ingredients = 5,
+		Count = 550,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

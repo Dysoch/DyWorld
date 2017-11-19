@@ -6,6 +6,10 @@ local Data_Table = {
 		Type = "recipe"
 	},
 	{
+		Name = dy.."geodrill",
+		Type = "recipe"
+	},
+	{
 		Name = dy.."recycling",
 		Type = "recipe"
 	},

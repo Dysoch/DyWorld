@@ -21,6 +21,8 @@ require("data.core.intermediates.seeds")
 require("data.core.intermediates.wood")
 require("data.core.intermediates.fluids")
 require("data.core.tech.tech")
+require("data.core.geodrill.geodrill")
+require("data.core.geodrill.recipes")
 
 -- Item Groups
 require("data.core.item-groups.energy")

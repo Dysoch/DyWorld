@@ -88,7 +88,8 @@ data:extend(
     results=
     {
       {type = "item", name = "stone", amount_min = 1, amount_max = 4, probability = 1},
-      {type = "item", name = "coal", amount_min = 1, amount_max = 4, probability = 0.5},
+      {type = "item", name = dy.."sand", amount_min = 1, amount_max = 10, probability = 0.75},
+      {type = "item", name = "coal", amount_min = 1, amount_max = 4, probability = 0.35},
       {type = "item", name = "iron-ore", amount_min = 1, amount_max = 2, probability = 0.19},
       {type = "item", name = "copper-ore", amount_min = 1, amount_max = 1, probability = 0.125},
       {type = "item", name = "gold-ore", amount_min = 1, amount_max = 1, probability = 0.07},
@@ -96,6 +97,8 @@ data:extend(
       {type = "item", name = "silver-ore", amount_min = 1, amount_max = 1, probability = 0.09},
       {type = "item", name = "lead-ore", amount_min = 1, amount_max = 1, probability = 0.12},
       {type = "item", name = "chromium-ore", amount_min = 1, amount_max = 1, probability = 0.14},
+      {type = "item", name = "tungsten-ore", amount_min = 1, amount_max = 1, probability = 0.07},
+      {type = "item", name = "cadmium-ore", amount_min = 1, amount_max = 1, probability = 0.09},
     },
     subgroup = dy.."fluid-recipes",
     order = "sludge-seperation",

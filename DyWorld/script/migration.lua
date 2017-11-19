@@ -101,6 +101,8 @@ function Migrate_To_Next_Version()
 					v.researched = true
 				end
 			end
+			game.players[1].surface.regenerate_entity("tungsten-ore")
+			game.players[1].surface.regenerate_entity("cadmium-ore")
 		global.dyworld.Version = "0.5.0" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end

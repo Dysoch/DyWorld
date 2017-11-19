@@ -7,4 +7,6 @@ data.raw.recipe["gold-plate"].ingredients = {{"gold-ore", 2}}
 data.raw.recipe["silver-plate"].ingredients = {{"silver-ore", 2}}
 data.raw.recipe["lead-plate"].ingredients = {{"lead-ore", 2}}
 data.raw.recipe["chromium-plate"].ingredients = {{"chromium-ore", 2}}
+data.raw.recipe["tungsten-plate"].ingredients = {{"tungsten-ore", 2}}
+data.raw.recipe["cadmium-plate"].ingredients = {{"cadmium-ore", 2}}
 data.raw.recipe["steel-plate"].ingredients = {{"iron-plate", 8}}

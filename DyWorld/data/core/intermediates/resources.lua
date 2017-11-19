@@ -41,6 +41,22 @@ local Data_Table = {
 		Mining_Time = (Materials.Silver.Hardness / Materials.Silver.Density),
 		Tint = Material_Colors.Silver,
 	},
+	{
+		Name = "tungsten",
+		Icon_1 = dyworld_path_icon.."tungsten-ore.png",
+		Icon_2 = dyworld_path_icon.."tungsten-plate.png",
+		Mining_Hardness = Materials.Tungsten.Hardness,
+		Mining_Time = (Materials.Tungsten.Hardness / Materials.Tungsten.Density),
+		Tint = Material_Colors.Tungsten,
+	},
+	{
+		Name = "cadmium",
+		Icon_1 = dyworld_path_icon.."cadmium-ore.png",
+		Icon_2 = dyworld_path_icon.."cadmium-plate.png",
+		Mining_Hardness = Materials.Cadmium.Hardness,
+		Mining_Time = (Materials.Cadmium.Hardness / Materials.Cadmium.Density),
+		Tint = Material_Colors.Cadmium,
+	},
 }
 
 for k,v in pairs(Data_Table) do

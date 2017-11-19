@@ -87,7 +87,7 @@ function DyWorld_Item_Ore(DATA)
     name = DATA.Name.."-ore",
 	icon = DATA.Icon_1,
     flags = {"goes-to-main-inventory"},
-    subgroup = dy.."metal-ore",
+    subgroup = dy.."metal-1-ore",
     stack_size = DATA.Stack or 200,
 	order = DATA.Name,
   }
@@ -101,7 +101,7 @@ function DyWorld_Item_Plate(DATA)
     name = DATA.Name.."-plate",
 	icon = DATA.Icon_2,
     flags = {"goes-to-main-inventory"},
-    subgroup = dy.."metal-plate",
+    subgroup = dy.."metal-2-plate",
     stack_size = DATA.Stack or 200,
 	order = DATA.Name,
   }

@@ -49,6 +49,8 @@ Material_Colors = {
 	Gold = {r=1, g=0.766, b=0.336},
 	Rubber = {r=128, g=128, b=128},
 	Obsidian = {r=105, g=105, b=105},
+	Tungsten = {r=105, g=105, b=105},
+	Cadmium = {r=105, g=105, b=105},
 }
 
 -- Material Formulas to calculate everything
@@ -204,6 +206,26 @@ Materials = {
 		Melting_Point = 327,
 		Boiling_Point = 1750,
 	},
+	Tungsten = {
+		Density = 19.25,
+		Hardness = 7.5,
+		Elasticity = 40.5,
+		Conductivity = 1.82,
+		Strength_Yield = 500,
+		Strength_Ultimate = 1000,
+		Melting_Point = 3422,
+		Boiling_Point = 5000,
+	},
+	Cadmium = {
+		Density = 8.65,
+		Hardness = 2,
+		Elasticity = 4.6,
+		Conductivity = 1.46,
+		Strength_Yield = 25,
+		Strength_Ultimate = 78,
+		Melting_Point = 321,
+		Boiling_Point = 767,
+	},
 	Steel = {
 		Density = 7.8,
 		Hardness = 4.25,
@@ -252,10 +274,12 @@ Material_Table = {
 	{ Name = "copper", Table = "Copper", Type = "Basic"},
 	{ Name = "iron", Table = "Iron", Type = "Basic"},
 	{ Name = "chromium", Table = "Chromium", Type = "Basic"},
+	{ Name = "cadmium", Table = "Cadmium", Type = "Basic"},
 	{ Name = "tin", Table = "Tin", Type = "Basic"},
 	{ Name = "silver", Table = "Silver", Type = "Basic"},
 	{ Name = "gold", Table = "Gold", Type = "Basic"},
 	{ Name = "lead", Table = "Lead", Type = "Basic"},
+	{ Name = "tungsten", Table = "Tungsten", Type = "Basic"},
 	{ Name = "steel", Table = "Steel", Type = "Alloy"},
 	-- Alloys
 	--{ Name = "stainless-steel", Table = "Stainless_Steel"},

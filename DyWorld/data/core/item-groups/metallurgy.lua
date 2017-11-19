@@ -12,6 +12,11 @@ Data_Table_Item_Group = {
 		Main = "metallurgy"
 	},
 	{
+		Name = "melting-recipes-alloy",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
 		Name = "casting-recipes",
 		Type = "sub",
 		Main = "metallurgy"

@@ -139,40 +139,8 @@ data:extend(
 	},
    	result = dy.."blast-furnace",
   },
-  {
-    type = "technology",
-   	name = dy.."ore-smelting",
-    icons = 
-	{  
-	  {
-		icon = dyworld_path_icon.."blast-furnace.png",
-		scale = 2,
-	  },
-	},
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = dy.."blast-furnace"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "centrifuge"
-      },
-    },
-    prerequisites = {"steel-processing", "automation"},
-    unit =
-    {
-      count = 100,
-      ingredients =
-      {
-        {"science-pack-1", 1},
-        {"science-pack-2", 1},
-      },
-      time = 30
-    },
-    order = dy.."ore-smelting",
-	upgrade = true,
-  },
 }
 )
+
+DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."blast-furnace")
+DyWorld_Add_To_Tech(dy.."ore-smelting", "centrifuge")

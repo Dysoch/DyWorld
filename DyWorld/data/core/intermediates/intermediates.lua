@@ -336,7 +336,7 @@ data:extend(
 		end
 	end
 end
---[[
+
 data:extend(
 {
   {
@@ -348,7 +348,52 @@ data:extend(
     stack_size = 200,
 	order = "stainless-steel",
   },
-})]]--
+  {
+    type = "item",
+    name = "copper-tungsten-plate",
+	icon = dyworld_path_icon_temp,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."metal-3-alloy-2",
+    stack_size = 200,
+	order = "copper-tungsten",
+  },
+  {
+    type = "item",
+    name = "elinvar-plate",
+	icon = dyworld_path_icon_temp,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."metal-3-alloy-3",
+    stack_size = 200,
+	order = "elinvar",
+  },
+  {
+    type = "item",
+    name = "billon-plate",
+	icon = dyworld_path_icon_temp,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."metal-3-alloy-2",
+    stack_size = 200,
+	order = "billon",
+  },
+  {
+    type = "item",
+    name = "bronze-plate",
+	icon = dyworld_path_icon_temp,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."metal-3-alloy-2",
+    stack_size = 200,
+	order = "bronze",
+  },
+  {
+    type = "item",
+    name = "copper-hydride-plate",
+	icon = dyworld_path_icon_temp,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."metal-3-alloy-2",
+    stack_size = 200,
+	order = "copper-hydride",
+  },
+})
 
 data.raw.item["copper-plate"].subgroup = dy.."metal-2-plate"
 data.raw.item["copper-plate"].order = "copper"

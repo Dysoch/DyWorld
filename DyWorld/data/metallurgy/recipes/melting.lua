@@ -31,35 +31,6 @@ data:extend(
     subgroup = dy.."sub-recipes",
     order = dy.."molten-rock",
   },
-  {
-    type = "recipe",
-    name = dy.."molten-steel",
-    icons = 
-	{
-	  {
-	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
-	  },
-	  {
-	    icon = data.raw.fluid[dy.."molten-steel"].icon,
-        scale = 0.75,
-        shift = {4, 7}
-	  },
-	},
-    category = dy.."blast-furnace",
-    energy_required = 0.5,
-	enabled = false,
-    ingredients =
-    {
-      {type = "fluid", name = dy.."molten-iron", amount = 45, minimum_temperature = Materials.Steel.Melting_Point},
-      {type = "item", name = "coal", amount = 1},
-    },
-    results=
-    {
-      {type = "fluid", name = dy.."molten-steel", amount = 60},
-    },
-    subgroup = dy.."melting-recipes",
-    order = dy.."molten-steel",
-  },
 })
 
 for k,v in pairs(Material_Table) do
@@ -75,7 +46,8 @@ for k,v in pairs(Material_Table) do
 				icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
 			  },
 			  {
-				icon = data.raw.fluid[dy.."molten-"..v.Name].icon,
+				icon = dyworld_path_fluid.."base.png",
+				tint = Material_Colors[v.Table],
 				scale = 0.75,
 				shift = {4, 7}
 			  },
@@ -102,4 +74,3 @@ for k,v in pairs(Material_Table) do
 end
 
 DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-rock")
-DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-steel")

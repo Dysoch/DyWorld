@@ -19,3 +19,6 @@ require("data.metallurgy.recipes.melting")
 
 -- Casting Recipes
 require("data.metallurgy.recipes.casting")
+
+-- Mixing Recipes
+require("data.metallurgy.recipes.mixing")

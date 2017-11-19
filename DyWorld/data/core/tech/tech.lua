@@ -3,14 +3,14 @@ require "data/prefix"
 local Data_Table = {
 	{
 		Name = dy.."mining-tools-1",
-		Icon = {{icon = dyworld_path_tech.."tools.png"}},
+		Icon = {{icon = dyworld_path_tech.."tools.png", scale = 0.5}},
 		Tech_Ingredients = 1,
 		Count = 50,
 		Military = false,
 	},
 	{
 		Name = dy.."mining-tools-2",
-		Icon = {{icon = dyworld_path_tech.."tools.png"}},
+		Icon = {{icon = dyworld_path_tech.."tools.png", scale = 0.5}},
 		Pre_Req = {dy.."mining-tools-1"},
 		Tech_Ingredients = 2,
 		Count = 250,
@@ -18,7 +18,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."repair-tools-1",
-		Icon = {{icon = dyworld_path_tech.."repair.png"}},
+		Icon = {{icon = dyworld_path_tech.."repair.png", scale = 0.5}},
 		Pre_Req = {"automation"},
 		Tech_Ingredients = 2,
 		Count = 150,
@@ -26,7 +26,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."repair-tools-2",
-		Icon = {{icon = dyworld_path_tech.."repair.png"}},
+		Icon = {{icon = dyworld_path_tech.."repair.png", scale = 0.5}},
 		Pre_Req = {dy.."repair-tools-1"},
 		Tech_Ingredients = 4,
 		Count = 450,
@@ -86,6 +86,22 @@ local Data_Table = {
 		Pre_Req = {dy.."electric-miners-1"},
 		Tech_Ingredients = 5,
 		Count = 550,
+		Military = false,
+	},
+	{
+		Name = dy.."ore-smelting",
+		Icon = {{icon = dyworld_path_icon.."blast-furnace.png", scale = 2}},
+		Pre_Req = {"steel-processing", "automation"},
+		Tech_Ingredients = 2,
+		Count = 100,
+		Military = false,
+	},
+	{
+		Name = dy.."ore-smelting-2",
+		Icon = {{icon = dyworld_path_icon.."blast-furnace.png", scale = 2}},
+		Pre_Req = {dy.."ore-smelting"},
+		Tech_Ingredients = 3,
+		Count = 500,
 		Military = false,
 	},
 }

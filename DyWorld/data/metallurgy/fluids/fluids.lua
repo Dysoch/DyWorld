@@ -7,7 +7,13 @@ for k,v in pairs(Material_Table) do
 		  {
 			type = "fluid",
 			name = dy.."molten-"..v.Name,
-			icon = dyworld_path_fluid..v.Name..".png",
+			icons = 
+			{
+			  { 
+				icon = dyworld_path_fluid.."base.png",
+				tint = Material_Colors[v.Table],
+			  },
+			},
 			default_temperature = Materials[v.Table].Melting_Point,
 			max_temperature = Materials[v.Table].Boiling_Point,
 			base_color = Material_Colors[v.Table],

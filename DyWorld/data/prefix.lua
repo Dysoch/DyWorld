@@ -36,21 +36,28 @@ Color_Tier = {
 }
 
 Material_Colors = {
-	Iron = {r=0.56, g=0.57, b=0.58},
-	Copper = {r=0.955, g=0.637, b=0.538},
-	Steel = {r=192, g=192, b=192},
-	Stainless_Steel = {r=224, g=223, b=219},
+	Rubber = {r=128, g=128, b=128},
+	Obsidian = {r=105, g=105, b=105},
 	Wood = {r=182, g=155, b=76},
 	Stone = {r=139, g=141, b=122},
+	
+	Iron = {r=0.56, g=0.57, b=0.58},
+	Copper = {r=0.955, g=0.637, b=0.538},
 	Chromium = {r=0.550, g=0.556, b=0.554},
 	Tin = {r=211, g=212, b=213},
 	Silver = {r=0.972, g=0.96, b=0.915},
 	Lead = {r=159, g=157, b=153},
 	Gold = {r=1, g=0.766, b=0.336},
-	Rubber = {r=128, g=128, b=128},
-	Obsidian = {r=105, g=105, b=105},
 	Tungsten = {r=105, g=105, b=105},
 	Cadmium = {r=105, g=105, b=105},
+	
+	Steel = {r=192, g=192, b=192},
+	Stainless_Steel = {r=224, g=223, b=219},
+	Bronze = {r=192, g=192, b=192},
+	Elinvar = {r=192, g=192, b=192},
+	Billon = {r=192, g=192, b=192},
+	Copper_Tungsten = {r=192, g=192, b=192},
+	Copper_Hydride = {r=192, g=192, b=192},
 }
 
 -- Material Formulas to calculate everything
@@ -87,7 +94,7 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return math.floor(Materials[TABLE].Strength_Ultimate * Materials[TABLE].Conductivity)
 	elseif TYPE == 11 then
 		-- Pole/Relay Supply Area
-		return math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Hardness)
+		return math.floor((Materials[TABLE].Conductivity + Materials[TABLE].Hardness) / 2)
 	elseif TYPE == 12 then
 		-- Pole/Relay Wire Reach
 		return math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Density)
@@ -258,6 +265,50 @@ Materials = {
 		Melting_Point = 658,
 		Boiling_Point = 2581,
 	},
+	Billon = {
+		-- mix of copper and silver
+		Density = 19.43,
+		Hardness = 5.75,
+		Elasticity = 27.5,
+		Conductivity = 12.28,
+		Strength_Yield = 125,
+		Strength_Ultimate = 580,
+		Melting_Point = 1023,
+		Boiling_Point = 2387,
+	},
+	Elinvar = {
+		-- mix of iron, chromium and nickel
+		Density = 15.06,
+		Hardness = 12.5,
+		Elasticity = 64.5,
+		Conductivity = 6.14,
+		Strength_Yield = 290,
+		Strength_Ultimate = 480,
+		Melting_Point = 1699,
+		Boiling_Point = 2766,
+	},
+	Copper_Tungsten = {
+		-- mix of copper and tungsten
+		Density = 28.19,
+		Hardness = 10.5,
+		Elasticity = 57.50,
+		Conductivity = 7.8,
+		Strength_Yield = 570,
+		Strength_Ultimate = 1220,
+		Melting_Point = 2253,
+		Boiling_Point = 3781,
+	},
+	Copper_Hydride = {
+		-- mix of copper and hydrogen
+		Density = 13.41,
+		Hardness = 4.5,
+		Elasticity = 25.2,
+		Conductivity = 8.97,
+		Strength_Yield = 105,
+		Strength_Ultimate = 330,
+		Melting_Point = 1626,
+		Boiling_Point = 3843,
+	},
 }
 
 function Round(num, numDecimalPlaces)
@@ -282,6 +333,10 @@ Material_Table = {
 	{ Name = "tungsten", Table = "Tungsten", Type = "Basic"},
 	{ Name = "steel", Table = "Steel", Type = "Alloy"},
 	-- Alloys
-	--{ Name = "stainless-steel", Table = "Stainless_Steel"},
-	--{ Name = "bronze", Table = "Bronze"},
+	{ Name = "stainless-steel", Table = "Stainless_Steel", Type = "Alloy"},
+	{ Name = "bronze", Table = "Bronze", Type = "Alloy"},
+	{ Name = "billon", Table = "Billon", Type = "Alloy"},
+	{ Name = "elinvar", Table = "Elinvar", Type = "Alloy"},
+	{ Name = "copper-tungsten", Table = "Copper_Tungsten", Type = "Alloy"},
+	{ Name = "copper-hydride", Table = "Copper_Hydride", Type = "Alloy"},
 }

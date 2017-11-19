@@ -23,7 +23,11 @@ for k,v in pairs(Material_Table) do
 			order = v.Name.."-plate",
 		  },
 		})
+	end
+	if v.Type == "Basic" then
 		DyWorld_Add_To_Tech(dy.."ore-smelting", dy..v.Name.."-plate")
+	elseif v.Type == "Alloy" then
+		DyWorld_Add_To_Tech(dy.."ore-smelting-2", dy..v.Name.."-plate")
 	end
 end
 

@@ -113,3 +113,6 @@ data.raw.resource["tin-ore"].autoplace.starting_area_amount = 4500
 
 data.raw.resource["lead-ore"].autoplace.richness_base = 4000
 data.raw.resource["lead-ore"].autoplace.starting_area_amount = 4000
+
+data.raw.resource["tungsten-ore"].minable.fluid_amount = 10
+data.raw.resource["tungsten-ore"].minable.required_fluid = dy.."hydrogen"

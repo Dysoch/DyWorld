@@ -86,6 +86,11 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "items"
 	},
+	{
+		Name = "fluid-recipes",
+		Type = "sub",
+		Main = "items"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

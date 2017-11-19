@@ -50,5 +50,8 @@ require("data.core.needs.seeds")
 require("data.core.needs.farm-recipes")
 end
 
--- Water System
+-- Fluid System
 require("data.core.water-system.recipes")
+
+-- Science System
+require("data.core.science.recipe-fluid")

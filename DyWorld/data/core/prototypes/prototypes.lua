@@ -5476,7 +5476,7 @@ data:extend(
     name = dy..DATA.Name.."-shotgun-laser-turret",
     energy_required = 3.5,
 	enabled = false,
-    ingredients = {{"electronic-circuit", 3}, {dy..DATA.Name.."-laser-turret", 1}, {"battery", 2}},
+    ingredients = {{"advanced-circuit", 3}, {dy..DATA.Name.."-laser-turret", 1}, {"battery", 2}},
     result = dy..DATA.Name.."-shotgun-laser-turret",
     result_count = 1,
   },
@@ -6903,7 +6903,7 @@ data:extend(
       emissions = 0.03 / 3.5
     },
     energy_usage = tostring(Materials[DATA.Table].Strength_Ultimate).."kW",
-    ingredient_count = math.ceil(Materials[DATA.Table].Elasticity / 2),
+    ingredient_count = math.ceil((Materials[DATA.Table].Elasticity / 2) + 1),
     module_specification =
     {
       module_slots = math.floor(Materials[DATA.Table].Hardness / 2)

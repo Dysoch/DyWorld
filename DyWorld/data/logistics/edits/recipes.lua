@@ -32,8 +32,6 @@ data.raw.recipe["stack-filter-inserter"].hidden = true
 
 data.raw.recipe["repair-pack"].hidden = true
 
-data.raw.recipe["science-pack-2"].enabled = false
-
 table.remove(data.raw.recipe["lab"].ingredients,3)
 local result = {dy.."stone-transport-belt", 2}
 table.insert(data.raw.recipe["lab"].ingredients,result)
@@ -51,13 +49,6 @@ table.insert(data.raw.recipe["steam-engine"].expensive.ingredients,result)
 table.remove(data.raw.recipe["fluid-wagon"].ingredients,3)
 local result = {dy.."tin-pipe", 8}
 table.insert(data.raw.recipe["fluid-wagon"].ingredients,result)
-
-table.remove(data.raw.recipe["science-pack-2"].ingredients,2)
-table.remove(data.raw.recipe["science-pack-2"].ingredients,1)
-local result = {dy.."stone-transport-belt", 1}
-table.insert(data.raw.recipe["science-pack-2"].ingredients,result)
-local result = {dy.."lead-basic-inserter", 1}
-table.insert(data.raw.recipe["science-pack-2"].ingredients,result)
 
 table.remove(data.raw.recipe["rocket-silo"].ingredients,3)
 local result = {dy.."lead-pipe", 100}

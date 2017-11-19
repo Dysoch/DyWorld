@@ -32,8 +32,8 @@ data:extend(
       {type = "fluid", name = "crude-oil", amount = 5},
       {type = "fluid", name = dy.."methane", amount = 2.5},
     },
-    subgroup = "fluid-recipes",
-    order = dy.."water-seperation",
+    subgroup = dy.."fluid-recipes",
+    order = "water-seperation",
   },
   {
     type = "recipe",
@@ -61,8 +61,8 @@ data:extend(
       {type = "fluid", name = dy.."hydrogen", amount = 250},
       {type = "fluid", name = dy.."oxygen", amount = 500},
     },
-    subgroup = "fluid-recipes",
-    order = dy.."water-seperation",
+    subgroup = dy.."fluid-recipes",
+    order = "water-seperation",
   },
   {
     type = "recipe",
@@ -97,8 +97,8 @@ data:extend(
       {type = "item", name = "lead-ore", amount_min = 1, amount_max = 1, probability = 0.12},
       {type = "item", name = "chromium-ore", amount_min = 1, amount_max = 1, probability = 0.14},
     },
-    subgroup = "fluid-recipes",
-    order = dy.."sludge-seperation",
+    subgroup = dy.."fluid-recipes",
+    order = "sludge-seperation",
   },
   {
     type = "recipe",
@@ -127,8 +127,8 @@ data:extend(
       {type = "fluid", name = dy.."sludge", amount = 15},
       {type = "fluid", name = dy.."water-clean", amount = 25},
     },
-    subgroup = "fluid-recipes",
-    order = dy.."acid-seperation",
+    subgroup = dy.."fluid-recipes",
+    order = "acid-seperation",
   },
   {
     type = "recipe",
@@ -156,8 +156,8 @@ data:extend(
       {type = "fluid", name = dy.."fertilized-water", amount = 100},
       {type = "fluid", name = dy.."sludge", amount = 150},
     },
-    subgroup = "fluid-recipes",
-    order = dy.."fertilizer-seperation",
+    subgroup = dy.."fluid-recipes",
+    order = "fertilizer-seperation",
   },
   {
     type = "recipe",
@@ -187,8 +187,8 @@ data:extend(
       {type = "fluid", name = "petroleum-gas", amount = 20},
       {type = "fluid", name = dy.."sewage", amount = 10},
     },
-    subgroup = "fluid-recipes",
-    order = dy.."basic-clean-oil-processing"
+    subgroup = dy.."fluid-recipes",
+    order = "basic-clean-oil-processing"
   },
   {
     type = "recipe",
@@ -220,7 +220,7 @@ data:extend(
       {type = "fluid", name = dy.."sewage", amount = 15},
       {type = "fluid", name = dy.."acid", amount = 20},
     },
-    subgroup = "fluid-recipes",
-    order = dy.."advanced-clean-oil-processing"
+    subgroup = dy.."fluid-recipes",
+    order = "advanced-clean-oil-processing"
   },
 })

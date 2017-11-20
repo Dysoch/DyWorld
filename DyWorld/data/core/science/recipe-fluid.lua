@@ -117,6 +117,8 @@ data:extend(
       {type = "fluid", name = dy.."molten-gold", amount = 5},
       {type = "fluid", name = dy.."methane", amount = 35},
       {type = "fluid", name = dy.."water-clean", amount = 250},
+      {type = "item", name = dy.."controller", amount = 1},
+      {type = "item", name = "iron-gear-wheel", amount = 2},
       {type = "item", name = dy.."crystai", amount = 2},
       {type = "item", name = dy.."processing-logic", amount = 1},
     },
@@ -133,4 +135,3 @@ DyWorld_Add_To_Tech("advanced-electronics", dy.."science-fluid-3")
 DyWorld_Add_To_Tech("military-2", dy.."science-fluid-4")
 DyWorld_Add_To_Tech("advanced-material-processing-2", dy.."science-fluid-5")
 DyWorld_Add_To_Tech("advanced-electronics-2", dy.."science-fluid-6")
---DyWorld_Add_To_Tech("rocket-silo", dy.."science-fluid-7")

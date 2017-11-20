@@ -32,6 +32,10 @@ data.raw.recipe["stack-filter-inserter"].hidden = true
 
 data.raw.recipe["repair-pack"].hidden = true
 
+data.raw.recipe["wooden-chest"].hidden = true
+data.raw.recipe["iron-chest"].hidden = true
+data.raw.recipe["steel-chest"].hidden = true
+
 table.remove(data.raw.recipe["lab"].ingredients,3)
 local result = {dy.."stone-transport-belt", 2}
 table.insert(data.raw.recipe["lab"].ingredients,result)

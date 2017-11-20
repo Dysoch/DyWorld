@@ -12,8 +12,16 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] Moved Mining Drills to use the Material System
 [*] Moved Assembling Machines to use the Material System
 [*] Added Repair Packs that use the Material System
+[*] Added Chests (Normal and Warehouses) that use the Material System
 [*] Added Conductivity to the Material System Properties. Used in anything that uses or creates energy!
 [*] Because of Conductivity add, Power Poles and Relays have been changed, drastically. Stone, Wood and Rubber are not conductive, so they no longer exist!
+[*] Added a GeoDrill, this will mine underground for those hard to reach resources
+[*] Added 6 alloys! Billon, Stainless Steel, Bronze, Elinvar, Copper-Tungsten and Copper-Hydride are now usable!
+[*] Massive change to science packs. You create a fluid first, and then bottle it with glass to create the science pack. Simple to use, hard to master! 
+[*] Major balancing of recipes
+[*] Split the DyWorld Logistic tab into 2 tabs. One holds all moving parts, the other chests, robots etc
+[*] Added Tungsten and Cadmium resources. 
+[*] Material System consists now of 20 materials instead of the previous 12! Expect a lot of items to play around with!
 [/list][/spoiler]
 
 [spoiler=DyWorld 0.4.2]

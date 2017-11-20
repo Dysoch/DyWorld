@@ -25,31 +25,37 @@ data.raw.recipe["sulfur"].ingredients = {
 	{type = "fluid", name = "dyworld-sewage", amount = 40},
 }
 data.raw.recipe["science-pack-1"].category = "crafting-with-fluid"
+data.raw.recipe["science-pack-1"].energy_required = 2.5
 data.raw.recipe["science-pack-1"].ingredients = {
     {type = "fluid", name = dy.."science-fluid-1", amount = 5},
 	{type = "item", name = dy.."glass", amount = 2},
 }
 data.raw.recipe["science-pack-2"].category = "crafting-with-fluid"
+data.raw.recipe["science-pack-2"].energy_required = 2.5
 data.raw.recipe["science-pack-2"].ingredients = {
     {type = "fluid", name = dy.."science-fluid-2", amount = 5},
 	{type = "item", name = dy.."glass", amount = 2},
 }
 data.raw.recipe["science-pack-3"].category = "crafting-with-fluid"
+data.raw.recipe["science-pack-3"].energy_required = 2.5
 data.raw.recipe["science-pack-3"].ingredients = {
     {type = "fluid", name = dy.."science-fluid-3", amount = 5},
 	{type = "item", name = dy.."glass", amount = 2},
 }
 data.raw.recipe["military-science-pack"].category = "crafting-with-fluid"
+data.raw.recipe["military-science-pack"].energy_required = 2.5
 data.raw.recipe["military-science-pack"].ingredients = {
     {type = "fluid", name = dy.."science-fluid-4", amount = 5},
 	{type = "item", name = dy.."glass", amount = 2},
 }
 data.raw.recipe["production-science-pack"].category = "crafting-with-fluid"
+data.raw.recipe["production-science-pack"].energy_required = 2.5
 data.raw.recipe["production-science-pack"].ingredients = {
     {type = "fluid", name = dy.."science-fluid-5", amount = 5},
 	{type = "item", name = dy.."glass", amount = 2},
 }
 data.raw.recipe["high-tech-science-pack"].category = "crafting-with-fluid"
+data.raw.recipe["high-tech-science-pack"].energy_required = 2.5
 data.raw.recipe["high-tech-science-pack"].ingredients = {
     {type = "fluid", name = dy.."science-fluid-6", amount = 5},
 	{type = "item", name = dy.."glass", amount = 2},

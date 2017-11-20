@@ -50,7 +50,7 @@ data:extend(
 	  },
 	},
     category = "centrifuging",
-    energy_required = 30,
+    energy_required = 15,
 	enabled = false,
     ingredients =
     {

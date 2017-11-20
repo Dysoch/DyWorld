@@ -19,6 +19,9 @@ require("data.logistics.inserters.inserters")
 
 require("data.logistics.tools.repair")
 
+require("data.logistics.chests.chests")
+require("data.logistics.chests.warehouse")
+
 
 
 

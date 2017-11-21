@@ -74,7 +74,7 @@ local Data_Table = {
 	},
 	{
 		Name = "turrets-2",
-		Icon = {{icon = "__base__/graphics/technology/electric-energy-acumulators.png"}},
+		Icon = {{icon = "__base__/graphics/technology/turrets.png"}},
 		Pre_Req = {"turrets"},
 		Tech_Ingredients = 2,
 		Count = 150,
@@ -82,7 +82,7 @@ local Data_Table = {
 	},
 	{
 		Name = "turrets-3",
-		Icon = {{icon = "__base__/graphics/technology/electric-energy-acumulators.png"}},
+		Icon = {{icon = "__base__/graphics/technology/turrets.png"}},
 		Pre_Req = {"turrets-2"},
 		Tech_Ingredients = 3,
 		Count = 250,

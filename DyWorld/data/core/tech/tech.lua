@@ -73,6 +73,22 @@ local Data_Table = {
 		Military = false,
 	},
 	{
+		Name = "turrets-2",
+		Icon = {{icon = "__base__/graphics/technology/electric-energy-acumulators.png"}},
+		Pre_Req = {"turrets"},
+		Tech_Ingredients = 2,
+		Count = 150,
+		Military = true,
+	},
+	{
+		Name = "turrets-3",
+		Icon = {{icon = "__base__/graphics/technology/electric-energy-acumulators.png"}},
+		Pre_Req = {"turrets-2"},
+		Tech_Ingredients = 3,
+		Count = 250,
+		Military = true,
+	},
+	{
 		Name = dy.."electric-miners-1",
 		Icon = {{icon = "__base__/graphics/technology/mining-productivity.png"}},
 		Pre_Req = {"automation"},

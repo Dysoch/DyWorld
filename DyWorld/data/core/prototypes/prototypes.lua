@@ -2055,19 +2055,168 @@ data:extend(
     result = dy..DATA.Name.."-shotgun-turret",
     result_count = 1,
   },
+  {
+    type = "ammo-turret",
+    name = dy..DATA.Name.."-cannon-turret",
+	localised_name = {"looped-name.cannon-turret", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/gun-turret.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-player", "player-creation"},
+    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-cannon-turret"},
+    max_health = (35 * DyWorld_Material_Formulas(3, DATA.Table)),
+    corpse = "medium-remnants",
+    collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
+    selection_box = {{-1, -1 }, {1, 1}},
+    rotation_speed = 0.015,
+    preparing_speed = 0.08,
+    folding_speed = 0.08,
+    dying_explosion = "medium-explosion",
+    inventory_size = 3,
+    automated_ammo_count = 10,
+    attacking_speed = 0.5,
+    folded_animation = 
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({frame_count=1, line_length = 1}, Material_Colors[DATA.Table]),
+        DyWorld_gun_turret_extension_mask{frame_count=1, line_length = 1},
+        DyWorld_gun_turret_extension_shadow{frame_count=1, line_length = 1}
+      }
+    },
+    preparing_animation = 
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({}, Material_Colors[DATA.Table]),
+        DyWorld_gun_turret_extension_mask{},
+        DyWorld_gun_turret_extension_shadow{}
+      }
+    },
+    prepared_animation = DyWorld_gun_turret_attack({frame_count=1}, Material_Colors[DATA.Table]),
+    attacking_animation = DyWorld_gun_turret_attack({}, Material_Colors[DATA.Table]),
+    folding_animation = 
+    { 
+      layers = 
+      { 
+        DyWorld_gun_turret_extension({run_mode = "backward"}, Material_Colors[DATA.Table]),
+        DyWorld_gun_turret_extension_mask{run_mode = "backward"},
+        DyWorld_gun_turret_extension_shadow{run_mode = "backward"}
+      }
+    },
+    base_picture =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
+          priority = "high",
+          width = 90,
+          height = 75,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+          shift = {0, -0.046875},
+		  tint = Material_Colors[DATA.Table],
+        },
+        {
+          filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
+          flags = { "mask" },
+          line_length = 1,
+          width = 52,
+          height = 47,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+          shift = {0, -0.234375},
+          apply_runtime_tint = true
+        }
+      }
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    attack_parameters =
+    {
+      type = "projectile",
+      ammo_category = "cannon-shell",
+      cooldown = ((60 / DyWorld_Material_Formulas(6, DATA.Table)) * 5),
+      projectile_creation_distance = 1.39375,
+      projectile_center = {0, -0.0875}, -- same as gun_turret_attack shift
+      shell_particle =
+      {
+        name = "shell-particle",
+        direction_deviation = 0.1,
+        speed = 0.1,
+        speed_deviation = 0.03,
+        center = {-0.0625, 0},
+        creation_distance = -1.925,
+        starting_frame_speed = 0.2,
+        starting_frame_speed_deviation = 0.1
+      },
+      range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 1.5),
+      min_range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.3),
+      turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
+      sound = make_heavy_gunshot_sounds(),
+    },
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
+    shoot_in_prepare_state = true,
+    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-cannon-turret",
+	localised_name = {"looped-name.cannon-turret", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."turret-cannon",
+    stack_size = 50,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-cannon-turret",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-cannon-turret",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{"advanced-circuit", 3}},
+    result = dy..DATA.Name.."-cannon-turret",
+    result_count = 1,
+  },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 15}
+		local result_2 = {DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-turret"].ingredients, result_2)
 	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
 		local result_1 = {dy..DATA.Name, 15}
+		local result_2 = {dy..DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-turret"].ingredients, result_2)
 	else
 		local result_1 = {DATA.Name.."-plate", 15}
+		local result_2 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-turret"].ingredients, result_2)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-gun-turret"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].enabled = true
+		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-cannon-turret")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-gun-turret")
+		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-shotgun-turret")
+		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-cannon-turret")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-gun-turret")
+		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-shotgun-turret")
+		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-cannon-turret")
 	end
 end
 
@@ -2710,10 +2859,10 @@ data:extend(
 	if DATA.Type == "Primitive" then
 		data.raw.recipe[dy..DATA.Name.."-basic-ammo"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-shotgun-ammo"].enabled = true
-		data.raw.recipe[dy..DATA.Name.."-basic-piercing-ammo"].enabled = true
-		data.raw.recipe[dy..DATA.Name.."-shotgun-piercing-ammo"].enabled = true
-		data.raw.recipe[dy..DATA.Name.."-cannon-shell"].enabled = true
-		data.raw.recipe[dy..DATA.Name.."-cannon-explosive-shell"].enabled = true
+		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-basic-piercing-ammo")
+		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-shotgun-piercing-ammo")
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-cannon-shell")
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-cannon-explosive-shell")
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-basic-ammo")
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-shotgun-ammo")

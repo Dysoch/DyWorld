@@ -57,6 +57,11 @@ Data_Table_Item_Group = {
 		Main = "warfare"
 	},
 	{
+		Name = "turret-cannon",
+		Type = "sub",
+		Main = "warfare"
+	},
+	{
 		Name = "turret-shotgun",
 		Type = "sub",
 		Main = "warfare"

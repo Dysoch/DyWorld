@@ -218,11 +218,3 @@ data:extend(
     order = dy.."molten-copper-hydride",
   },
 })
-
-DyWorld_Add_To_Tech(dy.."steel-advanced-melting", dy.."molten-steel")
-DyWorld_Add_To_Tech(dy.."stainless-steel-advanced-melting", dy.."molten-stainless-steel")
-DyWorld_Add_To_Tech(dy.."bronze-advanced-melting", dy.."molten-bronze")
-DyWorld_Add_To_Tech(dy.."billon-advanced-melting", dy.."molten-billon")
-DyWorld_Add_To_Tech(dy.."elinvar-advanced-melting", dy.."molten-elinvar")
-DyWorld_Add_To_Tech(dy.."copper-tungsten-advanced-melting", dy.."molten-copper-tungsten")
-DyWorld_Add_To_Tech(dy.."copper-hydride-advanced-melting", dy.."molten-copper-hydride")

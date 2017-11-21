@@ -40,7 +40,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 3,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"iron-plate", 5},{"iron-stick", 4},{"copper-cable", 6}},
+		Recipe_Ingredients = {{"iron-plate", 4},{"iron-stick", 3},{"copper-cable", 4}},
 	},
 	{
 		Name = "heater",
@@ -62,7 +62,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 1,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"iron-plate",2},{"iron-stick",1},{"stone",2}},
+		Recipe_Ingredients = {{"iron-plate",1},{"iron-stick",1},{"stone",2}},
 	},
 	{
 		Name = "gearbox",
@@ -120,7 +120,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 1.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{dy.."blade", 4},{"iron-stick", 2},{"copper-cable",3},{dy.."frame", 1}},
+		Recipe_Ingredients = {{dy.."blade", 3},{"iron-stick", 2},{"copper-cable",2}},
 	},
 	{
 		Name = "stone-gear",

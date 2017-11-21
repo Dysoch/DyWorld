@@ -69,7 +69,6 @@ for k,v in pairs(Material_Table) do
 			order = dy.."molten-"..v.Name,
 		  },
 		})
-		DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-"..v.Name)
 	end
 end
 

@@ -5833,7 +5833,7 @@ data:extend(
 	end
 end
 
-function DyWorld_Mining_Drills(DATA)
+function DyWorld_Mining_Drills_Electric(DATA)
 data:extend(
 {
   {
@@ -6699,8 +6699,8 @@ data:extend(
       emissions = 0.15 / 1.5,
       usage_priority = "secondary-input"
     },
-    energy_usage = tostring(Materials[DATA.Table].Strength_Ultimate).."kW",
-    mining_power = (Materials[DATA.Table].Hardness + 0.1),
+    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 100).."kW",
+    mining_power = (Materials[DATA.Table].Hardness + 0.5),
     resource_searching_radius = (math.floor(Materials[DATA.Table].Hardness / 2) + 0.49),
     vector_to_place_result = {0, -1.85},
     module_specification =
@@ -6753,7 +6753,7 @@ data:extend(
 	name = dy..DATA.Name.."-electric-drill",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{"electronic-circuit", 5},{dy.."frame", 1},{dy.."rotor", 1}},
+    ingredients = {{"electronic-circuit", 5},{dy.."frame", 1},{dy.."rotor", 2}},
     result = dy..DATA.Name.."-electric-drill",
     result_count = 1,
   },
@@ -6774,6 +6774,345 @@ data:extend(
 		DyWorld_Add_To_Tech(dy.."electric-miners-1", dy..DATA.Name.."-electric-drill")
 	elseif DATA.Type == "Alloy" then
 		DyWorld_Add_To_Tech(dy.."electric-miners-2", dy..DATA.Name.."-electric-drill")
+	end
+end
+
+function DyWorld_Mining_Drills_Burner(DATA)
+data:extend(
+{
+  {
+    type = "mining-drill",
+	name = dy..DATA.Name.."-burner-drill",
+	localised_name = {"looped-name.burner-drill", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/burner-mining-drill.png",
+		tint = Material_Colors[DATA.Table],
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation"},
+    resource_categories = {"basic-solid"},
+    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-burner-drill"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "medium-remnants",
+    collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
+    selection_box = {{ -1, -1}, {1, 1}},
+    mining_speed = (Materials[DATA.Table].Elasticity / 2),
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/burner-mining-drill.ogg",
+        volume = 0.8
+      },
+    },
+	vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    energy_source =
+    {
+      type = "burner",
+      fuel_category = "chemical",
+      effectivity = 1,
+      fuel_inventory_size = 1,
+      emissions = 0.1 / 3,
+      smoke =
+      {
+        {
+          name = "smoke",
+          deviation = {0.1, 0.1},
+          frequency = 3
+        }
+      }
+    },
+    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 100).."kW",
+    mining_power = (Materials[DATA.Table].Hardness + 0.5),
+    animations =
+    {
+      north =
+      {
+        layers = 
+        {
+          {
+            priority = "extra-high",
+            width = 87,
+            height = 95,
+            line_length = 4,
+            shift = util.by_pixel(2.5, 0.5),
+            filename = "__base__/graphics/entity/burner-mining-drill/burner-mining-drill-N.png",
+            frame_count = 32,
+            animation_speed = 0.5,
+            run_mode = "forward-then-backward",
+			tint = Material_Colors[DATA.Table],
+            hr_version = {
+              priority = "extra-high",
+              width = 173,
+              height = 188,
+              line_length = 4,
+              shift = util.by_pixel(2.75, 0.5),
+              filename = "__base__/graphics/entity/burner-mining-drill/hr-burner-mining-drill-N.png",
+              frame_count = 32,
+              animation_speed = 0.5,
+              run_mode = "forward-then-backward",
+              scale = 0.5,
+			  tint = Material_Colors[DATA.Table],
+            }
+          },
+          {
+            priority = "extra-high",
+            width = 109,
+            height = 76,
+            line_length = 4,
+            shift = util.by_pixel(23.5, -1),
+            filename = "__base__/graphics/entity/burner-mining-drill/burner-mining-drill-N-shadow.png",
+            frame_count = 32,
+            animation_speed = 0.5,
+            run_mode = "forward-then-backward",
+            draw_as_shadow = true,
+            hr_version = {
+              priority = "extra-high",
+              width = 217,
+              height = 150,
+              line_length = 4,
+              shift = util.by_pixel(23.75, -1),
+              filename = "__base__/graphics/entity/burner-mining-drill/hr-burner-mining-drill-N-shadow.png",
+              frame_count = 32,
+              animation_speed = 0.5,
+              run_mode = "forward-then-backward",
+              draw_as_shadow = true,
+              scale = 0.5
+            },
+          },
+        },
+      },
+      east =
+      {
+        layers =
+        {
+          {
+            priority = "extra-high",
+            width = 93,
+            height = 84,
+            line_length = 4,
+            shift = util.by_pixel(2.5, 1),
+            filename = "__base__/graphics/entity/burner-mining-drill/burner-mining-drill-E.png",
+            frame_count = 32,
+            animation_speed = 0.5,
+            run_mode = "forward-then-backward",
+			tint = Material_Colors[DATA.Table],
+            hr_version = {
+              priority = "extra-high",
+              width = 185,
+              height = 168,
+              line_length = 4,
+              shift = util.by_pixel(2.75, 1),
+              filename = "__base__/graphics/entity/burner-mining-drill/hr-burner-mining-drill-E.png",
+              frame_count = 32,
+              animation_speed = 0.5,
+              run_mode = "forward-then-backward",
+              scale = 0.5,
+			  tint = Material_Colors[DATA.Table],
+            },
+          },
+          {
+            priority = "extra-high",
+            width = 93,
+            height = 65,
+            line_length = 4,
+            shift = util.by_pixel(13.5, 0.5),
+            filename = "__base__/graphics/entity/burner-mining-drill/burner-mining-drill-E-shadow.png",
+            frame_count = 32,
+            animation_speed = 0.5,
+            run_mode = "forward-then-backward",
+            draw_as_shadow = true,
+            hr_version = {
+              width = 185,
+              height = 128,
+              line_length = 4,
+              shift = util.by_pixel(13.75, 0.5),
+              filename = "__base__/graphics/entity/burner-mining-drill/hr-burner-mining-drill-E-shadow.png",
+              frame_count = 32,
+              animation_speed = 0.5,
+              run_mode = "forward-then-backward",
+              draw_as_shadow = true,
+              scale = 0.5
+            },
+          },
+        },
+      },
+      south =
+      {
+        layers =
+        {
+          {
+            priority = "extra-high",
+            width = 87,
+            height = 87,
+            line_length = 4,
+            shift = util.by_pixel(0.5, -0.5),
+            filename = "__base__/graphics/entity/burner-mining-drill/burner-mining-drill-S.png",
+            frame_count = 32,
+            animation_speed = 0.5,
+            run_mode = "forward-then-backward",
+			tint = Material_Colors[DATA.Table],
+            hr_version = {
+              priority = "extra-high",
+              width = 174,
+              height = 174,
+              line_length = 4,
+              shift = util.by_pixel(0.5, -0.5),
+              filename = "__base__/graphics/entity/burner-mining-drill/hr-burner-mining-drill-S.png",
+              frame_count = 32,
+              animation_speed = 0.5,
+              run_mode = "forward-then-backward",
+              scale = 0.5,
+			  tint = Material_Colors[DATA.Table],
+            },
+          },
+          {
+            priority = "extra-high",
+            width = 88,
+            height = 69,
+            line_length = 4,
+            shift = util.by_pixel(11, 2.5),
+            filename = "__base__/graphics/entity/burner-mining-drill/burner-mining-drill-S-shadow.png",
+            frame_count = 32,
+            animation_speed = 0.5,
+            run_mode = "forward-then-backward",
+            draw_as_shadow = true,
+            hr_version = {
+              priority = "extra-high",
+              width = 174,
+              height = 137,
+              line_length = 4,
+              shift = util.by_pixel(11, 2.75),
+              filename = "__base__/graphics/entity/burner-mining-drill/hr-burner-mining-drill-S-shadow.png",
+              frame_count = 32,
+              animation_speed = 0.5,
+              run_mode = "forward-then-backward",
+              draw_as_shadow = true,
+              scale = 0.5
+            },
+          },
+        },
+      },
+      west =
+      {
+        layers =
+        {
+          {
+            priority = "extra-high",
+            width = 91,
+            height = 88,
+            line_length = 4,
+            shift = util.by_pixel(-1.5, 0),
+            filename = "__base__/graphics/entity/burner-mining-drill/burner-mining-drill-W.png",
+            frame_count = 32,
+            animation_speed = 0.5,
+            run_mode = "forward-then-backward",
+			tint = Material_Colors[DATA.Table],
+            hr_version = {
+              priority = "extra-high",
+              width = 180,
+              height = 176,
+              line_length = 4,
+              shift = util.by_pixel(-1.5, 0),
+              filename = "__base__/graphics/entity/burner-mining-drill/hr-burner-mining-drill-W.png",
+              frame_count = 32,
+              animation_speed = 0.5,
+              run_mode = "forward-then-backward",
+              scale = 0.5,
+			  tint = Material_Colors[DATA.Table],
+            },
+          },
+          {
+            priority = "extra-high",
+            width = 89,
+            height = 66,
+            line_length = 4,
+            shift = util.by_pixel(7.5, 1),
+            filename = "__base__/graphics/entity/burner-mining-drill/burner-mining-drill-W-shadow.png",
+            frame_count = 32,
+            animation_speed = 0.5,
+            run_mode = "forward-then-backward",
+            draw_as_shadow = true,
+            hr_version = {
+              priority = "extra-high",
+              width = 176,
+              height = 130,
+              line_length = 4,
+              shift = util.by_pixel(7.5, 1),
+              filename = "__base__/graphics/entity/burner-mining-drill/hr-burner-mining-drill-W-shadow.png",
+              frame_count = 32,
+              animation_speed = 0.5,
+              run_mode = "forward-then-backward",
+              draw_as_shadow = true,
+              scale = 0.5
+            },
+          },
+        },
+      },
+    },
+    monitor_visualization_tint = {r=78, g=173, b=255},
+    resource_searching_radius = (math.floor(Materials[DATA.Table].Hardness / 2) + 0.49),
+    vector_to_place_result = {-0.5, -1.3},
+    fast_replaceable_group = "mining-drill",
+    circuit_wire_connection_points =
+    {
+      get_circuit_connector_wire_shifting_for_connector({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
+      get_circuit_connector_wire_shifting_for_connector({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
+      get_circuit_connector_wire_shifting_for_connector({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
+      get_circuit_connector_wire_shifting_for_connector({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17)
+    },
+    circuit_connector_sprites =
+    {
+      get_circuit_connector_sprites({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
+      get_circuit_connector_sprites({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
+      get_circuit_connector_sprites({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
+      get_circuit_connector_sprites({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17)
+    },
+    circuit_wire_max_distance = 9,
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-burner-drill",
+	localised_name = {"looped-name.burner-drill", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/burner-mining-drill.png",
+		tint = Material_Colors[DATA.Table],
+	  }
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."drills-burner",
+    stack_size = 100,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-burner-drill",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-burner-drill",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 1},{dy.."rotor", 1}},
+    result = dy..DATA.Name.."-burner-drill",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-burner-drill"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-burner-drill"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-burner-drill"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-burner-drill"].enabled = true
+	elseif DATA.Type == "Basic" then
+		data.raw.recipe[dy..DATA.Name.."-burner-drill"].enabled = true
 	end
 end
 
@@ -6895,15 +7234,15 @@ data:extend(
       },
     },
     crafting_categories = {"crafting", "advanced-crafting", "crafting-with-fluid"},
-    crafting_speed = Round((Materials[DATA.Table].Density / 16), 2),
+    crafting_speed = Round(((Materials[DATA.Table].Density / 12) + 0.5), 2),
     energy_source =
     {
       type = "electric",
       usage_priority = "secondary-input",
       emissions = 0.03 / 3.5
     },
-    energy_usage = tostring(Materials[DATA.Table].Strength_Ultimate).."kW",
-    ingredient_count = math.ceil((Materials[DATA.Table].Elasticity / 2) + 1),
+    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 100).."kW",
+    ingredient_count = math.ceil((Materials[DATA.Table].Elasticity / 2) + 2),
     module_specification =
     {
       module_slots = math.floor(Materials[DATA.Table].Hardness / 2)

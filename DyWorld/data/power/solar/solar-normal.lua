@@ -6,4 +6,5 @@ for k,v in pairs(Material_Table) do
 	end
 end
 
+table.remove(data.raw.recipe[dy.."wood-solar-normal"].ingredients,1)
 data.raw["solar-panel"]["solar-panel"].fast_replaceable_group = "solar-panel"

@@ -5671,14 +5671,14 @@ data:extend(
         target_effects =
         {
             type = "damage",
-            damage = { amount = (Materials[DATA.Table].Hardness + 0.1) , type = "physical"}
+            damage = { amount = (Materials[DATA.Table].Hardness + 0.5) , type = "physical"}
         }
       }
     },
     durability = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
     subgroup = dy.."mining-tool",
     order = DATA.Name,
-    speed = (Materials[DATA.Table].Hardness + 0.1),
+    speed = (Materials[DATA.Table].Hardness + 0.5),
     stack_size = 25,
   },
   {
@@ -5834,7 +5834,9 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Name == "wood" then
+		data.raw.recipe[dy..DATA.Name.."-solar-normal"].enabled = true
+	elseif DATA.Type == "Primitive" then
 		DyWorld_Add_To_Tech("solar-energy", dy..DATA.Name.."-solar-normal")
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("solar-energy-2", dy..DATA.Name.."-solar-normal")
@@ -5973,7 +5975,9 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Name == "wood" then
+		data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].enabled = true
+	elseif DATA.Type == "Primitive" then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-1", dy..DATA.Name.."-accumulator-normal")
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-2", dy..DATA.Name.."-accumulator-normal")

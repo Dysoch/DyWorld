@@ -94,7 +94,7 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return math.floor(Materials[TABLE].Strength_Ultimate * Materials[TABLE].Conductivity)
 	elseif TYPE == 11 then
 		-- Pole/Relay Supply Area
-		return math.floor((Materials[TABLE].Conductivity + Materials[TABLE].Hardness) / 2)
+		return math.ceil((Materials[TABLE].Conductivity + Materials[TABLE].Hardness) / 2)
 	elseif TYPE == 12 then
 		-- Pole/Relay Wire Reach
 		return math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Density)
@@ -137,7 +137,7 @@ Materials = {
 		Density = 7.5,
 		Hardness = 2.25,
 		Elasticity = 11,
-		Conductivity = 0,
+		Conductivity = 0.5,
 		Strength_Yield = 1,
 		Strength_Ultimate = 40,
 		Melting_Point = nil,
@@ -317,11 +317,12 @@ function Round(num, numDecimalPlaces)
 end
 
 Material_Table = {
-	-- Normal Plates
+	-- Non Plates, aka Primitive
 	{ Name = "stone", Table = "Stone", Type = "Primitive"},
 	{ Name = "wood", Table = "Wood", Type = "Primitive"},
 	{ Name = "obsidian", Table = "Obsidian", Type = "Primitive"},
 	{ Name = "rubber", Table = "Rubber", Type = "Primitive"},
+	-- Normal Plates
 	{ Name = "copper", Table = "Copper", Type = "Basic"},
 	{ Name = "iron", Table = "Iron", Type = "Basic"},
 	{ Name = "chromium", Table = "Chromium", Type = "Basic"},
@@ -331,8 +332,8 @@ Material_Table = {
 	{ Name = "gold", Table = "Gold", Type = "Basic"},
 	{ Name = "lead", Table = "Lead", Type = "Basic"},
 	{ Name = "tungsten", Table = "Tungsten", Type = "Basic"},
-	{ Name = "steel", Table = "Steel", Type = "Alloy"},
 	-- Alloys
+	{ Name = "steel", Table = "Steel", Type = "Alloy"},
 	{ Name = "stainless-steel", Table = "Stainless_Steel", Type = "Alloy"},
 	{ Name = "bronze", Table = "Bronze", Type = "Alloy"},
 	{ Name = "billon", Table = "Billon", Type = "Alloy"},

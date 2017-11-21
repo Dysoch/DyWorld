@@ -120,6 +120,14 @@ local Data_Table = {
 		Count = 500,
 		Military = false,
 	},
+	{
+		Name = dy.."steam-energy-1",
+		Icon = {{icon = "__base__/graphics/technology/turrets.png"}},
+		Pre_Req = {"automation", "logistics"},
+		Tech_Ingredients = 1,
+		Count = 50,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

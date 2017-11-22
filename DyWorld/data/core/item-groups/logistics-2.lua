@@ -22,12 +22,7 @@ Data_Table_Item_Group = {
 		Main = "logistics-2"
 	},
 	{
-		Name = "roboport-construction",
-		Type = "sub",
-		Main = "logistics-2"
-	},
-	{
-		Name = "roboport-logistic",
+		Name = "roboport",
 		Type = "sub",
 		Main = "logistics-2"
 	},

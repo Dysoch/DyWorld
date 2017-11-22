@@ -7664,6 +7664,638 @@ data:extend(
 	end
 end
 
+function DyWorld_Roboport(DATA)
+data:extend(
+{
+  {
+    type = "roboport",
+	name = dy..DATA.Name.."-roboport",
+	localised_name = {"looped-name.roboport", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/roboport.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-roboport"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "big-remnants",
+    collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
+    selection_box = {{-2, -2}, {2, 2}},
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 60
+      },
+      {
+        type = "impact",
+        percent = 30
+      }
+    },
+    dying_explosion = "medium-explosion",
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      input_flow_limit = tostring(Materials[DATA.Table].Strength_Ultimate).."MW",
+      buffer_capacity = tostring(Materials[DATA.Table].Strength_Yield).."MJ",
+    },
+    recharge_minimum = tostring(math.floor(Materials[DATA.Table].Strength_Yield * 0.5)).."MJ",
+    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 50).."kW",
+    -- per one charge slot
+    charging_energy = tostring((Materials[DATA.Table].Strength_Ultimate) + 500).."kW",
+    logistics_radius = math.floor(Materials[DATA.Table].Density * Materials[DATA.Table].Hardness),
+    construction_radius = math.floor((Materials[DATA.Table].Density * Materials[DATA.Table].Hardness) * 1.5),
+    charge_approach_distance = 5,
+    robot_slots_count = math.floor(Materials[DATA.Table].Density),
+    material_slots_count = math.floor(Materials[DATA.Table].Density),
+    stationing_offset = {0, 0},
+    charging_offsets =
+    {
+      {-1.5, -0.5}, {1.5, -0.5}, {1.5, 1.5}, {-1.5, 1.5},
+    },
+    base =
+    {
+      filename = "__base__/graphics/entity/roboport/roboport-base.png",
+      width = 143,
+      height = 135,
+      shift = {0.5, 0.25},
+	  tint = Material_Colors[DATA.Table]
+    },
+    base_patch =
+    {
+      filename = "__base__/graphics/entity/roboport/roboport-base-patch.png",
+      priority = "medium",
+      width = 69,
+      height = 50,
+      frame_count = 1,
+	  tint = Material_Colors[DATA.Table],
+      shift = {0.03125, 0.203125}
+    },
+    base_animation =
+    {
+      filename = "__base__/graphics/entity/roboport/roboport-base-animation.png",
+      priority = "medium",
+      width = 42,
+      height = 31,
+      frame_count = 8,
+      animation_speed = 0.5,
+	  tint = Material_Colors[DATA.Table],
+      shift = {-0.5315, -1.9375}
+    },
+    door_animation_up =
+    {
+      filename = "__base__/graphics/entity/roboport/roboport-door-up.png",
+      priority = "medium",
+      width = 52,
+      height = 20,
+      frame_count = 16,
+	  tint = Material_Colors[DATA.Table],
+      shift = {0.015625, -0.890625}
+    },
+    door_animation_down =
+    {
+      filename = "__base__/graphics/entity/roboport/roboport-door-down.png",
+      priority = "medium",
+      width = 52,
+      height = 22,
+      frame_count = 16,
+	  tint = Material_Colors[DATA.Table],
+      shift = {0.015625, -0.234375}
+    },
+    recharging_animation =
+    {
+      filename = "__base__/graphics/entity/roboport/roboport-recharging.png",
+      priority = "high",
+      width = 37,
+      height = 35,
+      frame_count = 16,
+      scale = 1.5,
+      animation_speed = 0.5
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound = { filename = "__base__/sound/roboport-working.ogg", volume = 0.6 },
+      max_sounds_per_type = 3,
+      audible_distance_modifier = 0.5,
+      probability = 1 / (5 * 60) -- average pause between the sound is 5 seconds
+    },
+    recharging_light = {intensity = 0.4, size = 5, color = {r = 1.0, g = 1.0, b = 1.0}},
+    request_to_open_door_timeout = 15,
+    spawn_and_station_height = -0.1,
+
+    draw_logistic_radius_visualization = true,
+    draw_construction_radius_visualization = true,
+
+    open_door_trigger_effect =
+    {
+      {
+        type = "play-sound",
+        sound = { filename = "__base__/sound/roboport-door.ogg", volume = 1.2 }
+      },
+    },
+    close_door_trigger_effect =
+    {
+      {
+        type = "play-sound",
+        sound = { filename = "__base__/sound/roboport-door.ogg", volume = 0.75 }
+      },
+    },
+    circuit_wire_connection_point =
+    {
+      shadow =
+      {
+        red = {1.17188, 1.98438},
+        green = {1.04688, 2.04688}
+      },
+      wire =
+      {
+        red = {0.78125, 1.375},
+        green = {0.78125, 1.53125}
+      }
+    },
+    circuit_connector_sprites = get_circuit_connector_sprites({0.59375, 1.3125}, nil, 18),
+    circuit_wire_max_distance = 9,
+    default_available_logistic_output_signal = {type = "virtual", name = "signal-X"},
+    default_total_logistic_output_signal = {type = "virtual", name = "signal-Y"},
+    default_available_construction_output_signal = {type = "virtual", name = "signal-Z"},
+    default_total_construction_output_signal = {type = "virtual", name = "signal-T"},
+	fast_replaceable_group = "roboport",
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-roboport",
+	localised_name = {"looped-name.roboport", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/roboport.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."roboport",
+    stack_size = 50,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-roboport",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-roboport",
+    energy_required = 5,
+	enabled = false,
+    ingredients = {{"advanced-circuit", 5}},
+    result = dy..DATA.Name.."-roboport",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 45}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 45}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 45}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech("construction-robotics", dy..DATA.Name.."-roboport")
+		DyWorld_Add_To_Tech("logistic-robotics", dy..DATA.Name.."-roboport")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("construction-robotics-2", dy..DATA.Name.."-roboport")
+		DyWorld_Add_To_Tech("logistic-robotics-2", dy..DATA.Name.."-roboport")
+	elseif DATA.Type == "Alloy" then
+		local result_1 = {"processing-unit", 3}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
+		DyWorld_Add_To_Tech("construction-robotics-3", dy..DATA.Name.."-roboport")
+		DyWorld_Add_To_Tech("logistic-robotics-3", dy..DATA.Name.."-roboport")
+	end
+end
+
+function DyWorld_Logistic_Robot(DATA)
+data:extend(
+{
+  {
+    type = "logistic-robot",
+	name = dy..DATA.Name.."-logistic-robot",
+	localised_name = {"looped-name.logistic-robot", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/logistic-robot.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
+    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-logistic-robot"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = { { type = "fire", percent = 85 } },
+    collision_box = {{0, 0}, {0, 0}},
+    selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
+    max_payload_size = 1,
+    speed = (((Materials[DATA.Table].Hardness + Materials[DATA.Table].Elasticity) /500) + 0.015),
+    transfer_distance = 0.5,
+    max_energy = tostring(Materials[DATA.Table].Density).."MJ",
+    energy_per_tick = tostring(Materials[DATA.Table].Density / 100).."kJ",
+    speed_multiplier_when_out_of_energy = 0.2,
+    energy_per_move = tostring(Materials[DATA.Table].Density).."kJ",
+    min_to_charge = 0.2,
+    max_to_charge = 0.95,
+    idle =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+      direction_count = 16,
+	  tint = Material_Colors[DATA.Table],
+      y = 42
+    },
+    idle_with_cargo =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+	  tint = Material_Colors[DATA.Table],
+      direction_count = 16
+    },
+    in_motion =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+	  tint = Material_Colors[DATA.Table],
+      direction_count = 16,
+      y = 126
+    },
+    in_motion_with_cargo =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+	  tint = Material_Colors[DATA.Table],
+      direction_count = 16,
+      y = 84
+    },
+    shadow_idle =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 59,
+      height = 23,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16,
+      y = 23
+    },
+    shadow_idle_with_cargo =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 59,
+      height = 23,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16
+    },
+    shadow_in_motion =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 59,
+      height = 23,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16,
+      y = 23
+    },
+    shadow_in_motion_with_cargo =
+    {
+      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 59,
+      height = 23,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16
+    },
+    working_sound = flying_robot_sounds(),
+    cargo_centered = {0.0, 0.2},
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-logistic-robot",
+	localised_name = {"looped-name.logistic-robot", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/logistic-robot.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."robot-logistic",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-logistic-robot",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-logistic-robot",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 5}},
+    result = dy..DATA.Name.."-logistic-robot",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech("logistic-robotics", dy..DATA.Name.."-logistic-robot")
+	elseif DATA.Type == "Basic" then
+		local result_1 = {dy.."logistic-unit", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
+		DyWorld_Add_To_Tech("logistic-robotics-2", dy..DATA.Name.."-logistic-robot")
+	elseif DATA.Type == "Alloy" then
+		local result_1 = {"processing-unit", 3}
+		local result_2 = {dy.."logistic-unit", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_2)
+		DyWorld_Add_To_Tech("logistic-robotics-3", dy..DATA.Name.."-logistic-robot")
+	end
+end
+
+function DyWorld_Construction_Robot(DATA)
+data:extend(
+{
+  {
+    type = "construction-robot",
+	name = dy..DATA.Name.."-construction-robot",
+	localised_name = {"looped-name.construction-robot", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/construction-robot.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
+    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-construction-robot"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = { { type = "fire", percent = 85 } },
+    collision_box = {{0, 0}, {0, 0}},
+    selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
+    max_payload_size = 1,
+    speed = (((Materials[DATA.Table].Hardness + Materials[DATA.Table].Elasticity) /500) + 0.025),
+    transfer_distance = 0.5,
+    max_energy = tostring(Materials[DATA.Table].Density).."MJ",
+    energy_per_tick = tostring(Materials[DATA.Table].Density / 100).."kJ",
+    speed_multiplier_when_out_of_energy = 0.2,
+    energy_per_move = tostring(Materials[DATA.Table].Density).."kJ",
+    min_to_charge = 0.2,
+    max_to_charge = 0.95,
+    working_light = {intensity = 0.8, size = 3, color = {r = 0.8, g = 0.8, b = 0.8}},
+    idle =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 32,
+      height = 36,
+      frame_count = 1,
+      shift = {0, -0.15625},
+	  tint = Material_Colors[DATA.Table],
+      direction_count = 16
+    },
+    in_motion =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 32,
+      height = 36,
+      frame_count = 1,
+      shift = {0, -0.15625},
+	  tint = Material_Colors[DATA.Table],
+      direction_count = 16,
+      y = 36
+    },
+    shadow_idle =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 50,
+      height = 24,
+      frame_count = 1,
+      shift = {1.09375, 0.59375},
+      direction_count = 16
+    },
+    shadow_in_motion =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 50,
+      height = 24,
+      frame_count = 1,
+      shift = {1.09375, 0.59375},
+      direction_count = 16
+    },
+    working =
+    {
+      filename = "__base__/graphics/entity/construction-robot/construction-robot-working.png",
+      priority = "high",
+      line_length = 2,
+      width = 28,
+      height = 36,
+      frame_count = 2,
+      shift = {0, -0.15625},
+      direction_count = 16,
+	  tint = Material_Colors[DATA.Table],
+      animation_speed = 0.3,
+    },
+    shadow_working =
+    {
+      stripes = util.multiplystripes(2,
+      {
+        {
+          filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
+          width_in_frames = 16,
+          height_in_frames = 1,
+        }
+      }),
+      priority = "high",
+      width = 50,
+      height = 24,
+      frame_count = 2,
+      shift = {1.09375, 0.59375},
+      direction_count = 16
+    },
+    smoke =
+    {
+      filename = "__base__/graphics/entity/smoke-construction/smoke-01.png",
+      width = 39,
+      height = 32,
+      frame_count = 19,
+      line_length = 19,
+      shift = {0.078125, -0.15625},
+      animation_speed = 0.3,
+    },
+    sparks =
+    {
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-01.png",
+        width = 39,
+        height = 34,
+        frame_count = 19,
+        line_length = 19,
+        shift = {-0.109375, 0.3125},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-02.png",
+        width = 36,
+        height = 32,
+        frame_count = 19,
+        line_length = 19,
+        shift = {0.03125, 0.125},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-03.png",
+        width = 42,
+        height = 29,
+        frame_count = 19,
+        line_length = 19,
+        shift = {-0.0625, 0.203125},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-04.png",
+        width = 40,
+        height = 35,
+        frame_count = 19,
+        line_length = 19,
+        shift = {-0.0625, 0.234375},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-05.png",
+        width = 39,
+        height = 29,
+        frame_count = 19,
+        line_length = 19,
+        shift = {-0.109375, 0.171875},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-06.png",
+        width = 44,
+        height = 36,
+        frame_count = 19,
+        line_length = 19,
+        shift = {0.03125, 0.3125},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3,
+      },
+    },
+    working_sound = flying_robot_sounds(),
+    cargo_centered = {0.0, 0.2},
+    construction_vector = {0.30, 0.22},
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-construction-robot",
+	localised_name = {"looped-name.construction-robot", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/construction-robot.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."robot-construction",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-construction-robot",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-construction-robot",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 5}},
+    result = dy..DATA.Name.."-construction-robot",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech("construction-robotics", dy..DATA.Name.."-construction-robot")
+	elseif DATA.Type == "Basic" then
+		local result_1 = {dy.."logistic-unit", 1}
+		local result_2 = {"advanced-circuit", 3}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
+		DyWorld_Add_To_Tech("construction-robotics-2", dy..DATA.Name.."-construction-robot")
+	elseif DATA.Type == "Alloy" then
+		local result_1 = {"processing-unit", 1}
+		local result_2 = {dy.."logistic-unit", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
+		DyWorld_Add_To_Tech("construction-robotics-3", dy..DATA.Name.."-construction-robot")
+	end
+end
+
 function DyWorld_TEMPLATE(DATA)
 data:extend(
 {

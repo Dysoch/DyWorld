@@ -176,6 +176,38 @@ local Data_Table = {
 		Count = 250,
 		Military = true,
 	},
+	{
+		Name = "logistic-robotics-2",
+		Icon = {{icon = "__base__/graphics/technology/logistic-robotics.png"}},
+		Pre_Req = {"logistic-robotics"},
+		Tech_Ingredients = 3,
+		Count = 350,
+		Military = false,
+	},
+	{
+		Name = "logistic-robotics-3",
+		Icon = {{icon = "__base__/graphics/technology/logistic-robotics.png"}},
+		Pre_Req = {"logistic-robotics-2"},
+		Tech_Ingredients = 5,
+		Count = 750,
+		Military = false,
+	},
+	{
+		Name = "construction-robotics-2",
+		Icon = {{icon = "__base__/graphics/technology/construction-robotics.png"}},
+		Pre_Req = {"construction-robotics"},
+		Tech_Ingredients = 3,
+		Count = 350,
+		Military = false,
+	},
+	{
+		Name = "construction-robotics-3",
+		Icon = {{icon = "__base__/graphics/technology/construction-robotics.png"}},
+		Pre_Req = {"construction-robotics-2"},
+		Tech_Ingredients = 5,
+		Count = 750,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

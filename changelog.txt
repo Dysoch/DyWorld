@@ -4,20 +4,26 @@
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 
 [list]
-[*] Added Cannon Shells and Explosive Cannon Shells using the Material System
 [*] Increased all DyWorld Ores richness by 5x
 [*] Moved Solar Panels to use the Material System
 [*] Moved Accumulators to use the Material System
 [*] Moved Mining Tools to use the Material System
-[*] Moved Mining Drills to use the Material System
+[*] Moved Electric Mining Drills to use the Material System
 [*] Moved Assembling Machines to use the Material System
+[*] Added Burner Mining Drills that use the Material System
 [*] Added Repair Packs that use the Material System
 [*] Added Chests (Normal and Warehouses) that use the Material System
+[*] Added Cannon Shells and Explosive Cannon Shells using the Material System
+[*] Added Cannon Turrets that use the Material System
 [*] Added Conductivity to the Material System Properties. Used in anything that uses or creates energy!
-[*] Because of Conductivity add, Power Poles and Relays have been changed, drastically. Stone, Wood and Rubber are not conductive, so they no longer exist!
+[*] Because of Conductivity add, Power Poles and Relays have been changed, drastically. Stone and Rubber are not conductive, so they no longer exist!
 [*] Added a GeoDrill, this will mine underground for those hard to reach resources
 [*] Added 6 alloys! Billon, Stainless Steel, Bronze, Elinvar, Copper-Tungsten and Copper-Hydride are now usable!
 [*] Massive change to science packs. You create a fluid first, and then bottle it with glass to create the science pack. Simple to use, hard to master! 
+[*] Added in tiered labs. The first lab can only use red packs, second one red and green etc. 7 labs total, with the last one capable of using all science packs. Each has to be research after you get the new science pack it will use
+[*] Added in 7 new intermediates
+[*] Added in a tech for steam engines. Moved the steam engines to that tech. No longer can you use steam in the beginning of the game. You can use the makeshift wooden solar panels and accumulators in the beginning for power
+[*] Added the mining speed bonus back in into the bonuses system so the beginning game can get a bit better
 [*] Major balancing of recipes
 [*] Split the DyWorld Logistic tab into 2 tabs. One holds all moving parts, the other chests, robots etc
 [*] Added Tungsten and Cadmium resources. 

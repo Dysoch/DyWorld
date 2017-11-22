@@ -8,3 +8,6 @@ end
 
 table.remove(data.raw.recipe[dy.."wood-solar-normal"].ingredients,1)
 data.raw["solar-panel"]["solar-panel"].fast_replaceable_group = "solar-panel"
+
+local result_1 = {dy.."makeshift-solar-cell", 2}
+table.insert(data.raw.recipe[dy.."wood-solar-normal"].ingredients, result_1)

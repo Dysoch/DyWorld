@@ -5,18 +5,20 @@ data:extend(
   {
     type = "recipe",
     name = dy.."science-fluid-1",
+	icon = data.raw.fluid[dy.."science-fluid-1"].icon,
     category = "centrifuging",
     energy_required = 1.5,
 	enabled = true,
     ingredients =
     {
       {type = "fluid", name = "water", amount = 50},
-      {type = "item", name = "iron-ore", amount = 2},
-      {type = "item", name = "copper-ore", amount = 1},
+      {type = "item", name = dy.."filter-iron", amount = 1},
+      {type = "item", name = dy.."filter-copper", amount = 1},
     },
     results=
     {
       {type = "fluid", name = dy.."science-fluid-1", amount = 10},
+      {type = "item", name = dy.."filter-empty", amount = 2},
     },
     subgroup = dy.."fluid-recipes",
     order = dy.."science-fluid-1",
@@ -24,6 +26,7 @@ data:extend(
   {
     type = "recipe",
     name = dy.."science-fluid-2",
+	icon = data.raw.fluid[dy.."science-fluid-2"].icon,
     category = "centrifuging",
     energy_required = 1.5,
 	enabled = true,
@@ -44,9 +47,10 @@ data:extend(
   {
     type = "recipe",
     name = dy.."science-fluid-3",
+	icon = data.raw.fluid[dy.."science-fluid-3"].icon,
     category = "centrifuging",
     energy_required = 1.5,
-	enabled = true,
+	enabled = false,
     ingredients =
     {
       {type = "fluid", name = dy.."sludge", amount = 250},
@@ -65,9 +69,10 @@ data:extend(
   {
     type = "recipe",
     name = dy.."science-fluid-4",
+	icon = data.raw.fluid[dy.."science-fluid-4"].icon,
     category = "centrifuging",
     energy_required = 1.5,
-	enabled = true,
+	enabled = false,
     ingredients =
     {
       {type = "fluid", name = dy.."sewage", amount = 50},
@@ -86,9 +91,10 @@ data:extend(
   {
     type = "recipe",
     name = dy.."science-fluid-5",
+	icon = data.raw.fluid[dy.."science-fluid-5"].icon,
     category = "centrifuging",
     energy_required = 1.5,
-	enabled = true,
+	enabled = false,
     ingredients =
     {
       {type = "fluid", name = dy.."hydrogen", amount = 50},
@@ -108,6 +114,7 @@ data:extend(
   {
     type = "recipe",
     name = dy.."science-fluid-6",
+	icon = data.raw.fluid[dy.."science-fluid-6"].icon,
     category = "centrifuging",
     energy_required = 1.5,
 	enabled = false,

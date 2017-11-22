@@ -17,6 +17,11 @@ Data_Table_Item_Group = {
 		Main = "items"
 	},
 	{
+		Name = "filters",
+		Type = "sub",
+		Main = "items"
+	},
+	{
 		Name = "seeds",
 		Type = "sub",
 		Main = "items"

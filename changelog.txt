@@ -18,6 +18,7 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] Added Chests (Normal and Warehouses) that use the Material System
 [*] Added Cannon Shells and Explosive Cannon Shells using the Material System
 [*] Added Cannon Turrets that use the Material System
+[*] Added Grenades and Cluster Grenades that use the Material System
 [*] Added Conductivity to the Material System Properties. Used in anything that uses or creates energy!
 [*] Because of Conductivity add, Power Poles and Relays have been changed, drastically. Stone and Rubber are not conductive, so they no longer exist!
 [*] Added a GeoDrill, this will mine underground for those hard to reach resources

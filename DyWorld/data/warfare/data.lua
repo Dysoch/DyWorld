@@ -6,11 +6,12 @@ require("data.warfare.edits.items")
 require("data.warfare.edits.recipes")
 
 require("data.warfare.ammo.bullet")
+require("data.warfare.ammo.grenades")
 
 require("data.warfare.turrets.bullet")
 require("data.warfare.turrets.laser")
 
-local Remove_Table = {"gun-turret", "laser-turret", "piercing-shotgun-shell", "shotgun-shell", "uranium-rounds-magazine", "piercing-rounds-magazine", "firearm-magazine", "cannon-shell", "explosive-cannon-shell", "uranium-cannon-shell", "explosive-uranium-cannon-shell"}
+local Remove_Table = {"gun-turret", "laser-turret", "piercing-shotgun-shell", "shotgun-shell", "uranium-rounds-magazine", "piercing-rounds-magazine", "firearm-magazine", "cannon-shell", "explosive-cannon-shell", "uranium-cannon-shell", "explosive-uranium-cannon-shell", "grenade", "cluster-grenade"}
 
 for k,m in pairs(Remove_Table) do
 	for j,n in pairs(data.raw.technology) do

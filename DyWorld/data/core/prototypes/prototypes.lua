@@ -2880,6 +2880,272 @@ data:extend(
 	end
 end
 
+function DyWorld_Grenades(DATA)
+data:extend(
+{
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-grenade-projectile",
+    flags = {"not-on-map"},
+    acceleration = 0.005,
+    action =
+    {
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "instant",
+          target_effects =
+          {
+            {
+              type = "create-entity",
+              entity_name = "medium-explosion"
+            },
+            {
+              type = "create-entity",
+              entity_name = "small-scorchmark",
+              check_buildability = true
+            }
+          }
+        }
+      },
+      {
+        type = "area",
+        perimeter = (Materials[DATA.Table].Hardness),
+        action_delivery =
+        {
+          type = "instant",
+          target_effects =
+          {
+            {
+            type = "damage",
+            damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 1.5), type = "explosion"}
+            },
+            {
+            type = "create-entity",
+            entity_name = "explosion"
+            }
+          }
+        }
+      }
+    },
+    light = {intensity = 0.5, size = 4},
+    animation =
+    {
+      filename = "__base__/graphics/entity/grenade/grenade.png",
+      frame_count = 1,
+      width = 24,
+      height = 24,
+      priority = "high",
+	  tint = Material_Colors[DATA.Table],
+    },
+    shadow =
+    {
+      filename = "__base__/graphics/entity/grenade/grenade-shadow.png",
+      frame_count = 1,
+      width = 24,
+      height = 24,
+      priority = "high"
+    }
+  },
+  {
+    type = "capsule",
+    name = dy..DATA.Name.."-grenade",
+	localised_name = {"looped-name.grenade", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/grenade.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},    
+    flags = {"goes-to-quickbar"},
+    capsule_action =
+    {
+      type = "throw",
+      attack_parameters =
+      {
+        type = "projectile",
+        ammo_category = "grenade",
+        cooldown = 20,
+        projectile_creation_distance = 0.6,
+        range = DyWorld_Material_Formulas(5, DATA.Table),
+        ammo_type =
+        {
+          category = "grenade",
+          target_type = "position",
+          action =
+          {
+            type = "direct",
+            action_delivery =
+            {
+              type = "projectile",
+              projectile = dy..DATA.Name.."-grenade-projectile",
+              starting_speed = 0.3,
+              max_range = (DyWorld_Material_Formulas(5, DATA.Table) + 10),
+              direction_deviation = 0.05,
+              range_deviation = 0.15,
+            }
+          }
+        }
+      }
+    },
+    subgroup = dy.."grenade",
+    order = DATA.Name,
+    stack_size = 200
+  },
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-cluster-grenade-projectile",
+    flags = {"not-on-map"},
+    acceleration = 0.005,
+    action =
+    {
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "instant",
+          target_effects =
+          {
+            {
+              type = "create-entity",
+              entity_name = "explosion"
+            },
+            {
+              type = "create-entity",
+              entity_name = "small-scorchmark",
+              check_buildability = true
+            }
+          }
+        }
+      },
+      {
+        type = "cluster",
+        cluster_count = 7,
+        distance = 4,
+        distance_deviation = 3,
+        action_delivery =
+        {
+          type = "projectile",
+          projectile = dy..DATA.Name.."-grenade-projectile",
+          direction_deviation = 0.6,
+          starting_speed = 0.25,
+          starting_speed_deviation = 0.3,
+          max_range = (DyWorld_Material_Formulas(5, DATA.Table) + 10),
+          range_deviation = 0.15,
+        }
+      }
+    },
+    light = {intensity = 0.5, size = 4},
+    animation =
+    {
+      filename = "__base__/graphics/entity/grenade/grenade.png",
+      frame_count = 1,
+      width = 24,
+      height = 24,
+      priority = "high",
+	  tint = Material_Colors[DATA.Table],
+    },
+    shadow =
+    {
+      filename = "__base__/graphics/entity/grenade/grenade-shadow.png",
+      frame_count = 1,
+      width = 24,
+      height = 24,
+      priority = "high"
+    }
+  },
+  {
+    type = "capsule",
+    name = dy..DATA.Name.."-cluster-grenade",
+	localised_name = {"looped-name.cluster-grenade", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/cluster-grenade.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},    
+    flags = {"goes-to-quickbar"},
+    capsule_action =
+    {
+      type = "throw",
+      attack_parameters =
+      {
+        type = "projectile",
+        ammo_category = "grenade",
+        cooldown = 20,
+        projectile_creation_distance = 0.6,
+        range = DyWorld_Material_Formulas(5, DATA.Table),
+        ammo_type =
+        {
+          category = "grenade",
+          target_type = "position",
+          action =
+          {
+            type = "direct",
+            action_delivery =
+            {
+              type = "projectile",
+              projectile = dy..DATA.Name.."-cluster-grenade-projectile",
+              starting_speed = 0.3,
+              max_range = (DyWorld_Material_Formulas(5, DATA.Table) + 10),
+              direction_deviation = 0.05,
+              range_deviation = 0.15,
+            }
+          }
+        }
+      }
+    },
+    subgroup = dy.."grenade-cluster",
+    order = DATA.Name,
+    stack_size = 200
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-grenade",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{"coal", 10}},
+    result = dy..DATA.Name.."-grenade",
+    result_count = 1,
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-cluster-grenade",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-grenade", 7},{"explosives", 5}},
+    result = dy..DATA.Name.."-cluster-grenade",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cluster-grenade"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cluster-grenade"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-cluster-grenade"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-grenade"].enabled = true
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-cluster-grenade")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-grenade")
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-cluster-grenade")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-grenade")
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-cluster-grenade")
+	end
+end
+
 function DyWorld_Pumps(DATA)
 data:extend(
 {

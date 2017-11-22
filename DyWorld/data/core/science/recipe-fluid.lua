@@ -79,7 +79,7 @@ data:extend(
       {type = "fluid", name = dy.."acid", amount = 25},
       {type = "fluid", name = dy.."methane", amount = 25},
       {type = "item", name = dy.."lead-shotgun-ammo", amount = 1},
-      {type = "item", name = dy.."copper-shotgun-laser-turret", amount = 1},
+      {type = "item", name = dy.."copper-shotgun-turret", amount = 1},
     },
     results=
     {

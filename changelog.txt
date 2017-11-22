@@ -10,6 +10,9 @@ Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] o
 [*] Moved Mining Tools to use the Material System
 [*] Moved Electric Mining Drills to use the Material System
 [*] Moved Assembling Machines to use the Material System
+[*] Moved Roboports to use the Material System
+[*] Moved Construction Robots to use the Material System
+[*] Moved Logistic Robots to use the Material System
 [*] Added Burner Mining Drills that use the Material System
 [*] Added Repair Packs that use the Material System
 [*] Added Chests (Normal and Warehouses) that use the Material System

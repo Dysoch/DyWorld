@@ -21,7 +21,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input",
     },
-    energy_usage = "100kW", --"25kW",
+    energy_usage = "100W", --"25kW",
     ingredient_count = 25,
     resistances =
     {

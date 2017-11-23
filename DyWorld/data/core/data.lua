@@ -54,6 +54,9 @@ require("data.core.needs.seeds")
 require("data.core.needs.farm-recipes")
 end
 
+-- More techs
+require("data.core.tech.toolbelt")
+
 -- Fluid System
 require("data.core.water-system.recipes")
 

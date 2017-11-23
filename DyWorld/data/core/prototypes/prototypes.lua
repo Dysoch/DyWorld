@@ -1144,7 +1144,7 @@ data:extend(
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-transport-belt"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-transport-belt"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     resistances =
@@ -1215,7 +1215,7 @@ data:extend(
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-underground-belt"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-underground-belt"},
 	max_health = DyWorld_Material_Formulas(3, DATA.Table),
     max_distance = DyWorld_Material_Formulas(2, DATA.Table),
     underground_sprite =
@@ -1326,7 +1326,7 @@ data:extend(
 	  },
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-splitter"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-splitter"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "medium-remnants",
     resistances =
@@ -1562,7 +1562,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-pipe"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-pipe"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     resistances =
@@ -1620,7 +1620,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-pipe-to-ground"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-pipe-to-ground"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     resistances =
@@ -1807,7 +1807,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-gun-turret"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-gun-turret"},
     max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
@@ -1937,7 +1937,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-shotgun-turret"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-shotgun-turret"},
     max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
@@ -2067,7 +2067,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-cannon-turret"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-cannon-turret"},
     max_health = (35 * DyWorld_Material_Formulas(3, DATA.Table)),
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
@@ -3161,7 +3161,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation", "filter-directions"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-offshore-pump"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-offshore-pump"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     fluid = "water",
@@ -3306,7 +3306,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-pump"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-pump"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     fast_replaceable_group = "pipe",
     corpse = "small-remnants",
@@ -3688,7 +3688,7 @@ data:extend(
     name = dy..DATA.Name.."-basic-inserter",
 	localised_name = {"looped-name.inserter-1", {"looped-name."..DATA.Name}},
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-basic-inserter"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-basic-inserter"},
     icons = 
 	{
 	  {
@@ -3870,7 +3870,7 @@ data:extend(
     name = dy..DATA.Name.."-long-inserter",
 	localised_name = {"looped-name.inserter-2", {"looped-name."..DATA.Name}},
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-long-inserter"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-long-inserter"},
     icons = 
 	{
 	  {
@@ -4053,7 +4053,7 @@ data:extend(
     name = dy..DATA.Name.."-filter-inserter",
 	localised_name = {"looped-name.inserter-3", {"looped-name."..DATA.Name}},
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-filter-inserter"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-filter-inserter"},
     icons = 
 	{
 	  {
@@ -4236,7 +4236,7 @@ data:extend(
     name = dy..DATA.Name.."-stack-inserter",
 	localised_name = {"looped-name.inserter-4", {"looped-name."..DATA.Name}},
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-stack-inserter"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-stack-inserter"},
     icons = 
 	{
 	  {
@@ -4419,7 +4419,7 @@ data:extend(
     name = dy..DATA.Name.."-stack-filter-inserter",
 	localised_name = {"looped-name.inserter-5", {"looped-name."..DATA.Name}},
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-stack-filter-inserter"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-stack-filter-inserter"},
     icons = 
 	{
 	  {
@@ -4603,7 +4603,7 @@ data:extend(
     name = dy..DATA.Name.."-super-inserter",
 	localised_name = {"looped-name.inserter-6", {"looped-name."..DATA.Name}},
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-super-inserter"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-super-inserter"},
     icons = 
 	{
 	  {
@@ -4965,7 +4965,7 @@ data:extend(
     name = dy..DATA.Name.."-storage-tank",
 	localised_name = {"looped-name.storage-tank", {"looped-name."..DATA.Name}},
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-storage-tank"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-storage-tank"},
     icons = 
 	{
 	  {
@@ -5164,7 +5164,7 @@ data:extend(
     name = dy..DATA.Name.."-power-pole",
 	localised_name = {"looped-name.power-pole", {"looped-name."..DATA.Name}},
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-power-pole"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-power-pole"},
     icons = 
 	{
 	  {
@@ -5269,7 +5269,7 @@ data:extend(
     name = dy..DATA.Name.."-power-relay",
 	localised_name = {"looped-name.power-relay", {"looped-name."..DATA.Name}},
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-power-relay"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-power-relay"},
     icons = 
 	{
 	  {
@@ -5453,7 +5453,7 @@ data:extend(
 	  }
 	},
     flags = { "placeable-player", "placeable-enemy", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-laser-turret"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-laser-turret"},
     max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
     corpse = "medium-remnants",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
@@ -5659,7 +5659,7 @@ data:extend(
 	  }
 	},
     flags = { "placeable-player", "placeable-enemy", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-shotgun-laser-turret"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-shotgun-laser-turret"},
     max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
     corpse = "medium-remnants",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
@@ -6041,7 +6041,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-solar-normal"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-solar-normal"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "big-remnants",
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
@@ -6126,7 +6126,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-accumulator-normal"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-accumulator-normal"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "medium-remnants",
     collision_box = {{-0.9, -0.9}, {0.9, 0.9}},
@@ -6267,7 +6267,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-electric-drill"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-electric-drill"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     resource_categories = {"basic-solid"},
     corpse = "big-remnants",
@@ -7212,7 +7212,7 @@ data:extend(
 	},
     flags = {"placeable-neutral", "player-creation"},
     resource_categories = {"basic-solid"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-burner-drill"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-burner-drill"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "medium-remnants",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
@@ -7550,7 +7550,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral","placeable-player", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-assembling-electric"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-assembling-electric"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -7729,7 +7729,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-chest"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-chest"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
@@ -7836,7 +7836,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-warehouse-chest"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-warehouse-chest"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
@@ -7945,7 +7945,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-roboport"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-roboport"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "big-remnants",
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
@@ -7966,13 +7966,13 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
-      input_flow_limit = tostring(Materials[DATA.Table].Strength_Ultimate).."MW",
-      buffer_capacity = tostring(Materials[DATA.Table].Strength_Yield).."MJ",
+      input_flow_limit = tostring(Materials[DATA.Table].Strength_Ultimate * 5).."MW",
+      buffer_capacity = tostring(Materials[DATA.Table].Strength_Ultimate).."MJ",
     },
     recharge_minimum = tostring(math.floor(Materials[DATA.Table].Strength_Yield * 0.5)).."MJ",
     energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 50).."kW",
     -- per one charge slot
-    charging_energy = tostring((Materials[DATA.Table].Strength_Ultimate) + 500).."kW",
+    charging_energy = tostring((Materials[DATA.Table].Strength_Ultimate) + 1500).."kW",
     logistics_radius = math.floor(Materials[DATA.Table].Density * Materials[DATA.Table].Hardness),
     construction_radius = math.floor((Materials[DATA.Table].Density * Materials[DATA.Table].Hardness) * 1.5),
     charge_approach_distance = 5,
@@ -8158,7 +8158,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-logistic-robot"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-logistic-robot"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     resistances = { { type = "fire", percent = 85 } },
     collision_box = {{0, 0}, {0, 0}},
@@ -8339,7 +8339,7 @@ data:extend(
 	  }
 	},
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {hardness = Materials[DATA.Table].Hardness, mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-construction-robot"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-construction-robot"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     resistances = { { type = "fire", percent = 85 } },
     collision_box = {{0, 0}, {0, 0}},

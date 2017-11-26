@@ -137,7 +137,7 @@ Materials = {
 		Density = 7.5,
 		Hardness = 2.25,
 		Elasticity = 11,
-		Conductivity = 0.5,
+		Conductivity = 1,
 		Strength_Yield = 1,
 		Strength_Ultimate = 40,
 		Melting_Point = nil,
@@ -322,7 +322,7 @@ Material_Table = {
 	{ Name = "wood", Table = "Wood", Type = "Primitive"},
 	{ Name = "obsidian", Table = "Obsidian", Type = "Primitive"},
 	{ Name = "rubber", Table = "Rubber", Type = "Primitive"},
-	-- Normal Plates
+	-- Normal Plates, aka Basic
 	{ Name = "copper", Table = "Copper", Type = "Basic"},
 	{ Name = "iron", Table = "Iron", Type = "Basic"},
 	{ Name = "chromium", Table = "Chromium", Type = "Basic"},
@@ -332,12 +332,15 @@ Material_Table = {
 	{ Name = "gold", Table = "Gold", Type = "Basic"},
 	{ Name = "lead", Table = "Lead", Type = "Basic"},
 	{ Name = "tungsten", Table = "Tungsten", Type = "Basic"},
-	-- Alloys
+	-- Simple Alloys
 	{ Name = "steel", Table = "Steel", Type = "Alloy"},
+	-- Alloys
 	{ Name = "stainless-steel", Table = "Stainless_Steel", Type = "Alloy"},
-	{ Name = "bronze", Table = "Bronze", Type = "Alloy"},
 	{ Name = "billon", Table = "Billon", Type = "Alloy"},
-	{ Name = "elinvar", Table = "Elinvar", Type = "Alloy"},
+	{ Name = "bronze", Table = "Bronze", Type = "Alloy"},
 	{ Name = "copper-tungsten", Table = "Copper_Tungsten", Type = "Alloy"},
 	{ Name = "copper-hydride", Table = "Copper_Hydride", Type = "Alloy"},
+	-- Complex Alloys
+	{ Name = "elinvar", Table = "Elinvar", Type = "Alloy"},
+	-- Super Alloys
 }

@@ -1544,6 +1544,11 @@ data:extend(
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-splitter")
 	end
+	if DATA.Name == "rubber" then
+		data.raw["transport-belt"][dy..DATA.Name.."-transport-belt"].speed = ((DyWorld_Material_Formulas(1, DATA.Table)/426.67) / 2)
+		data.raw["underground-belt"][dy..DATA.Name.."-underground-belt"].speed = ((DyWorld_Material_Formulas(1, DATA.Table)/426.67) / 2)
+		data.raw["splitter"][dy..DATA.Name.."-splitter"].speed = ((DyWorld_Material_Formulas(1, DATA.Table)/426.67) / 2)
+	end
 end
 
 function DyWorld_Transport_Pipe(DATA)
@@ -1878,6 +1883,7 @@ data:extend(
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    turret_base_has_direction = true,
     attack_parameters =
     {
       type = "projectile",
@@ -4964,6 +4970,7 @@ data:extend(
     type = "storage-tank",
     name = dy..DATA.Name.."-storage-tank",
 	localised_name = {"looped-name.storage-tank", {"looped-name."..DATA.Name}},
+	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table)*100)},
     flags = {"placeable-player", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-storage-tank"},
     icons = 
@@ -5127,6 +5134,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-storage-tank",
 	localised_name = {"looped-name.storage-tank", {"looped-name."..DATA.Name}},
+	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table)*100)},
 	icons = {{icon = "__base__/graphics/icons/storage-tank.png", tint = Material_Colors[DATA.Table]}},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."tank-storage",
@@ -7821,7 +7829,115 @@ data:extend(
 	end
 end
 
-function DyWorld_Warehouse_Chests(DATA)
+function DyWorld_Warehouse_Chests_1(DATA)
+data:extend(
+{
+  {
+    type = "container",
+	name = dy..DATA.Name.."-warehouse-chest",
+	localised_name = {"looped-name.warehouse-chest", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/iron-chest.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-warehouse-chest"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    corpse = "small-remnants",
+    open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
+    close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.7 },
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 80
+      },
+      {
+        type = "impact",
+        percent = 30
+      }
+    },
+    collision_box = {{-1.35, -1.35}, {1.35, 1.35}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    fast_replaceable_group = "warehouse",
+    inventory_size = math.floor(DyWorld_Material_Formulas(3, DATA.Table)*5),
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    picture =
+    {
+      filename = "__base__/graphics/entity/iron-chest/iron-chest.png",
+      priority = "extra-high",
+	  scale = 3,
+      width = 48,
+      height = 34,
+      shift = {0.75, 0},
+	  tint = Material_Colors[DATA.Table]
+    },
+    circuit_wire_connection_point =
+    {
+      shadow =
+      {
+        red = {0.734375, 0.453125},
+        green = {0.609375, 0.515625},
+      },
+      wire =
+      {
+        red = {0.40625, 0.21875},
+        green = {0.40625, 0.375},
+      }
+    },
+    circuit_connector_sprites = get_circuit_connector_sprites({0.1875, 0.15625}, nil, 18),
+    circuit_wire_max_distance = 9
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-warehouse-chest",
+	localised_name = {"looped-name.warehouse-chest", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/iron-chest.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."chests-warehouse",
+    stack_size = 5,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-warehouse-chest",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-warehouse-chest",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-warehouse-chest",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 75}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 75}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 75}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-warehouse-chest")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-warehouse-chest")
+	end
+end
+
+function DyWorld_Warehouse_Chests_2(DATA)
 data:extend(
 {
   {
@@ -7906,7 +8022,7 @@ data:extend(
 	name = dy..DATA.Name.."-warehouse-chest",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{"electronic-circuit", 10}},
+    ingredients = {},
     result = dy..DATA.Name.."-warehouse-chest",
     result_count = 1,
   },
@@ -7924,9 +8040,13 @@ data:extend(
 	if DATA.Type == "Primitive" then
 		data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].enabled = true
 	elseif DATA.Type == "Basic" then
-		DyWorld_Add_To_Tech("automation", dy..DATA.Name.."-warehouse-chest")
-	elseif DATA.Type == "Alloy" then
+		local result_1 = {"electronic-circuit", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-warehouse-chest")
+	elseif DATA.Type == "Alloy" then
+		local result_1 = {"advanced-circuit", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
+		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-warehouse-chest")
 	end
 end
 

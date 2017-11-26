@@ -65,7 +65,6 @@ for k,v in pairs(Material_Table) do
 			upgrade = true,
 		  },
 		})
-		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
 	end
 end
 
@@ -104,6 +103,43 @@ data:extend(
 	},
 	subgroup = dy.."casting-recipes",
 	order = "obsidian",
+  },
+  {
+	type = "recipe",
+	name = dy.."glass-advanced-melting",
+	category = dy.."forge",
+	energy_required = 7.5,
+	enabled = false,
+	ingredients =
+	{
+	  {type = "fluid", name = dy.."molten-glass", amount = 100},
+	},
+	results=
+	{
+	  {type = "item", name = dy.."glass", amount = 10},
+	},
+	subgroup = dy.."casting-recipes",
+	order = "glass",
+  },
+  {
+	type = "technology",
+	name = dy.."glass-advanced-melting",
+	localised_name = {"looped-name.advanced-melting", {"looped-name.glass"}},
+	icon = data.raw.fluid[dy.."molten-glass"].icon,
+	effects = 
+	{
+	  {type = "unlock-recipe", recipe = dy.."glass-advanced-melting"},
+	  {type = "unlock-recipe", recipe = dy.."molten-glass"},
+	},
+	prerequisites = {dy.."ore-smelting"},
+	unit =
+	{
+	  count = 75,
+	  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
+	  time =  30
+	},
+	order = dy.."glass-advanced-melting",
+	upgrade = true,
   },
 })
 

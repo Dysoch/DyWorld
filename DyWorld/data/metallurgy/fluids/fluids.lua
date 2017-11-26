@@ -37,6 +37,15 @@ local Data_Table = {
 		Color_Flow = Material_Colors.Stone,
 		Barrel = false,
 	},
+	{
+		Name = "molten-glass",
+		Icon = dyworld_path_fluid.."rock.png",
+		Def_Temp = 250,
+		Max_Temp = 250,
+		Color_Base = Material_Colors.Silver,
+		Color_Flow = Material_Colors.Silver,
+		Barrel = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

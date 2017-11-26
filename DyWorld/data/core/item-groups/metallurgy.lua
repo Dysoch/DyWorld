@@ -17,6 +17,21 @@ Data_Table_Item_Group = {
 		Main = "metallurgy"
 	},
 	{
+		Name = "melting-recipes-alloy-2",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "melting-recipes-alloy-3",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "melting-recipes-alloy-4",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
 		Name = "casting-recipes",
 		Type = "sub",
 		Main = "metallurgy"

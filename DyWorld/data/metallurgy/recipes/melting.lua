@@ -31,6 +31,35 @@ data:extend(
     subgroup = dy.."sub-recipes",
     order = dy.."molten-rock",
   },
+  {
+    type = "recipe",
+    name = dy.."molten-glass",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-glass"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
+    category = dy.."blast-furnace",
+    energy_required = 5,
+	enabled = false,
+    ingredients =
+    {
+      {type = "item", name = dy.."sand", amount = 10},
+      {type = "fluid", name = dy.."molten-rock", amount = 5, minimum_temperature = 999},
+    },
+    results=
+    {
+      {type = "fluid", name = dy.."molten-glass", amount = 200},
+    },
+    subgroup = dy.."sub-recipes",
+    order = dy.."molten-glass",
+  },
 })
 
 for k,v in pairs(Material_Table) do

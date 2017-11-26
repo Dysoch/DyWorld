@@ -77,6 +77,11 @@ Data_Table_Item_Group = {
 		Main = "items"
 	},
 	{
+		Name = "metal-3-alloy-4",
+		Type = "sub",
+		Main = "items"
+	},
+	{
 		Name = "module-speed",
 		Type = "sub",
 		Main = "items"

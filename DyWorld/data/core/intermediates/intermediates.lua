@@ -30,6 +30,11 @@ local Data_Table = {
 		Icon = dyworld_path_icon.."sand.png",
 		Stack = 500,
 		Subgroup = "intermediates",
+		Recipe = true, --temp
+		Recipe_Without_Tech = true, --temp
+		Recipe_Craft_Time = 2.5, --temp
+		Recipe_Result_Count = 1, --temp
+		Recipe_Ingredients = {{"stone", 1}}, --temp
 	},
 	{
 		Name = "frame",

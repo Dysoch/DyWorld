@@ -109,7 +109,6 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      ,
       {type = "fluid", name = dy.."methane", amount = 35},
       {type = "fluid", name = dy.."water-clean", amount = 250},
       {type = "item", name = dy.."controller", amount = 1},

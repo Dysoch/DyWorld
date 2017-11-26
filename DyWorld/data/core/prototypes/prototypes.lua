@@ -229,6 +229,12 @@ function DyWorld_Fluid(DATA)
 	if DATA.Gas_Temp then
 		result.gas_temperature = DATA.Gas_Temp
 	end
+	if DATA.Pressure then
+		result.pressure_to_speed_ratio = DATA.Pressure
+	end
+	if DATA.Flow then
+		result.flow_to_energy_ratio = DATA.Flow
+	end
 	if DATA.Heat_Capacity then
 		result.heat_capacity = DATA.Heat_Capacity
 	else
@@ -1544,10 +1550,14 @@ data:extend(
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-splitter")
 	end
-	if DATA.Name == "rubber" then
-		data.raw["transport-belt"][dy..DATA.Name.."-transport-belt"].speed = ((DyWorld_Material_Formulas(1, DATA.Table)/426.67) / 2)
-		data.raw["underground-belt"][dy..DATA.Name.."-underground-belt"].speed = ((DyWorld_Material_Formulas(1, DATA.Table)/426.67) / 2)
-		data.raw["splitter"][dy..DATA.Name.."-splitter"].speed = ((DyWorld_Material_Formulas(1, DATA.Table)/426.67) / 2)
+	if (DyWorld_Material_Formulas(1, DATA.Table)) >= 25 then
+		data.raw.recipe[dy..DATA.Name.."-transport-belt"].category = "crafting-with-fluid"
+		data.raw.recipe[dy..DATA.Name.."-underground-belt"].category = "crafting-with-fluid"
+		data.raw.recipe[dy..DATA.Name.."-splitter"].category = "crafting-with-fluid"
+		local result_1 = {type = "fluid", name = "lubricant", amount = 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
 	end
 end
 

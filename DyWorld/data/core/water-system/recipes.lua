@@ -27,9 +27,9 @@ data:extend(
     {
       {type = "fluid", name = dy.."water-clean", amount = 80},
       {type = "fluid", name = dy.."sewage", amount = 20},
-      {type = "fluid", name = dy.."sludge", amount = 7.5},
+      {type = "fluid", name = dy.."sludge", amount = 10},
       {type = "fluid", name = dy.."acid", amount = 5},
-      {type = "fluid", name = "crude-oil", amount = 5},
+      {type = "fluid", name = "crude-oil", amount = 2.5},
       {type = "fluid", name = dy.."methane", amount = 2.5},
     },
     subgroup = dy.."fluid-recipes",
@@ -54,12 +54,12 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = "water", amount = 250},
+      {type = "fluid", name = "water", amount = 100},
     },
     results=
     {
-      {type = "fluid", name = dy.."hydrogen", amount = 250},
-      {type = "fluid", name = dy.."oxygen", amount = 500},
+      {type = "fluid", name = dy.."hydrogen", amount = 100},
+      {type = "fluid", name = dy.."oxygen", amount = 200},
     },
     subgroup = dy.."fluid-recipes",
     order = "water-seperation",
@@ -83,7 +83,7 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."sludge", amount = 250},
+      {type = "fluid", name = dy.."sludge", amount = 2500},
     },
     results=
     {
@@ -220,8 +220,8 @@ data:extend(
       {type = "fluid", name = "heavy-oil", amount = 20},
       {type = "fluid", name = "light-oil", amount = 20},
       {type = "fluid", name = "petroleum-gas", amount = 25},
-      {type = "fluid", name = dy.."sewage", amount = 15},
-      {type = "fluid", name = dy.."acid", amount = 20},
+      {type = "fluid", name = dy.."sewage", amount = 30},
+      {type = "fluid", name = dy.."acid", amount = 5},
     },
     subgroup = dy.."fluid-recipes",
     order = "advanced-clean-oil-processing"

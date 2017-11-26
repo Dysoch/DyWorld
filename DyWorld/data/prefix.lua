@@ -332,7 +332,7 @@ Material_Table = {
 	{ Name = "gold", Table = "Gold", Type = "Basic"},
 	{ Name = "lead", Table = "Lead", Type = "Basic"},
 	{ Name = "tungsten", Table = "Tungsten", Type = "Basic"},
-	-- Simple Alloys
+	-- Simple_Alloys
 	{ Name = "steel", Table = "Steel", Type = "Alloy"},
 	-- Alloys
 	{ Name = "stainless-steel", Table = "Stainless_Steel", Type = "Alloy"},
@@ -340,7 +340,7 @@ Material_Table = {
 	{ Name = "bronze", Table = "Bronze", Type = "Alloy"},
 	{ Name = "copper-tungsten", Table = "Copper_Tungsten", Type = "Alloy"},
 	{ Name = "copper-hydride", Table = "Copper_Hydride", Type = "Alloy"},
-	-- Complex Alloys
+	-- Complex_Alloys
 	{ Name = "elinvar", Table = "Elinvar", Type = "Alloy"},
-	-- Super Alloys
+	-- Super_Alloys
 }

@@ -84,7 +84,7 @@ local Data_Table = {
 	},
 	{
 		Name = "science-fluid-1",
-		Icon = dyworld_path_fluid.."blood.png",
+		Icon = dyworld_path_fluid.."science-1.png",
 		Def_Temp = 50,
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
@@ -93,7 +93,7 @@ local Data_Table = {
 	},
 	{
 		Name = "science-fluid-2",
-		Icon = dyworld_path_fluid.."blood.png",
+		Icon = dyworld_path_fluid.."science-2.png",
 		Def_Temp = 50,
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
@@ -102,7 +102,7 @@ local Data_Table = {
 	},
 	{
 		Name = "science-fluid-3",
-		Icon = dyworld_path_fluid.."blood.png",
+		Icon = dyworld_path_fluid.."science-3.png",
 		Def_Temp = 50,
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
@@ -111,7 +111,7 @@ local Data_Table = {
 	},
 	{
 		Name = "science-fluid-4",
-		Icon = dyworld_path_fluid.."blood.png",
+		Icon = dyworld_path_fluid.."science-4.png",
 		Def_Temp = 50,
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
@@ -120,7 +120,7 @@ local Data_Table = {
 	},
 	{
 		Name = "science-fluid-5",
-		Icon = dyworld_path_fluid.."blood.png",
+		Icon = dyworld_path_fluid.."science-5.png",
 		Def_Temp = 50,
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
@@ -129,7 +129,7 @@ local Data_Table = {
 	},
 	{
 		Name = "science-fluid-6",
-		Icon = dyworld_path_fluid.."blood.png",
+		Icon = dyworld_path_fluid.."science-6.png",
 		Def_Temp = 50,
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},

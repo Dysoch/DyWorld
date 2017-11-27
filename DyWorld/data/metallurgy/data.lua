@@ -2,6 +2,9 @@
 -- Edits
 require("data.metallurgy.edits.recipes")
 
+-- Alloy Items
+require("data.metallurgy.items.alloys")
+
 -- Fluids
 require("data.metallurgy.fluids.fluids")
 

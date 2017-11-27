@@ -58,6 +58,8 @@ Material_Colors = {
 	Billon = {r=72, g=61, b=139},
 	Copper_Tungsten = {r=255, g=200, b=200},
 	Copper_Hydride = {r=255, g=160, b=120},
+	
+	Copilinvar_Tungstate = {r=255, g=160, b=120},
 }
 
 -- Material Formulas to calculate everything
@@ -143,6 +145,7 @@ Materials = {
 		Melting_Point = nil,
 		Boiling_Point = nil,
 	},
+	-- Basic
 	Iron = {
 		Density = 7.874,
 		Hardness = 4,
@@ -233,6 +236,7 @@ Materials = {
 		Melting_Point = 321,
 		Boiling_Point = 767,
 	},
+	-- Simple Alloy
 	Steel = {
 		Density = 11.81,
 		Hardness = 6,
@@ -243,6 +247,7 @@ Materials = {
 		Melting_Point = 1425,
 		Boiling_Point = 2862,
 	},
+	-- Alloy
 	Stainless_Steel = {
 		-- mix of steel and chromium
 		Density = 19,
@@ -276,17 +281,6 @@ Materials = {
 		Melting_Point = 1023,
 		Boiling_Point = 2387,
 	},
-	Elinvar = {
-		-- mix of iron, chromium and nickel
-		Density = 15.06,
-		Hardness = 12.5,
-		Elasticity = 64.5,
-		Conductivity = 6.14,
-		Strength_Yield = 290,
-		Strength_Ultimate = 480,
-		Melting_Point = 1699,
-		Boiling_Point = 2766,
-	},
 	Copper_Tungsten = {
 		-- mix of copper and tungsten
 		Density = 28.19,
@@ -308,6 +302,30 @@ Materials = {
 		Strength_Ultimate = 330,
 		Melting_Point = 1626,
 		Boiling_Point = 3843,
+	},
+	-- Compex Alloy
+	Elinvar = {
+		-- mix of iron, chromium and nickel
+		Density = 15.06,
+		Hardness = 12.5,
+		Elasticity = 64.5,
+		Conductivity = 6.14,
+		Strength_Yield = 290,
+		Strength_Ultimate = 480,
+		Melting_Point = 1699,
+		Boiling_Point = 2766,
+	},
+	-- Super Alloy
+	Copilinvar_Tungstate = {
+		-- mix of Elinvar and Copper_Tungsten
+		Density = 43.25,
+		Hardness = 23,
+		Elasticity = 122,
+		Conductivity = 13.94,
+		Strength_Yield = 860,
+		Strength_Ultimate = 1700,
+		Melting_Point = 1976,
+		Boiling_Point = 3274,
 	},
 }
 
@@ -332,15 +350,16 @@ Material_Table = {
 	{ Name = "gold", Table = "Gold", Type = "Basic"},
 	{ Name = "lead", Table = "Lead", Type = "Basic"},
 	{ Name = "tungsten", Table = "Tungsten", Type = "Basic"},
-	-- Simple_Alloys
-	{ Name = "steel", Table = "Steel", Type = "Alloy"},
-	-- Alloys
+	-- Simple_Alloy
+	{ Name = "steel", Table = "Steel", Type = "Simple_Alloy"},
+	-- Alloy
 	{ Name = "stainless-steel", Table = "Stainless_Steel", Type = "Alloy"},
 	{ Name = "billon", Table = "Billon", Type = "Alloy"},
 	{ Name = "bronze", Table = "Bronze", Type = "Alloy"},
 	{ Name = "copper-tungsten", Table = "Copper_Tungsten", Type = "Alloy"},
 	{ Name = "copper-hydride", Table = "Copper_Hydride", Type = "Alloy"},
-	-- Complex_Alloys
-	{ Name = "elinvar", Table = "Elinvar", Type = "Alloy"},
-	-- Super_Alloys
+	-- Complex_Alloy
+	{ Name = "elinvar", Table = "Elinvar", Type = "Complex_Alloy"},
+	-- Super_Alloy
+	--{ Name = "copilinvar-tungstate", Table = "Copilinvar_Tungstate", Type = "Super_Alloy"},
 }

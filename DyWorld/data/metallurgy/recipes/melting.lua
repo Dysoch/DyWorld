@@ -82,11 +82,11 @@ for k,v in pairs(Material_Table) do
 			  },
 			},
 			category = dy.."blast-furnace",
-			energy_required = 0.5,
+			energy_required = 1.5,
 			enabled = false,
 			ingredients =
 			{
-			  {type = "fluid", name = dy.."molten-rock", amount = 10, minimum_temperature = Materials[v.Table].Melting_Point},
+			  {type = "fluid", name = dy.."molten-rock", amount = 5, minimum_temperature = Materials[v.Table].Melting_Point},
 			  {type = "item", name = v.Name.."-ore", amount = 1},
 			},
 			results=

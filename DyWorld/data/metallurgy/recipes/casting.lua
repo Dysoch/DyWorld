@@ -2,7 +2,7 @@ require "data/prefix"
 
 	
 for k,v in pairs(Material_Table) do
-	if v.Type == "Basic" or v.Type == "Alloy" then
+	if v.Type == "Basic" or v.Type == "Simple_Alloy" or v.Type == "Alloy" or v.Type == "Complex_Alloy" or v.Type == "Super_Alloy" then
 		data:extend(
 		{
 		  {
@@ -45,7 +45,7 @@ for k,v in pairs(Material_Table) do
 		  },
 		})
 		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
-	elseif v.Type == "Alloy" then
+	elseif v.Type == "Simple_Alloy" then
 		data:extend(
 		{
 		  {
@@ -59,6 +59,66 @@ for k,v in pairs(Material_Table) do
 			{
 			  count = math.floor(Materials[v.Table].Density * 15),
 			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
+			  time =  30
+			},
+			order = dy..v.Name.."-advanced-melting",
+			upgrade = true,
+		  },
+		})
+	elseif v.Type == "Alloy" then
+		data:extend(
+		{
+		  {
+			type = "technology",
+			name = dy..v.Name.."-advanced-melting",
+			icons = data.raw.fluid[dy.."molten-"..v.Name].icons,
+			localised_name = {"looped-name.advanced-mixing", {"looped-name."..v.Name}},
+			effects = {{type = "unlock-recipe", recipe = dy..v.Name.."-plate"}},
+			prerequisites = {dy.."ore-smelting-3"},
+			unit =
+			{
+			  count = math.floor(Materials[v.Table].Density * 25),
+			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}},
+			  time =  30
+			},
+			order = dy..v.Name.."-advanced-melting",
+			upgrade = true,
+		  },
+		})
+	elseif v.Type == "Complex_Alloy" then
+		data:extend(
+		{
+		  {
+			type = "technology",
+			name = dy..v.Name.."-advanced-melting",
+			icons = data.raw.fluid[dy.."molten-"..v.Name].icons,
+			localised_name = {"looped-name.advanced-mixing", {"looped-name."..v.Name}},
+			effects = {{type = "unlock-recipe", recipe = dy..v.Name.."-plate"}},
+			prerequisites = {dy.."ore-smelting-4"},
+			unit =
+			{
+			  count = math.floor(Materials[v.Table].Density * 50),
+			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}},
+			  time =  30
+			},
+			order = dy..v.Name.."-advanced-melting",
+			upgrade = true,
+		  },
+		})
+	elseif v.Type == "Super_Alloy" then
+		data:extend(
+		{
+		  {
+			type = "technology",
+			name = dy..v.Name.."-advanced-melting",
+			icons = data.raw.fluid[dy.."molten-"..v.Name].icons,
+			localised_name = {"looped-name.advanced-mixing", {"looped-name."..v.Name}},
+			effects = {{type = "unlock-recipe", recipe = dy..v.Name.."-plate"}},
+			prerequisites = {dy.."ore-smelting-5"},
+			unit =
+			{
+			  count = math.floor(Materials[v.Table].Density * 250),
+			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}},
 			  time =  30
 			},
 			order = dy..v.Name.."-advanced-melting",

@@ -5,6 +5,6 @@
 	"title": "DyWorld",
 	"author": "Dysoch",
 	"homepage": "https://www.facebook.com/DyWorld-1895036517492410/",
-	"description": "DyWorld, the successor of DyTech. Adding new systems, items, fluids, machines and enemies!!!! The Metal system gives items like pipes and transport a real life feeling (metal property specific capacity/speed/range) and the metallurgic system gives a new way to smelt ores. The Attribute system governs you! This means whatever you do, you get stronger from it!",
+	"description": "DyWorld, the successor of DyTech. Adding new systems, items, fluids, machines and enemies!!!! The Material System gives items like pipes and transport a real life feeling (metal property specific capacity/speed/range) and the Metallurgic System gives a new way to smelt ores. The Attribute System governs you! This means whatever you do, you get stronger from it!",
 	"dependencies": ["base"]
 }

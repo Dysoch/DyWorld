@@ -654,485 +654,6 @@ function DyWorld_Entity_Furnace_Electric(DATA, NMB)
   return result
 end
 
-function DyWorld_Entity_Construction_Robot(DATA, NMB)
-  local result =
-  {
-    type = "construction-robot",
-    name = dy..DATA.Name..tostring(NMB),
-	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
-    icons =
-	{
-	  {
-		icon = "__base__/graphics/icons/construction-robot.png",
-		tint = Color_Tier[NMB],
-	  },
-	},
-    flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {hardness = (0.1*NMB), mining_time = (0.1*NMB), result = dy..DATA.Name..tostring(NMB)},
-    max_health = (DATA.Health*NMB),
-    resistances = { { type = "fire", percent = 85 } },
-    collision_box = {{0, 0}, {0, 0}},
-    selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
-    max_payload_size = 1,
-    speed = (DATA.Speed*NMB),
-    transfer_distance = 0.5,
-    max_energy = tostring((DATA.Max_Energy*NMB)).."MJ",
-    energy_per_tick = tostring((DATA.Tick_Energy/NMB)).."kJ",
-    speed_multiplier_when_out_of_energy = 0.2,
-    energy_per_move = tostring(DATA.Move_Energy).."kJ",
-    min_to_charge = 0.2,
-    max_to_charge = 0.95,
-    working_light = {intensity = 0.8, size = 3, color = {r = 0.8, g = 0.8, b = 0.8}},
-    idle =
-    {
-      filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
-      priority = "high",
-      line_length = 16,
-      width = 32,
-      height = 36,
-      frame_count = 1,
-      shift = {0, -0.15625},
-      direction_count = 16,
-	  tint = Color_Tier[NMB],
-    },
-    in_motion =
-    {
-      filename = "__base__/graphics/entity/construction-robot/construction-robot.png",
-      priority = "high",
-      line_length = 16,
-      width = 32,
-      height = 36,
-      frame_count = 1,
-      shift = {0, -0.15625},
-      direction_count = 16,
-      y = 36,
-	  tint = Color_Tier[NMB],
-    },
-    shadow_idle =
-    {
-      filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
-      priority = "high",
-      line_length = 16,
-      width = 50,
-      height = 24,
-      frame_count = 1,
-      shift = {1.09375, 0.59375},
-      direction_count = 16
-    },
-    shadow_in_motion =
-    {
-      filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
-      priority = "high",
-      line_length = 16,
-      width = 50,
-      height = 24,
-      frame_count = 1,
-      shift = {1.09375, 0.59375},
-      direction_count = 16
-    },
-    working =
-    {
-      filename = "__base__/graphics/entity/construction-robot/construction-robot-working.png",
-      priority = "high",
-      line_length = 2,
-      width = 28,
-      height = 36,
-      frame_count = 2,
-      shift = {0, -0.15625},
-      direction_count = 16,
-      animation_speed = 0.3,
-	  tint = Color_Tier[NMB],
-    },
-    shadow_working =
-    {
-      stripes = util.multiplystripes(2,
-      {
-        {
-          filename = "__base__/graphics/entity/construction-robot/construction-robot-shadow.png",
-          width_in_frames = 16,
-          height_in_frames = 1,
-        }
-      }),
-      priority = "high",
-      width = 50,
-      height = 24,
-      frame_count = 2,
-      shift = {1.09375, 0.59375},
-      direction_count = 16
-    },
-    smoke =
-    {
-      filename = "__base__/graphics/entity/smoke-construction/smoke-01.png",
-      width = 39,
-      height = 32,
-      frame_count = 19,
-      line_length = 19,
-      shift = {0.078125, -0.15625},
-      animation_speed = 0.3,
-    },
-    sparks =
-    {
-      {
-        filename = "__base__/graphics/entity/sparks/sparks-01.png",
-        width = 39,
-        height = 34,
-        frame_count = 19,
-        line_length = 19,
-        shift = {-0.109375, 0.3125},
-        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
-        animation_speed = 0.3,
-      },
-      {
-        filename = "__base__/graphics/entity/sparks/sparks-02.png",
-        width = 36,
-        height = 32,
-        frame_count = 19,
-        line_length = 19,
-        shift = {0.03125, 0.125},
-        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
-        animation_speed = 0.3,
-      },
-      {
-        filename = "__base__/graphics/entity/sparks/sparks-03.png",
-        width = 42,
-        height = 29,
-        frame_count = 19,
-        line_length = 19,
-        shift = {-0.0625, 0.203125},
-        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
-        animation_speed = 0.3,
-      },
-      {
-        filename = "__base__/graphics/entity/sparks/sparks-04.png",
-        width = 40,
-        height = 35,
-        frame_count = 19,
-        line_length = 19,
-        shift = {-0.0625, 0.234375},
-        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
-        animation_speed = 0.3,
-      },
-      {
-        filename = "__base__/graphics/entity/sparks/sparks-05.png",
-        width = 39,
-        height = 29,
-        frame_count = 19,
-        line_length = 19,
-        shift = {-0.109375, 0.171875},
-        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
-        animation_speed = 0.3,
-      },
-      {
-        filename = "__base__/graphics/entity/sparks/sparks-06.png",
-        width = 44,
-        height = 36,
-        frame_count = 19,
-        line_length = 19,
-        shift = {0.03125, 0.3125},
-        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
-        animation_speed = 0.3,
-      },
-    },
-    working_sound = flying_robot_sounds(),
-    cargo_centered = {0.0, 0.2},
-    construction_vector = {0.30, 0.22},
-  }
-  return result
-end
-
-function DyWorld_Entity_Logistic_Robot(DATA, NMB)
-  local result =
-  {
-    type = "logistic-robot",
-    name = dy..DATA.Name..tostring(NMB),
-	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
-    icons =
-	{
-	  {
-		icon = "__base__/graphics/icons/logistic-robot.png",
-		tint = Color_Tier[NMB],
-	  },
-	},
-    flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {hardness = (0.1*NMB), mining_time = (0.1*NMB), result = dy..DATA.Name..tostring(NMB)},
-    max_health = (DATA.Health*NMB),
-    resistances = { { type = "fire", percent = 85 } },
-    collision_box = {{0, 0}, {0, 0}},
-    selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
-    max_payload_size = 1,
-    speed = (DATA.Speed*NMB),
-    transfer_distance = 0.5,
-    max_energy = tostring((DATA.Max_Energy*NMB)).."MJ",
-    energy_per_tick = tostring((DATA.Tick_Energy/NMB)).."kJ",
-    speed_multiplier_when_out_of_energy = 0.2,
-    energy_per_move = tostring(DATA.Move_Energy).."kJ",
-    min_to_charge = 0.2,
-    max_to_charge = 0.95,
-    working_light = {intensity = 0.8, size = 3, color = {r = 0.8, g = 0.8, b = 0.8}},
-    idle =
-    {
-      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
-      priority = "high",
-      line_length = 16,
-      width = 41,
-      height = 42,
-      frame_count = 1,
-      shift = {0.015625, -0.09375},
-      direction_count = 16,
-      y = 42,
-	  tint = Color_Tier[NMB],
-    },
-    idle_with_cargo =
-    {
-      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
-      priority = "high",
-      line_length = 16,
-      width = 41,
-      height = 42,
-      frame_count = 1,
-      shift = {0.015625, -0.09375},
-      direction_count = 16,
-	  tint = Color_Tier[NMB],
-    },
-    in_motion =
-    {
-      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
-      priority = "high",
-      line_length = 16,
-      width = 41,
-      height = 42,
-      frame_count = 1,
-      shift = {0.015625, -0.09375},
-      direction_count = 16,
-      y = 126,
-	  tint = Color_Tier[NMB],
-    },
-    in_motion_with_cargo =
-    {
-      filename = "__base__/graphics/entity/logistic-robot/logistic-robot.png",
-      priority = "high",
-      line_length = 16,
-      width = 41,
-      height = 42,
-      frame_count = 1,
-      shift = {0.015625, -0.09375},
-      direction_count = 16,
-      y = 84,
-	  tint = Color_Tier[NMB],
-    },
-    shadow_idle =
-    {
-      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
-      priority = "high",
-      line_length = 16,
-      width = 59,
-      height = 23,
-      frame_count = 1,
-      shift = {0.96875, 0.609375},
-      direction_count = 16,
-      y = 23
-    },
-    shadow_idle_with_cargo =
-    {
-      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
-      priority = "high",
-      line_length = 16,
-      width = 59,
-      height = 23,
-      frame_count = 1,
-      shift = {0.96875, 0.609375},
-      direction_count = 16
-    },
-    shadow_in_motion =
-    {
-      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
-      priority = "high",
-      line_length = 16,
-      width = 59,
-      height = 23,
-      frame_count = 1,
-      shift = {0.96875, 0.609375},
-      direction_count = 16,
-      y = 23
-    },
-    shadow_in_motion_with_cargo =
-    {
-      filename = "__base__/graphics/entity/logistic-robot/logistic-robot-shadow.png",
-      priority = "high",
-      line_length = 16,
-      width = 59,
-      height = 23,
-      frame_count = 1,
-      shift = {0.96875, 0.609375},
-      direction_count = 16
-    },
-    working_sound = flying_robot_sounds(),
-    cargo_centered = {0.0, 0.2},
-  }
-  return result
-end
-
-function DyWorld_Entity_Roboport(DATA, NMB)
-  local result =
-  {
-    type = "roboport",
-    name = dy..DATA.Name..tostring(NMB),
-	localised_name = {"looped-name."..DATA.Name, (tostring(NMB+1))},
-    icons =
-	{
-	  {
-		icon = "__base__/graphics/icons/roboport.png",
-		tint = Color_Tier[NMB],
-	  },
-	},
-    flags = {"placeable-player", "player-creation"},
-    minable = {hardness = (0.2*NMB), mining_time = (0.5*NMB), result = dy..DATA.Name..tostring(NMB)},
-    max_health = (DATA.Health*NMB),
-    corpse = "big-remnants",
-    collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
-    selection_box = {{-2, -2}, {2, 2}},
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 60
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
-    dying_explosion = "medium-explosion",
-    energy_source =
-    {
-      type = "electric",
-      usage_priority = "secondary-input",
-      input_flow_limit = tostring(5*(NMB+1)).."MW",
-      buffer_capacity = tostring(100*(NMB+1)).."MJ"
-    },
-    recharge_minimum = tostring(40*(NMB+1)).."MJ",
-    energy_usage = tostring(50*(NMB+1)).."kW",
-    -- per one charge slot
-    charging_energy = tostring(1000*(NMB+1)).."kW",
-    logistics_radius = (DATA.Radius_Logistic*(NMB+1)), --25
-    construction_radius = (DATA.Radius_Construction*(NMB+1)), --55
-    charge_approach_distance = 5 + NMB,
-    robot_slots_count = 7 + NMB,
-    material_slots_count = 7 + NMB,
-    stationing_offset = {0, 0},
-    charging_offsets =
-    {
-      {-1.5, -0.5}, {1.5, -0.5}, {1.5, 1.5}, {-1.5, 1.5},
-    },
-    base =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-base.png",
-      width = 143,
-      height = 135,
-      shift = {0.5, 0.25},
-	  tint = Color_Tier[NMB],
-    },
-    base_patch =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-base-patch.png",
-      priority = "medium",
-      width = 69,
-      height = 50,
-      frame_count = 1,
-      shift = {0.03125, 0.203125},
-	  tint = Color_Tier[NMB],
-    },
-    base_animation =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-base-animation.png",
-      priority = "medium",
-      width = 42,
-      height = 31,
-      frame_count = 8,
-      animation_speed = 0.5,
-      shift = {-0.5315, -1.9375},
-	  tint = Color_Tier[NMB],
-    },
-    door_animation_up =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-door-up.png",
-      priority = "medium",
-      width = 52,
-      height = 20,
-      frame_count = 16,
-      shift = {0.015625, -0.890625}
-    },
-    door_animation_down =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-door-down.png",
-      priority = "medium",
-      width = 52,
-      height = 22,
-      frame_count = 16,
-      shift = {0.015625, -0.234375}
-    },
-    recharging_animation =
-    {
-      filename = "__base__/graphics/entity/roboport/roboport-recharging.png",
-      priority = "high",
-      width = 37,
-      height = 35,
-      frame_count = 16,
-      scale = 1.5,
-      animation_speed = 0.5
-    },
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-      sound = { filename = "__base__/sound/roboport-working.ogg", volume = 0.6 },
-      max_sounds_per_type = 3,
-      audible_distance_modifier = 0.5,
-      probability = 1 / (5 * 60) -- average pause between the sound is 5 seconds
-    },
-    recharging_light = {intensity = 0.4, size = 5, color = {r = 1.0, g = 1.0, b = 1.0}},
-    request_to_open_door_timeout = 15,
-    spawn_and_station_height = -0.1,
-
-    draw_logistic_radius_visualization = true,
-    draw_construction_radius_visualization = true,
-
-    open_door_trigger_effect =
-    {
-      {
-        type = "play-sound",
-        sound = { filename = "__base__/sound/roboport-door.ogg", volume = 1.2 }
-      },
-    },
-    close_door_trigger_effect =
-    {
-      {
-        type = "play-sound",
-        sound = { filename = "__base__/sound/roboport-door.ogg", volume = 0.75 }
-      },
-    },
-    circuit_wire_connection_point =
-    {
-      shadow =
-      {
-        red = {1.17188, 1.98438},
-        green = {1.04688, 2.04688}
-      },
-      wire =
-      {
-        red = {0.78125, 1.375},
-        green = {0.78125, 1.53125}
-      }
-    },
-    circuit_connector_sprites = get_circuit_connector_sprites({0.59375, 1.3125}, nil, 18),
-    circuit_wire_max_distance = 9 + NMB,
-    default_available_logistic_output_signal = {type = "virtual", name = "signal-X"},
-    default_total_logistic_output_signal = {type = "virtual", name = "signal-Y"},
-    default_available_construction_output_signal = {type = "virtual", name = "signal-Z"},
-    default_total_construction_output_signal = {type = "virtual", name = "signal-T"},
-  }
-  return result
-end
-
 -- START OF MATERIAL SYSTEM!
 
 function DyWorld_Transport_Belt(DATA)
@@ -1545,10 +1066,22 @@ data:extend(
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-splitter")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-splitter")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-transport-belt")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-underground-belt")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-splitter")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-transport-belt")
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-underground-belt")
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-splitter")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-transport-belt")
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-underground-belt")
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-splitter")
 	end
 	if (DyWorld_Material_Formulas(1, DATA.Table)) >= 25 then
 		data.raw.recipe[dy..DATA.Name.."-transport-belt"].category = "crafting-with-fluid"
@@ -1804,6 +1337,25 @@ data:extend(
 		local result_2 = {DATA.Name.."-plate", 4}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].ingredients, result_2)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-pipe"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-pipe-to-ground")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-pipe-to-ground")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-pipe-to-ground")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-pipe-to-ground")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pipe-to-ground")
 	end
 end
 
@@ -2229,10 +1781,22 @@ data:extend(
 		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-gun-turret")
 		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-shotgun-turret")
 		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-cannon-turret")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-gun-turret")
-		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-shotgun-turret")
+		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-shotgun-turret")
 		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-cannon-turret")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-gun-turret")
+		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-shotgun-turret")
+		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-cannon-turret")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-gun-turret")
+		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-shotgun-turret")
+		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-cannon-turret")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-gun-turret")
+		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-shotgun-turret")
+		DyWorld_Add_To_Tech("turrets-6", dy..DATA.Name.."-cannon-turret")
 	end
 end
 
@@ -2886,13 +2450,34 @@ data:extend(
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-shotgun-piercing-ammo")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-cannon-shell")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-cannon-explosive-shell")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-basic-ammo")
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-shotgun-ammo")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-basic-piercing-ammo")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-shotgun-piercing-ammo")
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-cannon-shell")
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-cannon-explosive-shell")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-basic-ammo")
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-shotgun-ammo")
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-basic-piercing-ammo")
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-shotgun-piercing-ammo")
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-cannon-shell")
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-cannon-explosive-shell")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-basic-ammo")
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-shotgun-ammo")
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-basic-piercing-ammo")
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-shotgun-piercing-ammo")
+		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-cannon-shell")
+		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-cannon-explosive-shell")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-basic-ammo")
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-shotgun-ammo")
+		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-basic-piercing-ammo")
+		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-shotgun-piercing-ammo")
+		DyWorld_Add_To_Tech("military-7", dy..DATA.Name.."-cannon-shell")
+		DyWorld_Add_To_Tech("military-7", dy..DATA.Name.."-cannon-explosive-shell")
 	end
 end
 
@@ -3156,9 +2741,18 @@ data:extend(
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-grenade")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-cluster-grenade")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-grenade")
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-cluster-grenade")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-grenade")
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-cluster-grenade")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-grenade")
+		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-cluster-grenade")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-grenade")
+		DyWorld_Add_To_Tech("military-7", dy..DATA.Name.."-cluster-grenade")
 	end
 end
 
@@ -3693,6 +3287,25 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 8}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-pump"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-offshore-pump"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-pump")
+		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-offshore-pump")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-pump")
+		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-offshore-pump")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-pump")
+		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-offshore-pump")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-pump")
+		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-offshore-pump")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pump")
+		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-offshore-pump")
 	end
 end
 
@@ -4963,13 +4576,34 @@ data:extend(
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-inserter")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-super-inserter")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-basic-inserter")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-long-inserter")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-filter-inserter")
-		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-inserter")
-		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-filter-inserter")
-		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-super-inserter")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-stack-inserter")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-stack-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-super-inserter")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-basic-inserter")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-long-inserter")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-stack-inserter")
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-stack-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-super-inserter")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-basic-inserter")
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-long-inserter")
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-stack-inserter")
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-stack-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-6", dy..DATA.Name.."-super-inserter")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-basic-inserter")
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-long-inserter")
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-6", dy..DATA.Name.."-stack-inserter")
+		DyWorld_Add_To_Tech("logistics-6", dy..DATA.Name.."-stack-filter-inserter")
+		DyWorld_Add_To_Tech("logistics-7", dy..DATA.Name.."-super-inserter")
 	end
 end
 
@@ -5171,6 +4805,19 @@ data:extend(
 	else
 		local result_1 = {DATA.Name.."-plate", 40}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-storage-tank"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-storage-tank")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-storage-tank")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-storage-tank")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-storage-tank")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-storage-tank")
 	end
 end
 
@@ -5450,9 +5097,18 @@ data:extend(
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("electric-energy-distribution-1", dy..DATA.Name.."-power-pole")
 		DyWorld_Add_To_Tech("electric-energy-distribution-2", dy..DATA.Name.."-power-relay")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("electric-energy-distribution-2", dy..DATA.Name.."-power-pole")
 		DyWorld_Add_To_Tech("electric-energy-distribution-3", dy..DATA.Name.."-power-relay")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("electric-energy-distribution-3", dy..DATA.Name.."-power-pole")
+		DyWorld_Add_To_Tech("electric-energy-distribution-4", dy..DATA.Name.."-power-relay")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("electric-energy-distribution-4", dy..DATA.Name.."-power-pole")
+		DyWorld_Add_To_Tech("electric-energy-distribution-5", dy..DATA.Name.."-power-relay")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("electric-energy-distribution-5", dy..DATA.Name.."-power-pole")
+		DyWorld_Add_To_Tech("electric-energy-distribution-6", dy..DATA.Name.."-power-relay")
 	end
 end
 
@@ -5927,8 +5583,25 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-laser-turret"].ingredients, result_1)
 	end
-	DyWorld_Add_To_Tech("laser-turrets", dy..DATA.Name.."-laser-turret")
-	DyWorld_Add_To_Tech("laser-turrets", dy..DATA.Name.."-shotgun-laser-turret")
+	if DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech("laser-turrets", dy..DATA.Name.."-laser-turret")
+		DyWorld_Add_To_Tech("laser-turrets-2", dy..DATA.Name.."-shotgun-laser-turret")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("laser-turrets-2", dy..DATA.Name.."-laser-turret")
+		DyWorld_Add_To_Tech("laser-turrets-3", dy..DATA.Name.."-shotgun-laser-turret")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("laser-turrets-3", dy..DATA.Name.."-laser-turret")
+		DyWorld_Add_To_Tech("laser-turrets-4", dy..DATA.Name.."-shotgun-laser-turret")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("laser-turrets-4", dy..DATA.Name.."-laser-turret")
+		DyWorld_Add_To_Tech("laser-turrets-5", dy..DATA.Name.."-shotgun-laser-turret")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("laser-turrets-5", dy..DATA.Name.."-laser-turret")
+		DyWorld_Add_To_Tech("laser-turrets-6", dy..DATA.Name.."-shotgun-laser-turret")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("laser-turrets-6", dy..DATA.Name.."-laser-turret")
+		DyWorld_Add_To_Tech("laser-turrets-7", dy..DATA.Name.."-shotgun-laser-turret")
+	end
 end
 
 function DyWorld_Mining_Tool(DATA)
@@ -5989,8 +5662,14 @@ data:extend(
 		data.raw.recipe[dy..DATA.Name.."-mining-tool"].enabled = true
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech(dy.."mining-tools-1", dy..DATA.Name.."-mining-tool")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech(dy.."mining-tools-2", dy..DATA.Name.."-mining-tool")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech(dy.."mining-tools-3", dy..DATA.Name.."-mining-tool")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech(dy.."mining-tools-4", dy..DATA.Name.."-mining-tool")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech(dy.."mining-tools-5", dy..DATA.Name.."-mining-tool")
 	end
 end
 
@@ -6039,8 +5718,14 @@ data:extend(
 		data.raw.recipe[dy..DATA.Name.."-repair-tool"].enabled = true
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech(dy.."repair-tools-1", dy..DATA.Name.."-repair-tool")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech(dy.."repair-tools-2", dy..DATA.Name.."-repair-tool")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech(dy.."repair-tools-3", dy..DATA.Name.."-repair-tool")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech(dy.."repair-tools-4", dy..DATA.Name.."-repair-tool")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech(dy.."repair-tools-5", dy..DATA.Name.."-repair-tool")
 	end
 end
 
@@ -6124,8 +5809,14 @@ data:extend(
 		DyWorld_Add_To_Tech("solar-energy", dy..DATA.Name.."-solar-normal")
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("solar-energy-2", dy..DATA.Name.."-solar-normal")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("solar-energy-3", dy..DATA.Name.."-solar-normal")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("solar-energy-4", dy..DATA.Name.."-solar-normal")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("solar-energy-5", dy..DATA.Name.."-solar-normal")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("solar-energy-6", dy..DATA.Name.."-solar-normal")
 	end
 end
 
@@ -6265,8 +5956,14 @@ data:extend(
 		DyWorld_Add_To_Tech("electric-energy-accumulators-1", dy..DATA.Name.."-accumulator-normal")
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-2", dy..DATA.Name.."-accumulator-normal")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-3", dy..DATA.Name.."-accumulator-normal")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("electric-energy-accumulators-4", dy..DATA.Name.."-accumulator-normal")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("electric-energy-accumulators-5", dy..DATA.Name.."-accumulator-normal")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("electric-energy-accumulators-6", dy..DATA.Name.."-accumulator-normal")
 	end
 end
 
@@ -7209,8 +6906,14 @@ data:extend(
 		data.raw.recipe[dy..DATA.Name.."-electric-drill"].enabled = true
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech(dy.."electric-miners-1", dy..DATA.Name.."-electric-drill")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech(dy.."electric-miners-2", dy..DATA.Name.."-electric-drill")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech(dy.."electric-miners-3", dy..DATA.Name.."-electric-drill")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech(dy.."electric-miners-4", dy..DATA.Name.."-electric-drill")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech(dy.."electric-miners-5", dy..DATA.Name.."-electric-drill")
 	end
 end
 
@@ -7727,8 +7430,14 @@ data:extend(
 		data.raw.recipe[dy..DATA.Name.."-assembling-electric"].enabled = true
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("automation", dy..DATA.Name.."-assembling-electric")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-assembling-electric")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-assembling-electric")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("automation-4", dy..DATA.Name.."-assembling-electric")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("automation-5", dy..DATA.Name.."-assembling-electric")
 	end
 end
 
@@ -7834,8 +7543,14 @@ data:extend(
 		data.raw.recipe[dy..DATA.Name.."-chest"].enabled = true
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("automation", dy..DATA.Name.."-chest")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-chest")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-chest")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("automation-4", dy..DATA.Name.."-chest")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("automation-5", dy..DATA.Name.."-chest")
 	end
 end
 
@@ -8053,10 +7768,22 @@ data:extend(
 		local result_1 = {"electronic-circuit", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-warehouse-chest")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		local result_1 = {"advanced-circuit", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-warehouse-chest")
+	elseif DATA.Type == "Alloy" then
+		local result_1 = {"processing-unit", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
+		DyWorld_Add_To_Tech("automation-4", dy..DATA.Name.."-warehouse-chest")
+	elseif DATA.Type == "Complex_Alloy" then
+		local result_1 = {dy.."processing-advanced", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
+		DyWorld_Add_To_Tech("automation-5", dy..DATA.Name.."-warehouse-chest")
+	elseif DATA.Type == "Super_Alloy" then
+		local result_1 = {dy.."processing-logic", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
+		DyWorld_Add_To_Tech("automation-6", dy..DATA.Name.."-warehouse-chest")
 	end
 end
 
@@ -8265,11 +7992,26 @@ data:extend(
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("construction-robotics-2", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-2", dy..DATA.Name.."-roboport")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		local result_1 = {"processing-unit", 3}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 		DyWorld_Add_To_Tech("construction-robotics-3", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-3", dy..DATA.Name.."-roboport")
+	elseif DATA.Type == "Alloy" then
+		local result_1 = {dy.."processing-advanced", 3}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
+		DyWorld_Add_To_Tech("construction-robotics-4", dy..DATA.Name.."-roboport")
+		DyWorld_Add_To_Tech("logistic-robotics-4", dy..DATA.Name.."-roboport")
+	elseif DATA.Type == "Complex_Alloy" then
+		local result_1 = {dy.."processing-advanced", 6}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
+		DyWorld_Add_To_Tech("construction-robotics-5", dy..DATA.Name.."-roboport")
+		DyWorld_Add_To_Tech("logistic-robotics-5", dy..DATA.Name.."-roboport")
+	elseif DATA.Type == "Super_Alloy" then
+		local result_1 = {dy.."processing-logic", 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
+		DyWorld_Add_To_Tech("construction-robotics-6", dy..DATA.Name.."-roboport")
+		DyWorld_Add_To_Tech("logistic-robotics-6", dy..DATA.Name.."-roboport")
 	end
 end
 
@@ -8445,12 +8187,30 @@ data:extend(
 		local result_1 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
 		DyWorld_Add_To_Tech("logistic-robotics-2", dy..DATA.Name.."-logistic-robot")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		local result_1 = {"processing-unit", 3}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("logistic-robotics-3", dy..DATA.Name.."-logistic-robot")
+	elseif DATA.Type == "Alloy" then
+		local result_1 = {dy.."processing-advanced", 3}
+		local result_2 = {dy.."logistic-unit", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_2)
+		DyWorld_Add_To_Tech("logistic-robotics-4", dy..DATA.Name.."-logistic-robot")
+	elseif DATA.Type == "Complex_Alloy" then
+		local result_1 = {dy.."processing-advanced", 6}
+		local result_2 = {dy.."logistic-unit", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_2)
+		DyWorld_Add_To_Tech("logistic-robotics-5", dy..DATA.Name.."-logistic-robot")
+	elseif DATA.Type == "Super_Alloy" then
+		local result_1 = {dy.."processing-logic", 12}
+		local result_2 = {dy.."logistic-unit", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_2)
+		DyWorld_Add_To_Tech("logistic-robotics-6", dy..DATA.Name.."-logistic-robot")
 	end
 end
 
@@ -8683,12 +8443,30 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("construction-robotics-2", dy..DATA.Name.."-construction-robot")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Type == "Simple_Alloy" then
 		local result_1 = {"processing-unit", 1}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("construction-robotics-3", dy..DATA.Name.."-construction-robot")
+	elseif DATA.Type == "Alloy" then
+		local result_1 = {dy.."processing-advanced", 1}
+		local result_2 = {dy.."logistic-unit", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
+		DyWorld_Add_To_Tech("construction-robotics-4", dy..DATA.Name.."-construction-robot")
+	elseif DATA.Type == "Complex_Alloy" then
+		local result_1 = {dy.."processing-advanced", 3}
+		local result_2 = {dy.."logistic-unit", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
+		DyWorld_Add_To_Tech("construction-robotics-5", dy..DATA.Name.."-construction-robot")
+	elseif DATA.Type == "Super_Alloy" then
+		local result_1 = {dy.."processing-logic", 9}
+		local result_2 = {dy.."logistic-unit", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
+		DyWorld_Add_To_Tech("construction-robotics-6", dy..DATA.Name.."-construction-robot")
 	end
 end
 

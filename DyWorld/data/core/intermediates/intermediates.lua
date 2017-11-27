@@ -71,7 +71,7 @@ local Data_Table = {
 	},
 	{
 		Name = "filter-empty",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."filter-empty.png",
 		Stack = 200,
 		Subgroup = "filters",
 		Recipe = true,
@@ -82,7 +82,7 @@ local Data_Table = {
 	},
 	{
 		Name = "filter-iron",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."filter-iron.png",
 		Stack = 200,
 		Subgroup = "filters",
 		Recipe = true,
@@ -93,7 +93,7 @@ local Data_Table = {
 	},
 	{
 		Name = "filter-copper",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."filter-copper.png",
 		Stack = 200,
 		Subgroup = "filters",
 		Recipe = true,
@@ -104,7 +104,7 @@ local Data_Table = {
 	},
 	{
 		Name = "filter-coal",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."filter-coal.png",
 		Stack = 200,
 		Subgroup = "filters",
 		Recipe = true,
@@ -115,7 +115,7 @@ local Data_Table = {
 	},
 	{
 		Name = "filter-stone",
-		Icon = dyworld_path_icon_temp,
+		Icon = dyworld_path_icon.."filter-stone.png",
 		Stack = 200,
 		Subgroup = "filters",
 		Recipe = true,
@@ -418,7 +418,7 @@ data:extend(
 		end
 	end
 end
-
+--[[
 data:extend(
 {
   {
@@ -475,16 +475,4 @@ data:extend(
     stack_size = 200,
 	order = "copper-hydride",
   },
-})
-
-data.raw.item["copper-plate"].subgroup = dy.."metal-2-plate"
-data.raw.item["copper-plate"].order = "copper"
-data.raw.item["iron-plate"].subgroup = dy.."metal-2-plate"
-data.raw.item["iron-plate"].order = "iron"
-data.raw.item["steel-plate"].subgroup = dy.."metal-3-alloy-1"
-data.raw.item["steel-plate"].order = "steel"
-
-data.raw.item["copper-ore"].order = "copper"
-data.raw.item["copper-ore"].subgroup = dy.."metal-1-ore"
-data.raw.item["iron-ore"].order = "iron"
-data.raw.item["iron-ore"].subgroup = dy.."metal-1-ore"
+})]]--

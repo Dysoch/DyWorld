@@ -1376,6 +1376,7 @@ data:extend(
     flags = {"placeable-player", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-gun-turret"},
     max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
+	fast_replaceable_group = "turret",
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
     selection_box = {{-1, -1 }, {1, 1}},
@@ -1508,6 +1509,7 @@ data:extend(
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-shotgun-turret"},
     max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
     corpse = "medium-remnants",
+	fast_replaceable_group = "turret",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
     selection_box = {{-1, -1 }, {1, 1}},
     rotation_speed = 0.015,
@@ -1638,6 +1640,7 @@ data:extend(
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-cannon-turret"},
     max_health = (35 * DyWorld_Material_Formulas(3, DATA.Table)),
     corpse = "medium-remnants",
+	fast_replaceable_group = "turret",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
     selection_box = {{-1, -1 }, {1, 1}},
     rotation_speed = 0.015,
@@ -4628,6 +4631,7 @@ data:extend(
     corpse = "medium-remnants",
     collision_box = {{-1.3, -1.3}, {1.3, 1.3}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+	fast_replaceable_group = "storage-tank",
     fluid_box =
     {
       base_area = DyWorld_Material_Formulas(4, DATA.Table),
@@ -4851,6 +4855,7 @@ data:extend(
     drawing_box = {{-0.5, -2.8}, {0.5, 0.5}},
     maximum_wire_distance = DyWorld_Material_Formulas(12, DATA.Table),
     supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table),
+	fast_replaceable_group = "pole",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     pictures =
     {
@@ -4956,6 +4961,7 @@ data:extend(
     drawing_box = {{-1, -3}, {1, 0.5}},
     maximum_wire_distance = math.floor(DyWorld_Material_Formulas(12, DATA.Table) * 5),
     supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table),
+	fast_replaceable_group = "relay",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     pictures =
     {
@@ -5130,6 +5136,7 @@ data:extend(
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-laser-turret"},
     max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
     corpse = "medium-remnants",
+	fast_replaceable_group = "turret",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{ -1, -1}, {1, 1}},
     rotation_speed = 0.01,
@@ -5336,6 +5343,7 @@ data:extend(
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-shotgun-laser-turret"},
     max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
     corpse = "medium-remnants",
+	fast_replaceable_group = "turret",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{ -1, -1}, {1, 1}},
     rotation_speed = 0.01,
@@ -5988,6 +5996,7 @@ data:extend(
     corpse = "big-remnants",
     collision_box = {{ -1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{ -1.5, -1.5}, {1.5, 1.5}},
+	fast_replaceable_group = "mining-drill",
     input_fluid_box =
     {
       production_type = "input-output",
@@ -6848,7 +6857,6 @@ data:extend(
       height = 12
     },
     monitor_visualization_tint = {r=78, g=173, b=255},
-    fast_replaceable_group = "mining-drill",
     circuit_wire_connection_points =
     {
       get_circuit_connector_wire_shifting_for_connector({-0.09375, -1.65625}, {-0.09375, -1.65625}, 4),
@@ -7987,27 +7995,32 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 	end
 	if DATA.Type == "Primitive" then
+		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.5, -0.6}, {1.5, 1.6}}
 		DyWorld_Add_To_Tech("construction-robotics", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics", dy..DATA.Name.."-roboport")
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("construction-robotics-2", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-2", dy..DATA.Name.."-roboport")
 	elseif DATA.Type == "Simple_Alloy" then
+		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.5, -0.6}, {1.5, -0.6}, {1.5, 1.6}, {-1.5, 1.6},{-1.5, -0.4}, {1.5, -0.4}, {1.5, 1.4}, {-1.5, 1.4}}
 		local result_1 = {"processing-unit", 3}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 		DyWorld_Add_To_Tech("construction-robotics-3", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-3", dy..DATA.Name.."-roboport")
 	elseif DATA.Type == "Alloy" then
+		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.5, -0.6}, {1.5, -0.6}, {1.5, 1.6}, {-1.5, 1.6},{-1.5, -0.4}, {1.5, -0.4}, {1.5, 1.4}, {-1.5, 1.4}}
 		local result_1 = {dy.."processing-advanced", 3}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 		DyWorld_Add_To_Tech("construction-robotics-4", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-4", dy..DATA.Name.."-roboport")
 	elseif DATA.Type == "Complex_Alloy" then
+		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.5, -0.6}, {1.5, -0.6}, {1.5, 1.6}, {-1.5, 1.6},{-1.5, -0.4}, {1.5, -0.4}, {1.5, 1.4}, {-1.5, 1.4}}
 		local result_1 = {dy.."processing-advanced", 6}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 		DyWorld_Add_To_Tech("construction-robotics-5", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-5", dy..DATA.Name.."-roboport")
 	elseif DATA.Type == "Super_Alloy" then
+		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.6, -0.6}, {1.6, -0.6}, {1.6, 1.6}, {-1.6, 1.6},{-1.4, -0.4}, {1.4, -0.4}, {1.4, 1.4}, {-1.4, 1.4},{-1.4, -0.6}, {1.4, -0.6}, {1.4, 1.6}, {-1.4, 1.6},{-1.6, -0.4}, {1.6, -0.4}, {1.6, 1.4}, {-1.6, 1.4}}
 		local result_1 = {dy.."processing-logic", 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 		DyWorld_Add_To_Tech("construction-robotics-6", dy..DATA.Name.."-roboport")

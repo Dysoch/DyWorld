@@ -8483,6 +8483,141 @@ data:extend(
 	end
 end
 
+function DyWorld_Walls(DATA)
+data:extend(
+{
+  {
+    type = "wall",
+	name = dy..DATA.Name.."-wall",
+	localised_name = {"looped-name.wall", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/stone-wall.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-wall"},
+    max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 50),
+    collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    minable = {mining_time = 0.5, result = "stone-wall"},
+    fast_replaceable_group = "wall",
+    repair_speed_modifier = 2,
+    corpse = "wall-remnants",
+    repair_sound = { filename = "__base__/sound/manual-repair-simple.ogg" },
+    mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-stone-impact.ogg", volume = 1.0 },
+    connected_gate_visualization =
+    {
+      filename = "__core__/graphics/arrows/underground-lines.png",
+      priority = "high",
+      width = 64,
+      height = 64,
+      scale = 0.5
+    },
+    pictures = DyWorld_Wall_Graphics(Material_Colors[DATA.Table]),
+    wall_diode_green = conditional_return(
+        {
+          filename = "__base__/graphics/entity/gate/wall-diode-green.png",
+          width = 21,
+          height = 22,
+          shift = {0, -0.78125}
+        }),
+    wall_diode_green_light = conditional_return(
+        {
+          minimum_darkness = 0.3,
+          color = {g=1},
+          shift = {0, -0.78125},
+          size = 1,
+          intensity = 0.3
+        }),
+    wall_diode_red = conditional_return(
+    {
+      filename = "__base__/graphics/entity/gate/wall-diode-red.png",
+      width = 21,
+      height = 22,
+      shift = {0, -0.78125}
+    }),
+    wall_diode_red_light = conditional_return(
+    {
+      minimum_darkness = 0.3,
+      color = {r=1},
+      shift = {0, -0.78125},
+      size = 1,
+      intensity = 0.3
+    }),
+
+    circuit_wire_connection_point =
+    {
+      shadow =
+      {
+        red = {0.890625, 0.828125},
+        green = {0.890625, 0.703125}
+      },
+      wire =
+      {
+        red = {-0.28125, -0.71875},
+        green = {-0.28125, -0.84375}
+      }
+    },
+    circuit_wire_max_distance = 9,
+    circuit_connector_sprites = get_circuit_connector_sprites({0, -0.59375}, nil, 6),
+    default_output_signal = {type = "virtual", name = "signal-G"}
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-wall",
+	localised_name = {"looped-name.wall", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/stone-wall.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."wall-normal",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-wall",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-wall",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-wall",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-wall"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-wall"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-wall"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech("stone-walls", dy..DATA.Name.."-wall")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("stone-walls-2", dy..DATA.Name.."-wall")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("stone-walls-3", dy..DATA.Name.."-wall")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("stone-walls-4", dy..DATA.Name.."-wall")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("stone-walls-5", dy..DATA.Name.."-wall")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("stone-walls-6", dy..DATA.Name.."-wall")
+	end
+end
+
 function DyWorld_TEMPLATE(DATA)
 data:extend(
 {

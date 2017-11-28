@@ -62,6 +62,11 @@ Data_Table_Item_Group = {
 		Main = "warfare"
 	},
 	{
+		Name = "wall-normal",
+		Type = "sub",
+		Main = "warfare"
+	},
+	{
 		Name = "turret-gun",
 		Type = "sub",
 		Main = "warfare"

@@ -56,7 +56,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 2.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"copper-plate", 1},{"cadmium-ore", 2}},
+		Recipe_Ingredients = {{"copper-plate", 1},{"zinc-ore", 2}},
 	},
 	{
 		Name = "makeshift-solar-cell",
@@ -418,61 +418,3 @@ data:extend(
 		end
 	end
 end
---[[
-data:extend(
-{
-  {
-    type = "item",
-    name = "stainless-steel-plate",
-	icon = dyworld_path_icon_temp,
-    flags = {"goes-to-main-inventory"},
-    subgroup = dy.."metal-3-alloy-2",
-    stack_size = 200,
-	order = "stainless-steel",
-  },
-  {
-    type = "item",
-    name = "copper-tungsten-plate",
-	icon = dyworld_path_icon_temp,
-    flags = {"goes-to-main-inventory"},
-    subgroup = dy.."metal-3-alloy-2",
-    stack_size = 200,
-	order = "copper-tungsten",
-  },
-  {
-    type = "item",
-    name = "elinvar-plate",
-	icon = dyworld_path_icon_temp,
-    flags = {"goes-to-main-inventory"},
-    subgroup = dy.."metal-3-alloy-3",
-    stack_size = 200,
-	order = "elinvar",
-  },
-  {
-    type = "item",
-    name = "billon-plate",
-	icon = dyworld_path_icon_temp,
-    flags = {"goes-to-main-inventory"},
-    subgroup = dy.."metal-3-alloy-2",
-    stack_size = 200,
-	order = "billon",
-  },
-  {
-    type = "item",
-    name = "bronze-plate",
-	icon = dyworld_path_icon_temp,
-    flags = {"goes-to-main-inventory"},
-    subgroup = dy.."metal-3-alloy-2",
-    stack_size = 200,
-	order = "bronze",
-  },
-  {
-    type = "item",
-    name = "copper-hydride-plate",
-	icon = dyworld_path_icon_temp,
-    flags = {"goes-to-main-inventory"},
-    subgroup = dy.."metal-3-alloy-2",
-    stack_size = 200,
-	order = "copper-hydride",
-  },
-})]]--

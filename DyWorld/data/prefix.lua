@@ -46,10 +46,12 @@ Material_Colors = {
 	Chromium = {r=0.550, g=0.556, b=0.554},
 	Tin = {r=211, g=212, b=213},
 	Silver = {r=0.972, g=0.96, b=0.915},
-	Lead = {r=159, g=157, b=153},
+	Lead = {r=189, g=187, b=183},
 	Gold = {r=1, g=0.766, b=0.336},
 	Tungsten = {r=105, g=105, b=105},
-	Cadmium = {r=105, g=105, b=105},
+	Zinc = {r=105, g=105, b=105},
+	Nickel = {r=105, g=105, b=105},
+	Aluminium = {r=105, g=105, b=105},
 	
 	Steel = {r=192, g=192, b=192},
 	Stainless_Steel = {r=224, g=223, b=219},
@@ -59,7 +61,7 @@ Material_Colors = {
 	Copper_Tungsten = {r=255, g=200, b=200},
 	Copper_Hydride = {r=255, g=160, b=120},
 	
-	Copilinvar_Tungstate = {r=255, g=160, b=120},
+	Stainless_Copilinvar_Tungstate = {r=255, g=160, b=120},
 }
 
 -- Material Formulas to calculate everything
@@ -226,15 +228,35 @@ Materials = {
 		Melting_Point = 3422,
 		Boiling_Point = 5000,
 	},
-	Cadmium = {
-		Density = 8.65,
-		Hardness = 2,
-		Elasticity = 4.6,
-		Conductivity = 1.46,
-		Strength_Yield = 25,
-		Strength_Ultimate = 78,
-		Melting_Point = 321,
-		Boiling_Point = 767,
+	Zinc = {
+		Density = 7.14,
+		Hardness = 2.5,
+		Elasticity = 12,
+		Conductivity = 11.6,
+		Strength_Yield = 43,
+		Strength_Ultimate = 108,
+		Melting_Point = 419,
+		Boiling_Point = 907,
+	},
+	Nickel = {
+		Density = 8.91,
+		Hardness = 4,
+		Elasticity = 31,
+		Conductivity = 9.09,
+		Strength_Yield = 76,
+		Strength_Ultimate = 200,
+		Melting_Point = 1455,
+		Boiling_Point = 2730,
+	},
+	Aluminium = {
+		Density = 2.7,
+		Hardness = 2.75,
+		Elasticity = 10,
+		Conductivity = 2.37,
+		Strength_Yield = 26,
+		Strength_Ultimate = 70,
+		Melting_Point = 660,
+		Boiling_Point = 2470,
 	},
 	-- Simple Alloy
 	Steel = {
@@ -306,26 +328,26 @@ Materials = {
 	-- Compex Alloy
 	Elinvar = {
 		-- mix of iron, chromium and nickel
-		Density = 15.06,
-		Hardness = 12.5,
-		Elasticity = 64.5,
-		Conductivity = 6.14,
-		Strength_Yield = 290,
-		Strength_Ultimate = 480,
-		Melting_Point = 1699,
-		Boiling_Point = 2766,
+		Density = 23.97,
+		Hardness = 16.5,
+		Elasticity = 95.50,
+		Conductivity = 15.23,
+		Strength_Yield = 366,
+		Strength_Ultimate = 680,
+		Melting_Point = 1618,
+		Boiling_Point = 2754,
 	},
 	-- Super Alloy
-	Copilinvar_Tungstate = {
-		-- mix of Elinvar and Copper_Tungsten
-		Density = 43.25,
-		Hardness = 23,
-		Elasticity = 122,
-		Conductivity = 13.94,
-		Strength_Yield = 860,
-		Strength_Ultimate = 1700,
-		Melting_Point = 1976,
-		Boiling_Point = 3274,
+	Stainless_Copilinvar_Tungstate = {
+		-- mix of Elinvar and Copper_Tungsten and Stainless Steel
+		Density = 71.16,
+		Hardness = 41.5,
+		Elasticity = 231.75,
+		Conductivity = 29.69,
+		Strength_Yield = 1291,
+		Strength_Ultimate = 2480,
+		Melting_Point = 1838,
+		Boiling_Point = 2750,
 	},
 }
 
@@ -344,12 +366,14 @@ Material_Table = {
 	{ Name = "copper", Table = "Copper", Type = "Basic"},
 	{ Name = "iron", Table = "Iron", Type = "Basic"},
 	{ Name = "chromium", Table = "Chromium", Type = "Basic"},
-	{ Name = "cadmium", Table = "Cadmium", Type = "Basic"},
+	{ Name = "zinc", Table = "Zinc", Type = "Basic"},
 	{ Name = "tin", Table = "Tin", Type = "Basic"},
 	{ Name = "silver", Table = "Silver", Type = "Basic"},
 	{ Name = "gold", Table = "Gold", Type = "Basic"},
 	{ Name = "lead", Table = "Lead", Type = "Basic"},
 	{ Name = "tungsten", Table = "Tungsten", Type = "Basic"},
+	{ Name = "nickel", Table = "Nickel", Type = "Basic"},
+	{ Name = "aluminium", Table = "Aluminium", Type = "Basic"},
 	-- Simple_Alloy
 	{ Name = "steel", Table = "Steel", Type = "Simple_Alloy"},
 	-- Alloy
@@ -361,5 +385,5 @@ Material_Table = {
 	-- Complex_Alloy
 	{ Name = "elinvar", Table = "Elinvar", Type = "Complex_Alloy"},
 	-- Super_Alloy
-	--{ Name = "copilinvar-tungstate", Table = "Copilinvar_Tungstate", Type = "Super_Alloy"},
+	{ Name = "stainless-copilinvar-tungstate", Table = "Stainless_Copilinvar_Tungstate", Type = "Super_Alloy"},
 }

@@ -158,7 +158,7 @@ if settings.startup["DyWorld_Logistics"].value then
 	table.insert(data.raw.recipe[dy.."science-fluid-5"].ingredients, result)
 	local result = {type = "item", name = dy.."steel-pump", amount = 1}
 	table.insert(data.raw.recipe[dy.."science-fluid-5"].ingredients, result)
-	local result = {type = "item", name = dy.."cadmium-repair-tool", amount = 1}
+	local result = {type = "item", name = dy.."zinc-repair-tool", amount = 1}
 	table.insert(data.raw.recipe[dy.."science-fluid-5"].ingredients, result)
 	local result = {type = "item", name = dy.."tin-storage-tank", amount = 1}
 	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)

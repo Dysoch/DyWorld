@@ -85,7 +85,13 @@ function DyWorld_Item_Ore(DATA)
   {
     type = "item",
     name = DATA.Name.."-ore",
-	icon = DATA.Icon_1,
+	icons = 
+	{
+	  {
+		icon = dyworld_path_icon.."base-ore.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
     flags = {"goes-to-main-inventory"},
     subgroup = dy.."metal-1-ore",
     stack_size = DATA.Stack or 200,
@@ -99,12 +105,37 @@ function DyWorld_Item_Plate(DATA)
   {
     type = "item",
     name = DATA.Name.."-plate",
-	icon = DATA.Icon_2,
+	icons = {},
     flags = {"goes-to-main-inventory"},
     subgroup = dy.."metal-2-plate",
     stack_size = DATA.Stack or 200,
 	order = DATA.Name,
   }
+	if DATA.Type == 1 then
+		result.icons = 
+		{
+		  {
+			icon = dyworld_path_icon.."base-plate-1.png",
+			tint = Material_Colors[DATA.Table]
+		  }
+		}
+	elseif DATA.Type == 2 then
+		result.icons = 
+		{
+		  {
+			icon = dyworld_path_icon.."base-plate-2.png",
+			tint = Material_Colors[DATA.Table]
+		  }
+		}
+	elseif DATA.Type == 3 then
+		result.icons = 
+		{
+		  {
+			icon = dyworld_path_icon.."base-alloy.png",
+			tint = Material_Colors[DATA.Table]
+		  }
+		}
+	end
   return result
 end
 
@@ -148,7 +179,13 @@ function DyWorld_Resource(DATA)
   {
     type = "resource",
     name = DATA.Name.."-ore",
-	icon = DATA.Icon_1,
+	icons = 
+	{
+	  {
+		icon = dyworld_path_icon.."base-ore.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
     flags = {"placeable-neutral"},
     order = DATA.Name.."-ore",
     minable =
@@ -5796,7 +5833,7 @@ data:extend(
 	name = dy..DATA.Name.."-solar-normal",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{dy.."solar-cell", math.ceil(DyWorld_Material_Formulas(10, DATA.Table)/10)},{"electronic-circuit", 5}},
+    ingredients = {{dy.."solar-cell", math.ceil(DyWorld_Material_Formulas(10, DATA.Table)/25)},{"electronic-circuit", 5}},
     result = dy..DATA.Name.."-solar-normal",
     result_count = 1,
   },
@@ -5943,7 +5980,7 @@ data:extend(
 	name = dy..DATA.Name.."-accumulator-normal",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{dy.."battery-pack", math.ceil(DyWorld_Material_Formulas(10, DATA.Table))},{"electronic-circuit", 5}},
+    ingredients = {{dy.."battery-pack", math.ceil(DyWorld_Material_Formulas(10, DATA.Table)/25)},{"electronic-circuit", 5}},
     result = dy..DATA.Name.."-accumulator-normal",
     result_count = 1,
   },

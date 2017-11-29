@@ -3,59 +3,75 @@ require "data/prefix"
 local Data_Table = {
 	{
 		Name = "chromium",
-		Icon_1 = dyworld_path_icon.."chromium-ore.png",
-		Icon_2 = dyworld_path_icon.."chromium-plate.png",
+		Table = "Chromium",
+		Type = 1,
 		Mining_Hardness = Materials.Chromium.Hardness,
 		Mining_Time = (Materials.Chromium.Hardness / Materials.Chromium.Density),
 		Tint = Material_Colors.Chromium,
 	},
 	{
 		Name = "gold",
-		Icon_1 = dyworld_path_icon.."gold-ore.png",
-		Icon_2 = dyworld_path_icon.."gold-plate.png",
+		Table = "Gold",
+		Type = 2,
 		Mining_Hardness = Materials.Gold.Hardness,
 		Mining_Time = (Materials.Gold.Hardness / Materials.Gold.Density),
 		Tint = Material_Colors.Gold,
 	},
 	{
 		Name = "lead",
-		Icon_1 = dyworld_path_icon.."lead-ore.png",
-		Icon_2 = dyworld_path_icon.."lead-plate.png",
+		Table = "Lead",
+		Type = 1,
 		Mining_Hardness = Materials.Lead.Hardness,
 		Mining_Time = (Materials.Lead.Hardness / Materials.Lead.Density),
 		Tint = Material_Colors.Lead,
 	},
 	{
 		Name = "tin",
-		Icon_1 = dyworld_path_icon.."tin-ore.png",
-		Icon_2 = dyworld_path_icon.."tin-plate.png",
+		Table = "Tin",
+		Type = 1,
 		Mining_Hardness = Materials.Tin.Hardness,
 		Mining_Time = (Materials.Tin.Hardness / Materials.Tin.Density),
 		Tint = Material_Colors.Tin,
 	},
 	{
 		Name = "silver",
-		Icon_1 = dyworld_path_icon.."silver-ore.png",
-		Icon_2 = dyworld_path_icon.."silver-plate.png",
+		Table = "Silver",
+		Type = 2,
 		Mining_Hardness = Materials.Silver.Hardness,
 		Mining_Time = (Materials.Silver.Hardness / Materials.Silver.Density),
 		Tint = Material_Colors.Silver,
 	},
 	{
 		Name = "tungsten",
-		Icon_1 = dyworld_path_icon.."tungsten-ore.png",
-		Icon_2 = dyworld_path_icon.."tungsten-plate.png",
+		Table = "Tungsten",
+		Type = 3,
 		Mining_Hardness = Materials.Tungsten.Hardness,
 		Mining_Time = (Materials.Tungsten.Hardness / Materials.Tungsten.Density),
 		Tint = Material_Colors.Tungsten,
 	},
 	{
-		Name = "cadmium",
-		Icon_1 = dyworld_path_icon.."cadmium-ore.png",
-		Icon_2 = dyworld_path_icon.."cadmium-plate.png",
-		Mining_Hardness = Materials.Cadmium.Hardness,
-		Mining_Time = (Materials.Cadmium.Hardness / Materials.Cadmium.Density),
-		Tint = Material_Colors.Cadmium,
+		Name = "zinc",
+		Table = "Zinc",
+		Type = 1,
+		Mining_Hardness = Materials.Zinc.Hardness,
+		Mining_Time = (Materials.Zinc.Hardness / Materials.Zinc.Density),
+		Tint = Material_Colors.Zinc,
+	},
+	{
+		Name = "aluminium",
+		Table = "Aluminium",
+		Type = 3,
+		Mining_Hardness = Materials.Aluminium.Hardness,
+		Mining_Time = (Materials.Aluminium.Hardness / Materials.Aluminium.Density),
+		Tint = Material_Colors.Aluminium,
+	},
+	{
+		Name = "nickel",
+		Table = "Nickel",
+		Type = 1,
+		Mining_Hardness = Materials.Nickel.Hardness,
+		Mining_Time = (Materials.Nickel.Hardness / Materials.Nickel.Density),
+		Tint = Material_Colors.Nickel,
 	},
 }
 
@@ -68,7 +84,8 @@ data:extend(
 		DyWorld_Resource(v),
 		DyWorld_Item_Plate(v),
 		DyWorld_Recipe_Plate(v),
-	})
+	}
+	)
 end
 
 local function DyWorld_Technology_1(DATA)
@@ -77,10 +94,7 @@ local function DyWorld_Technology_1(DATA)
     type = "technology",
     name = dy..DATA.Name.."-processing",
 	localised_name = {"looped-name.processing", {"looped-name."..DATA.Name}},
-	icons = 
-	{
-	  { icon = dyworld_path_icon..DATA.Name.."-plate.png", scale = 2}
-	},
+	icons = data.raw.item[DATA.Name.."-plate"].icons,
     effects =
     {
 	  {type = "unlock-recipe", recipe = DATA.Name.."-plate"},

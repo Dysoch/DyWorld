@@ -24,4 +24,7 @@ require("data.metallurgy.recipes.melting")
 require("data.metallurgy.recipes.casting")
 
 -- Mixing Recipes
-require("data.metallurgy.recipes.mixing")
+require("data.metallurgy.recipes.mixing-simple-alloy")
+require("data.metallurgy.recipes.mixing-alloy")
+require("data.metallurgy.recipes.mixing-complex-alloy")
+require("data.metallurgy.recipes.mixing-super-alloy")

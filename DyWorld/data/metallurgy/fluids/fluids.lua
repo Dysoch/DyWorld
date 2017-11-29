@@ -7,6 +7,7 @@ for k,v in pairs(Material_Table) do
 		  {
 			type = "fluid",
 			name = dy.."molten-"..v.Name,
+			localised_name = {"looped-name.fluid-molten", {"looped-name."..v.Name}},
 			icons = 
 			{
 			  { 

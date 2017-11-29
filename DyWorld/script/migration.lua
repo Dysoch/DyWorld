@@ -113,6 +113,7 @@ function Migrate_To_Next_Version()
 					v.researched = true
 				end
 			end
+			game.players[1].surface.regenerate_entity("zinc-ore")
 			game.players[1].surface.regenerate_entity("nickel-ore")
 			game.players[1].surface.regenerate_entity("aluminium-ore")
 		global.dyworld.Version = "0.5.1" 

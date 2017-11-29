@@ -65,6 +65,7 @@ for k,v in pairs(Material_Table) do
 			upgrade = true,
 		  },
 		})
+		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
 	elseif v.Type == "Alloy" then
 		data:extend(
 		{
@@ -85,6 +86,7 @@ for k,v in pairs(Material_Table) do
 			upgrade = true,
 		  },
 		})
+		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
 	elseif v.Type == "Complex_Alloy" then
 		data:extend(
 		{
@@ -105,6 +107,7 @@ for k,v in pairs(Material_Table) do
 			upgrade = true,
 		  },
 		})
+		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
 	elseif v.Type == "Super_Alloy" then
 		data:extend(
 		{
@@ -125,6 +128,7 @@ for k,v in pairs(Material_Table) do
 			upgrade = true,
 		  },
 		})
+		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
 	end
 end
 

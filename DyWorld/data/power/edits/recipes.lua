@@ -18,3 +18,11 @@ DyWorld_Add_To_Tech(dy.."steam-energy-1", "boiler")
 table.remove(data.raw.recipe["solar-panel-equipment"].ingredients,1)
 local result = {dy.."obsidian-solar-normal", 2}
 table.insert(data.raw.recipe["solar-panel-equipment"].ingredients,result)
+
+table.remove(data.raw.recipe["satellite"].ingredients,2)
+local result = {dy.."zinc-solar-normal", 50}
+table.insert(data.raw.recipe["satellite"].ingredients,result)
+
+table.remove(data.raw.recipe["satellite"].ingredients,2)
+local result = {dy.."tungsten-accumulator-normal", 50}
+table.insert(data.raw.recipe["satellite"].ingredients,result)

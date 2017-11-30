@@ -1,5 +1,17 @@
 [size=200]Changelog:[/size]
 
+[spoiler=DyWorld 0.5.1]
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
+[list]
+[*] Added last 3 resources: Aluminium, Zinc and Nickel
+[*] Removed Cadmium Ore, but replaced it with Zinc Ore
+[*] Fixed Alloy recipes not unlocking
+[*] Added in first Super Alloy: Stainless-Copilinvar-Tungstate
+[*] Changed Elinvar to also use Nickel like it should
+[*] Removed a few items from recipes that arent used anymore and could not be crafted because of their items not being unlocked
+[/list][/spoiler]
+
 [spoiler=DyWorld 0.5.0]
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 

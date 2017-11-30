@@ -81,3 +81,23 @@ table.insert(data.raw.recipe["heat-exchanger"].ingredients,result)
 table.remove(data.raw.recipe["steam-turbine"].ingredients,3)
 local result = {dy.."steel-pipe", 20}
 table.insert(data.raw.recipe["steam-turbine"].ingredients,result)
+
+table.remove(data.raw.recipe["fluid-wagon"].ingredients,3)
+local result = {dy.."iron-storage-tank", 3}
+table.insert(data.raw.recipe["fluid-wagon"].ingredients,result)
+
+table.remove(data.raw.recipe["logistic-chest-storage"].ingredients,1)
+local result = {dy.."steel-chest", 1}
+table.insert(data.raw.recipe["logistic-chest-storage"].ingredients,result)
+
+table.remove(data.raw.recipe["logistic-chest-requester"].ingredients,1)
+local result = {dy.."steel-chest", 1}
+table.insert(data.raw.recipe["logistic-chest-requester"].ingredients,result)
+
+table.remove(data.raw.recipe["logistic-chest-active-provider"].ingredients,1)
+local result = {dy.."steel-chest", 1}
+table.insert(data.raw.recipe["logistic-chest-active-provider"].ingredients,result)
+
+table.remove(data.raw.recipe["logistic-chest-passive-provider"].ingredients,1)
+local result = {dy.."steel-chest", 1}
+table.insert(data.raw.recipe["logistic-chest-passive-provider"].ingredients,result)

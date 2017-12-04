@@ -45,6 +45,7 @@ for k,v in pairs(Material_Table) do
 		  },
 		})
 		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
+		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name.."-pebble")
 	elseif v.Type == "Simple_Alloy" then
 		data:extend(
 		{

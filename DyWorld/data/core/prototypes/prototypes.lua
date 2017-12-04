@@ -88,7 +88,7 @@ function DyWorld_Item_Ore(DATA)
 	icons = 
 	{
 	  {
-		icon = dyworld_path_icon.."base-ore.png",
+		icon = dyworld_path_icon.."base-ore-dirty.png",
 		tint = Material_Colors[DATA.Table]
 	  }
 	},
@@ -881,7 +881,7 @@ data:extend(
   {
     type = "splitter",
     name = dy..DATA.Name.."-splitter",
-	localised_name = {"looped-name.belt", {"looped-name."..DATA.Name}},
+	localised_name = {"looped-name.splitter", {"looped-name."..DATA.Name}},
     icons =
 	{
 	  {
@@ -1013,6 +1013,70 @@ data:extend(
     },
   },
   {
+    type = "loader",
+    name = dy..DATA.Name.."-loader",
+	localised_name = {"looped-name.loader", {"looped-name."..DATA.Name}},
+    icons =
+	{
+	  {
+		icon = "__base__/graphics/icons/loader.png",
+		tint = Material_Colors[DATA.Table],
+	  },
+	},
+    flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-loader"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    filter_count = 5,
+    corpse = "small-remnants",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 60
+      }
+    },
+    collision_box = {{-0.4, -0.9}, {0.4, 0.9}},
+    selection_box = {{-0.5, -1}, {0.5, 1}},
+    animation_speed_coefficient = 32,
+    belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
+    belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
+    ending_top = DyWorld_basic_belt_ending_top(Material_Colors[DATA.Table]),
+    ending_bottom = DyWorld_basic_belt_ending_bottom(Material_Colors[DATA.Table]),
+    ending_side = DyWorld_basic_belt_ending_side(Material_Colors[DATA.Table]),
+    starting_top = DyWorld_basic_belt_starting_top(Material_Colors[DATA.Table]),
+    starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
+    starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
+    ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
+    fast_replaceable_group = "loader",
+    speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
+    structure =
+    {
+      direction_in =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/loader/loader-structure.png",
+          priority = "extra-high",
+          width = 64,
+          height = 64,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      direction_out =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/loader/loader-structure.png",
+          priority = "extra-high",
+          width = 64,
+          height = 64,
+          y = 64,
+		  tint = Material_Colors[DATA.Table],
+        }
+      }
+    },
+  },
+  {
     type = "item",
     name = dy..DATA.Name.."-transport-belt",
 	localised_name = {"looped-name.belt", {"looped-name."..DATA.Name}},
@@ -1046,6 +1110,17 @@ data:extend(
 	place_result = dy..DATA.Name.."-splitter",
   },
   {
+    type = "item",
+    name = dy..DATA.Name.."-loader",
+	localised_name = {"looped-name.loader", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/loader.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."transport-loader",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-loader",
+  },
+  {
     type = "recipe",
     name = dy..DATA.Name.."-transport-belt",
     energy_required = 0.5,
@@ -1072,6 +1147,15 @@ data:extend(
     result = dy..DATA.Name.."-splitter",
     result_count = 1,
   },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-loader",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-transport-belt", 2},{"electronic-circuit", 2}},
+    result = dy..DATA.Name.."-loader",
+    result_count = 1,
+  },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 2}
@@ -1080,6 +1164,7 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
 	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
 		local result_1 = {dy..DATA.Name, 2}
 		local result_2 = {dy..DATA.Name, 3}
@@ -1087,6 +1172,7 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
 	else
 		local result_1 = {DATA.Name.."-plate", 2}
 		local result_2 = {DATA.Name.."-plate", 3}
@@ -1094,40 +1180,59 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
 	end
 	if DATA.Type == "Primitive" then
 		data.raw.recipe[dy..DATA.Name.."-transport-belt"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-underground-belt"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-splitter"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-loader"].enabled = true
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-splitter")
+		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-loader")
 	elseif DATA.Type == "Simple_Alloy" then
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-splitter")
+		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-loader")
 	elseif DATA.Type == "Alloy" then
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-splitter")
+		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-loader")
 	elseif DATA.Type == "Complex_Alloy" then
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-splitter")
+		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-loader")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-splitter")
+		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-loader")
 	end
-	if (DyWorld_Material_Formulas(1, DATA.Table)) >= 25 then
+	if (DyWorld_Material_Formulas(1, DATA.Table)) >= 50 then
 		data.raw.recipe[dy..DATA.Name.."-transport-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-underground-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-splitter"].category = "crafting-with-fluid"
+		data.raw.recipe[dy..DATA.Name.."-loader"].category = "crafting-with-fluid"
+		local result_1 = {type = "fluid", name = dy.."advanced-lubricant", amount = 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
+	elseif (DyWorld_Material_Formulas(1, DATA.Table)) >= 25 then
+		data.raw.recipe[dy..DATA.Name.."-transport-belt"].category = "crafting-with-fluid"
+		data.raw.recipe[dy..DATA.Name.."-underground-belt"].category = "crafting-with-fluid"
+		data.raw.recipe[dy..DATA.Name.."-splitter"].category = "crafting-with-fluid"
+		data.raw.recipe[dy..DATA.Name.."-loader"].category = "crafting-with-fluid"
 		local result_1 = {type = "fluid", name = "lubricant", amount = 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
 	end
 end
 
@@ -1837,6 +1942,234 @@ data:extend(
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-gun-turret")
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-shotgun-turret")
 		DyWorld_Add_To_Tech("turrets-6", dy..DATA.Name.."-cannon-turret")
+	end
+end
+
+function DyWorld_Grenade_Turret(DATA)
+data:extend(
+{
+  {
+    type = "ammo-turret",
+    name = dy..DATA.Name.."-grenade-turret",
+	localised_name = {"looped-name.grenade-turret", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/gun-turret.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"placeable-player", "player-creation"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-grenade-turret"},
+    max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
+	fast_replaceable_group = "turret",
+    corpse = "medium-remnants",
+    collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
+    selection_box = {{-1, -1 }, {1, 1}},
+    rotation_speed = 0.015,
+    preparing_speed = 0.08,
+    folding_speed = 0.08,
+    dying_explosion = "medium-explosion",
+    inventory_size = 3,
+    automated_ammo_count = 10,
+    attacking_speed = 0.5,
+    folded_animation = 
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({frame_count=1, line_length = 1}, Material_Colors[DATA.Table]),
+        DyWorld_gun_turret_extension_mask{frame_count=1, line_length = 1},
+        DyWorld_gun_turret_extension_shadow{frame_count=1, line_length = 1}
+      }
+    },
+    preparing_animation = 
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({}, Material_Colors[DATA.Table]),
+        DyWorld_gun_turret_extension_mask{},
+        DyWorld_gun_turret_extension_shadow{}
+      }
+    },
+    prepared_animation = DyWorld_gun_turret_attack({frame_count=1}, Material_Colors[DATA.Table]),
+    attacking_animation = DyWorld_gun_turret_attack({}, Material_Colors[DATA.Table]),
+    folding_animation = 
+    { 
+      layers = 
+      { 
+        DyWorld_gun_turret_extension({run_mode = "backward"}, Material_Colors[DATA.Table]),
+        DyWorld_gun_turret_extension_mask{run_mode = "backward"},
+        DyWorld_gun_turret_extension_shadow{run_mode = "backward"}
+      }
+    },
+    base_picture =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
+          priority = "high",
+          width = 90,
+          height = 75,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+          shift = {0, -0.046875},
+		  tint = Material_Colors[DATA.Table],
+        },
+        {
+          filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
+          flags = { "mask" },
+          line_length = 1,
+          width = 52,
+          height = 47,
+          axially_symmetrical = false,
+          direction_count = 1,
+          frame_count = 1,
+          shift = {0, -0.234375},
+          apply_runtime_tint = true
+        }
+      }
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    turret_base_has_direction = true,
+    attack_parameters =
+    {
+      type = "projectile",
+      ammo_category = dy.."grenade-ammo",
+      cooldown = (60 / DyWorld_Material_Formulas(6, DATA.Table)),
+      projectile_creation_distance = 1.39375,
+      projectile_center = {0, -0.0875}, -- same as gun_turret_attack shift
+      shell_particle =
+      {
+        name = "shell-particle",
+        direction_deviation = 0.1,
+        speed = 0.1,
+        speed_deviation = 0.03,
+        center = {-0.0625, 0},
+        creation_distance = -1.925,
+        starting_frame_speed = 0.2,
+        starting_frame_speed_deviation = 0.1
+      },
+      range = DyWorld_Material_Formulas(5, DATA.Table),
+      min_range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.15),
+      turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
+      sound = make_heavy_gunshot_sounds(),
+    },
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
+    shoot_in_prepare_state = true,
+    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
+  },
+  {
+    type = "ammo",
+    name = dy..DATA.Name.."-grenade-ammo",
+	localised_name = {"looped-name.ammo-grenade", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/firearm-magazine.png",
+		tint = Material_Colors[DATA.Table]
+	  }
+	},
+    flags = {"goes-to-main-inventory"},
+    ammo_type =
+    {
+      category = dy.."grenade-ammo",
+      target_type = "direction",
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery = 
+          {
+            type = "instant",
+            source_effects = 
+            {
+              {
+                type = "create-explosion",
+                entity_name = "explosion-gunshot"
+              }
+            }
+          }
+        },
+        {
+          type = "direct",
+          repeat_count = 1,
+          action_delivery =
+          {
+            type = "projectile",
+            projectile = dy..DATA.Name.."-grenade-projectile",
+            starting_speed = 1,
+            direction_deviation = 0.05,
+            range_deviation = 0.15,
+            max_range = DyWorld_Material_Formulas(5, DATA.Table),
+          }
+        }
+      }
+    },
+    magazine_size = math.floor(DyWorld_Material_Formulas(7, DATA.Table)/10),
+    subgroup = dy.."ammo-grenade",
+    order = DATA.Name,
+    stack_size = 200
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-grenade-ammo",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-grenade", math.floor(DyWorld_Material_Formulas(7, DATA.Table)/10)}},
+    result = dy..DATA.Name.."-grenade-ammo",
+    result_count = 1,
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-grenade-turret",
+	localised_name = {"looped-name.grenade-turret", {"looped-name."..DATA.Name}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = Material_Colors[DATA.Table]}},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."turret-grenade",
+    stack_size = 50,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-grenade-turret",
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-grenade-turret",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 15},{dy..DATA.Name.."-gun-turret", 1}},
+    result = dy..DATA.Name.."-grenade-turret",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade-turret"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+		local result_1 = {dy..DATA.Name, 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade-turret"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade-turret"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-grenade-turret"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-grenade-ammo"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-grenade-turret")
+		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-grenade-ammo")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-grenade-turret")
+		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-grenade-ammo")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-grenade-turret")
+		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-grenade-ammo")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-grenade-turret")
+		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-grenade-ammo")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-grenade-turret")
+		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-grenade-ammo")
 	end
 end
 
@@ -8539,7 +8872,6 @@ data:extend(
     max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 50),
     collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-    minable = {mining_time = 0.5, result = "stone-wall"},
     fast_replaceable_group = "wall",
     repair_speed_modifier = 2,
     corpse = "wall-remnants",

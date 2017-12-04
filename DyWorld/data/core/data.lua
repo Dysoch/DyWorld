@@ -35,7 +35,9 @@ require("data.core.item-groups.inserters")
 require("data.core.item-groups.machines")
 require("data.core.item-groups.metallurgy")
 require("data.core.item-groups.personal")
-require("data.core.item-groups.warfare")
+require("data.core.item-groups.warfare-1")
+require("data.core.item-groups.warfare-2")
+require("data.core.item-groups.warfare-3")
 
 -- Edits
 require("data.core.edits.ammo")

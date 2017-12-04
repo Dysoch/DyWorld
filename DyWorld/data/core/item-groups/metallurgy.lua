@@ -37,6 +37,11 @@ Data_Table_Item_Group = {
 		Main = "metallurgy"
 	},
 	{
+		Name = "cleaning-recipes",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
 		Name = "sub-recipes",
 		Type = "sub",
 		Main = "metallurgy"
@@ -48,6 +53,46 @@ Data_Table_Item_Group = {
 	},
 	{
 		Name = "zzz-void-recipes",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "metal-1-ore",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "metal-1-ore-clean",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "metal-1-pebble",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "metal-2-plate",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "metal-3-alloy-1",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "metal-3-alloy-2",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "metal-3-alloy-3",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "metal-3-alloy-4",
 		Type = "sub",
 		Main = "metallurgy"
 	},

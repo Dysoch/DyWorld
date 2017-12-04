@@ -2,54 +2,44 @@ require "data/prefix"
 
 Data_Table_Item_Group = {
 	{
-		Name = "logistics",
+		Name = "warfare-1",
 		Type = "main",
-		Icon = "logistics.png"
+		Icon = "warfare.png"
 	},
 	{
-		Name = "transport-belt",
+		Name = "ammo-basic",
 		Type = "sub",
-		Main = "logistics"
+		Main = "warfare-1"
 	},
 	{
-		Name = "transport-splitter",
+		Name = "ammo-basic-piercing",
 		Type = "sub",
-		Main = "logistics"
+		Main = "warfare-1"
 	},
 	{
-		Name = "transport-loader",
+		Name = "ammo-shotgun",
 		Type = "sub",
-		Main = "logistics"
+		Main = "warfare-1"
 	},
 	{
-		Name = "transport-underground",
+		Name = "ammo-grenade",
 		Type = "sub",
-		Main = "logistics"
+		Main = "warfare-1"
 	},
 	{
-		Name = "pipe-normal",
+		Name = "ammo-cannon",
 		Type = "sub",
-		Main = "logistics"
+		Main = "warfare-1"
 	},
 	{
-		Name = "pipe-underground",
+		Name = "ammo-cannon-explosive",
 		Type = "sub",
-		Main = "logistics"
+		Main = "warfare-1"
 	},
 	{
-		Name = "tank-storage",
+		Name = "ammo-shotgun-piercing",
 		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "pump-pipe",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "pump-offshore",
-		Type = "sub",
-		Main = "logistics"
+		Main = "warfare-1"
 	},
 }
 

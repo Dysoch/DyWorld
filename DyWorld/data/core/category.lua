@@ -10,6 +10,10 @@ local Data_Table = {
 		Type = "recipe"
 	},
 	{
+		Name = dy.."grenade-ammo",
+		Type = "ammo"
+	},
+	{
 		Name = dy.."recycling",
 		Type = "recipe"
 	},
@@ -19,6 +23,10 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."forge",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."ore-cleaning",
 		Type = "recipe"
 	},
 }

@@ -15,6 +15,7 @@ require "script/generation/world-generation"
 
 debugger = false
 debug_test = settings.startup["DyWorld_Debug"].value
+Migrate_Debug = true
 
 function debug(str, statement)
 local seconds = math.floor(game.tick/60)
@@ -42,6 +43,9 @@ end)
 
 script.on_configuration_changed(function()
 	migration.Migrate_To_Next_Version()
+	if Migrate_Debug then
+		migration.Migrate_Debug()
+	end
 end)
 
 -- player hooks

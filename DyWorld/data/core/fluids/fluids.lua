@@ -38,6 +38,15 @@ local Data_Table = {
 		Barrel = true,
 	},
 	{
+		Name = "advanced-lubricant",
+		Icon = dyworld_path_fluid.."acid.png",
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=10, g=255, b=10},
+		Color_Flow = {r=10, g=255, b=10},
+		Barrel = true,
+	},
+	{
 		Name = "methane",
 		Icon = dyworld_path_fluid.."methane.png",
 		Def_Temp = 15,
@@ -138,6 +147,15 @@ local Data_Table = {
 	},
 	{
 		Name = "science-fluid-7",
+		Icon = dyworld_path_fluid.."blood.png",
+		Def_Temp = 50,
+		Max_Temp = 50,
+		Color_Base = {r=255, g=10, b=10},
+		Color_Flow = {r=255, g=10, b=10},
+		Barrel = true,
+	},
+	{
+		Name = "rocket-fuel",
 		Icon = dyworld_path_fluid.."blood.png",
 		Def_Temp = 50,
 		Max_Temp = 50,

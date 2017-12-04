@@ -85,7 +85,7 @@ data:extend(
     {
       {type = "fluid", name = dy.."sludge", amount = 2500},
     },
-    results=
+    results =
     {
       {type = "item", name = "stone", amount_min = 1, amount_max = 4, probability = 1},
       {type = "item", name = dy.."sand", amount_min = 1, amount_max = 10, probability = 0.75},

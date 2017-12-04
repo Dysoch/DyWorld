@@ -52,36 +52,6 @@ Data_Table_Item_Group = {
 		Main = "items"
 	},
 	{
-		Name = "metal-1-ore",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "metal-2-plate",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "metal-3-alloy-1",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "metal-3-alloy-2",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "metal-3-alloy-3",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "metal-3-alloy-4",
-		Type = "sub",
-		Main = "items"
-	},
-	{
 		Name = "module-speed",
 		Type = "sub",
 		Main = "items"

@@ -2,94 +2,49 @@ require "data/prefix"
 
 Data_Table_Item_Group = {
 	{
-		Name = "warfare",
+		Name = "warfare-3",
 		Type = "main",
 		Icon = "warfare.png"
 	},
 	{
-		Name = "ammo-basic",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "ammo-basic-piercing",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "ammo-shotgun",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "ammo-cannon",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "ammo-cannon-explosive",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "ammo-shotgun-piercing",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "armor",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "grenade",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "grenade-cluster",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
-		Name = "gun",
-		Type = "sub",
-		Main = "warfare"
-	},
-	{
 		Name = "radar",
 		Type = "sub",
-		Main = "warfare"
+		Main = "warfare-3"
 	},
 	{
 		Name = "wall-normal",
 		Type = "sub",
-		Main = "warfare"
+		Main = "warfare-3"
 	},
 	{
 		Name = "turret-gun",
 		Type = "sub",
-		Main = "warfare"
+		Main = "warfare-3"
+	},
+	{
+		Name = "turret-grenade",
+		Type = "sub",
+		Main = "warfare-3"
 	},
 	{
 		Name = "turret-cannon",
 		Type = "sub",
-		Main = "warfare"
+		Main = "warfare-3"
 	},
 	{
 		Name = "turret-shotgun",
 		Type = "sub",
-		Main = "warfare"
+		Main = "warfare-3"
 	},
 	{
 		Name = "turret-laser",
 		Type = "sub",
-		Main = "warfare"
+		Main = "warfare-3"
 	},
 	{
 		Name = "turret-shotgun-laser",
 		Type = "sub",
-		Main = "warfare"
+		Main = "warfare-3"
 	},
 }
 

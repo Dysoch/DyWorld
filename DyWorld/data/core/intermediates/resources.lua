@@ -130,3 +130,20 @@ data.raw.resource["lead-ore"].autoplace.starting_area_amount = 4000
 
 data.raw.resource["tungsten-ore"].minable.fluid_amount = 10
 data.raw.resource["tungsten-ore"].minable.required_fluid = dy.."hydrogen"
+
+data.raw.item["iron-ore"].icons = {
+	  {
+		icon = dyworld_path_icon.."base-ore-dirty.png",
+		tint = Material_Colors.Iron
+	  }
+	}
+
+data.raw.item["copper-ore"].icons = {
+	  {
+		icon = dyworld_path_icon.."base-ore-dirty.png",
+		tint = Material_Colors.Copper
+	  }
+	}
+
+table.remove(data.raw.item["iron-ore"], icon)
+table.remove(data.raw.item["copper-ore"], icon)

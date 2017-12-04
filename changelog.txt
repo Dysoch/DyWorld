@@ -1,5 +1,13 @@
 [size=200]Changelog:[/size]
 
+[spoiler=DyWorld 0.6.0]
+Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
+
+[list]
+[*] Added Loaders to the Material System
+[*] Added Dirty Ores, Clean Ores and Ore Chunks
+[/list][/spoiler]
+
 [spoiler=DyWorld 0.5.1]
 Download can be found on [url=http://bit.ly/2pw0WkV]Patreon(coming soon)[/url] or [url=http://bit.ly/2oJ42x8]Factorio Mod Portal[/url]
 

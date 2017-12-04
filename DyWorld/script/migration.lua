@@ -120,3 +120,12 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end
 end
+
+function Migrate_Debug()
+	for k,v in pairs(game.players[1].force.technologies) do
+		if v.researched then
+		v.researched = false
+		v.researched = true
+		end
+	end
+end

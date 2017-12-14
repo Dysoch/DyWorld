@@ -6,6 +6,7 @@ data:extend(
     type = "furnace",
     name = dy.."forge",
     icon = "__base__/graphics/icons/electric-furnace.png",
+	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 1, result = dy.."forge"},
     max_health = 1000,

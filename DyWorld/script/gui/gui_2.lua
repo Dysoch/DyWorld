@@ -7,7 +7,7 @@ function toggleGui(player)
 	else
 	local force = player.force
 	local frame = player.gui.top.add{type = "frame", name = "dyworld_skills_gui", direction = "vertical", caption = {"dyworld_skills_gui.title"}}
-	local frameflow = frame.add{type = "flow", style = "dyworld_stats_list_flow", name = "flow", direction = "vertical"}
+	local frameflow = frame.add{type = "flow", name = "flow", direction = "vertical"}
 	-- checkboxes
 		-- frameflow.add{type = "checkbox", name = "dyworld_stats_enabled", caption = {"dyworld_skills_gui.enabled"}, tooltip = {"dyworld_skills_gui.enabled_tooltip"}, state = config.enabled or false}
 	-- labels for stats

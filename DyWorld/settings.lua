@@ -2,6 +2,7 @@
 --settings.startup["DyWorld_Debug"].value
 --settings.startup["DyWorld_Modules"].value
 --settings.startup["DyWorld_Warfare"].value
+--settings.startup["DyWorld_Warfare_Difficulty"].value
 --settings.startup["DyWorld_Processing"].value
 --settings.startup["DyWorld_Power"].value
 --settings.startup["DyWorld_Logistics"].value
@@ -30,6 +31,16 @@ data:extend({
 		name = "DyWorld_Warfare",
 		setting_type = "startup",
 		default_value = true,
+	},
+	{
+		type = "int-setting",
+		name = "DyWorld_Warfare_Difficulty",
+		setting_type = "startup",
+		default_value = 2,
+        maximum_value = 5,
+        minimum_value = 1,
+		allowed_values = Warfare_Modes,
+        order = "DyWorld_Warfare_Difficulty"
 	},
 	{
 		type = "bool-setting",
@@ -74,3 +85,6 @@ data:extend({
 		default_value = true,
 	},
 })
+
+Warfare_Modes =
+{ 1, 2, 3, 4, 5 }

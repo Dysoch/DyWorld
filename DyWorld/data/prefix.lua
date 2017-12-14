@@ -33,35 +33,284 @@ Color_Tier = {
 	[7] = {r=0, g=255, b=255}, --cyan
 	[8] = {r=255, g=165, b=0}, --orange
 	[9] = {r=255, g=192, b=203}, --pink
+	["Dirty"] = {r = 165, g = 165, b = 165},
 }
 
 Material_Colors = {
 	Rubber = {r=128, g=128, b=128},
+	Chitin = {r=228, g=128, b=128},
 	Obsidian = {r=105, g=105, b=105},
 	Wood = {r=182, g=155, b=76},
 	Stone = {r=139, g=141, b=122},
 	
-	Iron = {r=189, g=201, b=201},
-	Copper = {r=255, g=140, b=0},
-	Chromium = {r=0.550, g=0.556, b=0.554},
-	Tin = {r=211, g=212, b=213},
-	Silver = {r=0.972, g=0.96, b=0.915},
-	Lead = {r=132, g=132, b=185},
-	Gold = {r=1, g=0.766, b=0.336},
-	Tungsten = {r=105, g=105, b=105},
-	Zinc = {r=105, g=105, b=105},
-	Nickel = {r=105, g=105, b=105},
-	Aluminium = {r=105, g=105, b=105},
+	Iron = {r=82, g=174, b=212}, -- 52aed4
+	Copper = {r=212, g=119, b=82}, -- d47752
+	Chromium = {r=200, g=56, b=60}, -- c8383c
+	Tin = {r=39, g=105, b=135}, -- 276987
+	Silver = {r=170, g=170, b=170}, -- aaaaaa
+	Lead = {r=105, g=213, b=212}, -- 69d5d4
+	Gold = {r=134, g=128, b=34}, -- 868022
+	Tungsten = {r=87, g=87, b=87}, -- 575757
+	Zinc = {r=97, g=208, b=92}, -- 61d05c
+	Nickel = {r=92, g=114, b=208}, -- 5c72d0
+	Aluminium = {r=150, g=150, b=150}, -- 969696
 	
 	Steel = {r=192, g=192, b=192},
-	Stainless_Steel = {r=224, g=223, b=219},
-	Bronze = {r=240, g=230, b=140},
-	Elinvar = {r=230, g=230, b=250},
-	Billon = {r=72, g=61, b=139},
-	Copper_Tungsten = {r=255, g=200, b=200},
-	Copper_Hydride = {r=255, g=160, b=120},
 	
-	Stainless_Copilinvar_Tungstate = {r=255, g=160, b=120},
+	Stainless_Steel = {r=196, g=124, b=126}, -- c47c7e
+	Bronze = {r=126, g=112, b=109}, -- 7e706d
+	Elinvar = {r=125, g=115, b=160}, -- 7d73a0
+	Billon = {r=191, g=145, b=126}, -- bf917e
+	Copper_Tungsten = {r=137, g=135, b=142}, -- 89878e
+	Copper_Hydride = {r=212, g=179, b=123}, -- d4b37b
+	
+	Stainless_Copilinvar_Tungstate = {r=153, g=124, b=143}, -- 997c8f
+}
+
+Material_Resistances = {
+	Rubber = {
+	  {type = "physical", decrease = 0, percent = -100},
+	  {type = "impact", decrease = 0, percent = -100},
+      {type = "poison", decrease = 0, percent = 25},
+      {type = "explosion", decrease = 0, percent = -100},
+      {type = "fire", decrease = 0, percent = 35},
+      {type = "laser", decrease = 0, percent = 10},
+      {type = "acid", decrease = 0, percent = -50},
+      {type = "electric", decrease = 5000, percent = 100}
+	},
+	Chitin = {
+	  {type = "physical", decrease = 1, percent = 0},
+	  {type = "impact", decrease = 1, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Obsidian = {
+	  {type = "physical", decrease = 10, percent = 0},
+	  {type = "impact", decrease = 10, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 5, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Wood = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = -100},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Stone = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	
+	Iron = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Copper = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Chromium = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Tin = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Silver = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Lead = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Gold = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Tungsten = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Zinc = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Nickel = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Aluminium = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	
+	Steel = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Stainless_Steel = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Bronze = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Elinvar = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Billon = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Copper_Tungsten = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Copper_Hydride = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	
+	Stainless_Copilinvar_Tungstate = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
 }
 
 -- Material Formulas to calculate everything
@@ -80,7 +329,11 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
 	elseif TYPE == 5 then
 		-- Turret / Ammo Range
-		return math.floor(((Materials[TABLE].Density * Materials[TABLE].Hardness) / 2) + 5)
+			if math.floor(((Materials[TABLE].Density * Materials[TABLE].Hardness) / 2) + 5) >= 250 then
+				return 250
+			else
+				return math.floor(((Materials[TABLE].Density * Materials[TABLE].Hardness) / 2) + 5)
+			end
 	elseif TYPE == 6 then
 		-- Turret Shoot Speed
 		return Round((Materials[TABLE].Elasticity / Materials[TABLE].Hardness), 2)
@@ -100,8 +353,19 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		-- Pole/Relay Supply Area
 		return math.ceil((Materials[TABLE].Conductivity + Materials[TABLE].Hardness) / 2)
 	elseif TYPE == 12 then
-		-- Pole/Relay Wire Reach
-		return math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Density)
+		-- Pole Wire Reach
+			if math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Density) >= 64 then
+				return 64
+			else
+				return math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Density)
+			end
+	elseif TYPE == 13 then
+		-- Relay Wire Reach
+			if math.floor((Materials[TABLE].Conductivity + Materials[TABLE].Density) * 5) >= 64 then
+				return 64
+			else
+				return math.floor((Materials[TABLE].Conductivity + Materials[TABLE].Density) * 5)
+			end
 	end
 end
 
@@ -116,6 +380,7 @@ Materials = {
 		Strength_Ultimate = 15,
 		Melting_Point = 100,
 		Boiling_Point = 5000,
+		Icon = {icon = "__base__/graphics/icons/stone.png", scale= 0.6, shift = {8, 9}}
 	},
 	Rubber = {
 		Density = 1.2,
@@ -126,6 +391,18 @@ Materials = {
 		Strength_Ultimate = 35,
 		Melting_Point = nil,
 		Boiling_Point = nil,
+		Icon = {icon = dyworld_path_icon.."rubber.png", scale= 0.6, shift = {8, 9}}
+	},
+	Chitin = {
+		Density = 0.6,
+		Hardness = 2,
+		Elasticity = 51,
+		Conductivity = 0,
+		Strength_Yield = 7,
+		Strength_Ultimate = 61,
+		Melting_Point = nil,
+		Boiling_Point = nil,
+		Icon = {icon = dyworld_path_icon.."chitin.png", scale= 0.6, shift = {8, 9}}
 	},
 	Obsidian = {
 		Density = 3.6,
@@ -136,6 +413,7 @@ Materials = {
 		Strength_Ultimate = 450,
 		Melting_Point = nil,
 		Boiling_Point = nil,
+		Icon = {icon = dyworld_path_icon.."obsidian.png", scale= 0.6, shift = {8, 9}}
 	},
 	Wood = {
 		Density = 7.5,
@@ -146,6 +424,7 @@ Materials = {
 		Strength_Ultimate = 40,
 		Melting_Point = nil,
 		Boiling_Point = nil,
+		Icon = {icon = "__base__/graphics/icons/wood.png", scale= 0.6, shift = {8, 9}}
 	},
 	-- Basic
 	Iron = {
@@ -157,6 +436,7 @@ Materials = {
 		Strength_Ultimate = 200,
 		Melting_Point = 1538,
 		Boiling_Point = 2862,
+		Icon = {icon = dyworld_path_icon.."plate/iron.png", scale= 0.6, shift = {8, 9}}
 	},
 	Copper = {
 		Density = 8.94,
@@ -167,6 +447,7 @@ Materials = {
 		Strength_Ultimate = 220,
 		Melting_Point = 1084,
 		Boiling_Point = 2562,
+		Icon = {icon = dyworld_path_icon.."plate/copper.png", scale= 0.6, shift = {8, 9}}
 	},
 	Chromium = {
 		Density = 7.19,
@@ -177,6 +458,7 @@ Materials = {
 		Strength_Ultimate = 280,
 		Melting_Point = 1860,
 		Boiling_Point = 2670,
+		Icon = {icon = dyworld_path_icon.."plate/chromium.png", scale= 0.6, shift = {8, 9}}
 	},
 	Tin = {
 		Density = 7.28,
@@ -187,6 +469,7 @@ Materials = {
 		Strength_Ultimate = 19,
 		Melting_Point = 232,
 		Boiling_Point = 2600,
+		Icon = {icon = dyworld_path_icon.."plate/tin.png", scale= 0.6, shift = {8, 9}}
 	},
 	Silver = {
 		Density = 10.49,
@@ -197,6 +480,7 @@ Materials = {
 		Strength_Ultimate = 360,
 		Melting_Point = 961,
 		Boiling_Point = 2212,
+		Icon = {icon = dyworld_path_icon.."plate/silver.png", scale= 0.6, shift = {8, 9}}
 	},
 	Gold = {
 		Density = 19.32,
@@ -207,6 +491,7 @@ Materials = {
 		Strength_Ultimate = 220,
 		Melting_Point = 1063,
 		Boiling_Point = 2800,
+		Icon = {icon = dyworld_path_icon.."plate/gold.png", scale= 0.6, shift = {8, 9}}
 	},
 	Lead = {
 		Density = 11.34,
@@ -217,6 +502,7 @@ Materials = {
 		Strength_Ultimate = 32,
 		Melting_Point = 327,
 		Boiling_Point = 1750,
+		Icon = {icon = dyworld_path_icon.."plate/lead.png", scale= 0.6, shift = {8, 9}}
 	},
 	Tungsten = {
 		Density = 19.25,
@@ -227,6 +513,7 @@ Materials = {
 		Strength_Ultimate = 1000,
 		Melting_Point = 3422,
 		Boiling_Point = 5000,
+		Icon = {icon = dyworld_path_icon.."plate/tungsten.png", scale= 0.6, shift = {8, 9}}
 	},
 	Zinc = {
 		Density = 7.14,
@@ -237,6 +524,7 @@ Materials = {
 		Strength_Ultimate = 108,
 		Melting_Point = 419,
 		Boiling_Point = 907,
+		Icon = {icon = dyworld_path_icon.."plate/zinc.png", scale= 0.6, shift = {8, 9}}
 	},
 	Nickel = {
 		Density = 8.91,
@@ -247,6 +535,7 @@ Materials = {
 		Strength_Ultimate = 200,
 		Melting_Point = 1455,
 		Boiling_Point = 2730,
+		Icon = {icon = dyworld_path_icon.."plate/nickel.png", scale= 0.6, shift = {8, 9}}
 	},
 	Aluminium = {
 		Density = 2.7,
@@ -257,6 +546,7 @@ Materials = {
 		Strength_Ultimate = 70,
 		Melting_Point = 660,
 		Boiling_Point = 2470,
+		Icon = {icon = dyworld_path_icon.."plate/aluminium.png", scale= 0.6, shift = {8, 9}}
 	},
 	-- Simple Alloy
 	Steel = {
@@ -268,6 +558,7 @@ Materials = {
 		Strength_Ultimate = 300,
 		Melting_Point = 1425,
 		Boiling_Point = 2862,
+		Icon = {icon = "__base__/graphics/icons/steel-plate.png", scale = 0.6, shift = {8, 9}}
 	},
 	-- Alloy
 	Stainless_Steel = {
@@ -280,6 +571,7 @@ Materials = {
 		Strength_Ultimate = 580,
 		Melting_Point = 1643,
 		Boiling_Point = 2766,
+		Icon = {icon = dyworld_path_icon.."alloy/stainless-steel.png", scale= 0.6, shift = {8, 9}}
 	},
 	Bronze = {
 		-- mix of copper and tin
@@ -291,6 +583,7 @@ Materials = {
 		Strength_Ultimate = 239,
 		Melting_Point = 658,
 		Boiling_Point = 2581,
+		Icon = {icon = dyworld_path_icon.."alloy/bronze.png", scale= 0.6, shift = {8, 9}}
 	},
 	Billon = {
 		-- mix of copper and silver
@@ -302,6 +595,7 @@ Materials = {
 		Strength_Ultimate = 580,
 		Melting_Point = 1023,
 		Boiling_Point = 2387,
+		Icon = {icon = dyworld_path_icon.."alloy/billon.png", scale= 0.6, shift = {8, 9}}
 	},
 	Copper_Tungsten = {
 		-- mix of copper and tungsten
@@ -313,6 +607,7 @@ Materials = {
 		Strength_Ultimate = 1220,
 		Melting_Point = 2253,
 		Boiling_Point = 3781,
+		Icon = {icon = dyworld_path_icon.."alloy/copper-tungsten.png", scale= 0.6, shift = {8, 9}}
 	},
 	Copper_Hydride = {
 		-- mix of copper and hydrogen
@@ -324,6 +619,7 @@ Materials = {
 		Strength_Ultimate = 330,
 		Melting_Point = 1626,
 		Boiling_Point = 3843,
+		Icon = {icon = dyworld_path_icon.."alloy/copper-hydride.png", scale= 0.6, shift = {8, 9}}
 	},
 	-- Compex Alloy
 	Elinvar = {
@@ -336,6 +632,7 @@ Materials = {
 		Strength_Ultimate = 680,
 		Melting_Point = 1618,
 		Boiling_Point = 2754,
+		Icon = {icon = dyworld_path_icon.."alloy/elinvar.png", scale= 0.6, shift = {8, 9}}
 	},
 	-- Super Alloy
 	Stainless_Copilinvar_Tungstate = {
@@ -348,6 +645,7 @@ Materials = {
 		Strength_Ultimate = 2480,
 		Melting_Point = 1838,
 		Boiling_Point = 2750,
+		Icon = {icon = dyworld_path_icon.."alloy/stainless-copilinvar-tungstate.png", scale= 0.6, shift = {8, 9}}
 	},
 }
 
@@ -362,6 +660,7 @@ Material_Table = {
 	{ Name = "wood", Table = "Wood", Type = "Primitive"},
 	{ Name = "obsidian", Table = "Obsidian", Type = "Primitive"},
 	{ Name = "rubber", Table = "Rubber", Type = "Primitive"},
+	{ Name = "chitin", Table = "Chitin", Type = "Primitive"},
 	-- Normal Plates, aka Basic
 	{ Name = "copper", Table = "Copper", Type = "Basic"},
 	{ Name = "iron", Table = "Iron", Type = "Basic"},

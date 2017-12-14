@@ -60,3 +60,10 @@ data.raw.recipe["high-tech-science-pack"].ingredients = {
     {type = "fluid", name = dy.."science-fluid-6", amount = 5},
 	{type = "item", name = dy.."glass", amount = 2},
 }
+
+data.raw.recipe["rocket-fuel"].category = "crafting-with-fluid"
+data.raw.recipe["rocket-fuel"].energy_required = 2.5
+data.raw.recipe["rocket-fuel"].ingredients = {
+    {type = "fluid", name = dy.."rocket-fuel", amount = 5},
+	{type = "item", name = "steel-plate", amount = 1},
+}

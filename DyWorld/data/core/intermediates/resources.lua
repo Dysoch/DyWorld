@@ -94,7 +94,7 @@ local function DyWorld_Technology_1(DATA)
     type = "technology",
     name = dy..DATA.Name.."-processing",
 	localised_name = {"looped-name.processing", {"looped-name."..DATA.Name}},
-	icons = data.raw.item[DATA.Name.."-plate"].icons,
+	icon = data.raw.item[DATA.Name.."-plate"].icon,
     effects =
     {
 	  {type = "unlock-recipe", recipe = DATA.Name.."-plate"},
@@ -133,17 +133,20 @@ data.raw.resource["tungsten-ore"].minable.required_fluid = dy.."hydrogen"
 
 data.raw.item["iron-ore"].icons = {
 	  {
-		icon = dyworld_path_icon.."base-ore-dirty.png",
-		tint = Material_Colors.Iron
+		icon = dyworld_path_icon.."ore/iron.png",
+		tint = Color_Tier["Dirty"]
 	  }
 	}
 
 data.raw.item["copper-ore"].icons = {
 	  {
-		icon = dyworld_path_icon.."base-ore-dirty.png",
-		tint = Material_Colors.Copper
+		icon = dyworld_path_icon.."ore/copper.png",
+		tint = Color_Tier["Dirty"]
 	  }
 	}
 
 table.remove(data.raw.item["iron-ore"], icon)
 table.remove(data.raw.item["copper-ore"], icon)
+
+data.raw.item["copper-plate"].icon = dyworld_path_icon.."plate/copper.png"
+data.raw.item["iron-plate"].icon = dyworld_path_icon.."plate/iron.png"

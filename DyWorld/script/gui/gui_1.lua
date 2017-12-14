@@ -34,9 +34,9 @@ function openGui(player, id)
 	local frame1 = player.gui.top.add{type = "frame", name = "dyworld_stats_1_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
 	local frame2 = player.gui.top.add{type = "frame", name = "dyworld_stats_2_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
 	local frame3 = player.gui.top.add{type = "frame", name = "dyworld_stats_3_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
-	local frameflow1 = frame1.add{type = "flow", style = "dyworld_stats_list_flow", name = "flow", direction = "vertical"}
-	local frameflow2 = frame2.add{type = "flow", style = "dyworld_stats_list_flow", name = "flow", direction = "vertical"}
-	local frameflow3 = frame3.add{type = "flow", style = "dyworld_stats_list_flow", name = "flow", direction = "vertical"}
+	local frameflow1 = frame1.add{type = "flow", name = "flow", direction = "vertical"}
+	local frameflow2 = frame2.add{type = "flow", name = "flow", direction = "vertical"}
+	local frameflow3 = frame3.add{type = "flow", name = "flow", direction = "vertical"}
 	stats_functions.BodySkills(id)
 	-- labels for stats_1
 	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_1", (game.players[id].name)}}

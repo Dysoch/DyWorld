@@ -1,4 +1,6 @@
-require "data/prefix"
+
+local dy = "dyworld-"
+local dyworld_path_item_group = "__DyWorld__/graphics/item-group/"
 
 Data_Table_Item_Group = {
 	{

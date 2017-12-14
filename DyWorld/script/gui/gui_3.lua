@@ -9,7 +9,7 @@ function toggleGui(player)
 		roadmap.Roadmap()
 	local force = player.force
 	local frame = player.gui.top.add{type = "frame", name = "dyworld_roadmap_gui", direction = "vertical", caption = {"dyworld_roadmap_gui.title"}}
-	local frameflow = frame.add{type = "flow", style = "dyworld_stats_list_flow", name = "flow", direction = "vertical"}
+	local frameflow = frame.add{type = "flow", name = "flow", direction = "vertical"}
     local scroll = frameflow.add{type = "scroll-pane", name = "", horizontal_scroll_policy = "never", vertical_scroll_policy = "auto"}
 	scroll.style.top_padding = 5
 	scroll.style.bottom_padding = 5

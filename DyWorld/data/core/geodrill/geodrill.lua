@@ -12,6 +12,7 @@ data:extend(
 		tint = Color_Tier[3]
 	  },
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy.."geodrill"},
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
@@ -90,6 +91,7 @@ data:extend(
 		tint = Color_Tier[3]
 	  },
 	},
+	icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = dy.."assembling-special",
     order = "geodrill",

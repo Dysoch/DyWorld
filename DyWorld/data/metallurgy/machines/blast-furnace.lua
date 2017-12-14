@@ -6,6 +6,7 @@ data:extend(
     type = "assembling-machine",
     name = dy.."blast-furnace",
 	icon = dyworld_path_icon.."blast-furnace.png",
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy.."blast-furnace"},
     corpse = "big-remnants",

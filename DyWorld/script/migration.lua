@@ -119,6 +119,19 @@ function Migrate_To_Next_Version()
 		global.dyworld.Version = "0.5.1" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end
+	if global.dyworld.Version == "0.5.1" then
+			for k,v in pairs(game.players[1].force.technologies) do
+				if v.researched then
+					v.researched = false
+					v.researched = true
+				end
+			end
+			game.players[1].surface.regenerate_entity("zinc-ore")
+			game.players[1].surface.regenerate_entity("nickel-ore")
+			game.players[1].surface.regenerate_entity("aluminium-ore")
+		global.dyworld.Version = "0.6.0" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+	end
 end
 
 function Migrate_Debug()

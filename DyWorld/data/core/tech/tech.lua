@@ -656,6 +656,46 @@ local Data_Table = {
 		Count = 5000,
 		Military = true,
 	},
+	{
+		Name = "railway-2",
+		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
+		Pre_Req = {"railway"},
+		Tech_Ingredients = 2,
+		Count = 250,
+		Military = false,
+	},
+	{
+		Name = "railway-3",
+		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
+		Pre_Req = {"railway-2"},
+		Tech_Ingredients = 3,
+		Count = 400,
+		Military = false,
+	},
+	{
+		Name = "railway-4",
+		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
+		Pre_Req = {"railway-3"},
+		Tech_Ingredients = 4,
+		Count = 800,
+		Military = false,
+	},
+	{
+		Name = "railway-5",
+		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
+		Pre_Req = {"railway-4"},
+		Tech_Ingredients = 5,
+		Count = 1500,
+		Military = false,
+	},
+	{
+		Name = "railway-6",
+		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
+		Pre_Req = {"railway-5"},
+		Tech_Ingredients = 6,
+		Count = 3000,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

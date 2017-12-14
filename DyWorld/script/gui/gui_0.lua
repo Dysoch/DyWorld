@@ -12,9 +12,9 @@ function toggleGui(player, id)
 		local frame1 = player.gui.top.add{type = "frame", name = "dyworld_debug_gui_1", direction = "vertical", caption = "DyWorld Debug Menu"}
 		local frame2 = player.gui.top.add{type = "frame", name = "dyworld_debug_gui_2", direction = "vertical", caption = "DyWorld Debug Menu"}
 		local frame3 = player.gui.top.add{type = "frame", name = "dyworld_debug_gui_3", direction = "vertical", caption = "DyWorld Debug Menu"}
-		local frameflow1 = frame1.add{type = "flow", style = "dyworld_stats_list_flow", name = "debug_list_flow", direction = "vertical"}
-		local frameflow2 = frame2.add{type = "flow", style = "dyworld_stats_list_flow", name = "debug_list_flow", direction = "vertical"}
-		local frameflow3 = frame3.add{type = "flow", style = "dyworld_stats_list_flow", name = "debug_list_flow", direction = "vertical"}
+		local frameflow1 = frame1.add{type = "flow", name = "debug_list_flow", direction = "vertical"}
+		local frameflow2 = frame2.add{type = "flow", name = "debug_list_flow", direction = "vertical"}
+		local frameflow3 = frame3.add{type = "flow", name = "debug_list_flow", direction = "vertical"}
 		local scrollbar_debug = frameflow1.add{type = "scroll-pane", name = "", horizontal_scroll_policy = "never", vertical_scroll_policy = "auto"}
 		local scrollbar_debug2 = frameflow2.add{type = "scroll-pane", name = "", horizontal_scroll_policy = "never", vertical_scroll_policy = "auto"}
 		local scrollbar_debug3 = frameflow3.add{type = "scroll-pane", name = "", horizontal_scroll_policy = "never", vertical_scroll_policy = "auto"}

@@ -21,6 +21,8 @@ require("data.logistics.tools.repair")
 require("data.logistics.chests.chests")
 require("data.logistics.chests.warehouse")
 
+require("data.logistics.trains.locomotives")
+
 
 
 

@@ -41,6 +41,7 @@ function DyWorld_Item(DATA, NMB)
   {
     type = "item",
     name = dy..DATA.Name,
+	icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = dy..DATA.Subgroup,
     stack_size = DATA.Stack or 200,
@@ -88,10 +89,11 @@ function DyWorld_Item_Ore(DATA)
 	icons = 
 	{
 	  {
-		icon = dyworld_path_icon.."base-ore-dirty.png",
-		tint = Material_Colors[DATA.Table]
+		icon = dyworld_path_icon.."ore/"..DATA.Name..".png",
+		tint = Color_Tier["Dirty"]
 	  }
 	},
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = dy.."metal-1-ore",
     stack_size = DATA.Stack or 200,
@@ -105,37 +107,13 @@ function DyWorld_Item_Plate(DATA)
   {
     type = "item",
     name = DATA.Name.."-plate",
-	icons = {},
+	icon = dyworld_path_icon.."plate/"..DATA.Name..".png",
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = dy.."metal-2-plate",
     stack_size = DATA.Stack or 200,
 	order = DATA.Name,
   }
-	if DATA.Type == 1 then
-		result.icons = 
-		{
-		  {
-			icon = dyworld_path_icon.."base-plate-1.png",
-			tint = Material_Colors[DATA.Table]
-		  }
-		}
-	elseif DATA.Type == 2 then
-		result.icons = 
-		{
-		  {
-			icon = dyworld_path_icon.."base-plate-2.png",
-			tint = Material_Colors[DATA.Table]
-		  }
-		}
-	elseif DATA.Type == 3 then
-		result.icons = 
-		{
-		  {
-			icon = dyworld_path_icon.."base-alloy.png",
-			tint = Material_Colors[DATA.Table]
-		  }
-		}
-	end
   return result
 end
 
@@ -161,6 +139,7 @@ function DyWorld_Autoplace(DATA)
     name = DATA.Name.."-ore",
     richness = true,
     order = DATA.Name.."-ore",
+    category = "resource",
   }
   return result
 end
@@ -186,6 +165,7 @@ function DyWorld_Resource(DATA)
 		tint = Material_Colors[DATA.Table]
 	  }
 	},
+	icon_size = 32,
     flags = {"placeable-neutral"},
     order = DATA.Name.."-ore",
     minable =
@@ -704,20 +684,15 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/transport-belt.png",
-		tint = Material_Colors[DATA.Table],
 	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-transport-belt"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 90
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     working_sound =
@@ -775,9 +750,10 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/underground-belt.png",
-		tint = Material_Colors[DATA.Table],
 	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-underground-belt"},
 	max_health = DyWorld_Material_Formulas(3, DATA.Table),
@@ -791,18 +767,17 @@ data:extend(
       x = 64,
       scale = 0.5
     },
-    corpse = "small-remnants",
-    resistances =
+    underground_remove_belts_sprite =
     {
-      {
-        type = "fire",
-        percent = 60
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
+      filename = "__core__/graphics/arrows/underground-lines-remove.png",
+      priority = "high",
+      width = 64,
+      height = 64,
+      x = 64,
+      scale = 0.5
     },
+    corpse = "small-remnants",
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     animation_speed_coefficient = 32,
@@ -824,7 +799,7 @@ data:extend(
     starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
     starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
     ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
-    fast_replaceable_group = "underground-belt",
+    fast_replaceable_group = "transport-belt",
     speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
     structure =
     {
@@ -886,20 +861,15 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/splitter.png",
-		tint = Material_Colors[DATA.Table],
 	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-splitter"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "medium-remnants",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 60
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.9, -0.4}, {0.9, 0.4}},
     selection_box = {{-0.9, -0.5}, {0.9, 0.5}},
     animation_speed_coefficient = 32,
@@ -914,7 +884,7 @@ data:extend(
     starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
     starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
     ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
-    fast_replaceable_group = "splitter",
+    fast_replaceable_group = "transport-belt",
     speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
     structure =
     {
@@ -1020,21 +990,16 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/loader.png",
-		tint = Material_Colors[DATA.Table],
 	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-loader"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     filter_count = 5,
     corpse = "small-remnants",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 60
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.4, -0.9}, {0.4, 0.9}},
     selection_box = {{-0.5, -1}, {0.5, 1}},
     animation_speed_coefficient = 32,
@@ -1047,7 +1012,7 @@ data:extend(
     starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
     starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
     ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
-    fast_replaceable_group = "loader",
+    fast_replaceable_group = "transport-belt",
     speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
     structure =
     {
@@ -1080,7 +1045,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-transport-belt",
 	localised_name = {"looped-name.belt", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/transport-belt.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/transport-belt.png"}, Materials[DATA.Table].Icon},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-belt",
     stack_size = 200,
@@ -1091,7 +1056,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-underground-belt",
 	localised_name = {"looped-name.underground-belt", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/underground-belt.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/underground-belt.png"}, Materials[DATA.Table].Icon},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-underground",
     stack_size = 200,
@@ -1102,7 +1067,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-splitter",
 	localised_name = {"looped-name.splitter", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/splitter.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/splitter.png"}, Materials[DATA.Table].Icon},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-splitter",
     stack_size = 200,
@@ -1113,7 +1078,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-loader",
 	localised_name = {"looped-name.loader", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/loader.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/loader.png"}, Materials[DATA.Table].Icon},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-loader",
     stack_size = 200,
@@ -1165,7 +1130,7 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 2}
 		local result_2 = {dy..DATA.Name, 3}
 		local result_3 = {dy..DATA.Name, 4}
@@ -1248,24 +1213,15 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/pipe.png", 
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-pipe"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 80
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     fast_replaceable_group = "pipe",
     collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
@@ -1306,25 +1262,15 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/pipe-to-ground.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-pipe-to-ground"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 80
-      },
-      {
-        type = "impact",
-        percent = 40
-      }
-
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fluid_box =
@@ -1426,7 +1372,13 @@ data:extend(
     name = dy..DATA.Name.."-pipe",
 	localised_name = {"looped-name.pipe", {"looped-name."..DATA.Name}},
 	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table))},
-	icons = {{icon = "__base__/graphics/icons/pipe.png", tint = Material_Colors[DATA.Table]}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/pipe.png", 
+	  },
+	  Materials[DATA.Table].Icon,
+	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."pipe-normal",
     stack_size = 200,
@@ -1438,7 +1390,13 @@ data:extend(
     name = dy..DATA.Name.."-pipe-to-ground",
 	localised_name = {"looped-name.pipe-to-ground", {"looped-name."..DATA.Name}},
 	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table)), (DyWorld_Material_Formulas(2, DATA.Table))},
-	icons = {{icon = "__base__/graphics/icons/pipe-to-ground.png", tint = Material_Colors[DATA.Table]}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/pipe-to-ground.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."pipe-underground",
     stack_size = 200,
@@ -1469,7 +1427,7 @@ data:extend(
 		local result_2 = {DATA.Name, 4}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].ingredients, result_2)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 2}
 		local result_2 = {dy..DATA.Name, 4}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
@@ -1512,12 +1470,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/gun-turret.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-player", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-gun-turret"},
     max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
+    resistances = Material_Resistances[DATA.Table],
 	fast_replaceable_group = "turret",
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
@@ -1620,7 +1580,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-gun-turret",
 	localised_name = {"looped-name.gun-turret", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."turret-gun",
     stack_size = 50,
@@ -1644,12 +1604,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/gun-turret.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-player", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-shotgun-turret"},
     max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
+    resistances = Material_Resistances[DATA.Table],
     corpse = "medium-remnants",
 	fast_replaceable_group = "turret",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
@@ -1751,7 +1713,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-shotgun-turret",
 	localised_name = {"looped-name.shotgun-turret", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."turret-shotgun",
     stack_size = 50,
@@ -1775,12 +1737,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/gun-turret.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-player", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-cannon-turret"},
     max_health = (35 * DyWorld_Material_Formulas(3, DATA.Table)),
+    resistances = Material_Resistances[DATA.Table],
     corpse = "medium-remnants",
 	fast_replaceable_group = "turret",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
@@ -1882,7 +1846,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-cannon-turret",
 	localised_name = {"looped-name.cannon-turret", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."turret-cannon",
     stack_size = 50,
@@ -1905,7 +1869,7 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-turret"].ingredients, result_2)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 15}
 		local result_2 = {dy..DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-gun-turret"].ingredients, result_1)
@@ -1956,12 +1920,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/gun-turret.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-player", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-grenade-turret"},
     max_health = (25 * DyWorld_Material_Formulas(3, DATA.Table)),
+    resistances = Material_Resistances[DATA.Table],
 	fast_replaceable_group = "turret",
     corpse = "medium-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
@@ -2037,7 +2003,7 @@ data:extend(
     {
       type = "projectile",
       ammo_category = dy.."grenade-ammo",
-      cooldown = (60 / DyWorld_Material_Formulas(6, DATA.Table)),
+      cooldown = ((60 / DyWorld_Material_Formulas(6, DATA.Table)) * 5),
       projectile_creation_distance = 1.39375,
       projectile_center = {0, -0.0875}, -- same as gun_turret_attack shift
       shell_particle =
@@ -2068,9 +2034,10 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/firearm-magazine.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     ammo_type =
     {
@@ -2125,7 +2092,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-grenade-turret",
 	localised_name = {"looped-name.grenade-turret", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/gun-turret.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/gun-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."turret-grenade",
     stack_size = 50,
@@ -2145,7 +2112,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade-turret"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade-turret"].ingredients, result_1)
 	else
@@ -2214,9 +2181,10 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/firearm-magazine.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     ammo_type =
     {
@@ -2305,9 +2273,10 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/shotgun-shell.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     ammo_type =
     {
@@ -2365,7 +2334,7 @@ data:extend(
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0,
     direction_only = true,
-	piercing_damage = DyWorld_Material_Formulas(8, DATA.Table),
+	piercing_damage = (DyWorld_Material_Formulas(8, DATA.Table)*2),
     action =
     {
       type = "direct",
@@ -2375,7 +2344,7 @@ data:extend(
         target_effects =
         {
           type = "damage",
-          damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "physical"}
+          damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table)*2), type = "physical"}
         }
       }
     },
@@ -2397,9 +2366,10 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/piercing-rounds-magazine.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     ammo_type =
     {
@@ -2457,7 +2427,7 @@ data:extend(
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0,
     direction_only = true,
-	piercing_damage = DyWorld_Material_Formulas(8, DATA.Table),
+	piercing_damage = (DyWorld_Material_Formulas(8, DATA.Table)*2),
     action =
     {
       type = "direct",
@@ -2467,7 +2437,7 @@ data:extend(
         target_effects =
         {
           type = "damage",
-          damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "physical"}
+          damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table)*2), type = "physical"}
         }
       }
     },
@@ -2489,13 +2459,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/piercing-shotgun-shell.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     ammo_type =
     {
-      category = "bullet",
+      category = "shotgun-shell",
       target_type = "direction",
       action =
       {
@@ -2607,9 +2578,10 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/cannon-shell.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     ammo_type =
     {
@@ -2695,7 +2667,7 @@ data:extend(
             action =
             {
               type = "area",
-              perimeter = (DyWorld_Material_Formulas(5, DATA.Table) / 2),
+              radius = (DyWorld_Material_Formulas(5, DATA.Table) / 2),
               action_delivery =
               {
                 type = "instant",
@@ -2734,9 +2706,10 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/cannon-shell.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     ammo_type =
     {
@@ -2786,7 +2759,7 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-piercing-ammo"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-shell"].ingredients, result_4)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-explosive-shell"].ingredients, result_4)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 2}
 		local result_2 = {dy..DATA.Name, 5}
 		local result_3 = {dy..DATA.Name, 4}
@@ -2885,7 +2858,7 @@ data:extend(
       },
       {
         type = "area",
-        perimeter = (Materials[DATA.Table].Hardness),
+        radius = (Materials[DATA.Table].Hardness),
         action_delivery =
         {
           type = "instant",
@@ -2930,8 +2903,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/grenade.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},    
     flags = {"goes-to-quickbar"},
     capsule_action =
@@ -3038,8 +3011,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/cluster-grenade.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},    
     flags = {"goes-to-quickbar"},
     capsule_action =
@@ -3099,7 +3072,7 @@ data:extend(
 		local result_1 = {DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-cluster-grenade"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-cluster-grenade"].ingredients, result_1)
@@ -3140,25 +3113,16 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/offshore-pump.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation", "filter-directions"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-offshore-pump"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     fluid = "water",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 70
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.6, -0.45}, {0.6, 0.3}},
     selection_box = {{-1, -1.49}, {1, 0.49}},
     fluid_box =
@@ -3216,64 +3180,8 @@ data:extend(
 		tint = Material_Colors[DATA.Table]
       }
     },
-    circuit_wire_connection_points =
-    {
-      {
-        shadow =
-        {
-          red = {2.71875, 0.375},
-          green = {2.5, 0.375},
-        },
-        wire =
-        {
-          red = {0.84375, -0.09375},
-          green = {0.6875, -0.09375},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {0.765625, 0.546875},
-          green = {0.765625, 0.421875},
-        },
-        wire =
-        {
-          red = {-0.28125, -0.09375},
-          green = {-0.28125, -0.21875},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {-0.09375, 0.5625},
-          green = {0.0625, 0.5625},
-        },
-        wire =
-        {
-          red = {-0.90625, -0.53125},
-          green = {-0.75, -0.53125},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {1.78125, -0.46875},
-          green = {1.78125, -0.3125},
-        },
-        wire =
-        {
-          red = {0.34375, -1.40625},
-          green = {0.34375, -1.25},
-        }
-      }
-    },
-    circuit_connector_sprites =
-    {
-      get_circuit_connector_sprites({0.90625, -0.15625}, nil, 0),
-      get_circuit_connector_sprites({0, 0.03125}, nil, 6),
-      get_circuit_connector_sprites({-0.9375, -0.25}, nil, 4),
-      get_circuit_connector_sprites({0.125, -1.3125}, nil, 2),
-    },
+    circuit_wire_connection_points = circuit_connector_definitions["offshore-pump"].points,
+    circuit_connector_sprites = circuit_connector_definitions["offshore-pump"].sprites,
     circuit_wire_max_distance = math.floor(Materials[DATA.Table].Density)
 
   },
@@ -3285,9 +3193,10 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/pump.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-pump"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
@@ -3295,17 +3204,7 @@ data:extend(
     corpse = "small-remnants",
     collision_box = {{-0.29, -0.79}, {0.29, 0.79}},
     selection_box = {{-0.5, -1}, {0.5, 1}},
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 80
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     fluid_box =
     {
       base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
@@ -3547,71 +3446,15 @@ data:extend(
         },
       }
     },
-    circuit_wire_connection_points =
-    {
-      {
-        shadow =
-        {
-          red = {0.171875, 0.140625},
-          green = {0.171875, 0.265625},
-        },
-        wire =
-        {
-          red = {-0.53125, -0.15625},
-          green = {-0.53125, 0},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {0.890625, 0.703125},
-          green = {0.75, 0.75},
-        },
-        wire =
-        {
-          red = {0.34375, 0.28125},
-          green = {0.34375, 0.4375},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {0.15625, 0.0625},
-          green = {0.09375, 0.125},
-        },
-        wire =
-        {
-          red = {-0.53125, -0.09375},
-          green = {-0.53125, 0.03125},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {0.796875, 0.703125},
-          green = {0.625, 0.75},
-        },
-        wire =
-        {
-          red = {0.40625, 0.28125},
-          green = {0.40625, 0.4375},
-        }
-      }
-    },
-    circuit_connector_sprites =
-    {
-      get_circuit_connector_sprites({-0.40625, -0.3125}, nil, 24),
-      get_circuit_connector_sprites({0.125, 0.21875}, {0.34375, 0.40625}, 18),
-      get_circuit_connector_sprites({-0.40625, -0.25}, nil, 24),
-      get_circuit_connector_sprites({0.203125, 0.203125}, {0.25, 0.40625}, 18),
-    },
+    circuit_wire_connection_points = circuit_connector_definitions["pump"].points,
+    circuit_connector_sprites = circuit_connector_definitions["pump"].sprites,
     circuit_wire_max_distance = math.floor(Materials[DATA.Table].Density)
   },
   {
     type = "item",
     name = dy..DATA.Name.."-pump",
 	localised_name = {"looped-name.pump", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/pump.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/pump.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."pump-pipe",
     stack_size = 200,
@@ -3631,7 +3474,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-offshore-pump",
 	localised_name = {"looped-name.offshore-pump", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/offshore-pump.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/offshore-pump.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."pump-offshore",
     stack_size = 200,
@@ -3652,7 +3495,7 @@ data:extend(
 		local result_1 = {DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
@@ -3695,19 +3538,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/inserter.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     allow_custom_vectors = false,
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 90
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
     pickup_position = {0, -1},
@@ -3862,8 +3700,8 @@ data:extend(
         }
       }
     },
-    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
-    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_connection_points = circuit_connector_definitions["inserter"].points,
+    circuit_connector_sprites = circuit_connector_definitions["inserter"].sprites,
     circuit_wire_max_distance = inserter_circuit_wire_max_distance,
     default_stack_control_input_signal = inserter_default_stack_control_input_signal
   },
@@ -3877,19 +3715,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/long-handed-inserter.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     allow_custom_vectors = false,
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 90
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
     pickup_position = {0, -2},
@@ -4045,8 +3878,8 @@ data:extend(
         }
       }
     },
-    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
-    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_connection_points = circuit_connector_definitions["inserter"].points,
+    circuit_connector_sprites = circuit_connector_definitions["inserter"].sprites,
     circuit_wire_max_distance = inserter_circuit_wire_max_distance,
     default_stack_control_input_signal = inserter_default_stack_control_input_signal
   },
@@ -4060,19 +3893,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/filter-inserter.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     allow_custom_vectors = false,
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 90
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
     pickup_position = {0, -1},
@@ -4228,8 +4056,8 @@ data:extend(
         }
       }
     },
-    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
-    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_connection_points = circuit_connector_definitions["inserter"].points,
+    circuit_connector_sprites = circuit_connector_definitions["inserter"].sprites,
     circuit_wire_max_distance = inserter_circuit_wire_max_distance,
     default_stack_control_input_signal = inserter_default_stack_control_input_signal
   },
@@ -4243,20 +4071,15 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/stack-inserter.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     allow_custom_vectors = false,
     stack = true,
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 90
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
     pickup_position = {0, -1},
@@ -4411,8 +4234,8 @@ data:extend(
         }
       }
     },
-    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
-    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_connection_points = circuit_connector_definitions["inserter"].points,
+    circuit_connector_sprites = circuit_connector_definitions["inserter"].sprites,
     circuit_wire_max_distance = inserter_circuit_wire_max_distance,
     default_stack_control_input_signal = inserter_default_stack_control_input_signal
   },
@@ -4426,21 +4249,16 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/stack-filter-inserter.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     allow_custom_vectors = false,
     stack = true,
     filter_count = 2,
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 90
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
     pickup_position = {0, -1},
@@ -4595,8 +4413,8 @@ data:extend(
         }
       }
     },
-    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
-    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_connection_points = circuit_connector_definitions["inserter"].points,
+    circuit_connector_sprites = circuit_connector_definitions["inserter"].sprites,
     circuit_wire_max_distance = inserter_circuit_wire_max_distance,
     default_stack_control_input_signal = inserter_default_stack_control_input_signal
   },
@@ -4610,20 +4428,15 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/stack-filter-inserter.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     allow_custom_vectors = false,
     stack = true,
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 90
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
     pickup_position = {0, -1},
@@ -4778,8 +4591,8 @@ data:extend(
         }
       }
     },
-    circuit_wire_connection_point = inserter_circuit_wire_connection_point,
-    circuit_connector_sprites = inserter_circuit_connector_sprites,
+    circuit_wire_connection_points = circuit_connector_definitions["inserter"].points,
+    circuit_connector_sprites = circuit_connector_definitions["inserter"].sprites,
     circuit_wire_max_distance = inserter_circuit_wire_max_distance,
     default_stack_control_input_signal = inserter_default_stack_control_input_signal
   },
@@ -4787,7 +4600,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-basic-inserter",
 	localised_name = {"looped-name.inserter-1", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/inserter.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/inserter.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."inserter-basic",
     stack_size = 200,
@@ -4807,7 +4620,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-long-inserter",
 	localised_name = {"looped-name.inserter-2", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/long-handed-inserter.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/long-handed-inserter.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."inserter-long",
     stack_size = 200,
@@ -4827,7 +4640,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-filter-inserter",
 	localised_name = {"looped-name.inserter-3", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/filter-inserter.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/filter-inserter.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."inserter-filter",
     stack_size = 200,
@@ -4847,7 +4660,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-stack-inserter",
 	localised_name = {"looped-name.inserter-4", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/stack-inserter.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/stack-inserter.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."inserter-stack",
     stack_size = 200,
@@ -4867,7 +4680,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-stack-filter-inserter",
 	localised_name = {"looped-name.inserter-5", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/stack-filter-inserter.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/stack-filter-inserter.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."inserter-stack-filter",
     stack_size = 200,
@@ -4887,7 +4700,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-super-inserter",
 	localised_name = {"looped-name.inserter-6", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/stack-filter-inserter.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/stack-filter-inserter.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."inserter-super",
     stack_size = 200,
@@ -4914,7 +4727,7 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-inserter"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-filter-inserter"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-super-inserter"].ingredients, result_3)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 2}
 		local result_2 = {dy..DATA.Name, 5}
 		local result_3 = {dy..DATA.Name, 10}
@@ -4987,17 +4800,18 @@ data:extend(
     type = "storage-tank",
     name = dy..DATA.Name.."-storage-tank",
 	localised_name = {"looped-name.storage-tank", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table)*100)},
     flags = {"placeable-player", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-storage-tank"},
     icons = 
 	{
 	  {
 		icon = "__base__/graphics/icons/storage-tank.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
     corpse = "medium-remnants",
     collision_box = {{-1.3, -1.3}, {1.3, 1.3}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
@@ -5020,15 +4834,46 @@ data:extend(
     {
       picture =
       {
-        sheet =
+        sheets =
         {
-          filename = "__base__/graphics/entity/storage-tank/storage-tank.png",
-          priority = "extra-high",
-          frames = 2,
-          width = 140,
-          height = 115,
-          shift = {0.6875, 0.109375},
-		  tint = Material_Colors[DATA.Table],
+          {
+            filename = "__base__/graphics/entity/storage-tank/storage-tank.png",
+            priority = "extra-high",
+            frames = 2,
+            width = 110,
+            height = 108,
+            shift = util.by_pixel(0, 4),
+		    tint = Material_Colors[DATA.Table],
+            hr_version = {
+              filename = "__base__/graphics/entity/storage-tank/hr-storage-tank.png",
+              priority = "extra-high",
+              frames = 2,
+              width = 219,
+		      tint = Material_Colors[DATA.Table],
+              height = 215,
+              shift = util.by_pixel(-0.25, 3.75),
+              scale = 0.5
+            }
+          },
+          {
+            filename = "__base__/graphics/entity/storage-tank/storage-tank-shadow.png",
+            priority = "extra-high",
+            frames = 2,
+            width = 146,
+            height = 77,
+            shift = util.by_pixel(30, 22.5),
+            draw_as_shadow = true,
+            hr_version = {
+              filename = "__base__/graphics/entity/storage-tank/hr-storage-tank-shadow.png",
+              priority = "extra-high",
+              frames = 2,
+              width = 291,
+              height = 153,
+              shift = util.by_pixel(29.75, 22.25),
+              scale = 0.5,
+              draw_as_shadow = true
+            }
+          }
         }
       },
       fluid_background =
@@ -5043,7 +4888,14 @@ data:extend(
         filename = "__base__/graphics/entity/storage-tank/window-background.png",
         priority = "extra-high",
         width = 17,
-        height = 24
+        height = 24,
+        hr_version = {
+          filename = "__base__/graphics/entity/storage-tank/hr-window-background.png",
+          priority = "extra-high",
+          width = 34,
+          height = 48,
+          scale = 0.5
+        }
       },
       flow_sprite =
       {
@@ -5088,72 +4940,15 @@ data:extend(
       apparent_volume = 1.5,
       max_sounds_per_type = 3
     },
-    circuit_wire_connection_points =
-    {
-      {
-        shadow =
-        {
-          red = {2.35938, 0.890625},
-          green = {2.29688, 0.953125},
-        },
-        wire =
-        {
-          red = {-0.40625, -0.375},
-          green = {-0.53125, -0.46875},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {2.35938, 0.890625},
-          green = {2.29688, 0.953125},
-        },
-        wire =
-        {
-          red = {0.46875, -0.53125},
-          green = {0.375, -0.4375},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {2.35938, 0.890625},
-          green = {2.29688, 0.953125},
-        },
-        wire =
-        {
-          red = {-0.40625, -0.375},
-          green = {-0.53125, -0.46875},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {2.35938, 0.890625},
-          green = {2.29688, 0.953125},
-        },
-        wire =
-        {
-          red = {0.46875, -0.53125},
-          green = {0.375, -0.4375},
-        }
-      },
-    },
-    circuit_connector_sprites =
-    {
-      get_circuit_connector_sprites({-0.1875, -0.375}, nil, 7),
-      get_circuit_connector_sprites({0.375, -0.53125}, nil, 1),
-      get_circuit_connector_sprites({-0.1875, -0.375}, nil, 7),
-      get_circuit_connector_sprites({0.375, -0.53125}, nil, 1),
-    },
+    circuit_wire_connection_points = circuit_connector_definitions["storage-tank"].points,
+    circuit_connector_sprites = circuit_connector_definitions["storage-tank"].sprites,
     circuit_wire_max_distance = 9
   },
   {
     type = "item",
     name = dy..DATA.Name.."-storage-tank",
 	localised_name = {"looped-name.storage-tank", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table)*100)},
-	icons = {{icon = "__base__/graphics/icons/storage-tank.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/storage-tank.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."tank-storage",
     stack_size = 200,
@@ -5173,7 +4968,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 50}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 50}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
 	else
@@ -5208,18 +5003,13 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/medium-electric-pole.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 100
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     drawing_box = {{-0.5, -2.8}, {0.5, 0.5}},
@@ -5314,22 +5104,17 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/big-electric-pole.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "medium-remnants",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 100
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box = {{-1, -3}, {1, 0.5}},
-    maximum_wire_distance = math.floor(DyWorld_Material_Formulas(12, DATA.Table) * 5),
+    maximum_wire_distance = math.floor(DyWorld_Material_Formulas(13, DATA.Table)),
     supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table),
 	fast_replaceable_group = "relay",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -5414,7 +5199,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-power-pole",
 	localised_name = {"looped-name.power-pole", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/medium-electric-pole.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/medium-electric-pole.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."power-pole",
     stack_size = 200,
@@ -5434,7 +5219,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-power-relay",
 	localised_name = {"looped-name.power-relay", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/big-electric-pole.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/big-electric-pole.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."power-relay",
     stack_size = 200,
@@ -5456,7 +5241,7 @@ data:extend(
 		local result_2 = {DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-power-pole"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-power-relay"].ingredients, result_2)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 10}
 		local result_2 = {dy..DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-power-pole"].ingredients, result_1)
@@ -5499,12 +5284,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/laser-turret.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = { "placeable-player", "placeable-enemy", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-laser-turret"},
     max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
+    resistances = Material_Resistances[DATA.Table],
     corpse = "medium-remnants",
 	fast_replaceable_group = "turret",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
@@ -5706,12 +5493,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/laser-turret.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = { "placeable-player", "placeable-enemy", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-shotgun-laser-turret"},
     max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
+    resistances = Material_Resistances[DATA.Table],
     corpse = "medium-remnants",
 	fast_replaceable_group = "turret",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
@@ -5911,7 +5700,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-laser-turret",
 	localised_name = {"looped-name.laser-turret", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/laser-turret.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/laser-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."turret-laser",
     stack_size = 100,
@@ -5931,7 +5720,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-shotgun-laser-turret",
 	localised_name = {"looped-name.shotgun-laser-turret", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/laser-turret.png", tint = Material_Colors[DATA.Table]}},
+	icons = {{icon = "__base__/graphics/icons/laser-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
     subgroup = dy.."turret-shotgun-laser",
     stack_size = 100,
@@ -5952,7 +5741,7 @@ data:extend(
 		local result_1 = {DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-laser-turret"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 20}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-laser-turret"].ingredients, result_1)
@@ -5993,8 +5782,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/iron-axe.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-main-inventory"},
     action =
@@ -6029,7 +5818,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 4}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mining-tool"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 4}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mining-tool"].ingredients, result_1)
 	else
@@ -6062,8 +5851,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/repair-pack.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."repair-tool",
@@ -6085,7 +5874,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-repair-tool"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-repair-tool"].ingredients, result_1)
 	else
@@ -6118,12 +5907,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/solar-panel.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-solar-normal"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
     corpse = "big-remnants",
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
@@ -6134,11 +5925,64 @@ data:extend(
     },
     picture =
     {
-      filename = "__base__/graphics/entity/solar-panel/solar-panel.png",
-      priority = "high",
-      width = 104,
-      height = 96,
-	  tint = Material_Colors[DATA.Table],
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/solar-panel/solar-panel.png",
+          priority = "high",
+          width = 116,
+          height = 112,
+          shift = util.by_pixel(-3, 3),
+	      tint = Material_Colors[DATA.Table],
+          hr_version = {
+            filename = "__base__/graphics/entity/solar-panel/hr-solar-panel.png",
+            priority = "high",
+            width = 230,
+            height = 224,
+            shift = util.by_pixel(-3, 3.5),
+	        tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/solar-panel/solar-panel-shadow.png",
+          priority = "high",
+          width = 112,
+          height = 90,
+          shift = util.by_pixel(10, 6),
+          draw_as_shadow = true,
+          hr_version = {
+            filename = "__base__/graphics/entity/solar-panel/hr-solar-panel-shadow.png",
+            priority = "high",
+            width = 220,
+            height = 180,
+            shift = util.by_pixel(9.5, 6),
+            draw_as_shadow = true,
+            scale = 0.5
+          }
+        }
+      }
+    },
+    overlay =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/solar-panel/solar-panel-shadow-overlay.png",
+          priority = "high",
+          width = 108,
+          height = 90,
+          shift = util.by_pixel(11, 6),
+          hr_version = {
+            filename = "__base__/graphics/entity/solar-panel/hr-solar-panel-shadow-overlay.png",
+            priority = "high",
+            width = 214,
+            height = 180,
+            shift = util.by_pixel(10.5, 6),
+            scale = 0.5
+          }
+        }
+      }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     production = tostring(DyWorld_Material_Formulas(10, DATA.Table)).."kW",
@@ -6152,8 +5996,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/solar-panel.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."solar-2",
@@ -6174,7 +6018,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal"].ingredients, result_1)
 	else
@@ -6209,12 +6053,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/accumulator.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-accumulator-normal"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
     corpse = "medium-remnants",
     collision_box = {{-0.9, -0.9}, {0.9, 0.9}},
     selection_box = {{-1, -1}, {1, 1}},
@@ -6274,20 +6120,8 @@ data:extend(
       },
       max_sounds_per_type = 5
     },
-    circuit_wire_connection_point =
-    {
-      shadow =
-      {
-        red = {0.984375, 1.10938},
-        green = {0.890625, 1.10938}
-      },
-      wire =
-      {
-        red = {0.6875, 0.59375},
-        green = {0.6875, 0.71875}
-      }
-    },
-    circuit_connector_sprites = get_circuit_connector_sprites({0.46875, 0.5}, {0.46875, 0.8125}, 26),
+    circuit_wire_connection_point = circuit_connector_definitions["accumulator"].points,
+    circuit_connector_sprites = circuit_connector_definitions["accumulator"].sprites,
     circuit_wire_max_distance = 9,
     default_output_signal = {type = "virtual", name = "signal-A"}
   },
@@ -6299,8 +6133,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/accumulator.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."accumulator-2",
@@ -6321,7 +6155,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].ingredients, result_1)
 	else
@@ -6356,12 +6190,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/electric-mining-drill.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-electric-drill"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
     resource_categories = {"basic-solid"},
     corpse = "big-remnants",
     collision_box = {{ -1.4, -1.4}, {1.4, 1.4}},
@@ -7227,20 +7063,8 @@ data:extend(
       height = 12
     },
     monitor_visualization_tint = {r=78, g=173, b=255},
-    circuit_wire_connection_points =
-    {
-      get_circuit_connector_wire_shifting_for_connector({-0.09375, -1.65625}, {-0.09375, -1.65625}, 4),
-      get_circuit_connector_wire_shifting_for_connector({1.28125, -0.40625},  {1.28125, -0.40625},  2),
-      get_circuit_connector_wire_shifting_for_connector({0.09375, 1},         {0.09375, 1},         0),
-      get_circuit_connector_wire_shifting_for_connector({-1.3125, -0.3125},   {-1.3125, -0.3125},   6)
-    },
-    circuit_connector_sprites =
-    {
-      get_circuit_connector_sprites({-0.09375, -1.65625}, {-0.09375, -1.65625}, 4),
-      get_circuit_connector_sprites({1.28125, -0.40625},  {1.28125, -0.40625},  2),
-      get_circuit_connector_sprites({0.09375, 1},         {0.09375, 1},         0),
-      get_circuit_connector_sprites({-1.3125, -0.3125},   {-1.3125, -0.3125},   6)
-    },
+    circuit_wire_connection_points = circuit_connector_definitions["electric-mining-drill"].points,
+    circuit_connector_sprites = circuit_connector_definitions["electric-mining-drill"].sprites,
     circuit_wire_max_distance = 9,
   },
   {
@@ -7251,8 +7075,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/electric-mining-drill.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."drills-electric",
@@ -7273,7 +7097,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-electric-drill"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-electric-drill"].ingredients, result_1)
 	else
@@ -7306,13 +7130,15 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/burner-mining-drill.png",
-		tint = Material_Colors[DATA.Table],
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     resource_categories = {"basic-solid"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-burner-drill"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
     corpse = "medium-remnants",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{ -1, -1}, {1, 1}},
@@ -7574,20 +7400,8 @@ data:extend(
     resource_searching_radius = (math.floor(Materials[DATA.Table].Hardness / 2) + 0.49),
     vector_to_place_result = {-0.5, -1.3},
     fast_replaceable_group = "mining-drill",
-    circuit_wire_connection_points =
-    {
-      get_circuit_connector_wire_shifting_for_connector({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
-      get_circuit_connector_wire_shifting_for_connector({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
-      get_circuit_connector_wire_shifting_for_connector({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
-      get_circuit_connector_wire_shifting_for_connector({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17)
-    },
-    circuit_connector_sprites =
-    {
-      get_circuit_connector_sprites({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
-      get_circuit_connector_sprites({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
-      get_circuit_connector_sprites({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17),
-      get_circuit_connector_sprites({-0.46875, 0.09375}, {-0.46875, 0.09375}, 17)
-    },
+    circuit_wire_connection_points = circuit_connector_definitions["burner-mining-drill"].points,
+    circuit_connector_sprites = circuit_connector_definitions["burner-mining-drill"].sprites,
     circuit_wire_max_distance = 9,
   },
   {
@@ -7598,8 +7412,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/burner-mining-drill.png",
-		tint = Material_Colors[DATA.Table],
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."drills-burner",
@@ -7620,7 +7434,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-burner-drill"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-burner-drill"].ingredients, result_1)
 	else
@@ -7645,21 +7459,16 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/assembling-machine-3.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-assembling-electric"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 70
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     fluid_boxes =
     {
       {
@@ -7775,8 +7584,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/assembling-machine-3.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."assembling-electric",
@@ -7797,7 +7606,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-assembling-electric"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 12}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-assembling-electric"].ingredients, result_1)
 	else
@@ -7830,26 +7639,17 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/iron-chest.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-chest"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
     close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.7 },
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 80
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fast_replaceable_group = "container",
@@ -7864,20 +7664,8 @@ data:extend(
       shift = {0.1875, 0},
 	  tint = Material_Colors[DATA.Table]
     },
-    circuit_wire_connection_point =
-    {
-      shadow =
-      {
-        red = {0.734375, 0.453125},
-        green = {0.609375, 0.515625},
-      },
-      wire =
-      {
-        red = {0.40625, 0.21875},
-        green = {0.40625, 0.375},
-      }
-    },
-    circuit_connector_sprites = get_circuit_connector_sprites({0.1875, 0.15625}, nil, 18),
+    circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
     circuit_wire_max_distance = 9
   },
   {
@@ -7888,8 +7676,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/iron-chest.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."chests",
@@ -7910,7 +7698,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-chest"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-chest"].ingredients, result_1)
 	else
@@ -7943,26 +7731,17 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/iron-chest.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-warehouse-chest"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
     close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.7 },
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 80
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-1.35, -1.35}, {1.35, 1.35}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fast_replaceable_group = "warehouse",
@@ -7978,20 +7757,8 @@ data:extend(
       shift = {0.75, 0},
 	  tint = Material_Colors[DATA.Table]
     },
-    circuit_wire_connection_point =
-    {
-      shadow =
-      {
-        red = {0.734375, 0.453125},
-        green = {0.609375, 0.515625},
-      },
-      wire =
-      {
-        red = {0.40625, 0.21875},
-        green = {0.40625, 0.375},
-      }
-    },
-    circuit_connector_sprites = get_circuit_connector_sprites({0.1875, 0.15625}, nil, 18),
+    circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    circuit_connector_sprites = circuit_connector_definitions["chest"].sprites, 
     circuit_wire_max_distance = 9
   },
   {
@@ -8002,8 +7769,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/iron-chest.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."chests-warehouse",
@@ -8024,7 +7791,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 75}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 75}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 	else
@@ -8051,26 +7818,17 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/iron-chest.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-warehouse-chest"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
     close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.7 },
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 80
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-1.35, -1.35}, {1.35, 1.35}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fast_replaceable_group = "warehouse",
@@ -8087,20 +7845,8 @@ data:extend(
       shift = {0.75, 0},
 	  tint = Material_Colors[DATA.Table]
     },
-    circuit_wire_connection_point =
-    {
-      shadow =
-      {
-        red = {0.734375, 0.453125},
-        green = {0.609375, 0.515625},
-      },
-      wire =
-      {
-        red = {0.40625, 0.21875},
-        green = {0.40625, 0.375},
-      }
-    },
-    circuit_connector_sprites = get_circuit_connector_sprites({0.1875, 0.15625}, nil, 18),
+    circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
     circuit_wire_max_distance = 9
   },
   {
@@ -8111,8 +7857,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/iron-chest.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."chests-warehouse",
@@ -8133,7 +7879,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 75}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 75}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 	else
@@ -8176,26 +7922,17 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/roboport.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-roboport"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "big-remnants",
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
     selection_box = {{-2, -2}, {2, 2}},
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 60
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
+    resistances = Material_Resistances[DATA.Table],
     dying_explosion = "medium-explosion",
     energy_source =
     {
@@ -8220,11 +7957,39 @@ data:extend(
     },
     base =
     {
-      filename = "__base__/graphics/entity/roboport/roboport-base.png",
-      width = 143,
-      height = 135,
-      shift = {0.5, 0.25},
-	  tint = Material_Colors[DATA.Table]
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/roboport/roboport-base.png",
+          width = 143,
+          height = 135,
+          shift = {0.5, 0.25},
+	      tint = Material_Colors[DATA.Table],
+          hr_version = {
+            filename = "__base__/graphics/entity/roboport/hr-roboport-base.png",
+            width = 228,
+            height = 277,
+            shift = util.by_pixel(2, 7.75),
+	        tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
+          width = 147,
+          height = 102,
+          draw_as_shadow = true,
+          shift = util.by_pixel(28.5, 19.25),
+          hr_version = {
+            filename = "__base__/graphics/entity/roboport/hr-roboport-shadow.png",
+            width = 294,
+            height = 201,
+            draw_as_shadow = true,
+            shift = util.by_pixel(28.5, 19.25),
+            scale = 0.5
+          }
+        }
+      }
     },
     base_patch =
     {
@@ -8233,8 +7998,18 @@ data:extend(
       width = 69,
       height = 50,
       frame_count = 1,
+      shift = {0.03125, 0.203125},
 	  tint = Material_Colors[DATA.Table],
-      shift = {0.03125, 0.203125}
+      hr_version = {
+        filename = "__base__/graphics/entity/roboport/hr-roboport-base-patch.png",
+        priority = "medium",
+        width = 138,
+        height = 100,
+        frame_count = 1,
+        shift = util.by_pixel(1.5, 5),
+	    tint = Material_Colors[DATA.Table],
+        scale = 0.5
+      }
     },
     base_animation =
     {
@@ -8244,8 +8019,19 @@ data:extend(
       height = 31,
       frame_count = 8,
       animation_speed = 0.5,
+      shift = {-0.5315, -1.9375},
 	  tint = Material_Colors[DATA.Table],
-      shift = {-0.5315, -1.9375}
+      hr_version = {
+        filename = "__base__/graphics/entity/roboport/hr-roboport-base-animation.png",
+        priority = "medium",
+        width = 83,
+        height = 59,
+        frame_count = 8,
+	    tint = Material_Colors[DATA.Table],
+        animation_speed = 0.5,
+        shift = util.by_pixel(-17.75, -61.25),
+        scale = 0.5
+      }
     },
     door_animation_up =
     {
@@ -8254,8 +8040,18 @@ data:extend(
       width = 52,
       height = 20,
       frame_count = 16,
+      shift = {0.015625, -0.890625},
 	  tint = Material_Colors[DATA.Table],
-      shift = {0.015625, -0.890625}
+      hr_version = {
+        filename = "__base__/graphics/entity/roboport/hr-roboport-door-up.png",
+        priority = "medium",
+        width = 97,
+        height = 38,
+	    tint = Material_Colors[DATA.Table],
+        frame_count = 16,
+        shift = util.by_pixel(-0.25, -29.5),
+        scale = 0.5
+      }
     },
     door_animation_down =
     {
@@ -8264,8 +8060,18 @@ data:extend(
       width = 52,
       height = 22,
       frame_count = 16,
+      shift = {0.015625, -0.234375},
 	  tint = Material_Colors[DATA.Table],
-      shift = {0.015625, -0.234375}
+      hr_version = {
+        filename = "__base__/graphics/entity/roboport/hr-roboport-door-down.png",
+        priority = "medium",
+        width = 97,
+        height = 41,
+	    tint = Material_Colors[DATA.Table],
+        frame_count = 16,
+        shift = util.by_pixel(-0.25,-9.75),
+        scale = 0.5
+      }
     },
     recharging_animation =
     {
@@ -8306,20 +8112,8 @@ data:extend(
         sound = { filename = "__base__/sound/roboport-door.ogg", volume = 0.75 }
       },
     },
-    circuit_wire_connection_point =
-    {
-      shadow =
-      {
-        red = {1.17188, 1.98438},
-        green = {1.04688, 2.04688}
-      },
-      wire =
-      {
-        red = {0.78125, 1.375},
-        green = {0.78125, 1.53125}
-      }
-    },
-    circuit_connector_sprites = get_circuit_connector_sprites({0.59375, 1.3125}, nil, 18),
+    circuit_wire_connection_point = circuit_connector_definitions["roboport"].points,
+    circuit_connector_sprites = circuit_connector_definitions["roboport"].sprites,
     circuit_wire_max_distance = 9,
     default_available_logistic_output_signal = {type = "virtual", name = "signal-X"},
     default_total_logistic_output_signal = {type = "virtual", name = "signal-Y"},
@@ -8335,8 +8129,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/roboport.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."roboport",
@@ -8357,7 +8151,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 45}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 45}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 	else
@@ -8409,13 +8203,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/logistic-robot.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-logistic-robot"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
-    resistances = { { type = "fire", percent = 85 } },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
     max_payload_size = 1,
@@ -8437,8 +8232,21 @@ data:extend(
       frame_count = 1,
       shift = {0.015625, -0.09375},
       direction_count = 16,
+      y = 42,
 	  tint = Material_Colors[DATA.Table],
-      y = 42
+      hr_version = {
+        filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
+        priority = "high",
+        line_length = 16,
+        width = 80,
+        height = 84,
+        frame_count = 1,
+        shift = util.by_pixel(0, -3),
+        direction_count = 16,
+        y = 84,
+	    tint = Material_Colors[DATA.Table],
+        scale = 0.5
+      }
     },
     idle_with_cargo =
     {
@@ -8449,8 +8257,20 @@ data:extend(
       height = 42,
       frame_count = 1,
       shift = {0.015625, -0.09375},
+      direction_count = 16,
 	  tint = Material_Colors[DATA.Table],
-      direction_count = 16
+      hr_version = {
+        filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
+        priority = "high",
+        line_length = 16,
+        width = 80,
+        height = 84,
+        frame_count = 1,
+        shift = util.by_pixel(0, -3),
+        direction_count = 16,
+	    tint = Material_Colors[DATA.Table],
+        scale = 0.5
+      }
     },
     in_motion =
     {
@@ -8461,9 +8281,22 @@ data:extend(
       height = 42,
       frame_count = 1,
       shift = {0.015625, -0.09375},
-	  tint = Material_Colors[DATA.Table],
       direction_count = 16,
-      y = 126
+      y = 126,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
+        priority = "high",
+        line_length = 16,
+        width = 80,
+        height = 84,
+        frame_count = 1,
+        shift = util.by_pixel(0, -3),
+        direction_count = 16,
+        y = 252,
+	    tint = Material_Colors[DATA.Table],
+        scale = 0.5
+      }
     },
     in_motion_with_cargo =
     {
@@ -8474,9 +8307,22 @@ data:extend(
       height = 42,
       frame_count = 1,
       shift = {0.015625, -0.09375},
-	  tint = Material_Colors[DATA.Table],
       direction_count = 16,
-      y = 84
+      y = 84,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot.png",
+        priority = "high",
+        line_length = 16,
+        width = 80,
+        height = 84,
+        frame_count = 1,
+        shift = util.by_pixel(0, -3),
+        direction_count = 16,
+        y = 168,
+	    tint = Material_Colors[DATA.Table],
+        scale = 0.5
+      }
     },
     shadow_idle =
     {
@@ -8488,7 +8334,19 @@ data:extend(
       frame_count = 1,
       shift = {0.96875, 0.609375},
       direction_count = 16,
-      y = 23
+      y = 23,
+      hr_version = {
+        filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
+        priority = "high",
+        line_length = 16,
+        width = 115,
+        height = 57,
+        frame_count = 1,
+        shift = util.by_pixel(31.75, 19.75),
+        direction_count = 16,
+        y = 57,
+        scale = 0.5
+      }
     },
     shadow_idle_with_cargo =
     {
@@ -8499,7 +8357,18 @@ data:extend(
       height = 23,
       frame_count = 1,
       shift = {0.96875, 0.609375},
-      direction_count = 16
+      direction_count = 16,
+      hr_version = {
+        filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
+        priority = "high",
+        line_length = 16,
+        width = 115,
+        height = 57,
+        frame_count = 1,
+        shift = util.by_pixel(31.75, 19.75),
+        direction_count = 16,
+        scale = 0.5
+      }
     },
     shadow_in_motion =
     {
@@ -8511,7 +8380,19 @@ data:extend(
       frame_count = 1,
       shift = {0.96875, 0.609375},
       direction_count = 16,
-      y = 23
+      y = 23,
+      hr_version = {
+        filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
+        priority = "high",
+        line_length = 16,
+        width = 115,
+        height = 57,
+        frame_count = 1,
+        shift = util.by_pixel(31.75, 19.75),
+        direction_count = 16,
+        y = 171,
+        scale = 0.5
+      }
     },
     shadow_in_motion_with_cargo =
     {
@@ -8522,7 +8403,19 @@ data:extend(
       height = 23,
       frame_count = 1,
       shift = {0.96875, 0.609375},
-      direction_count = 16
+      direction_count = 16,
+      hr_version = {
+        filename = "__base__/graphics/entity/logistic-robot/hr-logistic-robot-shadow.png",
+        priority = "high",
+        line_length = 16,
+        width = 115,
+        height = 57,
+        frame_count = 1,
+        shift = util.by_pixel(31.75, 19.75),
+        direction_count = 16,
+        y = 114,
+        scale = 0.5
+      }
     },
     working_sound = flying_robot_sounds(),
     cargo_centered = {0.0, 0.2},
@@ -8535,8 +8428,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/logistic-robot.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."robot-logistic",
@@ -8557,7 +8450,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
 	else
@@ -8608,13 +8501,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/construction-robot.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-construction-robot"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
-    resistances = { { type = "fire", percent = 85 } },
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
     max_payload_size = 1,
@@ -8637,7 +8531,19 @@ data:extend(
       frame_count = 1,
       shift = {0, -0.15625},
 	  tint = Material_Colors[DATA.Table],
-      direction_count = 16
+      direction_count = 16,
+      hr_version = {
+        filename = "__base__/graphics/entity/construction-robot/hr-construction-robot.png",
+        priority = "high",
+        line_length = 16,
+        width = 66,
+        height = 76,
+        frame_count = 1,
+        shift = util.by_pixel(0,-4.5),
+        direction_count = 16,
+	    tint = Material_Colors[DATA.Table],
+        scale = 0.5
+      }
     },
     in_motion =
     {
@@ -8650,7 +8556,20 @@ data:extend(
       shift = {0, -0.15625},
 	  tint = Material_Colors[DATA.Table],
       direction_count = 16,
-      y = 36
+      y = 36,
+      hr_version = {
+        filename = "__base__/graphics/entity/construction-robot/hr-construction-robot.png",
+        priority = "high",
+        line_length = 16,
+        width = 66,
+        height = 76,
+        frame_count = 1,
+        shift = util.by_pixel(0, -4.5),
+        direction_count = 16,
+	    tint = Material_Colors[DATA.Table],
+        y = 76,
+        scale = 0.5
+      }
     },
     shadow_idle =
     {
@@ -8661,7 +8580,18 @@ data:extend(
       height = 24,
       frame_count = 1,
       shift = {1.09375, 0.59375},
-      direction_count = 16
+      direction_count = 16,
+      hr_version = {
+        filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
+        priority = "high",
+        line_length = 16,
+        width = 104,
+        height = 49,
+        frame_count = 1,
+        shift = util.by_pixel(33.5, 18.75),
+        direction_count = 16,
+        scale = 0.5
+      }
     },
     shadow_in_motion =
     {
@@ -8672,7 +8602,18 @@ data:extend(
       height = 24,
       frame_count = 1,
       shift = {1.09375, 0.59375},
-      direction_count = 16
+      direction_count = 16,
+      hr_version = {
+        filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-shadow.png",
+        priority = "high",
+        line_length = 16,
+        width = 104,
+        height = 49,
+        frame_count = 1,
+        shift = util.by_pixel(33.5, 18.75),
+        direction_count = 16,
+        scale = 0.5
+      }
     },
     working =
     {
@@ -8684,8 +8625,21 @@ data:extend(
       frame_count = 2,
       shift = {0, -0.15625},
       direction_count = 16,
-	  tint = Material_Colors[DATA.Table],
       animation_speed = 0.3,
+	  tint = Material_Colors[DATA.Table],
+      hr_version = {
+        filename = "__base__/graphics/entity/construction-robot/hr-construction-robot-working.png",
+        priority = "high",
+        line_length = 2,
+        width = 57,
+        height = 74,
+        frame_count = 2,
+        shift = util.by_pixel(-0.25, -5),
+        direction_count = 16,
+        animation_speed = 0.3,
+	    tint = Material_Colors[DATA.Table],
+        scale = 0.5
+      }
     },
     shadow_working =
     {
@@ -8789,8 +8743,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/construction-robot.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."robot-construction",
@@ -8811,7 +8765,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
 	else
@@ -8864,12 +8818,14 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/stone-wall.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-wall"},
     max_health = (DyWorld_Material_Formulas(3, DATA.Table) * 50),
+    resistances = Material_Resistances[DATA.Table],
     collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fast_replaceable_group = "wall",
@@ -8887,14 +8843,14 @@ data:extend(
       scale = 0.5
     },
     pictures = DyWorld_Wall_Graphics(Material_Colors[DATA.Table]),
-    wall_diode_green = conditional_return(
+    wall_diode_green = util.conditional_return(
         {
           filename = "__base__/graphics/entity/gate/wall-diode-green.png",
           width = 21,
           height = 22,
           shift = {0, -0.78125}
         }),
-    wall_diode_green_light = conditional_return(
+    wall_diode_green_light = util.conditional_return(
         {
           minimum_darkness = 0.3,
           color = {g=1},
@@ -8902,14 +8858,14 @@ data:extend(
           size = 1,
           intensity = 0.3
         }),
-    wall_diode_red = conditional_return(
+    wall_diode_red = util.conditional_return(
     {
       filename = "__base__/graphics/entity/gate/wall-diode-red.png",
       width = 21,
       height = 22,
       shift = {0, -0.78125}
     }),
-    wall_diode_red_light = conditional_return(
+    wall_diode_red_light = util.conditional_return(
     {
       minimum_darkness = 0.3,
       color = {r=1},
@@ -8917,22 +8873,9 @@ data:extend(
       size = 1,
       intensity = 0.3
     }),
-
-    circuit_wire_connection_point =
-    {
-      shadow =
-      {
-        red = {0.890625, 0.828125},
-        green = {0.890625, 0.703125}
-      },
-      wire =
-      {
-        red = {-0.28125, -0.71875},
-        green = {-0.28125, -0.84375}
-      }
-    },
+    circuit_wire_connection_point = circuit_connector_definitions["gate"].points,
+    circuit_connector_sprites = circuit_connector_definitions["gate"].sprites,
     circuit_wire_max_distance = 9,
-    circuit_connector_sprites = get_circuit_connector_sprites({0, -0.59375}, nil, 6),
     default_output_signal = {type = "virtual", name = "signal-G"}
   },
   {
@@ -8943,8 +8886,8 @@ data:extend(
 	{
 	  {
 		icon = "__base__/graphics/icons/stone-wall.png",
-		tint = Material_Colors[DATA.Table]
-	  }
+	  },
+	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."wall-normal",
@@ -8965,7 +8908,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-wall"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-wall"].ingredients, result_1)
 	else
@@ -8987,6 +8930,373 @@ data:extend(
 	end
 end
 
+function DyWorld_Locomotives(DATA)
+data:extend(
+{
+  {
+    type = "locomotive",
+	name = dy..DATA.Name.."-locomotive",
+	localised_name = {"looped-name.locomotive", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/diesel-locomotive.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+	icon_size = 32,
+    flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-locomotive"},
+    mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
+    max_health = (1000 + DyWorld_Material_Formulas(3, DATA.Table)),
+    resistances = Material_Resistances[DATA.Table],
+    corpse = "medium-remnants",
+    dying_explosion = "medium-explosion",
+    collision_box = {{-0.6, -2.6}, {0.6, 2.6}},
+    selection_box = {{-1, -3}, {1, 3}},
+    drawing_box = {{-1, -4}, {1, 3}},
+    weight = ( 2000 + (Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Density)),
+    max_speed = (1.2 + (Materials[DATA.Table].Density / 100)),
+    max_power = tostring(500 + Materials[DATA.Table].Strength_Ultimate).."kW",
+    reversing_power_modifier = 0.6,
+    braking_force = 10,
+    friction_force = 0.50,
+    vertical_selection_shift = -0.5,
+    air_resistance = 0.0075, -- this is a percentage of current speed that will be subtracted
+    connection_distance = 3,
+    joint_distance = 4,
+    energy_per_hit_point = 5,
+    burner =
+    {
+      fuel_category = "chemical",
+      effectivity = 1,
+      fuel_inventory_size = 3,
+      smoke =
+      {
+        {
+          name = "train-smoke",
+          deviation = {0.3, 0.3},
+          frequency = 100,
+          position = {0, 0},
+          starting_frame = 0,
+          starting_frame_deviation = 60,
+          height = 2,
+          height_deviation = 0.5,
+          starting_vertical_speed = 0.2,
+          starting_vertical_speed_deviation = 0.1,
+        }
+      }
+    },
+    front_light =
+    {
+      {
+        type = "oriented",
+        minimum_darkness = 0.3,
+        picture =
+        {
+          filename = "__core__/graphics/light-cone.png",
+          priority = "extra-high",
+          flags = { "light" },
+          scale = 2,
+          width = 200,
+          height = 200
+        },
+        shift = {-0.6, -16},
+        size = 2,
+        intensity = 0.6,
+        color = {r = 1.0, g = 0.9, b = 0.9}
+      },
+      {
+        type = "oriented",
+        minimum_darkness = 0.3,
+        picture =
+        {
+          filename = "__core__/graphics/light-cone.png",
+          priority = "extra-high",
+          flags = { "light" },
+          scale = 2,
+          width = 200,
+          height = 200
+        },
+        shift = {0.6, -16},
+        size = 2,
+        intensity = 0.6,
+        color = {r = 1.0, g = 0.9, b = 0.9}
+      }
+    },
+    back_light = rolling_stock_back_light(),
+    stand_by_light = rolling_stock_stand_by_light(),
+    color = {r = 0.92, g = 0.07, b = 0, a = 0.5},
+    pictures =
+    {
+      layers =
+      {
+        {
+          priority = "very-low",
+          width = 238,
+          height = 230,
+          direction_count = 256,
+		  tint = Material_Colors[DATA.Table],
+          filenames =
+          {
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-01.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-02.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-03.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-04.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-05.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-06.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-07.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-08.png"
+          },
+          line_length = 4,
+          lines_per_file = 8,
+          shift = {0.0, -0.5},
+          hr_version =
+            {
+            priority = "very-low",
+            width = 474,
+            height = 458,
+            direction_count = 256,
+			tint = Material_Colors[DATA.Table],
+            filenames =
+            {
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-1.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-2.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-3.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-4.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-5.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-6.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-7.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-8.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-9.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-10.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-11.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-12.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-13.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-14.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-15.png",
+              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-16.png"
+            },
+            line_length = 4,
+            lines_per_file = 4,
+            shift = {0.0, -0.5},
+            scale = 0.5
+            }
+        },
+        {
+          priority = "very-low",
+          flags = { "mask" },
+          width = 236,
+          height = 228,
+          direction_count = 256,
+          filenames =
+          {
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-01.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-02.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-03.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-04.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-05.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-06.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-07.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-08.png"
+          },
+          line_length = 4,
+          lines_per_file = 8,
+          shift = {0.0, -0.5},
+          apply_runtime_tint = true,
+          hr_version =
+            {
+              priority = "very-low",
+              flags = { "mask" },
+              width = 472,
+              height = 456,
+              direction_count = 256,
+              filenames =
+              {
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-1.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-2.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-3.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-4.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-5.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-6.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-7.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-8.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-9.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-10.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-11.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-12.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-13.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-14.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-15.png",
+                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-16.png"
+              },
+              line_length = 4,
+              lines_per_file = 4,
+              shift = {0.0, -0.5},
+              apply_runtime_tint = true,
+              scale = 0.5
+            }
+        },
+        {
+          priority = "very-low",
+          flags = { "shadow" },
+          width = 253,
+          height = 212,
+          direction_count = 256,
+          draw_as_shadow = true,
+          filenames =
+          {
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-01.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-02.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-03.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-04.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-05.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-06.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-07.png",
+            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-08.png"
+          },
+          line_length = 4,
+          lines_per_file = 8,
+          shift = {1, 0.3}
+        }
+      }
+    },
+    wheels = standard_train_wheels,
+    rail_category = "regular",
+    stop_trigger =
+    {
+      -- left side
+      {
+        type = "create-trivial-smoke",
+        repeat_count = 125,
+        smoke_name = "smoke-train-stop",
+        initial_height = 0,
+        -- smoke goes to the left
+        speed = {-0.03, 0},
+        speed_multiplier = 0.75,
+        speed_multiplier_deviation = 1.1,
+        offset_deviation = {{-0.75, -2.7}, {-0.3, 2.7}}
+      },
+      -- right side
+      {
+        type = "create-trivial-smoke",
+        repeat_count = 125,
+        smoke_name = "smoke-train-stop",
+        initial_height = 0,
+        -- smoke goes to the right
+        speed = {0.03, 0},
+        speed_multiplier = 0.75,
+        speed_multiplier_deviation = 1.1,
+        offset_deviation = {{0.3, -2.7}, {0.75, 2.7}}
+      },
+      {
+        type = "play-sound",
+        sound =
+        {
+          {
+            filename = "__base__/sound/train-breaks.ogg",
+            volume = 0.6
+          },
+        }
+      },
+    },
+    drive_over_tie_trigger = drive_over_tie(),
+    tie_distance = 50,
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/train-engine.ogg",
+        volume = 0.4
+      },
+      match_speed_to_activity = true,
+    },
+    open_sound = { filename = "__base__/sound/car-door-open.ogg", volume=0.7 },
+    close_sound = { filename = "__base__/sound/car-door-close.ogg", volume = 0.7 },
+    sound_minimum_speed = 0.5;
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-locomotive",
+	localised_name = {"looped-name.locomotive", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/diesel-locomotive.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."wall-normal",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-locomotive",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-locomotive",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{"locomotive", 1},{dy.."heater", 1},{dy.."gearbox", 2}},
+    result = dy..DATA.Name.."-locomotive",
+    result_count = 1,
+  },
+  {
+    type = "technology",
+   	name = dy..DATA.Name.."-locomotive",
+	localised_name = {"looped-name.locomotive", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/technology/railway.png"
+	  },
+	},
+    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-locomotive"} },
+    prerequisites = {},
+    unit =
+    {
+      count = math.floor(Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Hardness),
+      ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
+      time = 30
+    },
+    order = dy..DATA.Name.."-locomotive",
+	upgrade = true,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 100}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-locomotive"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 100}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-locomotive"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 100}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-locomotive"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway"}
+	elseif DATA.Type == "Basic" then
+		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-2"}
+	elseif DATA.Type == "Simple_Alloy" then
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-3"}
+	elseif DATA.Type == "Alloy" then
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-4"}
+	elseif DATA.Type == "Complex_Alloy" then
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-5"}
+	elseif DATA.Type == "Super_Alloy" then
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-6"}
+	end
+end
+
 function DyWorld_TEMPLATE(DATA)
 data:extend(
 {
@@ -8994,7 +9304,7 @@ data:extend(
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
-	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" then
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
 		local result_1 = {dy..DATA.Name, 20}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
 	else

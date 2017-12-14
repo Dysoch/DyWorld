@@ -8,7 +8,7 @@ function RefreshGUI(player, id)
 	end
 	local force = player.force
 	local frame = player.gui.top.add{type = "frame", name = "dyworld_distance_gui", direction = "vertical", caption = {"dyworld_distance_gui.title"}}
-	local frameflow = frame.add{type = "flow", style = "dyworld_stats_list_flow", name = "flow", direction = "vertical"}
+	local frameflow = frame.add{type = "flow", name = "flow", direction = "vertical"}
 	for k,v in pairs(global.players) do
 		if v.Alive then
 			if not v.PlayerID == id then

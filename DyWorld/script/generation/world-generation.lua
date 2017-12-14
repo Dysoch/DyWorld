@@ -1,7 +1,7 @@
 module("generation", package.seeall)
 require "script/generation/noise"
 
-Ruins = {"small-scorchmark", "stone-rock", "red-desert-rock-big-01"}
+Ruins = {"small-scorchmark", "sand-rock-big", "rock-big", "rock-huge"}
 
 local keysetRuins = {}
 for k in pairs(Ruins) do

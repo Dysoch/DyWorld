@@ -11,8 +11,7 @@ for k,v in pairs(Material_Table) do
 			icons = 
 			{
 			  {
-				icon = dyworld_path_icon.."base-ore.png",
-				tint = Material_Colors[v.Table],
+				icon = dyworld_path_icon.."ore/"..v.Name..".png",
 			  },
 			},
 			flags = {"goes-to-main-inventory"},

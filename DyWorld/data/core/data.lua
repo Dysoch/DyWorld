@@ -1,4 +1,18 @@
 
+-- Item Groups
+require("data.core.item-groups.energy")
+require("data.core.item-groups.items")
+require("data.core.item-groups.logistics")
+require("data.core.item-groups.logistics-2")
+require("data.core.item-groups.inserters")
+require("data.core.item-groups.machines")
+require("data.core.item-groups.metallurgy")
+require("data.core.item-groups.personal")
+require("data.core.item-groups.warfare-1")
+require("data.core.item-groups.warfare-2")
+require("data.core.item-groups.warfare-3")
+
+--require("data.core.intermediates.resources-start")
 require("data.core.prototypes.prototypes")
 require("data.core.prototypes.belt-pictures")
 require("data.core.prototypes.pipe-pictures")
@@ -8,7 +22,7 @@ require("data.core.gui_sprites")
 require("data.core.keys")
 require("data.core.category")
 require("data.core.tile.noise-layers")
-require("data.core.tile.tiles")
+--require("data.core.tile.tiles")
 require("data.core.entities.projectiles")
 require("data.core.debug.armor")
 require("data.core.debug.equipment")
@@ -25,19 +39,6 @@ require("data.core.intermediates.wood")
 require("data.core.intermediates.fluids")
 require("data.core.geodrill.geodrill")
 require("data.core.geodrill.recipes")
-
--- Item Groups
-require("data.core.item-groups.energy")
-require("data.core.item-groups.items")
-require("data.core.item-groups.logistics")
-require("data.core.item-groups.logistics-2")
-require("data.core.item-groups.inserters")
-require("data.core.item-groups.machines")
-require("data.core.item-groups.metallurgy")
-require("data.core.item-groups.personal")
-require("data.core.item-groups.warfare-1")
-require("data.core.item-groups.warfare-2")
-require("data.core.item-groups.warfare-3")
 
 -- Edits
 require("data.core.edits.ammo")
@@ -61,7 +62,7 @@ end
 require("data.core.tech.toolbelt")
 
 -- Fluid System
-require("data.core.water-system.recipes")
+require("data.core.fluid-system.recipes")
 
 -- Science System
 require("data.core.science.recipe-fluid")

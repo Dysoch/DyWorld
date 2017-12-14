@@ -1,6 +1,7 @@
+
 data.raw["gui-style"].default["dyworld_stats_header_label"] = {
     type = "label_style",
-    parent = "label_style",
+    parent = "label",
     font_color = {r = 255, g = 255, b = 255},
     font = "default-large-semibold",
     top_padding = 0,
@@ -10,7 +11,7 @@ data.raw["gui-style"].default["dyworld_stats_header_label"] = {
 }
 data.raw["gui-style"].default["dyworld_stats_divider_header_label"] = {
     type = "label_style",
-    parent = "label_style",
+    parent = "label",
     font_color = {r = 0, g = 0, b = 155},
     font = "default-large-semibold",
     top_padding = 0,
@@ -21,20 +22,20 @@ data.raw["gui-style"].default["dyworld_stats_divider_header_label"] = {
 
 data.raw["gui-style"].default["dyworld_stats_list_flow"] = {
     type = "flow_style",
-    parent = "flow_style",
+    parent = "flow",
     vertical_spacing = 0
 }
 
 data.raw["gui-style"].default["dyworld_stats_tech_flow"] = {
     type = "flow_style",
-    parent = "flow_style",
+    parent = "flow",
     horizontal_spacing = 0,
     resize_row_to_width = true
 }
 
 data.raw["gui-style"].default["dyworld_stats_sprite_button"] = {
     type = "button_style",
-    parent = "button_style",
+    parent = "button",
     width = 24,
     height = 24,
     top_padding = 0,
@@ -51,7 +52,7 @@ data.raw["gui-style"].default["dyworld_stats_sprite_button"] = {
 
 data.raw["gui-style"].default["dyworld_stats_tech_label"] = {
     type = "label_style",
-    parent = "label_style",
+    parent = "label",
     left_padding = 4,
     right_padding = 4
 }

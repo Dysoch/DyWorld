@@ -6,6 +6,7 @@ data:extend(
     type = "furnace",
     name = dy.."recycler",
     icon = "__base__/graphics/icons/electric-furnace.png",
+	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 1, result = dy.."recycler"},
     max_health = 50000,

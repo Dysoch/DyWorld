@@ -6,6 +6,7 @@ data:extend(
     type = "boiler",
     name = dy.."rock-boiler-5000",
     icon = "__base__/graphics/icons/boiler.png",
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = dy.."rock-boiler-5000"},
     max_health = 2500,

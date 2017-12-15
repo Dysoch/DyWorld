@@ -9252,6 +9252,7 @@ data:extend(
 		icon = "__base__/graphics/technology/railway.png"
 	  },
 	},
+    icon_size = 128,
     effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-locomotive"} },
     prerequisites = {},
     unit =
@@ -9294,6 +9295,348 @@ data:extend(
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-6"}
+	end
+end
+
+function DyWorld_Speed_Module(DATA)
+data:extend(
+{
+  {
+    type = "module",
+	name = dy..DATA.Name.."-module-speed",
+	localised_name = {"looped-name.speed-module", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/speed-module.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."module-speed",
+    category = "speed",
+    tier = Level,
+    order = dy..DATA.Name.."-module-speed",
+    stack_size = 50,
+    default_request_amount = 10,
+    effect = 
+    {
+      --productivity = {bonus = DyWorld_Material_Formulas(14, DATA.Table)},
+      consumption = {bonus = DyWorld_Material_Formulas(15, DATA.Table)},
+      --pollution = {bonus = DyWorld_Material_Formulas(17, DATA.Table))},
+      speed = {bonus = DyWorld_Material_Formulas(16, DATA.Table)}
+    },
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-module-speed",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-module-speed",
+    result_count = 1,
+  },
+  {
+    type = "technology",
+	name = dy..DATA.Name.."-module-speed",
+	localised_name = {"looped-name.speed-module", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/technology/speed-module.png"
+	  },
+	},
+    icon_size = 128,
+    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-module-speed"} },
+    prerequisites = {},
+    unit =
+    {
+      count = math.floor(Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Hardness),
+      ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
+      time = 30
+    },
+    order = dy..DATA.Name.."-module-speed",
+	upgrade = true,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 1
+		local result_1 = {"electronic-circuit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module"}
+	elseif DATA.Type == "Basic" then
+		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 2
+		local result_1 = {"advanced-circuit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-2"}
+	elseif DATA.Type == "Simple_Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 3
+		local result_1 = {"processing-unit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-3"}
+	elseif DATA.Type == "Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 4
+		local result_1 = {"processing-unit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-4"}
+	elseif DATA.Type == "Complex_Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 5
+		local result_1 = {dy.."processing-advanced", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-5"}
+	elseif DATA.Type == "Super_Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 6
+		local result_1 = {dy.."processing-logic", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-6"}
+	end
+end
+
+function DyWorld_Productivity_Module(DATA)
+data:extend(
+{
+  {
+    type = "module",
+	name = dy..DATA.Name.."-module-productivity",
+	localised_name = {"looped-name.productivity-module", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/productivity-module.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."module-productivity",
+    category = "productivity",
+    tier = Level,
+    order = dy..DATA.Name.."-module-productivity",
+    stack_size = 50,
+    default_request_amount = 10,
+    effect = 
+    {
+      productivity = {bonus = DyWorld_Material_Formulas(14, DATA.Table)},
+      consumption = {bonus = DyWorld_Material_Formulas(15, DATA.Table)},
+      pollution = {bonus = DyWorld_Material_Formulas(17, DATA.Table)},
+      speed = {bonus = ((DyWorld_Material_Formulas(16, DATA.Table)* 0.5) * -1)}
+    },
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-module-productivity",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-module-productivity",
+    result_count = 1,
+  },
+  {
+    type = "technology",
+	name = dy..DATA.Name.."-module-productivity",
+	localised_name = {"looped-name.productivity-module", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/technology/productivity-module.png"
+	  },
+	},
+    icon_size = 128,
+    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-module-productivity"} },
+    prerequisites = {},
+    unit =
+    {
+      count = math.floor(Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Hardness),
+      ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
+      time = 30
+    },
+    order = dy..DATA.Name.."-module-productivity",
+	upgrade = true,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 1
+		local result_1 = {"electronic-circuit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module"}
+	elseif DATA.Type == "Basic" then
+		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 2
+		local result_1 = {"advanced-circuit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-2"}
+	elseif DATA.Type == "Simple_Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 3
+		local result_1 = {"processing-unit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-3"}
+	elseif DATA.Type == "Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 4
+		local result_1 = {"processing-unit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-4"}
+	elseif DATA.Type == "Complex_Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 5
+		local result_1 = {dy.."processing-advanced", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-5"}
+	elseif DATA.Type == "Super_Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 6
+		local result_1 = {dy.."processing-logic", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-6"}
+	end
+end
+
+function DyWorld_Effectivity_Module(DATA)
+data:extend(
+{
+  {
+    type = "module",
+	name = dy..DATA.Name.."-module-effectivity",
+	localised_name = {"looped-name.effectivity-module", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/effectivity-module.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."module-effectivity",
+    category = "effectivity",
+    tier = Level,
+    order = dy..DATA.Name.."-module-effectivity",
+    stack_size = 50,
+    default_request_amount = 10,
+    effect = 
+    {
+      --productivity = {bonus = DyWorld_Material_Formulas(14, DATA.Table)},
+      consumption = {bonus = (DyWorld_Material_Formulas(15, DATA.Table) * -1)},
+      --pollution = {bonus = DyWorld_Material_Formulas(17, DATA.Table)},
+      --speed = {bonus = ((DyWorld_Material_Formulas(16, DATA.Table)* 0.5) * -1)}
+    },
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-module-effectivity",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-module-effectivity",
+    result_count = 1,
+  },
+  {
+    type = "technology",
+	name = dy..DATA.Name.."-module-effectivity",
+	localised_name = {"looped-name.effectivity-module", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/technology/effectivity-module.png"
+	  },
+	},
+    icon_size = 128,
+    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-module-effectivity"} },
+    prerequisites = {},
+    unit =
+    {
+      count = math.floor(Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Hardness),
+      ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
+      time = 30
+    },
+    order = dy..DATA.Name.."-module-effectivity",
+	upgrade = true,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 1
+		local result_1 = {"electronic-circuit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module"}
+	elseif DATA.Type == "Basic" then
+		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 2
+		local result_1 = {"advanced-circuit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-2"}
+	elseif DATA.Type == "Simple_Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 3
+		local result_1 = {"processing-unit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-3"}
+	elseif DATA.Type == "Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 4
+		local result_1 = {"processing-unit", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-4"}
+	elseif DATA.Type == "Complex_Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 5
+		local result_1 = {dy.."processing-advanced", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-5"}
+	elseif DATA.Type == "Super_Alloy" then
+		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 6
+		local result_1 = {dy.."processing-logic", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
+		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-6"}
 	end
 end
 

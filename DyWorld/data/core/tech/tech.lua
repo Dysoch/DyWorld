@@ -371,6 +371,7 @@ local Data_Table = {
 	{
 		Name = dy.."ore-smelting",
 		Icon = {{icon = dyworld_path_icon.."blast-furnace.png", scale = 2}},
+		Icon_Size = 32,
 		Pre_Req = {"steel-processing", "automation"},
 		Tech_Ingredients = 2,
 		Count = 250,
@@ -379,6 +380,7 @@ local Data_Table = {
 	{
 		Name = dy.."ore-smelting-2",
 		Icon = {{icon = dyworld_path_icon.."blast-furnace.png", scale = 2}},
+		Icon_Size = 32,
 		Pre_Req = {dy.."ore-smelting"},
 		Tech_Ingredients = 3,
 		Count = 500,
@@ -387,6 +389,7 @@ local Data_Table = {
 	{
 		Name = dy.."ore-smelting-3",
 		Icon = {{icon = dyworld_path_icon.."blast-furnace.png", scale = 2}},
+		Icon_Size = 32,
 		Pre_Req = {dy.."ore-smelting-2"},
 		Tech_Ingredients = 4,
 		Count = 750,
@@ -395,6 +398,7 @@ local Data_Table = {
 	{
 		Name = dy.."ore-smelting-4",
 		Icon = {{icon = dyworld_path_icon.."blast-furnace.png", scale = 2}},
+		Icon_Size = 32,
 		Pre_Req = {dy.."ore-smelting-3"},
 		Tech_Ingredients = 5,
 		Count = 1000,
@@ -403,6 +407,7 @@ local Data_Table = {
 	{
 		Name = dy.."ore-smelting-5",
 		Icon = {{icon = dyworld_path_icon.."blast-furnace.png", scale = 2}},
+		Icon_Size = 32,
 		Pre_Req = {dy.."ore-smelting-4"},
 		Tech_Ingredients = 6,
 		Count = 2500,
@@ -696,6 +701,78 @@ local Data_Table = {
 		Count = 3000,
 		Military = false,
 	},
+	{
+		Name = "speed-module-4",
+		Icon = {{icon = "__base__/graphics/technology/speed-module.png"}},
+		Pre_Req = {"speed-module-3"},
+		Tech_Ingredients = 5,
+		Count = 500,
+		Military = false,
+	},
+	{
+		Name = "speed-module-5",
+		Icon = {{icon = "__base__/graphics/technology/speed-module.png"}},
+		Pre_Req = {"speed-module-4"},
+		Tech_Ingredients = 5,
+		Count = 1000,
+		Military = false,
+	},
+	{
+		Name = "speed-module-6",
+		Icon = {{icon = "__base__/graphics/technology/speed-module.png"}},
+		Pre_Req = {"speed-module-5"},
+		Tech_Ingredients = 6,
+		Count = 3000,
+		Military = false,
+	},
+	{
+		Name = "effectivity-module-4",
+		Icon = {{icon = "__base__/graphics/technology/effectivity-module.png"}},
+		Pre_Req = {"effectivity-module-3"},
+		Tech_Ingredients = 5,
+		Count = 500,
+		Military = false,
+	},
+	{
+		Name = "effectivity-module-5",
+		Icon = {{icon = "__base__/graphics/technology/effectivity-module.png"}},
+		Pre_Req = {"effectivity-module-4"},
+		Tech_Ingredients = 5,
+		Count = 1000,
+		Military = false,
+	},
+	{
+		Name = "effectivity-module-6",
+		Icon = {{icon = "__base__/graphics/technology/effectivity-module.png"}},
+		Pre_Req = {"effectivity-module-5"},
+		Tech_Ingredients = 6,
+		Count = 3000,
+		Military = false,
+	},
+	{
+		Name = "productivity-module-4",
+		Icon = {{icon = "__base__/graphics/technology/productivity-module.png"}},
+		Pre_Req = {"productivity-module-3"},
+		Tech_Ingredients = 4,
+		Count = 500,
+		Military = false,
+	},
+	{
+		Name = "productivity-module-5",
+		Icon = {{icon = "__base__/graphics/technology/productivity-module.png"}},
+		Pre_Req = {"productivity-module-4"},
+		Tech_Ingredients = 5,
+		Count = 1000,
+		Military = false,
+	},
+	{
+		Name = "productivity-module-6",
+		Icon = {{icon = "__base__/graphics/technology/productivity-module.png"}},
+		Pre_Req = {"productivity-module-5"},
+		Tech_Ingredients = 6,
+		Count = 3000,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do
@@ -705,6 +782,7 @@ data:extend(
     type = "technology",
    	name = v.Name,
     icons = v.Icon,
+    icon_size = v.Icon_Size or 128,
     effects = { },
     prerequisites = {},
     unit =

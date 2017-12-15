@@ -366,6 +366,34 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 			else
 				return math.floor((Materials[TABLE].Conductivity + Materials[TABLE].Density) * 5)
 			end
+	elseif TYPE == 14 then
+		-- Module: Productivity
+			if ((Materials[TABLE].Hardness * Materials[TABLE].Density) / 250) >= 2.5 then
+				return 2.5
+			else
+				return ((Materials[TABLE].Hardness * Materials[TABLE].Density) / 250)
+			end
+	elseif TYPE == 15 then
+		-- Module: Energy
+			if ((Materials[TABLE].Conductivity * (Materials[TABLE].Hardness * Materials[TABLE].Density)) / 500) >= 2.5 then
+				return 2.5
+			else
+				return ((Materials[TABLE].Conductivity * (Materials[TABLE].Hardness * Materials[TABLE].Density)) / 500)
+			end
+	elseif TYPE == 16 then
+		-- Module: Speed
+			if ((Materials[TABLE].Elasticity * Materials[TABLE].Density) / 1000) >= 2.5 then
+				return 2.5
+			else
+				return ((Materials[TABLE].Elasticity * Materials[TABLE].Density) / 1000)
+			end
+	elseif TYPE == 17 then
+		-- Module: Pollution
+			if (((Materials[TABLE].Hardness * Materials[TABLE].Density) * Materials[TABLE].Elasticity) / 1000) >= 2.5 then
+				return 2.5
+			else
+				return (((Materials[TABLE].Hardness * Materials[TABLE].Density) * Materials[TABLE].Elasticity) / 1000)
+			end
 	end
 end
 

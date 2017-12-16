@@ -6,6 +6,8 @@ Date: 17. 12. 2017
   Changes:
     - Removed old DyWorld Modules 
     - Disabled Base Game Modules
+  Balancing:
+    - Changed smelting times of clean and dirty ores. Clean ores should smelt quicker now
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.0
 Date: 14. 12. 2017

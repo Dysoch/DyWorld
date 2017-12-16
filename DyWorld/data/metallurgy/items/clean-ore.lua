@@ -22,7 +22,7 @@ for k,v in pairs(Material_Table) do
 		  {
 			type = "recipe",
 			name = v.Name.."-clean-ore-smelting",
-			energy_required = 2.5,
+			energy_required = 2,
 			enabled = false,
 			category = "smelting",
 			ingredients = {{v.Name.."-clean-ore", 2}},

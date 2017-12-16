@@ -122,7 +122,7 @@ function DyWorld_Recipe_Plate(DATA)
   {
     type = "recipe",
     name = DATA.Name.."-plate",
-    energy_required = 2,
+    energy_required = 2.5,
 	enabled = false,
 	category = "smelting",
     ingredients = {{DATA.Name.."-ore", 1}},

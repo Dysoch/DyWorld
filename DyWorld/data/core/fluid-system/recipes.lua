@@ -257,4 +257,67 @@ data:extend(
     subgroup = dy.."fluid-recipes",
     order = "rocket-fuel"
   },
+  {
+    type = "recipe",
+    name = dy.."advanced-lubricant",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/lubricant.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = "centrifuging",
+    enabled = false,
+    energy_required = 30,
+    ingredients =
+    {
+      {type = "fluid", name = "lubricant", amount = 25},
+      {type = "fluid", name = dy.."hydrogen", amount = 75},
+    },
+    results =
+    {
+      {type = "fluid", name = dy.."advanced-lubricant", amount = 50},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = "advanced-lubricant"
+  },
+  {
+    type = "recipe",
+    name = dy.."super-lubricant",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/lubricant.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = "centrifuging",
+    enabled = false,
+    energy_required = 60,
+    ingredients =
+    {
+      {type = "fluid", name = dy.."advanced-lubricant", amount = 25},
+      {type = "fluid", name = dy.."hydrogen", amount = 250},
+      {type = "fluid", name = dy.."methane", amount = 75},
+      {type = "fluid", name = dy.."rocket-fuel", amount = 25},
+    },
+    results =
+    {
+      {type = "fluid", name = dy.."super-lubricant", amount = 50},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = "super-lubricant"
+  },
 })
+
+DyWorld_Add_To_Tech("advanced-oil-processing", dy.."advanced-lubricant")
+DyWorld_Add_To_Tech("advanced-oil-processing", dy.."super-lubricant")

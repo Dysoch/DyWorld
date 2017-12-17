@@ -47,6 +47,15 @@ local Data_Table = {
 		Barrel = true,
 	},
 	{
+		Name = "super-lubricant",
+		Icon = dyworld_path_fluid.."acid.png",
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=10, g=255, b=10},
+		Color_Flow = {r=10, g=255, b=10},
+		Barrel = true,
+	},
+	{
 		Name = "methane",
 		Icon = dyworld_path_fluid.."methane.png",
 		Def_Temp = 15,

@@ -1178,7 +1178,17 @@ data:extend(
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-splitter")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-loader")
 	end
-	if (DyWorld_Material_Formulas(1, DATA.Table)) >= 50 then
+	if (DyWorld_Material_Formulas(1, DATA.Table)) >= 100 then
+		data.raw.recipe[dy..DATA.Name.."-transport-belt"].category = "crafting-with-fluid"
+		data.raw.recipe[dy..DATA.Name.."-underground-belt"].category = "crafting-with-fluid"
+		data.raw.recipe[dy..DATA.Name.."-splitter"].category = "crafting-with-fluid"
+		data.raw.recipe[dy..DATA.Name.."-loader"].category = "crafting-with-fluid"
+		local result_1 = {type = "fluid", name = dy.."super-lubricant", amount = 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
+	elseif (DyWorld_Material_Formulas(1, DATA.Table)) >= 50 then
 		data.raw.recipe[dy..DATA.Name.."-transport-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-underground-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-splitter"].category = "crafting-with-fluid"

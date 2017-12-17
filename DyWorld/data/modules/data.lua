@@ -15,6 +15,19 @@ for k,m in pairs(Remove_Table) do
 			end
 		end
 	end
+	for j,n in pairs(data.raw.recipe) do
+		if n.ingredients then
+			for h,b in pairs(n.ingredients) do
+				if b.name then
+					if b.name == m then
+						table.remove(n.ingredients, h)
+					end
+				elseif b[1] == m then
+					table.remove(n.ingredients, h)
+				end
+			end
+		end
+	end
 	if data.raw.recipe[m] then
 		if data.raw.recipe[m].normal then
 			data.raw.recipe[m].normal.hidden = true

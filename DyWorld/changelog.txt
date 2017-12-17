@@ -6,6 +6,7 @@ Date: 17. 12. 2017
   Changes:
     - Removed old DyWorld Modules 
     - Disabled Base Game Modules
+    - Added advanced and super lubricant for use in the transport belts (transport belts with speeds above 100 use super lubricant, above 50 use advanced lubricant and above 25 use lubricant)
   Balancing:
     - Changed smelting times of clean and dirty ores. Clean ores should smelt quicker now
 ---------------------------------------------------------------------------------------------------

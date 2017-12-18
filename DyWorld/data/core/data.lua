@@ -60,6 +60,7 @@ end
 
 -- More techs
 require("data.core.tech.toolbelt")
+require("data.core.tech.robot-battery")
 
 -- Fluid System
 require("data.core.fluid-system.recipes")

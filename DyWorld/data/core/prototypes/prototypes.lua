@@ -9238,7 +9238,7 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."wall-normal",
+    subgroup = dy.."railway-1",
     stack_size = 200,
 	order = DATA.Name,
 	place_result = dy..DATA.Name.."-locomotive",
@@ -9259,8 +9259,9 @@ data:extend(
 	icons = 
 	{
 	  {
-		icon = "__base__/graphics/technology/railway.png"
+		icon = dyworld_path_tech.."locomotive.png"
 	  },
+	  Materials[DATA.Table].Icon_Tech,
 	},
     icon_size = 128,
     effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-locomotive"} },
@@ -9355,6 +9356,7 @@ data:extend(
 	  {
 		icon = "__base__/graphics/technology/speed-module.png"
 	  },
+	  Materials[DATA.Table].Icon_Tech,
 	},
     icon_size = 128,
     effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-module-speed"} },
@@ -9469,6 +9471,7 @@ data:extend(
 	  {
 		icon = "__base__/graphics/technology/productivity-module.png"
 	  },
+	  Materials[DATA.Table].Icon_Tech,
 	},
     icon_size = 128,
     effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-module-productivity"} },
@@ -9583,6 +9586,7 @@ data:extend(
 	  {
 		icon = "__base__/graphics/technology/effectivity-module.png"
 	  },
+	  Materials[DATA.Table].Icon_Tech,
 	},
     icon_size = 128,
     effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-module-effectivity"} },
@@ -9647,6 +9651,63 @@ data:extend(
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-6"}
+	end
+end
+
+function DyWorld_Armor_Normal(DATA)
+data:extend(
+{
+  {
+    type = "armor",
+	name = dy..DATA.Name.."-armor",
+	localised_name = {"looped-name.armor-1", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/light-armor.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    icon_size = 32,
+    flags = {"goes-to-main-inventory"},
+    resistances = Material_Resistances[DATA.Table],
+    durability = (DyWorld_Material_Formulas(3, DATA.Table) * 25),
+    subgroup = dy.."armor-1",
+    order = dy..DATA.Name.."-armor",
+    stack_size = 10
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-armor",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-armor",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-armor"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-armor"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-armor"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-armor"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-armor")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-armor")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-armor")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-armor")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-armor")
 	end
 end
 

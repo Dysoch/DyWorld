@@ -46,6 +46,7 @@ for k,v in pairs(Material_Table) do
 		})
 		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
 		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name.."-pebble")
+		table.insert(data.raw.technology[dy..v.Name.."-advanced-melting"].icons, Materials[v.Table].Icon_Tech)
 	elseif v.Type == "Simple_Alloy" then
 		data:extend(
 		{
@@ -67,6 +68,7 @@ for k,v in pairs(Material_Table) do
 		  },
 		})
 		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
+		table.insert(data.raw.technology[dy..v.Name.."-advanced-melting"].icons, Materials[v.Table].Icon_Tech)
 	elseif v.Type == "Alloy" then
 		data:extend(
 		{
@@ -88,6 +90,7 @@ for k,v in pairs(Material_Table) do
 		  },
 		})
 		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
+		table.insert(data.raw.technology[dy..v.Name.."-advanced-melting"].icons, Materials[v.Table].Icon_Tech)
 	elseif v.Type == "Complex_Alloy" then
 		data:extend(
 		{
@@ -109,6 +112,7 @@ for k,v in pairs(Material_Table) do
 		  },
 		})
 		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
+		table.insert(data.raw.technology[dy..v.Name.."-advanced-melting"].icons, Materials[v.Table].Icon_Tech)
 	elseif v.Type == "Super_Alloy" then
 		data:extend(
 		{
@@ -130,6 +134,7 @@ for k,v in pairs(Material_Table) do
 		  },
 		})
 		DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy.."molten-"..v.Name)
+		table.insert(data.raw.technology[dy..v.Name.."-advanced-melting"].icons, Materials[v.Table].Icon_Tech)
 	end
 end
 

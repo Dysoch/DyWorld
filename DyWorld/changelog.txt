@@ -1,8 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.1
 Date: 17. 12. 2017
+  Features:
+    - Added technologies to improve your batteries of worker robots
   Materials System:
-    - Added all Modules to the Material System
+    - Added all modules to the Material System
+    - Added normal armor to the Material System
   Changes:
     - Removed old DyWorld Modules 
     - Disabled Base Game Modules

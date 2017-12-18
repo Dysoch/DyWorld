@@ -18,6 +18,16 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "personal"
 	},
+	{
+		Name = "armor-1",
+		Type = "sub",
+		Main = "personal"
+	},
+	{
+		Name = "armor-2",
+		Type = "sub",
+		Main = "personal"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

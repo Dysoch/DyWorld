@@ -39,7 +39,17 @@ Data_Table_Item_Group = {
 		Main = "logistics-2"
 	},
 	{
-		Name = "railway",
+		Name = "railway-1",
+		Type = "sub",
+		Main = "logistics-2"
+	},
+	{
+		Name = "railway-2",
+		Type = "sub",
+		Main = "logistics-2"
+	},
+	{
+		Name = "railway-3",
 		Type = "sub",
 		Main = "logistics-2"
 	},

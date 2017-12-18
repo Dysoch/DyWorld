@@ -408,7 +408,8 @@ Materials = {
 		Strength_Ultimate = 15,
 		Melting_Point = 100,
 		Boiling_Point = 5000,
-		Icon = {icon = "__base__/graphics/icons/stone.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = "__base__/graphics/icons/stone.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/stone.png"},
 	},
 	Rubber = {
 		Density = 1.2,
@@ -419,7 +420,8 @@ Materials = {
 		Strength_Ultimate = 35,
 		Melting_Point = nil,
 		Boiling_Point = nil,
-		Icon = {icon = dyworld_path_icon.."rubber.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."rubber.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/rubber.png"},
 	},
 	Chitin = {
 		Density = 0.6,
@@ -430,7 +432,8 @@ Materials = {
 		Strength_Ultimate = 61,
 		Melting_Point = nil,
 		Boiling_Point = nil,
-		Icon = {icon = dyworld_path_icon.."chitin.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."chitin.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/chitin.png"},
 	},
 	Obsidian = {
 		Density = 3.6,
@@ -441,7 +444,8 @@ Materials = {
 		Strength_Ultimate = 450,
 		Melting_Point = nil,
 		Boiling_Point = nil,
-		Icon = {icon = dyworld_path_icon.."obsidian.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."obsidian.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/obsidian.png"},
 	},
 	Wood = {
 		Density = 7.5,
@@ -452,7 +456,8 @@ Materials = {
 		Strength_Ultimate = 40,
 		Melting_Point = nil,
 		Boiling_Point = nil,
-		Icon = {icon = "__base__/graphics/icons/wood.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = "__base__/graphics/icons/wood.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/wood.png"},
 	},
 	-- Basic
 	Iron = {
@@ -464,7 +469,8 @@ Materials = {
 		Strength_Ultimate = 200,
 		Melting_Point = 1538,
 		Boiling_Point = 2862,
-		Icon = {icon = dyworld_path_icon.."plate/iron.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/iron.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/iron.png"},
 	},
 	Copper = {
 		Density = 8.94,
@@ -475,7 +481,8 @@ Materials = {
 		Strength_Ultimate = 220,
 		Melting_Point = 1084,
 		Boiling_Point = 2562,
-		Icon = {icon = dyworld_path_icon.."plate/copper.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/copper.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/copper.png"},
 	},
 	Chromium = {
 		Density = 7.19,
@@ -486,7 +493,8 @@ Materials = {
 		Strength_Ultimate = 280,
 		Melting_Point = 1860,
 		Boiling_Point = 2670,
-		Icon = {icon = dyworld_path_icon.."plate/chromium.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/chromium.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/chromium.png"},
 	},
 	Tin = {
 		Density = 7.28,
@@ -497,7 +505,8 @@ Materials = {
 		Strength_Ultimate = 19,
 		Melting_Point = 232,
 		Boiling_Point = 2600,
-		Icon = {icon = dyworld_path_icon.."plate/tin.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/tin.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/tin.png"},
 	},
 	Silver = {
 		Density = 10.49,
@@ -508,7 +517,8 @@ Materials = {
 		Strength_Ultimate = 360,
 		Melting_Point = 961,
 		Boiling_Point = 2212,
-		Icon = {icon = dyworld_path_icon.."plate/silver.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/silver.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/silver.png"},
 	},
 	Gold = {
 		Density = 19.32,
@@ -519,7 +529,8 @@ Materials = {
 		Strength_Ultimate = 220,
 		Melting_Point = 1063,
 		Boiling_Point = 2800,
-		Icon = {icon = dyworld_path_icon.."plate/gold.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/gold.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/gold.png"},
 	},
 	Lead = {
 		Density = 11.34,
@@ -530,7 +541,8 @@ Materials = {
 		Strength_Ultimate = 32,
 		Melting_Point = 327,
 		Boiling_Point = 1750,
-		Icon = {icon = dyworld_path_icon.."plate/lead.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/lead.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/lead.png"},
 	},
 	Tungsten = {
 		Density = 19.25,
@@ -541,7 +553,8 @@ Materials = {
 		Strength_Ultimate = 1000,
 		Melting_Point = 3422,
 		Boiling_Point = 5000,
-		Icon = {icon = dyworld_path_icon.."plate/tungsten.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/tungsten.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/tungsten.png"},
 	},
 	Zinc = {
 		Density = 7.14,
@@ -552,7 +565,8 @@ Materials = {
 		Strength_Ultimate = 108,
 		Melting_Point = 419,
 		Boiling_Point = 907,
-		Icon = {icon = dyworld_path_icon.."plate/zinc.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/zinc.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/zinc.png"},
 	},
 	Nickel = {
 		Density = 8.91,
@@ -563,7 +577,8 @@ Materials = {
 		Strength_Ultimate = 200,
 		Melting_Point = 1455,
 		Boiling_Point = 2730,
-		Icon = {icon = dyworld_path_icon.."plate/nickel.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/nickel.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/nickel.png"},
 	},
 	Aluminium = {
 		Density = 2.7,
@@ -574,7 +589,8 @@ Materials = {
 		Strength_Ultimate = 70,
 		Melting_Point = 660,
 		Boiling_Point = 2470,
-		Icon = {icon = dyworld_path_icon.."plate/aluminium.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."plate/aluminium.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/aluminium.png"},
 	},
 	-- Simple Alloy
 	Steel = {
@@ -586,7 +602,8 @@ Materials = {
 		Strength_Ultimate = 300,
 		Melting_Point = 1425,
 		Boiling_Point = 2862,
-		Icon = {icon = "__base__/graphics/icons/steel-plate.png", scale = 0.6, shift = {8, 9}}
+		Icon = {icon = "__base__/graphics/icons/steel-plate.png", scale = 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/steel.png"},
 	},
 	-- Alloy
 	Stainless_Steel = {
@@ -599,7 +616,8 @@ Materials = {
 		Strength_Ultimate = 580,
 		Melting_Point = 1643,
 		Boiling_Point = 2766,
-		Icon = {icon = dyworld_path_icon.."alloy/stainless-steel.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."alloy/stainless-steel.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/stainless-steel.png"},
 	},
 	Bronze = {
 		-- mix of copper and tin
@@ -611,7 +629,8 @@ Materials = {
 		Strength_Ultimate = 239,
 		Melting_Point = 658,
 		Boiling_Point = 2581,
-		Icon = {icon = dyworld_path_icon.."alloy/bronze.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."alloy/bronze.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/bronze.png"},
 	},
 	Billon = {
 		-- mix of copper and silver
@@ -623,7 +642,8 @@ Materials = {
 		Strength_Ultimate = 580,
 		Melting_Point = 1023,
 		Boiling_Point = 2387,
-		Icon = {icon = dyworld_path_icon.."alloy/billon.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."alloy/billon.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/billon.png"},
 	},
 	Copper_Tungsten = {
 		-- mix of copper and tungsten
@@ -635,7 +655,8 @@ Materials = {
 		Strength_Ultimate = 1220,
 		Melting_Point = 2253,
 		Boiling_Point = 3781,
-		Icon = {icon = dyworld_path_icon.."alloy/copper-tungsten.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."alloy/copper-tungsten.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/copper-tungsten.png"},
 	},
 	Copper_Hydride = {
 		-- mix of copper and hydrogen
@@ -647,7 +668,8 @@ Materials = {
 		Strength_Ultimate = 330,
 		Melting_Point = 1626,
 		Boiling_Point = 3843,
-		Icon = {icon = dyworld_path_icon.."alloy/copper-hydride.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."alloy/copper-hydride.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/copper-hydride.png"},
 	},
 	-- Compex Alloy
 	Elinvar = {
@@ -660,7 +682,8 @@ Materials = {
 		Strength_Ultimate = 680,
 		Melting_Point = 1618,
 		Boiling_Point = 2754,
-		Icon = {icon = dyworld_path_icon.."alloy/elinvar.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."alloy/elinvar.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/elinvar.png"},
 	},
 	-- Super Alloy
 	Stainless_Copilinvar_Tungstate = {
@@ -673,7 +696,8 @@ Materials = {
 		Strength_Ultimate = 2480,
 		Melting_Point = 1838,
 		Boiling_Point = 2750,
-		Icon = {icon = dyworld_path_icon.."alloy/stainless-copilinvar-tungstate.png", scale= 0.6, shift = {8, 9}}
+		Icon = {icon = dyworld_path_icon.."alloy/stainless-copilinvar-tungstate.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/stainless-copilinvar-tungstate.png"},
 	},
 }
 

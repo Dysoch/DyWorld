@@ -3,14 +3,14 @@ require "data/prefix"
 local Data_Table = {
 	{
 		Name = dy.."mining-tools-1",
-		Icon = {{icon = dyworld_path_tech.."tools.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."tools.png"}},
 		Tech_Ingredients = 1,
 		Count = 50,
 		Military = false,
 	},
 	{
 		Name = dy.."mining-tools-2",
-		Icon = {{icon = dyworld_path_tech.."tools.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."tools.png"}},
 		Pre_Req = {dy.."mining-tools-1"},
 		Tech_Ingredients = 2,
 		Count = 150,
@@ -18,7 +18,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."mining-tools-3",
-		Icon = {{icon = dyworld_path_tech.."tools.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."tools.png"}},
 		Pre_Req = {dy.."mining-tools-2"},
 		Tech_Ingredients = 3,
 		Count = 350,
@@ -26,7 +26,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."mining-tools-4",
-		Icon = {{icon = dyworld_path_tech.."tools.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."tools.png"}},
 		Pre_Req = {dy.."mining-tools-3"},
 		Tech_Ingredients = 5,
 		Count = 750,
@@ -34,7 +34,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."mining-tools-5",
-		Icon = {{icon = dyworld_path_tech.."tools.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."tools.png"}},
 		Pre_Req = {dy.."mining-tools-4"},
 		Tech_Ingredients = 6,
 		Count = 1750,
@@ -42,7 +42,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."repair-tools-1",
-		Icon = {{icon = dyworld_path_tech.."repair.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."repair.png"}},
 		Pre_Req = {"automation"},
 		Tech_Ingredients = 2,
 		Count = 150,
@@ -50,7 +50,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."repair-tools-2",
-		Icon = {{icon = dyworld_path_tech.."repair.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."repair.png"}},
 		Pre_Req = {dy.."repair-tools-1"},
 		Tech_Ingredients = 3,
 		Count = 450,
@@ -58,7 +58,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."repair-tools-3",
-		Icon = {{icon = dyworld_path_tech.."repair.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."repair.png"}},
 		Pre_Req = {dy.."repair-tools-2"},
 		Tech_Ingredients = 4,
 		Count = 850,
@@ -66,7 +66,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."repair-tools-4",
-		Icon = {{icon = dyworld_path_tech.."repair.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."repair.png"}},
 		Pre_Req = {dy.."repair-tools-3"},
 		Tech_Ingredients = 5,
 		Count = 1450,
@@ -74,7 +74,7 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."repair-tools-5",
-		Icon = {{icon = dyworld_path_tech.."repair.png", scale = 0.5}},
+		Icon = {{icon = dyworld_path_tech.."repair.png"}},
 		Pre_Req = {dy.."repair-tools-4"},
 		Tech_Ingredients = 6,
 		Count = 2500,
@@ -415,10 +415,50 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."steam-energy-1",
-		Icon = {{icon = "__base__/graphics/technology/fluid-handling.png"}},
+		Icon = {{icon = dyworld_path_tech.."steam-energy.png"}},
 		Pre_Req = {"automation", "logistics"},
 		Tech_Ingredients = 1,
 		Count = 50,
+		Military = false,
+	},
+	{
+		Name = dy.."steam-energy-2",
+		Icon = {{icon = dyworld_path_tech.."steam-energy.png"}},
+		Pre_Req = {dy.."steam-energy-1"},
+		Tech_Ingredients = 2,
+		Count = 200,
+		Military = false,
+	},
+	{
+		Name = dy.."steam-energy-3",
+		Icon = {{icon = dyworld_path_tech.."steam-energy.png"}},
+		Pre_Req = {dy.."steam-energy-2"},
+		Tech_Ingredients = 3,
+		Count = 800,
+		Military = false,
+	},
+	{
+		Name = dy.."steam-energy-4",
+		Icon = {{icon = dyworld_path_tech.."steam-energy.png"}},
+		Pre_Req = {dy.."steam-energy-3"},
+		Tech_Ingredients = 4,
+		Count = 3200,
+		Military = false,
+	},
+	{
+		Name = dy.."steam-energy-5",
+		Icon = {{icon = dyworld_path_tech.."steam-energy.png"}},
+		Pre_Req = {dy.."steam-energy-4"},
+		Tech_Ingredients = 5,
+		Count = 12800,
+		Military = false,
+	},
+	{
+		Name = dy.."steam-energy-6",
+		Icon = {{icon = dyworld_path_tech.."steam-energy.png"}},
+		Pre_Req = {dy.."steam-energy-5"},
+		Tech_Ingredients = 6,
+		Count = 51200,
 		Military = false,
 	},
 	{

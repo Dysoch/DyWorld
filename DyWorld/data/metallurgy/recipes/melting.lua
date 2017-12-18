@@ -101,6 +101,7 @@ for k,v in pairs(Material_Table) do
 		  {
 			type = "recipe",
 			name = dy.."molten-"..v.Name.."-pebble",
+			localised_name = {"looped-name.melting-pebble", {"looped-name."..v.Name}},
 			icons = 
 			{
 			  {

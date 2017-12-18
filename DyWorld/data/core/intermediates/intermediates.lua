@@ -155,7 +155,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 2.5,
 		Recipe_Result_Count = 1,
-		Recipe_Ingredients = {{"iron-plate",15},{"iron-stick",4},{"copper-cable",12}},
+		Recipe_Ingredients = {{"iron-plate",8},{"iron-stick",3},{"copper-cable",9}},
 	},
 	{
 		Name = "processing-logic",

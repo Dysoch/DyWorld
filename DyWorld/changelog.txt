@@ -6,6 +6,7 @@ Date: 17. 12. 2017
   Materials System:
     - Added all modules to the Material System
     - Added normal armor to the Material System
+    - Added steam engines to the Material System
   Changes:
     - Removed old DyWorld Modules 
     - Disabled Base Game Modules

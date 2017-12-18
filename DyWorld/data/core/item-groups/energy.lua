@@ -20,6 +20,11 @@ Data_Table_Item_Group = {
 		Main = "energy"
 	},
 	{
+		Name = "steam-engine",
+		Type = "sub",
+		Main = "energy"
+	},
+	{
 		Name = "power-pole",
 		Type = "sub",
 		Main = "energy"

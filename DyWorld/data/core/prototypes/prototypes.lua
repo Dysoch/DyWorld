@@ -6052,6 +6052,220 @@ data:extend(
 	end
 end
 
+function DyWorld_Steam_Engine(DATA)
+data:extend(
+{
+  {
+    type = "generator",
+	name = dy..DATA.Name.."-steam-engine",
+	localised_name = {"looped-name.steam-engine", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/steam-engine.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+	icon_size = 32,
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-steam-engine"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
+    corpse = "big-remnants",
+    dying_explosion = "medium-explosion",
+    alert_icon_shift = util.by_pixel(3, -34),
+    effectivity = (1 + (Materials[DATA.Table].Conductivity / 10)),
+    fluid_usage_per_tick = (Materials[DATA.Table].Density / 10),
+    maximum_temperature = 165,
+    fast_replaceable_group = "steam-engine",
+    collision_box = {{-1.35, -2.35}, {1.35, 2.35}},
+    selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
+    fluid_box =
+    {
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      height = 2,
+      base_level = -1,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        { type = "input-output", position = {0, 3} },
+        { type = "input-output", position = {0, -3} },
+      },
+      production_type = "input-output",
+      filter = "steam",
+      minimum_temperature = 100.0
+    },
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-output"
+    },
+    horizontal_animation =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
+          width = 176,
+          height = 128,
+          frame_count = 32,
+          line_length = 8,
+          shift = util.by_pixel(1, -5),
+	      tint = Material_Colors[DATA.Table],
+          hr_version = {
+            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H.png",
+            width = 352,
+            height = 257,
+            frame_count = 32,
+            line_length = 8,
+	        tint = Material_Colors[DATA.Table],
+            shift = util.by_pixel(1, -4.75),
+            scale = 0.5
+          },
+        },
+        {
+          filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
+          width = 254,
+          height = 80,
+          frame_count = 32,
+          line_length = 8,
+          draw_as_shadow = true,
+          shift = util.by_pixel(48, 24),
+          hr_version = {
+            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H-shadow.png",
+            width = 508,
+            height = 160,
+            frame_count = 32,
+            line_length = 8,
+            draw_as_shadow = true,
+            shift = util.by_pixel(48, 24),
+            scale = 0.5
+          },
+        },
+      },
+    },
+    vertical_animation =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
+          width = 112,
+          height = 195,
+          frame_count = 32,
+          line_length = 8,
+	      tint = Material_Colors[DATA.Table],
+          shift = util.by_pixel(5, -6.5),
+          hr_version = {
+            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V.png",
+            width = 225,
+            height = 391,
+            frame_count = 32,
+            line_length = 8,
+	        tint = Material_Colors[DATA.Table],
+            shift = util.by_pixel(4.75, -6.25),
+            scale = 0.5
+          },
+        },
+        {
+          filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
+          width = 165,
+          height = 153,
+          frame_count = 32,
+          line_length = 8,
+          draw_as_shadow = true,
+          shift = util.by_pixel(40.5, 9.5),
+          hr_version = {
+            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V-shadow.png",
+            width = 330,
+            height = 307,
+            frame_count = 32,
+            line_length = 8,
+            draw_as_shadow = true,
+            shift = util.by_pixel(40.5, 9.25),
+            scale = 0.5
+          },
+        },
+      },
+    },
+    smoke =
+    {
+      {
+        name = "light-smoke",
+        north_position = {0.9, 0.0},
+        east_position = {-2.0, -2.0},
+        frequency = 10 / 32,
+        starting_vertical_speed = 0.08,
+        slow_down_factor = 1,
+        starting_frame_deviation = 60
+      }
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/steam-engine-90bpm.ogg",
+        volume = 0.6
+      },
+      match_speed_to_activity = true,
+    },
+    min_perceived_performance = 0.25,
+    performance_to_sound_speedup = 0.5
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-steam-engine",
+	localised_name = {"looped-name.steam-engine", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/steam-engine.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+	icon_size = 32,
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."steam-engine",
+    stack_size = 100,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-steam-engine",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-steam-engine",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy.."frame", 1},{"electronic-circuit", 5},{dy.."gearbox", 3}},
+    result = dy..DATA.Name.."-steam-engine",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-steam-engine"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-steam-engine"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-steam-engine"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech(dy.."steam-energy-1", dy..DATA.Name.."-steam-engine")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech(dy.."steam-energy-2", dy..DATA.Name.."-steam-engine")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech(dy.."steam-energy-3", dy..DATA.Name.."-steam-engine")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech(dy.."steam-energy-4", dy..DATA.Name.."-steam-engine")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech(dy.."steam-energy-5", dy..DATA.Name.."-steam-engine")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech(dy.."steam-energy-6", dy..DATA.Name.."-steam-engine")
+	end
+end
+
 function DyWorld_Accumulator(DATA)
 data:extend(
 {

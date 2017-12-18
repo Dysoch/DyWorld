@@ -5,7 +5,10 @@ require("data.power.edits.items")
 require("data.power.edits.recipes")
 
 require("data.power.accumulator.accumulator-normal")
+
 require("data.power.solar.solar-normal")
+
+require("data.power.steam.steam-engine")
 
 require("data.power.poles.poles")
 
@@ -19,7 +22,7 @@ require("data.power.poles.poles")
 
 require("data.power.recipes")
 
-local Remove_Table = {"solar-panel", "accumulator", "small-electric-pole", "medium-electric-pole", "big-electric-pole"}
+local Remove_Table = {"solar-panel", "accumulator", "small-electric-pole", "medium-electric-pole", "big-electric-pole", "steam-engine"}
 
 for k,m in pairs(Remove_Table) do
 	for j,n in pairs(data.raw.technology) do

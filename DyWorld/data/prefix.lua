@@ -706,35 +706,4 @@ function Round(num, numDecimalPlaces)
 	return math.floor(num * mult + 0.5) / mult
 end
 
-Material_Table = {
-	-- Non Plates, aka Primitive
-	{ Name = "stone", Table = "Stone", Type = "Primitive"},
-	{ Name = "wood", Table = "Wood", Type = "Primitive"},
-	{ Name = "obsidian", Table = "Obsidian", Type = "Primitive"},
-	{ Name = "rubber", Table = "Rubber", Type = "Primitive"},
-	{ Name = "chitin", Table = "Chitin", Type = "Primitive"},
-	-- Normal Plates, aka Basic
-	{ Name = "copper", Table = "Copper", Type = "Basic"},
-	{ Name = "iron", Table = "Iron", Type = "Basic"},
-	{ Name = "chromium", Table = "Chromium", Type = "Basic"},
-	{ Name = "zinc", Table = "Zinc", Type = "Basic"},
-	{ Name = "tin", Table = "Tin", Type = "Basic"},
-	{ Name = "silver", Table = "Silver", Type = "Basic"},
-	{ Name = "gold", Table = "Gold", Type = "Basic"},
-	{ Name = "lead", Table = "Lead", Type = "Basic"},
-	{ Name = "tungsten", Table = "Tungsten", Type = "Basic"},
-	{ Name = "nickel", Table = "Nickel", Type = "Basic"},
-	{ Name = "aluminium", Table = "Aluminium", Type = "Basic"},
-	-- Simple_Alloy
-	{ Name = "steel", Table = "Steel", Type = "Simple_Alloy"},
-	-- Alloy
-	{ Name = "stainless-steel", Table = "Stainless_Steel", Type = "Alloy"},
-	{ Name = "billon", Table = "Billon", Type = "Alloy"},
-	{ Name = "bronze", Table = "Bronze", Type = "Alloy"},
-	{ Name = "copper-tungsten", Table = "Copper_Tungsten", Type = "Alloy"},
-	{ Name = "copper-hydride", Table = "Copper_Hydride", Type = "Alloy"},
-	-- Complex_Alloy
-	{ Name = "elinvar", Table = "Elinvar", Type = "Complex_Alloy"},
-	-- Super_Alloy
-	{ Name = "stainless-copilinvar-tungstate", Table = "Stainless_Copilinvar_Tungstate", Type = "Super_Alloy"},
-}
+Material_Table = {}

@@ -138,9 +138,9 @@ if settings.startup["DyWorld_Metallurgy"].value then
 	local result = {type = "fluid", name = dy.."molten-gold", amount = 5}
 	table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
 else	
-	local result = {"sulfuric-acid", 75}
+	local result = {type = "fluid", name = "sulfuric-acid", amount = 75}
 	table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
-	local result = {dy.."acid", 25}
+	local result = {type = "fluid", name = dy.."acid", amount = 25}
 	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
 end
 

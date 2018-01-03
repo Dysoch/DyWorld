@@ -277,11 +277,11 @@ script.on_event("DyWorld_Debug_LOG", function(event)
 end)
 
 --remote calls
---[[remote.add_interface("DyWorld",
+remote.add_interface("DyWorld",
 {  
 	Debug_Items = function()
-		
+		functions.Debug_Items()
 	end
-})]]
+})
 
-commands.add_command("dyworld-debug-items", "Debug time :) (only for player 1!)", functions.Debug_Items())
+--commands.add_command("dyworld-debug-items", "Debug time :) (only for player 1!)", functions.Debug_Items())

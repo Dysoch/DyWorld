@@ -1,7 +1,20 @@
 
 -- Core Stuff
+require("data.prefix")
+require("data.ms-core")
+
+-- first we populate the Material Table
+if settings.startup["DyWorld_Warfare"].value then
+    require("data.ms-warfare")
+end
+
+if settings.startup["DyWorld_Metallurgy"].value then
+    require("data.ms-metallurgy")
+end
+
 require("data.core.data")
 
+-- then we add items/entities etc
 if settings.startup["DyWorld_Metallurgy"].value then
 	require("data.metallurgy.data")
 end

@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.1
-Date: 17. 12. 2017
+Date: ???
   Features:
     - Added technologies to improve your batteries of worker robots
     - Added a minigun, fires 120 shots per second!
@@ -8,12 +8,15 @@ Date: 17. 12. 2017
     - Added all modules to the Material System
     - Added normal armor to the Material System
     - Added steam engines to the Material System
+    - Changed the way the system is populated with materials. Chitin only shows up when Warfare is enabled, and all alloys (except steel) will only show up when Metallurgy is enabled. This is done so the screen will not be filled a lot when certain modules are disabled
   Changes:
     - Removed old DyWorld Modules 
     - Disabled Base Game Modules
     - Added advanced and super lubricant for use in the transport belts (transport belts with speeds above 100 use super lubricant, above 50 use advanced lubricant and above 25 use lubricant)
   Balancing:
     - Changed smelting times of clean and dirty ores. Clean ores should smelt quicker now
+  Bugfixes:
+    - Fixed bug with science fluid recipes when metallurgy was disabled
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.0
 Date: 14. 12. 2017

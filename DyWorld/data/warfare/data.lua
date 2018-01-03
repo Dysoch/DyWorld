@@ -12,6 +12,9 @@ require("data.warfare.ammo.grenades")
 
 require("data.warfare.walls.walls")
 
+require("data.warfare.guns.gun")
+require("data.warfare.guns.recipe")
+
 require("data.warfare.turrets.bullet")
 require("data.warfare.turrets.laser")
 require("data.warfare.turrets.grenade")

@@ -3,6 +3,7 @@ Version: 0.6.1
 Date: 17. 12. 2017
   Features:
     - Added technologies to improve your batteries of worker robots
+    - Added a minigun, fires 120 shots per second!
   Materials System:
     - Added all modules to the Material System
     - Added normal armor to the Material System

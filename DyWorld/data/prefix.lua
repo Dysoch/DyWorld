@@ -81,12 +81,12 @@ Material_Resistances = {
 	Chitin = {
 	  {type = "physical", decrease = 1, percent = 0},
 	  {type = "impact", decrease = 1, percent = 0},
-      {type = "poison", decrease = 0, percent = 0},
-      {type = "explosion", decrease = 0, percent = 0},
-      {type = "fire", decrease = 0, percent = 0},
-      {type = "laser", decrease = 0, percent = 0},
-      {type = "acid", decrease = 0, percent = 0},
-      {type = "electric", decrease = 0, percent = 0}
+      {type = "poison", decrease = 0, percent = 10},
+      {type = "explosion", decrease = -5, percent = 0},
+      {type = "fire", decrease = 0, percent = -25},
+      {type = "laser", decrease = 0, percent = 2},
+      {type = "acid", decrease = 5, percent = 75},
+      {type = "electric", decrease = 2, percent = 0}
 	},
 	Obsidian = {
 	  {type = "physical", decrease = 10, percent = 0},
@@ -120,8 +120,8 @@ Material_Resistances = {
 	},
 	
 	Iron = {
-	  {type = "physical", decrease = 0, percent = 0},
-	  {type = "impact", decrease = 0, percent = 0},
+	  {type = "physical", decrease = 5, percent = 0},
+	  {type = "impact", decrease = 5, percent = 0},
       {type = "poison", decrease = 0, percent = 0},
       {type = "explosion", decrease = 0, percent = 0},
       {type = "fire", decrease = 0, percent = 0},

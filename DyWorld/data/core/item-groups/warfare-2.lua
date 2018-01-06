@@ -28,6 +28,11 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "warfare-2"
 	},
+	{
+		Name = "equipment-solar",
+		Type = "sub",
+		Main = "warfare-2"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

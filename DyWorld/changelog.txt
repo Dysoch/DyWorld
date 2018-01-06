@@ -8,6 +8,7 @@ Date: ???
     - Added all modules to the Material System
     - Added normal armor to the Material System
     - Added steam engines to the Material System
+    - Added Solar Panel Equipment to the Material System
     - Changed the way the system is populated with materials. Chitin only shows up when Warfare is enabled, and all alloys (except steel) will only show up when Metallurgy is enabled. This is done so the screen will not be filled a lot when certain modules are disabled
   Changes:
     - Removed old DyWorld Modules 

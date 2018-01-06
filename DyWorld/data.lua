@@ -42,3 +42,7 @@ end
 if settings.startup["DyWorld_Warfare"].value then
 	require("data.warfare.data")
 end
+
+if settings.startup["DyWorld_Equipment"].value then
+	require("data.equipment.data")
+end

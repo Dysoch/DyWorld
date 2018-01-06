@@ -6052,6 +6052,89 @@ data:extend(
 	end
 end
 
+function DyWorld_Solar_Equipment(DATA)
+data:extend(
+{
+  {
+    type = "solar-panel-equipment",
+	name = dy..DATA.Name.."-solar-normal-equipment",
+	localised_name = {"looped-name.solar-equipment", {"looped-name."..DATA.Name}},
+    sprite =
+    {
+      filename = "__base__/graphics/equipment/solar-panel-equipment.png",
+      width = 32,
+      height = 32,
+      priority = "medium"
+    },
+    shape =
+    {
+      width = 1,
+      height = 1,
+      type = "full"
+    },
+	icon_size = 32,
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "primary-output"
+    },
+    power = tostring(DyWorld_Material_Formulas(10, DATA.Table)/5).."kW",
+    categories = {"armor"}
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-solar-normal-equipment",
+	localised_name = {"looped-name.solar-equipment", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/equipment/solar-panel-equipment.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    placed_as_equipment_result = dy..DATA.Name.."-solar-normal-equipment",
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."equipment-solar",
+    order = dy..DATA.Name.."-solar-normal-equipment",
+    stack_size = 20
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-solar-normal-equipment",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{dy.."solar-cell", math.ceil(DyWorld_Material_Formulas(10, DATA.Table)/50)},{"electronic-circuit", 5}},
+    result = dy..DATA.Name.."-solar-normal-equipment",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal-equipment"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal-equipment"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal-equipment"].ingredients, result_1)
+	end
+	if DATA.Name == "wood" then
+		data.raw.recipe[dy..DATA.Name.."-solar-normal-equipment"].enabled = true
+	elseif DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech("solar-energy", dy..DATA.Name.."-solar-normal-equipment")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("solar-energy-2", dy..DATA.Name.."-solar-normal-equipment")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("solar-energy-3", dy..DATA.Name.."-solar-normal-equipment")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("solar-energy-4", dy..DATA.Name.."-solar-normal-equipment")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("solar-energy-5", dy..DATA.Name.."-solar-normal-equipment")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("solar-energy-6", dy..DATA.Name.."-solar-normal-equipment")
+	end
+end
+
 function DyWorld_Steam_Engine(DATA)
 data:extend(
 {

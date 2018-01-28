@@ -1,6 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.6.2
+Date: ????
+  Features:
+    - 
+  Materials System:
+    - 
+  Changes:
+    - 
+  Balancing:
+    - 
+  Bugfixes:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.6.1
-Date: ???
+Date: 06. 01. 2018
   Features:
     - Added technologies to improve your batteries of worker robots
     - Added a minigun, fires 120 shots per second!

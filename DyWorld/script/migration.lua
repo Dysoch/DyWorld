@@ -142,6 +142,16 @@ function Migrate_To_Next_Version()
 		global.dyworld.Version = "0.6.1" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end
+	if global.dyworld.Version == "0.6.1" then
+			for k,v in pairs(game.players[1].force.technologies) do
+				if v.researched then
+					v.researched = false
+					v.researched = true
+				end
+			end
+		global.dyworld.Version = "0.6.2" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+	end
 end
 
 function Migrate_Debug()

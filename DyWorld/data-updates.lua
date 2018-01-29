@@ -1,5 +1,42 @@
 require "data/prefix"
 
+function Stick_Fix()
+	for j,n in pairs(data.raw.recipe) do
+		if n.normal then
+			for h,b in pairs(n.normal.ingredients) do
+				if b.name then
+					if b.name == "iron-stick" then
+						b.name = "iron-cable"
+					end
+				elseif b[1] == "iron-stick" then
+					b[1] = "iron-cable"
+				end
+			end	
+			for h,b in pairs(n.expensive.ingredients) do
+				if b.name then
+					if b.name == "iron-stick" then
+						b.name = "iron-cable"
+					end
+				elseif b[1] == "iron-stick" then
+					b[1] = "iron-cable"
+				end
+			end		
+		elseif n.ingredients then
+			for h,b in pairs(n.ingredients) do
+				if b.name then
+					if b.name == "iron-stick" then
+						b.name = "iron-cable"
+					end
+				elseif b[1] == "iron-stick" then
+					b[1] = "iron-cable"
+				end
+			end
+		end
+	end
+end
+
+Stick_Fix()
+
 function DyWorld_Fluid_Recycle(v)
 data:extend(
 {	

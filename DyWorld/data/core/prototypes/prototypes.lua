@@ -170,9 +170,9 @@ function DyWorld_Resource(DATA)
     order = DATA.Name.."-ore",
     minable =
     {
-      hardness = DATA.Mining_Hardness,
+      hardness = Round(DATA.Mining_Hardness, 2),
       mining_particle = "stone-particle",
-      mining_time = DATA.Mining_Time,
+      mining_time = Round(DATA.Mining_Time, 2),
       result = DATA.Name.."-ore",
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
@@ -222,7 +222,13 @@ function DyWorld_Resource(DATA)
     },
     map_color = DATA.Tint,
   }
-  return result
+	if result.minable.hardness <= 1 then
+		result.minable.hardness = result.minable.hardness + 1
+	end
+	if result.minable.mining_time <= 1 then
+		result.minable.mining_time = result.minable.mining_time + 1
+	end
+	return result
 end
 
 function DyWorld_Fluid(DATA)
@@ -1122,6 +1128,13 @@ data:extend(
     result_count = 1,
   },
 })
+	if DATA.Type == "Basic" or DATA.Type == "Simple_Alloy" or DATA.Type == "Alloy" or DATA.Type == "Complex_Alloy" or DATA.Type == "Super_Alloy" then
+		local result_1 = {DATA.Name.."-gear-wheel", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
+	end
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 2}
 		local result_2 = {DATA.Name, 3}
@@ -1140,8 +1153,8 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
 	else
 		local result_1 = {DATA.Name.."-plate", 2}
-		local result_2 = {DATA.Name.."-plate", 3}
-		local result_3 = {DATA.Name.."-plate", 4}
+		local result_2 = {DATA.Name.."-plate", 1}
+		local result_3 = {DATA.Name.."-plate", 2}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-transport-belt"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_3)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
@@ -3128,25 +3141,34 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"placeable-neutral", "player-creation", "filter-directions"},
+    collision_mask = { "ground-tile", "object-layer" },
+    fluid_box_tile_collision_test = { "ground-tile" },
+    adjacent_tile_collision_test = { "water-tile" },
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-offshore-pump"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
     corpse = "small-remnants",
     fluid = "water",
     resistances = Material_Resistances[DATA.Table],
-    collision_box = {{-0.6, -0.45}, {0.6, 0.3}},
+    collision_box = {{-0.6, -1.05}, {0.6, 0.3}},
     selection_box = {{-1, -1.49}, {1, 0.49}},
     fluid_box =
     {
       base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
       base_level = 1,
+      base_level = 1,
       pipe_covers = pipecoverspictures(),
+      production_type = "output",
       pipe_connections =
       {
-        { position = {0, 1} },
+        {
+          position = {0, 1},
+          type = "output"
+        },
       },
     },
     pumping_speed = Materials[DATA.Table].Strength_Ultimate,
     tile_width = 1,
+    tile_height = 1,
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
     {
@@ -3189,6 +3211,15 @@ data:extend(
         height = 102,
 		tint = Material_Colors[DATA.Table]
       }
+    },
+    placeable_position_visualization =
+    {
+      filename = "__core__/graphics/cursor-boxes-32x32.png",
+      priority = "extra-high-no-scale",
+      width = 64,
+      height = 64,
+      scale = 0.5,
+      x = 3*64
     },
     circuit_wire_connection_points = circuit_connector_definitions["offshore-pump"].points,
     circuit_connector_sprites = circuit_connector_definitions["offshore-pump"].sprites,
@@ -5221,7 +5252,7 @@ data:extend(
     name = dy..DATA.Name.."-power-pole",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{"copper-cable", 4}},
+    ingredients = {},
     result = dy..DATA.Name.."-power-pole",
     result_count = 2,
   },
@@ -5241,11 +5272,22 @@ data:extend(
     name = dy..DATA.Name.."-power-relay",
     energy_required = 1.5,
 	enabled = false,
-    ingredients = {{"copper-cable", 7}},
+    ingredients = {},
     result = dy..DATA.Name.."-power-relay",
     result_count = 1,
   },
 })
+	if DATA.Type == "Basic" or DATA.Type == "Simple_Alloy" or DATA.Type == "Alloy" or DATA.Type == "Complex_Alloy" or DATA.Type == "Super_Alloy" then
+		local result_1 = {DATA.Name.."-cable", 4}
+		local result_2 = {DATA.Name.."-cable", 9}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-pole"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-relay"].ingredients, result_2)	
+	else
+		local result_1 = {"copper-cable", 4}
+		local result_2 = {"copper-cable", 9}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-pole"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-power-relay"].ingredients, result_2)	
+	end
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 10}
 		local result_2 = {DATA.Name, 15}

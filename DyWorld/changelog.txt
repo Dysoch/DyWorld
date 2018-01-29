@@ -2,7 +2,7 @@
 Version: 0.6.2
 Date: ????
   Features:
-    - 
+    - Added new intermediates: Gears and wires of every metal. Only Copper Cable and Iron Gear can be made by hand (more expensive!), the rest has to be done with specialised assemblers!
   Materials System:
     - 
   Changes:
@@ -10,7 +10,7 @@ Date: ????
   Balancing:
     - 
   Bugfixes:
-    - 
+    - Fixed placement issues with offshore pumps. Should be visible where to place now, and fixed collision and selection boxes
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.1
 Date: 06. 01. 2018

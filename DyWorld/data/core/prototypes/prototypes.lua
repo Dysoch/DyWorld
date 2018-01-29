@@ -225,8 +225,8 @@ function DyWorld_Resource(DATA)
 	if result.minable.hardness <= 1 then
 		result.minable.hardness = result.minable.hardness + 1
 	end
-	if result.minable.mining_time <= 1 then
-		result.minable.mining_time = result.minable.mining_time + 1
+	if result.minable.mining_time <= 2 then
+		result.minable.mining_time = result.minable.mining_time + 2
 	end
 	return result
 end
@@ -7465,6 +7465,10 @@ data:extend(
 		DyWorld_Add_To_Tech(dy.."electric-miners-4", dy..DATA.Name.."-electric-drill")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech(dy.."electric-miners-5", dy..DATA.Name.."-electric-drill")
+	end
+	if (Materials[DATA.Table].Elasticity / 2) >= 20 then
+		data.raw.item[dy..DATA.Name.."-electric-drill"].localised_description = {"looped-name.drill-warning"}
+		data.raw["mining-drill"][dy..DATA.Name.."-electric-drill"].localised_description = {"looped-name.drill-warning"}
 	end
 end
 

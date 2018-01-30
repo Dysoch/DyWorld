@@ -38,3 +38,7 @@ table.insert(data.raw.recipe["discharge-defense-equipment"].ingredients,result)
 table.remove(data.raw.recipe["gate"].ingredients,1)
 local result = {dy.."stone-wall", 1}
 table.insert(data.raw.recipe["gate"].ingredients,result)
+
+table.remove(data.raw.recipe["cliff-explosives"].ingredients,2)
+local result = {dy.."iron-grenade", 1}
+table.insert(data.raw.recipe["cliff-explosives"].ingredients,result)

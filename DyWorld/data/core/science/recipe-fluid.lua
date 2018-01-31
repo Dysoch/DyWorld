@@ -20,7 +20,7 @@ data:extend(
       {type = "fluid", name = dy.."science-fluid-1", amount = 10},
       {type = "item", name = dy.."filter-empty", amount = 2},
     },
-    subgroup = dy.."fluid-recipes",
+    subgroup = dy.."science-recipe",
     order = dy.."science-fluid-1",
   },
   {
@@ -39,7 +39,7 @@ data:extend(
     {
       {type = "fluid", name = dy.."science-fluid-2", amount = 10},
     },
-    subgroup = dy.."fluid-recipes",
+    subgroup = dy.."science-recipe",
     order = dy.."science-fluid-2",
   },
   {
@@ -58,7 +58,7 @@ data:extend(
     {
       {type = "fluid", name = dy.."science-fluid-3", amount = 10},
     },
-    subgroup = dy.."fluid-recipes",
+    subgroup = dy.."science-recipe",
     order = dy.."science-fluid-3",
   },
   {
@@ -78,7 +78,7 @@ data:extend(
     {
       {type = "fluid", name = dy.."science-fluid-4", amount = 10},
     },
-    subgroup = dy.."fluid-recipes",
+    subgroup = dy.."science-recipe",
     order = dy.."science-fluid-4",
   },
   {
@@ -97,7 +97,7 @@ data:extend(
     {
       {type = "fluid", name = dy.."science-fluid-5", amount = 10},
     },
-    subgroup = dy.."fluid-recipes",
+    subgroup = dy.."science-recipe",
     order = dy.."science-fluid-5",
   },
   {
@@ -120,7 +120,7 @@ data:extend(
     {
       {type = "fluid", name = dy.."science-fluid-6", amount = 10},
     },
-    subgroup = dy.."fluid-recipes",
+    subgroup = dy.."science-recipe",
     order = dy.."science-fluid-6",
   },
 })

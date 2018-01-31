@@ -33,3 +33,16 @@ data.raw.item["iron-ore"].localised_name = {"edits-name.iron-ore"}
 data.raw.item["copper-ore"].localised_name = {"edits-name.copper-ore"}
 data.raw.item["iron-plate"].localised_name = {"edits-name.iron-plate"}
 data.raw.item["copper-plate"].localised_name = {"edits-name.copper-plate"}
+
+data.raw.tool["science-pack-1"].subgroup = dy.."science-tool"
+data.raw.tool["science-pack-2"].subgroup = dy.."science-tool"
+data.raw.tool["science-pack-3"].subgroup = dy.."science-tool"
+data.raw.tool["military-science-pack"].subgroup = dy.."science-tool"
+data.raw.tool["production-science-pack"].subgroup = dy.."science-tool"
+data.raw.tool["high-tech-science-pack"].subgroup = dy.."science-tool"
+data.raw.tool["science-pack-1"].order = "01"
+data.raw.tool["science-pack-2"].order = "02"
+data.raw.tool["science-pack-3"].order = "03"
+data.raw.tool["military-science-pack"].order = "04"
+data.raw.tool["production-science-pack"].order = "05"
+data.raw.tool["high-tech-science-pack"].order = "06"

@@ -1,5 +1,7 @@
 
 
+require("data.core.science.infinite-science-edits")
+
 for k,v in pairs(data.raw["projectile"]) do
 	if v.name == "cliff-explosives" then
 		-- nothing, to make sure it is skipped so that one will work as intended
@@ -10,6 +12,7 @@ for k,v in pairs(data.raw["projectile"]) do
 		if not v.direction_only then
 			v.direction_only = true
 		end
+	end
 end
 
 for k,v in pairs(data.raw["ammo"]) do

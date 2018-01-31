@@ -34,11 +34,6 @@ Data_Table_Item_Group = {
 		Main = "machines"
 	},
 	{
-		Name = "lab",
-		Type = "sub",
-		Main = "machines"
-	},
-	{
 		Name = "extraction-burner",
 		Type = "sub",
 		Main = "machines"

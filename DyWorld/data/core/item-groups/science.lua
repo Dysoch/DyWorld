@@ -4,24 +4,34 @@ local dyworld_path_item_group = "__DyWorld__/graphics/item-group/"
 
 Data_Table_Item_Group = {
 	{
-		Name = "items-2",
+		Name = "science",
 		Type = "main",
-		Icon = "items.png"
+		Icon = "personal.png"
 	},
 	{
-		Name = "gears",
+		Name = "science-tool",
 		Type = "sub",
-		Main = "items-2"
+		Main = "science"
 	},
 	{
-		Name = "cables",
+		Name = "science-recipe",
 		Type = "sub",
-		Main = "items-2"
+		Main = "science"
 	},
 	{
-		Name = "coils",
+		Name = "science-recipe-infinite",
 		Type = "sub",
-		Main = "items-2"
+		Main = "science"
+	},
+	{
+		Name = "science-artifact",
+		Type = "sub",
+		Main = "science"
+	},
+	{
+		Name = "lab",
+		Type = "sub",
+		Main = "science"
 	},
 }
 

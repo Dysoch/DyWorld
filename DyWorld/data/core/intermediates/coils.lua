@@ -1,16 +1,13 @@
 require "data/prefix"
 
-data.raw.recipe["iron-stick"].hidden = true
-data.raw.recipe["copper-cable"].result_count = 1
-
 for k,v in pairs(Material_Table) do
 	if v.Type == "Basic" or v.Type == "Simple_Alloy" or v.Type == "Alloy" or v.Type == "Complex_Alloy" or v.Type == "Super_Alloy" then
 		data:extend(
 		{ 
 		  {
 			type = "item",
-			name = v.Name.."-cable",
-			localised_name = {"looped-name.cable", {"looped-name."..v.Name}},
+			name = v.Name.."-coil",
+			localised_name = {"looped-name.coil", {"looped-name."..v.Name}},
 			icons = 
 			{
 			  {
@@ -19,20 +16,20 @@ for k,v in pairs(Material_Table) do
 			  },
 			},
 			flags = {"goes-to-main-inventory"},
-			subgroup = dy.."cables",
+			subgroup = dy.."coils",
 			stack_size = 200,
 			order = v.Name,
 		  },
 		  {
 			type = "recipe",
-			name = dy..v.Name.."-cable",
+			name = dy..v.Name.."-coil",
 			energy_required = 0.15,
-			category = dy.."cable-crafting", 
+			category = dy.."coil-crafting", 
 			enabled = true,
 			hidden = true,
-			ingredients = {{v.Name.."-plate", 1}},
-			result = v.Name.."-cable",
-			result_count = 3,
+			ingredients = {{v.Name.."-cable", 1}},
+			result = v.Name.."-coil",
+			result_count = 1,
 		  },
 		})
 	end
@@ -42,7 +39,7 @@ data:extend(
 {
   {
     type = "furnace",
-    name = dy.."cable-crafter",
+    name = dy.."coil-crafter",
     icons =
 	{
 	  {
@@ -52,7 +49,7 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = dy.."cable-crafter"},
+    minable = {mining_time = 1, result = dy.."coil-crafter"},
     max_health = 1000,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -72,7 +69,7 @@ data:extend(
       module_info_icon_shift = {0, 0.8}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {dy.."cable-crafting"},
+    crafting_categories = {dy.."coil-crafting"},
     result_inventory_size = 2,
     crafting_speed = 5,
     energy_usage = "100kW",
@@ -115,7 +112,7 @@ data:extend(
   },
   {
     type = "item",
-    name = dy.."cable-crafter",
+    name = dy.."coil-crafter",
     icons =
 	{
 	  {
@@ -126,13 +123,13 @@ data:extend(
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = dy.."assembling-special",
-    order = "cable-crafter",
-    place_result = dy.."cable-crafter",
+    order = "coil-crafter",
+    place_result = dy.."coil-crafter",
     stack_size = 200
   },
   {
     type = "recipe",
-    name = dy.."cable-crafter",
+    name = dy.."coil-crafter",
     energy_required = 1.5,
     enabled = true,
     ingredients =
@@ -142,7 +139,7 @@ data:extend(
       {type = "item", name = "iron-plate", amount = 5},
       {type = "item", name = "copper-plate", amount = 5},
     },
-    result = dy.."cable-crafter"
+    result = dy.."coil-crafter"
   },
 }
 )

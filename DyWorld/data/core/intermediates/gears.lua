@@ -64,8 +64,8 @@ data:extend(
         percent = 80
       }
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     module_specification =
     {
       module_slots = 0,
@@ -73,8 +73,8 @@ data:extend(
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {dy.."gear-crafting"},
-    result_inventory_size = 1,
-    crafting_speed = 1,
+    result_inventory_size = 2,
+    crafting_speed = 5,
     energy_usage = "100kW",
     source_inventory_size = 1,
     energy_source =
@@ -89,8 +89,9 @@ data:extend(
       width = 113,
       height = 91,
       frame_count = 1,
-      shift = {0.2, 0.15},
-	  tint = Color_Tier[3]
+      --shift = {0.2, 0.15},
+	  tint = Color_Tier[3],
+	  scale = 0.3
     },
     working_visualisations =
     {
@@ -102,8 +103,9 @@ data:extend(
           width = 113,
           height = 91,
           frame_count = 1,
-          shift = {0.2, 0.15},
-		  tint = Color_Tier[3]
+          --shift = {0.2, 0.15},
+		  tint = Color_Tier[3],
+		  scale = 0.3
         }
       }
     },

@@ -12,6 +12,7 @@ Date: ????
   Bugfixes:
     - Fixed placement issues with offshore pumps. Should be visible where to place now, and fixed collision and selection boxes
     - Fixed Cliff Explosives not being able to be crafted and not being able to hit cliffs
+    - Fixed quickbars resetting when migrating to a newer version
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.1
 Date: 06. 01. 2018

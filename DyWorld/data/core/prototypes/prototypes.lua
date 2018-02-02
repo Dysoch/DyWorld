@@ -1595,7 +1595,7 @@ data:extend(
       turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
       sound = make_heavy_gunshot_sounds(),
     },
-    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + Round(DyWorld_Material_Formulas(5, DATA.Table) * 0.1, 2)),
     shoot_in_prepare_state = true,
     call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
   },
@@ -1728,7 +1728,7 @@ data:extend(
       turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
       sound = make_heavy_gunshot_sounds(),
     },
-    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + Round(DyWorld_Material_Formulas(5, DATA.Table) * 0.1, 2)),
     shoot_in_prepare_state = true,
     call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
   },
@@ -1861,7 +1861,7 @@ data:extend(
       turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
       sound = make_heavy_gunshot_sounds(),
     },
-    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + Round(DyWorld_Material_Formulas(5, DATA.Table) * 0.1, 2)),
     shoot_in_prepare_state = true,
     call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
   },
@@ -5495,7 +5495,7 @@ data:extend(
       },
       sound = make_laser_sounds()
     },
-    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + Round(DyWorld_Material_Formulas(5, DATA.Table) * 0.1, 2)),
     shoot_in_prepare_state = true,
     call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
   },
@@ -5706,7 +5706,7 @@ data:extend(
       },
       sound = make_laser_sounds()
     },
-    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 )),
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + Round(DyWorld_Material_Formulas(5, DATA.Table) * 0.1, 2)),
     shoot_in_prepare_state = true,
     call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
   },

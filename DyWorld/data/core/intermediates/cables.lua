@@ -14,12 +14,12 @@ for k,v in pairs(Material_Table) do
 			icons = 
 			{
 			  {
-				icon = "__base__/graphics/icons/copper-cable.png",
+				icon = dyworld_path_icon.."wire.png",
 				tint = Material_Colors[v.Table],
 			  },
 			},
 			flags = {"goes-to-main-inventory"},
-			subgroup = dy.."cables",
+			subgroup = dy.."circuit-01-cables",
 			stack_size = 200,
 			order = v.Name,
 		  },

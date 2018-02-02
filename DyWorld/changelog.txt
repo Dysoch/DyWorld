@@ -2,11 +2,12 @@
 Version: 0.6.2
 Date: ????
   Features:
-    - Added new intermediates: Gears and wires of every metal. Only Copper Cable and Iron Gear can be made by hand (more expensive!), the rest has to be done with specialised assemblers!
+    - Added new intermediates: Gears, Wires, Coils and PCB's of every metal. Only Copper Wire/Coil/PCB and Iron Gear can be made by hand (INSANE expensive!), the rest has to be done with specialised assemblers!
+    - The first new recipes for Circuits. This is currently under testing, but should be balanced (any feedback is welcome)
   Materials System:
     - 
   Changes:
-    - 
+    - Turrets should be prepared to fire at less range now, making them slightly more effective.
   Balancing:
     - 
   Bugfixes:

@@ -67,3 +67,23 @@ data.raw.recipe["rocket-fuel"].ingredients = {
     {type = "fluid", name = dy.."rocket-fuel", amount = 5},
 	{type = "item", name = "steel-plate", amount = 1},
 }
+
+table.remove(data.raw.recipe["electronic-circuit"].normal.ingredients,2)
+local result = {"copper-pcb", 1}
+table.insert(data.raw.recipe["electronic-circuit"].normal.ingredients,result)
+
+table.remove(data.raw.recipe["advanced-circuit"].normal.ingredients,3)
+table.remove(data.raw.recipe["advanced-circuit"].normal.ingredients,1)
+local result = {"silver-pcb", 2}
+table.insert(data.raw.recipe["advanced-circuit"].normal.ingredients,result)
+local result = {"lead-pcb", 1}
+table.insert(data.raw.recipe["advanced-circuit"].normal.ingredients,result)
+
+table.remove(data.raw.recipe["processing-unit"].normal.ingredients,2)
+table.remove(data.raw.recipe["processing-unit"].normal.ingredients,1)
+local result = {"steel-pcb", 2}
+table.insert(data.raw.recipe["processing-unit"].normal.ingredients,result)
+local result = {"tungsten-pcb", 3}
+table.insert(data.raw.recipe["processing-unit"].normal.ingredients,result)
+local result = {"gold-cable", 5}
+table.insert(data.raw.recipe["processing-unit"].normal.ingredients,result)

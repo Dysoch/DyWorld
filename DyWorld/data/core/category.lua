@@ -41,6 +41,10 @@ local Data_Table = {
 		Name = dy.."coil-crafting",
 		Type = "recipe"
 	},
+	{
+		Name = dy.."pcb-crafting",
+		Type = "recipe"
+	},
 }
 
 function DyWorld_Damage_Type(NAME)

@@ -6,29 +6,29 @@ for k,v in pairs(Material_Table) do
 		{ 
 		  {
 			type = "item",
-			name = v.Name.."-coil",
-			localised_name = {"looped-name.coil", {"looped-name."..v.Name}},
+			name = v.Name.."-pcb",
+			localised_name = {"looped-name.pcb", {"looped-name."..v.Name}},
 			icons = 
 			{
 			  {
-				icon = dyworld_path_icon.."coil.png",
+				icon = dyworld_path_icon.."pcb.png",
 				tint = Material_Colors[v.Table],
 			  },
 			},
 			flags = {"goes-to-main-inventory"},
-			subgroup = dy.."circuit-02-coils",
+			subgroup = dy.."circuit-03-pcbs",
 			stack_size = 200,
 			order = v.Name,
 		  },
 		  {
 			type = "recipe",
-			name = dy..v.Name.."-coil",
+			name = dy..v.Name.."-pcb",
 			energy_required = 0.15,
-			category = dy.."coil-crafting", 
+			category = dy.."pcb-crafting", 
 			enabled = true,
 			hidden = true,
-			ingredients = {{v.Name.."-cable", 1}},
-			result = v.Name.."-coil",
+			ingredients = {{v.Name.."-coil", 1}},
+			result = v.Name.."-pcb",
 			result_count = 1,
 		  },
 		})
@@ -39,7 +39,7 @@ data:extend(
 {
   {
     type = "furnace",
-    name = dy.."coil-crafter",
+    name = dy.."pcb-crafter",
     icons =
 	{
 	  {
@@ -49,7 +49,7 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = dy.."coil-crafter"},
+    minable = {mining_time = 1, result = dy.."pcb-crafter"},
     max_health = 1000,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -69,7 +69,7 @@ data:extend(
       module_info_icon_shift = {0, 0.8}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {dy.."coil-crafting"},
+    crafting_categories = {dy.."pcb-crafting"},
     result_inventory_size = 2,
     crafting_speed = 5,
     energy_usage = "100kW",
@@ -112,7 +112,7 @@ data:extend(
   },
   {
     type = "item",
-    name = dy.."coil-crafter",
+    name = dy.."pcb-crafter",
     icons =
 	{
 	  {
@@ -123,35 +123,35 @@ data:extend(
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = dy.."assembling-special",
-    order = "coil-crafter",
-    place_result = dy.."coil-crafter",
+    order = "pcb-crafter",
+    place_result = dy.."pcb-crafter",
     stack_size = 200
   },
   {
     type = "recipe",
-    name = dy.."coil-crafter",
+    name = dy.."pcb-crafter",
     energy_required = 1.5,
     enabled = true,
     ingredients =
     {
       {type = "item", name = "electronic-circuit", amount = 1},
       {type = "item", name = "copper-cable", amount = 5},
-      {type = "item", name = "iron-plate", amount = 5},
+      {type = "item", name = "iron-coil", amount = 5},
       {type = "item", name = "copper-plate", amount = 5},
     },
-    result = dy.."coil-crafter"
+    result = dy.."pcb-crafter"
   },
   {
     type = "recipe",
-    name = "copper-coil",
+    name = "copper-pcb",
 	localised_description = {"looped-name.expensive"},
     energy_required = 0.5,
     enabled = true,
     ingredients =
     {
-      {type = "item", name = "copper-cable", amount = 5},
+      {type = "item", name = "copper-coil", amount = 3},
     },
-    result = "copper-coil"
+    result = "copper-pcb"
   },
 }
 )

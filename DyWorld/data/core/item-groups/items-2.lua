@@ -14,12 +14,22 @@ Data_Table_Item_Group = {
 		Main = "items-2"
 	},
 	{
-		Name = "cables",
+		Name = "circuit-01-cables",
 		Type = "sub",
 		Main = "items-2"
 	},
 	{
-		Name = "coils",
+		Name = "circuit-02-coils",
+		Type = "sub",
+		Main = "items-2"
+	},
+	{
+		Name = "circuit-03-pcbs",
+		Type = "sub",
+		Main = "items-2"
+	},
+	{
+		Name = "circuit-04-circuits",
 		Type = "sub",
 		Main = "items-2"
 	},

@@ -6,6 +6,18 @@ local Data_Table = {
 		Type = "recipe"
 	},
 	{
+		Name = dy.."splitter",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."electrolyser",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."recombiner",
+		Type = "recipe"
+	},
+	{
 		Name = dy.."geodrill",
 		Type = "recipe"
 	},

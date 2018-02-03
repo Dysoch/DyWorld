@@ -93,7 +93,7 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
-		name = "DyWorld_Chemistery",
+		name = "DyWorld_Chemistry",
 		setting_type = "startup",
 		default_value = true,
 	},

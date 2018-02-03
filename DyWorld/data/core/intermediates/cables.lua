@@ -75,7 +75,7 @@ data:extend(
     crafting_categories = {dy.."cable-crafting"},
     result_inventory_size = 2,
     crafting_speed = 5,
-    energy_usage = "100kW",
+    energy_usage = "100W",
     source_inventory_size = 1,
     energy_source =
     {

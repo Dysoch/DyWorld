@@ -4,11 +4,11 @@ data:extend(
 {
   {
     type = "furnace",
-    name = dy.."splitter",
+    name = dy.."splicer",
     icon = "__base__/graphics/icons/electric-furnace.png",
 	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = dy.."splitter"},
+    minable = {mining_time = 1, result = dy.."splicer"},
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -43,20 +43,20 @@ data:extend(
     },
     module_specification =
     {
-      module_slots = 0,
+      module_slots = 5,
       module_info_icon_shift = {0, 0.8}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {dy.."splitter"},
-    result_inventory_size = 5,
+    crafting_categories = {dy.."splicer"},
+    result_inventory_size = 1,
     crafting_speed = 1,
-    energy_usage = "100kW",
+    energy_usage = "1500kW",
     source_inventory_size = 1,
     energy_source =
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions = 0.005
+      emissions = 0.5
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
@@ -183,17 +183,17 @@ data:extend(
   },
   {
     type = "item",
-    name = dy.."splitter",
+    name = dy.."splicer",
     icon = "__base__/graphics/icons/electric-furnace.png",
     flags = {"goes-to-quickbar"},
     subgroup = dy.."assembling-special",
-    order = dy.."splitter",
-    place_result = dy.."splitter",
+    order = dy.."splicer",
+    place_result = dy.."splicer",
     stack_size = 20
   },
   {
     type = "recipe",
-    name = dy.."splitter",
+    name = dy.."splicer",
     energy_required = 5,
     enabled = true,
     ingredients =
@@ -202,7 +202,7 @@ data:extend(
       {type = "item", name = "copper-plate", amount = 4},
       {type = "item", name = "stone", amount = 2},
     },
-    result = dy.."splitter"
+    result = dy.."splicer"
   },
 }
 )

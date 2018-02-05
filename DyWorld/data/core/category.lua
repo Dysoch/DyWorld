@@ -6,7 +6,7 @@ local Data_Table = {
 		Type = "recipe"
 	},
 	{
-		Name = dy.."splitter",
+		Name = dy.."splicer",
 		Type = "recipe"
 	},
 	{

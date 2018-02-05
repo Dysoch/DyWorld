@@ -11,6 +11,7 @@ data.raw.recipe["tungsten-plate"].ingredients = {{"tungsten-ore", 2}}
 data.raw.recipe["zinc-plate"].ingredients = {{"zinc-ore", 2}}
 data.raw.recipe["aluminium-plate"].ingredients = {{"aluminium-ore", 2}}
 data.raw.recipe["nickel-plate"].ingredients = {{"nickel-ore", 2}}
+data.raw.recipe["uranium-plate"].ingredients = {{"uranium-ore", 2}}
 data.raw.recipe["steel-plate"].ingredients = {{"iron-plate", 8}}
 
 if settings.startup["DyWorld_Metallurgy"].value then
@@ -33,6 +34,7 @@ if settings.startup["DyWorld_Metallurgy"].value then
       {type = "item", name = "zinc-pebble", amount_min = 1, amount_max = 5, probability = 0.09},
       {type = "item", name = "aluminium-pebble", amount_min = 1, amount_max = 5, probability = 0.09},
       {type = "item", name = "nickel-pebble", amount_min = 1, amount_max = 5, probability = 0.09},
+      {type = "item", name = "uranium-pebble", amount_min = 1, amount_max = 5, probability = 0.04},
     }
 	data.raw.recipe[dy.."sludge-seperation"].results = {
       {type = "item", name = "stone", amount_min = 1, amount_max = 4, probability = 1},
@@ -49,5 +51,6 @@ if settings.startup["DyWorld_Metallurgy"].value then
       {type = "item", name = "nickel-pebble", amount_min = 1, amount_max = 10, probability = 0.09},
       {type = "item", name = "aluminium-pebble", amount_min = 1, amount_max = 10, probability = 0.09},
       {type = "item", name = "zinc-pebble", amount_min = 1, amount_max = 10, probability = 0.09},
+      {type = "item", name = "uranium-pebble", amount_min = 1, amount_max = 10, probability = 0.06},
     }
 end

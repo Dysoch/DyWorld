@@ -15,7 +15,7 @@ function DyWorld_Item_Plate_Start(DATA)
   return result
 end
 
-local Data_Table = { "chromium", "gold", "lead", "tin", "silver", "tungsten", "zinc", "aluminium", "nickel"}
+local Data_Table = { "chromium", "gold", "lead", "tin", "silver", "tungsten", "zinc", "aluminium", "nickel", "uranium"}
 
 for k,v in pairs(Data_Table) do
 data:extend(

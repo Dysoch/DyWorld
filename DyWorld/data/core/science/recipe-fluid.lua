@@ -32,7 +32,7 @@ data:extend(
 	enabled = true,
     ingredients =
     {
-      {type = "fluid", name = dy.."oxygen", amount = 50},
+      {type = "fluid", name = "oxygen", amount = 50},
       {type = "fluid", name = dy.."acid", amount = 5},
     },
     results=
@@ -90,7 +90,7 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."hydrogen", amount = 50},
+      {type = "fluid", name = "hydrogen", amount = 50},
       {type = "fluid", name = dy.."clean-oil", amount = 5},
     },
     results=

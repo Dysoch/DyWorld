@@ -361,3 +361,17 @@ data:extend(
 		end
 	end
 end
+
+data:extend(
+{
+  {
+    type = "item",
+    name = "carbon",
+    icon = dyworld_path_icon_temp,
+	icon_size = 32,
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."intermediates",
+    order = "carbon",
+    stack_size = 200
+  },
+})

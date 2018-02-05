@@ -58,8 +58,8 @@ data:extend(
     },
     results=
     {
-      {type = "fluid", name = dy.."hydrogen", amount = 100},
-      {type = "fluid", name = dy.."oxygen", amount = 200},
+      {type = "fluid", name = "hydrogen", amount = 100},
+      {type = "fluid", name = "oxygen", amount = 200},
     },
     subgroup = dy.."fluid-recipes",
     order = "water-seperation",
@@ -248,7 +248,7 @@ data:extend(
     ingredients =
     {
       {type = "fluid", name = "petroleum-gas", amount = 25},
-      {type = "fluid", name = dy.."oxygen", amount = 75},
+      {type = "fluid", name = "oxygen", amount = 75},
     },
     results =
     {
@@ -277,7 +277,7 @@ data:extend(
     ingredients =
     {
       {type = "fluid", name = "lubricant", amount = 25},
-      {type = "fluid", name = dy.."hydrogen", amount = 75},
+      {type = "fluid", name = "hydrogen", amount = 75},
     },
     results =
     {
@@ -306,7 +306,7 @@ data:extend(
     ingredients =
     {
       {type = "fluid", name = dy.."advanced-lubricant", amount = 25},
-      {type = "fluid", name = dy.."hydrogen", amount = 250},
+      {type = "fluid", name = "hydrogen", amount = 250},
       {type = "fluid", name = dy.."methane", amount = 75},
       {type = "fluid", name = dy.."rocket-fuel", amount = 25},
     },

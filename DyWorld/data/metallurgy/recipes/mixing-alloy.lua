@@ -147,7 +147,7 @@ data:extend(
     ingredients =
     {
       {type = "fluid", name = dy.."molten-copper", amount = 25},
-      {type = "fluid", name = dy.."hydrogen", amount = 35},
+      {type = "fluid", name = "hydrogen", amount = 35},
     },
     results=
     {

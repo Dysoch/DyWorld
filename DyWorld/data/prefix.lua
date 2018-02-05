@@ -54,6 +54,7 @@ Material_Colors = {
 	Zinc = {r=97, g=208, b=92}, -- 61d05c
 	Nickel = {r=92, g=114, b=208}, -- 5c72d0
 	Aluminium = {r=150, g=150, b=150}, -- 969696
+	Uranium = {r=100, g=255, b=100}, -- 969696
 	
 	Steel = {r=192, g=192, b=192},
 	
@@ -220,6 +221,16 @@ Material_Resistances = {
       {type = "electric", decrease = 0, percent = 0}
 	},
 	Aluminium = {
+	  {type = "physical", decrease = 0, percent = 0},
+	  {type = "impact", decrease = 0, percent = 0},
+      {type = "poison", decrease = 0, percent = 0},
+      {type = "explosion", decrease = 0, percent = 0},
+      {type = "fire", decrease = 0, percent = 0},
+      {type = "laser", decrease = 0, percent = 0},
+      {type = "acid", decrease = 0, percent = 0},
+      {type = "electric", decrease = 0, percent = 0}
+	},
+	Uranium = {
 	  {type = "physical", decrease = 0, percent = 0},
 	  {type = "impact", decrease = 0, percent = 0},
       {type = "poison", decrease = 0, percent = 0},
@@ -591,6 +602,18 @@ Materials = {
 		Boiling_Point = 2470,
 		Icon = {icon = dyworld_path_icon.."plate/aluminium.png", scale= 0.6, shift = {8, 9}},
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/aluminium.png"},
+	},
+	Uranium = {
+		Density = 19.1,
+		Hardness = 6.0,
+		Elasticity = 1.9,
+		Conductivity = 1.38,
+		Strength_Yield = 205,
+		Strength_Ultimate = 111,
+		Melting_Point = 1132,
+		Boiling_Point = 4131,
+		Icon = {icon = dyworld_path_icon.."plate/uranium.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/uranium.png"},
 	},
 	-- Simple Alloy
 	Steel = {

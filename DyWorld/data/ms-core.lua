@@ -16,6 +16,7 @@ local Table = {
 	{ Name = "tungsten", Table = "Tungsten", Type = "Basic"},
 	{ Name = "nickel", Table = "Nickel", Type = "Basic"},
 	{ Name = "aluminium", Table = "Aluminium", Type = "Basic"},
+	{ Name = "uranium", Table = "Uranium", Type = "Basic"},
 	{ Name = "steel", Table = "Steel", Type = "Simple_Alloy"},
 }
     for k,v in pairs(Table) do

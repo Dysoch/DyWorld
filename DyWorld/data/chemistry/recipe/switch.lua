@@ -1,24 +1,22 @@
 require "data/prefix"
-
-Solids = {"sulfur"}
-Liquids = {dy.."hydrogen", dy.."oxygen", dy.."methane"}
+require "data/chemistry/prefix"
 
 function Chemistry_Liquids_to_Atoms(v)
 data:extend(
 {	
   {
     type = "recipe",
-    name = dy.."pt-liquid>atom-"..v,
-    energy_required = 2.5,
-	category = dy.."splitter",
+    name = dy.."pt-liquid>atom-"..v.Name,
+    energy_required = 0.5,
+	category = dy.."splicer",
 	subgroup = dy.."pt-hidden",
     enabled = true,
 	hidden = true,
     ingredients =
     {
-      {type = "fluid", name = v, amount = 50},
+      {type = "fluid", name = v.Name, amount = 1},
     },
-    results = {{type = "fluid", name = dy.."atoms", amount = 50}},
+    results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
   },
 })
 end
@@ -28,17 +26,17 @@ data:extend(
 {	
   {
     type = "recipe",
-    name = dy.."pt-solid>atom-"..v,
-    energy_required = 2.5,
-	category = dy.."splitter",
+    name = dy.."pt-solid>atom-"..v.Name,
+    energy_required = 0.5,
+	category = dy.."splicer",
 	subgroup = dy.."pt-hidden",
     enabled = true,
 	hidden = true,
     ingredients =
     {
-      {type = "item", name = v, amount = 1},
+      {type = "item", name = v.Name, amount = 1},
     },
-    results = {{type = "fluid", name = dy.."atoms", amount = 1}},
+    results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
   },
 })
 end
@@ -48,16 +46,16 @@ data:extend(
 {	
   {
     type = "recipe",
-    name = dy.."pt-atom>liquid-"..v,
-    energy_required = 10,
+    name = dy.."pt-atom>liquid-"..v.Name,
+    energy_required = 1,
 	category = dy.."recombiner",
 	subgroup = dy.."atoms>liquids",
     enabled = true,
     ingredients =
     {
-      {type = "fluid", name = dy.."atoms", amount = 50},
+      {type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)},
     },
-    results = {{type = "fluid", name = v, amount = 25}},
+    results = {{type = "fluid", name = v.Name, amount = 1}},
   },
 })
 end
@@ -67,16 +65,16 @@ data:extend(
 {	
   {
     type = "recipe",
-    name = dy.."pt-atom>solid-"..v,
-    energy_required = 10,
+    name = dy.."pt-atom>solid-"..v.Name,
+    energy_required = 1,
 	category = dy.."recombiner",
 	subgroup = dy.."atoms>solids",
     enabled = true,
     ingredients =
     {
-      {type = "fluid", name = dy.."atoms", amount = 2},
+      {type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)},
     },
-    results = {{type = "item", name = v, amount = 1}},
+    results = {{type = "item", name = v.Name, amount = 1}},
   },
 })
 end

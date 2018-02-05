@@ -25,7 +25,7 @@ data:extend(
       {type = "fluid", name = dy.."molten-iron", amount = 20},
       {type = "fluid", name = dy.."molten-chromium", amount = 20},
       {type = "fluid", name = dy.."molten-nickel", amount = 20},
-      {type = "fluid", name = dy.."oxygen", amount = 5},
+      {type = "fluid", name = "oxygen", amount = 5},
     },
     results=
     {

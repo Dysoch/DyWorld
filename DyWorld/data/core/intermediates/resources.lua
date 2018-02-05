@@ -73,19 +73,35 @@ local Data_Table = {
 		Mining_Time = (Materials.Nickel.Hardness / Materials.Nickel.Density),
 		Tint = Material_Colors.Nickel,
 	},
+	{
+		Name = "uranium",
+		Table = "Uranium",
+		Type = 1,
+		Mining_Hardness = Materials.Uranium.Hardness,
+		Mining_Time = (Materials.Uranium.Hardness / Materials.Uranium.Density),
+		Tint = Material_Colors.Uranium,
+		Resource_Already_In = true,
+	},
 }
 
 for k,v in pairs(Data_Table) do
-data:extend(
-	{
-		DyWorld_Noise_Layer(v),
-		DyWorld_Autoplace(v),
-		DyWorld_Item_Ore(v),
-		DyWorld_Resource(v),
-		DyWorld_Item_Plate(v),
-		DyWorld_Recipe_Plate(v),
-	}
-	)
+	if not v.Resource_Already_In then
+		data:extend(
+		{
+			DyWorld_Noise_Layer(v),
+			DyWorld_Autoplace(v),
+			DyWorld_Item_Ore(v),
+			DyWorld_Resource(v),
+			DyWorld_Item_Plate(v),
+			DyWorld_Recipe_Plate(v),
+		})
+	else
+		data:extend(
+		{
+			DyWorld_Item_Plate(v),
+			DyWorld_Recipe_Plate(v),
+		})
+	end
 end
 
 local function DyWorld_Technology_1(DATA)

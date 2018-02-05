@@ -21,8 +21,9 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
+      emissions = 0.5
     },
-    energy_usage = "100W", --"25kW",
+    energy_usage = "2500kW", --"25kW",
     ingredient_count = 25,
     resistances =
     {
@@ -53,7 +54,7 @@ data:extend(
     },
     module_specification =
     {
-      module_slots = 0
+      module_slots = 5
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     animation =

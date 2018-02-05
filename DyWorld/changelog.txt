@@ -5,7 +5,7 @@ Date: ????
     - Added new intermediates: Gears, Wires, Coils and PCB's of every metal. Only Copper Wire/Coil/PCB and Iron Gear can be made by hand (INSANE expensive!), the rest has to be done with specialised assemblers!
     - The first new recipes for Circuits. This is currently under testing, but should be balanced (any feedback is welcome)
   Materials System:
-    - 
+    - Added a new material: Uranium. Smelt Uranium in a furnace to get its plate form
   Changes:
     - Turrets should be prepared to fire at less range now, making them slightly more effective.
   Balancing:

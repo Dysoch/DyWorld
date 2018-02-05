@@ -23,42 +23,50 @@ for k,v in pairs(data.raw["ammo"]) do
 	end
 end
 
-if settings.startup["DyWorld_Debug"].value then
-Stacksize_Increase_Factor = 100
+if settings.startup["DyWorld_Stack_Size_Mult"].value > 1 then
 	for k, v in pairs(data.raw.item) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
 	end
 	for k, v in pairs(data.raw.ammo) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
 	end
 	for k, v in pairs(data.raw.gun) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
 	end
 	for k, v in pairs(data.raw["repair-tool"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
 	end
 	for k, v in pairs(data.raw["mining-tool"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
 	end
 	for k, v in pairs(data.raw["capsule"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
 	end
 	for k, v in pairs(data.raw["module"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
 	end
 	for k, v in pairs(data.raw["tool"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
 	end
 	for k, v in pairs(data.raw["rail-planner"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = (v.stack_size*Stacksize_Increase_Factor)
+		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
+	end
+end
+
+if settings.startup["DyWorld_Infinite_Resources"].value then
+	for k, v in pairs(data.raw.resource) do
+		v.infinite = true
+		v.minimum = 60000
+		v.normal = 300000
+		v.infinite_depletion_amount = 10
 	end
 end

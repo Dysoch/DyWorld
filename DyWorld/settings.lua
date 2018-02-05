@@ -3,6 +3,7 @@
 --settings.startup["DyWorld_Modules"].value
 --settings.startup["DyWorld_Warfare"].value
 --settings.startup["DyWorld_Warfare_Difficulty"].value
+--settings.startup["DyWorld_Stack_Size_Mult"].value
 --settings.startup["DyWorld_Processing"].value
 --settings.startup["DyWorld_Power"].value
 --settings.startup["DyWorld_Logistics"].value
@@ -42,6 +43,14 @@ data:extend({
         minimum_value = 1,
 		allowed_values = Warfare_Modes,
         order = "DyWorld_Warfare_Difficulty"
+	},
+	{
+		type = "int-setting",
+		name = "DyWorld_Stack_Size_Mult",
+		setting_type = "startup",
+		default_value = 1,
+        maximum_value = 5000,
+        minimum_value = 1,
 	},
 	{
 		type = "bool-setting",
@@ -96,6 +105,12 @@ data:extend({
 		name = "DyWorld_Chemistry",
 		setting_type = "startup",
 		default_value = true,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld_Infinite_Resources",
+		setting_type = "startup",
+		default_value = false,
 	},
 })
 

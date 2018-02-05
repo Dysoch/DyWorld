@@ -4,6 +4,8 @@ Date: ????
   Features:
     - Added new intermediates: Gears, Wires, Coils and PCB's of every metal. Only Copper Wire/Coil/PCB and Iron Gear can be made by hand (INSANE expensive!), the rest has to be done with specialised assemblers!
     - The first new recipes for Circuits. This is currently under testing, but should be balanced (any feedback is welcome)
+    - Added a stacksize increaser. Defaults to 1, but can be as high as you want it with a max of 5000 times the current stacksize (multiplier)
+    - Dont like finite ores? Well now you can switch everything to infinite if you so wish. Check mod options to enable it
   Materials System:
     - Added a new material: Uranium. Smelt Uranium in a furnace to get its plate form
   Changes:

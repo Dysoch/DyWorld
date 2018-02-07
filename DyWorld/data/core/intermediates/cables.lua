@@ -29,7 +29,7 @@ for k,v in pairs(Material_Table) do
 			energy_required = 0.15,
 			category = dy.."cable-crafting", 
 			enabled = true,
-			hidden = true,
+			hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
 			ingredients = {{v.Name.."-plate", 1}},
 			result = v.Name.."-cable",
 			result_count = 3,

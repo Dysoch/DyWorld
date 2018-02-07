@@ -12,6 +12,7 @@
 --settings.startup["DyWorld_Needs"].value
 --settings.startup["DyWorld_Metallurgy"].value
 --settings.startup["DyWorld_Equipment"].value
+--settings.startup["DyWorld_Hidden_Recipes"].value
 
 -- can use: "runtime-global", "startup"
 
@@ -111,6 +112,12 @@ data:extend({
 		name = "DyWorld_Infinite_Resources",
 		setting_type = "startup",
 		default_value = false,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld_Hidden_Recipes",
+		setting_type = "startup",
+		default_value = true,
 	},
 })
 

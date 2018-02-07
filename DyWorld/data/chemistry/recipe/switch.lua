@@ -11,7 +11,7 @@ data:extend(
 	category = dy.."splicer",
 	subgroup = dy.."pt-hidden",
     enabled = true,
-	hidden = true,
+	hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
     ingredients =
     {
       {type = "fluid", name = v.Name, amount = 1},
@@ -31,7 +31,7 @@ data:extend(
 	category = dy.."splicer",
 	subgroup = dy.."pt-hidden",
     enabled = true,
-	hidden = true,
+	hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
     ingredients =
     {
       {type = "item", name = v.Name, amount = 1},

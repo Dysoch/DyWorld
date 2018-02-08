@@ -1,5 +1,3 @@
-require ("data.core.prototypes.gunshot-sounds")
-
 data:extend(
 {
   {

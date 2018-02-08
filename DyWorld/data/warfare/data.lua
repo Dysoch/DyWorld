@@ -19,6 +19,8 @@ require("data.warfare.turrets.bullet")
 require("data.warfare.turrets.laser")
 require("data.warfare.turrets.grenade")
 
+require("data.warfare.enemies.units")
+
 local Remove_Table = {"gun-turret", "laser-turret", "piercing-shotgun-shell", "shotgun-shell", "uranium-rounds-magazine", "piercing-rounds-magazine", "firearm-magazine", "cannon-shell", "explosive-cannon-shell", "uranium-cannon-shell", "explosive-uranium-cannon-shell", "grenade", "cluster-grenade", "stone-wall", "light-armor", "heavy-armor"}
 
 for k,m in pairs(Remove_Table) do

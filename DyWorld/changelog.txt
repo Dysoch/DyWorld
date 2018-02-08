@@ -6,8 +6,13 @@ Date: ????
     - The first new recipes for Circuits. This is currently under testing, but should be balanced (any feedback is welcome)
     - Added a stacksize increaser. Defaults to 1, but can be as high as you want it with a max of 5000 times the current stacksize (multiplier)
     - Dont like finite ores? Well now you can switch everything to infinite if you so wish. Check mod options to enable it
+    - Added an option to unhide hidden recipes. Disable to see those recipes, but it will make your crafting windows a lot bigger! Use it to see ratio's and where to craft them
+  Chemistry:
+    - Added first iteration of Chemistry. You can make certain elements from Atoms, and splice certain elements and compounds into Atoms
   Materials System:
     - Added a new material: Uranium. Smelt Uranium in a furnace to get its plate form
+  Warfare:
+    - Added the first 20 enemies: Arachtoid and Cuspira (remade from the base game, with slightly different hp and attacks) The later ones that spawn are HUGE!
   Changes:
     - Turrets should be prepared to fire at less range now, making them slightly more effective.
   Balancing:

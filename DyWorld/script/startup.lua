@@ -32,6 +32,7 @@ function Game()
 			Knowledge = 0,
 			Level = 0,
 			XP = 0,
+            Warfare = {Location = {}},
 		}
 	debug("Created global.dyworld")
 	end

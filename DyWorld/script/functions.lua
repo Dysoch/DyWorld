@@ -31,3 +31,12 @@ function GetInv()
 		end
 	end
 end
+
+function Mark_Warfare_Location(posX, posY, bool)
+	if not global.dyworld.Warfare then 
+        global.dyworld.Warfare = {} 
+        global.dyworld.Warfare.Location = {} 
+    end
+	global.dyworld.Warfare.Location[math.floor(posX)] = {}
+	global.dyworld.Warfare.Location[math.floor(posX)] = {Y = (math.floor(posY)), Build = bool}
+end

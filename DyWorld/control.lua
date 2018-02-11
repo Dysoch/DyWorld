@@ -119,6 +119,15 @@ script.on_event(defines.events.on_built_entity, function(event)
 	stats_functions.IncrementerPersonal("build", 1, event.player_index)
 	stats_functions.XP_Full(event.player_index)
 	stats_functions.Needs_Work(event.player_index, 0.1, 0.05)
+    functions.Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
+end)
+
+script.on_event(defines.events.on_player_mined_entity, function(event)
+    functions.Mark_Warfare_Location(event.entity.position.x, event.entity.position.y, false)
+end)
+
+script.on_event(defines.events.on_robot_mined_entity, function(event)
+    functions.Mark_Warfare_Location(event.entity.position.x, event.entity.position.y, false)
 end)
 
 script.on_event(defines.events.on_robot_mined, function(event)
@@ -129,6 +138,7 @@ end)
 script.on_event(defines.events.on_robot_built_entity, function(event)
 	stats_functions.IncrementerGlobal("ghostbuild", 1)
 	stats_functions.XP_All_Small()
+    functions.Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
 end)
 
 script.on_event(defines.events.on_sector_scanned, function(event)

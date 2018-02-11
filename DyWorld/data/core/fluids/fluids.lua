@@ -8,6 +8,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
 		Barrel = true,
 	},
 	{
@@ -17,6 +18,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
 		Barrel = true,
 	},
 	{
@@ -26,6 +28,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.15, 
 		Barrel = true,
 	},
 	{
@@ -35,6 +38,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=10, g=255, b=10},
 		Color_Flow = {r=10, g=255, b=10},
+		Pressure = 0.15, 
 		Barrel = true,
 	},
 	{
@@ -44,6 +48,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=10, g=255, b=10},
 		Color_Flow = {r=10, g=255, b=10},
+		Pressure = 0.15, 
 		Barrel = true,
 	},
 	{
@@ -53,6 +58,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=10, g=255, b=10},
 		Color_Flow = {r=10, g=255, b=10},
+		Pressure = 0.15, 
 		Barrel = true,
 	},
 	{
@@ -62,6 +68,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.85, 
 		Barrel = true,
 	},
 	{
@@ -71,6 +78,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.85, 
 		Barrel = true,
 	},
 	{
@@ -80,6 +88,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.85, 
 		Barrel = true,
 	},
 	{
@@ -89,6 +98,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=255, g=10, b=10},
 		Color_Flow = {r=255, g=10, b=10},
+		Pressure = 0.1, 
 		Barrel = true,
 	},
 	{
@@ -98,6 +108,7 @@ local Data_Table = {
 		Max_Temp = 100,
 		Color_Base = {r=0, g=0, b=0},
 		Color_Flow = {r=0.5, g=0.5, b=0.5},
+		Pressure = 0.15, 
 		Barrel = true,
 	},
 	{
@@ -107,6 +118,7 @@ local Data_Table = {
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
 		Color_Flow = {r=255, g=10, b=10},
+		Pressure = 0.25, 
 		Barrel = true,
 	},
 	{
@@ -116,6 +128,7 @@ local Data_Table = {
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
 		Color_Flow = {r=255, g=10, b=10},
+		Pressure = 0.25, 
 		Barrel = true,
 	},
 	{
@@ -125,6 +138,7 @@ local Data_Table = {
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
 		Color_Flow = {r=255, g=10, b=10},
+		Pressure = 0.25, 
 		Barrel = true,
 	},
 	{
@@ -134,6 +148,7 @@ local Data_Table = {
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
 		Color_Flow = {r=255, g=10, b=10},
+		Pressure = 0.25, 
 		Barrel = true,
 	},
 	{
@@ -143,6 +158,7 @@ local Data_Table = {
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
 		Color_Flow = {r=255, g=10, b=10},
+		Pressure = 0.25, 
 		Barrel = true,
 	},
 	{
@@ -152,6 +168,7 @@ local Data_Table = {
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
 		Color_Flow = {r=255, g=10, b=10},
+		Pressure = 0.25, 
 		Barrel = true,
 	},
 	{
@@ -161,6 +178,7 @@ local Data_Table = {
 		Max_Temp = 50,
 		Color_Base = {r=255, g=10, b=10},
 		Color_Flow = {r=255, g=10, b=10},
+		Pressure = 0.25, 
 		Barrel = true,
 	},
 }

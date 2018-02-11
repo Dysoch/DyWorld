@@ -58,8 +58,8 @@ data:extend(
     },
     results=
     {
-      {type = "fluid", name = "hydrogen", amount = 100},
-      {type = "fluid", name = "oxygen", amount = 200},
+      {type = "fluid", name = "hydrogen", amount = 200},
+      {type = "fluid", name = "oxygen", amount = 100},
     },
     subgroup = dy.."fluid-recipes",
     order = "water-seperation",

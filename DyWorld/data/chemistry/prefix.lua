@@ -86,6 +86,7 @@ Solids = {
 Liquids = {
 	{ Name = "hydrogen", Mass = 1.00794 },
 	{ Name = "oxygen", Mass = 15.9994 },
+	{ Name = "nitrogen", Mass = 14.0067 },
 }
 
 -- Compounds containing Compounds need to be at the bottom for it work. If a compound it contains is below it, then it will fail. Make sure it is ordered
@@ -135,6 +136,31 @@ Compounds = {
 		Mass = 0, 
 		Type = "fluid",
 		Elements = {["oxygen"] = 67, ["hydrogen"] = 33},
+	},
+	["dyworld-carbon-dioxide"] = {
+		Mass = 0, 
+		Type = "fluid",
+		Elements = {["oxygen"] = 67, ["carbon"] = 33},
+	},
+	["dyworld-carbon-monoxide"] = {
+		Mass = 0, 
+		Type = "fluid",
+		Elements = {["oxygen"] = 50, ["carbon"] = 50},
+	},
+	["dyworld-methane"] = {
+		Mass = 0, 
+		Type = "fluid",
+		Elements = {["carbon"] = 20, ["hydrogen"] = 80},
+	},
+	["petroleum"] = {
+		Mass = 0, 
+		Type = "fluid",
+		Elements = {["carbon"] = 85, ["hydrogen"] = 10, ["nitrogen"] = 2, ["oxygen"] = 1, ["sulfur"] = 2},
+	},
+	["crude-oil"] = {
+		Mass = 0, 
+		Type = "fluid",
+		Elements = {["carbon"] = 85, ["hydrogen"] = 10, ["nitrogen"] = 2, ["oxygen"] = 1, ["sulfur"] = 2},
 	},
 	["stone"] = {
 		Mass = 0, 

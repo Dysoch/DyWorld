@@ -242,7 +242,7 @@ function DyWorld_Fluid(DATA)
     base_color = DATA.Color_Base,
     flow_color = DATA.Color_Flow,
     order = DATA.Name,
-    pressure_to_speed_ratio = 0.4,
+    pressure_to_speed_ratio = DATA.Pressure or 0.4,
     flow_to_energy_ratio = 0.59,
     auto_barrel = false
   }

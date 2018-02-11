@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.2
-Date: ????
+Date: 12. 02. 2018
   Features:
     - Added new intermediates: Gears, Wires, Coils and PCB's of every metal. Only Copper Wire/Coil/PCB and Iron Gear can be made by hand (INSANE expensive!), the rest has to be done with specialised assemblers!
     - The first new recipes for Circuits. This is currently under testing, but should be balanced (any feedback is welcome)
@@ -16,11 +16,36 @@ Date: ????
   Changes:
     - Turrets should be prepared to fire at less range now, making them slightly more effective.
   Balancing:
-    - 
+    - Made Advanced Water Centrifuging recipe correct as it should be. Gives now H20 instead of HO2
+    - Fluids have different pressure rates now. Gases flow quick, while molten metals and sludge are super slow
   Bugfixes:
     - Fixed placement issues with offshore pumps. Should be visible where to place now, and fixed collision and selection boxes
     - Fixed Cliff Explosives not being able to be crafted and not being able to hit cliffs
     - Fixed quickbars resetting when migrating to a newer version
+  Compatibility:
+    - Compatible with Advanced Logistics System
+    - Compatible with Aircraft 
+    - Compatible with AutoDeconstruct 
+    - Compatible with Autofill
+    - Compatible with Auto-Research (recommended)
+    - Compatible with Bottleneck (recommended)
+    - Compatible with EquipmentHotkeys Fixed (recommended)
+    - Compatible with FARL
+    - Compatible with FNEI (recommended)
+    - Compatible with Foreman
+    - Compatible with Helmod
+    - Compatible with ItemCount
+    - Compatible with LTN, Logistic Train Network (recommended)
+    - Compatible with Minimap-Autohide
+    - Compatible with Ore Eraser
+    - Compatible with PickerExtended (recommended)
+    - Compatible with PlannerCore
+    - Compatible with OutpostPlanner
+    - Compatible with RSO (HIGHLY recommended)
+    - Compatible with Smokeless
+    - Compatible with Squeak Through
+    - Compatible with Upgrade Planner (recommended)
+    - Compatible with UPS-UP
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.1
 Date: 06. 01. 2018

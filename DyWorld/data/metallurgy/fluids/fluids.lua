@@ -20,7 +20,7 @@ for k,v in pairs(Material_Table) do
 			base_color = Material_Colors[v.Table],
 			flow_color = Material_Colors[v.Table],
 			order = v.Name,
-			pressure_to_speed_ratio = 0.4,
+			pressure_to_speed_ratio = 0.15,
 			flow_to_energy_ratio = 0.59,
 			auto_barrel = false
 		  },
@@ -36,6 +36,7 @@ local Data_Table = {
 		Max_Temp = Materials.Stone.Boiling_Point,
 		Color_Base = Material_Colors.Stone,
 		Color_Flow = Material_Colors.Stone,
+		Pressure = 0.25, 
 		Barrel = false,
 	},
 	{
@@ -45,6 +46,7 @@ local Data_Table = {
 		Max_Temp = 250,
 		Color_Base = Material_Colors.Silver,
 		Color_Flow = Material_Colors.Silver,
+		Pressure = 0.25, 
 		Barrel = false,
 	},
 }

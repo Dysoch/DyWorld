@@ -21,6 +21,9 @@ Date: 12. 02. 2018
   Bugfixes:
     - Fixed placement issues with offshore pumps. Should be visible where to place now, and fixed collision and selection boxes
     - Fixed Cliff Explosives not being able to be crafted and not being able to hit cliffs
+    - Fixed Artillery Shells not being able to be crafted
+    - Fixed Artillery Wagon not being able to be crafted
+    - Fixed Buffer Chest not being able to be crafted
     - Fixed quickbars resetting when migrating to a newer version
   Compatibility:
     - Compatible with Advanced Logistics System

@@ -101,3 +101,11 @@ table.insert(data.raw.recipe["logistic-chest-active-provider"].ingredients,resul
 table.remove(data.raw.recipe["logistic-chest-passive-provider"].ingredients,1)
 local result = {dy.."steel-chest", 1}
 table.insert(data.raw.recipe["logistic-chest-passive-provider"].ingredients,result)
+
+table.remove(data.raw.recipe["logistic-chest-buffer"].ingredients,1)
+local result = {dy.."steel-chest", 1}
+table.insert(data.raw.recipe["logistic-chest-buffer"].ingredients,result)
+
+table.remove(data.raw.recipe["artillery-wagon"].ingredients,4)
+local result = {dy.."tungsten-pipe", 16}
+table.insert(data.raw.recipe["artillery-wagon"].ingredients,result)

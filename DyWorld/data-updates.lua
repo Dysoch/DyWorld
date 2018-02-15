@@ -1,5 +1,7 @@
 require "data/prefix"
 
+require("dycompa")
+
 function Stick_Fix()
 	for j,n in pairs(data.raw.recipe) do
 		if n.normal then

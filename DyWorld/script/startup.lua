@@ -1,5 +1,13 @@
 module("startup", package.seeall)
 
+function Research_Calc()
+	local var = 0
+	for k,v in pairs(game.forces.player.technologies) do
+		var = var + v.research_unit_count
+	end
+	return var
+end
+
 function Game()
 	if not global.dyworld then
 		global.dyworld = 
@@ -7,6 +15,7 @@ function Game()
 			Version = "0.6.2",
 			Items = {},
 			Research = {},
+			Guide = {},
 			Players = 0,
 			Chunks = 0,
 			Generation_Ship_1 = false,
@@ -20,6 +29,7 @@ function Game()
 			Generation_Ship_3_PosY = 0,
 			Research_Level_String = "Primitive",
 			Research_Level_Var = 1,
+			Max_Research = Research_Calc(),
 			Strength = 0,
 			Endurance = 0,
 			Speed = 0,

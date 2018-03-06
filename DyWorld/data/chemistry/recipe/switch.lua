@@ -10,7 +10,7 @@ data:extend(
     energy_required = 0.5,
 	category = dy.."splicer",
 	subgroup = dy.."pt-hidden",
-    enabled = true,
+    enabled = false,
 	hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
     ingredients =
     {
@@ -19,6 +19,7 @@ data:extend(
     results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
   },
 })
+DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-liquid>atom-"..v.Name)
 end
 
 function Chemistry_Solids_to_Atoms(v)
@@ -30,7 +31,7 @@ data:extend(
     energy_required = 0.5,
 	category = dy.."splicer",
 	subgroup = dy.."pt-hidden",
-    enabled = true,
+    enabled = false,
 	hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
     ingredients =
     {
@@ -39,6 +40,7 @@ data:extend(
     results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
   },
 })
+DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-solid>atom-"..v.Name)
 end
 
 function Chemistry_Atoms_to_Liquids(v)
@@ -50,7 +52,7 @@ data:extend(
     energy_required = 1,
 	category = dy.."recombiner",
 	subgroup = dy.."atoms>liquids",
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)},
@@ -58,6 +60,7 @@ data:extend(
     results = {{type = "fluid", name = v.Name, amount = 1}},
   },
 })
+DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-atom>liquid-"..v.Name)
 end
 
 function Chemistry_Atoms_to_Solids(v)
@@ -69,7 +72,7 @@ data:extend(
     energy_required = 1,
 	category = dy.."recombiner",
 	subgroup = dy.."atoms>solids",
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)},
@@ -77,6 +80,7 @@ data:extend(
     results = {{type = "item", name = v.Name, amount = 1}},
   },
 })
+DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-atom>solid-"..v.Name)
 end
 
 for k,v in pairs(Liquids) do

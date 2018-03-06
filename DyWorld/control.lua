@@ -8,6 +8,7 @@ require "script/gui/gui_2"
 require "script/gui/gui_3"
 require "script/gui/gui_4"
 require "script/gui/gui_5"
+require "script/gui/gui_6"
 require "script/gui/gui_click"
 require "script/stats/functions"
 require "script/generation/noise"
@@ -58,6 +59,7 @@ script.on_event(defines.events.on_player_created, function(event)
 			player.print({"dyworld.startup-story-wip"})
 		end
 	end
+	PlayerPrint({"dyworld_guide_gui.message"})
 	debug(game.players[event.player_index].name.." created")
 end)
 
@@ -120,6 +122,10 @@ script.on_event(defines.events.on_built_entity, function(event)
 	stats_functions.XP_Full(event.player_index)
 	stats_functions.Needs_Work(event.player_index, 0.1, 0.05)
     functions.Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
+	if not global.dyworld.Guide then global.dyworld.Guide = {} end
+	if not global.dyworld.Guide[event.created_entity.type] then
+		global.dyworld.Guide[event.created_entity.type] = true
+	end
 end)
 
 script.on_event(defines.events.on_player_mined_entity, function(event)
@@ -139,6 +145,10 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
 	stats_functions.IncrementerGlobal("ghostbuild", 1)
 	stats_functions.XP_All_Small()
     functions.Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
+	if not global.dyworld.Guide then global.dyworld.Guide = {} end
+	if not global.dyworld.Guide[event.created_entity.type] then
+		global.dyworld.Guide[event.created_entity.type] = true
+	end
 end)
 
 script.on_event(defines.events.on_sector_scanned, function(event)
@@ -265,6 +275,10 @@ script.on_event("DyWorld_Skills", function(event)
     local player = game.players[event.player_index]
     gui_2.toggleGui(player)
 	stats_functions.BodySkills(event.player_index)
+end)
+script.on_event("DyWorld_Guide", function(event)
+    local player = game.players[event.player_index]
+    gui_6.toggleGui(player)
 end)
 
 script.on_event("DyWorld_Debug", function(event)

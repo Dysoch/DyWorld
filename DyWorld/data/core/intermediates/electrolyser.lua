@@ -97,7 +97,7 @@ data:extend(
     type = "recipe",
     name = dy.."electrolyser",
     energy_required = 5,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "item", name = "iron-plate", amount = 5},

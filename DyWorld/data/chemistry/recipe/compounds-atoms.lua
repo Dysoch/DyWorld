@@ -11,7 +11,7 @@ function Chemistry_Compound_to_Atoms(k, v)
 			energy_required = 0.5,
 			category = dy.."splicer",
 			subgroup = dy.."pt-hidden",
-			enabled = true,
+			enabled = false,
 			hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
 			ingredients =
 			{
@@ -20,6 +20,7 @@ function Chemistry_Compound_to_Atoms(k, v)
 			results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
 		  },
 		})
+		DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-compound>atom-"..k)
 	elseif v.Type == "fluid" then
 		data:extend(
 		{	
@@ -29,7 +30,7 @@ function Chemistry_Compound_to_Atoms(k, v)
 			energy_required = 0.5,
 			category = dy.."splicer",
 			subgroup = dy.."pt-hidden",
-			enabled = true,
+			enabled = false,
 			hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
 			ingredients =
 			{
@@ -38,6 +39,7 @@ function Chemistry_Compound_to_Atoms(k, v)
 			results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
 		  },
 		})
+		DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-compound>atom-"..k)
 	end
 end
 

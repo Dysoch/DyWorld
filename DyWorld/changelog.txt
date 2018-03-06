@@ -7,6 +7,8 @@ Date: 12. 02. 2018
     - Added a stacksize increaser. Defaults to 1, but can be as high as you want it with a max of 5000 times the current stacksize (multiplier)
     - Dont like finite ores? Well now you can switch everything to infinite if you so wish. Check mod options to enable it
     - Added an option to unhide hidden recipes. Disable to see those recipes, but it will make your crafting windows a lot bigger! Use it to see ratio's and where to craft them
+    - Added 2 new labels in the stats window (Numpad 7). Current Evolution in % and how much research is done (%). The research done label are milestones, which will be used for enemy generation in later updates
+    - Added an interactive guide. This currently only works for the first part of the game, but will be greatly expanded
   Chemistry:
     - Added first iteration of Chemistry. You can make certain elements from Atoms, and splice certain elements and compounds into Atoms
   Materials System:
@@ -15,40 +17,26 @@ Date: 12. 02. 2018
     - Added the first 20 enemies: Arachtoid and Cuspira (remade from the base game, with slightly different hp and attacks) The later ones that spawn are HUGE!
   Changes:
     - Turrets should be prepared to fire at less range now, making them slightly more effective.
+    - Reduced inventory slot bonuses to 250 slots total. At 500 slots it bugs out the crafting menu's. Should be fixed now
   Balancing:
     - Made Advanced Water Centrifuging recipe correct as it should be. Gives now H20 instead of HO2
     - Fluids have different pressure rates now. Gases flow quick, while molten metals and sludge are super slow
+    - Decrease power production of steam engines by 90% (its now 1/10th of what it was)
   Bugfixes:
     - Fixed placement issues with offshore pumps. Should be visible where to place now, and fixed collision and selection boxes
     - Fixed Cliff Explosives not being able to be crafted and not being able to hit cliffs
     - Fixed Artillery Shells not being able to be crafted
     - Fixed Artillery Wagon not being able to be crafted
     - Fixed Buffer Chest not being able to be crafted
+    - Fixed mining drills that offload to quick as much as possible. Some will have a warning label when speed is high. Please be cautious then!
     - Fixed quickbars resetting when migrating to a newer version
+    - Fixed error when loot pickup range bonus is above 320. Now maxed at 322
   Compatibility:
-    - Compatible with Advanced Logistics System
-    - Compatible with Aircraft 
-    - Compatible with AutoDeconstruct 
-    - Compatible with Autofill
-    - Compatible with Auto-Research (recommended)
-    - Compatible with Bottleneck (recommended)
-    - Compatible with EquipmentHotkeys Fixed (recommended)
-    - Compatible with FARL
-    - Compatible with FNEI (recommended)
-    - Compatible with Foreman
-    - Compatible with Helmod
-    - Compatible with ItemCount
-    - Compatible with LTN, Logistic Train Network (recommended)
-    - Compatible with Minimap-Autohide
-    - Compatible with Ore Eraser
-    - Compatible with PickerExtended (recommended)
-    - Compatible with PlannerCore
-    - Compatible with OutpostPlanner
-    - Compatible with RSO (HIGHLY recommended)
-    - Compatible with Smokeless
-    - Compatible with Squeak Through
-    - Compatible with Upgrade Planner (recommended)
-    - Compatible with UPS-UP
+    - First iteration of DyComPa (DyWorld Compatibilty Patcher) This is make other mods work better with DyWorld!
+    - Mods "fixed" will be listed here, and for suggestions about mods, use Discord server:
+    - https://discord.gg/yR5vBWy (head to mod compatibility suggestions channel)
+    - Now compatible with FARL (patched)
+    - Now compatible with BlackMarket (patched)
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.1
 Date: 06. 01. 2018

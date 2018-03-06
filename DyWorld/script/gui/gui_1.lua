@@ -2,6 +2,11 @@ module("gui_1", package.seeall)
 -- gui_1 is the stats menu
 require "script/stats/functions"
 
+function Round(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	return math.floor(num * mult + 0.5) / mult
+end
+
 function closeGUI(player, id)
 	if player.gui.top.dyworld_stats_1_gui then
 		player.gui.top.dyworld_stats_1_gui.destroy()
@@ -38,6 +43,10 @@ function openGui(player, id)
 	local frameflow2 = frame2.add{type = "flow", name = "flow", direction = "vertical"}
 	local frameflow3 = frame3.add{type = "flow", name = "flow", direction = "vertical"}
 	stats_functions.BodySkills(id)
+	if not global.dyworld.Max_Research then
+		require "script/startup"
+		global.dyworld.Max_Research = startup.Research_Calc()
+	end
 	-- labels for stats_1
 	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_1", (game.players[id].name)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_level", (global.players[id].Level or 0)}}
@@ -64,8 +73,10 @@ function openGui(player, id)
 	end
 	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_2"}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_killed", (global.stats.killed or 0)}}
+	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_evo", (Round(game.forces.enemy.evolution_factor * 100, 2) or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_scanned", (global.stats.scanned or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_research", (global.stats.research or 0)}}
+	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_research_done", (Round(((global.stats.research or 1) / global.dyworld.Max_Research) * 100, 1) or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_ghostbuild", (global.stats.ghostbuild or 0)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_ghostmined", (global.stats.ghostmined or 0)}}
 	-- labels for stats_2
@@ -89,8 +100,8 @@ function openGui(player, id)
 	frameflow3.add{type = "label", caption = "Running Speed: "..(game.players[id].character_running_speed_modifier+1)}
 	frameflow3.add{type = "label", caption = "Loot Pickup Range: "..math.floor(game.players[id].character_loot_pickup_distance_bonus+2)}
 	frameflow3.add{type = "label", caption = "Robot Follower Count: "..math.floor(game.players[id].character_maximum_following_robot_count_bonus)}
-	frameflow3.add{type = "label", caption = "Mining Speed: "..(game.players[id].character_mining_speed_modifier+1)}
-	frameflow3.add{type = "label", caption = "Crafting Speed: "..(game.players[id].character_crafting_speed_modifier+1)}
+	frameflow3.add{type = "label", caption = "Mining Speed: "..Round(game.players[id].character_mining_speed_modifier+1, 2)}
+	frameflow3.add{type = "label", caption = "Crafting Speed: "..Round(game.players[id].character_crafting_speed_modifier+1, 2)}
 	frameflow3.add{type = "label", caption = "Reach Distance: "..math.floor(game.players[id].character_reach_distance_bonus+6)}
 	frameflow3.add{type = "label", caption = "Build Distance: "..math.floor(game.players[id].character_build_distance_bonus+6)}
 	frameflow3.add{type = "label", caption = "Resource Reach Distance: "..math.floor(game.players[id].character_resource_reach_distance_bonus+2.7)}

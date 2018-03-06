@@ -98,7 +98,7 @@ data:extend(
     type = "recipe",
     name = dy.."recombiner",
     energy_required = 5,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "item", name = "iron-plate", amount = 5},
@@ -109,4 +109,8 @@ data:extend(
   },
 }
 )
+
+if settings.startup["DyWorld_Chemistry"].value then
+	DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."recombiner")
+end
 

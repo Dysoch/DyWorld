@@ -153,9 +153,13 @@ function Migrate_To_Next_Version()
 					end
 				end
 			end
+		if not global.dyworld.Guide then
+			global.dyworld.Guide = {} 
+		end
 		if not global.dyworld.Warfare then 
 			global.dyworld.Warfare = {} 
 			global.dyworld.Warfare.Location = {} 
+			global.dyworld.Max_Research = startup.Research_Calc()
 		end
 		global.dyworld.Version = "0.6.2" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})

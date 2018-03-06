@@ -109,7 +109,7 @@ data:extend(
     type = "recipe",
     name = dy.."washer",
     energy_required = 5,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "item", name = "advanced-circuit", amount = 2},
@@ -123,3 +123,4 @@ data:extend(
 }
 )
 
+DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."washer")

@@ -4859,7 +4859,7 @@ data:extend(
 	fast_replaceable_group = "storage-tank",
     fluid_box =
     {
-      base_area = DyWorld_Material_Formulas(4, DATA.Table),
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table) * settings.startup["DyWorld_Stack_Size_Mult"].value),
       pipe_covers = pipecoverspictures(),
       pipe_connections =
       {
@@ -6199,8 +6199,8 @@ data:extend(
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     alert_icon_shift = util.by_pixel(3, -34),
-    effectivity = (1 + (Materials[DATA.Table].Conductivity / 10)),
-    fluid_usage_per_tick = (Materials[DATA.Table].Density / 10),
+    effectivity = (1 + (Materials[DATA.Table].Conductivity / 50)),
+    fluid_usage_per_tick = (Materials[DATA.Table].Density / 50),
     maximum_temperature = 165,
     fast_replaceable_group = "steam-engine",
     collision_box = {{-1.35, -2.35}, {1.35, 2.35}},
@@ -8300,6 +8300,7 @@ data:extend(
     charging_energy = tostring((Materials[DATA.Table].Strength_Ultimate) + 1500).."kW",
     logistics_radius = math.floor(Materials[DATA.Table].Density * Materials[DATA.Table].Hardness),
     construction_radius = math.floor((Materials[DATA.Table].Density * Materials[DATA.Table].Hardness) * 1.5),
+	Tier = DATA.Type,
     charge_approach_distance = 5,
     robot_slots_count = math.floor(Materials[DATA.Table].Density),
     material_slots_count = math.floor(Materials[DATA.Table].Density),
@@ -8542,6 +8543,29 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 		DyWorld_Add_To_Tech("construction-robotics-6", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-6", dy..DATA.Name.."-roboport")
+	end
+	if settings.startup["DyWorld_Roboport_Standard"].value then
+		if data.raw["roboport"][dy..DATA.Name.."-roboport"].Tier then
+			if data.raw["roboport"][dy..DATA.Name.."-roboport"].Tier == "Primitive" then
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].logistics_radius = 12
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].construction_radius = 18
+			elseif data.raw["roboport"][dy..DATA.Name.."-roboport"].Tier == "Basic" then
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].logistics_radius = 25
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].construction_radius = 37
+			elseif data.raw["roboport"][dy..DATA.Name.."-roboport"].Tier == "Simple_Alloy" then
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].logistics_radius = 40
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].construction_radius = 60
+			elseif data.raw["roboport"][dy..DATA.Name.."-roboport"].Tier == "Alloy" then
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].logistics_radius = 75
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].construction_radius = 100
+			elseif data.raw["roboport"][dy..DATA.Name.."-roboport"].Tier == "Complex_Alloy" then
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].logistics_radius = 100
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].construction_radius = 150
+			elseif data.raw["roboport"][dy..DATA.Name.."-roboport"].Tier == "Super_Alloy" then
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].logistics_radius = 150
+				data.raw["roboport"][dy..DATA.Name.."-roboport"].construction_radius = 225
+			end
+		end
 	end
 end
 

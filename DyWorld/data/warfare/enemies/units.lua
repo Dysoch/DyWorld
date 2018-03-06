@@ -8,6 +8,11 @@ local function scale_bounding_box(bb, scale)
   }
 end
 
+function Round(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	return math.floor(num * mult + 0.5) / mult
+end
+
 for k,v in pairs(Enemies) do
 	if v.Type == "biter" then
 		for i = 1,10 do
@@ -203,3 +208,4 @@ data:extend(
 		end
 	end
 end
+

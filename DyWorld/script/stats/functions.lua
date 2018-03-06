@@ -146,17 +146,21 @@ function BodySkills(id)
 	global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000))+1)
 	global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000))+1)
 	game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
-	game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50)
+	if math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50) > 320 then
+		game.players[id].character_loot_pickup_distance_bonus = 320
+	else
+		game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50)
+	end
 	game.players[id].character_maximum_following_robot_count_bonus = math.floor(((p1*2)+(p2*10)+(p3*3)+(p4*1.5)+(m1*10)+(m2*3)+(m3*2)+(m4*25))/250)
 	game.players[id].character_mining_speed_modifier = ((((p1*25)+(p2*15)+(p3*15)+gsm)/10000)-0.0016)
 	game.players[id].character_crafting_speed_modifier = ((((p4*25)+(p3*15)+gsc)/10000)-0.0016)
 	game.players[id].character_reach_distance_bonus = math.floor((gsp+gsb+(p2*5)+(m1*2))/5000)
 	game.players[id].character_build_distance_bonus = math.floor((gsp+gsb+gsc+(p2*5)+(m1*2))/7500)
 	game.players[id].character_resource_reach_distance_bonus = math.floor((gsp+gsm+(p2*5)+(m1*2))/10000)
-	if math.floor((p1)/5) <= 440 then
+	if math.floor((p1)/5) <= 190 then
 		game.players[id].character_inventory_slots_bonus = math.floor((p1)/5)
 	else
-		game.players[id].character_inventory_slots_bonus = 440
+		game.players[id].character_inventory_slots_bonus = 190
 	end
 end
 

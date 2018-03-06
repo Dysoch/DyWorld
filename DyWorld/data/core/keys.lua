@@ -22,6 +22,11 @@ data:extend({
 	},
 	{
 		type = "custom-input",
+		name = "DyWorld_Guide",
+		key_sequence = "PAD 5"
+	},
+	{
+		type = "custom-input",
 		name = "DyWorld_Debug",
 		key_sequence = "PAD 0"
 	},

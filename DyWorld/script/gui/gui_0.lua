@@ -55,6 +55,7 @@ function toggleGui(player, id)
 		scrollbar_debug2.add{type = "label", caption = "Global Knowledge: "..global.dyworld.Knowledge}
 		scrollbar_debug2.add{type = "label", caption = "Global XP: "..global.dyworld.XP}
 		scrollbar_debug2.add{type = "label", caption = "Global Level: "..global.dyworld.Level}
+		scrollbar_debug2.add{type = "label", caption = "Max Research Points: "..global.dyworld.Max_Research}
 		scrollbar_debug2.add{type = "label", caption = "Ship_1 Spawned: "..tostring(global.dyworld.Generation_Ship_1)}
 		scrollbar_debug2.add{type = "label", caption = "Ship_2 Spawned: "..tostring(global.dyworld.Generation_Ship_2)}
 		scrollbar_debug2.add{type = "label", caption = "Ship_3 Spawned: "..tostring(global.dyworld.Generation_Ship_3)}

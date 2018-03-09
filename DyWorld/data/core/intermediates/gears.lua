@@ -1,8 +1,5 @@
 require "data/prefix"
 
-data.raw.recipe["iron-gear-wheel"].normal.ingredients = {{"iron-plate", 5}}
-data.raw.recipe["iron-gear-wheel"].expensive.ingredients = {{"iron-plate", 5}}
-
 for k,v in pairs(Material_Table) do
 	if v.Type == "Basic" or v.Type == "Simple_Alloy" or v.Type == "Alloy" or v.Type == "Complex_Alloy" or v.Type == "Super_Alloy" then
 		data:extend(
@@ -11,6 +8,7 @@ for k,v in pairs(Material_Table) do
 			type = "item",
 			name = v.Name.."-gear-wheel",
 			localised_name = {"looped-name.gear", {"looped-name."..v.Name}},
+			localised_description = {"looped-name.gear-machine"},
 			icons = 
 			{
 			  {
@@ -34,7 +32,28 @@ for k,v in pairs(Material_Table) do
 			result = v.Name.."-gear-wheel",
 			result_count = 1,
 		  },
+		  {
+			type = "recipe",
+			name = v.Name.."-gear-wheel",
+			energy_required = 1,
+			enabled = true,
+			allow_as_intermediate = false,
+			ingredients = {{v.Name.."-plate", 5}},
+			result = v.Name.."-gear-wheel",
+			result_count = 1,
+		  },
 		})
+		if data.raw.technology[dy..v.Name.."-processing"] then
+			data.raw.recipe[dy..v.Name.."-gear-wheel"].enabled = false
+			data.raw.recipe[v.Name.."-gear-wheel"].enabled = false
+			DyWorld_Add_To_Tech(dy..v.Name.."-processing", dy..v.Name.."-gear-wheel")
+			DyWorld_Add_To_Tech(dy..v.Name.."-processing", v.Name.."-gear-wheel")
+		elseif data.raw.technology[v.Name.."-processing"] then
+			data.raw.recipe[dy..v.Name.."-gear-wheel"].enabled = false
+			data.raw.recipe[v.Name.."-gear-wheel"].enabled = false
+			DyWorld_Add_To_Tech(v.Name.."-processing", dy..v.Name.."-gear-wheel")
+			DyWorld_Add_To_Tech(v.Name.."-processing", v.Name.."-gear-wheel")
+		end
 	end
 end
 

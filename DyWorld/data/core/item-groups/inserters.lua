@@ -9,6 +9,11 @@ Data_Table_Item_Group = {
 		Icon = "inserters.png"
 	},
 	{
+		Name = "inserter-base",
+		Type = "sub",
+		Main = "inserters"
+	},
+	{
 		Name = "inserter-basic",
 		Type = "sub",
 		Main = "inserters"

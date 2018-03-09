@@ -35,8 +35,8 @@ data:extend(
     ingredients =
     {
       {type = "fluid", name = "water", amount = 50000},
-      {type = "fluid", name = dy.."hydrogen", amount = 25000},
-      {type = "fluid", name = dy.."oxygen", amount = 15000},
+      {type = "fluid", name = "hydrogen", amount = 25000},
+      {type = "fluid", name = "oxygen", amount = 15000},
       {type = "fluid", name = dy.."methane", amount = 50},
       {type = "item", name = dy.."extra-solar-artifact", amount = 100},
       {type = "item", name = dy.."filter-coal", amount = 100},

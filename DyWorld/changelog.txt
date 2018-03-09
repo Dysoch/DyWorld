@@ -1,27 +1,34 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.2
-Date: 12. 02. 2018
+Date: 08. 03. 2018
   Features:
-    - Added new intermediates: Gears, Wires, Coils and PCB's of every metal. Only Copper Wire/Coil/PCB and Iron Gear can be made by hand (INSANE expensive!), the rest has to be done with specialised assemblers!
+    - Added new intermediates: Gears, Wires, Coils and PCB's of every metal. Hand crafting is expensive and requires you to manually craft them. Craft them with the specialised assemblers for way better ratio's
     - The first new recipes for Circuits. This is currently under testing, but should be balanced (any feedback is welcome)
     - Added a stacksize increaser. Defaults to 1, but can be as high as you want it with a max of 5000 times the current stacksize (multiplier)
     - Dont like finite ores? Well now you can switch everything to infinite if you so wish. Check mod options to enable it
     - Added an option to unhide hidden recipes. Disable to see those recipes, but it will make your crafting windows a lot bigger! Use it to see ratio's and where to craft them
     - Added 2 new labels in the stats window (Numpad 7). Current Evolution in % and how much research is done (%). The research done label are milestones, which will be used for enemy generation in later updates
     - Added an interactive guide. This currently only works for the first part of the game, but will be greatly expanded
+    - Added a new bonus! Logistic slots now automatically unlock when you get stronger and faster!
+    - Increased amount of robot battery research pre-infinite
   Chemistry:
     - Added first iteration of Chemistry. You can make certain elements from Atoms, and splice certain elements and compounds into Atoms
   Materials System:
     - Added a new material: Uranium. Smelt Uranium in a furnace to get its plate form
+    - Added a new entity: Radars (Warfare)
   Warfare:
     - Added the first 20 enemies: Arachtoid and Cuspira (remade from the base game, with slightly different hp and attacks) The later ones that spawn are HUGE!
   Changes:
     - Turrets should be prepared to fire at less range now, making them slightly more effective.
     - Reduced inventory slot bonuses to 250 slots total. At 500 slots it bugs out the crafting menu's. Should be fixed now
+    - Moved burner inserter to DyWorld Inserter tab
   Balancing:
     - Made Advanced Water Centrifuging recipe correct as it should be. Gives now H20 instead of HO2
     - Fluids have different pressure rates now. Gases flow quick, while molten metals and sludge are super slow
     - Decrease power production of steam engines by 90% (its now 1/10th of what it was)
+    - Increased rubber underground transport range: 2 > 6
+    - Increased roboport charging by 5 times
+    - Pumps are pumping faster depending on which tier it is. Super Alloys Pumps pump 6 times faster now!
   Bugfixes:
     - Fixed placement issues with offshore pumps. Should be visible where to place now, and fixed collision and selection boxes
     - Fixed Cliff Explosives not being able to be crafted and not being able to hit cliffs
@@ -32,11 +39,9 @@ Date: 12. 02. 2018
     - Fixed quickbars resetting when migrating to a newer version
     - Fixed error when loot pickup range bonus is above 320. Now maxed at 322
   Compatibility:
-    - First iteration of DyComPa (DyWorld Compatibilty Patcher) This is make other mods work better with DyWorld!
-    - Mods "fixed" will be listed here, and for suggestions about mods, use Discord server:
+    - First iteration of DyComPa (DyWorld Compatibilty Patcher) This is make other mods work better with DyWorld! This will automatically change recipes in other mods to use DyWorld's items. Works with MOST mods! All mods are automatically changed accordingly to what is enabled in DyWorld, and is removed.
+    - If a mod still seems broken, use Discord server:
     - https://discord.gg/yR5vBWy (head to mod compatibility suggestions channel)
-    - Now compatible with FARL (patched)
-    - Now compatible with BlackMarket (patched)
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.1
 Date: 06. 01. 2018

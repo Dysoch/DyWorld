@@ -35,3 +35,26 @@ require("data.metallurgy.recipes.mixing-simple-alloy")
 require("data.metallurgy.recipes.mixing-alloy")
 require("data.metallurgy.recipes.mixing-complex-alloy")
 require("data.metallurgy.recipes.mixing-super-alloy")
+
+for k,v in pairs(Material_Table) do
+	if v.Type == "Simple_Alloy" or v.Type == "Alloy" or v.Type == "Complex_Alloy" or v.Type == "Super_Alloy" then
+		if data.raw.technology[dy..v.Name.."-advanced-melting"] then
+			data.raw.recipe[dy..v.Name.."-cable"].enabled = false
+			data.raw.recipe[v.Name.."-cable"].enabled = false
+			DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy..v.Name.."-cable")
+			DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", v.Name.."-cable")
+			data.raw.recipe[dy..v.Name.."-coil"].enabled = false
+			data.raw.recipe[v.Name.."-coil"].enabled = false
+			DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy..v.Name.."-coil")
+			DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", v.Name.."-coil")
+			data.raw.recipe[dy..v.Name.."-gear-wheel"].enabled = false
+			data.raw.recipe[v.Name.."-gear-wheel"].enabled = false
+			DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy..v.Name.."-gear-wheel")
+			DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", v.Name.."-gear-wheel")
+			data.raw.recipe[dy..v.Name.."-pcb"].enabled = false
+			data.raw.recipe[v.Name.."-pcb"].enabled = false
+			DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", dy..v.Name.."-pcb")
+			DyWorld_Add_To_Tech(dy..v.Name.."-advanced-melting", v.Name.."-pcb")
+		end
+	end
+end

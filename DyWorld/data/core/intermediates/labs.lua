@@ -997,13 +997,7 @@ data:extend(
     researching_speed = 3,
     inputs =
     {
-      "science-pack-1",
-      "science-pack-2",
-      "science-pack-3",
-      "military-science-pack",
-      "production-science-pack",
-      "high-tech-science-pack",
-      "space-science-pack"
+      "dyworld-extra-solar-science-pack",
     },
     module_specification =
     {

@@ -26,12 +26,12 @@ data:extend
       time = 30
     },
     upgrade = true,
-    max_level = "3",
+    max_level = "5",
     order = dy.."robot-battery",
   },
   {
     type = "technology",
-    name = dy.."robot-battery-4",
+    name = dy.."robot-battery-6",
     icon = dyworld_path_tech.."robot-battery.png",
     icon_size = 128,
     effects =
@@ -54,12 +54,12 @@ data:extend
       time = 45
     },
     upgrade = true,
-    max_level = "6",
+    max_level = "10",
     order = dy.."robot-battery",
   },
   {
     type = "technology",
-    name = dy.."robot-battery-7",
+    name = dy.."robot-battery-11",
     icon = dyworld_path_tech.."robot-battery.png",
     icon_size = 128,
     effects =
@@ -69,7 +69,7 @@ data:extend
         modifier = 0.2
       }
     },
-    prerequisites = {dy.."robot-battery-4"},
+    prerequisites = {dy.."robot-battery-6"},
     unit =
     {
       count_formula = "200*L",
@@ -83,12 +83,12 @@ data:extend
       time = 60
     },
     upgrade = true,
-    max_level = "9",
+    max_level = "15",
     order = dy.."robot-battery",
   },
   {
     type = "technology",
-    name = dy.."robot-battery-10",
+    name = dy.."robot-battery-16",
     icon = dyworld_path_tech.."robot-battery.png",
     icon_size = 128,
     effects =
@@ -98,7 +98,7 @@ data:extend
         modifier = 0.25
       }
     },
-    prerequisites = {dy.."robot-battery-7"},
+    prerequisites = {dy.."robot-battery-11"},
     unit =
     {
       count_formula = "250*L",
@@ -113,12 +113,12 @@ data:extend
       time = 60
     },
     upgrade = true,
-    max_level = "12",
+    max_level = "20",
     order = dy.."robot-battery",
   },
   {
     type = "technology",
-    name = dy.."robot-battery-13",
+    name = dy.."robot-battery-21",
     icon = dyworld_path_tech.."robot-battery.png",
     icon_size = 128,
     effects =
@@ -128,7 +128,7 @@ data:extend
         modifier = 0.25
       }
     },
-    prerequisites = {dy.."robot-battery-10"},
+    prerequisites = {dy.."robot-battery-16"},
     unit =
     {
       count_formula = "300*L",

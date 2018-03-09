@@ -207,7 +207,3 @@ data:extend(
 }
 )
 
-if settings.startup["DyWorld_Chemistry"].value then
-	DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."splicer")
-end
-

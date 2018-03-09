@@ -8,6 +8,7 @@ for k,v in pairs(Material_Table) do
 			type = "item",
 			name = v.Name.."-pcb",
 			localised_name = {"looped-name.pcb", {"looped-name."..v.Name}},
+			localised_description = {"looped-name.pcb-machine"},
 			icons = 
 			{
 			  {
@@ -31,7 +32,28 @@ for k,v in pairs(Material_Table) do
 			result = v.Name.."-pcb",
 			result_count = 1,
 		  },
+		  {
+			type = "recipe",
+			name = v.Name.."-pcb",
+			energy_required = 1,
+			enabled = true,
+			allow_as_intermediate = false,
+			ingredients = {{v.Name.."-coil", 3}},
+			result = v.Name.."-pcb",
+			result_count = 1,
+		  },
 		})
+		if data.raw.technology[dy..v.Name.."-processing"] then
+			data.raw.recipe[dy..v.Name.."-pcb"].enabled = false
+			data.raw.recipe[v.Name.."-pcb"].enabled = false
+			DyWorld_Add_To_Tech(dy..v.Name.."-processing", dy..v.Name.."-pcb")
+			DyWorld_Add_To_Tech(dy..v.Name.."-processing", v.Name.."-pcb")
+		elseif data.raw.technology[v.Name.."-processing"] then
+			data.raw.recipe[dy..v.Name.."-pcb"].enabled = false
+			data.raw.recipe[v.Name.."-pcb"].enabled = false
+			DyWorld_Add_To_Tech(v.Name.."-processing", dy..v.Name.."-pcb")
+			DyWorld_Add_To_Tech(v.Name.."-processing", v.Name.."-pcb")
+		end
 	end
 end
 
@@ -140,18 +162,6 @@ data:extend(
       {type = "item", name = "copper-plate", amount = 5},
     },
     result = dy.."pcb-crafter"
-  },
-  {
-    type = "recipe",
-    name = "copper-pcb",
-	localised_description = {"looped-name.expensive"},
-    energy_required = 0.5,
-    enabled = true,
-    ingredients =
-    {
-      {type = "item", name = "copper-coil", amount = 3},
-    },
-    result = "copper-pcb"
   },
 }
 )

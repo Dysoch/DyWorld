@@ -12,6 +12,7 @@
 --settings.startup["DyWorld_Needs"].value
 --settings.startup["DyWorld_Metallurgy"].value
 --settings.startup["DyWorld_Equipment"].value
+--settings.startup["DyWorld_Chemistry"].value
 --settings.startup["DyWorld_Hidden_Recipes"].value
 --settings.startup["DyWorld_Roboport_Standard"].value
 

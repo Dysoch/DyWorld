@@ -11,6 +11,7 @@ for k,v in pairs(Material_Table) do
 			type = "item",
 			name = v.Name.."-cable",
 			localised_name = {"looped-name.cable", {"looped-name."..v.Name}},
+			localised_description = {"looped-name.cable-machine"},
 			icons = 
 			{
 			  {
@@ -34,7 +35,28 @@ for k,v in pairs(Material_Table) do
 			result = v.Name.."-cable",
 			result_count = 3,
 		  },
+		  {
+			type = "recipe",
+			name = v.Name.."-cable",
+			energy_required = 1,
+			enabled = true,
+			allow_as_intermediate = false,
+			ingredients = {{v.Name.."-plate", 1}},
+			result = v.Name.."-cable",
+			result_count = 1,
+		  },
 		})
+		if data.raw.technology[dy..v.Name.."-processing"] then
+			data.raw.recipe[dy..v.Name.."-cable"].enabled = false
+			data.raw.recipe[v.Name.."-cable"].enabled = false
+			DyWorld_Add_To_Tech(dy..v.Name.."-processing", dy..v.Name.."-cable")
+			DyWorld_Add_To_Tech(dy..v.Name.."-processing", v.Name.."-cable")
+		elseif data.raw.technology[v.Name.."-processing"] then
+			data.raw.recipe[dy..v.Name.."-cable"].enabled = false
+			data.raw.recipe[v.Name.."-cable"].enabled = false
+			DyWorld_Add_To_Tech(v.Name.."-processing", dy..v.Name.."-cable")
+			DyWorld_Add_To_Tech(v.Name.."-processing", v.Name.."-cable")
+		end
 	end
 end
 

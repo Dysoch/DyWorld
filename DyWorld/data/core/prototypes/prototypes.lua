@@ -1222,6 +1222,9 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
 	end
+	if DATA.Name == "rubber" then
+		data.raw["underground-belt"][dy..DATA.Name.."-underground-belt"].max_distance = 6
+	end
 end
 
 function DyWorld_Transport_Pipe(DATA)
@@ -3264,7 +3267,7 @@ data:extend(
       emissions = 0.01 / 2.5
     },
     energy_usage = "30kW",
-    pumping_speed = Materials[DATA.Table].Strength_Ultimate,
+    pumping_speed = (Materials[DATA.Table].Strength_Ultimate * DATA.Tier),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     animations =
     {
@@ -6438,7 +6441,8 @@ data:extend(
       line_length = 8,
       frame_count = 24,
       shift = {0.46875, -0.640625},
-      animation_speed = 0.5
+      animation_speed = 0.5,
+	  tint = Material_Colors[DATA.Table],
     },
 	fast_replaceable_group = "accumulator",
     charge_cooldown = 30,
@@ -6451,7 +6455,8 @@ data:extend(
       line_length = 8,
       frame_count = 24,
       shift = {0.390625, -0.53125},
-      animation_speed = 0.5
+      animation_speed = 0.5,
+	  tint = Material_Colors[DATA.Table],
     },
     discharge_cooldown = 60,
     discharge_light = {intensity = 0.7, size = 7, color = {r = 1.0, g = 1.0, b = 1.0}},
@@ -7819,9 +7824,9 @@ data:extend(
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-assembling-electric"},
     max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    resistances = Material_Resistances[DATA.Table],
     fluid_boxes =
     {
       {
@@ -8297,7 +8302,7 @@ data:extend(
     recharge_minimum = tostring(math.floor(Materials[DATA.Table].Strength_Yield * 0.5)).."MJ",
     energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 50).."kW",
     -- per one charge slot
-    charging_energy = tostring((Materials[DATA.Table].Strength_Ultimate) + 1500).."kW",
+    charging_energy = tostring(((Materials[DATA.Table].Strength_Ultimate) + 1500) * 5).."kW",
     logistics_radius = math.floor(Materials[DATA.Table].Density * Materials[DATA.Table].Hardness),
     construction_radius = math.floor((Materials[DATA.Table].Density * Materials[DATA.Table].Hardness) * 1.5),
 	Tier = DATA.Type,
@@ -10075,6 +10080,179 @@ data:extend(
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-armor")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-armor")
+	end
+end
+
+function DyWorld_Radar(DATA)
+data:extend(
+{
+  {
+    type = "radar",
+	name = dy..DATA.Name.."-radar",
+	localised_name = {"looped-name.radar", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/radar.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    icon_size = 32,
+    flags = {"placeable-player", "player-creation"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-radar"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
+    corpse = "big-remnants",
+    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    energy_per_sector = tostring((Materials[DATA.Table].Strength_Ultimate) + 500000).."kW",
+    max_distance_of_sector_revealed = (10 * DATA.Tier),
+    max_distance_of_nearby_sector_revealed = (2 + DATA.Tier),
+    energy_per_nearby_scan = tostring((Materials[DATA.Table].Strength_Ultimate) + 1000).."kJ",
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input"
+    },
+    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 250).."kW",
+    integration_patch =
+    {
+      filename = "__base__/graphics/entity/radar/radar-integration.png",
+      priority = "low",
+      width = 119,
+      height = 108,
+      apply_projection = false,
+      direction_count = 1,
+      repeat_count = 64,
+      line_length = 1,
+      shift = util.by_pixel(1.5, 4),
+      hr_version =
+      {
+        filename = "__base__/graphics/entity/radar/hr-radar-integration.png",
+        priority = "low",
+        width = 238,
+        height = 216,
+        apply_projection = false,
+        direction_count = 1,
+        repeat_count = 64,
+        line_length = 1,
+        shift = util.by_pixel(1.5, 4),
+        scale = 0.5
+      }
+    },
+    pictures =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/radar/radar.png",
+          priority = "low",
+          width = 98,
+          height = 128,
+          apply_projection = false,
+          direction_count = 64,
+          line_length = 8,
+          shift = util.by_pixel(1, -16),
+		  tint = Material_Colors[DATA.Table],
+          hr_version = {
+            filename = "__base__/graphics/entity/radar/hr-radar.png",
+            priority = "low",
+            width = 196,
+            height = 254,
+            apply_projection = false,
+            direction_count = 64,
+            line_length = 8,
+            shift = util.by_pixel(1, -16),
+            scale = 0.5,
+			tint = Material_Colors[DATA.Table],
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/radar/radar-shadow.png",
+          priority = "low",
+          width = 172,
+          height = 94,
+          apply_projection = false,
+          direction_count = 64,
+          line_length = 8,
+          shift = util.by_pixel(39,3),
+          draw_as_shadow = true,
+          hr_version = {
+            filename = "__base__/graphics/entity/radar/hr-radar-shadow.png",
+            priority = "low",
+            width = 343,
+            height = 186,
+            apply_projection = false,
+            direction_count = 64,
+            line_length = 8,
+            shift = util.by_pixel(39.25,3),
+            draw_as_shadow = true,
+            scale = 0.5
+          }
+        }
+      }
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound = {
+        {
+          filename = "__base__/sound/radar.ogg"
+        }
+      },
+      apparent_volume = 2,
+    },
+    radius_minimap_visualisation_color = { r = 0.059, g = 0.092, b = 0.235, a = 0.275 },
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-radar",
+	localised_name = {"looped-name.radar", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/radar.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."radar",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-radar",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-radar",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-radar",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-radar"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-radar")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-radar")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-radar")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-radar")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-radar")
 	end
 end
 

@@ -164,6 +164,20 @@ function Migrate_To_Next_Version()
 		global.dyworld.Version = "0.6.2" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end
+	if global.dyworld.Version == "0.6.2" then
+			for k,v in pairs(game.players[1].force.technologies) do
+				if v.name == "toolbelt" or v.name == "toolbelt-2" or v.name == "toolbelt-3" then
+					-- do nothing to make sure the quickbelts stay with items
+				else
+					if v.researched then
+						v.researched = false
+						v.researched = true
+					end
+				end
+			end
+		global.dyworld.Version = "0.7.0" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+	end
 end
 
 function Migrate_Debug()

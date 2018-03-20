@@ -186,7 +186,7 @@ data:extend(
     name = dy.."recycler",
     icon = "__base__/graphics/icons/electric-furnace.png",
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."assembling-special",
+    subgroup = dy.."assembling-special-recycler",
     order = dy.."recycler",
     place_result = dy.."recycler",
     stack_size = 20
@@ -195,7 +195,7 @@ data:extend(
     type = "recipe",
     name = dy.."recycler",
     energy_required = 5,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "item", name = "iron-plate", amount = 5},
@@ -207,3 +207,4 @@ data:extend(
 }
 )
 
+DyWorld_Add_To_Tech("automation", dy.."recycler")

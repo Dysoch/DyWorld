@@ -2,6 +2,54 @@ require "data/prefix"
 
 local Data_Table = {
 	{
+		Name = "primitive-armor",
+		Icon = {{icon = dyworld_path_tech.."armor.png"}, {icon = dyworld_path_tech.."tier/primitive.png"}},
+		Pre_Req = {"military"},
+		Tech_Ingredients = 2,
+		Count = 200,
+		Military = false,
+	},
+	{
+		Name = "basic-armor",
+		Icon = {{icon = dyworld_path_tech.."armor.png"}, {icon = dyworld_path_tech.."tier/basic.png"}},
+		Pre_Req = {"primitive-armor"},
+		Tech_Ingredients = 2,
+		Count = 400,
+		Military = true,
+	},
+	{
+		Name = "simple-alloy-armor",
+		Icon = {{icon = dyworld_path_tech.."armor.png"}, {icon = dyworld_path_tech.."tier/simple-alloy.png"}},
+		Pre_Req = {"basic-armor"},
+		Tech_Ingredients = 3,
+		Count = 800,
+		Military = true,
+	},
+	{
+		Name = "alloy-armor",
+		Icon = {{icon = dyworld_path_tech.."armor.png"}, {icon = dyworld_path_tech.."tier/alloy.png"}},
+		Pre_Req = {"simple-alloy-armor"},
+		Tech_Ingredients = 4,
+		Count = 1600,
+		Military = true,
+	},
+	{
+		Name = "complex-alloy-armor",
+		Icon = {{icon = dyworld_path_tech.."armor.png"}, {icon = dyworld_path_tech.."tier/complex-alloy.png"}},
+		Pre_Req = {"alloy-armor"},
+		Tech_Ingredients = 5,
+		Count = 3200,
+		Military = true,
+	},
+	{
+		Name = "super-alloy-armor",
+		Icon = {{icon = dyworld_path_tech.."armor.png"}, {icon = dyworld_path_tech.."tier/super-alloy.png"}},
+		Pre_Req = {"complex-alloy-armor"},
+		Tech_Ingredients = 6,
+		Count = 6400,
+		Military = true,
+	},
+	{
 		Name = dy.."mining-tools-1",
 		Icon = {{icon = dyworld_path_tech.."tools.png"}},
 		Tech_Ingredients = 1,
@@ -656,7 +704,7 @@ local Data_Table = {
 	{
 		Name = "stone-walls-1",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls"},
+		Pre_Req = {"stone-walls", "primitive-armor"},
 		Tech_Ingredients = 2,
 		Count = 75,
 		Military = false,
@@ -664,7 +712,7 @@ local Data_Table = {
 	{
 		Name = "stone-walls-2",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-1"},
+		Pre_Req = {"stone-walls-1", "basic-armor"},
 		Tech_Ingredients = 2,
 		Count = 150,
 		Military = true,
@@ -672,7 +720,7 @@ local Data_Table = {
 	{
 		Name = "stone-walls-3",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-2"},
+		Pre_Req = {"stone-walls-2", "simple-alloy-armor"},
 		Tech_Ingredients = 3,
 		Count = 250,
 		Military = true,
@@ -680,7 +728,7 @@ local Data_Table = {
 	{
 		Name = "stone-walls-4",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-3"},
+		Pre_Req = {"stone-walls-3", "alloy-armor"},
 		Tech_Ingredients = 4,
 		Count = 600,
 		Military = true,
@@ -688,7 +736,7 @@ local Data_Table = {
 	{
 		Name = "stone-walls-5",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-4"},
+		Pre_Req = {"stone-walls-4", "complex-alloy-armor"},
 		Tech_Ingredients = 5,
 		Count = 1500,
 		Military = true,
@@ -696,7 +744,7 @@ local Data_Table = {
 	{
 		Name = "stone-walls-6",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-5"},
+		Pre_Req = {"stone-walls-5", "super-alloy-armor"},
 		Tech_Ingredients = 6,
 		Count = 5000,
 		Military = true,
@@ -704,7 +752,7 @@ local Data_Table = {
 	{
 		Name = "railway-2",
 		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
-		Pre_Req = {"railway"},
+		Pre_Req = {"railway", "basic-armor"},
 		Tech_Ingredients = 2,
 		Count = 250,
 		Military = false,
@@ -712,7 +760,7 @@ local Data_Table = {
 	{
 		Name = "railway-3",
 		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
-		Pre_Req = {"railway-2"},
+		Pre_Req = {"railway-2", "simple-alloy-armor"},
 		Tech_Ingredients = 3,
 		Count = 400,
 		Military = false,
@@ -720,7 +768,7 @@ local Data_Table = {
 	{
 		Name = "railway-4",
 		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
-		Pre_Req = {"railway-3"},
+		Pre_Req = {"railway-3", "alloy-armor"},
 		Tech_Ingredients = 4,
 		Count = 800,
 		Military = false,
@@ -728,7 +776,7 @@ local Data_Table = {
 	{
 		Name = "railway-5",
 		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
-		Pre_Req = {"railway-4"},
+		Pre_Req = {"railway-4", "complex-alloy-armor"},
 		Tech_Ingredients = 5,
 		Count = 1500,
 		Military = false,
@@ -736,7 +784,7 @@ local Data_Table = {
 	{
 		Name = "railway-6",
 		Icon = {{icon = "__base__/graphics/technology/railway.png"}},
-		Pre_Req = {"railway-5"},
+		Pre_Req = {"railway-5", "super-alloy-armor"},
 		Tech_Ingredients = 6,
 		Count = 3000,
 		Military = false,
@@ -862,3 +910,6 @@ data:extend(
 		data.raw.technology[v.Name].prerequisites = v.Pre_Req
 	end
 end
+
+local add = "primitive-armor"
+table.insert(data.raw.technology["railway"].prerequisites, add)

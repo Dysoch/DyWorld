@@ -2183,10 +2183,16 @@ data:extend(
       {
         type = "instant",
         target_effects =
-        {
-          type = "damage",
-          damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "physical"}
-        }
+		{
+          {
+			type = "damage",
+			damage = {amount = Round(DyWorld_Material_Formulas(8, DATA.Table) * 0.1, 2), type = "impact"}
+          },
+          {
+			type = "damage",
+			damage = {amount = Round(DyWorld_Material_Formulas(8, DATA.Table) * 0.9, 2), type = DATA.DMG_Type}
+          },
+		}
       }
     },
     animation =
@@ -2275,10 +2281,16 @@ data:extend(
       {
         type = "instant",
         target_effects =
-        {
-          type = "damage",
-          damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "physical"}
-        }
+		{
+          {
+			type = "damage",
+			damage = {amount = Round(DyWorld_Material_Formulas(8, DATA.Table) * 0.1, 2), type = "impact"}
+          },
+          {
+			type = "damage",
+			damage = {amount = Round(DyWorld_Material_Formulas(8, DATA.Table) * 0.9, 2), type = DATA.DMG_Type}
+          },
+		}
       }
     },
     animation =
@@ -2368,10 +2380,16 @@ data:extend(
       {
         type = "instant",
         target_effects =
-        {
-          type = "damage",
-          damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table)*2), type = "physical"}
-        }
+		{
+          {
+			type = "damage",
+			damage = {amount = Round((DyWorld_Material_Formulas(8, DATA.Table)*2) * 0.1, 2), type = "impact"}
+          },
+          {
+			type = "damage",
+			damage = {amount = Round((DyWorld_Material_Formulas(8, DATA.Table)*2) * 0.9, 2), type = DATA.DMG_Type}
+          },
+		}
       }
     },
     animation =
@@ -2461,10 +2479,16 @@ data:extend(
       {
         type = "instant",
         target_effects =
-        {
-          type = "damage",
-          damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table)*2), type = "physical"}
-        }
+		{
+          {
+			type = "damage",
+			damage = {amount = Round((DyWorld_Material_Formulas(8, DATA.Table)*2) * 0.1, 2), type = "impact"}
+          },
+          {
+			type = "damage",
+			damage = {amount = Round((DyWorld_Material_Formulas(8, DATA.Table)*2) * 0.9, 2), type = DATA.DMG_Type}
+          },
+		}
       }
     },
     animation =
@@ -2557,7 +2581,7 @@ data:extend(
         {
           {
             type = "damage",
-            damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 20) , type = "physical"}
+            damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 20) , type = DATA.DMG_Type}
           },
           {
             type = "damage",
@@ -2663,7 +2687,7 @@ data:extend(
         {
           {
             type = "damage",
-            damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 25) , type = "physical"}
+            damage = {amount = (DyWorld_Material_Formulas(8, DATA.Table) * 25) , type = DATA.DMG_Type}
           },
           {
             type = "damage",
@@ -5850,7 +5874,7 @@ data:extend(
         target_effects =
         {
             type = "damage",
-            damage = { amount = (Materials[DATA.Table].Hardness + 0.5) , type = "physical"}
+            damage = { amount = (Materials[DATA.Table].Hardness + 0.5) , type = DATA.DMG_Type}
         }
       }
     },
@@ -7474,6 +7498,14 @@ data:extend(
 	if (Materials[DATA.Table].Elasticity / 2) >= 20 then
 		data.raw.item[dy..DATA.Name.."-electric-drill"].localised_description = {"looped-name.drill-warning"}
 		data.raw["mining-drill"][dy..DATA.Name.."-electric-drill"].localised_description = {"looped-name.drill-warning"}
+	end
+	if data.raw.item[DATA.Name.."-ore"] then
+		data.raw.item[dy..DATA.Name.."-electric-drill"].rocket_launch_products = {
+			{name = DATA.Name.."-ore", amount_min = 1, amount_max = 200, probability = 1},
+			{name = "stone", amount_min = 1, amount_max = 200, probability = 0.1},
+			{name = "coal", amount_min = 1, amount_max = 200, probability = 0.1},
+			{name = dy.."sand", amount_min = 1, amount_max = 200, probability = 0.1},
+		}
 	end
 end
 
@@ -10071,15 +10103,15 @@ data:extend(
 	if DATA.Type == "Primitive" then
 		data.raw.recipe[dy..DATA.Name.."-armor"].enabled = true
 	elseif DATA.Type == "Basic" then
-		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-armor")
+		DyWorld_Add_To_Tech("basic-armor", dy..DATA.Name.."-armor")
 	elseif DATA.Type == "Simple_Alloy" then
-		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-armor")
+		DyWorld_Add_To_Tech("simple-alloy-armor", dy..DATA.Name.."-armor")
 	elseif DATA.Type == "Alloy" then
-		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-armor")
+		DyWorld_Add_To_Tech("alloy-armor", dy..DATA.Name.."-armor")
 	elseif DATA.Type == "Complex_Alloy" then
-		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-armor")
+		DyWorld_Add_To_Tech("complex-alloy-armor", dy..DATA.Name.."-armor")
 	elseif DATA.Type == "Super_Alloy" then
-		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-armor")
+		DyWorld_Add_To_Tech("super-alloy-armor", dy..DATA.Name.."-armor")
 	end
 end
 

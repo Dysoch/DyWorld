@@ -144,8 +144,8 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."assembling-special",
-    order = "pcb-crafter",
+    subgroup = dy.."assembling-special-circuit",
+    order = "4",
     place_result = dy.."pcb-crafter",
     stack_size = 200
   },

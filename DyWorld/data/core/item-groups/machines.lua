@@ -24,6 +24,21 @@ Data_Table_Item_Group = {
 		Main = "machines"
 	},
 	{
+		Name = "assembling-special-recycler",
+		Type = "sub",
+		Main = "machines"
+	},
+	{
+		Name = "assembling-special-circuit",
+		Type = "sub",
+		Main = "machines"
+	},
+	{
+		Name = "assembling-special-chemistry",
+		Type = "sub",
+		Main = "machines"
+	},
+	{
 		Name = "furnace-burner",
 		Type = "sub",
 		Main = "machines"

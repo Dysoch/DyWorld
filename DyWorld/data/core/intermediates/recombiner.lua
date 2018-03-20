@@ -89,7 +89,7 @@ data:extend(
     icon = dyworld_path_icon.."greenhouse.png",
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."assembling-special",
+    subgroup = dy.."assembling-special-chemistry",
     order = dy.."recombiner",
     place_result = dy.."recombiner",
     stack_size = 20

@@ -144,8 +144,8 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."assembling-special",
-    order = "coil-crafter",
+    subgroup = dy.."assembling-special-circuit",
+    order = "3",
     place_result = dy.."coil-crafter",
     stack_size = 200
   },

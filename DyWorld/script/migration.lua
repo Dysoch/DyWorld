@@ -175,6 +175,30 @@ function Migrate_To_Next_Version()
 					end
 				end
 			end
+		global.dyworld.Version = "0.6.3" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+	end
+	if global.dyworld.Version == "0.6.3" then
+			for k,v in pairs(game.players[1].force.technologies) do
+				if Check_Tech(v.name) then
+					if v.researched then
+						v.researched = false
+						v.researched = true
+					end
+				end
+			end
+		global.dyworld.Version = "0.6.4" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+	end
+	if global.dyworld.Version == "0.6.4" then
+			for k,v in pairs(game.players[1].force.technologies) do
+				if Check_Tech(v.name) then
+					if v.researched then
+						v.researched = false
+						v.researched = true
+					end
+				end
+			end
 		global.dyworld.Version = "0.7.0" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end
@@ -182,13 +206,37 @@ end
 
 function Migrate_Debug()
 	for k,v in pairs(game.players[1].force.technologies) do
-		if v.name == "toolbelt" or v.name == "toolbelt-2" or v.name == "toolbelt-3" then
-			-- do nothing to make sure the quickbelts stay with items
-		else
+		if Check_Tech(v.name) then
 			if v.researched then
 				v.researched = false
 				v.researched = true
 			end
 		end
+	end
+end
+
+function Check_Tech(TECH)
+	if TECH == "toolbelt" then
+		return false
+	elseif TECH == "toolbelt-2" then
+		return false
+	elseif TECH == "toolbelt-3" then
+		return false
+	elseif TECH == "character-logistic-slots-1" then
+		return false
+	elseif TECH == "character-logistic-slots-2" then
+		return false
+	elseif TECH == "character-logistic-slots-3" then
+		return false
+	elseif TECH == "character-logistic-slots-4" then
+		return false
+	elseif TECH == "character-logistic-slots-5" then
+		return false
+	elseif TECH == "character-logistic-slots-6" then
+		return false
+	elseif TECH == "auto-character-logistic-trash-slots" then
+		return false
+	else
+		return true
 	end
 end

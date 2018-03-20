@@ -1,4 +1,24 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.0
+Date: ??. ??. 2018
+  Features:
+    - Launching a rocket with certain electric mining drills give resources. This always has a chance for stone, coal and sand, and depending on the mining drill material, will give its respective ore.
+  Bugfixes:
+    - 
+---------------------------------------------------------------------------------------------------
+Version: 0.6.4
+Date: 19. 03. 2018
+  Features:
+    - Added a new resistance type: Radiation
+    - Made Ammo damage more realistic. Impact Damage first, then the materials damage type. Lead and Uranium have different damage types then the rest
+  Bugfixes:
+    - Fixed tungsten requiring unknown key: dyworld-hydrogen. it now requires the correct fluid which is obtainable. 
+---------------------------------------------------------------------------------------------------
+Version: 0.6.3
+Date: 11. 03. 2018
+  Bugfixes:
+    - Fixed issue with character logistics slots research and the bug that followed
+---------------------------------------------------------------------------------------------------
 Version: 0.6.2
 Date: 08. 03. 2018
   Features:

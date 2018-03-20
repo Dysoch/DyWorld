@@ -164,7 +164,7 @@ function BodySkills(id)
 	end
 	if game.forces.player.technologies["character-logistic-slots-1"].researched then 
 		if math.floor((((gsgb + gsgm) / 25)+(p1))/15) <= 190 then
-			game.players[id].character_logistic_slot_count_bonus = math.floor((((gsgb + gsgm) / 25)+(p1))/15) <= 190
+			game.players[id].character_logistic_slot_count_bonus = math.floor((((gsgb + gsgm) / 25)+(p1))/15)
 		else
 			game.players[id].character_logistic_slot_count_bonus = 190
 		end

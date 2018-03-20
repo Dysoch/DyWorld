@@ -147,8 +147,8 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."assembling-special",
-    order = "cable-crafter",
+    subgroup = dy.."assembling-special-circuit",
+    order = "2",
     place_result = dy.."cable-crafter",
     stack_size = 200
   },

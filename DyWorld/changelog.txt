@@ -3,6 +3,8 @@ Version: 0.7.0
 Date: ??. ??. 2018
   Features:
     - Launching a rocket with certain electric mining drills give resources. This always has a chance for stone, coal and sand, and depending on the mining drill material, will give its respective ore.
+  Changes:
+    - Most wooden items should be burnable in boilers now.
   Bugfixes:
     - 
 ---------------------------------------------------------------------------------------------------

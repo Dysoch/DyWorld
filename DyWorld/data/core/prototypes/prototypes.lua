@@ -1225,6 +1225,16 @@ data:extend(
 	if DATA.Name == "rubber" then
 		data.raw["underground-belt"][dy..DATA.Name.."-underground-belt"].max_distance = 6
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-transport-belt"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-transport-belt"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-underground-belt"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-underground-belt"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-splitter"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-splitter"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-loader"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-loader"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Transport_Pipe(DATA)
@@ -1482,6 +1492,12 @@ data:extend(
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pipe")
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pipe-to-ground")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-pipe"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-pipe"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-pipe-to-ground"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-pipe-to-ground"].fuel_category = "chemical"
 	end
 end
 
@@ -1933,6 +1949,14 @@ data:extend(
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-shotgun-turret")
 		DyWorld_Add_To_Tech("turrets-6", dy..DATA.Name.."-cannon-turret")
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-gun-turret"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-gun-turret"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-shotgun-turret"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-shotgun-turret"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-cannon-turret"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-cannon-turret"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Grenade_Turret(DATA)
@@ -2163,6 +2187,12 @@ data:extend(
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-grenade-turret")
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-grenade-ammo")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-grenade-turret"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-grenade-turret"].fuel_category = "chemical"
+		data.raw.ammo[dy..DATA.Name.."-grenade-ammo"].fuel_value = "2MJ"
+		data.raw.ammo[dy..DATA.Name.."-grenade-ammo"].fuel_category = "chemical"
 	end
 end
 
@@ -2875,6 +2905,20 @@ data:extend(
 		DyWorld_Add_To_Tech("military-7", dy..DATA.Name.."-cannon-shell")
 		DyWorld_Add_To_Tech("military-7", dy..DATA.Name.."-cannon-explosive-shell")
 	end
+	if DATA.Name == "wood" then
+		data.raw.ammo[dy..DATA.Name.."-basic-ammo"].fuel_value = "2MJ"
+		data.raw.ammo[dy..DATA.Name.."-basic-ammo"].fuel_category = "chemical"
+		data.raw.ammo[dy..DATA.Name.."-shotgun-ammo"].fuel_value = "2MJ"
+		data.raw.ammo[dy..DATA.Name.."-shotgun-ammo"].fuel_category = "chemical"
+		data.raw.ammo[dy..DATA.Name.."-basic-piercing-ammo"].fuel_value = "2MJ"
+		data.raw.ammo[dy..DATA.Name.."-basic-piercing-ammo"].fuel_category = "chemical"
+		data.raw.ammo[dy..DATA.Name.."-shotgun-piercing-ammo"].fuel_value = "2MJ"
+		data.raw.ammo[dy..DATA.Name.."-shotgun-piercing-ammo"].fuel_category = "chemical"
+		data.raw.ammo[dy..DATA.Name.."-cannon-shell"].fuel_value = "2MJ"
+		data.raw.ammo[dy..DATA.Name.."-cannon-shell"].fuel_category = "chemical"
+		data.raw.ammo[dy..DATA.Name.."-cannon-explosive-shell"].fuel_value = "2MJ"
+		data.raw.ammo[dy..DATA.Name.."-cannon-explosive-shell"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Grenades(DATA)
@@ -3149,6 +3193,12 @@ data:extend(
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-grenade")
 		DyWorld_Add_To_Tech("military-7", dy..DATA.Name.."-cluster-grenade")
+	end
+	if DATA.Name == "wood" then
+		data.raw.capsule[dy..DATA.Name.."-grenade"].fuel_value = "2MJ"
+		data.raw.capsule[dy..DATA.Name.."-grenade"].fuel_category = "chemical"
+		data.raw.capsule[dy..DATA.Name.."-cluster-grenade"].fuel_value = "2MJ"
+		data.raw.capsule[dy..DATA.Name.."-cluster-grenade"].fuel_category = "chemical"
 	end
 end
 
@@ -3590,6 +3640,12 @@ data:extend(
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pump")
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-offshore-pump")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-pump"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-pump"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-offshore-pump"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-offshore-pump"].fuel_category = "chemical"
 	end
 end
 
@@ -4859,6 +4915,20 @@ data:extend(
 		DyWorld_Add_To_Tech("logistics-6", dy..DATA.Name.."-stack-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-7", dy..DATA.Name.."-super-inserter")
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-basic-inserter"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-basic-inserter"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-long-inserter"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-long-inserter"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-filter-inserter"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-filter-inserter"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-stack-inserter"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-stack-inserter"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-stack-filter-inserter"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-stack-filter-inserter"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-super-inserter"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-super-inserter"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Storage_Tanks(DATA)
@@ -5055,6 +5125,10 @@ data:extend(
 		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-storage-tank")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-storage-tank")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-storage-tank"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-storage-tank"].fuel_category = "chemical"
 	end
 end
 
@@ -5349,6 +5423,12 @@ data:extend(
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("electric-energy-distribution-5", dy..DATA.Name.."-power-pole")
 		DyWorld_Add_To_Tech("electric-energy-distribution-6", dy..DATA.Name.."-power-relay")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-power-pole"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-power-pole"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-power-relay"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-power-relay"].fuel_category = "chemical"
 	end
 end
 
@@ -5848,6 +5928,12 @@ data:extend(
 		DyWorld_Add_To_Tech("laser-turrets-6", dy..DATA.Name.."-laser-turret")
 		DyWorld_Add_To_Tech("laser-turrets-7", dy..DATA.Name.."-shotgun-laser-turret")
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-laser-turret"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-laser-turret"].fuel_category = "chemical"
+		data.raw.item[dy..DATA.Name.."-shotgun-laser-turret"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-shotgun-laser-turret"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Mining_Tool(DATA)
@@ -5917,6 +6003,10 @@ data:extend(
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech(dy.."mining-tools-5", dy..DATA.Name.."-mining-tool")
 	end
+	if DATA.Name == "wood" then
+		data.raw["mining-tool"][dy..DATA.Name.."-mining-tool"].fuel_value = "2MJ"
+		data.raw["mining-tool"][dy..DATA.Name.."-mining-tool"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Repair_Tool(DATA)
@@ -5972,6 +6062,10 @@ data:extend(
 		DyWorld_Add_To_Tech(dy.."repair-tools-4", dy..DATA.Name.."-repair-tool")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech(dy.."repair-tools-5", dy..DATA.Name.."-repair-tool")
+	end
+	if DATA.Name == "wood" then
+		data.raw["repair-tool"][dy..DATA.Name.."-repair-tool"].fuel_value = "2MJ"
+		data.raw["repair-tool"][dy..DATA.Name.."-repair-tool"].fuel_category = "chemical"
 	end
 end
 
@@ -6118,6 +6212,10 @@ data:extend(
 		DyWorld_Add_To_Tech("solar-energy-5", dy..DATA.Name.."-solar-normal")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("solar-energy-6", dy..DATA.Name.."-solar-normal")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-solar-normal"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-solar-normal"].fuel_category = "chemical"
 	end
 end
 
@@ -6416,6 +6514,10 @@ data:extend(
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech(dy.."steam-energy-6", dy..DATA.Name.."-steam-engine")
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-steam-engine"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-steam-engine"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Accumulator(DATA)
@@ -6554,6 +6656,10 @@ data:extend(
 		DyWorld_Add_To_Tech("electric-energy-accumulators-5", dy..DATA.Name.."-accumulator-normal")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-6", dy..DATA.Name.."-accumulator-normal")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-accumulator-normal"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-accumulator-normal"].fuel_category = "chemical"
 	end
 end
 
@@ -7507,6 +7613,10 @@ data:extend(
 			{name = dy.."sand", amount_min = 1, amount_max = 200, probability = 0.1},
 		}
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-electric-drill"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-electric-drill"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Mining_Drills_Burner(DATA)
@@ -7836,6 +7946,10 @@ data:extend(
 	elseif DATA.Type == "Basic" then
 		data.raw.recipe[dy..DATA.Name.."-burner-drill"].enabled = true
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-burner-drill"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-burner-drill"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Assembling_Machines(DATA)
@@ -8016,6 +8130,10 @@ data:extend(
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("automation-5", dy..DATA.Name.."-assembling-electric")
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-assembling-electric"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-assembling-electric"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Chests(DATA)
@@ -8108,6 +8226,10 @@ data:extend(
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("automation-5", dy..DATA.Name.."-chest")
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-chest"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-chest"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Warehouse_Chests_1(DATA)
@@ -8194,6 +8316,10 @@ data:extend(
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-warehouse-chest")
 	elseif DATA.Type == "Alloy" then
 		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-warehouse-chest")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-warehouse-chest"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-warehouse-chest"].fuel_category = "chemical"
 	end
 end
 
@@ -8298,6 +8424,10 @@ data:extend(
 		local result_1 = {dy.."processing-logic", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 		DyWorld_Add_To_Tech("automation-6", dy..DATA.Name.."-warehouse-chest")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-warehouse-chest"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-warehouse-chest"].fuel_category = "chemical"
 	end
 end
 
@@ -8604,6 +8734,10 @@ data:extend(
 			end
 		end
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-roboport"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-roboport"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Logistic_Robot(DATA)
@@ -8901,6 +9035,10 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("logistic-robotics-6", dy..DATA.Name.."-logistic-robot")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-logistic-robot"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-logistic-robot"].fuel_category = "chemical"
 	end
 end
 
@@ -9219,6 +9357,10 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("construction-robotics-6", dy..DATA.Name.."-construction-robot")
 	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-construction-robot"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-construction-robot"].fuel_category = "chemical"
+	end
 end
 
 function DyWorld_Walls(DATA)
@@ -9341,6 +9483,10 @@ data:extend(
 		DyWorld_Add_To_Tech("stone-walls-5", dy..DATA.Name.."-wall")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("stone-walls-6", dy..DATA.Name.."-wall")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-wall"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-wall"].fuel_category = "chemical"
 	end
 end
 
@@ -9710,6 +9856,10 @@ data:extend(
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-6"}
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-locomotive"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-locomotive"].fuel_category = "chemical"
 	end
 end
 
@@ -10285,6 +10435,10 @@ data:extend(
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-radar")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-radar")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-radar"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-radar"].fuel_category = "chemical"
 	end
 end
 

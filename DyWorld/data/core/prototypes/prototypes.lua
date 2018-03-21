@@ -9803,6 +9803,17 @@ data:extend(
     result_count = 1,
   },
   {
+    type = "recipe",
+	name = dy..DATA.Name.."-locomotive-armor-remover",
+    energy_required = 2.5,
+    category = dy.."armor-remover",
+	enabled = false,
+	hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
+    ingredients = {{dy..DATA.Name.."-locomotive", 1}},
+    result = "locomotive",
+    result_count = 1,
+  },
+  {
     type = "technology",
    	name = dy..DATA.Name.."-locomotive",
 	localised_name = {"looped-name.locomotive", {"looped-name."..DATA.Name}},
@@ -9814,7 +9825,7 @@ data:extend(
 	  Materials[DATA.Table].Icon_Tech,
 	},
     icon_size = 128,
-    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-locomotive"} },
+    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-locomotive"}, {type = "unlock-recipe", recipe = dy..DATA.Name.."-locomotive-armor-remover"} },
     prerequisites = {},
     unit =
     {

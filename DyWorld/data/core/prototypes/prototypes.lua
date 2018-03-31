@@ -1724,6 +1724,7 @@ data:extend(
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    turret_base_has_direction = true,
     attack_parameters =
     {
       type = "projectile",
@@ -1857,6 +1858,7 @@ data:extend(
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    turret_base_has_direction = true,
     attack_parameters =
     {
       type = "projectile",

@@ -6,7 +6,7 @@ Date: ??. ??. 2018
   Changes:
     - Most wooden items should be burnable in boilers now.
   Bugfixes:
-    - 
+    - Fixed Turrets switching directions when they shouldnt
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.4
 Date: 19. 03. 2018

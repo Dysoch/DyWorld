@@ -14,6 +14,7 @@
 --settings.startup["DyWorld_Equipment"].value
 --settings.startup["DyWorld_Chemistry"].value
 --settings.startup["DyWorld_Hidden_Recipes"].value
+--settings.startup["DyWorld_PvP"].value
 --settings.startup["DyWorld_Roboport_Standard"].value
 
 -- can use: "runtime-global", "startup"
@@ -124,6 +125,12 @@ data:extend({
 	{
 		type = "bool-setting",
 		name = "DyWorld_Roboport_Standard",
+		setting_type = "startup",
+		default_value = false,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld_PvP",
 		setting_type = "startup",
 		default_value = false,
 	},

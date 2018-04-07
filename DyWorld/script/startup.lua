@@ -42,6 +42,7 @@ function Game()
 			Knowledge = 0,
 			Level = 0,
 			XP = 0,
+			RPG_Mode = global.RPG or "normal",
             Warfare = {Location = {}},
 		}
 	debug("Created global.dyworld")

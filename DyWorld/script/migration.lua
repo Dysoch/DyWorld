@@ -199,6 +199,19 @@ function Migrate_To_Next_Version()
 					end
 				end
 			end
+			global.dyworld.RPG_Mode = "normal"
+		global.dyworld.Version = "0.6.5" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+	end
+	if global.dyworld.Version == "0.6.5" then
+			for k,v in pairs(game.players[1].force.technologies) do
+				if Check_Tech(v.name) then
+					if v.researched then
+						v.researched = false
+						v.researched = true
+					end
+				end
+			end
 		global.dyworld.Version = "0.7.0" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end

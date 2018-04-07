@@ -81,6 +81,18 @@ data:extend(
 })
 end
 
+if settings.startup["DyWorld_PvP"].value then
+	for k,v in pairs(data.raw.item) do
+		if v.rocket_launch_products then
+			v.rocket_launch_products = nil
+		end
+		if v.rocket_launch_product then
+			v.rocket_launch_product = nil
+		end
+	end
+	data.raw.item.satellite.rocket_launch_product = {dy.."extra-solar-artifact", 250}
+end
+
 for k,v in pairs(data.raw.fluid) do
 	DyWorld_Fluid_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end

@@ -64,64 +64,80 @@ script.on_event(defines.events.on_player_created, function(event)
 end)
 
 script.on_event(defines.events.on_player_respawned, function(event)
-	local player = game.players[event.player_index]	
-	local ID = event.player_index
-	global.players[ID].Alive = true
-	game.players[ID].get_inventory(defines.inventory.player_main).clear()
-	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
-	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
-	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
-	global.players[ID].Food = 100
-	global.players[ID].Water = 100
-	debug(game.players[event.player_index].name.." respawned")
+	if global.dyworld.RPG_Mode == "normal" then
+		local player = game.players[event.player_index]	
+		local ID = event.player_index
+		global.players[ID].Alive = true
+		game.players[ID].get_inventory(defines.inventory.player_main).clear()
+		game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
+		game.players[ID].get_inventory(defines.inventory.player_guns).clear()
+		game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
+		global.players[ID].Food = 100
+		global.players[ID].Water = 100
+		debug(game.players[event.player_index].name.." respawned")
+	end
 end)
 
 script.on_event(defines.events.on_player_died, function(event)
-	local ID = event.player_index
-	global.players[ID].Alive = false
-	debug(game.players[event.player_index].name.." died")
+	if global.dyworld.RPG_Mode == "normal" then
+		local ID = event.player_index
+		global.players[ID].Alive = false
+		debug(game.players[event.player_index].name.." died")
+	end
 end)
 
 script.on_event(defines.events.on_player_joined_game, function(event)
-	local ID = event.player_index
-	global.players[ID].Playing = true
-	debug(game.players[event.player_index].name.." joined game")
+	if global.dyworld.RPG_Mode == "normal" then
+		local ID = event.player_index
+		global.players[ID].Playing = true
+		debug(game.players[event.player_index].name.." joined game")
+	end
 end)
 
 script.on_event(defines.events.on_player_left_game, function(event)
-	local ID = event.player_index
-	global.players[ID].Playing = false
-	debug(game.players[event.player_index].name.." left game")
+	if global.dyworld.RPG_Mode == "normal" then
+		local ID = event.player_index
+		global.players[ID].Playing = false
+		debug(game.players[event.player_index].name.." left game")
+	end
 end)
 
 -- game event hooks
 script.on_event(defines.events.on_player_crafted_item, function(event)
-	stats_functions.IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
-	stats_functions.IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
-	stats_functions.XP_Full(event.player_index)
-	stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.1), (event.item_stack.count*0.15))
+	if global.dyworld.RPG_Mode == "normal" then
+		stats_functions.IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
+		stats_functions.IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
+		stats_functions.XP_Full(event.player_index)
+		stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.1), (event.item_stack.count*0.15))
+	end
 end)
 
 script.on_event(defines.events.on_player_mined_item, function(event)
-	stats_functions.IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
-	stats_functions.IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
-	stats_functions.XP_Full(event.player_index)
-	stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.15), (event.item_stack.count*0.25))
+	if global.dyworld.RPG_Mode == "normal" then
+		stats_functions.IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
+		stats_functions.IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
+		stats_functions.XP_Full(event.player_index)
+		stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.15), (event.item_stack.count*0.25))
+	end
 end)
 
 script.on_event(defines.events.on_picked_up_item, function(event)
-	stats_functions.IncrementerGlobal("pickup", event.item_stack.count, event.item_stack.name)
-	stats_functions.IncrementerPersonal("pickup", event.item_stack.count, event.player_index, event.item_stack.name)
-	stats_functions.XP_Full(event.player_index)
-	stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.05), (event.item_stack.count*0.025))
+	if global.dyworld.RPG_Mode == "normal" then
+		stats_functions.IncrementerGlobal("pickup", event.item_stack.count, event.item_stack.name)
+		stats_functions.IncrementerPersonal("pickup", event.item_stack.count, event.player_index, event.item_stack.name)
+		stats_functions.XP_Full(event.player_index)
+		stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.05), (event.item_stack.count*0.025))
+	end
 end)
 
 script.on_event(defines.events.on_built_entity, function(event)
-	stats_functions.IncrementerGlobal("build", 1)
-	stats_functions.IncrementerPersonal("build", 1, event.player_index)
-	stats_functions.XP_Full(event.player_index)
-	stats_functions.Needs_Work(event.player_index, 0.1, 0.05)
-    functions.Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
+	if global.dyworld.RPG_Mode == "normal" then
+		stats_functions.IncrementerGlobal("build", 1)
+		stats_functions.IncrementerPersonal("build", 1, event.player_index)
+		stats_functions.XP_Full(event.player_index)
+		stats_functions.Needs_Work(event.player_index, 0.1, 0.05)
+		functions.Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
+	end
 	if not global.dyworld.Guide then global.dyworld.Guide = {} end
 	if not global.dyworld.Guide[event.created_entity.type] then
 		global.dyworld.Guide[event.created_entity.type] = true
@@ -137,14 +153,18 @@ script.on_event(defines.events.on_robot_mined_entity, function(event)
 end)
 
 script.on_event(defines.events.on_robot_mined, function(event)
-	stats_functions.IncrementerGlobal("ghostmined", event.item_stack.count, event.item_stack.name)
-	stats_functions.XP_All_Small()
+	if global.dyworld.RPG_Mode == "normal" then
+		stats_functions.IncrementerGlobal("ghostmined", event.item_stack.count, event.item_stack.name)
+		stats_functions.XP_All_Small()
+	end
 end)
 
 script.on_event(defines.events.on_robot_built_entity, function(event)
-	stats_functions.IncrementerGlobal("ghostbuild", 1)
-	stats_functions.XP_All_Small()
-    functions.Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
+	if global.dyworld.RPG_Mode == "normal" then
+		stats_functions.IncrementerGlobal("ghostbuild", 1)
+		stats_functions.XP_All_Small()
+		functions.Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
+	end
 	if not global.dyworld.Guide then global.dyworld.Guide = {} end
 	if not global.dyworld.Guide[event.created_entity.type] then
 		global.dyworld.Guide[event.created_entity.type] = true
@@ -152,21 +172,27 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
 end)
 
 script.on_event(defines.events.on_sector_scanned, function(event)
-	stats_functions.IncrementerGlobal("scanned", 1)
-	stats_functions.XP_All_Small()
+	if global.dyworld.RPG_Mode == "normal" then
+		stats_functions.IncrementerGlobal("scanned", 1)
+		stats_functions.XP_All_Small()
+	end
 end)
 
 script.on_event(defines.events.on_entity_died, function(event)
 	if event.force.name == "player" then
+		if global.dyworld.RPG_Mode == "normal" then
 		stats_functions.IncrementerGlobal("killed", 1)
 		stats_functions.XP_All_Small()
+		end
 	end
 end)
 
 script.on_event(defines.events.on_research_finished, function(event)
 	stats_functions.IncrementerGlobal("research", game.forces.player.technologies[event.research.name].research_unit_count, event.research.name)
 	for i=1,(game.forces.player.technologies[event.research.name].research_unit_count) do
-		stats_functions.XP_All_Full()
+		if global.dyworld.RPG_Mode == "normal" then
+			stats_functions.XP_All_Full()
+		end
 	end
 	debug("Finished "..event.research.name.." research")
 end)
@@ -187,11 +213,13 @@ end)
 -- ontick hooks
 script.on_event(defines.events.on_tick, function(event)
 	if event.tick%(60*60*5)==1 and global.dyworld.Players ~= 0 then
-		stats_functions.GlobalSkillsReset()
-		for k,v in pairs(global.players) do
-			if v.Alive and v.Playing then
-				stats_functions.BodySkills(v.PlayerID)
-				stats_functions.GlobalSkills(v.PlayerID)
+		if global.dyworld.RPG_Mode == "normal" then
+			stats_functions.GlobalSkillsReset()
+			for k,v in pairs(global.players) do
+				if v.Alive and v.Playing then
+					stats_functions.BodySkills(v.PlayerID)
+					stats_functions.GlobalSkills(v.PlayerID)
+				end
 			end
 		end
 	end
@@ -234,11 +262,13 @@ script.on_event(defines.events.on_tick, function(event)
 		end
 	end
 	if event.tick%(60*1)==1 then
-		for k,v in pairs(global.players) do
-			if v.State_Stats_GUI and v.Alive and v.Playing then
-			local player = game.players[v.PlayerID]
-				gui_1.closeGUI(player, v.PlayerID)
-				gui_1.openGui(player, v.PlayerID)
+		if global.dyworld.RPG_Mode == "normal" then
+			for k,v in pairs(global.players) do
+				if v.State_Stats_GUI and v.Alive and v.Playing then
+				local player = game.players[v.PlayerID]
+					gui_1.closeGUI(player, v.PlayerID)
+					gui_1.openGui(player, v.PlayerID)
+				end
 			end
 		end
 	end
@@ -246,39 +276,49 @@ end)
 
 -- keybinding hooks
 script.on_event("DyWorld_Stats", function(event)
-	local player = game.players[event.player_index]
-	gui_1.closeGUI(player, event.player_index)
-	if global.players[event.player_index].State_Stats_GUI then
-		global.players[event.player_index].State_Stats_GUI = false
+	if global.dyworld.RPG_Mode == "normal" then
+		local player = game.players[event.player_index]
 		gui_1.closeGUI(player, event.player_index)
-	else
-		global.players[event.player_index].State_Stats_GUI = true
-		gui_1.openGui(player, event.player_index)
-		gui_4.CloseGUI(player, event.player_index)
+		if global.players[event.player_index].State_Stats_GUI then
+			global.players[event.player_index].State_Stats_GUI = false
+			gui_1.closeGUI(player, event.player_index)
+		else
+			global.players[event.player_index].State_Stats_GUI = true
+			gui_1.openGui(player, event.player_index)
+			gui_4.CloseGUI(player, event.player_index)
+		end
 	end
 end)
 script.on_event("DyWorld_Distance", function(event)
-	local player = game.players[event.player_index]
-	if global.players[event.player_index].State_Distance_GUI then
-		global.players[event.player_index].State_Distance_GUI = false
-		gui_5.CloseGUI(player, event.player_index)
-	else
-		global.players[event.player_index].State_Distance_GUI = true
-		gui_5.RefreshGUI(player, event.player_index)
+	if global.dyworld.RPG_Mode == "normal" then
+		local player = game.players[event.player_index]
+		if global.players[event.player_index].State_Distance_GUI then
+			global.players[event.player_index].State_Distance_GUI = false
+			gui_5.CloseGUI(player, event.player_index)
+		else
+			global.players[event.player_index].State_Distance_GUI = true
+			gui_5.RefreshGUI(player, event.player_index)
+		end
 	end
 end)
 script.on_event("DyWorld_RoadMap", function(event)
-    local player = game.players[event.player_index]
-    gui_3.toggleGui(player)
+	if global.dyworld.RPG_Mode == "normal" then
+		local player = game.players[event.player_index]
+		gui_3.toggleGui(player)
+	end
 end)
 script.on_event("DyWorld_Skills", function(event)
-    local player = game.players[event.player_index]
-    gui_2.toggleGui(player)
-	stats_functions.BodySkills(event.player_index)
+	if global.dyworld.RPG_Mode == "normal" then
+		local player = game.players[event.player_index]
+		gui_2.toggleGui(player)
+		stats_functions.BodySkills(event.player_index)
+	end
 end)
 script.on_event("DyWorld_Guide", function(event)
-    local player = game.players[event.player_index]
-    gui_6.toggleGui(player)
+	if global.dyworld.RPG_Mode == "normal" then
+		local player = game.players[event.player_index]
+		gui_6.toggleGui(player)
+	end
 end)
 
 script.on_event("DyWorld_Debug", function(event)
@@ -305,7 +345,11 @@ remote.add_interface("DyWorld",
 {  
 	Debug_Items = function()
 		functions.Debug_Items()
-	end
+	end,
+	
+	Change_RPG_System = function(NAME)
+		global.RPG = NAME
+	end,
 })
 
 --commands.add_command("dyworld-debug-items", "Debug time :) (only for player 1!)", functions.Debug_Items())

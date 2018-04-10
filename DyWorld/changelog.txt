@@ -6,7 +6,7 @@ Date: ??. ??. 2018
   Changes:
     - 
   Bugfixes:
-    - 
+    - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.5
 Date: 07. 04. 2018

@@ -114,19 +114,33 @@ end)
 
 script.on_event(defines.events.on_player_mined_item, function(event)
 	if global.dyworld.RPG_Mode == "normal" then
-		stats_functions.IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
-		stats_functions.IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
-		stats_functions.XP_Full(event.player_index)
-		stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.15), (event.item_stack.count*0.25))
+		if event.item_stack.count >= 100 then
+			stats_functions.IncrementerGlobal("mined", 100, event.item_stack.name)
+			stats_functions.IncrementerPersonal("mined", 100, event.player_index, event.item_stack.name)
+			stats_functions.XP_Full(event.player_index)
+			stats_functions.Needs_Work(event.player_index, (100*0.15), (100*0.25))
+		else
+			stats_functions.IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
+			stats_functions.IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
+			stats_functions.XP_Full(event.player_index)
+			stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.15), (event.item_stack.count*0.25))
+		end
 	end
 end)
 
 script.on_event(defines.events.on_picked_up_item, function(event)
 	if global.dyworld.RPG_Mode == "normal" then
-		stats_functions.IncrementerGlobal("pickup", event.item_stack.count, event.item_stack.name)
-		stats_functions.IncrementerPersonal("pickup", event.item_stack.count, event.player_index, event.item_stack.name)
-		stats_functions.XP_Full(event.player_index)
-		stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.05), (event.item_stack.count*0.025))
+		if event.item_stack.count >= 100 then
+			stats_functions.IncrementerGlobal("pickup", 100, event.item_stack.name)
+			stats_functions.IncrementerPersonal("pickup", 100, event.player_index, event.item_stack.name)
+			stats_functions.XP_Full(event.player_index)
+			stats_functions.Needs_Work(event.player_index, (100*0.05), (100*0.025))
+		else
+			stats_functions.IncrementerGlobal("pickup", event.item_stack.count, event.item_stack.name)
+			stats_functions.IncrementerPersonal("pickup", event.item_stack.count, event.player_index, event.item_stack.name)
+			stats_functions.XP_Full(event.player_index)
+			stats_functions.Needs_Work(event.player_index, (event.item_stack.count*0.05), (event.item_stack.count*0.025))
+		end
 	end
 end)
 

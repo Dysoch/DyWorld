@@ -2,7 +2,7 @@
 Version: 0.7.0
 Date: ??. ??. 2018
   Features:
-    - 
+    - Added new dynamic resistances for enemies. They scale up with higher and stronger units. They now truly get stronger and stronger the bigger they get.
   Changes:
     - 
   Bugfixes:

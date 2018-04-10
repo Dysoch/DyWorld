@@ -13,131 +13,158 @@ function Round(num, numDecimalPlaces)
 	return math.floor(num * mult + 0.5) / mult
 end
 
+function Increase_Resistances(Table, Tier)
+	local Resist_Table = util.table.deepcopy(Table)
+	for k,v in pairs(Resist_Table) do
+		if v.percent ~= 0 then
+			v.percent = (v.percent * Tier)
+		end
+		if v.decrease ~= 0 then
+			v.decrease = (v.decrease * Tier)
+		end
+		if v.maxed then
+			v.percent = 100
+			v.decrease = 5000
+		end
+		if v.negative then
+			if v.percent ~= 0 then
+				v.percent = v.percent * -1
+			end
+			if v.decrease ~= 0 then
+				v.decrease = v.decrease * -1
+			end
+		end
+	end
+	return Resist_Table
+end
+
 for k,v in pairs(Enemies) do
 	if v.Type == "biter" then
-		for i = 1,10 do
+		for index = 1,v.Unit_Amount do
 data:extend(
 {
   {
     type = "unit",
-    name = dy..k.."-"..i,
-	localised_name = {"enemies-name.unit", {"enemies-name."..i}, {"enemies-name."..k}},
+    name = dy..k.."-"..index,
+	localised_name = {"enemies-name.unit", {"enemies-name."..index}, {"enemies-name."..k}},
     icon = "__base__/graphics/icons/medium-biter.png",
     icon_size = 32,
     flags = {"placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable"},
-    max_health = ((v.Base_HP*i)*i),
-    order = dy..k.."-"..i,
+    max_health = ((v.Base_HP*index)*index),
+    order = dy..k.."-"..index,
     subgroup = "enemies",
-    resistances = v.Resistances,
-    healing_per_tick = ((0.01 * i) * i),
-    collision_box = scale_bounding_box({{-0.4, -0.4}, {0.4, 0.4}}, (0.25 * i)),
-    selection_box = scale_bounding_box({{-0.7, -1.5}, {0.7, 0.3}}, (0.25 * i)),
-    sticker_box = scale_bounding_box({{-0.6, -0.8}, {0.6, 0}}, (0.25 * i)),
-    distraction_cooldown = (330 - (30 * i)),
+	DyWorld_Tier = index,
+    resistances = Increase_Resistances(v.Resistances, index),
+    healing_per_tick = ((0.01 * index) * index),
+    collision_box = scale_bounding_box({{-0.4, -0.4}, {0.4, 0.4}}, (0.25 * index)),
+    selection_box = scale_bounding_box({{-0.7, -1.5}, {0.7, 0.3}}, (0.25 * index)),
+    sticker_box = scale_bounding_box({{-0.6, -0.8}, {0.6, 0}}, (0.25 * index)),
+    distraction_cooldown = (330 - (30 * index)),
     min_pursue_time = 10 * 60,
     max_pursue_distance = 50,
     attack_parameters =
     {
       type = "projectile",
       ammo_category = "melee",
-      ammo_type = DyWorld_make_unit_melee_ammo_type((v.Attack_DMG_Base * i), v.Attack_DMG_Type),
-      range = (v.Attack_Range_Base * i),
+      ammo_type = DyWorld_make_unit_melee_ammo_type((v.Attack_DMG_Base * index), v.Attack_DMG_Type),
+      range = (v.Attack_Range_Base * index),
       cooldown = v.Attack_Speed_Base,
       sound = make_biter_roars(0.5),
-      animation = DyWorld_biterattackanimation((0.25 * i), v.Tint_1, v.Tint_2)
+      animation = DyWorld_biterattackanimation((0.25 * index), v.Tint_1, v.Tint_2)
     },
     vision_distance = 30,
     movement_speed = v.Speed,
     distance_per_frame = 0.15,
     -- in pu
-    pollution_to_join_attack = ((v.Pollution_to_Join_Attack_Base * i) * i),
-    corpse = dy..k.."-"..i.."-corpse",
+    pollution_to_join_attack = ((v.Pollution_to_Join_Attack_Base * index) * index),
+    corpse = dy..k.."-"..index.."-corpse",
     dying_explosion = "blood-explosion-small",
     working_sound = make_biter_calls(0.4),
     dying_sound = make_biter_dying_sounds(0.5),
-    run_animation = DyWorld_biterrunanimation((0.25 * i), v.Tint_1, v.Tint_2)
+    run_animation = DyWorld_biterrunanimation((0.25 * index), v.Tint_1, v.Tint_2)
   },
   {
     type = "corpse",
-    name = dy..k.."-"..i.."-corpse",
-	localised_name = {"enemies-name.unit-corpse", {"enemies-name."..i}, {"enemies-name."..k}},
+    name = dy..k.."-"..index.."-corpse",
+	localised_name = {"enemies-name.unit-corpse", {"enemies-name."..index}, {"enemies-name."..k}},
     icon = "__base__/graphics/icons/medium-biter-corpse.png",
     icon_size = 32,
     selectable_in_game = false,
     selection_box = {{-1, -1}, {1, 1}},
     flags = {"placeable-neutral", "placeable-off-grid", "building-direction-8-way", "not-on-map"},
     subgroup = "corpses",
-    order = dy..k.."-"..i.."-corpse",
+    order = dy..k.."-"..index.."-corpse",
     dying_speed = 0.04,
     time_before_removed = 15 * 60 * 60,
     final_render_layer = "corpse",
-    animation = DyWorld_biterdieanimation((0.25 * i), v.Tint_1, v.Tint_2)
+    animation = DyWorld_biterdieanimation((0.25 * index), v.Tint_1, v.Tint_2)
   },
 })
 		end
 	elseif v.Type == "spitter" then
-		for i = 1,10 do
+		for index = 1,v.Unit_Amount do
 data:extend(
 {
   {
     type = "unit",
-    name = dy..k.."-"..i,
-	localised_name = {"enemies-name.unit", {"enemies-name."..i}, {"enemies-name."..k}},
+    name = dy..k.."-"..index,
+	localised_name = {"enemies-name.unit", {"enemies-name."..index}, {"enemies-name."..k}},
     icon = "__base__/graphics/icons/medium-biter.png",
     icon_size = 32,
     flags = {"placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable"},
-    max_health = ((v.Base_HP*i)*i),
-    order = dy..k.."-"..i,
+    max_health = ((v.Base_HP*index)*index),
+    order = dy..k.."-"..index,
     subgroup = "enemies",
-    resistances = v.Resistances,
-    healing_per_tick = ((0.01 * i) * i),
-    collision_box = scale_bounding_box({{-0.4, -0.4}, {0.4, 0.4}}, (0.25 * i)),
-    selection_box = scale_bounding_box({{-0.7, -1.5}, {0.7, 0.3}}, (0.25 * i)),
-    sticker_box = scale_bounding_box({{-0.6, -0.8}, {0.6, 0}}, (0.25 * i)),
-    distraction_cooldown = (330 - (30 * i)),
+	DyWorld_Tier = index,
+    resistances = Increase_Resistances(v.Resistances, index),
+    healing_per_tick = ((0.01 * index) * index),
+    collision_box = scale_bounding_box({{-0.4, -0.4}, {0.4, 0.4}}, (0.25 * index)),
+    selection_box = scale_bounding_box({{-0.7, -1.5}, {0.7, 0.3}}, (0.25 * index)),
+    sticker_box = scale_bounding_box({{-0.6, -0.8}, {0.6, 0}}, (0.25 * index)),
+    distraction_cooldown = (330 - (30 * index)),
     min_pursue_time = 10 * 60,
     max_pursue_distance = 50,
     attack_parameters = DyWorld_spitter_attack_parameters(
     {
-      range = (v.Attack_Range_Base * i ),
+      range = (v.Attack_Range_Base * index ),
       min_attack_distance = (v.Attack_Range_Base / 2 ),
-      cooldown = (v.Attack_Speed_Base * i),
-      damage_modifier = (1 + (i / 10)), 
-      scale = (0.25 * i),
+      cooldown = (v.Attack_Speed_Base * index),
+      damage_modifier = (1 + (index / 10)), 
+      scale = (0.25 * index),
       tint = v.Tint_1,
       roarvolume = 0.6,
-	  projectile = dy..k.."-"..i.."-projectile"
+	  projectile = dy..k.."-"..index.."-projectile"
     }),
     vision_distance = 30,
     movement_speed = v.Speed,
     distance_per_frame = 0.15,
     -- in pu
-    pollution_to_join_attack = ((v.Pollution_to_Join_Attack_Base * i) * i),
-    corpse = dy..k.."-"..i.."-corpse",
+    pollution_to_join_attack = ((v.Pollution_to_Join_Attack_Base * index) * index),
+    corpse = dy..k.."-"..index.."-corpse",
     dying_explosion = "blood-explosion-small",
     working_sound = make_biter_calls(0.4),
     dying_sound = make_biter_dying_sounds(0.5),
-    run_animation = DyWorld_spitterrunanimation((0.25 * i), v.Tint_1)
+    run_animation = DyWorld_spitterrunanimation((0.25 * index), v.Tint_1)
   },
   {
     type = "corpse",
-    name = dy..k.."-"..i.."-corpse",
-	localised_name = {"enemies-name.unit-corpse", {"enemies-name."..i}, {"enemies-name."..k}},
+    name = dy..k.."-"..index.."-corpse",
+	localised_name = {"enemies-name.unit-corpse", {"enemies-name."..index}, {"enemies-name."..k}},
     icon = "__base__/graphics/icons/medium-biter-corpse.png",
     icon_size = 32,
     selectable_in_game = false,
     selection_box = {{-1, -1}, {1, 1}},
     flags = {"placeable-neutral", "placeable-off-grid", "building-direction-8-way", "not-on-map"},
     subgroup = "corpses",
-    order = dy..k.."-"..i.."-corpse",
+    order = dy..k.."-"..index.."-corpse",
     dying_speed = 0.04,
     time_before_removed = 15 * 60 * 60,
     final_render_layer = "corpse",
-    animation = DyWorld_spitterdyinganimation((0.25 * i), v.Tint_1)
+    animation = DyWorld_spitterdyinganimation((0.25 * index), v.Tint_1)
   },
   {
     type = "projectile",
-    name = dy..k.."-"..i.."-projectile",
+    name = dy..k.."-"..index.."-projectile",
     flags = {"not-on-map"},
     acceleration = 0.005,
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
@@ -178,7 +205,7 @@ data:extend(
           },
           {
             type = "damage",
-            damage = {amount = (v.Attack_DMG_Base * i), type = v.Attack_DMG_Type}
+            damage = {amount = (v.Attack_DMG_Base * index), type = v.Attack_DMG_Type}
           }
         }
       }

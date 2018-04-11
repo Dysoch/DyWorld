@@ -1610,7 +1610,7 @@ data:extend(
         starting_frame_speed_deviation = 0.1
       },
       range = DyWorld_Material_Formulas(5, DATA.Table),
-      min_range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.15),
+      min_range = 0, --math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.15),
       turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
       sound = make_heavy_gunshot_sounds(),
     },
@@ -9389,6 +9389,28 @@ data:extend(
     fast_replaceable_group = "wall",
     repair_speed_modifier = 2,
     corpse = "wall-remnants",
+    --[[attack_reaction =
+    {
+      {
+        ---- how far the mirroring works
+        range = math.floor(Materials[DATA.Table].Hardness + 1),
+        ---- caused damage will be multiplied by this and added to the subsequent damages
+        reaction_modifier = 0.1,
+        action =
+        {
+          type = "direct",
+          action_delivery =
+          {
+            type = "instant",
+            target_effects =
+            {
+              type = "damage",
+              damage = {amount = 0.1, type = "physical"}
+            }
+          }
+        },
+      }
+    },]]
     repair_sound = { filename = "__base__/sound/manual-repair-simple.ogg" },
     mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
     vehicle_impact_sound =  { filename = "__base__/sound/car-stone-impact.ogg", volume = 1.0 },
@@ -10452,6 +10474,193 @@ data:extend(
 	if DATA.Name == "wood" then
 		data.raw.item[dy..DATA.Name.."-radar"].fuel_value = "2MJ"
 		data.raw.item[dy..DATA.Name.."-radar"].fuel_category = "chemical"
+	end
+end
+
+function DyWorld_Land_Mines(DATA)
+data:extend(
+{{
+    type = "land-mine",
+	name = dy..DATA.Name.."-mine",
+	localised_name = {"looped-name.mine", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/land-mine.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    icon_size = 32,
+    flags =
+    {
+      "placeable-player",
+      "placeable-enemy",
+      "player-creation",
+      "placeable-off-grid",
+      "not-on-map"
+    },
+    mined_sound = { filename = "__core__/sound/deconstruct-small.ogg" },
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-mine"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
+    corpse = "small-remnants",
+    collision_box = {{-0.4,-0.4}, {0.4, 0.4}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    dying_explosion = "explosion-hit",
+    picture_safe =
+    {
+      filename = "__base__/graphics/entity/land-mine/land-mine.png",
+      priority = "medium",
+      width = 32,
+      height = 32
+    },
+    picture_set =
+    {
+      filename = "__base__/graphics/entity/land-mine/land-mine-set.png",
+      priority = "medium",
+      width = 32,
+      height = 32
+    },
+    picture_set_enemy =
+    {
+      filename = "__base__/graphics/entity/land-mine/land-mine-set-enemy.png",
+      priority = "medium",
+      width = 32,
+      height = 32
+    },
+    trigger_radius = 2.5,
+    ammo_category = "landmine",
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        source_effects =
+        {
+          {
+            type = "nested-result",
+            affects_target = true,
+            action =
+            {
+              type = "area",
+              radius = 6 + Materials[DATA.Table].Hardness,
+              force = "enemy",
+              action_delivery =
+              {
+                type = "instant",
+                target_effects =
+                {
+                  {
+                    type = "damage",
+                    damage = { amount = 50 + Round(DyWorld_Material_Formulas(8, DATA.Table), 2), type = "impact"}
+                  },
+                  {
+                    type = "damage",
+                    damage = { amount = 100 + Round(DyWorld_Material_Formulas(8, DATA.Table), 2), type = "explosion"}
+                  },
+                  {
+                    type = "damage",
+                    damage = { amount = 50 + Round(DyWorld_Material_Formulas(8, DATA.Table), 2), type = DATA.DMG_Type}
+                  },
+                  {
+                    type = "create-sticker",
+                    sticker = "stun-sticker"
+                  }
+                }
+              }
+            },
+          },
+          {
+            type = "create-entity",
+            entity_name = "explosion"
+          },
+          {
+            type = "damage",
+            damage = { amount = 100 + Round(DyWorld_Material_Formulas(8, DATA.Table), 2), type = "impact"}
+          },
+          {
+            type = "damage",
+            damage = { amount = 700 + Round(DyWorld_Material_Formulas(8, DATA.Table), 2), type = "explosion"}
+          },
+          {
+            type = "damage",
+            damage = { amount = 200 + Round(DyWorld_Material_Formulas(8, DATA.Table), 2), type = DATA.DMG_Type}
+          },
+        }
+      }
+    },
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-mine",
+	localised_name = {"looped-name.mine", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/land-mine.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    icon_size = 32,
+    flags = {"goes-to-quickbar"},
+    damage_radius = 5 + Materials[DATA.Table].Hardness,
+    subgroup = dy.."mine",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-mine",
+    trigger_radius = (1 + (Materials[DATA.Table].Hardness / 2))
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-mine",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-mine",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 3}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 1}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-mine"].enabled = true
+		local result_1 = {"coal", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-mine")
+		local result_1 = {"explosives", 1}
+		local result_2 = {"coal", 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_2)
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-mine")
+		local result_1 = {"explosives", 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-mine")
+		local result_1 = {"explosives", 4}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-mine")
+		local result_1 = {"explosives", 6}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-mine")
+		local result_1 = {"explosives", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-mine"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-mine"].fuel_category = "chemical"
 	end
 end
 

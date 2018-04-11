@@ -24,6 +24,11 @@ Data_Table_Item_Group = {
 		Main = "warfare-2"
 	},
 	{
+		Name = "mine",
+		Type = "sub",
+		Main = "warfare-2"
+	},
+	{
 		Name = "gun",
 		Type = "sub",
 		Main = "warfare-2"

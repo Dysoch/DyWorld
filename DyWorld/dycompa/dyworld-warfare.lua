@@ -18,6 +18,7 @@ local Change = {
 	{Old = "stone-wall", New = dy.."stone-wall"},
 	{Old = "light-armor", New = dy.."stone-armor"},
 	{Old = "heavy-armor", New = dy.."iron-armor"},
+	{Old = "land-mine", New = dy.."stone-mine"},
 }
 
 for k,v in pairs(Change) do

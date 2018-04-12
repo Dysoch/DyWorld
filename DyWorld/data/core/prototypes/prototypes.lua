@@ -2206,6 +2206,7 @@ data:extend(
     name = dy..DATA.Name.."-basic-projectile",
     flags = {"not-on-map"},
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+	--collision_mask = {"layer-14"},
     acceleration = 0,
     direction_only = true,
     action =

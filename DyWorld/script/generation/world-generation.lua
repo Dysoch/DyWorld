@@ -30,9 +30,9 @@ function Ship_Spawner(event)
 	BuildEntity1 = "big-ship-wreck-1"
 	BuildEntity2 = "big-ship-wreck-2"
 	BuildEntity3 = "big-ship-wreck-3"
-	Ship_1_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity1, {PosX1,PosY1}, 250, 250)
-	Ship_2_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity2, {PosX2,PosY2}, 250, 250)
-	Ship_3_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity3, {PosX3,PosY3}, 250, 250)
+	Ship_1_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity1, {PosX1,PosY1}, 250, 1)
+	Ship_2_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity2, {PosX2,PosY2}, 250, 1)
+	Ship_3_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity3, {PosX3,PosY3}, 250, 1)
 	if not global.dyworld.Generation_Ship_1 then 
 		Ship_1_Created = game.surfaces[1].create_entity{name=(BuildEntity1), position=Ship_1_Pos, force=game.forces.player}
 		Ship_1_Created.insert{name="landfill", count=math.random(200)}

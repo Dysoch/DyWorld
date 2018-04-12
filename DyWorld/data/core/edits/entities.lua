@@ -1,5 +1,6 @@
 require "data/prefix"
 
+--data.raw.player.player.collision_mask = {"item-layer", "object-layer", "player-layer", "water-tile", "layer-14"}
 data.raw["assembling-machine"].centrifuge.collision_box = {{-2.4, -2.4}, {2.4, 2.4}}
 data.raw["assembling-machine"].centrifuge.selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
 data.raw["assembling-machine"].centrifuge.crafting_speed = 1

@@ -364,6 +364,10 @@ remote.add_interface("DyWorld",
 	Change_RPG_System = function(NAME)
 		global.RPG = NAME
 	end,
+	
+	Chart = function(AMOUNT)
+		game.forces.player.chart(game.player.surface, {lefttop = {x = -AMOUNT, y = -AMOUNT}, rightbottom = {x = AMOUNT, y = AMOUNT}})
+	end,
 })
 
 --commands.add_command("dyworld-debug-items", "Debug time :) (only for player 1!)", functions.Debug_Items())

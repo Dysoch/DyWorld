@@ -6,7 +6,7 @@ Date: ??. ??. 2018
   Materials System:
     - Added a new item: Land Mines
   Changes:
-    - 
+    - Added new license! Went to GNU v3 to allow me, and others, to use code from others.
   Bugfixes:
     - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
 ---------------------------------------------------------------------------------------------------

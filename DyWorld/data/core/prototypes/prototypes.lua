@@ -6415,9 +6415,7 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal-equipment"].ingredients, result_1)
 	end
-	if DATA.Name == "wood" then
-		data.raw.recipe[dy..DATA.Name.."-solar-normal-equipment"].enabled = true
-	elseif DATA.Type == "Primitive" then
+	if DATA.Type == "Primitive" then
 		DyWorld_Add_To_Tech("solar-energy", dy..DATA.Name.."-solar-normal-equipment")
 	elseif DATA.Type == "Basic" then
 		DyWorld_Add_To_Tech("solar-energy-2", dy..DATA.Name.."-solar-normal-equipment")

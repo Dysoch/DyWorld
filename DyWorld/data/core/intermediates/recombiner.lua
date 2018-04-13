@@ -21,7 +21,7 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions = 0.5
+      emissions = 0.01
     },
     energy_usage = "2500kW", --"25kW",
     ingredient_count = 25,

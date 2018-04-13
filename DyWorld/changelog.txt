@@ -14,6 +14,8 @@ Date: ??. ??. 2018
     - Made the spawned rocks have the correct hardness
   Graphics:
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
+  Balancing:
+    - Recombiner and Splicer now have much lower pollution output (1/50th to be exact)
   Bugfixes:
     - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
     - Fixed wooden solar equipment being available from the start

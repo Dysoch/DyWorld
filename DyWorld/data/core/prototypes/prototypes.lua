@@ -688,9 +688,8 @@ data:extend(
 	localised_name = {"looped-name.belt", {"looped-name."..DATA.Name}},
     icons =
 	{
-	  {
-		icon = "__base__/graphics/icons/transport-belt.png",
-	  },
+	  { icon = dyworld_path_icon.."belt-icon-base.png" },
+      { icon = dyworld_path_icon.."belt-icon-mask.png", tint = Material_Colors[DATA.Table] },
 	  Materials[DATA.Table].Icon,
 	},
 	icon_size = 32,
@@ -711,27 +710,56 @@ data:extend(
       max_sounds_per_type = 3
     },
     animation_speed_coefficient = 32,
-    animations =
-    {
-      filename = "__base__/graphics/entity/transport-belt/transport-belt.png",
-      priority = "extra-high",
-      width = 40,
-      height = 40,
-      frame_count = 16,
-      direction_count = 12,
-	  tint = Material_Colors[DATA.Table],
-      hr_version =
-      {
-        filename = "__base__/graphics/entity/transport-belt/hr-transport-belt.png",
-        priority = "extra-high",
-        width = 80,
-        height = 80,
-        scale = 0.5,
-        frame_count = 16,
-        direction_count = 12,
-		tint = Material_Colors[DATA.Table],
-      }
-    },
+    animations = {
+	  layers = {
+		{
+		  filename = dyworld_path_entity.."lr-belt-base.png",
+		  priority = "extra-high",
+		  width = 40,
+		  height = 40,
+		  line_length = 32,
+		  frame_count = 32,
+		  direction_count = 12,
+		  flags = { "no-crop", "low-object" },
+		  hr_version =
+		  {
+			filename = dyworld_path_entity.."hr-belt-base.png",
+			priority = "extra-high",
+			width = 80,
+			height = 80,
+			scale = 0.5,
+			line_length = 32,
+			frame_count = 32,
+			direction_count = 12,
+			flags = { "no-crop", "low-object" },
+		  },
+		},
+		{
+		  filename = dyworld_path_entity.."lr-belt-mask.png",
+		  priority = "extra-high",
+		  width = 40,
+		  height = 40,
+		  line_length = 32,
+		  frame_count = 32,
+		  direction_count = 12,
+		  tint = Material_Colors[DATA.Table],
+		  flags = { "no-crop", "low-object" },
+		  hr_version =
+		  {
+			filename = dyworld_path_entity.."hr-belt-mask.png",
+			priority = "extra-high",
+			width = 80,
+			height = 80,
+			scale = 0.5,
+			line_length = 32,
+			frame_count = 32,
+			direction_count = 12,
+			tint = Material_Colors[DATA.Table],
+			flags = { "no-crop", "low-object" },
+		  },
+		},
+	  },
+	},
     belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
     belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
     ending_top = DyWorld_basic_belt_ending_top(Material_Colors[DATA.Table]),
@@ -754,9 +782,8 @@ data:extend(
 	localised_name = {"looped-name.underground-belt", {"looped-name."..DATA.Name}},
     icons =
 	{
-	  {
-		icon = "__base__/graphics/icons/underground-belt.png",
-	  },
+	  { icon = dyworld_path_icon.."under-icon-base.png" },
+      { icon = dyworld_path_icon.."under-icon-mask.png", tint = Material_Colors[DATA.Table] },
 	  Materials[DATA.Table].Icon,
 	},
 	icon_size = 32,
@@ -807,55 +834,84 @@ data:extend(
     ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
     speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
-    structure =
-    {
-      direction_in =
-      {
-        sheet =
-        {
-          filename = "__base__/graphics/entity/underground-belt/underground-belt-structure.png",
-          priority = "extra-high",
-          shift = {0.25, 0},
-          width = 57,
-          height = 43,
-          y = 43,
-		  tint = Material_Colors[DATA.Table],
-          hr_version =
+    structure = {
+      direction_in = {
+        sheets = {
           {
-            filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure.png",
+            hr_version = {
+              filename = dyworld_path_entity.."hr-under-base.png",
+              height = 64,
+              priority = "extra-high",
+              width = 80,
+              scale = 0.5,
+              shift = { 0.125, 0 },
+            },
+            filename = dyworld_path_entity.."lr-under-base.png",
+            height = 32,
             priority = "extra-high",
-            shift = {0.15625, 0.0703125},
-            width = 106,
-            height = 85,
-            y = 85,
-            scale = 0.5,
-			tint = Material_Colors[DATA.Table],
-          }
-        }
+            width = 40,
+            scale = 1,
+            shift = { 0.125, 0 },
+          },
+          {
+            hr_version = {
+              filename = dyworld_path_entity.."hr-under-mask.png",
+              height = 64,
+              priority = "extra-high",
+              width = 80,
+              scale = 0.5,
+              tint = Material_Colors[DATA.Table],
+              shift = { 0.125, 0 },
+              y = 64,
+            },
+            filename = dyworld_path_entity.."lr-under-mask.png",
+            height = 32,
+            priority = "extra-high",
+            width = 40,
+            scale = 1,
+            tint = Material_Colors[DATA.Table],
+            shift = { 0.125, 0 },
+            y = 32,
+          },
+        },
       },
-      direction_out =
-      {
-        sheet =
-        {
-          filename = "__base__/graphics/entity/underground-belt/underground-belt-structure.png",
-          priority = "extra-high",
-          shift = {0.25, 0},
-          width = 57,
-          height = 43,
-		  tint = Material_Colors[DATA.Table],
-          hr_version =
+      direction_out = {
+        sheets = {
           {
-            filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure.png",
+            hr_version = {
+              filename = dyworld_path_entity.."hr-under-base.png",
+              height = 64,
+              priority = "extra-high",
+              width = 80,
+              scale = 0.5,
+              shift = { 0.125, 0 },
+            },
+            filename = dyworld_path_entity.."lr-under-base.png",
+            height = 32,
             priority = "extra-high",
-            shift = {0.15625, 0.0703125},
-            width = 106,
-            height = 85,
-            scale = 0.5,
-			tint = Material_Colors[DATA.Table],
-          }
-
-        }
-
+            width = 40,
+            scale = 1,
+            shift = { 0.125, 0 },
+          },
+          {
+            hr_version = {
+              filename = dyworld_path_entity.."hr-under-mask.png",
+              height = 64,
+              priority = "extra-high",
+              width = 80,
+              scale = 0.5,
+              tint = Material_Colors[DATA.Table],
+              shift = { 0.125, 0 },
+            },
+            filename = dyworld_path_entity.."lr-under-mask.png",
+            height = 32,
+            priority = "extra-high",
+            width = 40,
+            scale = 1,
+            tint = Material_Colors[DATA.Table],
+            shift = { 0.125, 0 },
+          },
+        },
       }
     },
   },
@@ -994,9 +1050,8 @@ data:extend(
 	localised_name = {"looped-name.loader", {"looped-name."..DATA.Name}},
     icons =
 	{
-	  {
-		icon = "__base__/graphics/icons/loader.png",
-	  },
+	  { icon = dyworld_path_icon.."loader-icon-base.png" },
+      { icon = dyworld_path_icon.."loader-icon-mask.png", tint = Material_Colors[DATA.Table] },
 	  Materials[DATA.Table].Icon,
 	},
 	icon_size = 32,
@@ -1006,8 +1061,8 @@ data:extend(
     filter_count = 5,
     corpse = "small-remnants",
     resistances = Material_Resistances[DATA.Table],
-    collision_box = {{-0.4, -0.9}, {0.4, 0.9}},
-    selection_box = {{-0.5, -1}, {0.5, 1}},
+    collision_box = {{-0.2, -0.2}, {0.2, 0.2}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     animation_speed_coefficient = 32,
     belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
     belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
@@ -1020,38 +1075,100 @@ data:extend(
     ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
     speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
-    structure =
-    {
-      direction_in =
-      {
-        sheet =
-        {
-          filename = "__base__/graphics/entity/loader/loader-structure.png",
-          priority = "extra-high",
-          width = 64,
-          height = 64,
-		  tint = Material_Colors[DATA.Table],
+	belt_distance = 0,
+    container_distance = 1.0,
+    belt_length = 0.5,
+    structure = {
+        direction_in = {
+            sheets = {
+                {
+                    hr_version = {
+                        filename = dyworld_path_entity.."hr-loader-base.png",
+                        height = 64,
+                        priority = "extra-high",
+                        width = 80,
+                        scale = 0.5,
+                        shift = { 0.125, 0 }
+                    },
+                    filename = dyworld_path_entity.."lr-loader-base.png",
+                    height = 32,
+                    priority = "extra-high",
+                    width = 40,
+                    scale = 1,
+                    shift = { 0.125, 0 }
+                },
+                {
+                    hr_version = {
+                        filename = dyworld_path_entity.."hr-loader-mask.png",
+                        height = 64,
+                        priority = "extra-high",
+                        width = 80,
+                        scale = 0.5,
+                        tint = Material_Colors[DATA.Table],
+                        shift = { 0.125, 0 }
+                    },
+                    filename = dyworld_path_entity.."lr-loader-mask.png",
+                    height = 32,
+                    priority = "extra-high",
+                    width = 40,
+                    scale = 1,
+                    tint = Material_Colors[DATA.Table],
+                    shift = { 0.125, 0 }
+                },
+            },
+        },
+        direction_out = {
+            sheets = {
+                {
+                    hr_version = {
+                        filename = dyworld_path_entity.."hr-loader-base.png",
+                        height = 64,
+                        priority = "extra-high",
+                        width = 80,
+                        scale = 0.5,
+                        shift = { 0.125, 0 },
+                    },
+                    filename = dyworld_path_entity.."lr-loader-base.png",
+                    height = 32,
+                    priority = "extra-high",
+                    width = 40,
+                    scale = 1,
+                    shift = { 0.125, 0 },
+                },
+                {
+                    hr_version = {
+                        filename = dyworld_path_entity.."hr-loader-mask.png",
+                        height = 64,
+                        priority = "extra-high",
+                        width = 80,
+                        scale = 0.5,
+                        tint = Material_Colors[DATA.Table],
+                        shift = { 0.125, 0 },
+                        y = 64
+                    },
+                    filename = dyworld_path_entity.."lr-loader-mask.png",
+                    height = 32,
+                    priority = "extra-high",
+                    width = 40,
+                    scale = 1,
+                    tint = Material_Colors[DATA.Table],
+                    shift = { 0.125, 0 },
+                    y = 32
+                },
+            },
         }
-      },
-      direction_out =
-      {
-        sheet =
-        {
-          filename = "__base__/graphics/entity/loader/loader-structure.png",
-          priority = "extra-high",
-          width = 64,
-          height = 64,
-          y = 64,
-		  tint = Material_Colors[DATA.Table],
-        }
-      }
     },
   },
   {
     type = "item",
     name = dy..DATA.Name.."-transport-belt",
 	localised_name = {"looped-name.belt", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/transport-belt.png"}, Materials[DATA.Table].Icon},
+    icons =
+	{
+	  { icon = dyworld_path_icon.."belt-icon-base.png" },
+      { icon = dyworld_path_icon.."belt-icon-mask.png", tint = Material_Colors[DATA.Table] },
+	  Materials[DATA.Table].Icon,
+	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-belt",
     stack_size = 200,
@@ -1062,7 +1179,12 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-underground-belt",
 	localised_name = {"looped-name.underground-belt", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/underground-belt.png"}, Materials[DATA.Table].Icon},
+    icons =
+	{
+	  { icon = dyworld_path_icon.."under-icon-base.png" },
+      { icon = dyworld_path_icon.."under-icon-mask.png", tint = Material_Colors[DATA.Table] },
+	  Materials[DATA.Table].Icon,
+	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-underground",
     stack_size = 200,
@@ -1084,7 +1206,12 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-loader",
 	localised_name = {"looped-name.loader", {"looped-name."..DATA.Name}},
-	icons = {{icon = "__base__/graphics/icons/loader.png"}, Materials[DATA.Table].Icon},
+    icons =
+	{
+	  { icon = dyworld_path_icon.."loader-icon-base.png" },
+      { icon = dyworld_path_icon.."loader-icon-mask.png", tint = Material_Colors[DATA.Table] },
+	  Materials[DATA.Table].Icon,
+	},
     flags = {"goes-to-quickbar"},
     subgroup = dy.."transport-loader",
     stack_size = 200,

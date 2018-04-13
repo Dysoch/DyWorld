@@ -13,6 +13,7 @@ require "script/gui/gui_click"
 require "script/stats/functions"
 require "script/generation/noise"
 require "script/generation/world-generation"
+require "script/functions/loaders"
 
 debugger = false
 debug_test = settings.startup["DyWorld_Debug"].value
@@ -145,6 +146,9 @@ script.on_event(defines.events.on_picked_up_item, function(event)
 end)
 
 script.on_event(defines.events.on_built_entity, function(event)
+	if string.find(event.created_entity.name, "dyworld-", 1, true) and string.find(event.created_entity.name, "-loader", 1, true) then
+		loaders.DyWorld_Loaders_Rotate(event)
+	end
 	if global.dyworld.RPG_Mode == "normal" then
 		stats_functions.IncrementerGlobal("build", 1)
 		stats_functions.IncrementerPersonal("build", 1, event.player_index)

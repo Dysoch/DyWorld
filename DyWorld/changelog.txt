@@ -12,6 +12,8 @@ Date: ??. ??. 2018
   Changes:
     - Added new license! Went to GNU GPL v3 to allow me, and others, to use code from others and share more freely among each other
     - Made the spawned rocks have the correct hardness
+    - Disabled Level Unlocks till further notice (will be revamped in 0.8.x)
+    - Centrifuge now available from the start
   Graphics:
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
   Balancing:

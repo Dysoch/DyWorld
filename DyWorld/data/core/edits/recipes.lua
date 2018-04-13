@@ -1,6 +1,7 @@
 require "data/prefix"
 
 data.raw.recipe.centrifuge.ingredients = {{"iron-plate", 25}, {"stone", 100}, {"electronic-circuit", 25}, {"iron-gear-wheel", 10}}
+data.raw.recipe.centrifuge.enabled = true
 data.raw.recipe["basic-oil-processing"].results = {
     {type = "fluid", name = "dyworld-clean-oil", amount = 50},
 	{type = "fluid", name = "dyworld-sludge", amount = 40},

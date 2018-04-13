@@ -84,7 +84,7 @@ function Level_Up(ID)
 		global.players[ID].XP_LevelUp = math.floor(global.players[ID].XP_LevelUp*(1.25+math.random()))
 		PlayerPrint({"dyworld.levelup", (global.players[ID].Level), (game.players[ID].name)})
 		debug(game.players[ID].name.." leveled up to level "..global.players[ID].Level)
-		LevelUnlock(ID, global.players[ID].Level)
+		--LevelUnlock(ID, global.players[ID].Level)
 	end
 end
 

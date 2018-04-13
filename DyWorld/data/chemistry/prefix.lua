@@ -95,6 +95,8 @@ Compounds = {
 	["coal"] = {
 		Mass = 0, 
 		Type = "item",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "intermediate",
 		Elements = {["sulfur"] = 3, ["oxygen"] = 17, ["hydrogen"] = 5, ["carbon"] = 75},
 	},
 	["cellulose"] = {
@@ -135,6 +137,8 @@ Compounds = {
 	["dyworld-water-clean"] = {
 		Mass = 0, 
 		Type = "fluid",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "intermediate",
 		Elements = {["oxygen"] = 67, ["hydrogen"] = 33},
 	},
 	["dyworld-carbon-dioxide"] = {
@@ -150,41 +154,63 @@ Compounds = {
 	["dyworld-methane"] = {
 		Mass = 0, 
 		Type = "fluid",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "advanced",
 		Elements = {["carbon"] = 20, ["hydrogen"] = 80},
+	},
+	["dyworld-acid"] = {
+		Mass = 0, 
+		Type = "fluid",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "advanced",
+		Elements = {["hydrogen"] = 20, ["nitrogen"] = 20, ["oxygen"] = 60},
 	},
 	["petroleum"] = {
 		Mass = 0, 
 		Type = "fluid",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "advanced",
 		Elements = {["carbon"] = 85, ["hydrogen"] = 10, ["nitrogen"] = 2, ["oxygen"] = 1, ["sulfur"] = 2},
 	},
 	["crude-oil"] = {
 		Mass = 0, 
 		Type = "fluid",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "intermediate",
 		Elements = {["carbon"] = 85, ["hydrogen"] = 10, ["nitrogen"] = 2, ["oxygen"] = 1, ["sulfur"] = 2},
 	},
 	["stone"] = {
 		Mass = 0, 
 		Type = "item",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "intermediate",
 		Compounds = {["silica"] = 78, ["alumina"] = 17, ["ferrous-oxide"] = 2, ["diferrous-trioxide"] = 3},
 	},
 	["stone-brick"] = {
 		Mass = 0, 
 		Type = "item",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "advanced",
 		Elements = {["carbon"] = 50},
 		Compounds = {["silica"] = 39, ["alumina"] = 8.5, ["ferrous-oxide"] = 1, ["diferrous-trioxide"] = 1.5},
 	},
 	["raw-wood"] = {
 		Mass = 0, 
 		Type = "item",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "intermediate",
 		Compounds = {["cellulose"] = 40, ["hemicellulose"] = 32, ["lignin"] = 28},
 	},
 	["wood"] = {
 		Mass = 0, 
 		Type = "item",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "advanced",
 		Elements = {["carbon"] = 7.5},
 		Compounds = {["cellulose"] = 17.5, ["hemicellulose"] = 13.5, ["lignin"] = 11.5},
 	},
 }
+
 for k,v in pairs(Compounds) do
 	Mass_Calc(k)
 end

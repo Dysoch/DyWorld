@@ -16,7 +16,7 @@ data:extend(
     {
       {type = "fluid", name = v.Name, amount = 1},
     },
-    results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
+    results = {{type = "fluid", name = dy.."atoms", amount = Round(v.Mass, 0)}},
   },
 })
 DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-liquid>atom-"..v.Name)
@@ -37,7 +37,7 @@ data:extend(
     {
       {type = "item", name = v.Name, amount = 1},
     },
-    results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
+    results = {{type = "fluid", name = dy.."atoms", amount = Round(v.Mass, 0)}},
   },
 })
 DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-solid>atom-"..v.Name)
@@ -55,7 +55,7 @@ data:extend(
     enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)},
+      {type = "fluid", name = dy.."atoms", amount = Round(v.Mass, 0)},
     },
     results = {{type = "fluid", name = v.Name, amount = 1}},
   },
@@ -75,7 +75,7 @@ data:extend(
     enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)},
+      {type = "fluid", name = dy.."atoms", amount = Round(v.Mass, 0)},
     },
     results = {{type = "item", name = v.Name, amount = 1}},
   },

@@ -70,7 +70,7 @@ local Data_Table = {
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Pressure = 0.85, 
 		Barrel = true,
-	},
+	},--[[
 	{
 		Name = "oxygen",
 		Icon = dyworld_path_fluid.."oxygen.png",
@@ -90,7 +90,7 @@ local Data_Table = {
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Pressure = 0.85, 
 		Barrel = true,
-	},
+	},]]
 	{
 		Name = "blood",
 		Icon = dyworld_path_fluid.."blood.png",

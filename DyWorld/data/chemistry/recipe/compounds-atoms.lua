@@ -17,7 +17,7 @@ function Chemistry_Compound_to_Atoms(k, v)
 			{
 			  {type = "item", name = k, amount = 1},
 			},
-			results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
+			results = {{type = "fluid", name = dy.."atoms", amount = Round(v.Mass, 0)}},
 		  },
 		})
 		DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-compound>atom-"..k)
@@ -36,7 +36,7 @@ function Chemistry_Compound_to_Atoms(k, v)
 			{
 			  {type = "fluid", name = k, amount = 1},
 			},
-			results = {{type = "fluid", name = dy.."atoms", amount = math.floor(v.Mass)}},
+			results = {{type = "fluid", name = dy.."atoms", amount = Round(v.Mass, 0)}},
 		  },
 		})
 		DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-compound>atom-"..k)

@@ -28,6 +28,11 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "chemistry"
 	},
+	{
+		Name = "atoms>compounds",
+		Type = "sub",
+		Main = "chemistry"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

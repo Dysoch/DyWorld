@@ -99,3 +99,7 @@ data.raw["assembling-machine"].centrifuge.fluid_boxes =
       },
       off_when_no_fluid_recipe = true
     }
+
+data.raw["simple-entity"]["sand-rock-big"].minable.hardness = ( Materials["Stone"].Hardness / 2)
+data.raw["simple-entity"]["rock-big"].minable.hardness = ( Materials["Stone"].Hardness / 2)
+data.raw["simple-entity"]["rock-huge"].minable.hardness = ( Materials["Stone"].Hardness / 2)

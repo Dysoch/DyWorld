@@ -14,6 +14,7 @@ Date: ??. ??. 2018
     - Made the spawned rocks have the correct hardness
     - Disabled Level Unlocks till further notice (will be revamped in 0.8.x)
     - Centrifuge now available from the start
+    - Science packs can no longer be used with productivity modules 
   Graphics:
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
   Balancing:
@@ -21,6 +22,7 @@ Date: ??. ??. 2018
   Bugfixes:
     - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
     - Fixed wooden solar equipment being available from the start
+    - Fixed productivity modules be able to be used on everything
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.5
 Date: 07. 04. 2018

@@ -323,6 +323,59 @@ local result = {type = "unlock-recipe", recipe = RECIPE}
 	table.insert(data.raw.technology[TECH].effects, result)
 end
 
+function DyWorld_Add_To_Productivity_Module(RECIPE)
+	if data.raw.recipe[RECIPE] then
+		for i, module in pairs(data.raw.module) do
+			if module.limitation and module.effect.productivity then
+				table.insert(module.limitation, RECIPE)
+			end
+		end
+	else
+		log("Recipe " .. RECIPE .. " does not exist.")
+	end
+end
+
+function DyWorld_Module_Limitation_Productivity()
+return
+      {
+        "sulfuric-acid",
+        "basic-oil-processing",
+        "advanced-oil-processing",
+        "coal-liquefaction",
+        "heavy-oil-cracking",
+        "light-oil-cracking",
+        "solid-fuel-from-light-oil",
+        "solid-fuel-from-heavy-oil",
+        "solid-fuel-from-petroleum-gas",
+        "lubricant",
+        "wood",
+        "iron-plate",
+        "copper-plate",
+        "steel-plate",
+        "stone-brick",
+        "sulfur",
+        "plastic-bar",
+        "empty-barrel",
+        "uranium-processing",
+        "copper-cable",
+        "iron-stick",
+        "iron-gear-wheel",
+        "electronic-circuit",
+        "advanced-circuit",
+        "processing-unit",
+        "engine-unit",
+        "electric-engine-unit",
+        "uranium-fuel-cell",
+        "explosives",
+        "battery",
+        "flying-robot-frame",
+        "low-density-structure",
+        "rocket-fuel",
+        "rocket-control-unit",
+        "rocket-part",
+      }
+end
+
 function DyWorld_Projectile_1(DATA, NMB)
 	local result =
   {
@@ -10160,6 +10213,8 @@ data:extend(
     order = dy..DATA.Name.."-module-productivity",
     stack_size = 50,
     default_request_amount = 10,
+    limitation = DyWorld_Module_Limitation_Productivity(),
+    limitation_message_key = "production-module-usable-only-on-intermediates",
     effect = 
     {
       productivity = {bonus = DyWorld_Material_Formulas(14, DATA.Table)},

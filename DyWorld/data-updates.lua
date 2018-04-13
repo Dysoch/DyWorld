@@ -298,3 +298,15 @@ elseif settings.startup["DyWorld_Warfare_Difficulty"].value == 5 then
 		v.spawning_cooldown[2] = v.spawning_cooldown[2] * 0.125
 	end	
 end
+
+-- remove all science packs from productivity modules
+for k,v in pairs(data.raw.module) do
+	if v.limitation and v.effect.productivity then
+		v.limitation = data.raw.module["productivity-module-3"].limitation
+		for index, name in pairs(v.limitation) do
+			if string.find(name, "science-pack", 1, true) then
+				table.remove(v.limitation, index)
+			end
+		end
+	end
+end

@@ -6,6 +6,7 @@ Date: ??. ??. 2018
     - Loaders now snap to entities with inventories. Same functionality as DeadLockLoaders. (Taken with his permission, legal stuff can be found in legal folder inside zip folder)
   Materials System:
     - Added a new item: Land Mines
+    - Added a new item: Rockets
   Chemistry:
     - Add the ability to recombine into certain compounds. 
     - Made recipes round their numbers better, so that it is more accurate numbers.

@@ -9,6 +9,7 @@ require("data.warfare.armor.normal")
 
 require("data.warfare.ammo.bullet")
 require("data.warfare.ammo.grenades")
+require("data.warfare.ammo.rocket")
 
 require("data.warfare.walls.walls")
 

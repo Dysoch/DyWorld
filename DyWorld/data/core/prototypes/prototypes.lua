@@ -3385,6 +3385,160 @@ data:extend(
 	end
 end
 
+function DyWorld_Rockets(DATA)
+data:extend(
+{
+  {
+    type = "projectile",
+    name = dy..DATA.Name.."-rocket-projectile",
+    flags = {"not-on-map"},
+    acceleration = 0.005,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "create-entity",
+            entity_name = "explosion"
+          },
+          {
+            type = "damage",
+            damage = {amount = Round(((DyWorld_Material_Formulas(8, DATA.Table) * 2.5) * 0.05), 2), type = "impact"}
+          },
+          {
+            type = "damage",
+            damage = {amount = Round(((DyWorld_Material_Formulas(8, DATA.Table) * 2.5) * 0.20), 2), type = DATA.DMG_Type}
+          },
+          {
+            type = "damage",
+            damage = {amount = Round(((DyWorld_Material_Formulas(8, DATA.Table) * 2.5) * 0.75), 2), type = "explosion"}
+          },
+          {
+            type = "create-entity",
+            entity_name = "small-scorchmark",
+            check_buildability = true
+          }
+        }
+      }
+    },
+    light = {intensity = 0.5, size = 4},
+    animation =
+    {
+      filename = "__base__/graphics/entity/rocket/rocket.png",
+      frame_count = 8,
+      line_length = 8,
+      width = 9,
+      height = 35,
+      shift = {0, 0},
+      priority = "high"
+    },
+    shadow =
+    {
+      filename = "__base__/graphics/entity/rocket/rocket-shadow.png",
+      frame_count = 1,
+      width = 7,
+      height = 24,
+      priority = "high",
+      shift = {0, 0}
+    },
+    smoke =
+    {
+      {
+        name = "smoke-fast",
+        deviation = {0.15, 0.15},
+        frequency = 1,
+        position = {0, -1},
+        slow_down_factor = 1,
+        starting_frame = 3,
+        starting_frame_deviation = 5,
+        starting_frame_speed = 0,
+        starting_frame_speed_deviation = 5
+      }
+    }
+  },
+  {
+    type = "ammo",
+    name = dy..DATA.Name.."-rocket",
+	localised_name = {"looped-name.rocket", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/rocket.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},  
+    icon_size = 32,  
+    flags = {"goes-to-main-inventory"},
+    ammo_type =
+    {
+      category = "rocket",
+      action =
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "projectile",
+          projectile = dy..DATA.Name.."-rocket-projectile",
+          starting_speed = 0.1,
+          max_range = (DyWorld_Material_Formulas(5, DATA.Table) + 10),
+		  direction_deviation = 0.05,
+          range_deviation = 0.15,
+          source_effects =
+          {
+            type = "create-entity",
+            entity_name = "explosion-hit"
+          }
+        }
+      }
+    },
+    subgroup = dy.."rocket",
+    order = DATA.Name,
+    magazine_size = Round((DyWorld_Material_Formulas(7, DATA.Table) / 2), 0),
+    stack_size = 200
+  },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-rocket",
+    energy_required = 1,
+	enabled = false,
+    ingredients = {{"electronic-circuit", 1},{"explosives", 1}},
+    result = dy..DATA.Name.."-rocket",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-rocket"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-rocket"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-rocket"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-rocket")
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-rocket")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-rocket")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-rocket")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-rocket")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("military-7", dy..DATA.Name.."-rocket")
+	end
+	if DATA.Name == "wood" then
+		data.raw.ammo[dy..DATA.Name.."-rocket"].fuel_value = "2MJ"
+		data.raw.ammo[dy..DATA.Name.."-rocket"].fuel_category = "chemical"
+	end
+end
+
 function DyWorld_Pumps(DATA)
 data:extend(
 {

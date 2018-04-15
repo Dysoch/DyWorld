@@ -1,6 +1,9 @@
 require "data/prefix"
 
 local Change = {
+	{Old = "rocket", New = dy.."stone-rocket"},
+	{Old = "explosive-rocket", New = dy.."steel-rocket"},
+	{Old = "atomic-bomb", New = dy.."uranium-rocket"},
 	{Old = "radar", New = dy.."iron-radar"},
 	{Old = "gun-turret", New = dy.."stone-gun-turret"},
 	{Old = "laser-turret", New = dy.."iron-laser-turret"},

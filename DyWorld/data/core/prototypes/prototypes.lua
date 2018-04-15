@@ -7714,7 +7714,7 @@ data:extend(
       usage_priority = "secondary-input"
     },
     energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 100).."kW",
-    mining_power = (Materials[DATA.Table].Hardness + 0.5),
+    mining_power = Round(Materials[DATA.Table].Hardness + (Materials[DATA.Table].Hardness / 2), 2),
     resource_searching_radius = (math.floor(Materials[DATA.Table].Hardness / 2) + 0.49),
     vector_to_place_result = {0, -1.85},
     module_specification =

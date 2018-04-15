@@ -1,4 +1,7 @@
 
+--- Original ---
+https://mods.factorio.com/mod/DeadlockLoaders made by Deadlock989. This is an alteration of his work
+
 --- Permissions ---
 Permission given by Deadlock989 on April 11 2018.
 
@@ -9,6 +12,7 @@ Script to snap Loaders to entities with inventories
 --- Changes Made ---
 Graphical assets are unchanged, script to color the masks are made by Dysoch.
 Scripting code was taken entirely, and altered to fit the use inside DyWorld. This includes new strings for settings, and the renaming of functions.
+Alteration were made on April 2018 (12th and 13th)
 
 --- Original Links ---
 Forum Post DeadLockLoaders: https://forums.factorio.com/viewtopic.php?f=94&t=57264

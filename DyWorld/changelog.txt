@@ -19,6 +19,7 @@ Date: ??. ??. 2018
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
   Balancing:
     - Recombiner and Splicer now have much lower pollution output (1/50th to be exact)
+    - Increased Electric Mining drills mining power. They are now 50% more powerful
   Bugfixes:
     - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
     - Fixed wooden solar equipment being available from the start

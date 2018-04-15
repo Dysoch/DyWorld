@@ -24,6 +24,8 @@ Date: ??. ??. 2018
     - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
     - Fixed wooden solar equipment being available from the start
     - Fixed productivity modules be able to be used on everything
+  Warfare:
+    - Added first 30 enemies (total now 50)! Fuerion, Zaptoid and Radicus! They spawn like the normal spawners, with base game generation.
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.5
 Date: 07. 04. 2018

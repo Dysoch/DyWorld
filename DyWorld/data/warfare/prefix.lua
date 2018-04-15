@@ -53,6 +53,7 @@ Enemies = {
 		Unit_Amount = 10,
 		Spawner = true,
 		Spawn_Method = "base",
+		Spawner_Strength = 3.5,
 		Resistances = {
 			{type = "physical", decrease = 1, percent = 1.5, maxed = false, negative = true},
 			{type = "impact", decrease = 1, percent = 1, maxed = false, negative = true},
@@ -76,6 +77,7 @@ Enemies = {
 		Unit_Amount = 10,
 		Spawner = true,
 		Spawn_Method = "base",
+		Spawner_Strength = 2,
 		Resistances = {
 			{type = "physical", decrease = 1, percent = 1.5, maxed = false, negative = false},
 			{type = "impact", decrease = 1, percent = 1, maxed = false, negative = false},
@@ -99,6 +101,7 @@ Enemies = {
 		Unit_Amount = 10,
 		Spawner = true,
 		Spawn_Method = "base",
+		Spawner_Strength = 5,
 		Resistances = {
 			{type = "physical", decrease = 1, percent = 1.5, maxed = false, negative = false},
 			{type = "impact", decrease = 1, percent = 1, maxed = false, negative = false},

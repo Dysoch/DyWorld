@@ -23,3 +23,4 @@ require("data.warfare.turrets.laser")
 require("data.warfare.turrets.grenade")
 
 require("data.warfare.enemies.units")
+require("data.warfare.enemies.spawner")

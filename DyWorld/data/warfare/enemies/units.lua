@@ -68,7 +68,7 @@ data:extend(
       type = "projectile",
       ammo_category = "melee",
       ammo_type = DyWorld_make_unit_melee_ammo_type((v.Attack_DMG_Base * index), v.Attack_DMG_Type),
-      range = (v.Attack_Range_Base * index),
+      range = Round((v.Attack_Range_Base + ((v.Attack_Range_Base * index) * 0.1)), 0),
       cooldown = v.Attack_Speed_Base,
       sound = make_biter_roars(0.5),
       animation = DyWorld_biterattackanimation((0.25 * index), v.Tint_1, v.Tint_2)

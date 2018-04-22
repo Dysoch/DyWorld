@@ -6,6 +6,7 @@ require("data.warfare.edits.items")
 require("data.warfare.edits.recipes")
 
 require("data.warfare.armor.normal")
+require("data.warfare.armor.modular")
 
 require("data.warfare.ammo.bullet")
 require("data.warfare.ammo.grenades")

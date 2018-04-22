@@ -65,6 +65,10 @@ local Data_Table = {
 		Name = "radiation",
 		Type = "dmg"
 	},
+	{
+		Name = "vehicle",
+		Type = "equipment"
+	},
 }
 
 function DyWorld_Damage_Type(NAME)
@@ -107,6 +111,15 @@ function DyWorld_Ammo_Type(NAME)
   local result =
   {
     type = "ammo-category",
+    name = NAME
+  }
+  return result
+end
+
+function DyWorld_Equipment_Category(NAME)
+  local result =
+  {
+    type = "equipment-category",
     name = NAME
   }
   return result
@@ -155,6 +168,11 @@ for k,v in pairs(Data_Table) do
 		data:extend(
 			{
 				DyWorld_Ammo_Type(v.Name)
+			})
+	elseif v.Type == "equipment" then
+		data:extend(
+			{
+				DyWorld_Equipment_Category(v.Name)
 			})
 	elseif v.Type == "noise" then
 		data:extend(

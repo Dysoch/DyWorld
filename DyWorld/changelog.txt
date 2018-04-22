@@ -7,6 +7,7 @@ Date: ??. ??. 2018
   Materials System:
     - Added a new item: Land Mines
     - Added a new item: Rockets
+    - Added a new armor: Modular Armors. Grid Space is based on the material's Hardness and Density. Provides NO inventory slot bonuses!
   Chemistry:
     - Add the ability to recombine into certain compounds. 
     - Made recipes round their numbers better, so that it is more accurate numbers.
@@ -21,6 +22,7 @@ Date: ??. ??. 2018
   Balancing:
     - Recombiner and Splicer now have much lower pollution output (1/50th to be exact)
     - Increased Electric Mining drills mining power. They are now 50% more powerful
+    - DyWorld Locomotives now have a Grid Space for use of different equipments.
   Bugfixes:
     - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
     - Fixed wooden solar equipment being available from the start

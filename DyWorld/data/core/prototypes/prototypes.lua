@@ -81,6 +81,26 @@ function DyWorld_Item(DATA, NMB)
   return result
 end
 
+function DyWorld_Equipment_Grid(DATA)
+data:extend(
+{
+  {
+    type = "equipment-grid",
+    name = dy..DATA.Name.."-equipment-grid",
+    width = Round(Materials[DATA.Table].Density, 0),
+    height = Round(Materials[DATA.Table].Hardness, 0),
+    equipment_categories = {"armor"}
+  },
+  {
+    type = "equipment-grid",
+    name = dy..DATA.Name.."-vehicle-grid",
+    width = Round(Materials[DATA.Table].Density, 0),
+    height = Round(Materials[DATA.Table].Hardness, 0),
+    equipment_categories = {"vehicle"}
+  },
+})
+end
+
 function DyWorld_Item_Ore(DATA)
   local result =
   {
@@ -10632,6 +10652,64 @@ data:extend(
 		DyWorld_Add_To_Tech("complex-alloy-armor", dy..DATA.Name.."-armor")
 	elseif DATA.Type == "Super_Alloy" then
 		DyWorld_Add_To_Tech("super-alloy-armor", dy..DATA.Name.."-armor")
+	end
+end
+
+function DyWorld_Armor_Modular(DATA)
+data:extend(
+{
+  {
+    type = "armor",
+	name = dy..DATA.Name.."-modular-armor",
+	localised_name = {"looped-name.armor-2", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/modular-armor.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    icon_size = 32,
+    flags = {"goes-to-main-inventory"},
+    resistances = Material_Resistances[DATA.Table],
+    durability = Round((DyWorld_Material_Formulas(3, DATA.Table) * 75), 0),
+    subgroup = dy.."armor-2",
+    order = dy..DATA.Name.."-modular-armor",
+    equipment_grid = dy..DATA.Name.."-equipment-grid",
+    stack_size = 1
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-modular-armor",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {},
+    result = dy..DATA.Name.."-modular-armor",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_1)
+	end
+	if DATA.Type == "Primitive" then
+		data.raw.recipe[dy..DATA.Name.."-modular-armor"].enabled = true
+	elseif DATA.Type == "Basic" then
+		DyWorld_Add_To_Tech("basic-armor", dy..DATA.Name.."-modular-armor")
+	elseif DATA.Type == "Simple_Alloy" then
+		DyWorld_Add_To_Tech("simple-alloy-armor", dy..DATA.Name.."-modular-armor")
+	elseif DATA.Type == "Alloy" then
+		DyWorld_Add_To_Tech("alloy-armor", dy..DATA.Name.."-modular-armor")
+	elseif DATA.Type == "Complex_Alloy" then
+		DyWorld_Add_To_Tech("complex-alloy-armor", dy..DATA.Name.."-modular-armor")
+	elseif DATA.Type == "Super_Alloy" then
+		DyWorld_Add_To_Tech("super-alloy-armor", dy..DATA.Name.."-modular-armor")
 	end
 end
 

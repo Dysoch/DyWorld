@@ -112,7 +112,7 @@ Enemies = {
 			{type = "radiation", decrease = 5000, percent = 100, maxed = true, negative = false},
 		},
 		Speed = 0.2,
-		Attack_Range_Base = 6,
+		Attack_Range_Base = 2.5,
 		Attack_DMG_Base = 15,
 		Attack_DMG_Type = "radiation",
 		Attack_Speed_Base = 30,

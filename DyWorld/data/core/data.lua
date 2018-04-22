@@ -85,3 +85,6 @@ require("data.core.fluid-system.recipes")
 -- Science System
 require("data.core.science.recipe-fluid")
 require("data.core.science.infinite-science")
+
+-- Core Catergories/ETC
+require("data.core.prototypes.category.grids")

@@ -2,7 +2,7 @@ require "data/prefix"
 
 	
 for k,v in pairs(Material_Table) do
-	if v.Type == "Basic" or v.Type == "Simple_Alloy" or v.Type == "Alloy" or v.Type == "Complex_Alloy" or v.Type == "Super_Alloy" then
+	if v.Molten then
 		data:extend(
 		{
 		  {

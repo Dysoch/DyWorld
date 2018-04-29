@@ -63,7 +63,7 @@ data:extend(
 })
 
 for k,v in pairs(Material_Table) do
-	if v.Type == "Basic" then
+	if v.Clean_Ore and v.Pebble then
 		data:extend(
 		{
 		  {

@@ -4,6 +4,9 @@ local Table = {
 		Table = "Stainless_Steel", 
 		Type = "Alloy", 
 		Tier = 4,
+		Molten = true,
+		Pebble = false,
+		Clean_Ore = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -11,6 +14,9 @@ local Table = {
 		Table = "Billon", 
 		Type = "Alloy", 
 		Tier = 4,
+		Molten = true,
+		Pebble = false,
+		Clean_Ore = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -18,6 +24,9 @@ local Table = {
 		Table = "Bronze", 
 		Type = "Alloy", 
 		Tier = 4,
+		Molten = true,
+		Pebble = false,
+		Clean_Ore = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -25,6 +34,9 @@ local Table = {
 		Table = "Copper_Tungsten", 
 		Type = "Alloy", 
 		Tier = 4,
+		Molten = true,
+		Pebble = false,
+		Clean_Ore = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -32,6 +44,9 @@ local Table = {
 		Table = "Copper_Hydride", 
 		Type = "Alloy", 
 		Tier = 4,
+		Molten = true,
+		Pebble = false,
+		Clean_Ore = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -39,6 +54,9 @@ local Table = {
 		Table = "Elinvar", 
 		Type = "Complex_Alloy", 
 		Tier = 5,
+		Molten = true,
+		Pebble = false,
+		Clean_Ore = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -46,6 +64,9 @@ local Table = {
 		Table = "Stainless_Copilinvar_Tungstate", 
 		Type = "Super_Alloy", 
 		Tier = 6,
+		Molten = true,
+		Pebble = false,
+		Clean_Ore = false,
 		DMG_Type = "physical",
 	},
 }

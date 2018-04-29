@@ -1,7 +1,7 @@
 require "data/prefix"
 
 for k,v in pairs(Material_Table) do
-	if v.Type == "Basic" then
+	if v.Pebble then
 		data:extend(
 		{	  
 		  {

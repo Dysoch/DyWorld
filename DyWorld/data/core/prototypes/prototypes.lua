@@ -1368,32 +1368,32 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-transport-belt"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-underground-belt"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-splitter"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-loader"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-splitter")
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-loader")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-splitter")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-loader")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-splitter")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-loader")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-splitter")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-loader")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-transport-belt")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-underground-belt")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-splitter")
@@ -1682,22 +1682,22 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].ingredients, result_2)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-pipe"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-pipe")
 		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-pipe-to-ground")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-pipe")
 		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-pipe-to-ground")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-pipe")
 		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-pipe-to-ground")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-pipe")
 		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-pipe-to-ground")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pipe")
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pipe-to-ground")
 	end
@@ -2134,27 +2134,27 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-turret"].ingredients, result_2)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-gun-turret"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-shotgun-turret"].enabled = true
 		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-cannon-turret")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-gun-turret")
 		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-shotgun-turret")
 		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-cannon-turret")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-gun-turret")
 		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-shotgun-turret")
 		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-cannon-turret")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-gun-turret")
 		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-shotgun-turret")
 		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-cannon-turret")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-gun-turret")
 		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-shotgun-turret")
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-cannon-turret")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-gun-turret")
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-shotgun-turret")
 		DyWorld_Add_To_Tech("turrets-6", dy..DATA.Name.."-cannon-turret")
@@ -2379,22 +2379,22 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade-turret"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-grenade-turret"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-grenade-ammo"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-grenade-turret")
 		DyWorld_Add_To_Tech("turrets", dy..DATA.Name.."-grenade-ammo")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-grenade-turret")
 		DyWorld_Add_To_Tech("turrets-2", dy..DATA.Name.."-grenade-ammo")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-grenade-turret")
 		DyWorld_Add_To_Tech("turrets-3", dy..DATA.Name.."-grenade-ammo")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-grenade-turret")
 		DyWorld_Add_To_Tech("turrets-4", dy..DATA.Name.."-grenade-ammo")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-grenade-turret")
 		DyWorld_Add_To_Tech("turrets-5", dy..DATA.Name.."-grenade-ammo")
 	end
@@ -3073,42 +3073,42 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-shell"].ingredients, result_4)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-cannon-explosive-shell"].ingredients, result_4)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-basic-ammo"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-shotgun-ammo"].enabled = true
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-basic-piercing-ammo")
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-shotgun-piercing-ammo")
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-cannon-shell")
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-cannon-explosive-shell")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-basic-ammo")
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-shotgun-ammo")
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-basic-piercing-ammo")
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-shotgun-piercing-ammo")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-cannon-shell")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-cannon-explosive-shell")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-basic-ammo")
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-shotgun-ammo")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-basic-piercing-ammo")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-shotgun-piercing-ammo")
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-cannon-shell")
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-cannon-explosive-shell")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-basic-ammo")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-shotgun-ammo")
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-basic-piercing-ammo")
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-shotgun-piercing-ammo")
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-cannon-shell")
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-cannon-explosive-shell")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-basic-ammo")
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-shotgun-ammo")
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-basic-piercing-ammo")
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-shotgun-piercing-ammo")
 		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-cannon-shell")
 		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-cannon-explosive-shell")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-basic-ammo")
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-shotgun-ammo")
 		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-basic-piercing-ammo")
@@ -3386,22 +3386,22 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-grenade"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-cluster-grenade"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-grenade"].enabled = true
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-cluster-grenade")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-grenade")
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-cluster-grenade")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-grenade")
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-cluster-grenade")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-grenade")
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-cluster-grenade")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-grenade")
 		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-cluster-grenade")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-grenade")
 		DyWorld_Add_To_Tech("military-7", dy..DATA.Name.."-cluster-grenade")
 	end
@@ -3548,17 +3548,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-rocket"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-rocket")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-rocket")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-rocket")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-rocket")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("military-6", dy..DATA.Name.."-rocket")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("military-7", dy..DATA.Name.."-rocket")
 	end
 	if DATA.Name == "wood" then
@@ -3987,22 +3987,22 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-pump"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-offshore-pump"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-pump"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-offshore-pump"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-pump")
 		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-offshore-pump")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-pump")
 		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-offshore-pump")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-pump")
 		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-offshore-pump")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-pump")
 		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-offshore-pump")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pump")
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-offshore-pump")
 	end
@@ -5237,42 +5237,42 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-stack-filter-inserter"].ingredients, result_2)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-super-inserter"].ingredients, result_3)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-basic-inserter"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-long-inserter"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-filter-inserter"].enabled = true
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-inserter")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-super-inserter")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-basic-inserter")
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-long-inserter")
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-inserter")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-stack-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-super-inserter")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-basic-inserter")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-long-inserter")
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-stack-inserter")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-stack-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-super-inserter")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-basic-inserter")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-long-inserter")
 		DyWorld_Add_To_Tech("logistics-3", dy..DATA.Name.."-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-stack-inserter")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-stack-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-super-inserter")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-basic-inserter")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-long-inserter")
 		DyWorld_Add_To_Tech("logistics-4", dy..DATA.Name.."-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-stack-inserter")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-stack-filter-inserter")
 		DyWorld_Add_To_Tech("logistics-6", dy..DATA.Name.."-super-inserter")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-basic-inserter")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-long-inserter")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-filter-inserter")
@@ -5478,17 +5478,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 40}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-storage-tank"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-storage-tank"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-storage-tank")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-storage-tank")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-storage-tank")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-storage-tank")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-storage-tank")
 	end
 	if DATA.Name == "wood" then
@@ -5773,19 +5773,19 @@ data:extend(
 	if DATA.Type == "Primitive" or DATA.Name == "iron" or DATA.Name == "copper" then
 		data.raw.recipe[dy..DATA.Name.."-power-pole"].enabled = true
 		DyWorld_Add_To_Tech("electric-energy-distribution-1", dy..DATA.Name.."-power-relay")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("electric-energy-distribution-1", dy..DATA.Name.."-power-pole")
 		DyWorld_Add_To_Tech("electric-energy-distribution-2", dy..DATA.Name.."-power-relay")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("electric-energy-distribution-2", dy..DATA.Name.."-power-pole")
 		DyWorld_Add_To_Tech("electric-energy-distribution-3", dy..DATA.Name.."-power-relay")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("electric-energy-distribution-3", dy..DATA.Name.."-power-pole")
 		DyWorld_Add_To_Tech("electric-energy-distribution-4", dy..DATA.Name.."-power-relay")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("electric-energy-distribution-4", dy..DATA.Name.."-power-pole")
 		DyWorld_Add_To_Tech("electric-energy-distribution-5", dy..DATA.Name.."-power-relay")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("electric-energy-distribution-5", dy..DATA.Name.."-power-pole")
 		DyWorld_Add_To_Tech("electric-energy-distribution-6", dy..DATA.Name.."-power-relay")
 	end
@@ -6274,22 +6274,22 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-shotgun-laser-turret"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("laser-turrets", dy..DATA.Name.."-laser-turret")
 		DyWorld_Add_To_Tech("laser-turrets-2", dy..DATA.Name.."-shotgun-laser-turret")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("laser-turrets-2", dy..DATA.Name.."-laser-turret")
 		DyWorld_Add_To_Tech("laser-turrets-3", dy..DATA.Name.."-shotgun-laser-turret")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("laser-turrets-3", dy..DATA.Name.."-laser-turret")
 		DyWorld_Add_To_Tech("laser-turrets-4", dy..DATA.Name.."-shotgun-laser-turret")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("laser-turrets-4", dy..DATA.Name.."-laser-turret")
 		DyWorld_Add_To_Tech("laser-turrets-5", dy..DATA.Name.."-shotgun-laser-turret")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("laser-turrets-5", dy..DATA.Name.."-laser-turret")
 		DyWorld_Add_To_Tech("laser-turrets-6", dy..DATA.Name.."-shotgun-laser-turret")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("laser-turrets-6", dy..DATA.Name.."-laser-turret")
 		DyWorld_Add_To_Tech("laser-turrets-7", dy..DATA.Name.."-shotgun-laser-turret")
 	end
@@ -6355,17 +6355,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 4}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mining-tool"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-mining-tool"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech(dy.."mining-tools-1", dy..DATA.Name.."-mining-tool")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech(dy.."mining-tools-2", dy..DATA.Name.."-mining-tool")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech(dy.."mining-tools-3", dy..DATA.Name.."-mining-tool")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech(dy.."mining-tools-4", dy..DATA.Name.."-mining-tool")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech(dy.."mining-tools-5", dy..DATA.Name.."-mining-tool")
 	end
 	if DATA.Name == "wood" then
@@ -6415,17 +6415,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-repair-tool"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-repair-tool"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech(dy.."repair-tools-1", dy..DATA.Name.."-repair-tool")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech(dy.."repair-tools-2", dy..DATA.Name.."-repair-tool")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech(dy.."repair-tools-3", dy..DATA.Name.."-repair-tool")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech(dy.."repair-tools-4", dy..DATA.Name.."-repair-tool")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech(dy.."repair-tools-5", dy..DATA.Name.."-repair-tool")
 	end
 	if DATA.Name == "wood" then
@@ -6565,17 +6565,17 @@ data:extend(
 	end
 	if DATA.Name == "wood" then
 		data.raw.recipe[dy..DATA.Name.."-solar-normal"].enabled = true
-	elseif DATA.Type == "Primitive" then
+	elseif DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("solar-energy", dy..DATA.Name.."-solar-normal")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("solar-energy-2", dy..DATA.Name.."-solar-normal")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("solar-energy-3", dy..DATA.Name.."-solar-normal")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("solar-energy-4", dy..DATA.Name.."-solar-normal")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("solar-energy-5", dy..DATA.Name.."-solar-normal")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("solar-energy-6", dy..DATA.Name.."-solar-normal")
 	end
 	if DATA.Name == "wood" then
@@ -6650,17 +6650,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal-equipment"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("solar-energy", dy..DATA.Name.."-solar-normal-equipment")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("solar-energy-2", dy..DATA.Name.."-solar-normal-equipment")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("solar-energy-3", dy..DATA.Name.."-solar-normal-equipment")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("solar-energy-4", dy..DATA.Name.."-solar-normal-equipment")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("solar-energy-5", dy..DATA.Name.."-solar-normal-equipment")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("solar-energy-6", dy..DATA.Name.."-solar-normal-equipment")
 	end
 end
@@ -6864,17 +6864,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-steam-engine"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		DyWorld_Add_To_Tech(dy.."steam-energy-1", dy..DATA.Name.."-steam-engine")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech(dy.."steam-energy-2", dy..DATA.Name.."-steam-engine")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech(dy.."steam-energy-3", dy..DATA.Name.."-steam-engine")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech(dy.."steam-energy-4", dy..DATA.Name.."-steam-engine")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech(dy.."steam-energy-5", dy..DATA.Name.."-steam-engine")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech(dy.."steam-energy-6", dy..DATA.Name.."-steam-engine")
 	end
 	if DATA.Name == "wood" then
@@ -7007,17 +7007,17 @@ data:extend(
 	end
 	if DATA.Name == "wood" then
 		data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].enabled = true
-	elseif DATA.Type == "Primitive" then
+	elseif DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-1", dy..DATA.Name.."-accumulator-normal")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-2", dy..DATA.Name.."-accumulator-normal")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-3", dy..DATA.Name.."-accumulator-normal")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-4", dy..DATA.Name.."-accumulator-normal")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-5", dy..DATA.Name.."-accumulator-normal")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-6", dy..DATA.Name.."-accumulator-normal")
 	end
 	if DATA.Name == "wood" then
@@ -7951,17 +7951,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-electric-drill"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-electric-drill"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech(dy.."electric-miners-1", dy..DATA.Name.."-electric-drill")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech(dy.."electric-miners-2", dy..DATA.Name.."-electric-drill")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech(dy.."electric-miners-3", dy..DATA.Name.."-electric-drill")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech(dy.."electric-miners-4", dy..DATA.Name.."-electric-drill")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech(dy.."electric-miners-5", dy..DATA.Name.."-electric-drill")
 	end
 	if (Materials[DATA.Table].Elasticity / 2) >= 20 then
@@ -8304,9 +8304,9 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-burner-drill"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-burner-drill"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		data.raw.recipe[dy..DATA.Name.."-burner-drill"].enabled = true
 	end
 	if DATA.Name == "wood" then
@@ -8480,17 +8480,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 12}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-assembling-electric"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-assembling-electric"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("automation", dy..DATA.Name.."-assembling-electric")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-assembling-electric")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-assembling-electric")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("automation-4", dy..DATA.Name.."-assembling-electric")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("automation-5", dy..DATA.Name.."-assembling-electric")
 	end
 	if DATA.Name == "wood" then
@@ -8576,17 +8576,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-chest"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-chest"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("automation", dy..DATA.Name.."-chest")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-chest")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-chest")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("automation-4", dy..DATA.Name.."-chest")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("automation-5", dy..DATA.Name.."-chest")
 	end
 	if DATA.Name == "wood" then
@@ -8673,11 +8673,11 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 75}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-warehouse-chest")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-warehouse-chest")
 	end
 	if DATA.Name == "wood" then
@@ -8765,25 +8765,25 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 75}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		local result_1 = {"electronic-circuit", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-warehouse-chest")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		local result_1 = {"advanced-circuit", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-warehouse-chest")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		local result_1 = {"processing-unit", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 		DyWorld_Add_To_Tech("automation-4", dy..DATA.Name.."-warehouse-chest")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		local result_1 = {dy.."processing-advanced", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 		DyWorld_Add_To_Tech("automation-5", dy..DATA.Name.."-warehouse-chest")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		local result_1 = {dy.."processing-logic", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-warehouse-chest"].ingredients, result_1)
 		DyWorld_Add_To_Tech("automation-6", dy..DATA.Name.."-warehouse-chest")
@@ -9042,32 +9042,32 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 45}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.5, -0.6}, {1.5, 1.6}}
 		DyWorld_Add_To_Tech("construction-robotics", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics", dy..DATA.Name.."-roboport")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("construction-robotics-2", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-2", dy..DATA.Name.."-roboport")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.5, -0.6}, {1.5, -0.6}, {1.5, 1.6}, {-1.5, 1.6},{-1.5, -0.4}, {1.5, -0.4}, {1.5, 1.4}, {-1.5, 1.4}}
 		local result_1 = {"processing-unit", 3}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 		DyWorld_Add_To_Tech("construction-robotics-3", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-3", dy..DATA.Name.."-roboport")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.5, -0.6}, {1.5, -0.6}, {1.5, 1.6}, {-1.5, 1.6},{-1.5, -0.4}, {1.5, -0.4}, {1.5, 1.4}, {-1.5, 1.4}}
 		local result_1 = {dy.."processing-advanced", 3}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 		DyWorld_Add_To_Tech("construction-robotics-4", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-4", dy..DATA.Name.."-roboport")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.5, -0.6}, {1.5, -0.6}, {1.5, 1.6}, {-1.5, 1.6},{-1.5, -0.4}, {1.5, -0.4}, {1.5, 1.4}, {-1.5, 1.4}}
 		local result_1 = {dy.."processing-advanced", 6}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
 		DyWorld_Add_To_Tech("construction-robotics-5", dy..DATA.Name.."-roboport")
 		DyWorld_Add_To_Tech("logistic-robotics-5", dy..DATA.Name.."-roboport")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		data.raw.roboport[dy..DATA.Name.."-roboport"].charging_offsets ={{-1.6, -0.6}, {1.6, -0.6}, {1.6, 1.6}, {-1.6, 1.6},{-1.4, -0.4}, {1.4, -0.4}, {1.4, 1.4}, {-1.4, 1.4},{-1.4, -0.6}, {1.4, -0.6}, {1.4, 1.6}, {-1.4, 1.6},{-1.6, -0.4}, {1.6, -0.4}, {1.6, 1.4}, {-1.6, 1.4}}
 		local result_1 = {dy.."processing-logic", 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-roboport"].ingredients, result_1)
@@ -9368,31 +9368,31 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("logistic-robotics", dy..DATA.Name.."-logistic-robot")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		local result_1 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
 		DyWorld_Add_To_Tech("logistic-robotics-2", dy..DATA.Name.."-logistic-robot")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		local result_1 = {"processing-unit", 3}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("logistic-robotics-3", dy..DATA.Name.."-logistic-robot")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		local result_1 = {dy.."processing-advanced", 3}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("logistic-robotics-4", dy..DATA.Name.."-logistic-robot")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		local result_1 = {dy.."processing-advanced", 6}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("logistic-robotics-5", dy..DATA.Name.."-logistic-robot")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		local result_1 = {dy.."processing-logic", 12}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-logistic-robot"].ingredients, result_1)
@@ -9687,33 +9687,33 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("construction-robotics", dy..DATA.Name.."-construction-robot")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		local result_1 = {dy.."logistic-unit", 1}
 		local result_2 = {"advanced-circuit", 3}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("construction-robotics-2", dy..DATA.Name.."-construction-robot")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		local result_1 = {"processing-unit", 1}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("construction-robotics-3", dy..DATA.Name.."-construction-robot")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		local result_1 = {dy.."processing-advanced", 1}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("construction-robotics-4", dy..DATA.Name.."-construction-robot")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		local result_1 = {dy.."processing-advanced", 3}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_2)
 		DyWorld_Add_To_Tech("construction-robotics-5", dy..DATA.Name.."-construction-robot")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		local result_1 = {dy.."processing-logic", 9}
 		local result_2 = {dy.."logistic-unit", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-construction-robot"].ingredients, result_1)
@@ -9856,17 +9856,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-wall"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("stone-walls", dy..DATA.Name.."-wall")
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("stone-walls-2", dy..DATA.Name.."-wall")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("stone-walls-3", dy..DATA.Name.."-wall")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("stone-walls-4", dy..DATA.Name.."-wall")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("stone-walls-5", dy..DATA.Name.."-wall")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("stone-walls-6", dy..DATA.Name.."-wall")
 	end
 	if DATA.Name == "wood" then
@@ -10232,23 +10232,23 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 100}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-locomotive"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway"}
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-2"}
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
 		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-3"}
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-4"}
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-5"}
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-6"}
@@ -10331,40 +10331,40 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 1
 		local result_1 = {"electronic-circuit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module"}
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 2
 		local result_1 = {"advanced-circuit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-2"}
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 3
 		local result_1 = {"processing-unit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-3"}
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 4
 		local result_1 = {"processing-unit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-4"}
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 5
 		local result_1 = {dy.."processing-advanced", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-5"}
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 6
 		local result_1 = {dy.."processing-logic", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
@@ -10448,40 +10448,40 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 1
 		local result_1 = {"electronic-circuit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module"}
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 2
 		local result_1 = {"advanced-circuit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-2"}
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 3
 		local result_1 = {"processing-unit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-3"}
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 4
 		local result_1 = {"processing-unit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-4"}
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 5
 		local result_1 = {dy.."processing-advanced", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-5"}
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 6
 		local result_1 = {dy.."processing-logic", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
@@ -10563,40 +10563,40 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 1
 		local result_1 = {"electronic-circuit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module"}
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 2
 		local result_1 = {"advanced-circuit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-2"}
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 3
 		local result_1 = {"processing-unit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-3"}
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 4
 		local result_1 = {"processing-unit", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-4"}
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 5
 		local result_1 = {dy.."processing-advanced", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-5"}
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 6
 		local result_1 = {dy.."processing-logic", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
@@ -10648,17 +10648,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-armor"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-armor"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("basic-armor", dy..DATA.Name.."-armor")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("simple-alloy-armor", dy..DATA.Name.."-armor")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("alloy-armor", dy..DATA.Name.."-armor")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("complex-alloy-armor", dy..DATA.Name.."-armor")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("super-alloy-armor", dy..DATA.Name.."-armor")
 	end
 end
@@ -10706,18 +10706,29 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
-		data.raw.recipe[dy..DATA.Name.."-modular-armor"].enabled = true
-	elseif DATA.Type == "Basic" then
-		DyWorld_Add_To_Tech("basic-armor", dy..DATA.Name.."-modular-armor")
-	elseif DATA.Type == "Simple_Alloy" then
-		DyWorld_Add_To_Tech("simple-alloy-armor", dy..DATA.Name.."-modular-armor")
-	elseif DATA.Type == "Alloy" then
-		DyWorld_Add_To_Tech("alloy-armor", dy..DATA.Name.."-modular-armor")
-	elseif DATA.Type == "Complex_Alloy" then
-		DyWorld_Add_To_Tech("complex-alloy-armor", dy..DATA.Name.."-modular-armor")
-	elseif DATA.Type == "Super_Alloy" then
-		DyWorld_Add_To_Tech("super-alloy-armor", dy..DATA.Name.."-modular-armor")
+	if DATA.Tier == 1 then
+		DyWorld_Add_To_Tech("power-armor", dy..DATA.Name.."-modular-armor")
+	elseif DATA.Tier == 2 then
+		DyWorld_Add_To_Tech("power-armor-2", dy..DATA.Name.."-modular-armor")
+	elseif DATA.Tier == 3 then
+		DyWorld_Add_To_Tech("power-armor-3", dy..DATA.Name.."-modular-armor")
+	elseif DATA.Tier == 4 then
+		DyWorld_Add_To_Tech("power-armor-4", dy..DATA.Name.."-modular-armor")
+	elseif DATA.Tier == 5 then
+		DyWorld_Add_To_Tech("power-armor-5", dy..DATA.Name.."-modular-armor")
+	elseif DATA.Tier == 6 then
+		DyWorld_Add_To_Tech("power-armor-6", dy..DATA.Name.."-modular-armor")
+	end
+	if settings.startup["DyWorld_Modules"].value then
+		if data.raw.module[dy..DATA.Name.."-module-speed"] and data.raw.module[dy..DATA.Name.."-module-productivity"] then
+			local result_1 = {dy..DATA.Name.."-module-speed", (2 * DATA.Tier)}
+			local result_2 = {dy..DATA.Name.."-module-productivity", (1 * DATA.Tier)}
+			table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_1)
+			table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_2)
+		end
+	else
+		local result_1 = {"speed-module-2", (5 * DATA.Tier)}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_1)
 	end
 end
 
@@ -10879,17 +10890,17 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-radar"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-radar")
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-radar")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-radar")
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-radar")
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-radar")
 	end
 	if DATA.Name == "wood" then
@@ -11052,29 +11063,29 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 1}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-mine"].enabled = true
 		local result_1 = {"coal", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-mine")
 		local result_1 = {"explosives", 1}
 		local result_2 = {"coal", 2}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_2)
-	elseif DATA.Type == "Simple_Alloy" then
+	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-mine")
 		local result_1 = {"explosives", 2}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-mine")
 		local result_1 = {"explosives", 4}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
-	elseif DATA.Type == "Complex_Alloy" then
+	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-mine")
 		local result_1 = {"explosives", 6}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
-	elseif DATA.Type == "Super_Alloy" then
+	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-mine")
 		local result_1 = {"explosives", 10}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-mine"].ingredients, result_1)
@@ -11099,11 +11110,11 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 15}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-laser-turret"].ingredients, result_1)
 	end
-	if DATA.Type == "Primitive" then
+	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-splitter"].enabled = true
-	elseif DATA.Type == "Basic" then
+	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("logistics", dy..DATA.Name.."-splitter")
-	elseif DATA.Type == "Alloy" then
+	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("logistics-2", dy..DATA.Name.."-splitter")
 	end
 end

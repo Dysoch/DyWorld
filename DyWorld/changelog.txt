@@ -9,7 +9,7 @@ Date: ??. ??. 2018
     - Added a new item: Land Mines
     - Added a new item: Rockets
     - Added a new armor: Modular Armors. Grid Space is based on the material's Hardness and Density. Provides NO inventory slot bonuses!
-    - Moved Uranium to a higher tier, since it can be overpowered in the start.
+    - Moved Rubber and Uranium both 2 tiers higher, since it can be overpowered in the start of the game. Rubber is now tier 3, and Uranium is tier 4
   Chemistry:
     - Add the ability to recombine into certain compounds. 
     - Made recipes round their numbers better, so that it is more accurate numbers.

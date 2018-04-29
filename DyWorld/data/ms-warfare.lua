@@ -4,6 +4,9 @@ local Table = {
 		Table = "Chitin", 
 		Type = "Primitive", 
 		Tier = 1,
+		Molten = false,
+		Pebble = false,
+		Clean_Ore = false,
 		DMG_Type = "physical",
 	},
 }

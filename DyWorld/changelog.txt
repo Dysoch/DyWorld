@@ -9,6 +9,7 @@ Date: ??. ??. 2018
     - Added a new item: Land Mines
     - Added a new item: Rockets
     - Added a new armor: Modular Armors. Grid Space is based on the material's Hardness and Density. Provides NO inventory slot bonuses!
+    - Moved Uranium to a higher tier, since it can be overpowered in the start.
   Chemistry:
     - Add the ability to recombine into certain compounds. 
     - Made recipes round their numbers better, so that it is more accurate numbers.
@@ -18,12 +19,14 @@ Date: ??. ??. 2018
     - Disabled Level Unlocks till further notice (will be revamped in 0.8.x)
     - Centrifuge now available from the start
     - Science packs can no longer be used with productivity modules 
+    - Productivity Modules work with a lot of DyWorld intermediate recipes now
   Graphics:
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
   Balancing:
     - Recombiner and Splicer now have much lower pollution output (1/50th to be exact)
     - Increased Electric Mining drills mining power. They are now 50% more powerful
     - DyWorld Locomotives now have a Grid Space for use of different equipments.
+    - Molten Rock and Molten Glass recipe can now be productivity moduled
   Bugfixes:
     - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
     - Fixed wooden solar equipment being available from the start

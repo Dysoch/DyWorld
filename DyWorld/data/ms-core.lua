@@ -109,8 +109,8 @@ local Table = {
 	{ 
 		Name = "uranium", 
 		Table = "Uranium", 
-		Type = "Basic", 
-		Tier = 2,
+		Type = "Alloy", 
+		Tier = 4,
 		DMG_Type = "radiation",
 	},
 	{ 

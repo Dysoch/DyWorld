@@ -135,3 +135,5 @@ for k,v in pairs(Material_Table) do
 end
 
 DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-rock")
+table.insert(DyWorld_TD.Module_List, dy.."molten-rock")
+table.insert(DyWorld_TD.Module_List, dy.."molten-glass")

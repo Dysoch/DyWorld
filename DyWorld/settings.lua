@@ -16,6 +16,7 @@
 --settings.startup["DyWorld_Hidden_Recipes"].value
 --settings.startup["DyWorld_PvP"].value
 --settings.startup["DyWorld_Roboport_Standard"].value
+--settings.startup["DyWorld_Circuit_Components_Auto_Craft"].value
 
 -- can use: "runtime-global", "startup"
 
@@ -147,6 +148,12 @@ data:extend({
 		order = "b",
         setting_type = "runtime-per-user",
         default_value = true
+    },
+    {
+        type = "bool-setting",
+        name = "DyWorld_Circuit_Components_Auto_Craft",
+        setting_type = "startup",
+        default_value = false
     },
 })
 

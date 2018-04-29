@@ -37,7 +37,7 @@ for k,v in pairs(Material_Table) do
 			name = v.Name.."-coil",
 			energy_required = 1,
 			enabled = true,
-			allow_as_intermediate = false,
+			allow_as_intermediate = settings.startup["DyWorld_Circuit_Components_Auto_Craft"].value,
 			ingredients = {{v.Name.."-cable", 5}},
 			result = v.Name.."-coil",
 			result_count = 1,
@@ -54,6 +54,8 @@ for k,v in pairs(Material_Table) do
 			DyWorld_Add_To_Tech(v.Name.."-processing", dy..v.Name.."-coil")
 			DyWorld_Add_To_Tech(v.Name.."-processing", v.Name.."-coil")
 		end
+		table.insert(DyWorld_TD.Module_List, dy..v.Name.."-coil")
+		table.insert(DyWorld_TD.Module_List, v.Name.."-coil")
 	end
 end
 
@@ -87,7 +89,7 @@ data:extend(
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     module_specification =
     {
-      module_slots = 0,
+      module_slots = 1,
       module_info_icon_shift = {0, 0.8}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},

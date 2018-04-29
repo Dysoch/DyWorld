@@ -1,4 +1,6 @@
 
+DyWorld_TD = {}
+
 -- Core Stuff
 require("data.prefix")
 require("data.ms-core")

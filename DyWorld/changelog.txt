@@ -4,6 +4,7 @@ Date: ??. ??. 2018
   Features:
     - Added new dynamic resistances for enemies. They scale up with higher and stronger units. They now truly get stronger and stronger the bigger they get.
     - Loaders now snap to entities with inventories. Same functionality as DeadLockLoaders. (Taken with his permission, legal stuff can be found in legal folder inside zip folder)
+    - Added option to the manual crafting of circuit and pcb components. Enabled it will auto craft in inventory when a circuit is pressed. Remember, this requires more resources, and a restart of the game.
   Materials System:
     - Added a new item: Land Mines
     - Added a new item: Rockets

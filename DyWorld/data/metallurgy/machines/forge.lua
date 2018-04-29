@@ -35,10 +35,9 @@ data:extend(
     },
     module_specification =
     {
-      module_slots = 0,
-      module_info_icon_shift = {0, 0.8}
+      module_slots = 3,
     },
-    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
+    allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {dy.."forge"},
     result_inventory_size = 5,
     crafting_speed = 1,

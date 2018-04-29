@@ -1,5 +1,7 @@
 require "data/prefix"
 
+DyWorld_TD.Module_List = {}
+
 function DyWorld_Recipe(DATA, NMB)
   local result =
   {
@@ -356,8 +358,7 @@ function DyWorld_Add_To_Productivity_Module(RECIPE)
 end
 
 function DyWorld_Module_Limitation_Productivity()
-return
-      {
+    return {
         "sulfuric-acid",
         "basic-oil-processing",
         "advanced-oil-processing",
@@ -369,13 +370,9 @@ return
         "solid-fuel-from-petroleum-gas",
         "lubricant",
         "wood",
-        "iron-plate",
-        "copper-plate",
-        "steel-plate",
         "stone-brick",
         "sulfur",
         "plastic-bar",
-        "empty-barrel",
         "uranium-processing",
         "copper-cable",
         "iron-stick",
@@ -393,7 +390,18 @@ return
         "rocket-fuel",
         "rocket-control-unit",
         "rocket-part",
-      }
+		dy.."water-seperation-1",
+		dy.."water-seperation-2",
+		dy.."sludge-seperation",
+		dy.."acid-seperation",
+		dy.."fertilizer-seperation",
+		dy.."basic-clean-oil-processing",
+		dy.."advanced-clean-oil-processing",
+		dy.."rocket-fuel",
+		dy.."advanced-lubricant",
+		dy.."super-lubricant",
+		dy.."ground-mining",
+    }
 end
 
 function DyWorld_Projectile_1(DATA, NMB)

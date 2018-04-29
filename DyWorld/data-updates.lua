@@ -299,13 +299,11 @@ elseif settings.startup["DyWorld_Warfare_Difficulty"].value == 5 then
 	end	
 end
 
--- remove all science packs from productivity modules
-for k,v in pairs(data.raw.module) do
-	if v.limitation and v.effect.productivity then
-		v.limitation = data.raw.module["productivity-module-3"].limitation
-		for index, name in pairs(v.limitation) do
-			if string.find(name, "science-pack", 1, true) then
-				table.remove(v.limitation, index)
+for k,v in pairs(DyWorld_TD.Module_List) do
+	if data.raw.recipe[v] then
+		for i, module in pairs(data.raw.module) do
+			if module.limitation and module.effect.productivity then
+				table.insert(module.limitation, v)
 			end
 		end
 	end

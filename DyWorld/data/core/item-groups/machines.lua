@@ -63,6 +63,11 @@ Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "machines"
 	},
+	{
+		Name = "beacon",
+		Type = "sub",
+		Main = "machines"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

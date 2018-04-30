@@ -909,6 +909,46 @@ local Data_Table = {
 		Count = 3000,
 		Military = false,
 	},
+	{
+		Name = "effect-transmission-2",
+		Icon = {{icon = "__base__/graphics/technology/effect-transmission.png"}},
+		Pre_Req = {"effect-transmission"},
+		Tech_Ingredients = 5,
+		Count = 350,
+		Military = false,
+	},
+	{
+		Name = "effect-transmission-3",
+		Icon = {{icon = "__base__/graphics/technology/effect-transmission.png"}},
+		Pre_Req = {"effect-transmission-2"},
+		Tech_Ingredients = 5,
+		Count = 1000,
+		Military = false,
+	},
+	{
+		Name = "effect-transmission-4",
+		Icon = {{icon = "__base__/graphics/technology/effect-transmission.png"}},
+		Pre_Req = {"effect-transmission-3"},
+		Tech_Ingredients = 6,
+		Count = 2500,
+		Military = false,
+	},
+	{
+		Name = "effect-transmission-5",
+		Icon = {{icon = "__base__/graphics/technology/effect-transmission.png"}},
+		Pre_Req = {"effect-transmission-4"},
+		Tech_Ingredients = 6,
+		Count = 5000,
+		Military = false,
+	},
+	{
+		Name = "effect-transmission-6",
+		Icon = {{icon = "__base__/graphics/technology/effect-transmission.png"}},
+		Pre_Req = {"effect-transmission-5"},
+		Tech_Ingredients = 6,
+		Count = 12500,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

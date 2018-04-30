@@ -10,6 +10,7 @@ local Change = {
 	{Old = "effectivity-module", New = dy.."obsidian-module-effectivity"},
 	{Old = "effectivity-module-2", New = dy.."silver-module-effectivity"},
 	{Old = "effectivity-module-3", New = dy.."elinvar-module-effectivity"},
+	{Old = "beacon", New = dy.."iron-beacon"},
 }
 
 for k,v in pairs(Change) do

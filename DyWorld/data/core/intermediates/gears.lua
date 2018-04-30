@@ -93,7 +93,7 @@ data:extend(
       module_info_icon_shift = {0, 0.8}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {dy.."gear-crafting"},
+    crafting_categories = {},
     result_inventory_size = 2,
     crafting_speed = 5,
     energy_usage = "100W",

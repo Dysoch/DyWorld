@@ -10911,7 +10911,8 @@ end
 
 function DyWorld_Land_Mines(DATA)
 data:extend(
-{{
+{  
+  {
     type = "land-mine",
 	name = dy..DATA.Name.."-mine",
 	localised_name = {"looped-name.mine", {"looped-name."..DATA.Name}},
@@ -10944,21 +10945,24 @@ data:extend(
       filename = "__base__/graphics/entity/land-mine/land-mine.png",
       priority = "medium",
       width = 32,
-      height = 32
+      height = 32,
+	  tint = Material_Colors[DATA.Table],
     },
     picture_set =
     {
       filename = "__base__/graphics/entity/land-mine/land-mine-set.png",
       priority = "medium",
       width = 32,
-      height = 32
+      height = 32,
+	  tint = Material_Colors[DATA.Table],
     },
     picture_set_enemy =
     {
       filename = "__base__/graphics/entity/land-mine/land-mine-set-enemy.png",
       priority = "medium",
       width = 32,
-      height = 32
+      height = 32,
+	  tint = Material_Colors[DATA.Table],
     },
     trigger_radius = 2.5,
     ammo_category = "landmine",
@@ -11093,6 +11097,164 @@ data:extend(
 	if DATA.Name == "wood" then
 		data.raw.item[dy..DATA.Name.."-mine"].fuel_value = "2MJ"
 		data.raw.item[dy..DATA.Name.."-mine"].fuel_category = "chemical"
+	end
+end
+
+function DyWorld_Module_Beacons(DATA)
+data:extend(
+{
+  {
+    type = "beacon",
+	name = dy..DATA.Name.."-beacon",
+	localised_name = {"looped-name.beacon", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/beacon.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    icon_size = 32,
+    flags = {"placeable-player", "player-creation"},
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-beacon"},
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
+    corpse = "big-remnants",
+    dying_explosion = "medium-explosion",
+    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    drawing_box = {{-1.5, -2.2}, {1.5, 1.3}},
+    allowed_effects = {"consumption", "speed", "pollution"},
+    base_picture =
+    {
+      filename = "__base__/graphics/entity/beacon/beacon-base.png",
+      width = 116,
+      height = 93,
+      shift = { 0.34375, 0.046875},
+	  tint = Material_Colors[DATA.Table],
+    },
+    animation =
+    {
+      filename = "__base__/graphics/entity/beacon/beacon-antenna.png",
+      width = 54,
+      height = 50,
+      line_length = 8,
+      frame_count = 32,
+      shift = { -0.03125, -1.71875},
+      animation_speed = 0.5,
+	  tint = Material_Colors[DATA.Table],
+    },
+    animation_shadow =
+    {
+      filename = "__base__/graphics/entity/beacon/beacon-antenna-shadow.png",
+      width = 63,
+      height = 49,
+      line_length = 8,
+      frame_count = 32,
+      shift = { 3.140625, 0.484375},
+      animation_speed = 0.5
+    },
+    radius_visualisation_picture =
+    {
+      filename = "__base__/graphics/entity/beacon/beacon-radius-visualization.png",
+      priority = "extra-high-no-scale",
+      width = 10,
+      height = 10
+    },
+    supply_area_distance = Round(( 2 + (DATA.Tier)), 0),
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input"
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 500).."kW",
+    distribution_effectivity = 0.4 + (DATA.Tier / 10),
+    module_specification =
+    {
+      module_slots = 1 + DATA.Tier,
+      module_info_icon_shift = {0, 0.5},
+      module_info_multi_row_initial_height_modifier = -0.3
+    }
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-beacon",
+	localised_name = {"looped-name.beacon", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/beacon.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    icon_size = 32,
+    flags = {"goes-to-quickbar"},
+    damage_radius = 5 + Materials[DATA.Table].Hardness,
+    subgroup = dy.."beacon",
+    stack_size = 200,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-beacon",
+    trigger_radius = (1 + (Materials[DATA.Table].Hardness / 2))
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-beacon",
+    energy_required = 10 * DATA.Tier,
+	enabled = false,
+    ingredients = {{dy.."rotor", 2},{dy.."housing", 1},
+    result = dy..DATA.Name.."-beacon",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, (10 * DATA.Tier)}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, (15 * DATA.Tier)}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", (12 * DATA.Tier)}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+	end
+	if DATA.Tier == 1 then
+		DyWorld_Add_To_Tech("effect-transmission", dy..DATA.Name.."-beacon")
+		local result_1 = {"electronic-circuit", 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+	elseif DATA.Tier == 2 then
+		DyWorld_Add_To_Tech("effect-transmission-2", dy..DATA.Name.."-beacon")
+		local result_1 = {"electronic-circuit", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+		local result_1 = {"advanced-circuit", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+	elseif DATA.Tier == 3 then
+		DyWorld_Add_To_Tech("effect-transmission-3", dy..DATA.Name.."-beacon")
+		local result_1 = {"advanced-circuit", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+		local result_1 = {"processing-unit", 10}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+	elseif DATA.Tier == 4 then
+		DyWorld_Add_To_Tech("effect-transmission-4", dy..DATA.Name.."-beacon")
+		local result_1 = {"processing-unit", 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+		local result_1 = {dy.."processing-advanced", 15}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+	elseif DATA.Tier == 5 then
+		DyWorld_Add_To_Tech("effect-transmission-5", dy..DATA.Name.."-beacon")
+		local result_1 = {dy.."processing-advanced", 25}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+		local result_1 = {dy.."processing-logic", 20}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+		data.raw.beacon[dy..DATA.Name.."-beacon"].allowed_effects = {"consumption", "speed", "pollution", "productivity"}
+	elseif DATA.Tier == 6 then
+		DyWorld_Add_To_Tech("effect-transmission-6", dy..DATA.Name.."-beacon")
+		local result_1 = {dy.."processing-logic", 50}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-beacon"].ingredients, result_1)
+		data.raw.beacon[dy..DATA.Name.."-beacon"].allowed_effects = {"consumption", "speed", "pollution", "productivity"}
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-beacon"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-beacon"].fuel_category = "chemical"
 	end
 end
 

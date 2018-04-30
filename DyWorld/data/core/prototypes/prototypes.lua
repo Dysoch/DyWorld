@@ -10192,7 +10192,7 @@ data:extend(
 	name = dy..DATA.Name.."-locomotive-armor-remover",
     energy_required = 2.5,
     category = dy.."armor-remover",
-	enabled = false,
+	enabled = true,
 	hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
     ingredients = {{dy..DATA.Name.."-locomotive", 1}},
     result = "locomotive",
@@ -10256,6 +10256,941 @@ data:extend(
 	if DATA.Name == "wood" then
 		data.raw.item[dy..DATA.Name.."-locomotive"].fuel_value = "2MJ"
 		data.raw.item[dy..DATA.Name.."-locomotive"].fuel_category = "chemical"
+	end
+end
+
+function DyWorld_Tanks(DATA)
+data:extend(
+{
+  {
+    type = "car",
+	name = dy..DATA.Name.."-tank",
+	localised_name = {"looped-name.tank", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/tank.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+	icon_size = 32,
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-tank"},
+    flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
+    mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
+    max_health = (2500 + DyWorld_Material_Formulas(3, DATA.Table)),
+    resistances = Material_Resistances[DATA.Table],
+    corpse = "medium-remnants",
+    dying_explosion = "medium-explosion",
+    alert_icon_shift = util.by_pixel(-4, -13),
+    immune_to_tree_impacts = true,
+    energy_per_hit_point = 0.4 + (DATA.Tier / 10),
+    collision_box = {{-0.9, -1.3}, {0.9, 1.3}},
+    selection_box = {{-0.9, -1.3}, {0.9, 1.3}},
+    drawing_box = {{-1.8, -1.8}, {1.8, 1.5}},
+    effectivity = 0.5 + (DATA.Tier / 10),
+    braking_power = tostring(400 + Materials[DATA.Table].Strength_Ultimate).."kW",
+    burner =
+    {
+      fuel_category = "chemical",
+      effectivity = 0.8 + (DATA.Tier / 10),
+      fuel_inventory_size = 1 + DATA.Tier,
+      smoke =
+      {
+        {
+          name = "tank-smoke",
+          deviation = {0.25, 0.25},
+          frequency = 50,
+          position = {0, 1.5},
+          starting_frame = 0,
+          starting_frame_deviation = 60
+        }
+      }
+    },
+    consumption = tostring(600 + Materials[DATA.Table].Strength_Ultimate).."kW",
+    terrain_friction_modifier = 0.2,
+    friction = 0.002 + (DATA.Tier / 100),
+    light =
+    {
+      {
+        type = "oriented",
+        minimum_darkness = 0.3,
+        picture =
+        {
+          filename = "__core__/graphics/light-cone.png",
+          priority = "extra-high",
+          flags = { "light" },
+          scale = 2,
+          width = 200,
+          height = 200,
+        },
+        shift = {-0.6, -14},
+        size = 2,
+        intensity = 0.6,
+        color = {r = 0.9, g = 1.0, b = 1.0}
+      },
+      {
+        type = "oriented",
+        minimum_darkness = 0.3,
+        picture =
+        {
+          filename = "__core__/graphics/light-cone.png",
+          priority = "extra-high",
+          flags = { "light" },
+          scale = 2,
+          width = 200,
+          height = 200
+        },
+        shift = {0.6, -14},
+        size = 2,
+        intensity = 0.6,
+        color = {r = 0.9, g = 1.0, b = 1.0}
+      }
+    },
+    animation =
+    {
+      layers =
+      {
+        {
+          priority = "low",
+          width = 135,
+          height = 106,
+          frame_count = 2,
+          direction_count = 64,
+          shift = util.by_pixel(-4.5, -10),
+          animation_speed = 8,
+          max_advance = 1,
+		  tint = Material_Colors[DATA.Table],
+          stripes =
+          {
+            {
+             filename = "__base__/graphics/entity/tank/tank-base-1.png",
+             width_in_frames = 2,
+             height_in_frames = 16,
+            },
+            {
+             filename = "__base__/graphics/entity/tank/tank-base-2.png",
+             width_in_frames = 2,
+             height_in_frames = 16,
+            },
+            {
+             filename = "__base__/graphics/entity/tank/tank-base-3.png",
+             width_in_frames = 2,
+             height_in_frames = 16,
+            },
+            {
+             filename = "__base__/graphics/entity/tank/tank-base-4.png",
+             width_in_frames = 2,
+             height_in_frames = 16,
+            }
+          },
+          hr_version = {
+            priority = "low",
+            width = 269,
+            height = 212,
+            frame_count = 2,
+            direction_count = 64,
+            shift = util.by_pixel(-4.75, -10),
+            animation_speed = 8,
+            max_advance = 1,
+		    tint = Material_Colors[DATA.Table],
+            stripes =
+            {
+              {
+               filename = "__base__/graphics/entity/tank/hr-tank-base-1.png",
+               width_in_frames = 2,
+               height_in_frames = 16,
+              },
+              {
+               filename = "__base__/graphics/entity/tank/hr-tank-base-2.png",
+               width_in_frames = 2,
+               height_in_frames = 16,
+              },
+              {
+               filename = "__base__/graphics/entity/tank/hr-tank-base-3.png",
+               width_in_frames = 2,
+               height_in_frames = 16,
+              },
+              {
+               filename = "__base__/graphics/entity/tank/hr-tank-base-4.png",
+               width_in_frames = 2,
+               height_in_frames = 16,
+              }
+            },
+            scale = 0.5
+          }
+        },
+        {
+          priority = "low",
+          width = 104,
+          height = 84,
+          frame_count = 2,
+          apply_runtime_tint = true,
+          direction_count = 64,
+          shift = util.by_pixel(-5, -21),
+          max_advance = 1,
+          line_length = 2,
+		  tint = Material_Colors[DATA.Table],
+          stripes = util.multiplystripes(2,
+          {
+            {
+              filename = "__base__/graphics/entity/tank/tank-base-mask-1.png",
+              width_in_frames = 1,
+              height_in_frames = 22,
+            },
+            {
+              filename = "__base__/graphics/entity/tank/tank-base-mask-2.png",
+              width_in_frames = 1,
+              height_in_frames = 22,
+            },
+            {
+              filename = "__base__/graphics/entity/tank/tank-base-mask-3.png",
+              width_in_frames = 1,
+              height_in_frames = 20,
+            },
+          }),
+          hr_version =
+          {
+            priority = "low",
+            width = 207,
+            height = 166,
+		    tint = Material_Colors[DATA.Table],
+            frame_count = 2,
+            apply_runtime_tint = true,
+            direction_count = 64,
+            shift = util.by_pixel(-4.75, -21),
+            max_advance = 1,
+            line_length = 2,
+            stripes = util.multiplystripes(2,
+            {
+              {
+                filename = "__base__/graphics/entity/tank/hr-tank-base-mask-1.png",
+                width_in_frames = 1,
+                height_in_frames = 22,
+              },
+              {
+                filename = "__base__/graphics/entity/tank/hr-tank-base-mask-2.png",
+                width_in_frames = 1,
+                height_in_frames = 22,
+              },
+              {
+                filename = "__base__/graphics/entity/tank/hr-tank-base-mask-3.png",
+                width_in_frames = 1,
+                height_in_frames = 20,
+              },
+            }),
+            scale = 0.5
+          }
+        },
+        {
+          priority = "low",
+          width = 151,
+          height = 98,
+          frame_count = 2,
+          draw_as_shadow = true,
+          direction_count = 64,
+          shift = util.by_pixel(17.5, 7),
+          max_advance = 1,
+          stripes = util.multiplystripes(2,
+          {
+           {
+            filename = "__base__/graphics/entity/tank/tank-base-shadow-1.png",
+            width_in_frames = 1,
+            height_in_frames = 16,
+           },
+           {
+            filename = "__base__/graphics/entity/tank/tank-base-shadow-2.png",
+            width_in_frames = 1,
+            height_in_frames = 16,
+           },
+           {
+            filename = "__base__/graphics/entity/tank/tank-base-shadow-3.png",
+            width_in_frames = 1,
+            height_in_frames = 16,
+           },
+           {
+            filename = "__base__/graphics/entity/tank/tank-base-shadow-4.png",
+            width_in_frames = 1,
+            height_in_frames = 16,
+           }
+          }),
+          hr_version =
+          {
+            priority = "low",
+            width = 301,
+            height = 194,
+            frame_count = 2,
+            draw_as_shadow = true,
+            direction_count = 64,
+            shift = util.by_pixel(17.75, 7),
+            max_advance = 1,
+            stripes = util.multiplystripes(2,
+            {
+             {
+              filename = "__base__/graphics/entity/tank/hr-tank-base-shadow-1.png",
+              width_in_frames = 1,
+              height_in_frames = 16,
+             },
+             {
+              filename = "__base__/graphics/entity/tank/hr-tank-base-shadow-2.png",
+              width_in_frames = 1,
+              height_in_frames = 16,
+             },
+             {
+              filename = "__base__/graphics/entity/tank/hr-tank-base-shadow-3.png",
+              width_in_frames = 1,
+              height_in_frames = 16,
+             },
+             {
+              filename = "__base__/graphics/entity/tank/hr-tank-base-shadow-4.png",
+              width_in_frames = 1,
+              height_in_frames = 16,
+             }
+            }),
+            scale = 0.5
+          }
+        }
+      }
+    },
+    turret_animation =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/tank/tank-turret.png",
+          priority = "low",
+          line_length = 8,
+          width = 90,
+          height = 67,
+          frame_count = 1,
+          direction_count = 64,
+          shift = util.by_pixel(-5, -34.5),
+          animation_speed = 8,
+		  tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/tank/hr-tank-turret.png",
+            priority = "low",
+            line_length = 8,
+            width = 179,
+            height = 132,
+            frame_count = 1,
+            direction_count = 64,
+            shift = util.by_pixel(-4.75, -34.5),
+            animation_speed = 8,
+		    tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/tank/tank-turret-mask.png",
+          priority = "low",
+          line_length = 8,
+          width = 36,
+          height = 33,
+          frame_count = 1,
+          apply_runtime_tint = true,
+          direction_count = 64,
+		  tint = Material_Colors[DATA.Table],
+          shift = util.by_pixel(-5, -35.5),
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/tank/hr-tank-turret-mask.png",
+            priority = "low",
+            line_length = 8,
+            width = 72,
+            height = 66,
+            frame_count = 1,
+            apply_runtime_tint = true,
+            direction_count = 64,
+            shift = util.by_pixel(-5, -35.5),
+		    tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/tank/tank-turret-shadow.png",
+          priority = "low",
+          line_length = 8,
+          width = 97,
+          height = 67,
+          frame_count = 1,
+          draw_as_shadow = true,
+          direction_count = 64,
+          shift = util.by_pixel(51.5, 6.5),
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/tank/hr-tank-turret-shadow.png",
+            priority = "low",
+            line_length = 8,
+            width = 193,
+            height = 134,
+            frame_count = 1,
+            draw_as_shadow = true,
+            direction_count = 64,
+            shift = util.by_pixel(51.25, 6.5),
+            scale = 0.5
+          }
+        }
+      }
+    },
+    turret_rotation_speed = 0.35 / 60,
+    turret_return_timeout = 300,
+    stop_trigger_speed = 0.2,
+    sound_no_fuel =
+    {
+      {
+        filename = "__base__/sound/fight/tank-no-fuel-1.ogg",
+        volume = 0.6
+      },
+    },
+    stop_trigger =
+    {
+      {
+        type = "play-sound",
+        sound =
+        {
+          {
+            filename = "__base__/sound/car-breaks.ogg",
+            volume = 0.6
+          },
+        }
+      },
+    },
+    sound_minimum_speed = 0.15;
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/fight/tank-engine.ogg",
+        volume = 0.6
+      },
+      activate_sound =
+      {
+        filename = "__base__/sound/fight/tank-engine-start.ogg",
+        volume = 0.6
+      },
+      deactivate_sound =
+      {
+        filename = "__base__/sound/fight/tank-engine-stop.ogg",
+        volume = 0.6
+      },
+      match_speed_to_activity = true,
+    },
+    open_sound = { filename = "__base__/sound/car-door-open.ogg", volume=0.7 },
+    close_sound = { filename = "__base__/sound/car-door-close.ogg", volume = 0.7 },
+    rotation_speed = 0.0035,
+    tank_driving = true,
+    weight = ( 20000 + (Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Density)),
+    inventory_size = Round((50 + Materials[DATA.Table].Elasticity), 0),
+    guns = { "tank-cannon", "tank-machine-gun", "tank-flamethrower" },
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-tank",
+	localised_name = {"looped-name.tank", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/tank.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."vehicle-tank",
+    stack_size = 1,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-tank",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-tank",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{"tank", 1},{dy.."heater", 1},{dy.."gearbox", 2}},
+    result = dy..DATA.Name.."-tank",
+    result_count = 1,
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-tank-armor-remover",
+    energy_required = 2.5,
+    category = dy.."armor-remover",
+	enabled = true,
+	hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
+    ingredients = {{dy..DATA.Name.."-tank", 1}},
+    result = "tank",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 100}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-tank"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 100}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-tank"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 100}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-tank"].ingredients, result_1)
+	end
+	if DATA.Tier == 1 then
+		DyWorld_Add_To_Tech("tanks", dy..DATA.Name.."-tank")
+	elseif DATA.Tier == 2 then
+		DyWorld_Add_To_Tech("tanks-2", dy..DATA.Name.."-tank")
+	elseif DATA.Tier == 3 then
+		DyWorld_Add_To_Tech("tanks-3", dy..DATA.Name.."-tank")
+	elseif DATA.Tier == 4 then
+		DyWorld_Add_To_Tech("tanks-4", dy..DATA.Name.."-tank")
+	elseif DATA.Tier == 5 then
+		DyWorld_Add_To_Tech("tanks-5", dy..DATA.Name.."-tank")
+	elseif DATA.Tier == 6 then
+		DyWorld_Add_To_Tech("tanks-6", dy..DATA.Name.."-tank")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-tank"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-tank"].fuel_category = "chemical"
+	end
+end
+
+function DyWorld_Cars(DATA)
+data:extend(
+{
+  {
+    type = "car",
+	name = dy..DATA.Name.."-car",
+	localised_name = {"looped-name.car", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/car.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+	icon_size = 32,
+    minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-car"},
+    flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
+    mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
+    max_health = (500 + DyWorld_Material_Formulas(3, DATA.Table)),
+    resistances = Material_Resistances[DATA.Table],
+    corpse = "medium-remnants",
+    dying_explosion = "medium-explosion",
+    alert_icon_shift = util.by_pixel(-4, -13),
+    immune_to_tree_impacts = true,
+    energy_per_hit_point = 0.4 + (DATA.Tier / 10),
+    collision_box = {{-0.9, -1.3}, {0.9, 1.3}},
+    selection_box = {{-0.9, -1.3}, {0.9, 1.3}},
+    drawing_box = {{-1.8, -1.8}, {1.8, 1.5}},
+    effectivity = 0.4 + (DATA.Tier / 10),
+    braking_power = tostring(200 + Materials[DATA.Table].Strength_Ultimate).."kW",
+    burner =
+    {
+      fuel_category = "chemical",
+      effectivity = 0.5 + (DATA.Tier / 10),
+      fuel_inventory_size = 1 + DATA.Tier,
+      smoke =
+      {
+        {
+          name = "tank-smoke",
+          deviation = {0.25, 0.25},
+          frequency = 50,
+          position = {0, 1.5},
+          starting_frame = 0,
+          starting_frame_deviation = 60
+        }
+      }
+    },
+    consumption = tostring(150 + Materials[DATA.Table].Strength_Ultimate).."kW",
+    terrain_friction_modifier = 0.2,
+    friction = 0.0002 + (DATA.Tier / 1000),
+    light =
+    {
+      {
+        type = "oriented",
+        minimum_darkness = 0.3,
+        picture =
+        {
+          filename = "__core__/graphics/light-cone.png",
+          priority = "extra-high",
+          flags = { "light" },
+          scale = 2,
+          width = 200,
+          height = 200,
+        },
+        shift = {-0.6, -14},
+        size = 2,
+        intensity = 0.6,
+        color = {r = 0.9, g = 1.0, b = 1.0}
+      },
+      {
+        type = "oriented",
+        minimum_darkness = 0.3,
+        picture =
+        {
+          filename = "__core__/graphics/light-cone.png",
+          priority = "extra-high",
+          flags = { "light" },
+          scale = 2,
+          width = 200,
+          height = 200
+        },
+        shift = {0.6, -14},
+        size = 2,
+        intensity = 0.6,
+        color = {r = 0.9, g = 1.0, b = 1.0}
+      }
+    },
+    render_layer = "object",
+    animation =
+    {
+      layers =
+      {
+        {
+          priority = "low",
+          width = 102,
+          height = 86,
+          frame_count = 2,
+          direction_count = 64,
+          shift = {0, -0.1875},
+          animation_speed = 8,
+          max_advance = 0.2,
+		  tint = Material_Colors[DATA.Table],
+          stripes =
+          {
+            {
+             filename = "__base__/graphics/entity/car/car-1.png",
+             width_in_frames = 2,
+             height_in_frames = 22,
+            },
+            {
+             filename = "__base__/graphics/entity/car/car-2.png",
+             width_in_frames = 2,
+             height_in_frames = 22,
+            },
+            {
+             filename = "__base__/graphics/entity/car/car-3.png",
+             width_in_frames = 2,
+             height_in_frames = 20,
+            },
+          },
+          hr_version =
+          {
+            priority = "low",
+            width = 202,
+            height = 172,
+            frame_count = 2,
+            scale = 0.5,
+            direction_count = 64,
+            shift = util.by_pixel(0+2, -11.5+8.5),
+            animation_speed = 8,
+            max_advance = 0.2,
+		    tint = Material_Colors[DATA.Table],
+            stripes =
+            {
+              {
+                filename = "__base__/graphics/entity/car/hr-car-1.png",
+                width_in_frames = 2,
+                height_in_frames = 11
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-2.png",
+                width_in_frames = 2,
+                height_in_frames = 11
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-3.png",
+                width_in_frames = 2,
+                height_in_frames = 11
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-4.png",
+                width_in_frames = 2,
+                height_in_frames = 11
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-5.png",
+                width_in_frames = 2,
+                height_in_frames = 11
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-6.png",
+                width_in_frames = 2,
+                height_in_frames = 9
+              }
+            }
+          }
+        },
+        {
+          priority = "low",
+          width = 100,
+          height = 75,
+          frame_count = 2,
+          apply_runtime_tint = true,
+          direction_count = 64,
+          max_advance = 0.2,
+          line_length = 2,
+		  tint = Material_Colors[DATA.Table],
+          shift = {0, -0.171875},
+          stripes = util.multiplystripes(2,
+          {
+            {
+              filename = "__base__/graphics/entity/car/car-mask-1.png",
+              width_in_frames = 1,
+              height_in_frames = 22,
+            },
+            {
+              filename = "__base__/graphics/entity/car/car-mask-2.png",
+              width_in_frames = 1,
+              height_in_frames = 22,
+            },
+            {
+              filename = "__base__/graphics/entity/car/car-mask-3.png",
+              width_in_frames = 1,
+              height_in_frames = 20,
+            },
+          }),
+          hr_version =
+          {
+            priority = "low",
+            width = 199,
+            height = 147,
+            frame_count = 2,
+            apply_runtime_tint = true,
+            scale = 0.5,
+            axially_symmetrical = false,
+            direction_count = 64,
+            max_advance = 0.2,
+            shift = util.by_pixel(0+2, -11+8.5),
+            line_length = 1,
+		    tint = Material_Colors[DATA.Table],
+            stripes = util.multiplystripes(2,
+            {
+              {
+                filename = "__base__/graphics/entity/car/hr-car-mask-1.png",
+                width_in_frames = 1,
+                height_in_frames = 13
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-mask-2.png",
+                width_in_frames = 1,
+                height_in_frames = 13
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-mask-3.png",
+                width_in_frames = 1,
+                height_in_frames = 13
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-mask-4.png",
+                width_in_frames = 1,
+                height_in_frames = 13
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-mask-5.png",
+                width_in_frames = 1,
+                height_in_frames = 12
+              }
+            })
+          }
+        },
+        {
+          priority = "low",
+          width = 114,
+          height = 76,
+          frame_count = 2,
+          draw_as_shadow = true,
+          direction_count = 64,
+          shift = {0.28125, 0.25},
+          max_advance = 0.2,
+          stripes = util.multiplystripes(2,
+          {
+           {
+            filename = "__base__/graphics/entity/car/car-shadow-1.png",
+            width_in_frames = 1,
+            height_in_frames = 22,
+           },
+           {
+            filename = "__base__/graphics/entity/car/car-shadow-2.png",
+            width_in_frames = 1,
+            height_in_frames = 22,
+           },
+           {
+            filename = "__base__/graphics/entity/car/car-shadow-3.png",
+            width_in_frames = 1,
+            height_in_frames = 20,
+           }
+          })
+        }
+      }
+    },
+    turret_animation =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/car/car-turret.png",
+          priority = "low",
+          line_length = 8,
+          width = 36,
+          height = 29,
+          frame_count = 1,
+          direction_count = 64,
+          shift = {0.03125, -0.890625},
+          animation_speed = 8,
+		  tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            priority = "low",
+            width = 71,
+            height = 57,
+            frame_count = 1,
+            axially_symmetrical = false,
+            direction_count = 64,
+		    tint = Material_Colors[DATA.Table],
+            shift = util.by_pixel(0+2, -33.5+8.5),
+            animation_speed = 8,
+            scale = 0.5,
+            stripes =
+            {
+              {
+                filename = "__base__/graphics/entity/car/hr-car-turret-1.png",
+                width_in_frames = 1,
+                height_in_frames = 32
+              },
+              {
+                filename = "__base__/graphics/entity/car/hr-car-turret-2.png",
+                width_in_frames = 1,
+                height_in_frames = 32
+              }
+            }
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/car/car-turret-shadow.png",
+          priority = "low",
+          line_length = 8,
+          width = 46,
+          height = 31,
+          frame_count = 1,
+          draw_as_shadow = true,
+          direction_count = 64,
+          shift = {0.875, 0.359375}
+        }
+      }
+    },
+    turret_rotation_speed = 0.35 / 60,
+    sound_no_fuel =
+    {
+      {
+        filename = "__base__/sound/fight/car-no-fuel-1.ogg",
+        volume = 0.6
+      }
+    },
+    stop_trigger_speed = 0.2,
+    stop_trigger =
+    {
+      {
+        type = "play-sound",
+        sound =
+        {
+          {
+            filename = "__base__/sound/car-breaks.ogg",
+            volume = 0.6
+          }
+        }
+      }
+    },
+    sound_minimum_speed = 0.2;
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/car-engine.ogg",
+        volume = 0.6
+      },
+      activate_sound =
+      {
+        filename = "__base__/sound/car-engine-start.ogg",
+        volume = 0.6
+      },
+      deactivate_sound =
+      {
+        filename = "__base__/sound/car-engine-stop.ogg",
+        volume = 0.6
+      },
+      match_speed_to_activity = true,
+    },
+    open_sound = { filename = "__base__/sound/car-door-open.ogg", volume = 0.7 },
+    close_sound = { filename = "__base__/sound/car-door-close.ogg", volume = 0.7 },
+    rotation_speed = 0.015,
+    guns = { "vehicle-machine-gun" },
+    weight = ( 700 + (Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Density)),
+    inventory_size = Round((80 + Materials[DATA.Table].Elasticity), 0),
+  },
+  {
+    type = "item",
+	name = dy..DATA.Name.."-car",
+	localised_name = {"looped-name.car", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/car.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy.."vehicle-car",
+    stack_size = 1,
+	order = DATA.Name,
+	place_result = dy..DATA.Name.."-car",
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-car",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{"car", 1},{dy.."gearbox", 2}},
+    result = dy..DATA.Name.."-car",
+    result_count = 1,
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-car-armor-remover",
+    energy_required = 2.5,
+    category = dy.."armor-remover",
+	enabled = true,
+	hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
+    ingredients = {{dy..DATA.Name.."-car", 1}},
+    result = "car",
+    result_count = 1,
+  },
+})
+	if DATA.Name == "stone" or DATA.Name == "wood" then
+		local result_1 = {DATA.Name, 50}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-car"].ingredients, result_1)
+	elseif DATA.Name == "rubber" or DATA.Name == "obsidian" or DATA.Name == "chitin" then
+		local result_1 = {dy..DATA.Name, 50}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-car"].ingredients, result_1)
+	else
+		local result_1 = {DATA.Name.."-plate", 50}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-car"].ingredients, result_1)
+	end
+	if DATA.Tier == 1 then
+		DyWorld_Add_To_Tech("automobilism", dy..DATA.Name.."-car")
+	elseif DATA.Tier == 2 then
+		DyWorld_Add_To_Tech("automobilism-2", dy..DATA.Name.."-car")
+	elseif DATA.Tier == 3 then
+		DyWorld_Add_To_Tech("automobilism-3", dy..DATA.Name.."-car")
+	elseif DATA.Tier == 4 then
+		DyWorld_Add_To_Tech("automobilism-4", dy..DATA.Name.."-car")
+	elseif DATA.Tier == 5 then
+		DyWorld_Add_To_Tech("automobilism-5", dy..DATA.Name.."-car")
+	elseif DATA.Tier == 6 then
+		DyWorld_Add_To_Tech("automobilism-6", dy..DATA.Name.."-car")
+	end
+	if DATA.Name == "wood" then
+		data.raw.item[dy..DATA.Name.."-car"].fuel_value = "2MJ"
+		data.raw.item[dy..DATA.Name.."-car"].fuel_category = "chemical"
 	end
 end
 

@@ -16,6 +16,9 @@ require("data.warfare.walls.walls")
 
 require("data.warfare.radar.radar")
 
+require("data.warfare.vehicles.cars")
+require("data.warfare.vehicles.tanks")
+
 require("data.warfare.guns.gun")
 require("data.warfare.guns.land-mine")
 require("data.warfare.guns.recipe")

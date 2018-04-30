@@ -11,6 +11,8 @@ Date: ??. ??. 2018
     - Added a new item: Rockets
     - Added a new armor: Modular Armors. Grid Space is based on the material's Hardness and Density. Provides NO inventory slot bonuses!
     - Added a new entity: Module Beacons
+    - Added a new entity: Armored Cars
+    - Added a new entity: Armored Tanks
     - Moved Rubber to higher tier. 1 > 3
     - Moved Uranium to higher tier. 2 > 4
     - Moved Obsidian to higher tier. 1 > 2

@@ -359,7 +359,7 @@ data:extend(
 			local result = {type = "unlock-recipe", recipe = dy..v.Name}
 			table.insert(data.raw.technology[v.Tech_Name].effects,result)
 		end
-		DyWorld_Module_Limitation_Productivity(nil, dy..v.Name)
+		table.insert(DyWorld_TD.Module_List, dy..v.Name)
 	end
 end
 

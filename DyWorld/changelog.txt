@@ -5,6 +5,7 @@ Date: ??. ??. 2018
     - Added new dynamic resistances for enemies. They scale up with higher and stronger units. They now truly get stronger and stronger the bigger they get.
     - Loaders now snap to entities with inventories. Same functionality as DeadLockLoaders. (Taken with his permission, legal stuff can be found in legal folder inside zip folder)
     - Added option to the manual crafting of circuit and pcb components. Enabled it will auto craft in inventory when a circuit is pressed. Remember, this requires more resources, and a restart of the game.
+    - Removed all special assemblers and made 1 all purpose assembler. All old items and entities will migrate to new entity
   Materials System:
     - Added a new item: Land Mines
     - Added a new item: Rockets
@@ -23,6 +24,7 @@ Date: ??. ??. 2018
     - Centrifuge now available from the start
     - Science packs can no longer be used with productivity modules 
     - Productivity Modules work with a lot of DyWorld intermediate recipes now
+    - Migrated plastic bar to a new item: Plastic Plate. This is internally and makes it usable for the Material System without massive editing. All old plastic bars are migrated to the new item, and recipes will use the new one. Mods are also affected, and will change to new item as well.
   Graphics:
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
   Balancing:

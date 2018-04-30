@@ -11202,7 +11202,7 @@ data:extend(
 	name = dy..DATA.Name.."-beacon",
     energy_required = 10 * DATA.Tier,
 	enabled = false,
-    ingredients = {{dy.."rotor", 2},{dy.."housing", 1},
+    ingredients = {{dy.."rotor", 2},{dy.."housing", 1}},
     result = dy..DATA.Name.."-beacon",
     result_count = 1,
   },

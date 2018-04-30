@@ -1,4 +1,6 @@
 
+require("dycompa.dyworld-core")
+
 if settings.startup["DyWorld_Warfare"].value then
 	require("dycompa.dyworld-warfare")
 end

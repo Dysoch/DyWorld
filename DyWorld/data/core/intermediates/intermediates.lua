@@ -375,14 +375,4 @@ data:extend(
     order = "carbon",
     stack_size = 200
   },
-  {
-    type = "item",
-    name = "plastic-plate",
-    icon = "__base__/graphics/icons/plastic-bar.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "raw-material",
-    order = "f[plastic-bar]",
-    stack_size = 200
-  },
 })

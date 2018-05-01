@@ -1,17 +1,16 @@
 {
   "item":
   [
-	["plastic-bar", "plastic-plate"],
 	["dyworld-cable-crafter", "dyworld-intermediate-crafter"],
 	["dyworld-coil-crafter", "dyworld-intermediate-crafter"],
-	["dyworld-gear-crafter", "dyworld-intermediate-crafter"],
+	["dyworld-gear-crafter", "dyworld-intermediate-crafter-2"],
 	["dyworld-pcb-crafter", "dyworld-intermediate-crafter"]
   ],
   "entity":
   [
 	["dyworld-cable-crafter", "dyworld-intermediate-crafter"],
 	["dyworld-coil-crafter", "dyworld-intermediate-crafter"],
-	["dyworld-gear-crafter", "dyworld-intermediate-crafter"],
+	["dyworld-gear-crafter", "dyworld-intermediate-crafter-2"],
 	["dyworld-pcb-crafter", "dyworld-intermediate-crafter"]
   ]
 }

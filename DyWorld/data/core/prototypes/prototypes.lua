@@ -3449,6 +3449,37 @@ data:extend(
             type = "create-entity",
             entity_name = "small-scorchmark",
             check_buildability = true
+          },
+          {
+            type = "nested-result",
+            action =
+            {
+              type = "area",
+              radius = DATA.Tier + 0.5,
+              action_delivery =
+              {
+                type = "instant",
+                target_effects =
+                {
+                  {
+                    type = "damage",
+                    damage = {amount = Round(((DyWorld_Material_Formulas(8, DATA.Table) * 0.5) * 0.05), 2), type = "impact"}
+                  },
+                  {
+                    type = "damage",
+                    damage = {amount = Round(((DyWorld_Material_Formulas(8, DATA.Table) * 0.5) * 0.2), 2), type = DATA.DMG_Type}
+                  },
+                  {
+                    type = "damage",
+                    damage = {amount = Round(((DyWorld_Material_Formulas(8, DATA.Table) * 0.5) * 0.75), 2), type = "explosion"}
+                  },
+                  {
+                    type = "create-entity",
+                    entity_name = "explosion"
+                  }
+                }
+              }
+            },
           }
         }
       }

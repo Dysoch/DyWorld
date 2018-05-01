@@ -8,7 +8,7 @@ Date: ??. ??. 2018
     - Removed all special assemblers and made 1 all purpose assembler. All old items and entities will migrate to new entity
   Materials System:
     - Added a new item: Land Mines
-    - Added a new item: Rockets
+    - Added a new item: Rockets. They have AoE damage based on their tier
     - Added a new armor: Modular Armors. Grid Space is based on the material's Hardness and Density. Provides NO inventory slot bonuses!
     - Added a new entity: Module Beacons
     - Added a new entity: Armored Cars
@@ -26,7 +26,6 @@ Date: ??. ??. 2018
     - Centrifuge now available from the start
     - Science packs can no longer be used with productivity modules 
     - Productivity Modules work with a lot of DyWorld intermediate recipes now
-    - Migrated plastic bar to a new item: Plastic Plate. This is internally and makes it usable for the Material System without massive editing. All old plastic bars are migrated to the new item, and recipes will use the new one. Mods are also affected, and will change to new item as well.
   Graphics:
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
   Balancing:

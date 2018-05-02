@@ -109,16 +109,15 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."methane", amount = 35},
-      {type = "fluid", name = dy.."water-clean", amount = 250},
+      {type = "fluid", name = dy.."methane", amount = 75},
+      {type = "fluid", name = dy.."advanced-lubricant", amount = 500},
       {type = "item", name = dy.."controller", amount = 1},
-      {type = "item", name = "iron-gear-wheel", amount = 2},
-      {type = "item", name = dy.."crystai", amount = 2},
-      {type = "item", name = dy.."processing-logic", amount = 1},
+      {type = "item", name = dy.."crystai", amount = 3},
+      {type = "item", name = dy.."processing-logic", amount = 2},
     },
     results=
     {
-      {type = "fluid", name = dy.."science-fluid-6", amount = 10},
+      {type = "fluid", name = dy.."science-fluid-6", amount = 20},
     },
     subgroup = dy.."science-recipe",
     order = dy.."science-fluid-6",
@@ -135,7 +134,9 @@ if settings.startup["DyWorld_Metallurgy"].value then
 	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
 	local result = {type = "fluid", name = dy.."molten-billon", amount = 15}
 	table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
-	local result = {type = "fluid", name = dy.."molten-gold", amount = 5}
+	local result = {type = "fluid", name = dy.."molten-copper-hydride", amount = 5}
+	table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
+	local result = {type = "item", name = "stainless-steel-pcb", amount = 2}
 	table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
 else	
 	local result = {type = "fluid", name = "sulfuric-acid", amount = 75}

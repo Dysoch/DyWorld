@@ -26,6 +26,7 @@ Date: ??. ??. 2018
     - Centrifuge now available from the start
     - Science packs can no longer be used with productivity modules 
     - Productivity Modules work with a lot of DyWorld intermediate recipes now
+    - Made recipe of Yellow Science Fluid a lot harder, while increasing the amount of fluid you get
   Graphics:
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
   Balancing:

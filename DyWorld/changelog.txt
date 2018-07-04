@@ -27,6 +27,8 @@ Date: ??. ??. 2018
     - Science packs can no longer be used with productivity modules 
     - Productivity Modules work with a lot of DyWorld intermediate recipes now
     - Made recipe of Yellow Science Fluid a lot harder, while increasing the amount of fluid you get
+    - Changed max fluid input of Forge and Centrifuge to 2 times recipe size.
+    - Forge now only has 1 input slot, which should fix module issue
   Graphics:
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
   Balancing:

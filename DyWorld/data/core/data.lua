@@ -57,6 +57,7 @@ require("data.core.intermediates.wood")
 require("data.core.intermediates.fluids")
 require("data.core.geodrill.geodrill")
 require("data.core.geodrill.recipes")
+require("data.core.vehicle-gun.tank-weapons")
 
 -- Edits
 require("data.core.edits.ammo")

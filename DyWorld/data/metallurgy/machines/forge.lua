@@ -28,7 +28,7 @@ data:extend(
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        base_area = 2,
         base_level = -1,
         pipe_connections = {{ type="input", position = {0, -2} }}
       },
@@ -39,10 +39,10 @@ data:extend(
     },
     allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {dy.."forge"},
-    result_inventory_size = 5,
+    result_inventory_size = 1,
     crafting_speed = 1,
     energy_usage = "100kW",
-    source_inventory_size = 1,
+    source_inventory_size = 0,
     energy_source =
     {
       type = "electric",

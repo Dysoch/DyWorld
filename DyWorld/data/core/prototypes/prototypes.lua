@@ -10308,7 +10308,7 @@ data:extend(
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-tank"},
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
     mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
-    max_health = (2500 + DyWorld_Material_Formulas(3, DATA.Table)),
+    max_health = (2500 + (DyWorld_Material_Formulas(3, DATA.Table) * 15)),
     resistances = Material_Resistances[DATA.Table],
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
@@ -10714,7 +10714,7 @@ data:extend(
     tank_driving = true,
     weight = ( 20000 + (Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Density)),
     inventory_size = Round((50 + Materials[DATA.Table].Elasticity), 0),
-    guns = { "tank-cannon", "tank-machine-gun", "tank-flamethrower" },
+    guns = { dy.."tank-cannon-"..DATA.Tier, dy.."tank-machine-gun-"..DATA.Tier, dy.."tank-flamethrower-"..DATA.Tier },
   },
   {
     type = "item",
@@ -10767,14 +10767,39 @@ data:extend(
 	if DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("tanks", dy..DATA.Name.."-tank")
 	elseif DATA.Tier == 2 then
+		local gun_1 = dy.."tank-shotgun-2"
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_1)
 		DyWorld_Add_To_Tech("tanks-2", dy..DATA.Name.."-tank")
 	elseif DATA.Tier == 3 then
+		local gun_1 = dy.."tank-shotgun-3"
+		local gun_2 = dy.."tank-rocket-launcher-3"
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_1)
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_2)
 		DyWorld_Add_To_Tech("tanks-3", dy..DATA.Name.."-tank")
 	elseif DATA.Tier == 4 then
+		local gun_1 = dy.."tank-shotgun-4"
+		local gun_2 = dy.."tank-rocket-launcher-4"
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_1)
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_2)
+		--table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_3)
 		DyWorld_Add_To_Tech("tanks-4", dy..DATA.Name.."-tank")
 	elseif DATA.Tier == 5 then
+		local gun_1 = dy.."tank-shotgun-5"
+		local gun_2 = dy.."tank-rocket-launcher-5"
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_1)
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_2)
+		--table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_3)
+		--table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_4)
 		DyWorld_Add_To_Tech("tanks-5", dy..DATA.Name.."-tank")
 	elseif DATA.Tier == 6 then
+		local gun_1 = dy.."tank-shotgun-6"
+		local gun_2 = dy.."tank-rocket-launcher-6"
+		local gun_5 = dy.."artillery-tank-cannon"
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_1)
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_2)
+		--table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_3)
+		--table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_4)
+		table.insert(data.raw.car[dy..DATA.Name.."-tank"].guns, gun_5)
 		DyWorld_Add_To_Tech("tanks-6", dy..DATA.Name.."-tank")
 	end
 	if DATA.Name == "wood" then

@@ -8,7 +8,7 @@ for k,v in pairs(Remove_Table) do
 			for h,b in pairs(n.unit.ingredients) do
 				if b[1] == v then
 					table.remove(n.unit.ingredients, h)
-					n.unit.count = n.unit.count * 2
+					--n.unit.count = n.unit.count * 2
 				end
 			end
 		end

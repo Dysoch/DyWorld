@@ -87,20 +87,14 @@ data:extend(
     },
     results =
     {
-      {type = "item", name = "stone", amount_min = 1, amount_max = 4, probability = 1},
+      {type = "item", name = "bauxite", amount_min = 1, amount_max = 5, probability = 1},
       {type = "item", name = dy.."sand", amount_min = 1, amount_max = 10, probability = 0.75},
-      {type = "item", name = "coal", amount_min = 1, amount_max = 4, probability = 0.35},
-      {type = "item", name = "iron-ore", amount_min = 1, amount_max = 2, probability = 0.19},
-      {type = "item", name = "copper-ore", amount_min = 1, amount_max = 1, probability = 0.125},
-      {type = "item", name = "gold-ore", amount_min = 1, amount_max = 1, probability = 0.07},
-      {type = "item", name = "tin-ore", amount_min = 1, amount_max = 1, probability = 0.1},
-      {type = "item", name = "silver-ore", amount_min = 1, amount_max = 1, probability = 0.09},
-      {type = "item", name = "lead-ore", amount_min = 1, amount_max = 1, probability = 0.12},
-      {type = "item", name = "chromium-ore", amount_min = 1, amount_max = 1, probability = 0.14},
-      {type = "item", name = "tungsten-ore", amount_min = 1, amount_max = 1, probability = 0.07},
-      {type = "item", name = "nickel-ore", amount_min = 1, amount_max = 1, probability = 0.09},
-      {type = "item", name = "aluminium-ore", amount_min = 1, amount_max = 1, probability = 0.09},
-      {type = "item", name = "zinc-ore", amount_min = 1, amount_max = 1, probability = 0.09},
+      {type = "item", name = "carbolycite", amount_min = 1, amount_max = 5, probability = 0.35},
+      {type = "item", name = "chalcopyrite", amount_min = 1, amount_max = 5, probability = 0.19},
+      {type = "item", name = "hematite", amount_min = 1, amount_max = 5, probability = 0.125},
+      {type = "item", name = "galena", amount_min = 1, amount_max = 5, probability = 0.07},
+      {type = "item", name = "prolycotherium", amount_min = 1, amount_max = 5, probability = 0.1},
+      {type = "item", name = "radicium", amount_min = 1, amount_max = 5, probability = 0.06},
     },
     subgroup = dy.."fluid-recipes",
     order = "sludge-seperation",
@@ -317,7 +311,217 @@ data:extend(
     subgroup = dy.."fluid-recipes",
     order = "super-lubricant"
   },
+  {
+    type = "recipe",
+    name = dy.."ore-grinding-1",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/water.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = dy.."grinder",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {type = "item", name = "chalcopyrite", amount = 5},
+      {type = "fluid", name = dy.."water-clean", amount = 25},
+    },
+    results =
+    {
+      {type = "item", name = dy.."sand", amount_min = 5, amount_max = 75},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = dy.."ore-grinding-1",
+  },
+  {
+    type = "recipe",
+    name = dy.."ore-grinding-2",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/water.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = dy.."grinder",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {type = "item", name = "hematite", amount = 5},
+      {type = "fluid", name = dy.."water-clean", amount = 25},
+    },
+    results =
+    {
+      {type = "item", name = dy.."sand", amount_min = 5, amount_max = 75},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = dy.."ore-grinding-2",
+  },
+  {
+    type = "recipe",
+    name = dy.."ore-grinding-3",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/water.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = dy.."grinder",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {type = "item", name = "galena", amount = 5},
+      {type = "fluid", name = dy.."water-clean", amount = 25},
+    },
+    results =
+    {
+      {type = "item", name = dy.."sand", amount_min = 5, amount_max = 75},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = dy.."ore-grinding-3",
+  },
+  {
+    type = "recipe",
+    name = dy.."ore-grinding-4",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/water.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = dy.."grinder",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {type = "item", name = "prolycotherium", amount = 5},
+      {type = "fluid", name = dy.."water-clean", amount = 25},
+    },
+    results =
+    {
+      {type = "item", name = dy.."sand", amount_min = 5, amount_max = 75},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = dy.."ore-grinding-4",
+  },
+  {
+    type = "recipe",
+    name = dy.."ore-grinding-5",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/water.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = dy.."grinder",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {type = "item", name = "carbolycite", amount = 5},
+      {type = "fluid", name = dy.."water-clean", amount = 25},
+    },
+    results =
+    {
+      {type = "item", name = dy.."sand", amount_min = 5, amount_max = 75},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = dy.."ore-grinding-5",
+  },
+  {
+    type = "recipe",
+    name = dy.."ore-grinding-6",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/water.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = dy.."grinder",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {type = "item", name = "bauxite", amount = 5},
+      {type = "fluid", name = dy.."water-clean", amount = 25},
+    },
+    results =
+    {
+      {type = "item", name = dy.."sand", amount_min = 5, amount_max = 75},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = dy.."ore-grinding-6",
+  },
+  {
+    type = "recipe",
+    name = dy.."ore-grinding-7",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/water.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = dy.."grinder",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {type = "item", name = "radicium", amount = 5},
+      {type = "fluid", name = dy.."water-clean", amount = 25},
+    },
+    results =
+    {
+      {type = "item", name = dy.."sand", amount_min = 5, amount_max = 75},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = dy.."ore-grinding-7",
+  },
 })
 
 DyWorld_Add_To_Tech("advanced-oil-processing", dy.."advanced-lubricant")
 DyWorld_Add_To_Tech("advanced-oil-processing", dy.."super-lubricant")
+DyWorld_Add_To_Tech("automation", dy.."ore-grinding-1")
+DyWorld_Add_To_Tech("automation", dy.."ore-grinding-2")
+DyWorld_Add_To_Tech("automation", dy.."ore-grinding-3")
+DyWorld_Add_To_Tech("automation", dy.."ore-grinding-4")
+DyWorld_Add_To_Tech("automation", dy.."ore-grinding-5")
+DyWorld_Add_To_Tech("automation", dy.."ore-grinding-6")
+DyWorld_Add_To_Tech("automation", dy.."ore-grinding-7")

@@ -88,10 +88,7 @@ for k,v in pairs(Data_Table) do
 	if not v.Resource_Already_In then
 		data:extend(
 		{
-			DyWorld_Noise_Layer(v),
-			DyWorld_Autoplace(v),
 			DyWorld_Item_Ore(v),
-			DyWorld_Resource(v),
 			DyWorld_Item_Plate(v),
 			DyWorld_Recipe_Plate(v),
 		})
@@ -137,15 +134,6 @@ data:extend(
 		DyWorld_Technology_1(v),
 	})
 end
-
-data.raw.resource["tin-ore"].autoplace.richness_base = 4500
-data.raw.resource["tin-ore"].autoplace.starting_area_amount = 4500
-
-data.raw.resource["lead-ore"].autoplace.richness_base = 4000
-data.raw.resource["lead-ore"].autoplace.starting_area_amount = 4000
-
-data.raw.resource["tungsten-ore"].minable.fluid_amount = 10
-data.raw.resource["tungsten-ore"].minable.required_fluid = "hydrogen"
 
 data.raw.item["iron-ore"].icons = {
 	  {

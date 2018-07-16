@@ -11,6 +11,37 @@
 	["dyworld-cable-crafter", "dyworld-intermediate-crafter"],
 	["dyworld-coil-crafter", "dyworld-intermediate-crafter"],
 	["dyworld-gear-crafter", "dyworld-intermediate-crafter-2"],
-	["dyworld-pcb-crafter", "dyworld-intermediate-crafter"]
+	["dyworld-pcb-crafter", "dyworld-intermediate-crafter"],
+	["iron-ore", "hematite"],
+	["copper-ore", "chalcopyrite"],
+	["uranium-ore", "radicium"],
+	["stone", "bauxite"],
+	["coal", "carbolycite"],
+	["chromium-ore", "prolycotherium"],
+	["gold-ore", "galena"],
+	["lead-ore", "galena"],
+	["tin-ore", "hematite"],
+	["silver-ore", "galena"],
+	["tungsten-ore", "prolycotherium"],
+	["zinc-ore", "chalcopyrite"],
+	["aluminium-ore", "bauxite"],
+	["nickel-ore", "hematite"]
+  ],
+  "resource":
+  [
+	["iron-ore", "hematite"],
+	["copper-ore", "chalcopyrite"],
+	["uranium-ore", "radicium"],
+	["stone", "bauxite"],
+	["coal", "carbolycite"],
+	["chromium-ore", "prolycotherium"],
+	["gold-ore", "galena"],
+	["lead-ore", "galena"],
+	["tin-ore", "hematite"],
+	["silver-ore", "galena"],
+	["tungsten-ore", "prolycotherium"],
+	["zinc-ore", "chalcopyrite"],
+	["aluminium-ore", "bauxite"],
+	["nickel-ore", "hematite"]
   ]
 }

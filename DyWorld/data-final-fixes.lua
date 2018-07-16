@@ -65,7 +65,7 @@ end
 if settings.startup["DyWorld_Infinite_Resources"].value then
 	for k, v in pairs(data.raw.resource) do
 		v.infinite = true
-		v.minimum = 6000
+		v.minimum = 60000
 		v.normal = 300000
 		v.infinite_depletion_amount = 10
 	end

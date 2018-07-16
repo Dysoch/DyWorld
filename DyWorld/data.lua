@@ -14,6 +14,7 @@ if settings.startup["DyWorld_Metallurgy"].value then
     require("data.ms-metallurgy")
 end
 
+require("data.core.populate-item-group")
 require("data.core.data")
 
 -- then we add items/entities etc

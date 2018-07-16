@@ -372,6 +372,20 @@ remote.add_interface("DyWorld",
 	Chart = function(AMOUNT)
 		game.forces.player.chart(game.player.surface, {lefttop = {x = -AMOUNT, y = -AMOUNT}, rightbottom = {x = AMOUNT, y = AMOUNT}})
 	end,
+	
+	RegenerateOresAll = function()
+		game.regenerate_entity("chalcopyrite")
+		game.regenerate_entity("hematite")
+		game.regenerate_entity("galena")
+		game.regenerate_entity("prolycotherium")
+		game.regenerate_entity("carbolycite")
+		game.regenerate_entity("bauxite")
+		game.regenerate_entity("radicium")
+	end,
+	
+	RegenerateOre = function(NAME)
+		game.regenerate_entity(NAME)
+	end,
 })
 
 --commands.add_command("dyworld-debug-items", "Debug time :) (only for player 1!)", functions.Debug_Items())

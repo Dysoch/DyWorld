@@ -364,14 +364,59 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) + Materials[TABLE].Strength_Yield)
 	elseif TYPE == 4 then
 		-- Pipe Capacity
-		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
+		--return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
+		if OPT == 1 then
+			return 200
+		elseif OPT == 2 then
+			return 150
+		elseif OPT == 3 then
+			return 100
+		elseif OPT == 4 then
+			return 50
+		elseif OPT == 5 then
+			return 25
+		elseif OPT == 6 then
+			return 10
+		end
 	elseif TYPE == 5 then
 		-- Turret / Ammo Range
-			if math.floor(((Materials[TABLE].Density * Materials[TABLE].Hardness) / 2) + 5) >= 250 then
+		if Materials[TABLE].Tier == 1 then
+			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 35 then
+				return 35
+			else
+				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+			end
+		elseif Materials[TABLE].Tier == 2 then
+			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 60 then
+				return 60
+			else
+				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+			end
+		elseif Materials[TABLE].Tier == 3 then
+			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 90 then
+				return 90
+			else
+				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+			end
+		elseif Materials[TABLE].Tier == 4 then
+			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 140 then
+				return 140
+			else
+				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+			end
+		elseif Materials[TABLE].Tier == 5 then
+			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 190 then
+				return 190
+			else
+				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+			end
+		elseif Materials[TABLE].Tier == 6 then
+			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 250 then
 				return 250
 			else
-				return math.floor(((Materials[TABLE].Density * Materials[TABLE].Hardness) / 2) + 5)
+				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
 			end
+		end
 	elseif TYPE == 6 then
 		-- Turret Shoot Speed
 		return Round((Materials[TABLE].Elasticity / Materials[TABLE].Hardness), 2)
@@ -380,7 +425,8 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return math.floor(60 + Materials[TABLE].Elasticity)
 	elseif TYPE == 8 then
 		-- Ammo Damage
-		return Round((Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity), 2)
+		return Round((((Materials[TABLE].Hardness * 1.25 * Materials[TABLE].Tier)+(Materials[TABLE].Elasticity * 0.5 * Materials[TABLE].Tier)) + (Materials[TABLE].Density * 0.1 * Materials[TABLE].Tier)), 2)
+		--return Round(( damage (hardness * 1,25 * tier)+(elasticity * 0,5 *tier)  - (density * 1.2 * tier)), 2)
 	elseif TYPE == 9 then
 		-- Inserter Speed
 		return (Materials[TABLE].Hardness / Materials[TABLE].Density)
@@ -432,12 +478,16 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 			else
 				return (((Materials[TABLE].Hardness * Materials[TABLE].Density) * Materials[TABLE].Elasticity) / 1000)
 			end
+	elseif TYPE == 18 then
+		-- Pipe Capacity
+		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
 	end
 end
 
 -- Material Properties (for metallurgy and other stuff)
 Materials = {
 	Stone = {
+		Tier = 1,
 		Density = 12.55,
 		Hardness = 5,
 		Elasticity = 1,
@@ -450,6 +500,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/stone.png"},
 	},
 	Rubber = {
+		Tier = 3,
 		Density = 1.2,
 		Hardness = 5,
 		Elasticity = 100,
@@ -462,6 +513,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/rubber.png"},
 	},
 	Chitin = {
+		Tier = 1,
 		Density = 0.6,
 		Hardness = 2,
 		Elasticity = 51,
@@ -474,6 +526,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/chitin.png"},
 	},
 	Obsidian = {
+		Tier = 2,
 		Density = 3.6,
 		Hardness = 6,
 		Elasticity = 13.5,
@@ -486,6 +539,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/obsidian.png"},
 	},
 	Wood = {
+		Tier = 1,
 		Density = 7.5,
 		Hardness = 2.25,
 		Elasticity = 11,
@@ -499,6 +553,7 @@ Materials = {
 	},
 	-- Basic
 	Iron = {
+		Tier = 2,
 		Density = 7.874,
 		Hardness = 4,
 		Elasticity = 28.5,
@@ -511,6 +566,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/iron.png"},
 	},
 	Copper = {
+		Tier = 2,
 		Density = 8.94,
 		Hardness = 3,
 		Elasticity = 17,
@@ -523,6 +579,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/copper.png"},
 	},
 	Chromium = {
+		Tier = 2,
 		Density = 7.19,
 		Hardness = 8.5,
 		Elasticity = 36,
@@ -535,6 +592,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/chromium.png"},
 	},
 	Tin = {
+		Tier = 2,
 		Density = 7.28,
 		Hardness = 1.5,
 		Elasticity = 47,
@@ -547,6 +605,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/tin.png"},
 	},
 	Silver = {
+		Tier = 2,
 		Density = 10.49,
 		Hardness = 2.75,
 		Elasticity = 10.5,
@@ -559,6 +618,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/silver.png"},
 	},
 	Gold = {
+		Tier = 2,
 		Density = 19.32,
 		Hardness = 2.75,
 		Elasticity = 10.8,
@@ -571,6 +631,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/gold.png"},
 	},
 	Lead = {
+		Tier = 2,
 		Density = 11.34,
 		Hardness = 1.5,
 		Elasticity = 2,
@@ -583,6 +644,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/lead.png"},
 	},
 	Tungsten = {
+		Tier = 2,
 		Density = 19.25,
 		Hardness = 7.5,
 		Elasticity = 40.5,
@@ -595,6 +657,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/tungsten.png"},
 	},
 	Zinc = {
+		Tier = 2,
 		Density = 7.14,
 		Hardness = 2.5,
 		Elasticity = 12,
@@ -607,6 +670,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/zinc.png"},
 	},
 	Nickel = {
+		Tier = 2,
 		Density = 8.91,
 		Hardness = 4,
 		Elasticity = 31,
@@ -619,6 +683,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/nickel.png"},
 	},
 	Aluminium = {
+		Tier = 2,
 		Density = 2.7,
 		Hardness = 2.75,
 		Elasticity = 10,
@@ -631,6 +696,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/aluminium.png"},
 	},
 	Uranium = {
+		Tier = 4,
 		Density = 19.1,
 		Hardness = 6.0,
 		Elasticity = 1.9,
@@ -644,6 +710,7 @@ Materials = {
 	},
 	-- Simple Alloy
 	Steel = {
+		Tier = 3,
 		Density = 11.81,
 		Hardness = 6,
 		Elasticity = 42.75,
@@ -658,6 +725,7 @@ Materials = {
 	-- Alloy
 	Stainless_Steel = {
 		-- mix of steel and chromium
+		Tier = 4,
 		Density = 19,
 		Hardness = 14.5,
 		Elasticity = 78.75,
@@ -671,6 +739,7 @@ Materials = {
 	},
 	Bronze = {
 		-- mix of copper and tin
+		Tier = 4,
 		Density = 16.22,
 		Hardness = 4.50,
 		Elasticity = 64,
@@ -684,6 +753,7 @@ Materials = {
 	},
 	Billon = {
 		-- mix of copper and silver
+		Tier = 4,
 		Density = 19.43,
 		Hardness = 5.75,
 		Elasticity = 27.5,
@@ -697,6 +767,7 @@ Materials = {
 	},
 	Copper_Tungsten = {
 		-- mix of copper and tungsten
+		Tier = 4,
 		Density = 28.19,
 		Hardness = 10.5,
 		Elasticity = 57.50,
@@ -710,6 +781,7 @@ Materials = {
 	},
 	Copper_Hydride = {
 		-- mix of copper and hydrogen
+		Tier = 4,
 		Density = 13.41,
 		Hardness = 4.5,
 		Elasticity = 25.2,
@@ -724,6 +796,7 @@ Materials = {
 	-- Compex Alloy
 	Elinvar = {
 		-- mix of iron, chromium and nickel
+		Tier = 5,
 		Density = 23.97,
 		Hardness = 16.5,
 		Elasticity = 95.50,
@@ -738,6 +811,7 @@ Materials = {
 	-- Super Alloy
 	Stainless_Copilinvar_Tungstate = {
 		-- mix of Elinvar and Copper_Tungsten and Stainless Steel
+		Tier = 6,
 		Density = 71.16,
 		Hardness = 41.5,
 		Elasticity = 231.75,

@@ -209,6 +209,14 @@ Compounds = {
 		Elements = {["carbon"] = 7.5},
 		Compounds = {["cellulose"] = 17.5, ["hemicellulose"] = 13.5, ["lignin"] = 11.5},
 	},
+	["dyworld-sludge"] = {
+		Mass = 0, 
+		Type = "fluid",
+		Atom_To_Compound = true,
+		Atom_To_Compound_Tech = "intermediate",
+		Elements = {["iron-clean-ore"] = 7.1, ["copper-clean-ore"] = 7.1, ["gold-clean-ore"] = 7.1, ["tin-clean-ore"] = 7.1, ["silver-clean-ore"] = 7.1, ["lead-clean-ore"] = 7.1, ["chromium-clean-ore"] = 7.1, ["tungsten-clean-ore"] = 7.1, ["nickel-clean-ore"] = 7.1, ["aluminium-clean-ore"] = 7.1, ["zinc-clean-ore"] = 7.1},
+		Compounds = {["stone"] = 7.1, ["coal"] = 7.1},
+	},
 }
 
 for k,v in pairs(Compounds) do

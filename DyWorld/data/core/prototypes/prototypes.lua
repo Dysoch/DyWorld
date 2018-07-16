@@ -199,7 +199,7 @@ function DyWorld_Resource(DATA)
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
-    autoplace =
+    autoplace = 
     {
       control = DATA.Name.."-ore",
       sharpness = 1,
@@ -1251,9 +1251,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."transport-belt",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-transport-belt",
 	place_result = dy..DATA.Name.."-transport-belt",
   },
   {
@@ -1267,9 +1267,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."transport-underground",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-underground-belt",
 	place_result = dy..DATA.Name.."-underground-belt",
   },
   {
@@ -1278,9 +1278,9 @@ data:extend(
 	localised_name = {"looped-name.splitter", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/splitter.png"}, Materials[DATA.Table].Icon},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."transport-splitter",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-splitter",
 	place_result = dy..DATA.Name.."-splitter",
   },
   {
@@ -1294,9 +1294,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."transport-loader",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-loader",
 	place_result = dy..DATA.Name.."-loader",
   },
   {
@@ -1452,7 +1452,7 @@ data:extend(
     type = "pipe",
     name = dy..DATA.Name.."-pipe",
 	localised_name = {"looped-name.pipe", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table))},
+	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier))},
     icons = 
 	{
 	  {
@@ -1471,7 +1471,7 @@ data:extend(
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fluid_box =
     {
-      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier) / 100),
       pipe_connections =
       {
         { position = {0, -1} },
@@ -1501,7 +1501,7 @@ data:extend(
     type = "pipe-to-ground",
     name = dy..DATA.Name.."-pipe-to-ground",
 	localised_name = {"looped-name.pipe-to-ground", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table)), (DyWorld_Material_Formulas(2, DATA.Table))},
+	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier)), (DyWorld_Material_Formulas(2, DATA.Table))},
     icons = 
 	{
 	  {
@@ -1519,7 +1519,7 @@ data:extend(
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fluid_box =
     {
-      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier) / 100),
       pipe_covers = DyWorld_pipecoverspictures(Material_Colors[DATA.Table]),
       pipe_connections =
       {
@@ -1615,7 +1615,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-pipe",
 	localised_name = {"looped-name.pipe", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table))},
+	localised_description = {"looped-name.pipe-desc", (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier))},
 	icons = 
 	{
 	  {
@@ -1624,16 +1624,16 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."pipe-normal",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-pipe",
 	place_result = dy..DATA.Name.."-pipe",
   },
   {
     type = "item",
     name = dy..DATA.Name.."-pipe-to-ground",
 	localised_name = {"looped-name.pipe-to-ground", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table)), (DyWorld_Material_Formulas(2, DATA.Table))},
+	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier)), (DyWorld_Material_Formulas(2, DATA.Table))},
 	icons = 
 	{
 	  {
@@ -1642,9 +1642,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."pipe-underground",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-pipe-to-ground",
 	place_result = dy..DATA.Name.."-pipe-to-ground",
   },
   {
@@ -1832,9 +1832,9 @@ data:extend(
 	localised_name = {"looped-name.gun-turret", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/gun-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."turret-gun",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 50,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-gun-turret",
 	place_result = dy..DATA.Name.."-gun-turret",
   },
   {
@@ -1966,9 +1966,9 @@ data:extend(
 	localised_name = {"looped-name.shotgun-turret", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/gun-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."turret-shotgun",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 50,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-shotgun-turret",
 	place_result = dy..DATA.Name.."-shotgun-turret",
   },
   {
@@ -2100,9 +2100,9 @@ data:extend(
 	localised_name = {"looped-name.cannon-turret", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/gun-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."turret-cannon",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 50,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-cannon-turret",
 	place_result = dy..DATA.Name.."-cannon-turret",
   },
   {
@@ -2335,8 +2335,8 @@ data:extend(
       }
     },
     magazine_size = math.floor(DyWorld_Material_Formulas(7, DATA.Table)/10),
-    subgroup = dy.."ammo-grenade",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-grenade-ammo",
     stack_size = 200
   },
   {
@@ -2354,9 +2354,9 @@ data:extend(
 	localised_name = {"looped-name.grenade-turret", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/gun-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."turret-grenade",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 50,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-grenade-turret",
 	place_result = dy..DATA.Name.."-grenade-turret",
   },
   {
@@ -2495,8 +2495,8 @@ data:extend(
       }
     },
     magazine_size = DyWorld_Material_Formulas(7, DATA.Table),
-    subgroup = dy.."ammo-basic",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-basic-ammo",
     stack_size = 200
   },
   {
@@ -2593,8 +2593,8 @@ data:extend(
       }
     },
     magazine_size = DyWorld_Material_Formulas(7, DATA.Table),
-    subgroup = dy.."ammo-shotgun",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-shotgun-ammo",
     stack_size = 200
   },
   {
@@ -2692,8 +2692,8 @@ data:extend(
       }
     },
     magazine_size = DyWorld_Material_Formulas(7, DATA.Table),
-    subgroup = dy.."ammo-basic-piercing",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-basic-piercing-ammo",
     stack_size = 200
   },
   {
@@ -2791,8 +2791,8 @@ data:extend(
       }
     },
     magazine_size = DyWorld_Material_Formulas(7, DATA.Table),
-    subgroup = dy.."ammo-shotgun-piercing",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-shotgun-piercing-ammo",
     stack_size = 200
   },
   {
@@ -2897,8 +2897,8 @@ data:extend(
         }
       },
     },
-    subgroup = dy.."ammo-cannon",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-cannon-shell",
     stack_size = 200
   },
   {
@@ -3025,8 +3025,8 @@ data:extend(
         }
       },
     },
-    subgroup = dy.."ammo-cannon-explosive",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-cannon-explosive-shell",
     stack_size = 200
   },
   {
@@ -3242,8 +3242,8 @@ data:extend(
         }
       }
     },
-    subgroup = dy.."grenade",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-grenade",
     stack_size = 200
   },
   {
@@ -3350,8 +3350,8 @@ data:extend(
         }
       }
     },
-    subgroup = dy.."grenade-cluster",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-cluster-grenade",
     stack_size = 200
   },
   {
@@ -3554,8 +3554,8 @@ data:extend(
         }
       }
     },
-    subgroup = dy.."rocket",
-    order = DATA.Name,
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
+    order = dy..DATA.Name.."-rocket",
     magazine_size = Round((DyWorld_Material_Formulas(7, DATA.Table) / 2), 0),
     stack_size = 200
   },
@@ -3626,7 +3626,7 @@ data:extend(
     selection_box = {{-1, -1.49}, {1, 0.49}},
     fluid_box =
     {
-      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier) / 100),
       base_level = 1,
       base_level = 1,
       pipe_covers = pipecoverspictures(),
@@ -3721,7 +3721,7 @@ data:extend(
     resistances = Material_Resistances[DATA.Table],
     fluid_box =
     {
-      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier) / 100),
       height = 2,
       pipe_covers = pipecoverspictures(),
       pipe_connections =
@@ -3970,9 +3970,9 @@ data:extend(
 	localised_name = {"looped-name.pump", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/pump.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."pump-pipe",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-pump",
 	place_result = dy..DATA.Name.."-pump",
   },
   {
@@ -3990,9 +3990,9 @@ data:extend(
 	localised_name = {"looped-name.offshore-pump", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/offshore-pump.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."pump-offshore",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-offshore-pump",
 	place_result = dy..DATA.Name.."-offshore-pump",
   },
   {
@@ -5352,7 +5352,7 @@ data:extend(
 	fast_replaceable_group = "storage-tank",
     fluid_box =
     {
-      base_area = (DyWorld_Material_Formulas(4, DATA.Table) * settings.startup["DyWorld_Stack_Size_Mult"].value),
+      base_area = (DyWorld_Material_Formulas(18, DATA.Table) * settings.startup["DyWorld_Stack_Size_Mult"].value),
       pipe_covers = pipecoverspictures(),
       pipe_connections =
       {
@@ -5484,9 +5484,9 @@ data:extend(
 	localised_name = {"looped-name.storage-tank", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/storage-tank.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."tank-storage",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-storage-tank",
 	place_result = dy..DATA.Name.."-storage-tank",
   },
   {
@@ -5739,9 +5739,9 @@ data:extend(
 	localised_name = {"looped-name.power-pole", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/medium-electric-pole.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."power-pole",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-power-pole",
 	place_result = dy..DATA.Name.."-power-pole",
   },
   {
@@ -5759,9 +5759,9 @@ data:extend(
 	localised_name = {"looped-name.power-relay", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/big-electric-pole.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."power-relay",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-power-relay",
 	place_result = dy..DATA.Name.."-power-relay",
   },
   {
@@ -6257,9 +6257,9 @@ data:extend(
 	localised_name = {"looped-name.laser-turret", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/laser-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."turret-laser",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 100,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-laser-turret",
 	place_result = dy..DATA.Name.."-laser-turret",
   },
   {
@@ -6277,9 +6277,9 @@ data:extend(
 	localised_name = {"looped-name.shotgun-laser-turret", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/laser-turret.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."turret-shotgun-laser",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 100,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-shotgun-laser-turret",
 	place_result = dy..DATA.Name.."-shotgun-laser-turret",
   },
   {
@@ -6569,9 +6569,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."solar-2",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 100,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-solar-normal",
 	place_result = dy..DATA.Name.."-solar-normal",
   },
   {
@@ -6726,7 +6726,7 @@ data:extend(
     selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
     fluid_box =
     {
-      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier) / 100),
       height = 2,
       base_level = -1,
       pipe_covers = pipecoverspictures(),
@@ -6870,9 +6870,9 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."steam-engine",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 100,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-steam-engine",
 	place_result = dy..DATA.Name.."-steam-engine",
   },
   {
@@ -7011,9 +7011,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."accumulator-2",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 100,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-accumulator-normal",
 	place_result = dy..DATA.Name.."-accumulator-normal",
   },
   {
@@ -7086,7 +7086,7 @@ data:extend(
       production_type = "input-output",
       pipe_picture = assembler2pipepictures(),
       pipe_covers = pipecoverspictures(),
-      base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier) / 100),
       height = 2,
       base_level = -1,
       pipe_connections =
@@ -7957,9 +7957,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."drills-electric",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 100,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-electric-drill",
 	place_result = dy..DATA.Name.."-electric-drill",
   },
   {
@@ -8310,9 +8310,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."drills-burner",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 100,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-burner-drill",
 	place_result = dy..DATA.Name.."-burner-drill",
   },
   {
@@ -8373,7 +8373,7 @@ data:extend(
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+        base_area = (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier) / 100),
         base_level = -1,
         pipe_connections = {{ type="input", position = {0, -2} }},
         secondary_draw_orders = { north = -1 }
@@ -8382,7 +8382,7 @@ data:extend(
         production_type = "output",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = (DyWorld_Material_Formulas(4, DATA.Table) / 100),
+        base_area = (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier) / 100),
         base_level = 1,
         pipe_connections = {{ type="output", position = {0, 2} }},
         secondary_draw_orders = { north = -1 }
@@ -8486,9 +8486,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."assembling-electric",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 100,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-assembling-electric",
 	place_result = dy..DATA.Name.."-assembling-electric",
   },
   {
@@ -8539,10 +8539,10 @@ data:extend(
 	localised_name = {"looped-name.chest", {"looped-name."..DATA.Name}},
 	icons = 
 	{
+	  Materials[DATA.Table].Icon,
 	  {
 		icon = "__base__/graphics/icons/iron-chest.png",
 	  },
-	  Materials[DATA.Table].Icon,
 	},
 	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
@@ -8582,9 +8582,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."chests",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 100,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-chest",
 	place_result = dy..DATA.Name.."-chest",
   },
   {
@@ -8679,9 +8679,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."chests-warehouse",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 5,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-warehouse-chest",
 	place_result = dy..DATA.Name.."-warehouse-chest",
   },
   {
@@ -8771,9 +8771,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."chests-warehouse",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 5,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-warehouse-chest",
 	place_result = dy..DATA.Name.."-warehouse-chest",
   },
   {
@@ -9048,9 +9048,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."roboport",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 50,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-roboport",
 	place_result = dy..DATA.Name.."-roboport",
   },
   {
@@ -9374,9 +9374,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."robot-logistic",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-logistic-robot",
 	place_result = dy..DATA.Name.."-logistic-robot",
   },
   {
@@ -9693,9 +9693,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."robot-construction",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-construction-robot",
 	place_result = dy..DATA.Name.."-construction-robot",
   },
   {
@@ -9862,9 +9862,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."wall-normal",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-wall",
 	place_result = dy..DATA.Name.."-wall",
   },
   {
@@ -10204,9 +10204,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."railway-1",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-locomotive",
 	place_result = dy..DATA.Name.."-locomotive",
   },
   {
@@ -10728,9 +10728,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."vehicle-tank",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 1,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-tank",
 	place_result = dy..DATA.Name.."-tank",
   },
   {
@@ -11195,9 +11195,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."vehicle-car",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 1,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-car",
 	place_result = dy..DATA.Name.."-car",
   },
   {
@@ -11857,9 +11857,9 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."radar",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-radar",
 	place_result = dy..DATA.Name.."-radar",
   },
   {
@@ -12033,9 +12033,9 @@ data:extend(
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     damage_radius = 5 + Materials[DATA.Table].Hardness,
-    subgroup = dy.."mine",
+    subgroup = dy..DATA.Name.."-MS-group-warfare",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-mine",
 	place_result = dy..DATA.Name.."-mine",
     trigger_radius = (1 + (Materials[DATA.Table].Hardness / 2))
   },
@@ -12184,9 +12184,9 @@ data:extend(
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     damage_radius = 5 + Materials[DATA.Table].Hardness,
-    subgroup = dy.."beacon",
+    subgroup = dy..DATA.Name.."-MS-group",
     stack_size = 200,
-	order = DATA.Name,
+	order = dy..DATA.Name.."-beacon",
 	place_result = dy..DATA.Name.."-beacon",
     trigger_radius = (1 + (Materials[DATA.Table].Hardness / 2))
   },

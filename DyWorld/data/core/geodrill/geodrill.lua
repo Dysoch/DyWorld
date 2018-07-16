@@ -102,7 +102,7 @@ data:extend(
     type = "recipe",
     name = dy.."geodrill",
     energy_required = 5,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "item", name = "electronic-circuit", amount = 5},
@@ -114,3 +114,4 @@ data:extend(
 }
 )
 
+DyWorld_Add_To_Tech("steel-processing", dy.."geodrill")

@@ -1,11 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.0
-Date: ??. ??. 2018
+Date: 16. 07. 2018
   Features:
     - Added new dynamic resistances for enemies. They scale up with higher and stronger units. They now truly get stronger and stronger the bigger they get.
     - Loaders now snap to entities with inventories. Same functionality as DeadLockLoaders. (Taken with his permission, legal stuff can be found in legal folder inside zip folder)
     - Added option to the manual crafting of circuit and pcb components. Enabled it will auto craft in inventory when a circuit is pressed. Remember, this requires more resources, and a restart of the game.
-    - Removed all special assemblers and made 1 all purpose assembler. All old items and entities will migrate to new entity
+    - Removed all special assemblers for coils, wires and pcb's and made 1 all purpose assembler. All old items and entities will migrate to new entity. Gear crafter is untouched
+    - Complete new layout in the crafting menu. This is still a work in progress, but shaping to be much nicer. For example, all iron related material items are now in the same group, so if you want something of iron, look there, instead of in each menu.
+    - Ores revamped. All ores have been removed! And now there are 7 ores, which holds the other ores. Ores can be seperated with the centrifuge (for now). RSO wont work yet, till its updated!
   Materials System:
     - Added a new item: Land Mines
     - Added a new item: Rockets. They have AoE damage based on their tier
@@ -19,6 +21,7 @@ Date: ??. ??. 2018
   Chemistry:
     - Add the ability to recombine into certain compounds. 
     - Made recipes round their numbers better, so that it is more accurate numbers.
+    - Sludge Water can now be spliced and recombined.
   Changes:
     - Added new license! Went to GNU GPL v3 to allow me, and others, to use code from others and share more freely among each other
     - Made the spawned rocks have the correct hardness
@@ -29,6 +32,8 @@ Date: ??. ??. 2018
     - Made recipe of Yellow Science Fluid a lot harder, while increasing the amount of fluid you get
     - Changed max fluid input of Forge and Centrifuge to 2 times recipe size.
     - Forge now only has 1 input slot, which should fix module issue
+    - Removed Rubber Burner and Electric Drills. They were too OP!
+    - Added couple of new recipes to help out with higher tiers of automation
   Graphics:
     - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
   Balancing:
@@ -36,6 +41,9 @@ Date: ??. ??. 2018
     - Increased Electric Mining drills mining power. They are now 50% more powerful
     - DyWorld Locomotives now have a Grid Space for use of different equipments.
     - Molten Rock and Molten Glass recipe can now be productivity moduled
+    - Molten rock heating is 50% more effective and 200% faster
+    - Pipes are now tiered. Meaning that higher tiers have LOWER capacity, thus increasing flow and being overal better.
+    - Completely redid the calculations for ammo's. ITs now much more tier based, and a lot more buffed!
   Bugfixes:
     - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
     - Fixed wooden solar equipment being available from the start

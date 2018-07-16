@@ -1,0 +1,9 @@
+Chalcopyrite: Copper, Zinc, Sulfur
+Hematite: Iron, Tin, Nickel
+Galena: Lead, small amount Silver, small amount Gold
+Prolycotherium: Chromium, Lithium, Tungsten
+Carbolycite: Coal, Carbon, Sulfur
+Bauxite: Stone, Aluminium, small amount Gold
+Radicium: Uranium
+
+Beginning of the game you need your 4 basic resources: Stone (Bauxite), Coal (Carbolycite), Copper (Chalcopyrite) and Iron (Hematite). These can be used directly as their normal ores. So for example, Bauxite is stone in recipes. Simple as that.

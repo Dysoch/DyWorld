@@ -59,6 +59,16 @@ Data_Table_Item_Group = {
 		Main = "metallurgy"
 	},
 	{
+		Name = "metal-0-ore",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
+		Name = "metal-0-ore-recipes",
+		Type = "sub",
+		Main = "metallurgy"
+	},
+	{
 		Name = "metal-1-ore",
 		Type = "sub",
 		Main = "metallurgy"

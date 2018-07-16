@@ -468,7 +468,7 @@ local Data_Table = {
 		Name = dy.."ore-smelting",
 		Icon = {{icon = dyworld_path_icon.."blast-furnace.png", scale = 2}},
 		Icon_Size = 32,
-		Pre_Req = {"steel-processing", "automation"},
+		Pre_Req = {"steel-processing", "automation", dy.."lead-processing"},
 		Tech_Ingredients = 2,
 		Count = 250,
 		Military = false,

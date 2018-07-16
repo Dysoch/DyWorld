@@ -43,7 +43,7 @@ data:extend(
 	},
     category = dy.."geodrill",
     energy_required = 60,
-	enabled = true,
+	enabled = false,
     ingredients =
     {
       {type = "fluid", name = "water", amount = 100},
@@ -73,3 +73,5 @@ data:extend(
     order = "ground-mining",
   },
 })
+
+DyWorld_Add_To_Tech("steel-processing", dy.."ground-mining")

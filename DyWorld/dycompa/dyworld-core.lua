@@ -30,6 +30,9 @@ for k,m in pairs(Change) do
 			end
 		end
 	end
+	if data.raw.item[m.Old] then
+		table.insert(data.raw.item[m.Old].flags, "hidden")
+	end
 	if data.raw.recipe[m.Old] then
 		if data.raw.recipe[m.Old].normal then
 			data.raw.recipe[m.Old].normal.hidden = true

@@ -366,55 +366,103 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		-- Pipe Capacity
 		--return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
 		if OPT == 1 then
-			return 200
+			if (200 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.8)) <= 1 then
+				return 1
+			else
+				return (200 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.8))
+			end
 		elseif OPT == 2 then
-			return 150
+			if (150 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.7)) <= 1 then
+				return 1
+			else
+				return (150 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.7))
+			end
 		elseif OPT == 3 then
-			return 100
+			if (100 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.6)) <= 1 then
+				return 1
+			else
+				return (100 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.6))
+			end
 		elseif OPT == 4 then
-			return 50
+			if (50 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.5)) <= 1 then
+				return 1
+			else
+				return (50 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.5))
+			end
 		elseif OPT == 5 then
-			return 25
+			if (25 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.4)) <= 1 then
+				return 1
+			else
+				return (25 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.4))
+			end
 		elseif OPT == 6 then
-			return 10
+			if (10 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.1)) <= 1 then
+				return 1
+			else
+				return (10 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.1))
+			end
 		end
 	elseif TYPE == 5 then
 		-- Turret / Ammo Range
 		if Materials[TABLE].Tier == 1 then
-			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 35 then
-				return 35
+			if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) >= 15 then
+				return 15
 			else
-				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+				if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) <= 0 then
+					return (math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) * -1 ) * 2
+				else
+					return math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density)
+				end
 			end
 		elseif Materials[TABLE].Tier == 2 then
-			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 60 then
-				return 60
+			if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) >= 30 then
+				return 30
 			else
-				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+				if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) <= 0 then
+					return (math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) * -1 ) * 2
+				else
+					return math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density)
+				end
 			end
 		elseif Materials[TABLE].Tier == 3 then
-			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 90 then
-				return 90
+			if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) >= 50 then
+				return 50
 			else
-				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+				if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) <= 0 then
+					return (math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) * -1 ) * 2
+				else
+					return math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density)
+				end
 			end
 		elseif Materials[TABLE].Tier == 4 then
-			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 140 then
-				return 140
+			if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) >= 80 then
+				return 80
 			else
-				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+				if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) <= 0 then
+					return (math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) * -1 ) * 2
+				else
+					return math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density)
+				end
 			end
 		elseif Materials[TABLE].Tier == 5 then
-			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 190 then
-				return 190
+			if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) >= 150 then
+				return 150
 			else
-				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+				if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) <= 0 then
+					return (math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) * -1 ) * 2
+				else
+					return math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density)
+				end
 			end
 		elseif Materials[TABLE].Tier == 6 then
-			if math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density) >= 250 then
+			if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) >= 250 then
 				return 250
 			else
-				return math.floor(((Materials[TABLE].Hardness * 2.5)+(Materials[TABLE].Elasticity * 5)) - Materials[TABLE].Density)
+				if math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) <= 0 then
+					return (math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density) * -1 ) * 2
+				else
+					return math.floor(((Materials[TABLE].Hardness * 1.5)+(Materials[TABLE].Elasticity * 3)) - Materials[TABLE].Density)
+				end
 			end
 		end
 	elseif TYPE == 6 then
@@ -422,7 +470,7 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return Round((Materials[TABLE].Elasticity / Materials[TABLE].Hardness), 2)
 	elseif TYPE == 7 then
 		-- Turret Shoot Arc & Mag Size
-		return math.floor(60 + Materials[TABLE].Elasticity)
+		return math.floor(75 + Materials[TABLE].Elasticity)
 	elseif TYPE == 8 then
 		-- Ammo Damage
 		return Round((((Materials[TABLE].Hardness * 1.25 * Materials[TABLE].Tier)+(Materials[TABLE].Elasticity * 0.5 * Materials[TABLE].Tier)) + (Materials[TABLE].Density * 0.1 * Materials[TABLE].Tier)), 2)

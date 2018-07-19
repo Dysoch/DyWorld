@@ -1,4 +1,24 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.2
+Date: ??. 07. 2018
+  Balancing:
+    - Changed some recipes of ore cracking to be more random and recipes are quickers now
+    - Rock Boilers use slightly less power
+  Materials System:
+    - Changed Pipe capacity formula to be more flexible and accurate
+    - Changed Ranges of Ammo's and Turrets even better then in last updates. Much more accurate now
+  Changes:
+    - Increased starting arc of turrets: 60 > 75 degrees
+  Bugfixes:
+    - 
+---------------------------------------------------------------------------------------------------
+Version: 0.7.1
+Date: 17. 07. 2018
+  Balancing:
+    - Changed some recipes of ore cracking to be more logical
+  Bugfixes:
+    - Fixed debug statement causing errors on a server
+---------------------------------------------------------------------------------------------------
 Version: 0.7.0
 Date: 16. 07. 2018
   Features:

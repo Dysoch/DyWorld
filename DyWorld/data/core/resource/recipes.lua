@@ -18,7 +18,7 @@ data:extend(
 	  },
 	},
     category = "centrifuging",
-    energy_required = 5,
+    energy_required = 2.5,
 	enabled = true,
     ingredients =
     {
@@ -28,8 +28,8 @@ data:extend(
     results=
     {
       {type = "fluid", name = dy.."sludge", amount = 10},
-      {type = "item", name = "copper-ore", amount = 6},
-      {type = "item", name = "zinc-ore", amount = 3},
+      {type = "item", name = "copper-ore", amount_min = 8, amount_max = 13},
+      {type = "item", name = "zinc-ore", amount_min = 2, amount_max = 10},
       {type = "item", name = "sulfur", amount = 1},
     },
     subgroup = dy.."metal-0-ore-recipes",
@@ -51,7 +51,7 @@ data:extend(
 	  },
 	},
     category = "centrifuging",
-    energy_required = 5,
+    energy_required = 2.5,
 	enabled = true,
     ingredients =
     {
@@ -61,9 +61,9 @@ data:extend(
     results=
     {
       {type = "fluid", name = dy.."sludge", amount = 10},
-      {type = "item", name = "iron-ore", amount = 5},
-      {type = "item", name = "tin-ore", amount = 3},
-      {type = "item", name = "nickel-ore", amount = 2},
+      {type = "item", name = "iron-ore", amount_min = 7, amount_max = 13},
+      {type = "item", name = "tin-ore", amount_min = 3, amount_max = 8},
+      {type = "item", name = "nickel-ore", amount_min = 1, amount_max = 6},
     },
     subgroup = dy.."metal-0-ore-recipes",
     order = "hematite-seperation",
@@ -84,7 +84,7 @@ data:extend(
 	  },
 	},
     category = "centrifuging",
-    energy_required = 5,
+    energy_required = 2.5,
 	enabled = true,
     ingredients =
     {
@@ -94,9 +94,9 @@ data:extend(
     results=
     {
       {type = "fluid", name = dy.."sludge", amount = 10},
-      {type = "item", name = "lead-ore", amount = 7},
-      {type = "item", name = "silver-ore", amount = 2},
-      {type = "item", name = "gold-ore", amount = 1},
+      {type = "item", name = "lead-ore", amount_min = 5, amount_max = 12},
+      {type = "item", name = "silver-ore", amount_min = 3, amount_max = 6},
+      {type = "item", name = "gold-ore", amount_min = 1, amount_max = 3},
     },
     subgroup = dy.."metal-0-ore-recipes",
     order = "galena-seperation",
@@ -117,7 +117,7 @@ data:extend(
 	  },
 	},
     category = "centrifuging",
-    energy_required = 5,
+    energy_required = 2.5,
 	enabled = true,
     ingredients =
     {
@@ -149,7 +149,7 @@ data:extend(
 	  },
 	},
     category = "centrifuging",
-    energy_required = 5,
+    energy_required = 2.5,
 	enabled = true,
     ingredients =
     {
@@ -159,9 +159,9 @@ data:extend(
     results=
     {
       {type = "fluid", name = dy.."sludge", amount = 10},
-      {type = "item", name = "coal", amount = 7},
-      {type = "item", name = "sulfur", amount = 2},
-      {type = "item", name = dy.."sand", amount = 1},
+      {type = "item", name = "coal", amount_min = 5, amount_max = 15},
+      {type = "item", name = "sulfur", amount = 1},
+      {type = "item", name = dy.."sand", amount_min = 5, amount_max = 75},
     },
     subgroup = dy.."metal-0-ore-recipes",
     order = "carbolycite-seperation",
@@ -182,7 +182,7 @@ data:extend(
 	  },
 	},
     category = "centrifuging",
-    energy_required = 5,
+    energy_required = 2.5,
 	enabled = true,
     ingredients =
     {
@@ -192,9 +192,9 @@ data:extend(
     results=
     {
       {type = "fluid", name = dy.."sludge", amount = 10},
-      {type = "item", name = "stone", amount = 7},
-      {type = "item", name = "aluminium-ore", amount = 2},
-      {type = "item", name = "gold-ore", amount = 1},
+      {type = "item", name = "stone", amount_min = 5, amount_max = 17},
+      {type = "item", name = "aluminium-ore", amount_min = 2, amount_max = 7},
+      {type = "item", name = "gold-ore", amount_min = 1, amount_max = 3},
     },
     subgroup = dy.."metal-0-ore-recipes",
     order = "bauxite-seperation",
@@ -215,7 +215,7 @@ data:extend(
 	  },
 	},
     category = "centrifuging",
-    energy_required = 5,
+    energy_required = 2.5,
 	enabled = true,
     ingredients =
     {
@@ -225,9 +225,9 @@ data:extend(
     results=
     {
       {type = "fluid", name = dy.."sludge", amount = 10},
-      {type = "item", name = "uranium-ore", amount = 7},
-      {type = "item", name = "stone", amount = 2},
-      {type = "item", name = "gold-ore", amount = 1},
+      {type = "item", name = "uranium-ore", amount_min = 5, amount_max = 12},
+      {type = "item", name = "stone", amount_min = 1, amount_max = 8},
+      {type = "item", name = "gold-ore", amount_min = 1, amount_max = 3},
     },
     subgroup = dy.."metal-0-ore-recipes",
     order = "radicium-seperation",

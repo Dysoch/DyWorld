@@ -66,7 +66,7 @@ data:extend(
       name = dy.."molten-rock",
       amount = 0.15
     },
-    energy_consumption = tostring(3000*0.5).."kW",
+    energy_consumption = tostring(1500*0.5).."kW",
     energy_source =
     {
       type = "electric",

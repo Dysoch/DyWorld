@@ -17,7 +17,7 @@ require "script/functions/loaders"
 
 debugger = false
 debug_test = settings.startup["DyWorld_Debug"].value
-Migrate_Debug = true
+Migrate_Debug = false
 
 function debug(str, statement)
 local seconds = math.floor(game.tick/60)

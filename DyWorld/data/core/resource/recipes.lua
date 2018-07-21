@@ -128,7 +128,8 @@ data:extend(
     {
       {type = "fluid", name = dy.."sludge", amount = 10},
       {type = "item", name = "chromium-ore", amount = 7},
-      {type = "item", name = "tungsten-ore", amount = 3},
+      {type = "item", name = "tungsten-ore", amount_min = 1, amount_max = 3},
+      {type = "item", name = "titanium-ore", amount_min = 1, amount_max = 3},
     },
     subgroup = dy.."metal-0-ore-recipes",
     order = "prolycotherium-seperation",
@@ -195,6 +196,7 @@ data:extend(
       {type = "item", name = "stone", amount_min = 5, amount_max = 17},
       {type = "item", name = "aluminium-ore", amount_min = 2, amount_max = 7},
       {type = "item", name = "gold-ore", amount_min = 1, amount_max = 3},
+      {type = "item", name = "lithium-ore", amount_min = 1, amount_max = 3},
     },
     subgroup = dy.."metal-0-ore-recipes",
     order = "bauxite-seperation",

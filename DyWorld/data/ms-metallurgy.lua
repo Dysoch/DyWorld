@@ -60,6 +60,16 @@ local Table = {
 		DMG_Type = "physical",
 	},
 	{ 
+		Name = "lithium-titaniate", 
+		Table = "Lithium_Titaniate", 
+		Type = "Complex_Alloy", 
+		Tier = 5,
+		Molten = true,
+		Pebble = false,
+		Clean_Ore = false,
+		DMG_Type = "acid",
+	},
+	{ 
 		Name = "stainless-copilinvar-tungstate", 
 		Table = "Stainless_Copilinvar_Tungstate", 
 		Type = "Super_Alloy", 

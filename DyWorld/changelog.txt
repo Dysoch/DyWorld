@@ -3,21 +3,25 @@ Version: 0.7.2
 Date: ??. 07. 2018
   Features:
     - Added a new intermediate: Gunpowder
+    - Added a new recipe to create Acid
   Balancing:
     - Changed some recipes of ore cracking to be more random and recipes are quickers now
     - Rock Boilers use slightly less power
   Materials System:
     - Changed Pipe capacity formula to be more flexible and accurate
     - Changed Ranges of Ammo's and Turrets even better then in last updates. Much more accurate now
+    - Moved Chromium to higher tier. 2 > 3
+    - Moved Tungsten to higher tier. 2 > 3
+    - Added a new alloy: Lithium-Titaniate (tier 5)
+    - Added a new metal: Titanium (tier 3)
+    - Added a new metal: Lithium (tier 2)
   Changes:
     - Increased starting arc of turrets: 60 > 75 degrees
     - Improved the item grouping even further. Materials are still locked together, but now grouped in 3 groups: Machines, Power and Transport
     - Reduced Blast-furnace's input and output storage to 5 times recipes size
-  Materials System:
-    - Moved Chromium to higher tier. 2 > 3
-    - Moved Tungsten to higher tier. 2 > 3
-  Bugfixes:
-    - 
+    - Changed blue science pack to use lithium instead of tin
+  Metallurgy:
+    - Added second recipe to get Molten Rock using sand, sludge and sulfur
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.1
 Date: 17. 07. 2018

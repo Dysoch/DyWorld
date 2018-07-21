@@ -55,16 +55,20 @@ Material_Colors = {
 	Zinc = {r=97, g=208, b=92}, -- 61d05c
 	Nickel = {r=92, g=114, b=208}, -- 5c72d0
 	Aluminium = {r=150, g=150, b=150}, -- 969696
+	Lithium = {r=150, g=150, b=210}, -- 969696
+	Titanium = {r=150, g=150, b=170}, -- 969696
 	Uranium = {r=100, g=255, b=100}, -- 969696
 	
 	Steel = {r=192, g=192, b=192},
 	
 	Stainless_Steel = {r=196, g=124, b=126}, -- c47c7e
 	Bronze = {r=126, g=112, b=109}, -- 7e706d
-	Elinvar = {r=125, g=115, b=160}, -- 7d73a0
 	Billon = {r=191, g=145, b=126}, -- bf917e
 	Copper_Tungsten = {r=137, g=135, b=142}, -- 89878e
 	Copper_Hydride = {r=212, g=179, b=123}, -- d4b37b
+	
+	Lithium_Titaniate = {r=150, g=150, b=210}, -- 969696
+	Elinvar = {r=125, g=115, b=160}, -- 7d73a0
 	
 	Stainless_Copilinvar_Tungstate = {r=153, g=124, b=143}, -- 997c8f
 }
@@ -247,6 +251,28 @@ Material_Resistances = {
       {type = "acid", decrease = 0, percent = -25},
       {type = "electric", decrease = 0, percent = -50},
 	},
+	Lithium = {
+	  {type = "physical", decrease = 5, percent = 5},
+	  {type = "impact", decrease = 5, percent = 10},
+      {type = "poison", decrease = 0, percent = 2.5},
+      {type = "explosion", decrease = 0, percent = 15},
+      {type = "radiation", decrease = 0, percent = 15},
+      {type = "fire", decrease = 0, percent = 80},
+      {type = "laser", decrease = 0, percent = 45},
+      {type = "acid", decrease = 5000, percent = 100},
+      {type = "electric", decrease = 0, percent = -50},
+	},
+	Titanium = {
+	  {type = "physical", decrease = 5, percent = 10},
+	  {type = "impact", decrease = 5, percent = 20},
+      {type = "poison", decrease = 0, percent = 5},
+      {type = "explosion", decrease = 0, percent = 30},
+      {type = "radiation", decrease = 0, percent = 15},
+      {type = "fire", decrease = 0, percent = 80},
+      {type = "laser", decrease = 0, percent = 45},
+      {type = "acid", decrease = 0, percent = -25},
+      {type = "electric", decrease = 0, percent = -50},
+	},
 	Uranium = {
 	  {type = "physical", decrease = 5, percent = 5},
 	  {type = "impact", decrease = 5, percent = 10},
@@ -293,17 +319,6 @@ Material_Resistances = {
       {type = "acid", decrease = 0, percent = -25},
       {type = "electric", decrease = 0, percent = -50},
 	},
-	Elinvar = {
-	  {type = "physical", decrease = 5, percent = 15},
-	  {type = "impact", decrease = 5, percent = 25},
-      {type = "poison", decrease = 0, percent = 7.5},
-      {type = "explosion", decrease = 0, percent = 25},
-      {type = "radiation", decrease = 0, percent = 35},
-      {type = "fire", decrease = 0, percent = 80},
-      {type = "laser", decrease = 0, percent = 50},
-      {type = "acid", decrease = 0, percent = -25},
-      {type = "electric", decrease = 0, percent = -50},
-	},
 	Billon = {
 	  {type = "physical", decrease = 5, percent = 15},
 	  {type = "impact", decrease = 5, percent = 25},
@@ -327,6 +342,29 @@ Material_Resistances = {
       {type = "electric", decrease = 0, percent = -50},
 	},
 	Copper_Hydride = {
+	  {type = "physical", decrease = 5, percent = 15},
+	  {type = "impact", decrease = 5, percent = 25},
+      {type = "poison", decrease = 0, percent = 7.5},
+      {type = "explosion", decrease = 0, percent = 25},
+      {type = "radiation", decrease = 0, percent = 35},
+      {type = "fire", decrease = 0, percent = 80},
+      {type = "laser", decrease = 0, percent = 50},
+      {type = "acid", decrease = 0, percent = -25},
+      {type = "electric", decrease = 0, percent = -50},
+	},
+	
+	Elinvar = {
+	  {type = "physical", decrease = 5, percent = 15},
+	  {type = "impact", decrease = 5, percent = 25},
+      {type = "poison", decrease = 0, percent = 7.5},
+      {type = "explosion", decrease = 0, percent = 25},
+      {type = "radiation", decrease = 0, percent = 35},
+      {type = "fire", decrease = 0, percent = 80},
+      {type = "laser", decrease = 0, percent = 50},
+      {type = "acid", decrease = 0, percent = -25},
+      {type = "electric", decrease = 0, percent = -50},
+	},
+	Lithium_Titaniate = {
 	  {type = "physical", decrease = 5, percent = 15},
 	  {type = "impact", decrease = 5, percent = 25},
       {type = "poison", decrease = 0, percent = 7.5},
@@ -706,27 +744,27 @@ Materials = {
 	},
 	Lithium = {
 		Tier = 2,
-		Density = 19.25,
-		Hardness = 7.5,
+		Density = 0.534,
+		Hardness = 0.6,
 		Elasticity = 40.5,
-		Conductivity = 1.82,
-		Strength_Yield = 500,
-		Strength_Ultimate = 1000,
-		Melting_Point = 3422,
-		Boiling_Point = 5000,
+		Conductivity = 82.5,
+		Strength_Yield = 4.9,
+		Strength_Ultimate = 4.2,
+		Melting_Point = 453,
+		Boiling_Point = 1620,
 		Icon = {icon = dyworld_path_icon.."plate/lithium.png", scale= 0.6, shift = {8, 9}},
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/lithium.png"},
 	},
 	Titanium = {
 		Tier = 3,
-		Density = 19.25,
-		Hardness = 7.5,
-		Elasticity = 40.5,
-		Conductivity = 1.82,
-		Strength_Yield = 500,
-		Strength_Ultimate = 1000,
-		Melting_Point = 3422,
-		Boiling_Point = 5000,
+		Density = 4.56,
+		Hardness = 6.0,
+		Elasticity = 38.75,
+		Conductivity = 1.64,
+		Strength_Yield = 116,
+		Strength_Ultimate = 44,
+		Melting_Point = 1668,
+		Boiling_Point = 3287,
 		Icon = {icon = dyworld_path_icon.."plate/titanium.png", scale= 0.6, shift = {8, 9}},
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/titanium.png"},
 	},
@@ -881,6 +919,19 @@ Materials = {
 		Boiling_Point = 2754,
 		Icon = {icon = dyworld_path_icon.."alloy/elinvar.png", scale= 0.6, shift = {8, 9}},
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/elinvar.png"},
+	},
+	Lithium_Titaniate = {
+		Tier = 5,
+		Density = 19.934,
+		Hardness = 8.1,
+		Elasticity = 60,
+		Conductivity = 85.5,
+		Strength_Yield = 204.9,
+		Strength_Ultimate = 504.2,
+		Melting_Point = 867,
+		Boiling_Point = 3200,
+		Icon = {icon = dyworld_path_icon.."plate/lithium.png", scale= 0.6, shift = {8, 9}},
+		Icon_Tech = {icon = dyworld_path_tech.."material-system/lithium.png"},
 	},
 	-- Super Alloy
 	Stainless_Copilinvar_Tungstate = {

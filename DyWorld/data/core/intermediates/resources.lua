@@ -2,6 +2,22 @@ require "data/prefix"
 
 local Data_Table = {
 	{
+		Name = "lithium",
+		Table = "Lithium",
+		Type = 1,
+		Mining_Hardness = Materials.Lithium.Hardness,
+		Mining_Time = (Materials.Lithium.Hardness / Materials.Lithium.Density),
+		Tint = Material_Colors.Lithium,
+	},
+	{
+		Name = "titanium",
+		Table = "Titanium",
+		Type = 1,
+		Mining_Hardness = Materials.Titanium.Hardness,
+		Mining_Time = (Materials.Titanium.Hardness / Materials.Titanium.Density),
+		Tint = Material_Colors.Titanium,
+	},
+	{
 		Name = "chromium",
 		Table = "Chromium",
 		Type = 1,

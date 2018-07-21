@@ -60,7 +60,7 @@ script.on_event(defines.events.on_player_created, function(event)
 			player.print({"dyworld.startup-story-wip"})
 		end
 	end
-	PlayerPrint({"dyworld_guide_gui.message"})
+	--PlayerPrint({"dyworld_guide_gui.message"})
 	debug(game.players[event.player_index].name.." created")
 end)
 

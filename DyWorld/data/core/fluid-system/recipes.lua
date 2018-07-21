@@ -514,6 +514,36 @@ data:extend(
     subgroup = dy.."fluid-recipes",
     order = dy.."ore-grinding-7",
   },
+  {
+    type = "recipe",
+    name = dy.."acid-creation",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = "centrifuging",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {type = "item", name = "sulfur", amount = 5},
+      {type = "fluid", name = "water", amount = 25},
+      {type = "fluid", name = dy.."methane", amount = 25},
+    },
+    results =
+    {
+      {type = "fluid", name = dy.."acid", amount_min = 50, amount_max = 100},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = dy.."acid-creation",
+  },
 })
 
 DyWorld_Add_To_Tech("advanced-oil-processing", dy.."advanced-lubricant")
@@ -525,3 +555,4 @@ DyWorld_Add_To_Tech("automation", dy.."ore-grinding-4")
 DyWorld_Add_To_Tech("automation", dy.."ore-grinding-5")
 DyWorld_Add_To_Tech("automation", dy.."ore-grinding-6")
 DyWorld_Add_To_Tech("automation", dy.."ore-grinding-7")
+DyWorld_Add_To_Tech("automation-2", dy.."acid-creation")

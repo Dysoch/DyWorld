@@ -33,6 +33,36 @@ data:extend(
   },
   {
     type = "recipe",
+    name = dy.."molten-rock-2",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."molten-rock"].icon,
+        scale = 0.75,
+        shift = {4, 7}
+	  },
+	},
+    category = dy.."blast-furnace",
+    energy_required = 5,
+	enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "sulfur", amount = 25},
+      {type = "item", name = dy.."sand", amount = 100},
+      {type = "fluid", name = dy.."sludge", amount = 10},
+    },
+    results=
+    {
+      {type = "fluid", name = dy.."molten-rock", amount = 50},
+    },
+    subgroup = dy.."sub-recipes",
+    order = dy.."molten-rock",
+  },
+  {
+    type = "recipe",
     name = dy.."molten-glass",
     icons = 
 	{
@@ -135,5 +165,7 @@ for k,v in pairs(Material_Table) do
 end
 
 DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-rock")
+DyWorld_Add_To_Tech(dy.."ore-smelting", dy.."molten-rock-2")
 table.insert(DyWorld_TD.Module_List, dy.."molten-rock")
+table.insert(DyWorld_TD.Module_List, dy.."molten-rock-2")
 table.insert(DyWorld_TD.Module_List, dy.."molten-glass")

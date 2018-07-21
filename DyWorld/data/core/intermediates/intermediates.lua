@@ -21,6 +21,17 @@ local Data_Table = {
 		Tech_Name = "advanced-electronics-2",
 	},
 	{
+		Name = "gunpowder",
+		Icon = dyworld_path_icon.."gunpowder.png",
+		Stack = 1000,
+		Subgroup = "intermediates",
+		Recipe = true,
+		Recipe_Without_Tech = true,
+		Recipe_Craft_Time = 2.5,
+		Recipe_Result_Count = 50, 
+		Recipe_Ingredients = {{dy.."sand", 50},{"sulfur", 25},{"coal", 1}}, 
+	},
+	{
 		Name = "crystal",
 		Icon = dyworld_path_icon.."crystal.png",
 		Stack = 25,

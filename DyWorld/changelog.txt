@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.2
 Date: ??. 07. 2018
+  Features:
+    - Added a new intermediate: Gunpowder
   Balancing:
     - Changed some recipes of ore cracking to be more random and recipes are quickers now
     - Rock Boilers use slightly less power
@@ -9,6 +11,8 @@ Date: ??. 07. 2018
     - Changed Ranges of Ammo's and Turrets even better then in last updates. Much more accurate now
   Changes:
     - Increased starting arc of turrets: 60 > 75 degrees
+    - Improved the item grouping even further. Materials are still locked together, but now grouped in 3 groups: Machines, Power and Transport
+    - Reduced Blast-furnace's input and output storage to 5 times recipes size
   Bugfixes:
     - 
 ---------------------------------------------------------------------------------------------------

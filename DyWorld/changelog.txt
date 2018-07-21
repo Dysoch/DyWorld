@@ -13,6 +13,9 @@ Date: ??. 07. 2018
     - Increased starting arc of turrets: 60 > 75 degrees
     - Improved the item grouping even further. Materials are still locked together, but now grouped in 3 groups: Machines, Power and Transport
     - Reduced Blast-furnace's input and output storage to 5 times recipes size
+  Materials System:
+    - Moved Chromium to higher tier. 2 > 3
+    - Moved Tungsten to higher tier. 2 > 3
   Bugfixes:
     - 
 ---------------------------------------------------------------------------------------------------

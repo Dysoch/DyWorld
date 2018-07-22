@@ -396,7 +396,8 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return ((Materials[TABLE].Elasticity / 2) + Materials[TABLE].Density)
 	elseif TYPE == 2 then
 		-- Belt & Pipe Range
-		return math.floor((Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity) + 2)
+		--return math.floor((Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity) + 2)
+		return ((3 * OPT) + math.floor((Materials[TABLE].Density * 0.2) + (Materials[TABLE].Hardness * 0.25) + (Materials[TABLE].Elasticity * 0.5)))
 	elseif TYPE == 3 then
 		-- Health
 		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) + Materials[TABLE].Strength_Yield)

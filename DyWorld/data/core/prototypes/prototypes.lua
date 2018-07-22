@@ -871,7 +871,7 @@ data:extend(
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness =( Materials[DATA.Table].Hardness / 2), mining_time = DyWorld_Material_Formulas(9, DATA.Table), result = dy..DATA.Name.."-underground-belt"},
 	max_health = DyWorld_Material_Formulas(3, DATA.Table),
-    max_distance = DyWorld_Material_Formulas(2, DATA.Table),
+    max_distance = DyWorld_Material_Formulas(2, DATA.Table, DATA.Tier),
     underground_sprite =
     {
       filename = "__core__/graphics/arrows/underground-lines.png",
@@ -1313,7 +1313,7 @@ data:extend(
     name = dy..DATA.Name.."-underground-belt",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{dy..DATA.Name.."-transport-belt", DyWorld_Material_Formulas(2, DATA.Table)}},
+    ingredients = {{dy..DATA.Name.."-transport-belt", DyWorld_Material_Formulas(2, DATA.Table, DATA.Tier)}},
     result = dy..DATA.Name.."-underground-belt",
     result_count = 2,
   },
@@ -1430,9 +1430,6 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
 	end
-	if DATA.Name == "rubber" then
-		data.raw["underground-belt"][dy..DATA.Name.."-underground-belt"].max_distance = 6
-	end
 	if DATA.Name == "wood" then
 		data.raw.item[dy..DATA.Name.."-transport-belt"].fuel_value = "2MJ"
 		data.raw.item[dy..DATA.Name.."-transport-belt"].fuel_category = "chemical"
@@ -1501,7 +1498,7 @@ data:extend(
     type = "pipe-to-ground",
     name = dy..DATA.Name.."-pipe-to-ground",
 	localised_name = {"looped-name.pipe-to-ground", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier)), (DyWorld_Material_Formulas(2, DATA.Table))},
+	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier)), (DyWorld_Material_Formulas(2, DATA.Table, DATA.Tier))},
     icons = 
 	{
 	  {
@@ -1526,7 +1523,7 @@ data:extend(
         { position = {0, -1} },
         {
           position = {0, 1},
-          max_underground_distance = DyWorld_Material_Formulas(2, DATA.Table)
+          max_underground_distance = DyWorld_Material_Formulas(2, DATA.Table, DATA.Tier),
         }
       },
     },
@@ -1633,7 +1630,7 @@ data:extend(
     type = "item",
     name = dy..DATA.Name.."-pipe-to-ground",
 	localised_name = {"looped-name.pipe-to-ground", {"looped-name."..DATA.Name}},
-	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier)), (DyWorld_Material_Formulas(2, DATA.Table))},
+	localised_description = {"looped-name.pipe-to-ground-desc", (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier)), (DyWorld_Material_Formulas(2, DATA.Table, DATA.Tier))},
 	icons = 
 	{
 	  {
@@ -1661,7 +1658,7 @@ data:extend(
     name = dy..DATA.Name.."-pipe-to-ground",
     energy_required = 2.5,
 	enabled = false,
-    ingredients = {{dy..DATA.Name.."-pipe", DyWorld_Material_Formulas(2, DATA.Table)}},
+    ingredients = {{dy..DATA.Name.."-pipe", DyWorld_Material_Formulas(2, DATA.Table, DATA.Tier)}},
     result = dy..DATA.Name.."-pipe-to-ground",
     result_count = 2,
   },

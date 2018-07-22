@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.3
+Date: ??. 07. 2018
+  Features:
+    - 
+  Balancing:
+    - 
+  Materials System:
+    - 
+  Changes:
+    - Removed science fluid outputs of Space Science Packs
+    - Changed recipe of Space Packs
+  Metallurgy:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.7.2
 Date: 21. 07. 2018
   Features:

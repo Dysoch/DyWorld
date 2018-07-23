@@ -488,7 +488,7 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return (Materials[TABLE].Hardness / Materials[TABLE].Density)
 	elseif TYPE == 10 then
 		-- Solar Power
-		return math.floor(Materials[TABLE].Strength_Ultimate * Materials[TABLE].Conductivity)
+		return math.floor(((OPT * 100) * Materials[TABLE].Conductivity) )
 	elseif TYPE == 11 then
 		-- Pole/Relay Supply Area
 		return math.ceil((Materials[TABLE].Conductivity + Materials[TABLE].Hardness) / 2)

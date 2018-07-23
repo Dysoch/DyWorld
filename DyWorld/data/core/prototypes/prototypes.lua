@@ -6551,7 +6551,7 @@ data:extend(
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    production = tostring(DyWorld_Material_Formulas(10, DATA.Table)).."kW",
+    production = tostring(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)).."kW",
 	fast_replaceable_group = "solar-panel",
   },
   {
@@ -6576,7 +6576,7 @@ data:extend(
 	name = dy..DATA.Name.."-solar-normal",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{dy.."solar-cell", math.ceil(DyWorld_Material_Formulas(10, DATA.Table)/25)},{"electronic-circuit", 5}},
+    ingredients = {{dy.."solar-cell", math.ceil(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)/25)},{"electronic-circuit", 5}},
     result = dy..DATA.Name.."-solar-normal",
     result_count = 1,
   },
@@ -6638,7 +6638,7 @@ data:extend(
       type = "electric",
       usage_priority = "primary-output"
     },
-    power = tostring(DyWorld_Material_Formulas(10, DATA.Table)/5).."kW",
+    power = tostring(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)/5).."kW",
     categories = {"armor"}
   },
   {
@@ -6663,7 +6663,7 @@ data:extend(
 	name = dy..DATA.Name.."-solar-normal-equipment",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{dy.."solar-cell", math.ceil(DyWorld_Material_Formulas(10, DATA.Table)/50)},{"electronic-circuit", 5}},
+    ingredients = {{dy.."solar-cell", math.ceil(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)/50)},{"electronic-circuit", 5}},
     result = dy..DATA.Name.."-solar-normal-equipment",
     result_count = 1,
   },
@@ -6936,10 +6936,10 @@ data:extend(
     energy_source =
     {
       type = "electric",
-      buffer_capacity = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table)*10)).."kJ",
+      buffer_capacity = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)*10)).."kJ",
       usage_priority = "terciary",
-      input_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table)*3)).."kW",
-      output_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table)*3)).."kW"
+      input_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)*3)).."kW",
+      output_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)*3)).."kW"
     },
     picture =
     {
@@ -7018,7 +7018,7 @@ data:extend(
 	name = dy..DATA.Name.."-accumulator-normal",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{dy.."battery-pack", math.ceil(DyWorld_Material_Formulas(10, DATA.Table)/25)},{"electronic-circuit", 5}},
+    ingredients = {{dy.."battery-pack", math.ceil(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)/25)},{"electronic-circuit", 5}},
     result = dy..DATA.Name.."-accumulator-normal",
     result_count = 1,
   },

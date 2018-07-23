@@ -4,9 +4,10 @@ Date: ??. 07. 2018
   Features:
     - 
   Balancing:
-    - 
+    - MS: Changed the formula for underground ranges of both Pipes and Belts
+    - MS: Changed the formula for pipe capacity even further by improving it
   Materials System:
-    - Changed the formula for underground ranges of both Pipes and Belts
+    - 
   Changes:
     - Removed science fluid outputs of Space Science Packs
     - Changed recipe of Space Packs

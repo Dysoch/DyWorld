@@ -404,42 +404,10 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 	elseif TYPE == 4 then
 		-- Pipe Capacity
 		--return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
-		if OPT == 1 then
-			if (200 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.8)) <= 1 then
-				return 1
-			else
-				return (200 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.8))
-			end
-		elseif OPT == 2 then
-			if (150 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.7)) <= 1 then
-				return 1
-			else
-				return (150 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.7))
-			end
-		elseif OPT == 3 then
-			if (100 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.6)) <= 1 then
-				return 1
-			else
-				return (100 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.6))
-			end
-		elseif OPT == 4 then
-			if (50 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.5)) <= 1 then
-				return 1
-			else
-				return (50 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.5))
-			end
-		elseif OPT == 5 then
-			if (25 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.4)) <= 1 then
-				return 1
-			else
-				return (25 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.4))
-			end
-		elseif OPT == 6 then
-			if (10 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.1)) <= 1 then
-				return 1
-			else
-				return (10 - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.1))
-			end
+		if ((250 - (40 * OPT)) - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.5)) <= 2.5 then
+			return 2.5
+		else
+			return ((250 - (40 * OPT)) - math.floor((Materials[TABLE].Density + Materials[TABLE].Hardness) * 0.5))
 		end
 	elseif TYPE == 5 then
 		-- Turret / Ammo Range

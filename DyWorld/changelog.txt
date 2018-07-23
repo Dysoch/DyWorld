@@ -4,11 +4,11 @@ Date: ??. 07. 2018
   Features:
     - 
   Balancing:
-    - MS: Changed the formula for underground ranges of both Pipes and Belts
-    - MS: Changed the formula for pipe capacity even further by improving it
-    - MS: Changed the formula for Belt, Loader and Splitter speed. Much more flexible, and more balanced
   Materials System:
-    - 
+    - Changed the formula for underground ranges of both Pipes and Belts
+    - Changed the formula for pipe capacity even further by improving it
+    - Changed the formula for Belt, Loader and Splitter speed. Much more flexible, and more balanced
+    - Changed the formula for shooting speeds of turrets
   Changes:
     - Removed science fluid outputs of Space Science Packs
     - Changed recipe of Space Packs

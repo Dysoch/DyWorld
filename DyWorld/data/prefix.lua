@@ -488,7 +488,7 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return (Materials[TABLE].Hardness / Materials[TABLE].Density)
 	elseif TYPE == 10 then
 		-- Solar Power
-		return math.floor(((OPT * 100) * Materials[TABLE].Conductivity) )
+		return math.floor(((OPT * 100) * Materials[TABLE].Conductivity) - Materials[TABLE].Density )
 	elseif TYPE == 11 then
 		-- Pole/Relay Supply Area
 		return math.ceil((Materials[TABLE].Conductivity + Materials[TABLE].Hardness) / 2)
@@ -537,6 +537,9 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 	elseif TYPE == 18 then
 		-- Pipe Capacity
 		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
+	elseif TYPE == 19 then
+		-- Assembler Speed
+		return Round(((OPT * 0.25) + (Materials[TABLE].Density * 0.1) + (Materials[TABLE].Hardness * 0.25) + (Materials[TABLE].Elasticity * 0.025)), 2)
 	end
 end
 

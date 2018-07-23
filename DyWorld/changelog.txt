@@ -9,6 +9,7 @@ Date: ??. 07. 2018
     - Changed the formula for pipe capacity even further by improving it
     - Changed the formula for Belt, Loader and Splitter speed. Much more flexible, and more balanced
     - Changed the formula for shooting speeds of turrets
+    - Changed the formula for assembler speed
     - Changed power output formula of solar panels and storage of accumulators
   Changes:
     - Removed science fluid outputs of Space Science Packs

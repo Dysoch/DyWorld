@@ -8456,7 +8456,7 @@ data:extend(
       },
     },
     crafting_categories = {"crafting", "advanced-crafting", "crafting-with-fluid"},
-    crafting_speed = Round(((Materials[DATA.Table].Density / 12) + 0.5), 2),
+    crafting_speed = DyWorld_Material_Formulas(19, DATA.Table, DATA.Tier),
     energy_source =
     {
       type = "electric",

@@ -6,6 +6,7 @@ Date: ??. 07. 2018
   Balancing:
     - MS: Changed the formula for underground ranges of both Pipes and Belts
     - MS: Changed the formula for pipe capacity even further by improving it
+    - MS: Changed the formula for Belt, Loader and Splitter speed. Much more flexible, and more balanced
   Materials System:
     - 
   Changes:

@@ -393,7 +393,8 @@ Material_Resistances = {
 function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 	if TYPE == 1 then
 		-- Belt Speed
-		return ((Materials[TABLE].Elasticity / 2) + Materials[TABLE].Density)
+		--return ((Materials[TABLE].Elasticity / 2) + Materials[TABLE].Density) / 426.67
+		return (((5 * OPT) + ((Materials[TABLE].Density * 0.25) + (Materials[TABLE].Hardness * 0.35) + (Materials[TABLE].Elasticity * 0.3))) / 426.67)
 	elseif TYPE == 2 then
 		-- Belt & Pipe Range
 		--return math.floor((Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity) + 2)

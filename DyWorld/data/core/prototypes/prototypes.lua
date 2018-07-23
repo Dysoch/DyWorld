@@ -851,7 +851,7 @@ data:extend(
     starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
     ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
-    speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
+    speed = DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier),
     connector_frame_sprites = transport_belt_connector_frame_sprites,
     circuit_connector_sprites = transport_belt_circuit_connector_sprites,
     circuit_wire_connection_point = transport_belt_circuit_wire_connection_point,
@@ -914,7 +914,7 @@ data:extend(
     starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
     ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
-    speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
+    speed = DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier),
     structure = {
       direction_in = {
         sheets = {
@@ -1028,7 +1028,7 @@ data:extend(
     starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
     ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
-    speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
+    speed = DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier),
     structure =
     {
       north =
@@ -1155,7 +1155,7 @@ data:extend(
     starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
     ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
-    speed = (DyWorld_Material_Formulas(1, DATA.Table)/426.67),
+    speed = DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier),
 	belt_distance = 0,
     container_distance = 1.0,
     belt_length = 0.5,
@@ -1399,7 +1399,7 @@ data:extend(
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-splitter")
 		DyWorld_Add_To_Tech("logistics-5", dy..DATA.Name.."-loader")
 	end
-	if (DyWorld_Material_Formulas(1, DATA.Table)) >= 100 then
+	if (DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier) * 426.67) >= 100 then
 		data.raw.recipe[dy..DATA.Name.."-transport-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-underground-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-splitter"].category = "crafting-with-fluid"
@@ -1409,7 +1409,7 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
-	elseif (DyWorld_Material_Formulas(1, DATA.Table)) >= 50 then
+	elseif (DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier) * 426.67) >= 50 then
 		data.raw.recipe[dy..DATA.Name.."-transport-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-underground-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-splitter"].category = "crafting-with-fluid"
@@ -1419,7 +1419,7 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-underground-belt"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-splitter"].ingredients, result_1)
 		table.insert(data.raw.recipe[dy..DATA.Name.."-loader"].ingredients, result_1)
-	elseif (DyWorld_Material_Formulas(1, DATA.Table)) >= 25 then
+	elseif (DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier) * 426.67) >= 25 then
 		data.raw.recipe[dy..DATA.Name.."-transport-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-underground-belt"].category = "crafting-with-fluid"
 		data.raw.recipe[dy..DATA.Name.."-splitter"].category = "crafting-with-fluid"
@@ -8552,7 +8552,7 @@ data:extend(
     collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fast_replaceable_group = "container",
-    inventory_size = math.floor(DyWorld_Material_Formulas(1, DATA.Table)+5),
+    inventory_size = math.floor(DyWorld_Material_Formulas(3, DATA.Table)+5),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
     {

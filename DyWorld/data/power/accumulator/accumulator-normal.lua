@@ -6,8 +6,11 @@ for k,v in pairs(Material_Table) do
 	end
 end
 
-table.remove(data.raw.recipe[dy.."wood-accumulator-normal"].ingredients,1)
+table.remove(data.raw.recipe[dy.."iron-accumulator-normal"].ingredients,1)
+table.remove(data.raw.recipe[dy.."copper-accumulator-normal"].ingredients,1)
 data.raw["accumulator"]["accumulator"].fast_replaceable_group = "accumulator"
 
 local result_1 = {dy.."makeshift-battery", 2}
-table.insert(data.raw.recipe[dy.."wood-accumulator-normal"].ingredients, result_1)
+local result_2 = {dy.."makeshift-battery", 12}
+table.insert(data.raw.recipe[dy.."iron-accumulator-normal"].ingredients, result_1)
+table.insert(data.raw.recipe[dy.."copper-accumulator-normal"].ingredients, result_2)

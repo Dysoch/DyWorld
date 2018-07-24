@@ -1,9 +1,7 @@
 require "data/prefix"
 	
 for k,v in pairs(Material_Table) do
-	if v.Name == "rubber" then
-	
-	else
+	if Materials[v.Table].Conductivity >= 0.01 then
 		DyWorld_Mining_Drills_Electric(v)
 	end
 end

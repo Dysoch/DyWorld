@@ -1,5 +1,7 @@
 require "data/prefix"
 	
 for k,v in pairs(Material_Table) do
-	DyWorld_Cars(v)
+	if Materials[v.Table].Conductivity >= 0.01 then
+		DyWorld_Cars(v)
+	end
 end

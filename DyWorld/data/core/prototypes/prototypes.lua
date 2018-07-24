@@ -3733,7 +3733,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.01 / 2.5
     },
-    energy_usage = "30kW",
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
     pumping_speed = (Materials[DATA.Table].Strength_Ultimate * DATA.Tier),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     animations =
@@ -6591,7 +6591,7 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-solar-normal"].ingredients, result_1)
 	end
-	if DATA.Name == "wood" then
+	if DATA.Name == "copper" or DATA.Name == "iron" then
 		data.raw.recipe[dy..DATA.Name.."-solar-normal"].enabled = true
 	elseif DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("solar-energy", dy..DATA.Name.."-solar-normal")
@@ -7033,7 +7033,7 @@ data:extend(
 		local result_1 = {DATA.Name.."-plate", 25}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].ingredients, result_1)
 	end
-	if DATA.Name == "wood" then
+	if DATA.Name == "copper" or DATA.Name == "iron" then
 		data.raw.recipe[dy..DATA.Name.."-accumulator-normal"].enabled = true
 	elseif DATA.Tier == 1 then
 		DyWorld_Add_To_Tech("electric-energy-accumulators-1", dy..DATA.Name.."-accumulator-normal")
@@ -7923,7 +7923,7 @@ data:extend(
       emissions = 0.15 / 1.5,
       usage_priority = "secondary-input"
     },
-    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 100).."kW",
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
     mining_power = Round(Materials[DATA.Table].Hardness + (Materials[DATA.Table].Hardness / 2), 2),
     resource_searching_radius = (math.floor(Materials[DATA.Table].Hardness / 2) + 0.49),
     vector_to_place_result = {0, -1.85},
@@ -8059,7 +8059,7 @@ data:extend(
         }
       }
     },
-    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 100).."kW",
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
     mining_power = (Materials[DATA.Table].Hardness + 0.5),
     animations =
     {
@@ -8463,7 +8463,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.03 / 3.5
     },
-    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 100).."kW",
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
     ingredient_count = math.ceil((Materials[DATA.Table].Elasticity / 2) + 2),
     module_specification =
     {
@@ -8853,7 +8853,7 @@ data:extend(
       buffer_capacity = tostring(Materials[DATA.Table].Strength_Ultimate).."MJ",
     },
     recharge_minimum = tostring(math.floor(Materials[DATA.Table].Strength_Yield * 0.5)).."MJ",
-    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 50).."kW",
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
     -- per one charge slot
     charging_energy = tostring(((Materials[DATA.Table].Strength_Ultimate) + 1500) * 5).."kW",
     logistics_radius = math.floor(Materials[DATA.Table].Density * Materials[DATA.Table].Hardness),
@@ -11752,7 +11752,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 250).."kW",
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
     integration_patch =
     {
       filename = "__base__/graphics/entity/radar/radar-integration.png",
@@ -12158,7 +12158,7 @@ data:extend(
       usage_priority = "secondary-input"
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    energy_usage = tostring((Materials[DATA.Table].Strength_Ultimate) + 500).."kW",
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
     distribution_effectivity = 0.4 + (DATA.Tier / 10),
     module_specification =
     {

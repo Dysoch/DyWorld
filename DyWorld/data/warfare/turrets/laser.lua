@@ -1,6 +1,8 @@
 require "data/prefix"
 	
 for k,v in pairs(Material_Table) do
-	DyWorld_Laser_Turrets(v)
+	if Materials[v.Table].Conductivity >= 0.01 then
+		DyWorld_Laser_Turrets(v)
+	end
 end
 

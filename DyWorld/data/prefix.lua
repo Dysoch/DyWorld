@@ -539,7 +539,10 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) * Materials[TABLE].Elasticity)
 	elseif TYPE == 19 then
 		-- Assembler Speed
-		return Round(((OPT * 0.25) + (Materials[TABLE].Density * 0.1) + (Materials[TABLE].Hardness * 0.25) + (Materials[TABLE].Elasticity * 0.025)), 2)
+		return Round(((OPT * 0.1) + (Materials[TABLE].Density * 0.05) + (Materials[TABLE].Hardness * 0.125) + (Materials[TABLE].Elasticity * 0.0125)), 2)
+	elseif TYPE == 20 then
+		-- Power Usage
+		return tostring(math.floor((OPT * 50) + ((Materials[TABLE].Conductivity) * ((Materials[TABLE].Density * 0.125) + (Materials[TABLE].Hardness * 0.2) + (Materials[TABLE].Elasticity * 0.05))))).."kW"
 	end
 end
 
@@ -589,7 +592,7 @@ Materials = {
 		Density = 3.6,
 		Hardness = 6,
 		Elasticity = 13.5,
-		Conductivity = 0.25,
+		Conductivity = 0,
 		Strength_Yield = 300,
 		Strength_Ultimate = 450,
 		Melting_Point = nil,
@@ -602,7 +605,7 @@ Materials = {
 		Density = 7.5,
 		Hardness = 2.25,
 		Elasticity = 11,
-		Conductivity = 1,
+		Conductivity = 0,
 		Strength_Yield = 1,
 		Strength_Ultimate = 40,
 		Melting_Point = nil,
@@ -612,7 +615,7 @@ Materials = {
 	},
 	-- Basic
 	Iron = {
-		Tier = 2,
+		Tier = 1,
 		Density = 7.874,
 		Hardness = 4,
 		Elasticity = 28.5,
@@ -625,7 +628,7 @@ Materials = {
 		Icon_Tech = {icon = dyworld_path_tech.."material-system/iron.png"},
 	},
 	Copper = {
-		Tier = 2,
+		Tier = 1,
 		Density = 8.94,
 		Hardness = 3,
 		Elasticity = 17,
@@ -785,7 +788,7 @@ Materials = {
 		Density = 19.1,
 		Hardness = 6.0,
 		Elasticity = 1.9,
-		Conductivity = 1.38,
+		Conductivity = 0,
 		Strength_Yield = 205,
 		Strength_Ultimate = 111,
 		Melting_Point = 1132,

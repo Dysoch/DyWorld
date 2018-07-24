@@ -11,9 +11,17 @@ Date: ??. 07. 2018
     - Changed the formula for shooting speeds of turrets
     - Changed the formula for assembler speed
     - Changed power output formula of solar panels and storage of accumulators
+    - When a material has 0 conductivity, it will have NO electric machines!!!!
+    - All previously placed electric machines that now have 0 Conductivity will be transfered to a material of the same tier that does have Conductivity
+    - Changed conductivity of Uranium to 0
+    - Changed conductivity of Stone to 0
+    - Changed conductivity of Obsidian to 0
+    - Massive power update! All power usage and production have been completely revamped to be better!
+    - Changed Tier of Iron and Copper: 2 > 1
   Changes:
     - Removed science fluid outputs of Space Science Packs
     - Changed recipe of Space Packs
+    - Changed recipe of Blue Science Fluid to use Aluminium Storage Tank instead of Lithium Storage Tank
   Metallurgy:
     - 
 ---------------------------------------------------------------------------------------------------

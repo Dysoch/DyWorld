@@ -8493,7 +8493,7 @@ data:extend(
 	name = dy..DATA.Name.."-assembling-electric",
     energy_required = 1,
 	enabled = false,
-    ingredients = {{"electronic-circuit", 3}},
+    ingredients = {},
     result = dy..DATA.Name.."-assembling-electric",
     result_count = 1,
   },
@@ -8510,16 +8510,28 @@ data:extend(
 	end
 	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-assembling-electric"].enabled = true
+		local result_1 = {"electronic-circuit", DATA.Tier * 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-assembling-electric"].ingredients, result_1)
 	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("automation", dy..DATA.Name.."-assembling-electric")
+		local result_1 = {"electronic-circuit", DATA.Tier * 5}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-assembling-electric"].ingredients, result_1)
 	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("automation-2", dy..DATA.Name.."-assembling-electric")
+		local result_1 = {"advanced-circuit", DATA.Tier * 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-assembling-electric"].ingredients, result_1)
 	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("automation-3", dy..DATA.Name.."-assembling-electric")
+		local result_1 = {"processing-unit", DATA.Tier * 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-assembling-electric"].ingredients, result_1)
 	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("automation-4", dy..DATA.Name.."-assembling-electric")
+		local result_1 = {dy.."processing-advanced", DATA.Tier * 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-assembling-electric"].ingredients, result_1)
 	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("automation-5", dy..DATA.Name.."-assembling-electric")
+		local result_1 = {dy.."processing-logic", DATA.Tier * 2}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-assembling-electric"].ingredients, result_1)
 	end
 	if DATA.Name == "wood" then
 		data.raw.item[dy..DATA.Name.."-assembling-electric"].fuel_value = "2MJ"
@@ -10277,7 +10289,7 @@ data:extend(
 		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-5"}
 	elseif DATA.Tier == 6 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-6"}
 	end
@@ -11356,7 +11368,7 @@ data:extend(
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 6
 		local result_1 = {dy.."processing-logic", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-6"}
 	end
@@ -11473,7 +11485,7 @@ data:extend(
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 6
 		local result_1 = {dy.."processing-logic", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-6"}
 	end
@@ -11588,7 +11600,7 @@ data:extend(
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 6
 		local result_1 = {dy.."processing-logic", 5}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-6"}
 	end
@@ -11881,16 +11893,28 @@ data:extend(
 	end
 	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-radar"].enabled = true
+		local result_1 = {"electronic-circuit", DATA.Tier * 3}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
 	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("military", dy..DATA.Name.."-radar")
+		local result_1 = {"electronic-circuit", DATA.Tier * 8}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
 	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("military-2", dy..DATA.Name.."-radar")
+		local result_1 = {"advanced-circuit", DATA.Tier * 3}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
 	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("military-3", dy..DATA.Name.."-radar")
+		local result_1 = {"processing-unit", DATA.Tier * 3}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
 	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("military-4", dy..DATA.Name.."-radar")
+		local result_1 = {dy.."processing-advanced", DATA.Tier * 3}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
 	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("military-5", dy..DATA.Name.."-radar")
+		local result_1 = {dy.."processing-logic", DATA.Tier * 3}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-radar"].ingredients, result_1)
 	end
 	if DATA.Name == "wood" then
 		data.raw.item[dy..DATA.Name.."-radar"].fuel_value = "2MJ"

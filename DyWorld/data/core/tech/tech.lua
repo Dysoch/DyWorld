@@ -993,23 +993,23 @@ local Data_Table = {
 		Name = "effect-transmission-2",
 		Icon = {{icon = "__base__/graphics/technology/effect-transmission.png"}},
 		Pre_Req = {"effect-transmission"},
-		Tech_Ingredients = 5,
-		Count = 350,
+		Tech_Ingredients = 3,
+		Count = 500,
 		Military = false,
 	},
 	{
 		Name = "effect-transmission-3",
 		Icon = {{icon = "__base__/graphics/technology/effect-transmission.png"}},
 		Pre_Req = {"effect-transmission-2"},
-		Tech_Ingredients = 5,
-		Count = 1000,
+		Tech_Ingredients = 4,
+		Count = 1250,
 		Military = false,
 	},
 	{
 		Name = "effect-transmission-4",
 		Icon = {{icon = "__base__/graphics/technology/effect-transmission.png"}},
 		Pre_Req = {"effect-transmission-3"},
-		Tech_Ingredients = 6,
+		Tech_Ingredients = 4,
 		Count = 2500,
 		Military = false,
 	},
@@ -1017,7 +1017,7 @@ local Data_Table = {
 		Name = "effect-transmission-5",
 		Icon = {{icon = "__base__/graphics/technology/effect-transmission.png"}},
 		Pre_Req = {"effect-transmission-4"},
-		Tech_Ingredients = 6,
+		Tech_Ingredients = 5,
 		Count = 5000,
 		Military = false,
 	},
@@ -1027,6 +1027,46 @@ local Data_Table = {
 		Pre_Req = {"effect-transmission-5"},
 		Tech_Ingredients = 6,
 		Count = 12500,
+		Military = false,
+	},
+	{
+		Name = "landfill-2",
+		Icon = {{icon = "__base__/graphics/technology/landfill.png"}},
+		Pre_Req = {"landfill"},
+		Tech_Ingredients = 3,
+		Count = 750,
+		Military = false,
+	},
+	{
+		Name = "landfill-3",
+		Icon = {{icon = "__base__/graphics/technology/landfill.png"}},
+		Pre_Req = {"landfill-2"},
+		Tech_Ingredients = 4,
+		Count = 2000,
+		Military = false,
+	},
+	{
+		Name = "landfill-4",
+		Icon = {{icon = "__base__/graphics/technology/landfill.png"}},
+		Pre_Req = {"landfill-3"},
+		Tech_Ingredients = 4,
+		Count = 5000,
+		Military = false,
+	},
+	{
+		Name = "landfill-5",
+		Icon = {{icon = "__base__/graphics/technology/landfill.png"}},
+		Pre_Req = {"landfill-4"},
+		Tech_Ingredients = 5,
+		Count = 12500,
+		Military = false,
+	},
+	{
+		Name = "landfill-6",
+		Icon = {{icon = "__base__/graphics/technology/landfill.png"}},
+		Pre_Req = {"landfill-5"},
+		Tech_Ingredients = 6,
+		Count = 37500,
 		Military = false,
 	},
 }
@@ -1067,7 +1107,7 @@ data:extend(
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 6 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 5}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	end
 	if v.Military then
@@ -1081,3 +1121,6 @@ end
 
 local add = "primitive-armor"
 table.insert(data.raw.technology["railway"].prerequisites, add)
+
+local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+data.raw.technology["effect-transmission"].unit.ingredients = results

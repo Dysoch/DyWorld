@@ -199,7 +199,7 @@ data:extend(
     type = "recipe",
     name = dy.."tile-crafter-2",
     energy_required = 1.5,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "item", name = "electronic-circuit", amount = 2},
@@ -210,3 +210,6 @@ data:extend(
   },
 }
 )
+
+DyWorld_Add_To_Tech("landfill", dy.."tile-crafter")
+DyWorld_Add_To_Tech("landfill", dy.."tile-crafter-2")

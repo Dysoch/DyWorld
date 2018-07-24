@@ -126,7 +126,7 @@ for k,v in pairs(Material_Table) do
 			unit =
 			{
 			  count = math.floor(Materials[v.Table].Density * 250),
-			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}},
+			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}},
 			  time =  30
 			},
 			order = dy..v.Name.."-advanced-melting",

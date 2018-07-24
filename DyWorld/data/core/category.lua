@@ -70,6 +70,14 @@ local Data_Table = {
 		Type = "recipe"
 	},
 	{
+		Name = dy.."tile-crafting",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."tile-uncrafting",
+		Type = "recipe"
+	},
+	{
 		Name = "radiation",
 		Type = "dmg"
 	},

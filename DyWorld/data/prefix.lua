@@ -478,7 +478,7 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return Round(((Materials[TABLE].Hardness * 0.5)+ (Materials[TABLE].Elasticity * 0.3) * (Materials[TABLE].Density * 0.1)), 2)
 	elseif TYPE == 7 then
 		-- Turret Shoot Arc & Mag Size
-		return math.floor(75 + Materials[TABLE].Elasticity)
+		return math.floor(70 + Materials[TABLE].Elasticity)
 	elseif TYPE == 8 then
 		-- Ammo Damage
 		return Round((((Materials[TABLE].Hardness * 1.25 * Materials[TABLE].Tier)+(Materials[TABLE].Elasticity * 0.5 * Materials[TABLE].Tier)) + (Materials[TABLE].Density * 0.1 * Materials[TABLE].Tier)), 2)

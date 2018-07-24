@@ -28,7 +28,7 @@ Enemies = {
 	},
 	["arachtoid"] = {
 		Type = "biter",
-		Base_HP = 15,
+		Base_HP = 20,
 		Unit_Amount = 10,
 		Spawner = false,
 		Resistances = {
@@ -40,7 +40,7 @@ Enemies = {
 		},
 		Speed = 0.2,
 		Attack_Range_Base = 1,
-		Attack_DMG_Base = 5,
+		Attack_DMG_Base = 7,
 		Attack_DMG_Type = "physical",
 		Attack_Speed_Base = 30,
 		Pollution_to_Join_Attack_Base = 200,

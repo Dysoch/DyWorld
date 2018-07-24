@@ -59,13 +59,13 @@ local Data_Table = {
 	{
 		Name = "bauxite",
 		Order = "g",
-		Coverage = 0.003,
+		Coverage = 0.004,
 		Mining_Hardness = 4.75,
 		Mining_Time = 2.5,
 		Tint = Material_Colors.Stone,
 		Starting_Area = true,
-		Starting_Area_Strength = 1.5,
-		Multiplier = 1.01,
+		Starting_Area_Strength = 2,
+		Multiplier = 1.03,
 	},
 	{
 		Name = "radicium",

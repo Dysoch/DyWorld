@@ -7,6 +7,7 @@ local Table = {
 		Molten = false,
 		Pebble = false,
 		Clean_Ore = false,
+		Tile = false,
 		DMG_Type = "physical",
 	},
 }

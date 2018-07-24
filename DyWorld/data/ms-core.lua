@@ -9,6 +9,7 @@ local Table = {
 		Molten = false,
 		Pebble = false,
 		Clean_Ore = false,
+		Tile = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -19,6 +20,7 @@ local Table = {
 		Molten = false,
 		Pebble = false,
 		Clean_Ore = false,
+		Tile = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -29,6 +31,7 @@ local Table = {
 		Molten = false,
 		Pebble = false,
 		Clean_Ore = false,
+		Tile = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -39,6 +42,7 @@ local Table = {
 		Molten = false,
 		Pebble = false,
 		Clean_Ore = false,
+		Tile = false,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -49,6 +53,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -59,6 +64,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -69,6 +75,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -79,6 +86,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -89,6 +97,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -99,6 +108,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -109,6 +119,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -119,6 +130,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "poison",
 	},
 	{ 
@@ -129,6 +141,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -139,6 +152,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -149,6 +163,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -159,6 +174,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 	{ 
@@ -169,6 +185,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "acid",
 	},
 	{ 
@@ -179,6 +196,7 @@ local Table = {
 		Molten = true,
 		Pebble = true,
 		Clean_Ore = true,
+		Tile = true,
 		DMG_Type = "radiation",
 	},
 	{ 
@@ -189,6 +207,7 @@ local Table = {
 		Molten = true,
 		Pebble = false,
 		Clean_Ore = false,
+		Tile = true,
 		DMG_Type = "physical",
 	},
 }

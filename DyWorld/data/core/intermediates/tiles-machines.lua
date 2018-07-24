@@ -4,7 +4,7 @@ data:extend(
 {
   {
     type = "furnace",
-    name = dy.."intermediate-crafter",
+    name = dy.."tile-crafter",
     icons =
 	{
 	  {
@@ -14,7 +14,7 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = dy.."intermediate-crafter"},
+    minable = {mining_time = 1, result = dy.."tile-crafter"},
     max_health = 1000,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -34,7 +34,7 @@ data:extend(
       module_info_icon_shift = {0, 0.8}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {dy.."pcb-crafting", dy.."coil-crafting", dy.."cable-crafting"},
+    crafting_categories = {dy.."tile-crafting"},
     result_inventory_size = 1,
     crafting_speed = 5,
     energy_usage = "100W",
@@ -77,7 +77,7 @@ data:extend(
   },
   {
     type = "item",
-    name = dy.."intermediate-crafter",
+    name = dy.."tile-crafter",
     icons =
 	{
 	  {
@@ -87,27 +87,27 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."assembling-special-circuit",
+    subgroup = dy.."assembling-special-tiles",
     order = "1",
-    place_result = dy.."intermediate-crafter",
+    place_result = dy.."tile-crafter",
     stack_size = 200
   },
   {
     type = "recipe",
-    name = dy.."intermediate-crafter",
+    name = dy.."tile-crafter",
     energy_required = 1.5,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "item", name = "electronic-circuit", amount = 2},
       {type = "item", name = "stone", amount = 15},
       {type = "item", name = "iron-plate", amount = 5},
     },
-    result = dy.."intermediate-crafter"
+    result = dy.."tile-crafter"
   },
   {
     type = "furnace",
-    name = dy.."intermediate-crafter-2",
+    name = dy.."tile-crafter-2",
     icons =
 	{
 	  {
@@ -117,7 +117,7 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = dy.."intermediate-crafter-2"},
+    minable = {mining_time = 1, result = dy.."tile-crafter-2"},
     max_health = 1000,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -137,8 +137,8 @@ data:extend(
       module_info_icon_shift = {0, 0.8}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {dy.."gear-crafting"},
-    result_inventory_size = 1,
+    crafting_categories = {dy.."tile-uncrafting"},
+    result_inventory_size = 2,
     crafting_speed = 5,
     energy_usage = "100W",
     source_inventory_size = 1,
@@ -180,7 +180,7 @@ data:extend(
   },
   {
     type = "item",
-    name = dy.."intermediate-crafter-2",
+    name = dy.."tile-crafter-2",
     icons =
 	{
 	  {
@@ -190,14 +190,14 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
-    subgroup = dy.."assembling-special-circuit",
+    subgroup = dy.."assembling-special-tiles",
     order = "2",
-    place_result = dy.."intermediate-crafter-2",
+    place_result = dy.."tile-crafter-2",
     stack_size = 200
   },
   {
     type = "recipe",
-    name = dy.."intermediate-crafter-2",
+    name = dy.."tile-crafter-2",
     energy_required = 1.5,
     enabled = true,
     ingredients =
@@ -206,7 +206,7 @@ data:extend(
       {type = "item", name = "stone", amount = 15},
       {type = "item", name = "iron-plate", amount = 5},
     },
-    result = dy.."intermediate-crafter-2"
+    result = dy.."tile-crafter-2"
   },
 }
 )

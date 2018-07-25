@@ -182,8 +182,8 @@ data:extend(
     results =
     {
       {type = "fluid", name = "heavy-oil", amount = 15},
-      {type = "fluid", name = "light-oil", amount = 15},
       {type = "fluid", name = "petroleum-gas", amount = 20},
+      {type = "fluid", name = "light-oil", amount = 15},
       {type = "fluid", name = dy.."sewage", amount = 10},
     },
     subgroup = dy.."fluid-recipes",

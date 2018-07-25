@@ -491,16 +491,16 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return math.floor(((OPT * 100) * Materials[TABLE].Conductivity) - Materials[TABLE].Density )
 	elseif TYPE == 11 then
 		-- Pole/Relay Supply Area
-		return math.ceil((Materials[TABLE].Conductivity + Materials[TABLE].Hardness) / 2)
+		return Round(((OPT * 1) + (Materials[TABLE].Density * 0.05) + (Materials[TABLE].Hardness * 0.125) + (Materials[TABLE].Elasticity * 0.0125) + (Materials[TABLE].Conductivity * 0.25)), 0)
 	elseif TYPE == 12 then
 		-- Pole Wire Reach
-			if math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Density) >= 64 then
+			if Round(((OPT * 2.5) + (Materials[TABLE].Density * 0.05) + (Materials[TABLE].Hardness * 0.125) + (Materials[TABLE].Elasticity * 0.0125) + (Materials[TABLE].Conductivity * 0.25)), 0) * 2 >= 64 then
 				return 64
 			else
-				return math.floor(Materials[TABLE].Conductivity + Materials[TABLE].Density)
+				return Round(((OPT * 2.5) + (Materials[TABLE].Density * 0.05) + (Materials[TABLE].Hardness * 0.125) + (Materials[TABLE].Elasticity * 0.0125) + (Materials[TABLE].Conductivity * 0.25)), 0) * 2
 			end
 	elseif TYPE == 13 then
-		-- Relay Wire Reach
+		-- Relay Wire Reach UNUSED ATM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			if math.floor((Materials[TABLE].Conductivity + Materials[TABLE].Density) * 5) >= 64 then
 				return 64
 			else
@@ -543,6 +543,9 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 	elseif TYPE == 20 then
 		-- Power Usage
 		return tostring(math.floor((OPT * 50) + ((Materials[TABLE].Conductivity) * ((Materials[TABLE].Density * 0.125) + (Materials[TABLE].Hardness * 0.2) + (Materials[TABLE].Elasticity * 0.05))))).."kW"
+	elseif TYPE == 21 then
+		-- Pump Speed
+		return math.floor((OPT * 500) + ((Materials[TABLE].Conductivity * 1.5) * ((Materials[TABLE].Density * 4.5) + (Materials[TABLE].Hardness * 6) + (Materials[TABLE].Elasticity * 25))))
 	end
 end
 

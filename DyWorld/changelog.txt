@@ -22,12 +22,17 @@ Date: ??. 07. 2018
     - Changed Tier of Iron and Copper: 2 > 1
     - Recipes of Radars are now more diverse
     - Recipes of Assembling Machines are now more diverse
+    - Changed formula for pumps
+    - Power Relays now have a set max distance: 64 (max the game allows)
+    - Changed formula's of power poles and relays. Much more tiered, and not too big or too small anymore
+    - Added a new entity: Tiles! Made from metals only, can be used to place on the ground. GRAPHICS ARE TEMPORARY, Will be fixed next update!
   Changes:
     - Removed science fluid outputs of Space Science Packs
     - Changed recipe of Space Packs
     - Changed recipe of Blue Science Fluid to use Aluminium Storage Tank instead of Lithium Storage Tank
     - Tier 6 research now uses Extra Solar Packs aswell
     - Infinity lab renamed to Space Lab, and uses all science packs now
+    - Changed graphics of Methane Deposits slighty, so they are easier to spot
   Warfare:
     - Arachtoids are a bit stronger (± 25%)
 ---------------------------------------------------------------------------------------------------

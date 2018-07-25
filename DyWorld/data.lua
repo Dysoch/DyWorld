@@ -53,3 +53,5 @@ end
 if settings.startup["DyWorld_Chemistry"].value and settings.startup["DyWorld_Metallurgy"].value then
 	require("data.chemistry.data")
 end
+
+require("data.decor.data")

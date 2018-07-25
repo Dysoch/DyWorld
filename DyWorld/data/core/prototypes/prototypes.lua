@@ -3636,7 +3636,7 @@ data:extend(
         },
       },
     },
-    pumping_speed = Materials[DATA.Table].Strength_Ultimate,
+    pumping_speed = (DyWorld_Material_Formulas(21, DATA.Table, DATA.Tier)),
     tile_width = 1,
     tile_height = 1,
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -3734,7 +3734,7 @@ data:extend(
       emissions = 0.01 / 2.5
     },
     energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
-    pumping_speed = (Materials[DATA.Table].Strength_Ultimate * DATA.Tier),
+    pumping_speed = (DyWorld_Material_Formulas(21, DATA.Table, DATA.Tier) * DATA.Tier),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     animations =
     {
@@ -5548,8 +5548,8 @@ data:extend(
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     drawing_box = {{-0.5, -2.8}, {0.5, 0.5}},
-    maximum_wire_distance = DyWorld_Material_Formulas(12, DATA.Table),
-    supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table),
+    maximum_wire_distance = DyWorld_Material_Formulas(12, DATA.Table, DATA.Tier),
+    supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table, DATA.Tier),
 	fast_replaceable_group = "pole",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     pictures =
@@ -5649,8 +5649,8 @@ data:extend(
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box = {{-1, -3}, {1, 0.5}},
-    maximum_wire_distance = math.floor(DyWorld_Material_Formulas(13, DATA.Table)),
-    supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table),
+    maximum_wire_distance = 64,
+    supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table, DATA.Tier),
 	fast_replaceable_group = "relay",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     pictures =
@@ -12269,6 +12269,318 @@ data:extend(
 	if DATA.Name == "wood" then
 		data.raw.item[dy..DATA.Name.."-beacon"].fuel_value = "2MJ"
 		data.raw.item[dy..DATA.Name.."-beacon"].fuel_category = "chemical"
+	end
+end
+
+function DyWorld_Tiles(DATA)
+data:extend(
+{
+  {
+    type = "tile",
+    name = dy..DATA.Name.."-tile",
+	localised_name = {"looped-name.tile", {"looped-name."..DATA.Name}},
+    needs_correction = true,
+    minable = {hardness = 0.2, mining_time = 0.5, result = dy..DATA.Name.."-tile"},
+    mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
+    collision_mask = {"ground-tile"},
+    walking_speed_modifier = (1 + (Materials[DATA.Table].Elasticity / 100)),
+    layer = 61,
+    transition_overlay_layer_offset = 2, -- need to render border overlay on top of hazard-concrete
+    decorative_removal_probability = 0.25,
+    variants =
+    {
+      main =
+      {
+        {
+          picture = "__base__/graphics/terrain/concrete/concrete-dummy.png",
+          count = 1,
+          size = 1,
+		  tint = Material_Colors[DATA.Table],
+        },
+        {
+          picture = "__base__/graphics/terrain/concrete/concrete-dummy.png",
+          count = 1,
+          size = 2,
+          probability = 0.39,
+		  tint = Material_Colors[DATA.Table],
+        },
+        {
+          picture = "__base__/graphics/terrain/concrete/concrete-dummy.png",
+          count = 1,
+          size = 4,
+          probability = 1,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      inner_corner =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-inner-corner.png",
+        count = 16,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-inner-corner.png",
+          count = 16,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      inner_corner_mask =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-inner-corner-mask.png",
+        count = 16,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-inner-corner-mask.png",
+          count = 16,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      outer_corner =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-outer-corner.png",
+        count = 8,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-outer-corner.png",
+          count = 8,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      outer_corner_mask =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-outer-corner-mask.png",
+        count = 8,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-outer-corner-mask.png",
+          count = 8,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+    side =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-side.png",
+        count = 16,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-side.png",
+          count = 16,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      side_mask =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-side-mask.png",
+        count = 16,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-side-mask.png",
+          count = 16,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      u_transition =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-u.png",
+        count = 8,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-u.png",
+          count = 8,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      u_transition_mask =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-u-mask.png",
+        count = 8,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-u-mask.png",
+          count = 8,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+
+      o_transition =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-o.png",
+        count = 4,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-o.png",
+          count = 4,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      o_transition_mask =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete-o-mask.png",
+        count = 4,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete-o-mask.png",
+          count = 4,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      },
+      material_background =
+      {
+        picture = "__base__/graphics/terrain/concrete/concrete.png",
+        count = 8,
+		tint = Material_Colors[DATA.Table],
+        hr_version =
+        {
+          picture = "__base__/graphics/terrain/concrete/hr-concrete.png",
+          count = 8,
+          scale = 0.5,
+		  tint = Material_Colors[DATA.Table],
+        }
+      }
+    },
+    transitions = 
+	{
+	  water_transition_template
+	  (
+		water_tile_type_names,
+		"__base__/graphics/terrain/water-transitions/concrete.png",
+		"__base__/graphics/terrain/water-transitions/hr-concrete.png",
+		{
+          o_transition_tall = false,
+          u_transition_count = 4,
+          o_transition_count = 4,
+          side_count = 8,
+          outer_corner_count = 8,
+          inner_corner_count = 8,
+		  tint = Material_Colors[DATA.Table],
+          --base = { layer = 40 }
+        }
+	  )
+	},
+    transitions_between_transitions = 
+	{
+      water_transition_template
+      (
+        water_tile_type_names,
+        "__base__/graphics/terrain/water-transitions/concrete-transitions.png",
+        "__base__/graphics/terrain/water-transitions/hr-concrete-transitions.png",
+        {
+          inner_corner_tall = true,
+          inner_corner_count = 3,
+          outer_corner_count = 3,
+          side_count = 3,
+          u_transition_count = 1,
+          o_transition_count = 0,
+		  tint = Material_Colors[DATA.Table],
+        }
+      )
+    },
+    walking_sound =
+    {
+      {
+        filename = "__base__/sound/walking/concrete-01.ogg",
+        volume = 1.0
+      },
+      {
+        filename = "__base__/sound/walking/concrete-02.ogg",
+        volume = 1.0
+      },
+      {
+        filename = "__base__/sound/walking/concrete-03.ogg",
+        volume = 1.0
+      },
+      {
+        filename = "__base__/sound/walking/concrete-04.ogg",
+        volume = 1.0
+      }
+    },
+    map_color = Material_Colors[DATA.Table],
+    ageing = 0,
+    vehicle_friction_modifier = (1 + (Materials[DATA.Table].Elasticity / 100)),
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-tile",
+	localised_name = {"looped-name.tile", {"looped-name."..DATA.Name}},
+	icons = 
+	{
+	  {
+		icon = "__base__/graphics/icons/concrete.png",
+		tint = Material_Colors[DATA.Table],
+	  },
+	},
+    icon_size = 32,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy..DATA.Name.."-MS-group-tile",
+    order = dy..DATA.Name.."-tile",
+    stack_size = 500,
+    place_as_tile =
+    {
+      result = dy..DATA.Name.."-tile",
+      condition_size = 1,
+      condition = { "water-tile" }
+    }
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-tile",
+    energy_required = 1,
+	enabled = false,
+	hidden = true,
+	category = dy.."tile-crafting",
+    ingredients = {{DATA.Name.."-plate", 5}},
+    result = dy..DATA.Name.."-tile",
+    result_count = 1,
+  },
+  {
+    type = "recipe",
+	name = dy..DATA.Name.."-untile",
+    energy_required = 1,
+	enabled = false,
+	hidden = true,
+	category = dy.."tile-uncrafting",
+    ingredients = {{dy..DATA.Name.."-tile", 1}},
+    result = DATA.Name.."-plate",
+    result_count = 5,
+  },
+})
+	if DATA.Tier == 1 then
+		DyWorld_Add_To_Tech("landfill", dy..DATA.Name.."-tile")
+		DyWorld_Add_To_Tech("landfill", dy..DATA.Name.."-untile")
+	elseif DATA.Tier == 2 then
+		DyWorld_Add_To_Tech("landfill-2", dy..DATA.Name.."-tile")
+		DyWorld_Add_To_Tech("landfill-2", dy..DATA.Name.."-untile")
+	elseif DATA.Tier == 3 then
+		DyWorld_Add_To_Tech("landfill-3", dy..DATA.Name.."-tile")
+		DyWorld_Add_To_Tech("landfill-3", dy..DATA.Name.."-untile")
+	elseif DATA.Tier == 4 then
+		DyWorld_Add_To_Tech("landfill-4", dy..DATA.Name.."-tile")
+		DyWorld_Add_To_Tech("landfill-4", dy..DATA.Name.."-untile")
+	elseif DATA.Tier == 5 then
+		DyWorld_Add_To_Tech("landfill-5", dy..DATA.Name.."-tile")
+		DyWorld_Add_To_Tech("landfill-5", dy..DATA.Name.."-untile")
+	elseif DATA.Tier == 6 then
+		DyWorld_Add_To_Tech("landfill-6", dy..DATA.Name.."-tile")
+		DyWorld_Add_To_Tech("landfill-6", dy..DATA.Name.."-untile")
 	end
 end
 

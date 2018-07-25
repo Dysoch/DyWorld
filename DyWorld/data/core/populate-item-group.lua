@@ -11,12 +11,6 @@ data:extend(
   },
   {
     type = "item-subgroup",
-    name = dy..v.Name.."-MS-group-warfare",
-    group = dy.."Mat-Sys-"..v.Tier.."-warfare",
-    order = v.Name
-  },
-  {
-    type = "item-subgroup",
     name = dy..v.Name.."-MS-group-transport",
     group = dy.."Mat-Sys-"..v.Tier,
     order = v.Name
@@ -31,6 +25,18 @@ data:extend(
     type = "item-subgroup",
     name = dy..v.Name.."-MS-group-power",
     group = dy.."Mat-Sys-"..v.Tier,
+    order = v.Name
+  },
+  {
+    type = "item-subgroup",
+    name = dy..v.Name.."-MS-group-tile",
+    group = dy.."Mat-Sys-"..v.Tier,
+    order = v.Name
+  },
+  {
+    type = "item-subgroup",
+    name = dy..v.Name.."-MS-group-warfare",
+    group = dy.."Mat-Sys-"..v.Tier.."-warfare",
     order = v.Name
   },
 })

@@ -64,10 +64,11 @@ data:extend(
         width = 75,
         height = 61,
         frame_count = 4,
-        variation_count = 1
+        variation_count = 1,
+		tint = Color_Tier[7]
       }
     },
-    map_color = {r=0.78, g=0.2, b=0.77},
+    map_color = {r=0.58, g=0.2, b=0.97},
     map_grid = false
   },
 })

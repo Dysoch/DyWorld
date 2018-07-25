@@ -8,6 +8,7 @@ local Tech_Add = {
 	["advanced-oil-processing"] = {{type = "unlock-recipe", recipe = dy.."advanced-clean-oil-processing"}},
 	["sulfur-processing"] = {{type = "unlock-recipe", recipe = dy.."acid-seperation"}},
 	["rocket-silo"] = {{type = "unlock-recipe", recipe = dy.."rocket-fuel"}},
+	["logistic-robotics-2"] = {{type = "unlock-recipe", recipe = "logistic-chest-requester"}},
 } 
 
 for k,v in pairs(Tech_Add) do

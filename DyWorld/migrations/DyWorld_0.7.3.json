@@ -83,6 +83,7 @@
 	["dyworld-obsidian-power-relay", "dyworld-lead-power-relay"],
 	["dyworld-obsidian-solar-normal", "dyworld-lead-solar-normal"],
 	["dyworld-obsidian-steam-engine", "dyworld-lead-steam-engine"],
+	["dyworld-obsidian-warehouse-chest", "dyworld-tungsten-warehouse-chest"],
 	["dyworld-uranium-assembling-electric", "dyworld-lead-assembling-electric"],
 	["dyworld-uranium-basic-inserter", "dyworld-lead-basic-inserter"],
 	["dyworld-uranium-filter-inserter", "dyworld-lead-filter-inserter"],
@@ -132,7 +133,9 @@
 	["dyworld-wood-power-pole", "dyworld-copper-power-pole"],
 	["dyworld-wood-power-relay", "dyworld-copper-power-relay"],
 	["dyworld-wood-solar-normal", "dyworld-copper-solar-normal"],
-	["dyworld-wood-steam-engine", "dyworld-copper-steam-engine"]
+	["dyworld-wood-steam-engine", "dyworld-copper-steam-engine"],
+	["dyworld-wood-offshore-pump", "dyworld-copper-offshore-pump"],
+	["dyworld-stone-offshore-pump", "dyworld-copper-offshore-pump"]
   ],
   "entity":
   [
@@ -218,6 +221,7 @@
 	["dyworld-obsidian-power-relay", "dyworld-lead-power-relay"],
 	["dyworld-obsidian-solar-normal", "dyworld-lead-solar-normal"],
 	["dyworld-obsidian-steam-engine", "dyworld-lead-steam-engine"],
+	["dyworld-obsidian-warehouse-chest", "dyworld-tungsten-warehouse-chest"],
 	["dyworld-uranium-assembling-electric", "dyworld-lead-assembling-electric"],
 	["dyworld-uranium-basic-inserter", "dyworld-lead-basic-inserter"],
 	["dyworld-uranium-filter-inserter", "dyworld-lead-filter-inserter"],
@@ -267,6 +271,8 @@
 	["dyworld-wood-power-pole", "dyworld-copper-power-pole"],
 	["dyworld-wood-power-relay", "dyworld-copper-power-relay"],
 	["dyworld-wood-solar-normal", "dyworld-copper-solar-normal"],
-	["dyworld-wood-steam-engine", "dyworld-copper-steam-engine"]
+	["dyworld-wood-steam-engine", "dyworld-copper-steam-engine"],
+	["dyworld-wood-offshore-pump", "dyworld-copper-offshore-pump"],
+	["dyworld-stone-offshore-pump", "dyworld-copper-offshore-pump"]
   ]
 }

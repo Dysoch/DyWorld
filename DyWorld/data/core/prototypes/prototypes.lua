@@ -8868,12 +8868,12 @@ data:extend(
     energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
     -- per one charge slot
     charging_energy = tostring(((Materials[DATA.Table].Strength_Ultimate) + 1500) * 5).."kW",
-    logistics_radius = math.floor(Materials[DATA.Table].Density * Materials[DATA.Table].Hardness),
-    construction_radius = math.floor((Materials[DATA.Table].Density * Materials[DATA.Table].Hardness) * 1.5),
+    logistics_radius = DyWorld_Material_Formulas(22, DATA.Table, DATA.Tier),
+    construction_radius = math.floor((DyWorld_Material_Formulas(22, DATA.Table, DATA.Tier)) * 1.5),
 	Tier = DATA.Type,
     charge_approach_distance = 5,
-    robot_slots_count = math.floor(Materials[DATA.Table].Density),
-    material_slots_count = math.floor(Materials[DATA.Table].Density),
+    robot_slots_count = math.floor(DATA.Tier * 1.5),
+    material_slots_count = math.floor(DATA.Tier * 1.5),
     stationing_offset = {0, 0},
     charging_offsets =
     {

@@ -213,9 +213,9 @@ data:extend(
     },
     results =
     {
-      {type = "fluid", name = "heavy-oil", amount = 20},
-      {type = "fluid", name = "light-oil", amount = 20},
       {type = "fluid", name = "petroleum-gas", amount = 25},
+      {type = "fluid", name = "light-oil", amount = 20},
+      {type = "fluid", name = "heavy-oil", amount = 20},
       {type = "fluid", name = dy.."sewage", amount = 30},
       {type = "fluid", name = dy.."acid", amount = 5},
     },

@@ -88,3 +88,10 @@ local result = {"tungsten-pcb", 3}
 table.insert(data.raw.recipe["processing-unit"].normal.ingredients,result)
 local result = {"gold-cable", 5}
 table.insert(data.raw.recipe["processing-unit"].normal.ingredients,result)
+
+data.raw.recipe["logistic-chest-requester"].category = "crafting-with-fluid"
+table.remove(data.raw.recipe["logistic-chest-requester"].ingredients,2)
+local result = {"processing-unit", 2}
+table.insert(data.raw.recipe["logistic-chest-requester"].ingredients,result)
+local result = {type = "fluid", name = dy.."acid", amount = 5}
+table.insert(data.raw.recipe["logistic-chest-requester"].ingredients,result)

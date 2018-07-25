@@ -546,6 +546,9 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 	elseif TYPE == 21 then
 		-- Pump Speed
 		return math.floor((OPT * 500) + ((Materials[TABLE].Conductivity * 1.5) * ((Materials[TABLE].Density * 4.5) + (Materials[TABLE].Hardness * 6) + (Materials[TABLE].Elasticity * 25))))
+	elseif TYPE == 22 then
+		-- Roboport Range
+		return math.floor((OPT * 15) + ((Materials[TABLE].Conductivity * 0.15) + ((Materials[TABLE].Density * 0.25) + (Materials[TABLE].Hardness * 0.1) + (Materials[TABLE].Elasticity * 0.124))))
 	end
 end
 

@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.4
+Date: ??. 07. 2018
+  Features:
+    - Metal Tiles now correctly colored. Spice up your world!
+  Balancing:
+    - Rock Boilers are 10x faster
+    - Chemistry Machines require less power
+  Materials System:
+    - Changed formula of Chests and Warehouses, they are better now and increase more fluent
+  Changes:
+    - 
+  Warfare:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.7.3
 Date: 25. 07. 2018
   Features:

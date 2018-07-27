@@ -50,7 +50,7 @@ data:extend(
     crafting_categories = {dy.."splicer"},
     result_inventory_size = 1,
     crafting_speed = 1,
-    energy_usage = "1500kW",
+    energy_usage = "250kW",
     source_inventory_size = 1,
     energy_source =
     {

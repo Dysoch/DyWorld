@@ -178,8 +178,10 @@ data:extend(
             {
               {
                 type = "projectile",
-                projectile = "laser",
-                starting_speed = 0.28
+                projectile = dyworld_debug_prefix.."-laser",
+                starting_speed = 0.28,
+                range_deviation = 0.1,
+				max_range = 100,
               }
             }
           }
@@ -188,6 +190,47 @@ data:extend(
     },
     automatic = true,
     categories = {"armor"}
+  },
+  {
+    type = "projectile",
+    name = dyworld_debug_prefix.."-laser",
+    flags = {"not-on-map"},
+    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    acceleration = 0.05,
+    direction_only = true,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+       target_effects =
+        {
+          {
+            type = "create-entity",
+            entity_name = "laser-bubble"
+          },
+          {
+            type = "damage",
+			damage = {amount = 50000, type = "laser"}
+          },
+          {
+            type = "damage",
+			damage = {amount = 50000, type = "physical"}
+          },
+        }
+      }
+    },
+    light = {intensity = 0.5, size = 5},
+    animation =
+    {
+      filename = "__base__/graphics/entity/laser/laser-to-tint-medium.png",
+      frame_count = 1,
+      width = 12,
+      height = 33,
+      priority = "high",
+      blend_mode = "additive"
+    },
   },
   {
     type = "movement-bonus-equipment",

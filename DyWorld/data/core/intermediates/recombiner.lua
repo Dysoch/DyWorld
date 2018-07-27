@@ -23,7 +23,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.01
     },
-    energy_usage = "2500kW", --"25kW",
+    energy_usage = "400kW", --"25kW",
     ingredient_count = 25,
     resistances =
     {

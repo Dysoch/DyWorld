@@ -20,6 +20,7 @@ dyworld_path_fluid = "__DyWorld__/graphics/fluids/"
 dyworld_path_tech = "__DyWorld__/graphics/technology/"
 dyworld_path_entity = "__DyWorld__/graphics/entity/"
 dyworld_path_tile = "__DyWorld__/graphics/tiles/"
+dyworld_path_concrete = "__DyWorld__/graphics/terrain/concrete/"
 dyworld_path_item_group = "__DyWorld__/graphics/item-group/"
 dyworld_path_icon_temp = "__DyWorld__/graphics/icons/temp.png"
 
@@ -55,11 +56,11 @@ Material_Colors = {
 	Zinc = {r=97, g=208, b=92}, -- 61d05c
 	Nickel = {r=92, g=114, b=208}, -- 5c72d0
 	Aluminium = {r=150, g=150, b=150}, -- 969696
-	Lithium = {r=150, g=150, b=210}, -- 969696
-	Titanium = {r=150, g=150, b=170}, -- 969696
-	Uranium = {r=100, g=255, b=100}, -- 969696
+	Lithium = {r=204, g=204, b=217}, -- ccccd9
+	Titanium = {r=57, g=61, b=112}, -- 393d70
+	Uranium = {r=21, g=121, b=10}, -- 15790a
 	
-	Steel = {r=192, g=192, b=192},
+	Steel = {r=229, g=227, b=227}, -- e5e3e3
 	
 	Stainless_Steel = {r=196, g=124, b=126}, -- c47c7e
 	Bronze = {r=126, g=112, b=109}, -- 7e706d
@@ -67,7 +68,7 @@ Material_Colors = {
 	Copper_Tungsten = {r=137, g=135, b=142}, -- 89878e
 	Copper_Hydride = {r=212, g=179, b=123}, -- d4b37b
 	
-	Lithium_Titaniate = {r=150, g=150, b=210}, -- 969696
+	Lithium_Titaniate = {r=142, g=142, b=160}, -- 8e8ea0
 	Elinvar = {r=125, g=115, b=160}, -- 7d73a0
 	
 	Stainless_Copilinvar_Tungstate = {r=153, g=124, b=143}, -- 997c8f
@@ -390,7 +391,7 @@ Material_Resistances = {
 }
 
 -- Material Formulas to calculate everything
-function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
+function DyWorld_Material_Formulas(TYPE, TABLE, OPT, OPT2)
 	if TYPE == 1 then
 		-- Belt Speed
 		--return ((Materials[TABLE].Elasticity / 2) + Materials[TABLE].Density) / 426.67
@@ -500,12 +501,8 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 				return Round(((OPT * 2.5) + (Materials[TABLE].Density * 0.05) + (Materials[TABLE].Hardness * 0.125) + (Materials[TABLE].Elasticity * 0.0125) + (Materials[TABLE].Conductivity * 0.25)), 0) * 2
 			end
 	elseif TYPE == 13 then
-		-- Relay Wire Reach UNUSED ATM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			if math.floor((Materials[TABLE].Conductivity + Materials[TABLE].Density) * 5) >= 64 then
-				return 64
-			else
-				return math.floor((Materials[TABLE].Conductivity + Materials[TABLE].Density) * 5)
-			end
+		-- Inventory Size
+		return Round((((OPT * 10) + ((Materials[TABLE].Density * 0.5) + (Materials[TABLE].Hardness * 0.5) + (Materials[TABLE].Elasticity * 0.5))) * OPT2), 0)
 	elseif TYPE == 14 then
 		-- Module: Productivity
 			if ((Materials[TABLE].Hardness * Materials[TABLE].Density) / 250) >= 2.5 then
@@ -542,7 +539,7 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT)
 		return Round(((OPT * 0.1) + (Materials[TABLE].Density * 0.05) + (Materials[TABLE].Hardness * 0.125) + (Materials[TABLE].Elasticity * 0.0125)), 2)
 	elseif TYPE == 20 then
 		-- Power Usage
-		return tostring(math.floor((OPT * 50) + ((Materials[TABLE].Conductivity) * ((Materials[TABLE].Density * 0.125) + (Materials[TABLE].Hardness * 0.2) + (Materials[TABLE].Elasticity * 0.05))))).."kW"
+		return tostring(math.floor(((OPT * 50) + ((Materials[TABLE].Conductivity) * ((Materials[TABLE].Density * 0.125) + (Materials[TABLE].Hardness * 0.2) + (Materials[TABLE].Elasticity * 0.05)))) * OPT2)).."kW"
 	elseif TYPE == 21 then
 		-- Pump Speed
 		return math.floor((OPT * 500) + ((Materials[TABLE].Conductivity * 1.5) * ((Materials[TABLE].Density * 4.5) + (Materials[TABLE].Hardness * 6) + (Materials[TABLE].Elasticity * 25))))

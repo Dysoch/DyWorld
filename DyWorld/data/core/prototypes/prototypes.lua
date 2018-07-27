@@ -3733,7 +3733,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.01 / 2.5
     },
-    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier, 1),
     pumping_speed = (DyWorld_Material_Formulas(21, DATA.Table, DATA.Tier) * DATA.Tier),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     animations =
@@ -7923,7 +7923,7 @@ data:extend(
       emissions = 0.15 / 1.5,
       usage_priority = "secondary-input"
     },
-    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier, 1),
     mining_power = Round(Materials[DATA.Table].Hardness + (Materials[DATA.Table].Hardness / 2), 2),
     resource_searching_radius = (math.floor(Materials[DATA.Table].Hardness / 2) + 0.49),
     vector_to_place_result = {0, -1.85},
@@ -8059,7 +8059,7 @@ data:extend(
         }
       }
     },
-    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier, 1),
     mining_power = (Materials[DATA.Table].Hardness + 0.5),
     animations =
     {
@@ -8463,7 +8463,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.03 / 3.5
     },
-    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier, 1),
     ingredient_count = math.ceil((Materials[DATA.Table].Elasticity / 2) + 2),
     module_specification =
     {
@@ -8564,7 +8564,7 @@ data:extend(
     collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fast_replaceable_group = "container",
-    inventory_size = math.floor(DyWorld_Material_Formulas(3, DATA.Table)+5),
+    inventory_size = DyWorld_Material_Formulas(13, DATA.Table, DATA.Tier, 1),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
     {
@@ -8660,7 +8660,7 @@ data:extend(
     collision_box = {{-1.35, -1.35}, {1.35, 1.35}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fast_replaceable_group = "warehouse",
-    inventory_size = math.floor(DyWorld_Material_Formulas(3, DATA.Table)*5),
+    inventory_size = DyWorld_Material_Formulas(13, DATA.Table, DATA.Tier, 3.75),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
     {
@@ -8752,7 +8752,7 @@ data:extend(
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fast_replaceable_group = "warehouse",
     logistic_mode = "passive-provider",
-    inventory_size = math.floor(DyWorld_Material_Formulas(3, DATA.Table)*5),
+    inventory_size = DyWorld_Material_Formulas(13, DATA.Table, DATA.Tier, 5),
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
     {
@@ -8865,7 +8865,7 @@ data:extend(
       buffer_capacity = tostring(Materials[DATA.Table].Strength_Ultimate).."MJ",
     },
     recharge_minimum = tostring(math.floor(Materials[DATA.Table].Strength_Yield * 0.5)).."MJ",
-    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier, 1),
     -- per one charge slot
     charging_energy = tostring(((Materials[DATA.Table].Strength_Ultimate) + 1500) * 5).."kW",
     logistics_radius = DyWorld_Material_Formulas(22, DATA.Table, DATA.Tier),
@@ -11755,7 +11755,7 @@ data:extend(
 	fast_replaceable_group = "radar",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    energy_per_sector = tostring((Materials[DATA.Table].Strength_Ultimate) + 500000).."kW",
+    energy_per_sector = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier, 0.5),
     max_distance_of_sector_revealed = (10 * DATA.Tier),
     max_distance_of_nearby_sector_revealed = (2 + DATA.Tier),
     energy_per_nearby_scan = tostring((Materials[DATA.Table].Strength_Ultimate) + 1000).."kJ",
@@ -11764,7 +11764,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier, 10),
     integration_patch =
     {
       filename = "__base__/graphics/entity/radar/radar-integration.png",
@@ -12182,7 +12182,7 @@ data:extend(
       usage_priority = "secondary-input"
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier),
+    energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier, 1),
     distribution_effectivity = 0.4 + (DATA.Tier / 10),
     module_specification =
     {
@@ -12314,12 +12314,12 @@ data:extend(
       },
       inner_corner =
       {
-        picture = "__base__/graphics/terrain/concrete/concrete-inner-corner.png",
+        picture = dyworld_path_concrete..DATA.Name.."/concrete-inner-corner.png",
         count = 16,
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
-          picture = "__base__/graphics/terrain/concrete/hr-concrete-inner-corner.png",
+          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-inner-corner.png",
           count = 16,
           scale = 0.5,
 		  tint = Material_Colors[DATA.Table],
@@ -12340,12 +12340,12 @@ data:extend(
       },
       outer_corner =
       {
-        picture = "__base__/graphics/terrain/concrete/concrete-outer-corner.png",
+        picture = dyworld_path_concrete..DATA.Name.."/concrete-outer-corner.png",
         count = 8,
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
-          picture = "__base__/graphics/terrain/concrete/hr-concrete-outer-corner.png",
+          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-outer-corner.png",
           count = 8,
           scale = 0.5,
 		  tint = Material_Colors[DATA.Table],
@@ -12366,12 +12366,12 @@ data:extend(
       },
     side =
       {
-        picture = "__base__/graphics/terrain/concrete/concrete-side.png",
+        picture = dyworld_path_concrete..DATA.Name.."/concrete-side.png",
         count = 16,
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
-          picture = "__base__/graphics/terrain/concrete/hr-concrete-side.png",
+          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-side.png",
           count = 16,
           scale = 0.5,
 		  tint = Material_Colors[DATA.Table],
@@ -12392,12 +12392,12 @@ data:extend(
       },
       u_transition =
       {
-        picture = "__base__/graphics/terrain/concrete/concrete-u.png",
+        picture = dyworld_path_concrete..DATA.Name.."/concrete-u.png",
         count = 8,
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
-          picture = "__base__/graphics/terrain/concrete/hr-concrete-u.png",
+          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-u.png",
           count = 8,
           scale = 0.5,
 		  tint = Material_Colors[DATA.Table],
@@ -12419,12 +12419,12 @@ data:extend(
 
       o_transition =
       {
-        picture = "__base__/graphics/terrain/concrete/concrete-o.png",
+        picture = dyworld_path_concrete..DATA.Name.."/concrete-o.png",
         count = 4,
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
-          picture = "__base__/graphics/terrain/concrete/hr-concrete-o.png",
+          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-o.png",
           count = 4,
           scale = 0.5,
 		  tint = Material_Colors[DATA.Table],
@@ -12445,12 +12445,12 @@ data:extend(
       },
       material_background =
       {
-        picture = "__base__/graphics/terrain/concrete/concrete.png",
+        picture = dyworld_path_concrete..DATA.Name.."/concrete.png",
         count = 8,
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
-          picture = "__base__/graphics/terrain/concrete/hr-concrete.png",
+          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete.png",
           count = 8,
           scale = 0.5,
 		  tint = Material_Colors[DATA.Table],
@@ -12462,8 +12462,8 @@ data:extend(
 	  water_transition_template
 	  (
 		water_tile_type_names,
-		"__base__/graphics/terrain/water-transitions/concrete.png",
-		"__base__/graphics/terrain/water-transitions/hr-concrete.png",
+		dyworld_path_concrete..DATA.Name.."/transition/concrete.png",
+		dyworld_path_concrete..DATA.Name.."/transition/hr-concrete.png",
 		{
           o_transition_tall = false,
           u_transition_count = 4,
@@ -12481,8 +12481,8 @@ data:extend(
       water_transition_template
       (
         water_tile_type_names,
-        "__base__/graphics/terrain/water-transitions/concrete-transitions.png",
-        "__base__/graphics/terrain/water-transitions/hr-concrete-transitions.png",
+        dyworld_path_concrete..DATA.Name.."/transition/concrete-transitions.png",
+        dyworld_path_concrete..DATA.Name.."/transition/hr-concrete-transitions.png",
         {
           inner_corner_tall = true,
           inner_corner_count = 3,

@@ -59,12 +59,12 @@ data:extend(
     fluid_input =
     {
       name = dy.."molten-rock",
-      amount = 0.1
+      amount = 1
     },
     fluid_output =
     {
       name = dy.."molten-rock",
-      amount = 0.15
+      amount = 1.5
     },
     energy_consumption = tostring(1000*0.5).."kW",
     energy_source =

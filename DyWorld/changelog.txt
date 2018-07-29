@@ -1,17 +1,33 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.4
-Date: ??. 07. 2018
+Date: 29. 07. 2018
   Features:
     - Metal Tiles now correctly colored. Spice up your world!
+    - Added high output clean water recipe. Locked behind Purple Science (Fluid Handling 4), but gives to you ability to create massive amounts of clean water
+    - Added new mod setting for multiplying science pack costs. This will only work on normal research! The tiered onces are not changed!
   Balancing:
     - Rock Boilers are 10x faster
     - Chemistry Machines require less power
   Materials System:
     - Changed formula of Chests and Warehouses, they are better now and increase more fluent
+    - Formula of pumps pumping speed is now correct
+    - Added 2 new formula's: Mining Time and Mining Hardness. Used for taking down entities
+    - Changed Speed of repair packs formula
+    - Changed damage of mining axes formula
+    - Changed speed of mining axes formula
+    - Changed formula's of electric and burner mining drills
+    - Added a new entity: Pumpjacks
+    - Added description to inserters about their speed. This is still a WIP, and will be refined further
+    - Changed formula of inserters, and made them faster as well
+    - Underground Belts are now having less air resistance and thus are 15% faster then normal belts
+  Bugfixes:
+    - Fixed radars not showing area covered completely
   Changes:
-    - 
-  Warfare:
-    - 
+    - Carbolycite has less hardness, but takes longer to mine
+    - Removed older migrations. Only migrations after 0.6.x stay for now
+    - Chemistry Recombining is now faster and it will give you 10 items or fluids now, for the price of 10x the atoms it requires (so no gain, just bigger output with bigger costs)
+    - Removed Substations, and recipes that used it will now use Copper Relay
+    - More changes to crafting menu grouping! Even nicer now
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.3
 Date: 25. 07. 2018

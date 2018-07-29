@@ -7,7 +7,7 @@ data:extend(
   {
     type = "recipe",
     name = dy.."pt-liquid>atom-"..v.Name,
-    energy_required = 0.5,
+    energy_required = 0.15,
 	category = dy.."splicer",
 	subgroup = dy.."pt-hidden",
     enabled = false,
@@ -28,7 +28,7 @@ data:extend(
   {
     type = "recipe",
     name = dy.."pt-solid>atom-"..v.Name,
-    energy_required = 0.5,
+    energy_required = 0.15,
 	category = dy.."splicer",
 	subgroup = dy.."pt-hidden",
     enabled = false,
@@ -55,9 +55,9 @@ data:extend(
     enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."atoms", amount = Round(v.Mass, 0)},
+      {type = "fluid", name = dy.."atoms", amount = Round((v.Mass * 10), 0)},
     },
-    results = {{type = "fluid", name = v.Name, amount = 1}},
+    results = {{type = "fluid", name = v.Name, amount = 10}},
   },
 })
 DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-atom>liquid-"..v.Name)
@@ -75,9 +75,9 @@ data:extend(
     enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."atoms", amount = Round(v.Mass, 0)},
+      {type = "fluid", name = dy.."atoms", amount = Round((v.Mass * 10), 0)},
     },
-    results = {{type = "item", name = v.Name, amount = 1}},
+    results = {{type = "item", name = v.Name, amount = 10}},
   },
 })
 DyWorld_Add_To_Tech(dy.."chemistry-basic", dy.."pt-atom>solid-"..v.Name)

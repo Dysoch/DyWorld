@@ -7,6 +7,7 @@ local Change = {
 	{Old = "medium-electric-pole", New = dy.."gold-power-pole"},
 	{Old = "big-electric-pole", New = dy.."steel-power-relay"},
 	{Old = "steam-engine", New = dy.."tin-steam-engine"},
+	{Old = "substation", New = dy.."steel-power-relay"},
 }
 
 for k,v in pairs(Change) do

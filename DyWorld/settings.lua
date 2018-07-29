@@ -4,6 +4,7 @@
 --settings.startup["DyWorld_Warfare"].value
 --settings.startup["DyWorld_Warfare_Difficulty"].value
 --settings.startup["DyWorld_Stack_Size_Mult"].value
+--settings.startup["DyWorld_Tech_Increaser"].value
 --settings.startup["DyWorld_Processing"].value
 --settings.startup["DyWorld_Power"].value
 --settings.startup["DyWorld_Logistics"].value
@@ -52,6 +53,14 @@ data:extend({
 	{
 		type = "int-setting",
 		name = "DyWorld_Stack_Size_Mult",
+		setting_type = "startup",
+		default_value = 1,
+        maximum_value = 100000,
+        minimum_value = 1,
+	},
+	{
+		type = "int-setting",
+		name = "DyWorld_Tech_Increaser",
 		setting_type = "startup",
 		default_value = 1,
         maximum_value = 5000,

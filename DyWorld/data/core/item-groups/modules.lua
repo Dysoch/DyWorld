@@ -4,59 +4,24 @@ local dyworld_path_item_group = "__DyWorld__/graphics/item-group/"
 
 Data_Table_Item_Group = {
 	{
-		Name = "items",
+		Name = "modules",
 		Type = "main",
-		Icon = "items.png"
+		Icon = "modules.png"
 	},
 	{
-		Name = "lab-tool",
+		Name = "module-speed",
 		Type = "sub",
-		Main = "items"
+		Main = "modules"
 	},
 	{
-		Name = "intermediates",
+		Name = "module-productivity",
 		Type = "sub",
-		Main = "items"
+		Main = "modules"
 	},
 	{
-		Name = "filters",
+		Name = "module-effectivity",
 		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "seeds",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "food-raw",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "food-cooked",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "hydration",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "oxygen",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "debug",
-		Type = "sub",
-		Main = "items"
-	},
-	{
-		Name = "fluid-recipes",
-		Type = "sub",
-		Main = "items"
+		Main = "modules"
 	},
 }
 

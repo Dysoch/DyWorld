@@ -2,6 +2,11 @@
 
 require("data.core.science.infinite-science-edits")
 
+function Round(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	return math.floor(num * mult + 0.5) / mult
+end
+
 for k,v in pairs(data.raw["projectile"]) do
 	if v.name == "cliff-explosives" then
 		-- nothing, to make sure it is skipped so that one will work as intended
@@ -59,6 +64,16 @@ if settings.startup["DyWorld_Stack_Size_Mult"].value > 1 then
 	for k, v in pairs(data.raw["rail-planner"]) do
 		v.default_request_amount = v.stack_size
 		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
+	end
+end
+
+if settings.startup["DyWorld_Tech_Increaser"].value > 1 then
+	for k, v in pairs(data.raw.technology) do
+		if v.max_level then
+		
+		else
+			v.unit.count = Round((v.unit.count * settings.startup["DyWorld_Tech_Increaser"].value), 0)
+		end
 	end
 end
 

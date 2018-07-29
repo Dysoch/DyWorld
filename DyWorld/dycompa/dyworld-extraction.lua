@@ -4,6 +4,7 @@ local Change = {
 	{Old = "steel-axe", New = dy.."steel-mining-tool"},
 	{Old = "iron-axe", New = dy.."iron-mining-tool"},
 	{Old = "electric-mining-drill", New = dy.."iron-electric-drill"},
+	{Old = "pumpjack", New = dy.."copper-pumpjack"},
 	{Old = "burner-mining-drill", New = dy.."wood-burner-drill"},
 }
 

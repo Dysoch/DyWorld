@@ -395,11 +395,11 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT, OPT2)
 	if TYPE == 1 then
 		-- Belt Speed
 		--return ((Materials[TABLE].Elasticity / 2) + Materials[TABLE].Density) / 426.67
-		return (((5 * OPT) + ((Materials[TABLE].Density * 0.25) + (Materials[TABLE].Hardness * 0.35) + (Materials[TABLE].Elasticity * 0.3))) / 426.67)
+		return ((((5 * OPT) + ((Materials[TABLE].Density * 0.25) + (Materials[TABLE].Hardness * 0.35) + (Materials[TABLE].Elasticity * 0.3))) * OPT2) / 426.67)
 	elseif TYPE == 2 then
 		-- Belt & Pipe Range
 		--return math.floor((Materials[TABLE].Strength_Ultimate / Materials[TABLE].Elasticity) + 2)
-		return ((3 * OPT) + math.floor((Materials[TABLE].Density * 0.2) + (Materials[TABLE].Hardness * 0.25) + (Materials[TABLE].Elasticity * 0.5)))
+		return ((3 * OPT) + math.floor((Materials[TABLE].Density * 0.1) + (Materials[TABLE].Hardness * 0.125) + (Materials[TABLE].Elasticity * 0.25)))
 	elseif TYPE == 3 then
 		-- Health
 		return math.floor((Materials[TABLE].Density * Materials[TABLE].Hardness) + Materials[TABLE].Strength_Yield)
@@ -486,7 +486,7 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT, OPT2)
 		--return Round(( damage (hardness * 1,25 * tier)+(elasticity * 0,5 *tier)  - (density * 1.2 * tier)), 2)
 	elseif TYPE == 9 then
 		-- Inserter Speed
-		return (Materials[TABLE].Hardness / Materials[TABLE].Density)
+		return Round((((Materials[TABLE].Hardness * 1.25) / (Materials[TABLE].Density * 1.5)) / OPT2), 2)
 	elseif TYPE == 10 then
 		-- Solar Power
 		return math.floor(((OPT * 100) * Materials[TABLE].Conductivity) - Materials[TABLE].Density )
@@ -542,10 +542,19 @@ function DyWorld_Material_Formulas(TYPE, TABLE, OPT, OPT2)
 		return tostring(math.floor(((OPT * 50) + ((Materials[TABLE].Conductivity) * ((Materials[TABLE].Density * 0.125) + (Materials[TABLE].Hardness * 0.2) + (Materials[TABLE].Elasticity * 0.05)))) * OPT2)).."kW"
 	elseif TYPE == 21 then
 		-- Pump Speed
-		return math.floor((OPT * 500) + ((Materials[TABLE].Conductivity * 1.5) * ((Materials[TABLE].Density * 4.5) + (Materials[TABLE].Hardness * 6) + (Materials[TABLE].Elasticity * 25))))
+		return math.floor((OPT * 100) + ((Materials[TABLE].Conductivity * 0.1) + ((Materials[TABLE].Density * 0.1) + (Materials[TABLE].Hardness * 0.5) + (Materials[TABLE].Elasticity * 0.5))))
 	elseif TYPE == 22 then
 		-- Roboport Range
 		return math.floor((OPT * 15) + ((Materials[TABLE].Conductivity * 0.15) + ((Materials[TABLE].Density * 0.25) + (Materials[TABLE].Hardness * 0.1) + (Materials[TABLE].Elasticity * 0.124))))
+	elseif TYPE == 23 then
+		-- Mining Hardness
+		return Round(((OPT) + (Materials[TABLE].Hardness * (1 + (OPT * 0.25)))), 2)
+	elseif TYPE == 24 then
+		-- Mining Time
+		return Round(((OPT ) + ((Materials[TABLE].Density * 0.1) * (Materials[TABLE].Hardness * 0.1))), 2)
+	elseif TYPE == 25 then
+		-- Power Usage
+		return tostring(math.floor(((OPT * 50) + ((Materials[TABLE].Conductivity) * ((Materials[TABLE].Density * 0.125) + (Materials[TABLE].Hardness * 0.2) + (Materials[TABLE].Elasticity * 0.05)))) * OPT2)).."kJ"
 	end
 end
 

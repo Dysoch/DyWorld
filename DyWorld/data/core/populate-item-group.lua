@@ -39,5 +39,17 @@ data:extend(
     group = dy.."Mat-Sys-"..v.Tier.."-warfare",
     order = v.Name
   },
+  {
+    type = "item-subgroup",
+    name = dy..v.Name.."-MS-group-warfare-ammo",
+    group = dy.."Mat-Sys-"..v.Tier.."-warfare",
+    order = v.Name
+  },
+  {
+    type = "item-subgroup",
+    name = dy..v.Name.."-MS-group-warfare-turret",
+    group = dy.."Mat-Sys-"..v.Tier.."-warfare",
+    order = v.Name
+  },
 })
 end

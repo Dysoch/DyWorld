@@ -7,3 +7,4 @@ require("data.extraction.tools.tools")
 
 require("data.extraction.drills.burner")
 require("data.extraction.drills.electric")
+require("data.extraction.drills.pumpjack")

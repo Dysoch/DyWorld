@@ -7,15 +7,15 @@ data:extend(
   {
     type = "recipe",
     name = dy.."pt-atom>compound-"..k,
-    energy_required = 2.5,
+    energy_required = 1.5,
 	category = dy.."recombiner",
 	subgroup = dy.."atoms>compounds",
     enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."atoms", amount = Round(v.Mass, 0)},
+      {type = "fluid", name = dy.."atoms", amount = Round((v.Mass * 10), 0)},
     },
-    results = {{type = v.Type, name = k, amount = 1}},
+    results = {{type = v.Type, name = k, amount = 10}},
   },
 })
 DyWorld_Add_To_Tech(dy.."chemistry-"..v.Atom_To_Compound_Tech, dy.."pt-atom>compound-"..k)

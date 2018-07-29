@@ -37,6 +37,36 @@ data:extend(
   },
   {
     type = "recipe",
+    name = dy.."clean-water-seperation-1",
+    icons = 
+	{
+	  {
+	    icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
+	  },
+	  {
+	    icon = data.raw.fluid[dy.."water-clean"].icon,
+        scale = 0.75,
+        shift = {4, 8}
+	  },
+	},
+    category = "centrifuging",
+    energy_required = 1,
+	enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "water", amount = 250},
+      {type = "item", name = dy.."sand", amount = 10},
+    },
+    results=
+    {
+      {type = "fluid", name = dy.."water-clean", amount = 250},
+      {type = "fluid", name = dy.."sludge", amount = 10},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = "water-seperation",
+  },
+  {
+    type = "recipe",
     name = dy.."water-seperation-2",
     icons = 
 	{
@@ -556,3 +586,4 @@ DyWorld_Add_To_Tech("automation", dy.."ore-grinding-5")
 DyWorld_Add_To_Tech("automation", dy.."ore-grinding-6")
 DyWorld_Add_To_Tech("automation", dy.."ore-grinding-7")
 DyWorld_Add_To_Tech("automation-2", dy.."acid-creation")
+DyWorld_Add_To_Tech("fluid-handling-4", dy.."clean-water-seperation-1")

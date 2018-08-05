@@ -6,6 +6,7 @@ Date: ??. 08. 2018
   Balancing:
     - Accumulators now hold 2.5x more charge
     - Roboports hold a lot more energy, to prevent power loss at higher tiers with more charging slots
+    - Increased Fluid Wagon capacity to 250k, and will work with stack size increaser now as well.
   Materials System:
     - 
   Bugfixes:

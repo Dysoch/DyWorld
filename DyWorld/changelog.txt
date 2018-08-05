@@ -9,7 +9,7 @@ Date: ??. 08. 2018
     - Increased Fluid Wagon capacity to 250k, and will work with stack size increaser now as well.
     - Recycler produces more pollution now
   Materials System:
-    - 
+    - Gold now has 4x more conductivity
   Bugfixes:
     - 
   Changes:

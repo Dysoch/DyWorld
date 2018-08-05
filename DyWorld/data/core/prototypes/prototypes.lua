@@ -11530,7 +11530,7 @@ data:extend(
   {
     type = "recipe",
 	name = dy..DATA.Name.."-module-speed",
-    energy_required = 2.5,
+    energy_required = (10 + (5 * DATA.Tier)),
 	enabled = false,
     ingredients = {},
     result = dy..DATA.Name.."-module-speed",
@@ -11572,40 +11572,42 @@ data:extend(
 	end
 	if DATA.Tier == 1 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 1
-		local result_1 = {"electronic-circuit", 5}
+		local result_1 = {"electronic-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module"}
 	elseif DATA.Tier == 2 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 2
-		local result_1 = {"advanced-circuit", 5}
+		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-2"}
 	elseif DATA.Tier == 3 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 3
-		local result_1 = {"processing-unit", 5}
+		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
+		local result_1 = {"processing-unit", (5 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-3"}
 	elseif DATA.Tier == 4 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 4
-		local result_1 = {"processing-unit", 5}
+		local result_1 = {"processing-unit", (15 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-4"}
 	elseif DATA.Tier == 5 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 5
-		local result_1 = {dy.."processing-advanced", 5}
+		local result_1 = {dy.."processing-advanced", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-5"}
 	elseif DATA.Tier == 6 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 6
-		local result_1 = {dy.."processing-logic", 5}
+		local result_1 = {dy.."processing-logic", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
@@ -11647,7 +11649,7 @@ data:extend(
   {
     type = "recipe",
 	name = dy..DATA.Name.."-module-productivity",
-    energy_required = 2.5,
+    energy_required = (10 + (5 * DATA.Tier)),
 	enabled = false,
     ingredients = {},
     result = dy..DATA.Name.."-module-productivity",
@@ -11689,40 +11691,42 @@ data:extend(
 	end
 	if DATA.Tier == 1 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 1
-		local result_1 = {"electronic-circuit", 5}
+		local result_1 = {"electronic-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module"}
 	elseif DATA.Tier == 2 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 2
-		local result_1 = {"advanced-circuit", 5}
+		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-2"}
 	elseif DATA.Tier == 3 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 3
-		local result_1 = {"processing-unit", 5}
+		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
+		local result_1 = {"processing-unit", (5 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-3"}
 	elseif DATA.Tier == 4 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 4
-		local result_1 = {"processing-unit", 5}
+		local result_1 = {"processing-unit", (15 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-4"}
 	elseif DATA.Tier == 5 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 5
-		local result_1 = {dy.."processing-advanced", 5}
+		local result_1 = {dy.."processing-advanced", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-5"}
 	elseif DATA.Tier == 6 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 6
-		local result_1 = {dy.."processing-logic", 5}
+		local result_1 = {dy.."processing-logic", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
@@ -11762,7 +11766,7 @@ data:extend(
   {
     type = "recipe",
 	name = dy..DATA.Name.."-module-effectivity",
-    energy_required = 2.5,
+    energy_required = (10 + (5 * DATA.Tier)),
 	enabled = false,
     ingredients = {},
     result = dy..DATA.Name.."-module-effectivity",
@@ -11804,40 +11808,42 @@ data:extend(
 	end
 	if DATA.Tier == 1 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 1
-		local result_1 = {"electronic-circuit", 5}
+		local result_1 = {"electronic-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module"}
 	elseif DATA.Tier == 2 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 2
-		local result_1 = {"advanced-circuit", 5}
+		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-2"}
 	elseif DATA.Tier == 3 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 3
-		local result_1 = {"processing-unit", 5}
+		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
+		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
+		local result_1 = {"processing-unit", (5 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-3"}
 	elseif DATA.Tier == 4 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 4
-		local result_1 = {"processing-unit", 5}
+		local result_1 = {"processing-unit", (15 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-4"}
 	elseif DATA.Tier == 5 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 5
-		local result_1 = {dy.."processing-advanced", 5}
+		local result_1 = {dy.."processing-advanced", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-5"}
 	elseif DATA.Tier == 6 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 6
-		local result_1 = {dy.."processing-logic", 5}
+		local result_1 = {dy.."processing-logic", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
 		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results

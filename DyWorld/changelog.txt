@@ -5,6 +5,7 @@ Date: ??. 08. 2018
     - Added Russian Translation. Made by EthereanOne and Anton. It is far from perfect, but acceptable
   Balancing:
     - Accumulators now hold 2.5x more charge
+    - Roboports hold a lot more energy, to prevent power loss at higher tiers with more charging slots
   Materials System:
     - 
   Bugfixes:

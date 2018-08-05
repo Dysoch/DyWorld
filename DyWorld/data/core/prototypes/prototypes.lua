@@ -9100,8 +9100,8 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
-      input_flow_limit = tostring(Materials[DATA.Table].Strength_Ultimate * 5).."MW",
-      buffer_capacity = tostring(Materials[DATA.Table].Strength_Ultimate).."MJ",
+      input_flow_limit = tostring(Materials[DATA.Table].Strength_Ultimate * 15).."MW",
+      buffer_capacity = tostring(Materials[DATA.Table].Strength_Ultimate * 10).."MJ",
     },
     recharge_minimum = tostring(math.floor(Materials[DATA.Table].Strength_Yield * 0.5)).."MJ",
     energy_usage = DyWorld_Material_Formulas(20, DATA.Table, DATA.Tier, 1),

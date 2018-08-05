@@ -6948,7 +6948,7 @@ data:extend(
     energy_source =
     {
       type = "electric",
-      buffer_capacity = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)*10)).."kJ",
+      buffer_capacity = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)*25)).."kJ",
       usage_priority = "terciary",
       input_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)*3)).."kW",
       output_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)*3)).."kW"

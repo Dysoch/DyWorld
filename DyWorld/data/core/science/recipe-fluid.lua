@@ -59,7 +59,7 @@ data:extend(
       {type = "fluid", name = dy.."science-fluid-3", amount = 10},
     },
     subgroup = dy.."science-recipe",
-    order = dy.."science-fluid-3",
+    order = dy.."science-fluid-4",
   },
   {
     type = "recipe",
@@ -79,7 +79,7 @@ data:extend(
       {type = "fluid", name = dy.."science-fluid-4", amount = 10},
     },
     subgroup = dy.."science-recipe",
-    order = dy.."science-fluid-4",
+    order = dy.."science-fluid-3",
   },
   {
     type = "recipe",

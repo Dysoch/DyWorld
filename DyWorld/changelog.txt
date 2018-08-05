@@ -1,8 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.5
+Date: ??. 08. 2018
+  Features:
+    - 
+  Balancing:
+    - Accumulators now hold 2.5x more charge
+  Materials System:
+    - 
+  Bugfixes:
+    - 
+  Changes:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.7.4
 Date: 29. 07. 2018
   Features:
-    - Metal Tiles now correctly colored. Spice up your world!
+    - Metal Tiles now correctly colored. Spice up your world! (No High Res)
     - Added high output clean water recipe. Locked behind Purple Science (Fluid Handling 4), but gives to you ability to create massive amounts of clean water
     - Added new mod setting for multiplying science pack costs. This will only work on normal research! The tiered onces are not changed!
   Balancing:

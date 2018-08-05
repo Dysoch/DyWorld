@@ -12556,13 +12556,6 @@ data:extend(
         picture = dyworld_path_concrete..DATA.Name.."/concrete-inner-corner.png",
         count = 16,
 		tint = Material_Colors[DATA.Table],
-        hr_version =
-        {
-          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-inner-corner.png",
-          count = 16,
-          scale = 0.5,
-		  tint = Material_Colors[DATA.Table],
-        }
       },
       inner_corner_mask =
       {
@@ -12582,13 +12575,6 @@ data:extend(
         picture = dyworld_path_concrete..DATA.Name.."/concrete-outer-corner.png",
         count = 8,
 		tint = Material_Colors[DATA.Table],
-        hr_version =
-        {
-          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-outer-corner.png",
-          count = 8,
-          scale = 0.5,
-		  tint = Material_Colors[DATA.Table],
-        }
       },
       outer_corner_mask =
       {
@@ -12608,13 +12594,6 @@ data:extend(
         picture = dyworld_path_concrete..DATA.Name.."/concrete-side.png",
         count = 16,
 		tint = Material_Colors[DATA.Table],
-        hr_version =
-        {
-          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-side.png",
-          count = 16,
-          scale = 0.5,
-		  tint = Material_Colors[DATA.Table],
-        }
       },
       side_mask =
       {
@@ -12634,13 +12613,6 @@ data:extend(
         picture = dyworld_path_concrete..DATA.Name.."/concrete-u.png",
         count = 8,
 		tint = Material_Colors[DATA.Table],
-        hr_version =
-        {
-          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-u.png",
-          count = 8,
-          scale = 0.5,
-		  tint = Material_Colors[DATA.Table],
-        }
       },
       u_transition_mask =
       {
@@ -12661,13 +12633,6 @@ data:extend(
         picture = dyworld_path_concrete..DATA.Name.."/concrete-o.png",
         count = 4,
 		tint = Material_Colors[DATA.Table],
-        hr_version =
-        {
-          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete-o.png",
-          count = 4,
-          scale = 0.5,
-		  tint = Material_Colors[DATA.Table],
-        }
       },
       o_transition_mask =
       {
@@ -12687,13 +12652,6 @@ data:extend(
         picture = dyworld_path_concrete..DATA.Name.."/concrete.png",
         count = 8,
 		tint = Material_Colors[DATA.Table],
-        hr_version =
-        {
-          picture = dyworld_path_concrete..DATA.Name.."/hr-concrete.png",
-          count = 8,
-          scale = 0.5,
-		  tint = Material_Colors[DATA.Table],
-        }
       }
     },
     transitions = 
@@ -12701,8 +12659,8 @@ data:extend(
 	  water_transition_template
 	  (
 		water_tile_type_names,
-		dyworld_path_concrete..DATA.Name.."/transition/concrete.png",
-		dyworld_path_concrete..DATA.Name.."/transition/hr-concrete.png",
+      "__base__/graphics/terrain/water-transitions/concrete.png",
+      "__base__/graphics/terrain/water-transitions/hr-concrete.png",
 		{
           o_transition_tall = false,
           u_transition_count = 4,
@@ -12720,8 +12678,8 @@ data:extend(
       water_transition_template
       (
         water_tile_type_names,
-        dyworld_path_concrete..DATA.Name.."/transition/concrete-transitions.png",
-        dyworld_path_concrete..DATA.Name.."/transition/hr-concrete-transitions.png",
+      "__base__/graphics/terrain/water-transitions/concrete-transitions.png",
+      "__base__/graphics/terrain/water-transitions/hr-concrete-transitions.png",
         {
           inner_corner_tall = true,
           inner_corner_count = 3,

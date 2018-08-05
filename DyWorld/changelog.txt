@@ -11,6 +11,7 @@ Date: ??. 08. 2018
     - Recycler produces more pollution now
     - Made recipes of Modules more diverse
     - Made recipes of Labs more diverse
+    - Made recipes of Gun Turrets more diverse
   Materials System:
     - Gold now has 4x more conductivity
   Bugfixes:

@@ -6728,7 +6728,7 @@ data:extend(
     dying_explosion = "medium-explosion",
     alert_icon_shift = util.by_pixel(3, -34),
     effectivity = (1 + (Materials[DATA.Table].Conductivity / 50)),
-    fluid_usage_per_tick = (Materials[DATA.Table].Density / 50),
+    fluid_usage_per_tick = 0.25, --(Materials[DATA.Table].Density / 50),
     maximum_temperature = 165,
     fast_replaceable_group = "steam-engine",
     collision_box = {{-1.35, -2.35}, {1.35, 2.35}},

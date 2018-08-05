@@ -12,6 +12,7 @@ Date: ??. 08. 2018
     - Made recipes of Modules more diverse
     - Made recipes of Labs more diverse
     - Made recipes of Gun Turrets more diverse
+    - Steam Engines now have set fluid usage, making energy produced more sensible
   Materials System:
     - Gold now has 4x more conductivity
   Bugfixes:

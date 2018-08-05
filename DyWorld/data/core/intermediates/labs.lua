@@ -1031,8 +1031,9 @@ data:extend(
     ingredients =
     {
       {type = "item", name = "lab", amount = 1},
-      {type = "item", name = "electronic-circuit", amount = 4},
-      {type = "item", name = "stone", amount = 2},
+      {type = "item", name = "electronic-circuit", amount = 25},
+      {type = "item", name = "tin-plate", amount = 12},
+      {type = "item", name = "science-pack-2", amount = 5},
     },
     result = dy.."lab-2"
   },
@@ -1054,8 +1055,9 @@ data:extend(
     ingredients =
     {
       {type = "item", name = dy.."lab-2", amount = 1},
-      {type = "item", name = "electronic-circuit", amount = 4},
-      {type = "item", name = "stone", amount = 2},
+      {type = "item", name = "advanced-circuit", amount = 5},
+      {type = "item", name = "lead-plate", amount = 25},
+      {type = "item", name = "military-science-pack", amount = 5},
     },
     result = dy.."lab-3"
   },
@@ -1077,8 +1079,9 @@ data:extend(
     ingredients =
     {
       {type = "item", name = dy.."lab-3", amount = 1},
-      {type = "item", name = "electronic-circuit", amount = 4},
-      {type = "item", name = "stone", amount = 2},
+      {type = "item", name = "advanced-circuit", amount = 25},
+      {type = "item", name = "gold-plate", amount = 25},
+      {type = "item", name = "science-pack-3", amount = 5},
     },
     result = dy.."lab-4"
   },
@@ -1100,8 +1103,9 @@ data:extend(
     ingredients =
     {
       {type = "item", name = dy.."lab-4", amount = 1},
-      {type = "item", name = "electronic-circuit", amount = 4},
-      {type = "item", name = "stone", amount = 2},
+      {type = "item", name = "processing-unit", amount = 15},
+      {type = "item", name = "titanium-plate", amount = 25},
+      {type = "item", name = "production-science-pack", amount = 5},
     },
     result = dy.."lab-5"
   },
@@ -1118,13 +1122,15 @@ data:extend(
   {
     type = "recipe",
     name = dy.."lab-6",
-    energy_required = 30,
+    energy_required = 45,
     enabled = false,
     ingredients =
     {
       {type = "item", name = dy.."lab-5", amount = 1},
-      {type = "item", name = "electronic-circuit", amount = 4},
-      {type = "item", name = "stone", amount = 2},
+      {type = "item", name = dy.."processing-advanced", amount = 15},
+      {type = "item", name = "titanium-plate", amount = 50},
+      {type = "item", name = "lithium-plate", amount = 50},
+      {type = "item", name = "high-tech-science-pack", amount = 5},
     },
     result = dy.."lab-6"
   },
@@ -1141,13 +1147,15 @@ data:extend(
   {
     type = "recipe",
     name = dy.."lab-7",
-    energy_required = 30,
+    energy_required = 60,
     enabled = false,
     ingredients =
     {
       {type = "item", name = dy.."lab-6", amount = 1},
-      {type = "item", name = "electronic-circuit", amount = 4},
-      {type = "item", name = "stone", amount = 2},
+      {type = "item", name = dy.."processing-logic", amount = 15},
+      {type = "item", name = "titanium-plate", amount = 250},
+      {type = "item", name = "lithium-plate", amount = 250},
+      {type = "item", name = "steel-plate", amount = 250},
     },
     result = dy.."lab-7"
   },

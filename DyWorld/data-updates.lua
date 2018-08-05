@@ -39,6 +39,10 @@ end
 
 Stick_Fix()
 
+for i,inserter in pairs(data.raw["inserter"]) do
+    inserter.allow_custom_vectors = true
+end
+
 function DyWorld_Fluid_Recycle(v)
 data:extend(
 {	

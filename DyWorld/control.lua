@@ -14,6 +14,7 @@ require "script/stats/functions"
 require "script/generation/noise"
 require "script/generation/world-generation"
 require "script/functions/loaders"
+require "script/functions/side-inserter"
 
 debugger = false
 debug_test = settings.startup["DyWorld_Debug"].value
@@ -355,6 +356,34 @@ script.on_event("DyWorld_Debug_LOG", function(event)
 			game.write_file("DyWorld/Debug/Techs.txt", v.name.."\n", true, event.player_index)
 		end
 		--game.write_file("DyWorld/Debug/Techs.txt", tostring(global.DyWorld_Debug.Tech))
+	end
+end)
+
+script.on_event("DyWorld_rotate_inserter_pickup", function(event)
+local selection = game.players[event.player_index].selected
+	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and election.ghost_type == "inserter")) then
+		side_inserters.RotatePickup(selection, true)
+	end
+end)
+
+script.on_event("DyWorld_reverse_rotate_inserter_pickup", function(event)
+local selection = game.players[event.player_index].selected
+	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
+		side_inserters.RotatePickup(selection, false)
+	end
+end)
+
+script.on_event("DyWorld_inserter_drop_distance_toggle", function(event)
+local selection = game.players[event.player_index].selected
+	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
+		side_inserters.ToggleDropDistance(selection, event)
+	end
+end)
+
+script.on_event("DyWorld_inserter_drop_lateral_adjust", function(event)
+local selection = game.players[event.player_index].selected
+	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
+		side_inserters.LateralDropAdjust(selection)
 	end
 end)
 

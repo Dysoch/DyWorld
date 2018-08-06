@@ -22,7 +22,7 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = dy.."molten-iron", amount = 45},
+      {type = "fluid", name = dy.."molten-iron", amount = 90},
       {type = "item", name = "coal", amount = 1},
     },
     results=

@@ -18,6 +18,9 @@ Date: ??. 08. 2018
     - Added one way pipes! This will balance both output and input with each other, one way obviously. Will not start outputting till input is at least 10% full. Can be connected to circuit network to read pipe contents
   Materials System:
     - Gold now has 4x more conductivity
+  Metallurgy:
+    - Proper ore cleaning chunk recipes. All cleaning ores recipes now give a lot more variants of chunks
+    - Double Molten Iron cost of Molten Steel recipe
   Bugfixes:
     - 
   Changes:

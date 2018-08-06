@@ -37,20 +37,56 @@ for k,v in pairs(Material_Table) do
 	end
 end
 
+result = {type = "item", name = "gold-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
+table.insert(data.raw.recipe[dy.."cleaning-copper"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-zinc"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-nickel"].results, result)
+
+result = {type = "item", name = "aluminium-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
+table.insert(data.raw.recipe[dy.."cleaning-nickel"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-iron"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-silver"].results, result)
+
+result = {type = "item", name = "lithium-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
+table.insert(data.raw.recipe[dy.."cleaning-titanium"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-gold"].results, result)
+
+result = {type = "item", name = "zinc-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
+table.insert(data.raw.recipe[dy.."cleaning-nickel"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-gold"].results, result)
+
+result = {type = "item", name = "lead-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
+table.insert(data.raw.recipe[dy.."cleaning-nickel"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-zinc"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-silver"].results, result)
+
+result = {type = "item", name = "tungsten-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
+table.insert(data.raw.recipe[dy.."cleaning-chromium"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-titanium"].results, result)
+
+result = {type = "item", name = "chromium-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
+table.insert(data.raw.recipe[dy.."cleaning-iron"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-gold"].results, result)
+
+result = {type = "item", name = "silver-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
+table.insert(data.raw.recipe[dy.."cleaning-chromium"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-titanium"].results, result)
+
+result = {type = "item", name = "titanium-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
+table.insert(data.raw.recipe[dy.."cleaning-chromium"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-silver"].results, result)
+
 result = {type = "item", name = "tin-pebble", amount_min = 1, amount_max = 3, probability = 0.098}
 table.insert(data.raw.recipe[dy.."cleaning-iron"].results, result)
 table.insert(data.raw.recipe[dy.."cleaning-lead"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-titanium"].results, result)
 
 result = {type = "item", name = "iron-pebble", amount_min = 1, amount_max = 3, probability = 0.078}
 table.insert(data.raw.recipe[dy.."cleaning-tungsten"].results, result)
 table.insert(data.raw.recipe[dy.."cleaning-lead"].results, result)
+table.insert(data.raw.recipe[dy.."cleaning-titanium"].results, result)
 
 result = {type = "item", name = "copper-pebble", amount_min = 1, amount_max = 3, probability = 0.067}
 table.insert(data.raw.recipe[dy.."cleaning-gold"].results, result)
-table.insert(data.raw.recipe[dy.."cleaning-zinc"].results, result)
-table.insert(data.raw.recipe[dy.."cleaning-nickel"].results, result)
-
-result = {type = "item", name = "gold-pebble", amount_min = 1, amount_max = 2, probability = 0.067}
-table.insert(data.raw.recipe[dy.."cleaning-copper"].results, result)
 table.insert(data.raw.recipe[dy.."cleaning-zinc"].results, result)
 table.insert(data.raw.recipe[dy.."cleaning-nickel"].results, result)

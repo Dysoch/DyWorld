@@ -161,6 +161,16 @@ local Data_Table = {
 		Pressure = 0.25, 
 		Barrel = true,
 	},
+	{
+		Name = "conductive-fluid",
+		Icon = dyworld_path_fluid.."conductive-fluid.png",
+		Def_Temp = 50,
+		Max_Temp = 50,
+		Color_Base = {r=255, g=10, b=255},
+		Color_Flow = {r=255, g=10, b=255},
+		Pressure = 0.25, 
+		Barrel = true,
+	},
 }
 
 for k,v in pairs(Data_Table) do

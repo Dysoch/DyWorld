@@ -8,6 +8,7 @@ local Tech_Add = {
 	["advanced-oil-processing"] = {{type = "unlock-recipe", recipe = dy.."advanced-clean-oil-processing"}},
 	["sulfur-processing"] = {{type = "unlock-recipe", recipe = dy.."acid-seperation"}},
 	["rocket-silo"] = {{type = "unlock-recipe", recipe = dy.."rocket-fuel"}},
+	["battery"] = {{type = "unlock-recipe", recipe = dy.."conductive-fluid"}},
 	["logistic-robotics-2"] = {{type = "unlock-recipe", recipe = "logistic-chest-requester"}},
 } 
 
@@ -16,3 +17,8 @@ for k,v in pairs(Tech_Add) do
 		table.insert(data.raw.technology[k].effects,z)
 	end
 end
+
+local result = dy.."gold-processing"
+table.insert(data.raw.technology["battery"].prerequisites, result)
+local result = dy.."aluminium-processing"
+table.insert(data.raw.technology["battery"].prerequisites, result)

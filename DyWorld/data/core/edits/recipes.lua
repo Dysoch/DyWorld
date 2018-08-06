@@ -69,6 +69,19 @@ data.raw.recipe["rocket-fuel"].ingredients = {
 	{type = "item", name = "steel-plate", amount = 1},
 }
 
+data.raw.recipe["battery"].normal.ingredients = {
+    {type = "fluid", name = dy.."conductive-fluid", amount = 2.5},
+	{type = "item", name = "gold-cable", amount = 1},
+	{type = "item", name = "aluminium-pcb", amount = 1},
+	{type = "item", name = "steel-plate", amount = 1},
+}
+data.raw.recipe["battery"].expensive.ingredients = {
+    {type = "fluid", name = dy.."conductive-fluid", amount = 5},
+	{type = "item", name = "gold-cable", amount = 2},
+	{type = "item", name = "aluminium-pcb", amount = 2},
+	{type = "item", name = "titanium-plate", amount = 2},
+}
+
 table.remove(data.raw.recipe["electronic-circuit"].normal.ingredients,2)
 local result = {"copper-pcb", 1}
 table.insert(data.raw.recipe["electronic-circuit"].normal.ingredients,result)

@@ -37,6 +37,30 @@ data:extend(
   },
   {
     type = "recipe",
+    name = dy.."conductive-fluid",
+    icons = 
+	{
+	  {
+	    icon = dyworld_path_fluid.."conductive-fluid.png",
+	  },
+	},
+    category = "chemistry",
+    energy_required = 5,
+	enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "sulfuric-acid", amount = 50},
+      {type = "item", name = "lithium-ore", amount = 5},
+    },
+    results=
+    {
+      {type = "fluid", name = dy.."conductive-fluid", amount = 50},
+    },
+    subgroup = dy.."fluid-recipes",
+    order = "water-seperation",
+  },
+  {
+    type = "recipe",
     name = dy.."clean-water-seperation-1",
     icons = 
 	{

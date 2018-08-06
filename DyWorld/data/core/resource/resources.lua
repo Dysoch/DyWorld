@@ -98,8 +98,8 @@ for k,m in pairs(Remove) do
 	--Controls[m].richness = false
 end
 
-data.raw["map-gen-presets"]["default"]["death-world"] = nil
-data.raw["map-gen-presets"]["default"]["death-world-marathon"] = nil
+--data.raw["map-gen-presets"]["default"]["death-world"] = nil
+--data.raw["map-gen-presets"]["default"]["death-world-marathon"] = nil
 data.raw["map-gen-presets"]["default"]["rail-world"] = nil
 data.raw["map-gen-presets"]["default"]["rich-resources"] = nil
 

@@ -87,6 +87,7 @@ require("data.core.needs.farm-recipes")
 end
 
 -- More techs
+require("data.core.tech.inserter")
 require("data.core.tech.toolbelt")
 require("data.core.tech.robot-battery")
 

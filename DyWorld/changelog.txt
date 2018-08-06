@@ -6,6 +6,7 @@ Date: 06. 08. 2018
     - Inserters can now be rotated to side loading. Similar functions to Side Inserters mod
     - New chain for making batteries! Use conductive fluids to fill the battery with!
     - Added back the preset map gen settings, with the correct ores set to it!
+    - Added infinite Inserter Capacity research. Every 2 levels increases non stack with 1, while every level increase stack inserter stacksize by 2
   Balancing:
     - Accumulators now hold 2.5x more charge
     - Roboports hold a lot more energy, to prevent power loss at higher tiers with more charging slots

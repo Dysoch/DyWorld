@@ -17,6 +17,12 @@ data:extend(
   },
   {
     type = "item-subgroup",
+    name = dy..v.Name.."-MS-group-fluid",
+    group = dy.."Mat-Sys-"..v.Tier,
+    order = v.Name
+  },
+  {
+    type = "item-subgroup",
     name = dy..v.Name.."-MS-group-machine",
     group = dy.."Mat-Sys-"..v.Tier,
     order = v.Name

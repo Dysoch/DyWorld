@@ -1609,6 +1609,161 @@ data:extend(
     }
   },
   {
+    type = "storage-tank",
+    name = dy..DATA.Name.."-one-way-pipe",
+	localised_name = {"looped-name.one-way-pipe", {"looped-name."..DATA.Name}},
+    flags = {"placeable-player", "player-creation"},
+    minable = {hardness = DyWorld_Material_Formulas(23, DATA.Table, DATA.Tier), mining_time = DyWorld_Material_Formulas(24, DATA.Table, DATA.Tier), result = dy..DATA.Name.."-one-way-pipe"},
+    icons = 
+	{
+	  {
+		icon = dyworld_path_icon.."one-way-pipe.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+	icon_size = 32,
+    max_health = DyWorld_Material_Formulas(3, DATA.Table),
+    resistances = Material_Resistances[DATA.Table],
+    corpse = "small-remnants",
+    collision_box = data.raw["pipe"]["pipe"].collision_box,
+    selection_box = data.raw["pipe"]["pipe"].selection_box,
+	fast_replaceable_group = data.raw["pipe"]["pipe"].fast_replaceable_group,
+    fluid_box =
+    {
+      base_area = (DyWorld_Material_Formulas(4, DATA.Table, DATA.Tier) / 100),
+	  base_level = 0.1,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+		{ position = {0, 1}, type = "output" },
+		{ position = {0, -1}, type = "input" }
+      },
+    },
+    two_direction_only = false,
+    window_bounding_box = {{-0.125, 0.6875}, {0.1875, 1.1875}},
+    pictures =
+    {
+      picture =
+	  {
+		sheet =
+		{
+		  filename = dyworld_path_entity.."one-way-pipe.png",
+          priority = "extra-high",
+          frames = 4,
+          width = 58,
+          height = 55,
+          shift = {0.28125, -0.078125},
+		  tint = Material_Colors[DATA.Table],
+        },
+      },
+      fluid_background =
+      {
+		filename = "__core__/graphics/empty.png",
+		priority = "extra-high",
+		width = 1,
+		height = 1,
+		frame_count = 1
+	  },
+      window_background =
+      {
+		filename = "__core__/graphics/empty.png",
+		priority = "extra-high",
+		width = 1,
+		height = 1,
+		frame_count = 1
+	  },
+      flow_sprite =
+      {
+		filename = "__core__/graphics/empty.png",
+		priority = "extra-high",
+		width = 1,
+		height = 1,
+		frame_count = 1
+	  },
+      gas_flow =
+      {
+		filename = "__core__/graphics/empty.png",
+		priority = "extra-high",
+		width = 1,
+		height = 1,
+		frame_count = 1
+	  },
+    },
+    flow_length_in_ticks = 360,
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound = nil,
+    circuit_wire_connection_points = 
+	{
+	  {
+		shadow =
+		{
+		  red = {0.171875, 0.140625},
+		  green = {0.171875, 0.265625},
+		},
+		wire =
+		{
+		  red = {-0.53125, -0.15625},
+		  green = {-0.53125, 0},
+		}
+	  },
+	  {
+		shadow =
+		{
+		  red = {0.890625, 0.703125},
+		  green = {0.75, 0.75},
+		},
+		wire =
+		{
+		  red = {0.34375, 0.28125},
+		  green = {0.34375, 0.4375},
+		}
+	  },
+	  {
+		shadow =
+		{
+		  red = {0.15625, 0.0625},
+		  green = {0.09375, 0.125},
+		},
+		wire =
+		{
+		  red = {-0.53125, -0.09375},
+		  green = {-0.53125, 0.03125},
+		}
+	  },
+	  {
+		shadow =
+		{
+		  red = {0.796875, 0.703125},
+		  green = {0.625, 0.75},
+		},
+		wire =
+		{
+		  red = {0.40625, 0.28125},
+		  green = {0.40625, 0.4375},
+		}
+	  }
+	},
+    circuit_connector_sprites = circuit_connector_definitions["inserter"].sprites,
+    circuit_wire_max_distance = 9
+  },
+  {
+    type = "item",
+    name = dy..DATA.Name.."-one-way-pipe",
+	localised_name = {"looped-name.one-way-pipe", {"looped-name."..DATA.Name}},
+    icons = 
+	{
+	  {
+		icon = dyworld_path_icon.."one-way-pipe.png",
+	  },
+	  Materials[DATA.Table].Icon,
+	},
+    flags = {"goes-to-quickbar"},
+    subgroup = dy..DATA.Name.."-MS-group-fluid",
+    stack_size = 200,
+	order = dy..DATA.Name.."-one-way-pipe",
+	place_result = dy..DATA.Name.."-one-way-pipe",
+  },
+  {
     type = "item",
     name = dy..DATA.Name.."-pipe",
 	localised_name = {"looped-name.pipe", {"looped-name."..DATA.Name}},
@@ -1621,7 +1776,7 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy..DATA.Name.."-MS-group-transport",
+    subgroup = dy..DATA.Name.."-MS-group-fluid",
     stack_size = 200,
 	order = dy..DATA.Name.."-pipe",
 	place_result = dy..DATA.Name.."-pipe",
@@ -1639,7 +1794,7 @@ data:extend(
 	  Materials[DATA.Table].Icon,
 	},
     flags = {"goes-to-quickbar"},
-    subgroup = dy..DATA.Name.."-MS-group-transport",
+    subgroup = dy..DATA.Name.."-MS-group-fluid",
     stack_size = 200,
 	order = dy..DATA.Name.."-pipe-to-ground",
 	place_result = dy..DATA.Name.."-pipe-to-ground",
@@ -1662,6 +1817,15 @@ data:extend(
     result = dy..DATA.Name.."-pipe-to-ground",
     result_count = 2,
   },
+  {
+    type = "recipe",
+    name = dy..DATA.Name.."-one-way-pipe",
+    energy_required = 2.5,
+	enabled = false,
+    ingredients = {{dy..DATA.Name.."-pipe", 2}},
+    result = dy..DATA.Name.."-one-way-pipe",
+    result_count = 1,
+  },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 2}
@@ -1681,21 +1845,27 @@ data:extend(
 	end
 	if DATA.Tier == 1 then
 		data.raw.recipe[dy..DATA.Name.."-pipe"].enabled = true
+		data.raw.recipe[dy..DATA.Name.."-one-way-pipe"].enabled = true
 		data.raw.recipe[dy..DATA.Name.."-pipe-to-ground"].enabled = true
 	elseif DATA.Tier == 2 then
 		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-one-way-pipe")
 		DyWorld_Add_To_Tech("fluid-handling", dy..DATA.Name.."-pipe-to-ground")
 	elseif DATA.Tier == 3 then
 		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-one-way-pipe")
 		DyWorld_Add_To_Tech("fluid-handling-2", dy..DATA.Name.."-pipe-to-ground")
 	elseif DATA.Tier == 4 then
 		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-one-way-pipe")
 		DyWorld_Add_To_Tech("fluid-handling-3", dy..DATA.Name.."-pipe-to-ground")
 	elseif DATA.Tier == 5 then
 		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-one-way-pipe")
 		DyWorld_Add_To_Tech("fluid-handling-4", dy..DATA.Name.."-pipe-to-ground")
 	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pipe")
+		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-one-way-pipe")
 		DyWorld_Add_To_Tech("fluid-handling-5", dy..DATA.Name.."-pipe-to-ground")
 	end
 	if DATA.Name == "wood" then
@@ -3967,7 +4137,7 @@ data:extend(
 	localised_name = {"looped-name.pump", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/pump.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy..DATA.Name.."-MS-group",
+    subgroup = dy..DATA.Name.."-MS-group-fluid",
     stack_size = 200,
 	order = dy..DATA.Name.."-pump",
 	place_result = dy..DATA.Name.."-pump",
@@ -3987,7 +4157,7 @@ data:extend(
 	localised_name = {"looped-name.offshore-pump", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/offshore-pump.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy..DATA.Name.."-MS-group",
+    subgroup = dy..DATA.Name.."-MS-group-fluid",
     stack_size = 200,
 	order = dy..DATA.Name.."-offshore-pump",
 	place_result = dy..DATA.Name.."-offshore-pump",
@@ -5362,6 +5532,7 @@ data:extend(
     fluid_box =
     {
       base_area = (DyWorld_Material_Formulas(18, DATA.Table) * settings.startup["DyWorld_Stack_Size_Mult"].value),
+	  base_level = 0.8,
       pipe_covers = pipecoverspictures(),
       pipe_connections =
       {
@@ -5493,7 +5664,7 @@ data:extend(
 	localised_name = {"looped-name.storage-tank", {"looped-name."..DATA.Name}},
 	icons = {{icon = "__base__/graphics/icons/storage-tank.png"}, Materials[DATA.Table].Icon },
     flags = {"goes-to-quickbar"},
-    subgroup = dy..DATA.Name.."-MS-group",
+    subgroup = dy..DATA.Name.."-MS-group-fluid",
     stack_size = 200,
 	order = dy..DATA.Name.."-storage-tank",
 	place_result = dy..DATA.Name.."-storage-tank",

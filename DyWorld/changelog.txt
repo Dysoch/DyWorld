@@ -13,6 +13,8 @@ Date: ??. 08. 2018
     - Made recipes of Labs more diverse
     - Made recipes of Gun Turrets more diverse
     - Steam Engines now have set fluid usage, making energy produced more sensible
+    - Storage Tanks now act as valves. This means that any connecting pipe that is an input into a tank has to be at least 80% full before it can fill the tank. Output is unchanged though. This feature can be override by adding a pump before going into tanks
+    - Added one way pipes! This will balance both output and input with each other, one way obviously. Will not start outputting till input is at least 10% full. Can be connected to circuit network to read pipe contents
   Materials System:
     - Gold now has 4x more conductivity
   Bugfixes:

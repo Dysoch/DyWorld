@@ -1,10 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.5
-Date: ??. 08. 2018
+Date: 06. 08. 2018
   Features:
     - Added Russian Translation. Made by EthereanOne and Anton. It is far from perfect, but acceptable
     - Inserters can now be rotated to side loading. Similar functions to Side Inserters mod
     - New chain for making batteries! Use conductive fluids to fill the battery with!
+    - Added back the preset map gen settings, with the correct ores set to it!
   Balancing:
     - Accumulators now hold 2.5x more charge
     - Roboports hold a lot more energy, to prevent power loss at higher tiers with more charging slots
@@ -22,10 +23,16 @@ Date: ??. 08. 2018
     - Proper ore cleaning chunk recipes. All cleaning ores recipes now give a lot more variants of chunks
     - Double Molten Iron cost of Molten Steel recipe
     - Increased time it takes to melt an ore, and increased ore amount per recipe by 10, but gives 10 times more fluid as well. This will speed up the melting
-  Bugfixes:
-    - 
+  Chemistry:
+    - Water can now be spliced and recombined
+    - Sulfiric Acid can now be spliced and recombined
+    - Lubricant can now be spliced and recombined
+    - Petroleum Gas can now be spliced and recombined
+    - Light Oil can now be spliced and recombined
+    - Heavy Oil can now be spliced and recombined
   Changes:
     - Changed order in which science packs are placed in menu
+    - All fluid entities (pumps, pipes, etc) now have their own row in the crafting menu's
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.4
 Date: 29. 07. 2018

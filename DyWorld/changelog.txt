@@ -21,6 +21,7 @@ Date: ??. 08. 2018
   Metallurgy:
     - Proper ore cleaning chunk recipes. All cleaning ores recipes now give a lot more variants of chunks
     - Double Molten Iron cost of Molten Steel recipe
+    - Increased time it takes to melt an ore, and increased ore amount per recipe by 10, but gives 10 times more fluid as well. This will speed up the melting
   Bugfixes:
     - 
   Changes:

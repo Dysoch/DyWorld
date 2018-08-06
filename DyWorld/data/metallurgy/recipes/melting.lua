@@ -113,16 +113,16 @@ for k,v in pairs(Material_Table) do
 			  },
 			},
 			category = dy.."blast-furnace",
-			energy_required = 1.5,
+			energy_required = 2.5,
 			enabled = false,
 			ingredients =
 			{
-			  {type = "fluid", name = dy.."molten-rock", amount = 5, minimum_temperature = Materials[v.Table].Melting_Point},
-			  {type = "item", name = v.Name.."-clean-ore", amount = 1},
+			  {type = "fluid", name = dy.."molten-rock", amount = 15, minimum_temperature = Materials[v.Table].Melting_Point},
+			  {type = "item", name = v.Name.."-clean-ore", amount = 10},
 			},
 			results=
 			{
-			  {type = "fluid", name = dy.."molten-"..v.Name, amount = 14},
+			  {type = "fluid", name = dy.."molten-"..v.Name, amount = 140},
 			  {type = "fluid", name = dy.."sludge", amount = 10},
 			},
 			subgroup = dy.."melting-recipes",
@@ -145,16 +145,16 @@ for k,v in pairs(Material_Table) do
 			  },
 			},
 			category = dy.."blast-furnace",
-			energy_required = 1.5,
+			energy_required = 2.5,
 			enabled = false,
 			ingredients =
 			{
-			  {type = "fluid", name = dy.."molten-rock", amount = 0.5, minimum_temperature = Materials[v.Table].Melting_Point},
-			  {type = "item", name = v.Name.."-pebble", amount = 1},
+			  {type = "fluid", name = dy.."molten-rock", amount = 1.5, minimum_temperature = Materials[v.Table].Melting_Point},
+			  {type = "item", name = v.Name.."-pebble", amount = 10},
 			},
 			results=
 			{
-			  {type = "fluid", name = dy.."molten-"..v.Name, amount = 1.3},
+			  {type = "fluid", name = dy.."molten-"..v.Name, amount = 13},
 			  {type = "fluid", name = dy.."sludge", amount = 1.1},
 			},
 			subgroup = dy.."melting-recipes",

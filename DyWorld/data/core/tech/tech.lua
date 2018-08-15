@@ -1132,28 +1132,3 @@ table.insert(data.raw.technology["railway"].prerequisites, add)
 
 local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
 data.raw.technology["effect-transmission"].unit.ingredients = results
-
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."chalcopyrite-seperation-1a")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."chalcopyrite-seperation-1b")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."chalcopyrite-seperation-1c")
-
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."hematite-seperation-1a")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."hematite-seperation-1b")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."hematite-seperation-1c")
-
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."galena-seperation-1a")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."galena-seperation-1b")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."galena-seperation-1c")
-
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."carbolycite-seperation-1a")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."carbolycite-seperation-1b")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."carbolycite-seperation-1c")
-
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1a")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1b")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1c")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1d")
-
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."radicium-seperation-1a")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."radicium-seperation-1b")
-DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."radicium-seperation-1c")

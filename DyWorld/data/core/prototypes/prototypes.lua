@@ -347,11 +347,7 @@ end
 
 function DyWorld_Add_To_Productivity_Module(RECIPE)
 	if data.raw.recipe[RECIPE] then
-		for i, module in pairs(data.raw.module) do
-			if module.limitation and module.effect.productivity then
-				table.insert(module.limitation, RECIPE)
-			end
-		end
+		table.insert(DyWorld_TD.Module_List, RECIPE)
 	else
 		log("Recipe " .. RECIPE .. " does not exist.")
 	end

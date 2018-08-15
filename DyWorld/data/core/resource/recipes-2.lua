@@ -704,3 +704,68 @@ data:extend(
     order = "radicium-seperation",
   },
 })
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."chalcopyrite-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."chalcopyrite-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."chalcopyrite-seperation-1c")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."hematite-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."hematite-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."hematite-seperation-1c")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."prolycotherium-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."prolycotherium-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."prolycotherium-seperation-1c")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."galena-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."galena-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."galena-seperation-1c")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."carbolycite-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."carbolycite-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."carbolycite-seperation-1c")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1c")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1d")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."radicium-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."radicium-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."radicium-seperation-1c")
+
+DyWorld_Add_To_Productivity_Module(dy.."chalcopyrite-seperation")
+DyWorld_Add_To_Productivity_Module(dy.."chalcopyrite-seperation-1a")
+DyWorld_Add_To_Productivity_Module(dy.."chalcopyrite-seperation-1b")
+DyWorld_Add_To_Productivity_Module(dy.."chalcopyrite-seperation-1c")
+
+DyWorld_Add_To_Productivity_Module(dy.."hematite-seperation")
+DyWorld_Add_To_Productivity_Module(dy.."hematite-seperation-1a")
+DyWorld_Add_To_Productivity_Module(dy.."hematite-seperation-1b")
+DyWorld_Add_To_Productivity_Module(dy.."hematite-seperation-1c")
+
+DyWorld_Add_To_Productivity_Module(dy.."prolycotherium-seperation")
+DyWorld_Add_To_Productivity_Module(dy.."prolycotherium-seperation-1a")
+DyWorld_Add_To_Productivity_Module(dy.."prolycotherium-seperation-1b")
+DyWorld_Add_To_Productivity_Module(dy.."prolycotherium-seperation-1c")
+
+DyWorld_Add_To_Productivity_Module(dy.."galena-seperation")
+DyWorld_Add_To_Productivity_Module(dy.."galena-seperation-1a")
+DyWorld_Add_To_Productivity_Module(dy.."galena-seperation-1b")
+DyWorld_Add_To_Productivity_Module(dy.."galena-seperation-1c")
+
+DyWorld_Add_To_Productivity_Module(dy.."carbolycite-seperation")
+DyWorld_Add_To_Productivity_Module(dy.."carbolycite-seperation-1a")
+DyWorld_Add_To_Productivity_Module(dy.."carbolycite-seperation-1b")
+DyWorld_Add_To_Productivity_Module(dy.."carbolycite-seperation-1c")
+
+DyWorld_Add_To_Productivity_Module(dy.."bauxite-seperation")
+DyWorld_Add_To_Productivity_Module(dy.."bauxite-seperation-1a")
+DyWorld_Add_To_Productivity_Module(dy.."bauxite-seperation-1b")
+DyWorld_Add_To_Productivity_Module(dy.."bauxite-seperation-1c")
+DyWorld_Add_To_Productivity_Module(dy.."bauxite-seperation-1d")
+
+DyWorld_Add_To_Productivity_Module(dy.."radicium-seperation")
+DyWorld_Add_To_Productivity_Module(dy.."radicium-seperation-1a")
+DyWorld_Add_To_Productivity_Module(dy.."radicium-seperation-1b")
+DyWorld_Add_To_Productivity_Module(dy.."radicium-seperation-1c")

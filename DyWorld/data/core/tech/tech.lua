@@ -137,6 +137,14 @@ local Data_Table = {
 		Military = false,
 	},
 	{
+		Name = dy.."ore-cracking",
+		Icon = {{icon = dyworld_path_tech.."tools.png"}},
+		Pre_Req = {dy.."ore-smelting"},
+		Tech_Ingredients = 4,
+		Count = 1500,
+		Military = false,
+	},
+	{
 		Name = dy.."repair-tools-1",
 		Icon = {{icon = dyworld_path_tech.."repair.png"}},
 		Pre_Req = {"automation"},
@@ -1124,3 +1132,28 @@ table.insert(data.raw.technology["railway"].prerequisites, add)
 
 local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
 data.raw.technology["effect-transmission"].unit.ingredients = results
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."chalcopyrite-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."chalcopyrite-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."chalcopyrite-seperation-1c")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."hematite-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."hematite-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."hematite-seperation-1c")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."galena-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."galena-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."galena-seperation-1c")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."carbolycite-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."carbolycite-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."carbolycite-seperation-1c")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1c")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."bauxite-seperation-1d")
+
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."radicium-seperation-1a")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."radicium-seperation-1b")
+DyWorld_Add_To_Tech(dy.."ore-cracking", dy.."radicium-seperation-1c")

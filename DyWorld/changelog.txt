@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.0
+Date: ??. 08. 2018
+  Features:
+    - Add specialised Ore Cracking Recipes. They are locked behind purple science, but give you the ability to get just one ore, instead of multiple
+  Balancing:
+    - 
+  Materials System:
+    - 
+  Metallurgy:
+    - 
+  Chemistry:
+    - 
+  Changes:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.7.5
 Date: 06. 08. 2018
   Features:

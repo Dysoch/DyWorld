@@ -129,21 +129,14 @@ DyWorld_Add_To_Tech("military-2", dy.."science-fluid-4")
 DyWorld_Add_To_Tech("advanced-material-processing-2", dy.."science-fluid-5")
 DyWorld_Add_To_Tech("advanced-electronics-2", dy.."science-fluid-6")
 
-if settings.startup["DyWorld_Metallurgy"].value then
-	local result = {type = "fluid", name = dy.."molten-lead", amount = 5}
-	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
-	local result = {type = "fluid", name = dy.."molten-billon", amount = 15}
-	table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
-	local result = {type = "fluid", name = dy.."molten-copper-hydride", amount = 5}
-	table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
-	local result = {type = "item", name = "stainless-steel-pcb", amount = 2}
-	table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
-else	
-	local result = {type = "fluid", name = "sulfuric-acid", amount = 75}
-	table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
-	local result = {type = "fluid", name = dy.."acid", amount = 25}
-	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
-end
+local result = {type = "fluid", name = dy.."molten-lead", amount = 5}
+table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
+local result = {type = "fluid", name = dy.."molten-billon", amount = 15}
+table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
+local result = {type = "fluid", name = dy.."molten-copper-hydride", amount = 5}
+table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
+local result = {type = "item", name = "stainless-steel-pcb", amount = 2}
+table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
 
 if settings.startup["DyWorld_Extraction"].value then
 	local result = {type = "item", name = dy.."tin-mining-tool", amount = 1}

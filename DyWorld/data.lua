@@ -10,17 +10,14 @@ if settings.startup["DyWorld_Warfare"].value then
     require("data.ms-warfare")
 end
 
-if settings.startup["DyWorld_Metallurgy"].value then
-    require("data.ms-metallurgy")
-end
+require("data.ms-metallurgy")
 
 require("data.core.populate-item-group")
 require("data.core.data")
 
 -- then we add items/entities etc
-if settings.startup["DyWorld_Metallurgy"].value then
-	require("data.metallurgy.data")
-end
+require("data.metallurgy.data")
+require("data.modules.data")
 
 if settings.startup["DyWorld_Extraction"].value then
 	require("data.extraction.data")
@@ -28,10 +25,6 @@ end
 
 if settings.startup["DyWorld_Logistics"].value then
 	require("data.logistics.data")
-end
-
-if settings.startup["DyWorld_Modules"].value then
-	require("data.modules.data")
 end
 
 if settings.startup["DyWorld_Power"].value then
@@ -50,7 +43,7 @@ if settings.startup["DyWorld_Equipment"].value then
 	require("data.equipment.data")
 end
 
-if settings.startup["DyWorld_Chemistry"].value and settings.startup["DyWorld_Metallurgy"].value then
+if settings.startup["DyWorld_Chemistry"].value then
 	require("data.chemistry.data")
 end
 

@@ -12015,16 +12015,11 @@ data:extend(
 	elseif DATA.Tier == 6 then
 		DyWorld_Add_To_Tech("power-armor-6", dy..DATA.Name.."-modular-armor")
 	end
-	if settings.startup["DyWorld_Modules"].value then
-		if data.raw.module[dy..DATA.Name.."-module-speed"] and data.raw.module[dy..DATA.Name.."-module-productivity"] then
-			local result_1 = {dy..DATA.Name.."-module-speed", (2 * DATA.Tier)}
-			local result_2 = {dy..DATA.Name.."-module-productivity", (1 * DATA.Tier)}
-			table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_1)
-			table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_2)
-		end
-	else
-		local result_1 = {"speed-module-2", (5 * DATA.Tier)}
+	if data.raw.module[dy..DATA.Name.."-module-speed"] and data.raw.module[dy..DATA.Name.."-module-productivity"] then
+		local result_1 = {dy..DATA.Name.."-module-speed", (2 * DATA.Tier)}
+		local result_2 = {dy..DATA.Name.."-module-productivity", (1 * DATA.Tier)}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_1)
+		table.insert(data.raw.recipe[dy..DATA.Name.."-modular-armor"].ingredients, result_2)
 	end
 end
 

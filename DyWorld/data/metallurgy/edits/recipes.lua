@@ -16,7 +16,7 @@ data.raw.recipe["lithium-plate"].ingredients = {{"lithium-ore", 2}}
 data.raw.recipe["titanium-plate"].ingredients = {{"titanium-ore", 2}}
 data.raw.recipe["steel-plate"].ingredients = {{"iron-plate", 8}}
 
-if settings.startup["DyWorld_Metallurgy"].value then
+
 	data.raw.recipe[dy.."ground-mining"].results = {
       {type = "item", name = "stone", amount_min = 1, amount_max = 25, probability = 0.35},
       {type = "item", name = dy.."sand", amount_min = 1, amount_max = 25, probability = 0.15},
@@ -57,4 +57,3 @@ if settings.startup["DyWorld_Metallurgy"].value then
       {type = "item", name = "lithium-pebble", amount_min = 1, amount_max = 10, probability = 0.09},
       {type = "item", name = "titanium-pebble", amount_min = 1, amount_max = 10, probability = 0.09},
     }
-end

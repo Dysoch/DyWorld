@@ -5,6 +5,7 @@ Date: ??. 08. 2018
     - Add specialised Ore Cracking Recipes. They are locked behind purple science, but give you the ability to get just one ore, instead of multiple
   Balancing:
     - Blue science pack require aluminium mining drill now. This requires more components, but less overal resources!
+    - Metallurgy and Modules settings removed. They are now part of the core of DyWorld!
   Materials System:
     - 
   Metallurgy:

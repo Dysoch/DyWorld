@@ -30,12 +30,6 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
-		name = "DyWorld_Modules",
-		setting_type = "startup",
-		default_value = true,
-	},
-	{
-		type = "bool-setting",
 		name = "DyWorld_Warfare",
 		setting_type = "startup",
 		default_value = true,
@@ -102,12 +96,18 @@ data:extend({
 		setting_type = "startup",
 		default_value = false,
 	},
-	{
+	--[[{
 		type = "bool-setting",
 		name = "DyWorld_Metallurgy",
 		setting_type = "startup",
 		default_value = true,
 	},
+	{
+		type = "bool-setting",
+		name = "DyWorld_Modules",
+		setting_type = "startup",
+		default_value = true,
+	},]]
 	{
 		type = "bool-setting",
 		name = "DyWorld_Equipment",

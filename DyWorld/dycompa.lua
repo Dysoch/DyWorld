@@ -5,9 +5,7 @@ if settings.startup["DyWorld_Warfare"].value then
 	require("dycompa.dyworld-warfare")
 end
 
-if settings.startup["DyWorld_Modules"].value then
-	require("dycompa.dyworld-modules")
-end
+require("dycompa.dyworld-modules")
 
 if settings.startup["DyWorld_Processing"].value then
 	require("dycompa.dyworld-processing")

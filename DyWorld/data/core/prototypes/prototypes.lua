@@ -6174,9 +6174,9 @@ data:extend(
       },
       sound = make_laser_sounds()
     },
-    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + Round(DyWorld_Material_Formulas(5, DATA.Table) * 0.1, 2)),
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) - Round(DyWorld_Material_Formulas(5, DATA.Table) * 0.1, 2)),
     shoot_in_prepare_state = true,
-    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
+    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) - (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
   },
   {
     type = "projectile",
@@ -6199,8 +6199,12 @@ data:extend(
           },
           {
             type = "damage",
-			damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "laser"}
-          }
+			damage = {amount = Round(DyWorld_Material_Formulas(8, DATA.Table) * 0.01, 0), type = "electric"}
+          },
+          {
+            type = "damage",
+			damage = {amount = Round(DyWorld_Material_Formulas(8, DATA.Table) * 0.99, 0), type = "laser"}
+          },
         }
       }
     },
@@ -6368,7 +6372,7 @@ data:extend(
         {
           {
             type = "direct",
-            repeat_count = 10 + math.floor(Materials[DATA.Table].Density),
+            repeat_count = 10 + DATA.Tier,
             action_delivery =
             {
               {
@@ -6385,9 +6389,9 @@ data:extend(
       },
       sound = make_laser_sounds()
     },
-    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + Round(DyWorld_Material_Formulas(5, DATA.Table) * 0.1, 2)),
+    prepare_range = math.floor(DyWorld_Material_Formulas(5, DATA.Table) - Round(DyWorld_Material_Formulas(5, DATA.Table) * 0.1, 2)),
     shoot_in_prepare_state = true,
-    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) + (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
+    call_for_help_radius = math.floor(DyWorld_Material_Formulas(5, DATA.Table) - (DyWorld_Material_Formulas(5, DATA.Table) / 2 ))
   },
   {
     type = "projectile",
@@ -6410,8 +6414,12 @@ data:extend(
           },
           {
             type = "damage",
-			damage = {amount = DyWorld_Material_Formulas(8, DATA.Table), type = "laser"}
-          }
+			damage = {amount = Round(DyWorld_Material_Formulas(8, DATA.Table) * 0.01, 0), type = "electric"}
+          },
+          {
+            type = "damage",
+			damage = {amount = Round(DyWorld_Material_Formulas(8, DATA.Table) * 0.99, 0), type = "laser"}
+          },
         }
       }
     },
@@ -10638,34 +10646,11 @@ data:extend(
 	name = dy..DATA.Name.."-locomotive-armor-remover",
     energy_required = 2.5,
     category = dy.."armor-remover",
-	enabled = true,
+	enabled = false,
 	hidden = settings.startup["DyWorld_Hidden_Recipes"].value,
     ingredients = {{dy..DATA.Name.."-locomotive", 1}},
     result = "locomotive",
     result_count = 1,
-  },
-  {
-    type = "technology",
-   	name = dy..DATA.Name.."-locomotive",
-	localised_name = {"looped-name.locomotive", {"looped-name."..DATA.Name}},
-	icons = 
-	{
-	  {
-		icon = dyworld_path_tech.."locomotive.png"
-	  },
-	  Materials[DATA.Table].Icon_Tech,
-	},
-    icon_size = 128,
-    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-locomotive"}, {type = "unlock-recipe", recipe = dy..DATA.Name.."-locomotive-armor-remover"} },
-    prerequisites = {},
-    unit =
-    {
-      count = math.floor(Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Hardness),
-      ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
-      time = 30
-    },
-    order = dy..DATA.Name.."-locomotive",
-	upgrade = true,
   },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
@@ -10679,25 +10664,23 @@ data:extend(
 		table.insert(data.raw.recipe[dy..DATA.Name.."-locomotive"].ingredients, result_1)
 	end
 	if DATA.Tier == 1 then
-		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway"}
+		DyWorld_Add_To_Tech("railway", dy..DATA.Name.."-locomotive")
+		DyWorld_Add_To_Tech("railway", dy..DATA.Name.."-locomotive-armor-remover")
 	elseif DATA.Tier == 2 then
-		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-2"}
+		DyWorld_Add_To_Tech("railway-2", dy..DATA.Name.."-locomotive")
+		DyWorld_Add_To_Tech("railway-2", dy..DATA.Name.."-locomotive-armor-remover")
 	elseif DATA.Tier == 3 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
-		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-3"}
+		DyWorld_Add_To_Tech("railway-3", dy..DATA.Name.."-locomotive")
+		DyWorld_Add_To_Tech("railway-3", dy..DATA.Name.."-locomotive-armor-remover")
 	elseif DATA.Tier == 4 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-4"}
+		DyWorld_Add_To_Tech("railway-4", dy..DATA.Name.."-locomotive")
+		DyWorld_Add_To_Tech("railway-4", dy..DATA.Name.."-locomotive-armor-remover")
 	elseif DATA.Tier == 5 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-5"}
+		DyWorld_Add_To_Tech("railway-5", dy..DATA.Name.."-locomotive")
+		DyWorld_Add_To_Tech("railway-5", dy..DATA.Name.."-locomotive-armor-remover")
 	elseif DATA.Tier == 6 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-locomotive"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-locomotive"].prerequisites = {"railway-6"}
+		DyWorld_Add_To_Tech("railway-6", dy..DATA.Name.."-locomotive")
+		DyWorld_Add_To_Tech("railway-6", dy..DATA.Name.."-locomotive-armor-remover")
 	end
 	if DATA.Name == "wood" then
 		data.raw.item[dy..DATA.Name.."-locomotive"].fuel_value = "2MJ"
@@ -11703,29 +11686,6 @@ data:extend(
     result = dy..DATA.Name.."-module-speed",
     result_count = 1,
   },
-  {
-    type = "technology",
-	name = dy..DATA.Name.."-module-speed",
-	localised_name = {"looped-name.speed-module", {"looped-name."..DATA.Name}},
-	icons = 
-	{
-	  {
-		icon = "__base__/graphics/technology/speed-module.png"
-	  },
-	  Materials[DATA.Table].Icon_Tech,
-	},
-    icon_size = 128,
-    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-module-speed"} },
-    prerequisites = {},
-    unit =
-    {
-      count = math.floor(Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Hardness),
-      ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
-      time = 30
-    },
-    order = dy..DATA.Name.."-module-speed",
-	upgrade = true,
-  },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 5}
@@ -11741,44 +11701,34 @@ data:extend(
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 1
 		local result_1 = {"electronic-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
-		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module"}
+		DyWorld_Add_To_Tech("speed-module", dy..DATA.Name.."-module-speed")
 	elseif DATA.Tier == 2 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 2
 		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-2"}
+		DyWorld_Add_To_Tech("speed-module-2", dy..DATA.Name.."-module-speed")
 	elseif DATA.Tier == 3 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 3
 		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
 		local result_1 = {"processing-unit", (5 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-3"}
+		DyWorld_Add_To_Tech("speed-module-3", dy..DATA.Name.."-module-speed")
 	elseif DATA.Tier == 4 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 4
 		local result_1 = {"processing-unit", (15 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-4"}
+		DyWorld_Add_To_Tech("speed-module-4", dy..DATA.Name.."-module-speed")
 	elseif DATA.Tier == 5 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 5
 		local result_1 = {dy.."processing-advanced", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-5"}
+		DyWorld_Add_To_Tech("speed-module-5", dy..DATA.Name.."-module-speed")
 	elseif DATA.Tier == 6 then
 		data.raw.module[dy..DATA.Name.."-module-speed"].tier = 6
 		local result_1 = {dy.."processing-logic", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-speed"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-speed"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-speed"].prerequisites = {"speed-module-6"}
+		DyWorld_Add_To_Tech("speed-module-6", dy..DATA.Name.."-module-speed")
 	end
 end
 
@@ -11822,29 +11772,6 @@ data:extend(
     result = dy..DATA.Name.."-module-productivity",
     result_count = 1,
   },
-  {
-    type = "technology",
-	name = dy..DATA.Name.."-module-productivity",
-	localised_name = {"looped-name.productivity-module", {"looped-name."..DATA.Name}},
-	icons = 
-	{
-	  {
-		icon = "__base__/graphics/technology/productivity-module.png"
-	  },
-	  Materials[DATA.Table].Icon_Tech,
-	},
-    icon_size = 128,
-    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-module-productivity"} },
-    prerequisites = {},
-    unit =
-    {
-      count = math.floor(Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Hardness),
-      ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
-      time = 30
-    },
-    order = dy..DATA.Name.."-module-productivity",
-	upgrade = true,
-  },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 5}
@@ -11860,44 +11787,34 @@ data:extend(
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 1
 		local result_1 = {"electronic-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module"}
+		DyWorld_Add_To_Tech("productivity-module", dy..DATA.Name.."-module-productivity")
 	elseif DATA.Tier == 2 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 2
 		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-2"}
+		DyWorld_Add_To_Tech("productivity-module-2", dy..DATA.Name.."-module-productivity")
 	elseif DATA.Tier == 3 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 3
 		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
 		local result_1 = {"processing-unit", (5 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-3"}
+		DyWorld_Add_To_Tech("productivity-module-3", dy..DATA.Name.."-module-productivity")
 	elseif DATA.Tier == 4 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 4
 		local result_1 = {"processing-unit", (15 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-4"}
+		DyWorld_Add_To_Tech("productivity-module-4", dy..DATA.Name.."-module-productivity")
 	elseif DATA.Tier == 5 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 5
 		local result_1 = {dy.."processing-advanced", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-5"}
+		DyWorld_Add_To_Tech("productivity-module-5", dy..DATA.Name.."-module-productivity")
 	elseif DATA.Tier == 6 then
 		data.raw.module[dy..DATA.Name.."-module-productivity"].tier = 6
 		local result_1 = {dy.."processing-logic", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-productivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-productivity"].prerequisites = {"productivity-module-6"}
+		DyWorld_Add_To_Tech("productivity-module-6", dy..DATA.Name.."-module-productivity")
 	end
 end
 
@@ -11939,29 +11856,6 @@ data:extend(
     result = dy..DATA.Name.."-module-effectivity",
     result_count = 1,
   },
-  {
-    type = "technology",
-	name = dy..DATA.Name.."-module-effectivity",
-	localised_name = {"looped-name.effectivity-module", {"looped-name."..DATA.Name}},
-	icons = 
-	{
-	  {
-		icon = "__base__/graphics/technology/effectivity-module.png"
-	  },
-	  Materials[DATA.Table].Icon_Tech,
-	},
-    icon_size = 128,
-    effects = { {type = "unlock-recipe", recipe = dy..DATA.Name.."-module-effectivity"} },
-    prerequisites = {},
-    unit =
-    {
-      count = math.floor(Materials[DATA.Table].Strength_Yield * Materials[DATA.Table].Hardness),
-      ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
-      time = 30
-    },
-    order = dy..DATA.Name.."-module-effectivity",
-	upgrade = true,
-  },
 })
 	if DATA.Name == "stone" or DATA.Name == "wood" then
 		local result_1 = {DATA.Name, 5}
@@ -11977,44 +11871,34 @@ data:extend(
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 1
 		local result_1 = {"electronic-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module"}
+		DyWorld_Add_To_Tech("effectivity-module", dy..DATA.Name.."-module-effectivity")
 	elseif DATA.Tier == 2 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 2
 		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-2"}
+		DyWorld_Add_To_Tech("effectivity-module-2", dy..DATA.Name.."-module-effectivity")
 	elseif DATA.Tier == 3 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 3
 		local result_1 = {"advanced-circuit", (10 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
 		local result_1 = {"processing-unit", (5 + (5 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-3"}
+		DyWorld_Add_To_Tech("effectivity-module-3", dy..DATA.Name.."-module-effectivity")
 	elseif DATA.Tier == 4 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 4
 		local result_1 = {"processing-unit", (15 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-4"}
+		DyWorld_Add_To_Tech("effectivity-module-4", dy..DATA.Name.."-module-effectivity")
 	elseif DATA.Tier == 5 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 5
 		local result_1 = {dy.."processing-advanced", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-5"}
+		DyWorld_Add_To_Tech("effectivity-module-5", dy..DATA.Name.."-module-effectivity")
 	elseif DATA.Tier == 6 then
 		data.raw.module[dy..DATA.Name.."-module-effectivity"].tier = 6
 		local result_1 = {dy.."processing-logic", (10 + (10 * DATA.Tier))}
 		table.insert(data.raw.recipe[dy..DATA.Name.."-module-effectivity"].ingredients, result_1)
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}}
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].unit.ingredients = results
-		data.raw.technology[dy..DATA.Name.."-module-effectivity"].prerequisites = {"effectivity-module-6"}
+		DyWorld_Add_To_Tech("effectivity-module-6", dy..DATA.Name.."-module-effectivity")
 	end
 end
 

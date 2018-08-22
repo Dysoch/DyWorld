@@ -148,6 +148,8 @@ end
 if settings.startup["DyWorld_Extraction"].value then
 	local result = {type = "item", name = dy.."tin-mining-tool", amount = 1}
 	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
+	local result = {type = "item", name = dy.."aluminium-electric-drill", amount = 1}
+	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
 else	
 	local result = {"steel-axe", 1}
 	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
@@ -161,8 +163,6 @@ if settings.startup["DyWorld_Logistics"].value then
 	table.insert(data.raw.recipe[dy.."science-fluid-5"].ingredients, result)
 	local result = {type = "item", name = dy.."zinc-repair-tool", amount = 1}
 	table.insert(data.raw.recipe[dy.."science-fluid-5"].ingredients, result)
-	local result = {type = "item", name = dy.."aluminium-storage-tank", amount = 1}
-	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
 	local result = {type = "item", name = dy.."stone-transport-belt", amount = 1}
 	table.insert(data.raw.recipe[dy.."science-fluid-2"].ingredients, result)
 else	

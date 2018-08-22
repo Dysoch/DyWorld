@@ -65,7 +65,6 @@ if settings.startup["DyWorld_Stack_Size_Mult"].value > 1 then
 		v.default_request_amount = v.stack_size
 		v.stack_size = (v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value)
 	end
-	data.raw["fluid-wagon"]["fluid-wagon"].capacity = 250000 * settings.startup["DyWorld_Stack_Size_Mult"].value
 end
 
 if settings.startup["DyWorld_Tech_Increaser"].value > 1 then

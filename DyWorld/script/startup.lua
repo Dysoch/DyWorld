@@ -53,6 +53,8 @@ function Game()
 	end
 	game.forces.player.ghost_time_to_live = (60*60*60*24) -- 24 hour live time
 	game.forces.player.deconstruction_time_to_live = (60*60*60*24) -- 24 hour live time
+	remote.call("silo_script", "set_show_launched_without_satellite", false)
+	remote.call("silo_script", "set_finish_on_launch", false)
 end
 
 function startup(PLAYER, ID)

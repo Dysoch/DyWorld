@@ -6,6 +6,7 @@ Date: ??. 08. 2018
   Balancing:
     - Blue science pack require aluminium mining drill now. This requires more components, but less overal resources!
     - Metallurgy and Modules settings removed. They are now part of the core of DyWorld!
+    - Reduced min range of turrets a lot
   Materials System:
     - 
   Metallurgy:

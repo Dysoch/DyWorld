@@ -6147,7 +6147,7 @@ data:extend(
       projectile_center = {-0.09375, -0.2},
       projectile_creation_distance = 1.4,
       range = DyWorld_Material_Formulas(5, DATA.Table),
-      min_range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.15),
+      min_range = DATA.Tier,
       turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
       damage_modifier = 1,
       ammo_type =
@@ -6360,7 +6360,7 @@ data:extend(
       projectile_center = {-0.09375, -0.2},
       projectile_creation_distance = 1.4,
       range = DyWorld_Material_Formulas(5, DATA.Table),
-      min_range = math.ceil(DyWorld_Material_Formulas(5, DATA.Table) * 0.15),
+      min_range = DATA.Tier,
       turn_range = DyWorld_Material_Formulas(7, DATA.Table)/360,
       damage_modifier = 1,
       ammo_type =

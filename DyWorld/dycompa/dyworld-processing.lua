@@ -1,7 +1,7 @@
 require "data/prefix"
 
 local Change = {
-	{Old = "assembling-machine-1", New = dy.."stone-assembling-electric"},
+	{Old = "assembling-machine-1", New = dy.."iron-assembling-electric"},
 	{Old = "assembling-machine-2", New = dy.."lead-assembling-electric"},
 	{Old = "assembling-machine-3", New = dy.."steel-assembling-electric"},
 }

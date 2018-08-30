@@ -3,7 +3,7 @@ require "data/prefix"
 local Change = {
 	{Old = "solar-panel", New = dy.."iron-solar-normal"},
 	{Old = "accumulator", New = dy.."copper-accumulator-normal"},
-	{Old = "small-electric-pole", New = dy.."stone-power-pole"},
+	{Old = "small-electric-pole", New = dy.."copper-power-pole"},
 	{Old = "medium-electric-pole", New = dy.."gold-power-pole"},
 	{Old = "big-electric-pole", New = dy.."steel-power-relay"},
 	{Old = "steam-engine", New = dy.."tin-steam-engine"},

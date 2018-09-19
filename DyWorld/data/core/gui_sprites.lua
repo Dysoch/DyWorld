@@ -6,7 +6,7 @@ data.raw["gui-style"].default["dyworld_stats_header_label"] = {
     font = "default-large-semibold",
     top_padding = 0,
     bottom_padding = 0,
-    left_padding = 0,
+    left_padding = 6,
     right_padding = 6
 }
 data.raw["gui-style"].default["dyworld_stats_divider_header_label"] = {
@@ -15,7 +15,7 @@ data.raw["gui-style"].default["dyworld_stats_divider_header_label"] = {
     font_color = {r = 0, g = 0, b = 155},
     font = "default-large-semibold",
     top_padding = 0,
-    bottom_padding = 10,
+    bottom_padding = 0,
     left_padding = 0,
     right_padding = 0
 }
@@ -53,8 +53,28 @@ data.raw["gui-style"].default["dyworld_stats_sprite_button"] = {
 data.raw["gui-style"].default["dyworld_stats_tech_label"] = {
     type = "label_style",
     parent = "label",
+    left_padding = 2,
+    right_padding = 2,
+    bottom_padding = 0,
+    top_padding = 0,
+}
+
+data.raw["gui-style"].default["dyworld_label_parent"] = {
+    type = "label_style",
+    font = "default",
+    font_color = {r=0.9, g=0.9, b=1},
+    single_line = true,
+    want_ellipsis = false
+}
+
+data.raw["gui-style"].default["dyworld_label"] = {
+    type = "label_style",
+    parent = "dyworld_label_parent",
+    font = "default-small",
     left_padding = 4,
-    right_padding = 4
+    right_padding = 0,
+    bottom_padding = 0,
+    top_padding = 0,
 }
 
 data.raw["gui-style"].default["dyworld_stats_sprite"] = {

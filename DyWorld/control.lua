@@ -213,6 +213,7 @@ script.on_event(defines.events.on_research_finished, function(event)
 			stats_functions.XP_All_Full()
 		end
 	end
+	global.dyworld.Research_Done = global.dyworld.Research_Done + 1
 	debug("Finished "..event.research.name.." research")
 end)
 
@@ -231,7 +232,7 @@ end)
 
 -- ontick hooks
 script.on_event(defines.events.on_tick, function(event)
-	if event.tick%(60*60*5)==1 and global.dyworld.Players ~= 0 then
+	if event.tick%(60*60)==1 and global.dyworld.Players ~= 0 then
 		if global.dyworld.RPG_Mode == "normal" then
 			stats_functions.GlobalSkillsReset()
 			for k,v in pairs(global.players) do
@@ -251,7 +252,7 @@ script.on_event(defines.events.on_tick, function(event)
 			end
 		end
 	end
-	if event.tick%(60*1)==1 and global.dyworld.Players ~= 0 then
+	if event.tick%(60*5)==1 and global.dyworld.Players ~= 0 then
 		for k,v in pairs(global.players) do
 			if v.Alive and v.Playing then
 				if settings.startup["DyWorld_Story"].value or settings.startup["DyWorld_Needs"].value then
@@ -273,14 +274,14 @@ script.on_event(defines.events.on_tick, function(event)
 			if v.Alive and v.Playing then
 				v.PosX = game.players[v.PlayerID].position.x
 				v.PosY = game.players[v.PlayerID].position.y
-				if v.State_Distance_GUI then
+				if v.State_Distance_GUI and v.Alive and v.Playing and not v.State_Stats_GUI then
 					local player = game.players[v.PlayerID]
 					gui_5.RefreshGUI(player, v.PlayerID)
 				end
 			end
 		end
 	end
-	if event.tick%(60*1)==1 then
+	if event.tick%(60*5)==1 then
 		if global.dyworld.RPG_Mode == "normal" then
 			for k,v in pairs(global.players) do
 				if v.State_Stats_GUI and v.Alive and v.Playing then
@@ -298,6 +299,10 @@ script.on_event("DyWorld_Stats", function(event)
 	if global.dyworld.RPG_Mode == "normal" then
 		local player = game.players[event.player_index]
 		gui_1.closeGUI(player, event.player_index)
+		if global.players[event.player_index].State_Distance_GUI then
+			global.players[event.player_index].State_Distance_GUI = false
+			gui_5.CloseGUI(player, event.player_index)
+		end
 		if global.players[event.player_index].State_Stats_GUI then
 			global.players[event.player_index].State_Stats_GUI = false
 			gui_1.closeGUI(player, event.player_index)
@@ -311,6 +316,10 @@ end)
 script.on_event("DyWorld_Distance", function(event)
 	if global.dyworld.RPG_Mode == "normal" then
 		local player = game.players[event.player_index]
+		if global.players[event.player_index].State_Stats_GUI then
+			global.players[event.player_index].State_Stats_GUI = false
+			gui_1.closeGUI(player, event.player_index)
+		end
 		if global.players[event.player_index].State_Distance_GUI then
 			global.players[event.player_index].State_Distance_GUI = false
 			gui_5.CloseGUI(player, event.player_index)

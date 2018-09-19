@@ -539,7 +539,6 @@ data:extend(
     results=
     {
       {type = "fluid", name = dy.."sludge", amount = 75},
-      {type = "item", name = "stone", amount_min = 5, amount_max = 17},
       {type = "item", name = "aluminium-ore", amount_min = 4, amount_max = 11},
     },
     subgroup = dy.."metal-0-ore-recipes",

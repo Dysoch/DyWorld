@@ -3,7 +3,7 @@ module("startup", package.seeall)
 function Research_Calc()
 	local var = 0
 	for k,v in pairs(game.forces.player.technologies) do
-		var = var + v.research_unit_count
+		var = var + 1
 	end
 	return var
 end
@@ -12,7 +12,7 @@ function Game()
 	if not global.dyworld then
 		global.dyworld = 
 		{
-			Version = "0.7.5",
+			Version = "0.7.80",
 			Items = {},
 			Research = {},
 			Guide = {},
@@ -29,7 +29,9 @@ function Game()
 			Generation_Ship_3_PosY = 0,
 			Research_Level_String = "Primitive",
 			Research_Level_Var = 1,
+			Research_Done = 0,
 			Max_Research = Research_Calc(),
+			Migration_Check = false,
 			Strength = 0,
 			Endurance = 0,
 			Speed = 0,
@@ -55,6 +57,8 @@ function Game()
 	game.forces.player.deconstruction_time_to_live = (60*60*60*24) -- 24 hour live time
 	remote.call("silo_script", "set_show_launched_without_satellite", false)
 	remote.call("silo_script", "set_finish_on_launch", false)
+	remote.call("silo_script", "remove_tracked_item", "satellite")
+	remote.call("silo_script", "add_tracked_item", "dyworld-dtx-001-spaceship")
 end
 
 function startup(PLAYER, ID)

@@ -13,6 +13,20 @@ data:extend(
     stack_size = 2000,
     durability = 1,
     durability_description_key = "description.science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value",
+	rocket_launch_product = {dy.."infinity-science-pack", 50},
+  },
+  {
+    type = "tool",
+    name = dy.."infinity-science-pack",
+    icon = "__base__/graphics/icons/space-science-pack.png",
+    icon_size = 32,
+    flags = {"goes-to-main-inventory"},
+    subgroup = dy.."science-tool",
+    order = "08",
+    stack_size = 2000,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value"
   },
   {

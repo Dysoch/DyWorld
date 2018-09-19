@@ -18,7 +18,14 @@ end
 for k,v in pairs(data.raw.technology) do
 	if v.max_level == "infinite" then
 		v.unit.ingredients = {
-        {dy.."extra-solar-science-pack", 1},
+        {"science-pack-1", 25},
+        {"science-pack-2", 25},
+        {"science-pack-3", 25},
+        {"military-science-pack", 25},
+        {"production-science-pack", 25},
+        {"high-tech-science-pack", 25},
+        {dy.."extra-solar-science-pack", 10},
+        {dy.."infinity-science-pack", 1},
       }
 	end
 end

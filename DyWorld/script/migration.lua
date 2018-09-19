@@ -150,6 +150,63 @@ function Migrate_To_Next_Version()
 		global.dyworld.Version = "0.7.5" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end
+	if global.dyworld.Version == "0.7.5" then
+			global.dyworld.Research_Done = 0
+			for k,v in pairs(game.players[1].force.technologies) do
+				if Check_Tech(v.name) then
+					if v.researched then
+						v.researched = false
+						v.researched = true
+					end
+				end
+			end
+		global.dyworld.Version = "0.7.80" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+	end
+	if global.dyworld.Version == "0.7.80" then
+			remote.call("silo_script", "set_show_launched_without_satellite", false)
+			remote.call("silo_script", "set_finish_on_launch", false)
+			remote.call("silo_script", "remove_tracked_item", "satellite")
+			remote.call("silo_script", "add_tracked_item", "dyworld-dtx-001-spaceship")
+			-- This part below is done every migration!
+			global.dyworld.Max_Research = Research_Calc(),
+			global.dyworld.Research_Done = 0
+			global.stats.research = 0
+			global.dyworld.Migration_Check = true
+			for k,v in pairs(game.players[1].force.technologies) do
+				if Check_Tech(v.name) then
+					if v.researched then
+						v.researched = false
+						v.researched = true
+					end
+				end
+			end
+			global.dyworld.Migration_Check = false
+		global.dyworld.Version = "0.7.81" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+	end
+	--[[if global.dyworld.Version == "0.7.5" or global.dyworld.Version == "0.7.81" then
+			remote.call("silo_script", "set_show_launched_without_satellite", false)
+			remote.call("silo_script", "set_finish_on_launch", false)
+			remote.call("silo_script", "remove_tracked_item", "satellite")
+			remote.call("silo_script", "add_tracked_item", "dyworld-dtx-001-spaceship")
+			-- This part below is done every migration!
+			global.dyworld.Max_Research = Research_Calc(),
+			global.dyworld.Research_Done = 0
+			global.stats.research = 0
+			global.dyworld.Migration_Check = true
+			for k,v in pairs(game.players[1].force.technologies) do
+				if Check_Tech(v.name) then
+					if v.researched then
+						v.researched = false
+						v.researched = true
+					end
+				end
+			end
+			global.dyworld.Migration_Check = false
+		global.dyworld.Version = "0.8.0" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+	end]]
 end
 
 function Migrate_Debug()

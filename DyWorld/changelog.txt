@@ -1,22 +1,25 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.8.0
+Version: 0.7.80
 Date: ??. 08. 2018
   Features:
     - Add specialised Ore Cracking Recipes. They are locked behind purple science, but give you the ability to get just one ore, instead of multiple
-  Balancing:
-    - Blue science pack require aluminium mining drill now. This requires more components, but less overal resources!
-    - Metallurgy and Modules settings removed. They are now part of the core of DyWorld!
-    - Reduced min range of turrets a lot
-  Materials System:
-    - 
-  Metallurgy:
-    - 
-  Chemistry:
-    - 
+  RPG:
+    - Bonuses and Attributes are now calculated every minute, instead of every second (it updated when the RPG Stats GUI refreshed in previous releases). Formula's became more complex, and updating every second lags the game insanely
+    - The RPG Stats GUI and Needs GUI now all update every 5 seconds, instead of every second (more checks added, increasing lag spikes on slower computers). 
+    - The Distance GUI now can only be opened when the RPG Stats GUI is closed! This fixes bouncing GUI's
+    - Most bonuses can only become active when certain conditions are met. Mostly levels, but some have a throshold in their corresponding statistic.
+    - Leveling is much easier in DyWorld now, to compensate for some bonuses being locked in levels beyond level 20
+    - A bit smaller text in all GUI's, so that it wont cover a huge part the screen. Size reduced by 15-20%
   Changes:
     - Removed seperate technologies of Modules, Tanks and Locomotives. THey are unlocked as a batch now
     - Removed stacksize multiplier from fluid wagon. Capacity is now set at 250k
-    - Removed unit increase from DyWorld Warfare difficulty. This was lagging the game extensively, especially on higher difficulty!
+    - Removed unit increase from DyWorld Warfare difficulty. This was lagging the game extensively, especially on higher difficulty! As compensation, health increases have become higher
+    - Blue science pack require aluminium mining drill now. This requires more components, but less overal resources!
+    - Metallurgy and Modules settings removed. They are now part of the core of DyWorld!
+    - Reduced min range of turrets a lot
+    - A lot better migration script, which doesnt result in increased stats (RPG wise) whenever a migration was done.
+    - Launching a satellite doesnt finish the game anymore. Now you have to launch the DTX-001 Spaceship.
+    - Launching with any item with a rocket doesnt bring up the message anymore that a satellite wasnt added
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.5
 Date: 06. 08. 2018

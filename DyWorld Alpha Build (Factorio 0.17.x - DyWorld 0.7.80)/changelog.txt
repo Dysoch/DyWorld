@@ -1,0 +1,450 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.7.80
+Date: ??. 08. 2018
+  Features:
+    - Add specialised Ore Cracking Recipes. They are locked behind purple science, but give you the ability to get just one ore, instead of multiple
+    - Ported to Factorio 0.17.x
+  RPG:
+    - Bonuses and Attributes are now calculated every minute, instead of every second (it updated when the RPG Stats GUI refreshed in previous releases). Formula's became more complex, and updating every second lags the game insanely
+    - The RPG Stats GUI and Needs GUI now all update every 5 seconds, instead of every second (more checks added, increasing lag spikes on slower computers). 
+    - The Distance GUI now can only be opened when the RPG Stats GUI is closed! This fixes bouncing GUI's
+    - Most bonuses can only become active when certain conditions are met. Mostly levels, but some have a throshold in their corresponding statistic.
+    - Leveling is much easier in DyWorld now, to compensate for some bonuses being locked in levels beyond level 20
+    - A bit smaller text in all GUI's, so that it wont cover a huge part the screen. Size reduced by 15-20%
+  Changes:
+    - Removed seperate technologies of Modules, Tanks and Locomotives. THey are unlocked as a batch now
+    - Removed stacksize multiplier from fluid wagon. Capacity is now set at 250k
+    - Removed unit increase from DyWorld Warfare difficulty. This was lagging the game extensively, especially on higher difficulty! As compensation, health increases have become higher
+    - Blue science pack require aluminium mining drill now. This requires more components, but less overal resources!
+    - Metallurgy and Modules settings removed. They are now part of the core of DyWorld!
+    - Reduced min range of turrets a lot
+    - A lot better migration script, which doesnt result in increased stats (RPG wise) whenever a migration was done.
+    - Launching a satellite doesnt finish the game anymore. Now you have to launch the DTX-001 Spaceship.
+    - Launching with any item with a rocket doesnt bring up the message anymore that a satellite wasnt added
+    - Removed Tiles for now
+    - Removed Enemies for now
+    - Removed quickbars
+---------------------------------------------------------------------------------------------------
+Version: 0.7.5
+Date: 06. 08. 2018
+  Features:
+    - Added Russian Translation. Made by EthereanOne and Anton. It is far from perfect, but acceptable
+    - Inserters can now be rotated to side loading. Similar functions to Side Inserters mod
+    - New chain for making batteries! Use conductive fluids to fill the battery with!
+    - Added back the preset map gen settings, with the correct ores set to it!
+    - Added infinite Inserter Capacity research. Every 2 levels increases non stack with 1, while every level increase stack inserter stacksize by 2
+    - Added infinite worker robot stack size. Increase your robot's carry size, one tech at a time
+  Balancing:
+    - Accumulators now hold 2.5x more charge
+    - Roboports hold a lot more energy, to prevent power loss at higher tiers with more charging slots
+    - Increased Fluid Wagon capacity to 250k, and will work with stack size increaser now as well.
+    - Recycler produces more pollution now
+    - Made recipes of Modules more diverse
+    - Made recipes of Labs more diverse
+    - Made recipes of Gun Turrets more diverse
+    - Steam Engines now have set fluid usage, making energy produced more sensible
+    - Storage Tanks now act as valves. This means that any connecting pipe that is an input into a tank has to be at least 80% full before it can fill the tank. Output is unchanged though. This feature can be override by adding a pump before going into tanks
+    - Added one way pipes! This will balance both output and input with each other, one way obviously. Will not start outputting till input is at least 10% full. Can be connected to circuit network to read pipe contents
+  Materials System:
+    - Gold now has 4x more conductivity
+  Metallurgy:
+    - Proper ore cleaning chunk recipes. All cleaning ores recipes now give a lot more variants of chunks
+    - Double Molten Iron cost of Molten Steel recipe
+    - Increased time it takes to melt an ore, and increased ore amount per recipe by 10, but gives 10 times more fluid as well. This will speed up the melting
+  Chemistry:
+    - Water can now be spliced and recombined
+    - Sulfiric Acid can now be spliced and recombined
+    - Lubricant can now be spliced and recombined
+    - Petroleum Gas can now be spliced and recombined
+    - Light Oil can now be spliced and recombined
+    - Heavy Oil can now be spliced and recombined
+  Changes:
+    - Changed order in which science packs are placed in menu
+    - All fluid entities (pumps, pipes, etc) now have their own row in the crafting menu's
+---------------------------------------------------------------------------------------------------
+Version: 0.7.4
+Date: 29. 07. 2018
+  Features:
+    - Metal Tiles now correctly colored. Spice up your world! (No High Res)
+    - Added high output clean water recipe. Locked behind Purple Science (Fluid Handling 4), but gives to you ability to create massive amounts of clean water
+    - Added new mod setting for multiplying science pack costs. This will only work on normal research! The tiered onces are not changed!
+  Balancing:
+    - Rock Boilers are 10x faster
+    - Chemistry Machines require less power
+  Materials System:
+    - Changed formula of Chests and Warehouses, they are better now and increase more fluent
+    - Formula of pumps pumping speed is now correct
+    - Added 2 new formula's: Mining Time and Mining Hardness. Used for taking down entities
+    - Changed Speed of repair packs formula
+    - Changed damage of mining axes formula
+    - Changed speed of mining axes formula
+    - Changed formula's of electric and burner mining drills
+    - Added a new entity: Pumpjacks
+    - Added description to inserters about their speed. This is still a WIP, and will be refined further
+    - Changed formula of inserters, and made them faster as well
+    - Underground Belts are now having less air resistance and thus are 15% faster then normal belts
+  Bugfixes:
+    - Fixed radars not showing area covered completely
+  Changes:
+    - Carbolycite has less hardness, but takes longer to mine
+    - Removed older migrations. Only migrations after 0.6.x stay for now
+    - Chemistry Recombining is now faster and it will give you 10 items or fluids now, for the price of 10x the atoms it requires (so no gain, just bigger output with bigger costs)
+    - Removed Substations, and recipes that used it will now use Copper Relay
+    - More changes to crafting menu grouping! Even nicer now
+---------------------------------------------------------------------------------------------------
+Version: 0.7.3
+Date: 25. 07. 2018
+  Features:
+    - Beacons can now be unlocked with Blue Science Packs
+    - Added a new entity to the Material System: Tiles! Made from metals only, can be used to place on the ground. GRAPHICS ARE TEMPORARY, Will be fixed next update!
+  Balancing:
+    - Reduced base arc of turrets: 75 > 70
+    - Bauxite is now richer and spawn slightly more
+  Materials System:
+    - Changed the formula for underground ranges of both Pipes and Belts
+    - Changed the formula for pipe capacity even further by improving it
+    - Changed the formula for Belt, Loader and Splitter speed. Much more flexible, and more balanced
+    - Changed the formula for shooting speeds of turrets
+    - Changed the formula for assembler speed
+    - Changed power output formula of solar panels and storage of accumulators
+    - When a material has 0 conductivity, it will have NO electric machines!!!!
+    - All previously placed electric machines that now have 0 Conductivity will be transfered to a material of the same tier that does have Conductivity
+    - Changed conductivity of Uranium to 0
+    - Changed conductivity of Stone to 0
+    - Changed conductivity of Obsidian to 0
+    - Massive power update! All power usage and production have been completely revamped to be better!
+    - Changed Tier of Iron and Copper: 2 > 1
+    - Recipes of Radars are now more diverse
+    - Recipes of Assembling Machines are now more diverse
+    - Changed formula for pumps pumping speed
+    - Changed formula of roboport ranges
+    - Power Relays now have a set max distance: 64 (max the game allows)
+    - Changed formula's of power poles and relays. Much more tiered, and not too big or too small anymore
+  Changes:
+    - Removed science fluid outputs of Space Science Packs
+    - Changed recipe of Space Packs
+    - Changed recipe of Blue Science Fluid to use Aluminium Storage Tank instead of Lithium Storage Tank
+    - Tier 6 research now uses Extra Solar Packs aswell
+    - Infinity lab renamed to Space Lab, and uses all science packs now
+    - Changed graphics of Methane Deposits slighty, so they are easier to spot
+    - Requester chest now unlocked with logistic robot 2 research
+  Warfare:
+    - Arachtoids are a bit stronger (± 25%)
+---------------------------------------------------------------------------------------------------
+Version: 0.7.2
+Date: 21. 07. 2018
+  Features:
+    - Added a new intermediate: Gunpowder. Used in all ammo related items now!
+    - Added a new recipe to create Acid
+  Balancing:
+    - Changed some recipes of ore cracking to be more random and recipes are quickers now
+    - Rock Boilers use slightly less power
+  Materials System:
+    - Changed Pipe capacity formula to be more flexible and accurate
+    - Changed Ranges of Ammo's and Turrets even better then in last updates. Much more accurate now
+    - Moved Chromium to higher tier. 2 > 3
+    - Moved Tungsten to higher tier. 2 > 3
+    - Added a new alloy: Lithium-Titaniate (tier 5)
+    - Added a new metal: Titanium (tier 3)
+    - Added a new metal: Lithium (tier 2)
+  Changes:
+    - Increased starting arc of turrets: 60 > 75 degrees
+    - Improved the item grouping even further. Materials are still locked together, but now grouped in 3 groups: Machines, Power and Transport. This will undergo even more changes soon
+    - Reduced Blast-furnace's input and output storage to 5 times recipes size
+    - Changed blue science pack to use lithium instead of tin and tin instead of chromium
+  Metallurgy:
+    - Added second recipe to get Molten Rock using sand, sludge and sulfur
+---------------------------------------------------------------------------------------------------
+Version: 0.7.1
+Date: 17. 07. 2018
+  Balancing:
+    - Changed some recipes of ore cracking to be more logical
+  Bugfixes:
+    - Fixed debug statement causing errors on a server
+---------------------------------------------------------------------------------------------------
+Version: 0.7.0
+Date: 16. 07. 2018
+  Features:
+    - Added new dynamic resistances for enemies. They scale up with higher and stronger units. They now truly get stronger and stronger the bigger they get.
+    - Loaders now snap to entities with inventories. Same functionality as DeadLockLoaders. (Taken with his permission, legal stuff can be found in legal folder inside zip folder)
+    - Added option to the manual crafting of circuit and pcb components. Enabled it will auto craft in inventory when a circuit is pressed. Remember, this requires more resources, and a restart of the game.
+    - Removed all special assemblers for coils, wires and pcb's and made 1 all purpose assembler. All old items and entities will migrate to new entity. Gear crafter is untouched
+    - Complete new layout in the crafting menu. This is still a work in progress, but shaping to be much nicer. For example, all iron related material items are now in the same group, so if you want something of iron, look there, instead of in each menu.
+    - Ores revamped. All ores have been removed! And now there are 7 ores, which holds the other ores. Ores can be seperated with the centrifuge (for now). RSO wont work yet, till its updated!
+  Materials System:
+    - Added a new item: Land Mines
+    - Added a new item: Rockets. They have AoE damage based on their tier
+    - Added a new armor: Modular Armors. Grid Space is based on the material's Hardness and Density. Provides NO inventory slot bonuses!
+    - Added a new entity: Module Beacons
+    - Added a new entity: Armored Cars
+    - Added a new entity: Armored Tanks
+    - Moved Rubber to higher tier. 1 > 3
+    - Moved Uranium to higher tier. 2 > 4
+    - Moved Obsidian to higher tier. 1 > 2
+  Chemistry:
+    - Add the ability to recombine into certain compounds. 
+    - Made recipes round their numbers better, so that it is more accurate numbers.
+    - Sludge Water can now be spliced and recombined.
+  Changes:
+    - Added new license! Went to GNU GPL v3 to allow me, and others, to use code from others and share more freely among each other
+    - Made the spawned rocks have the correct hardness
+    - Disabled Level Unlocks till further notice (will be revamped in 0.8.x)
+    - Centrifuge now available from the start
+    - Science packs can no longer be used with productivity modules 
+    - Productivity Modules work with a lot of DyWorld intermediate recipes now
+    - Made recipe of Yellow Science Fluid a lot harder, while increasing the amount of fluid you get
+    - Changed max fluid input of Forge and Centrifuge to 2 times recipe size.
+    - Forge now only has 1 input slot, which should fix module issue
+    - Removed Rubber Burner and Electric Drills. They were too OP!
+    - Added couple of new recipes to help out with higher tiers of automation
+  Graphics:
+    - Added new loader, transport belt and underground belt graphics made by Deadlock989. Taken from https://mods.factorio.com/mod/DeadlockLoaders with approval.
+  Balancing:
+    - Recombiner and Splicer now have much lower pollution output (1/50th to be exact)
+    - Increased Electric Mining drills mining power. They are now 50% more powerful
+    - DyWorld Locomotives now have a Grid Space for use of different equipments.
+    - Molten Rock and Molten Glass recipe can now be productivity moduled
+    - Molten rock heating is 50% more effective and 200% faster
+    - Pipes are now tiered. Meaning that higher tiers have LOWER capacity, thus increasing flow and being overal better.
+    - Completely redid the calculations for ammo's. ITs now much more tier based, and a lot more buffed!
+  Bugfixes:
+    - Fixed exploit of mining a chest with 100k items increasing you mined stat and thus making you super powerful quickly
+    - Fixed wooden solar equipment being available from the start
+    - Fixed productivity modules be able to be used on everything
+  Warfare:
+    - Added first 30 enemies (total now 50)! Fuerion, Zaptoid and Radicus! They spawn like the normal spawners, with base game generation.
+---------------------------------------------------------------------------------------------------
+Version: 0.6.5
+Date: 07. 04. 2018
+  Features:
+    - Launching a rocket with certain electric mining drills give resources. This always has a chance for stone, coal and sand, and depending on the mining drill material, will give its respective ore.
+    - Added PvP Scenario. All modules must be enabled, and the PvP option at the startup options must be enabled!
+  Changes:
+    - Most wooden items should be burnable in boilers now.
+  Bugfixes:
+    - Fixed Turrets switching directions when they shouldnt
+---------------------------------------------------------------------------------------------------
+Version: 0.6.4
+Date: 19. 03. 2018
+  Features:
+    - Added a new resistance type: Radiation
+    - Made Ammo damage more realistic. Impact Damage first, then the materials damage type. Lead and Uranium have different damage types then the rest
+  Bugfixes:
+    - Fixed tungsten requiring unknown key: dyworld-hydrogen. it now requires the correct fluid which is obtainable. 
+---------------------------------------------------------------------------------------------------
+Version: 0.6.3
+Date: 11. 03. 2018
+  Bugfixes:
+    - Fixed issue with character logistics slots research and the bug that followed
+---------------------------------------------------------------------------------------------------
+Version: 0.6.2
+Date: 08. 03. 2018
+  Features:
+    - Added new intermediates: Gears, Wires, Coils and PCB's of every metal. Hand crafting is expensive and requires you to manually craft them. Craft them with the specialised assemblers for way better ratio's
+    - The first new recipes for Circuits. This is currently under testing, but should be balanced (any feedback is welcome)
+    - Added a stacksize increaser. Defaults to 1, but can be as high as you want it with a max of 5000 times the current stacksize (multiplier)
+    - Dont like finite ores? Well now you can switch everything to infinite if you so wish. Check mod options to enable it
+    - Added an option to unhide hidden recipes. Disable to see those recipes, but it will make your crafting windows a lot bigger! Use it to see ratio's and where to craft them
+    - Added 2 new labels in the stats window (Numpad 7). Current Evolution in % and how much research is done (%). The research done label are milestones, which will be used for enemy generation in later updates
+    - Added an interactive guide. This currently only works for the first part of the game, but will be greatly expanded
+    - Added a new bonus! Logistic slots now automatically unlock when you get stronger and faster!
+    - Increased amount of robot battery research pre-infinite
+  Chemistry:
+    - Added first iteration of Chemistry. You can make certain elements from Atoms, and splice certain elements and compounds into Atoms
+  Materials System:
+    - Added a new material: Uranium. Smelt Uranium in a furnace to get its plate form
+    - Added a new entity: Radars (Warfare)
+  Warfare:
+    - Added the first 20 enemies: Arachtoid and Cuspira (remade from the base game, with slightly different hp and attacks) The later ones that spawn are HUGE!
+  Changes:
+    - Turrets should be prepared to fire at less range now, making them slightly more effective.
+    - Reduced inventory slot bonuses to 250 slots total. At 500 slots it bugs out the crafting menu's. Should be fixed now
+    - Moved burner inserter to DyWorld Inserter tab
+  Balancing:
+    - Made Advanced Water Centrifuging recipe correct as it should be. Gives now H20 instead of HO2
+    - Fluids have different pressure rates now. Gases flow quick, while molten metals and sludge are super slow
+    - Decrease power production of steam engines by 90% (its now 1/10th of what it was)
+    - Increased rubber underground transport range: 2 > 6
+    - Increased roboport charging by 5 times
+    - Pumps are pumping faster depending on which tier it is. Super Alloys Pumps pump 6 times faster now!
+  Bugfixes:
+    - Fixed placement issues with offshore pumps. Should be visible where to place now, and fixed collision and selection boxes
+    - Fixed Cliff Explosives not being able to be crafted and not being able to hit cliffs
+    - Fixed Artillery Shells not being able to be crafted
+    - Fixed Artillery Wagon not being able to be crafted
+    - Fixed Buffer Chest not being able to be crafted
+    - Fixed mining drills that offload to quick as much as possible. Some will have a warning label when speed is high. Please be cautious then!
+    - Fixed quickbars resetting when migrating to a newer version
+    - Fixed error when loot pickup range bonus is above 320. Now maxed at 322
+  Compatibility:
+    - First iteration of DyComPa (DyWorld Compatibilty Patcher) This is make other mods work better with DyWorld! This will automatically change recipes in other mods to use DyWorld's items. Works with MOST mods! All mods are automatically changed accordingly to what is enabled in DyWorld, and is removed.
+    - If a mod still seems broken, use Discord server:
+    - https://discord.gg/yR5vBWy (head to mod compatibility suggestions channel)
+---------------------------------------------------------------------------------------------------
+Version: 0.6.1
+Date: 06. 01. 2018
+  Features:
+    - Added technologies to improve your batteries of worker robots
+    - Added a minigun, fires 120 shots per second!
+  Materials System:
+    - Added all modules to the Material System
+    - Added normal armor to the Material System
+    - Added steam engines to the Material System
+    - Added Solar Panel Equipment to the Material System
+    - Changed the way the system is populated with materials. Chitin only shows up when Warfare is enabled, and all alloys (except steel) will only show up when Metallurgy is enabled. This is done so the screen will not be filled a lot when certain modules are disabled
+  Changes:
+    - Removed old DyWorld Modules 
+    - Disabled Base Game Modules
+    - Added advanced and super lubricant for use in the transport belts (transport belts with speeds above 100 use super lubricant, above 50 use advanced lubricant and above 25 use lubricant)
+  Balancing:
+    - Changed smelting times of clean and dirty ores. Clean ores should smelt quicker now
+  Bugfixes:
+    - Fixed bug with science fluid recipes when metallurgy was disabled
+---------------------------------------------------------------------------------------------------
+Version: 0.6.0
+Date: 14. 12. 2017
+  Notes:
+    - This has been released quick to get you guys playing on Factorio 0.16! Certain things are unfinished, or still require some polishing. 
+    - VERY IMPORTANT NOTE: OLD MAPS MIGHT NOT WORK!!!!
+  Warfare:
+    - Added a difficulty setting. This changes a lot of things like spawn rates, health etc. Can be changed in the option menu
+  Metallurgy:
+    - Added Dirty Ores, Clean Ores and Ore Chunks
+  Materials System:
+    - Added a hard limit for max range of ammo and turrets (250) to not break the game. Super Alloys will always stay at max 250 range (or lower if their properties let it)
+    - Added a hard limit for Power Pole/Relay range, which is 64 (base game wont allow for higher)
+    - Added Loaders to the Material System
+    - Added Chitin usable for the Material System
+    - Added Armor Plated Locomotives for the Material System
+  Graphics:
+    - New graphics for a few items, technologies and entities (thanks to a player)
+    - New High Res graphics when available from the base game
+  Balancing:
+    - Made Piercing Ammo 2 times more powerful
+  Changes:
+    - Ported to Factorio 0.16.x
+    - Changed GUI Setup
+    - GeoDrill now gives ore chunks instead of normal ore
+    - Sludge processing gives ore chunks instead of normal ore
+  Bugfixes:
+    - Fixed Piercing Shotgun Shells being usable only in normal Guns
+---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+Date: 30. 11. 2017
+  Major Features:
+    - Added last 3 resources: Aluminium, Zinc and Nickel
+    - Added in first Super Alloy: Stainless-Copilinvar-Tungstate
+  Balancing:
+    - Changed Elinvar to also use Nickel like it should
+  Changes:
+    - Removed Cadmium Ore, but replaced it with Zinc Ore
+    - Removed a few items from recipes that arent used anymore and could not be crafted because of their items not being unlocked
+  Bugfixes:
+    - Fixed Alloy recipes not unlocking
+---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: 28. 11. 2017
+  Major Features:
+    - Added a GeoDrill, this will mine underground for those hard to reach resources
+    - Added 6 alloys! Billon, Stainless Steel, Bronze, Elinvar, Copper-Tungsten and Copper-Hydride are now usable!
+    - Massive change to science packs. You create a fluid first, and then bottle it with glass to create the science pack. Simple to use, hard to master! 
+    - Added in tiered labs. The first lab can only use red packs, second one red and green etc. 7 labs total, with the last one capable of using all science packs. Each has to be research after you get the new science pack it will use. The better variants research faster though
+    - Material System consists now of 20 materials instead of the previous 12! Expect a lot of items to play around with!
+  Features:
+    - Added Burner Mining Drills that use the Material System (only basic and primitive materials can be made)
+    - Added Repair Packs that use the Material System
+    - Added Chests (Normal and Warehouses) that use the Material System
+    - Added Cannon Shells and Explosive Cannon Shells using the Material System
+    - Added Cannon Turrets that use the Material System
+    - Added Walls that use the Material System
+    - Added Grenades and Cluster Grenades that use the Material System
+    - Added Conductivity to the Material System Properties. Used in anything that uses or creates energy!
+    - Added Tungsten and Cadmium resources. 
+  Minor Features:
+    - Moved Solar Panels to use the Material System
+    - Moved Accumulators to use the Material System
+    - Moved Mining Tools to use the Material System
+    - Moved Electric Mining Drills to use the Material System
+    - Moved Assembling Machines to use the Material System
+    - Moved Roboports to use the Material System. Higher "tiers" have more charging slots
+    - Moved Construction Robots to use the Material System
+    - Moved Logistic Robots to use the Material System
+    - Added more technologies of a lot of techs. Used to unlock different tiers of the Material System
+    - Added in 7 new intermediates
+    - Added the mining speed bonus back in into the bonuses system so the beginning game can get a bit better
+  Balancing:
+    - Increased all DyWorld Ores richness by 5x
+    - Major Rebalancing of the Metallurgic System. Recipes changed, techs changed everything! All done to accomodate alloys!
+    - Major balancing of recipes, health, ammo and pretty much everything
+  Changes:
+    - Because of Conductivity add, Power Poles and Relays have been changed, drastically. Stone and Rubber are not conductive, so they no longer exist!
+    - Added in a tech for steam engines. Moved the steam engines to that tech. No longer can you use steam in the beginning of the game. You can use the makeshift wooden solar panels and accumulators in the beginning for power
+    - Split the DyWorld Logistic tab into 2 tabs. One holds all moving parts, the other chests, robots etc
+---------------------------------------------------------------------------------------------------
+Version: 0.4.2
+Date: 16. 11. 2017
+  Major Features:
+    - Change of the Formula's in preparations for 0.5.0 and alloys. All Transport Belts have different speeds now!
+  Bugfixes:
+    - Fixed Crash To Desktop issue with power poles and relays
+    - Unlocked recipe for stone bricks and obsidian for the Forge
+---------------------------------------------------------------------------------------------------
+Version: 0.4.1
+Date: 15. 11. 2017
+  Features:
+    - Added 2 new materials to the Material System: Rubber and Obsidian
+  Minor Features:
+    - Added a way to smelt stone bricks and obsidian using molten rock
+  Changes:
+    - Moved inserters to their own tab in the crafting window to make the crafting screen a bit smaller
+  Bugfixes:
+    - Fixed inserters not being able to be blueprinted
+---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 13. 11. 2017
+  Major Features:
+    - Added the Material System. This governs materials and their properties. Currently 10 different materials
+    - Added Metallurgy. The process to refine ore into plates using liquids. This can happen for: Iron, Copper, Steel, Tin, Lead, Silver, Chromium and Gold
+  Features:
+    - Added Inserters (6 types), Transport Belts (normal, underground and splitters), Pumps (offshore and inline), Power Poles (poles and relays), Ammo (basic and shotgun. Normal and piercing for both), Turrets (gun, shotgun, laser and laser shotgun) to the game using the Material System. (resulting in 190 new items and entities!!!!)
+    - Added 5 new resources (Tin, Lead, Silver, Chromium and Gold)
+    - Added 18 new roboports
+    - 36 Electric Drills. This is temporary, and will move to the Material System soon
+  Minor Features:
+    - Added Recycler. This recycles everything (including fluids) into sludge
+  Balancing:
+    - Changed centrifuge. Now available earlier and cheaper so you can use it for the new recipes
+    - Changed recipes of a lot of the base games items, and disabled a few
+---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 10. 10. 2017
+  Minor Features:
+    - Added back intermediates, with a few new ones
+  Balancing:
+    - Added in correct recipes for all items and entities
+  Changes:
+    - Level System: Starting level is now level 1
+    - Level System: leveling is now slower. XP needed for level 2 is now between 100 and 200 instead of 100 (its randomized at the moment of your characters creation (aka joining or starting game)
+    - Level System: XP needed for next level is now random. Somewhere between 125% and 225% of previous level. No 2 levels are the same increase or 2 games are the same
+    - Bonuses: Now available from the start instead of level 5
+    - Bonuses: Crafting speed bonus increases much slower
+    - Changed the way recipes are handled. This makes it easier to add correct recipes and balance them
+  Bugfixes:
+    - Fixed Level up when player wasnt playing on server but still leveled up.
+    - Fixed getting XP when everybody gets XP, even dead players. Now only those alive get XP
+    - Fixed advanced steel axe research cluttering the technology screen
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 8. 10. 2017
+  Major Features:
+    - Completely new setup and rewrite
+  Features:
+    - New level mechanic. still in WIP state, but will be used for unlocks, bonuses and more
+    - Needs system. Still under construction, but working already a bit (at least the losing hunger and thirst stats) Currently off normally, since doenst add any gameplay yet that works like it should
+    - Tiered Entites and Items: because of the rewrite, i changed the setup how this is done. It is still in its early stages, but works fine. It adds 9 tiers of multiple machines and items with technologies and graphicals automatically. Currently supported: Assembling Machines, Solar Panels, Accumulators, Logistics Bots, Construction Bots, Mining Tools. (recipes are currently not good. Will be fixed in 0.3.1 update!)
+  Minor Features:
+    - Added a distance window. This works with the map tags you make on the map screen, but also helps you find the shipwrecks
+  Changes:
+    - Improved Statistics and Level window
+    - Shipwrecks are now closed but way more random. One can be close to you, while other 2 are 500 meters away.
+    - Loads of changes in the scripts to make everything more fluent. Including, but not limited to, refreshing stats window (every sec), better calculations and much more

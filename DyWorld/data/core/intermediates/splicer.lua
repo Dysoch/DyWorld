@@ -185,7 +185,7 @@ data:extend(
     type = "item",
     name = dy.."splicer",
     icon = "__base__/graphics/icons/electric-furnace.png",
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."assembling-special-chemistry",
     order = dy.."splicer",
     place_result = dy.."splicer",

@@ -3,6 +3,7 @@ Version: 0.7.80
 Date: ??. 08. 2018
   Features:
     - Add specialised Ore Cracking Recipes. They are locked behind purple science, but give you the ability to get just one ore, instead of multiple
+    - Ported to Factorio 0.17.x
   RPG:
     - Bonuses and Attributes are now calculated every minute, instead of every second (it updated when the RPG Stats GUI refreshed in previous releases). Formula's became more complex, and updating every second lags the game insanely
     - The RPG Stats GUI and Needs GUI now all update every 5 seconds, instead of every second (more checks added, increasing lag spikes on slower computers). 
@@ -20,6 +21,9 @@ Date: ??. 08. 2018
     - A lot better migration script, which doesnt result in increased stats (RPG wise) whenever a migration was done.
     - Launching a satellite doesnt finish the game anymore. Now you have to launch the DTX-001 Spaceship.
     - Launching with any item with a rocket doesnt bring up the message anymore that a satellite wasnt added
+    - Removed Tiles for now
+    - Removed Enemies for now
+    - Removed quickbars
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.5
 Date: 06. 08. 2018

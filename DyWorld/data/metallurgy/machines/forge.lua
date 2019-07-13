@@ -176,7 +176,7 @@ data:extend(
     type = "item",
     name = dy.."forge",
     icon = "__base__/graphics/icons/electric-furnace.png",
-    flags = {"goes-to-quickbar"},
+	flags = {},
 	subgroup = dy.."metal-machines",
     order = dy.."forge",
     place_result = dy.."forge",

@@ -99,7 +99,7 @@ data:extend(
 		tint = Color_Tier[3]
 	  },
 	},
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."metal-machines",
     order = "washer",
     place_result = dy.."washer",

@@ -7,7 +7,6 @@ local StackSizes = {
 	{Name = "steel-plate", Amount = 200, Type = "item"},
 	{Name = "stone", Amount = 200, Type = "item"},
 	{Name = "wood", Amount = 200, Type = "item"},
-	{Name = "raw-wood", Amount = 200, Type = "item"},
 	{Name = "coal", Amount = 200, Type = "item"},
 	{Name = "pipe", Amount = 200, Type = "item"},
 	{Name = "pipe-to-ground", Amount = 200, Type = "item"},
@@ -34,18 +33,18 @@ data.raw.item["copper-ore"].localised_name = {"edits-name.copper-ore"}
 data.raw.item["iron-plate"].localised_name = {"edits-name.iron-plate"}
 data.raw.item["copper-plate"].localised_name = {"edits-name.copper-plate"}
 
-data.raw.tool["science-pack-1"].subgroup = dy.."science-tool"
-data.raw.tool["science-pack-2"].subgroup = dy.."science-tool"
-data.raw.tool["science-pack-3"].subgroup = dy.."science-tool"
+data.raw.tool["automation-science-pack"].subgroup = dy.."science-tool"
+data.raw.tool["logistic-science-pack"].subgroup = dy.."science-tool"
+data.raw.tool["chemical-science-pack"].subgroup = dy.."science-tool"
 data.raw.tool["military-science-pack"].subgroup = dy.."science-tool"
 data.raw.tool["production-science-pack"].subgroup = dy.."science-tool"
-data.raw.tool["high-tech-science-pack"].subgroup = dy.."science-tool"
-data.raw.tool["science-pack-1"].order = "01"
-data.raw.tool["science-pack-2"].order = "02"
-data.raw.tool["science-pack-3"].order = "04"
+data.raw.tool["utility-science-pack"].subgroup = dy.."science-tool"
+data.raw.tool["automation-science-pack"].order = "01"
+data.raw.tool["logistic-science-pack"].order = "02"
+data.raw.tool["chemical-science-pack"].order = "04"
 data.raw.tool["military-science-pack"].order = "03"
 data.raw.tool["production-science-pack"].order = "05"
-data.raw.tool["high-tech-science-pack"].order = "06"
+data.raw.tool["utility-science-pack"].order = "06"
 
 data.raw.item["electronic-circuit"].subgroup = dy.."circuit-04-circuits"
 data.raw.item["electronic-circuit"].order = "01"

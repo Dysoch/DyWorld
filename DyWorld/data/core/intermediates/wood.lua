@@ -13,7 +13,7 @@ data:extend(
       {type = "fluid", name = "water", amount = 10},
       {type = "item", name = dy.."wood-seed", amount = 1},
     },
-    result = "raw-wood",
+    result = "wood",
 	result_count = 3,
   },
   {
@@ -27,7 +27,7 @@ data:extend(
       {type = "fluid", name = dy.."fertilized-water", amount = 10},
       {type = "item", name = dy.."wood-seed", amount = 1},
     },
-    result = "raw-wood",
+    result = "wood",
 	result_count = 5,
   },
 })

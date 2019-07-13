@@ -80,8 +80,8 @@ data:extend(
     pollution_to_join_attack = ((v.Pollution_to_Join_Attack_Base * index) * index),
     corpse = dy..k.."-"..index.."-corpse",
     dying_explosion = "blood-explosion-small",
-    working_sound = make_biter_calls(0.4),
-    dying_sound = make_biter_dying_sounds(0.5),
+    --working_sound = make_biter_calls(0.4),
+    --dying_sound = make_biter_dying_sounds(0.5),
     run_animation = DyWorld_biterrunanimation((0.25 * index), v.Tint_1, v.Tint_2)
   },
   {
@@ -144,8 +144,8 @@ data:extend(
     pollution_to_join_attack = ((v.Pollution_to_Join_Attack_Base * index) * index),
     corpse = dy..k.."-"..index.."-corpse",
     dying_explosion = "blood-explosion-small",
-    working_sound = make_biter_calls(0.4),
-    dying_sound = make_biter_dying_sounds(0.5),
+    --working_sound = make_biter_calls(0.4),
+    --dying_sound = make_biter_dying_sounds(0.5),
     run_animation = DyWorld_spitterrunanimation((0.25 * index), v.Tint_1)
   },
   {
@@ -201,10 +201,10 @@ data:extend(
               }
             }
           },
-          {
+          --[[{
             type = "create-entity",
             entity_name = "acid-splash-purple"
-          },
+          },]]--
           {
             type = "damage",
             damage = {amount = (v.Attack_DMG_Base * index), type = v.Attack_DMG_Type}

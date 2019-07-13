@@ -88,7 +88,7 @@ data:extend(
     name = dy.."grinder",
     icon = dyworld_path_icon.."greenhouse.png",
 	icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = dy.."assembling-special",
     order = dy.."grinder",
     place_result = dy.."grinder",

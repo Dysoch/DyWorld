@@ -7,7 +7,7 @@ function DyWorld_Item_Plate_Start(DATA)
     type = "item",
     name = DATA.."-plate",
 	icon = dyworld_path_icon.."plate/"..DATA..".png",
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = dy.."metal-2-plate",
     stack_size = 200,
 	order = DATA,

@@ -9,7 +9,7 @@ data:extend(
 	localised_name = {"looped-name.tank-machine-gun", {i}},
     icon = "__base__/graphics/icons/submachine-gun.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = "gun",
     order = "a[basic-clips]-b[tank-machine-gun]",
     attack_parameters =
@@ -43,7 +43,7 @@ data:extend(
 	localised_name = {"looped-name.tank-shotgun", {i}},
     icon = "__base__/graphics/icons/shotgun.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = "gun",
     order = "a[basic-clips]-b[tank-machine-gun]",
     attack_parameters =
@@ -77,7 +77,7 @@ data:extend(
 	localised_name = {"looped-name.tank-flamethrower", {i}},
     icon = "__base__/graphics/icons/flamethrower.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = "gun",
     order = "b[flamethrower]-b[tank-flamethrower]",
     attack_parameters =
@@ -123,7 +123,7 @@ data:extend(
 	localised_name = {"looped-name.tank-cannon", {i}},
     icon = "__base__/graphics/icons/tank-cannon.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = "gun",
     order = "z[tank]-a[cannon]",
     attack_parameters =
@@ -151,7 +151,7 @@ data:extend(
 	localised_name = {"looped-name.tank-rocket-launcher", {i}},
     icon = "__base__/graphics/icons/rocket-launcher.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = "gun",
     order = "z[tank]-a[cannon]",
     attack_parameters =
@@ -185,7 +185,7 @@ data:extend(
 	localised_name = {"looped-name.tank-artillery"},
     icon = "__base__/graphics/icons/tank-cannon.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = "gun",
     order = "z[artillery]-a[cannon]",
     attack_parameters =

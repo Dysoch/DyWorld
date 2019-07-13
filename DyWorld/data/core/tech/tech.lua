@@ -259,7 +259,7 @@ local Data_Table = {
 	{
 		Name = "electric-energy-accumulators-2",
 		Icon = {{icon = "__base__/graphics/technology/electric-energy-acumulators.png"}},
-		Pre_Req = {"electric-energy-accumulators-1"},
+		Pre_Req = {"electric-energy-accumulators"},
 		Tech_Ingredients = 3,
 		Count = 250,
 		Military = false,
@@ -758,7 +758,7 @@ local Data_Table = {
 		Military = false,
 	},
 	{
-		Name = "stone-walls-1",
+		Name = "stone-walls-2",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
 		Pre_Req = {"stone-walls", "primitive-armor"},
 		Tech_Ingredients = 2,
@@ -766,41 +766,41 @@ local Data_Table = {
 		Military = false,
 	},
 	{
-		Name = "stone-walls-2",
+		Name = "stone-walls-3",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-1", "basic-armor"},
+		Pre_Req = {"stone-walls-2", "basic-armor"},
 		Tech_Ingredients = 2,
 		Count = 150,
 		Military = true,
 	},
 	{
-		Name = "stone-walls-3",
+		Name = "stone-walls-4",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-2", "simple-alloy-armor"},
+		Pre_Req = {"stone-walls-3", "simple-alloy-armor"},
 		Tech_Ingredients = 3,
 		Count = 250,
 		Military = true,
 	},
 	{
-		Name = "stone-walls-4",
+		Name = "stone-walls-5",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-3", "alloy-armor"},
+		Pre_Req = {"stone-walls-4", "alloy-armor"},
 		Tech_Ingredients = 4,
 		Count = 600,
 		Military = true,
 	},
 	{
-		Name = "stone-walls-5",
+		Name = "stone-walls-6",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-4", "complex-alloy-armor"},
+		Pre_Req = {"stone-walls-5", "complex-alloy-armor"},
 		Tech_Ingredients = 5,
 		Count = 1500,
 		Military = true,
 	},
 	{
-		Name = "stone-walls-6",
+		Name = "stone-walls-7",
 		Icon = {{icon = "__base__/graphics/technology/stone-walls.png"}},
-		Pre_Req = {"stone-walls-5", "super-alloy-armor"},
+		Pre_Req = {"stone-walls-6", "super-alloy-armor"},
 		Tech_Ingredients = 6,
 		Count = 5000,
 		Military = true,
@@ -1100,22 +1100,22 @@ data:extend(
   },
 })
 	if v.Tech_Ingredients == 1 then
-		local results = {{"science-pack-1", 1}}
+		local results = {{"automation-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 2 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 3 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 4 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 5 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 6 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 5}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1},{dy.."extra-solar-science-pack", 5}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	end
 	if v.Military then
@@ -1130,5 +1130,5 @@ end
 local add = "primitive-armor"
 table.insert(data.raw.technology["railway"].prerequisites, add)
 
-local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
 data.raw.technology["effect-transmission"].unit.ingredients = results

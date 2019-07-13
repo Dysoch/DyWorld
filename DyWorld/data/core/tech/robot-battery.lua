@@ -20,8 +20,8 @@ data:extend
       count_formula = "100*L",
       ingredients =
       {
-        {"science-pack-1", 1},
-        {"science-pack-2", 1},
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
       },
       time = 30
     },
@@ -47,9 +47,9 @@ data:extend
       count_formula = "150*L",
       ingredients =
       {
-        {"science-pack-1", 2},
-        {"science-pack-2", 1},
-        {"science-pack-3", 1},
+        {"automation-science-pack", 2},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
       },
       time = 45
     },
@@ -75,9 +75,9 @@ data:extend
       count_formula = "200*L",
       ingredients =
       {
-        {"science-pack-1", 3},
-        {"science-pack-2", 1},
-        {"science-pack-3", 1},
+        {"automation-science-pack", 3},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
         {"production-science-pack", 1},
       },
       time = 60
@@ -104,11 +104,11 @@ data:extend
       count_formula = "250*L",
       ingredients =
       {
-        {"science-pack-1", 4},
-        {"science-pack-2", 1},
-        {"science-pack-3", 1},
+        {"automation-science-pack", 4},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
         {"production-science-pack", 1},
-        {"high-tech-science-pack", 1},
+        {"utility-science-pack", 1},
       },
       time = 60
     },
@@ -134,11 +134,11 @@ data:extend
       count_formula = "300*L",
       ingredients =
       {
-        {"science-pack-1", 5},
-        {"science-pack-2", 2},
-        {"science-pack-3", 1},
+        {"automation-science-pack", 5},
+        {"logistic-science-pack", 2},
+        {"chemical-science-pack", 1},
         {"production-science-pack", 1},
-        {"high-tech-science-pack", 1},
+        {"utility-science-pack", 1},
         {"space-science-pack", 1},
       },
       time = 60

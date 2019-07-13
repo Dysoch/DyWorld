@@ -91,7 +91,7 @@ end
 -- More techs
 require("data.core.tech.worker-storage")
 require("data.core.tech.inserter")
-require("data.core.tech.toolbelt")
+--require("data.core.tech.toolbelt")
 require("data.core.tech.robot-battery")
 
 -- Fluid System

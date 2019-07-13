@@ -47,4 +47,4 @@ if settings.startup["DyWorld_Chemistry"].value then
 	require("data.chemistry.data")
 end
 
-require("data.decor.data")
+--require("data.decor.data")

@@ -19,7 +19,7 @@ for k,v in pairs(Material_Table) do
 				tint = Material_Colors[v.Table],
 			  },
 			},
-			flags = {"goes-to-main-inventory"},
+			flags = {},
 			subgroup = dy.."circuit-01-cables",
 			stack_size = 200,
 			order = v.Name,

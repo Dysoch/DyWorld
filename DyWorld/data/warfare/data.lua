@@ -1,7 +1,7 @@
 
 
 
-require("data.warfare.edits.entities")
+--require("data.warfare.edits.entities")
 require("data.warfare.edits.items")
 require("data.warfare.edits.recipes")
 
@@ -27,5 +27,5 @@ require("data.warfare.turrets.bullet")
 require("data.warfare.turrets.laser")
 require("data.warfare.turrets.grenade")
 
-require("data.warfare.enemies.units")
-require("data.warfare.enemies.spawner")
+--require("data.warfare.enemies.units")
+--require("data.warfare.enemies.spawner")

@@ -15,7 +15,7 @@ for k,v in pairs(Material_Table) do
 				tint = Material_Colors[v.Table],
 			  },
 			},
-			flags = {"goes-to-main-inventory"},
+			flags = {},
 			subgroup = dy.."metal-1-pebble",
 			stack_size = 500,
 			order = v.Name,

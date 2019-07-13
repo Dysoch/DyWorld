@@ -445,7 +445,7 @@ data:extend(
 	type = "item",
     name = dy.."rock-boiler-1000",
     icon = "__base__/graphics/icons/boiler.png",
-	flags = {"goes-to-quickbar"},
+	flags = {},
 	order = dy.."1000-rock-boiler",
 	place_result = dy.."rock-boiler-1000",
 	stack_size = 50,

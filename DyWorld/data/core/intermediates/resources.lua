@@ -134,7 +134,7 @@ local function DyWorld_Technology_1(DATA)
       count = math.floor(50 * DATA.Mining_Hardness),
       ingredients =
       {
-		{"science-pack-1", 1},
+		{"automation-science-pack", 1},
       },
       time = 15
     },

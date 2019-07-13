@@ -14,7 +14,7 @@ data:extend(
     icon = "__base__/graphics/icons/fusion-reactor-equipment.png",
 	icon_size = 32,
     placed_as_equipment_result = dyworld_debug_prefix.."fusion-equipment",
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = dyworld_prefix.."debug",
     order = "x",
     stack_size = 100000
@@ -25,7 +25,7 @@ data:extend(
     icon = "__base__/graphics/icons/energy-shield-equipment.png",
 	icon_size = 32,
     placed_as_equipment_result = dyworld_debug_prefix.."shield-equipment",
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = dyworld_prefix.."debug",
     order = "x",
     stack_size = 100000
@@ -36,7 +36,7 @@ data:extend(
     icon = "__base__/graphics/icons/battery-equipment.png",
 	icon_size = 32,
     placed_as_equipment_result = dyworld_debug_prefix.."battery-equipment",
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = dyworld_prefix.."debug",
     order = "x",
     stack_size = 100000
@@ -47,7 +47,7 @@ data:extend(
     icon = "__base__/graphics/icons/personal-laser-defense-equipment.png",
 	icon_size = 32,
     placed_as_equipment_result = dyworld_debug_prefix.."laser-defense-equipment",
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = dyworld_prefix.."debug",
     order = "x",
     stack_size = 100000
@@ -58,7 +58,7 @@ data:extend(
     icon = "__base__/graphics/icons/exoskeleton-equipment.png",
 	icon_size = 32,
     placed_as_equipment_result = dyworld_debug_prefix.."exoskeleton-equipment",
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = dyworld_prefix.."debug",
     order = "x",
     stack_size = 100000
@@ -69,7 +69,7 @@ data:extend(
     icon = "__base__/graphics/icons/personal-roboport-equipment.png",
 	icon_size = 32,
     placed_as_equipment_result = dyworld_debug_prefix.."roboport-equipment",
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     subgroup = dyworld_prefix.."debug",
     order = "x",
     stack_size = 100000
@@ -113,7 +113,7 @@ data:extend(
       buffer_capacity = "20PJ",
       input_flow_limit = "200PW",
       output_flow_limit = "200PW",
-      usage_priority = "terciary"
+      usage_priority = "tertiary"
     },
     categories = {"armor"}
   },

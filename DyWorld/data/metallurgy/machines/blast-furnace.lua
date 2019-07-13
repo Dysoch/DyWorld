@@ -119,7 +119,7 @@ data:extend(
 	type = "item",
     name = dy.."blast-furnace",
 	icon = dyworld_path_icon.."blast-furnace.png",
-	flags = {"goes-to-quickbar"},
+	flags = {},
 	order = dy.."blast-furnace",
 	place_result = dy.."blast-furnace",
 	stack_size = 50,

@@ -185,7 +185,7 @@ data:extend(
     type = "item",
     name = dy.."recycler",
     icon = "__base__/graphics/icons/electric-furnace.png",
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."assembling-special-recycler",
     order = dy.."recycler",
     place_result = dy.."recycler",

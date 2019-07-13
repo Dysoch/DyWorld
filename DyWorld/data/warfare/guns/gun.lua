@@ -5,7 +5,7 @@ data:extend(
     name = dy.."minigun",
     icon = "__base__/graphics/icons/submachine-gun.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "gun",
     order = "a[basic-clips]-c[minigun]",
     attack_parameters =

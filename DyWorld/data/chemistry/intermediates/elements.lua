@@ -10,7 +10,7 @@ for k,v in pairs(Solids) do
 			name = v.Name,
 			icon = dyworld_path_icon_temp,
 			icon_size = 32,
-			flags = {"goes-to-quickbar"},
+			flags = {},
 			subgroup = dy.."pt-hidden",
 			order = v.Name,
 			stack_size = 200

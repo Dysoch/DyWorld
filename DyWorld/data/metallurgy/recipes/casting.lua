@@ -37,7 +37,7 @@ for k,v in pairs(Material_Table) do
 			unit =
 			{
 			  count = math.floor(Materials[v.Table].Density * 10),
-			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
+			  ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1}},
 			  time =  30
 			},
 			order = dy..v.Name.."-advanced-melting",
@@ -60,7 +60,7 @@ for k,v in pairs(Material_Table) do
 			unit =
 			{
 			  count = math.floor(Materials[v.Table].Density * 15),
-			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}},
+			  ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}},
 			  time =  30
 			},
 			order = dy..v.Name.."-advanced-melting",
@@ -82,7 +82,7 @@ for k,v in pairs(Material_Table) do
 			unit =
 			{
 			  count = math.floor(Materials[v.Table].Density * 25),
-			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}},
+			  ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}},
 			  time =  30
 			},
 			order = dy..v.Name.."-advanced-melting",
@@ -104,7 +104,7 @@ for k,v in pairs(Material_Table) do
 			unit =
 			{
 			  count = math.floor(Materials[v.Table].Density * 50),
-			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}},
+			  ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1}},
 			  time =  30
 			},
 			order = dy..v.Name.."-advanced-melting",
@@ -126,7 +126,7 @@ for k,v in pairs(Material_Table) do
 			unit =
 			{
 			  count = math.floor(Materials[v.Table].Density * 250),
-			  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{dy.."extra-solar-science-pack", 1}},
+			  ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1},{dy.."extra-solar-science-pack", 1}},
 			  time =  30
 			},
 			order = dy..v.Name.."-advanced-melting",
@@ -205,7 +205,7 @@ data:extend(
 	unit =
 	{
 	  count = 75,
-	  ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}},
+	  ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1}},
 	  time =  30
 	},
 	order = dy.."glass-advanced-melting",

@@ -331,7 +331,7 @@ local Data_Table = {
 		Recipe_Without_Tech = true,
 		Recipe_Craft_Time = 0.5,
 		Recipe_Result_Count = 3,
-		Recipe_Ingredients = {{"raw-wood", 1}},
+		Recipe_Ingredients = {{"wood", 1}},
 	},
 	{
 		Name = "rubber",
@@ -408,7 +408,7 @@ data:extend(
     name = "carbon",
     icon = dyworld_path_icon_temp,
 	icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = dy.."intermediates",
     order = "carbon",
     stack_size = 200

@@ -1,5 +1,6 @@
 require "data/warfare/prefix"
 require "data/prefix"
+local enemy_autoplace = require ("data/warfare/enemies/enemy-autoplace-utils")
 
 local function scale_bounding_box(bb, scale)
   return {
@@ -78,8 +79,8 @@ data:extend(
     collision_box = {{-3.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-3.5, -2.5}, {2.5, 2.5}},
     -- in ticks per 1 pu
-    pollution_absorbtion_absolute = Round((20 * v.Spawner_Strength), 2),
-    pollution_absorbtion_proportional = Round((0.01 * v.Spawner_Strength), 2),
+    pollution_absorption_absolute = 20,--Round((20 * v.Spawner_Strength), 2),
+    pollution_absorption_proportional = Round((0.01 * v.Spawner_Strength), 2),
     corpse = dy..k.."-spawner-corpse",
     dying_explosion = "blood-explosion-huge",
     max_count_of_owned_units = Round((10 * (v.Spawner_Strength / 2)), 0),
@@ -111,7 +112,7 @@ data:extend(
     spawning_spacing = 3,
     max_spawn_shift = 0,
     max_richness_for_spawn_shift = 100,
-    autoplace = enemy_spawner_autoplace(0),
+    autoplace = enemy_autoplace.enemy_spawner_autoplace(0),
     call_for_help_radius = 50
   },
   {

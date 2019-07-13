@@ -78,7 +78,7 @@ data:extend(
     name = dy.."greenhouse",
     icon = dyworld_path_icon.."greenhouse.png",
 	icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = dy.."assembling-special",
     order = dy.."greenhouse",
     place_result = dy.."greenhouse",

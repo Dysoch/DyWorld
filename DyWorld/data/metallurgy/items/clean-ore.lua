@@ -14,7 +14,7 @@ for k,v in pairs(Material_Table) do
 				icon = dyworld_path_icon.."ore/"..v.Name..".png",
 			  },
 			},
-			flags = {"goes-to-main-inventory"},
+			flags = {},
 			subgroup = dy.."metal-1-ore-clean",
 			stack_size = 200,
 			order = v.Name,

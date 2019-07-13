@@ -217,13 +217,6 @@ Compounds = {
 		Elements = {["carbon"] = 50},
 		Compounds = {["silica"] = 39, ["alumina"] = 8.5, ["ferrous-oxide"] = 1, ["diferrous-trioxide"] = 1.5},
 	},
-	["raw-wood"] = {
-		Mass = 0, 
-		Type = "item",
-		Atom_To_Compound = true,
-		Atom_To_Compound_Tech = "intermediate",
-		Compounds = {["cellulose"] = 40, ["hemicellulose"] = 32, ["lignin"] = 28},
-	},
 	["wood"] = {
 		Mass = 0, 
 		Type = "item",

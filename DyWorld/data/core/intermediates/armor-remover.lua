@@ -185,7 +185,7 @@ data:extend(
     type = "item",
     name = dy.."armor-remover",
     icon = "__base__/graphics/icons/electric-furnace.png",
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = dy.."assembling-special-recycler",
     order = dy.."armor-remover",
     place_result = dy.."armor-remover",

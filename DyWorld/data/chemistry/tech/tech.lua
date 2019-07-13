@@ -56,22 +56,22 @@ data:extend(
   },
 })
 	if v.Tech_Ingredients == 1 then
-		local results = {{"science-pack-1", 1}}
+		local results = {{"automation-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 2 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 3 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 4 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 5 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	elseif v.Tech_Ingredients == 6 then
-		local results = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1},{"space-science-pack", 1}}
+		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1},{"space-science-pack", 1}}
 		data.raw.technology[v.Name].unit.ingredients = results
 	end
 	if v.Military then

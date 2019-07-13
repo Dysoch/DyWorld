@@ -7,7 +7,7 @@ data:extend(
     name = dyworld_debug_prefix.."axe",
     icon = "__base__/graphics/icons/steel-axe.png",
 	icon_size = 32,
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     action =
     {
       type="direct",

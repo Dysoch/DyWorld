@@ -59,7 +59,31 @@ for k,m in pairs(Change) do
 		end
 	end
 	if data.raw.item[m.Old] then
-		table.insert(data.raw.item[m.Old].flags, "hidden")
+		if data.raw.item[m.Old].flags then
+			table.insert(data.raw.item[m.Old].flags, "hidden")
+		else
+			data.raw.item[m.Old].flags = {"hidden"}
+		end
+	end
+	if data.raw["transport-belt"][m.Old] then
+		if data.raw["transport-belt"][m.Old].next_upgrade then
+			data.raw["transport-belt"][m.Old].next_upgrade = nil
+		end
+	end
+	if data.raw["splitter"][m.Old] then
+		if data.raw["splitter"][m.Old].next_upgrade then
+			data.raw["splitter"][m.Old].next_upgrade = nil
+		end
+	end
+	if data.raw["underground-belt"][m.Old] then
+		if data.raw["underground-belt"][m.Old].next_upgrade then
+			data.raw["underground-belt"][m.Old].next_upgrade = nil
+		end
+	end
+	if data.raw["inserter"][m.Old] then
+		if data.raw["inserter"][m.Old].next_upgrade then
+			data.raw["inserter"][m.Old].next_upgrade = nil
+		end
 	end
 	if data.raw.recipe[m.Old] then
 		if data.raw.recipe[m.Old].normal then

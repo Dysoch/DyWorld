@@ -157,8 +157,8 @@ data:extend(
     researching_speed = 1,
     inputs =
     {
-      "science-pack-1",
-      "science-pack-2",
+      "automation-science-pack",
+      "logistic-science-pack",
     },
     module_specification =
     {
@@ -323,8 +323,8 @@ data:extend(
     researching_speed = 1.25,
     inputs =
     {
-      "science-pack-1",
-      "science-pack-2",
+      "automation-science-pack",
+      "logistic-science-pack",
       "military-science-pack",
     },
     module_specification =
@@ -490,9 +490,9 @@ data:extend(
     researching_speed = 1.5,
     inputs =
     {
-      "science-pack-1",
-      "science-pack-2",
-      "science-pack-3",
+      "automation-science-pack",
+      "logistic-science-pack",
+      "chemical-science-pack",
       "military-science-pack",
     },
     module_specification =
@@ -658,9 +658,9 @@ data:extend(
     researching_speed = 2,
     inputs =
     {
-      "science-pack-1",
-      "science-pack-2",
-      "science-pack-3",
+      "automation-science-pack",
+      "logistic-science-pack",
+      "chemical-science-pack",
       "military-science-pack",
       "production-science-pack",
     },
@@ -827,12 +827,12 @@ data:extend(
     researching_speed = 2.5,
     inputs =
     {
-      "science-pack-1",
-      "science-pack-2",
-      "science-pack-3",
+      "automation-science-pack",
+      "logistic-science-pack",
+      "chemical-science-pack",
       "military-science-pack",
       "production-science-pack",
-      "high-tech-science-pack",
+      "utility-science-pack",
     },
     module_specification =
     {
@@ -997,12 +997,12 @@ data:extend(
     researching_speed = 3,
     inputs =
     {
-      "science-pack-1",
-      "science-pack-2",
-      "science-pack-3",
+      "automation-science-pack",
+      "logistic-science-pack",
+      "chemical-science-pack",
       "military-science-pack",
       "production-science-pack",
-      "high-tech-science-pack",
+      "utility-science-pack",
       "dyworld-extra-solar-science-pack",
     },
     module_specification =
@@ -1017,7 +1017,7 @@ data:extend(
     type = "item",
     name = dy.."lab-2",
     icon = "__base__/graphics/icons/lab.png",
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."lab",
     order = dy.."lab-2",
     place_result = dy.."lab-2",
@@ -1033,7 +1033,7 @@ data:extend(
       {type = "item", name = "lab", amount = 1},
       {type = "item", name = "electronic-circuit", amount = 25},
       {type = "item", name = "tin-plate", amount = 12},
-      {type = "item", name = "science-pack-2", amount = 5},
+      {type = "item", name = "logistic-science-pack", amount = 5},
     },
     result = dy.."lab-2"
   },
@@ -1041,7 +1041,7 @@ data:extend(
     type = "item",
     name = dy.."lab-3",
     icon = "__base__/graphics/icons/lab.png",
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."lab",
     order = dy.."lab-3",
     place_result = dy.."lab-3",
@@ -1065,7 +1065,7 @@ data:extend(
     type = "item",
     name = dy.."lab-4",
     icon = "__base__/graphics/icons/lab.png",
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."lab",
     order = dy.."lab-4",
     place_result = dy.."lab-4",
@@ -1081,7 +1081,7 @@ data:extend(
       {type = "item", name = dy.."lab-3", amount = 1},
       {type = "item", name = "advanced-circuit", amount = 25},
       {type = "item", name = "gold-plate", amount = 25},
-      {type = "item", name = "science-pack-3", amount = 5},
+      {type = "item", name = "chemical-science-pack", amount = 5},
     },
     result = dy.."lab-4"
   },
@@ -1089,7 +1089,7 @@ data:extend(
     type = "item",
     name = dy.."lab-5",
     icon = "__base__/graphics/icons/lab.png",
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."lab",
     order = dy.."lab-5",
     place_result = dy.."lab-5",
@@ -1113,7 +1113,7 @@ data:extend(
     type = "item",
     name = dy.."lab-6",
     icon = "__base__/graphics/icons/lab.png",
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."lab",
     order = dy.."lab-6",
     place_result = dy.."lab-6",
@@ -1130,7 +1130,7 @@ data:extend(
       {type = "item", name = dy.."processing-advanced", amount = 15},
       {type = "item", name = "titanium-plate", amount = 50},
       {type = "item", name = "lithium-plate", amount = 50},
-      {type = "item", name = "high-tech-science-pack", amount = 5},
+      {type = "item", name = "utility-science-pack", amount = 5},
     },
     result = dy.."lab-6"
   },
@@ -1138,7 +1138,7 @@ data:extend(
     type = "item",
     name = dy.."lab-7",
     icon = "__base__/graphics/icons/lab.png",
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."lab",
     order = dy.."lab-7",
     place_result = dy.."lab-7",
@@ -1166,7 +1166,7 @@ data.raw.item.lab.order = dy.."lab-1"
 data.raw.item.lab.subgroup = dy.."lab"
 data.raw.item.lab.localized_name = {"entity-name.lab"}
 data.raw.lab.lab.localized_name = {"entity-name.lab"}
-data.raw.lab.lab.inputs = {"science-pack-1"}
+data.raw.lab.lab.inputs = {"automation-science-pack"}
 
 DyWorld_Add_To_Tech(dy.."labs-1", dy.."lab-2")
 DyWorld_Add_To_Tech(dy.."labs-2", dy.."lab-3")

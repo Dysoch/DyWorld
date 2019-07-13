@@ -11,7 +11,7 @@ for k,v in pairs(Compounds) do
 				name = k,
 				icon = dyworld_path_icon_temp,
 				icon_size = 32,
-				flags = {"goes-to-quickbar"},
+				flags = {},
 				subgroup = dy.."pt-hidden",
 				order = k,
 				stack_size = 200

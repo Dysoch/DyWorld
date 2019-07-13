@@ -14,7 +14,7 @@ data:extend(
     name = dyworld_debug_prefix.."armor",
     icon = "__base__/graphics/icons/power-armor-mk2.png",
 	icon_size = 32,
-    flags = {"goes-to-main-inventory", "hidden"},
+    flags = {"hidden"},
     resistances =
     {
       {

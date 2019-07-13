@@ -7,7 +7,7 @@ data:extend(
     name = dy.."dtx-001-spaceship",
     icon = dyworld_path_icon_temp,
 	icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = dy.."intermediates-2",
     order = dy.."dtx-001-spaceship",
     stack_size = 1

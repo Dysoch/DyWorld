@@ -87,7 +87,7 @@ data:extend(
     name = dy.."electrolyser",
     icon = dyworld_path_icon.."greenhouse.png",
 	icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = dy.."assembling-special-chemistry",
     order = dy.."electrolyser",
     place_result = dy.."electrolyser",

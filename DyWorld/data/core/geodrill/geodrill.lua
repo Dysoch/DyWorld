@@ -92,7 +92,7 @@ data:extend(
 	  },
 	},
 	icon_size = 32,
-    flags = {"goes-to-quickbar"},
+	flags = {},
     subgroup = dy.."assembling-special",
     order = "geodrill",
     place_result = dy.."geodrill",

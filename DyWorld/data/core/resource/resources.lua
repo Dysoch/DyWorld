@@ -193,7 +193,7 @@ data:extend(
 	  }
 	},
 	icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+	flags = {},
     subgroup = dy.."metal-0-ore",
     stack_size = 200,
 	order = v.Name,

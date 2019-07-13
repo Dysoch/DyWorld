@@ -16,7 +16,7 @@ require "script/generation/world-generation"
 require "script/functions/loaders"
 require "script/functions/side-inserter"
 
-debugger = true
+debugger = false
 debug_test = settings.startup["DyWorld_Debug"].value
 Migrate_Debug = false
 

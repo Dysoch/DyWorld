@@ -11,7 +11,7 @@ function gui_6_toggleGui(player)
 	prioritized.style.top_padding = 0
 	prioritized.style.bottom_padding = 0
 	prioritized.style.maximal_height = 192
-	prioritized.style.scaleable = false
+	--prioritized.style.scaleable = false
 	--prioritized.style.font = "default-small-bold"
 	if not global.dyworld.Guide then global.dyworld.Guide = {} end
 	local guide_max = 10

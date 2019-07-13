@@ -9550,7 +9550,7 @@ data:extend(
         {
           filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
           width = 147,
-          height = 102,
+          height = 101,
           draw_as_shadow = true,
           shift = util.by_pixel(28.5, 19.25),
           hr_version = {

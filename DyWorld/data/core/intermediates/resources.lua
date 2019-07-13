@@ -151,6 +151,7 @@ data:extend(
 	})
 end
 
+data.raw.item["iron-ore"].icon_size = 32
 data.raw.item["iron-ore"].icons = {
 	  {
 		icon = dyworld_path_icon.."ore/iron.png",
@@ -158,6 +159,7 @@ data.raw.item["iron-ore"].icons = {
 	  }
 	}
 
+data.raw.item["copper-ore"].icon_size = 32
 data.raw.item["copper-ore"].icons = {
 	  {
 		icon = dyworld_path_icon.."ore/copper.png",

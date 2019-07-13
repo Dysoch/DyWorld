@@ -781,65 +781,7 @@ data:extend(
       max_sounds_per_type = 3
     },
     animation_speed_coefficient = 32,
-    animations = {
-	  layers = {
-		{
-		  filename = dyworld_path_entity.."lr-belt-base.png",
-		  priority = "extra-high",
-		  width = 40,
-		  height = 40,
-		  line_length = 32,
-		  frame_count = 32,
-		  direction_count = 12,
-		  flags = { "no-crop", "low-object" },
-		  hr_version =
-		  {
-			filename = dyworld_path_entity.."hr-belt-base.png",
-			priority = "extra-high",
-			width = 80,
-			height = 80,
-			scale = 0.5,
-			line_length = 32,
-			frame_count = 32,
-			direction_count = 12,
-			flags = { "no-crop", "low-object" },
-		  },
-		},
-		{
-		  filename = dyworld_path_entity.."lr-belt-mask.png",
-		  priority = "extra-high",
-		  width = 40,
-		  height = 40,
-		  line_length = 32,
-		  frame_count = 32,
-		  direction_count = 12,
-		  tint = Material_Colors[DATA.Table],
-		  flags = { "no-crop", "low-object" },
-		  hr_version =
-		  {
-			filename = dyworld_path_entity.."hr-belt-mask.png",
-			priority = "extra-high",
-			width = 80,
-			height = 80,
-			scale = 0.5,
-			line_length = 32,
-			frame_count = 32,
-			direction_count = 12,
-			tint = Material_Colors[DATA.Table],
-			flags = { "no-crop", "low-object" },
-		  },
-		},
-	  },
-	},
-    belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
-    belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
-    ending_top = DyWorld_basic_belt_ending_top(Material_Colors[DATA.Table]),
-    ending_bottom = DyWorld_basic_belt_ending_bottom(Material_Colors[DATA.Table]),
-    ending_side = DyWorld_basic_belt_ending_side(Material_Colors[DATA.Table]),
-    starting_top = DyWorld_basic_belt_starting_top(Material_Colors[DATA.Table]),
-    starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
-    starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
-    ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
+    belt_animation_set = DyWorld_basic_belt_animation_set(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
     speed = DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier, 1),
     connector_frame_sprites = transport_belt_connector_frame_sprites,
@@ -885,104 +827,142 @@ data:extend(
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     animation_speed_coefficient = 32,
-    working_sound =
-    {
-      sound =
-      {
-        filename = "__base__/sound/transport-belt.ogg",
-        volume = 0.4
-      },
-      max_sounds_per_type = 3
-    },
-    belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
-    belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
-    ending_top = DyWorld_basic_belt_ending_top(Material_Colors[DATA.Table]),
-    ending_bottom = DyWorld_basic_belt_ending_bottom(Material_Colors[DATA.Table]),
-    ending_side = DyWorld_basic_belt_ending_side(Material_Colors[DATA.Table]),
-    starting_top = DyWorld_basic_belt_starting_top(Material_Colors[DATA.Table]),
-    starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
-    starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
-    ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
+    belt_animation_set = DyWorld_basic_belt_animation_set(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
     speed = DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier, 1.15),
-    structure = {
-      direction_in = {
-        sheets = {
+    structure =
+    {
+      direction_in =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/underground-belt/underground-belt-structure.png",
+          priority = "extra-high",
+          width = 96,
+          height = 96,
+          y = 96,
+          tint = Material_Colors[DATA.Table],
+          hr_version =
           {
-            hr_version = {
-              filename = dyworld_path_entity.."hr-under-base.png",
-              height = 64,
-              priority = "extra-high",
-              width = 80,
-              scale = 0.5,
-              shift = { 0.125, 0 },
-            },
-            filename = dyworld_path_entity.."lr-under-base.png",
-            height = 32,
+            filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure.png",
             priority = "extra-high",
-            width = 40,
-            scale = 1,
-            shift = { 0.125, 0 },
-          },
-          {
-            hr_version = {
-              filename = dyworld_path_entity.."hr-under-mask.png",
-              height = 64,
-              priority = "extra-high",
-              width = 80,
-              scale = 0.5,
-              tint = Material_Colors[DATA.Table],
-              shift = { 0.125, 0 },
-              y = 64,
-            },
-            filename = dyworld_path_entity.."lr-under-mask.png",
-            height = 32,
-            priority = "extra-high",
-            width = 40,
-            scale = 1,
+            width = 192,
+            height =192,
+            y = 192,
             tint = Material_Colors[DATA.Table],
-            shift = { 0.125, 0 },
-            y = 32,
-          },
-        },
+            scale = 0.5
+          }
+        }
       },
-      direction_out = {
-        sheets = {
+      direction_out =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/underground-belt/underground-belt-structure.png",
+          priority = "extra-high",
+          width = 96,
+          height = 96,
+          tint = Material_Colors[DATA.Table],
+          hr_version =
           {
-            hr_version = {
-              filename = dyworld_path_entity.."hr-under-base.png",
-              height = 64,
-              priority = "extra-high",
-              width = 80,
-              scale = 0.5,
-              shift = { 0.125, 0 },
-            },
-            filename = dyworld_path_entity.."lr-under-base.png",
-            height = 32,
+            filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure.png",
             priority = "extra-high",
-            width = 40,
-            scale = 1,
-            shift = { 0.125, 0 },
-          },
-          {
-            hr_version = {
-              filename = dyworld_path_entity.."hr-under-mask.png",
-              height = 64,
-              priority = "extra-high",
-              width = 80,
-              scale = 0.5,
-              tint = Material_Colors[DATA.Table],
-              shift = { 0.125, 0 },
-            },
-            filename = dyworld_path_entity.."lr-under-mask.png",
-            height = 32,
-            priority = "extra-high",
-            width = 40,
-            scale = 1,
+            width = 192,
+            height = 192,
             tint = Material_Colors[DATA.Table],
-            shift = { 0.125, 0 },
+            scale = 0.5
+          }
+
+        }
+
+      },
+      direction_in_side_loading =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/underground-belt/underground-belt-structure.png",
+          priority = "extra-high",
+          width = 96,
+          height = 96,
+          y = 96*3,
+          tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure.png",
+            priority = "extra-high",
+            width = 192,
+            height = 192,
+            y = 192*3,
+            tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+        }
+      },
+      direction_out_side_loading =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/underground-belt/underground-belt-structure.png",
+          priority = "extra-high",
+          width = 96,
+          height = 96,
+          y = 96*2,
+          tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure.png",
+            priority = "extra-high",
+            width = 192,
+            height = 192,
+            y= 192*2,
+            tint = Material_Colors[DATA.Table],
+            scale = 0.5
           },
-        },
+
+        }
+
+      },
+      back_patch =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/underground-belt/underground-belt-structure-back-patch.png",
+          priority = "extra-high",
+          width = 96,
+          height = 96,
+          tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure-back-patch.png",
+            priority = "extra-high",
+            width = 192,
+            height = 192,
+            tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+
+        }
+      },
+      front_patch =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/underground-belt/underground-belt-structure-front-patch.png",
+          priority = "extra-high",
+          width = 96,
+          height = 96,
+          tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/underground-belt/hr-underground-belt-structure-front-patch.png",
+            priority = "extra-high",
+            width = 192,
+            height = 192,
+            tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+
+        }
       }
     },
   },
@@ -1008,15 +988,7 @@ data:extend(
     animation_speed_coefficient = 32,
     structure_animation_speed_coefficient = 0.7,
     structure_animation_movement_cooldown = 10,
-    belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
-    belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
-    ending_top = DyWorld_basic_belt_ending_top(Material_Colors[DATA.Table]),
-    ending_bottom = DyWorld_basic_belt_ending_bottom(Material_Colors[DATA.Table]),
-    ending_side = DyWorld_basic_belt_ending_side(Material_Colors[DATA.Table]),
-    starting_top = DyWorld_basic_belt_starting_top(Material_Colors[DATA.Table]),
-    starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
-    starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
-    ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
+    belt_animation_set = DyWorld_basic_belt_animation_set(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
     speed = DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier, 1),
     structure =
@@ -1025,11 +997,11 @@ data:extend(
       {
         filename = "__base__/graphics/entity/splitter/splitter-north.png",
         frame_count = 32,
-        line_length = 16,
+        line_length = 8,
         priority = "extra-high",
-        width = 83,
+        width = 82,
         height = 36,
-        shift = {0.265625, 0},
+        shift = util.by_pixel(6, 0),
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
@@ -1037,22 +1009,22 @@ data:extend(
           frame_count = 32,
           line_length = 8,
           priority = "extra-high",
-          width = 164,
+          width = 160,
           height = 70,
-          shift = {0.25, 0.046875},
-          scale = 0.5,
+          shift = util.by_pixel(7, 0),
 		  tint = Material_Colors[DATA.Table],
+          scale = 0.5
         }
       },
       east =
       {
         filename = "__base__/graphics/entity/splitter/splitter-east.png",
         frame_count = 32,
-        line_length = 16,
+        line_length = 8,
         priority = "extra-high",
-        width = 51,
+        width = 46,
         height = 80,
-        shift = {0.109375, -0.03125},
+        shift = util.by_pixel(4, -6),
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
@@ -1060,22 +1032,22 @@ data:extend(
           frame_count = 32,
           line_length = 8,
           priority = "extra-high",
-          width = 93,
-          height = 157,
-          shift = {0.148438, -0.179688},
-          scale = 0.5,
+          width = 90,
+          height = 160,
+          shift = util.by_pixel(4, -6),
 		  tint = Material_Colors[DATA.Table],
+          scale = 0.5
         }
       },
       south =
       {
         filename = "__base__/graphics/entity/splitter/splitter-south.png",
         frame_count = 32,
-        line_length = 16,
+        line_length = 8,
         priority = "extra-high",
-        width = 85,
-        height = 35,
-        shift = {0.140625, -0.015625},
+        width = 82,
+        height = 32,
+        shift = util.by_pixel(4, 0),
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
@@ -1083,22 +1055,22 @@ data:extend(
           frame_count = 32,
           line_length = 8,
           priority = "extra-high",
-          width = 168,
-          height = 67,
-          shift = {0.140625, 0.0234375},
-          scale = 0.5,
+          width = 164,
+          height = 64,
+          shift = util.by_pixel(4, 0),
 		  tint = Material_Colors[DATA.Table],
+          scale = 0.5
         }
       },
       west =
       {
         filename = "__base__/graphics/entity/splitter/splitter-west.png",
         frame_count = 32,
-        line_length = 16,
+        line_length = 8,
         priority = "extra-high",
-        width = 51,
-        height = 78,
-        shift = {0.296875, -0.03125},
+        width = 46,
+        height = 76,
+        shift = util.by_pixel(6, -4),
 		tint = Material_Colors[DATA.Table],
         hr_version =
         {
@@ -1106,13 +1078,13 @@ data:extend(
           frame_count = 32,
           line_length = 8,
           priority = "extra-high",
-          width = 94,
-          height = 154,
-          shift = {0.203125, -0.109375},
-          scale = 0.5,
+          width = 90,
+          height = 150,
+          shift = util.by_pixel(6, -4),
 		  tint = Material_Colors[DATA.Table],
+          scale = 0.5
         }
-      },
+      }
     },
   },
   {
@@ -1135,99 +1107,34 @@ data:extend(
     collision_box = {{-0.2, -0.2}, {0.2, 0.2}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     animation_speed_coefficient = 32,
-    belt_horizontal = DyWorld_basic_belt_horizontal(Material_Colors[DATA.Table]),
-    belt_vertical = DyWorld_basic_belt_vertical(Material_Colors[DATA.Table]),
-    ending_top = DyWorld_basic_belt_ending_top(Material_Colors[DATA.Table]),
-    ending_bottom = DyWorld_basic_belt_ending_bottom(Material_Colors[DATA.Table]),
-    ending_side = DyWorld_basic_belt_ending_side(Material_Colors[DATA.Table]),
-    starting_top = DyWorld_basic_belt_starting_top(Material_Colors[DATA.Table]),
-    starting_bottom = DyWorld_basic_belt_starting_bottom(Material_Colors[DATA.Table]),
-    starting_side = DyWorld_basic_belt_starting_side(Material_Colors[DATA.Table]),
-    ending_patch = DyWorld_ending_patch_prototype(Material_Colors[DATA.Table]),
+    belt_animation_set = DyWorld_basic_belt_animation_set(Material_Colors[DATA.Table]),
     fast_replaceable_group = "transport-belt",
     speed = DyWorld_Material_Formulas(1, DATA.Table, DATA.Tier, 1),
-	belt_distance = 0,
-    container_distance = 1.0,
-    belt_length = 0.5,
-    structure = {
-        direction_in = {
-            sheets = {
-                {
-                    hr_version = {
-                        filename = dyworld_path_entity.."hr-loader-base.png",
-                        height = 64,
-                        priority = "extra-high",
-                        width = 80,
-                        scale = 0.5,
-                        shift = { 0.125, 0 }
-                    },
-                    filename = dyworld_path_entity.."lr-loader-base.png",
-                    height = 32,
-                    priority = "extra-high",
-                    width = 40,
-                    scale = 1,
-                    shift = { 0.125, 0 }
-                },
-                {
-                    hr_version = {
-                        filename = dyworld_path_entity.."hr-loader-mask.png",
-                        height = 64,
-                        priority = "extra-high",
-                        width = 80,
-                        scale = 0.5,
-                        tint = Material_Colors[DATA.Table],
-                        shift = { 0.125, 0 }
-                    },
-                    filename = dyworld_path_entity.."lr-loader-mask.png",
-                    height = 32,
-                    priority = "extra-high",
-                    width = 40,
-                    scale = 1,
-                    tint = Material_Colors[DATA.Table],
-                    shift = { 0.125, 0 }
-                },
-            },
-        },
-        direction_out = {
-            sheets = {
-                {
-                    hr_version = {
-                        filename = dyworld_path_entity.."hr-loader-base.png",
-                        height = 64,
-                        priority = "extra-high",
-                        width = 80,
-                        scale = 0.5,
-                        shift = { 0.125, 0 },
-                    },
-                    filename = dyworld_path_entity.."lr-loader-base.png",
-                    height = 32,
-                    priority = "extra-high",
-                    width = 40,
-                    scale = 1,
-                    shift = { 0.125, 0 },
-                },
-                {
-                    hr_version = {
-                        filename = dyworld_path_entity.."hr-loader-mask.png",
-                        height = 64,
-                        priority = "extra-high",
-                        width = 80,
-                        scale = 0.5,
-                        tint = Material_Colors[DATA.Table],
-                        shift = { 0.125, 0 },
-                        y = 64
-                    },
-                    filename = dyworld_path_entity.."lr-loader-mask.png",
-                    height = 32,
-                    priority = "extra-high",
-                    width = 40,
-                    scale = 1,
-                    tint = Material_Colors[DATA.Table],
-                    shift = { 0.125, 0 },
-                    y = 32
-                },
-            },
+    structure =
+    {
+      direction_in =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/loader/loader-structure.png",
+          priority = "extra-high",
+          width = 64,
+          height = 64,
+		  tint = Material_Colors[DATA.Table]
         }
+      },
+      direction_out =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/loader/loader-structure.png",
+          priority = "extra-high",
+          width = 64,
+          height = 64,
+          y = 64,
+		  tint = Material_Colors[DATA.Table]
+        }
+      }
     },
   },
   {
@@ -1932,26 +1839,54 @@ data:extend(
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
           priority = "high",
-          width = 90,
-          height = 75,
+          width = 76,
+          height = 60,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
-          shift = {0, -0.046875},
+          shift = util.by_pixel(1, -1),
 		  tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base.png",
+            priority = "high",
+            width = 150,
+            height = 118,
+            axially_symmetrical = false,
+            direction_count = 1,
+            frame_count = 1,
+		    tint = Material_Colors[DATA.Table],
+            shift = util.by_pixel(0.5, -1),
+            scale = 0.5
+          }
         },
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
-          flags = { "mask" },
+          flags = { "mask", "low-object" },
           line_length = 1,
-          width = 52,
-          height = 47,
+          width = 62,
+          height = 52,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
-          shift = {0, -0.234375},
-          apply_runtime_tint = true
+          shift = util.by_pixel(0, -4),
+          apply_runtime_tint = true,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base-mask.png",
+            flags = { "mask", "low-object" },
+            line_length = 1,
+            width = 122,
+            height = 102,
+            axially_symmetrical = false,
+            direction_count = 1,
+            frame_count = 1,
+            shift = util.by_pixel(0, -4.5),
+            apply_runtime_tint = true,
+            scale = 0.5
+          }
         }
+
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -2066,26 +2001,54 @@ data:extend(
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
           priority = "high",
-          width = 90,
-          height = 75,
+          width = 76,
+          height = 60,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
-          shift = {0, -0.046875},
+          shift = util.by_pixel(1, -1),
 		  tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base.png",
+            priority = "high",
+            width = 150,
+            height = 118,
+            axially_symmetrical = false,
+            direction_count = 1,
+            frame_count = 1,
+		    tint = Material_Colors[DATA.Table],
+            shift = util.by_pixel(0.5, -1),
+            scale = 0.5
+          }
         },
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
-          flags = { "mask" },
+          flags = { "mask", "low-object" },
           line_length = 1,
-          width = 52,
-          height = 47,
+          width = 62,
+          height = 52,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
-          shift = {0, -0.234375},
-          apply_runtime_tint = true
+          shift = util.by_pixel(0, -4),
+          apply_runtime_tint = true,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base-mask.png",
+            flags = { "mask", "low-object" },
+            line_length = 1,
+            width = 122,
+            height = 102,
+            axially_symmetrical = false,
+            direction_count = 1,
+            frame_count = 1,
+            shift = util.by_pixel(0, -4.5),
+            apply_runtime_tint = true,
+            scale = 0.5
+          }
         }
+
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -2200,26 +2163,54 @@ data:extend(
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
           priority = "high",
-          width = 90,
-          height = 75,
+          width = 76,
+          height = 60,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
-          shift = {0, -0.046875},
+          shift = util.by_pixel(1, -1),
 		  tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base.png",
+            priority = "high",
+            width = 150,
+            height = 118,
+            axially_symmetrical = false,
+            direction_count = 1,
+            frame_count = 1,
+		    tint = Material_Colors[DATA.Table],
+            shift = util.by_pixel(0.5, -1),
+            scale = 0.5
+          }
         },
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
-          flags = { "mask" },
+          flags = { "mask", "low-object" },
           line_length = 1,
-          width = 52,
-          height = 47,
+          width = 62,
+          height = 52,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
-          shift = {0, -0.234375},
-          apply_runtime_tint = true
+          shift = util.by_pixel(0, -4),
+          apply_runtime_tint = true,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base-mask.png",
+            flags = { "mask", "low-object" },
+            line_length = 1,
+            width = 122,
+            height = 102,
+            axially_symmetrical = false,
+            direction_count = 1,
+            frame_count = 1,
+            shift = util.by_pixel(0, -4.5),
+            apply_runtime_tint = true,
+            scale = 0.5
+          }
         }
+
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -2392,26 +2383,54 @@ data:extend(
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base.png",
           priority = "high",
-          width = 90,
-          height = 75,
+          width = 76,
+          height = 60,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
-          shift = {0, -0.046875},
+          shift = util.by_pixel(1, -1),
 		  tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base.png",
+            priority = "high",
+            width = 150,
+            height = 118,
+            axially_symmetrical = false,
+            direction_count = 1,
+            frame_count = 1,
+		    tint = Material_Colors[DATA.Table],
+            shift = util.by_pixel(0.5, -1),
+            scale = 0.5
+          }
         },
         {
           filename = "__base__/graphics/entity/gun-turret/gun-turret-base-mask.png",
-          flags = { "mask" },
+          flags = { "mask", "low-object" },
           line_length = 1,
-          width = 52,
-          height = 47,
+          width = 62,
+          height = 52,
           axially_symmetrical = false,
           direction_count = 1,
           frame_count = 1,
-          shift = {0, -0.234375},
-          apply_runtime_tint = true
+          shift = util.by_pixel(0, -4),
+          apply_runtime_tint = true,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/gun-turret/hr-gun-turret-base-mask.png",
+            flags = { "mask", "low-object" },
+            line_length = 1,
+            width = 122,
+            height = 102,
+            axially_symmetrical = false,
+            direction_count = 1,
+            frame_count = 1,
+            shift = util.by_pixel(0, -4.5),
+            apply_runtime_tint = true,
+            scale = 0.5
+          }
         }
+
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -5727,70 +5746,106 @@ data:extend(
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     pictures =
     {
-      filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png",
-      priority = "high",
-      width = 136,
-      height = 122,
-      direction_count = 4,
-      shift = {1.4, -1.0},
-	  tint = Material_Colors[DATA.Table]
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png",
+          priority = "extra-high",
+          width = 40,
+          height = 124,
+          direction_count = 4,
+          shift = util.by_pixel(4, -44),
+		  tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/medium-electric-pole/hr-medium-electric-pole.png",
+            priority = "extra-high",
+            width = 84,
+            height = 252,
+            direction_count = 4,
+            shift = util.by_pixel(3.5, -44),
+		    tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole-shadow.png",
+          priority = "extra-high",
+          width = 140,
+          height = 32,
+          direction_count = 4,
+          shift = util.by_pixel(56, -1),
+          draw_as_shadow = true,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/medium-electric-pole/hr-medium-electric-pole-shadow.png",
+            priority = "extra-high",
+            width = 280,
+            height = 64,
+            direction_count = 4,
+            shift = util.by_pixel(56.5, -1),
+            draw_as_shadow = true,
+            scale = 0.5
+          }
+        }
+      }
     },
     connection_points =
     {
       {
         shadow =
         {
-          copper = {2.55, 0.4},
-          green = {2.0, 0.4},
-          red = {3.05, 0.4}
+          copper = util.by_pixel_hr(229, -13),
+          red = util.by_pixel_hr(246, -2),
+          green = util.by_pixel_hr(201, -2)
         },
         wire =
         {
-          copper = {-0.03, -2.5},
-          green = {-0.35,-2.5},
-          red = {0.25,-2.5}
+          copper = util.by_pixel_hr(15, -199),
+          red = util.by_pixel_hr(43, -179),
+          green = util.by_pixel_hr(-15, -185)
         }
       },
       {
         shadow =
         {
-          copper = {2.9, 0.1},
-          green = {2.6, -0.15},
-          red = {3.25, 0.35}
+          copper = util.by_pixel_hr(229, -13),
+          red = util.by_pixel_hr(230, 10),
+          green = util.by_pixel_hr(196, -23)
         },
         wire =
         {
-          copper = {0.05, -2.75},
-          green = {-0.15, -2.9},
-          red = {0.25, -2.55}
+          copper = util.by_pixel_hr(15, -199),
+          red = util.by_pixel_hr(27, -167),
+          green = util.by_pixel_hr(-9, -200)
         }
       },
       {
         shadow =
         {
-          copper = {1.5, -0.2},
-          green = {1.5, -0.55},
-          red = {1.5, 0.1}
+          copper = util.by_pixel_hr(229, -13),
+          red = util.by_pixel_hr(208, 12),
+          green = util.by_pixel_hr(217, -30)
         },
         wire =
         {
-          copper = {-0.43, -2.4},
-          green = {-0.43, -2.63},
-          red = {-0.43, -2.2}
+          copper = util.by_pixel_hr(15, -199),
+          red = util.by_pixel_hr(5, -166),
+          green = util.by_pixel_hr(13, -206)
         }
       },
       {
         shadow =
         {
-          copper = {2.88, 0.2},
-          green = {3.2, -0.1},
-          red = {2.45, 0.4}
+          copper = util.by_pixel_hr(229, -13),
+          red = util.by_pixel_hr(195, 1),
+          green = util.by_pixel_hr(238, -23)
         },
         wire =
         {
-          copper = {0, -2.7},
-          green = {0.22, -2.85},
-          red = {-0.24, -2.55}
+          copper = util.by_pixel_hr(15, -199),
+          red = util.by_pixel_hr(-12, -175),
+          green = util.by_pixel_hr(36, -199)
         }
       }
     },
@@ -5826,72 +5881,108 @@ data:extend(
     supply_area_distance = DyWorld_Material_Formulas(11, DATA.Table, DATA.Tier),
 	fast_replaceable_group = "relay",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    pictures =
+	pictures =
     {
-      filename = "__base__/graphics/entity/big-electric-pole/big-electric-pole.png",
-      priority = "high",
-      width = 168,
-      height = 165,
-      direction_count = 4,
-      shift = {1.6, -1.1},
-	  tint = Material_Colors[DATA.Table]
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/big-electric-pole/big-electric-pole.png",
+          priority = "extra-high",
+          width = 76,
+          height = 156,
+          direction_count = 4,
+          shift = util.by_pixel(1, -51),
+		  tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/big-electric-pole/hr-big-electric-pole.png",
+            priority = "extra-high",
+            width = 148,
+            height = 312,
+            direction_count = 4,
+            shift = util.by_pixel(0, -51),
+		    tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/big-electric-pole/big-electric-pole-shadow.png",
+          priority = "extra-high",
+          width = 188,
+          height = 48,
+          direction_count = 4,
+          shift = util.by_pixel(60, 0),
+          draw_as_shadow = true,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/big-electric-pole/hr-big-electric-pole-shadow.png",
+            priority = "extra-high",
+            width = 374,
+            height = 94,
+            direction_count = 4,
+            shift = util.by_pixel(60, 0),
+            draw_as_shadow = true,
+            scale = 0.5
+          }
+        }
+      }
     },
     connection_points =
     {
       {
         shadow =
         {
-          copper = {2.7, 0},
-          green = {1.8, 0},
-          red = {3.6, 0}
+          copper = util.by_pixel_hr(245.0, -34.0),
+          red = util.by_pixel_hr(301.0, -0.0),
+          green = util.by_pixel_hr(206.0, -0.0)
         },
         wire =
         {
-          copper = {0, -3.1},
-          green = {-0.6,-3.1},
-          red = {0.6,-3.1}
+          copper = util.by_pixel_hr(0, -246.0),
+          red = util.by_pixel_hr(58.0, -211.0),
+          green = util.by_pixel_hr(-58.0, -211.0)
         }
       },
       {
         shadow =
         {
-          copper = {3.1, 0.2},
-          green = {2.3, -0.3},
-          red = {3.8, 0.6}
+          copper = util.by_pixel_hr(279.0, -24.0),
+          red = util.by_pixel_hr(284.0, 28.0),
+          green = util.by_pixel_hr(204.0, -31.0)
         },
         wire =
         {
-          copper = {-0.08, -3.15},
-          green = {-0.55, -3.5},
-          red = {0.3, -2.87}
+          copper = util.by_pixel_hr(34.0, -235.0),
+          red = util.by_pixel_hr(41.0, -183.0),
+          green = util.by_pixel_hr(-40.0, -240.0)
         }
       },
       {
         shadow =
         {
-          copper = {2.9, 0.06},
-          green = {3.0, -0.6},
-          red = {3.0, 0.8}
+          copper = util.by_pixel_hr(292.0, 0.0),
+          red = util.by_pixel_hr(244.0, 41.0),
+          green = util.by_pixel_hr(244.0, -41.0)
         },
         wire =
         {
-          copper = {-0.1, -3.1},
-          green = {-0.1, -3.55},
-          red = {-0.1, -2.8}
+          copper = util.by_pixel_hr(47.0, -212.0),
+          red = util.by_pixel_hr(1.0, -170.0),
+          green = util.by_pixel_hr(1.0, -251.0)
         }
       },
       {
         shadow =
         {
-          copper = {3.1, 0.2},
-          green = {3.8, -0.3},
-          red = {2.35, 0.6}
+          copper = util.by_pixel_hr(277.0, 23.0),
+          red = util.by_pixel_hr(204.0, 30.0),
+          green = util.by_pixel_hr(286.0, -29.0)
         },
         wire =
         {
-          copper = {0, -3.25},
-          green = {0.45, -3.55},
-          red = {-0.54, -3.0}
+          copper = util.by_pixel_hr(33.0, -188.0),
+          red = util.by_pixel_hr(-41.0, -182.5),
+          green = util.by_pixel_hr(41.0, -239.0)
         }
       }
     },
@@ -6496,7 +6587,7 @@ data:extend(
 	icons = 
 	{
 	  {
-		icon = "__base__/graphics/icons/iron-axe.png",
+		icon = "__base__/graphics/icons/steel-axe.png",
 	  },
 	  Materials[DATA.Table].Icon,
 	},
@@ -7098,40 +7189,113 @@ data:extend(
       input_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)*3)).."kW",
       output_flow_limit = tostring(math.floor(DyWorld_Material_Formulas(10, DATA.Table, DATA.Tier)*3)).."kW"
     },
-    picture =
+    picture = {
+    layers =
     {
-      filename = "__base__/graphics/entity/accumulator/accumulator.png",
-      priority = "extra-high",
-      width = 124,
-      height = 103,
-	  tint = Material_Colors[DATA.Table],
-      shift = {0.6875, -0.203125}
-    },
+      {
+        filename = "__base__/graphics/entity/accumulator/accumulator.png",
+        priority = "high",
+        width = 66,
+        height = 94,
+        repeat_count = repeat_count,
+        shift = util.by_pixel(0, -10),
+	    tint = Material_Colors[DATA.Table],
+        animation_speed = 0.5,
+        hr_version =
+        {
+          filename = "__base__/graphics/entity/accumulator/hr-accumulator.png",
+          priority = "high",
+          width = 130,
+          height = 189,
+          repeat_count = repeat_count,
+          shift = util.by_pixel(0, -11),
+          tint = Material_Colors[DATA.Table],
+          animation_speed = 0.5,
+          scale = 0.5
+        }
+      },
+      {
+        filename = "__base__/graphics/entity/accumulator/accumulator-shadow.png",
+        priority = "high",
+        width = 120,
+        height = 54,
+        repeat_count = repeat_count,
+        shift = util.by_pixel(28, 6),
+        draw_as_shadow = true,
+        hr_version =
+        {
+          filename = "__base__/graphics/entity/accumulator/hr-accumulator-shadow.png",
+          priority = "high",
+          width = 234,
+          height = 106,
+          repeat_count = repeat_count,
+          shift = util.by_pixel(29, 6),
+          draw_as_shadow = true,
+          scale = 0.5
+        }
+      }
+    }},
     charge_animation =
     {
-      filename = "__base__/graphics/entity/accumulator/accumulator-charge.png",
-      width = 138,
-      height = 135,
-      line_length = 8,
-      frame_count = 24,
-      shift = {0.46875, -0.640625},
-      animation_speed = 0.5,
-	  tint = Material_Colors[DATA.Table],
+    layers =
+    {
+      accumulator_picture({ r=1, g=1, b=1, a=1 } , 24),
+      {
+        filename = "__base__/graphics/entity/accumulator/accumulator-charge.png",
+        priority = "high",
+        width = 90,
+        height = 100,
+        line_length = 6,
+        frame_count = 24,
+        blend_mode = "additive",
+        shift = util.by_pixel(0, -22),
+        hr_version =
+        {
+          filename = "__base__/graphics/entity/accumulator/hr-accumulator-charge.png",
+          priority = "high",
+          width = 178,
+          height = 206,
+          line_length = 6,
+          frame_count = 24,
+          blend_mode = "additive",
+          shift = util.by_pixel(0, -22),
+          scale = 0.5
+        }
+      }
+    }
     },
 	fast_replaceable_group = "accumulator",
     charge_cooldown = 30,
     charge_light = {intensity = 0.3, size = 7, color = {r = 1.0, g = 1.0, b = 1.0}},
     discharge_animation =
     {
-      filename = "__base__/graphics/entity/accumulator/accumulator-discharge.png",
-      width = 147,
-      height = 128,
-      line_length = 8,
-      frame_count = 24,
-      shift = {0.390625, -0.53125},
-      animation_speed = 0.5,
-	  tint = Material_Colors[DATA.Table],
-    },
+    layers =
+    {
+      accumulator_picture({ r=1, g=1, b=1, a=1 } , 24),
+      {
+        filename = "__base__/graphics/entity/accumulator/accumulator-discharge.png",
+        priority = "high",
+        width = 88,
+        height = 104,
+        line_length = 6,
+        frame_count = 24,
+        blend_mode = "additive",
+        shift = util.by_pixel(-2, -22),
+        hr_version =
+        {
+          filename = "__base__/graphics/entity/accumulator/hr-accumulator-discharge.png",
+          priority = "high",
+          width = 170,
+          height = 210,
+          line_length = 6,
+          frame_count = 24,
+          blend_mode = "additive",
+          shift = util.by_pixel(-1, -23),
+          scale = 0.5
+        }
+      }
+    }
+  },
     discharge_cooldown = 60,
     discharge_light = {intensity = 0.7, size = 7, color = {r = 1.0, g = 1.0, b = 1.0}},
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -8952,12 +9116,45 @@ data:extend(
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
     {
-      filename = "__base__/graphics/entity/iron-chest/iron-chest.png",
-      priority = "extra-high",
-      width = 48,
-      height = 34,
-      shift = {0.1875, 0},
-	  tint = Material_Colors[DATA.Table]
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/iron-chest/iron-chest.png",
+          priority = "extra-high",
+          width = 34,
+          height = 38,
+          shift = util.by_pixel(0, -0.5),
+		  tint = Material_Colors[DATA.Table],
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/iron-chest/hr-iron-chest.png",
+            priority = "extra-high",
+            width = 66,
+            height = 76,
+            shift = util.by_pixel(-0.5, -0.5),
+			tint = Material_Colors[DATA.Table],
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/iron-chest/iron-chest-shadow.png",
+          priority = "extra-high",
+          width = 56,
+          height = 26,
+          shift = util.by_pixel(10, 6.5),
+          draw_as_shadow = true,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/iron-chest/hr-iron-chest-shadow.png",
+            priority = "extra-high",
+            width = 110,
+            height = 50,
+            shift = util.by_pixel(10.5, 6),
+            draw_as_shadow = true,
+            scale = 0.5
+          }
+        }
+      }
     },
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
     circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
@@ -9048,13 +9245,47 @@ data:extend(
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
     {
-      filename = "__base__/graphics/entity/iron-chest/iron-chest.png",
-      priority = "extra-high",
-	  scale = 3,
-      width = 48,
-      height = 34,
-      shift = {0.75, 0},
-	  tint = Material_Colors[DATA.Table]
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/iron-chest/iron-chest.png",
+          priority = "extra-high",
+          width = 34,
+          height = 38,
+          shift = util.by_pixel(0, -0.5),
+		  tint = Material_Colors[DATA.Table],
+          scale = 3,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/iron-chest/hr-iron-chest.png",
+            priority = "extra-high",
+            width = 66,
+            height = 76,
+            shift = util.by_pixel(-0.5, -0.5),
+			tint = Material_Colors[DATA.Table],
+            scale = 1.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/iron-chest/iron-chest-shadow.png",
+          priority = "extra-high",
+          width = 56,
+          height = 26,
+          shift = util.by_pixel(10, 6.5),
+          draw_as_shadow = true,
+          scale = 3,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/iron-chest/hr-iron-chest-shadow.png",
+            priority = "extra-high",
+            width = 110,
+            height = 50,
+            shift = util.by_pixel(10.5, 6),
+            draw_as_shadow = true,
+            scale = 1.5
+          }
+        }
+      }
     },
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
     circuit_connector_sprites = circuit_connector_definitions["chest"].sprites, 
@@ -9140,13 +9371,47 @@ data:extend(
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
     {
-      filename = "__base__/graphics/entity/iron-chest/iron-chest.png",
-      priority = "extra-high",
-	  scale = 3,
-      width = 48,
-      height = 34,
-      shift = {0.75, 0},
-	  tint = Material_Colors[DATA.Table]
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/iron-chest/iron-chest.png",
+          priority = "extra-high",
+          width = 34,
+          height = 38,
+          shift = util.by_pixel(0, -0.5),
+		  tint = Material_Colors[DATA.Table],
+          scale = 3,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/iron-chest/hr-iron-chest.png",
+            priority = "extra-high",
+            width = 66,
+            height = 76,
+            shift = util.by_pixel(-0.5, -0.5),
+			tint = Material_Colors[DATA.Table],
+            scale = 1.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/iron-chest/iron-chest-shadow.png",
+          priority = "extra-high",
+          width = 56,
+          height = 26,
+          shift = util.by_pixel(10, 6.5),
+          draw_as_shadow = true,
+          scale = 3,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/iron-chest/hr-iron-chest-shadow.png",
+            priority = "extra-high",
+            width = 110,
+            height = 50,
+            shift = util.by_pixel(10.5, 6),
+            draw_as_shadow = true,
+            scale = 1.5
+          }
+        }
+      }
     },
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
     circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
@@ -10160,7 +10425,7 @@ data:extend(
 	icons = 
 	{
 	  {
-		icon = "__base__/graphics/icons/stone-wall.png",
+		icon = "__base__/graphics/icons/wall.png",
 	  },
 	  Materials[DATA.Table].Icon,
 	},
@@ -10250,7 +10515,7 @@ data:extend(
 	icons = 
 	{
 	  {
-		icon = "__base__/graphics/icons/stone-wall.png",
+		icon = "__base__/graphics/icons/wall.png",
 	  },
 	  Materials[DATA.Table].Icon,
 	},
@@ -11276,38 +11541,38 @@ data:extend(
           direction_count = 64,
           shift = {0, -0.1875},
           animation_speed = 8,
-          max_advance = 0.2,
 		  tint = Material_Colors[DATA.Table],
+          max_advance = 0.2,
           stripes =
           {
             {
              filename = "__base__/graphics/entity/car/car-1.png",
              width_in_frames = 2,
-             height_in_frames = 22,
+             height_in_frames = 22
             },
             {
              filename = "__base__/graphics/entity/car/car-2.png",
              width_in_frames = 2,
-             height_in_frames = 22,
+             height_in_frames = 22
             },
             {
              filename = "__base__/graphics/entity/car/car-3.png",
              width_in_frames = 2,
-             height_in_frames = 20,
-            },
+             height_in_frames = 20
+            }
           },
           hr_version =
           {
             priority = "low",
-            width = 202,
+            width = 201,
             height = 172,
             frame_count = 2,
             scale = 0.5,
             direction_count = 64,
             shift = util.by_pixel(0+2, -11.5+8.5),
             animation_speed = 8,
-            max_advance = 0.2,
 		    tint = Material_Colors[DATA.Table],
+            max_advance = 0.2,
             stripes =
             {
               {
@@ -11352,25 +11617,24 @@ data:extend(
           direction_count = 64,
           max_advance = 0.2,
           line_length = 2,
-		  tint = Material_Colors[DATA.Table],
           shift = {0, -0.171875},
           stripes = util.multiplystripes(2,
           {
             {
               filename = "__base__/graphics/entity/car/car-mask-1.png",
               width_in_frames = 1,
-              height_in_frames = 22,
+              height_in_frames = 22
             },
             {
               filename = "__base__/graphics/entity/car/car-mask-2.png",
               width_in_frames = 1,
-              height_in_frames = 22,
+              height_in_frames = 22
             },
             {
               filename = "__base__/graphics/entity/car/car-mask-3.png",
               width_in_frames = 1,
-              height_in_frames = 20,
-            },
+              height_in_frames = 20
+            }
           }),
           hr_version =
           {
@@ -11385,7 +11649,6 @@ data:extend(
             max_advance = 0.2,
             shift = util.by_pixel(0+2, -11+8.5),
             line_length = 1,
-		    tint = Material_Colors[DATA.Table],
             stripes = util.multiplystripes(2,
             {
               {
@@ -11430,17 +11693,17 @@ data:extend(
            {
             filename = "__base__/graphics/entity/car/car-shadow-1.png",
             width_in_frames = 1,
-            height_in_frames = 22,
+            height_in_frames = 22
            },
            {
             filename = "__base__/graphics/entity/car/car-shadow-2.png",
             width_in_frames = 1,
-            height_in_frames = 22,
+            height_in_frames = 22
            },
            {
             filename = "__base__/graphics/entity/car/car-shadow-3.png",
             width_in_frames = 1,
-            height_in_frames = 20,
+            height_in_frames = 20
            }
           })
         }

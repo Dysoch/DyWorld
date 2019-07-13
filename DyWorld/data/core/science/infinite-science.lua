@@ -32,7 +32,7 @@ data:extend(
   {
     type = "item",
     name = dy.."extra-solar-artifact",
-    icon = "__base__/graphics/icons/alien-artifact-goo.png",
+    icon = dyworld_path_icon.."alien-artifact-goo.png",
     icon_size = 32,
 	flags = {},
     subgroup = dy.."science-artifact",

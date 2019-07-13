@@ -16,7 +16,7 @@ data:extend(
     type = "recipe",
     name = dy.."dtx-001-spaceship",
     energy_required = 500,
-	enabled = false,
+	enabled = true,
     ingredients =
     {
     },
@@ -35,6 +35,13 @@ local Data_Table = {
 		Stack = 100,
 		Amount_Added = 75,
 		Subgroup = "intermediates-2",
+		Recipe = true,
+		Recipe_Without_Tech = true,
+		Recipe_Craft_Time = 150,
+		Recipe_Category = "crafting-with-fluid",
+		Recipe_Result_Count = 1,
+		Recipe_Ingredients = {{"energy-shield-mk2-equipment", 50},{"zinc-plate", 100},{"advanced-circuit", 15}},
+		Tech_Name = "advanced-electronics-2",
 	},
 	{
 		Name = "storage-component",
@@ -42,6 +49,13 @@ local Data_Table = {
 		Stack = 100,
 		Amount_Added = 25,
 		Subgroup = "intermediates-2",
+		Recipe = true,
+		Recipe_Without_Tech = true,
+		Recipe_Craft_Time = 75,
+		Recipe_Category = "crafting-with-fluid",
+		Recipe_Result_Count = 1,
+		Recipe_Ingredients = {{"logistic-chest-storage", 50},{"lead-plate", 100},{"processing-unit", 15}},
+		Tech_Name = "advanced-electronics-2",
 	},
 	{
 		Name = "electrical-wiring",
@@ -49,6 +63,13 @@ local Data_Table = {
 		Stack = 100,
 		Amount_Added = 600,
 		Subgroup = "intermediates-2",
+		Recipe = true,
+		Recipe_Without_Tech = true,
+		Recipe_Craft_Time = 25,
+		Recipe_Category = "crafting-with-fluid",
+		Recipe_Result_Count = 1,
+		Recipe_Ingredients = {{"gold-cable", 15},{"lithium-cable", 100},{"red-wire", 15},{"green-wire", 15}},
+		Tech_Name = "advanced-electronics-2",
 	},
 	{
 		Name = "sensor-component",
@@ -56,6 +77,13 @@ local Data_Table = {
 		Stack = 100,
 		Amount_Added = 5,
 		Subgroup = "intermediates-2",
+		Recipe = true,
+		Recipe_Without_Tech = true,
+		Recipe_Craft_Time = 25,
+		Recipe_Category = "crafting-with-fluid",
+		Recipe_Result_Count = 1,
+		Recipe_Ingredients = {{dy.."stainless-steel-radar", 10},{"elinvar-cable", 50}},
+		Tech_Name = "advanced-electronics-2",
 	},
 	{
 		Name = "rcs-component",
@@ -155,13 +183,13 @@ local Data_Table = {
 		Amount_Added = 40,
 		Subgroup = "intermediates-2",
 	},
-	{
+	--[[{
 		Name = "dtx-001-spaceship",
 		Icon = dyworld_path_icon_temp,
 		Stack = 1,
 		Subgroup = "intermediates-2",
 	},
-	--[[{
+	{
 		Name = "diamond",
 		Icon = dyworld_path_icon.."diamond.png",
 		Stack = 25,

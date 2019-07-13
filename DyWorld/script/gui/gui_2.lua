@@ -1,7 +1,6 @@
-module("gui_2", package.seeall)
 -- gui_2 is the skills menu
 
-function toggleGui(player)
+function gui_2_toggleGui(player)
 	if player.gui.top.dyworld_skills_gui then
 		player.gui.top.dyworld_skills_gui.destroy()
 	else

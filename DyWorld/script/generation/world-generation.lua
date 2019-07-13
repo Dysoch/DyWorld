@@ -1,4 +1,3 @@
-module("generation", package.seeall)
 require "script/generation/noise"
 
 Ruins = {"small-scorchmark", "sand-rock-big", "rock-big", "rock-huge"}

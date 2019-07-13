@@ -1,5 +1,3 @@
-module("noise", package.seeall)
-
 -- original code by Ken Perlin: http://mrl.nyu.edu/~perlin/noise/
 
 noise = {}

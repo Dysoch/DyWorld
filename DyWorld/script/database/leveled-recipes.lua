@@ -1,6 +1,4 @@
-module("LvLed_Recipes", package.seeall)
-
-RecipeUnlock  = 
+LvLed_Recipes_RecipeUnlock  = 
 {
 	{ Recipe = "dyworld-greenhouse", Level = 2, type = 3 },
 	{ Recipe = "dyworld-wood-creation-1", Level = 2, type = 1 },

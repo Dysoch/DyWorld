@@ -1,4 +1,3 @@
-module("gui_1", package.seeall)
 -- gui_1 is the stats menu
 require "script/stats/functions"
 
@@ -7,7 +6,7 @@ function Round(num, numDecimalPlaces)
 	return math.floor(num * mult + 0.5) / mult
 end
 
-function closeGUI(player, id)
+function gui_1_closeGUI(player, id)
 	if player.gui.top.dyworld_stats_1_gui then
 	local P_Level = global.players[id].Level
 		player.gui.top.dyworld_stats_1_gui.destroy()
@@ -18,7 +17,7 @@ function closeGUI(player, id)
 	end
 end
 
-function openGui(player, id)
+function gui_1_openGui(player, id)
 	local P_Level = global.players[id].Level
 	local frame1 = player.gui.top.add{type = "frame", name = "dyworld_stats_1_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
 	local frame2 = player.gui.top.add{type = "frame", name = "dyworld_stats_2_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}

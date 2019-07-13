@@ -1,7 +1,6 @@
-module("gui_6", package.seeall)
 -- gui_6 is the guide menu
 
-function toggleGui(player)
+function gui_6_toggleGui(player)
 	if player.gui.top.dyworld_guide_gui then
 		player.gui.top.dyworld_guide_gui.destroy()
 	else

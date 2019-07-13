@@ -1,5 +1,3 @@
-module("functions", package.seeall)
-
 function getDistance(objA_X, objA_Y, objB_X, objB_Y)
     -- Get the length for each of the components x and y
     local xDist = objB_X - objA_X

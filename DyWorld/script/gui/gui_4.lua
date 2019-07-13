@@ -1,7 +1,6 @@
-module("gui_4", package.seeall)
 -- gui_4 is the needs window
 
-function RefreshGUI(player, id)
+function gui_4_RefreshGUI(player, id)
 	if player.gui.top.dyworld_needs_gui then
 		player.gui.top.dyworld_needs_gui.destroy()
 	end
@@ -14,7 +13,7 @@ function RefreshGUI(player, id)
 	frameflow.add{type = "progressbar", size = 26, value = (global.players[id].Water/global.players[id].Water_Max)}
 end
 
-function CloseGUI(player, id)
+function gui_4_CloseGUI(player, id)
 	if player.gui.top.dyworld_needs_gui then
 		player.gui.top.dyworld_needs_gui.destroy()
 	end

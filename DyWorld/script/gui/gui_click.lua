@@ -1,4 +1,3 @@
-module("gui_click", package.seeall)
 
 function onClick(event)
 	local player = game.players[event.player_index]

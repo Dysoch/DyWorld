@@ -1,12 +1,11 @@
-module("gui_3", package.seeall)
 require "roadmap"
 -- gui_3 is the Roadmap
 
-function toggleGui(player)
+function gui_3_toggleGui(player)
 	if player.gui.top.dyworld_roadmap_gui then
 		player.gui.top.dyworld_roadmap_gui.destroy()
 	else
-		roadmap.Roadmap()
+		Roadmap()
 	local force = player.force
 	local frame = player.gui.top.add{type = "frame", name = "dyworld_roadmap_gui", direction = "vertical", caption = {"dyworld_roadmap_gui.title"}}
 	local frameflow = frame.add{type = "flow", name = "flow", direction = "vertical"}

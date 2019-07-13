@@ -1,5 +1,3 @@
-module("roadmap", package.seeall)
-
 function Roadmap()
 	global.Roadmap = 
 	{

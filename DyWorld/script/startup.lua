@@ -1,5 +1,3 @@
-module("startup", package.seeall)
-
 function Research_Calc()
 	local var = 0
 	for k,v in pairs(game.forces.player.technologies) do
@@ -8,7 +6,7 @@ function Research_Calc()
 	return var
 end
 
-function Game()
+function Game_Startup()
 	if not global.dyworld then
 		global.dyworld = 
 		{
@@ -55,13 +53,13 @@ function Game()
 	end
 	game.forces.player.ghost_time_to_live = (60*60*60*24) -- 24 hour live time
 	game.forces.player.deconstruction_time_to_live = (60*60*60*24) -- 24 hour live time
-	remote.call("silo_script", "set_show_launched_without_satellite", false)
-	remote.call("silo_script", "set_finish_on_launch", false)
-	remote.call("silo_script", "remove_tracked_item", "satellite")
-	remote.call("silo_script", "add_tracked_item", "dyworld-dtx-001-spaceship")
+	--remote.call("silo_script", "set_show_launched_without_satellite", false)
+	--remote.call("silo_script", "set_finish_on_launch", false)
+	--remote.call("silo_script", "remove_tracked_item", "satellite")
+	--remote.call("silo_script", "add_tracked_item", "dyworld-dtx-001-spaceship")
 end
 
-function startup(PLAYER, ID)
+function Player_Startup(PLAYER, ID)
 	debug("Starting Startup")
 	if not global.stats then global.stats = {} debug("Created global.stats") end
 	global.dyworld.Players = global.dyworld.Players + 1
@@ -160,10 +158,9 @@ function startup(PLAYER, ID)
 		}
 	debug("New player created, and added "..game.players[ID].name.." to global.players with blank stats with ID: "..ID)
 	end
-	game.players[ID].get_inventory(defines.inventory.player_main).clear()
-	game.players[ID].get_inventory(defines.inventory.player_quickbar).clear()
-	game.players[ID].get_inventory(defines.inventory.player_guns).clear()
-	game.players[ID].get_inventory(defines.inventory.player_ammo).clear()
+	game.players[ID].get_inventory(defines.inventory.character_main).clear()
+	game.players[ID].get_inventory(defines.inventory.character_guns).clear()
+	game.players[ID].get_inventory(defines.inventory.character_ammo).clear()
 	if settings.startup["DyWorld_Debug"].value then
 		game.players[ID].insert{name="substation",count=100}
 		game.players[ID].insert{name="logistic-chest-storage",count=100}

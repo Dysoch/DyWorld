@@ -139,13 +139,13 @@ local result = {type = "item", name = "stainless-steel-pcb", amount = 2}
 table.insert(data.raw.recipe[dy.."science-fluid-6"].ingredients, result)
 
 if settings.startup["DyWorld_Extraction"].value then
-	local result = {type = "item", name = dy.."tin-mining-tool", amount = 1}
-	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
+	--local result = {type = "item", name = dy.."tin-mining-tool", amount = 1}
+	--table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
 	local result = {type = "item", name = dy.."aluminium-electric-drill", amount = 1}
 	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
 else	
-	local result = {"steel-axe", 1}
-	table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
+	--local result = {"steel-axe", 1}
+	--table.insert(data.raw.recipe[dy.."science-fluid-3"].ingredients, result)
 	
 end
 

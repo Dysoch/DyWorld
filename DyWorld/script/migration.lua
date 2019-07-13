@@ -1,4 +1,3 @@
-module("migration", package.seeall)
 require "script/startup"
 
 function Migrate_To_Next_Version()
@@ -42,7 +41,7 @@ function Migrate_To_Next_Version()
 		if not global.dyworld.Warfare then 
 			global.dyworld.Warfare = {} 
 			global.dyworld.Warfare.Location = {} 
-			global.dyworld.Max_Research = startup.Research_Calc()
+			global.dyworld.Max_Research = Research_Calc()
 		end
 		global.dyworld.Version = "0.6.2" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
@@ -170,7 +169,7 @@ function Migrate_To_Next_Version()
 			remote.call("silo_script", "add_tracked_item", "dyworld-dtx-001-spaceship")
 			-- This part below is done every migration!
 			global.dyworld.Max_Research = Research_Calc(),
-			global.dyworld.Research_Done = 0
+			global.dyworld.Research_Done == 0
 			global.stats.research = 0
 			global.dyworld.Migration_Check = true
 			for k,v in pairs(game.players[1].force.technologies) do

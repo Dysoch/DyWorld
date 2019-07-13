@@ -1,5 +1,3 @@
-module("loaders", package.seeall)
-
 -- work with directions
 local opposite = {
 	[defines.direction.north] = defines.direction.south,

@@ -1,7 +1,6 @@
-module("gui_0", package.seeall)
 -- gui_0 is the debug menu
 
-function toggleGui(player, id)
+function gui_0_toggleGui(player, id)
 	if player.gui.top.dyworld_debug_gui_1 then
 		player.gui.top.dyworld_debug_gui_1.destroy()
 		player.gui.top.dyworld_debug_gui_2.destroy()
@@ -62,7 +61,7 @@ function toggleGui(player, id)
 		-- scrollbar_debug3.add is the modular test gui
 		-- scrollbar_debug3.add{type = "label", caption = k..": "..v.."x"}
 		for z,x in pairs(global.players) do
-			for c,v in pairs(game.players[x.PlayerID].get_inventory(defines.inventory.player_main).get_contents()) do
+			for c,v in pairs(game.players[x.PlayerID].get_inventory(defines.inventory.character_main).get_contents()) do
 				scrollbar_debug3.add{type = "label", caption = game.players[x.PlayerID].name..": "..c..": "..v.."x"}
 			end
 		end

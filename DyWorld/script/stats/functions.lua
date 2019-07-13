@@ -1,4 +1,3 @@
-module("stats_functions", package.seeall)
 require "roadmap"
 require "script/database/leveled-recipes"
 
@@ -93,7 +92,7 @@ end
 
 function LevelUnlock(ID, LEVEL)
 	local player = game.players[ID]
-	for _,data in pairs(LvLed_Recipes.RecipeUnlock) do
+	for _,data in pairs(LvLed_Recipes_RecipeUnlock) do
 		--if math.floor(global.dyworld.Level / global.dyworld.Players) >= data.Level then
 		if global.dyworld.Level >= data.Level then
 			for _,player in pairs(game.players) do

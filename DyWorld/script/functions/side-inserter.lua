@@ -1,5 +1,3 @@
-module("side_inserters", package.seeall)
-
 PICKUP_ROTATIONS = -- True is clockwise rotation
 {
   [0] = -- south

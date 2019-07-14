@@ -6,7 +6,6 @@ require "script/gui/gui_0"
 require "script/gui/gui_1"
 require "script/gui/gui_2"
 require "script/gui/gui_3"
-require "script/gui/gui_4"
 require "script/gui/gui_5"
 require "script/gui/gui_6"
 require "script/gui/gui_click"
@@ -74,8 +73,6 @@ script.on_event(defines.events.on_player_respawned, function(event)
 		game.players[ID].get_inventory(defines.inventory.character_main).clear()
 		game.players[ID].get_inventory(defines.inventory.character_guns).clear()
 		game.players[ID].get_inventory(defines.inventory.character_ammo).clear()
-		global.players[ID].Food = 100
-		global.players[ID].Water = 100
 		debug(game.players[event.player_index].name.." respawned")
 	end
 end)
@@ -110,7 +107,6 @@ script.on_event(defines.events.on_player_crafted_item, function(event)
 		IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
 		IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
 		XP_Full(event.player_index)
-		Needs_Work(event.player_index, (event.item_stack.count*0.1), (event.item_stack.count*0.15))
 	end
 end)
 
@@ -120,12 +116,10 @@ script.on_event(defines.events.on_player_mined_item, function(event)
 			IncrementerGlobal("mined", 100, event.item_stack.name)
 			IncrementerPersonal("mined", 100, event.player_index, event.item_stack.name)
 			XP_Full(event.player_index)
-			Needs_Work(event.player_index, (100*0.15), (100*0.25))
 		else
 			IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
 			IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
 			XP_Full(event.player_index)
-			Needs_Work(event.player_index, (event.item_stack.count*0.15), (event.item_stack.count*0.25))
 		end
 	end
 end)
@@ -136,39 +130,24 @@ script.on_event(defines.events.on_picked_up_item, function(event)
 			IncrementerGlobal("pickup", 100, event.item_stack.name)
 			IncrementerPersonal("pickup", 100, event.player_index, event.item_stack.name)
 			XP_Full(event.player_index)
-			Needs_Work(event.player_index, (100*0.05), (100*0.025))
 		else
 			IncrementerGlobal("pickup", event.item_stack.count, event.item_stack.name)
 			IncrementerPersonal("pickup", event.item_stack.count, event.player_index, event.item_stack.name)
 			XP_Full(event.player_index)
-			Needs_Work(event.player_index, (event.item_stack.count*0.05), (event.item_stack.count*0.025))
 		end
 	end
 end)
 
 script.on_event(defines.events.on_built_entity, function(event)
-	if string.find(event.created_entity.name, "dyworld-", 1, true) and string.find(event.created_entity.name, "-loader", 1, true) then
-		DyWorld_Loaders_Rotate(event)
-	end
 	if global.dyworld.RPG_Mode == "normal" then
 		IncrementerGlobal("build", 1)
 		IncrementerPersonal("build", 1, event.player_index)
 		XP_Full(event.player_index)
-		Needs_Work(event.player_index, 0.1, 0.05)
-		Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
 	end
 	if not global.dyworld.Guide then global.dyworld.Guide = {} end
 	if not global.dyworld.Guide[event.created_entity.type] then
 		global.dyworld.Guide[event.created_entity.type] = true
 	end
-end)
-
-script.on_event(defines.events.on_player_mined_entity, function(event)
-    Mark_Warfare_Location(event.entity.position.x, event.entity.position.y, false)
-end)
-
-script.on_event(defines.events.on_robot_mined_entity, function(event)
-    Mark_Warfare_Location(event.entity.position.x, event.entity.position.y, false)
 end)
 
 script.on_event(defines.events.on_robot_mined, function(event)
@@ -182,7 +161,6 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
 	if global.dyworld.RPG_Mode == "normal" then
 		IncrementerGlobal("ghostbuild", 1)
 		XP_All_Small()
-		Mark_Warfare_Location(event.created_entity.position.x, event.created_entity.position.y, true)
 	end
 	if not global.dyworld.Guide then global.dyworld.Guide = {} end
 	if not global.dyworld.Guide[event.created_entity.type] then
@@ -243,33 +221,7 @@ script.on_event(defines.events.on_tick, function(event)
 			end
 		end
 	end
-	if event.tick%(60*60*1)==1 and global.dyworld.Players ~= 0 then
-		for k,v in pairs(global.players) do
-			if v.Alive and v.Playing then
-				if settings.startup["DyWorld_Story"].value or settings.startup["DyWorld_Needs"].value then
-					Needs_Timed(v.PlayerID)
-				end
-			end
-		end
-	end
-	if event.tick%(60*5)==1 and global.dyworld.Players ~= 0 then
-		for k,v in pairs(global.players) do
-			if v.Alive and v.Playing then
-				if settings.startup["DyWorld_Story"].value or settings.startup["DyWorld_Needs"].value then
-					if not v.State_Stats_GUI then
-						local player = game.players[v.PlayerID]
-						gui_4_RefreshGUI(player, v.PlayerID)
-					else
-						local player = game.players[v.PlayerID]
-						gui_4_CloseGUI(player, v.PlayerID)
-					end
-				end
-				--v.PosX = game.players[v.PlayerID].position.x
-				--v.PosY = game.players[v.PlayerID].position.y
-			end
-		end
-	end
-	if global.dyworld.Players ~= 0 and event.tick%(15*1)==1 then --might be script heavy, but updates always instantly
+	if global.dyworld.Players ~= 0 and event.tick%(15*1)==1 then
 		for k,v in pairs(global.players) do
 			if v.Alive and v.Playing then
 				v.PosX = game.players[v.PlayerID].position.x
@@ -309,7 +261,6 @@ script.on_event("DyWorld_Stats", function(event)
 		else
 			global.players[event.player_index].State_Stats_GUI = true
 			gui_1_openGui(player, event.player_index)
-			gui_4_CloseGUI(player, event.player_index)
 		end
 	end
 end)
@@ -409,16 +360,6 @@ remote.add_interface("DyWorld",
 	
 	Chart = function(AMOUNT)
 		game.forces.player.chart(game.player.surface, {lefttop = {x = -AMOUNT, y = -AMOUNT}, rightbottom = {x = AMOUNT, y = AMOUNT}})
-	end,
-	
-	RegenerateOresAll = function()
-		game.regenerate_entity("chalcopyrite")
-		game.regenerate_entity("hematite")
-		game.regenerate_entity("galena")
-		game.regenerate_entity("prolycotherium")
-		game.regenerate_entity("carbolycite")
-		game.regenerate_entity("bauxite")
-		game.regenerate_entity("radicium")
 	end,
 	
 	RegenerateOre = function(NAME)

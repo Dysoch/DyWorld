@@ -23,7 +23,7 @@ end
 
 function GetInv()
 	for z,x in pairs(global.players) do
-		for c,v in pairs(game.players[x.PlayerID].get_inventory(defines.inventory.player_main).get_contents()) do
+		for c,v in pairs(game.players[x.PlayerID].get_inventory(defines.inventory.character_main).get_contents()) do
 			
 		end
 	end

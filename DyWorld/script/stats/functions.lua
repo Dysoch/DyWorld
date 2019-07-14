@@ -1,5 +1,4 @@
 require "roadmap"
-require "script/database/leveled-recipes"
 
 function IncrementerGlobal(NAME, AMOUNT, ITEMNAME)
 	local ITEMNAME2 = ITEMNAME or "nil"
@@ -82,37 +81,9 @@ function Level_Up(ID)
 		global.players[ID].Level = global.players[ID].Level + 1
 		global.dyworld.Level = global.dyworld.Level + 1
 		global.players[ID].XP = global.players[ID].XP - global.players[ID].XP_LevelUp
-		--global.players[ID].XP_LevelUp = math.floor(global.players[ID].XP_LevelUp*(1.25+math.random()))
 		global.players[ID].XP_LevelUp = math.floor(( (100 + (global.players[ID].Level * 75)) + math.random(100 + (global.players[ID].Level * 100))) * (1 + (global.players[ID].Level / 10)))
 		PlayerPrint({"dyworld.levelup", (global.players[ID].Level), (game.players[ID].name)})
 		debug(game.players[ID].name.." leveled up to level "..global.players[ID].Level)
-		--LevelUnlock(ID, global.players[ID].Level)
-	end
-end
-
-function LevelUnlock(ID, LEVEL)
-	local player = game.players[ID]
-	for _,data in pairs(LvLed_Recipes_RecipeUnlock) do
-		--if math.floor(global.dyworld.Level / global.dyworld.Players) >= data.Level then
-		if global.dyworld.Level >= data.Level then
-			for _,player in pairs(game.players) do
-				if player.force.recipes[data.Recipe] then
-					if not player.force.recipes[data.Recipe].enabled then
-						player.force.recipes[data.Recipe].enabled = true
-						if data.type == 1 then
-							player.print({"dyworld.level-unlock", {"recipe-name."..data.Recipe}})
-						elseif data.type == 2 then
-							player.print({"dyworld.level-unlock", {"fluid-name."..data.Recipe}})
-						elseif data.type == 3 then
-							player.print({"dyworld.level-unlock", {"entity-name."..data.Recipe}})
-						else
-							player.print({"dyworld.level-unlock", {"item-name."..data.Recipe}})
-						end
-						debug("Unlocked: "..data.Recipe)
-					end
-				end
-			end
-		end
 	end
 end
 
@@ -220,20 +191,4 @@ function GlobalSkills(id)
 	global.dyworld.Wisdom = global.dyworld.Wisdom + global.players[id].mystical.wisdom
 	global.dyworld.Guile = global.dyworld.Guile + global.players[id].mystical.guile
 	global.dyworld.Knowledge = global.dyworld.Knowledge + global.players[id].mystical.knowledge
-end
-
-function Needs_Timed(ID)
-	local player = game.players[ID]
-	global.players[ID].Food = global.players[ID].Food - global.players[ID].Food_Use
-	global.players[ID].Water = global.players[ID].Water - global.players[ID].Water_Use
-	if global.players[ID].Food <= 0 then global.players[ID].Food = 0 end
-	if global.players[ID].Water <= 0 then global.players[ID].Water = 0 end
-end
-
-function Needs_Work(ID, AMOUNT1, AMOUNT2)
-	local player = game.players[ID]
-	global.players[ID].Food = global.players[ID].Food - AMOUNT1
-	global.players[ID].Water = global.players[ID].Water - AMOUNT2
-	if global.players[ID].Food <= 0 then global.players[ID].Food = 0 end
-	if global.players[ID].Water <= 0 then global.players[ID].Water = 0 end
 end

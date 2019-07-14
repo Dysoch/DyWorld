@@ -1,55 +1,40 @@
 for k,v in pairs(data.raw.fluid) do
-	DyWorld_Fluid_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
 for k,v in pairs(data.raw.item) do
-	DyWorld_Item_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
 for k,v in pairs(data.raw.module) do
-	DyWorld_Item_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
 for k,v in pairs(data.raw.ammo) do
-	DyWorld_Item_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
 for k,v in pairs(data.raw.capsule) do
-	DyWorld_Item_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
 for k,v in pairs(data.raw.tool) do
-	DyWorld_Item_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
 for k,v in pairs(data.raw.gun) do
-	DyWorld_Item_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
 for k,v in pairs(data.raw.armor) do
-	DyWorld_Item_Recycle(v)
-	if not v.icon_size then v.icon_size = 32 end
-end	
-
-for k,v in pairs(data.raw["mining-tool"]) do
-	DyWorld_Item_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
 for k,v in pairs(data.raw["repair-tool"]) do
-	DyWorld_Item_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
 for k,v in pairs(data.raw["rail-planner"]) do
-	DyWorld_Item_Recycle(v)
 	if not v.icon_size then v.icon_size = 32 end
 end	
 
@@ -60,6 +45,10 @@ end
 for k,v in pairs(data.raw.technology) do
 	if not v.icon_size then v.icon_size = 32 end
 end	
+
+for i,inserter in pairs(data.raw["inserter"]) do
+    inserter.allow_custom_vectors = true
+end
 
 if settings.startup["DyWorld_Warfare_Difficulty"].value == 1 then
 	for k,v in pairs(data.raw.unit) do	

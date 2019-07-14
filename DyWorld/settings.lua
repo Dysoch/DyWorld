@@ -9,56 +9,24 @@
 --settings.startup["DyWorld_Power"].value
 --settings.startup["DyWorld_Logistics"].value
 --settings.startup["DyWorld_Extraction"].value
---settings.startup["DyWorld_Story"].value
---settings.startup["DyWorld_Needs"].value
---settings.startup["DyWorld_Metallurgy"].value
 --settings.startup["DyWorld_Equipment"].value
---settings.startup["DyWorld_Chemistry"].value
---settings.startup["DyWorld_Hidden_Recipes"].value
---settings.startup["DyWorld_PvP"].value
---settings.startup["DyWorld_Roboport_Standard"].value
---settings.startup["DyWorld_Circuit_Components_Auto_Craft"].value
 
 -- can use: "runtime-global", "startup"
 
 data:extend({
+	----- Debug Settings -----
 	{
 		type = "bool-setting",
 		name = "DyWorld_Debug",
 		setting_type = "startup",
 		default_value = false,
 	},
+	----- Content Altering Settings -----
 	{
 		type = "bool-setting",
 		name = "DyWorld_Warfare",
 		setting_type = "startup",
 		default_value = true,
-	},
-	{
-		type = "int-setting",
-		name = "DyWorld_Warfare_Difficulty",
-		setting_type = "startup",
-		default_value = 2,
-        maximum_value = 5,
-        minimum_value = 1,
-		allowed_values = Warfare_Modes,
-        order = "DyWorld_Warfare_Difficulty"
-	},
-	{
-		type = "int-setting",
-		name = "DyWorld_Stack_Size_Mult",
-		setting_type = "startup",
-		default_value = 1,
-        maximum_value = 100000,
-        minimum_value = 1,
-	},
-	{
-		type = "int-setting",
-		name = "DyWorld_Tech_Increaser",
-		setting_type = "startup",
-		default_value = 1,
-        maximum_value = 5000,
-        minimum_value = 1,
 	},
 	{
 		type = "bool-setting",
@@ -86,40 +54,11 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
-		name = "DyWorld_Story",
-		setting_type = "startup",
-		default_value = false,
-	},
-	{
-		type = "bool-setting",
-		name = "DyWorld_Needs",
-		setting_type = "startup",
-		default_value = false,
-	},
-	--[[{
-		type = "bool-setting",
-		name = "DyWorld_Metallurgy",
-		setting_type = "startup",
-		default_value = true,
-	},
-	{
-		type = "bool-setting",
-		name = "DyWorld_Modules",
-		setting_type = "startup",
-		default_value = true,
-	},]]
-	{
-		type = "bool-setting",
 		name = "DyWorld_Equipment",
 		setting_type = "startup",
 		default_value = true,
 	},
-	{
-		type = "bool-setting",
-		name = "DyWorld_Chemistry",
-		setting_type = "startup",
-		default_value = true,
-	},
+	----- Game Altering Settings -----
 	{
 		type = "bool-setting",
 		name = "DyWorld_Infinite_Resources",
@@ -127,43 +66,31 @@ data:extend({
 		default_value = false,
 	},
 	{
-		type = "bool-setting",
-		name = "DyWorld_Hidden_Recipes",
+		type = "int-setting",
+		name = "DyWorld_Warfare_Difficulty",
 		setting_type = "startup",
-		default_value = false,
+		default_value = 2,
+        maximum_value = 5,
+        minimum_value = 1,
+		allowed_values = Warfare_Modes,
+        order = "DyWorld_Warfare_Difficulty"
 	},
 	{
-		type = "bool-setting",
-		name = "DyWorld_Roboport_Standard",
+		type = "int-setting",
+		name = "DyWorld_Stack_Size_Mult",
 		setting_type = "startup",
-		default_value = true,
+		default_value = 1,
+        maximum_value = 1000000,
+        minimum_value = 1,
 	},
 	{
-		type = "bool-setting",
-		name = "DyWorld_PvP",
+		type = "int-setting",
+		name = "DyWorld_Tech_Increaser",
 		setting_type = "startup",
-		default_value = false,
+		default_value = 1,
+        maximum_value = 1000000,
+        minimum_value = 1,
 	},
-    {
-        type = "bool-setting",
-        name = "DyWorld_loaders_snap_to_back",
-		order = "a",
-        setting_type = "runtime-per-user",
-        default_value = true
-    },
-    {
-        type = "bool-setting",
-        name = "DyWorld_loaders_snap_to_front",
-		order = "b",
-        setting_type = "runtime-per-user",
-        default_value = true
-    },
-    {
-        type = "bool-setting",
-        name = "DyWorld_Circuit_Components_Auto_Craft",
-        setting_type = "startup",
-        default_value = false
-    },
 })
 
 Warfare_Modes =

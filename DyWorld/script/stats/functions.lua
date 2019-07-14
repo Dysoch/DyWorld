@@ -39,6 +39,7 @@ function XP_Full(ID)
 		global.players[ID].XP = global.players[ID].XP + 1
 		global.dyworld.XP = global.dyworld.XP + 1
 	end
+	--@todo Add diminishing xp for crafting
 	Level_Up(ID)
 end
 
@@ -110,6 +111,7 @@ function BodySkills(id)
 	local m4 = global.players[id].mystical.guile
 	local m5 = global.players[id].mystical.knowledge
 	-- p5 is done with research and crafting! implants will be installed, each with a base number to increase the value
+	--@todo Implement Implants
 	global.players[id].physical.creations = math.floor(((gsb+gsc)+(gsgb/25))/(1000))
 	global.players[id].mystical.guile = math.floor(((((gsc+gsm)/25)+((gsb+(gsgb/100))/50)+gsk)/(1000))+1)
 	global.players[id].mystical.intelligence = math.floor(((((p4+m4)*5)+gss)/(1000))+1)
@@ -163,7 +165,7 @@ function BodySkills(id)
 			end
 		end
 	end
-	
+	--@todo add more bonuses
 end
 
 function GlobalSkillsReset()

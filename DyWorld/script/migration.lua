@@ -18,6 +18,8 @@ function Migrate_To_Next_Version()
 			global.dyworld.Migration_Check = false
 		global.dyworld.Version = "0.8.0" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+		--@todo add migration message
+		--@body A message that says to start over with a new game since DyWorld changed a lot
 	end
 	--[[if global.dyworld.Version == "0.7.5" or global.dyworld.Version == "0.7.81" then
 			remote.call("silo_script", "set_show_launched_without_satellite", false)

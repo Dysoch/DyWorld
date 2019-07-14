@@ -9,6 +9,7 @@ function Roadmap()
 		Graphics = {Progress = 1, Name = "Graphical Overhaul"},
 		Settings = {Progress = 35, Name = "Mod Settings"},
 		Enemies = {Progress = 1, Name = "Enemies"},
+		RPG = {Progress = 50, Name = "RPG System"},
 	}
 	global.RoadmapAmounts = {}
 	for k,v in pairs(global.Roadmap) do

@@ -126,7 +126,6 @@ function BodySkills(id)
 		if gsc >= 250 then
 			game.players[id].character_crafting_speed_modifier = ((((p4*25)+(p3*15)+gsc)/10000)-0.0016)
 		end
-		
 	end
 	if P_Level >= 4 then
 		game.players[id].character_resource_reach_distance_bonus = math.floor((gsp+gsm+(p2*5)+(m1*2))/10000)

@@ -1,6 +1,0 @@
--- water = 100(max_temperature) - 15(default_temperature) = 85. 85 * 1kJ(heat_capacity) per degree = 85kJ. 85kJ * 60(ticks) = 5100kJ
--- generator = 5100kJ * 1(effectivity ) * 0.1(fluid_usage_per_tick) = 510kJ
--- a standard boiler is capable of heating 0.075 of flow from 15 degrees to 100.
-
-
--- Power = 0.2kW(water power per degree) * Temperature - 15(start) * fluid per tick * 60

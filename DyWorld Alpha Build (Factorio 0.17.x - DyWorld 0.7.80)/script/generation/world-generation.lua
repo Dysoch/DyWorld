@@ -53,7 +53,7 @@ function Ship_Spawner(event)
 			Ship_2_Created.insert{name="copper-plate", count=math.random(50)}
 		end
 		if math.random(1,10) == 5 then
-			Ship_2_Created.insert{name="raw-wood", count=math.random(100)}
+			Ship_2_Created.insert{name="wood", count=math.random(100)}
 		end
 		global.dyworld.Generation_Ship_2 = true
 		global.dyworld.Generation_Ship_2_PosX = Ship_2_Pos.x

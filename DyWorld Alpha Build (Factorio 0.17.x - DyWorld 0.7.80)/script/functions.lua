@@ -13,7 +13,6 @@ end
 
 function Debug_Items()
 	game.players[1].insert{name="dyworld-debug-armor",count=1}
-	game.players[1].insert{name="dyworld-debug-axe",count=1000}
 	game.players[1].insert{name="dyworld-debug-battery-equipment",count=10}
 	game.players[1].insert{name="dyworld-debug-exoskeleton-equipment",count=1}
 	game.players[1].insert{name="dyworld-debug-fusion-equipment",count=10}

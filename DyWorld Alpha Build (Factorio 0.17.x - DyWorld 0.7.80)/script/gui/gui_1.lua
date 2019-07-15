@@ -122,12 +122,12 @@ function gui_1_openGui(player, id)
 		end
 		if P_Level >= 7 and global.stats.killed and global.stats.killed >= 1 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Loot Pickup Range: "..math.floor(game.players[id].character_loot_pickup_distance_bonus+2), style = "dyworld_label"}
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Health: "..game.entity_prototypes["player"].max_health + game.players[id].character_health_bonus, style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Health: "..game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus, style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 7}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
 		if P_Level >= 10 then
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Inventory Slots: "..game.entity_prototypes["player"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus, style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Inventory Slots: "..game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus, style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 10}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end

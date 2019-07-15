@@ -408,6 +408,12 @@ remote.add_interface("DyWorld",
 		global.RPG = NAME
 	end,
 	
+	--@todo Add debug RPG elements to beta version
+	RPG_Level_Increase = function(ID, AMOUNT)
+		global.players[ID].Level = global.players[ID].Level + AMOUNT
+		
+	end,
+	
 	Chart = function(AMOUNT)
 		game.forces.player.chart(game.player.surface, {lefttop = {x = -AMOUNT, y = -AMOUNT}, rightbottom = {x = AMOUNT, y = AMOUNT}})
 	end,

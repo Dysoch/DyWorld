@@ -11,3 +11,6 @@ require("data.core.edits.items")
 
 -- Resources
 require("data.core.resources.resources")
+
+-- Items
+require("data.core.items.metals")

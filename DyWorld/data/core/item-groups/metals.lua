@@ -12,6 +12,11 @@ local Data_Table_Item_Group = {
 		Main = "metals"
 	},
 	{
+		Name = "material-0",
+		Type = "sub",
+		Main = "metals"
+	},
+	{
 		Name = "material-1",
 		Type = "sub",
 		Main = "metals"
@@ -53,11 +58,6 @@ local Data_Table_Item_Group = {
 	},
 	{
 		Name = "material-9",
-		Type = "sub",
-		Main = "metals"
-	},
-	{
-		Name = "material-10",
 		Type = "sub",
 		Main = "metals"
 	},

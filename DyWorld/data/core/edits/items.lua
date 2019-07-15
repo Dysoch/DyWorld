@@ -33,20 +33,22 @@ data.raw.item["wood"].order = "wood"
 data.raw.item["uranium-ore"].subgroup = dy.."0-resource"
 data.raw.item["uranium-ore"].order = "uranium-ore"
 
-data.raw.item["iron-plate"].subgroup = dy.."material-2"
+data.raw.item["iron-plate"].subgroup = dy.."material-1"
 data.raw.item["iron-plate"].order = "iron-plate"
 
-data.raw.item["copper-plate"].subgroup = dy.."material-2"
+data.raw.item["copper-plate"].subgroup = dy.."material-1"
 data.raw.item["copper-plate"].order = "copper-plate"
 
-data.raw.item["steel-plate"].subgroup = dy.."material-3"
+data.raw.item["steel-plate"].subgroup = dy.."material-2"
 data.raw.item["steel-plate"].order = "steel-plate"
 
-data.raw.item["stone"].subgroup = dy.."material-1"
+data.raw.item["stone"].subgroup = dy.."material-0"
 data.raw.item["stone"].order = "stone"
 
-data.raw.item["coal"].subgroup = dy.."material-1"
+data.raw.item["coal"].subgroup = dy.."material-0"
 data.raw.item["coal"].order = "coal"
 
-data.raw.item["wood"].subgroup = dy.."material-1"
+data.raw.item["wood"].subgroup = dy.."material-0"
 data.raw.item["wood"].order = "wood"
+
+--@todo Add descriptions for ores (chemical formula)

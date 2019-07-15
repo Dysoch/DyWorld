@@ -5,6 +5,7 @@ require("data.core.gui_sprites")
 
 -- Item Groups
 require("data.core.item-groups.metals")
+require("data.core.item-groups.fluids")
 
 -- Edits
 require("data.core.edits.items")
@@ -14,3 +15,6 @@ require("data.core.resources.resources")
 
 -- Items
 require("data.core.items.metals")
+
+-- Fluids
+require("data.core.fluids.basics")

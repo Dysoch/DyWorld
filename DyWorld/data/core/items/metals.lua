@@ -1,5 +1,6 @@
 require "data/core/functions/prefix"
 require "data/core/functions/colors"
+-- NO BALANCING HERE
 
 local Data_Table = {
 	{ Name = "silver", Icon = 1, Tier = 2 },

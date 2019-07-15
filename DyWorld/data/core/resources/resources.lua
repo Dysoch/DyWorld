@@ -194,7 +194,7 @@ data:extend(
 	},
 	icon_size = 32,
 	flags = {},
-    --subgroup = dy.."metal-0-ore",
+    subgroup = dy.."0-resource",
     stack_size = 200,
 	order = v.Name.."-ore",
   },

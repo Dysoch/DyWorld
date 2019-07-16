@@ -163,10 +163,6 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 	end
 	if global.dyworld.Version == "0.7.80" then
-			remote.call("silo_script", "set_show_launched_without_satellite", false)
-			remote.call("silo_script", "set_finish_on_launch", false)
-			remote.call("silo_script", "remove_tracked_item", "satellite")
-			remote.call("silo_script", "add_tracked_item", "dyworld-dtx-001-spaceship")
 			-- This part below is done every migration!
 			global.dyworld.Max_Research = Research_Calc(),
 			global.dyworld.Research_Done == 0

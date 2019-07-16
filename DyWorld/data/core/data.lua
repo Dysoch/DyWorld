@@ -18,3 +18,7 @@ require("data.core.items.metals")
 
 -- Fluids
 require("data.core.fluids.basics")
+
+-- Debug
+require("data.core.debug.armor")
+require("data.core.debug.equipment")

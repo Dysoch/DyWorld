@@ -166,6 +166,18 @@ function BodySkills(id)
 		end
 	end
 	--@todo add more bonuses
+	--
+	--@todo Add inserter and stack inserter stack size bonus 
+	--@body based on picked up stat, level 20+
+	--
+	--@todo Add worker robot bonus
+	--@body based on inventory bonus, level 35+
+	--
+	--@todo Add mining drill prod bonus
+	--@body based on mined and build stats, level 50+
+	--
+	--@todo Add train breaking bonus
+	--@body based on almost all stats, level 75+
 end
 
 function GlobalSkillsReset()

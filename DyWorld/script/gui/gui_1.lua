@@ -61,6 +61,13 @@ function gui_1_openGui(player, id)
 			frameflow1.add{type = "label", tooltip = "The amount you have build / Total amount build by all players", caption = {"dyworld_stats_gui.stats_build_mp", (global.players[id].stats.build or 0), (global.stats.build or 0)}, style = "dyworld_label"}
 		end
 	end
+	if global.players[id].stats.pickup and global.players[id].stats.pickup >= 1 then
+		if (#game.players <= 1) then
+			frameflow1.add{type = "label", tooltip = "The amount you have picked up/looted", caption = {"dyworld_stats_gui.stats_pickup", (global.players[id].stats.pickup or 0)}, style = "dyworld_label"}
+		else
+			frameflow1.add{type = "label", tooltip = "The amount you have picked up/looted / Total amount picked up/looted by all players", caption = {"dyworld_stats_gui.stats_pickup_mp", (global.players[id].stats.pickup or 0), (global.stats.pickup or 0)}, style = "dyworld_label"}
+		end
+	end
 	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_2"}}
 	if global.stats.killed and global.stats.killed >= 1 then
 		frameflow1.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.stats_killed", global.stats.killed}, style = "dyworld_label"}

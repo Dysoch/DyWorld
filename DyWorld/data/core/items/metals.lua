@@ -22,6 +22,8 @@ local Data_Table = {
 	{ Name = "neutrobaltium", Icon = 3, Tier = 10 },
 }
 
+--@todo Add chemical formula descriptions for ores and metals
+
 for k,v in pairs(Data_Table) do
 data:extend(
 {

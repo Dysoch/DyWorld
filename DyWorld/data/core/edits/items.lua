@@ -50,5 +50,3 @@ data.raw.item["coal"].order = "coal"
 
 data.raw.item["wood"].subgroup = dy.."material-0"
 data.raw.item["wood"].order = "wood"
-
---@todo Add descriptions for ores (chemical formula)

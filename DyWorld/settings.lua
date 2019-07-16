@@ -21,6 +21,12 @@ data:extend({
 		setting_type = "startup",
 		default_value = false,
 	},
+	{
+		type = "bool-setting",
+		name = "DyWorld_Debug_Extra",
+		setting_type = "startup",
+		default_value = false,
+	},
 	----- Content Altering Settings -----
 	{
 		type = "bool-setting",
@@ -95,3 +101,4 @@ data:extend({
 
 Warfare_Modes =
 { 1, 2, 3, 4, 5 }
+

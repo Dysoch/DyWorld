@@ -13,13 +13,43 @@ end
 
 function IncrementerPersonal(NAME, AMOUNT, ID, ITEMNAME)
 	local ITEMNAME2 = ITEMNAME or "nil"
+	if not global.players[ID].crafted then global.players[ID].crafted = {} end
 	if not global.players[ID].stats[NAME] then 
 		global.players[ID].stats[NAME] = AMOUNT 
-		--debug("Created "..NAME.." counter for "..ITEMNAME2.." with : "..AMOUNT.." for player "..ID.."")
+		debug2("Created "..NAME.." counter for "..ITEMNAME2.." with "..AMOUNT.." for player "..ID.."")
 	else
 		global.players[ID].stats[NAME] = global.players[ID].stats[NAME] + AMOUNT
-		--debug("Added to "..NAME.." counter for "..ITEMNAME2.." with : "..AMOUNT.." for player "..ID.."")
+		debug2("Added to "..NAME.." counter for "..ITEMNAME2.." with "..AMOUNT.." for player "..ID.."")
 	end
+	if NAME == "crafted" then
+		if not global.players[ID].crafted[ITEMNAME] then 
+			global.players[ID].crafted[ITEMNAME] = {Amount_Crafted = AMOUNT, XP_Multiplier = 1} 
+		else
+			global.players[ID].crafted[ITEMNAME].Amount_Crafted = global.players[ID].crafted[ITEMNAME].Amount_Crafted + AMOUNT
+			Calc_Crafting_XP(AMOUNT, ID, ITEMNAME)
+			debug2("Player "..ID.." XP multiplier: "..global.players[ID].crafted[ITEMNAME].XP_Multiplier)
+		end
+	end
+end
+
+function Calc_Crafting_XP(AMOUNT, ID, ITEMNAME)
+	if global.players[ID].crafted[ITEMNAME].XP_Multiplier >= 0.06 then
+		global.players[ID].crafted[ITEMNAME].XP_Multiplier = 1.04 - Round((global.players[ID].crafted[ITEMNAME].Amount_Crafted / 250), 5)
+	else
+		global.players[ID].crafted[ITEMNAME].XP_Multiplier = 0.05
+	end
+end
+
+function XP_Crafting(ID, NAME)
+	if not global.players[ID].XP then 
+		global.players[ID].XP = Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2)
+		debug2("Player "..ID.." XP added: "..Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2))
+	else
+		global.players[ID].XP = global.players[ID].XP + Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2)
+		global.dyworld.XP = global.dyworld.XP + Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2)
+		debug2("Player "..ID.." XP added: "..Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2))
+	end
+	Level_Up(ID)
 end
 
 function XP_Small(ID)
@@ -39,7 +69,6 @@ function XP_Full(ID)
 		global.players[ID].XP = global.players[ID].XP + 1
 		global.dyworld.XP = global.dyworld.XP + 1
 	end
-	--@todo Add diminishing xp for crafting
 	Level_Up(ID)
 end
 

@@ -6,6 +6,7 @@ Date: 25. 08. 2019
     - Completely new Ores. Cobalt, Arditium, Tin, Silver, Lead, Tungsten, Titanium and Neutronium.
   RPG:
     - Removed the Needs and Story systems. Were unfinished and are pushed back to far away
+    - Changed the way Crafting xp is gained. It now has a diminishing xp gain the more you craft. At a certain threshold, you only gain 5% of the xp. Xp gained for the first few items (roughly 10 items) is slighty increased though
   Changes:
     - Removed old mod settings
 ---------------------------------------------------------------------------------------------------

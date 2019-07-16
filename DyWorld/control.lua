@@ -14,7 +14,8 @@ require "script/generation/noise"
 require "script/generation/world-generation"
 require "script/functions/side-inserter"
 
-debugger = false
+debugger_extensive = settings.startup["DyWorld_Debug_Extra"].value
+debugger = settings.startup["DyWorld_Debug"].value
 debug_test = settings.startup["DyWorld_Debug"].value
 Migrate_Debug = false
 
@@ -25,6 +26,17 @@ local hours = math.floor(minutes/60)
 	if not global.debug then global.debug = {} end
 	table.insert(global.debug, ("("..hours..":"..(minutes-(hours*60))..":"..(seconds-(minutes*60))..") = "..str))
 	if debugger then
+		PlayerPrint("("..hours..":"..(minutes-(hours*60))..":"..(seconds-(minutes*60))..") = "..str)
+	end
+end
+
+function debug2(str, statement)
+local seconds = math.floor(game.tick/60)
+local minutes = math.floor(seconds/60)
+local hours = math.floor(minutes/60)
+	if not global.debug then global.debug = {} end
+	if debugger_extensive then
+		table.insert(global.debug, ("("..hours..":"..(minutes-(hours*60))..":"..(seconds-(minutes*60))..") = "..str))
 		PlayerPrint("("..hours..":"..(minutes-(hours*60))..":"..(seconds-(minutes*60))..") = "..str)
 	end
 end
@@ -106,7 +118,8 @@ script.on_event(defines.events.on_player_crafted_item, function(event)
 	if global.dyworld.RPG_Mode == "normal" then
 		IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
 		IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
-		XP_Full(event.player_index)
+		XP_Crafting(event.player_index, event.item_stack.name)
+		
 	end
 end)
 

@@ -6,7 +6,10 @@ require("data.core.gui_sprites")
 -- Item Groups
 require("data.core.item-groups.metals")
 require("data.core.item-groups.fluids")
+require("data.core.item-groups.power")
+require("data.core.item-groups.modules")
 require("data.core.item-groups.logistics")
+require("data.core.item-groups.logistics-2")
 require("data.core.item-groups.machine-production")
 
 -- Edits

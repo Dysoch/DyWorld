@@ -2,74 +2,39 @@ require "data/core/functions/prefix"
 
 local Data_Table_Item_Group = {
 	{
-		Name = "logistics",
+		Name = "logistics-2",
 		Type = "main",
 		Icon = "logistics.png"
 	},
 	{
-		Name = "transport-belt",
+		Name = "locomotive",
 		Type = "sub",
-		Main = "logistics"
+		Main = "logistics-2"
 	},
 	{
-		Name = "transport-belt-underground",
+		Name = "tank",
 		Type = "sub",
-		Main = "logistics"
+		Main = "logistics-2"
 	},
 	{
-		Name = "transport-splitter",
+		Name = "car",
 		Type = "sub",
-		Main = "logistics"
+		Main = "logistics-2"
 	},
 	{
-		Name = "transport-loader",
+		Name = "cargo-wagon",
 		Type = "sub",
-		Main = "logistics"
+		Main = "logistics-2"
 	},
 	{
-		Name = "pipe",
+		Name = "fluid-wagon",
 		Type = "sub",
-		Main = "logistics"
+		Main = "logistics-2"
 	},
 	{
-		Name = "pipe-underground",
+		Name = "artillery-wagon",
 		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "pump",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "pump-offshore",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "rail",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "chests",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "robot-construction",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "robot-logistic",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "roboport",
-		Type = "sub",
-		Main = "logistics"
+		Main = "logistics-2"
 	},
 }
 

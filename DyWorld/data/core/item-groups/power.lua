@@ -2,74 +2,54 @@ require "data/core/functions/prefix"
 
 local Data_Table_Item_Group = {
 	{
-		Name = "logistics",
+		Name = "power",
 		Type = "main",
-		Icon = "logistics.png"
+		Icon = "energy.png"
 	},
 	{
-		Name = "transport-belt",
+		Name = "power-transfer",
 		Type = "sub",
-		Main = "logistics"
+		Main = "power"
 	},
 	{
-		Name = "transport-belt-underground",
+		Name = "solar",
 		Type = "sub",
-		Main = "logistics"
+		Main = "power"
 	},
 	{
-		Name = "transport-splitter",
+		Name = "accumulator",
 		Type = "sub",
-		Main = "logistics"
+		Main = "power"
 	},
 	{
-		Name = "transport-loader",
+		Name = "boiler",
 		Type = "sub",
-		Main = "logistics"
+		Main = "power"
 	},
 	{
-		Name = "pipe",
+		Name = "reactor",
 		Type = "sub",
-		Main = "logistics"
+		Main = "power"
 	},
 	{
-		Name = "pipe-underground",
+		Name = "heat-exchanger",
 		Type = "sub",
-		Main = "logistics"
+		Main = "power"
 	},
 	{
-		Name = "pump",
+		Name = "heat-pipe",
 		Type = "sub",
-		Main = "logistics"
+		Main = "power"
 	},
 	{
-		Name = "pump-offshore",
+		Name = "steam-engine",
 		Type = "sub",
-		Main = "logistics"
+		Main = "power"
 	},
 	{
-		Name = "rail",
+		Name = "steam-turbine",
 		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "chests",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "robot-construction",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "robot-logistic",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "roboport",
-		Type = "sub",
-		Main = "logistics"
+		Main = "power"
 	},
 }
 

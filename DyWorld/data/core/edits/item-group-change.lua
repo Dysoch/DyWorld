@@ -79,3 +79,108 @@ data.raw.item["rail-signal"].subgroup = dy.."rail"
 data.raw.item["rail-signal"].order = Order_Tiers[2]
 data.raw.item["rail-chain-signal"].subgroup = dy.."rail"
 data.raw.item["rail-chain-signal"].order = Order_Tiers[3]
+
+data.raw.item["storage-tank"].subgroup = dy.."chests"
+data.raw.item["storage-tank"].order = Order_Tiers[5]
+
+data.raw.item["compilatron-chest"].subgroup = dy.."chests"
+data.raw.item["compilatron-chest"].order = Order_Tiers[1]
+data.raw.item["wooden-chest"].subgroup = dy.."chests"
+data.raw.item["wooden-chest"].order = Order_Tiers[1]
+data.raw.item["iron-chest"].subgroup = dy.."chests"
+data.raw.item["iron-chest"].order = Order_Tiers[2]
+data.raw.item["steel-chest"].subgroup = dy.."chests"
+data.raw.item["steel-chest"].order = Order_Tiers[3]
+data.raw.item["logistic-chest-passive-provider"].subgroup = dy.."chests"
+data.raw.item["logistic-chest-passive-provider"].order = Order_Tiers[4]
+data.raw.item["logistic-chest-active-provider"].subgroup = dy.."chests"
+data.raw.item["logistic-chest-active-provider"].order = Order_Tiers[4]
+data.raw.item["logistic-chest-storage"].subgroup = dy.."chests"
+data.raw.item["logistic-chest-storage"].order = Order_Tiers[4]
+data.raw.item["logistic-chest-buffer"].subgroup = dy.."chests"
+data.raw.item["logistic-chest-buffer"].order = Order_Tiers[4]
+data.raw.item["logistic-chest-requester"].subgroup = dy.."chests"
+data.raw.item["logistic-chest-requester"].order = Order_Tiers[4]
+
+data.raw.item["construction-robot"].subgroup = dy.."robot-construction"
+data.raw.item["construction-robot"].order = Order_Tiers[1]
+data.raw.item["logistic-robot"].subgroup = dy.."robot-logistic"
+data.raw.item["logistic-robot"].order = Order_Tiers[1]
+
+data.raw.item["roboport"].subgroup = dy.."roboport"
+data.raw.item["roboport"].order = Order_Tiers[1]
+
+data.raw["item-with-entity-data"]["locomotive"].subgroup = dy.."locomotive"
+data.raw["item-with-entity-data"]["locomotive"].order = Order_Tiers[1]
+
+data.raw["item-with-entity-data"]["tank"].subgroup = dy.."tank"
+data.raw["item-with-entity-data"]["tank"].order = Order_Tiers[1]
+
+data.raw["item-with-entity-data"]["car"].subgroup = dy.."car"
+data.raw["item-with-entity-data"]["car"].order = Order_Tiers[1]
+
+data.raw["item-with-entity-data"]["cargo-wagon"].subgroup = dy.."cargo-wagon"
+data.raw["item-with-entity-data"]["cargo-wagon"].order = Order_Tiers[1]
+
+data.raw["item-with-entity-data"]["fluid-wagon"].subgroup = dy.."fluid-wagon"
+data.raw["item-with-entity-data"]["fluid-wagon"].order = Order_Tiers[1]
+
+data.raw["item-with-entity-data"]["artillery-wagon"].subgroup = dy.."artillery-wagon"
+data.raw["item-with-entity-data"]["artillery-wagon"].order = Order_Tiers[1]
+
+data.raw.item["small-electric-pole"].subgroup = dy.."power-transfer"
+data.raw.item["small-electric-pole"].order = Order_Tiers[1]
+data.raw.item["medium-electric-pole"].subgroup = dy.."power-transfer"
+data.raw.item["medium-electric-pole"].order = Order_Tiers[2]
+data.raw.item["big-electric-pole"].subgroup = dy.."power-transfer"
+data.raw.item["big-electric-pole"].order = Order_Tiers[3]
+data.raw.item["substation"].subgroup = dy.."power-transfer"
+data.raw.item["substation"].order = Order_Tiers[4]
+
+data.raw.item["solar-panel"].subgroup = dy.."solar"
+data.raw.item["solar-panel"].order = Order_Tiers[1]
+
+data.raw.item["accumulator"].subgroup = dy.."accumulator"
+data.raw.item["accumulator"].order = Order_Tiers[1]
+
+data.raw.item["boiler"].subgroup = dy.."boiler"
+data.raw.item["boiler"].order = Order_Tiers[1]
+
+data.raw.item["nuclear-reactor"].subgroup = dy.."reactor"
+data.raw.item["nuclear-reactor"].order = Order_Tiers[1]
+
+data.raw.item["heat-exchanger"].subgroup = dy.."heat-exchanger"
+data.raw.item["heat-exchanger"].order = Order_Tiers[1]
+
+data.raw.item["heat-pipe"].subgroup = dy.."heat-pipe"
+data.raw.item["heat-pipe"].order = Order_Tiers[1]
+
+data.raw.item["steam-engine"].subgroup = dy.."steam-engine"
+data.raw.item["steam-engine"].order = Order_Tiers[1]
+
+data.raw.item["steam-turbine"].subgroup = dy.."steam-turbine"
+data.raw.item["steam-turbine"].order = Order_Tiers[1]
+
+data.raw.module["speed-module"].subgroup = dy.."speed-module"
+data.raw.module["speed-module"].order = Order_Tiers[1]
+data.raw.module["speed-module-2"].subgroup = dy.."speed-module"
+data.raw.module["speed-module-2"].order = Order_Tiers[2]
+data.raw.module["speed-module-3"].subgroup = dy.."speed-module"
+data.raw.module["speed-module-3"].order = Order_Tiers[3]
+
+data.raw.module["productivity-module"].subgroup = dy.."productivity-module"
+data.raw.module["productivity-module"].order = Order_Tiers[1]
+data.raw.module["productivity-module-2"].subgroup = dy.."productivity-module"
+data.raw.module["productivity-module-2"].order = Order_Tiers[2]
+data.raw.module["productivity-module-3"].subgroup = dy.."productivity-module"
+data.raw.module["productivity-module-3"].order = Order_Tiers[3]
+
+data.raw.module["effectivity-module"].subgroup = dy.."effectivity-module"
+data.raw.module["effectivity-module"].order = Order_Tiers[1]
+data.raw.module["effectivity-module-2"].subgroup = dy.."effectivity-module"
+data.raw.module["effectivity-module-2"].order = Order_Tiers[2]
+data.raw.module["effectivity-module-3"].subgroup = dy.."effectivity-module"
+data.raw.module["effectivity-module-3"].order = Order_Tiers[3]
+
+data.raw.item["beacon"].subgroup = dy.."beacon"
+data.raw.item["beacon"].order = Order_Tiers[1]

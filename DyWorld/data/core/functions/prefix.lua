@@ -9,3 +9,19 @@ dyworld_path_entity = "__DyWorld__/graphics/entity/"
 dyworld_path_tile = "__DyWorld__/graphics/tiles/"
 dyworld_path_item_group = "__DyWorld__/graphics/item-group/"
 dyworld_path_icon_temp = "__DyWorld__/graphics/questionmark.png"
+
+Order_Tiers = {
+	[1] = "d",
+	[2] = "e",
+	[3] = "f",
+	[4] = "g",
+	[5] = "h",
+	[6] = "i",
+	[7] = "j",
+	[8] = "k",
+	[9] = "l",
+	[10] = "m",
+	["single"] = "a",
+	["duo"] = "b",
+	["trio"] = "c",
+}

@@ -9,3 +9,5 @@
 --@todo Add methane from cows
 --
 --@todo Add wheat farming
+--
+--@todo Add vehicle equipment

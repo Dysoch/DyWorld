@@ -306,3 +306,77 @@ data.raw.item["decider-combinator"].subgroup = dy.."circuit-network"
 data.raw.item["constant-combinator"].subgroup = dy.."circuit-network"
 data.raw.item["power-switch"].subgroup = dy.."circuit-network"
 data.raw.item["programmable-speaker"].subgroup = dy.."circuit-network"
+
+data.raw.ammo["firearm-magazine"].subgroup = dy.."ammo-basic"
+data.raw.ammo["firearm-magazine"].order = Order_Tiers[2]
+data.raw.ammo["piercing-rounds-magazine"].subgroup = dy.."ammo-basic"
+data.raw.ammo["piercing-rounds-magazine"].order = Order_Tiers[3]
+data.raw.ammo["uranium-rounds-magazine"].subgroup = dy.."ammo-basic"
+data.raw.ammo["uranium-rounds-magazine"].order = Order_Tiers[5]
+
+data.raw.ammo["shotgun-shell"].subgroup = dy.."ammo-shotgun"
+data.raw.ammo["shotgun-shell"].order = Order_Tiers[2]
+data.raw.ammo["piercing-shotgun-shell"].subgroup = dy.."ammo-shotgun"
+data.raw.ammo["piercing-shotgun-shell"].order = Order_Tiers[3]
+
+data.raw.ammo["rocket"].subgroup = dy.."ammo-rocket"
+data.raw.ammo["rocket"].order = Order_Tiers[2]
+data.raw.ammo["explosive-rocket"].subgroup = dy.."ammo-rocket"
+data.raw.ammo["explosive-rocket"].order = Order_Tiers[3]
+data.raw.ammo["atomic-bomb"].subgroup = dy.."ammo-rocket"
+data.raw.ammo["atomic-bomb"].order = Order_Tiers[4]
+
+data.raw.ammo["cannon-shell"].subgroup = dy.."ammo-cannon"
+data.raw.ammo["cannon-shell"].order = Order_Tiers[2]
+data.raw.ammo["explosive-cannon-shell"].subgroup = dy.."ammo-cannon"
+data.raw.ammo["explosive-cannon-shell"].order = Order_Tiers[3]
+data.raw.ammo["uranium-cannon-shell"].subgroup = dy.."ammo-cannon"
+data.raw.ammo["uranium-cannon-shell"].order = Order_Tiers[4]
+data.raw.ammo["explosive-uranium-cannon-shell"].subgroup = dy.."ammo-cannon"
+data.raw.ammo["explosive-uranium-cannon-shell"].order = Order_Tiers[5]
+
+data.raw.ammo["artillery-shell"].subgroup = dy.."ammo-artillery"
+data.raw.ammo["artillery-shell"].order = Order_Tiers[1]
+
+data.raw.ammo["flamethrower-ammo"].subgroup = dy.."ammo-flame"
+data.raw.ammo["flamethrower-ammo"].order = Order_Tiers[4]
+
+data.raw.capsule["grenade"].subgroup = dy.."grenade"
+data.raw.capsule["grenade"].order = Order_Tiers[1]
+data.raw.capsule["cluster-grenade"].subgroup = dy.."grenade"
+data.raw.capsule["cluster-grenade"].order = Order_Tiers[2]
+
+data.raw.capsule["poison-capsule"].subgroup = dy.."capsule"
+data.raw.capsule["poison-capsule"].order = Order_Tiers[1]
+data.raw.capsule["slowdown-capsule"].subgroup = dy.."capsule"
+data.raw.capsule["slowdown-capsule"].order = Order_Tiers[1]
+
+data.raw.item["land-mine"].subgroup = dy.."landmine"
+data.raw.item["land-mine"].order = Order_Tiers[1]
+
+data.raw.capsule["defender-capsule"].subgroup = dy.."robots"
+data.raw.capsule["defender-capsule"].order = Order_Tiers[2]
+data.raw.capsule["distractor-capsule"].subgroup = dy.."robots"
+data.raw.capsule["distractor-capsule"].order = Order_Tiers[1]
+data.raw.capsule["destroyer-capsule"].subgroup = dy.."robots"
+data.raw.capsule["destroyer-capsule"].order = Order_Tiers[3]
+
+data.raw.capsule["discharge-defense-remote"].subgroup = dy.."capsule-others"
+data.raw.capsule["discharge-defense-remote"].order = Order_Tiers[1]
+data.raw.capsule["artillery-targeting-remote"].subgroup = dy.."capsule-others"
+data.raw.capsule["artillery-targeting-remote"].order = Order_Tiers[1]
+
+data.raw.item["radar"].subgroup = dy.."radar"
+data.raw.item["radar"].order = Order_Tiers[1]
+
+data.raw.item["gun-turret"].subgroup = dy.."turret-gun"
+data.raw.item["gun-turret"].order = Order_Tiers[1]
+
+data.raw.item["laser-turret"].subgroup = dy.."turret-laser"
+data.raw.item["laser-turret"].order = Order_Tiers[1]
+
+data.raw.item["flamethrower-turret"].subgroup = dy.."turret-flame"
+data.raw.item["flamethrower-turret"].order = Order_Tiers[1]
+
+data.raw.item["artillery-turret"].subgroup = dy.."turret-artillery"
+data.raw.item["artillery-turret"].order = Order_Tiers[1]

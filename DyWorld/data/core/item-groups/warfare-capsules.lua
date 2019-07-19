@@ -2,34 +2,34 @@ require "data/core/functions/prefix"
 
 local Data_Table_Item_Group = {
 	{
-		Name = "decor",
+		Name = "warfare-capsule",
 		Type = "main",
-		Icon = "empty.png"
+		Icon = "warfare.png"
 	},
 	{
-		Name = "flooring-1",
+		Name = "grenade",
 		Type = "sub",
-		Main = "decor"
+		Main = "warfare-capsule"
 	},
 	{
-		Name = "flooring-2",
+		Name = "capsule",
 		Type = "sub",
-		Main = "decor"
+		Main = "warfare-capsule"
 	},
 	{
-		Name = "flooring-3",
+		Name = "landmine",
 		Type = "sub",
-		Main = "decor"
+		Main = "warfare-capsule"
 	},
 	{
-		Name = "lamps",
+		Name = "robots",
 		Type = "sub",
-		Main = "decor"
+		Main = "warfare-capsule"
 	},
 	{
-		Name = "circuit-network",
+		Name = "capsule-others",
 		Type = "sub",
-		Main = "decor"
+		Main = "warfare-capsule"
 	},
 }
 

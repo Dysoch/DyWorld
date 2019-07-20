@@ -37,6 +37,7 @@ require("data.core.fluids.basics")
 
 -- Entities
 require("data.core.entities.greenhouse")
+require("data.core.entities.pasture")
 
 -- Debug
 require("data.core.debug.armor")

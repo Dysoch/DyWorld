@@ -2,24 +2,24 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
-for i=1,Greenhouses_Amount do
+for i=1,Pasture_Amount do
 data:extend(
 {
   {
     type = "assembling-machine",
-    name = "greenhouse-"..i,
-	localised_name = {"looped-name.greenhouse", i},
+    name = "pasture-"..i,
+	localised_name = {"looped-name.pasture", i},
     icon = dyworld_path_icon.."greenhouse.png",
 	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "greenhouse-"..i},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "pasture-"..i},
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     max_health = 250 * (i*i),
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    fast_replaceable_group = "greenhouse",
-    crafting_categories = {dy.."farming"},
+    fast_replaceable_group = "pasture",
+    crafting_categories = {dy.."pasture"},
     crafting_speed = 0.5 * (i + i),
     energy_source =
     {
@@ -44,6 +44,14 @@ data:extend(
         base_area = 10,
         base_level = -1,
         pipe_connections = {{ type="input", position = {0, -2} }}
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 10,
+        base_level = 1,
+        pipe_connections = {{ type="output", position = {-2, 0} }}
       },
     },
     module_specification =
@@ -80,8 +88,8 @@ data:extend(
   },
   {
     type = "item",
-    name = "greenhouse-"..i,
-	localised_name = {"looped-name.greenhouse", i},
+    name = "pasture-"..i,
+	localised_name = {"looped-name.pasture", i},
     icons = 
 	{
 	  {
@@ -91,15 +99,15 @@ data:extend(
 	},
 	icon_size = 32,
     flags = {},
-    subgroup = dy.."greenhouse",
+    subgroup = dy.."pasture",
     order = Order_Tiers[i],
-    place_result = "greenhouse-"..i,
+    place_result = "pasture-"..i,
     stack_size = 50
   },
-  --@todo Change recipes greenhouse
+  --@todo Change recipes pasture
   {
     type = "recipe",
-    name = "greenhouse-"..i,
+    name = "pasture-"..i,
     energy_required = 5*i,
     enabled = true,
     ingredients =
@@ -108,12 +116,12 @@ data:extend(
       {type = "item", name = "copper-plate", amount = 4*i},
       {type = "item", name = "stone", amount = 2*i},
     },
-    result = "greenhouse-"..i
+    result = "pasture-"..i
   },
 }
 )
-	local Insert_Recipe = {type = "item", name = "greenhouse-"..(i-1), amount = 1}
+	local Insert_Recipe = {type = "item", name = "pasture-"..(i-1), amount = 1}
 	if i >= 2 then 
-		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		table.insert(data.raw.recipe["pasture-"..i].ingredients, Insert_Recipe)
 	end
 end

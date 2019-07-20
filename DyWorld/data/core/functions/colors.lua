@@ -1,8 +1,8 @@
 -- color tiers
 Color_Tier = {
-	[1] = {r=128, g=0, b=128}, --purple
+	[1] = {r=165, g=42, b=42}, --brown
 	[2] = {r=255, g=255, b=0}, --yellow
-	[3] = {r=165, g=42, b=42}, --brown
+	[3] = {r=128, g=0, b=128}, --purple
 	[4] = {r=0, g=255, b=0}, --green
 	[5] = {r=0, g=0, b=255}, --blue
 	[6] = {r=255, g=0, b=0}, --red

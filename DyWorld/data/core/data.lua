@@ -31,6 +31,8 @@ require("data.core.resources.resources")
 
 -- Items
 require("data.core.items.metals")
+require("data.core.items.intermediates")
+require("data.core.items.filters")
 
 -- Fluids
 require("data.core.fluids.basics")

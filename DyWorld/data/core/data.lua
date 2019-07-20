@@ -3,6 +3,7 @@
 require("data.core.functions.keys")
 require("data.core.functions.category")
 require("data.core.functions.deep-copy")
+require("data.core.functions.creator-recipe")
 require("data.core.functions.gui_sprites")
 
 -- Item Groups
@@ -34,12 +35,15 @@ require("data.core.items.metals")
 require("data.core.items.intermediates")
 require("data.core.items.filters")
 
--- Fluids
-require("data.core.fluids.basics")
-
 -- Entities
 require("data.core.entities.greenhouse")
 require("data.core.entities.pasture")
+
+-- Recipes
+require("data.core.recipes.wood")
+
+-- Fluids
+require("data.core.fluids.basics")
 
 -- Debug
 require("data.core.debug.armor")

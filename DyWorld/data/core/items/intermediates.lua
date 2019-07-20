@@ -22,6 +22,7 @@ local Data_Table = {
 	["battery-pack"] = 3,
 	["logistic-unit"] = 5,
 	["resin"] = 2,
+	["acorn"] = 1,
 	["rubber"] = 3,
 	["controller"] = 6,
 	["housing"] = 4,

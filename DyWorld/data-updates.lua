@@ -1,3 +1,7 @@
+
+-- DyComPa Module --
+require("data.dycompa.data")
+
 for k,v in pairs(data.raw.fluid) do
 	if not v.icon_size then v.icon_size = 32 end
 end	

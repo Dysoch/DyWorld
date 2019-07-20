@@ -1,6 +1,7 @@
 
 -- Core Files
 require("data.core.functions.keys")
+require("data.core.functions.category")
 require("data.core.functions.deep-copy")
 require("data.core.functions.gui_sprites")
 
@@ -33,6 +34,9 @@ require("data.core.items.metals")
 
 -- Fluids
 require("data.core.fluids.basics")
+
+-- Entities
+require("data.core.entities.greenhouse")
 
 -- Debug
 require("data.core.debug.armor")

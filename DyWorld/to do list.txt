@@ -1,9 +1,6 @@
 --@todo Add pasture farms
 --@body 5 tiers, tiny to huge
 --
---@todo Add greenhouse
---@body 5 tiers, tiny to huge
---
 --@todo Add tree farming
 --
 --@todo Add methane from cows

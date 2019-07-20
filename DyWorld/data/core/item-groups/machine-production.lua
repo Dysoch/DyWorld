@@ -12,6 +12,11 @@ local Data_Table_Item_Group = {
 		Main = "machine-production"
 	},
 	{
+		Name = "greenhouse",
+		Type = "sub",
+		Main = "machine-production"
+	},
+	{
 		Name = "miners",
 		Type = "sub",
 		Main = "machine-production"

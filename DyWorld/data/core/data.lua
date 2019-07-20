@@ -1,7 +1,8 @@
 
 -- Core Files
-require("data.core.keys")
-require("data.core.gui_sprites")
+require("data.core.functions.keys")
+require("data.core.functions.deep-copy")
+require("data.core.functions.gui_sprites")
 
 -- Item Groups
 require("data.core.item-groups.metals")

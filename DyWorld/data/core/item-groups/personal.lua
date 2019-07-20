@@ -2,49 +2,24 @@ require "data/core/functions/prefix"
 
 local Data_Table_Item_Group = {
 	{
-		Name = "machine-production",
+		Name = "personal",
 		Type = "main",
-		Icon = "machines.png"
+		Icon = "personal.png"
 	},
 	{
-		Name = "assemblers",
+		Name = "labs",
 		Type = "sub",
-		Main = "machine-production"
+		Main = "personal"
 	},
 	{
-		Name = "miners",
+		Name = "science-packs",
 		Type = "sub",
-		Main = "machine-production"
+		Main = "personal"
 	},
 	{
-		Name = "furnaces",
+		Name = "repair-packs",
 		Type = "sub",
-		Main = "machine-production"
-	},
-	{
-		Name = "centrifuge",
-		Type = "sub",
-		Main = "machine-production"
-	},
-	{
-		Name = "oil-pumps",
-		Type = "sub",
-		Main = "machine-production"
-	},
-	{
-		Name = "chemical-plants",
-		Type = "sub",
-		Main = "machine-production"
-	},
-	{
-		Name = "oil-refinery",
-		Type = "sub",
-		Main = "machine-production"
-	},
-	{
-		Name = "rocket-silo",
-		Type = "sub",
-		Main = "machine-production"
+		Main = "personal"
 	},
 }
 

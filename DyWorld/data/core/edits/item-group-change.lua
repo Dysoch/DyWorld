@@ -380,3 +380,20 @@ data.raw.item["flamethrower-turret"].order = Order_Tiers[1]
 
 data.raw.item["artillery-turret"].subgroup = dy.."turret-artillery"
 data.raw.item["artillery-turret"].order = Order_Tiers[1]
+
+data.raw.item["rocket-silo"].subgroup = dy.."rocket-silo"
+data.raw.item["rocket-silo"].order = Order_Tiers[1]
+
+data.raw.item["lab"].subgroup = dy.."labs"
+data.raw.item["lab"].order = Order_Tiers[1]
+
+data.raw.tool["automation-science-pack"].subgroup = dy.."science-packs"
+data.raw.tool["logistic-science-pack"].subgroup = dy.."science-packs"
+data.raw.tool["military-science-pack"].subgroup = dy.."science-packs"
+data.raw.tool["chemical-science-pack"].subgroup = dy.."science-packs"
+data.raw.tool["production-science-pack"].subgroup = dy.."science-packs"
+data.raw.tool["utility-science-pack"].subgroup = dy.."science-packs"
+data.raw.tool["space-science-pack"].subgroup = dy.."science-packs"
+
+data.raw["repair-tool"]["repair-pack"].subgroup = dy.."repair-packs"
+data.raw["repair-tool"]["repair-pack"].order = Order_Tiers[1]

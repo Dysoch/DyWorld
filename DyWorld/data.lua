@@ -38,3 +38,8 @@ end
 if settings.startup["DyWorld_Equipment"].value then
 	require("data.equipment.data")
 end
+
+-- Decor Module --
+if settings.startup["DyWorld_Decor"].value then
+	require("data.decor.data")
+end

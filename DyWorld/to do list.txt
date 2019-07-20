@@ -12,7 +12,3 @@
 --
 --@todo Add vehicle equipment
 --
---@todo Add letters and symbols as flooring
---
---@todo Add color flooring
-

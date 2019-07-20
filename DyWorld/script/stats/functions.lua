@@ -27,7 +27,18 @@ function IncrementerPersonal(NAME, AMOUNT, ID, ITEMNAME)
 		else
 			global.players[ID].crafted[ITEMNAME].Amount_Crafted = global.players[ID].crafted[ITEMNAME].Amount_Crafted + AMOUNT
 			Calc_Crafting_XP(AMOUNT, ID, ITEMNAME)
-			debug2("Player "..ID.." XP multiplier: "..global.players[ID].crafted[ITEMNAME].XP_Multiplier)
+			debug2("Player "..ID..": XP multiplier (Crafting): "..global.players[ID].crafted[ITEMNAME].XP_Multiplier.." for "..ITEMNAME)
+			debug2("Player "..ID..": XP added (Crafting): "..Round((1 * global.players[ID].crafted[ITEMNAME].XP_Multiplier), 2).." for "..ITEMNAME.." ("..global.players[ID].crafted[ITEMNAME].Amount_Crafted.." crafted total)")
+		end
+	end
+	if NAME == "mined" then
+		if not global.players[ID].mined[ITEMNAME] then 
+			global.players[ID].mined[ITEMNAME] = {Amount_Mined = AMOUNT, XP_Multiplier = 1} 
+		else
+			global.players[ID].mined[ITEMNAME].Amount_Mined = global.players[ID].mined[ITEMNAME].Amount_Mined + AMOUNT
+			Calc_Mining_XP(AMOUNT, ID, ITEMNAME)
+			debug2("Player "..ID..": XP multiplier (Mining): "..global.players[ID].mined[ITEMNAME].XP_Multiplier.." for "..ITEMNAME)
+			debug2("Player "..ID..": XP added (Mining): "..Round((2 * global.players[ID].mined[ITEMNAME].XP_Multiplier), 2).." for "..ITEMNAME.." ("..global.players[ID].mined[ITEMNAME].Amount_Mined.." mined total)")
 		end
 	end
 end
@@ -43,11 +54,28 @@ end
 function XP_Crafting(ID, NAME)
 	if not global.players[ID].XP then 
 		global.players[ID].XP = Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2)
-		debug2("Player "..ID.." XP added: "..Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2))
 	else
 		global.players[ID].XP = global.players[ID].XP + Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2)
 		global.dyworld.XP = global.dyworld.XP + Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2)
-		debug2("Player "..ID.." XP added: "..Round((1 * global.players[ID].crafted[NAME].XP_Multiplier), 2))
+		
+	end
+	Level_Up(ID)
+end
+
+function Calc_Mining_XP(AMOUNT, ID, ITEMNAME)
+	if global.players[ID].mined[ITEMNAME].XP_Multiplier >= 0.26 then
+		global.players[ID].mined[ITEMNAME].XP_Multiplier = 1 - Round((global.players[ID].mined[ITEMNAME].Amount_Mined / 1000), 5)
+	else
+		global.players[ID].mined[ITEMNAME].XP_Multiplier = 0.25
+	end
+end
+
+function XP_Mining(ID, NAME)
+	if not global.players[ID].XP then 
+		global.players[ID].XP = Round((2 * global.players[ID].mined[NAME].XP_Multiplier), 2)
+	else
+		global.players[ID].XP = global.players[ID].XP + Round((2 * global.players[ID].mined[NAME].XP_Multiplier), 2)
+		global.dyworld.XP = global.dyworld.XP + Round((2 * global.players[ID].mined[NAME].XP_Multiplier), 2)
 	end
 	Level_Up(ID)
 end

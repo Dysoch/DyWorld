@@ -128,11 +128,11 @@ script.on_event(defines.events.on_player_mined_item, function(event)
 		if event.item_stack.count >= 100 then
 			IncrementerGlobal("mined", 100, event.item_stack.name)
 			IncrementerPersonal("mined", 100, event.player_index, event.item_stack.name)
-			XP_Full(event.player_index)
+			XP_Mining(event.player_index, event.item_stack.name)
 		else
 			IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
 			IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
-			XP_Full(event.player_index)
+			XP_Mining(event.player_index, event.item_stack.name)
 		end
 	end
 end)

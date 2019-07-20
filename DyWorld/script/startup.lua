@@ -105,6 +105,7 @@ function Player_Startup(PLAYER, ID)
 				},
 				stats = {},
 				crafted = {},
+				mined = {},
 			}
 		}
 	debug("Created global.players, and added "..game.players[ID].name.." to the table with blank stats with ID: "..ID)
@@ -145,6 +146,7 @@ function Player_Startup(PLAYER, ID)
 			},
 			stats = {},
 			crafted = {},
+			mined = {},
 		}
 	debug("New player created, and added "..game.players[ID].name.." to global.players with blank stats with ID: "..ID)
 	end

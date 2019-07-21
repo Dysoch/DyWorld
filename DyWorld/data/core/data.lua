@@ -45,9 +45,11 @@ require("data.core.items.filters")
 -- Entities
 require("data.core.entities.greenhouse")
 require("data.core.entities.pasture")
+require("data.core.entities.blast-furnace")
 
 -- Recipes
 require("data.core.recipes.wood")
+require("data.core.recipes.rocks")
 require("data.core.recipes.intermediates")
 
 -- Fluids

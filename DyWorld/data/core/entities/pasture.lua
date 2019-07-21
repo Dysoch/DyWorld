@@ -9,7 +9,13 @@ data:extend(
     type = "assembling-machine",
     name = "pasture-"..i,
 	localised_name = {"looped-name.pasture", i},
-    icon = dyworld_path_icon.."greenhouse.png",
+    icons = 
+	{
+	  {
+		icon = dyworld_path_icon.."greenhouse.png",
+	    tint = Color_Tier[i],
+	  },
+	},
 	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "pasture-"..i},

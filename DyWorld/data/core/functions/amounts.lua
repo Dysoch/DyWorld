@@ -9,3 +9,6 @@ Greenhouses_Amount = 5
 
 Pasture_Amount = 5
 -- Pasture default: 5
+
+Blast_Furnace_Amount = 5
+-- Blast Furnace default: 5

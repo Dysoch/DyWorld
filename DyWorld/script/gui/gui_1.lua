@@ -23,7 +23,7 @@ function gui_1_openGui(player, id)
 	local frame2 = player.gui.top.add{type = "frame", name = "dyworld_stats_2_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
 	local frameflow1 = frame1.add{type = "flow", name = "flow", direction = "vertical"}
 	local frameflow2 = frame2.add{type = "flow", name = "flow", direction = "vertical"}
-	if P_Level >= 2 then
+	if P_Level >= 2 and game.players[id].character then
 		local frame3 = player.gui.top.add{type = "frame", name = "dyworld_stats_3_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
 		stats_frameflow3 = frame3.add{type = "flow", name = "flow", direction = "vertical"}
 	end
@@ -36,7 +36,7 @@ function gui_1_openGui(player, id)
 	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_1", (game.players[id].name)}}
 	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_level", (global.players[id].Level or 0)}, style = "dyworld_label"}
 	--frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xp"}}
-	frameflow1.add{type = "progressbar", tooltip = {"dyworld_stats_gui.stats_xp"}, size = 26, value = (global.players[id].XP/global.players[id].XP_LevelUp)}
+	frameflow1.add{type = "progressbar", tooltip = {"dyworld_stats_gui.stats_xp", Round((global.players[id].XP_LevelUp - global.players[id].XP), 2)}, size = 26, value = (global.players[id].XP/global.players[id].XP_LevelUp)}
 	--frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xp", (global.players[id].XP or 0)}}
 	--frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xplevel", (global.players[id].XP_LevelUp or 0)}}
 	--frameflow1.add{type = "label", caption = "XP TO LEVEL FRACT: "..(global.players[id].XP/global.players[id].XP_LevelUp)}
@@ -107,12 +107,12 @@ function gui_1_openGui(player, id)
 	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_guile", (global.players[id].mystical.guile)}, style = "dyworld_label"}
 	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_knowledge", (global.players[id].mystical.knowledge)}, style = "dyworld_label"}
 	-- labels for stats_3
-	if P_Level >= 2 then
+	if P_Level >= 2 and game.players[id].character then
 		stats_frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3", (game.players[id].name)}}
-		if global.players[id].stats.mined and global.players[id].stats.mined >= 1000 then
+		if global.players[id].stats.mined and global.players[id].stats.mined >= 500 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Mining Speed: "..Round(game.players[id].character_mining_speed_modifier+1, 2), style = "dyworld_label"}
 		end
-		if global.players[id].stats.crafted and global.players[id].stats.crafted >= 250 then
+		if global.players[id].stats.crafted and global.players[id].stats.crafted >= 100 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Crafting Speed: "..Round(game.players[id].character_crafting_speed_modifier+1, 2), style = "dyworld_label"}
 		end
 		if P_Level >= 4 then
@@ -136,7 +136,7 @@ function gui_1_openGui(player, id)
 			if global.players[id].stats.build and global.players[id].stats.build >= 15000 then
 				stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Build Distance: "..math.floor(game.players[id].character_build_distance_bonus+6), style = "dyworld_label"}
 			end
-		else
+		else 
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 15}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
 		if P_Level >= 25 then

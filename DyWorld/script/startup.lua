@@ -150,9 +150,11 @@ function Player_Startup(PLAYER, ID)
 		}
 	debug("New player created, and added "..game.players[ID].name.." to global.players with blank stats with ID: "..ID)
 	end
-	game.players[ID].get_inventory(defines.inventory.character_main).clear()
-	game.players[ID].get_inventory(defines.inventory.character_guns).clear()
-	game.players[ID].get_inventory(defines.inventory.character_ammo).clear()
+	if game.players[ID].character then
+		game.players[ID].get_inventory(defines.inventory.character_main).clear()
+		game.players[ID].get_inventory(defines.inventory.character_guns).clear()
+		game.players[ID].get_inventory(defines.inventory.character_ammo).clear()
+	end
 	if settings.startup["DyWorld_Debug"].value then
 		game.players[ID].insert{name="substation",count=100}
 		game.players[ID].insert{name="logistic-chest-storage",count=100}

@@ -65,16 +65,12 @@ end)
 script.on_event(defines.events.on_player_created, function(event)
 	local player = game.players[event.player_index]
 	local ID = event.player_index
-	debug(ID)
-	Player_Startup(player, ID)
-	if not game.players[event.player_index].name == "Dysoch" then
-		player.print({"dyworld.startup-1", (game.players[event.player_index].name)})
-		if settings.startup["DyWorld_Story"].value then
-			player.print({"dyworld.startup-story-wip"})
+		Player_Startup(player, ID)
+		if not game.players[event.player_index].name == "Dysoch" then
+			player.print({"dyworld.startup-1", (game.players[event.player_index].name)})
 		end
-	end
-	--PlayerPrint({"dyworld_guide_gui.message"})
-	debug(game.players[event.player_index].name.." created")
+		--PlayerPrint({"dyworld_guide_gui.message"})
+		debug(game.players[event.player_index].name.." created")
 end)
 
 script.on_event(defines.events.on_player_respawned, function(event)

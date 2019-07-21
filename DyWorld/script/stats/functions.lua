@@ -178,47 +178,49 @@ function BodySkills(id)
 	global.players[id].physical.speed = math.floor((((p1*25)+(p2*50)+(m1*10)+gsk+gss)/(1000))+1)
 	global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000))+1)
 	global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000))+1)
-	if P_Level >= 2 then
-		if gsm >= 1000 then
-			game.players[id].character_mining_speed_modifier = ((((p1*25)+(p2*15)+(p3*15)+gsm)/10000)-0.0016)
+	if game.players[id].character then
+		if P_Level >= 2 then
+			if gsm >= 500 then
+				game.players[id].character_mining_speed_modifier = ((((p1*25)+(p2*15)+(p3*15)+gsm)/10000)-0.0016)
+			end
+			if gsc >= 100 then
+				game.players[id].character_crafting_speed_modifier = ((((p4*25)+(p3*15)+gsc)/10000)-0.0016)
+			end
 		end
-		if gsc >= 250 then
-			game.players[id].character_crafting_speed_modifier = ((((p4*25)+(p3*15)+gsc)/10000)-0.0016)
+		if P_Level >= 4 then
+			game.players[id].character_resource_reach_distance_bonus = math.floor((gsp+gsm+(p2*5)+(m1*2))/10000)
 		end
-	end
-	if P_Level >= 4 then
-		game.players[id].character_resource_reach_distance_bonus = math.floor((gsp+gsm+(p2*5)+(m1*2))/10000)
-	end
-	if P_Level >= 7 and gsk >= 1 then
-		game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
-		if math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50) > 320 then
-			game.players[id].character_loot_pickup_distance_bonus = 320
-		else
-			game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50)
-		end
-	end
-	if P_Level >= 10 then
-		if math.floor((p1)/5) <= 190 then
-			game.players[id].character_inventory_slots_bonus = math.floor((p1)/5)
-		else
-			game.players[id].character_inventory_slots_bonus = 190
-		end
-	end
-	if P_Level >= 15 then
-		game.players[id].character_reach_distance_bonus = math.floor((gsp+gsb+(p2*5)+(m1*2))/5000)
-		if gsb >= 15000 then
-			game.players[id].character_build_distance_bonus = math.floor((gsp+gsb+gsc+(p2*5)+(m1*2))/7500)
-		end
-	end
-	if P_Level >= 25 then
-		game.players[id].character_maximum_following_robot_count_bonus = math.floor(((p1*2)+(p2*10)+(p3*3)+(p4*1.5)+(m1*10)+(m2*3)+(m3*2)+(m4*25))/250)
-	end
-	if P_Level >= 30 then
-		if game.forces.player.technologies["character-logistic-slots-1"].researched then 
-			if math.floor((((gsgb + gsgm) / 25)+(p1))/15) <= 190 then
-				game.players[id].character_logistic_slot_count_bonus = math.floor((((gsgb + gsgm) / 25)+(m2))/15)
+		if P_Level >= 7 and gsk >= 1 then
+			game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
+			if math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50) > 320 then
+				game.players[id].character_loot_pickup_distance_bonus = 320
 			else
-				game.players[id].character_logistic_slot_count_bonus = 190
+				game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50)
+			end
+		end
+		if P_Level >= 10 then
+			if math.floor((p1)/5) <= 190 then
+				game.players[id].character_inventory_slots_bonus = math.floor((p1)/5)
+			else
+				game.players[id].character_inventory_slots_bonus = 190
+			end
+		end
+		if P_Level >= 15 then
+			game.players[id].character_reach_distance_bonus = math.floor((gsp+gsb+(p2*5)+(m1*2))/5000)
+			if gsb >= 15000 then
+				game.players[id].character_build_distance_bonus = math.floor((gsp+gsb+gsc+(p2*5)+(m1*2))/7500)
+			end
+		end
+		if P_Level >= 25 then
+			game.players[id].character_maximum_following_robot_count_bonus = math.floor(((p1*2)+(p2*10)+(p3*3)+(p4*1.5)+(m1*10)+(m2*3)+(m3*2)+(m4*25))/250)
+		end
+		if P_Level >= 30 then
+			if game.forces.player.technologies["character-logistic-slots-1"].researched then 
+				if math.floor((((gsgb + gsgm) / 25)+(p1))/15) <= 190 then
+					game.players[id].character_logistic_slot_count_bonus = math.floor((((gsgb + gsgm) / 25)+(m2))/15)
+				else
+					game.players[id].character_logistic_slot_count_bonus = 190
+				end
 			end
 		end
 	end

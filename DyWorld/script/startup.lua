@@ -151,6 +151,7 @@ function Player_Startup(PLAYER, ID)
 	debug("New player created, and added "..game.players[ID].name.." to global.players with blank stats with ID: "..ID)
 	end
 	if game.players[ID].character then
+	-- @todo Fix PvP mode
 		game.players[ID].get_inventory(defines.inventory.character_main).clear()
 		game.players[ID].get_inventory(defines.inventory.character_guns).clear()
 		game.players[ID].get_inventory(defines.inventory.character_ammo).clear()

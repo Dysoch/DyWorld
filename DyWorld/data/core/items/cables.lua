@@ -34,5 +34,8 @@ data:extend(
 	result_amount = 3,
   },
 })
+		if v.Intermediates.Tech_Processing then
+			data.raw.recipe[v.Intermediates.Name.."-cable"].enabled = false
+		end
 	end
 end

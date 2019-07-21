@@ -5,33 +5,39 @@ local Data_Metal_Intermediates = {
 	{
 		Name = "silver",
 		Stick = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "tin",
 		Cable = true,
 		Gear = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "gold",
 		Cable = true,
 		Stick = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "bronze",
 		Cable = true,
 		Stick = true,
 		Gear = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "lead",
 		Stick = true,
 		Gear = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "cobalt",
 		Cable = true,
 		Stick = true,
 		Gear = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "invar",
@@ -52,17 +58,20 @@ local Data_Metal_Intermediates = {
 	{
 		Name = "arditium",
 		Gear = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "titanium",
 		Cable = true,
 		Stick = true,
 		Gear = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "tungsten",
 		Stick = true,
 		Gear = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "electranium",
@@ -81,6 +90,7 @@ local Data_Metal_Intermediates = {
 	{
 		Name = "neutronium",
 		Stick = true,
+		Tech_Processing = true,
 	},
 	{
 		Name = "neutrobaltium",
@@ -103,6 +113,9 @@ for k,v in pairs(Data_Metal_Intermediates) do
 		end
 		if v.Stick then
 			data.raw.item[v.Name.."-plate"].Intermediates.Stick = true
+		end
+		if v.Tech_Processing then
+			data.raw.item[v.Name.."-plate"].Intermediates.Tech_Processing = true
 		end
 	end
 end

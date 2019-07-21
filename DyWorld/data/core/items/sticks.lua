@@ -34,5 +34,8 @@ data:extend(
 	result_amount = 2,
   },
 })
+		if v.Intermediates.Tech_Processing then
+			data.raw.recipe[v.Intermediates.Name.."-stick"].enabled = false
+		end
 	end
 end

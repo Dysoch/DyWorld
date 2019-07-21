@@ -33,5 +33,11 @@ data:extend(
     result = v.Intermediates.Name.."-gear-wheel",
   },
 })
+
+		--@todo Add metal processing tech
+		--@body with unlocking recipes added in data-updates
+		if v.Intermediates.Tech_Processing then
+			data.raw.recipe[v.Intermediates.Name.."-gear-wheel"].enabled = false
+		end
 	end
 end

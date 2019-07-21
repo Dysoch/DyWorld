@@ -4,6 +4,7 @@ require "data/core/functions/colors"
 
 local Data_Table = {
 	{ Name = "silver", Icon = 1},
+	{ Name = "nickel", Icon = 2},
 	{ Name = "tin", Icon = 1},
 	{ Name = "gold", Icon = 1},
 	{ Name = "bronze", Icon = 2},

@@ -25,6 +25,7 @@ Material_Colors = {
 	["silver"] = {r=170, g=170, b=170}, -- aaaaaa
 	--- Tier 3 ---
 	["steel"] = {r=229, g=227, b=227}, -- e5e3e3
+	["nickel"] = {r=92, g=114, b=208}, -- 5c72d0
 	["lead"] = {r=105, g=213, b=212}, -- 69d5d4
 	["gold"] = {r=134, g=128, b=34}, -- 868022
 	["bronze"] = {r=126, g=112, b=109}, -- 7e706d
@@ -41,7 +42,7 @@ Material_Colors = {
 	["titanium"] = {r=57, g=61, b=112}, -- 393d70
 	--- Tier 7 ---
 	["electranium"] = {r=128, g=128, b=128}, -- TO DO
-	["ardritium-tungstenate"] = {r=128, g=128, b=128}, -- TO DO
+	["arditium-tungstenate"] = {r=128, g=128, b=128}, -- TO DO
 	--- Tier 8 ---
 	["tungstvar"] = {r=128, g=128, b=128}, -- TO DO
 	--- Tier 9 ---
@@ -54,7 +55,6 @@ Material_Colors = {
 	Obsidian = {r=105, g=105, b=105},
 	Chromium = {r=200, g=56, b=60}, -- c8383c
 	Zinc = {r=97, g=208, b=92}, -- 61d05c
-	Nickel = {r=92, g=114, b=208}, -- 5c72d0
 	Aluminium = {r=150, g=150, b=150}, -- 969696
 	Lithium = {r=204, g=204, b=217}, -- ccccd9
 	Billon = {r=191, g=145, b=126}, -- bf917e

@@ -1,10 +1,11 @@
 
--- Core Files
+-- Core Files (Need to be loaded first)
 require("data.core.functions.keys")
 require("data.core.functions.category")
 require("data.core.functions.deep-copy")
 require("data.core.functions.creator-recipe")
 require("data.core.functions.gui_sprites")
+require("data.core.functions.metal-info")
 
 -- Item Groups
 require("data.core.item-groups.metals")
@@ -15,6 +16,7 @@ require("data.core.item-groups.warfare-defensive")
 require("data.core.item-groups.warfare-capsules")
 require("data.core.item-groups.warfare-ammo")
 require("data.core.item-groups.modules")
+require("data.core.item-groups.metallurgy")
 require("data.core.item-groups.inserters")
 require("data.core.item-groups.intermediates")
 require("data.core.item-groups.decor")
@@ -32,7 +34,8 @@ require("data.core.resources.resources")
 
 -- Items
 require("data.core.items.metals")
-require("data.core.functions.metal-intermediates-add")
+require("data.core.items.metal-intermediates-add")
+require("data.core.functions.metallurgy-info-add")
 require("data.core.items.gears")
 require("data.core.items.sticks")
 require("data.core.items.cables")
@@ -46,12 +49,10 @@ require("data.core.entities.pasture")
 -- Recipes
 require("data.core.recipes.wood")
 require("data.core.recipes.intermediates")
---require("data.core.recipes.gears")
---require("data.core.recipes.sticks")
---require("data.core.recipes.cables")
 
 -- Fluids
 require("data.core.fluids.basics")
+require("data.core.fluids.metallurgy-fluids")
 
 -- Debug
 require("data.core.debug.armor")

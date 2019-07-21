@@ -3,13 +3,23 @@ require "data/core/functions/colors"
 
 local Data_Table = {
 	{
-		Name = "silver",
+		Name = "nickel",
 		Order = "e",
 		Coverage = 0.004,
 		Mining_Hardness = 3.75,
 		Mining_Time = 1.5,
 		Starting_Area = true,
 		Starting_Area_Strength = 2,
+		Multiplier = 1.05,
+	},
+	{
+		Name = "silver",
+		Order = "e",
+		Coverage = 0.004,
+		Mining_Hardness = 3.75,
+		Mining_Time = 1.5,
+		Starting_Area = true,
+		Starting_Area_Strength = 1.5,
 		Multiplier = 1.05,
 	},
 	{

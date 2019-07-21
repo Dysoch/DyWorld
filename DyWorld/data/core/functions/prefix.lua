@@ -28,6 +28,7 @@ Order_Tiers = {
 
 Metal_Tiers = {
 	["silver"] = 2,
+	["nickel"] = 2,
 	["tin"] = 2,
 	["gold"] = 3,
 	["bronze"] = 3,
@@ -48,6 +49,7 @@ Metal_Tiers = {
 	["wood"] = 1,
 	["copper"] = 2,
 	["iron"] = 2,
+	["steel"] = 3,
 	["stone"] = 1,
 	["uranium"] = 5,
 }

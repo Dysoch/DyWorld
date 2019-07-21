@@ -120,6 +120,7 @@ data:extend(
   {
     type = "resource",
     name = v.Name.."-ore",
+	localised_name = {"looped-name.ore", {"looped-name."..v.Name}},
 	icons = 
 	{
 	  {
@@ -185,6 +186,7 @@ data:extend(
   {
     type = "item",
     name = v.Name.."-ore",
+	localised_name = {"looped-name.ore", {"looped-name."..v.Name}},
 	icons = 
 	{
 	  {

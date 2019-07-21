@@ -1,4 +1,7 @@
 
+-- Core Module --
+require("data.core.data-2")
+
 -- DyComPa Module --
 require("data.dycompa.data")
 

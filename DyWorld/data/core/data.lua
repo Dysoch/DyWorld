@@ -32,6 +32,10 @@ require("data.core.resources.resources")
 
 -- Items
 require("data.core.items.metals")
+require("data.core.functions.metal-intermediates-add")
+require("data.core.items.gears")
+require("data.core.items.sticks")
+require("data.core.items.cables")
 require("data.core.items.intermediates")
 require("data.core.items.filters")
 
@@ -42,6 +46,9 @@ require("data.core.entities.pasture")
 -- Recipes
 require("data.core.recipes.wood")
 require("data.core.recipes.intermediates")
+--require("data.core.recipes.gears")
+--require("data.core.recipes.sticks")
+--require("data.core.recipes.cables")
 
 -- Fluids
 require("data.core.fluids.basics")

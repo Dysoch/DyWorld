@@ -114,7 +114,7 @@ script.on_event(defines.events.on_player_crafted_item, function(event)
 	if global.dyworld.RPG_Mode == "normal" then
 		IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
 		IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
-		XP_Crafting(event.player_index, event.item_stack.name)
+		XP_Crafting(event.player_index, event.item_stack.name, event.item_stack.count)
 		
 	end
 end)
@@ -124,11 +124,11 @@ script.on_event(defines.events.on_player_mined_item, function(event)
 		if event.item_stack.count >= 100 then
 			IncrementerGlobal("mined", 100, event.item_stack.name)
 			IncrementerPersonal("mined", 100, event.player_index, event.item_stack.name)
-			XP_Mining(event.player_index, event.item_stack.name)
+			XP_Mining(event.player_index, event.item_stack.name, 100)
 		else
 			IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
 			IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
-			XP_Mining(event.player_index, event.item_stack.name)
+			XP_Mining(event.player_index, event.item_stack.name, event.item_stack.count)
 		end
 	end
 end)
@@ -150,8 +150,8 @@ end)
 script.on_event(defines.events.on_built_entity, function(event)
 	if global.dyworld.RPG_Mode == "normal" then
 		IncrementerGlobal("build", 1)
-		IncrementerPersonal("build", 1, event.player_index)
-		XP_Full(event.player_index)
+		IncrementerPersonal("build", 1, event.player_index, event.created_entity.name)
+		XP_Building(event.player_index, event.created_entity.name, 1)
 	end
 	if not global.dyworld.Guide then global.dyworld.Guide = {} end
 	if not global.dyworld.Guide[event.created_entity.type] then

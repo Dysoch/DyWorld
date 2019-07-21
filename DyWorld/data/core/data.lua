@@ -41,6 +41,7 @@ require("data.core.entities.pasture")
 
 -- Recipes
 require("data.core.recipes.wood")
+require("data.core.recipes.intermediates")
 
 -- Fluids
 require("data.core.fluids.basics")

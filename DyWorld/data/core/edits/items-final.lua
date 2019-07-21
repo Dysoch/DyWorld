@@ -32,7 +32,7 @@ local Data_Locale_Chemical_Formula = {
 }
 
 for k,v in pairs(Data_Locale_Chemical_Formula) do
-	if data.raw.item[k] then
-		data.raw.item[k].Locale_Chemical = v
+	if data.raw.item[k] and data.raw.item[k].DyWorld then
+		data.raw.item[k].DyWorld.Locale_Chemical = v
 	end
 end

@@ -102,20 +102,23 @@ local Data_Metal_Intermediates = {
 
 for k,v in pairs(Data_Metal_Intermediates) do
 	if data.raw.item[v.Name.."-plate"] then
-		data.raw.item[v.Name.."-plate"].Intermediates = {}
-		data.raw.item[v.Name.."-plate"].Intermediates.Name = v.Name
-		data.raw.item[v.Name.."-plate"].Intermediates.Tier = Metal_Tiers[v.Name]
+		if not data.raw.item[v.Name.."-plate"].DyWorld then
+			data.raw.item[v.Name.."-plate"].DyWorld = {}		
+		end
+		data.raw.item[v.Name.."-plate"].DyWorld.Intermediates = {}
+		data.raw.item[v.Name.."-plate"].DyWorld.Intermediates.Name = v.Name
+		data.raw.item[v.Name.."-plate"].DyWorld.Intermediates.Tier = Metal_Tiers[v.Name]
 		if v.Cable then
-			data.raw.item[v.Name.."-plate"].Intermediates.Cable = true
+			data.raw.item[v.Name.."-plate"].DyWorld.Intermediates.Cable = true
 		end
 		if v.Gear then
-			data.raw.item[v.Name.."-plate"].Intermediates.Gear = true
+			data.raw.item[v.Name.."-plate"].DyWorld.Intermediates.Gear = true
 		end
 		if v.Stick then
-			data.raw.item[v.Name.."-plate"].Intermediates.Stick = true
+			data.raw.item[v.Name.."-plate"].DyWorld.Intermediates.Stick = true
 		end
 		if v.Tech_Processing then
-			data.raw.item[v.Name.."-plate"].Intermediates.Tech_Processing = true
+			data.raw.item[v.Name.."-plate"].DyWorld.Intermediates.Tech_Processing = true
 		end
 	end
 end

@@ -4,18 +4,21 @@ Data_Metallurgy = {
 	{
 		Name = "iron",
 		Ore = true,
+		Molten = true,
 		Melting_Point = 1538,
 		Boiling_Point = 2862,
 	},
 	{
 		Name = "copper",
 		Ore = true,
+		Molten = true,
 		Melting_Point = 1084,
 		Boiling_Point = 2562,
 	},
 	{
 		Name = "steel",
 		Stick = true,
+		Molten = true,
 		Gear = true,
 		Tech_Processing = true,
 		Melting_Point = 1425,
@@ -24,6 +27,7 @@ Data_Metallurgy = {
 	{
 		Name = "nickel",
 		Ore = true,
+		Molten = true,
 		Cable = true,
 		Gear = true,
 		Stick = true,
@@ -34,6 +38,7 @@ Data_Metallurgy = {
 	{
 		Name = "silver",
 		Ore = true,
+		Molten = true,
 		Stick = true,
 		Tech_Processing = true,
 		Melting_Point = 961,
@@ -42,6 +47,7 @@ Data_Metallurgy = {
 	{
 		Name = "tin",
 		Ore = true,
+		Molten = true,
 		Cable = true,
 		Gear = true,
 		Tech_Processing = true,
@@ -51,6 +57,7 @@ Data_Metallurgy = {
 	{
 		Name = "gold",
 		Ore = true,
+		Molten = true,
 		Cable = true,
 		Stick = true,
 		Tech_Processing = true,
@@ -60,6 +67,7 @@ Data_Metallurgy = {
 	{
 		Name = "bronze",
 		Cable = true,
+		Molten = true,
 		Stick = true,
 		Gear = true,
 		Tech_Processing = true,
@@ -69,6 +77,7 @@ Data_Metallurgy = {
 	{
 		Name = "lead",
 		Ore = true,
+		Molten = true,
 		Stick = true,
 		Gear = true,
 		Tech_Processing = true,
@@ -78,6 +87,7 @@ Data_Metallurgy = {
 	{
 		Name = "cobalt",
 		Ore = true,
+		Molten = true,
 		Cable = true,
 		Stick = true,
 		Gear = true,
@@ -88,6 +98,7 @@ Data_Metallurgy = {
 	{
 		Name = "invar",
 		Cable = true,
+		Molten = true,
 		Stick = true,
 		Gear = true,
 		Melting_Point = 1427,
@@ -96,6 +107,7 @@ Data_Metallurgy = {
 	{
 		Name = "electrum",
 		Cable = true,
+		Molten = true,
 		Stick = true,
 		Melting_Point = 100, --N/A
 		Boiling_Point = 100000, --N/A
@@ -103,6 +115,7 @@ Data_Metallurgy = {
 	{
 		Name = "stainless-steel",
 		Stick = true,
+		Molten = true,
 		Gear = true,
 		Melting_Point = 1643,
 		Boiling_Point = 2766,
@@ -110,6 +123,7 @@ Data_Metallurgy = {
 	{
 		Name = "arditium",
 		Ore = true,
+		Molten = true,
 		Gear = true,
 		Tech_Processing = true,
 		Melting_Point = 754,
@@ -118,6 +132,7 @@ Data_Metallurgy = {
 	{
 		Name = "titanium",
 		Ore = true,
+		Molten = true,
 		Cable = true,
 		Stick = true,
 		Gear = true,
@@ -128,6 +143,7 @@ Data_Metallurgy = {
 	{
 		Name = "tungsten",
 		Ore = true,
+		Molten = true,
 		Stick = true,
 		Gear = true,
 		Tech_Processing = true,
@@ -137,6 +153,7 @@ Data_Metallurgy = {
 	{
 		Name = "electranium",
 		Cable = true,
+		Molten = true,
 		Stick = true,
 		Melting_Point = 512,
 		Boiling_Point = 3078,
@@ -144,6 +161,7 @@ Data_Metallurgy = {
 	{
 		Name = "arditium-tungstenate",
 		Stick = true,
+		Molten = true,
 		Gear = true,
 		Melting_Point = 901,
 		Boiling_Point = 7563,
@@ -151,12 +169,14 @@ Data_Metallurgy = {
 	{
 		Name = "tungstvar",
 		Stick = true,
+		Molten = true,
 		Melting_Point = 2189,
 		Boiling_Point = 9146,
 	},
 	{
 		Name = "neutronium",
 		Ore = true,
+		Molten = true,
 		Stick = true,
 		Tech_Processing = true,
 		Melting_Point = 4389,
@@ -165,6 +185,7 @@ Data_Metallurgy = {
 	{
 		Name = "neutrobaltium",
 		Cable = true,
+		Molten = true,
 		Stick = true,
 		Gear = true,
 		Melting_Point = 3147,

@@ -2,7 +2,7 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 
 for k,v in pairs(data.raw.item) do
-	if v.DyWorld and v.DyWorld.Metallurgy and v.DyWorld.Metallurgy.Melting_Point and v.DyWorld.Metallurgy.Boiling_Point then
+	if v.DyWorld and v.DyWorld.Metallurgy and v.DyWorld.Metallurgy.Molten and v.DyWorld.Metallurgy.Melting_Point and v.DyWorld.Metallurgy.Boiling_Point then
 data:extend(
 {
   {

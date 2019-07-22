@@ -12,3 +12,6 @@ Pasture_Amount = 5
 
 Blast_Furnace_Amount = 5
 -- Blast Furnace default: 5
+
+Caster_Amount = 5
+-- Metal Caster default: 5

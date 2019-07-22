@@ -45,6 +45,7 @@ require("data.core.items.filters")
 -- Entities
 require("data.core.entities.greenhouse")
 require("data.core.entities.pasture")
+require("data.core.entities.caster")
 require("data.core.entities.blast-furnace")
 
 -- Recipes

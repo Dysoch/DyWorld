@@ -1,11 +1,14 @@
 
 -- Core Files (Need to be loaded first)
+require("data.core.functions.functions")
 require("data.core.functions.keys")
 require("data.core.functions.category")
 require("data.core.functions.deep-copy")
 require("data.core.functions.creator-recipe")
 require("data.core.functions.gui_sprites")
-require("data.core.functions.metal-info")
+require("data.core.functions.metallurgy-info")
+require("data.core.functions.entity-info")
+require("data.core.functions.transport-belt-pictures")
 
 -- Item Groups
 require("data.core.item-groups.metals")
@@ -36,6 +39,7 @@ require("data.core.resources.resources")
 require("data.core.items.metals")
 require("data.core.items.metal-intermediates-add")
 require("data.core.functions.metallurgy-info-add")
+require("data.core.functions.entity-info-add")
 require("data.core.items.gears")
 require("data.core.items.sticks")
 require("data.core.items.cables")

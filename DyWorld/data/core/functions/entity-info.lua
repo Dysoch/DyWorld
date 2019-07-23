@@ -5,6 +5,7 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 9,
 		Belt_Range = 7,
+		Belt_Next = "bronze",
 	},
 	["copper"] = {
 		Belt = false,
@@ -13,6 +14,7 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 23,
 		Belt_Range = 14,
+		Belt_Next = "stainless-steel",
 	},
 	["nickel"] = {
 		Belt = false,
@@ -30,6 +32,7 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 15,
 		Belt_Range = 10,
+		Belt_Next = "steel",
 	},
 	["lead"] = {
 		Belt = false,
@@ -47,6 +50,7 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 32,
 		Belt_Range = 17,
+		Belt_Next = "titanium",
 	},
 	["arditium"] = {
 		Belt = false,
@@ -55,11 +59,13 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 42,
 		Belt_Range = 21,
+		Belt_Next = "tungsten",
 	},
 	["tungsten"] = {
 		Belt = true,
 		Belt_Speed = 55,
 		Belt_Range = 26,
+		Belt_Next = "arditium-tungstenate",
 	},
 	["electranium"] = {
 		Belt = false,
@@ -68,11 +74,13 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 70,
 		Belt_Range = 32,
+		Belt_Next = "tungstvar",
 	},
 	["tungstvar"] = {
 		Belt = true,
 		Belt_Speed = 88,
 		Belt_Range = 38,
+		Belt_Next = "neutrobaltium",
 	},
 	["neutronium"] = {
 		Belt = false,
@@ -81,5 +89,6 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 110,
 		Belt_Range = 50,
+		Belt_Next = "neutrobaltium",
 	},
 }

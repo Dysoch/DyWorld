@@ -2,11 +2,11 @@
 
 local Change = {
 	{Old = "fast-transport-belt", New = "iron-transport-belt"},
-	--{Old = "fast-splitter", New = "iron-splitter"},
-	--{Old = "fast-underground-belt", New = "iron-underground-belt"},
+	{Old = "fast-splitter", New = "iron-splitter"},
+	{Old = "fast-underground-belt", New = "iron-underground-belt"},
 	{Old = "express-transport-belt", New = "titanium-transport-belt"},
-	--{Old = "express-splitter", New = "titanium-splitter"},
-	--{Old = "express-underground-belt", New = "titanium-underground-belt"}
+	{Old = "express-splitter", New = "titanium-splitter"},
+	{Old = "express-underground-belt", New = "titanium-underground-belt"}
 }
 
 for k,v in pairs(Change) do

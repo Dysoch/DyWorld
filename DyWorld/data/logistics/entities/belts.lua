@@ -9,6 +9,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype.speed = Round((v.DyWorld.Entity.Belt_Speed / 426.67), 2)
 	DyWorld_Prototype.localised_name = {"looped-name.belt-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype.next_upgrade = v.DyWorld.Entity.Belt_Next.."-transport-belt"
+	DyWorld_Prototype.max_health = 150 * Metal_Tiers[v.DyWorld.Name]
 	DyWorld_Prototype.icon = nil
 	DyWorld_Prototype.icons = {
 	  {

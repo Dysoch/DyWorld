@@ -1,5 +1,8 @@
 require "data/core/functions/prefix"
 
+--TODO balance metal intermediates
+--BODY balance to make sure the correct materials have the correct intermediates
+
 Data_Metallurgy = {
 	{
 		Name = "iron",

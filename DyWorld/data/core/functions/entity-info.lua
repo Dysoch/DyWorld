@@ -1,5 +1,7 @@
 require "data/core/functions/prefix"
 
+--TODO balance recipes of belts
+--@body balance the recipe's Zukii
 Data_Entity = {
 	["iron"] = {
 		Belt = true,

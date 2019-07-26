@@ -1,0 +1,8 @@
+todo:
+  autoAssign: "Dysoch"
+  label: 'todo'
+  reopenClosed: true
+  keyword: ['@todo','TODO']
+  bodyKeyword: ['@body','BODY']
+  blobLines: 10
+  caseSensitive: false

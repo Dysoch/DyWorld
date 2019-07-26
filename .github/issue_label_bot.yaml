@@ -1,0 +1,6 @@
+label-alias:
+  bug: 'kind/bug'
+  new feature: 'enhancement'
+  balancing: 'balance'
+  compatibility: 'compatible'
+  graphics: 'graphics'

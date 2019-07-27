@@ -3,6 +3,7 @@ require "data/core/functions/colors"
 
 for k,v in pairs(data.raw.item) do
 	if v.DyWorld and v.DyWorld.Intermediates and v.DyWorld.Intermediates.Gear then
+		if not data.raw.item[v.DyWorld.Name.."-gear-wheel"] then
 data:extend(
 {
   {
@@ -38,6 +39,7 @@ data:extend(
 		--@body with unlocking recipes added in data-updates
 		if v.DyWorld.Intermediates.Tech_Processing then
 			data.raw.recipe[v.DyWorld.Name.."-gear-wheel"].enabled = false
+		end
 		end
 	end
 end

@@ -7,6 +7,8 @@ Data_Metallurgy = {
 	{
 		Name = "iron",
 		Ore = true,
+		Stick = true,
+		Gear = true,
 		Molten = true,
 		Melting_Point = 1538,
 		Boiling_Point = 2862,
@@ -14,6 +16,7 @@ Data_Metallurgy = {
 	{
 		Name = "copper",
 		Ore = true,
+		Cable = true,
 		Molten = true,
 		Melting_Point = 1084,
 		Boiling_Point = 2562,

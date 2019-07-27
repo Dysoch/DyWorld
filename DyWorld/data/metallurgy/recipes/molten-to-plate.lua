@@ -12,7 +12,7 @@ data:extend(
     type = "recipe",
     name = "metallurgy-"..v.DyWorld.Name.."-plate",
     energy_required = 1.5 * v.DyWorld.Tier,
-    enabled = true,
+    enabled = false,
 	category = dy.."casting",
     ingredients = 
 	{ 
@@ -24,5 +24,6 @@ data:extend(
 	},
   },
 })
+	DyWorld_Add_To_Tech("metallurgy-"..v.DyWorld.Tier, "metallurgy-"..v.DyWorld.Name.."-plate")
 	end
 end	

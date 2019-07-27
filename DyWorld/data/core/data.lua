@@ -52,7 +52,7 @@ require("data.core.items.filters")
 require("data.core.entities.greenhouse")
 require("data.core.entities.pasture")
 require("data.core.entities.caster")
-require("data.core.entities.blast-furnace")
+require("data.core.entities.blast-furnace") -- needs to be last, does tech additions for caster as well
 
 -- Recipes
 require("data.core.recipes.wood")

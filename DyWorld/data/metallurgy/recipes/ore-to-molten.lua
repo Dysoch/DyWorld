@@ -12,7 +12,7 @@ data:extend(
     type = "recipe",
     name = "molten-"..v.DyWorld.Name,
     energy_required = 5 * v.DyWorld.Tier,
-    enabled = true,
+    enabled = false,
 	category = dy.."melting",
     ingredients = 
 	{ 
@@ -24,5 +24,6 @@ data:extend(
 	},
   },
 })
+	DyWorld_Add_To_Tech("metallurgy-"..v.DyWorld.Tier, "molten-"..v.DyWorld.Name)
 	end
 end	

@@ -10,11 +10,8 @@ Greenhouses_Amount = 5
 Pasture_Amount = 5
 -- Pasture default: 5
 
-Blast_Furnace_Amount = 5
--- Blast Furnace default: 5
-
-Caster_Amount = 5
--- Metal Caster default: 5
+Metallurgy_Machines_Amount = 5
+-- Metallurgy_Machines_Amount default: 5
 
  --- Metallurgy Amounts ---
  

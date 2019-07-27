@@ -2,7 +2,7 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
-for i=1,Caster_Amount do
+for i=1,Metallurgy_Machines_Amount do
 data:extend(
 {
   {
@@ -106,7 +106,7 @@ data:extend(
     type = "recipe",
     name = "caster-"..i,
     energy_required = 5*i,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {type = "item", name = "iron-plate", amount = 5*i},

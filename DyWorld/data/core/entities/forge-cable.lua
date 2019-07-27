@@ -31,6 +31,7 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
+      emissions_per_minute = (0.05 * (i*i)),
     },
     energy_usage = math.floor(25 * (i*(i-(0.5/i)))).."kW",
     source_inventory_size = 1,

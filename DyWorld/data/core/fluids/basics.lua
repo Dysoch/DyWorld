@@ -10,6 +10,40 @@ local Data_Table = {
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Pressure = 0.4, 
+		Emissions_Multiplier = 0.1,
+		Barrel = true,
+	},
+	{
+		Name = "oxygen",
+		Tier = 1,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Emissions_Multiplier = 0.1,
+		Barrel = true,
+	},
+	{
+		Name = "carbon-monoxide",
+		Tier = 1,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Emissions_Multiplier = 0.1,
+		Barrel = true,
+	},
+	{
+		Name = "carbon-dioxide",
+		Tier = 1,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Emissions_Multiplier = 0.1,
 		Barrel = true,
 	},
 	{
@@ -20,6 +54,7 @@ local Data_Table = {
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Pressure = 0.4, 
+		Emissions_Multiplier = 0.1,
 		Barrel = true,
 	},
 	{
@@ -30,6 +65,7 @@ local Data_Table = {
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Pressure = 0.4, 
+		Emissions_Multiplier = 1.5,
 		Barrel = true,
 	},
 	{
@@ -40,6 +76,7 @@ local Data_Table = {
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Pressure = 0.4, 
+		Emissions_Multiplier = 2,
 		Barrel = true,
 	},
 	{
@@ -50,6 +87,7 @@ local Data_Table = {
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Pressure = 0.4, 
+		Emissions_Multiplier = 0.1,
 		Barrel = true,
 	},
 	{
@@ -60,6 +98,7 @@ local Data_Table = {
 		Color_Base = {r=0, g=0.34, b=0.6},
 		Color_Flow = {r=0.7, g=0.7, b=0.7},
 		Pressure = 0.4, 
+		Emissions_Multiplier = 0.1,
 		Barrel = true,
 	},
 }
@@ -85,7 +124,7 @@ local function DyWorld_Fluid(DATA)
     flow_color = DATA.Color_Flow,
     order = DATA.Name,
     subgroup = dy.."fluids-"..(DATA.Tier-1),
-    pressure_to_speed_ratio = DATA.Pressure or 0.4,
+    pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
     auto_barrel = false
   }
@@ -100,6 +139,9 @@ local function DyWorld_Fluid(DATA)
 	end
 	if DATA.Flow then
 		result.flow_to_energy_ratio = DATA.Flow
+	end
+	if DATA.Emissions_Multiplier then
+		result.emissions_multiplier = DATA.Emissions_Multiplier
 	end
 	if DATA.Heat_Capacity then
 		result.heat_capacity = DATA.Heat_Capacity

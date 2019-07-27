@@ -4,6 +4,10 @@
 -- each with increasing strength compared to previous tier
 -- DO NOT INCREASE HIGHER THEN 100!!! It breaks the game xD (crashes the game)
 
+Air_Filter_Amount = 5
+-- Air_Filter_Amount default: 5
+
+
 Greenhouses_Amount = 5
 -- Greenhouse default: 5
 

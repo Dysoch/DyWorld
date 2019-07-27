@@ -57,7 +57,11 @@ data:extend(
 		for _,RESULTS in pairs(v.Multi_Output) do
 			table.insert(data.raw.recipe[v.Name].results, RESULTS)
 		end
-		data.raw.recipe[v.Name].icon = v.Icon
+		if v.Icon_Type_Icons then
+			data.raw.recipe[v.Name].icons = v.Icon
+		else
+			data.raw.recipe[v.Name].icon = v.Icon
+		end
 		data.raw.recipe[v.Name].subgroup = dy..v.Subgroup
 	end
 end

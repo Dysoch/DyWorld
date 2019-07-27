@@ -49,6 +49,7 @@ require("data.core.items.intermediates")
 require("data.core.items.filters")
 
 -- Entities
+require("data.core.entities.air-filter")
 require("data.core.entities.greenhouse")
 require("data.core.entities.pasture")
 require("data.core.entities.caster")
@@ -57,14 +58,15 @@ require("data.core.entities.forge-stick")
 require("data.core.entities.forge-cable")
 require("data.core.entities.blast-furnace") -- needs to be last, does tech additions for caster as well
 
+-- Fluids
+require("data.core.fluids.basics")
+require("data.core.fluids.metallurgy-fluids")
+
 -- Recipes
 require("data.core.recipes.wood")
 require("data.core.recipes.rocks")
 require("data.core.recipes.intermediates")
-
--- Fluids
-require("data.core.fluids.basics")
-require("data.core.fluids.metallurgy-fluids")
+require("data.core.recipes.fluids-air-filtering")
 
 -- Debug
 require("data.core.debug.armor")

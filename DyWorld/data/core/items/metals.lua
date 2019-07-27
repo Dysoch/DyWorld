@@ -3,6 +3,9 @@ require "data/core/functions/colors"
 -- NO BALANCING HERE
 
 local Data_Table = {
+	{ Name = "iron", Icon = 1},
+	{ Name = "steel", Icon = 3},
+	{ Name = "copper", Icon = 2},
 	{ Name = "silver", Icon = 1},
 	{ Name = "nickel", Icon = 2},
 	{ Name = "tin", Icon = 1},
@@ -26,6 +29,7 @@ local Data_Table = {
 --@todo Add chemical formula descriptions for ores and metals
 
 for k,v in pairs(Data_Table) do
+	if not data.raw.item[v.Name.."-plate"] then
 data:extend(
 {
   {
@@ -45,4 +49,26 @@ data:extend(
 	order = v.Name.."-plate",
   },
 })
+	end
+	if not data.raw.item[v.Name.."-slag"] then
+data:extend(
+{
+  {
+    type = "item",
+    name = v.Name.."-slag",
+	localised_name = {"looped-name.slag", {"looped-name."..v.Name}},
+	icons = 
+	{
+	  {
+		icon = dyworld_path_icon.."base-slag.png",
+		tint = Material_Colors[v.Name],
+	  }
+	},
+	icon_size = 32,
+    subgroup = dy.."slags",
+    stack_size = 200,
+	order = v.Name.."-slag",
+  },
+})
+	end
 end	

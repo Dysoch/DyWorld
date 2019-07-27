@@ -5,7 +5,7 @@ require "data/core/functions/amounts"
 -- check also "data/core/functions/amounts.lua"
 
 for k,v in pairs(data.raw.item) do
-	if v.DyWorld and v.DyWorld.Metallurgy and v.DyWorld.Metallurgy.Molten and v.DyWorld.Intermediates and v.DyWorld.Intermediates.Stick and data.raw.fluid["molten-"..v.DyWorld.Name] then	
+	if v.DyWorld and v.DyWorld.Metallurgy and v.DyWorld.Metallurgy.Molten and v.DyWorld.Metallurgy.Stick and data.raw.fluid["molten-"..v.DyWorld.Name] then	
 data:extend(
 {
   {

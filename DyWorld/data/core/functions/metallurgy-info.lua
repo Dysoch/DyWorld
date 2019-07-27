@@ -4,8 +4,7 @@ require "data/core/functions/prefix"
 --BODY balance to make sure the correct materials have the correct intermediates
 
 Data_Metallurgy = {
-	{
-		Name = "iron",
+	["iron"] = {
 		Ore = true,
 		Stick = true,
 		Gear = true,
@@ -13,25 +12,29 @@ Data_Metallurgy = {
 		Melting_Point = 1538,
 		Boiling_Point = 2862,
 	},
-	{
-		Name = "copper",
+	["copper"] = {
 		Ore = true,
 		Cable = true,
 		Molten = true,
 		Melting_Point = 1084,
 		Boiling_Point = 2562,
 	},
-	{
-		Name = "steel",
+	["steel"] = {
 		Stick = true,
 		Molten = true,
+		Mixed = true,
+		Mixed_Formula = {
+			["iron"] = 10,
+		},
+		Mixed_Item = {
+			["coal"] = 1,
+		},
 		Gear = true,
 		Tech_Processing = true,
 		Melting_Point = 1425,
 		Boiling_Point = 2862,
 	},
-	{
-		Name = "nickel",
+	["nickel"] = {
 		Ore = true,
 		Molten = true,
 		Cable = true,
@@ -41,8 +44,7 @@ Data_Metallurgy = {
 		Melting_Point = 1455,
 		Boiling_Point = 2730,
 	},
-	{
-		Name = "silver",
+	["silver"] = {
 		Ore = true,
 		Molten = true,
 		Stick = true,
@@ -50,8 +52,7 @@ Data_Metallurgy = {
 		Melting_Point = 961,
 		Boiling_Point = 2212,
 	},
-	{
-		Name = "tin",
+	["tin"] = {
 		Ore = true,
 		Molten = true,
 		Cable = true,
@@ -60,8 +61,7 @@ Data_Metallurgy = {
 		Melting_Point = 232,
 		Boiling_Point = 2600,
 	},
-	{
-		Name = "gold",
+	["gold"] = {
 		Ore = true,
 		Molten = true,
 		Cable = true,
@@ -70,18 +70,24 @@ Data_Metallurgy = {
 		Melting_Point = 1063,
 		Boiling_Point = 2800,
 	},
-	{
-		Name = "bronze",
+	["bronze"] = {
 		Cable = true,
 		Molten = true,
+		Mixed = true,
+		Mixed_Formula = {
+			["copper"] = 12,
+			["tin"] = 2,
+		},
+		Mixed_Item = {
+			["stone"] = 1,
+		},
 		Stick = true,
 		Gear = true,
 		Tech_Processing = true,
 		Melting_Point = 658,
 		Boiling_Point = 2581,
 	},
-	{
-		Name = "lead",
+	["lead"] = {
 		Ore = true,
 		Molten = true,
 		Stick = true,
@@ -90,8 +96,7 @@ Data_Metallurgy = {
 		Melting_Point = 327,
 		Boiling_Point = 1750,
 	},
-	{
-		Name = "cobalt",
+	["cobalt"] = {
 		Ore = true,
 		Molten = true,
 		Cable = true,
@@ -101,33 +106,53 @@ Data_Metallurgy = {
 		Melting_Point = 1495,
 		Boiling_Point = 2870,
 	},
-	{
-		Name = "invar",
+	["invar"] = {
 		Cable = true,
 		Molten = true,
+		Mixed = true,
+		Mixed_Formula = {
+			["iron"] = 9,
+			["nickel"] = 4,
+		},
+		Mixed_Item = {
+			["stone"] = 1,
+		},
 		Stick = true,
 		Gear = true,
 		Melting_Point = 1427,
 		Boiling_Point = 100000, --N/A
 	},
-	{
-		Name = "electrum",
+	["electrum"] = {
 		Cable = true,
 		Molten = true,
+		Mixed = true,
+		Mixed_Formula = {
+			["gold"] = 10,
+			["silver"] = 4,
+		},
+		Mixed_Item = {
+			["stone"] = 1,
+		},
 		Stick = true,
 		Melting_Point = 100, --N/A
 		Boiling_Point = 100000, --N/A
 	},
-	{
-		Name = "stainless-steel",
+	["stainless-steel"] = {
 		Stick = true,
 		Molten = true,
+		Mixed = true,
+		Mixed_Formula = {
+			["steel"] = 10,
+			["nickel"] = 4,
+		},
+		Mixed_Item = {
+			["coal"] = 5,
+		},
 		Gear = true,
 		Melting_Point = 1643,
 		Boiling_Point = 2766,
 	},
-	{
-		Name = "arditium",
+	["arditium"] = {
 		Ore = true,
 		Molten = true,
 		Gear = true,
@@ -135,8 +160,7 @@ Data_Metallurgy = {
 		Melting_Point = 754,
 		Boiling_Point = 2289,
 	},
-	{
-		Name = "titanium",
+	["titanium"] = {
 		Ore = true,
 		Molten = true,
 		Cable = true,
@@ -146,8 +170,7 @@ Data_Metallurgy = {
 		Melting_Point = 1668,
 		Boiling_Point = 3287,
 	},
-	{
-		Name = "tungsten",
+	["tungsten"] = {
 		Ore = true,
 		Molten = true,
 		Stick = true,
@@ -156,31 +179,51 @@ Data_Metallurgy = {
 		Melting_Point = 3422,
 		Boiling_Point = 5555,
 	},
-	{
-		Name = "electranium",
+	["electranium"] = {
 		Cable = true,
 		Molten = true,
+		Mixed = true,
+		Mixed_Formula = {
+			["electrum"] = 8,
+			["arditium"] = 6,
+		},
+		Mixed_Item = {
+			["stone"] = 1,
+		},
 		Stick = true,
 		Melting_Point = 512,
 		Boiling_Point = 3078,
 	},
-	{
-		Name = "arditium-tungstenate",
+	["arditium-tungstenate"] = {
 		Stick = true,
 		Molten = true,
+		Mixed = true,
+		Mixed_Formula = {
+			["arditium"] = 10,
+			["tungsten"] = 4,
+		},
+		Mixed_Item = {
+			["stone"] = 1,
+		},
 		Gear = true,
 		Melting_Point = 901,
 		Boiling_Point = 7563,
 	},
-	{
-		Name = "tungstvar",
+	["tungstvar"] = {
 		Stick = true,
 		Molten = true,
+		Mixed = true,
+		Mixed_Formula = {
+			["invar"] = 7,
+			["tungsten"] = 7,
+		},
+		Mixed_Item = {
+			["stone"] = 1,
+		},
 		Melting_Point = 2189,
 		Boiling_Point = 9146,
 	},
-	{
-		Name = "neutronium",
+	["neutronium"] = {
 		Ore = true,
 		Molten = true,
 		Stick = true,
@@ -188,10 +231,19 @@ Data_Metallurgy = {
 		Melting_Point = 4389,
 		Boiling_Point = 12489,
 	},
-	{
-		Name = "neutrobaltium",
+	["neutrobaltium"] = {
 		Cable = true,
 		Molten = true,
+		Mixed = true,
+		Mixed_Formula = {
+			["neutronium"] = 8,
+			["tungstvar"] = 2,
+			["arditium-tungstenate"] = 3,
+			["cobalt"] = 4,
+		},
+		Mixed_Item = {
+			["stone"] = 1,
+		},
 		Stick = true,
 		Gear = true,
 		Melting_Point = 3147,

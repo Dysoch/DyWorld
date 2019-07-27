@@ -16,7 +16,7 @@ data:extend(
 	category = dy.."melting",
     ingredients = 
 	{ 
-	  {type = "item", name = v.DyWorld.Metallurgy.Ore, amount = Ore_To_Molten_Ore_Amount},
+	  {type = "item", name = v.DyWorld.Name.."-ore", amount = Ore_To_Molten_Ore_Amount},
 	},
     results = 
 	{ 

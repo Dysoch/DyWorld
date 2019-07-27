@@ -52,6 +52,9 @@ require("data.core.items.filters")
 require("data.core.entities.greenhouse")
 require("data.core.entities.pasture")
 require("data.core.entities.caster")
+require("data.core.entities.forge-gear")
+require("data.core.entities.forge-stick")
+require("data.core.entities.forge-cable")
 require("data.core.entities.blast-furnace") -- needs to be last, does tech additions for caster as well
 
 -- Recipes

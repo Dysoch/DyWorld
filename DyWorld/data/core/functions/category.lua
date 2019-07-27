@@ -19,6 +19,18 @@ local Data_Table = {
 		Type = "recipe"
 	},
 	{
+		Name = dy.."forging-gear",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."forging-cable",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."forging-stick",
+		Type = "recipe"
+	},
+	{
 		Name = "radiation",
 		Type = "dmg"
 	},

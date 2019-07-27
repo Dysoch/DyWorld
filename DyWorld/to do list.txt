@@ -1,7 +1,45 @@
---
---@todo Add methane from cows
---
---@todo Add wheat farming
---
---@todo Add vehicle equipment
---
+TODO Add electric drills
+
+TODO Add Electric Furnaces
+
+TODO Add Solar Panels
+
+TODO Add Steam Engines
+
+TODO Add Inserters
+
+TODO Balance Binding Agents
+
+TODO Balancing Acidic Agents
+
+TODO Process Slag
+
+TODO Correct Graphics Metalurgic Machines
+
+TODO Add Walls
+
+TODO Add Armors
+
+TODO Add Guns
+
+TODO Add Ammo's
+
+TODO Add Thumbnail
+
+TODO Add Enemies
+
+TODO Add Gun Turrets
+
+TODO Recreate Circuits Intermediates
+
+TODO Recreate Science Packs
+
+TODO Add more Metals
+
+TODO Add enemy based loot
+
+TODO Add Loaders
+
+TODO Add Assembling Machines
+
+TODO Add Centrifuges

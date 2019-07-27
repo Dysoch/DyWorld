@@ -83,7 +83,6 @@ Data_Metallurgy = {
 		},
 		Stick = true,
 		Gear = true,
-		Tech_Processing = true,
 		Melting_Point = 658,
 		Boiling_Point = 2581,
 	},

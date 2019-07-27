@@ -37,6 +37,7 @@ data:extend(
 })
 		if v.DyWorld.Metallurgy.Tech_Processing then
 			data.raw.recipe[v.DyWorld.Name.."-stick"].enabled = false
+			DyWorld_Add_To_Tech(v.DyWorld.Name.."-processing", v.DyWorld.Name.."-stick")
 		end
 		end
 	end

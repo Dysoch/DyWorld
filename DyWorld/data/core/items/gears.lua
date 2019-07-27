@@ -39,6 +39,7 @@ data:extend(
 		--@body with unlocking recipes added in data-updates
 		if v.DyWorld.Metallurgy.Tech_Processing then
 			data.raw.recipe[v.DyWorld.Name.."-gear-wheel"].enabled = false
+			DyWorld_Add_To_Tech(v.DyWorld.Name.."-processing", v.DyWorld.Name.."-gear-wheel")
 		end
 		end
 	end

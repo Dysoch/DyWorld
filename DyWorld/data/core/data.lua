@@ -39,8 +39,8 @@ require("data.core.resources.resources")
 
 -- Items
 require("data.core.items.metals")
-require("data.core.items.metal-intermediates-add")
 require("data.core.functions.metallurgy-info-add")
+require("data.core.tech.tech-metal-processing")
 require("data.core.functions.entity-info-add")
 require("data.core.items.gears")
 require("data.core.items.sticks")

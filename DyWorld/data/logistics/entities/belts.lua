@@ -6,7 +6,7 @@ require "data/core/functions/amounts"
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("transport-belt", "express-transport-belt", v.DyWorld.Name.."-transport-belt", true)
-	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt_Speed / 426.67), 2)
+	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt_Speed / 426.67), 5)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt_Next.."-transport-belt"
 	DyWorld_Prototype_Entity.max_health = 150 * Metal_Tiers[v.DyWorld.Name]
@@ -32,6 +32,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "transport-belt", v.DyWorld.Name.."-transport-belt", true)
 	DyWorld_Prototype_Recipe.ingredients = {}
+	DyWorld_Prototype_Recipe.enabled = false
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
@@ -47,4 +48,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 end
 end
 
+--TODO change recipe transport belt
 data.raw["transport-belt"]["transport-belt"].next_upgrade = "iron-transport-belt"
+data.raw["transport-belt"]["transport-belt"].speed = Round((5 / 426.67), 5)
+data.raw["transport-belt"]["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
+data.raw.item["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
+data.raw.recipe["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}

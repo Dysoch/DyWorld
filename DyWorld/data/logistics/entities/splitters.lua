@@ -55,4 +55,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 end
 end
 
+--TODO change recipe splitter
 data.raw["splitter"]["splitter"].next_upgrade = "iron-splitter"
+data.raw["splitter"]["splitter"].speed = Round((5 / 426.67), 5)
+data.raw["splitter"]["splitter"].localised_name = {"looped-name.belt-3", {"looped-name.stone"}}
+data.raw["item"]["splitter"].localised_name = {"looped-name.belt-3", {"looped-name.stone"}}
+data.raw["recipe"]["splitter"].localised_name = {"looped-name.belt-3", {"looped-name.stone"}}

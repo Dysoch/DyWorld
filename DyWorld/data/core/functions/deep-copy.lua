@@ -19,6 +19,12 @@ function DyWorld_CopyPrototype(type, name, newName, change_results)
         if p.placed_as_equipment_result then
             p.placed_as_equipment_result = newName
         end
+        if p.normal and p.normal.result then
+            p.normal.result = newName
+        end
+        if p.expensive and p.expensive.result then
+            p.expensive.result = newName
+        end
     end
     return p
 end

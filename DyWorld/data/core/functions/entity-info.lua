@@ -24,6 +24,13 @@ Data_Entity = {
 			["loader"] = 1,
 		},
 		Drill = true,
+		Drill_Speed = 1,
+		Drill_Range = 6,
+		Drill_Next = "nickel",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 	["copper"] = {
 		Belt = false,
@@ -52,6 +59,13 @@ Data_Entity = {
 	["nickel"] = {
 		Belt = false,
 		Drill = true,
+		Drill_Speed = 1.5,
+		Drill_Range = 7,
+		Drill_Next = "lead",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 	["silver"] = {
 		Belt = false,
@@ -86,10 +100,24 @@ Data_Entity = {
 	["lead"] = {
 		Belt = false,
 		Drill = true,
+		Drill_Speed = 2.5,
+		Drill_Range = 8,
+		Drill_Next = "cobalt",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 	["cobalt"] = {
 		Belt = false,
 		Drill = true,
+		Drill_Speed = 4,
+		Drill_Range = 10,
+		Drill_Next = "arditium",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 	["invar"] = {
 		Belt = false,
@@ -121,6 +149,13 @@ Data_Entity = {
 	["arditium"] = {
 		Belt = false,
 		Drill = true,
+		Drill_Speed = 6,
+		Drill_Range = 10,
+		Drill_Next = "titanium",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 	["titanium"] = {
 		Belt = true,
@@ -144,6 +179,13 @@ Data_Entity = {
 			["stainless-steel-loader"] = 1,
 		},
 		Drill = true,
+		Drill_Speed = 9,
+		Drill_Range = 12,
+		Drill_Next = "electranium",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 	["tungsten"] = {
 		Belt = true,
@@ -169,6 +211,13 @@ Data_Entity = {
 	["electranium"] = {
 		Belt = false,
 		Drill = true,
+		Drill_Speed = 12,
+		Drill_Range = 15,
+		Drill_Next = "tungstvar",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 	["arditium-tungstenate"] = {
 		Belt = true,
@@ -213,10 +262,24 @@ Data_Entity = {
 			["arditium-tungstenate-loader"] = 1,
 		},
 		Drill = true,
+		Drill_Speed = 15,
+		Drill_Range = 20,
+		Drill_Next = "neutronium",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 	["neutronium"] = {
 		Belt = false,
 		Drill = true,
+		Drill_Speed = 19,
+		Drill_Range = 22,
+		Drill_Next = "neutrobaltium",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 	["neutrobaltium"] = {
 		Belt = true,
@@ -239,5 +302,12 @@ Data_Entity = {
 			["tungstvar-loader"] = 1,
 		},
 		Drill = true,
+		Drill_Speed = 25,
+		Drill_Range = 25,
+		Drill_Next = "neutrobaltium",
+		Drill_Ingredients = {
+			["iron-gear-wheel"] = 4,
+			["transport-belt"] = 2,
+		},
 	},
 }

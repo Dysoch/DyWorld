@@ -1,8 +1,17 @@
 require "data/core/functions/prefix"
 require "data/core/functions/colors"
--- Balancing here is just the tier in which is resides in the crafting menu (the number behind the =)
+-- Balancing here recipes
 
 local Data_Table = {
+	{
+		Name = "stone-gear-wheel",
+		Time = 1,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["stone"] = 2,
+		},
+		Enabled = true,
+	},
 	{
 		Name = "glass",
 		Time = 2,

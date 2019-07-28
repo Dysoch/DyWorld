@@ -48,9 +48,12 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 end
 end
 
---TODO change recipe transport belt
 data.raw["transport-belt"]["transport-belt"].next_upgrade = "iron-transport-belt"
 data.raw["transport-belt"]["transport-belt"].speed = Round((5 / 426.67), 5)
 data.raw["transport-belt"]["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
 data.raw.item["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
 data.raw.recipe["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
+data.raw.recipe["transport-belt"].ingredients = {
+	{type = "item", name = "stone", amount = 3},
+	{type = "item", name = "stone-gear-wheel", amount = 2},
+}

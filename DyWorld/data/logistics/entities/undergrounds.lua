@@ -60,9 +60,14 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 end
 end
 
---TODO change recipe underground belt
 data.raw["underground-belt"]["underground-belt"].next_upgrade = "iron-underground-belt"
 data.raw["underground-belt"]["underground-belt"].speed = Round((5 / 426.67), 5)
+data.raw["underground-belt"]["underground-belt"].max_distance = 4
 data.raw["underground-belt"]["underground-belt"].localised_name = {"looped-name.belt-2", {"looped-name.stone"}}
 data.raw["item"]["underground-belt"].localised_name = {"looped-name.belt-2", {"looped-name.stone"}}
 data.raw["recipe"]["underground-belt"].localised_name = {"looped-name.belt-2", {"looped-name.stone"}}
+data.raw.recipe["underground-belt"].enabled = true
+data.raw.recipe["underground-belt"].ingredients = {
+	{type = "item", name = "transport-belt", amount = 4},
+	{type = "item", name = "stone", amount = 3},
+}

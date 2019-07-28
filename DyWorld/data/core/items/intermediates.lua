@@ -4,6 +4,7 @@ require "data/core/functions/colors"
 
 local Data_Table = {
 	["chitin"] = 1,
+	["stone-gear-wheel"] = 1,
 	["diamond"] = 5,
 	["gunpowder"] = 3, --
 	["obsidian"] = 2,

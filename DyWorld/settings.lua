@@ -78,6 +78,12 @@ data:extend({
 		default_value = false,
 	},
 	{
+		type = "bool-setting",
+		name = "DyWorld_Collision_Projectiles",
+		setting_type = "startup",
+		default_value = false,
+	},
+	{
 		type = "int-setting",
 		name = "DyWorld_Warfare_Difficulty",
 		setting_type = "startup",

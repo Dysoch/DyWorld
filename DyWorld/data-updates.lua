@@ -92,6 +92,10 @@ for i,inserter in pairs(data.raw["inserter"]) do
     inserter.allow_custom_vectors = true
 end
 
+if settings.startup["DyWorld_Collision_Projectiles"] then
+	--TODO Change projectiles so there are no unlimited ranges on them 
+end
+
 if settings.startup["DyWorld_Warfare_Difficulty"].value == 1 then
 	for k,v in pairs(data.raw.unit) do	
 		v.max_health = math.floor(v.max_health * 0.5)

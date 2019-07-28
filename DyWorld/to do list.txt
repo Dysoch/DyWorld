@@ -51,3 +51,13 @@ TODO Add collidable projectiles
 TODO Add Material System back
 
 TODO Add Starting Ship
+
+TODO Add expensive recipe modifier to Logistics Recipes
+
+TODO Add expensive recipe modifier to Extraction Recipes
+
+TODO Add expensive recipe modifier to Intermediates Recipes
+
+TODO Add expensive recipe modifier to Metal Intermediates Recipes
+
+TODO Add expensive recipe modifier to Wood Recipes

@@ -5,7 +5,7 @@ require "data/core/functions/amounts"
 --@todo change belt script to work with predefined data table
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
-	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("underground-belt", "express-underground-belt", v.DyWorld.Name.."-underground-belt", true)
+	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("underground-belt", "underground-belt", v.DyWorld.Name.."-underground-belt", true)
 	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt_Speed / 426.67), 2)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt_Next.."-underground-belt"
@@ -14,7 +14,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Entity.max_distance = v.DyWorld.Entity.Belt_Range
 	DyWorld_Prototype_Entity.icons = {
 	  {
-		icon = "__base__/graphics/icons/express-underground-belt.png",
+		icon = "__base__/graphics/icons/underground-belt.png",
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
@@ -32,19 +32,20 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Entity.structure.front_patch.sheet.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.front_patch.sheet.hr_version.tint = Material_Colors[v.DyWorld.Name]
 
-	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "express-underground-belt", v.DyWorld.Name.."-underground-belt", true)
+	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "underground-belt", v.DyWorld.Name.."-underground-belt", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.icons = {
 	  {
-		icon = "__base__/graphics/icons/express-underground-belt.png",
+		icon = "__base__/graphics/icons/underground-belt.png",
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
 
-	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "express-underground-belt", v.DyWorld.Name.."-underground-belt", true)
+	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "underground-belt", v.DyWorld.Name.."-underground-belt", true)
 	DyWorld_Prototype_Recipe.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = v.DyWorld.Entity.Belt_Range}}
+	DyWorld_Prototype_Recipe.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	

@@ -20,6 +20,9 @@ Data_Entity = {
 		Splitter_Ingredients = {
 			["splitter"] = 1,
 		},
+		Loader_Ingredients = {
+			["loader"] = 1,
+		},
 		Drill = true,
 	},
 	["copper"] = {
@@ -41,6 +44,9 @@ Data_Entity = {
 		},
 		Splitter_Ingredients = {
 			["bronze-splitter"] = 1,
+		},
+		Loader_Ingredients = {
+			["bronze-loader"] = 1,
 		},
 	},
 	["nickel"] = {
@@ -72,6 +78,9 @@ Data_Entity = {
 		},
 		Splitter_Ingredients = {
 			["iron-splitter"] = 1,
+		},
+		Loader_Ingredients = {
+			["iron-loader"] = 1,
 		},
 	},
 	["lead"] = {
@@ -105,6 +114,9 @@ Data_Entity = {
 		Splitter_Ingredients = {
 			["steel-splitter"] = 1,
 		},
+		Loader_Ingredients = {
+			["steel-loader"] = 1,
+		},
 	},
 	["arditium"] = {
 		Belt = false,
@@ -128,6 +140,9 @@ Data_Entity = {
 		Splitter_Ingredients = {
 			["stainless-steel-splitter"] = 1,
 		},
+		Loader_Ingredients = {
+			["stainless-steel-loader"] = 1,
+		},
 		Drill = true,
 	},
 	["tungsten"] = {
@@ -146,6 +161,9 @@ Data_Entity = {
 		},
 		Splitter_Ingredients = {
 			["titanium-splitter"] = 1,
+		},
+		Loader_Ingredients = {
+			["titanium-loader"] = 1,
 		},
 	},
 	["electranium"] = {
@@ -169,6 +187,9 @@ Data_Entity = {
 		Splitter_Ingredients = {
 			["tungsten-splitter"] = 1,
 		},
+		Loader_Ingredients = {
+			["tungsten-loader"] = 1,
+		},
 	},
 	["tungstvar"] = {
 		Belt = true,
@@ -187,6 +208,9 @@ Data_Entity = {
 		},
 		Splitter_Ingredients = {
 			["arditium-tungstenate-splitter"] = 1,
+		},
+		Loader_Ingredients = {
+			["arditium-tungstenate-loader"] = 1,
 		},
 		Drill = true,
 	},
@@ -210,6 +234,9 @@ Data_Entity = {
 		},
 		Splitter_Ingredients = {
 			["tungstvar-splitter"] = 1,
+		},
+		Loader_Ingredients = {
+			["tungstvar-loader"] = 1,
 		},
 		Drill = true,
 	},

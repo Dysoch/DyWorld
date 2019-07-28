@@ -5,7 +5,7 @@ require "data/core/functions/amounts"
 --@todo change belt script to work with predefined data table
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
-	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("splitter", "express-splitter", v.DyWorld.Name.."-splitter", true)
+	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("splitter", "splitter", v.DyWorld.Name.."-splitter", true)
 	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt_Speed / 426.67), 2)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-3", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt_Next.."-splitter"
@@ -21,24 +21,25 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.icons = {
 	  {
-		icon = "__base__/graphics/icons/express-splitter.png",
+		icon = "__base__/graphics/icons/splitter.png",
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
 	DyWorld_Prototype_Entity.belt_animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
 
-	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "express-splitter", v.DyWorld.Name.."-splitter", true)
-	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
+	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "splitter", v.DyWorld.Name.."-splitter", true)
+	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-3", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.icons = {
 	  {
-		icon = "__base__/graphics/icons/express-splitter.png",
+		icon = "__base__/graphics/icons/splitter.png",
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
 
-	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "express-splitter", v.DyWorld.Name.."-splitter", true)
+	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "splitter", v.DyWorld.Name.."-splitter", true)
+	DyWorld_Prototype_Recipe.localised_name = {"looped-name.belt-3", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Recipe.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 2}}
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})

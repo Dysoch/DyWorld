@@ -28,6 +28,7 @@ Data_Entity = {
 		Drill_Range = 6,
 		Drill_Next = "nickel",
 		Drill_Ingredients = {
+			["electric-mining-drill"] = 1,
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
 		},
@@ -65,6 +66,7 @@ Data_Entity = {
 		Drill_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["iron-electric-mining-drill"] = 1,
 		},
 	},
 	["silver"] = {
@@ -106,6 +108,7 @@ Data_Entity = {
 		Drill_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["nickel-electric-mining-drill"] = 1,
 		},
 	},
 	["cobalt"] = {
@@ -117,6 +120,7 @@ Data_Entity = {
 		Drill_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["lead-electric-mining-drill"] = 1,
 		},
 	},
 	["invar"] = {
@@ -155,6 +159,7 @@ Data_Entity = {
 		Drill_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["cobalt-electric-mining-drill"] = 1,
 		},
 	},
 	["titanium"] = {
@@ -185,6 +190,7 @@ Data_Entity = {
 		Drill_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["arditium-electric-mining-drill"] = 1,
 		},
 	},
 	["tungsten"] = {
@@ -217,6 +223,7 @@ Data_Entity = {
 		Drill_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["titanium-electric-mining-drill"] = 1,
 		},
 	},
 	["arditium-tungstenate"] = {
@@ -268,6 +275,7 @@ Data_Entity = {
 		Drill_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["electranium-electric-mining-drill"] = 1,
 		},
 	},
 	["neutronium"] = {
@@ -279,6 +287,7 @@ Data_Entity = {
 		Drill_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["tungstvar-electric-mining-drill"] = 1,
 		},
 	},
 	["neutrobaltium"] = {
@@ -308,6 +317,7 @@ Data_Entity = {
 		Drill_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["neutronium-electric-mining-drill"] = 1,
 		},
 	},
 }

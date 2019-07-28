@@ -12,6 +12,14 @@ local Data_Table = {
 		Count = 50,
 		Military = false,
 	},
+	{
+		Name = "automation",
+		Icon = {{icon = "__base__/graphics/technology/automation.png"}},
+		Pre_Req_Above = 3,
+		Tiers = 10,
+		Count = 100,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

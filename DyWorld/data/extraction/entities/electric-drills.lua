@@ -34,7 +34,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "electric-mining-drill", v.DyWorld.Name.."-electric-mining-drill", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.drill-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
-	DyWorld_Prototype_Item.flags = {}
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.icons = {
 	  {
@@ -46,15 +45,12 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "electric-mining-drill", v.DyWorld.Name.."-electric-mining-drill", true)
 	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = (12 * v.DyWorld.Tier)}}
 	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = (25 * v.DyWorld.Tier)}}
-	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-electric-mining-drill"
-	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-electric-mining-drill"
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.drill-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Recipe.enabled = false
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	--if v.DyWorld.Entity.Drill_Tech then
-		--DyWorld_Add_To_Tech(v.DyWorld.Entity.Drill_Tech, v.DyWorld.Name.."-electric-mining-drill")
-	--end
+	DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-electric-mining-drill")
 	if v.DyWorld.Entity.Drill_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Drill_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}

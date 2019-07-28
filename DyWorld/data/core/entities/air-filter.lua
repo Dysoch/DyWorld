@@ -49,7 +49,7 @@ data:extend(
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
         base_area = 10,
-        base_level = -1,
+        base_level = 1,
         pipe_connections = {{ type="output", position = {0, -2} }}
       },
       {
@@ -57,7 +57,7 @@ data:extend(
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
         base_area = 10,
-        base_level = -1,
+        base_level = 1,
         pipe_connections = {{ type="output", position = {0, 2} }}
       },
       {

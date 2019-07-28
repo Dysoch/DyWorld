@@ -43,3 +43,11 @@ TODO Add Loaders
 TODO Add Assembling Machines
 
 TODO Add Centrifuges
+
+TODO Add option for collidable projectiles
+
+TODO Add collidable projectiles
+
+TODO Add Material System back
+
+TODO Add Starting Ship

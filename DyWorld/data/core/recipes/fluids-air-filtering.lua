@@ -32,5 +32,7 @@ local Data_Table = {
 }
 
 for k,v in pairs(Data_Table) do
-	DyWorld_Master_Recipe_Creator(v)
+	if not data.raw.recipe[v.Name] then
+		DyWorld_Master_Recipe_Creator(v)
+	end
 end	

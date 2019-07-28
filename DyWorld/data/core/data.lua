@@ -30,14 +30,14 @@ require("data.core.item-groups.logistics")
 require("data.core.item-groups.logistics-2")
 require("data.core.item-groups.machine-production")
 
--- Edits
+-- Edits & Edits Related Functions
 require("data.core.edits.items")
 require("data.core.edits.item-group-change")
 
--- Resources
+-- Resources & Resources Related Functions
 require("data.core.resources.resources")
 
--- Items
+-- Items & Item Related Functions
 require("data.core.items.metals")
 require("data.core.functions.metallurgy-info-add")
 require("data.core.tech.tech-metal-processing")
@@ -48,7 +48,7 @@ require("data.core.items.cables")
 require("data.core.items.intermediates")
 require("data.core.items.filters")
 
--- Entities
+-- Entities & Entities Related Functions
 require("data.core.entities.air-filter")
 require("data.core.entities.greenhouse")
 require("data.core.entities.pasture")
@@ -58,16 +58,17 @@ require("data.core.entities.forge-stick")
 require("data.core.entities.forge-cable")
 require("data.core.entities.blast-furnace") -- needs to be last, does tech additions for caster as well
 
--- Fluids
+-- Fluids & Fluids Related Functions
 require("data.core.fluids.basics")
 require("data.core.fluids.metallurgy-fluids")
 
--- Recipes
+-- Recipes & Recipes Related Functions
+require("data.core.recipes.metals")
 require("data.core.recipes.wood")
 require("data.core.recipes.rocks")
 require("data.core.recipes.intermediates")
 require("data.core.recipes.fluids-air-filtering")
 
--- Debug
+-- Debug & Debug Related Functions
 require("data.core.debug.armor")
 require("data.core.debug.equipment")

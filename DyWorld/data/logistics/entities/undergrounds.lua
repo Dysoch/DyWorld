@@ -44,7 +44,14 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	}
 
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "underground-belt", v.DyWorld.Name.."-underground-belt", true)
-	DyWorld_Prototype_Recipe.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = v.DyWorld.Entity.Belt_Range}}
+	DyWorld_Prototype_Recipe.enabled = false
+	DyWorld_Prototype_Recipe.normal = {}
+	DyWorld_Prototype_Recipe.expensive = {}
+	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = v.DyWorld.Entity.Belt_Range}}
+	DyWorld_Prototype_Recipe.normal.results = {{type = "item", name = v.DyWorld.Name.."-underground-belt", amount = 2}}
+	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = v.DyWorld.Entity.Belt_Range * 5}}
+	DyWorld_Prototype_Recipe.expensive.results = {{type = "item", name = v.DyWorld.Name.."-underground-belt", amount = 2}}
+	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
@@ -52,10 +59,12 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	if v.DyWorld.Entity.Belt_Tech then
 		DyWorld_Add_To_Tech(v.DyWorld.Entity.Belt_Tech, v.DyWorld.Name.."-underground-belt")
 	end
-	if v.DyWorld.Entity.Underground_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Underground_Ingredients) do
+	if v.DyWorld.Entity.Loader_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Loader_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
-			table.insert(data.raw.recipe[v.DyWorld.Name.."-underground-belt"].ingredients, Ingredient)
+			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-underground-belt"].normal.ingredients, Ingredient)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-underground-belt"].expensive.ingredients, Ingredient_2)
 		end
 	end
 end
@@ -68,7 +77,16 @@ data.raw["underground-belt"]["underground-belt"].localised_name = {"looped-name.
 data.raw["item"]["underground-belt"].localised_name = {"looped-name.belt-2", {"looped-name.stone"}}
 data.raw["recipe"]["underground-belt"].localised_name = {"looped-name.belt-2", {"looped-name.stone"}}
 data.raw.recipe["underground-belt"].enabled = true
-data.raw.recipe["underground-belt"].ingredients = {
+data.raw.recipe["underground-belt"].ingredients = nil
+data.raw.recipe["underground-belt"].normal = {}
+data.raw.recipe["underground-belt"].expensive = {}
+data.raw.recipe["underground-belt"].normal.ingredients = {
 	{type = "item", name = "transport-belt", amount = 4},
 	{type = "item", name = "stone", amount = 3},
 }
+data.raw.recipe["underground-belt"].expensive.ingredients = {
+	{type = "item", name = "transport-belt", amount = 20},
+	{type = "item", name = "stone", amount = 15},
+}
+data.raw.recipe["underground-belt"].normal.result = "underground-belt"
+data.raw.recipe["underground-belt"].expensive.result = "underground-belt"

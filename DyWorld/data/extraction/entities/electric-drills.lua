@@ -43,8 +43,13 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 	}
 
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "electric-mining-drill", v.DyWorld.Name.."-electric-mining-drill", true)
+	DyWorld_Prototype_Recipe.normal = {}
+	DyWorld_Prototype_Recipe.expensive = {}
 	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = (12 * v.DyWorld.Tier)}}
+	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-electric-mining-drill"
 	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = (25 * v.DyWorld.Tier)}}
+	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-electric-mining-drill"
+	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.drill-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Recipe.enabled = false
 

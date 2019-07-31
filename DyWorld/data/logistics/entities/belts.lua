@@ -31,8 +31,15 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	}
 
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "transport-belt", v.DyWorld.Name.."-transport-belt", true)
+	DyWorld_Prototype_Recipe.enabled = false
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.belt-1", {"looped-name."..v.DyWorld.Name}}
-	DyWorld_Prototype_Recipe.ingredients = {}
+	DyWorld_Prototype_Recipe.normal = {}
+	DyWorld_Prototype_Recipe.expensive = {}
+	DyWorld_Prototype_Recipe.normal.ingredients = {}
+	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-transport-belt"
+	DyWorld_Prototype_Recipe.expensive.ingredients = {}
+	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-transport-belt"
+	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.enabled = false
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
@@ -43,7 +50,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	if v.DyWorld.Entity.Belt_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Belt_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
-			table.insert(data.raw.recipe[v.DyWorld.Name.."-transport-belt"].ingredients, Ingredient)
+			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-transport-belt"].normal.ingredients, Ingredient)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-transport-belt"].expensive.ingredients, Ingredient_2)
 		end
 	end
 end
@@ -54,7 +63,16 @@ data.raw["transport-belt"]["transport-belt"].speed = Round((5 / 426.67), 5)
 data.raw["transport-belt"]["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
 data.raw.item["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
 data.raw.recipe["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
-data.raw.recipe["transport-belt"].ingredients = {
+data.raw.recipe["transport-belt"].ingredients = nil
+data.raw.recipe["transport-belt"].normal = {}
+data.raw.recipe["transport-belt"].expensive = {}
+data.raw.recipe["transport-belt"].normal.ingredients = {
 	{type = "item", name = "stone", amount = 3},
 	{type = "item", name = "stone-gear-wheel", amount = 2},
 }
+data.raw.recipe["transport-belt"].expensive.ingredients = {
+	{type = "item", name = "stone", amount = 15},
+	{type = "item", name = "stone-gear-wheel", amount = 10},
+}
+data.raw.recipe["transport-belt"].normal.result = "transport-belt"
+data.raw.recipe["transport-belt"].expensive.result = "transport-belt"

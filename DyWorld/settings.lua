@@ -84,6 +84,12 @@ data:extend({
 		default_value = false,
 	},
 	{
+		type = "bool-setting",
+		name = "DyWorld_Expensive_Recipe_Helper",
+		setting_type = "startup",
+		default_value = false,
+	},
+	{
 		type = "int-setting",
 		name = "DyWorld_Warfare_Difficulty",
 		setting_type = "startup",
@@ -98,7 +104,7 @@ data:extend({
 		name = "DyWorld_Stack_Size_Mult",
 		setting_type = "startup",
 		default_value = 1,
-        maximum_value = 1000000,
+        maximum_value = 10000,
         minimum_value = 1,
 	},
 	{

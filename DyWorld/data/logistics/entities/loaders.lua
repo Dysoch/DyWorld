@@ -34,7 +34,14 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	}
 
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "loader", v.DyWorld.Name.."-loader", true)
-	DyWorld_Prototype_Recipe.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 2}}
+	DyWorld_Prototype_Recipe.enabled = false
+	DyWorld_Prototype_Recipe.normal = {}
+	DyWorld_Prototype_Recipe.expensive = {}
+	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 2}}
+	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-loader"
+	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 10}}
+	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-loader"
+	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.belt-4", {"looped-name."..v.DyWorld.Name}}
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
@@ -45,18 +52,26 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	if v.DyWorld.Entity.Loader_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Loader_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
-			table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].ingredients, Ingredient)
+			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].normal.ingredients, Ingredient)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient_2)
 		end
 	end
 	if v.DyWorld.Tier >= 7 then
-		local Ingredient = {type = "item", name = "processing-unit", amount = v.DyWorld.Tier}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].ingredients, Ingredient)
+		local Ingredient = {type = "item", name = "processing-unit", amount = v.DyWorld.Tier * 3}
+		local Ingredient_2 = {type = "item", name = "processing-unit", amount = v.DyWorld.Tier * 15}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient_2)
 	elseif v.DyWorld.Tier >= 4 then
-		local Ingredient = {type = "item", name = "advanced-circuit", amount = v.DyWorld.Tier}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].ingredients, Ingredient)
+		local Ingredient = {type = "item", name = "advanced-circuit", amount = v.DyWorld.Tier * 2}
+		local Ingredient_2 = {type = "item", name = "advanced-circuit", amount = v.DyWorld.Tier * 10}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient_2)
 	elseif v.DyWorld.Tier >= 1 then
-		local Ingredient = {type = "item", name = "electronic-circuit", amount = v.DyWorld.Tier}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].ingredients, Ingredient)
+		local Ingredient = {type = "item", name = "electronic-circuit", amount = v.DyWorld.Tier * 1}
+		local Ingredient_2 = {type = "item", name = "electronic-circuit", amount = v.DyWorld.Tier * 5}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient_2)
 	end
 end
 end
@@ -68,8 +83,18 @@ data.raw["item"]["loader"].localised_name = {"looped-name.belt-4", {"looped-name
 data.raw["item"]["loader"].flags = {}
 data.raw["recipe"]["loader"].localised_name = {"looped-name.belt-4", {"looped-name.stone"}}
 data.raw.recipe["loader"].enabled = true
-data.raw.recipe["loader"].ingredients = {
+data.raw.recipe["loader"].ingredients = nil
+data.raw.recipe["loader"].normal = {}
+data.raw.recipe["loader"].expensive = {}
+data.raw.recipe["loader"].normal.ingredients = {
 	{type = "item", name = "electronic-circuit", amount = 1},
 	{type = "item", name = "transport-belt", amount = 2},
 	{type = "item", name = "stone", amount = 3},
 }
+data.raw.recipe["loader"].expensive.ingredients = {
+	{type = "item", name = "electronic-circuit", amount = 5},
+	{type = "item", name = "transport-belt", amount = 10},
+	{type = "item", name = "stone", amount = 15},
+}
+data.raw.recipe["loader"].normal.result = "loader"
+data.raw.recipe["loader"].expensive.result = "loader"

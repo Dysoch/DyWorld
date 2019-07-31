@@ -129,8 +129,10 @@ data:extend(
 	  }
 	},
 	icon_size = 32,
+    tree_removal_probability = 0.8,
+    tree_removal_max_distance = 32 * 32,
     flags = {"placeable-neutral"},
-    order = "a-b-"..v.Order,
+    order = "b-"..v.Order,
     minable =
     {
       mining_particle = "stone-particle",

@@ -40,14 +40,23 @@ data:extend(
   {
     type = "recipe",
     name = k.."-filter",
-    energy_required = 5,
     enabled = true,
-    ingredients =
-    {
-      {type = "item", name = "filter-empty", amount = 1},
-      {type = "item", name = k, amount = 5},
-    },
-    result = k.."-filter",
+    normal = {
+	  energy_required = 5,
+	  ingredients = {
+		{type = "item", name = "filter-empty", amount = 1},
+		{type = "item", name = k, amount = 5},
+	  },
+      result = k.."-filter",
+	},
+    expensive = {
+	  energy_required = 5,
+	  ingredients = {
+		{type = "item", name = "filter-empty", amount = 1},
+		{type = "item", name = k, amount = 25},
+	  },
+      result = k.."-filter",
+	},
   },
 })
 else
@@ -76,14 +85,23 @@ data:extend(
   {
     type = "recipe",
     name = k.."-filter",
-    energy_required = 5,
     enabled = true,
-    ingredients =
-    {
-      {type = "item", name = "filter-empty", amount = 1},
-      {type = "item", name = k, amount = 5},
-    },
-    result = k.."-filter",
+    normal = {
+	  energy_required = 5,
+	  ingredients = {
+		{type = "item", name = "filter-empty", amount = 1},
+		{type = "item", name = k, amount = 5},
+	  },
+      result = k.."-filter",
+	},
+    expensive = {
+	  energy_required = 5,
+	  ingredients = {
+		{type = "item", name = "filter-empty", amount = 1},
+		{type = "item", name = k, amount = 25},
+	  },
+      result = k.."-filter",
+	},
   },
 })
 end

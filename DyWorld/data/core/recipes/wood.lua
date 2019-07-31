@@ -51,4 +51,6 @@ for k,v in pairs(data.raw.tree) do
 end
 
 local INSERT = {type = "fluid", name = "water", amount = 250, minimum_temperature = 10, maximum_temperature = 35}
-table.insert(data.raw.recipe["wood"].ingredients,INSERT)
+table.insert(data.raw.recipe["wood"].normal.ingredients, INSERT)
+local INSERT = {type = "fluid", name = "water", amount = 1250, minimum_temperature = 10, maximum_temperature = 25}
+table.insert(data.raw.recipe["wood"].expensive.ingredients, INSERT)

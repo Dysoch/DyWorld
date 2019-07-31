@@ -25,14 +25,17 @@ data:extend(
   {
     type = "recipe",
     name = v.DyWorld.Name.."-stick",
-    energy_required = 2,
     enabled = true,
-    ingredients =
-    {
-      {type = "item", name = v.DyWorld.Name.."-plate", amount = 1},
-    },
-    result = v.DyWorld.Name.."-stick",
-	result_amount = 2,
+    normal = {
+	  energy_required = 2,
+	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 1},},
+      results = {{type = "item", name = v.DyWorld.Name.."-stick", amount = 2},},
+	},
+    expensive = {
+	  energy_required = 2,
+	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 5},},
+      results = {{type = "item", name = v.DyWorld.Name.."-stick", amount = 2},},
+	},
   },
 })
 		if v.DyWorld.Metallurgy.Tech_Processing then

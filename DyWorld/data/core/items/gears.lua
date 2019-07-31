@@ -25,13 +25,17 @@ data:extend(
   {
     type = "recipe",
     name = v.DyWorld.Name.."-gear-wheel",
-    energy_required = 2,
     enabled = true,
-    ingredients =
-    {
-      {type = "item", name = v.DyWorld.Name.."-plate", amount = 2},
-    },
-    result = v.DyWorld.Name.."-gear-wheel",
+    normal = {
+	  energy_required = 2,
+	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 2},},
+      results = {{type = "item", name = v.DyWorld.Name.."-gear-wheel", amount = 1},},
+	},
+    expensive = {
+	  energy_required = 2,
+	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 10},},
+      results = {{type = "item", name = v.DyWorld.Name.."-gear-wheel", amount = 1},},
+	},
   },
 })
 

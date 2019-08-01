@@ -41,24 +41,9 @@ for k,m in pairs(Change) do
 				data.raw.item[m.Old].flags = {"hidden"}
 			end
 		end
-		if data.raw["transport-belt"][m.Old] then
-			if data.raw["transport-belt"][m.Old].next_upgrade then
-				data.raw["transport-belt"][m.Old].next_upgrade = nil
-			end
-		end
-		if data.raw["splitter"][m.Old] then
-			if data.raw["splitter"][m.Old].next_upgrade then
-				data.raw["splitter"][m.Old].next_upgrade = nil
-			end
-		end
-		if data.raw["underground-belt"][m.Old] then
-			if data.raw["underground-belt"][m.Old].next_upgrade then
-				data.raw["underground-belt"][m.Old].next_upgrade = nil
-			end
-		end
-		if data.raw["inserter"][m.Old] then
-			if data.raw["inserter"][m.Old].next_upgrade then
-				data.raw["inserter"][m.Old].next_upgrade = nil
+		if data.raw["assembling-machine"][m.Old] then
+			if data.raw["assembling-machine"][m.Old].next_upgrade then
+				data.raw["assembling-machine"][m.Old].next_upgrade = nil
 			end
 		end
 		if data.raw.recipe[m.Old] then

@@ -7,12 +7,13 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Assembler then
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("assembling-machine", "assembling-machine-3", v.DyWorld.Name.."-assembling-machine", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.assembler-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.max_health = 500 * v.DyWorld.Tier
-	DyWorld_Prototype_Entity.energy_source.emissions_per_minute = 0.5 * v.DyWorld.Tier
+	DyWorld_Prototype_Entity.energy_source.emissions_per_minute = 0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.75))
 	DyWorld_Prototype_Entity.module_specification.module_slots = 2 + v.DyWorld.Tier
 	DyWorld_Prototype_Entity.animation.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animation.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
-	DyWorld_Prototype_Entity.crafting_speed = 0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))
+	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Assembler_Next.."-assembling-machine"
+	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Assembler_Speed_Mod), 2)
 	DyWorld_Prototype_Entity.energy_usage = (250 * v.DyWorld.Tier).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
@@ -56,3 +57,5 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Assembler then
 	end
 end
 end
+
+data.raw["assembling-machine"]["assembling-machine-1"].next_upgrade = "iron-assembling-machine"

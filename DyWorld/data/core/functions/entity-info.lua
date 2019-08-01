@@ -1,7 +1,5 @@
 require "data/core/functions/prefix"
 
---TODO balance recipes of belts
---@body balance the recipe's Zukii
 Data_Entity = {
 	["iron"] = {
 		Belt = true,
@@ -32,9 +30,19 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
 		},
+		Assembler = true,
+		Assembler_Ingredients = {
+			["assembling-machine-1"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["copper"] = {
 		Belt = false,
+		Assembler = true,
+		Assembler_Ingredients = {
+			["iron-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["steel"] = {
 		Belt = true,
@@ -74,6 +82,11 @@ Data_Entity = {
 	},
 	["tin"] = {
 		Belt = false,
+		Assembler = true,
+		Assembler_Ingredients = {
+			["copper-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["gold"] = {
 		Belt = false,
@@ -110,6 +123,11 @@ Data_Entity = {
 			["transport-belt"] = 2,
 			["nickel-electric-mining-drill"] = 1,
 		},
+		Assembler = true,
+		Assembler_Ingredients = {
+			["tin-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["cobalt"] = {
 		Belt = false,
@@ -125,9 +143,19 @@ Data_Entity = {
 	},
 	["invar"] = {
 		Belt = false,
+		Assembler = true,
+		Assembler_Ingredients = {
+			["lead-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["electrum"] = {
 		Belt = false,
+		Assembler = true,
+		Assembler_Ingredients = {
+			["invar-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["stainless-steel"] = {
 		Belt = true,
@@ -160,6 +188,11 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
 			["cobalt-electric-mining-drill"] = 1,
+		},
+		Assembler = true,
+		Assembler_Ingredients = {
+			["electrum-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
 		},
 	},
 	["titanium"] = {
@@ -213,6 +246,11 @@ Data_Entity = {
 		Loader_Ingredients = {
 			["titanium-loader"] = 1,
 		},
+		Assembler = true,
+		Assembler_Ingredients = {
+			["arditium-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["electranium"] = {
 		Belt = false,
@@ -224,6 +262,11 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
 			["titanium-electric-mining-drill"] = 1,
+		},
+		Assembler = true,
+		Assembler_Ingredients = {
+			["tungsten-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
 		},
 	},
 	["arditium-tungstenate"] = {
@@ -289,6 +332,11 @@ Data_Entity = {
 			["transport-belt"] = 2,
 			["tungstvar-electric-mining-drill"] = 1,
 		},
+		Assembler = true,
+		Assembler_Ingredients = {
+			["electranium-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["neutrobaltium"] = {
 		Belt = true,
@@ -318,6 +366,11 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
 			["neutronium-electric-mining-drill"] = 1,
+		},
+		Assembler = true,
+		Assembler_Ingredients = {
+			["neutronium-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
 		},
 	},
 }

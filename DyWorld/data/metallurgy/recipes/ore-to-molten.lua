@@ -14,13 +14,19 @@ data:extend(
     energy_required = 5 * v.DyWorld.Tier,
     enabled = false,
 	category = dy.."melting",
-    ingredients = 
-	{ 
-	  {type = "item", name = v.DyWorld.Name.."-ore", amount = Ore_To_Molten_Ore_Amount},
+    normal = { 
+	  energy_required = 5 * v.DyWorld.Tier,
+	  ingredients = {{type = "item", name = v.DyWorld.Name.."-ore", amount = Ore_To_Molten_Ore_Amount}},
+	  results = { 
+	    {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = math.floor(Ore_To_Molten_Ore_Amount * Ore_To_Molten_Ratio)},
+	  },
 	},
-    results = 
-	{ 
-	  {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = math.floor(Ore_To_Molten_Ore_Amount * Ore_To_Molten_Ratio)},
+    expensive = { 
+	  energy_required = 15 * v.DyWorld.Tier,
+	  ingredients = {{type = "item", name = v.DyWorld.Name.."-ore", amount = Ore_To_Molten_Ore_Amount * 5}},
+	  results = { 
+	    {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = math.floor(Ore_To_Molten_Ore_Amount * Ore_To_Molten_Ratio)},
+	  },
 	},
   },
 })

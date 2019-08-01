@@ -12,20 +12,26 @@ data:extend(
     type = "recipe",
     name = "metallurgy-"..v.DyWorld.Name.."-plate",
 	localised_name = {"looped-name.plate-casting", {"looped-name."..v.DyWorld.Name}},
-    energy_required = 1.5 * v.DyWorld.Tier,
 	icons = data.raw.item[v.DyWorld.Name.."-plate"].icons,
     enabled = false,
 	category = dy.."casting",
 	icon_size = 32,
     subgroup = dy.."material-"..(Metal_Tiers[v.DyWorld.Name]-1),
-    ingredients = 
-	{ 
-	  {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = Molten_To_Plate_Molten_Amount},
+    normal = { 
+	  energy_required = 1.5 * v.DyWorld.Tier,
+	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = Molten_To_Plate_Molten_Amount}},
+	  results = { 
+	    {type = "item", name = v.DyWorld.Name.."-plate", amount = math.floor(Molten_To_Plate_Molten_Amount / Molten_To_Plate_Ratio)},
+	    {type = "item", name = v.DyWorld.Name.."-slag", amount_min = 1, amount_max = 3, probability = 0.6},
+	  },
 	},
-    results = 
-	{ 
-	  {type = "item", name = v.DyWorld.Name.."-plate", amount = math.floor(Molten_To_Plate_Molten_Amount / Molten_To_Plate_Ratio)},
-	  {type = "item", name = v.DyWorld.Name.."-slag", amount_min = 1, amount_max = 3, probability = 0.6},
+    expensive = { 
+	  energy_required = 2.5 * v.DyWorld.Tier,
+	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = Molten_To_Plate_Molten_Amount * 5}},
+	  results = { 
+		{type = "item", name = v.DyWorld.Name.."-plate", amount = math.floor(Molten_To_Plate_Molten_Amount / Molten_To_Plate_Ratio)},
+		{type = "item", name = v.DyWorld.Name.."-slag", amount_min = 1, amount_max = 3, probability = 0.6},
+	  },
 	},
   },
 })

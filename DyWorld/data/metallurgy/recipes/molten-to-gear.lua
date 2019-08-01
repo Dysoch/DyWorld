@@ -11,17 +11,22 @@ data:extend(
   {
     type = "recipe",
     name = "metallurgy-"..v.DyWorld.Name.."-gear",
-    energy_required = 0.5 * v.DyWorld.Tier,
     enabled = true,
 	category = dy.."forging-gear",
 	hidden = true,
-    ingredients = 
-	{ 
-	  {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 10},
+    normal = { 
+	  energy_required = 0.5 * v.DyWorld.Tier,
+	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 10}},
+	  results = { 
+	    {type = "item", name = v.DyWorld.Name.."-gear-wheel", amount = 1},
+	  },
 	},
-    results = 
-	{ 
-	  {type = "item", name = v.DyWorld.Name.."-gear-wheel", amount = 1},
+    expensive = { 
+	  energy_required = 2.5 * v.DyWorld.Tier,
+	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 50}},
+	  results = { 
+	    {type = "item", name = v.DyWorld.Name.."-gear-wheel", amount = 1},
+	  },
 	},
   },
 })

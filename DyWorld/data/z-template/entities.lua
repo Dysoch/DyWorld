@@ -53,7 +53,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.TEMPLATE then
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	DyWorld_Add_To_Tech("TEMPLATE-"..v.DyWorld.Tier, v.DyWorld.Name.."-TEMPLATE")
+	if data.raw.technology["TEMPLATE-"..v.DyWorld.Tier] then
+		DyWorld_Add_To_Tech("TEMPLATE-"..v.DyWorld.Tier, v.DyWorld.Name.."-TEMPLATE")
+	end
+	
 	if v.DyWorld.Entity.TEMPLATE then
 		for q,a in pairs(v.DyWorld.Entity.TEMPLATE) do
 			local Ingredient = {type = "item", name = q, amount = a}

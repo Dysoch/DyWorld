@@ -22,6 +22,14 @@ Data_Entity = {
 			["stone-gear-wheel"] = 2,
 			["stone-plate"] = 1,
 		},	
+		Assembler = true,
+		Assembler_Speed_Mod = 0.5,
+		Assembler_Next = "iron",
+		Assembler_Ingredients = {
+			["electronic-circuit"] = 2,
+			["stone-plate"] = 5,
+			["stone-gear-wheel"] = 4,
+		},
 	},
 	["iron"] = {
 		Belt = true,
@@ -56,7 +64,7 @@ Data_Entity = {
 		Assembler_Speed_Mod = 1.11,
 		Assembler_Next = "copper",
 		Assembler_Ingredients = {
-			["assembling-machine-1"] = 1,
+			["stone-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
 		},
 		Furnace = true,

@@ -42,9 +42,15 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Furnace then
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-electric-furnace"
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.furnace-1", {"looped-name."..v.DyWorld.Name}}
-	DyWorld_Prototype_Recipe.enabled = false
-	DyWorld_Prototype_Recipe.normal.enabled = false
-	DyWorld_Prototype_Recipe.expensive.enabled = false
+	if v.DyWorld.Tier == 1 then 
+		DyWorld_Prototype_Recipe.enabled = true
+		DyWorld_Prototype_Recipe.normal.enabled = true
+		DyWorld_Prototype_Recipe.expensive.enabled = true
+	else
+		DyWorld_Prototype_Recipe.enabled = false
+		DyWorld_Prototype_Recipe.normal.enabled = false
+		DyWorld_Prototype_Recipe.expensive.enabled = false
+	end
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	

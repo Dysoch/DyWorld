@@ -31,7 +31,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	}
 
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "transport-belt", v.DyWorld.Name.."-transport-belt", true)
-	DyWorld_Prototype_Recipe.enabled = false
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.belt-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
@@ -40,8 +39,15 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Recipe.expensive.ingredients = {}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-transport-belt"
 	DyWorld_Prototype_Recipe.ingredients = nil
-	DyWorld_Prototype_Recipe.normal.enabled = false
-	DyWorld_Prototype_Recipe.expensive.enabled = false
+	if v.DyWorld.Tier == 1 then 
+		DyWorld_Prototype_Recipe.enabled = true
+		DyWorld_Prototype_Recipe.normal.enabled = true
+		DyWorld_Prototype_Recipe.expensive.enabled = true
+	else
+		DyWorld_Prototype_Recipe.enabled = false
+		DyWorld_Prototype_Recipe.normal.enabled = false
+		DyWorld_Prototype_Recipe.expensive.enabled = false
+	end
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
@@ -58,7 +64,3 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	end
 end
 end
-
-data.raw.recipe["stone-transport-belt"].enabled = true
-data.raw.recipe["stone-transport-belt"].normal.enabled = true
-data.raw.recipe["stone-transport-belt"].expensive.enabled = true

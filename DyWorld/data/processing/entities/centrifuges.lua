@@ -1,0 +1,123 @@
+require "data/core/functions/prefix"
+require "data/core/functions/colors"
+require "data/core/functions/amounts"
+
+for k,v in pairs(data.raw.item) do
+if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Centrifuge then	
+	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("assembling-machine", "centrifuge", v.DyWorld.Name.."-centrifuge", true)
+	DyWorld_Prototype_Entity.localised_name = {"looped-name.centrifuge-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Entity.max_health = 500 * v.DyWorld.Tier
+	DyWorld_Prototype_Entity.energy_source.emissions_per_minute = 2.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.75))
+	DyWorld_Prototype_Entity.module_specification.module_slots = 2 + v.DyWorld.Tier
+	DyWorld_Prototype_Entity.idle_animation.layers[1].tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.idle_animation.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.idle_animation.layers[3].tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.idle_animation.layers[3].hr_version.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.idle_animation.layers[5].tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.idle_animation.layers[5].hr_version.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.icon = nil
+	DyWorld_Prototype_Entity.fluid_boxes = {
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 2,
+        base_level = -1,
+        pipe_connections = {{ type="input", position = {-2, 1} }},
+        secondary_draw_orders = { north = -1 }
+      },
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 2,
+        base_level = -1,
+        pipe_connections = {{ type="input", position = {-2, -1} }},
+        secondary_draw_orders = { north = -1 }
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 20,
+        base_level = 1,
+        pipe_connections = {{ type="output", position = {2, -1} }},
+        secondary_draw_orders = { north = -1 }
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 20,
+        base_level = 1,
+        pipe_connections = {{ type="output", position = {2, 1} }},
+        secondary_draw_orders = { north = -1 }
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 20,
+        base_level = 1,
+        pipe_connections = {{ type="output", position = {0, 2} }},
+        secondary_draw_orders = { north = -1 }
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 20,
+        base_level = 1,
+        pipe_connections = {{ type="output", position = {0, -2} }},
+        secondary_draw_orders = { north = -1 }
+      },
+      off_when_no_fluid_recipe = false
+    }
+	DyWorld_Prototype_Entity.fast_replaceable_group = "centrifuge"
+	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Centrifuge_Next.."-centrifuge"
+	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Centrifuge_Speed_Mod), 2)
+	DyWorld_Prototype_Entity.energy_usage = (350 * v.DyWorld.Tier).."kW"
+	DyWorld_Prototype_Entity.icons = {
+	  {
+		icon = "__base__/graphics/icons/centrifuge.png",
+		tint = Material_Colors[v.DyWorld.Name],
+	  },
+	}
+
+	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "centrifuge", v.DyWorld.Name.."-centrifuge", true)
+	DyWorld_Prototype_Item.localised_name = {"looped-name.centrifuge-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
+	DyWorld_Prototype_Item.icon = nil
+	DyWorld_Prototype_Item.icons = {
+	  {
+		icon = "__base__/graphics/icons/centrifuge.png",
+		tint = Material_Colors[v.DyWorld.Name],
+	  },
+	}
+
+	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "centrifuge", v.DyWorld.Name.."-centrifuge", true)
+	DyWorld_Prototype_Recipe.normal = {}
+	DyWorld_Prototype_Recipe.expensive = {}
+	DyWorld_Prototype_Recipe.normal.ingredients = {}
+	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-centrifuge"
+	DyWorld_Prototype_Recipe.expensive.ingredients = {}
+	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-centrifuge"
+	DyWorld_Prototype_Recipe.ingredients = nil
+	DyWorld_Prototype_Recipe.localised_name = {"looped-name.centrifuge-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Recipe.enabled = false
+
+	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
+	
+	DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-centrifuge")
+	if v.DyWorld.Entity.Centrifuge_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Centrifuge_Ingredients) do
+			local Ingredient = {type = "item", name = q, amount = a}
+			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-centrifuge"].normal.ingredients, Ingredient)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-centrifuge"].expensive.ingredients, Ingredient_2)
+		end
+	end
+end
+end
+
+data.raw["assembling-machine"]["centrifuge"].next_upgrade = "copper-centrifuge"

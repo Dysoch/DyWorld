@@ -47,6 +47,13 @@ Data_Entity = {
 			["iron-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
 		},
+		Centrifuge = true,
+		Centrifuge_Speed_Mod = 1.1,
+		Centrifuge_Next = "copper",
+		Centrifuge_Ingredients = {
+			["iron-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["steel"] = {
 		Belt = true,

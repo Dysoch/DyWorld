@@ -25,14 +25,16 @@ data:extend(
   {
     type = "recipe",
     name = v.DyWorld.Name.."-gear-wheel",
-    enabled = true,
+    enabled = false,
     normal = {
 	  energy_required = 2,
+	  enabled = false,
 	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 2},},
       results = {{type = "item", name = v.DyWorld.Name.."-gear-wheel", amount = 1},},
 	},
     expensive = {
 	  energy_required = 2,
+	  enabled = false,
 	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 10},},
       results = {{type = "item", name = v.DyWorld.Name.."-gear-wheel", amount = 1},},
 	},
@@ -42,9 +44,9 @@ data:extend(
 		--@todo Add metal processing tech
 		--@body with unlocking recipes added in data-updates
 		if v.DyWorld.Metallurgy.Tech_Processing then
-			data.raw.recipe[v.DyWorld.Name.."-gear-wheel"].enabled = false
 			DyWorld_Add_To_Tech(v.DyWorld.Name.."-processing", v.DyWorld.Name.."-gear-wheel")
 		end
+		DyWorld_Add_To_Tech("intermediates-"..(v.DyWorld.Tier-1), v.DyWorld.Name.."-gear-wheel")
 		end
 	end
 end

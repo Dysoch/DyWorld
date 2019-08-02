@@ -105,6 +105,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Centrifuge then
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.centrifuge-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Recipe.enabled = false
+	DyWorld_Prototype_Recipe.normal.enabled = false
+	DyWorld_Prototype_Recipe.expensive.enabled = false
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	

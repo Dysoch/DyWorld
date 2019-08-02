@@ -4,31 +4,37 @@ require "data/core/functions/colors"
 
 local Data_Table = {
 	["chitin"] = 1,
+	["acorn"] = 1, --
+	["sand"] = 1,
 	["stone-gear-wheel"] = 1,
 	["stone-plate"] = 1,
-	["diamond"] = 5,
-	["gunpowder"] = 3, --
-	["obsidian"] = 2,
-	["sand"] = 1,
-	["frame"] = 3, --
-	["filter-empty"] = 2, --
-	["heater"] = 3, --
-	["blade"] = 2, --
-	["gearbox"] = 3, --
+	
 	["glass"] = 2, --
 	["rotor"] = 2, --
 	["wheat"] = 2,
 	["carrot"] = 2,
+	["obsidian"] = 2,
+	["filter-empty"] = 2, --
+	["blade"] = 2, --
+	["resin"] = 2, --
+	
+	["gunpowder"] = 3, --
+	["frame"] = 3, --
+	["heater"] = 3, --
+	["gearbox"] = 3, --
 	["coil"] = 3, --
 	["solar-cell"] = 3, --
 	["battery-pack"] = 3, --
-	["logistic-unit"] = 5, --
-	["resin"] = 2, --
-	["acorn"] = 1, --
 	["rubber"] = 3, --
-	["controller"] = 6, --
+	
 	["housing"] = 4, --
 	["intake"] = 4,
+	
+	["logistic-unit"] = 5, --
+	["diamond"] = 5,
+	
+	["controller"] = 6, --
+	
 	--["silver"] = 2,
 }
 

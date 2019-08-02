@@ -3,10 +3,9 @@ require "data/core/functions/prefix"
 Data_Entity = {
 	["stone"] = {
 		Belt = true,
-		Belt_Speed = 9,
-		Belt_Range = 7,
+		Belt_Speed = 5,
+		Belt_Range = 4,
 		Belt_Next = "iron",
-		Belt_Tech = "logistics",
 		Belt_Ingredients = {
 			["stone-gear-wheel"] = 2,
 			["stone-plate"] = 1,

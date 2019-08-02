@@ -6,7 +6,7 @@ require "data/core/functions/amounts"
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("underground-belt", "underground-belt", v.DyWorld.Name.."-underground-belt", true)
-	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt_Speed / 426.67), 2)
+	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt_Speed / 426.67), 5)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt_Next.."-underground-belt"
 	DyWorld_Prototype_Entity.icon = nil

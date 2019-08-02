@@ -25,23 +25,25 @@ data:extend(
   {
     type = "recipe",
     name = v.DyWorld.Name.."-cable",
-    enabled = true,
+    enabled = false,
     normal = {
 	  energy_required = 2,
+	  enabled = false,
 	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 1},},
       results = {{type = "item", name = v.DyWorld.Name.."-cable", amount = 3},},
 	},
     expensive = {
 	  energy_required = 2,
+	  enabled = false,
 	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 5},},
       results = {{type = "item", name = v.DyWorld.Name.."-cable", amount = 3},},
 	},
   },
 })
 		if v.DyWorld.Metallurgy.Tech_Processing then
-			data.raw.recipe[v.DyWorld.Name.."-cable"].enabled = false
 			DyWorld_Add_To_Tech(v.DyWorld.Name.."-processing", v.DyWorld.Name.."-cable")
 		end
+		DyWorld_Add_To_Tech("intermediates-"..(v.DyWorld.Tier-1), v.DyWorld.Name.."-cable")
 		end
 	end
 end

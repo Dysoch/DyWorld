@@ -25,23 +25,25 @@ data:extend(
   {
     type = "recipe",
     name = v.DyWorld.Name.."-stick",
-    enabled = true,
+    enabled = false,
     normal = {
 	  energy_required = 2,
+	  enabled = false,
 	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 1},},
       results = {{type = "item", name = v.DyWorld.Name.."-stick", amount = 2},},
 	},
     expensive = {
 	  energy_required = 2,
+	  enabled = false,
 	  ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = 5},},
       results = {{type = "item", name = v.DyWorld.Name.."-stick", amount = 2},},
 	},
   },
 })
 		if v.DyWorld.Metallurgy.Tech_Processing then
-			data.raw.recipe[v.DyWorld.Name.."-stick"].enabled = false
 			DyWorld_Add_To_Tech(v.DyWorld.Name.."-processing", v.DyWorld.Name.."-stick")
 		end
+		DyWorld_Add_To_Tech("intermediates-"..(v.DyWorld.Tier-1), v.DyWorld.Name.."-stick")
 		end
 	end
 end

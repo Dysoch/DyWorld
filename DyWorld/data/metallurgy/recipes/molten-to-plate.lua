@@ -19,6 +19,7 @@ data:extend(
     subgroup = dy.."material-"..(Metal_Tiers[v.DyWorld.Name]-1),
     normal = { 
 	  energy_required = 1.5 * v.DyWorld.Tier,
+	  enabled = false,
 	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = Molten_To_Plate_Molten_Amount}},
 	  results = { 
 	    {type = "item", name = v.DyWorld.Name.."-plate", amount = math.floor(Molten_To_Plate_Molten_Amount / Molten_To_Plate_Ratio)},
@@ -27,6 +28,7 @@ data:extend(
 	},
     expensive = { 
 	  energy_required = 2.5 * v.DyWorld.Tier,
+	  enabled = false,
 	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = Molten_To_Plate_Molten_Amount * 5}},
 	  results = { 
 		{type = "item", name = v.DyWorld.Name.."-plate", amount = math.floor(Molten_To_Plate_Molten_Amount / Molten_To_Plate_Ratio)},

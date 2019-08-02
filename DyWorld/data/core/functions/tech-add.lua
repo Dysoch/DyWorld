@@ -61,6 +61,12 @@ data:extend(
 		local results = v.Name.."-"..(i-1)
 		table.insert(data.raw.technology[v.Name.."-"..i].prerequisites, results)	
 	end
+	if v.Name == "intermediates" then
+		-- nothing
+	else
+		local results = "intermediates-"..i
+		table.insert(data.raw.technology[v.Name.."-"..i].prerequisites, results)	
+	end
 end
 
 function DyWorld_Add_To_Tech(TECH, RECIPE)

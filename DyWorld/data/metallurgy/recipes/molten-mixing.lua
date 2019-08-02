@@ -15,6 +15,7 @@ data:extend(
 	category = dy.."melting",
     normal = { 
 	  energy_required = 10 * v.DyWorld.Tier,
+	  enabled = false,
 	  ingredients = {},
 	  results = { 
 	    {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 15},
@@ -22,6 +23,7 @@ data:extend(
 	},
     expensive = { 
 	  energy_required = 30 * v.DyWorld.Tier,
+	  enabled = false,
 	  ingredients = {},
 	  results = { 
 	    {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 15},

@@ -16,6 +16,7 @@ data:extend(
 	hidden = true,
     normal = { 
 	  energy_required = 0.5 * v.DyWorld.Tier,
+	  hidden = true,
 	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 10}},
 	  results = { 
 	    {type = "item", name = v.DyWorld.Name.."-gear-wheel", amount = 1},
@@ -23,6 +24,7 @@ data:extend(
 	},
     expensive = { 
 	  energy_required = 2.5 * v.DyWorld.Tier,
+	  hidden = true,
 	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 50}},
 	  results = { 
 	    {type = "item", name = v.DyWorld.Name.."-gear-wheel", amount = 1},

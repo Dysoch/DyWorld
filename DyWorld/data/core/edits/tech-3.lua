@@ -1,6 +1,12 @@
 require "data/core/functions/prefix"
 
 local Tech_PreReq = {
+	["smelting-2"] = {"silver-processing", "nickel-processing", "tin-processing"},
+	["smelting-3"] = {"lead-processing", "steel-processing", "gold-processing"},
+	["smelting-4"] = {"cobalt-processing"},
+	["smelting-5"] = {"arditium-processing"},
+	["smelting-6"] = {"tungsten-processing", "titanium-processing"},
+	["smelting-9"] = {"neutronium-processing"},
 	["automation-2"] = {"silver-processing", "nickel-processing", "tin-processing"},
 	["automation-3"] = {"lead-processing", "steel-processing", "gold-processing"},
 	["automation-4"] = {"cobalt-processing"},

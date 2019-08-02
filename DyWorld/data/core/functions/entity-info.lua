@@ -37,6 +37,13 @@ Data_Entity = {
 			["assembling-machine-1"] = 1,
 			["iron-gear-wheel"] = 4,
 		},
+		Furnace = true,
+		Furnace_Speed_Mod = 1.11,
+		Furnace_Next = "iron",
+		Furnace_Ingredients = {
+			["assembling-machine-1"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 	},
 	["copper"] = {
 		Belt = false,

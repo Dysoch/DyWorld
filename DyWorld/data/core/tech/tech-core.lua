@@ -20,6 +20,14 @@ local Data_Table = {
 		Count = 100,
 		Military = false,
 	},
+	{
+		Name = "smelting",
+		Icon = {{icon = "__base__/graphics/technology/advanced-material-processing.png"}},
+		Pre_Req_Above = 2,
+		Tiers = 10,
+		Count = 50,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

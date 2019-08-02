@@ -52,6 +52,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Recipe.expensive.results = {{type = "item", name = v.DyWorld.Name.."-underground-belt", amount = 2}}
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Recipe.energy_required = 0
+	DyWorld_Prototype_Recipe.normal.energy_required = (0.5 * v.DyWorld.Tier) * v.DyWorld.Tier
+	DyWorld_Prototype_Recipe.expensive.energy_required = (0.5 * v.DyWorld.Tier) * v.DyWorld.Tier
 	if v.DyWorld.Tier == 1 then 
 		DyWorld_Prototype_Recipe.enabled = true
 		DyWorld_Prototype_Recipe.normal.enabled = true

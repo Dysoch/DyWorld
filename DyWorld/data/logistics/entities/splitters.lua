@@ -47,6 +47,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 10}}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-splitter"
 	DyWorld_Prototype_Recipe.ingredients = nil
+	DyWorld_Prototype_Recipe.energy_required = 0
+	DyWorld_Prototype_Recipe.normal.energy_required = (0.5 * v.DyWorld.Tier) * v.DyWorld.Tier
+	DyWorld_Prototype_Recipe.expensive.energy_required = (0.5 * v.DyWorld.Tier) * v.DyWorld.Tier
 	if v.DyWorld.Tier == 1 then 
 		DyWorld_Prototype_Recipe.enabled = true
 		DyWorld_Prototype_Recipe.normal.enabled = true

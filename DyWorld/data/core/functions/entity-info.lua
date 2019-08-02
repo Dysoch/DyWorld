@@ -1,6 +1,7 @@
 require "data/core/functions/prefix"
 
 Data_Entity = {
+--------------------------------------- TIER 1 --------------------------------------
 	["stone"] = {
 		Belt = true,
 		Belt_Speed = 5,
@@ -31,6 +32,7 @@ Data_Entity = {
 			["stone-gear-wheel"] = 4,
 		},
 	},
+--------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {
 		Belt = true,
 		Belt_Speed = 9,
@@ -92,27 +94,6 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 		},
 	},
-	["steel"] = {
-		Belt = true,
-		Belt_Speed = 23,
-		Belt_Range = 14,
-		Belt_Next = "stainless-steel",
-		Belt_Tech = "logistics-3",
-		Belt_Ingredients = {
-			["steel-gear-wheel"] = 4,
-			["steel-plate"] = 5,
-			["bronze-transport-belt"] = 2,
-		},
-		Underground_Ingredients = {
-			["bronze-underground-belt"] = 2,
-		},
-		Splitter_Ingredients = {
-			["bronze-splitter"] = 1,
-		},
-		Loader_Ingredients = {
-			["bronze-loader"] = 1,
-		},
-	},
 	["nickel"] = {
 		Belt = false,
 		Drill = true,
@@ -136,6 +117,28 @@ Data_Entity = {
 		Assembler_Ingredients = {
 			["copper-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
+		},
+	},
+--------------------------------------- TIER 3 --------------------------------------
+	["steel"] = {
+		Belt = true,
+		Belt_Speed = 23,
+		Belt_Range = 14,
+		Belt_Next = "stainless-steel",
+		Belt_Tech = "logistics-3",
+		Belt_Ingredients = {
+			["steel-gear-wheel"] = 4,
+			["steel-plate"] = 5,
+			["bronze-transport-belt"] = 2,
+		},
+		Underground_Ingredients = {
+			["bronze-underground-belt"] = 2,
+		},
+		Splitter_Ingredients = {
+			["bronze-splitter"] = 1,
+		},
+		Loader_Ingredients = {
+			["bronze-loader"] = 1,
 		},
 	},
 	["gold"] = {
@@ -181,6 +184,7 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 		},
 	},
+--------------------------------------- TIER 4 --------------------------------------
 	["cobalt"] = {
 		Belt = false,
 		Drill = true,
@@ -213,6 +217,7 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 		},
 	},
+--------------------------------------- TIER 5 --------------------------------------
 	["stainless-steel"] = {
 		Belt = true,
 		Belt_Speed = 32,
@@ -253,6 +258,7 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 		},
 	},
+--------------------------------------- TIER 6 --------------------------------------
 	["titanium"] = {
 		Belt = true,
 		Belt_Speed = 42,
@@ -312,6 +318,7 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 		},
 	},
+--------------------------------------- TIER 7 --------------------------------------
 	["electranium"] = {
 		Belt = false,
 		Drill = true,
@@ -352,6 +359,7 @@ Data_Entity = {
 			["tungsten-loader"] = 1,
 		},
 	},
+--------------------------------------- TIER 8 --------------------------------------
 	["tungstvar"] = {
 		Belt = true,
 		Belt_Speed = 88,
@@ -383,6 +391,7 @@ Data_Entity = {
 			["electranium-electric-mining-drill"] = 1,
 		},
 	},
+--------------------------------------- TIER 9 --------------------------------------
 	["neutronium"] = {
 		Belt = false,
 		Drill = true,
@@ -402,6 +411,7 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 		},
 	},
+--------------------------------------- TIER 10 --------------------------------------
 	["neutrobaltium"] = {
 		Belt = true,
 		Belt_Speed = 110,

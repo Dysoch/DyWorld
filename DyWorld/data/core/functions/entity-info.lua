@@ -1,6 +1,29 @@
 require "data/core/functions/prefix"
 
 Data_Entity = {
+	["stone"] = {
+		Belt = true,
+		Belt_Speed = 9,
+		Belt_Range = 7,
+		Belt_Next = "iron",
+		Belt_Tech = "logistics",
+		Belt_Ingredients = {
+			["stone-gear-wheel"] = 2,
+			["stone-plate"] = 1,
+		},
+		Underground_Ingredients = {
+			["stone-gear-wheel"] = 2,
+			["stone-plate"] = 1,
+		},
+		Splitter_Ingredients = {
+			["stone-gear-wheel"] = 2,
+			["stone-plate"] = 1,
+		},
+		Loader_Ingredients = {
+			["stone-gear-wheel"] = 2,
+			["stone-plate"] = 1,
+		},	
+	},
 	["iron"] = {
 		Belt = true,
 		Belt_Speed = 9,
@@ -10,16 +33,16 @@ Data_Entity = {
 		Belt_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["iron-plate"] = 5,
-			["transport-belt"] = 2,
+			["stone-transport-belt"] = 2,
 		},
 		Underground_Ingredients = {
-			["underground-belt"] = 2,
+			["stone-underground-belt"] = 2,
 		},
 		Splitter_Ingredients = {
-			["splitter"] = 1,
+			["stone-splitter"] = 1,
 		},
 		Loader_Ingredients = {
-			["loader"] = 1,
+			["stone-loader"] = 1,
 		},
 		Drill = true,
 		Drill_Speed = 1,

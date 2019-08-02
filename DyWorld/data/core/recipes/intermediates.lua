@@ -4,6 +4,15 @@ require "data/core/functions/colors"
 
 local Data_Table = {
 	{
+		Name = "stone-plate",
+		Time = 1,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["stone-brick"] = 2,
+		},
+		Enabled = true,
+	},
+	{
 		Name = "stone-gear-wheel",
 		Time = 1,
 		Recipe_Enabled = true,

@@ -42,11 +42,11 @@ require("data.core.resources.resources")
 require("data.core.items.metals")
 require("data.core.functions.metallurgy-info-add")
 require("data.core.tech.tech-metal-processing")
+require("data.core.items.intermediates")
 require("data.core.functions.entity-info-add")
 require("data.core.items.gears")
 require("data.core.items.sticks")
 require("data.core.items.cables")
-require("data.core.items.intermediates")
 require("data.core.items.filters")
 
 -- Entities & Entities Related Functions

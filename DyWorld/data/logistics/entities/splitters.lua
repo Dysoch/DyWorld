@@ -48,6 +48,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 10}}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-splitter"
 	DyWorld_Prototype_Recipe.ingredients = nil
+	DyWorld_Prototype_Recipe.normal.enabled = false
+	DyWorld_Prototype_Recipe.expensive.enabled = false
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
@@ -65,24 +67,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 end
 end
 
-data.raw["splitter"]["splitter"].next_upgrade = "iron-splitter"
-data.raw["splitter"]["splitter"].speed = Round((5 / 426.67), 5)
-data.raw["splitter"]["splitter"].localised_name = {"looped-name.belt-3", {"looped-name.stone"}}
-data.raw["item"]["splitter"].localised_name = {"looped-name.belt-3", {"looped-name.stone"}}
-data.raw["recipe"]["splitter"].localised_name = {"looped-name.belt-3", {"looped-name.stone"}}
-data.raw.recipe["splitter"].enabled = true
-data.raw.recipe["splitter"].ingredients = nil
-data.raw.recipe["splitter"].normal = {}
-data.raw.recipe["splitter"].expensive = {}
-data.raw.recipe["splitter"].normal.ingredients = {
-	{type = "item", name = "electronic-circuit", amount = 1},
-	{type = "item", name = "transport-belt", amount = 2},
-	{type = "item", name = "stone", amount = 3},
-}
-data.raw.recipe["splitter"].expensive.ingredients = {
-	{type = "item", name = "electronic-circuit", amount = 5},
-	{type = "item", name = "transport-belt", amount = 10},
-	{type = "item", name = "stone", amount = 15},
-}
-data.raw.recipe["splitter"].normal.result = "splitter"
-data.raw.recipe["splitter"].expensive.result = "splitter"
+data.raw.recipe["stone-splitter"].enabled = true
+data.raw.recipe["stone-splitter"].normal.enabled = true
+data.raw.recipe["stone-splitter"].expensive.enabled = true

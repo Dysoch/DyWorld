@@ -40,7 +40,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Recipe.expensive.ingredients = {}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-transport-belt"
 	DyWorld_Prototype_Recipe.ingredients = nil
-	DyWorld_Prototype_Recipe.enabled = false
+	DyWorld_Prototype_Recipe.normal.enabled = false
+	DyWorld_Prototype_Recipe.expensive.enabled = false
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
@@ -58,21 +59,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 end
 end
 
-data.raw["transport-belt"]["transport-belt"].next_upgrade = "iron-transport-belt"
-data.raw["transport-belt"]["transport-belt"].speed = Round((5 / 426.67), 5)
-data.raw["transport-belt"]["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
-data.raw.item["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
-data.raw.recipe["transport-belt"].localised_name = {"looped-name.belt-1", {"looped-name.stone"}}
-data.raw.recipe["transport-belt"].ingredients = nil
-data.raw.recipe["transport-belt"].normal = {}
-data.raw.recipe["transport-belt"].expensive = {}
-data.raw.recipe["transport-belt"].normal.ingredients = {
-	{type = "item", name = "stone", amount = 3},
-	{type = "item", name = "stone-gear-wheel", amount = 2},
-}
-data.raw.recipe["transport-belt"].expensive.ingredients = {
-	{type = "item", name = "stone", amount = 15},
-	{type = "item", name = "stone-gear-wheel", amount = 10},
-}
-data.raw.recipe["transport-belt"].normal.result = "transport-belt"
-data.raw.recipe["transport-belt"].expensive.result = "transport-belt"
+data.raw.recipe["stone-transport-belt"].enabled = true
+data.raw.recipe["stone-transport-belt"].normal.enabled = true
+data.raw.recipe["stone-transport-belt"].expensive.enabled = true

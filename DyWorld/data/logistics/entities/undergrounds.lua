@@ -52,6 +52,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = v.DyWorld.Entity.Belt_Range * 5}}
 	DyWorld_Prototype_Recipe.expensive.results = {{type = "item", name = v.DyWorld.Name.."-underground-belt", amount = 2}}
 	DyWorld_Prototype_Recipe.ingredients = nil
+	DyWorld_Prototype_Recipe.normal.enabled = false
+	DyWorld_Prototype_Recipe.expensive.enabled = false
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
@@ -70,23 +72,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 end
 end
 
-data.raw["underground-belt"]["underground-belt"].next_upgrade = "iron-underground-belt"
-data.raw["underground-belt"]["underground-belt"].speed = Round((5 / 426.67), 5)
-data.raw["underground-belt"]["underground-belt"].max_distance = 4
-data.raw["underground-belt"]["underground-belt"].localised_name = {"looped-name.belt-2", {"looped-name.stone"}}
-data.raw["item"]["underground-belt"].localised_name = {"looped-name.belt-2", {"looped-name.stone"}}
-data.raw["recipe"]["underground-belt"].localised_name = {"looped-name.belt-2", {"looped-name.stone"}}
-data.raw.recipe["underground-belt"].enabled = true
-data.raw.recipe["underground-belt"].ingredients = nil
-data.raw.recipe["underground-belt"].normal = {}
-data.raw.recipe["underground-belt"].expensive = {}
-data.raw.recipe["underground-belt"].normal.ingredients = {
-	{type = "item", name = "transport-belt", amount = 4},
-	{type = "item", name = "stone", amount = 3},
-}
-data.raw.recipe["underground-belt"].expensive.ingredients = {
-	{type = "item", name = "transport-belt", amount = 20},
-	{type = "item", name = "stone", amount = 15},
-}
-data.raw.recipe["underground-belt"].normal.result = "underground-belt"
-data.raw.recipe["underground-belt"].expensive.result = "underground-belt"
+data.raw.recipe["stone-underground-belt"].enabled = true
+data.raw.recipe["stone-underground-belt"].normal.enabled = true
+data.raw.recipe["stone-underground-belt"].expensive.enabled = true

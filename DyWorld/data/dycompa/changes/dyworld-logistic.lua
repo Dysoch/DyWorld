@@ -1,11 +1,12 @@
 
 
 local Change = {
+	{Old = "transport-belt", New = "stone-transport-belt"},
+	{Old = "splitter", New = "stone-splitter"},
+	{Old = "underground-belt", New = "stone-underground-belt"},
 	{Old = "fast-transport-belt", New = "iron-transport-belt"},
 	{Old = "fast-splitter", New = "iron-splitter"},
 	{Old = "fast-underground-belt", New = "iron-underground-belt"},
-	{Old = "splitter"},
-	{Old = "underground-belt"},
 	{Old = "express-transport-belt", New = "titanium-transport-belt"},
 	{Old = "express-splitter", New = "titanium-splitter"},
 	{Old = "express-underground-belt", New = "titanium-underground-belt"}

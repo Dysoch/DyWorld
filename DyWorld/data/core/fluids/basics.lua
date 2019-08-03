@@ -114,8 +114,7 @@ local function DyWorld_Fluid(DATA)
 	icons = 
 	{
 	  {
-		icon = dyworld_path_fluid.."base.png",
-		--tint = Material_Colors[v.Name],
+		icon = dyworld_path_fluid..DATA.Name..".png",
 	  }
 	},
     default_temperature = DATA.Def_Temp,

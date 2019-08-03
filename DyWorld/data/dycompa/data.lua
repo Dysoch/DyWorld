@@ -15,7 +15,7 @@ if settings.startup["DyWorld_Power"].value then
 end
 
 if settings.startup["DyWorld_Extraction"].value then
-	
+	require("data.dycompa.changes.dyworld-extraction")
 end
 
 if settings.startup["DyWorld_Warfare"].value then

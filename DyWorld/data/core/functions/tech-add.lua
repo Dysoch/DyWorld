@@ -54,8 +54,15 @@ data:extend(
 		data.raw.technology[v.Name.."-"..i].unit.ingredients = results
 	end
 	if v.Military then
-		local results = {"military-science-pack", 5}
-		table.insert(data.raw.technology[v.Name.."-"..i].unit.ingredients,results)
+		if v.Military_Above then
+			if i >= v.Military_Above then
+				local results = {"military-science-pack", i}
+				table.insert(data.raw.technology[v.Name.."-"..i].unit.ingredients,results)
+			end
+		else
+			local results = {"military-science-pack", i}
+			table.insert(data.raw.technology[v.Name.."-"..i].unit.ingredients,results)
+		end
 	end
 	if v.Pre_Req_Above and i >= v.Pre_Req_Above then
 		local results = v.Name.."-"..(i-1)

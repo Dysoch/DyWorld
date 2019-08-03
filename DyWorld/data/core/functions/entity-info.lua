@@ -142,6 +142,11 @@ Data_Entity = {
 			["assembling-machine-1"] = 1,
 			["iron-gear-wheel"] = 4,
 		},
+		Wall = true,
+		Wall_Next = "iron",
+		Wall_Ingredients = {
+			["iron-plate"] = 10,
+		},
 	},
 	["copper"] = {
 		Belt = false,
@@ -513,6 +518,11 @@ Data_Entity = {
 		Assembler_Ingredients = {
 			["neutronium-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
+		},
+		Wall = true,
+		Wall_Next = "neutrobaltium",
+		Wall_Ingredients = {
+			["neutrobaltium-plate"] = 10,
 		},
 	},
 }

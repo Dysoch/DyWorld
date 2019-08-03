@@ -10,6 +10,7 @@ require("data.core.functions.metallurgy-info")
 require("data.core.functions.entity-info")
 require("data.core.functions.transport-belt-pictures")
 require("data.core.functions.pipe-pictures")
+require("data.core.functions.wall-pictures")
 require("data.core.functions.tech-add")
 require("data.core.tech.data-tech")
 

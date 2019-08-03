@@ -23,7 +23,7 @@ end
 
 -- Warfare Module --
 if settings.startup["DyWorld_Warfare"].value then
-	--require("data.core.tech.tech-warfare")
+	require("data.core.tech.tech-warfare")
 end
 
 -- Equipment Module --

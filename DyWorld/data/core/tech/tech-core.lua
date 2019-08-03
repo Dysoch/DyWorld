@@ -36,6 +36,30 @@ local Data_Table = {
 		Count = 25,
 		Military = false,
 	},
+	{
+		Name = "effectivity-module",
+		Icon = {{icon = "__base__/graphics/technology/effectivity-module.png"}},
+		Pre_Req_Above = 2,
+		Tiers = 10,
+		Count = 100,
+		Military = false,
+	},
+	{
+		Name = "speed-module",
+		Icon = {{icon = "__base__/graphics/technology/speed-module.png"}},
+		Pre_Req_Above = 2,
+		Tiers = 10,
+		Count = 100,
+		Military = false,
+	},
+	{
+		Name = "productivity-module",
+		Icon = {{icon = "__base__/graphics/technology/productivity-module.png"}},
+		Pre_Req_Above = 2,
+		Tiers = 10,
+		Count = 100,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

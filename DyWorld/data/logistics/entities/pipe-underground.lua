@@ -43,7 +43,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 	DyWorld_Prototype_Recipe.expensive = {}
 	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = v.DyWorld.Name.."-pipe", amount = v.DyWorld.Entity.Pipe_Range}}
 	DyWorld_Prototype_Recipe.normal.results = {{type = "item", name = v.DyWorld.Name.."-pipe-to-ground", amount = 2}}
-	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-pipe", amount = v.DyWorld.Entity.Pipe_Range * 5}}
+	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-pipe", amount = v.DyWorld.Entity.Pipe_Range}}
 	DyWorld_Prototype_Recipe.expensive.results = {{type = "item", name = v.DyWorld.Name.."-pipe-to-ground", amount = 2}}
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.pipe-to-ground-1", {"looped-name."..v.DyWorld.Name}}

@@ -41,6 +41,33 @@ Data_Entity = {
 		Pipe_Underground_Ingredients = {
 			["stone-plate"] = 2,
 		},
+		Speed_Module = true,
+		Speed_Module_Speed_Boost = 0.1,
+		Speed_Module_Consumption_Boost = 0.65,
+		Speed_Module_Pollution_Boost = 0.1,
+		Speed_Module_Ingredients = {
+			["electronic-circuit"] = 2,
+			["stone-plate"] = 5,
+			["stone-gear-wheel"] = 1,
+		},
+		Effectivity_Module = true,
+		Effectivity_Module_Consumption_Boost = -0.1,
+		Effectivity_Module_Pollution_Boost = 0.1,
+		Effectivity_Module_Ingredients = {
+			["electronic-circuit"] = 2,
+			["stone-plate"] = 5,
+			["stone-gear-wheel"] = 1,
+		},
+		Productivity_Module = true,
+		Productivity_Module_Speed_Boost = -0.4,
+		Productivity_Module_Consumption_Boost = 0.5,
+		Productivity_Module_Pollution_Boost = 0.25,
+		Productivity_Module_Productivity_Boost = 0.02,
+		Productivity_Module_Ingredients = {
+			["electronic-circuit"] = 2,
+			["stone-plate"] = 5,
+			["stone-gear-wheel"] = 1,
+		},
 	},
 --------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {

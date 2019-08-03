@@ -1,3 +1,9 @@
 TODO Use DyComPa to remove modules
 
 TODO Add More Modules
+
+TODO Add Sniper Gun
+
+TODO Add Sniper Turret
+
+TODO Add Laser Gun

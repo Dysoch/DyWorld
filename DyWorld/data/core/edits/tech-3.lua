@@ -24,6 +24,16 @@ local Tech_PreReq = {
 	["metallurgy-9"] = {"neutronium-processing", "smelting-9"},
 	["metallurgy-10"] = {"smelting-10"},
 	["pollution-module-1"] = {"modules"},
+	["super-module-1"] = {"productivity-module", "speed-module", "effectivity-module", "pollution-module-1"},
+	["super-module-2"] = {"productivity-module-2", "speed-module-2", "effectivity-module-2", "pollution-module-2"},
+	["super-module-3"] = {"productivity-module-3", "speed-module-3", "effectivity-module-3", "pollution-module-3"},
+	["super-module-4"] = {"productivity-module-4", "speed-module-4", "effectivity-module-4", "pollution-module-4"},
+	["super-module-5"] = {"productivity-module-5", "speed-module-5", "effectivity-module-5", "pollution-module-5"},
+	["super-module-6"] = {"productivity-module-6", "speed-module-6", "effectivity-module-6", "pollution-module-6"},
+	["super-module-7"] = {"productivity-module-7", "speed-module-7", "effectivity-module-7", "pollution-module-7"},
+	["super-module-8"] = {"productivity-module-8", "speed-module-8", "effectivity-module-8", "pollution-module-8"},
+	["super-module-9"] = {"productivity-module-9", "speed-module-9", "effectivity-module-9", "pollution-module-9"},
+	["super-module-10"] = {"productivity-module-10", "speed-module-10", "effectivity-module-10", "pollution-module-10"},
 } 
 
 for k,v in pairs(Tech_PreReq) do

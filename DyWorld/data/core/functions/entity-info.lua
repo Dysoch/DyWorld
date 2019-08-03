@@ -147,6 +147,11 @@ Data_Entity = {
 		Wall_Ingredients = {
 			["iron-plate"] = 10,
 		},
+		Gate = true,
+		Gate_Ingredients = {
+			["iron-wall"] = 2,
+			["iron-plate"] = 10,
+		},
 	},
 	["copper"] = {
 		Belt = false,
@@ -522,6 +527,11 @@ Data_Entity = {
 		Wall = true,
 		Wall_Next = "neutrobaltium",
 		Wall_Ingredients = {
+			["neutrobaltium-plate"] = 10,
+		},
+		Gate = true,
+		Gate_Ingredients = {
+			["neutrobaltium-wall"] = 2,
 			["neutrobaltium-plate"] = 10,
 		},
 	},

@@ -6,7 +6,7 @@ for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("wall", "stone-wall", v.DyWorld.Name.."-wall", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.wall-1", {"looped-name."..v.DyWorld.Name}}
-	DyWorld_Prototype_Entity.max_health = Round((100 * (math.exp(v.DyWorld.Tier) / 2)), 0)
+	DyWorld_Prototype_Entity.max_health = Round((150 * (math.exp(v.DyWorld.Tier) * 0.2)), 0)
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.pictures = DyWorld_Wall_Pictures(Material_Colors[v.DyWorld.Name])
 	DyWorld_Prototype_Entity.fast_replaceable_group = "wall"

@@ -13,7 +13,7 @@ end
 
 -- Power Module --
 if settings.startup["DyWorld_Power"].value then
-	--require("data.core.tech.tech-power")
+	require("data.core.tech.tech-power")
 end
 
 -- Processing Module --

@@ -169,6 +169,12 @@ Data_Entity = {
 			["iron-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
 		},
+		Solar = true,
+		Solar_Production = 90,
+		Solar_Next = "copper",
+		Solar_Ingredients = {
+			["copper-plate"] = 4,
+		},
 	},
 	["nickel"] = {
 		Belt = false,

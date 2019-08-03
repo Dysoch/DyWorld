@@ -123,3 +123,9 @@ data:extend(
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
 	end
 end
+
+DyWorld_Add_To_Tech("automation", "greenhouse-1")
+DyWorld_Add_To_Tech("automation-3", "greenhouse-2")
+DyWorld_Add_To_Tech("automation-5", "greenhouse-3")
+DyWorld_Add_To_Tech("automation-7", "greenhouse-4")
+DyWorld_Add_To_Tech("automation-9", "greenhouse-5")

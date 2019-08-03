@@ -11,6 +11,7 @@ local Change = {
 	{Old = "express-splitter", New = "titanium-splitter"},
 	{Old = "express-underground-belt", New = "titanium-underground-belt"},
 	{Old = "pipe", New = "stone-pipe"},
+	{Old = "pump", New = "stone-pump"},
 	{Old = "pipe-to-ground", New = "stone-pipe-to-ground"},
 }
 

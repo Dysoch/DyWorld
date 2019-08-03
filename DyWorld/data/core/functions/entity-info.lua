@@ -116,6 +116,15 @@ Data_Entity = {
 			["stone-pipe"] = 2,
 			["stone"] = 2,
 		},
+		Pump = true,
+		Pump_Next = "stone",
+		Pump_Speed = 150,
+		Pump_Amount = 50,
+		Pump_Ingredients = {
+			["stone-plate"] = 2,
+			["stone-pipe"] = 2,
+			["stone"] = 2,
+		},
 	},
 --------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {

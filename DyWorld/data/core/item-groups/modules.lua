@@ -26,6 +26,21 @@ local Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "modules"
 	},
+	{
+		Name = "pollution-1-module",
+		Type = "sub",
+		Main = "modules"
+	},
+	{
+		Name = "pollution-2-module",
+		Type = "sub",
+		Main = "modules"
+	},
+	{
+		Name = "super-module",
+		Type = "sub",
+		Main = "modules"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

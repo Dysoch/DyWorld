@@ -33,20 +33,19 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Speed_Module then
 	DyWorld_Prototype_Recipe.energy_required = 0
 	DyWorld_Prototype_Recipe.normal.energy_required = (5 * v.DyWorld.Tier) * v.DyWorld.Tier
 	DyWorld_Prototype_Recipe.expensive.energy_required = (5 * v.DyWorld.Tier) * v.DyWorld.Tier
-	if v.DyWorld.Tier == 1 then 
-		DyWorld_Prototype_Recipe.enabled = true
-		DyWorld_Prototype_Recipe.normal.enabled = true
-		DyWorld_Prototype_Recipe.expensive.enabled = true
-	else
-		DyWorld_Prototype_Recipe.enabled = false
-		DyWorld_Prototype_Recipe.normal.enabled = false
-		DyWorld_Prototype_Recipe.expensive.enabled = false
-	end
+	DyWorld_Prototype_Recipe.enabled = false
+	DyWorld_Prototype_Recipe.normal.enabled = false
+	DyWorld_Prototype_Recipe.expensive.enabled = false
 
 	data:extend({DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
 	if data.raw.technology["speed-module-"..v.DyWorld.Tier] then
 		DyWorld_Add_To_Tech("speed-module-"..v.DyWorld.Tier, v.DyWorld.Name.."-speed-module")
+	end
+	if v.DyWorld.Tier == 1 then
+		if data.raw.technology["speed-module"] then
+			DyWorld_Add_To_Tech("speed-module", v.DyWorld.Name.."-speed-module")
+		end
 	end
 	
 	if v.DyWorld.Entity.Speed_Module_Ingredients then

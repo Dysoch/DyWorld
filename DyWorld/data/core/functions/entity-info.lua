@@ -68,6 +68,22 @@ Data_Entity = {
 			["stone-plate"] = 5,
 			["stone-gear-wheel"] = 1,
 		},
+		Pollution_1_Module = true,
+		Pollution_1_Module_Speed_Boost = -0.1,
+		Pollution_1_Module_Pollution_Boost = -0.2,
+		Pollution_1_Module_Ingredients = {
+			["electronic-circuit"] = 2,
+			["stone-plate"] = 5,
+			["stone-gear-wheel"] = 1,
+		},
+		Pollution_2_Module = true,
+		Pollution_2_Module_Consumption_Boost = 0.4,
+		Pollution_2_Module_Pollution_Boost = 0.2,
+		Pollution_2_Module_Ingredients = {
+			["electronic-circuit"] = 2,
+			["stone-plate"] = 5,
+			["stone-gear-wheel"] = 1,
+		},
 	},
 --------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {

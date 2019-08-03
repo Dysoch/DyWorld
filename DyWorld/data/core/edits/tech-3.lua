@@ -23,6 +23,7 @@ local Tech_PreReq = {
 	["metallurgy-8"] = {"smelting-8"},
 	["metallurgy-9"] = {"neutronium-processing", "smelting-9"},
 	["metallurgy-10"] = {"smelting-10"},
+	["pollution-module-1"] = {"modules"},
 } 
 
 for k,v in pairs(Tech_PreReq) do

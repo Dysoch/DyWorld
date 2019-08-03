@@ -525,9 +525,16 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 		},
 		Refinery = true,
-		Assembler_Refinery_Mod = 1.8,
+		Refinery_Speed_Mod = 1.8,
 		Refinery_Next = "neutrobaltium",
 		Refinery_Ingredients = {
+			["neutronium-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
+		Chemical = true,
+		Chemical_Speed_Mod = 1.8,
+		Chemical_Next = "neutrobaltium",
+		Chemical_Ingredients = {
 			["neutronium-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
 		},

@@ -7,12 +7,12 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Refinery then
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("assembling-machine", "oil-refinery", v.DyWorld.Name.."-oil-refinery", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.oil-refinery-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.max_health = 500 * v.DyWorld.Tier
-	DyWorld_Prototype_Entity.energy_source.emissions_per_minute = 5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.75))
-	DyWorld_Prototype_Entity.module_specification.module_slots = 2 + v.DyWorld.Tier
+	DyWorld_Prototype_Entity.energy_source.emissions_per_minute = 3 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.75))
+	DyWorld_Prototype_Entity.module_specification.module_slots = 0 + v.DyWorld.Tier
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.fast_replaceable_group = "refinery"
 	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Refinery_Next.."-oil-refinery"
-	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Assembler_Refinery_Mod), 2)
+	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Refinery_Speed_Mod), 2)
 	DyWorld_Prototype_Entity.energy_usage = (250 * v.DyWorld.Tier).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {

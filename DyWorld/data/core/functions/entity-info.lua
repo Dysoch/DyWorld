@@ -31,6 +31,16 @@ Data_Entity = {
 			["stone-plate"] = 5,
 			["stone-gear-wheel"] = 4,
 		},
+		Pipe = true,
+		Pipe_Amount = 5,
+		Pipe_Range = 4,
+		Pipe_Next = "stone",
+		Pipe_Ingredients = {
+			["stone"] = 2,
+		},
+		Pipe_Underground_Ingredients = {
+			["stone-plate"] = 2,
+		},
 	},
 --------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {

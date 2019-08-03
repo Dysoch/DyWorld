@@ -97,6 +97,25 @@ Data_Entity = {
 			["stone-pollution-reduce-module"] = 2,
 			["stone-pollution-increase-module"] = 2,
 		},
+		Steam_Engine = true,
+		Steam_Engine_Next = "stone",
+		Steam_Engine_Fluid_Usage = 0.4,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["stone-pipe"] = 2,
+			["stone"] = 2,
+		},
+		Steam_Turbine = true,
+		Steam_Turbine_Next = "stone",
+		Steam_Turbine_Fluid_Usage = 0.4,
+		Steam_Turbine_Effectivity = 0.75,
+		Steam_Turbine_Maximum_Temperature = 500,
+		Steam_Turbine_Ingredients = {
+			["stone-steam-engine"] = 2,
+			["stone-pipe"] = 2,
+			["stone"] = 2,
+		},
 	},
 --------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {

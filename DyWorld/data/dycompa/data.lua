@@ -9,3 +9,23 @@ end
 if settings.startup["DyWorld_Processing"].value then
 	require("data.dycompa.changes.dyworld-processing")
 end
+
+if settings.startup["DyWorld_Power"].value then
+	require("data.dycompa.changes.dyworld-power")
+end
+
+if settings.startup["DyWorld_Extraction"].value then
+	
+end
+
+if settings.startup["DyWorld_Warfare"].value then
+	
+end
+
+if settings.startup["DyWorld_Equipment"].value then
+	
+end
+
+if settings.startup["DyWorld_Decor"].value then
+	
+end

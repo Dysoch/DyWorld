@@ -11,6 +11,14 @@ local Data_Table = {
 		Count = 150,
 		Military = false,
 	},
+	{
+		Name = "steam-energy",
+		Icon = {{icon = "__base__/graphics/technology/solar-energy.png"}},
+		Pre_Req_Above = 2,
+		Tiers = 10,
+		Count = 150,
+		Military = false,
+	},
 }
 
 for k,v in pairs(Data_Table) do

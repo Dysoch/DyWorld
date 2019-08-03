@@ -28,11 +28,13 @@ data.raw.recipe["copper-plate"].expensive = {
 data.raw.recipe["steel-plate"].ingredients = nil
 data.raw.recipe["steel-plate"].normal = {
 	energy_required = 5,
+	enabled = false,
 	ingredients = {{type = "item", name = "iron-plate", amount = 5}},
 	result = "steel-plate",
 }
 data.raw.recipe["steel-plate"].expensive = {
 	energy_required = 5,
+	enabled = false,
 	ingredients = {{type = "item", name = "iron-plate", amount = 25}},
 	result = "steel-plate",
 }

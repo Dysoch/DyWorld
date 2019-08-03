@@ -524,6 +524,13 @@ Data_Entity = {
 			["neutronium-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
 		},
+		Refinery = true,
+		Assembler_Refinery_Mod = 1.8,
+		Refinery_Next = "neutrobaltium",
+		Refinery_Ingredients = {
+			["neutronium-assembling-machine"] = 1,
+			["iron-gear-wheel"] = 4,
+		},
 		Wall = true,
 		Wall_Next = "neutrobaltium",
 		Wall_Ingredients = {

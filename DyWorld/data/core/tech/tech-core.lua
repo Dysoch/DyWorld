@@ -21,6 +21,14 @@ local Data_Table = {
 		Military = false,
 	},
 	{
+		Name = "oil-processing",
+		Icon = {{icon = "__base__/graphics/technology/oil-processing.png"}},
+		Pre_Req_Above = 3,
+		Tiers = 10,
+		Count = 100,
+		Military = false,
+	},
+	{
 		Name = "smelting",
 		Icon = {{icon = "__base__/graphics/technology/advanced-material-processing.png"}},
 		Pre_Req_Above = 2,

@@ -10,6 +10,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pollution_2_Module then
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
 	DyWorld_Prototype_Item.tier = v.DyWorld.Tier
 	DyWorld_Prototype_Item.icon = nil
+	DyWorld_Prototype_Item.category = "pollution-2"
 	DyWorld_Prototype_Item.subgroup = dy.."pollution-2-module"
 	DyWorld_Prototype_Item.effect = {
       consumption = {bonus = v.DyWorld.Entity.Pollution_2_Module_Consumption_Boost},

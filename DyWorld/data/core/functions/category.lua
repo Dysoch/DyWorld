@@ -38,6 +38,18 @@ local Data_Table = {
 		Name = "radiation",
 		Type = "dmg"
 	},
+	{
+		Name = "super",
+		Type = "module"
+	},
+	{
+		Name = "pollution-1",
+		Type = "module"
+	},
+	{
+		Name = "pollution-2",
+		Type = "module"
+	},
 }
 
 function DyWorld_Damage_Type(NAME)
@@ -89,6 +101,15 @@ function DyWorld_Equipment_Category(NAME)
   local result =
   {
     type = "equipment-category",
+    name = NAME
+  }
+  return result
+end
+
+function DyWorld_Module_Category(NAME)
+  local result =
+  {
+    type = "module-category",
     name = NAME
   }
   return result
@@ -157,6 +178,11 @@ for k,v in pairs(Data_Table) do
 		data:extend(
 			{
 				DyWorld_Equipment_Grid_Type(v.Name, v.Width, v.Height)
+			})
+	elseif v.Type == "module" then
+		data:extend(
+			{
+				DyWorld_Module_Category(v.Name)
 			})
 	end
 end

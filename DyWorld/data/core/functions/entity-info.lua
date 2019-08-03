@@ -84,6 +84,19 @@ Data_Entity = {
 			["stone-plate"] = 5,
 			["stone-gear-wheel"] = 1,
 		},
+		Super_Module = true,
+		Super_Module_Speed_Boost = 0.1,
+		Super_Module_Consumption_Boost = -0.15,
+		Super_Module_Pollution_Boost = -0.05,
+		Super_Module_Productivity_Boost = 0.02,
+		Super_Module_Ingredients = {
+			["advanced-circuit"] = 2,
+			["stone-speed-module"] = 2,
+			["stone-productivity-module"] = 2,
+			["stone-effectivity-module"] = 2,
+			["stone-pollution-reduce-module"] = 2,
+			["stone-pollution-increase-module"] = 2,
+		},
 	},
 --------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {

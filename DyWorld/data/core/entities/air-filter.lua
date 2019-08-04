@@ -136,7 +136,7 @@ data:extend(
 	end
 end
 
-DyWorld_Add_To_Tech("automation", "air-filter-1")
+
 DyWorld_Add_To_Tech("automation-3", "air-filter-2")
 DyWorld_Add_To_Tech("automation-5", "air-filter-3")
 DyWorld_Add_To_Tech("automation-7", "air-filter-4")

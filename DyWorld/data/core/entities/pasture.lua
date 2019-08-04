@@ -131,6 +131,26 @@ data:extend(
 	if i >= 2 then 
 		table.insert(data.raw.recipe["pasture-"..i].ingredients, Insert_Recipe)
 	end
+	if i == 2 then 
+		data.raw.recipe["pasture-"..i].ingredients = {}
+		local Insert_Recipe = {type = "item", name = "pasture", amount = 1}
+		table.insert(data.raw.recipe["pasture-"..i].ingredients, Insert_Recipe)
+	end
+	if i == 3 then 
+		data.raw.recipe["pasture-"..i].ingredients = {}
+		local Insert_Recipe = {type = "item", name = "pasture", amount = 1}
+		table.insert(data.raw.recipe["pasture-"..i].ingredients, Insert_Recipe)
+	end
+	if i == 4 then 
+		data.raw.recipe["pasture-"..i].ingredients = {}
+		local Insert_Recipe = {type = "item", name = "pasture", amount = 1}
+		table.insert(data.raw.recipe["pasture-"..i].ingredients, Insert_Recipe)
+	end
+	if i == 5 then 
+		data.raw.recipe["pasture-"..i].ingredients = {}
+		local Insert_Recipe = {type = "item", name = "pasture", amount = 1}
+		table.insert(data.raw.recipe["pasture-"..i].ingredients, Insert_Recipe)
+	end
 end
 
 DyWorld_Add_To_Tech("automation-2", "pasture-1")

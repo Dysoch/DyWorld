@@ -1,3 +1,0 @@
-TODO Make Greenhouses eat pollution
-
-TODO Make Pastures eat little pollution

@@ -127,10 +127,6 @@ data:extend(
   },
 }
 )
-	local Insert_Recipe = {type = "item", name = "pasture-"..(i-1), amount = 1}
-	if i >= 2 then 
-		table.insert(data.raw.recipe["pasture-"..i].ingredients, Insert_Recipe)
-	end
 	if i == 2 then 
 		data.raw.recipe["pasture-"..i].ingredients = {}
 		local Insert_Recipe = {type = "item", name = "pasture", amount = 1}
@@ -149,6 +145,10 @@ data:extend(
 	if i == 5 then 
 		data.raw.recipe["pasture-"..i].ingredients = {}
 		local Insert_Recipe = {type = "item", name = "pasture", amount = 1}
+		table.insert(data.raw.recipe["pasture-"..i].ingredients, Insert_Recipe)
+	end
+	if i >= 2 then 
+		local Insert_Recipe = {type = "item", name = "pasture-"..(i-1), amount = 1}
 		table.insert(data.raw.recipe["pasture-"..i].ingredients, Insert_Recipe)
 	end
 end

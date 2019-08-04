@@ -7,8 +7,22 @@ local Data_Table = {
 		Name = "stone-plate",
 		Time = 1,
 		Recipe_Enabled = true,
+		Icon_Type_Icons = true,
+		Subgroup = "intermediates-tier-0",
 		Recipe_Ingredients = {
-			["stone-brick"] = 2,
+			["stone-brick"] = 1,
+		},
+		Multi_Output = {
+			{type = "item", name = "stone-plate", amount = 2},
+		},
+		Enabled = true,
+	},
+	{
+		Name = "stone",
+		Time = 2,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["sand"] = 5,
 		},
 		Enabled = true,
 	},

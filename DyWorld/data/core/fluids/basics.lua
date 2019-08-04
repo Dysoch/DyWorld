@@ -101,10 +101,78 @@ local Data_Table = {
 		Emissions_Multiplier = 0.1,
 		Barrel = true,
 	},
+	{
+		Name = "science-base",
+		Tier = 1,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Barrel = false,
+	},
+	{
+		Name = "science-1",
+		Tier = 1,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Barrel = false,
+	},
+	{
+		Name = "science-2",
+		Tier = 2,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Barrel = false,
+	},
+	{
+		Name = "science-3",
+		Tier = 3,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Barrel = false,
+	},
+	{
+		Name = "science-4",
+		Tier = 3,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Barrel = false,
+	},
+	{
+		Name = "science-5",
+		Tier = 5,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Barrel = false,
+	},
+	{
+		Name = "science-6",
+		Tier = 6,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Barrel = false,
+	},
 }
---@todo Add more noble gases and fluids
---@todo Add fluid chemical formula to description
------------------------------ BALANCING ABOVE THIS LINE, BELOW IS CODE ------------------------------------
+ --------------------- BALANCING ABOVE THIS LINE, BELOW IS CODE ---------------------
 
 local function DyWorld_Fluid(DATA)
   local result =

@@ -79,3 +79,31 @@ data:extend(
 	end
 end
 end
+
+function DyWorld_Add_To_Recipe(RECIPE, INGREDIENT, AMOUNT, FLUID)
+	if data.raw.recipe[RECIPE] then
+		if FLUID then
+			if data.raw.recipe[RECIPE].ingredients then
+				local INSERT = {type = "fluid", name = INGREDIENT, amount = AMOUNT}
+				table.insert(data.raw.recipe[RECIPE].ingredients, INSERT)
+			end
+			if data.raw.recipe[RECIPE].normal and data.raw.recipe[RECIPE].expensive then
+				local INSERT = {type = "fluid", name = INGREDIENT, amount = AMOUNT}
+				local INSERT_2 = {type = "fluid", name = INGREDIENT, amount = AMOUNT * 5}
+				table.insert(data.raw.recipe[RECIPE].normal.ingredients, INSERT)
+				table.insert(data.raw.recipe[RECIPE].expensive.ingredients, INSERT_2)
+			end
+		else
+			if data.raw.recipe[RECIPE].ingredients then
+				local INSERT = {type = "item", name = INGREDIENT, amount = AMOUNT}
+				table.insert(data.raw.recipe[RECIPE].ingredients, INSERT)
+			end
+			if data.raw.recipe[RECIPE].normal and data.raw.recipe[RECIPE].expensive then
+				local INSERT = {type = "item", name = INGREDIENT, amount = AMOUNT}
+				local INSERT_2 = {type = "item", name = INGREDIENT, amount = AMOUNT * 5}
+				table.insert(data.raw.recipe[RECIPE].normal.ingredients, INSERT)
+				table.insert(data.raw.recipe[RECIPE].expensive.ingredients, INSERT_2)
+			end
+		end
+	end
+end

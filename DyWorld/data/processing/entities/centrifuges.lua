@@ -119,7 +119,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Centrifuge then
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-centrifuge")
+	if data.raw.technology["automation-"..v.DyWorld.Tier] and v.DyWorld.Tier > 1 then
+		DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-centrifuge")
+	end
 	if v.DyWorld.Entity.Centrifuge_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Centrifuge_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}

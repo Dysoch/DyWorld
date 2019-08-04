@@ -69,6 +69,11 @@ local Tech_Recipe_Add = {
 	["titanium-processing"] = {"titanium-plate"},
 	["tungsten-processing"] = {"tungsten-plate"},
 	["neutronium-processing"] = {"neutronium-plate"},
+	["logistic-science-pack"] = {"science-2"},
+	["chemical-science-pack"] = {"science-3"},
+	["military-science-pack"] = {"science-4"},
+	["production-science-pack"] = {"science-5"},
+	["utility-science-pack"] = {"science-6"},
 } 
 
 for k,v in pairs(Tech_Recipe_Add) do

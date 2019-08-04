@@ -1,8 +1,5 @@
---[[
--- Edits
-require("data.core.edits.items-final")
 
--- Locale Changes
-require("data.core.functions.locale-description-chemical")
 
-]]--
+
+require("data.core.science.edits")
+require("data.core.science.recipes")

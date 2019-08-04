@@ -1,0 +1,13 @@
+TODO decrease expensiveness of belts
+
+TODO Fix graphical window issue pipes
+
+TODO Decrease Stone brick amount of recipe Stone Plate
+
+TODO Increase Stone Plate recipe output
+
+TODO Add seperate Iron Belt recipe without stone
+
+TODO Increase ways to get stone
+
+TODO Add sand to stone recipe

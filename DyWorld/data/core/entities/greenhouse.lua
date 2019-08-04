@@ -31,6 +31,7 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
+      emissions_per_minute = (-0.25 * i),
     },
     energy_usage = math.floor(25 * (i*(i-(0.5/i)))).."W", --"25kW",
     ingredient_count = 25,

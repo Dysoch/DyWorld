@@ -3,6 +3,16 @@ require "data/core/functions/colors"
 
 local Data_Table = {
 	{
+		Name = "pollution",
+		Tier = 1,
+		Def_Temp = 25,
+		Max_Temp = 25,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Barrel = false,
+	},
+	{
 		Name = "hydrogen",
 		Tier = 1,
 		Def_Temp = 15,

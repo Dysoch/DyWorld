@@ -16,8 +16,9 @@ Color_Tier = {
 Material_Colors = {
 	--- Tier 1 ---
 	["wood"] = {r=182, g=155, b=76},
-	["stone"] = {r=139, g=141, b=122},
-	["coal"] = {r=128, g=128, b=128}, -- TO DO
+	["stone"] = {r=209, g=204, b=194},
+	["coal"] = {r=10, g=8, b=9}, 
+	["sand"] = {r=242, g=244, b=212}, 
 	--- Tier 2 ---
 	["iron"] = {r=82, g=174, b=212}, -- 52aed4
 	["copper"] = {r=212, g=119, b=82}, -- d47752

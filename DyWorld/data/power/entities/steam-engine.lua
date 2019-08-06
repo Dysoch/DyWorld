@@ -59,7 +59,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Steam_Engine then
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if data.raw.technology["steam-energy-"..v.DyWorld.Tier] and v.DyWorld.Tier > 1 then
+	if data.raw.technology["steam-energy-"..v.DyWorld.Tier] and v.DyWorld.Tier >= 2 then
 		DyWorld_Add_To_Tech("steam-energy-"..v.DyWorld.Tier, v.DyWorld.Name.."-steam-engine")
 	end
 	

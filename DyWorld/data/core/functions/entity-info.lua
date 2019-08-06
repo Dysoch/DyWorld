@@ -155,6 +155,16 @@ Data_Entity = {
 			["stone-brick"] = 3,
 			["stone-gear-wheel"] = 1,
 		},
+		Boiler = true,
+		Boiler_Next = "iron",
+		Boiler_Max_Temp = 150,
+		Boiler_Effectivity = 0.9,
+		Boiler_Energy_Consumption_KW = 1500,
+		Boiler_Ingredients = {
+			["stone-plate"] = 5,
+			["stone-brick"] = 3,
+			["stone-gear-wheel"] = 1,
+		},
 	},
 --------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {
@@ -218,6 +228,18 @@ Data_Entity = {
 		Gate_Ingredients = {
 			["iron-wall"] = 2,
 			["iron-plate"] = 10,
+		},
+		Boiler = true,
+		Boiler_Next = "iron",
+		Boiler_Previous = "stone",
+		Boiler_Max_Temp = 165,
+		Boiler_Effectivity = 1,
+		Boiler_Energy_Consumption_KW = 1900,
+		Boiler_Ingredients = {
+			["electronic-circuit"] = 4,
+			["copper-plate"] = 1,
+			["iron-plate"] = 5,
+			["iron-gear-wheel"] = 1,
 		},
 	},
 	["copper"] = {

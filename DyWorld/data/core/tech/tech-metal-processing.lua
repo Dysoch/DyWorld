@@ -15,43 +15,43 @@ data:extend(
     prerequisites = {},
     unit =
     {
-      count = 100 * v.DyWorld.Tier,
+      count = 65 * v.DyWorld.Tier,
       ingredients = {},
-      time = 10 * v.DyWorld.Tier
+      time = 5 * v.DyWorld.Tier
     },
     order = v.DyWorld.Name.."-processing",
 	upgrade = true,
   },
 })
 	if v.DyWorld.Tier == 1 then
-		local results = {{"automation-science-pack", 1}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	elseif v.DyWorld.Tier == 2 then
-		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	elseif v.DyWorld.Tier == 3 then
-		local results = {{"automation-science-pack", 2},{"logistic-science-pack", 2}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier},{"logistic-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	elseif v.DyWorld.Tier == 4 then
-		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier},{"logistic-science-pack", v.DyWorld.Tier},{"chemical-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	elseif v.DyWorld.Tier == 5 then
-		local results = {{"automation-science-pack", 3},{"logistic-science-pack", 3},{"chemical-science-pack", 3}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier},{"logistic-science-pack", v.DyWorld.Tier},{"chemical-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	elseif v.DyWorld.Tier == 6 then
-		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier},{"logistic-science-pack", v.DyWorld.Tier},{"chemical-science-pack", v.DyWorld.Tier},{"production-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	elseif v.DyWorld.Tier == 7 then
-		local results = {{"automation-science-pack", 4},{"logistic-science-pack", 4},{"chemical-science-pack", 4},{"production-science-pack", 4}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier},{"logistic-science-pack", v.DyWorld.Tier},{"chemical-science-pack", v.DyWorld.Tier},{"production-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	elseif v.DyWorld.Tier == 8 then
-		local results = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier},{"logistic-science-pack", v.DyWorld.Tier},{"chemical-science-pack", v.DyWorld.Tier},{"production-science-pack", v.DyWorld.Tier},{"utility-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	elseif v.DyWorld.Tier == 9 then
-		local results = {{"automation-science-pack", 5},{"logistic-science-pack", 5},{"chemical-science-pack", 5},{"production-science-pack", 5},{"utility-science-pack", 5}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier},{"logistic-science-pack", v.DyWorld.Tier},{"chemical-science-pack", v.DyWorld.Tier},{"production-science-pack", v.DyWorld.Tier},{"utility-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	elseif v.DyWorld.Tier == 10 then
-		local results = {{"automation-science-pack", 5},{"logistic-science-pack", 5},{"chemical-science-pack", 5},{"production-science-pack", 5},{"utility-science-pack", 5},{"space-science-pack", 10}}
+		local results = {{"automation-science-pack", v.DyWorld.Tier},{"logistic-science-pack", v.DyWorld.Tier},{"chemical-science-pack", v.DyWorld.Tier},{"production-science-pack", v.DyWorld.Tier},{"utility-science-pack", v.DyWorld.Tier},{"space-science-pack", v.DyWorld.Tier}}
 		data.raw.technology[v.DyWorld.Name.."-processing"].unit.ingredients = results
 	end
 	if data.raw.item[v.DyWorld.Name.."-plate"].icons then

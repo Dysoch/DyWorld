@@ -71,5 +71,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Steam_Engine then
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-steam-engine"].expensive.ingredients, Ingredient_2)
 		end
 	end
+	if v.DyWorld.Entity.Steam_Engine_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Steam_Engine_Previous.."-steam-engine", amount = 1}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-steam-engine"].normal.ingredients, Ingredient)
+	end
 end
 end

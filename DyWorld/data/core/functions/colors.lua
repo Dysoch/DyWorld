@@ -16,7 +16,7 @@ Color_Tier = {
 Material_Colors = {
 	--- Tier 1 ---
 	["wood"] = {r=182, g=155, b=76},
-	["stone"] = {r=209, g=204, b=194},
+	["stone"] = {r=116, g=84, b=69},
 	["coal"] = {r=10, g=8, b=9}, 
 	["sand"] = {r=242, g=244, b=212}, 
 	--- Tier 2 ---

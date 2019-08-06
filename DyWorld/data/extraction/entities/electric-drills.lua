@@ -45,9 +45,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "electric-mining-drill", v.DyWorld.Name.."-electric-mining-drill", true)
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
-	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = (12 * v.DyWorld.Tier)}}
+	DyWorld_Prototype_Recipe.normal.ingredients = {}
 	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-electric-mining-drill"
-	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = (25 * v.DyWorld.Tier)}}
+	DyWorld_Prototype_Recipe.expensive.ingredients = {}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-electric-mining-drill"
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.drill-1", {"looped-name."..v.DyWorld.Name}}
@@ -66,7 +66,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-electric-mining-drill")
+	if v.DyWorld.Tier >= 2 and data.raw.technology["automation-"..v.DyWorld.Tier] then
+		DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-electric-mining-drill")
+	end
 	if v.DyWorld.Entity.Drill_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Drill_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
@@ -74,22 +76,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].expensive.ingredients, Ingredient_2)
 		end
-	end
-	if v.DyWorld.Tier >= 7 then
-		local Ingredient = {type = "item", name = "processing-unit", amount = v.DyWorld.Tier * 5}
-		local Ingredient_2 = {type = "item", name = "processing-unit", amount = v.DyWorld.Tier * 25}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].normal.ingredients, Ingredient)
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].expensive.ingredients, Ingredient_2)
-	elseif v.DyWorld.Tier >= 4 then
-		local Ingredient = {type = "item", name = "advanced-circuit", amount = v.DyWorld.Tier * 4}
-		local Ingredient_2 = {type = "item", name = "advanced-circuit", amount = v.DyWorld.Tier * 20}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].normal.ingredients, Ingredient)
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].expensive.ingredients, Ingredient_2)
-	elseif v.DyWorld.Tier >= 1 then
-		local Ingredient = {type = "item", name = "electronic-circuit", amount = v.DyWorld.Tier * 3}
-		local Ingredient_2 = {type = "item", name = "electronic-circuit", amount = v.DyWorld.Tier * 15}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].normal.ingredients, Ingredient)
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].expensive.ingredients, Ingredient_2)
 	end
 end
 end

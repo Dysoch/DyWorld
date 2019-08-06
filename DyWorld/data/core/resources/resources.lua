@@ -248,4 +248,7 @@ end
 		data.raw["resource"][v.Name_Ore].autoplace.starting_area_size = 10 * v.Starting_Area_Strength
 		data.raw["resource"][v.Name_Ore].autoplace.starting_area_amount = 1000 * v.Starting_Area_Strength
 	end
+	if v.Name == "stone" then
+		data.raw["resource"][v.Name_Ore].localised_name = {"looped-name."..v.Name}
+	end
 end	

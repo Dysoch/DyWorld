@@ -1,5 +1,6 @@
 
 require("data.core.tech.tech-core")
+require("data.core.tech.specials.mining-speed")
 
 -- Extraction Module --
 if settings.startup["DyWorld_Extraction"].value then

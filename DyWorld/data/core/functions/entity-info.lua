@@ -99,21 +99,21 @@ Data_Entity = {
 		Super_Module_Pollution_Boost = -0.05,
 		Super_Module_Productivity_Boost = 0.02,
 		Super_Module_Ingredients = {
-			["advanced-circuit"] = 2,
-			["stone-speed-module"] = 2,
-			["stone-productivity-module"] = 2,
-			["stone-effectivity-module"] = 2,
-			["stone-pollution-reduce-module"] = 2,
-			["stone-pollution-increase-module"] = 2,
+			["advanced-circuit"] = 5,
+			["stone-speed-module"] = 10,
+			["stone-productivity-module"] = 10,
+			["stone-effectivity-module"] = 10,
+			["stone-pollution-reduce-module"] = 10,
+			["stone-pollution-increase-module"] = 10,
 		},
 		Steam_Engine = true,
-		Steam_Engine_Next = "stone",
+		Steam_Engine_Next = "nickel",
 		Steam_Engine_Fluid_Usage = 0.4,
 		Steam_Engine_Effectivity = 0.75,
 		Steam_Engine_Maximum_Temperature = 165,
 		Steam_Engine_Ingredients = {
-			["stone-pipe"] = 2,
-			["stone"] = 2,
+			["stone-pipe"] = 4,
+			["stone"] = 50,
 		},
 		Steam_Turbine = true,
 		Steam_Turbine_Next = "stone",
@@ -201,19 +201,12 @@ Data_Entity = {
 	},
 	["copper"] = {
 		Belt = false,
-		Assembler = true,
-		Assembler_Speed_Mod = 1.1,
-		Assembler_Next = "tin",
-		Assembler_Ingredients = {
-			["iron-assembling-machine"] = 1,
-			["iron-gear-wheel"] = 4,
-		},
 		Centrifuge = true,
 		Centrifuge_Speed_Mod = 1,
 		Centrifuge_Next = "lead",
 		Centrifuge_Ingredients = {
 			["stone-centrifuge"] = 1,
-			["copper-plate"] = 4,
+			["copper-plate"] = 10,
 		},
 		Solar = true,
 		Solar_Production = 90,
@@ -232,6 +225,17 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
 			["iron-electric-mining-drill"] = 1,
+		},
+		Steam_Engine = true,
+		Steam_Engine_Next = "steel",
+		Steam_Engine_Fluid_Usage = 0.5,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["nickel-plate"] = 50,
+			["nickel-cable"] = 10,
+			["nickel-gear-wheel"] = 10,
+			["electronic-circuit"] = 5,
 		},
 	},
 	["silver"] = {
@@ -329,6 +333,17 @@ Data_Entity = {
 		},
 		Loader_Ingredients = {
 			["bronze-loader"] = 1,
+		},
+		Steam_Engine = true,
+		Steam_Engine_Next = "cobalt",
+		Steam_Engine_Fluid_Usage = 0.6,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["steel-plate"] = 50,
+			["steel-cable"] = 10,
+			["steel-gear-wheel"] = 10,
+			["electronic-circuit"] = 5,
 		},
 	},
 	["gold"] = {
@@ -466,6 +481,17 @@ Data_Entity = {
 			["stone-brick"] = 4,
 			["iron-plate"] = 1,
 		},
+				Steam_Engine = true,
+		Steam_Engine_Next = "stainless-steel",
+		Steam_Engine_Fluid_Usage = 0.7,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["cobalt-plate"] = 50,
+			["cobalt-cable"] = 10,
+			["cobalt-gear-wheel"] = 10,
+			["electronic-circuit"] = 25,
+		},
 	},
 	["invar"] = {
 		Belt = false,
@@ -522,6 +548,16 @@ Data_Entity = {
 			["stone-gear-wheel"] = 4,
 			["stone-brick"] = 4,
 			["iron-plate"] = 1,
+		},
+		Steam_Engine_Next = "titanium",
+		Steam_Engine_Fluid_Usage = 0.8,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["stainless-steel-plate"] = 50,
+			["stainless-steel-cable"] = 10,
+			["stainless-steel-gear-wheel"] = 10,
+			["electronic-circuit"] = 25,
 		},
 	},
 	["arditium"] = {
@@ -586,6 +622,16 @@ Data_Entity = {
 		Solar_Ingredients = {
 			["titanium-plate"] = 4,
 		},
+		Steam_Engine_Next = "electranium",
+		Steam_Engine_Fluid_Usage = 0.9,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["titanium-plate"] = 50,
+			["titanium-cable"] = 10,
+			["titanium-gear-wheel"] = 10,
+			["electronic-circuit"] = 25,
+		},		
 	},
 	["tungsten"] = {
 		Belt = true,
@@ -649,6 +695,16 @@ Data_Entity = {
 		Solar_Ingredients = {
 			["electranium-plate"] = 4,
 		},
+		Steam_Engine_Next = "tungstvar",
+		Steam_Engine_Fluid_Usage = 1,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["electranium-plate"] = 50,
+			["electranium-cable"] = 10,
+			["electranium-gear-wheel"] = 10,
+			["electronic-circuit"] = 25,
+		},		
 	},
 	["arditium-tungstenate"] = {
 		Belt = true,
@@ -717,6 +773,16 @@ Data_Entity = {
 		Solar_Ingredients = {
 			["tungstvar-plate"] = 4,
 		},
+		Steam_Engine_Next = "neutronium",
+		Steam_Engine_Fluid_Usage = 1.1,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["tungstvar-plate"] = 50,
+			["tungstvar-cable"] = 10,
+			["tungstvar-gear-wheel"] = 10,
+			["electronic-circuit"] = 25,
+		},		
 	},
 --------------------------------------- TIER 9 --------------------------------------
 	["neutronium"] = {
@@ -737,6 +803,16 @@ Data_Entity = {
 			["electranium-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
 		},
+		Steam_Engine_Next = "neutrobaltium",
+		Steam_Engine_Fluid_Usage = 1.2,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["neutronium-plate"] = 50,
+			["neutronium-cable"] = 10,
+			["neutronium-gear-wheel"] = 10,
+			["electronic-circuit"] = 25,
+		},		
 	},
 --------------------------------------- TIER 10 --------------------------------------
 	["neutrobaltium"] = {
@@ -814,5 +890,16 @@ Data_Entity = {
 			["stone-brick"] = 4,
 			["neutrobaltium-plate"] = 1,
 		},
+		Steam_Engine_Next = "neutrobaltium",
+		Steam_Engine_Fluid_Usage = 1.1,
+		Steam_Engine_Effectivity = 0.75,
+		Steam_Engine_Maximum_Temperature = 165,
+		Steam_Engine_Ingredients = {
+			["neutrobaltium-plate"] = 50,
+			["neutrobaltium-cable"] = 10,
+			["neutrobaltium-gear-wheel"] = 10,
+			["electronic-circuit"] = 25,
+		},		
 	},
+	
 }

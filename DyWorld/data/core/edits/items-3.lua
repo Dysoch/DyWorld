@@ -36,13 +36,31 @@ local Data_Locale_Chemical_Formula = {
 	["electranium-plate"] = "6Ard-4Ag-10Au",
 	["arditium-tungstenate-plate"] = "10Ard-8Fe-12O",
 	["tungstvar-plate"] = "7Fe-9O-4Ni",
-	--["gold-ore"] = "Cu3Au",
-	--["gold-plate"] = "Au",
+	["hydrogen"] = "H",
+	["oxygen"] = "O",
+	["carbon-monoxide"] = "C-O",
+	["carbon-dioxide"] = "C-O2",
+	["hydrogen-peroxide"] = "H2-O2",
+	["nitrogen"] = "N",
+	["methane"] = "M",
+	["argon"] = "Ar",
+	["boron"] = "Bo",
 	--["coal"] = "5C2Hg",
 }
 
 for k,v in pairs(Data_Locale_Chemical_Formula) do
-	if data.raw.item[k] and data.raw.item[k].DyWorld then
-		data.raw.item[k].DyWorld.Locale_Chemical = v
+	if data.raw.item[k] then
+		if data.raw.item[k].DyWorld then
+			data.raw.item[k].DyWorld.Locale_Chemical = v
+		else
+			data.raw.item[k].DyWorld = {Locale_Chemical = v}
+		end
+	end
+	if data.raw.fluid[k] then
+		if data.raw.fluid[k].DyWorld then
+			data.raw.fluid[k].DyWorld.Locale_Chemical = v
+		else
+			data.raw.fluid[k].DyWorld = {Locale_Chemical = v}
+		end
 	end
 end

@@ -26,6 +26,11 @@ local Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "personal"
 	},
+	{
+		Name = "recycler-recipes",
+		Type = "sub",
+		Main = "personal"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

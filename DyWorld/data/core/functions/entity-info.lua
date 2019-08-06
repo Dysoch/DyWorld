@@ -268,6 +268,16 @@ Data_Entity = {
 			["iron-plate"] = 3,
 			["copper-cable"] = 1,
 		},
+		Accumulator = true,
+		Accumulator_Next = "copper",
+		--Accumulator_Previous = "stone",
+		Accumulator_Buffer_MJ = 5,
+		Accumulator_Ingredients = {
+			["electronic-circuit"] = 14,
+			["copper-plate"] = 5,
+			["iron-plate"] = 3,
+			["copper-cable"] = 1,
+		},
 	},
 	["nickel"] = {
 		Belt = false,

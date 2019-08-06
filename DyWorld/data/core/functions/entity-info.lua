@@ -377,6 +377,19 @@ Data_Entity = {
 			["iron-assembling-machine"] = 1,
 			["tin-gear-wheel"] = 4,
 		},
+		Nuclear_Reactor = true,
+		--Nuclear_Reactor_Previous = "tin",
+		Nuclear_Reactor_Next = "tin",
+		Nuclear_Reactor_Consumption_MW = 40,
+		Nuclear_Reactor_Max_Temperature = 1000,
+		Nuclear_Reactor_Specific_Heat_MJ = 10,
+		Nuclear_Reactor_Max_Transfer_GW = 10,
+		Nuclear_Reactor_Neighbour_Bonus = 1,
+		Nuclear_Reactor_Effectivity = 1,
+		Nuclear_Reactor_Ingredients = {
+			["iron-assembling-machine"] = 1,
+			["tin-gear-wheel"] = 4,
+		},
 	},
 --------------------------------------- TIER 3 --------------------------------------
 	["steel"] = {

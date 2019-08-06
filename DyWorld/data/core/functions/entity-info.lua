@@ -123,6 +123,7 @@ Data_Entity = {
 		Steam_Engine_Ingredients = {
 			["stone-pipe"] = 4,
 			["stone"] = 50,
+			["stone-gear-wheel"] = 1,
 		},
 		Steam_Turbine = true,
 		Steam_Turbine_Next = "stone",
@@ -133,6 +134,7 @@ Data_Entity = {
 			["stone-steam-engine"] = 2,
 			["stone-pipe"] = 2,
 			["stone"] = 2,
+			["stone-gear-wheel"] = 1,
 		},
 		Pump = true,
 		Pump_Next = "stone",
@@ -142,6 +144,16 @@ Data_Entity = {
 			["stone-plate"] = 2,
 			["stone-pipe"] = 2,
 			["stone"] = 2,
+		},
+		Radar = true,
+		Radar_Next = "stone",
+		Radar_Active_Range = 2,
+		Radar_Scan_Range = 10,
+		Radar_Ingredients = {
+			["electronic-circuit"] = 4,
+			["stone-plate"] = 5,
+			["stone-brick"] = 3,
+			["stone-gear-wheel"] = 1,
 		},
 	},
 --------------------------------------- TIER 2 --------------------------------------
@@ -222,6 +234,17 @@ Data_Entity = {
 		Solar_Next = "silver",
 		Solar_Ingredients = {
 			["copper-plate"] = 4,
+		},
+		Radar = true,
+		Radar_Next = "copper",
+		Radar_Previous = "stone",
+		Radar_Active_Range = 3,
+		Radar_Scan_Range = 15,
+		Radar_Ingredients = {
+			["electronic-circuit"] = 14,
+			["copper-plate"] = 5,
+			["iron-plate"] = 3,
+			["copper-cable"] = 1,
 		},
 	},
 	["nickel"] = {

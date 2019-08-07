@@ -77,3 +77,5 @@ require("data.core.recipes.fluids-air-filtering")
 -- Debug & Debug Related Functions
 require("data.core.debug.armor")
 require("data.core.debug.equipment")
+
+require("data.core.achievements")

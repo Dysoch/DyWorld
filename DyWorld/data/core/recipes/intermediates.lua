@@ -224,28 +224,28 @@ local Data_Table = {
 	--TODO Add fluids to certain circuits
 	{
 		Name = "simple-control-board",
-		Time = 1,
+		Time = 0.5,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
-			["stone-plate"] = 1,
+			["wood"] = 1,
 			["copper-cable"] = 1,
 		},
 		Enabled = true,
 	},
 	{
 		Name = "basic-control-board",
-		Time = 2,
+		Time = 1,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["simple-control-board"] = 1,
-			["iron-plate"] = 1,
+			["nickel-plate"] = 1,
 			["copper-cable"] = 2,
 		},
 		Enabled = true,
 	},
 	{
 		Name = "electronic-control-board",
-		Time = 4,
+		Time = 2,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["basic-control-board"] = 1,
@@ -256,7 +256,7 @@ local Data_Table = {
 	},
 	{
 		Name = "advanced-control-board",
-		Time = 8,
+		Time = 3.5,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["electronic-control-board"] = 1,
@@ -267,7 +267,7 @@ local Data_Table = {
 	},
 	{
 		Name = "tough-control-board",
-		Time = 16,
+		Time = 5,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["advanced-control-board"] = 1,
@@ -278,7 +278,7 @@ local Data_Table = {
 	},
 	{
 		Name = "processing-control-board",
-		Time = 32,
+		Time = 8,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["tough-control-board"] = 1,
@@ -289,7 +289,7 @@ local Data_Table = {
 	},
 	{
 		Name = "logic-control-board",
-		Time = 64,
+		Time = 12,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["processing-control-board"] = 1,
@@ -300,7 +300,7 @@ local Data_Table = {
 	},
 	{
 		Name = "super-control-board",
-		Time = 128,
+		Time = 17,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["logic-control-board"] = 1,
@@ -311,7 +311,7 @@ local Data_Table = {
 	},
 	{
 		Name = "extreme-control-board",
-		Time = 256,
+		Time = 23,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["super-control-board"] = 1,
@@ -322,7 +322,7 @@ local Data_Table = {
 	},
 	{
 		Name = "quantum-control-board",
-		Time = 512,
+		Time = 30,
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["extreme-control-board"] = 1,

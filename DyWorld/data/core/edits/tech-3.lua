@@ -55,11 +55,15 @@ for k,v in pairs(Tech_PreReq) do
 end
 
 local Tech_Recipe_Add = {
-	["intermediates-1"] = {"glass", "rotor", "wheat", "carrot", "obsidian", "filter-empty", "blade", "resin", "sand-filter", "resin-filter", "coal-filter", "stone-filter"},
-	["intermediates-2"] = {"gunpowder", "frame", "heater", "gearbox", "coil", "solar-cell", "battery-pack", "rubber", "obsidian-filter"},
-	["intermediates-3"] = {"housing", "intake"},
-	["intermediates-4"] = {"logistic-unit", "diamond"},
-	["intermediates-5"] = {"controller"},
+	["intermediates-1"] = {"glass", "rotor", "wheat", "carrot", "obsidian", "filter-empty", "blade", "resin", "sand-filter", "resin-filter", "coal-filter", "stone-filter", "basic-control-board"},
+	["intermediates-2"] = {"gunpowder", "frame", "heater", "gearbox", "coil", "solar-cell", "battery-pack", "rubber", "obsidian-filter", "electronic-control-board"},
+	["intermediates-3"] = {"housing", "intake", "advanced-control-board"},
+	["intermediates-4"] = {"logistic-unit", "diamond", "tough-control-board"},
+	["intermediates-5"] = {"processing-control-board"},
+	["intermediates-6"] = {"logic-control-board"},
+	["intermediates-7"] = {"super-control-board"},
+	["intermediates-8"] = {"extreme-control-board"},
+	["intermediates-9"] = {"quantum-control-board"},
 	["nickel-processing"] = {"nickel-plate"},
 	["steel-processing"] = {"steel-plate"},
 	["silver-processing"] = {"silver-plate"},

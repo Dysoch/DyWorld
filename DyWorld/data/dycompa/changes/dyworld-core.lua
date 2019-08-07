@@ -9,7 +9,10 @@ local Change = {
 	{Old = "productivity-module-2", New = "silver-productivity-module"},
 	{Old = "speed-module-3", New = "gold-speed-module"},
 	{Old = "effectivity-module-3", New = "gold-effectivity-module"},
-	{Old = "productivity-module-3", New = "gold-productivity-module"},
+	{Old = "electronic-circuit", New = "simple-control-board"},
+	{Old = "advanced-circuit", New = "advanced-control-board"},
+	{Old = "processing-unit", New = "logic-control-board"},
+	
 }
 
 for k,v in pairs(Change) do

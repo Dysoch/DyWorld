@@ -12,6 +12,7 @@
 "stone" = Stone
 "coal" = Coal
 "wood" = Wood
+"simple-control-board" = Circuit for this tier
 
 --------------------------- Tier 2 ---------------------------------
 "red-wire" = Red Wires
@@ -31,7 +32,6 @@
 "copper-cable" = Copper Cable
 "iron-stick" = Iron Stick
 "iron-gear-wheel" = Iron Gear
-"electronic-circuit" = Electronic Circuit
 "nickel-stick" = Nickel Stick
 "nickel-plate" = Nickel Plate
 "nickel-cable" = Nickel Cable
@@ -41,12 +41,12 @@
 "tin-cable" = Tin Cable
 "tin-plate" = Tin Plate
 "tin-gear-wheel" = Tin Gear
+"basic-control-board" = Circuit for this tier
 
 --------------------------- Tier 3 ---------------------------------
 "engine-unit" = Engine Unit
 "battery" = Battery
 "flying-robot-frame" = Flying robot frame
-"advanced-circuit" = Advanced Circuit
 "plastic-bar" = Plastic
 "sulfur" = Sulfur
 "gunpowder" = Gunpowder
@@ -70,9 +70,9 @@
 "lead-stick" = Lead Stick
 "lead-plate" = Lead Plate
 "lead-gear-wheel" = Lead Gear
+"electronic-control-board" = Circuit for this tier
 
 --------------------------- Tier 4 ---------------------------------
-"processing-unit" = Processing Unit
 "empty-barrel" = Emty Barrels
 "electric-engine-unit" = Electric Engine Unit
 "explosives" = Explosive
@@ -94,6 +94,7 @@
 "electrum-stick" = Electrum Stick
 "electrum-plate" = Electrum Plate
 "electrum-cable" = Electrum Cable
+"advanced-control-board" = Circuit for this tier
 
 --------------------------- Tier 5 ---------------------------------
 "nuclear-fuel" = Nuclear Fuel
@@ -109,6 +110,7 @@
 "stainless-steel-gear-wheel" = Stainless Steel Gear
 "arditium-gear-wheel" =  Arditium Gear
 "arditium-plate" = Arditium Plate
+"tough-control-board" = Circuit for this tier
 
 --------------------------- Tier 6 ---------------------------------
 "controller" = Controller
@@ -119,6 +121,7 @@
 "titanium-plate" = Titanium Plate
 "titanium-cable" = Titanium Cable
 "titanium-gear-wheel" =  Titanium Gear
+"processing-control-board" = Circuit for this tier
 
 --------------------------- Tier 7 ---------------------------------
 "arditium-tungstenate-plate" = Arditium-Tungstenate Plate
@@ -127,20 +130,24 @@
 "electranium-stick" = Electranium Stick
 "electranium-plate" = Electranium Plate
 "electranium-cable" = Electranium Cable
+"logic-control-board" = Circuit for this tier
 
 --------------------------- Tier 8 ---------------------------------
 "tungstvar-stick" = Tungstvar Stick
 "tungstvar-plate" = Tungstvar Plate
+"super-control-board" = Circuit for this tier
 
 --------------------------- Tier 9 ---------------------------------
 "neutronium-stick" = Neutronium Stick
 "neutronium-plate" = Neutronium Plate
+"extreme-control-board" = Circuit for this tier
 
 --------------------------- Tier 10 --------------------------------
 "neutrobaltium-stick" = Neutrobaltium Stick
 "neutrobaltium-plate" = Neutrobaltium Plate
 "neutrobaltium-cable" = Neutrobaltium Cable
 "neutrobaltium-gear-wheel" =  Neutrobaltium Gear
+"quantum-control-board" = Circuit for this tier
 
 
 

@@ -221,6 +221,116 @@ local Data_Table = {
 		},
 		Enabled = true,
 	},
+	--TODO Add fluids to certain circuits
+	{
+		Name = "simple-control-board",
+		Time = 1,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["stone-plate"] = 1,
+			["copper-cable"] = 1,
+		},
+		Enabled = true,
+	},
+	{
+		Name = "basic-control-board",
+		Time = 2,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["simple-control-board"] = 1,
+			["iron-plate"] = 1,
+			["copper-cable"] = 2,
+		},
+		Enabled = true,
+	},
+	{
+		Name = "electronic-control-board",
+		Time = 4,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["basic-control-board"] = 1,
+			["silver-plate"] = 1,
+			["tin-cable"] = 3,
+		},
+		Enabled = true,
+	},
+	{
+		Name = "advanced-control-board",
+		Time = 8,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["electronic-control-board"] = 1,
+			["electrum-plate"] = 1,
+			["cobalt-cable"] = 3,
+		},
+		Enabled = true,
+	},
+	{
+		Name = "tough-control-board",
+		Time = 16,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["advanced-control-board"] = 1,
+			["stainless-steel-plate"] = 1,
+			["electrum-cable"] = 3,
+		},
+		Enabled = true,
+	},
+	{
+		Name = "processing-control-board",
+		Time = 32,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["tough-control-board"] = 1,
+			["tungsten-plate"] = 1,
+			["titanium-cable"] = 3,
+		},
+		Enabled = true,
+	},
+	{
+		Name = "logic-control-board",
+		Time = 64,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["processing-control-board"] = 1,
+			["arditium-tungstenate-plate"] = 1,
+			["electranium-cable"] = 3,
+		},
+		Enabled = true,
+	},
+	{
+		Name = "super-control-board",
+		Time = 128,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["logic-control-board"] = 1,
+			["tungstvar-plate"] = 1,
+			["tungstvar-stick"] = 3,
+		},
+		Enabled = true,
+	},
+	{
+		Name = "extreme-control-board",
+		Time = 256,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["super-control-board"] = 1,
+			["neutronium-plate"] = 1,
+			["neutronium-stick"] = 3,
+		},
+		Enabled = true,
+	},
+	{
+		Name = "quantum-control-board",
+		Time = 512,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["extreme-control-board"] = 1,
+			["neutrobaltium-plate"] = 1,
+			["neutrobaltium-cable"] = 3,
+		},
+		Enabled = true,
+	},
 }
 
 for k,v in pairs(Data_Table) do

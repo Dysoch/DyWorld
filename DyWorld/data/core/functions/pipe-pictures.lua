@@ -313,12 +313,14 @@ function DyWorld_Pipepictures(TINT)
       priority = "extra-high",
       width = 64,
       height = 64,
+	  tint = TINT,
       hr_version =
       {
         filename = "__base__/graphics/entity/pipe/hr-pipe-horizontal-window-background.png",
         priority = "extra-high",
         width = 128,
         height = 128,
+	    tint = TINT,
         scale = 0.5
       }
     },
@@ -328,12 +330,14 @@ function DyWorld_Pipepictures(TINT)
       priority = "extra-high",
       width = 64,
       height = 64,
+	  tint = TINT,
       hr_version =
       {
         filename = "__base__/graphics/entity/pipe/hr-pipe-vertical-window-background.png",
         priority = "extra-high",
         width = 128,
         height = 128,
+	    tint = TINT,
         scale = 0.5
       }
     },

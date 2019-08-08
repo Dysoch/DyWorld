@@ -421,6 +421,20 @@ Data_Entity = {
 			["iron-assembling-machine"] = 1,
 			["tin-gear-wheel"] = 4,
 		},
+		Refinery = true,
+		Refinery_Speed_Mod = 1.8,
+		Refinery_Next = "neutrobaltium",
+		Refinery_Ingredients = {
+			["tin-assembling-machine"] = 1,
+			["tin-gear-wheel"] = 4,
+		},
+		Chemical = true,
+		Chemical_Speed_Mod = 1.8,
+		Chemical_Next = "neutrobaltium",
+		Chemical_Ingredients = {
+			["tin-assembling-machine"] = 1,
+			["tin-gear-wheel"] = 4,
+		},
 	},
 --------------------------------------- TIER 3 --------------------------------------
 	["steel"] = {

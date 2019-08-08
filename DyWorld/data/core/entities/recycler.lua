@@ -11,7 +11,7 @@ data:extend(
 	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 1, result = "recycler"},
-    max_health = 50000,
+    max_health = 2000,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     light = {intensity = 1, size = 10},
@@ -50,7 +50,7 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 10000,
+      emissions_per_minute = 1000,
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =

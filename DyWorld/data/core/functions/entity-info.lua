@@ -52,7 +52,7 @@ Data_Entity = {
 		Pipe = true,
 		Pipe_Amount = 5,
 		Pipe_Range = 4,
-		Pipe_Next = "stone",
+		Pipe_Next = "nickel",
 		Pipe_Ingredients = {
 			["stone"] = 2,
 		},
@@ -333,6 +333,17 @@ Data_Entity = {
 			["nickel-gear-wheel"] = 10,
 			["electronic-circuit"] = 5,
 		},
+		Pipe = true,
+		Pipe_Amount = 10,
+		Pipe_Range = 8,
+		Pipe_Previous = "stone",
+		Pipe_Next = "bronze",
+		Pipe_Ingredients = {
+			["nickel-plate"] = 2,
+		},
+		Pipe_Underground_Ingredients = {
+			["nickel-plate"] = 10,
+		},
 	},
 	["silver"] = {
 		Belt = false,
@@ -555,6 +566,17 @@ Data_Entity = {
 		Loader_Ingredients = {
 			["iron-loader"] = 1,
 		},
+		Pipe = true,
+		Pipe_Amount = 15,
+		Pipe_Range = 14,
+		Pipe_Previous = "nickel",
+		Pipe_Next = "electrum",
+		Pipe_Ingredients = {
+			["bronze-plate"] = 2,
+		},
+		Pipe_Underground_Ingredients = {
+			["bronze-plate"] = 10,
+		},
 	},
 	["lead"] = {
 		Belt = false,
@@ -643,6 +665,17 @@ Data_Entity = {
 			["invar-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
 		},
+		Pipe = true,
+		Pipe_Amount = 20,
+		Pipe_Range = 20,
+		Pipe_Previous = "bronze",
+		Pipe_Next = "arditium",
+		Pipe_Ingredients = {
+			["electrum-plate"] = 2,
+		},
+		Pipe_Underground_Ingredients = {
+			["electrum-plate"] = 10,
+		},
 	},
 --------------------------------------- TIER 5 --------------------------------------
 	["stainless-steel"] = {
@@ -710,6 +743,17 @@ Data_Entity = {
 		Solar_Next = "titanium",
 		Solar_Ingredients = {
 			["arditium-plate"] = 4,
+		},
+		Pipe = true,
+		Pipe_Amount = 30,
+		Pipe_Range = 25,
+		Pipe_Previous = "electrum",
+		Pipe_Next = "tungsten",
+		Pipe_Ingredients = {
+			["arditium-plate"] = 2,
+		},
+		Pipe_Underground_Ingredients = {
+			["arditium-plate"] = 10,
 		},
 	},
 --------------------------------------- TIER 6 --------------------------------------
@@ -782,6 +826,17 @@ Data_Entity = {
 		Loader_Ingredients = {
 			["titanium-loader"] = 1,
 		},
+		Pipe = true,
+		Pipe_Amount = 50,
+		Pipe_Range = 30,
+		Pipe_Previous = "arditium",
+		Pipe_Next = "electranium",
+		Pipe_Ingredients = {
+			["tungsten-plate"] = 2,
+		},
+		Pipe_Underground_Ingredients = {
+			["tungsten-plate"] = 10,
+		},
 		Assembler = true,
 		Assembler_Speed_Mod = 1.56,
 		Assembler_Next = "electranium",
@@ -801,7 +856,6 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 7 --------------------------------------
 	["electranium"] = {
-		Belt = false,
 		Drill = true,
 		Drill_Speed = 12,
 		Drill_Range = 15,
@@ -810,6 +864,17 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
 			["titanium-electric-mining-drill"] = 1,
+		},
+		Pipe = true,
+		Pipe_Amount = 80,
+		Pipe_Range = 40,
+		Pipe_Previous = "tungsten",
+		Pipe_Next = "tungstvar",
+		Pipe_Ingredients = {
+			["electranium-plate"] = 2,
+		},
+		Pipe_Underground_Ingredients = {
+			["electranium-plate"] = 10,
 		},
 		Assembler = true,
 		Assembler_Speed_Mod = 1.54,
@@ -879,6 +944,17 @@ Data_Entity = {
 		},
 		Loader_Ingredients = {
 			["arditium-tungstenate-loader"] = 1,
+		},
+		Pipe = true,
+		Pipe_Amount = 100,
+		Pipe_Range = 50,
+		Pipe_Previous = "electranium",
+		Pipe_Next = "neutrobaltium",
+		Pipe_Ingredients = {
+			["tungstvar-plate"] = 2,
+		},
+		Pipe_Underground_Ingredients = {
+			["tungstvar-plate"] = 10,
 		},
 		Drill = true,
 		Drill_Speed = 15,
@@ -1034,7 +1110,18 @@ Data_Entity = {
 			["neutrobaltium-cable"] = 10,
 			["neutrobaltium-gear-wheel"] = 10,
 			["electronic-circuit"] = 25,
-		},		
+		},
+		Pipe = true,
+		Pipe_Amount = 200,
+		Pipe_Range = 75,
+		Pipe_Previous = "tungstvar",
+		Pipe_Next = "neutrobaltium",
+		Pipe_Ingredients = {
+			["neutrobaltium-plate"] = 2,
+		},
+		Pipe_Underground_Ingredients = {
+			["neutrobaltium-plate"] = 10,
+		},	
 	},
 	
 }

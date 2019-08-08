@@ -74,5 +74,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pipe-to-ground"].expensive.ingredients, Ingredient_2)
 		end
 	end
+	if v.DyWorld.Entity.Pipe_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Pipe_Previous.."-pipe-to-ground", amount = 2}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-pipe-to-ground"].normal.ingredients, Ingredient)
+	end
 end
 end

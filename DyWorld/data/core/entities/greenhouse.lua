@@ -111,9 +111,9 @@ data:extend(
     enabled = true,
     ingredients =
     {
-      {type = "item", name = "iron-plate", amount = 5*i},
-      {type = "item", name = "copper-plate", amount = 4*i},
-      {type = "item", name = "stone", amount = 2*i},
+      {type = "item", name = "stone-plate", amount = 5},
+      {type = "item", name = "wood", amount = 4},
+      {type = "item", name = "simple-control-board", amount = 1},
     },
     result = "greenhouse-"..i
   },
@@ -121,24 +121,36 @@ data:extend(
 )
 	if i == 2 then 
 		data.raw.recipe["greenhouse-"..i].ingredients = {}
-		local Insert_Recipe = {type = "item", name = "advanced-circuit", amount = 1}
+		local Insert_Recipe = {type = "item", name = "electronic-control-board", amount = 2}
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
-		local Insert_Recipe = {type = "item", name = "electronic-circuit", amount = 1}
+		local Insert_Recipe = {type = "item", name = "bronze-plate", amount = 10}
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
 	end
 	if i == 3 then 
 		data.raw.recipe["greenhouse-"..i].ingredients = {}
-		local Insert_Recipe = {type = "item", name = "electronic-circuit", amount = 1}
+		local Insert_Recipe = {type = "item", name = "tough-control-board", amount = 2}
+		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "cobalt-plate", amount = 15}
+		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "frame", amount = 1}
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
 	end
 	if i == 4 then 
 		data.raw.recipe["greenhouse-"..i].ingredients = {}
-		local Insert_Recipe = {type = "item", name = "electronic-circuit", amount = 1}
+		local Insert_Recipe = {type = "item", name = "logic-control-board", amount = 2}
+		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "titanium-plate", amount = 20}
+		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "heater", amount = 1}
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
 	end
 	if i == 5 then 
 		data.raw.recipe["greenhouse-"..i].ingredients = {}
-		local Insert_Recipe = {type = "item", name = "electronic-circuit", amount = 1}
+		local Insert_Recipe = {type = "item", name = "extreme-control-board", amount = 2}
+		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "tungstvar-plate", amount = 25}
+		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "housing", amount = 1}
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
 	end
 	if i >= 2 then 

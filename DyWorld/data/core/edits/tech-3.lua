@@ -1,5 +1,8 @@
 require "data/core/functions/prefix"
 
+local Tech_PreReq_Remove = {
+	["automation-3"] = {"production-science-pack"},
+}
 local Tech_PreReq = {
 	["smelting-2"] = {"silver-processing", "nickel-processing", "tin-processing"},
 	["smelting-3"] = {"lead-processing", "steel-processing", "gold-processing"},
@@ -11,6 +14,7 @@ local Tech_PreReq = {
 	["automation-3"] = {"lead-processing", "steel-processing", "gold-processing", "automation-2"},
 	["logistics-2"] = {"nickel-processing", "metallurgy-3"},
 	["logistics-3"] = {"logistics-2"},
+	["rocket-fuel"] = {"lead-processing"},
 	["automation-4"] = {"cobalt-processing"},
 	["automation-5"] = {"arditium-processing"},
 	["automation-6"] = {"tungsten-processing", "titanium-processing"},
@@ -41,6 +45,11 @@ local Tech_PreReq = {
 	["super-module-8"] = {"productivity-module-8", "speed-module-8", "effectivity-module-8", "pollution-module-8"},
 	["super-module-9"] = {"productivity-module-9", "speed-module-9", "effectivity-module-9", "pollution-module-9"},
 	["super-module-10"] = {"productivity-module-10", "speed-module-10", "effectivity-module-10", "pollution-module-10"},
+	["chemical-science-pack"] = {"solar-energy-3", "logistics-2", "intermediates-3"},
+	["logistic-science-pack"] = {"fast-inserter", "logistics", "tin-processing", "steel-processing", "intermediates-1"},
+	["military-science-pack"] = {"gun-turrets", "stone-wall", "intermediates-2"},
+	["production-science-pack"] = {"automation-4", "intermediates-4"},
+	["utility-science-pack"] = {"solar-energy-7", "automation-7", "intermediates-6"},
 } 
 
 for k,v in pairs(Tech_PreReq) do
@@ -51,6 +60,28 @@ for k,v in pairs(Tech_PreReq) do
 		for _,z in pairs(v) do
 			if data.raw.technology[z] then
 				table.insert(data.raw.technology[k].prerequisites,z)
+			end
+		end
+	end
+end
+
+function removeFirst(tbl, val)
+	for i, v in ipairs(tbl) do
+		if v == val then
+			return table.remove(tbl, i)
+		end
+	end
+end
+
+for k,v in pairs(Tech_PreReq_Remove) do
+	if data.raw.technology[k] then
+		if data.raw.technology[k].prerequisites then
+			for _,z in pairs(data.raw.technology[k].prerequisites) do
+				for _,x in pairs(v) do
+					if z == x then
+						removeFirst(data.raw.technology[k].prerequisites, x)
+					end
+				end
 			end
 		end
 	end
@@ -82,6 +113,7 @@ local Tech_Recipe_Add = {
 	["military-science-pack"] = {"science-4"},
 	["production-science-pack"] = {"science-5"},
 	["utility-science-pack"] = {"science-6"},
+	["oil-processing"] = {"crude-refined-oil-processing"},
 } 
 
 for k,v in pairs(Tech_Recipe_Add) do
@@ -110,3 +142,32 @@ for k,v in pairs(data.raw.technology) do
 		v.upgrade = true
 	end
 end
+
+local Tech_Science_Pack_Change = {
+	["automation-3"] = 3,
+	["logistics-3"] = 3,
+}
+
+for k,v in pairs(Tech_Science_Pack_Change) do
+	if v == 1 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1}}
+	elseif v == 2 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1}}
+	elseif v == 3 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 2},{"logistic-science-pack", 2}}
+	elseif v == 4 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
+	elseif v == 5 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 3},{"logistic-science-pack", 3},{"chemical-science-pack", 3}}
+	elseif v == 6 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
+	elseif v == 7 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 4},{"logistic-science-pack", 4},{"chemical-science-pack", 4},{"production-science-pack", 4}}
+	elseif v == 8 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1}}
+	elseif v == 9 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 5},{"logistic-science-pack", 5},{"chemical-science-pack", 5},{"production-science-pack", 5},{"utility-science-pack", 5}}
+	elseif v == 10 then
+		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 5},{"logistic-science-pack", 5},{"chemical-science-pack", 5},{"production-science-pack", 5},{"utility-science-pack", 5},{"space-science-pack", 10}}
+	end
+end	

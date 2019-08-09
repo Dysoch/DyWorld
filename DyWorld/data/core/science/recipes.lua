@@ -134,7 +134,7 @@ data:extend(
 
 
 DyWorld_Add_To_Recipe("science-3", "methane", 5, true)	
-DyWorld_Add_To_Recipe("science-3", "lubricant", 15, true)	
+DyWorld_Add_To_Recipe("science-3", "hydrogen", 150, true)	
 
 if settings.startup["DyWorld_Extraction"].value then
 	DyWorld_Add_To_Recipe("science-5", "cobalt-electric-mining-drill", 1)	
@@ -157,7 +157,7 @@ end
 
 if settings.startup["DyWorld_Power"].value then
 	DyWorld_Add_To_Recipe("science-3", "gold-solar-panel", 1)	
-	DyWorld_Add_To_Recipe("science-6", "tungstvar-solar-panel", 1)	
+	DyWorld_Add_To_Recipe("science-6", "electranium-solar-panel", 1)	
 else	
 	DyWorld_Add_To_Recipe("science-3", "solar-panel", 1)
 	DyWorld_Add_To_Recipe("science-6", "solar-panel", 5)
@@ -177,7 +177,7 @@ end
 
 if settings.startup["DyWorld_Warfare"].value then
 	DyWorld_Add_To_Recipe("science-4", "gun-turret", 1)	--TEMP
-	DyWorld_Add_To_Recipe("science-4", "iron-gate", 1)	
+	DyWorld_Add_To_Recipe("science-4", "stone-wall", 3)	
 else
 	DyWorld_Add_To_Recipe("science-4", "gun-turret", 1)	
 	DyWorld_Add_To_Recipe("science-4", "stone-wall", 1)	

@@ -70,6 +70,7 @@ require("data.core.fluids.metallurgy-fluids")
 -- Recipes & Recipes Related Functions
 require("data.core.recipes.metals")
 require("data.core.recipes.wood")
+require("data.core.recipes.oil")
 require("data.core.recipes.rocks")
 require("data.core.recipes.intermediates")
 require("data.core.recipes.fluids-air-filtering")

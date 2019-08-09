@@ -3,7 +3,7 @@ require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
 for k,v in pairs(data.raw.item) do
-if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Gate then	
+if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("gate", "gate", v.DyWorld.Name.."-gate", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.wall-2", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.max_health = Round((150 * (math.exp(v.DyWorld.Tier) * 0.2)), 0)
@@ -81,6 +81,17 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Gate then
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].expensive.ingredients, Ingredient_2)
+		end
+	end
+	if v.DyWorld.Entity.Wall_Previous then
+		if v.DyWorld.Entity.Wall_Previous == "stone" then
+			local Ingredient = {type = "item", name = "gate", amount = 1}
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].normal.ingredients, Ingredient)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].expensive.ingredients, Ingredient)
+		else
+			local Ingredient = {type = "item", name = v.DyWorld.Entity.Wall_Previous.."-gate", amount = 1}
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].normal.ingredients, Ingredient)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].expensive.ingredients, Ingredient)
 		end
 	end
 end

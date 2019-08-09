@@ -220,11 +220,11 @@ Data_Entity = {
 			["iron-gear-wheel"] = 4,
 		},
 		Wall = true,
+		Wall_Previous = "stone",
 		Wall_Next = "iron",
 		Wall_Ingredients = {
 			["iron-plate"] = 10,
 		},
-		Gate = true,
 		Gate_Ingredients = {
 			["iron-wall"] = 2,
 			["iron-plate"] = 10,
@@ -605,6 +605,16 @@ Data_Entity = {
 			["stone-brick"] = 4,
 			["iron-plate"] = 1,
 		},
+		Wall = true,
+		Wall_Previous = "iron",
+		Wall_Next = "invar",
+		Wall_Ingredients = {
+			["lead-plate"] = 10,
+		},
+		Gate_Ingredients = {
+			["lead-wall"] = 2,
+			["lead-plate"] = 10,
+		},
 	},
 --------------------------------------- TIER 4 --------------------------------------
 	["cobalt"] = {
@@ -654,6 +664,16 @@ Data_Entity = {
 		Solar_Next = "arditium",
 		Solar_Ingredients = {
 			["invar-plate"] = 4,
+		},
+		Wall = true,
+		Wall_Previous = "lead",
+		Wall_Next = "stainless-steel",
+		Wall_Ingredients = {
+			["invar-plate"] = 10,
+		},
+		Gate_Ingredients = {
+			["invar-wall"] = 2,
+			["invar-plate"] = 10,
 		},
 	},
 	["electrum"] = {
@@ -718,6 +738,16 @@ Data_Entity = {
 			["stainless-steel-stick"] = 10,
 			["stainless-steel-gear-wheel"] = 10,
 			["electronic-circuit"] = 25,
+		},
+		Wall = true,
+		Wall_Previous = "invar",
+		Wall_Next = "titanium",
+		Wall_Ingredients = {
+			["stainless-steel-plate"] = 10,
+		},
+		Gate_Ingredients = {
+			["stainless-steel-wall"] = 2,
+			["stainless-steel-plate"] = 10,
 		},
 	},
 	["arditium"] = {
@@ -804,7 +834,17 @@ Data_Entity = {
 			["titanium-cable"] = 10,
 			["titanium-gear-wheel"] = 10,
 			["electronic-circuit"] = 25,
-		},		
+		},	
+		Wall = true,
+		Wall_Previous = "stainless-steel",
+		Wall_Next = "arditium-tungstenate",
+		Wall_Ingredients = {
+			["titanium-plate"] = 10,
+		},
+		Gate_Ingredients = {
+			["titanium-wall"] = 2,
+			["titanium-plate"] = 10,
+		},	
 	},
 	["tungsten"] = {
 		Belt = true,
@@ -922,6 +962,16 @@ Data_Entity = {
 		Loader_Ingredients = {
 			["tungsten-loader"] = 1,
 		},
+		Wall = true,
+		Wall_Previous = "titanium",
+		Wall_Next = "tungstvar",
+		Wall_Ingredients = {
+			["arditium-tungstenate-plate"] = 10,
+		},
+		Gate_Ingredients = {
+			["arditium-tungstenate-wall"] = 2,
+			["arditium-tungstenate-plate"] = 10,
+		},
 	},
 --------------------------------------- TIER 8 --------------------------------------
 	["tungstvar"] = {
@@ -990,6 +1040,16 @@ Data_Entity = {
 			["tungstvar-plate"] = 50,
 			["tungstvar-stick"] = 10,
 			["electronic-circuit"] = 25,
+		},
+		Wall = true,
+		Wall_Previous = "arditium-tungstenate",
+		Wall_Next = "neutronium",
+		Wall_Ingredients = {
+			["tungstvar-plate"] = 10,
+		},
+		Gate_Ingredients = {
+			["tungstvar-wall"] = 2,
+			["tungstvar-plate"] = 10,
 		},		
 	},
 --------------------------------------- TIER 9 --------------------------------------
@@ -1021,9 +1081,19 @@ Data_Entity = {
 			["neutronium-plate"] = 50,
 			["neutronium-stick"] = 10,
 			["electronic-circuit"] = 25,
-		},		
+		},	
+		Wall = true,
+		Wall_Previous = "tungstvar",
+		Wall_Next = "neutrobaltium",
+		Wall_Ingredients = {
+			["neutronium-plate"] = 10,
+		},
+		Gate_Ingredients = {
+			["neutronium-wall"] = 2,
+			["neutronium-plate"] = 10,
+		},	
 	},
---------------------------------------- TIER 10 --------------------------------------
+--------------------------------------- TIER 10 -------------------------------------
 	["neutrobaltium"] = {
 		Belt = true,
 		Belt_Speed = 110,
@@ -1121,7 +1191,17 @@ Data_Entity = {
 		},
 		Pipe_Underground_Ingredients = {
 			["neutrobaltium-plate"] = 10,
-		},	
+		},
+		Wall = true,
+		Wall_Previous = "neutronium",
+		Wall_Next = "neutrobaltium",
+		Wall_Ingredients = {
+			["neutrobaltium-plate"] = 10,
+		},
+		Gate_Ingredients = {
+			["neutrobaltium-wall"] = 2,
+			["neutrobaltium-plate"] = 10,
+		},		
 	},
 	
 }

@@ -6,6 +6,11 @@ Data_Metallurgy = {
 		Stick = true,
 		Gear = true,
 		Molten = true,
+		Slag_Output = {
+			["copper"] = 13,
+			["nickel"] = 17,
+			["silver"] = 11,
+		},
 		Melting_Point = 1538,
 		Boiling_Point = 2862,
 	},
@@ -13,12 +18,21 @@ Data_Metallurgy = {
 		Ore = true,
 		Cable = true,
 		Molten = true,
+		Slag_Output = {
+			["iron"] = 13,
+			["tin"] = 17,
+			["gold"] = 7,
+		},
 		Melting_Point = 1084,
 		Boiling_Point = 2562,
 	},
 	["steel"] = {
 		Stick = true,
 		Molten = true,
+		Slag_Output = {
+			["iron"] = 23,
+			["tin"] = 17,
+		},
 		Mixed = true,
 		Mixed_Formula = {
 			["iron"] = 10,
@@ -34,6 +48,10 @@ Data_Metallurgy = {
 	["nickel"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["iron"] = 23,
+			["silver"] = 17,
+		},
 		Cable = true,
 		Gear = true,
 		Stick = true,
@@ -44,6 +62,10 @@ Data_Metallurgy = {
 	["silver"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["lead"] = 19,
+			["nickel"] = 17,
+		},
 		Stick = true,
 		Tech_Processing = true,
 		Melting_Point = 961,
@@ -52,6 +74,9 @@ Data_Metallurgy = {
 	["tin"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["copper"] = 19,
+		},
 		Cable = true,
 		Gear = true,
 		Tech_Processing = true,
@@ -61,6 +86,11 @@ Data_Metallurgy = {
 	["gold"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["silver"] = 19,
+			["iron"] = 19,
+			["lead"] = 19,
+		},
 		Cable = true,
 		Stick = true,
 		Tech_Processing = true,
@@ -70,13 +100,18 @@ Data_Metallurgy = {
 	["bronze"] = {
 		Cable = true,
 		Molten = true,
+		Slag_Output = {
+			["copper"] = 30,
+			["tin"] = 10,
+			["lead"] = 5,
+		},
 		Mixed = true,
 		Mixed_Formula = {
 			["copper"] = 12,
 			["tin"] = 2,
 		},
 		Mixed_Item = {
-			["stone"] = 1,
+			["stone"] = 3,
 		},
 		Stick = true,
 		Gear = true,
@@ -86,6 +121,9 @@ Data_Metallurgy = {
 	["lead"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["silver"] = 30,
+		},
 		Stick = true,
 		Gear = true,
 		Tech_Processing = true,
@@ -95,6 +133,10 @@ Data_Metallurgy = {
 	["cobalt"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["silver"] = 30,
+			["tin"] = 10,
+		},
 		Cable = true,
 		Stick = true,
 		Gear = true,
@@ -105,13 +147,18 @@ Data_Metallurgy = {
 	["invar"] = {
 		Cable = true,
 		Molten = true,
+		Slag_Output = {
+			["iron"] = 30,
+			["lead"] = 10,
+			["nickel"] = 10,
+		},
 		Mixed = true,
 		Mixed_Formula = {
 			["iron"] = 9,
 			["nickel"] = 4,
 		},
 		Mixed_Item = {
-			["stone"] = 1,
+			["resin"] = 5,
 		},
 		Stick = true,
 		Gear = true,
@@ -121,13 +168,17 @@ Data_Metallurgy = {
 	["electrum"] = {
 		Cable = true,
 		Molten = true,
+		Slag_Output = {
+			["gold"] = 30,
+			["silver"] = 10,
+		},
 		Mixed = true,
 		Mixed_Formula = {
 			["gold"] = 10,
 			["silver"] = 4,
 		},
 		Mixed_Item = {
-			["stone"] = 1,
+			["sand"] = 6,
 		},
 		Stick = true,
 		Melting_Point = 100, --N/A
@@ -136,13 +187,18 @@ Data_Metallurgy = {
 	["stainless-steel"] = {
 		Stick = true,
 		Molten = true,
+		Slag_Output = {
+			["steel"] = 30,
+			["lead"] = 10,
+			["nickel"] = 10,
+		},
 		Mixed = true,
 		Mixed_Formula = {
 			["steel"] = 10,
 			["nickel"] = 4,
 		},
 		Mixed_Item = {
-			["coal"] = 5,
+			["coal"] = 15,
 		},
 		Gear = true,
 		Melting_Point = 1643,
@@ -151,6 +207,10 @@ Data_Metallurgy = {
 	["arditium"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["gold"] = 30,
+			["silver"] = 10,
+		},
 		Gear = true,
 		Tech_Processing = true,
 		Melting_Point = 754,
@@ -159,6 +219,10 @@ Data_Metallurgy = {
 	["titanium"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["tungsten"] = 30,
+			["lead"] = 10,
+		},
 		Cable = true,
 		Stick = true,
 		Gear = true,
@@ -169,6 +233,10 @@ Data_Metallurgy = {
 	["tungsten"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["titanium"] = 30,
+			["lead"] = 10,
+		},
 		Stick = true,
 		Gear = true,
 		Tech_Processing = true,
@@ -178,13 +246,18 @@ Data_Metallurgy = {
 	["electranium"] = {
 		Cable = true,
 		Molten = true,
+		Slag_Output = {
+			["electrum"] = 30,
+			["arditium"] = 10,
+			["lead"] = 10,
+		},
 		Mixed = true,
 		Mixed_Formula = {
 			["electrum"] = 8,
 			["arditium"] = 6,
 		},
 		Mixed_Item = {
-			["stone"] = 1,
+			["coal"] = 4,
 		},
 		Stick = true,
 		Melting_Point = 512,
@@ -193,13 +266,17 @@ Data_Metallurgy = {
 	["arditium-tungstenate"] = {
 		Stick = true,
 		Molten = true,
+		Slag_Output = {
+			["tungsten"] = 30,
+			["arditium"] = 10,
+		},
 		Mixed = true,
 		Mixed_Formula = {
 			["arditium"] = 10,
 			["tungsten"] = 4,
 		},
 		Mixed_Item = {
-			["stone"] = 1,
+			["uranium-ore"] = 6,
 		},
 		Gear = true,
 		Melting_Point = 901,
@@ -208,13 +285,17 @@ Data_Metallurgy = {
 	["tungstvar"] = {
 		Stick = true,
 		Molten = true,
+		Slag_Output = {
+			["tungsten"] = 30,
+			["invar"] = 10,
+		},
 		Mixed = true,
 		Mixed_Formula = {
 			["invar"] = 7,
 			["tungsten"] = 7,
 		},
 		Mixed_Item = {
-			["stone"] = 1,
+			["sulfur"] = 14,
 		},
 		Melting_Point = 2189,
 		Boiling_Point = 9146,
@@ -222,6 +303,11 @@ Data_Metallurgy = {
 	["neutronium"] = {
 		Ore = true,
 		Molten = true,
+		Slag_Output = {
+			["copper"] = 30,
+			["iron"] = 10,
+			["bronze"] = 5,
+		},
 		Stick = true,
 		Tech_Processing = true,
 		Melting_Point = 4389,
@@ -230,6 +316,11 @@ Data_Metallurgy = {
 	["neutrobaltium"] = {
 		Cable = true,
 		Molten = true,
+		Slag_Output = {
+			["neutronium"] = 30,
+			["tungstvar"] = 10,
+			["cobalt"] = 5,
+		},
 		Mixed = true,
 		Mixed_Formula = {
 			["neutronium"] = 8,
@@ -238,7 +329,7 @@ Data_Metallurgy = {
 			["cobalt"] = 4,
 		},
 		Mixed_Item = {
-			["stone"] = 1,
+			["rocket-fuel"] = 10,
 		},
 		Stick = true,
 		Gear = true,

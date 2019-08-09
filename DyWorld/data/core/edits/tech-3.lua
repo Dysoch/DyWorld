@@ -47,9 +47,16 @@ local Tech_PreReq = {
 	["super-module-10"] = {"productivity-module-10", "speed-module-10", "effectivity-module-10", "pollution-module-10"},
 	["chemical-science-pack"] = {"solar-energy-3", "logistics-2", "intermediates-3"},
 	["logistic-science-pack"] = {"fast-inserter", "logistics", "tin-processing", "steel-processing", "intermediates-1"},
-	["military-science-pack"] = {"gun-turrets", "stone-wall", "intermediates-2"},
+	["military-science-pack"] = {"turrets", "stone-wall", "intermediates-2"},
 	["production-science-pack"] = {"automation-4", "intermediates-4"},
 	["utility-science-pack"] = {"solar-energy-7", "automation-7", "intermediates-6"},
+	["neutronium-processing"] = {"logistic-science-pack", "chemical-science-pack", "production-science-pack", "utility-science-pack"},
+	["tungsten-processing"] = {"logistic-science-pack", "chemical-science-pack", "production-science-pack"},
+	["titanium-processing"] = {"logistic-science-pack", "chemical-science-pack", "production-science-pack"},
+	["arditium-processing"] = {"logistic-science-pack", "chemical-science-pack"},
+	["cobalt-processing"] = {"logistic-science-pack", "chemical-science-pack"},
+	["lead-processing"] = {"logistic-science-pack"},
+	["gold-processing"] = {"logistic-science-pack"},
 } 
 
 for k,v in pairs(Tech_PreReq) do

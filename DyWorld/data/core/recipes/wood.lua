@@ -1,6 +1,6 @@
 require "data/core/functions/prefix"
 require "data/core/functions/colors"
--- Balancing here is just the tier in which is resides in the crafting menu (the number behind the =)
+
 
 local Data_Table = {
 	{

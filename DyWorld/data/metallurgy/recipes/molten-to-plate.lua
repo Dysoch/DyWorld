@@ -32,7 +32,7 @@ data:extend(
 	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = Molten_To_Plate_Molten_Amount * 5}},
 	  results = { 
 		{type = "item", name = v.DyWorld.Name.."-plate", amount = math.floor(Molten_To_Plate_Molten_Amount / Molten_To_Plate_Ratio)},
-		{type = "item", name = v.DyWorld.Name.."-slag", amount_min = 1, amount_max = 3, probability = 0.6},
+		{type = "item", name = v.DyWorld.Name.."-slag", amount_min = 1, amount_max = 3, probability = 0.4},
 	  },
 	},
   },

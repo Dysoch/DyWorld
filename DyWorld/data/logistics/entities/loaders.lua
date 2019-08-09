@@ -2,7 +2,6 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
---@todo change belt script to work with predefined data table
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("loader", "loader", v.DyWorld.Name.."-loader", true)
@@ -57,8 +56,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if v.DyWorld.Entity.Belt_Tech then
-		DyWorld_Add_To_Tech(v.DyWorld.Entity.Belt_Tech, v.DyWorld.Name.."-loader")
+	if data.raw.technology["logistics-"..(v.DyWorld.Tier-1)] and v.DyWorld.Tier >= 3 then
+		DyWorld_Add_To_Tech("logistics-"..(v.DyWorld.Tier-1), v.DyWorld.Name.."-loader")
+	elseif data.raw.technology["logistics"] and v.DyWorld.Tier == 2 then
+		DyWorld_Add_To_Tech("logistics", v.DyWorld.Name.."-loader")
 	end
 	if v.DyWorld.Entity.Loader_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Loader_Ingredients) do
@@ -68,21 +69,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Tier >= 7 then
-		local Ingredient = {type = "item", name = "processing-unit", amount = v.DyWorld.Tier * 3}
-		local Ingredient_2 = {type = "item", name = "processing-unit", amount = v.DyWorld.Tier * 15}
+	if v.DyWorld.Entity.Belt_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Belt_Previous.."-loader", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].normal.ingredients, Ingredient)
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient_2)
-	elseif v.DyWorld.Tier >= 4 then
-		local Ingredient = {type = "item", name = "advanced-circuit", amount = v.DyWorld.Tier * 2}
-		local Ingredient_2 = {type = "item", name = "advanced-circuit", amount = v.DyWorld.Tier * 10}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].normal.ingredients, Ingredient)
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient_2)
-	elseif v.DyWorld.Tier >= 1 then
-		local Ingredient = {type = "item", name = "electronic-circuit", amount = v.DyWorld.Tier * 1}
-		local Ingredient_2 = {type = "item", name = "electronic-circuit", amount = v.DyWorld.Tier * 5}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].normal.ingredients, Ingredient)
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient_2)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient)
 	end
 end
 end

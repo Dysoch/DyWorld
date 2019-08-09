@@ -2,7 +2,6 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
---@todo change belt script to work with predefined data table
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("underground-belt", "underground-belt", v.DyWorld.Name.."-underground-belt", true)
@@ -67,16 +66,23 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if v.DyWorld.Entity.Belt_Tech then
-		DyWorld_Add_To_Tech(v.DyWorld.Entity.Belt_Tech, v.DyWorld.Name.."-underground-belt")
+	if data.raw.technology["logistics-"..(v.DyWorld.Tier-1)] and v.DyWorld.Tier >= 3 then
+		DyWorld_Add_To_Tech("logistics-"..(v.DyWorld.Tier-1), v.DyWorld.Name.."-underground-belt")
+	elseif data.raw.technology["logistics"] and v.DyWorld.Tier == 2 then
+		DyWorld_Add_To_Tech("logistics", v.DyWorld.Name.."-underground-belt")
 	end
-	if v.DyWorld.Entity.Loader_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Loader_Ingredients) do
+	if v.DyWorld.Entity.Underground_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Underground_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-underground-belt"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-underground-belt"].expensive.ingredients, Ingredient_2)
 		end
+	end
+	if v.DyWorld.Entity.Belt_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Belt_Previous.."-underground-belt", amount = 2}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-underground-belt"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-underground-belt"].expensive.ingredients, Ingredient)
 	end
 end
 end

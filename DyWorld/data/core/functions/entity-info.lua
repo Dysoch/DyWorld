@@ -171,21 +171,20 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 9,
 		Belt_Range = 7,
+		Belt_Previous = "stone",
 		Belt_Next = "bronze",
-		Belt_Tech = "logistics",
 		Belt_Ingredients = {
 			["iron-gear-wheel"] = 4,
 			["iron-plate"] = 5,
-			["stone-transport-belt"] = 2,
 		},
 		Underground_Ingredients = {
-			["stone-underground-belt"] = 2,
+			["iron-plate"] = 5,
 		},
 		Splitter_Ingredients = {
-			["stone-splitter"] = 1,
+			["basic-control-board"] = 1,
 		},
 		Loader_Ingredients = {
-			["stone-loader"] = 1,
+			["basic-control-board"] = 1,
 		},
 		Drill = true,
 		Drill_Speed = 1,
@@ -452,21 +451,20 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 23,
 		Belt_Range = 14,
+		Belt_Previous = "bronze",
 		Belt_Next = "stainless-steel",
-		Belt_Tech = "logistics-3",
 		Belt_Ingredients = {
 			["steel-gear-wheel"] = 4,
 			["steel-plate"] = 5,
-			["bronze-transport-belt"] = 2,
 		},
 		Underground_Ingredients = {
-			["bronze-underground-belt"] = 2,
+			["steel-plate"] = 5,
 		},
 		Splitter_Ingredients = {
-			["bronze-splitter"] = 1,
+			["electronic-control-board"] = 1,
 		},
 		Loader_Ingredients = {
-			["bronze-loader"] = 1,
+			["electronic-control-board"] = 1,
 		},
 		Steam_Engine = true,
 		Steam_Engine_Next = "cobalt",
@@ -550,21 +548,20 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 15,
 		Belt_Range = 10,
+		Belt_Previous = "iron",
 		Belt_Next = "steel",
-		Belt_Tech = "logistics-2",
 		Belt_Ingredients = {
 			["electronic-circuit"] = 1,
 			["bronze-plate"] = 5,
-			["iron-transport-belt"] = 2,
 		},
 		Underground_Ingredients = {
-			["iron-underground-belt"] = 2,
+			["bronze-plate"] = 5,
 		},
 		Splitter_Ingredients = {
-			["iron-splitter"] = 1,
+			["electronic-control-board"] = 1,
 		},
 		Loader_Ingredients = {
-			["iron-loader"] = 1,
+			["electronic-control-board"] = 1,
 		},
 		Pipe = true,
 		Pipe_Amount = 15,
@@ -579,7 +576,6 @@ Data_Entity = {
 		},
 	},
 	["lead"] = {
-		Belt = false,
 		Drill = true,
 		Drill_Speed = 2.5,
 		Drill_Range = 8,
@@ -618,7 +614,6 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 4 --------------------------------------
 	["cobalt"] = {
-		Belt = false,
 		Drill = true,
 		Drill_Speed = 4,
 		Drill_Range = 10,
@@ -651,7 +646,6 @@ Data_Entity = {
 		},
 	},
 	["invar"] = {
-		Belt = false,
 		Assembler = true,
 		Assembler_Speed_Mod = 1.33,
 		Assembler_Next = "electrum",
@@ -677,7 +671,6 @@ Data_Entity = {
 		},
 	},
 	["electrum"] = {
-		Belt = false,
 		Assembler = true,
 		Assembler_Speed_Mod = 1.39,
 		Assembler_Next = "arditium",
@@ -702,21 +695,22 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 32,
 		Belt_Range = 17,
+		Belt_Previous = "steel",
 		Belt_Next = "titanium",
-		Belt_Tech = "logistics-4",
 		Belt_Ingredients = {
 			["stainless-steel-gear-wheel"] = 4,
 			["stainless-steel-plate"] = 5,
-			["steel-transport-belt"] = 2,
 		},
 		Underground_Ingredients = {
-			["steel-underground-belt"] = 2,
+			["stainless-steel-plate"] = 5,
 		},
 		Splitter_Ingredients = {
-			["steel-splitter"] = 1,
+			["tough-control-board"] = 1,
+			["logistic-unit"] = 1,
 		},
 		Loader_Ingredients = {
-			["steel-loader"] = 1,
+			["tough-control-board"] = 1,
+			["logistic-unit"] = 1,
 		},
 		Centrifuge = true,
 		Centrifuge_Speed_Mod = 1.35,
@@ -751,7 +745,6 @@ Data_Entity = {
 		},
 	},
 	["arditium"] = {
-		Belt = false,
 		Drill = true,
 		Drill_Speed = 6,
 		Drill_Range = 10,
@@ -791,22 +784,21 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 42,
 		Belt_Range = 21,
+		Belt_Previous = "stainless-steel",
 		Belt_Next = "tungsten",
-		Belt_Tech = "logistics-5",
 		Belt_Ingredients = {
 			["titanium-gear-wheel"] = 4,
 			["titanium-plate"] = 5,
-			["advanced-circuit"] = 1,
-			["stainless-steel-transport-belt"] = 2,
+			["logistic-unit"] = 1,
 		},
 		Underground_Ingredients = {
-			["stainless-steel-underground-belt"] = 2,
+			["titanium-plate"] = 5,
 		},
 		Splitter_Ingredients = {
-			["stainless-steel-splitter"] = 1,
+			["processing-control-board"] = 1,
 		},
 		Loader_Ingredients = {
-			["stainless-steel-loader"] = 1,
+			["processing-control-board"] = 1,
 		},
 		Drill = true,
 		Drill_Speed = 9,
@@ -850,21 +842,20 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 55,
 		Belt_Range = 26,
+		Belt_Previous = "titanium",
 		Belt_Next = "arditium-tungstenate",
-		Belt_Tech = "logistics-6",
 		Belt_Ingredients = {
 			["tungsten-gear-wheel"] = 4,
 			["tungsten-plate"] = 5,
-			["titanium-transport-belt"] = 2,
 		},
 		Underground_Ingredients = {
-			["titanium-underground-belt"] = 2,
+			["tungsten-plate"] = 5,
 		},
 		Splitter_Ingredients = {
-			["titanium-splitter"] = 1,
+			["processing-control-board"] = 1,
 		},
 		Loader_Ingredients = {
-			["titanium-loader"] = 1,
+			["processing-control-board"] = 1,
 		},
 		Pipe = true,
 		Pipe_Amount = 50,
@@ -946,21 +937,21 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 70,
 		Belt_Range = 32,
+		Belt_Previous = "tungsten",
 		Belt_Next = "tungstvar",
-		Belt_Tech = "logistics-7",
 		Belt_Ingredients = {
 			["arditium-tungstenate-gear-wheel"] = 4,
 			["arditium-tungstenate-plate"] = 5,
-			["tungsten-transport-belt"] = 2,
+			["controller"] = 1,
 		},
 		Underground_Ingredients = {
-			["tungsten-underground-belt"] = 2,
+			["arditium-tungstenate-plate"] = 5,
 		},
 		Splitter_Ingredients = {
-			["tungsten-splitter"] = 1,
+			["logic-control-board"] = 1,
 		},
 		Loader_Ingredients = {
-			["tungsten-loader"] = 1,
+			["logic-control-board"] = 1,
 		},
 		Wall = true,
 		Wall_Previous = "titanium",
@@ -978,22 +969,20 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 88,
 		Belt_Range = 38,
+		Belt_Previous = "arditium-tungstenate",
 		Belt_Next = "neutrobaltium",
-		Belt_Tech = "logistics-8",
 		Belt_Ingredients = {
 			["arditium-tungstenate-gear-wheel"] = 8,
 			["tungstvar-plate"] = 5,
-			["processing-unit"] = 1,
-			["arditium-tungstenate-transport-belt"] = 2,
 		},
 		Underground_Ingredients = {
-			["arditium-tungstenate-underground-belt"] = 2,
+			["tungstvar-plate"] = 5,
 		},
 		Splitter_Ingredients = {
-			["arditium-tungstenate-splitter"] = 1,
+			["super-control-board"] = 1,
 		},
 		Loader_Ingredients = {
-			["arditium-tungstenate-loader"] = 1,
+			["super-control-board"] = 1,
 		},
 		Pipe = true,
 		Pipe_Amount = 100,
@@ -1054,7 +1043,6 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 9 --------------------------------------
 	["neutronium"] = {
-		Belt = false,
 		Drill = true,
 		Drill_Speed = 19,
 		Drill_Range = 22,
@@ -1098,21 +1086,20 @@ Data_Entity = {
 		Belt = true,
 		Belt_Speed = 110,
 		Belt_Range = 50,
+		Belt_Previous = "tungstvar",
 		Belt_Next = "neutrobaltium",
-		Belt_Tech = "logistics-9",
 		Belt_Ingredients = {
 			["neutrobaltium-gear-wheel"] = 4,
 			["neutrobaltium-plate"] = 5,
-			["tungstvar-transport-belt"] = 2,
 		},
 		Underground_Ingredients = {
-			["tungstvar-underground-belt"] = 2,
+			["neutrobaltium-plate"] = 25,
 		},
 		Splitter_Ingredients = {
-			["tungstvar-splitter"] = 1,
+			["quantum-control-board"] = 1,
 		},
 		Loader_Ingredients = {
-			["tungstvar-loader"] = 1,
+			["quantum-control-board"] = 1,
 		},
 		Drill = true,
 		Drill_Speed = 25,
@@ -1143,16 +1130,6 @@ Data_Entity = {
 		Chemical_Ingredients = {
 			["neutronium-assembling-machine"] = 1,
 			["iron-gear-wheel"] = 4,
-		},
-		Wall = true,
-		Wall_Next = "neutrobaltium",
-		Wall_Ingredients = {
-			["neutrobaltium-plate"] = 10,
-		},
-		Gate = true,
-		Gate_Ingredients = {
-			["neutrobaltium-wall"] = 2,
-			["neutrobaltium-plate"] = 10,
 		},
 		Solar = true,
 		Solar_Production = 900,

@@ -51,19 +51,15 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	DyWorld_Prototype_Recipe.energy_required = 0
 	DyWorld_Prototype_Recipe.normal.energy_required = (2 * v.DyWorld.Tier) * v.DyWorld.Tier
 	DyWorld_Prototype_Recipe.expensive.energy_required = (2 * v.DyWorld.Tier) * v.DyWorld.Tier
-	if v.DyWorld.Tier == 1 then 
-		DyWorld_Prototype_Recipe.enabled = true
-		DyWorld_Prototype_Recipe.normal.enabled = true
-		DyWorld_Prototype_Recipe.expensive.enabled = true
-	else
-		DyWorld_Prototype_Recipe.enabled = false
-		DyWorld_Prototype_Recipe.normal.enabled = false
-		DyWorld_Prototype_Recipe.expensive.enabled = false
-	end
+	DyWorld_Prototype_Recipe.enabled = false
+	DyWorld_Prototype_Recipe.normal.enabled = false
+	DyWorld_Prototype_Recipe.expensive.enabled = false
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if data.raw.technology["construction-robotics-"..v.DyWorld.Tier] and v.DyWorld.Tier >= 2 then
+	if data.raw.technology["construction-robotics"] and v.DyWorld.Tier == 1 then 
+		DyWorld_Add_To_Tech("construction-robotics", v.DyWorld.Name.."-construction-robot")
+	elseif data.raw.technology["construction-robotics-"..v.DyWorld.Tier] and v.DyWorld.Tier >= 2 then
 		DyWorld_Add_To_Tech("construction-robotics-"..v.DyWorld.Tier, v.DyWorld.Name.."-construction-robot")
 	end
 	

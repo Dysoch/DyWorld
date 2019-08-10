@@ -9,6 +9,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("roboport", "roboport", v.DyWorld.Name.."-roboport", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.roboport-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.max_health = 1000 * v.DyWorld.Tier
+	DyWorld_Prototype_Entity.fast_replaceable_group = "roboport"
 	DyWorld_Prototype_Entity.base.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.base.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.base_patch.tint = Material_Colors[v.DyWorld.Name]
@@ -55,19 +56,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	DyWorld_Prototype_Recipe.energy_required = 0
 	DyWorld_Prototype_Recipe.normal.energy_required = (2 * v.DyWorld.Tier) * v.DyWorld.Tier
 	DyWorld_Prototype_Recipe.expensive.energy_required = (2 * v.DyWorld.Tier) * v.DyWorld.Tier
-	if v.DyWorld.Tier == 1 then 
-		DyWorld_Prototype_Recipe.enabled = true
-		DyWorld_Prototype_Recipe.normal.enabled = true
-		DyWorld_Prototype_Recipe.expensive.enabled = true
-	else
-		DyWorld_Prototype_Recipe.enabled = false
-		DyWorld_Prototype_Recipe.normal.enabled = false
-		DyWorld_Prototype_Recipe.expensive.enabled = false
-	end
+	DyWorld_Prototype_Recipe.enabled = false
+	DyWorld_Prototype_Recipe.normal.enabled = false
+	DyWorld_Prototype_Recipe.expensive.enabled = false
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if data.raw.technology["logistic-robotics-"..v.DyWorld.Tier] and v.DyWorld.Tier >= 2 then
+	if data.raw.technology["logistic-robotics"] and v.DyWorld.Tier == 1 then 
+		DyWorld_Add_To_Tech("logistic-robotics", v.DyWorld.Name.."-roboport")
+		DyWorld_Add_To_Tech("construction-robotics", v.DyWorld.Name.."-roboport")
+	elseif data.raw.technology["logistic-robotics-"..v.DyWorld.Tier] and v.DyWorld.Tier >= 2 then
 		DyWorld_Add_To_Tech("logistic-robotics-"..v.DyWorld.Tier, v.DyWorld.Name.."-roboport")
 		DyWorld_Add_To_Tech("construction-robotics-"..v.DyWorld.Tier, v.DyWorld.Name.."-roboport")
 	end

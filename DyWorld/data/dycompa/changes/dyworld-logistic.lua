@@ -13,6 +13,9 @@ local Change = {
 	{Old = "pipe", New = "stone-pipe"},
 	{Old = "pump", New = "stone-pump"},
 	{Old = "pipe-to-ground", New = "stone-pipe-to-ground"},
+	{Old = "roboport", New = "nickel-roboport"},
+	{Old = "construction-robot", New = "nickel-construction-robot"},
+	{Old = "logistic-robot", New = "nickel-logistic-robot"},
 }
 
 for k,v in pairs(Change) do

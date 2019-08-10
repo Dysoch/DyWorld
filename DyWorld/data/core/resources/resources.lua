@@ -233,7 +233,7 @@ data:extend(
 	{
 	  {
 		icon = dyworld_path_icon.."base-ore.png",
-		tint = v.Tint
+		tint = Material_Colors[v.Name],
 	  }
 	},
 	icon_size = 32,

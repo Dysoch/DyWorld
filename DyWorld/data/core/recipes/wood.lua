@@ -15,7 +15,7 @@ local Data_Table = {
 		Category = dy.."farming",
 		Multi_Output = {
 			{type = "item", name = "wood", amount_min = 1, amount_max = 25, probability = 0.95},
-			{type = "item", name = "acorn", amount_min = 1, amount_max = 10, probability = 0.5},
+			{type = "item", name = "acorn", amount_min = 1, amount_max = 4, probability = 0.45},
 		},
 		Icon = data.raw.item.wood.icon,
 		Subgroup = "0-resource",

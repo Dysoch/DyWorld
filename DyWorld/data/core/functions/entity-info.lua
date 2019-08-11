@@ -493,11 +493,14 @@ Data_Entity = {
 			},
 		},
 		Chemical = {
-			Chemical_Speed_Mod = 1.8,
-			Chemical_Next = "neutrobaltium",
+			Chemical_Speed_Mod = 1,
+			--Chemical_Previous = "neutrobaltium",
+			Chemical_Next = "invar",
 			Chemical_Ingredients = {
 				["tin-assembling-machine"] = 1,
 				["tin-gear-wheel"] = 4,
+				["tin-plate"] = 25,
+				["basic-control-board"] = 12,
 			},
 		},
 	},
@@ -838,6 +841,16 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["invar-wall"] = 2,
 				["invar-plate"] = 10,
+			},
+		},
+		Chemical = {
+			Chemical_Speed_Mod = 1.2,
+			Chemical_Previous = "tin",
+			Chemical_Next = "arditium-tungstenate",
+			Chemical_Ingredients = {
+				["invar-gear-wheel"] = 4,
+				["invar-plate"] = 25,
+				["advanced-control-board"] = 12,
 			},
 		},
 	},
@@ -1324,6 +1337,16 @@ Data_Entity = {
 				["logic-control-board"] = 25,
 			},
 		},
+		Chemical = {
+			Chemical_Speed_Mod = 1.4,
+			Chemical_Previous = "invar",
+			Chemical_Next = "neutronium",
+			Chemical_Ingredients = {
+				["arditium-tungstenate-gear-wheel"] = 4,
+				["arditium-tungstenate-plate"] = 25,
+				["logic-control-board"] = 12,
+			},
+		},
 	},
 --------------------------------------- TIER 8 --------------------------------------
 	["tungstvar"] = {
@@ -1483,6 +1506,16 @@ Data_Entity = {
 				["extreme-control-board"] = 2,
 			},
 		},
+		Chemical = {
+			Chemical_Speed_Mod = 1.55,
+			Chemical_Previous = "arditium-tungstenate",
+			Chemical_Next = "neutronium",
+			Chemical_Ingredients = {
+				["neutronium-stick"] = 4,
+				["neutronium-plate"] = 25,
+				["extreme-control-board"] = 12,
+			},
+		},
 	},
 --------------------------------------- TIER 10 -------------------------------------
 	["neutrobaltium"] = {
@@ -1560,14 +1593,6 @@ Data_Entity = {
 				["neutrobaltium-gear-wheel"] = 4,
 				["neutrobaltium-plate"] = 50,
 				["extreme-control-board"] = 25,
-			},
-		},
-		Chemical = {
-			Chemical_Speed_Mod = 1.8,
-			Chemical_Next = "neutrobaltium",
-			Chemical_Ingredients = {
-				["neutronium-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
 			},
 		},
 		Solar = {

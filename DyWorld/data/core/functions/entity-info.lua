@@ -482,11 +482,14 @@ Data_Entity = {
 			},
 		},
 		Refinery = {
-			Refinery_Speed_Mod = 1.8,
-			Refinery_Next = "neutrobaltium",
+			Refinery_Speed_Mod = 1,
+			--Refinery_Previous = "neutrobaltium",
+			Refinery_Next = "stainless-steel",
 			Refinery_Ingredients = {
 				["tin-assembling-machine"] = 1,
 				["tin-gear-wheel"] = 4,
+				["tin-plate"] = 50,
+				["basic-control-board"] = 25,
 			},
 		},
 		Chemical = {
@@ -950,6 +953,16 @@ Data_Entity = {
 				["tough-control-board"] = 2,
 			},
 		},
+		Refinery = {
+			Refinery_Speed_Mod = 1.25,
+			Refinery_Previous = "tin",
+			Refinery_Next = "arditium-tungstenate",
+			Refinery_Ingredients = {
+				["stainless-steel-gear-wheel"] = 4,
+				["stainless-steel-plate"] = 50,
+				["tough-control-board"] = 25,
+			},
+		},
 	},
 	["arditium"] = {
 		Drill = {
@@ -1301,6 +1314,16 @@ Data_Entity = {
 				["logic-control-board"] = 2,
 			},
 		},
+		Refinery = {
+			Refinery_Speed_Mod = 1.5,
+			Refinery_Previous = "stainless-steel",
+			Refinery_Next = "neutrobaltium",
+			Refinery_Ingredients = {
+				["arditium-tungstenate-gear-wheel"] = 4,
+				["arditium-tungstenate-plate"] = 50,
+				["logic-control-board"] = 25,
+			},
+		},
 	},
 --------------------------------------- TIER 8 --------------------------------------
 	["tungstvar"] = {
@@ -1531,10 +1554,12 @@ Data_Entity = {
 		},
 		Refinery = {
 			Refinery_Speed_Mod = 1.8,
+			Refinery_Previous = "arditium-tungstenate",
 			Refinery_Next = "neutrobaltium",
 			Refinery_Ingredients = {
-				["neutronium-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
+				["neutrobaltium-gear-wheel"] = 4,
+				["neutrobaltium-plate"] = 50,
+				["extreme-control-board"] = 25,
 			},
 		},
 		Chemical = {

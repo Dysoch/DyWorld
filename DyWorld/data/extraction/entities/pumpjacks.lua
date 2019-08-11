@@ -38,9 +38,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pumpjack then
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "pumpjack", v.DyWorld.Name.."-pumpjack", true)
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
-	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = (12 * v.DyWorld.Tier)}}
+	DyWorld_Prototype_Recipe.normal.ingredients = {}
 	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-pumpjack"
-	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-plate", amount = (25 * v.DyWorld.Tier)}}
+	DyWorld_Prototype_Recipe.expensive.ingredients = {}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-pumpjack"
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.pumpjack-1", {"looped-name."..v.DyWorld.Name}}
@@ -59,8 +59,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pumpjack then
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if data.raw.technology["automation-"..v.DyWorld.Tier] then
-		DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-pumpjack")
+	if data.raw.technology["fluid-handling-"..v.DyWorld.Tier] then
+		DyWorld_Add_To_Tech("fluid-handling-"..v.DyWorld.Tier, v.DyWorld.Name.."-pumpjack")
 	end
 	
 	if v.DyWorld.Entity.Pumpjack_Ingredients then
@@ -70,6 +70,11 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pumpjack then
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pumpjack"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pumpjack"].expensive.ingredients, Ingredient_2)
 		end
+	end
+	if v.DyWorld.Entity.Pumpjack_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Pumpjack_Previous.."-pumpjack", amount = 1}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-pumpjack"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-pumpjack"].expensive.ingredients, Ingredient)
 	end
 end
 end

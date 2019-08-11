@@ -197,12 +197,14 @@ Data_Entity = {
 		},
 		Pumpjack = true,
 		Pumpjack_Speed = 1,
-		Pumpjack_Range = 6,
-		Pumpjack_Next = "iron",
+		Pumpjack_Range = 3,
+		--Pumpjack_Previous = "iron",
+		Pumpjack_Next = "bronze",
 		Pumpjack_Ingredients = {
 			["electric-mining-drill"] = 1,
 			["iron-gear-wheel"] = 4,
 			["transport-belt"] = 2,
+			["basic-control-board"] = 3,
 		},
 		Assembler = true,
 		Assembler_Speed_Mod = 1.11,
@@ -600,6 +602,16 @@ Data_Entity = {
 		Pipe_Underground_Ingredients = {
 			["bronze-plate"] = 10,
 		},
+		Pumpjack = true,
+		Pumpjack_Speed = 1.75,
+		Pumpjack_Range = 6,
+		Pumpjack_Previous = "iron",
+		Pumpjack_Next = "electrum",
+		Pumpjack_Ingredients = {
+			["bronze-gear-wheel"] = 4,
+			["bronze-pipe"] = 2,
+			["electronic-control-board"] = 3,
+		},
 	},
 	["lead"] = {
 		Drill = true,
@@ -742,6 +754,16 @@ Data_Entity = {
 		Pipe_Underground_Ingredients = {
 			["electrum-plate"] = 10,
 		},
+		Pumpjack = true,
+		Pumpjack_Speed = 3,
+		Pumpjack_Range = 9,
+		Pumpjack_Previous = "bronze",
+		Pumpjack_Next = "arditium",
+		Pumpjack_Ingredients = {
+			["electrum-plate"] = 4,
+			["electrum-pipe"] = 2,
+			["electronic-control-board"] = 3,
+		},
 	},
 --------------------------------------- TIER 5 --------------------------------------
 	["stainless-steel"] = {
@@ -831,6 +853,16 @@ Data_Entity = {
 		Pipe_Underground_Ingredients = {
 			["arditium-plate"] = 10,
 		},
+		Pumpjack = true,
+		Pumpjack_Speed = 5,
+		Pumpjack_Range = 12,
+		Pumpjack_Previous = "electrum",
+		Pumpjack_Next = "titanium",
+		Pumpjack_Ingredients = {
+			["arditium-plate"] = 4,
+			["arditium-pipe"] = 2,
+			["tough-control-board"] = 3,
+		},
 		Robot = true,
 		Robot_Speed = 0.15,
 		Robot_Energy_Max_MJ = 6,
@@ -917,6 +949,16 @@ Data_Entity = {
 		Gate_Ingredients = {
 			["titanium-wall"] = 2,
 			["titanium-plate"] = 10,
+		},
+		Pumpjack = true,
+		Pumpjack_Speed = 7.5,
+		Pumpjack_Range = 16,
+		Pumpjack_Previous = "arditium",
+		Pumpjack_Next = "tungstvar",
+		Pumpjack_Ingredients = {
+			["titanium-plate"] = 4,
+			["tungsten-pipe"] = 2,
+			["processing-control-board"] = 3,
 		},	
 	},
 	["tungsten"] = {
@@ -1104,6 +1146,16 @@ Data_Entity = {
 		Pipe_Underground_Ingredients = {
 			["tungstvar-plate"] = 10,
 		},
+		Pumpjack = true,
+		Pumpjack_Speed = 12,
+		Pumpjack_Range = 20,
+		Pumpjack_Previous = "titanium",
+		Pumpjack_Next = "neutrobaltium",
+		Pumpjack_Ingredients = {
+			["tungstvar-plate"] = 4,
+			["tungstvar-pipe"] = 2,
+			["super-control-board"] = 3,
+		},	
 		Drill = true,
 		Drill_Speed = 15,
 		Drill_Range = 20,
@@ -1306,6 +1358,16 @@ Data_Entity = {
 		Pipe_Underground_Ingredients = {
 			["neutrobaltium-plate"] = 10,
 		},
+		Pumpjack = true,
+		Pumpjack_Speed = 16,
+		Pumpjack_Range = 25,
+		Pumpjack_Previous = "tungstvar",
+		Pumpjack_Next = "neutrobaltium",
+		Pumpjack_Ingredients = {
+			["neutrobaltium-plate"] = 4,
+			["neutrobaltium-pipe"] = 2,
+			["quantum-control-board"] = 3,
+		},	
 		Wall = true,
 		Wall_Previous = "neutronium",
 		Wall_Next = "neutrobaltium",

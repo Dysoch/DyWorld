@@ -150,7 +150,7 @@ Data_Entity = {
 			},
 		},
 		Pump = {
-			Pump_Next = "stone",
+			Pump_Next = "copper",
 			Pump_Speed = 150,
 			Pump_Amount = 50,
 			Pump_Ingredients = {
@@ -303,6 +303,17 @@ Data_Entity = {
 				["copper-plate"] = 5,
 				["iron-plate"] = 3,
 				["copper-cable"] = 1,
+			},
+		},
+		Pump = {
+			Pump_Previous = "stone",
+			Pump_Next = "steel",
+			Pump_Speed = 150 * 2,
+			Pump_Amount = 50 * 2,
+			Pump_Ingredients = {
+				["copper-plate"] = 2,
+				["nickel-pipe"] = 2,
+				["basic-control-board"] = 2,
 			},
 		},
 	},
@@ -518,6 +529,17 @@ Data_Entity = {
 				["steel-stick"] = 10,
 				["steel-gear-wheel"] = 10,
 				["electronic-circuit"] = 5,
+			},
+		},
+		Pump = {
+			Pump_Previous = "copper",
+			Pump_Next = "electrum",
+			Pump_Speed = 150 * 3,
+			Pump_Amount = 50 * 3,
+			Pump_Ingredients = {
+				["steel-plate"] = 2,
+				["bronze-pipe"] = 2,
+				["electronic-control-board"] = 2,
 			},
 		},
 	},
@@ -818,6 +840,17 @@ Data_Entity = {
 				["electrum-plate"] = 10,
 			},
 		},
+		Pump = {
+			Pump_Previous = "steel",
+			Pump_Next = "stainless-steel",
+			Pump_Speed = 150 * 4,
+			Pump_Amount = 50 * 4,
+			Pump_Ingredients = {
+				["electrum-plate"] = 2,
+				["electrum-pipe"] = 2,
+				["advanced-control-board"] = 2,
+			},
+		},
 		Pumpjack = {
 			Pumpjack_Speed = 3,
 			Pumpjack_Range = 9,
@@ -885,6 +918,17 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["stainless-steel-wall"] = 2,
 				["stainless-steel-plate"] = 10,
+			},
+		},
+		Pump = {
+			Pump_Previous = "electrum",
+			Pump_Next = "tungsten",
+			Pump_Speed = 150 * 5,
+			Pump_Amount = 50 * 5,
+			Pump_Ingredients = {
+				["stainless-steel-plate"] = 2,
+				["arditium-pipe"] = 2,
+				["tough-control-board"] = 2,
 			},
 		},
 	},
@@ -1074,6 +1118,17 @@ Data_Entity = {
 				["tungsten-plate"] = 10,
 			},
 		},
+		Pump = {
+			Pump_Previous = "stainless-steel",
+			Pump_Next = "arditium-tungstenate",
+			Pump_Speed = 150 * 6,
+			Pump_Amount = 50 * 6,
+			Pump_Ingredients = {
+				["tungsten-plate"] = 2,
+				["tungsten-pipe"] = 2,
+				["processing-control-board"] = 2,
+			},
+		},
 		Assembler = {
 			Assembler_Speed_Mod = 1.56,
 			Assembler_Next = "electranium",
@@ -1205,6 +1260,17 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["arditium-tungstenate-wall"] = 2,
 				["arditium-tungstenate-plate"] = 10,
+			},
+		},
+		Pump = {
+			Pump_Previous = "tungsten",
+			Pump_Next = "neutronium",
+			Pump_Speed = 150 * 7,
+			Pump_Amount = 50 * 7,
+			Pump_Ingredients = {
+				["arditium-tungstenate-plate"] = 2,
+				["electranium-pipe"] = 2,
+				["logic-control-board"] = 2,
 			},
 		},
 	},
@@ -1346,6 +1412,17 @@ Data_Entity = {
 				["neutronium-plate"] = 10,
 			},	
 		},
+		Pump = {
+			Pump_Previous = "arditium-tungstenate",
+			Pump_Next = "neutrobaltium",
+			Pump_Speed = 150 * 9,
+			Pump_Amount = 50 * 9,
+			Pump_Ingredients = {
+				["neutronium-plate"] = 2,
+				["tungstvar-pipe"] = 2,
+				["extreme-control-board"] = 2,
+			},
+		},
 	},
 --------------------------------------- TIER 10 -------------------------------------
 	["neutrobaltium"] = {
@@ -1471,6 +1548,17 @@ Data_Entity = {
 			},
 			Pipe_Underground_Ingredients = {
 				["neutrobaltium-plate"] = 10,
+			},
+		},
+		Pump = {
+			Pump_Previous = "neutronium",
+			Pump_Next = "neutrobaltium",
+			Pump_Speed = 150 * 10,
+			Pump_Amount = 50 * 10,
+			Pump_Ingredients = {
+				["neutrobaltium-plate"] = 2,
+				["neutrobaltium-pipe"] = 2,
+				["quantum-control-board"] = 2,
 			},
 		},
 		Pumpjack = {

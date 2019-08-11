@@ -9,7 +9,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pump then
 	DyWorld_Prototype_Entity.max_health = 150 * v.DyWorld.Tier
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.energy_usage = (90 * v.DyWorld.Tier).."kW"
-	DyWorld_Prototype_Entity.pumping_speed = v.DyWorld.Entity.Pump_Speed
+	DyWorld_Prototype_Entity.pumping_speed = v.DyWorld.Entity.Pump.Pump_Speed
 	DyWorld_Prototype_Entity.animations.north.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animations.north.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animations.east.tint = Material_Colors[v.DyWorld.Name]
@@ -18,9 +18,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pump then
 	DyWorld_Prototype_Entity.animations.south.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animations.west.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animations.west.hr_version.tint = Material_Colors[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.fluid_box.base_area = v.DyWorld.Entity.Pump_Amount / 10
+	DyWorld_Prototype_Entity.fluid_box.base_area = v.DyWorld.Entity.Pump.Pump_Amount / 10
 	DyWorld_Prototype_Entity.fast_replaceable_group = "pump"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Pump_Next.."-pump"
+	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Pump.Pump_Next.."-pump"
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/pump.png",
@@ -67,13 +67,18 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pump then
 		DyWorld_Add_To_Tech("logistics-"..v.DyWorld.Tier, v.DyWorld.Name.."-pump")
 	end
 	
-	if v.DyWorld.Entity.Pump_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Pump_Ingredients) do
+	if v.DyWorld.Entity.Pump.Pump_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Pump.Pump_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pump"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pump"].expensive.ingredients, Ingredient_2)
 		end
+	end
+	if v.DyWorld.Entity.Pump.Pump_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Pump.Pump_Previous.."-pump", amount = 1}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-pump"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-pump"].expensive.ingredients, Ingredient)
 	end
 end
 end

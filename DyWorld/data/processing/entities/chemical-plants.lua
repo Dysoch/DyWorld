@@ -11,8 +11,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Chemical then
 	DyWorld_Prototype_Entity.module_specification.module_slots = 2 + v.DyWorld.Tier
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.fast_replaceable_group = "chemical-plant"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Chemical_Next.."-chemical-plant"
-	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Chemical_Speed_Mod), 2)
+	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Chemical.Chemical_Next.."-chemical-plant"
+	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Chemical.Chemical_Speed_Mod), 2)
 	DyWorld_Prototype_Entity.energy_usage = (250 * v.DyWorld.Tier).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
@@ -60,13 +60,18 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Chemical then
 	if data.raw.technology["oil-processing-"..v.DyWorld.Tier] then
 		DyWorld_Add_To_Tech("oil-processing-"..v.DyWorld.Tier, v.DyWorld.Name.."-chemical-plant")
 	end
-	if v.DyWorld.Entity.Chemical_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Chemical_Ingredients) do
+	if v.DyWorld.Entity.Chemical.Chemical_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Chemical.Chemical_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-chemical-plant"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-chemical-plant"].expensive.ingredients, Ingredient_2)
 		end
+	end
+	if v.DyWorld.Entity.Chemical.Chemical_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Chemical.Chemical_Previous.."-chemical-plant", amount = 1}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-chemical-plant"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-chemical-plant"].expensive.ingredients, Ingredient)
 	end
 end
 end

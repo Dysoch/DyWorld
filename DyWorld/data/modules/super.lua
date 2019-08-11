@@ -13,10 +13,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Super_Module then
 	DyWorld_Prototype_Item.category = "super"
 	DyWorld_Prototype_Item.subgroup = dy.."super-module"
 	DyWorld_Prototype_Item.effect = {
-      productivity = {bonus = v.DyWorld.Entity.Super_Module_Productivity_Boost},
-      consumption = {bonus = v.DyWorld.Entity.Super_Module_Consumption_Boost},
-      pollution = {bonus = v.DyWorld.Entity.Super_Module_Pollution_Boost},
-      speed = {bonus = v.DyWorld.Entity.Super_Module_Speed_Boost}
+      productivity = {bonus = v.DyWorld.Entity.Super_Module.Super_Module_Productivity_Boost},
+      consumption = {bonus = v.DyWorld.Entity.Super_Module.Super_Module_Consumption_Boost},
+      pollution = {bonus = v.DyWorld.Entity.Super_Module.Super_Module_Pollution_Boost},
+      speed = {bonus = v.DyWorld.Entity.Super_Module.Super_Module_Speed_Boost}
     }
 	DyWorld_Prototype_Item.icons = {
 	  {
@@ -53,8 +53,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Super_Module then
 		end
 	end
 	
-	if v.DyWorld.Entity.Super_Module_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Super_Module_Ingredients) do
+	if v.DyWorld.Entity.Super_Module.Super_Module_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Super_Module.Super_Module_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-super-module"].normal.ingredients, Ingredient)

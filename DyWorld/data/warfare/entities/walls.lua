@@ -10,7 +10,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.pictures = DyWorld_Wall_Pictures(Material_Colors[v.DyWorld.Name])
 	DyWorld_Prototype_Entity.fast_replaceable_group = "wall"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Wall_Next.."-wall"
+	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Wall.Wall_Next.."-wall"
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/wall.png",
@@ -57,16 +57,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then
 		DyWorld_Add_To_Tech("defensive-structures-"..v.DyWorld.Tier, v.DyWorld.Name.."-wall")
 	end
 	
-	if v.DyWorld.Entity.Wall_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Wall_Ingredients) do
+	if v.DyWorld.Entity.Wall.Wall_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Wall.Wall_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-wall"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-wall"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Wall_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Wall_Previous.."-wall", amount = 1}
+	if v.DyWorld.Entity.Wall.Wall_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Wall.Wall_Previous.."-wall", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-wall"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-wall"].expensive.ingredients, Ingredient)
 	end

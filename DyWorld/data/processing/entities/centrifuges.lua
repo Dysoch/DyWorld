@@ -74,8 +74,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Centrifuge then
       off_when_no_fluid_recipe = false
     }
 	DyWorld_Prototype_Entity.fast_replaceable_group = "centrifuge"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Centrifuge_Next.."-centrifuge"
-	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Centrifuge_Speed_Mod), 2)
+	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Centrifuge.Centrifuge_Next.."-centrifuge"
+	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Centrifuge.Centrifuge_Speed_Mod), 2)
 	DyWorld_Prototype_Entity.energy_usage = (350 * v.DyWorld.Tier).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
@@ -122,13 +122,18 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Centrifuge then
 	if data.raw.technology["automation-"..v.DyWorld.Tier] and v.DyWorld.Tier > 1 then
 		DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-centrifuge")
 	end
-	if v.DyWorld.Entity.Centrifuge_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Centrifuge_Ingredients) do
+	if v.DyWorld.Entity.Centrifuge.Centrifuge_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Centrifuge.Centrifuge_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-centrifuge"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-centrifuge"].expensive.ingredients, Ingredient_2)
 		end
+	end
+	if v.DyWorld.Entity.Centrifuge.Centrifuge_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Centrifuge.Centrifuge_Previous.."-centrifuge", amount = 1}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-centrifuge"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-centrifuge"].expensive.ingredients, Ingredient)
 	end
 end
 end

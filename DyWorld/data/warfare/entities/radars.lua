@@ -9,14 +9,14 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Radar then
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("radar", "radar", v.DyWorld.Name.."-radar", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.radar-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.max_health = 250 * v.DyWorld.Tier
-	DyWorld_Prototype_Entity.max_distance_of_sector_revealed = v.DyWorld.Entity.Radar_Scan_Range
-	DyWorld_Prototype_Entity.max_distance_of_nearby_sector_revealed = v.DyWorld.Entity.Radar_Active_Range
+	DyWorld_Prototype_Entity.max_distance_of_sector_revealed = v.DyWorld.Entity.Radar.Radar_Scan_Range
+	DyWorld_Prototype_Entity.max_distance_of_nearby_sector_revealed = v.DyWorld.Entity.Radar.Radar_Active_Range
 	DyWorld_Prototype_Entity.pictures.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.pictures.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.energy_usage = (150 + (150 * v.DyWorld.Tier)).."kW"
 	DyWorld_Prototype_Entity.fast_replaceable_group = "radar"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Radar_Next.."-radar"
+	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Radar.Radar_Next.."-radar"
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/radar.png",
@@ -63,17 +63,18 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Radar then
 		DyWorld_Add_To_Tech("defensive-structures-"..v.DyWorld.Tier, v.DyWorld.Name.."-radar")
 	end
 	
-	if v.DyWorld.Entity.Radar_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Radar_Ingredients) do
+	if v.DyWorld.Entity.Radar.Radar_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Radar.Radar_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-radar"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-radar"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Radar_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Radar_Previous.."-radar", amount = 1}
+	if v.DyWorld.Entity.Radar.Radar_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Radar.Radar_Previous.."-radar", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-radar"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-radar"].expensive.ingredients, Ingredient)
 	end
 end
 end

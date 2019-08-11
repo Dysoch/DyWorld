@@ -13,10 +13,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Steam_Engine then
 	DyWorld_Prototype_Entity.vertical_animation.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.fast_replaceable_group = "steam"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Steam_Engine_Next.."-steam-engine"
-	DyWorld_Prototype_Entity.fluid_usage_per_tick = v.DyWorld.Entity.Steam_Engine_Fluid_Usage
-	DyWorld_Prototype_Entity.effectivity = v.DyWorld.Entity.Steam_Engine_Effectivity
-	DyWorld_Prototype_Entity.maximum_temperature = v.DyWorld.Entity.Steam_Engine_Maximum_Temperature
+	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Steam_Engine.Steam_Engine_Next.."-steam-engine"
+	DyWorld_Prototype_Entity.fluid_usage_per_tick = v.DyWorld.Entity.Steam_Engine.Steam_Engine_Fluid_Usage
+	DyWorld_Prototype_Entity.effectivity = v.DyWorld.Entity.Steam_Engine.Steam_Engine_Effectivity
+	DyWorld_Prototype_Entity.maximum_temperature = v.DyWorld.Entity.Steam_Engine.Steam_Engine_Maximum_Temperature
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/steam-engine.png",
@@ -63,17 +63,18 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Steam_Engine then
 		DyWorld_Add_To_Tech("steam-energy-"..v.DyWorld.Tier, v.DyWorld.Name.."-steam-engine")
 	end
 	
-	if v.DyWorld.Entity.Steam_Engine_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Steam_Engine_Ingredients) do
+	if v.DyWorld.Entity.Steam_Engine.Steam_Engine_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Steam_Engine.Steam_Engine_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-steam-engine"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-steam-engine"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Steam_Engine_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Steam_Engine_Previous.."-steam-engine", amount = 1}
+	if v.DyWorld.Entity.Steam_Engine.Steam_Engine_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Steam_Engine.Steam_Engine_Previous.."-steam-engine", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-steam-engine"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-steam-engine"].expensive.ingredients, Ingredient)
 	end
 end
 end

@@ -16,10 +16,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	DyWorld_Prototype_Entity.idle_with_cargo.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.idle_with_cargo.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.max_payload_size = v.DyWorld.Tier
-	DyWorld_Prototype_Entity.speed = v.DyWorld.Entity.Robot_Speed
-	DyWorld_Prototype_Entity.max_energy = v.DyWorld.Entity.Robot_Energy_Max_MJ.."MJ"
-	DyWorld_Prototype_Entity.energy_per_tick = v.DyWorld.Entity.Robot_Energy_Tick_KJ.."kJ"
-	DyWorld_Prototype_Entity.energy_per_move = v.DyWorld.Entity.Robot_Energy_Move_KJ.."kJ"
+	DyWorld_Prototype_Entity.speed = v.DyWorld.Entity.Robot.Robot_Speed
+	DyWorld_Prototype_Entity.max_energy = v.DyWorld.Entity.Robot.Robot_Energy_Max_MJ.."MJ"
+	DyWorld_Prototype_Entity.energy_per_tick = v.DyWorld.Entity.Robot.Robot_Energy_Tick_KJ.."kJ"
+	DyWorld_Prototype_Entity.energy_per_move = v.DyWorld.Entity.Robot.Robot_Energy_Move_KJ.."kJ"
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.icons = {
 	  {
@@ -63,17 +63,18 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 		DyWorld_Add_To_Tech("logistic-robotics-"..v.DyWorld.Tier, v.DyWorld.Name.."-logistic-robot")
 	end
 	
-	if v.DyWorld.Entity.Logistic_Robot_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Logistic_Robot_Ingredients) do
+	if v.DyWorld.Entity.Robot.Logistic_Robot_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Robot.Logistic_Robot_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-logistic-robot"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-logistic-robot"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Robot_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Robot_Previous.."-logistic-robot", amount = 1}
+	if v.DyWorld.Entity.Robot.Robot_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Robot.Robot_Previous.."-logistic-robot", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-logistic-robot"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-logistic-robot"].expensive.ingredients, Ingredient)
 	end
 end
 end

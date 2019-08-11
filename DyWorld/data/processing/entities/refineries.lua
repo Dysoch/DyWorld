@@ -11,8 +11,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Refinery then
 	DyWorld_Prototype_Entity.module_specification.module_slots = 0 + v.DyWorld.Tier
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.fast_replaceable_group = "refinery"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Refinery_Next.."-oil-refinery"
-	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Refinery_Speed_Mod), 2)
+	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Refinery.Refinery_Next.."-oil-refinery"
+	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Refinery.Refinery_Speed_Mod), 2)
 	DyWorld_Prototype_Entity.energy_usage = (250 * v.DyWorld.Tier).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
@@ -60,13 +60,18 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Refinery then
 	if data.raw.technology["oil-processing-"..v.DyWorld.Tier] then
 		DyWorld_Add_To_Tech("oil-processing-"..v.DyWorld.Tier, v.DyWorld.Name.."-oil-refinery")
 	end
-	if v.DyWorld.Entity.Refinery_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Refinery_Ingredients) do
+	if v.DyWorld.Entity.Refinery.Refinery_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Refinery.Refinery_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-oil-refinery"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-oil-refinery"].expensive.ingredients, Ingredient_2)
 		end
+	end
+	if v.DyWorld.Entity.Refinery.Refinery_Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Refinery.Refinery_Previous.."-oil-refinery", amount = 1}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-oil-refinery"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-oil-refinery"].expensive.ingredients, Ingredient)
 	end
 end
 end

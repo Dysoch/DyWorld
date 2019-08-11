@@ -104,7 +104,7 @@ data:extend({
 		name = "DyWorld_Stack_Size_Mult",
 		setting_type = "startup",
 		default_value = 1,
-        maximum_value = 10000,
+        maximum_value = 4200000000,
         minimum_value = 1,
 	},
 	{

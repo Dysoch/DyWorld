@@ -7,58 +7,71 @@ function Round(num, numDecimalPlaces)
 	return math.floor(num * mult + 0.5) / mult
 end
 
+function StackSizeCheck(StackSize)
+	local Multi = settings.startup["DyWorld_Stack_Size_Mult"].value
+	if (Round((StackSize * Multi), 0)) >= 4200000000 then
+		return 4200000000
+	else
+		return (Round((StackSize * Multi), 0))
+	end
+end
+
 if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
 ---------------------------------- Enemies -------------------------------------------
 	for k,v in pairs(data.raw.unit) do	
-		v.max_health = math.floor(v.max_health * 0.5)
-		v.healing_per_tick = v.healing_per_tick * 0.5
+		v.max_health = math.floor(v.max_health * 0.25)
+		v.healing_per_tick = v.healing_per_tick * 0.25
 	end	
 	for k,v in pairs(data.raw.turret) do	
-		v.max_health = math.floor(v.max_health * 0.5)
-		v.healing_per_tick = v.healing_per_tick * 0.5
-		v.call_for_help_radius = math.floor(v.call_for_help_radius * 0.5)
+		v.max_health = math.floor(v.max_health * 0.25)
+		v.healing_per_tick = v.healing_per_tick * 0.25
+		v.call_for_help_radius = math.floor(v.call_for_help_radius * 0.25)
 	end	
 	for k,v in pairs(data.raw["unit-spawner"]) do	
-		v.max_health = math.floor(v.max_health * 0.5)
-		v.healing_per_tick = v.healing_per_tick * 0.5
-		v.max_count_of_owned_units = math.floor(v.max_count_of_owned_units * 0.5)
-		v.max_friends_around_to_spawn = math.floor(v.max_friends_around_to_spawn * 0.5)
-		v.call_for_help_radius = math.floor(v.call_for_help_radius * 0.5)
-		v.spawning_cooldown[1] = v.spawning_cooldown[1] * 2
-		v.spawning_cooldown[2] = v.spawning_cooldown[2] * 2
+		v.max_health = math.floor(v.max_health * 0.25)
+		v.healing_per_tick = v.healing_per_tick * 0.25
+		v.max_count_of_owned_units = math.floor(v.max_count_of_owned_units * 0.25)
+		v.max_friends_around_to_spawn = math.floor(v.max_friends_around_to_spawn * 0.25)
+		v.call_for_help_radius = math.floor(v.call_for_help_radius * 0.25)
+		v.spawning_cooldown[1] = v.spawning_cooldown[1] * 2.5
+		v.spawning_cooldown[2] = v.spawning_cooldown[2] * 2.5
 	end	
 -------------------------------- Stack Sizes -----------------------------------------
 	for k, v in pairs(data.raw.item) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = Round((v.stack_size * 10000), 0)
+		v.stack_size = 1000000000
 	end
 	for k, v in pairs(data.raw.ammo) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = Round((v.stack_size * 50000), 0)
+		v.stack_size = 1000000000
 	end
 	for k, v in pairs(data.raw.gun) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = Round((v.stack_size * 50000), 0)
+		v.stack_size = 1000000000
 	end
 	for k, v in pairs(data.raw["repair-tool"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = Round((v.stack_size * 50000), 0)
+		v.stack_size = 1000000000
 	end
 	for k, v in pairs(data.raw["capsule"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = Round((v.stack_size * 50000), 0)
+		v.stack_size = 1000000000
 	end
 	for k, v in pairs(data.raw["module"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = Round((v.stack_size * 50000), 0)
+		v.stack_size = 1000000000
+	end
+	for k, v in pairs(data.raw["item-with-entity-data"]) do
+		v.default_request_amount = v.stack_size
+		v.stack_size = 1000000000
 	end
 	for k, v in pairs(data.raw["tool"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = Round((v.stack_size * 50000), 0)
+		v.stack_size = 1000000000
 	end
 	for k, v in pairs(data.raw["rail-planner"]) do
 		v.default_request_amount = v.stack_size
-		v.stack_size = Round((v.stack_size * 50000), 0)
+		v.stack_size = 1000000000
 	end
 ---------------------------------  Resources -----------------------------------------
 	for k, v in pairs(data.raw.resource) do
@@ -77,6 +90,9 @@ if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
 			end
 			if v.autoplace.richness_base then
 				v.autoplace.richness_base = v.autoplace.richness_base * 1000
+			end
+			if v.autoplace.starting_area_amount then
+				v.autoplace.starting_area_amount = v.autoplace.starting_area_amount * 500
 			end
 			if v.autoplace.starting_rq_factor_multiplier then
 				v.autoplace.starting_rq_factor_multiplier = v.autoplace.starting_rq_factor_multiplier * 1000
@@ -169,35 +185,39 @@ else
 	if settings.startup["DyWorld_Stack_Size_Mult"].value > 1 then
 		for k, v in pairs(data.raw.item) do
 			v.default_request_amount = v.stack_size
-			v.stack_size = Round((v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value), 0)
+			v.stack_size = StackSizeCheck(v.stack_size)
 		end
 		for k, v in pairs(data.raw.ammo) do
 			v.default_request_amount = v.stack_size
-			v.stack_size = Round((v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value), 0)
+			v.stack_size = StackSizeCheck(v.stack_size)
 		end
 		for k, v in pairs(data.raw.gun) do
 			v.default_request_amount = v.stack_size
-			v.stack_size = Round((v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value), 0)
+			v.stack_size = StackSizeCheck(v.stack_size)
 		end
 		for k, v in pairs(data.raw["repair-tool"]) do
 			v.default_request_amount = v.stack_size
-			v.stack_size = Round((v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value), 0)
+			v.stack_size = StackSizeCheck(v.stack_size)
 		end
 		for k, v in pairs(data.raw["capsule"]) do
 			v.default_request_amount = v.stack_size
-			v.stack_size = Round((v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value), 0)
+			v.stack_size = StackSizeCheck(v.stack_size)
 		end
 		for k, v in pairs(data.raw["module"]) do
 			v.default_request_amount = v.stack_size
-			v.stack_size = Round((v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value), 0)
+			v.stack_size = StackSizeCheck(v.stack_size)
+		end
+		for k, v in pairs(data.raw["item-with-entity-data"]) do
+			v.default_request_amount = v.stack_size
+			v.stack_size = StackSizeCheck(v.stack_size)
 		end
 		for k, v in pairs(data.raw["tool"]) do
 			v.default_request_amount = v.stack_size
-			v.stack_size = Round((v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value), 0)
+			v.stack_size = StackSizeCheck(v.stack_size)
 		end
 		for k, v in pairs(data.raw["rail-planner"]) do
 			v.default_request_amount = v.stack_size
-			v.stack_size = Round((v.stack_size*settings.startup["DyWorld_Stack_Size_Mult"].value), 0)
+			v.stack_size = StackSizeCheck(v.stack_size)
 		end
 	end
 ------------------------- Infinite Resources -----------------------------------------

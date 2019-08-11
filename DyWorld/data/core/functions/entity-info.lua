@@ -235,10 +235,11 @@ Data_Entity = {
 		},
 		Furnace = {
 			Furnace_Speed_Mod = 1.11,
-			Furnace_Next = "iron",
+			Furnace_Next = "steel",
 			Furnace_Ingredients = {
 				["assembling-machine-1"] = 1,
-				["iron-gear-wheel"] = 4,
+				["basic-control-board"] = 4,
+				["iron-plate"] = 15,
 			},
 		},
 		Wall = {
@@ -542,6 +543,15 @@ Data_Entity = {
 				["electronic-control-board"] = 2,
 			},
 		},
+		Furnace = {
+			Furnace_Speed_Mod = 1.16,
+			Furnace_Previous = "iron",
+			Furnace_Next = "cobalt",
+			Furnace_Ingredients = {
+				["electronic-control-board"] = 4,
+				["steel-plate"] = 15,
+			},
+		},
 	},
 	["gold"] = {
 		Solar = {
@@ -788,6 +798,15 @@ Data_Entity = {
 				["cobalt-plate"] = 5,
 				["housing"] = 1,
 				["advanced-control-board"] = 5,
+			},
+		},
+		Furnace = {
+			Furnace_Speed_Mod = 1.25,
+			Furnace_Previous = "steel",
+			Furnace_Next = "tungsten",
+			Furnace_Ingredients = {
+				["advanced-control-board"] = 4,
+				["cobalt-plate"] = 15,
 			},
 		},
 	},
@@ -1147,6 +1166,15 @@ Data_Entity = {
 				["iron-plate"] = 1,
 			},
 		},
+		Furnace = {
+			Furnace_Speed_Mod = 1.4,
+			Furnace_Previous = "cobalt",
+			Furnace_Next = "tungstvar",
+			Furnace_Ingredients = {
+				["processing-control-board"] = 4,
+				["tungsten-plate"] = 15,
+			},
+		},
 	},
 --------------------------------------- TIER 7 --------------------------------------
 	["electranium"] = {
@@ -1368,6 +1396,15 @@ Data_Entity = {
 				["tungstvar-plate"] = 10,
 			},	
 		},	
+		Furnace = {
+			Furnace_Speed_Mod = 1.6,
+			Furnace_Previous = "tungsten",
+			Furnace_Next = "neutrobaltium",
+			Furnace_Ingredients = {
+				["super-control-board"] = 4,
+				["tungstvar-plate"] = 15,
+			},
+		},
 	},
 --------------------------------------- TIER 9 --------------------------------------
 	["neutronium"] = {
@@ -1581,6 +1618,15 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["neutrobaltium-wall"] = 2,
 				["neutrobaltium-plate"] = 10,
+			},
+		},
+		Furnace = {
+			Furnace_Speed_Mod = 2,
+			Furnace_Previous = "tungstvar",
+			Furnace_Next = "neutrobaltium",
+			Furnace_Ingredients = {
+				["quantum-control-board"] = 4,
+				["neutrobaltium-plate"] = 15,
 			},
 		},
 	},

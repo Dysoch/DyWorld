@@ -242,13 +242,15 @@ script.on_event(defines.events.on_tick, function(event)
 			end
 		end
 	end
-	if event.tick%(60*5)==1 then
+	if event.tick%(60*5)==1 and global.dyworld.Players ~= 0 then
 		if global.dyworld.RPG_Mode == "normal" then
-			for k,v in pairs(global.players) do
-				if v.State_Stats_GUI and v.Alive and v.Playing then
-				local player = game.players[v.PlayerID]
-					gui_1_closeGUI(player, v.PlayerID)
-					gui_1_openGui(player, v.PlayerID)
+			if global.players then
+				for k,v in pairs(global.players) do
+					if v.State_Stats_GUI and v.Alive and v.Playing then
+					local player = game.players[v.PlayerID]
+						gui_1_closeGUI(player, v.PlayerID)
+						gui_1_openGui(player, v.PlayerID)
+					end
 				end
 			end
 		end
@@ -258,6 +260,10 @@ end)
 -- keybinding hooks
 script.on_event("DyWorld_Stats", function(event)
 	if global.dyworld.RPG_Mode == "normal" then
+		if not global.players or not global.players[event.player_index] then
+			local player = game.players[event.player_index]
+			Player_Startup(player, event.player_index)
+		end
 		local player = game.players[event.player_index]
 		gui_1_closeGUI(player, event.player_index)
 		if global.players[event.player_index].State_Distance_GUI then
@@ -275,6 +281,10 @@ script.on_event("DyWorld_Stats", function(event)
 end)
 script.on_event("DyWorld_Distance", function(event)
 	if global.dyworld.RPG_Mode == "normal" then
+		if not global.players or not global.players[event.player_index] then
+			local player = game.players[event.player_index]
+			Player_Startup(player, event.player_index)
+		end
 		local player = game.players[event.player_index]
 		if global.players[event.player_index].State_Stats_GUI then
 			global.players[event.player_index].State_Stats_GUI = false
@@ -291,12 +301,20 @@ script.on_event("DyWorld_Distance", function(event)
 end)
 script.on_event("DyWorld_RoadMap", function(event)
 	if global.dyworld.RPG_Mode == "normal" then
+		if not global.players or not global.players[event.player_index] then
+			local player = game.players[event.player_index]
+			Player_Startup(player, event.player_index)
+		end
 		local player = game.players[event.player_index]
 		gui_3_toggleGui(player)
 	end
 end)
 script.on_event("DyWorld_Skills", function(event)
 	if global.dyworld.RPG_Mode == "normal" then
+		if not global.players or not global.players[event.player_index] then
+			local player = game.players[event.player_index]
+			Player_Startup(player, event.player_index)
+		end
 		local player = game.players[event.player_index]
 		gui_2_toggleGui(player)
 		BodySkills(event.player_index)
@@ -304,6 +322,10 @@ script.on_event("DyWorld_Skills", function(event)
 end)
 script.on_event("DyWorld_Guide", function(event)
 	if global.dyworld.RPG_Mode == "normal" then
+		if not global.players or not global.players[event.player_index] then
+			local player = game.players[event.player_index]
+			Player_Startup(player, event.player_index)
+		end
 		local player = game.players[event.player_index]
 		gui_6_toggleGui(player)
 	end

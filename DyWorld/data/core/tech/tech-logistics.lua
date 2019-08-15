@@ -12,6 +12,14 @@ local Data_Table = {
 		Military = false,
 	},
 	{
+		Name = "storage-solutions",
+		Icon = {{icon = dyworld_path_tech.."warehouse-research.png"}},
+		Pre_Req_Above = 2,
+		Tiers = 5,
+		Count = 50,
+		Military = false,
+	},
+	{
 		Name = "construction-robotics",
 		Icon = {{icon = "__base__/graphics/technology/logistics.png"}},
 		Pre_Req_Above = 3,

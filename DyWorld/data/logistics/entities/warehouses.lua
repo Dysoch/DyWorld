@@ -26,7 +26,7 @@ data:extend({
 		collision_box = {{-2.7, -2.7}, {2.7, 2.7}},
 		selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
 		fast_replaceable_group = "container",
-		inventory_size = 1800,
+		inventory_size = 2200,
 		scale_info_icons = true,
 		picture =
 		{
@@ -64,12 +64,22 @@ function createLogisticContainer(name, logistic_type)
 	return p
 end
 
-
-local warehouse_passive_provider_Entity = createLogisticContainer("warehouse", "passive-provider")
+local warehouse_active_provider = createLogisticContainer("warehouse", "active-provider")
+local warehouse_passive_provider = createLogisticContainer("warehouse", "passive-provider")
+local warehouse_storage = createLogisticContainer("warehouse", "storage")
+warehouse_storage.logistic_slots_count = 1
+local warehouse_buffer = createLogisticContainer("warehouse", "buffer")
+warehouse_buffer.logistic_slots_count = 24
+local warehouse_requester = createLogisticContainer("warehouse", "requester")
+warehouse_requester.logistic_slots_count = 24
 
 
 data:extend({
-	warehouse_passive_provider_Entity,
+	warehouse_active_provider,
+	warehouse_passive_provider,
+	warehouse_storage,
+	warehouse_buffer,
+	warehouse_requester,
 	{
 		type = "item",
 		name = "warehouse-basic",
@@ -88,6 +98,46 @@ data:extend({
 		subgroup = "logistic-network",
 		order = "warehouse-passive-provider",
 		place_result = "warehouse-passive-provider",
+		stack_size = 50,
+	},
+	{
+		type = "item",
+		name = "warehouse-active-provider",
+		icon = dyworld_path_icon.."warehouse-active-provider.png",
+		icon_size = 32,
+		subgroup = "logistic-network",
+		order = "warehouse-active-provider",
+		place_result = "warehouse-active-provider",
+		stack_size = 50,
+	},
+	{
+		type = "item",
+		name = "warehouse-buffer",
+		icon = dyworld_path_icon.."warehouse-buffer.png",
+		icon_size = 32,
+		subgroup = "logistic-network",
+		order = "warehouse-buffer",
+		place_result = "warehouse-buffer",
+		stack_size = 50,
+	},
+	{
+		type = "item",
+		name = "warehouse-requester",
+		icon = dyworld_path_icon.."warehouse-requester.png",
+		icon_size = 32,
+		subgroup = "logistic-network",
+		order = "warehouse-requester",
+		place_result = "warehouse-requester",
+		stack_size = 50,
+	},
+	{
+		type = "item",
+		name = "warehouse-storage",
+		icon = dyworld_path_icon.."warehouse-storage.png",
+		icon_size = 32,
+		subgroup = "logistic-network",
+		order = "warehouse-storage",
+		place_result = "warehouse-storage",
 		stack_size = 50,
 	},
 	{ 
@@ -110,60 +160,69 @@ data:extend({
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "logistic-chest-passive-provider", 1 },
 			{ "steel-plate", 10 },
 			{ "iron-stick", 15 },
 		},
 		energy_required = 5,
 		result = "warehouse-passive-provider",
 	},
-	{
-		type = "technology",
-		name = "warehouse-research",
-		icon = dyworld_path_tech.."warehouse-research.png",
-		icon_size = 128,
-		effects =
+	{ 
+		type = "recipe",
+		name = "warehouse-active-provider",
+		enabled = false,
+		ingredients =
 		{
-			{
-				type = "unlock-recipe",
-				recipe = "warehouse-basic",
-			},
+			{ "warehouse-basic", 1 },
+			{ "steel-plate", 10 },
+			{ "iron-stick", 15 },
 		},
-		prerequisites = { "steel-processing" },
-		unit =
-		{
-			count = 50,
-			ingredients =
-			{
-				{ "automation-science-pack", 1 },
-				{ "logistic-science-pack", 1 },
-			},
-			time = 30
-		},
-		order = "c-a"
+		energy_required = 5,
+		result = "warehouse-active-provider",
 	},
-	{
-		type = "technology",
-		name = "warehouse-logistics-research-1",
-		icon = dyworld_path_tech.."warehouse-logistics-research.png",
-		icon_size = 128,
-		effects =
+	{ 
+		type = "recipe",
+		name = "warehouse-storage",
+		enabled = false,
+		ingredients =
 		{
-			{
-				type = "unlock-recipe",
-				recipe = "warehouse-passive-provider",
-			},
+			{ "warehouse-basic", 1 },
+			{ "steel-plate", 10 },
+			{ "iron-stick", 15 },
 		},
-		prerequisites = { "warehouse-research", "robotics" },
-		unit =
+		energy_required = 5,
+		result = "warehouse-storage",
+	},
+	{ 
+		type = "recipe",
+		name = "warehouse-requester",
+		enabled = false,
+		ingredients =
 		{
-			count = 150,
-			ingredients = {
-				{ "automation-science-pack", 1 },
-				{ "logistic-science-pack", 1 },
-			},
-			time = 30
+			{ "warehouse-basic", 1 },
+			{ "steel-plate", 10 },
+			{ "iron-stick", 15 },
 		},
-		order = "c-k-a"
+		energy_required = 5,
+		result = "warehouse-requester",
+	},
+	{ 
+		type = "recipe",
+		name = "warehouse-buffer",
+		enabled = false,
+		ingredients =
+		{
+			{ "warehouse-basic", 1 },
+			{ "steel-plate", 10 },
+			{ "iron-stick", 15 },
+		},
+		energy_required = 5,
+		result = "warehouse-buffer",
 	},
 })
+
+DyWorld_Add_To_Tech("storage-solutions-2", "warehouse-basic")
+DyWorld_Add_To_Tech("storage-solutions-3", "warehouse-passive-provider")
+DyWorld_Add_To_Tech("storage-solutions-4", "warehouse-storage")
+DyWorld_Add_To_Tech("storage-solutions-4", "warehouse-requester")
+DyWorld_Add_To_Tech("storage-solutions-5", "warehouse-active-provider")
+DyWorld_Add_To_Tech("storage-solutions-5", "warehouse-buffer")

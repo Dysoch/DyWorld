@@ -29,6 +29,7 @@ local Tech_PreReq = {
 	["metallurgy-8"] = {"smelting-8"},
 	["metallurgy-9"] = {"neutronium-processing", "smelting-9"},
 	["metallurgy-10"] = {"smelting-10"},
+	["storage-solutions-2"] = {"concrete", "tin-processing", "steel-processing"},
 	["pollution-module-1"] = {"modules"},
 	["logistic-robotics-2"] = {"logistic-robotics"},
 	["construction-robotics-2"] = {"construction-robotics"},

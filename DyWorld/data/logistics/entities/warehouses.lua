@@ -147,8 +147,9 @@ data:extend({
 		ingredients =
 		{
 			{ "steel-plate", 200 },
-			{ "stone-brick", 40 },
-			{ "iron-stick", 85 },
+			{ "concrete", 40 },
+			{ "tin-plate", 20 },
+			{ "basic-control-board", 50 },
 		},
 		energy_required = 30,
 		result = "warehouse-basic",
@@ -160,8 +161,8 @@ data:extend({
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "steel-plate", 10 },
-			{ "iron-stick", 15 },
+			{ "electronic-control-board", 25 },
+			{ "frame", 15 },
 		},
 		energy_required = 5,
 		result = "warehouse-passive-provider",
@@ -173,8 +174,8 @@ data:extend({
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "steel-plate", 10 },
-			{ "iron-stick", 15 },
+			{ "tough-control-board", 25 },
+			{ "logistic-unit", 1 },
 		},
 		energy_required = 5,
 		result = "warehouse-active-provider",
@@ -186,8 +187,8 @@ data:extend({
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "steel-plate", 10 },
-			{ "iron-stick", 15 },
+			{ "advanced-control-board", 25 },
+			{ "housing", 2 },
 		},
 		energy_required = 5,
 		result = "warehouse-storage",
@@ -199,8 +200,8 @@ data:extend({
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "steel-plate", 10 },
-			{ "iron-stick", 15 },
+			{ "advanced-control-board", 25 },
+			{ "housing", 2 },
 		},
 		energy_required = 5,
 		result = "warehouse-requester",
@@ -212,8 +213,8 @@ data:extend({
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "steel-plate", 10 },
-			{ "iron-stick", 15 },
+			{ "tough-control-board", 25 },
+			{ "logistic-unit", 1 },
 		},
 		energy_required = 5,
 		result = "warehouse-buffer",

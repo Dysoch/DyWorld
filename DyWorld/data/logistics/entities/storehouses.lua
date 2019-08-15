@@ -146,9 +146,9 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-			{ "steel-plate", 200 },
-			{ "stone-brick", 40 },
-			{ "iron-stick", 85 },
+			{ "iron-plate", 200 },
+			{ "stone-plate", 40 },
+			{ "simple-control-board", 25 },
 		},
 		energy_required = 30,
 		result = "storehouse-basic",
@@ -160,8 +160,8 @@ data:extend({
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "steel-plate", 10 },
 			{ "iron-stick", 15 },
+			{ "basic-control-board", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-passive-provider",
@@ -173,8 +173,8 @@ data:extend({
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "steel-plate", 10 },
-			{ "iron-stick", 15 },
+			{ "housing", 1 },
+			{ "advanced-control-board", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-active-provider",
@@ -186,8 +186,8 @@ data:extend({
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "steel-plate", 10 },
-			{ "iron-stick", 15 },
+			{ "frame", 8 },
+			{ "electronic-control-board", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-storage",
@@ -199,8 +199,8 @@ data:extend({
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "steel-plate", 10 },
-			{ "iron-stick", 15 },
+			{ "frame", 8 },
+			{ "electronic-control-board", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-requester",
@@ -212,8 +212,8 @@ data:extend({
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "steel-plate", 10 },
-			{ "iron-stick", 15 },
+			{ "housing", 1 },
+			{ "advanced-control-board", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-buffer",

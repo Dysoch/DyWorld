@@ -51,7 +51,7 @@ local Tech_PreReq = {
 	["military-science-pack"] = {"turrets", "stone-wall", "intermediates-2", "lead-processing", "gold-processing"},
 	["production-science-pack"] = {"automation-4", "intermediates-4", "cobalt-processing", "arditium-processing"},
 	["utility-science-pack"] = {"solar-energy-7", "automation-7", "intermediates-6", "production-science-pack", "titanium-processing", "tungsten-processing"},
-	["space-science-pack"] = {"intermediates-7", "utility-science-pack", "titanium-processing"},
+	["space-science-pack"] = {"intermediates-7", "utility-science-pack", "titanium-processing", "solar-energy-6", "metallurgy-7"},
 	["neutronium-processing"] = {"logistic-science-pack", "chemical-science-pack", "production-science-pack", "utility-science-pack"},
 	["tungsten-processing"] = {"logistic-science-pack", "chemical-science-pack", "production-science-pack"},
 	["titanium-processing"] = {"logistic-science-pack", "chemical-science-pack", "production-science-pack"},
@@ -60,6 +60,9 @@ local Tech_PreReq = {
 	["lead-processing"] = {"logistic-science-pack"},
 	["gold-processing"] = {"logistic-science-pack"},
 	["fluid-handling-2"] = {"fluid-handling"},
+	["low-density-structure"] = {"intermediates-3", "metallurgy-4"},
+	["rocket-control-unit"] = {"intermediates-6", "metallurgy-5"},
+	["rocket-silo"] = {"intermediates-6", "metallurgy-7", "logistics-5", "tungsten-processing"},
 } 
 
 for k,v in pairs(Tech_PreReq) do
@@ -103,7 +106,7 @@ local Tech_Recipe_Add = {
 	["intermediates-3"] = {"housing", "intake", "advanced-control-board"},
 	["intermediates-4"] = {"logistic-unit", "diamond", "tough-control-board"},
 	["intermediates-5"] = {"processing-control-board"},
-	["intermediates-6"] = {"logic-control-board"},
+	["intermediates-6"] = {"logic-control-board", "controller"},
 	["intermediates-7"] = {"super-control-board"},
 	["intermediates-8"] = {"extreme-control-board"},
 	["intermediates-9"] = {"quantum-control-board"},

@@ -8,6 +8,9 @@ function gui_5_RefreshGUI(player, id)
 	local force = player.force
 	local frame = player.gui.top.add{type = "frame", name = "dyworld_distance_gui", direction = "vertical", caption = {"dyworld_distance_gui.title"}}
 	local frameflow = frame.add{type = "flow", name = "flow", direction = "vertical"}
+	local DyWorld_Distance_Map_Tags = settings.get_player_settings(game.players[id])["DyWorld_Distance_Map_Tags"].value
+	local DyWorld_Distance_Resource_Tags = settings.get_player_settings(game.players[id])["DyWorld_Distance_Resource_Tags"].value
+	local DyWorld_Distance_Player_Tags = settings.get_player_settings(game.players[id])["DyWorld_Distance_Player_Tags"].value
 	for k,v in pairs(global.players) do
 		if v.Alive then
 			if not v.PlayerID == id then
@@ -69,16 +72,28 @@ function gui_5_RefreshGUI(player, id)
 			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_m", (5), (math.floor(getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_5_PosX, global.dyworld.Generation_Ship_5_PosY)))}}
 		end
 	end
-	for k,v in pairs(game.forces.player.find_chart_tags("nauvis")) do
-		if nil then 
-			return 
-		else
-			if math.floor(getDistance(global.players[id].PosX, global.players[id].PosY, v.position.x, v.position.y)) >= 1000 then
-				frameflow.add{type = "label", caption = {"dyworld_distance_gui.tag_km", (v.text or "NULL"), Round(getDistance(global.players[id].PosX, global.players[id].PosY, v.position.x, v.position.y)/1000, 3)}}
+	if DyWorld_Distance_Map_Tags then
+		for k,v in pairs(game.forces.player.find_chart_tags("nauvis")) do
+			if nil then 
+				return 
 			else
-				frameflow.add{type = "label", caption = {"dyworld_distance_gui.tag_m", (v.text or "NULL"), (math.floor(getDistance(global.players[id].PosX, global.players[id].PosY, v.position.x, v.position.y)))}}
+				if math.floor(getDistance(global.players[id].PosX, global.players[id].PosY, v.position.x, v.position.y)) >= 1000 then
+					frameflow.add{type = "label", caption = {"dyworld_distance_gui.tag_km", (v.text or "NULL"), Round(getDistance(global.players[id].PosX, global.players[id].PosY, v.position.x, v.position.y)/1000, 3)}}
+				else
+					frameflow.add{type = "label", caption = {"dyworld_distance_gui.tag_m", (v.text or "NULL"), (math.floor(getDistance(global.players[id].PosX, global.players[id].PosY, v.position.x, v.position.y)))}}
+				end
 			end
 		end
+	else
+		frameflow.add{type = "label", caption = {"dyworld_distance_gui.map-tag-disabled"}}
+	end
+	if DyWorld_Distance_Resource_Tags then
+	else
+		frameflow.add{type = "label", caption = {"dyworld_distance_gui.resource-tag-disabled"}}
+	end
+	if DyWorld_Distance_Player_Tags then
+	else
+		frameflow.add{type = "label", caption = {"dyworld_distance_gui.player-tag-disabled"}}
 	end
 end
 

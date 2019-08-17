@@ -13,7 +13,7 @@ function gui_3_toggleGui(player)
 	scroll.style.top_padding = 5
 	scroll.style.bottom_padding = 5
 	scroll.style.maximal_height = 300
-		if global.RoadmapTotal == 100 then
+		if global.RoadmapTotal >= 90 then
 			frameflow.add{type = "label", style = "dyworld_stats_divider_header_label", caption = "Testing Phase! (Playing, Balancing and Graphics)"}
 		else
 			frameflow.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_roadmap_gui.roadmap_999", (global.RoadmapTotal)}}

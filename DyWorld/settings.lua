@@ -115,6 +115,28 @@ data:extend({
         maximum_value = 1000000,
         minimum_value = 1,
 	},
+	----- Per Player Settings -----
+    {
+        type = "bool-setting",
+        name = "DyWorld_Distance_Map_Tags",
+		order = "a",
+        setting_type = "runtime-per-user",
+        default_value = true
+    },
+    {
+        type = "bool-setting",
+        name = "DyWorld_Distance_Resource_Tags",
+		order = "a",
+        setting_type = "runtime-per-user",
+        default_value = false
+    },
+    {
+        type = "bool-setting",
+        name = "DyWorld_Distance_Player_Tags",
+		order = "a",
+        setting_type = "runtime-per-user",
+        default_value = false
+    },
 })
 
 Warfare_Modes =

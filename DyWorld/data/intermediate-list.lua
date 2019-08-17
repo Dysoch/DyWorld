@@ -30,7 +30,6 @@
 "copper-plate" = Copper Plate
 "iron-plate" = Iron Plate
 "copper-cable" = Copper Cable
-"iron-stick" = Iron Stick
 "iron-gear-wheel" = Iron Gear
 "nickel-stick" = Nickel Stick
 "nickel-plate" = Nickel Plate

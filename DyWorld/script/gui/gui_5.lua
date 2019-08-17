@@ -49,6 +49,26 @@ function gui_5_RefreshGUI(player, id)
 			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_m", (3), (math.floor(getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_3_PosX, global.dyworld.Generation_Ship_3_PosY)))}}
 		end
 	end
+	if not global.players[id].Ship_4_Visited then
+		if getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_4_PosX, global.dyworld.Generation_Ship_4_PosY) <= 10 then
+			global.players[id].Ship_4_Visited = true
+		end
+		if getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_4_PosX, global.dyworld.Generation_Ship_4_PosY) >= 1000 then
+			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_km", (4), (Round(getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_4_PosX, global.dyworld.Generation_Ship_4_PosY)/1000, 3))}}
+		else
+			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_m", (4), (math.floor(getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_4_PosX, global.dyworld.Generation_Ship_4_PosY)))}}
+		end
+	end
+	if not global.players[id].Ship_5_Visited then
+		if getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_5_PosX, global.dyworld.Generation_Ship_5_PosY) <= 10 then
+			global.players[id].Ship_5_Visited = true
+		end
+		if getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_5_PosX, global.dyworld.Generation_Ship_5_PosY) >= 1000 then
+			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_km", (5), (Round(getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_5_PosX, global.dyworld.Generation_Ship_5_PosY)/1000, 3))}}
+		else
+			frameflow.add{type = "label", caption = {"dyworld_distance_gui.ship_m", (5), (math.floor(getDistance(global.players[id].PosX, global.players[id].PosY, global.dyworld.Generation_Ship_5_PosX, global.dyworld.Generation_Ship_5_PosY)))}}
+		end
+	end
 	for k,v in pairs(game.forces.player.find_chart_tags("nauvis")) do
 		if nil then 
 			return 

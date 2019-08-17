@@ -207,11 +207,14 @@ end)
 -- random generation
 script.on_event(defines.events.on_chunk_generated, function(event)
 	global.dyworld.Chunks = global.dyworld.Chunks + 1
-	if math.random(1,5)==3 then
+	if math.random(1,10)==5 then
 		Ruins_Spawner(event)
 	end
 	if global.dyworld.Chunks <= 100 then
 		Ship_Spawner(event)
+	end
+	if global.dyworld.Chunks <= 75 then
+		Ruins_Spawner_Start(event)
 	end
 end)
 

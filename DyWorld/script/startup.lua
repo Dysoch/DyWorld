@@ -31,6 +31,7 @@ function Game_Startup()
 			Generation_Ship_5 = false,
 			Generation_Ship_5_PosX = 0,
 			Generation_Ship_5_PosY = 0,
+			Generation_Ores = {},
 			Research_Level_String = "Primitive",
 			Research_Level_Var = 1,
 			Research_Done = 0,

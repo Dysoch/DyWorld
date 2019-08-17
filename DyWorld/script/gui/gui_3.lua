@@ -19,7 +19,13 @@ function gui_3_toggleGui(player)
 			frameflow.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_roadmap_gui.roadmap_999", (global.RoadmapTotal)}}
 		end
 		for k,v in pairs(global.Roadmap) do
-			scroll.add{type = "label", caption = "("..v.Progress.."%) "..v.Name.."" }
+			if v.Progress == 100 then
+				scroll.add{type = "label", caption = v.Name.." (DONE!)"}
+			elseif v.Progress == 0 then
+				scroll.add{type = "label", caption = "(Not Started!) "..v.Name}
+			else
+				scroll.add{type = "label", caption = "("..v.Progress.."%) "..v.Name}
+			end
 		end
 	end
 end

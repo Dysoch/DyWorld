@@ -85,15 +85,15 @@ function gui_5_RefreshGUI(player, id)
 			end
 		end
 	else
-		frameflow.add{type = "label", caption = {"dyworld_distance_gui.map-tag-disabled"}}
+		frameflow.add{type = "label", caption = {"dyworld_distance_gui.map-tag-disabled"}, tooltip = {"dyworld_distance_gui.map-tag-disabled-tp"}}
 	end
 	if DyWorld_Distance_Resource_Tags then
 	else
-		frameflow.add{type = "label", caption = {"dyworld_distance_gui.resource-tag-disabled"}}
+		frameflow.add{type = "label", caption = {"dyworld_distance_gui.resource-tag-disabled"}, tooltip = {"dyworld_distance_gui.resource-tag-disabled-tp"}}
 	end
 	if DyWorld_Distance_Player_Tags then
 	else
-		frameflow.add{type = "label", caption = {"dyworld_distance_gui.player-tag-disabled"}}
+		frameflow.add{type = "label", caption = {"dyworld_distance_gui.player-tag-disabled"}, tooltip = {"dyworld_distance_gui.player-tag-disabled-tp"}}
 	end
 end
 

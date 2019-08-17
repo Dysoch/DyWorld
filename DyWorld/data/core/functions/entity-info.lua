@@ -160,11 +160,11 @@ Data_Entity = {
 			},
 		},
 		Radar = {
-			Radar_Next = "stone",
+			Radar_Next = "nickel",
 			Radar_Active_Range = 2,
 			Radar_Scan_Range = 10,
 			Radar_Ingredients = {
-				["electronic-circuit"] = 4,
+				["simple-control-board"] = 4,
 				["stone-plate"] = 5,
 				["stone-brick"] = 3,
 				["stone-gear-wheel"] = 1,
@@ -386,6 +386,17 @@ Data_Entity = {
 				["nickel-plate"] = 10,
 			},
 		},
+		Radar = {
+			Radar_Previous = "stone",
+			Radar_Next = "steel",
+			Radar_Active_Range = 3,
+			Radar_Scan_Range = 15,
+			Radar_Ingredients = {
+				["basic-control-board"] = 4,
+				["nickel-plate"] = 5,
+				["nickel-gear-wheel"] = 1,
+			},
+		},
 	},
 	["silver"] = {
 		Solar = {
@@ -556,6 +567,17 @@ Data_Entity = {
 			Furnace_Ingredients = {
 				["electronic-control-board"] = 4,
 				["steel-plate"] = 15,
+			},
+		},
+		Radar = {
+			Radar_Previous = "nickel",
+			Radar_Next = "invar",
+			Radar_Active_Range = 4,
+			Radar_Scan_Range = 22,
+			Radar_Ingredients = {
+				["electronic-control-board"] = 4,
+				["steel-plate"] = 5,
+				["steel-gear-wheel"] = 1,
 			},
 		},
 	},
@@ -853,6 +875,17 @@ Data_Entity = {
 				["advanced-control-board"] = 12,
 			},
 		},
+		Radar = {
+			Radar_Previous = "steel",
+			Radar_Next = "stainless-steel",
+			Radar_Active_Range = 5,
+			Radar_Scan_Range = 28,
+			Radar_Ingredients = {
+				["advanced-control-board"] = 4,
+				["invar-plate"] = 5,
+				["invar-gear-wheel"] = 1,
+			},
+		},
 	},
 	["electrum"] = {
 		Assembler = {
@@ -974,6 +1007,17 @@ Data_Entity = {
 				["stainless-steel-gear-wheel"] = 4,
 				["stainless-steel-plate"] = 50,
 				["tough-control-board"] = 25,
+			},
+		},
+		Radar = {
+			Radar_Previous = "invar",
+			Radar_Next = "titanium",
+			Radar_Active_Range = 6,
+			Radar_Scan_Range = 37,
+			Radar_Ingredients = {
+				["tough-control-board"] = 4,
+				["stainless-steel-plate"] = 5,
+				["stainless-steel-gear-wheel"] = 1,
 			},
 		},
 	},
@@ -1129,6 +1173,17 @@ Data_Entity = {
 				["tungsten-pipe"] = 2,
 				["processing-control-board"] = 3,
 			},	
+		},
+		Radar = {
+			Radar_Previous = "stainless-steel",
+			Radar_Next = "arditium-tungstenate",
+			Radar_Active_Range = 8,
+			Radar_Scan_Range = 50,
+			Radar_Ingredients = {
+				["processing-control-board"] = 4,
+				["titanium-plate"] = 5,
+				["titanium-gear-wheel"] = 1,
+			},
 		},
 	},
 	["tungsten"] = {
@@ -1345,6 +1400,17 @@ Data_Entity = {
 				["arditium-tungstenate-gear-wheel"] = 4,
 				["arditium-tungstenate-plate"] = 25,
 				["logic-control-board"] = 12,
+			},
+		},
+		Radar = {
+			Radar_Previous = "titanium",
+			Radar_Next = "neutrobaltium",
+			Radar_Active_Range = 10,
+			Radar_Scan_Range = 65,
+			Radar_Ingredients = {
+				["logic-control-board"] = 4,
+				["arditium-tungstenate-plate"] = 5,
+				["arditium-tungstenate-gear-wheel"] = 1,
 			},
 		},
 	},
@@ -1677,6 +1743,17 @@ Data_Entity = {
 			Furnace_Ingredients = {
 				["quantum-control-board"] = 4,
 				["neutrobaltium-plate"] = 15,
+			},
+		},
+		Radar = {
+			Radar_Previous = "arditium-tungstenate",
+			Radar_Next = "neutrobaltium",
+			Radar_Active_Range = 13,
+			Radar_Scan_Range = 90,
+			Radar_Ingredients = {
+				["quantum-control-board"] = 4,
+				["neutrobaltium-plate"] = 5,
+				["neutrobaltium-gear-wheel"] = 1,
 			},
 		},
 	},

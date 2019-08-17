@@ -283,24 +283,12 @@ Data_Entity = {
 				["copper-plate"] = 4,
 			},
 		},
-		Radar = {
-			Radar_Next = "copper",
-			Radar_Previous = "stone",
-			Radar_Active_Range = 3,
-			Radar_Scan_Range = 15,
-			Radar_Ingredients = {
-				["electronic-circuit"] = 14,
-				["copper-plate"] = 5,
-				["iron-plate"] = 3,
-				["copper-cable"] = 1,
-			},
-		},
 		Accumulator = {
-			Accumulator_Next = "copper",
-			--Accumulator_Previous = "stone",
+			Accumulator_Next = "bronze",
+			--Accumulator_Previous = "copper",
 			Accumulator_Buffer_MJ = 5,
 			Accumulator_Ingredients = {
-				["electronic-circuit"] = 14,
+				["basic-control-board"] = 14,
 				["copper-plate"] = 5,
 				["iron-plate"] = 3,
 				["copper-cable"] = 1,
@@ -400,7 +388,7 @@ Data_Entity = {
 	},
 	["silver"] = {
 		Solar = {
-			Solar_Production = 140,
+			Solar_Production = 170,
 			Solar_Next = "gold",
 			Solar_Ingredients = {
 				["silver-plate"] = 4,
@@ -583,7 +571,7 @@ Data_Entity = {
 	},
 	["gold"] = {
 		Solar = {
-			Solar_Production = 165,
+			Solar_Production = 260,
 			Solar_Next = "invar",
 			Solar_Ingredients = {
 				["gold-plate"] = 4,
@@ -723,6 +711,16 @@ Data_Entity = {
 				["electronic-control-board"] = 3,
 			},
 		},
+		Accumulator = {
+			Accumulator_Previous = "copper",
+			Accumulator_Next = "electrum",
+			Accumulator_Buffer_MJ = 8,
+			Accumulator_Ingredients = {
+				["electronic-control-board"] = 14,
+				["bronze-plate"] = 5,
+				["bronze-cable"] = 1,
+			},
+		},
 	},
 	["lead"] = {
 		Drill = {
@@ -848,7 +846,7 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 210,
+			Solar_Production = 375,
 			Solar_Next = "arditium",
 			Solar_Ingredients = {
 				["invar-plate"] = 4,
@@ -928,6 +926,16 @@ Data_Entity = {
 				["electrum-plate"] = 4,
 				["electrum-pipe"] = 2,
 				["electronic-control-board"] = 3,
+			},
+		},
+		Accumulator = {
+			Accumulator_Previous = "bronze",
+			Accumulator_Next = "titanium",
+			Accumulator_Buffer_MJ = 13,
+			Accumulator_Ingredients = {
+				["advanced-control-board"] = 14,
+				["electrum-plate"] = 5,
+				["electrum-cable"] = 1,
 			},
 		},
 	},
@@ -1041,7 +1049,7 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 300,
+			Solar_Production = 490,
 			Solar_Next = "titanium",
 			Solar_Ingredients = {
 				["arditium-plate"] = 4,
@@ -1133,7 +1141,7 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 140,
+			Solar_Production = 620,
 			Solar_Next = "electranium",
 			Solar_Ingredients = {
 				["titanium-plate"] = 4,
@@ -1183,6 +1191,16 @@ Data_Entity = {
 				["processing-control-board"] = 4,
 				["titanium-plate"] = 5,
 				["titanium-gear-wheel"] = 1,
+			},
+		},
+		Accumulator = {
+			Accumulator_Previous = "electrum",
+			Accumulator_Next = "electranium",
+			Accumulator_Buffer_MJ = 20,
+			Accumulator_Ingredients = {
+				["processing-control-board"] = 14,
+				["titanium-plate"] = 5,
+				["titanium-cable"] = 1,
 			},
 		},
 	},
@@ -1290,7 +1308,7 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 420,
+			Solar_Production = 860,
 			Solar_Next = "tungstvar",
 			Solar_Ingredients = {
 				["electranium-plate"] = 4,
@@ -1337,6 +1355,16 @@ Data_Entity = {
 				["controller"] = 1,
 				["logic-control-board"] = 5,
 			},	
+		},
+		Accumulator = {
+			Accumulator_Previous = "titanium",
+			Accumulator_Next = "tungstvar",
+			Accumulator_Buffer_MJ = 32,
+			Accumulator_Ingredients = {
+				["logic-control-board"] = 14,
+				["electranium-plate"] = 5,
+				["electranium-cable"] = 1,
+			},
 		},
 	},
 	["arditium-tungstenate"] = {
@@ -1479,7 +1507,7 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 650,
+			Solar_Production = 1175,
 			Solar_Next = "neutrobaltium",
 			Solar_Ingredients = {
 				["tungstvar-plate"] = 4,
@@ -1515,6 +1543,15 @@ Data_Entity = {
 			Furnace_Ingredients = {
 				["super-control-board"] = 4,
 				["tungstvar-plate"] = 15,
+			},
+		},
+		Accumulator = {
+			Accumulator_Previous = "electranium",
+			Accumulator_Next = "neutronium",
+			Accumulator_Buffer_MJ = 48,
+			Accumulator_Ingredients = {
+				["super-control-board"] = 14,
+				["tungstvar-plate"] = 5,
 			},
 		},
 	},
@@ -1580,6 +1617,16 @@ Data_Entity = {
 				["neutronium-stick"] = 4,
 				["neutronium-plate"] = 25,
 				["extreme-control-board"] = 12,
+			},
+		},
+		Accumulator = {
+			Accumulator_Previous = "tungstvar",
+			Accumulator_Next = "neutronium",
+			Accumulator_Buffer_MJ = 70,
+			Accumulator_Ingredients = {
+				["extreme-control-board"] = 14,
+				["neutronium-plate"] = 5,
+				["neutronium-stick"] = 5,
 			},
 		},
 	},
@@ -1662,7 +1709,7 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 900,
+			Solar_Production = 1500,
 			Solar_Next = "neutrobaltium",
 			Solar_Ingredients = {
 				["neutrobaltium-plate"] = 4,

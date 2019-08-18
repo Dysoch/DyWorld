@@ -216,6 +216,11 @@ script.on_event(defines.events.on_chunk_generated, function(event)
 	if global.dyworld.Chunks <= 75 then
 		Ruins_Spawner_Start(event)
 	end
+	if global.dyworld.Chunks >= global.dyworld.Chunks_Generation_1 then
+		if math.random(1,20)==5 then
+			Ruins_Spawner_FarOut(event)
+		end
+	end
 end)
 
 --script.on_event(defines.events.on_gui_click, gui_click.onClick)
@@ -319,7 +324,7 @@ script.on_event("DyWorld_Skills", function(event)
 			Player_Startup(player, event.player_index)
 		end
 		local player = game.players[event.player_index]
-		gui_2_toggleGui(player)
+		--gui_2_toggleGui(player) -- TEMP REMOVED!
 		BodySkills(event.player_index)
 	end
 end)

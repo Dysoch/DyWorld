@@ -19,12 +19,12 @@ end
 
 function gui_1_openGui(player, id)
 	local P_Level = global.players[id].Level
-	local frame1 = player.gui.top.add{type = "frame", name = "dyworld_stats_1_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
-	local frame2 = player.gui.top.add{type = "frame", name = "dyworld_stats_2_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
+	local frame1 = player.gui.top.add{type = "frame", name = "dyworld_stats_1_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}, tooltip = {"dyworld_stats_gui.title-tp"}}
+	local frame2 = player.gui.top.add{type = "frame", name = "dyworld_stats_2_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}, tooltip = {"dyworld_stats_gui.title-tp"}}
 	local frameflow1 = frame1.add{type = "flow", name = "flow", direction = "vertical"}
 	local frameflow2 = frame2.add{type = "flow", name = "flow", direction = "vertical"}
 	if P_Level >= 2 and game.players[id].character then
-		local frame3 = player.gui.top.add{type = "frame", name = "dyworld_stats_3_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}}
+		local frame3 = player.gui.top.add{type = "frame", name = "dyworld_stats_3_gui", direction = "vertical", caption = {"dyworld_stats_gui.title"}, tooltip = {"dyworld_stats_gui.title-tp"}}
 		stats_frameflow3 = frame3.add{type = "flow", name = "flow", direction = "vertical"}
 	end
 	--stats_functions.BodySkills(id)
@@ -33,8 +33,8 @@ function gui_1_openGui(player, id)
 		global.dyworld.Max_Research = Research_Calc()
 	end
 	-- labels for stats_1
-	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_1", (game.players[id].name)}}
-	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_level", (global.players[id].Level or 0)}, style = "dyworld_label"}
+	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_1", (game.players[id].name)}, tooltip = {"dyworld_stats_gui.stats_1-tp", (game.players[id].name)}}
+	frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_level", (global.players[id].Level or 0)}, style = "dyworld_label", tooltip = {"dyworld_stats_gui.stats_xp", Round((global.players[id].XP_LevelUp - global.players[id].XP), 2)}}
 	--frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xp"}}
 	frameflow1.add{type = "progressbar", tooltip = {"dyworld_stats_gui.stats_xp", Round((global.players[id].XP_LevelUp - global.players[id].XP), 2)}, size = 26, value = (global.players[id].XP/global.players[id].XP_LevelUp)}
 	--frameflow1.add{type = "label", caption = {"dyworld_stats_gui.stats_xp", (global.players[id].XP or 0)}}
@@ -42,70 +42,70 @@ function gui_1_openGui(player, id)
 	--frameflow1.add{type = "label", caption = "XP TO LEVEL FRACT: "..(global.players[id].XP/global.players[id].XP_LevelUp)}
 	if global.players[id].stats.crafted and global.players[id].stats.crafted >= 1 then
 		if (#game.players <= 1) then
-			frameflow1.add{type = "label", tooltip = "The amount you have crafted", caption = {"dyworld_stats_gui.stats_crafted", (global.players[id].stats.crafted or 0)}, style = "dyworld_label"}
+			frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_crafted-tp"}, caption = {"dyworld_stats_gui.stats_crafted", (global.players[id].stats.crafted or 0)}, style = "dyworld_label"}
 		else
-			frameflow1.add{type = "label", tooltip = "The amount you have crafted / Total amount crafted by all players", caption = {"dyworld_stats_gui.stats_crafted_mp", (global.players[id].stats.crafted or 0), (global.stats.crafted or 0)}, style = "dyworld_label"}
+			frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_crafted_mp-tp"}, caption = {"dyworld_stats_gui.stats_crafted_mp", (global.players[id].stats.crafted or 0), (global.stats.crafted or 0)}, style = "dyworld_label"}
 		end
 	end
 	if global.players[id].stats.mined and global.players[id].stats.mined >= 1 then
 		if (#game.players <= 1) then
-			frameflow1.add{type = "label", tooltip = "The amount you have mined", caption = {"dyworld_stats_gui.stats_mined", (global.players[id].stats.mined or 0)}, style = "dyworld_label"}
+			frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_mined-tp"}, caption = {"dyworld_stats_gui.stats_mined", (global.players[id].stats.mined or 0)}, style = "dyworld_label"}
 		else
-			frameflow1.add{type = "label", tooltip = "The amount you have mined / Total amount mined by all players", caption = {"dyworld_stats_gui.stats_mined_mp", (global.players[id].stats.mined or 0), (global.stats.mined or 0)}, style = "dyworld_label"}
+			frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_mined_mp-tp"}, caption = {"dyworld_stats_gui.stats_mined_mp", (global.players[id].stats.mined or 0), (global.stats.mined or 0)}, style = "dyworld_label"}
 		end
 	end
 	if global.players[id].stats.build and global.players[id].stats.build >= 1 then
 		if (#game.players <= 1) then
-			frameflow1.add{type = "label", tooltip = "The amount you have build", caption = {"dyworld_stats_gui.stats_build", (global.players[id].stats.build or 0)}, style = "dyworld_label"}
+			frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_build-tp"}, caption = {"dyworld_stats_gui.stats_build", (global.players[id].stats.build or 0)}, style = "dyworld_label"}
 		else
-			frameflow1.add{type = "label", tooltip = "The amount you have build / Total amount build by all players", caption = {"dyworld_stats_gui.stats_build_mp", (global.players[id].stats.build or 0), (global.stats.build or 0)}, style = "dyworld_label"}
+			frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_build_mp-tp"}, caption = {"dyworld_stats_gui.stats_build_mp", (global.players[id].stats.build or 0), (global.stats.build or 0)}, style = "dyworld_label"}
 		end
 	end
 	if global.players[id].stats.pickup and global.players[id].stats.pickup >= 1 then
 		if (#game.players <= 1) then
-			frameflow1.add{type = "label", tooltip = "The amount you have picked up/looted", caption = {"dyworld_stats_gui.stats_pickup", (global.players[id].stats.pickup or 0)}, style = "dyworld_label"}
+			frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_pickup-tp"}, caption = {"dyworld_stats_gui.stats_pickup", (global.players[id].stats.pickup or 0)}, style = "dyworld_label"}
 		else
-			frameflow1.add{type = "label", tooltip = "The amount you have picked up/looted / Total amount picked up/looted by all players", caption = {"dyworld_stats_gui.stats_pickup_mp", (global.players[id].stats.pickup or 0), (global.stats.pickup or 0)}, style = "dyworld_label"}
+			frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_pickup_mp-tp"}, caption = {"dyworld_stats_gui.stats_pickup_mp", (global.players[id].stats.pickup or 0), (global.stats.pickup or 0)}, style = "dyworld_label"}
 		end
 	end
-	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_2"}}
+	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_2"}, tooltip = {"dyworld_stats_gui.stats_2-tp"}}
 	if global.stats.killed and global.stats.killed >= 1 then
-		frameflow1.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.stats_killed", global.stats.killed}, style = "dyworld_label"}
-		frameflow1.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.stats_evo", (Round(game.forces.enemy.evolution_factor * 100, 2) or 0)}, style = "dyworld_label"}
+		frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_killed-tp"}, caption = {"dyworld_stats_gui.stats_killed", global.stats.killed}, style = "dyworld_label"}
+		frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_evo-tp"}, caption = {"dyworld_stats_gui.stats_evo", (Round(game.forces.enemy.evolution_factor * 100, 2) or 0)}, style = "dyworld_label"}
 	end
 	if global.stats.scanned and global.stats.scanned >= 1 then
-		frameflow1.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.stats_scanned", (global.stats.scanned or 0)}, style = "dyworld_label"}
+		frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_scanned-tp"}, caption = {"dyworld_stats_gui.stats_scanned", (global.stats.scanned or 0)}, style = "dyworld_label"}
 	end
 	if global.stats.research and global.stats.research >= 1 then
-		frameflow1.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.stats_research", global.stats.research}, style = "dyworld_label"}
+		frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_research-tp"}, caption = {"dyworld_stats_gui.stats_research", global.stats.research}, style = "dyworld_label"}
 	end
 	if global.dyworld.Research_Done and global.dyworld.Research_Done >= 1 then
-		frameflow1.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.stats_research_done", (Round(((global.dyworld.Research_Done) / global.dyworld.Max_Research) * 100, 1) or 0)}, style = "dyworld_label"}
+		frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_research_done-tp"}, caption = {"dyworld_stats_gui.stats_research_done", (Round(((global.dyworld.Research_Done) / global.dyworld.Max_Research) * 100, 1) or 0)}, style = "dyworld_label"}
 	end
 	if global.stats.ghostbuild and global.stats.ghostbuild >= 1 then
-		frameflow1.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.stats_ghostbuild", (global.stats.ghostbuild or 0)}, style = "dyworld_label"}
+		frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_ghostbuild-tp"}, caption = {"dyworld_stats_gui.stats_ghostbuild", (global.stats.ghostbuild or 0)}, style = "dyworld_label"}
 	end
 	if global.stats.ghostmined and global.stats.ghostmined >= 1 then
-		frameflow1.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.stats_ghostmined", (global.stats.ghostmined or 0)}, style = "dyworld_label"}
+		frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_ghostmined-tp"}, caption = {"dyworld_stats_gui.stats_ghostmined", (global.stats.ghostmined or 0)}, style = "dyworld_label"}
 	end
 	-- labels for stats_2
-	frameflow2.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.body", (game.players[id].name)}}
-	frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_physical"}}
-	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_strength", (global.players[id].physical.strength)}, style = "dyworld_label"}
-	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_endurance", (global.players[id].physical.endurance)}, style = "dyworld_label"}
-	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_speed", (global.players[id].physical.speed)}, style = "dyworld_label"}
-	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_creations", (global.players[id].physical.creations)}, style = "dyworld_label"}
+	frameflow2.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.body", (game.players[id].name)}, tooltip = {"dyworld_stats_gui.body-tp"}}
+	frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_physical"}, tooltip = {"dyworld_stats_gui.body_physical-tp"}}
+	frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_strength-tp"}, caption = {"dyworld_stats_gui.body_strength", (global.players[id].physical.strength)}, style = "dyworld_label"}
+	frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_endurance-tp"}, caption = {"dyworld_stats_gui.body_endurance", (global.players[id].physical.endurance)}, style = "dyworld_label"}
+	frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_speed-tp"}, caption = {"dyworld_stats_gui.body_speed", (global.players[id].physical.speed)}, style = "dyworld_label"}
+	frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_creations-tp"}, caption = {"dyworld_stats_gui.body_creations", (global.players[id].physical.creations)}, style = "dyworld_label"}
 	if P_Level >= 25 then
-		frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_implants", (global.players[id].physical.implants)}, style = "dyworld_label"}
+		frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_implants-tp"}, caption = {"dyworld_stats_gui.body_implants", (global.players[id].physical.implants)}, style = "dyworld_label"}
 	else
-		frameflow2.add{type = "label", tooltip = "WIP", caption = "Locked (Lvl 25+)", style = "dyworld_label"}
+		frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 25}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 	end
-	frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_mystical"}}
-	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_spirit", (global.players[id].mystical.spirit)}, style = "dyworld_label"}
-	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_intelligence", (global.players[id].mystical.intelligence)}, style = "dyworld_label"}
-	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_wisdom", (global.players[id].mystical.wisdom)}, style = "dyworld_label"}
-	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_guile", (global.players[id].mystical.guile)}, style = "dyworld_label"}
-	frameflow2.add{type = "label", tooltip = "WIP", caption = {"dyworld_stats_gui.body_knowledge", (global.players[id].mystical.knowledge)}, style = "dyworld_label"}
+	frameflow2.add{type = "label", style = "dyworld_stats_header_label", caption = {"dyworld_stats_gui.body_mystical"}, tooltip = {"dyworld_stats_gui.body_mystical-tp"}}
+	frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_spirit-tp"}, caption = {"dyworld_stats_gui.body_spirit", (global.players[id].mystical.spirit)}, style = "dyworld_label"}
+	frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_intelligence-tp"}, caption = {"dyworld_stats_gui.body_intelligence", (global.players[id].mystical.intelligence)}, style = "dyworld_label"}
+	frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_wisdom-tp"}, caption = {"dyworld_stats_gui.body_wisdom", (global.players[id].mystical.wisdom)}, style = "dyworld_label"}
+	frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_guile-tp"}, caption = {"dyworld_stats_gui.body_guile", (global.players[id].mystical.guile)}, style = "dyworld_label"}
+	frameflow2.add{type = "label", tooltip = {"dyworld_stats_gui.body_knowledge-tp"}, caption = {"dyworld_stats_gui.body_knowledge", (global.players[id].mystical.knowledge)}, style = "dyworld_label"}
 	-- labels for stats_3
 	if P_Level >= 2 and game.players[id].character then
 		stats_frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3", (game.players[id].name)}}

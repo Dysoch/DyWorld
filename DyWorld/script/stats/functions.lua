@@ -180,25 +180,25 @@ end
 function BodySkills(id)
 	local P_Level = global.players[id].Level
 	local mp = global.dyworld.Players
-	local gsc = global.players[id].stats.crafted or 1
-	local gsm = global.players[id].stats.mined or 1
-	local gsb = global.players[id].stats.build or 1
-	local gsp = global.players[id].stats.pickup or 1
-	local gsk = global.stats.killed or 1
-	local gss = global.stats.scanned or 1
-	local gsr = global.stats.research or 1
-	local gsgb = global.stats.ghostbuild or 1
-	local gsgm = global.stats.ghostmined or 1
-	local p1 = global.players[id].physical.strength
-	local p2 = global.players[id].physical.endurance
-	local p3 = global.players[id].physical.speed
-	local p4 = global.players[id].physical.creations
-	local p5 = global.players[id].physical.implants 
-	local m1 = global.players[id].mystical.spirit
-	local m2 = global.players[id].mystical.intelligence
-	local m3 = global.players[id].mystical.wisdom
-	local m4 = global.players[id].mystical.guile
-	local m5 = global.players[id].mystical.knowledge
+	local gsc = global.players[id].stats.crafted or 1 -- Crafted
+	local gsm = global.players[id].stats.mined or 1 -- Mined
+	local gsb = global.players[id].stats.build or 1 -- Built
+	local gsp = global.players[id].stats.pickup or 1 -- Looted
+	local gsk = global.stats.killed or 1 -- Killed
+	local gss = global.stats.scanned or 1 -- Scanned
+	local gsr = global.stats.research or 1 -- Researched
+	local gsgb = global.stats.ghostbuild or 1 -- Build by Robot
+	local gsgm = global.stats.ghostmined or 1 -- Mined by Robot 
+	local p1 = global.players[id].physical.strength -- Strength
+	local p2 = global.players[id].physical.endurance -- Endurance
+	local p3 = global.players[id].physical.speed -- Speed
+	local p4 = global.players[id].physical.creations -- Creations
+	local p5 = global.players[id].physical.implants  -- Implants
+	local m1 = global.players[id].mystical.spirit -- Spirit
+	local m2 = global.players[id].mystical.intelligence -- Intelligence
+	local m3 = global.players[id].mystical.wisdom -- Wisdom
+	local m4 = global.players[id].mystical.guile -- Guile
+	local m5 = global.players[id].mystical.knowledge -- Knowledge
 	-- p5 is done with research and crafting! implants will be installed, each with a base number to increase the value
 	--@todo Implement Implants
 	global.players[id].physical.creations = math.floor(((gsb+gsc)+(gsgb/25))/(1000))

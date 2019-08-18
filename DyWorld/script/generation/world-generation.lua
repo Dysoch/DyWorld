@@ -7,6 +7,20 @@ AddedItems = {"simple-control-board", "raw-fish", "stone-brick", "chitin", "acor
 local keysetRuins = {}
 local keysetRuins_Start = {}
 local keysetAddedItem = {}
+local keysetAddedItemAll = {}
+
+function AddedItemsAll_Adder()
+	AddedItemsAll = {}
+	for k,v in pairs(game.item_prototypes) do
+		if v.type == "mining-tool" then
+		else
+			table.insert(AddedItemsAll, v.name)
+		end
+	end
+	for k in pairs(AddedItemsAll) do
+		table.insert(keysetAddedItemAll, k)
+	end
+end
 
 for k in pairs(Ruins) do
     table.insert(keysetRuins, k)
@@ -27,7 +41,6 @@ function Ruins_Spawner(event)
 			game.surfaces[1].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.player}
 		end
 	end
-	--debug("Generator: Created "..BuildEntity.." at "..PosX..", "..PosY)
 end
 
 function Ruins_Spawner_Start(event)
@@ -38,7 +51,20 @@ function Ruins_Spawner_Start(event)
 		Pos_1 = game.surfaces[1].find_non_colliding_position(BuildEntity1, {PosX, PosY}, 150, 1)
 		game.surfaces[1].create_entity{name = (BuildEntity), position = Pos_1, force = game.forces.player}
 	end
-	--debug("Generator: Created "..BuildEntity.." at "..PosX..", "..PosY)
+end
+
+function Ruins_Spawner_FarOut(event)
+	AddedItemsAll_Adder()
+	PosX = event.area.left_top.x + math.random(-150, 150)
+	PosY = event.area.left_top.y + math.random(-150, 150)
+	BuildEntity = "crash-site-chest-2"
+	Chest_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity, {PosX,PosY}, 250, 1)
+	Chest_Created = game.surfaces[1].create_entity{name = (BuildEntity), position = Chest_Pos, force = game.forces.player}
+	for i = 1, (math.random(5,25)) do
+		AddedItem = AddedItemsAll[keysetAddedItemAll[math.random(#keysetAddedItemAll)]]
+		Chest_Created.insert{name = AddedItem, count = math.random(25)}
+	end
+	global.dyworld.Chunks_Generation_1 = math.floor(global.dyworld.Chunks_Generation_1 * (math.random() + 1))
 end
 
 function Ship_Spawner(event)

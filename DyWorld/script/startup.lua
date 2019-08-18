@@ -16,6 +16,7 @@ function Game_Startup()
 			Guide = {},
 			Players = 0,
 			Chunks = 0,
+			Chunks_Generation_1 = 1500,
 			Generation_Ship_1 = false,
 			Generation_Ship_1_PosX = 0,
 			Generation_Ship_1_PosY = 0,

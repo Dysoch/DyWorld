@@ -219,10 +219,11 @@ Data_Entity = {
 			--Pumpjack_Previous = "iron",
 			Pumpjack_Next = "bronze",
 			Pumpjack_Ingredients = {
+				["iron-plate"] = 10,
 				["electric-mining-drill"] = 1,
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["basic-control-board"] = 3,
+				["iron-gear-wheel"] = 10,
+				["stone-pipe"] = 5,
+				["basic-control-board"] = 5,
 			},
 		},
 		Assembler = {
@@ -350,16 +351,18 @@ Data_Entity = {
 				["basic-control-board"] = 25,
 			},
 			Logistic_Robot_Ingredients = {
-				["nickel-plate"] = 3,
+				["nickel-plate"] = 5,
 				["nickel-cable"] = 1,
 				["nickel-gear-wheel"] = 3,
 				["basic-control-board"] = 5,
+				["rotor"] = 2,
 			},
 			Construction_Robot_Ingredients = {
 				["nickel-plate"] = 5,
 				["nickel-cable"] = 3,
 				["nickel-gear-wheel"] = 2,
 				["basic-control-board"] = 5,
+				["rotor"] = 2,
 			},
 		},
 		Pipe = {
@@ -654,16 +657,19 @@ Data_Entity = {
 			Roboport_Slot_Count = 6,
 			Roboport_Ingredients = {
 				["gold-plate"] = 50,
+				["gold-cable"] = 25,
 				["electronic-control-board"] = 25,
 			},
 			Logistic_Robot_Ingredients = {
-				["gold-plate"] = 3,
-				["flying-robot-frame"] = 1,
+				["gold-plate"] = 5,
+				["engine-unit"] = 1,
+				["frame"] = 1,
 				["electronic-control-board"] = 5,
 			},
 			Construction_Robot_Ingredients = {
 				["gold-plate"] = 5,
-				["flying-robot-frame"] = 1,
+				["engine-unit"] = 1,
+				["frame"] = 1,
 				["electronic-control-board"] = 5,
 			},
 		},
@@ -706,8 +712,9 @@ Data_Entity = {
 			Pumpjack_Previous = "iron",
 			Pumpjack_Next = "electrum",
 			Pumpjack_Ingredients = {
-				["bronze-gear-wheel"] = 4,
-				["bronze-pipe"] = 2,
+				["bronze-plate"] = 10,
+				["bronze-gear-wheel"] = 10,
+				["bronze-pipe"] = 5,
 				["electronic-control-board"] = 3,
 			},
 		},
@@ -813,16 +820,20 @@ Data_Entity = {
 			Roboport_Slot_Count = 8,
 			Roboport_Ingredients = {
 				["cobalt-plate"] = 50,
+				["cobalt-cable"] = 10,
+				["cobalt-gear-wheel"] = 10,
 				["advanced-control-board"] = 25,
 			},
 			Logistic_Robot_Ingredients = {
-				["cobalt-plate"] = 3,
+				["cobalt-plate"] = 5,
 				["housing"] = 1,
+				["flying-robot-frame"] = 1,
 				["advanced-control-board"] = 5,
 			},
 			Construction_Robot_Ingredients = {
 				["cobalt-plate"] = 5,
 				["housing"] = 1,
+				["flying-robot-frame"] = 1,
 				["advanced-control-board"] = 5,
 			},
 		},
@@ -923,9 +934,9 @@ Data_Entity = {
 			Pumpjack_Previous = "bronze",
 			Pumpjack_Next = "arditium",
 			Pumpjack_Ingredients = {
-				["electrum-plate"] = 4,
-				["electrum-pipe"] = 2,
-				["electronic-control-board"] = 3,
+				["electrum-plate"] = 10,
+				["electrum-pipe"] = 5,
+				["advanced-control-board"] = 3,
 			},
 		},
 		Accumulator = {
@@ -1073,9 +1084,10 @@ Data_Entity = {
 			Pumpjack_Previous = "electrum",
 			Pumpjack_Next = "titanium",
 			Pumpjack_Ingredients = {
-				["arditium-plate"] = 4,
-				["arditium-pipe"] = 2,
-				["tough-control-board"] = 3,
+				["arditium-plate"] = 10,
+				["arditium-gear-wheel"] = 4,
+				["arditium-pipe"] = 5,
+				["tough-control-board"] = 4,
 			},
 		},
 		Robot = {
@@ -1093,11 +1105,12 @@ Data_Entity = {
 			Roboport_Slot_Count = 8,
 			Roboport_Ingredients = {
 				["arditium-plate"] = 50,
+				["arditium-gear-wheel"] = 10,
 				["logistic-unit"] = 5,
 				["tough-control-board"] = 25,
 			},
 			Logistic_Robot_Ingredients = {
-				["arditium-plate"] = 3,
+				["arditium-plate"] = 5,
 				["logistic-unit"] = 1,
 				["tough-control-board"] = 5,
 			},
@@ -1177,9 +1190,10 @@ Data_Entity = {
 			Pumpjack_Previous = "arditium",
 			Pumpjack_Next = "tungstvar",
 			Pumpjack_Ingredients = {
-				["titanium-plate"] = 4,
-				["tungsten-pipe"] = 2,
-				["processing-control-board"] = 3,
+				["titanium-plate"] = 10,
+				["titanium-gear-wheel"] = 4,
+				["tungsten-pipe"] = 5,
+				["processing-control-board"] = 6,
 			},	
 		},
 		Radar = {
@@ -1342,11 +1356,12 @@ Data_Entity = {
 			Roboport_Slot_Count = 12,
 			Roboport_Ingredients = {
 				["electranium-plate"] = 50,
+				["electranium-cable"] = 10,
 				["controller"] = 5,
 				["logic-control-board"] = 25,
 			},
 			Logistic_Robot_Ingredients = {
-				["electranium-plate"] = 3,
+				["electranium-plate"] = 5,
 				["controller"] = 1,
 				["logic-control-board"] = 5,
 			},
@@ -1481,9 +1496,10 @@ Data_Entity = {
 			Pumpjack_Previous = "titanium",
 			Pumpjack_Next = "neutrobaltium",
 			Pumpjack_Ingredients = {
-				["tungstvar-plate"] = 4,
-				["tungstvar-pipe"] = 2,
-				["super-control-board"] = 3,
+				["tungstvar-plate"] = 10,
+				["arditium-tungstenate-gear-wheel"] = 4,
+				["tungstvar-pipe"] = 5,
+				["super-control-board"] = 7,
 			},	
 		},
 		Drill = {
@@ -1666,17 +1682,19 @@ Data_Entity = {
 			Roboport_Slot_Count = 14,
 			Roboport_Ingredients = {
 				["neutrobaltium-plate"] = 50,
-				["controller"] = 5,
+				["neutrobaltium-cable"] = 15,
+				["neutrobaltium-gear-wheel"] = 15,
+				["controller"] = 10,
 				["quantum-control-board"] = 25,
 			},
 			Logistic_Robot_Ingredients = {
-				["neutrobaltium-plate"] = 3,
-				["controller"] = 1,
+				["neutrobaltium-plate"] = 10,
+				["controller"] = 3,
 				["quantum-control-board"] = 5,
 			},
 			Construction_Robot_Ingredients = {
-				["neutrobaltium-plate"] = 5,
-				["controller"] = 1,
+				["neutrobaltium-plate"] = 10,
+				["controller"] = 3,
 				["quantum-control-board"] = 5,
 			},	
 		},
@@ -1767,9 +1785,10 @@ Data_Entity = {
 			Pumpjack_Previous = "tungstvar",
 			Pumpjack_Next = "neutrobaltium",
 			Pumpjack_Ingredients = {
-				["neutrobaltium-plate"] = 4,
-				["neutrobaltium-pipe"] = 2,
-				["quantum-control-board"] = 3,
+				["neutrobaltium-plate"] = 10,
+				["neutrobaltium-gear-wheel"] = 7,
+				["neutrobaltium-pipe"] = 5,
+				["quantum-control-board"] = 10,
 			},	
 		},
 		Wall = {

@@ -80,7 +80,7 @@
 "rocket-fuel" = Rocket Fuel
 "rocket-control-unit" = Rocket Control Unit
 "rocket-part" = Rocket Part
-"housing" = Housing
+"housing" = Housing Unit
 "intake" = Intake
 "cobalt-stick" = Cobalt Stick
 "cobalt-plate" = Cobalt Plate

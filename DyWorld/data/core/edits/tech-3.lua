@@ -34,6 +34,7 @@ local Tech_PreReq = {
 	["logistic-robotics-2"] = {"logistic-robotics"},
 	["construction-robotics-2"] = {"construction-robotics"},
 	["solar-energy-2"] = {"solar-energy"},
+	["solar-energy"] = {"intermediates-1"},
 	["oil-processing-2"] = {"oil-processing"},
 	["oil-processing-3"] = {"advanced-oil-processing"},
 	["super-module-1"] = {"productivity-module", "speed-module", "effectivity-module", "pollution-module-1"},
@@ -102,7 +103,7 @@ end
 
 local Tech_Recipe_Add = {
 	["intermediates-1"] = {"glass", "rotor", "wheat", "carrot", "obsidian", "filter-empty", "blade", "resin", "sand-filter", "resin-filter", "coal-filter", "stone-filter", "basic-control-board"},
-	["intermediates-2"] = {"gunpowder", "frame", "heater", "gearbox", "coil", "solar-cell", "battery-pack", "rubber", "obsidian-filter", "electronic-control-board"},
+	["intermediates-2"] = {"gunpowder", "frame", "heater", "gearbox", "coil", "battery-pack", "rubber", "obsidian-filter", "electronic-control-board"},
 	["intermediates-3"] = {"housing", "intake", "advanced-control-board"},
 	["intermediates-4"] = {"logistic-unit", "diamond", "tough-control-board"},
 	["intermediates-5"] = {"processing-control-board"},
@@ -127,6 +128,7 @@ local Tech_Recipe_Add = {
 	["production-science-pack"] = {"science-5"},
 	["utility-science-pack"] = {"science-6"},
 	["oil-processing"] = {"crude-refined-oil-processing"},
+	["solar-energy"] = {"solar-cell"},
 } 
 
 for k,v in pairs(Tech_Recipe_Add) do
@@ -159,6 +161,7 @@ end
 local Tech_Science_Pack_Change = {
 	["automation-3"] = 3,
 	["logistics-3"] = 3,
+	["solar-energy"] = 1,
 }
 
 for k,v in pairs(Tech_Science_Pack_Change) do

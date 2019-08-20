@@ -55,8 +55,11 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if data.raw.technology["solar-energy-"..v.DyWorld.Tier] then
-		DyWorld_Add_To_Tech("solar-energy-"..v.DyWorld.Tier, v.DyWorld.Name.."-solar-panel")
+	if data.raw.technology["solar-energy-"..(v.DyWorld.Tier - 1)] then
+		DyWorld_Add_To_Tech("solar-energy-"..(v.DyWorld.Tier - 1), v.DyWorld.Name.."-solar-panel")
+	end
+	if data.raw.technology["solar-energy"] and v.DyWorld.Tier <= 2 then
+		DyWorld_Add_To_Tech("solar-energy", v.DyWorld.Name.."-solar-panel")
 	end
 	
 	if v.DyWorld.Entity.Solar.Solar_Ingredients then

@@ -67,7 +67,7 @@ function Game_Startup()
 	--remote.call("silo_script", "add_tracked_item", "dyworld-dtx-001-spaceship")
 end
 
-function Player_Startup(PLAYER, ID)
+function Player_Startup(PLAYER, ID, FORCE)
 	debug("Starting Startup")
 	if not global.stats then global.stats = {} debug("Created global.stats") end
 	global.dyworld.Players = global.dyworld.Players + 1
@@ -81,6 +81,7 @@ function Player_Startup(PLAYER, ID)
 			{
 				PlayerInfo = PLAYER, 
 				PlayerID = ID,
+				Force = FORCE,
 				State_Stats_GUI = false,
 				State_Distance_GUI = false,
 				Ship_1_Visited = false,
@@ -125,6 +126,7 @@ function Player_Startup(PLAYER, ID)
 		{
 			PlayerInfo = PLAYER, 
 			PlayerID = ID,
+			Force = FORCE,
 			State_Stats_GUI = false,
 			State_Distance_GUI = false,
 			Ship_1_Visited = false,

@@ -8,12 +8,12 @@ local Data_Table = {
 		Icon = {{icon = "__base__/graphics/technology/solar-energy.png"}},
 		Pre_Req_Above = 3,
 		Tiers = 10,
-		Count = 150,
+		Count = 100,
 		Military = false,
 	},
 	{
 		Name = "steam-energy",
-		Icon = {{icon = "__base__/graphics/technology/solar-energy.png"}},
+		Icon = {{icon = "__base__/graphics/technology/electric-energy-distribution.png"}, {icon = "__base__/graphics/technology/engine.png"}},
 		Pre_Req_Above = 2,
 		Tiers = 10,
 		Count = 150,
@@ -21,7 +21,7 @@ local Data_Table = {
 	},
 	{
 		Name = "nuclear-energy",
-		Icon = {{icon = "__base__/graphics/technology/solar-energy.png"}},
+		Icon = {{icon = "__base__/graphics/technology/nuclear-power.png"}},
 		Pre_Req_Above = 2,
 		Tiers = 10,
 		Count = 500,

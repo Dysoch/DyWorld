@@ -140,7 +140,7 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Recipe_Ingredients = {
 			["silver-plate"] = 4,
-			["bronze-plate"] = 1,
+			["copper-plate"] = 1,
 			["electronic-circuit"] = 1,
 		},
 		Enabled = true,

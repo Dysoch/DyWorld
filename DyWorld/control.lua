@@ -65,24 +65,29 @@ end)
 script.on_event(defines.events.on_player_created, function(event)
 	local player = game.players[event.player_index]
 	local ID = event.player_index
-		Player_Startup(player, ID)
-		if not game.players[event.player_index].name == "Dysoch" then
-			player.print({"dyworld.startup-1", (game.players[event.player_index].name)})
-		end
-		--PlayerPrint({"dyworld_guide_gui.message"})
-		debug(game.players[event.player_index].name.." created")
+	Player_Startup(player, ID, player.force.name)
+	if not game.players[event.player_index].name == "Dysoch" then
+		player.print({"dyworld.startup-1", (game.players[event.player_index].name)})
+	end
+	--PlayerPrint({"dyworld_guide_gui.message"})
+	debug(game.players[event.player_index].name.." created")
 end)
 
 script.on_event(defines.events.on_player_respawned, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		local player = game.players[event.player_index]	
-		local ID = event.player_index
-		global.players[ID].Alive = true
-		game.players[ID].get_inventory(defines.inventory.character_main).clear()
-		game.players[ID].get_inventory(defines.inventory.character_guns).clear()
-		game.players[ID].get_inventory(defines.inventory.character_ammo).clear()
-		debug(game.players[event.player_index].name.." respawned")
-	end
+	local player = game.players[event.player_index]	
+	local ID = event.player_index
+	global.players[ID].Alive = true
+	game.players[ID].get_inventory(defines.inventory.character_main).clear()
+	game.players[ID].get_inventory(defines.inventory.character_guns).clear()
+	game.players[ID].get_inventory(defines.inventory.character_ammo).clear()
+	debug(game.players[event.player_index].name.." respawned")
+end)
+
+script.on_event(defines.events.on_player_changed_force, function(event)
+	local player = game.players[event.player_index]	
+	local ID = event.player_index
+	debug("Player "..event.player_index.." changed force")
+	global.players[ID].Force = player.force.name
 end)
 
 script.on_event(defines.events.on_player_died, function(event)

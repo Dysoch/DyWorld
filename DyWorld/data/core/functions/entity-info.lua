@@ -39,7 +39,7 @@ Data_Entity = {
 			Centrifuge_Ingredients = {
 				["stone-assembling-machine"] = 1,
 				["stone-gear-wheel"] = 4,
-				["stone-brick"] = 4,
+				["stone-brick"] = 20,
 				["iron-plate"] = 1,
 			},
 		},
@@ -228,10 +228,12 @@ Data_Entity = {
 		},
 		Assembler = {
 			Assembler_Speed_Mod = 1.11,
+			Assembler_Previous = "stone",
 			Assembler_Next = "tin",
 			Assembler_Ingredients = {
-				["stone-assembling-machine"] = 1,
 				["iron-gear-wheel"] = 4,
+				["iron-plate"] = 20,
+				["basic-control-board"] = 1,
 			},
 		},
 		Furnace = {
@@ -271,10 +273,13 @@ Data_Entity = {
 	["copper"] = {
 		Centrifuge = {
 			Centrifuge_Speed_Mod = 1,
+			Centrifuge_Previous = "stone",
 			Centrifuge_Next = "lead",
 			Centrifuge_Ingredients = {
-				["stone-centrifuge"] = 1,
 				["copper-plate"] = 10,
+				["copper-cable"] = 15,
+				["rotor"] = 5,
+				["basic-control-board"] = 5,
 			},
 		},
 		Solar = {
@@ -463,10 +468,13 @@ Data_Entity = {
 	["tin"] = {
 		Assembler = {
 			Assembler_Speed_Mod = 1.21,
+			Assembler_Previous = "iron",
 			Assembler_Next = "lead",
 			Assembler_Ingredients = {
-				["iron-assembling-machine"] = 1,
 				["tin-gear-wheel"] = 4,
+				["tin-plate"] = 20,
+				["basic-control-board"] = 5,
+				["rotor"] = 1,
 			},
 		},
 		Nuclear_Reactor = {
@@ -742,20 +750,24 @@ Data_Entity = {
 		},
 		Assembler = {
 			Assembler_Speed_Mod = 1.29,
+			Assembler_Previous = "tin",
 			Assembler_Next = "invar",
 			Assembler_Ingredients = {
-				["tin-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
+				["lead-gear-wheel"] = 4,
+				["lead-plate"] = 20,
+				["electronic-control-board"] = 1,
+				["frame"] = 1,
 			},
 		},
 		Centrifuge = {
 			Centrifuge_Speed_Mod = 1.08,
+			Centrifuge_Previous = "copper",
 			Centrifuge_Next = "cobalt",
 			Centrifuge_Ingredients = {
-				["copper-centrifuge"] = 1,
-				["stone-gear-wheel"] = 4,
-				["stone-brick"] = 4,
-				["iron-plate"] = 1,
+				["electronic-control-board"] = 5,
+				["lead-plate"] = 25,
+				["heater"] = 3,
+				["frame"] = 1,
 			},
 		},
 		Wall = {
@@ -784,12 +796,13 @@ Data_Entity = {
 		},
 		Centrifuge = {
 			Centrifuge_Speed_Mod = 1.2,
+			Centrifuge_Previous = "lead",
 			Centrifuge_Next = "stainless-steel",
 			Centrifuge_Ingredients = {
-				["lead-centrifuge"] = 1,
-				["stone-gear-wheel"] = 4,
-				["stone-brick"] = 4,
-				["iron-plate"] = 1,
+				["advanced-control-board"] = 5,
+				["cobalt-plate"] = 25,
+				["intake"] = 3,
+				["housing"] = 1,
 			},
 		},
 		Steam_Engine = {
@@ -850,10 +863,13 @@ Data_Entity = {
 	["invar"] = {
 		Assembler = {
 			Assembler_Speed_Mod = 1.33,
+			Assembler_Previous = "lead",
 			Assembler_Next = "electrum",
 			Assembler_Ingredients = {
-				["lead-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
+				["invar-gear-wheel"] = 4,
+				["invar-plate"] = 20,
+				["advanced-control-board"] = 1,
+				["intake"] = 1,
 			},
 		},
 		Solar = {
@@ -899,10 +915,13 @@ Data_Entity = {
 	["electrum"] = {
 		Assembler = {
 			Assembler_Speed_Mod = 1.39,
+			Assembler_Previous = "invar",
 			Assembler_Next = "arditium",
 			Assembler_Ingredients = {
-				["invar-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
+				["electrum-cable"] = 4,
+				["electrum-plate"] = 20,
+				["advanced-control-board"] = 3,
+				["housing"] = 1,
 			},
 		},
 		Pipe = {
@@ -975,12 +994,13 @@ Data_Entity = {
 		},
 		Centrifuge = {
 			Centrifuge_Speed_Mod = 1.35,
+			Centrifuge_Previous = "cobalt",
 			Centrifuge_Next = "tungsten",
 			Centrifuge_Ingredients = {
-				["cobalt-centrifuge"] = 1,
-				["stone-gear-wheel"] = 4,
-				["stone-brick"] = 4,
-				["iron-plate"] = 1,
+				["tough-control-board"] = 5,
+				["stainless-steel-plate"] = 25,
+				["logistic-unit"] = 2,
+				["stainless-steel-gear-wheel"] = 2,
 			},
 		},
 		Steam_Engine = {
@@ -1053,10 +1073,13 @@ Data_Entity = {
 		},
 		Assembler = {
 			Assembler_Speed_Mod = 1.43,
+			Assembler_Previous = "electrum",
 			Assembler_Next = "tungsten",
 			Assembler_Ingredients = {
-				["electrum-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
+				["arditium-gear-wheel"] = 4,
+				["arditium-plate"] = 20,
+				["tough-control-board"] = 1,
+				["logistic-unit"] = 1,
 			},
 		},
 		Solar = {
@@ -1263,20 +1286,24 @@ Data_Entity = {
 		},
 		Assembler = {
 			Assembler_Speed_Mod = 1.56,
+			Assembler_Previous = "arditium",
 			Assembler_Next = "electranium",
 			Assembler_Ingredients = {
-				["arditium-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
+				["tungsten-gear-wheel"] = 4,
+				["tungsten-plate"] = 20,
+				["processing-control-board"] = 1,
+				["controller"] = 1,
 			},
 		},
 		Centrifuge = {
 			Centrifuge_Speed_Mod = 1.5,
+			Centrifuge_Previous = "stainless-steel",
 			Centrifuge_Next = "tungstvar",
 			Centrifuge_Ingredients = {
-				["stainless-steel-centrifuge"] = 1,
-				["stone-gear-wheel"] = 4,
-				["stone-brick"] = 4,
-				["iron-plate"] = 1,
+				["processing-control-board"] = 5,
+				["tungsten-plate"] = 25,
+				["tungsten-gear-wheel"] = 25,
+				["controller"] = 5,
 			},
 		},
 		Furnace = {
@@ -1315,10 +1342,12 @@ Data_Entity = {
 		},
 		Assembler = {
 			Assembler_Speed_Mod = 1.54,
+			Assembler_Previous = "tungsten",
 			Assembler_Next = "neutronium",
 			Assembler_Ingredients = {
-				["tungsten-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
+				["electranium-cable"] = 4,
+				["electranium-plate"] = 20,
+				["logic-control-board"] = 1,
 			},
 		},
 		Solar = {
@@ -1514,12 +1543,11 @@ Data_Entity = {
 		},
 		Centrifuge = {
 			Centrifuge_Speed_Mod = 1.8,
+			Centrifuge_Previous = "tungsten",
 			Centrifuge_Next = "neutrobaltium",
 			Centrifuge_Ingredients = {
-				["tungsten-centrifuge"] = 1,
-				["stone-gear-wheel"] = 4,
-				["stone-brick"] = 4,
-				["iron-plate"] = 1,
+				["super-control-board"] = 5,
+				["tungstvar-plate"] = 25,
 			},
 		},
 		Solar = {
@@ -1585,10 +1613,12 @@ Data_Entity = {
 		},
 		Assembler = {
 			Assembler_Speed_Mod = 1.66,
+			Assembler_Previous = "electranium",
 			Assembler_Next = "neutrobaltium",
 			Assembler_Ingredients = {
-				["electranium-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
+				["neutronium-stick"] = 4,
+				["neutronium-plate"] = 20,
+				["extreme-control-board"] = 1,
 			},
 		},
 		Steam_Engine = {
@@ -1710,10 +1740,12 @@ Data_Entity = {
 		},
 		Assembler = {
 			Assembler_Speed_Mod = 1.8,
+			Assembler_Previous = "neutronium",
 			Assembler_Next = "neutrobaltium",
 			Assembler_Ingredients = {
-				["neutronium-assembling-machine"] = 1,
-				["iron-gear-wheel"] = 4,
+				["neutrobaltium-gear-wheel"] = 4,
+				["neutrobaltium-plate"] = 20,
+				["quantum-control-board"] = 2,
 			},
 		},
 		Refinery = {
@@ -1735,12 +1767,11 @@ Data_Entity = {
 		},
 		Centrifuge = {
 			Centrifuge_Speed_Mod = 2.5,
+			Centrifuge_Previous = "tungstvar",
 			Centrifuge_Next = "neutrobaltium",
 			Centrifuge_Ingredients = {
-				["tungstvar-centrifuge"] = 1,
-				["stone-gear-wheel"] = 4,
-				["stone-brick"] = 4,
-				["neutrobaltium-plate"] = 1,
+				["quantum-control-board"] = 5,
+				["neutrobaltium-plate"] = 25,
 			},
 		},
 		Steam_Engine = {

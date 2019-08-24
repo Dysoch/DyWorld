@@ -241,9 +241,11 @@ Data_Entity = {
 			Furnace_Speed_Mod = 1.11,
 			Furnace_Next = "steel",
 			Furnace_Ingredients = {
-				["assembling-machine-1"] = 1,
-				["basic-control-board"] = 4,
-				["iron-plate"] = 15,
+				["basic-control-board"] = 5,
+				["iron-plate"] = 25,
+				["iron-stick"] = 10,
+				["copper-cable"] = 5,
+				["rotor"] = 1,
 			},
 		},
 		Wall = {
@@ -255,6 +257,7 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["iron-wall"] = 2,
 				["iron-plate"] = 10,
+				["simple-control-board"] = 2,
 			},
 		},
 		Boiler = {
@@ -264,10 +267,11 @@ Data_Entity = {
 			Boiler_Effectivity = 1,
 			Boiler_Energy_Consumption_KW = 1900,
 			Boiler_Ingredients = {
-				["electronic-circuit"] = 4,
+				["basic-control-board"] = 4,
 				["copper-plate"] = 1,
 				["iron-plate"] = 5,
 				["iron-gear-wheel"] = 1,
+				["rotor"] = 1,
 			},
 		},
 	},
@@ -287,7 +291,8 @@ Data_Entity = {
 			Solar_Production = 90,
 			Solar_Next = "silver",
 			Solar_Ingredients = {
-				["copper-plate"] = 4,
+				["copper-plate"] = 10,
+				["basic-control-board"] = 4,
 			},
 		},
 		Accumulator = {
@@ -333,10 +338,9 @@ Data_Entity = {
 			Steam_Engine_Effectivity = 0.75,
 			Steam_Engine_Maximum_Temperature = 165,
 			Steam_Engine_Ingredients = {
-				["nickel-plate"] = 50,
-				["nickel-cable"] = 10,
-				["nickel-gear-wheel"] = 10,
-				["electronic-circuit"] = 5,
+				["nickel-plate"] = 20,
+				["nickel-gear-wheel"] = 5,
+				["rotor"] = 5,
 			},
 		},
 		Robot = {
@@ -400,9 +404,11 @@ Data_Entity = {
 	["silver"] = {
 		Solar = {
 			Solar_Production = 170,
+			Solar_Previous = "copper",
 			Solar_Next = "gold",
 			Solar_Ingredients = {
-				["silver-plate"] = 4,
+				["silver-plate"] = 10,
+				["basic-control-board"] = 4,
 			},
 		},
 		Speed_Module = {
@@ -545,10 +551,10 @@ Data_Entity = {
 			Steam_Engine_Effectivity = 0.75,
 			Steam_Engine_Maximum_Temperature = 165,
 			Steam_Engine_Ingredients = {
-				["steel-plate"] = 50,
+				["steel-plate"] = 25,
 				["steel-stick"] = 10,
 				["steel-gear-wheel"] = 10,
-				["electronic-circuit"] = 5,
+				["heater"] = 5,
 			},
 		},
 		Pump = {
@@ -569,6 +575,8 @@ Data_Entity = {
 			Furnace_Ingredients = {
 				["electronic-control-board"] = 4,
 				["steel-plate"] = 15,
+				["heater"] = 2,
+				["coil"] = 5,
 			},
 		},
 		Radar = {
@@ -586,9 +594,12 @@ Data_Entity = {
 	["gold"] = {
 		Solar = {
 			Solar_Production = 260,
+			Solar_Previous = "silver",
 			Solar_Next = "invar",
 			Solar_Ingredients = {
-				["gold-plate"] = 4,
+				["gold-plate"] = 10,
+				["electronic-control-board"] = 4,
+				["frame"] = 1,
 			},
 		},
 		Speed_Module = {
@@ -784,6 +795,7 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["lead-wall"] = 2,
 				["lead-plate"] = 10,
+				["basic-control-board"] = 2,
 			},
 		},
 	},
@@ -819,10 +831,9 @@ Data_Entity = {
 			Steam_Engine_Effectivity = 0.75,
 			Steam_Engine_Maximum_Temperature = 165,
 			Steam_Engine_Ingredients = {
-				["cobalt-plate"] = 50,
-				["cobalt-cable"] = 10,
+				["cobalt-plate"] = 40,
 				["cobalt-gear-wheel"] = 10,
-				["electronic-circuit"] = 25,
+				["intake"] = 4,
 			},
 		},
 		Robot = {
@@ -863,7 +874,9 @@ Data_Entity = {
 			Furnace_Next = "tungsten",
 			Furnace_Ingredients = {
 				["advanced-control-board"] = 4,
-				["cobalt-plate"] = 15,
+				["cobalt-plate"] = 25,
+				["heater"] = 5,
+				["intake"] = 1,
 			},
 		},
 	},
@@ -881,9 +894,12 @@ Data_Entity = {
 		},
 		Solar = {
 			Solar_Production = 375,
+			Solar_Previous = "gold",
 			Solar_Next = "arditium",
 			Solar_Ingredients = {
-				["invar-plate"] = 4,
+				["invar-plate"] = 10,
+				["advanced-control-board"] = 4,
+				["housing"] = 1,
 			},
 		},
 		Wall = {
@@ -895,6 +911,7 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["invar-wall"] = 2,
 				["invar-plate"] = 10,
+				["electronic-control-board"] = 2,
 			},
 		},
 		Chemical = {
@@ -913,9 +930,9 @@ Data_Entity = {
 			Radar_Active_Range = 5,
 			Radar_Scan_Range = 28,
 			Radar_Ingredients = {
-				["advanced-control-board"] = 4,
-				["invar-plate"] = 5,
-				["invar-gear-wheel"] = 1,
+				["advanced-control-board"] = 2,
+				["invar-plate"] = 25,
+				["invar-gear-wheel"] = 13,
 			},
 		},
 	},
@@ -1019,8 +1036,7 @@ Data_Entity = {
 			Steam_Engine_Ingredients = {
 				["stainless-steel-plate"] = 50,
 				["stainless-steel-stick"] = 10,
-				["stainless-steel-gear-wheel"] = 10,
-				["electronic-circuit"] = 25,
+				["tough-control-board"] = 5,
 			},
 		},
 		Wall = {
@@ -1032,6 +1048,7 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["stainless-steel-wall"] = 2,
 				["stainless-steel-plate"] = 10,
+				["advanced-control-board"] = 2,
 			},
 		},
 		Pump = {
@@ -1062,8 +1079,8 @@ Data_Entity = {
 			Radar_Scan_Range = 37,
 			Radar_Ingredients = {
 				["tough-control-board"] = 4,
-				["stainless-steel-plate"] = 5,
-				["stainless-steel-gear-wheel"] = 1,
+				["stainless-steel-plate"] = 15,
+				["stainless-steel-gear-wheel"] = 3,
 			},
 		},
 	},
@@ -1094,9 +1111,12 @@ Data_Entity = {
 		},
 		Solar = {
 			Solar_Production = 490,
+			Solar_Previous = "invar",
 			Solar_Next = "titanium",
 			Solar_Ingredients = {
-				["arditium-plate"] = 4,
+				["arditium-plate"] = 10,
+				["tough-control-board"] = 4,
+				["housing"] = 4,
 			},
 		},
 		Pipe = {
@@ -1190,9 +1210,12 @@ Data_Entity = {
 		},
 		Solar = {
 			Solar_Production = 620,
+			Solar_Previous = "arditium",
 			Solar_Next = "electranium",
 			Solar_Ingredients = {
-				["titanium-plate"] = 4,
+				["titanium-plate"] = 10,
+				["processing-control-board"] = 4,
+				["controller"] = 1,
 			},
 		},
 		Steam_Engine = {
@@ -1203,9 +1226,8 @@ Data_Entity = {
 			Steam_Engine_Maximum_Temperature = 165,
 			Steam_Engine_Ingredients = {
 				["titanium-plate"] = 50,
-				["titanium-cable"] = 10,
 				["titanium-gear-wheel"] = 10,
-				["electronic-circuit"] = 25,
+				["controller"] = 1,
 			},	
 		},
 		Wall = {
@@ -1217,6 +1239,7 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["titanium-wall"] = 2,
 				["titanium-plate"] = 10,
+				["processing-control-board"] = 2,
 			},
 		},
 		Pumpjack = {
@@ -1237,7 +1260,7 @@ Data_Entity = {
 			Radar_Active_Range = 8,
 			Radar_Scan_Range = 50,
 			Radar_Ingredients = {
-				["processing-control-board"] = 4,
+				["processing-control-board"] = 8,
 				["titanium-plate"] = 5,
 				["titanium-gear-wheel"] = 1,
 			},
@@ -1324,7 +1347,9 @@ Data_Entity = {
 			Furnace_Next = "tungstvar",
 			Furnace_Ingredients = {
 				["processing-control-board"] = 4,
-				["tungsten-plate"] = 15,
+				["tungsten-plate"] = 30,
+				["heater"] = 10,
+				["controller"] = 1,
 			},
 		},
 	},
@@ -1365,9 +1390,11 @@ Data_Entity = {
 		},
 		Solar = {
 			Solar_Production = 860,
+			Solar_Previous = "titanium",
 			Solar_Next = "tungstvar",
 			Solar_Ingredients = {
-				["electranium-plate"] = 4,
+				["electranium-plate"] = 10,
+				["logic-control-board"] = 8,
 			},
 		},
 		Steam_Engine = {
@@ -1380,7 +1407,7 @@ Data_Entity = {
 				["electranium-plate"] = 50,
 				["electranium-cable"] = 10,
 				["electranium-stick"] = 10,
-				["electronic-circuit"] = 25,
+				["logic-control-board"] = 25,
 			},	
 		},
 		Robot = {
@@ -1454,6 +1481,7 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["arditium-tungstenate-wall"] = 2,
 				["arditium-tungstenate-plate"] = 10,
+				["logic-control-board"] = 5,
 			},
 		},
 		Pump = {
@@ -1495,7 +1523,7 @@ Data_Entity = {
 			Radar_Ingredients = {
 				["logic-control-board"] = 4,
 				["arditium-tungstenate-plate"] = 5,
-				["arditium-tungstenate-gear-wheel"] = 1,
+				["arditium-tungstenate-gear-wheel"] = 9,
 			},
 		},
 	},
@@ -1566,9 +1594,11 @@ Data_Entity = {
 		},
 		Solar = {
 			Solar_Production = 1175,
+			Solar_Previous = "electranium",
 			Solar_Next = "neutrobaltium",
 			Solar_Ingredients = {
-				["tungstvar-plate"] = 4,
+				["tungstvar-plate"] = 10,
+				["super-control-board"] = 8,
 			},
 		},
 		Steam_Engine = {
@@ -1580,7 +1610,7 @@ Data_Entity = {
 			Steam_Engine_Ingredients = {
 				["tungstvar-plate"] = 50,
 				["tungstvar-stick"] = 10,
-				["electronic-circuit"] = 25,
+				["housing"] = 10,
 			},
 		},
 		Wall = {
@@ -1592,6 +1622,7 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["tungstvar-wall"] = 2,
 				["tungstvar-plate"] = 10,
+				["super-control-board"] = 5,
 			},	
 		},	
 		Furnace = {
@@ -1600,7 +1631,8 @@ Data_Entity = {
 			Furnace_Next = "neutrobaltium",
 			Furnace_Ingredients = {
 				["super-control-board"] = 4,
-				["tungstvar-plate"] = 15,
+				["tungstvar-plate"] = 40,
+				["heater"] = 25,
 			},
 		},
 		Accumulator = {
@@ -1645,7 +1677,7 @@ Data_Entity = {
 			Steam_Engine_Ingredients = {
 				["neutronium-plate"] = 50,
 				["neutronium-stick"] = 10,
-				["electronic-circuit"] = 25,
+				["extreme-control-board"] = 15,
 			},	
 		},
 		Wall = {
@@ -1657,6 +1689,7 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["neutronium-wall"] = 2,
 				["neutronium-plate"] = 10,
+				["extreme-control-board"] = 10,
 			},	
 		},
 		Pump = {
@@ -1776,9 +1809,11 @@ Data_Entity = {
 		},
 		Solar = {
 			Solar_Production = 1500,
+			Solar_Previous = "tungstvar",
 			Solar_Next = "neutrobaltium",
 			Solar_Ingredients = {
-				["neutrobaltium-plate"] = 4,
+				["neutrobaltium-plate"] = 10,
+				["quantum-control-board"] = 25,
 			},
 		},
 		Centrifuge = {
@@ -1800,7 +1835,7 @@ Data_Entity = {
 				["neutrobaltium-plate"] = 50,
 				["neutrobaltium-cable"] = 10,
 				["neutrobaltium-gear-wheel"] = 10,
-				["electronic-circuit"] = 25,
+				["quantum-control-board"] = 25,
 			},
 		},
 		Pipe = {
@@ -1847,6 +1882,7 @@ Data_Entity = {
 			Gate_Ingredients = {
 				["neutrobaltium-wall"] = 2,
 				["neutrobaltium-plate"] = 10,
+				["quantum-control-board"] = 10,
 			},
 		},
 		Furnace = {
@@ -1854,8 +1890,9 @@ Data_Entity = {
 			Furnace_Previous = "tungstvar",
 			Furnace_Next = "neutrobaltium",
 			Furnace_Ingredients = {
-				["quantum-control-board"] = 4,
-				["neutrobaltium-plate"] = 15,
+				["quantum-control-board"] = 5,
+				["neutrobaltium-plate"] = 75,
+				["heater"] = 50,
 			},
 		},
 		Radar = {
@@ -1864,9 +1901,9 @@ Data_Entity = {
 			Radar_Active_Range = 13,
 			Radar_Scan_Range = 90,
 			Radar_Ingredients = {
-				["quantum-control-board"] = 4,
-				["neutrobaltium-plate"] = 5,
-				["neutrobaltium-gear-wheel"] = 1,
+				["quantum-control-board"] = 20,
+				["neutrobaltium-plate"] = 25,
+				["neutrobaltium-gear-wheel"] = 15,
 			},
 		},
 	},

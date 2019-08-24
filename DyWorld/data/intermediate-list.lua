@@ -20,6 +20,7 @@
 "wheat" = Wheat
 "carrot" = Carrot
 "obsidian" = Obsidian
+"solar-cell" = Solar Cell
 "filter-empty" = Empty Filter
 "blade" = Blade (used in rotors)
 "resin" = Resin
@@ -53,7 +54,6 @@
 "heater" = Heater
 "gearbox" = Gearbox
 "coil" = Coil
-"solar-cell" = Solar Cell
 "battery-pack" = Battery Pack
 "rubber" = Rubber
 "steel-plate" = Steel Plate

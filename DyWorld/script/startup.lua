@@ -10,7 +10,7 @@ function Game_Startup()
 	if not global.dyworld then
 		global.dyworld = 
 		{
-			Version = "0.7.80",
+			Version = "0.8.0",
 			Items = {},
 			Research = {},
 			Guide = {},
@@ -53,18 +53,14 @@ function Game_Startup()
 			RPG_Mode = global.RPG or "normal",
             Warfare = {Location = {}},
 		}
-	debug("Created global.dyworld")
+	debug("Created global.dyworld at version: "..global.dyworld.Version)
 	end
 	if settings.startup["DyWorld_Debug"].value then
 		game.forces.player.maximum_following_robot_count = 500
 		game.forces.player.character_health_bonus = 99750
 	end
-	game.forces.player.ghost_time_to_live = (60*60*60*24) -- 24 hour live time
-	game.forces.player.deconstruction_time_to_live = (60*60*60*24) -- 24 hour live time
-	--remote.call("silo_script", "set_show_launched_without_satellite", false)
-	--remote.call("silo_script", "set_finish_on_launch", false)
-	--remote.call("silo_script", "remove_tracked_item", "satellite")
-	--remote.call("silo_script", "add_tracked_item", "dyworld-dtx-001-spaceship")
+	game.forces.player.ghost_time_to_live = (60*60*60*172)
+	game.forces.player.deconstruction_time_to_live = (60*60*60*172)
 end
 
 function Player_Startup(PLAYER, ID, FORCE)
@@ -72,7 +68,6 @@ function Player_Startup(PLAYER, ID, FORCE)
 	if not global.stats then global.stats = {} debug("Created global.stats") end
 	global.dyworld.Players = global.dyworld.Players + 1
 	global.dyworld.Level = global.dyworld.Level + 1
-	--Prototype()
 	if not global.players then
 	debug("No global.players, creating new one")
 		global.players = 
@@ -167,7 +162,6 @@ function Player_Startup(PLAYER, ID, FORCE)
 	debug("New player created, and added "..game.players[ID].name.." to global.players with blank stats with ID: "..ID)
 	end
 	if game.players[ID].character then
-	-- @todo Fix PvP mode
 		game.players[ID].get_inventory(defines.inventory.character_main).clear()
 		game.players[ID].get_inventory(defines.inventory.character_guns).clear()
 		game.players[ID].get_inventory(defines.inventory.character_ammo).clear()

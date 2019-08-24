@@ -1,7 +1,7 @@
 require "script/startup"
 
 function Migrate_To_Next_Version()
-	if global.dyworld.Version == "0.7.82" then
+	if global.dyworld.Version == "0.7.80" then
 			-- This part below is done every migration!
 			global.dyworld.Max_Research = Research_Calc(),
 			global.dyworld.Research_Done == 0
@@ -21,8 +21,6 @@ function Migrate_To_Next_Version()
 		global.dyworld.Version = "0.8.0" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 		PlayerPrint("Please start over! DyWorld has changed a lot since version 0.7.x, and certain things are no longer working. No migration will happen from 0.7.x to 0.8, since that is to much edits that might corrupt savegame. Please start a new game!")
-		--@todo add migration message
-		--@body A message that says to start over with a new game since DyWorld changed a lot
 	end
 end
 

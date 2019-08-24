@@ -2,22 +2,23 @@
 Version: 0.8.0
 Date: 25. 08. 2019
   Features:
-    - COMPLETE REWRITE OF DYWORLD!
+    - COMPLETE REWRITE OF DYWORLD! So many changes, that it is to much to write down. Its a completely new mod now, and upcoming changelogs will reflect changes and additions made after this versions.
     - Completely new Ores. Cobalt, Arditium, Tin, Nickel, Silver, Lead, Tungsten, Titanium and Neutronium.
     - Base game ores revamped and now generated the same as the rest
     - Added storehouses and warehouses in 3x3 and 6x6 size, courtesy of Nova Kast, dgw and Anoyomouse
     - Starting ships replaced by new base game graphics. Broken down stuff sadly, will recieve update in next versions to repair them
     - Random debris can now be found in the starting area. This holds scrap metal (which gives some random stuff), corpses of your crew mates and impact craters. More to come in coming updates to bring more life into the world
     - During your crash landing, a lot of stuff has been ejected before you hit the ground. Some chests can be found further away from the starting area, these are hard to find, but give rewarding loot (all items in game can spawn in it!) Its quite far away though, and each one generated makes the next one even further generated.
+    - Added a lot new intermediates! Total over 100 items! 
   RPG/GUI:
     - Removed the Needs and Story systems. Were unfinished and are pushed back to far away
     - Changed the way you gain XP. Mining, Crafting and Building have diminishing XP gains. This is item specific, so Mining, Crafting or Building different items have different XP. Max XP gain for Mining after 1000 mined is 0.25 XP, for Crafting its 0.05 XP after 260 crafted and building is 0.05 XP gained after 10.000 build. Build, mine and craft many different things!
     - Revamped Distance GUI. Now has 4 modes. First will show the crashed ships, always active. 2: You can toggle Map Labels on/off in settings, will show distances. 3/4: These modes are not completely implemented yet, but show resource and player distances when done
-    - Add Tooltips for everything GUI Related
-    - Disabled Skills window for now, till it has been implemented
+    - Add Tooltips for nearly everything GUI Related
+    - Disabled Skills window for now, till it has been implemented (0.8.2!)
   Changes:
     - Removed old mod settings
-    - Completely revamped world generation. More stuff now generates
+    - Completely revamped world generation of ruins. More stuff now generates
     - Recycler now has a massive drawback: It emits MASSIVE amounts of pollution! use it wisely!
     - Revamped metallurgy. Now new alloys, more machines, and easier to understand. Still some logistical nightmare though!
 ---------------------------------------------------------------------------------------------------

@@ -48,8 +48,8 @@ Data_Entity = {
 			Drill_Range = 3,
 			Drill_Next = "iron",
 			Drill_Ingredients = {
-				["electronic-circuit"] = 2,
-				["stone-plate"] = 8,
+				["simple-control-board"] = 5,
+				["stone-plate"] = 10,
 				["stone-gear-wheel"] = 5,
 			},
 		},
@@ -206,11 +206,12 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 1,
 			Drill_Range = 6,
+			Drill_Previous = "stone",
 			Drill_Next = "nickel",
 			Drill_Ingredients = {
-				["electric-mining-drill"] = 1,
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
+				["iron-gear-wheel"] = 5,
+				["basic-control-board"] = 2,
+				["rotor"] = 2,
 			},
 		},
 		Pumpjack = {
@@ -316,11 +317,13 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 1.5,
 			Drill_Range = 7,
+			Drill_Previous = "iron",
 			Drill_Next = "lead",
 			Drill_Ingredients = {
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["iron-electric-mining-drill"] = 1,
+				["nickel-gear-wheel"] = 4,
+				["nickel-plate"] = 10,
+				["basic-control-board"] = 10,
+				["rotor"] = 4,
 			},
 		},
 		Steam_Engine = {
@@ -741,11 +744,13 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 2.5,
 			Drill_Range = 8,
+			Drill_Previous = "nickel",
 			Drill_Next = "cobalt",
 			Drill_Ingredients = {
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["nickel-electric-mining-drill"] = 1,
+				["lead-gear-wheel"] = 4,
+				["lead-plate"] = 10,
+				["electronic-control-board"] = 5,
+				["frame"] = 1,
 			},
 		},
 		Assembler = {
@@ -787,11 +792,13 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 4,
 			Drill_Range = 10,
+			Drill_Previous = "lead",
 			Drill_Next = "arditium",
 			Drill_Ingredients = {
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["lead-electric-mining-drill"] = 1,
+				["cobalt-gear-wheel"] = 4,
+				["cobalt-plate"] = 10,
+				["advanced-control-board"] = 5,
+				["intake"] = 1,
 			},
 		},
 		Centrifuge = {
@@ -1064,11 +1071,14 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 6,
 			Drill_Range = 10,
+			Drill_Previous = "cobalt",
 			Drill_Next = "titanium",
 			Drill_Ingredients = {
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["cobalt-electric-mining-drill"] = 1,
+				["arditium-gear-wheel"] = 6,
+				["arditium-plate"] = 15,
+				["tough-control-board"] = 5,
+				["housing"] = 2,
+				["intake"] = 1,
 			},
 		},
 		Assembler = {
@@ -1169,11 +1179,13 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 9,
 			Drill_Range = 12,
+			Drill_Previous = "arditium",
 			Drill_Next = "electranium",
 			Drill_Ingredients = {
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["arditium-electric-mining-drill"] = 1,
+				["titanium-gear-wheel"] = 10,
+				["titanium-plate"] = 20,
+				["processing-control-board"] = 5,
+				["controller"] = 1,
 			},
 		},
 		Solar = {
@@ -1321,11 +1333,12 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 12,
 			Drill_Range = 15,
+			Drill_Previous = "titanium",
 			Drill_Next = "tungstvar",
 			Drill_Ingredients = {
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["titanium-electric-mining-drill"] = 1,
+				["electranium-cable"] = 10,
+				["electranium-plate"] = 25,
+				["logic-control-board"] = 5,
 			},
 		},
 		Pipe = {
@@ -1534,11 +1547,12 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 15,
 			Drill_Range = 20,
+			Drill_Previous = "electranium",
 			Drill_Next = "neutronium",
 			Drill_Ingredients = {
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["electranium-electric-mining-drill"] = 1,
+				["tungstvar-stick"] = 20,
+				["tungstvar-plate"] = 50,
+				["super-control-board"] = 10,
 			},
 		},
 		Centrifuge = {
@@ -1604,11 +1618,12 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 19,
 			Drill_Range = 22,
+			Drill_Previous = "tungstvar",
 			Drill_Next = "neutrobaltium",
 			Drill_Ingredients = {
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["tungstvar-electric-mining-drill"] = 1,
+				["neutronium-stick"] = 20,
+				["neutronium-plate"] = 50,
+				["super-control-board"] = 25,
 			},
 		},
 		Assembler = {
@@ -1731,11 +1746,12 @@ Data_Entity = {
 		Drill = {
 			Drill_Speed = 25,
 			Drill_Range = 25,
+			Drill_Previous = "neutronium",
 			Drill_Next = "neutrobaltium",
 			Drill_Ingredients = {
-				["iron-gear-wheel"] = 4,
-				["transport-belt"] = 2,
-				["neutronium-electric-mining-drill"] = 1,
+				["neutrobaltium-gear-wheel"] = 20,
+				["neutrobaltium-plate"] = 50,
+				["quantum-control-board"] = 25,
 			},
 		},
 		Assembler = {

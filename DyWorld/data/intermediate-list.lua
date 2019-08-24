@@ -15,9 +15,6 @@
 "simple-control-board" = Circuit for this tier
 
 --------------------------- Tier 2 ---------------------------------
-"red-wire" = Red Wires
-"green-wire" = Green Wires
-"concrete" = Concrete
 "glass" = Glass
 "rotor" = Rotor
 "wheat" = Wheat
@@ -43,6 +40,9 @@
 "basic-control-board" = Circuit for this tier
 
 --------------------------- Tier 3 ---------------------------------
+"red-wire" = Red Wires
+"concrete" = Concrete
+"green-wire" = Green Wires
 "engine-unit" = Engine Unit
 "battery" = Battery
 "flying-robot-frame" = Flying robot frame

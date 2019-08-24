@@ -38,9 +38,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Accumulator then
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "accumulator", v.DyWorld.Name.."-accumulator", true)
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
-	DyWorld_Prototype_Recipe.normal.ingredients = {}
+	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = "battery-pack", amount = v.DyWorld.Entity.Accumulator.Accumulator_Buffer_MJ}}
 	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-accumulator"
-	DyWorld_Prototype_Recipe.expensive.ingredients = {}
+	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = "battery-pack", amount = v.DyWorld.Entity.Accumulator.Accumulator_Buffer_MJ*3}}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-accumulator"
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.accumulator-1", {"looped-name."..v.DyWorld.Name}}

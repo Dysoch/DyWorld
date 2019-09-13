@@ -35,6 +35,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
 	DyWorld_Prototype_Item.icon = nil
+	DyWorld_Prototype_Item.stacksize = 200
 	DyWorld_Prototype_Item.icons = {
 	  {
 		icon = "__base__/graphics/icons/underground-belt.png",

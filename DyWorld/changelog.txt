@@ -1,8 +1,17 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.1
 Date: 24. 08. 2019
+  Balancing:
+    - Cutting ANY tree will now have a chance to get acorns. This fixes compatibility issues with mods that add trees, since they give acorns as well.
+    - Changed difficulty script to not have massive leaps in health. Now smaller leaps, and different things have different health increases (bases more then units)
+  Changes:
+    - Reworked info.json. Added a list of mods that are incompatible with DyWorld (bobs, angels, py, IR etc) should these mods be installed, DyWorld will not be loaded!
+    - Stone has now a slighty different color, to hopefully not make it as dark as it was
   Bugfixes:
     - Fixed joining a game in progress error (https://mods.factorio.com/mod/DyWorld/discussion/5d615b8acda710000b9705b0)
+    - Fixed graphical glitch with pipes and its window sprite. Should display correct color now
+    - Fixed Chemical Science Fluid not being able to be crafted in any machines
+    - 
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.0
 Date: 24. 08. 2019
@@ -20,7 +29,7 @@ Date: 24. 08. 2019
     - Changed the way you gain XP. Mining, Crafting and Building have diminishing XP gains. This is item specific, so Mining, Crafting or Building different items have different XP. Max XP gain for Mining after 1000 mined is 0.25 XP, for Crafting its 0.05 XP after 260 crafted and building is 0.05 XP gained after 10.000 build. Build, mine and craft many different things!
     - Revamped Distance GUI. Now has 4 modes. First will show the crashed ships, always active. 2: You can toggle Map Labels on/off in settings, will show distances. 3/4: These modes are not completely implemented yet, but show resource and player distances when done
     - Add Tooltips for nearly everything GUI Related
-    - Disabled Skills window for now, till it has been implemented (0.8.3!)
+    - Disabled Skills window for now, till it has been implemented (0.8.2!)
   Changes:
     - Removed old mod settings
     - Completely revamped world generation of ruins. More stuff now generates

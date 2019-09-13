@@ -91,73 +91,60 @@ script.on_event(defines.events.on_player_changed_force, function(event)
 end)
 
 script.on_event(defines.events.on_player_died, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		local ID = event.player_index
-		global.players[ID].Alive = false
-		debug(game.players[event.player_index].name.." died")
-	end
+	local ID = event.player_index
+	global.players[ID].Alive = false
+	debug(game.players[event.player_index].name.." died")
 end)
 
 script.on_event(defines.events.on_player_joined_game, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		local ID = event.player_index
-		global.players[ID].Playing = true
-		debug(game.players[event.player_index].name.." joined game")
-	end
+	local player = game.players[event.player_index]
+	local ID = event.player_index
+	Player_Startup(player, ID, player.force.name)
+	global.players[ID].Playing = true
+	debug(game.players[event.player_index].name.." joined game")
 end)
 
 script.on_event(defines.events.on_player_left_game, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		local ID = event.player_index
-		global.players[ID].Playing = false
-		debug(game.players[event.player_index].name.." left game")
-	end
+	local ID = event.player_index
+	global.players[ID].Playing = false
+	debug(game.players[event.player_index].name.." left game")
 end)
 
 -- game event hooks
 script.on_event(defines.events.on_player_crafted_item, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
-		IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
-		XP_Crafting(event.player_index, event.item_stack.name, event.item_stack.count)
-		
-	end
+	IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
+	IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
+	XP_Crafting(event.player_index, event.item_stack.name, event.item_stack.count)
 end)
 
 script.on_event(defines.events.on_player_mined_item, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		if event.item_stack.count >= 100 then
-			IncrementerGlobal("mined", 100, event.item_stack.name)
-			IncrementerPersonal("mined", 100, event.player_index, event.item_stack.name)
-			XP_Mining(event.player_index, event.item_stack.name, 100)
-		else
-			IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
-			IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
-			XP_Mining(event.player_index, event.item_stack.name, event.item_stack.count)
-		end
+	if event.item_stack.count >= 100 then
+		IncrementerGlobal("mined", 100, event.item_stack.name)
+		IncrementerPersonal("mined", 100, event.player_index, event.item_stack.name)
+		XP_Mining(event.player_index, event.item_stack.name, 100)
+	else
+		IncrementerGlobal("mined", event.item_stack.count, event.item_stack.name)
+		IncrementerPersonal("mined", event.item_stack.count, event.player_index, event.item_stack.name)
+		XP_Mining(event.player_index, event.item_stack.name, event.item_stack.count)
 	end
 end)
 
 script.on_event(defines.events.on_picked_up_item, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		if event.item_stack.count >= 100 then
-			IncrementerGlobal("pickup", 100, event.item_stack.name)
-			IncrementerPersonal("pickup", 100, event.player_index, event.item_stack.name)
-			XP_Full(event.player_index)
-		else
-			IncrementerGlobal("pickup", event.item_stack.count, event.item_stack.name)
-			IncrementerPersonal("pickup", event.item_stack.count, event.player_index, event.item_stack.name)
-			XP_Full(event.player_index)
-		end
+	if event.item_stack.count >= 100 then
+		IncrementerGlobal("pickup", 100, event.item_stack.name)
+		IncrementerPersonal("pickup", 100, event.player_index, event.item_stack.name)
+		XP_Full(event.player_index)
+	else
+		IncrementerGlobal("pickup", event.item_stack.count, event.item_stack.name)
+		IncrementerPersonal("pickup", event.item_stack.count, event.player_index, event.item_stack.name)
+		XP_Full(event.player_index)
 	end
 end)
 
 script.on_event(defines.events.on_built_entity, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		IncrementerGlobal("build", 1)
-		IncrementerPersonal("build", 1, event.player_index, event.created_entity.name)
-		XP_Building(event.player_index, event.created_entity.name, 1)
-	end
+	IncrementerGlobal("build", 1)
+	IncrementerPersonal("build", 1, event.player_index, event.created_entity.name)
+	XP_Building(event.player_index, event.created_entity.name, 1)
 	if not global.dyworld.Guide then global.dyworld.Guide = {} end
 	if not global.dyworld.Guide[event.created_entity.type] then
 		global.dyworld.Guide[event.created_entity.type] = true
@@ -165,17 +152,13 @@ script.on_event(defines.events.on_built_entity, function(event)
 end)
 
 script.on_event(defines.events.on_robot_mined, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		IncrementerGlobal("ghostmined", event.item_stack.count, event.item_stack.name)
-		XP_All_Small()
-	end
+	IncrementerGlobal("ghostmined", event.item_stack.count, event.item_stack.name)
+	XP_All_Small()
 end)
 
 script.on_event(defines.events.on_robot_built_entity, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		IncrementerGlobal("ghostbuild", 1)
-		XP_All_Small()
-	end
+	IncrementerGlobal("ghostbuild", 1)
+	XP_All_Small()
 	if not global.dyworld.Guide then global.dyworld.Guide = {} end
 	if not global.dyworld.Guide[event.created_entity.type] then
 		global.dyworld.Guide[event.created_entity.type] = true
@@ -183,27 +166,21 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
 end)
 
 script.on_event(defines.events.on_sector_scanned, function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		IncrementerGlobal("scanned", 1)
-		XP_All_Small()
-	end
+	IncrementerGlobal("scanned", 1)
+	XP_All_Small()
 end)
 
 script.on_event(defines.events.on_entity_died, function(event)
 	if event.force.name == "player" then
-		if global.dyworld.RPG_Mode == "normal" then
 		IncrementerGlobal("killed", 1)
 		XP_All_Small()
-		end
 	end
 end)
 
 script.on_event(defines.events.on_research_finished, function(event)
 	IncrementerGlobal("research", game.forces.player.technologies[event.research.name].research_unit_count, event.research.name)
 	for i=1,(game.forces.player.technologies[event.research.name].research_unit_count) do
-		if global.dyworld.RPG_Mode == "normal" then
-			XP_All_Full()
-		end
+		XP_All_Full()
 	end
 	global.dyworld.Research_Done = global.dyworld.Research_Done + 1
 	debug("Finished "..event.research.name.." research")

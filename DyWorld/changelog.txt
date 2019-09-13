@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.1
+Date: 24. 08. 2019
+  Bugfixes:
+    - Fixed joining a game in progress error (https://mods.factorio.com/mod/DyWorld/discussion/5d615b8acda710000b9705b0)
+---------------------------------------------------------------------------------------------------
 Version: 0.8.0
-Date: 25. 08. 2019
+Date: 24. 08. 2019
   Features:
     - COMPLETE REWRITE OF DYWORLD! So many changes, that it is to much to write down. Its a completely new mod now, and upcoming changelogs will reflect changes and additions made after this versions.
     - Completely new Ores. Cobalt, Arditium, Tin, Nickel, Silver, Lead, Tungsten, Titanium and Neutronium.
@@ -15,7 +20,7 @@ Date: 25. 08. 2019
     - Changed the way you gain XP. Mining, Crafting and Building have diminishing XP gains. This is item specific, so Mining, Crafting or Building different items have different XP. Max XP gain for Mining after 1000 mined is 0.25 XP, for Crafting its 0.05 XP after 260 crafted and building is 0.05 XP gained after 10.000 build. Build, mine and craft many different things!
     - Revamped Distance GUI. Now has 4 modes. First will show the crashed ships, always active. 2: You can toggle Map Labels on/off in settings, will show distances. 3/4: These modes are not completely implemented yet, but show resource and player distances when done
     - Add Tooltips for nearly everything GUI Related
-    - Disabled Skills window for now, till it has been implemented (0.8.2!)
+    - Disabled Skills window for now, till it has been implemented (0.8.3!)
   Changes:
     - Removed old mod settings
     - Completely revamped world generation of ruins. More stuff now generates

@@ -123,11 +123,11 @@ else
 	elseif settings.startup["DyWorld_Warfare_Difficulty"].value == 3 then
 		for k,v in pairs(data.raw.unit) do	
 			v.pollution_to_join_attack = 1
-			v.max_health = v.max_health * 10
+			v.max_health = v.max_health * 5
 			v.healing_per_tick = v.healing_per_tick * 2
 		end	
 		for k,v in pairs(data.raw.turret) do	
-			v.max_health = v.max_health * 10
+			v.max_health = v.max_health * 8
 			v.healing_per_tick = v.healing_per_tick * 2
 			v.call_for_help_radius = v.call_for_help_radius * 2
 		end	
@@ -143,7 +143,7 @@ else
 	elseif settings.startup["DyWorld_Warfare_Difficulty"].value == 4 then
 		for k,v in pairs(data.raw.unit) do	
 			v.pollution_to_join_attack = 1
-			v.max_health = v.max_health * 25
+			v.max_health = v.max_health * 15
 			v.healing_per_tick = v.healing_per_tick * 4
 		end	
 		for k,v in pairs(data.raw.turret) do	
@@ -152,7 +152,7 @@ else
 			v.call_for_help_radius = v.call_for_help_radius * 4
 		end	
 		for k,v in pairs(data.raw["unit-spawner"]) do	
-			v.max_health = v.max_health * 25
+			v.max_health = v.max_health * 35
 			v.healing_per_tick = v.healing_per_tick * 4
 			--v.max_count_of_owned_units = v.max_count_of_owned_units * 4
 			--v.max_friends_around_to_spawn = v.max_friends_around_to_spawn * 4
@@ -163,11 +163,11 @@ else
 	elseif settings.startup["DyWorld_Warfare_Difficulty"].value == 5 then
 		for k,v in pairs(data.raw.unit) do	
 			v.pollution_to_join_attack = 1
-			v.max_health = v.max_health * 100
+			v.max_health = v.max_health * 35
 			v.healing_per_tick = v.healing_per_tick * 20
 		end	
 		for k,v in pairs(data.raw.turret) do	
-			v.max_health = v.max_health * 100
+			v.max_health = v.max_health * 70
 			v.healing_per_tick = v.healing_per_tick * 20
 			v.call_for_help_radius = v.call_for_help_radius * 10
 		end	

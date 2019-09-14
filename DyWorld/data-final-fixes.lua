@@ -75,6 +75,15 @@ if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
 	end
 ---------------------------------  Resources -----------------------------------------
 	for k, v in pairs(data.raw.resource) do
+		if v.minable then
+			if v.minable.results then
+				for _,z in pairs(v.minable.results) do
+					if z.amount_max then
+						z.amount_max = z.amount_max * 10
+					end
+				end
+			end
+		end
 		if v.autoplace then
 			if v.autoplace.richness_multiplier then
 				v.autoplace.richness_multiplier = v.autoplace.richness_multiplier * 1000

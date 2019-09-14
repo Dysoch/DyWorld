@@ -10,6 +10,8 @@
 	"dependencies": [  
 		"base",
 		"!angelsrefining",
+		"!pyindustry",
+		"!pycoalprocessing",
 		"!boblibrary"
 	]
 }

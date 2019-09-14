@@ -174,7 +174,10 @@ data:extend(
     {
       mining_particle = "stone-particle",
       mining_time = v.Mining_Time,
-      result = v.Name_Ore,
+	  results = {
+            {name = v.Name_Ore, amount_min = 1, amount_max = 1, probability = 1},
+            --{name = v.Name_Ore, amount_min = 1, amount_max = 1, probability = 0.45},
+        },
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},

@@ -19,20 +19,40 @@ end
 if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
 ---------------------------------- Enemies -------------------------------------------
 	for k,v in pairs(data.raw.unit) do	
-		v.max_health = math.floor(v.max_health * 0.25)
-		v.healing_per_tick = v.healing_per_tick * 0.25
+		if v.max_health then
+			v.max_health = math.floor(v.max_health * 0.25)
+		end
+		if v.healing_per_tick then
+			v.healing_per_tick = v.healing_per_tick * 0.25
+		end
 	end	
 	for k,v in pairs(data.raw.turret) do	
-		v.max_health = math.floor(v.max_health * 0.25)
-		v.healing_per_tick = v.healing_per_tick * 0.25
-		v.call_for_help_radius = math.floor(v.call_for_help_radius * 0.25)
+		if v.max_health then
+			v.max_health = math.floor(v.max_health * 0.25)
+		end
+		if v.healing_per_tick then
+			v.healing_per_tick = v.healing_per_tick * 0.25
+		end
+		if v.call_for_help_radius then
+			v.call_for_help_radius = math.floor(v.call_for_help_radius * 0.25)
+		end
 	end	
 	for k,v in pairs(data.raw["unit-spawner"]) do	
-		v.max_health = math.floor(v.max_health * 0.25)
-		v.healing_per_tick = v.healing_per_tick * 0.25
-		v.max_count_of_owned_units = math.floor(v.max_count_of_owned_units * 0.25)
-		v.max_friends_around_to_spawn = math.floor(v.max_friends_around_to_spawn * 0.25)
-		v.call_for_help_radius = math.floor(v.call_for_help_radius * 0.25)
+		if v.max_health then
+			v.max_health = math.floor(v.max_health * 0.25)
+		end
+		if v.healing_per_tick then
+			v.healing_per_tick = v.healing_per_tick * 0.25
+		end
+		if v.max_count_of_owned_units then
+			v.max_count_of_owned_units = math.floor(v.max_count_of_owned_units * 0.25)
+		end
+		if v.max_friends_around_to_spawn then
+			v.max_friends_around_to_spawn = math.floor(v.max_friends_around_to_spawn * 0.25)
+		end
+		if v.call_for_help_radius then
+			v.call_for_help_radius = math.floor(v.call_for_help_radius * 0.25)
+		end
 		v.spawning_cooldown[1] = v.spawning_cooldown[1] * 2.5
 		v.spawning_cooldown[2] = v.spawning_cooldown[2] * 2.5
 	end	
@@ -112,8 +132,12 @@ else
 ---------------------------------- Enemies -------------------------------------------
 	if settings.startup["DyWorld_Warfare_Difficulty"].value == 1 then
 		for k,v in pairs(data.raw.unit) do	
-			v.max_health = math.floor(v.max_health * 0.5)
-			v.healing_per_tick = v.healing_per_tick * 0.5
+			if v.max_health then
+				v.max_health = math.floor(v.max_health * 0.5)
+			end
+			if v.healing_per_tick then
+				v.healing_per_tick = v.healing_per_tick * 0.5
+			end
 		end	
 		for k,v in pairs(data.raw.turret) do	
 			v.max_health = math.floor(v.max_health * 0.5)
@@ -131,9 +155,15 @@ else
 		end	
 	elseif settings.startup["DyWorld_Warfare_Difficulty"].value == 3 then
 		for k,v in pairs(data.raw.unit) do	
-			v.pollution_to_join_attack = 1
-			v.max_health = v.max_health * 5
-			v.healing_per_tick = v.healing_per_tick * 2
+			if v.pollution_to_join_attack then
+				v.pollution_to_join_attack = 1
+			end
+			if v.max_health then
+				v.max_health = math.floor(v.max_health * 5)
+			end
+			if v.healing_per_tick then
+				v.healing_per_tick = v.healing_per_tick * 2
+			end
 		end	
 		for k,v in pairs(data.raw.turret) do	
 			v.max_health = v.max_health * 8
@@ -151,9 +181,15 @@ else
 		end	
 	elseif settings.startup["DyWorld_Warfare_Difficulty"].value == 4 then
 		for k,v in pairs(data.raw.unit) do	
-			v.pollution_to_join_attack = 1
-			v.max_health = v.max_health * 15
-			v.healing_per_tick = v.healing_per_tick * 4
+			if v.pollution_to_join_attack then
+				v.pollution_to_join_attack = 1
+			end
+			if v.max_health then
+				v.max_health = v.max_health * 15
+			end
+			if v.healing_per_tick then
+				v.healing_per_tick = v.healing_per_tick * 4
+			end
 		end	
 		for k,v in pairs(data.raw.turret) do	
 			v.max_health = v.max_health * 25
@@ -171,9 +207,15 @@ else
 		end	
 	elseif settings.startup["DyWorld_Warfare_Difficulty"].value == 5 then
 		for k,v in pairs(data.raw.unit) do	
-			v.pollution_to_join_attack = 1
-			v.max_health = v.max_health * 35
-			v.healing_per_tick = v.healing_per_tick * 20
+			if v.pollution_to_join_attack then
+				v.pollution_to_join_attack = 1
+			end
+			if v.max_health then
+				v.max_health = math.floor(v.max_health * 35)
+			end
+			if v.healing_per_tick then
+				v.healing_per_tick = v.healing_per_tick * 20
+			end
 		end	
 		for k,v in pairs(data.raw.turret) do	
 			v.max_health = v.max_health * 70

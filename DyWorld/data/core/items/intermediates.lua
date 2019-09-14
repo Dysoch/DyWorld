@@ -13,7 +13,6 @@ local Data_Table = {
 	["glass"] = 2, --
 	["rotor"] = 2, --
 	["wheat"] = 2,
-	["carrot"] = 2,
 	["obsidian"] = 2,
 	["filter-empty"] = 2, --
 	["blade"] = 2, --

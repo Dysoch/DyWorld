@@ -104,7 +104,7 @@ end
 local Tech_Recipe_Add = {
 	["intermediates-1"] = {"glass", "rotor", "wheat", "carrot", "obsidian", "filter-empty", "blade", "resin", "sand-filter", "resin-filter", "coal-filter", "stone-filter", "basic-control-board"},
 	["intermediates-2"] = {"gunpowder", "frame", "heater", "gearbox", "coil", "battery-pack", "rubber", "obsidian-filter", "electronic-control-board"},
-	["intermediates-3"] = {"housing", "intake", "advanced-control-board"},
+	["intermediates-3"] = {"housing", "intake", "advanced-control-board", "wood-2"},
 	["intermediates-4"] = {"logistic-unit", "diamond", "tough-control-board"},
 	["intermediates-5"] = {"processing-control-board"},
 	["intermediates-6"] = {"logic-control-board", "controller"},

@@ -34,6 +34,7 @@ require("data.core.item-groups.machine-production")
 
 -- Edits & Edits Related Functions
 require("data.core.edits.items")
+require("data.core.edits.fluids")
 require("data.core.edits.scrap")
 require("data.core.edits.recipes")
 require("data.core.edits.item-group-change")

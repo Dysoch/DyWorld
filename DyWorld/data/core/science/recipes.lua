@@ -132,8 +132,6 @@ data:extend(
   },
 })
 
-
-DyWorld_Add_To_Recipe("science-3", "methane", 5, true)	
 DyWorld_Add_To_Recipe("science-3", "hydrogen", 150, true)	
 
 if settings.startup["DyWorld_Extraction"].value then

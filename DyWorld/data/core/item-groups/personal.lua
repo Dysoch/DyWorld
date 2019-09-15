@@ -27,6 +27,11 @@ local Data_Table_Item_Group = {
 		Main = "personal"
 	},
 	{
+		Name = "mod-nanobots",
+		Type = "sub",
+		Main = "personal"
+	},
+	{
 		Name = "recycler-recipes",
 		Type = "sub",
 		Main = "personal"

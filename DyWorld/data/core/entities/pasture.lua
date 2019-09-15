@@ -170,8 +170,8 @@ data:extend(
 	end
 end
 
-DyWorld_Add_To_Tech("automation-2", "pasture-1")
-DyWorld_Add_To_Tech("automation-4", "pasture-2")
+DyWorld_Add_To_Tech("farming-2", "pasture-1")
+DyWorld_Add_To_Tech("farming-4", "pasture-2")
 DyWorld_Add_To_Tech("automation-6", "pasture-3")
 DyWorld_Add_To_Tech("automation-8", "pasture-4")
 DyWorld_Add_To_Tech("automation-10", "pasture-5")

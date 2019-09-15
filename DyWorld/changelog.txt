@@ -1,29 +1,32 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.1
-Date: 24. 08. 2019
+Date: 14. 09. 2019
   Features:
-    - Mining trees now have an extremely low chance (0.5%) to give food items. Can be used to heal yourself, or for farming which can give more stuff
+    - Mining trees now have an extremely low chance (0.5%) to give food items. Can be used to heal yourself, or for farming which can give more food related items
     - Added a new wood farming recipe for greenhouses. This always gives 1 acorn, but requires more time and water (at a very specific temperature range though, good luck with that). Wood output is also increased
-    - Stone resources now have a chance to give sand when mined
+    - Stone resources now has a chance to give sand when mined
+    - Added dedicated water boiler. This heats water to 95 degrees (doesn't create steam!)
+    - Added a new recipe for Electronic Control Board. This recipe doesn't use the previous Control Board, but is made from scratch. More expensive, but does not require any wood anymore. Cuts the wood usage back from later tiers. Unlocked at Intermediates-3 
   Balancing:
-    - Cutting ANY tree will now have a chance to get acorns. This fixes compatibility issues with mods that add trees, since they give acorns as well.
+    - Cutting ANY tree will now have a chance to get acorns. This fixes compatibility issues with mods that add trees, since they give acorns now as well.
     - Rocks in the game, also any added by any mod, now give a chance for sand and obsidian depending on their size
     - Changed difficulty script to not have massive leaps in health. Now smaller leaps, and different things have different health increases (bases more then units)
     - Belts stacksize changed: 100 > 200
     - Loaders stacksize changed: 100 > 200
     - Underground Belts stacksize changed: 100 > 200
     - Splitters stacksize changed: 100 > 200
-    - Acorns drop chance from greenhouse increased: 45% > 55%
-    - Increased max temperature of steam: 1.000 > 50.000
+    - Acorns drop chance from greenhouse basic recipe increased: 45% > 55%
+    - Increased max temperature of steam: 1.000 > 50.000 (temporary, Work in Progress)
     - Changed max temperature of Iron Boiler: 165 > 200
   Changes:
     - Reworked info.json. Added a list of mods that are incompatible with DyWorld (bobs, angels, py, IR etc) should these mods be installed, DyWorld will not be loaded!
     - Stone has now a slighty different color, to hopefully not make it as dark as it was
+    - Greenhouses now have 2 fluid inputs
   Bugfixes:
-    - Fixed joining a game in progress error (https://mods.factorio.com/mod/DyWorld/discussion/5d615b8acda710000b9705b0)
+    - Fixed joining a game in progress error
     - Fixed graphical glitch with pipes and its window sprite. Should display correct color now
     - Fixed Chemical Science Fluid not being able to be crafted in any machines
-    - Fixed issue with mods that add units that have no healing
+    - Fixed issue with mods that added units that have no healing per tick
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.0
 Date: 24. 08. 2019

@@ -45,6 +45,14 @@ local Data_Table = {
 		Military = false,
 	},
 	{
+		Name = "farming",
+		Icon = {{icon = dyworld_path_tech.."farming.png"}},
+		Pre_Req_Above = 2,
+		Tiers = 5,
+		Count = 50,
+		Military = false,
+	},
+	{
 		Name = "intermediates",
 		Icon = {{icon = "__base__/graphics/technology/advanced-electronics.png"}},
 		Pre_Req_Above = 2,

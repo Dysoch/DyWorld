@@ -17,7 +17,8 @@ local Tech_PreReq = {
 	["rocket-fuel"] = {"lead-processing"},
 	["automation-4"] = {"cobalt-processing"},
 	["automation-5"] = {"arditium-processing"},
-	["automation-6"] = {"tungsten-processing", "titanium-processing"},
+	["automation-6"] = {"tungsten-processing", "titanium-processing", "farming-4"},
+	["automation-7"] = {"farming-5"},
 	["automation-9"] = {"neutronium-processing"},
 	["metallurgy-1"] = {"steel-processing", "smelting-1", "lead-processing"},
 	["metallurgy-2"] = {"silver-processing", "nickel-processing", "tin-processing", "smelting-2"},
@@ -102,9 +103,9 @@ for k,v in pairs(Tech_PreReq_Remove) do
 end
 
 local Tech_Recipe_Add = {
-	["intermediates-1"] = {"glass", "rotor", "wheat", "carrot", "obsidian", "filter-empty", "blade", "resin", "sand-filter", "resin-filter", "coal-filter", "stone-filter", "basic-control-board"},
+	["intermediates-1"] = {"glass", "rotor", "obsidian", "filter-empty", "blade", "resin", "sand-filter", "resin-filter", "coal-filter", "stone-filter", "basic-control-board"},
 	["intermediates-2"] = {"gunpowder", "frame", "heater", "gearbox", "coil", "battery-pack", "rubber", "obsidian-filter", "electronic-control-board"},
-	["intermediates-3"] = {"housing", "intake", "advanced-control-board", "wood-2"},
+	["intermediates-3"] = {"housing", "intake", "advanced-control-board", "electronic-control-board-2"},
 	["intermediates-4"] = {"logistic-unit", "diamond", "tough-control-board"},
 	["intermediates-5"] = {"processing-control-board"},
 	["intermediates-6"] = {"logic-control-board", "controller"},
@@ -129,6 +130,9 @@ local Tech_Recipe_Add = {
 	["utility-science-pack"] = {"science-6"},
 	["oil-processing"] = {"crude-refined-oil-processing"},
 	["solar-energy"] = {"solar-cell"},
+	["farming-1"] = {"carrot", "boiler-water"},
+	["farming-2"] = {"wheat"},
+	["farming-4"] = {"wood-2"},
 } 
 
 for k,v in pairs(Tech_Recipe_Add) do

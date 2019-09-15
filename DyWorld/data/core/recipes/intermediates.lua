@@ -254,6 +254,24 @@ local Data_Table = {
 		Enabled = true,
 	},
 	{
+		Name = "electronic-control-board-2",
+		Time = 5,
+		Recipe_Enabled = true,
+		Recipe_Ingredients = {
+			["nickel-plate"] = 2,
+			["silver-plate"] = 3,
+			["tin-cable"] = 7,
+		},
+		Category = "crafting-with-fluid",
+		Add_Fluid_1 = "hydrogen",
+		Add_Fluid_1_Amount = 5,
+		Multi_Output = {
+			{type = "item", name = "electronic-control-board", amount = 1},
+		},
+		Enabled = true,
+		Subgroup = "intermediates-tier-2",
+	},
+	{
 		Name = "advanced-control-board",
 		Time = 3.5,
 		Recipe_Enabled = true,

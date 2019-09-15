@@ -4,6 +4,9 @@
 -- each with increasing strength compared to previous tier
 -- DO NOT INCREASE HIGHER THEN 100!!! It breaks the game xD (crashes the game)
 
+Expensive_Modifier = 5
+-- Makes expensive recipes x this amount (default: 5)
+
 Air_Filter_Amount = 5
 -- Air_Filter_Amount default: 5
 

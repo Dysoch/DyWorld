@@ -52,6 +52,14 @@ data:extend(
         base_level = -1,
         pipe_connections = {{ type="input", position = {0, -2} }}
       },
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 10,
+        base_level = -1,
+        pipe_connections = {{ type="input", position = {0, 2} }}
+      },
     },
     module_specification =
     {
@@ -159,8 +167,8 @@ data:extend(
 	end
 end
 
-DyWorld_Add_To_Tech("automation", "greenhouse-1")
-DyWorld_Add_To_Tech("automation-3", "greenhouse-2")
-DyWorld_Add_To_Tech("automation-5", "greenhouse-3")
+DyWorld_Add_To_Tech("farming-1", "greenhouse-1")
+DyWorld_Add_To_Tech("farming-3", "greenhouse-2")
+DyWorld_Add_To_Tech("farming-5", "greenhouse-3")
 DyWorld_Add_To_Tech("automation-7", "greenhouse-4")
 DyWorld_Add_To_Tech("automation-9", "greenhouse-5")

@@ -41,6 +41,8 @@ function Migrate_To_Next_Version()
 			global.dyworld.Migration_Check = false
 		global.dyworld.Version = "0.8.1" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+		PlayerPrint({"dyworld.migrate-1"})
+		PlayerPrint({"dyworld.migrate-2"})
 	end
 end
 

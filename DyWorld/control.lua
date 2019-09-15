@@ -66,11 +66,9 @@ script.on_event(defines.events.on_player_created, function(event)
 	local player = game.players[event.player_index]
 	local ID = event.player_index
 	Player_Startup(player, ID, player.force.name)
-	if not game.players[event.player_index].name == "Dysoch" then
-		player.print({"dyworld.startup-1", (game.players[event.player_index].name)})
-	end
+	player.print({"dyworld.startup-1", (player.name)})
 	--PlayerPrint({"dyworld_guide_gui.message"})
-	debug(game.players[event.player_index].name.." created")
+	debug(player.name.." created")
 end)
 
 script.on_event(defines.events.on_player_respawned, function(event)

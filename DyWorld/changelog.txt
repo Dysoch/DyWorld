@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.1
-Date: 14. 09. 2019
+Date: 15. 09. 2019
   Features:
+    - NOTE: this update is released ahead of schedule, and does not contain all features that were originally planned for this update. These features have been pushed back to next update. This was done to fix a few issue's that were troubling for KatherineOfSky's playthrough on Youtube ( https://www.youtube.com/watch?v=TRT6uW2NOtA&list=PL4o6UvJIdPNqubR5oXdx9SqKFoYW_SL-q )
     - Mining trees now have an extremely low chance (0.5%) to give food items. Can be used to heal yourself, or for farming which can give more food related items
     - Added a new wood farming recipe for greenhouses. This always gives 1 acorn, but requires more time and water (at a very specific temperature range though, good luck with that). Wood output is also increased
     - Stone resources now has a chance to give sand when mined

@@ -23,7 +23,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "loader", v.DyWorld.Name.."-loader", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-4", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
-	DyWorld_Prototype_Item.stacksize = 200
+	DyWorld_Prototype_Item.stack_size = 200
 	DyWorld_Prototype_Item.flags = {}
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.icons = {

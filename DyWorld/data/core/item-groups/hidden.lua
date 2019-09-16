@@ -2,34 +2,19 @@ require "data/core/functions/prefix"
 
 local Data_Table_Item_Group = {
 	{
-		Name = "personal",
+		Name = "z-hidden",
 		Type = "main",
-		Icon = "personal.png"
+		Icon = "empty.png"
 	},
 	{
-		Name = "labs",
+		Name = "hidden-items",
 		Type = "sub",
-		Main = "personal"
+		Main = "z-hidden"
 	},
 	{
-		Name = "science-fluids",
+		Name = "recycler-recipes",
 		Type = "sub",
-		Main = "personal"
-	},
-	{
-		Name = "science-packs",
-		Type = "sub",
-		Main = "personal"
-	},
-	{
-		Name = "repair-packs",
-		Type = "sub",
-		Main = "personal"
-	},
-	{
-		Name = "mod-nanobots",
-		Type = "sub",
-		Main = "personal"
+		Main = "z-hidden"
 	},
 }
 

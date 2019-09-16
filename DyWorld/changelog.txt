@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.2
+Date: 16. 09. 2019
+  Features:
+    - A complete new way to generate Ores. This should now spawn all ores (some were getting left out) and should make patches nicer sizes and at various placed. Still a work in progress, but works great already
+    - Hidden items are now shown in seperate tab in the filter menu. This to improve compatibility with Upgrade Planner so vanilla blueprints can be upgraded after being placed
+    - A rewrite in infinite ore setting. Should now work with expensive recipe helper setting, and should also have reasonable ore value's now
+  Balancing:
+    - Increased stacksize of all DyWorld added tiered items to 200
+  Bugfixes:
+    - Fixed multiplayer bug with wiping inventory and levels everytime a player joins
+    - Fixed stack sizes not being correct
+    - Debug items will no longer show up in random chests
+    - Fixed extremely rare crashing error with random loot spawners
+---------------------------------------------------------------------------------------------------
 Version: 0.8.1
 Date: 15. 09. 2019
   Features:

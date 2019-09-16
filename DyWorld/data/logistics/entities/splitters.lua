@@ -29,7 +29,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "splitter", v.DyWorld.Name.."-splitter", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-3", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
-	DyWorld_Prototype_Item.stacksize = 200
+	DyWorld_Prototype_Item.stack_size = 200
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.icons = {
 	  {

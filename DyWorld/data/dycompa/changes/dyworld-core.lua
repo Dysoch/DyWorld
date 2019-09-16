@@ -67,11 +67,8 @@ for k,m in pairs(Change) do
 	end
 	if m.New then
 		if data.raw.item[m.Old] then
-			if data.raw.item[m.Old].flags then
-				table.insert(data.raw.item[m.Old].flags, "hidden")
-			else
-				data.raw.item[m.Old].flags = {"hidden"}
-			end
+			data.raw.item[m.Old].DyWorld_Hidden = true
+			data.raw.item[m.Old].subgroup = "dyworld-hidden-items"
 		end
 		if data.raw.module[m.Old] then
 			if data.raw.module[m.Old].flags then

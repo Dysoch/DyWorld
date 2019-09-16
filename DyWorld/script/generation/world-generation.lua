@@ -13,6 +13,9 @@ function AddedItemsAll_Adder()
 	AddedItemsAll = {}
 	for k,v in pairs(game.item_prototypes) do
 		if v.type == "mining-tool" then
+			-- do nothing
+		elseif string.find(v.name, "debug", 1, true) then
+			-- do nothing
 		else
 			table.insert(AddedItemsAll, v.name)
 		end
@@ -55,8 +58,8 @@ end
 
 function Ruins_Spawner_FarOut(event)
 	AddedItemsAll_Adder()
-	PosX = event.area.left_top.x + math.random(-150, 150)
-	PosY = event.area.left_top.y + math.random(-150, 150)
+	PosX = event.area.left_top.x + math.random(150)
+	PosY = event.area.left_top.y + math.random(150)
 	BuildEntity = "crash-site-chest-2"
 	Chest_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity, {PosX,PosY}, 250, 1)
 	Chest_Created = game.surfaces[1].create_entity{name = (BuildEntity), position = Chest_Pos, force = game.forces.player}

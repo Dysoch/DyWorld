@@ -94,17 +94,13 @@ if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
 		v.stack_size = 1000000000
 	end
 ---------------------------------  Resources -----------------------------------------
-	for k, v in pairs(data.raw.resource) do
-		if v.minable then
-			if v.minable.results then
-				for _,z in pairs(v.minable.results) do
-					if z.amount_max then
-						z.amount_max = z.amount_max * 10
-					end
-				end
-			end
-		end
-		if v.autoplace then
+	if settings.startup["DyWorld_Infinite_Resources"].value then
+		for k, v in pairs(data.raw.resource) do
+			v.infinite = true
+			v.minimum = 3
+			v.normal = 15
+			v.maximum = 60
+			v.infinite_depletion_amount = 10
 			if v.autoplace.richness_multiplier then
 				v.autoplace.richness_multiplier = v.autoplace.richness_multiplier * 1000
 			end
@@ -125,6 +121,41 @@ if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
 			end
 			if v.autoplace.starting_rq_factor_multiplier then
 				v.autoplace.starting_rq_factor_multiplier = v.autoplace.starting_rq_factor_multiplier * 1000
+			end
+		end
+	else
+		for k, v in pairs(data.raw.resource) do
+			if v.minable then
+				if v.minable.results then
+					for _,z in pairs(v.minable.results) do
+						if z.amount_max then
+							z.amount_max = z.amount_max * 10
+						end
+					end
+				end
+			end
+			if v.autoplace then
+				if v.autoplace.richness_multiplier then
+					v.autoplace.richness_multiplier = v.autoplace.richness_multiplier * 1000
+				end
+				if v.autoplace.base_density then
+					v.autoplace.base_density = v.autoplace.base_density * 1000
+				end
+				if v.autoplace.richness_multiplier_distance_bonus then
+					v.autoplace.richness_multiplier_distance_bonus = v.autoplace.richness_multiplier_distance_bonus * 500
+				end
+				if v.autoplace.regular_rq_factor_multiplier then
+					v.autoplace.regular_rq_factor_multiplier = v.autoplace.regular_rq_factor_multiplier * 500
+				end
+				if v.autoplace.richness_base then
+					v.autoplace.richness_base = v.autoplace.richness_base * 1000
+				end
+				if v.autoplace.starting_area_amount then
+					v.autoplace.starting_area_amount = v.autoplace.starting_area_amount * 500
+				end
+				if v.autoplace.starting_rq_factor_multiplier then
+					v.autoplace.starting_rq_factor_multiplier = v.autoplace.starting_rq_factor_multiplier * 1000
+				end
 			end
 		end
 	end
@@ -275,8 +306,9 @@ else
 	if settings.startup["DyWorld_Infinite_Resources"].value then
 		for k, v in pairs(data.raw.resource) do
 			v.infinite = true
-			v.minimum = 60000
-			v.normal = 300000
+			v.minimum = 30
+			v.normal = 150
+			v.maximum = 600
 			v.infinite_depletion_amount = 10
 			if v.autoplace.richness_multiplier then
 				v.autoplace.richness_multiplier = v.autoplace.richness_multiplier * 5

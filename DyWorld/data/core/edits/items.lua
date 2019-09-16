@@ -9,6 +9,8 @@ local StackSizes = {
 	{Name = "stone", Amount = 200, Type = "item"},
 	{Name = "wood", Amount = 200, Type = "item"},
 	{Name = "coal", Amount = 200, Type = "item"},
+	{Name = "pipe", Amount = 200, Type = "item"},
+	{Name = "pipe-to-ground", Amount = 200, Type = "item"},
 }
 
 for k,v in pairs(StackSizes) do

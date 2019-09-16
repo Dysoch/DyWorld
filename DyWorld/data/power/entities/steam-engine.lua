@@ -27,6 +27,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Steam_Engine then
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "steam-engine", v.DyWorld.Name.."-steam-engine", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.steam-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
+	DyWorld_Prototype_Item.stack_size = 200
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.icons = {
 	  {

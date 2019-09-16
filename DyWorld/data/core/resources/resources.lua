@@ -1,132 +1,150 @@
 require "data/core/functions/prefix"
 require "data/core/functions/colors"
 
+local noise = require("noise");
+local tne = noise.to_noise_expression;
+local resource_autoplace = require("resource-autoplace");
+
 local Data_Table = {
 	{
 		Name = "stone",
 		Name_Ore = "stone",
-		Order = "d",
-		Coverage = 0.0042,
+		Order = "b",
 		Mining_Time = 1,
 		Starting_Area = true,
-		Starting_Area_Strength = 1.25,
-		Multiplier = 1.02,
+		Starting_Area_Rq_Factor = 1.35,
+		Rq_Factor = 1.06,
+		Base_Density = 24,
 	},
 	{
 		Name = "coal",
 		Name_Ore = "coal",
-		Order = "d",
-		Coverage = 0.0037,
+		Order = "b",
 		Mining_Time = 1,
 		Starting_Area = true,
-		Starting_Area_Strength = 1.25,
-		Multiplier = 1.02,
+		Starting_Area_Rq_Factor = 1.25,
+		Rq_Factor = 1.12,
+		Base_Density = 12,
 	},
 	{
 		Name = "iron",
 		Name_Ore = "iron-ore",
-		Order = "d",
-		Coverage = 0.0047,
+		Order = "b",
 		Mining_Time = 1.5,
 		Starting_Area = true,
-		Starting_Area_Strength = 1.25,
-		Multiplier = 1.04,
+		Starting_Area_Rq_Factor = 1.5,
+		Rq_Factor = 1.11,
+		Base_Density = 15,
 	},
 	{
 		Name = "copper",
 		Name_Ore = "copper-ore",
-		Order = "d",
-		Coverage = 0.0047,
+		Order = "b",
 		Mining_Time = 1,
 		Starting_Area = true,
-		Starting_Area_Strength = 1.25,
-		Multiplier = 1.04,
+		Starting_Area_Rq_Factor = 1.45,
+		Rq_Factor = 1.08,
+		Base_Density = 13,
 	},
 	{
 		Name = "nickel",
 		Name_Ore = "nickel-ore",
-		Order = "e",
-		Coverage = 0.0037,
+		Order = "d",
 		Mining_Time = 3,
 		Starting_Area = true,
-		Starting_Area_Strength = 1.15,
-		Multiplier = 0.99,
+		Starting_Area_Rq_Factor = 1.32,
+		Rq_Factor = 1.04,
+		Base_Density = 12,
 	},
 	{
 		Name = "silver",
 		Name_Ore = "silver-ore",
-		Order = "e",
-		Coverage = 0.0037,
+		Order = "d",
 		Mining_Time = 3,
 		Starting_Area = true,
-		Starting_Area_Strength = 1.15,
-		Multiplier = 0.99,
+		Starting_Area_Rq_Factor = 1.27,
+		Rq_Factor = 1.03,
+		Base_Density = 8,
 	},
 	{
 		Name = "tin",
 		Name_Ore = "tin-ore",
-		Order = "e",
-		Coverage = 0.0037,
+		Order = "d",
 		Mining_Time = 3,
 		Starting_Area = true,
-		Starting_Area_Strength = 1.05,
-		Multiplier = 0.99,
+		Starting_Area_Rq_Factor = 1.41,
+		Rq_Factor = 1.06,
+		Base_Density = 9,
 	},
 	{
 		Name = "gold",
 		Name_Ore = "gold-ore",
-		Order = "f",
-		Coverage = 0.0035,
+		Order = "e",
 		Mining_Time = 5,
-		Multiplier = 0.97,
+		Starting_Area = false,
+		Starting_Area_Rq_Factor = 0,
+		Rq_Factor = 1.02,
+		Base_Density = 5,
 	},
 	{
 		Name = "lead",
 		Name_Ore = "lead-ore",
-		Order = "f",
-		Coverage = 0.0035,
+		Order = "e",
 		Mining_Time = 5,
-		Multiplier = 0.97,
+		Starting_Area = false,
+		Starting_Area_Rq_Factor = 0,
+		Rq_Factor = 1.08,
+		Base_Density = 12,
 	},
 	{
 		Name = "cobalt",
 		Name_Ore = "cobalt-ore",
-		Order = "f",
-		Coverage = 0.0033,
+		Order = "e",
 		Mining_Time = 7,
-		Multiplier = 0.97,
+		Starting_Area = false,
+		Starting_Area_Rq_Factor = 0,
+		Rq_Factor = 1.02,
+		Base_Density = 10,
 	},
 	{
 		Name = "arditium",
 		Name_Ore = "arditium-ore",
-		Order = "f",
-		Coverage = 0.0031,
+		Order = "e",
 		Mining_Time = 9,
-		Multiplier = 0.95,
+		Starting_Area = false,
+		Starting_Area_Rq_Factor = 0,
+		Rq_Factor = 1.08,
+		Base_Density = 15,
 	},
 	{
 		Name = "titanium",
 		Name_Ore = "titanium-ore",
-		Order = "f",
-		Coverage = 0.0029,
+		Order = "e",
 		Mining_Time = 11,
-		Multiplier = 0.90,
+		Starting_Area = false,
+		Starting_Area_Rq_Factor = 0,
+		Rq_Factor = 1.034,
+		Base_Density = 11,
 	},
 	{
 		Name = "tungsten",
 		Name_Ore = "tungsten-ore",
-		Order = "f",
-		Coverage = 0.0029,
+		Order = "e",
 		Mining_Time = 11,
-		Multiplier = 0.90,
+		Starting_Area = false,
+		Starting_Area_Rq_Factor = 0,
+		Rq_Factor = 1.045,
+		Base_Density = 12,
 	},
 	{
 		Name = "neutronium",
 		Name_Ore = "neutronium-ore",
-		Order = "f",
-		Coverage = 0.0025,
+		Order = "e",
 		Mining_Time = 15,
-		Multiplier = 0.90,
+		Starting_Area = false,
+		Starting_Area_Rq_Factor = 0,
+		Rq_Factor = 1.01,
+		Base_Density = 25,
 	},
 }
 
@@ -152,79 +170,6 @@ data:extend(
   },
 })
 end
-data:extend(
-{
-  {
-    type = "resource",
-    name = v.Name_Ore,
-	localised_name = {"looped-name.ore", {"looped-name."..v.Name}},
-	icons = 
-	{
-	  {
-		icon = dyworld_path_icon.."base-ore.png",
-		tint = Material_Colors[v.Name],
-	  }
-	},
-	icon_size = 32,
-    tree_removal_probability = 0.8,
-    tree_removal_max_distance = 32 * 32,
-    flags = {"placeable-neutral"},
-    order = "b-"..v.Order,
-    minable =
-    {
-      mining_particle = "stone-particle",
-      mining_time = v.Mining_Time,
-	  results = {
-            {name = v.Name_Ore, amount_min = 1, amount_max = 1, probability = 1},
-            --{name = v.Name_Ore, amount_min = 1, amount_max = 1, probability = 0.45},
-        },
-    },
-    collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
-    selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
-    autoplace =
-    {
-      control = v.Name_Ore,
-	  sharpness = 15/16,
-      richness_multiplier = 1500 * v.Multiplier,
-      richness_multiplier_distance_bonus = 20 * v.Multiplier,
-      richness_base = 10 * v.Multiplier,
-      coverage = (v.Coverage / 2.75) * v.Multiplier,
-      peaks =
-      {
-        {
-		  noise_layer = v.Name_Ore,
-          noise_octaves_difference = -0.85,
-          noise_persistence = 0.4
-		},
-      },
-    },
-    stage_counts = {5000, 3000, 1500, 800, 400, 100, 50, 10},
-    stages =
-    {
-      sheet =
-      {
-        filename = "__base__/graphics/entity/iron-ore/iron-ore.png",
-        priority = "extra-high",
-        width = 64,
-        height = 64,
-        frame_count = 8,
-        variation_count = 8,
-		tint = Material_Colors[v.Name],
-        hr_version = {
-          filename = "__base__/graphics/entity/iron-ore/hr-iron-ore.png",
-          priority = "extra-high",
-          width = 128,
-          height = 128,
-          frame_count = 8,
-          variation_count = 8,
-          scale = 0.5,
-		  tint = Material_Colors[v.Name],
-        }
-      }
-	},
-    map_color = Material_Colors[v.Name],
-  },
-})
 if not data.raw.item[v.Name_Ore] then
 data:extend(
 {
@@ -247,14 +192,121 @@ data:extend(
   },
 })
 end
-	if v.Starting_Area then
-		data.raw["resource"][v.Name_Ore].autoplace.starting_area_size = 10 * v.Starting_Area_Strength
-		data.raw["resource"][v.Name_Ore].autoplace.starting_area_amount = 1000 * v.Starting_Area_Strength
-	end
-	if v.Name == "stone" then
-		data.raw["resource"][v.Name_Ore].localised_name = {"looped-name."..v.Name}
-	end
-end	
 
+-- Initialize the core patch sets in a predictable order
+resource_autoplace.initialize_patch_set(v.Name_Ore, v.Starting_Area)
+
+local function autoplace_settings(name, order, coverage)
+  return
+  {
+    order = order,
+    control = name,
+    sharpness = 15/16,
+    richness_multiplier = 1500,
+    richness_multiplier_distance_bonus = 20,
+    richness_base = 10,
+    coverage = coverage,
+    peaks =
+    {
+      {
+        noise_layer = name,
+        noise_octaves_difference = -0.85,
+        noise_persistence = 0.4
+      }
+    },
+    starting_area_size = 5500 * coverage,
+    starting_area_amount = 1600
+  }
+end
+
+local function resource(resource_parameters, autoplace_parameters)
+  if coverage == nil then coverage = 0.02 end
+
+  return
+  {
+    type = "resource",
+    name = resource_parameters.name_ore,
+	localised_name = {"looped-name.ore", {"looped-name."..resource_parameters.name}},
+	icons = 
+	{
+	  {
+		icon = dyworld_path_icon.."base-ore.png",
+		tint = Material_Colors[resource_parameters.name],
+	  }
+	},
+    icon_size = 32,
+    flags = {"placeable-neutral"},
+    order = "a-b-"..resource_parameters.order,
+    tree_removal_probability = 0.8,
+    tree_removal_max_distance = 32 * 32,
+    minable =
+    {
+      mining_particle = "stone-particle",
+      mining_time = resource_parameters.mining_time,
+	  results = {
+            {name = resource_parameters.name_ore, amount_min = 1, amount_max = 1, probability = 1},
+            --{name = v.Name_Ore, amount_min = 1, amount_max = 1, probability = 0.45},
+        },
+    },
+    collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    -- autoplace = autoplace_settings(name, order, coverage),
+    autoplace = resource_autoplace.resource_autoplace_settings
+    {
+      name = resource_parameters.name_ore,
+      order = resource_parameters.order,
+      base_density = autoplace_parameters.base_density,
+      has_starting_area_placement = true,
+      regular_rq_factor_multiplier = autoplace_parameters.regular_rq_factor_multiplier,
+      starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
+      candidate_spot_count = autoplace_parameters.candidate_spot_count,
+    },
+    stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
+    stages =
+    {
+      sheet =
+      {
+        filename = "__base__/graphics/entity/iron-ore/iron-ore.png",
+        priority = "extra-high",
+        width = 64,
+        height = 64,
+        frame_count = 8,
+        variation_count = 8,
+		tint = Material_Colors[resource_parameters.name],
+        hr_version = {
+          filename = "__base__/graphics/entity/iron-ore/hr-iron-ore.png",
+          priority = "extra-high",
+          width = 128,
+          height = 128,
+          frame_count = 8,
+          variation_count = 8,
+          scale = 0.5,
+		  tint = Material_Colors[resource_parameters.name],
+        }
+      }
+	},
+    map_color = resource_parameters.map_color
+  }
+end
+
+data:extend(
+{
+  resource(
+    {
+      name = v.Name,
+      name_ore = v.Name_Ore,
+      order = v.Order,
+      map_color = Material_Colors[v.Name],
+      mining_time = v.Mining_Time,
+    },
+    {
+      base_density = v.Base_Density,
+      regular_rq_factor_multiplier = v.Rq_Factor,
+      starting_rq_factor_multiplier = v.Starting_Area_Rq_Factor,
+    }
+  ),
+}
+)
+end
 INSERT = {name = "sand", amount_min = 1, amount_max = 1, probability = 0.05}
 table.insert(data.raw["resource"]["stone"].minable.results, INSERT)

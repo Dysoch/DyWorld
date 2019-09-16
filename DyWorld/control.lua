@@ -97,7 +97,6 @@ end)
 script.on_event(defines.events.on_player_joined_game, function(event)
 	local player = game.players[event.player_index]
 	local ID = event.player_index
-	Player_Startup(player, ID, player.force.name)
 	global.players[ID].Playing = true
 	debug(game.players[event.player_index].name.." joined game")
 end)

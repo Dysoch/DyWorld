@@ -109,6 +109,14 @@ data:extend({
 	},
 	{
 		type = "int-setting",
+		name = "DyWorld_Expensive_Multiplier",
+		setting_type = "startup",
+		default_value = 2,
+        maximum_value = 4200000000,
+        minimum_value = 2,
+	},
+	{
+		type = "int-setting",
 		name = "DyWorld_Tech_Increaser",
 		setting_type = "startup",
 		default_value = 1,

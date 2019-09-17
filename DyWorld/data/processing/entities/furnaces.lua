@@ -63,7 +63,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Furnace then
 	if v.DyWorld.Entity.Furnace.Furnace_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Furnace.Furnace_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
-			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
+			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-furnace"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-furnace"].expensive.ingredients, Ingredient_2)
 		end

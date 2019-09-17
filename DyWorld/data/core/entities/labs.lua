@@ -1083,7 +1083,7 @@ data:extend(
       {type = "item", name = "lab-3", amount = 1},
       {type = "item", name = "gold-plate", amount = 25},
       {type = "item", name = "chemical-science-pack", amount = 5},
-      {type = "item", name = "advanced-control-board", amount = 25},
+      {type = "item", name = "electronic-control-board", amount = 50},
     },
     result = "lab-4"
   },
@@ -1107,7 +1107,7 @@ data:extend(
       {type = "item", name = "lab-4", amount = 1},
       {type = "item", name = "cobalt-plate", amount = 25},
       {type = "item", name = "production-science-pack", amount = 5},
-      {type = "item", name = "tough-control-board", amount = 25},
+      {type = "item", name = "advanced-control-board", amount = 25},
     },
     result = "lab-5"
   },
@@ -1131,7 +1131,7 @@ data:extend(
       {type = "item", name = "lab-5", amount = 1},
       {type = "item", name = "titanium-plate", amount = 50},
       {type = "item", name = "utility-science-pack", amount = 5},
-      {type = "item", name = "logic-control-board", amount = 25},
+      {type = "item", name = "processing-control-board", amount = 25},
     },
     result = "lab-6"
   },
@@ -1155,7 +1155,7 @@ data:extend(
       {type = "item", name = "lab-6", amount = 1},
       {type = "item", name = "titanium-plate", amount = 250},
       {type = "item", name = "steel-plate", amount = 250},
-      {type = "item", name = "super-control-board", amount = 150},
+      {type = "item", name = "logic-control-board", amount = 150},
     },
     result = "lab-7"
   },

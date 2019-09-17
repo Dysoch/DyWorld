@@ -46,12 +46,12 @@ for k,v in pairs(Data_Table) do
 	end
 end	
 
-local INSERT = {type = "fluid", name = "water", amount = 250, minimum_temperature = 10, maximum_temperature = 35}
+local INSERT = {type = "fluid", name = "water", amount = 250, minimum_temperature = 10, maximum_temperature = 25}
 table.insert(data.raw.recipe["wood"].normal.ingredients, INSERT)
-local INSERT = {type = "fluid", name = "water", amount = math.ceil(250 * Expensive_Modifier), minimum_temperature = 10, maximum_temperature = 25}
+local INSERT = {type = "fluid", name = "water", amount = Expensive_Check(250), minimum_temperature = 10, maximum_temperature = 25}
 table.insert(data.raw.recipe["wood"].expensive.ingredients, INSERT)
 
-local INSERT = {type = "fluid", name = "water", amount = 500, minimum_temperature = 25, maximum_temperature = 50}
+local INSERT = {type = "fluid", name = "water", amount = 500, minimum_temperature = 25, maximum_temperature = 60}
 table.insert(data.raw.recipe["wood-2"].normal.ingredients, INSERT)
-local INSERT = {type = "fluid", name = "water", amount = math.ceil(500 * Expensive_Modifier), minimum_temperature = 25, maximum_temperature = 50}
+local INSERT = {type = "fluid", name = "water", amount = Expensive_Check(500), minimum_temperature = 25, maximum_temperature = 60}
 table.insert(data.raw.recipe["wood-2"].expensive.ingredients, INSERT)

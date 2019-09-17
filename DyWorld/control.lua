@@ -109,6 +109,7 @@ end)
 
 -- game event hooks
 script.on_event(defines.events.on_player_crafted_item, function(event)
+	if not event.item_stack.valid_for_read then return end
 	IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
 	IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
 	XP_Crafting(event.player_index, event.item_stack.name, event.item_stack.count)

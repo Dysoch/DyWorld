@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.3
+Date: 17. 09. 2019
+  Features:
+    - Expensive recipe multiplier is now a startu setting. You can input the x multiplier, and scripts will change the recipes accordingly
+  Balancing:
+    - Tweaked resources a small bit
+  Bugfixes:
+    - Fixed certain labs not being able to be crafted
+---------------------------------------------------------------------------------------------------
 Version: 0.8.2
 Date: 16. 09. 2019
   Features:

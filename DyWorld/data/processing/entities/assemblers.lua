@@ -65,7 +65,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Assembler then
 	if v.DyWorld.Entity.Assembler.Assembler_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Assembler.Assembler_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
-			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
+			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-assembling-machine"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-assembling-machine"].expensive.ingredients, Ingredient_2)
 		end

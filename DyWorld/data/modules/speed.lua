@@ -51,7 +51,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Speed_Module then
 	if v.DyWorld.Entity.Speed_Module.Speed_Module_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Speed_Module.Speed_Module_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
-			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
+			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-speed-module"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-speed-module"].expensive.ingredients, Ingredient_2)
 		end

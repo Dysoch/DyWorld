@@ -24,7 +24,7 @@ data:extend(
 		for Ingr_Name, Ingr_Amount in pairs(v.Recipe_Ingredients) do
 			local Ingredient = {type = "item", name = Ingr_Name, amount = Ingr_Amount}
 			table.insert(data.raw.recipe[v.Name].normal.ingredients, Ingredient)
-			local Ingredient = {type = "item", name = Ingr_Name, amount = Ingr_Amount * 5}
+			local Ingredient = {type = "item", name = Ingr_Name, amount = Expensive_Check(Ingr_Amount)}
 			table.insert(data.raw.recipe[v.Name].expensive.ingredients, Ingredient)
 		end
 	end
@@ -36,7 +36,7 @@ data:extend(
 	if v.Add_Fluid_1 then
 		local Ingredient = {type = "fluid", name = v.Add_Fluid_1, amount = v.Add_Fluid_1_Amount}
 		table.insert(data.raw.recipe[v.Name].normal.ingredients, Ingredient)
-		local Ingredient = {type = "fluid", name = v.Add_Fluid_1, amount = v.Add_Fluid_1_Amount * 5}
+		local Ingredient = {type = "fluid", name = v.Add_Fluid_1, amount = Expensive_Check(v.Add_Fluid_1_Amount)}
 		table.insert(data.raw.recipe[v.Name].expensive.ingredients, Ingredient)
 	end
 	if v.Add_Fluid_2 then
@@ -89,7 +89,7 @@ function DyWorld_Add_To_Recipe(RECIPE, INGREDIENT, AMOUNT, FLUID)
 			end
 			if data.raw.recipe[RECIPE].normal and data.raw.recipe[RECIPE].expensive then
 				local INSERT = {type = "fluid", name = INGREDIENT, amount = AMOUNT}
-				local INSERT_2 = {type = "fluid", name = INGREDIENT, amount = AMOUNT * 5}
+				local INSERT_2 = {type = "fluid", name = INGREDIENT, amount = Expensive_Check(AMOUNT)}
 				table.insert(data.raw.recipe[RECIPE].normal.ingredients, INSERT)
 				table.insert(data.raw.recipe[RECIPE].expensive.ingredients, INSERT_2)
 			end
@@ -100,7 +100,7 @@ function DyWorld_Add_To_Recipe(RECIPE, INGREDIENT, AMOUNT, FLUID)
 			end
 			if data.raw.recipe[RECIPE].normal and data.raw.recipe[RECIPE].expensive then
 				local INSERT = {type = "item", name = INGREDIENT, amount = AMOUNT}
-				local INSERT_2 = {type = "item", name = INGREDIENT, amount = AMOUNT * 5}
+				local INSERT_2 = {type = "item", name = INGREDIENT, amount = Expensive_Check(AMOUNT)}
 				table.insert(data.raw.recipe[RECIPE].normal.ingredients, INSERT)
 				table.insert(data.raw.recipe[RECIPE].expensive.ingredients, INSERT_2)
 			end

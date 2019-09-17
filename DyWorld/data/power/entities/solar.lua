@@ -37,7 +37,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then
 	DyWorld_Prototype_Recipe.expensive = {}
 	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Solar_Production / 10)}}
 	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-solar-panel"
-	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Solar_Production / 2)}}
+	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Solar_Production / 10)}}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-solar-panel"
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.solar-panel-1", {"looped-name."..v.DyWorld.Name}}
@@ -66,7 +66,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then
 	if v.DyWorld.Entity.Solar.Solar_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Solar.Solar_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
-			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
+			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-solar-panel"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-solar-panel"].expensive.ingredients, Ingredient_2)
 		end

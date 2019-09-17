@@ -25,7 +25,7 @@ data:extend(
     expensive = { 
 	  energy_required = 2.5 * v.DyWorld.Tier,
 	  hidden = true,
-	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 50}},
+	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = Expensive_Check(10)}},
 	  results = { 
 	    {type = "item", name = v.DyWorld.Name.."-stick", amount = 3},
 	  },

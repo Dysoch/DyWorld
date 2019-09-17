@@ -74,7 +74,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	if v.DyWorld.Entity.Robot.Roboport_Ingredients then
 		for q,a in pairs(v.DyWorld.Entity.Robot.Roboport_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
-			local Ingredient_2 = {type = "item", name = q, amount = a * 5}
+			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-roboport"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-roboport"].expensive.ingredients, Ingredient_2)
 		end

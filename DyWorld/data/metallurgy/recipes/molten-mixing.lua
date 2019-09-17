@@ -34,7 +34,7 @@ data:extend(
 	if v.DyWorld.Metallurgy.Mixed_Formula then
 		for n, a in pairs(v.DyWorld.Metallurgy.Mixed_Formula) do
 			local Ingredient = {type = "fluid", name = "molten-"..n, amount = a}
-			local Ingredient_2 = {type = "fluid", name = "molten-"..n, amount = a * 5}
+			local Ingredient_2 = {type = "fluid", name = "molten-"..n, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe["molten-"..v.DyWorld.Name].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe["molten-"..v.DyWorld.Name].expensive.ingredients, Ingredient_2)
 		end
@@ -42,7 +42,7 @@ data:extend(
 	if v.DyWorld.Metallurgy.Mixed_Item then
 		for n, a in pairs(v.DyWorld.Metallurgy.Mixed_Item) do
 			local Ingredient = {type = "item", name = n, amount = a}
-			local Ingredient_2 = {type = "item", name = n, amount = a * 5}
+			local Ingredient_2 = {type = "item", name = n, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe["molten-"..v.DyWorld.Name].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe["molten-"..v.DyWorld.Name].expensive.ingredients, Ingredient_2)
 		end

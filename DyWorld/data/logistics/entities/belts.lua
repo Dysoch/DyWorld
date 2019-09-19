@@ -50,7 +50,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 		DyWorld_Prototype_Recipe.expensive.result = nil
 		DyWorld_Prototype_Recipe.expensive.result = nil
 		DyWorld_Prototype_Recipe.normal.results = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 6}}
-		DyWorld_Prototype_Recipe.expensive.results = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 2}}
+		DyWorld_Prototype_Recipe.expensive.results = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 6}}
 	else
 		DyWorld_Prototype_Recipe.enabled = false
 		DyWorld_Prototype_Recipe.normal.enabled = false

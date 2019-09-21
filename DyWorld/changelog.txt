@@ -7,6 +7,8 @@ Date: 21. 09. 2019
     - Tweaked energy usage of Blast Furnaces
     - Tweaked crafting speeds of Blast Furnaces
     - Reduced crafting times of alloy mixing
+    - Reduced crafting times of plate casting
+    - Reduced crafting times of slag melting
   Changes:
     - Renamed Recycler to Waste Incinerator
     - Blast Furnaces now require different power source: Heat (from heat pipes)

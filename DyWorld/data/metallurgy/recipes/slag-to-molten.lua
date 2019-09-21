@@ -30,7 +30,7 @@ data:extend(
     order = "molten-"..v.DyWorld.Name.."-x",
     subgroup = dy.."fluids-"..(v.DyWorld.Tier-1),
     normal = { 
-	  energy_required = 10 * v.DyWorld.Tier,
+	  energy_required = 5 * v.DyWorld.Tier,
 	  enabled = false,
 	  ingredients = {{type = "item", name = v.DyWorld.Name.."-slag", amount = 100}},
 	  results = { 
@@ -38,7 +38,7 @@ data:extend(
 	  },
 	},
     expensive = { 
-	  energy_required = 30 * v.DyWorld.Tier,
+	  energy_required = 15 * v.DyWorld.Tier,
 	  enabled = false,
 	  ingredients = {{type = "item", name = v.DyWorld.Name.."-slag", amount = 100}},
 	  results = { 

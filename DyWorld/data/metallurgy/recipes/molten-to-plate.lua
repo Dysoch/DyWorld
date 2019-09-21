@@ -18,7 +18,7 @@ data:extend(
 	icon_size = 32,
     subgroup = dy.."material-"..(Metal_Tiers[v.DyWorld.Name]-1),
     normal = { 
-	  energy_required = 1.5 * v.DyWorld.Tier,
+	  energy_required = 0.5 * v.DyWorld.Tier,
 	  enabled = false,
 	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = Molten_To_Plate_Molten_Amount}},
 	  results = { 
@@ -27,7 +27,7 @@ data:extend(
 	  },
 	},
     expensive = { 
-	  energy_required = 2.5 * v.DyWorld.Tier,
+	  energy_required = 1.5 * v.DyWorld.Tier,
 	  enabled = false,
 	  ingredients = {{type = "fluid", name = "molten-"..v.DyWorld.Name, amount = Expensive_Check(Molten_To_Plate_Molten_Amount)}},
 	  results = { 

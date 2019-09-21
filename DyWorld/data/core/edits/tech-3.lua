@@ -133,7 +133,7 @@ local Tech_Recipe_Add = {
 	["farming-1"] = {"carrot", "boiler-water"},
 	["farming-2"] = {"wheat"},
 	["farming-4"] = {"wood-2"},
-	["nuclear-energy-1"] = {"heat-pipe", "heat-pipe-furnace"},
+	["nuclear-energy-1"] = {"heat-pipe", "heat-pipe-furnace", "heated-furnace", "heated-inserter"},
 	["nuclear-energy-2"] = {"heat-exchanger"},
 } 
 
@@ -165,7 +165,9 @@ for k,v in pairs(data.raw.technology) do
 end
 
 local Tech_Science_Pack_Change = {
+	["automation-2"] = 2,
 	["automation-3"] = 3,
+	["logistics-2"] = 2,
 	["logistics-3"] = 3,
 	["solar-energy"] = 1,
 }

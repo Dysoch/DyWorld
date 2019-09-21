@@ -12,6 +12,11 @@ local Data_Table_Item_Group = {
 		Main = "inserters"
 	},
 	{
+		Name = "inserter-2-heat",
+		Type = "sub",
+		Main = "inserters"
+	},
+	{
 		Name = "inserter-2-basic",
 		Type = "sub",
 		Main = "inserters"

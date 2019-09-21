@@ -14,7 +14,7 @@ data:extend(
     enabled = false,
 	category = dy.."melting",
     normal = { 
-	  energy_required = 10 * v.DyWorld.Tier,
+	  energy_required = 1 * v.DyWorld.Tier,
 	  enabled = false,
 	  ingredients = {},
 	  results = { 
@@ -22,7 +22,7 @@ data:extend(
 	  },
 	},
     expensive = { 
-	  energy_required = 30 * v.DyWorld.Tier,
+	  energy_required = 2 * v.DyWorld.Tier,
 	  enabled = false,
 	  ingredients = {},
 	  results = { 

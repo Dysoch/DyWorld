@@ -310,23 +310,25 @@ else
 			v.normal = 150
 			v.maximum = 600
 			v.infinite_depletion_amount = 10
-			if v.autoplace.richness_multiplier then
-				v.autoplace.richness_multiplier = v.autoplace.richness_multiplier * 5
-			end
-			if v.autoplace.richness_multiplier_distance_bonus then
-				v.autoplace.richness_multiplier_distance_bonus = v.autoplace.richness_multiplier_distance_bonus * 2
-			end
-			if v.autoplace.richness_base then
-				v.autoplace.richness_base = v.autoplace.richness_base * 5
-			end
-			if v.autoplace.base_density then
-				v.autoplace.base_density = v.autoplace.base_density * 5
-			end
-			if v.autoplace.regular_rq_factor_multiplier then
-				v.autoplace.regular_rq_factor_multiplier = v.autoplace.regular_rq_factor_multiplier * 2
-			end
-			if v.autoplace.starting_rq_factor_multiplier then
-				v.autoplace.starting_rq_factor_multiplier = v.autoplace.starting_rq_factor_multiplier * 5
+			if v.autoplace then
+				if v.autoplace.richness_multiplier then
+					v.autoplace.richness_multiplier = v.autoplace.richness_multiplier * 5
+				end
+				if v.autoplace.richness_multiplier_distance_bonus then
+					v.autoplace.richness_multiplier_distance_bonus = v.autoplace.richness_multiplier_distance_bonus * 2
+				end
+				if v.autoplace.richness_base then
+					v.autoplace.richness_base = v.autoplace.richness_base * 5
+				end
+				if v.autoplace.base_density then
+					v.autoplace.base_density = v.autoplace.base_density * 5
+				end
+				if v.autoplace.regular_rq_factor_multiplier then
+					v.autoplace.regular_rq_factor_multiplier = v.autoplace.regular_rq_factor_multiplier * 2
+				end
+				if v.autoplace.starting_rq_factor_multiplier then
+					v.autoplace.starting_rq_factor_multiplier = v.autoplace.starting_rq_factor_multiplier * 5
+				end
 			end
 		end
 	end

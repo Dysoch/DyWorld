@@ -2,6 +2,20 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+local function Crafting_Speed(i)
+	if i == 1 then
+		return 1
+	elseif i == 2 then
+		return 3
+	elseif i == 3 then
+		return 5.5
+	elseif i == 4 then
+		return 8
+	elseif i == 5 then
+		return 15
+	end
+end
+
 for i=1,Metallurgy_Machines_Amount do
 data:extend(
 {
@@ -26,14 +40,52 @@ data:extend(
     dying_explosion = "medium-explosion",
     fast_replaceable_group = "blast-furnace",
     crafting_categories = {dy.."melting"},
-    crafting_speed = 1 * i,
+    crafting_speed = Crafting_Speed(i),
     energy_source =
     {
-      type = "electric",
-      usage_priority = "secondary-input",
-      emissions_per_minute = (5 * (i*i)),
+      type = "heat",
+      max_temperature = 500 * i,
+      specific_heat = "1MJ",
+      max_transfer = "2GW",
+      min_working_temperature = 450 * i,
+      minimum_glow_temperature = 250 * i,
+      connections =
+      {
+        {
+          position = {2, 2},
+          direction = defines.direction.south
+        },
+        {
+          position = {-2, 2},
+          direction = defines.direction.south
+        },
+        {
+          position = {2, -2},
+          direction = defines.direction.north
+        },
+        {
+          position = {-2, -2},
+          direction = defines.direction.north
+        },
+        {
+          position = {2, 2},
+          direction = defines.direction.east
+        },
+        {
+          position = {2, -2},
+          direction = defines.direction.east
+        },
+        {
+          position = {-2, 2},
+          direction = defines.direction.west
+        },
+        {
+          position = {-2, -2},
+          direction = defines.direction.west
+        },
+      },
     },
-    energy_usage = math.floor(150 * (i*(i-(0.5/i)))).."kW", --"25kW",
+    energy_usage = math.floor(250 * i).."kW",
     ingredient_count = 25,
     resistances =
     {

@@ -1,4 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.4
+Date: 21. 09. 2019
+  Features:
+    - A new early game entity has been added, the Heat Pipe Heater. 
+  Balancing:
+    - Tweaked energy usage of Blast Furnaces
+    - Tweaked crafting speeds of Blast Furnaces
+    - Reduced crafting times of alloy mixing
+  Changes:
+    - Renamed Recycler to Waste Incinerator
+    - Blast Furnaces now require different power source: Heat (from heat pipes)
+    - Heat pipes now have a new max temperature: 1000 > 5000
+    - Steam now has a new max temperature: 50000 > 5000
+  Bugfixes:
+    - Fixed belt related expensive recipe issue's
+---------------------------------------------------------------------------------------------------
 Version: 0.8.3
 Date: 17. 09. 2019
   Features:

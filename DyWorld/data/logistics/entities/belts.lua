@@ -35,9 +35,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
 	DyWorld_Prototype_Recipe.normal.ingredients = {}
-	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-transport-belt"
+	DyWorld_Prototype_Recipe.normal.results = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 6}}
 	DyWorld_Prototype_Recipe.expensive.ingredients = {}
-	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-transport-belt"
+	DyWorld_Prototype_Recipe.expensive.results = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 6}}
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.energy_required = 0
 	DyWorld_Prototype_Recipe.normal.energy_required = (0.5 * v.DyWorld.Tier) * v.DyWorld.Tier
@@ -46,11 +46,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 		DyWorld_Prototype_Recipe.enabled = true
 		DyWorld_Prototype_Recipe.normal.enabled = true
 		DyWorld_Prototype_Recipe.expensive.enabled = true
-		DyWorld_Prototype_Recipe.normal.result = nil
-		DyWorld_Prototype_Recipe.expensive.result = nil
-		DyWorld_Prototype_Recipe.expensive.result = nil
-		DyWorld_Prototype_Recipe.normal.results = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 6}}
-		DyWorld_Prototype_Recipe.expensive.results = {{type = "item", name = v.DyWorld.Name.."-transport-belt", amount = 6}}
 	else
 		DyWorld_Prototype_Recipe.enabled = false
 		DyWorld_Prototype_Recipe.normal.enabled = false
@@ -73,7 +68,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 		end
 	end
 	if v.DyWorld.Entity.Belt.Belt_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Belt.Belt_Previous.."-transport-belt", amount = 1}
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Belt.Belt_Previous.."-transport-belt", amount = 6}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-transport-belt"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-transport-belt"].expensive.ingredients, Ingredient)
 	end

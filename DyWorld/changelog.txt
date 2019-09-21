@@ -12,6 +12,7 @@ Date: 21. 09. 2019
     - Reduced crafting times of alloy mixing
     - Reduced crafting times of plate casting
     - Reduced crafting times of slag melting
+    - All Transport Belts recipe are now giving 6 Belts instead of 1
   Changes:
     - Renamed Recycler to Waste Incinerator
     - Blast Furnaces now require different power source: Heat (from heat pipes)

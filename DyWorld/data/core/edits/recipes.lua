@@ -50,3 +50,20 @@ data.raw.recipe["stone-brick"].expensive = {
 	ingredients = {{type = "item", name = "stone", amount = 10}},
 	result = "stone-brick",
 }
+
+data.raw.recipe["heat-pipe"].ingredients = nil
+data.raw.recipe["heat-pipe"].normal = {
+	energy_required = 2.5,
+	ingredients = {
+		{type = "item", name = "iron-plate", amount = 2},
+		{type = "item", name = "copper-plate", amount = 1},
+	},
+	result = "heat-pipe",
+}
+data.raw.recipe["heat-pipe"].expensive = {
+	energy_required = 5,
+	ingredients = {
+		{type = "item", name = "iron-plate", amount = 5},
+		{type = "item", name = "copper-plate", amount = 2},
+	result = "heat-pipe",
+}

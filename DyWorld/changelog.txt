@@ -15,6 +15,7 @@ Date: 21. 09. 2019
     - Renamed Recycler to Waste Incinerator
     - Blast Furnaces now require different power source: Heat (from heat pipes)
     - Heat pipes now have a new max temperature: 1000 > 5000
+    - Heat pipes are now unlocked a lot earlier, and are cheaper
     - Steam now has a new max temperature: 50000 > 5000
   Bugfixes:
     - Fixed belt related expensive recipe issue's

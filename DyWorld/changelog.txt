@@ -5,6 +5,7 @@ Date: 21. 09. 2019
     - A new early game entity has been added, the Heat Pipe Heater. 
     - Heated Inserters can now be made and placed. They are normal inserters, excet they use heat instead of electricity. They double as a heat pipe, so heat can be transferred through them
     - Heated Furnaces can now be made and placed. These are furnaces that dont take fuel, but use heat to smelt. They transfer heat down the line (they act as heat pipes)
+    - Damaged entities from the start can now be mined and removed to gain a nice amount of stuff
   Balancing:
     - Tweaked energy usage of Blast Furnaces
     - Tweaked crafting speeds of Blast Furnaces

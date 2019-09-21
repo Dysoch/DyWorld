@@ -1,7 +1,7 @@
 require "script/generation/noise"
 
 Ruins = {"sand-rock-big", "rock-big", "rock-huge"}
-Ruins_Start = {"small-scorchmark", "mineable-wreckage", "mineable-wreckage", "mineable-wreckage", "character-corpse"}
+Ruins_Start = {"small-scorchmark", "mineable-wreckage", "mineable-wreckage", "mineable-wreckage", "character-corpse-dyworld"}
 AddedItems = {"simple-control-board", "raw-fish", "stone-brick", "chitin", "acorn", "sand", "stone-gear-wheel", "stone-plate", "stone", "coal", "wood", "red-wire", "green-wire", "concrete", "glass", "rotor", "wheat", "carrot", "obsidian", "filter-empty", "blade", "resin", "iron-stick", "copper-plate", "iron-plate", "copper-cable", "iron-gear-wheel", "nickel-stick", "nickel-plate", "nickel-cable", "nickel-gear-wheel", "silver-stick", "silver-plate", "tin-cable", "tin-plate", "tin-gear-wheel", "basic-control-board"}
 
 local keysetRuins = {}

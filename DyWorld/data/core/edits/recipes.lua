@@ -65,5 +65,6 @@ data.raw.recipe["heat-pipe"].expensive = {
 	ingredients = {
 		{type = "item", name = "iron-plate", amount = 5},
 		{type = "item", name = "copper-plate", amount = 2},
+	},
 	result = "heat-pipe",
 }

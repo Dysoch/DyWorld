@@ -2,7 +2,7 @@
 
 local Change = {
 	{Old = "boiler", New = "stone-boiler"},
-	{Old = "nuclear-reactor", New = "tin-nuclear-reactor"},
+	{Old = "nuclear-reactor", New = "steel-nuclear-reactor"},
 	{Old = "accumulator", New = "copper-accumulator"},
 	{Old = "steam-engine", New = "stone-steam-engine"},
 	{Old = "steam-turbine", New = "stone-steam-turbine"},

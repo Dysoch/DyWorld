@@ -3,8 +3,9 @@ Version: 0.8.4
 Date: 22. 09. 2019
   Features:
     - A new early game entity has been added, the Heat Pipe Heater. 
-    - Heated Inserters can now be made and placed. They are normal inserters, excet they use heat instead of electricity. They double as a heat pipe, so heat can be transferred through them
+    - Heated Inserters can now be made and placed. They are normal inserters, except they use heat instead of electricity. They double as a heat pipe, so heat can be transferred through them
     - Heated Furnaces can now be made and placed. These are furnaces that dont take fuel, but use heat to smelt. They transfer heat down the line (they act as heat pipes)
+    - Added more Nuclear Reactors (now 5 total) and made them A LOT more expensive! They trully are a good power generators
   Balancing:
     - Tweaked energy usage of Blast Furnaces
     - Tweaked crafting speeds of Blast Furnaces
@@ -15,9 +16,10 @@ Date: 22. 09. 2019
   QoL:
     - The last tier of an entity is no longer upgradable, meaning it will not be replaced with the upgrade tool
     - Damaged entities (ship stuff, corpses and capsules) from the start can now be mined and removed to gain a nice amount of stuff
+    - Renamed Recycler to Waste Incinerator to better show its purpose
   Changes:
     - Added several more incompatible mods to dependencies
-    - Renamed Recycler to Waste Incinerator
+    - Renamed Nuclear Energy Technology to: Heat Management & Nuclear Energy
     - Blast Furnaces now require different power source: Heat (from heat pipes)
     - Heat pipes now have a new max temperature: 1000 > 5000
     - Heat pipes are now unlocked a lot earlier, and are cheaper
@@ -97,7 +99,7 @@ Date: 24. 08. 2019
     - Changed the way you gain XP. Mining, Crafting and Building have diminishing XP gains. This is item specific, so Mining, Crafting or Building different items have different XP. Max XP gain for Mining after 1000 mined is 0.25 XP, for Crafting its 0.05 XP after 260 crafted and building is 0.05 XP gained after 10.000 build. Build, mine and craft many different things!
     - Revamped Distance GUI. Now has 4 modes. First will show the crashed ships, always active. 2: You can toggle Map Labels on/off in settings, will show distances. 3/4: These modes are not completely implemented yet, but show resource and player distances when done
     - Add Tooltips for nearly everything GUI Related
-    - Disabled Skills window for now, till it has been implemented (0.8.2!)
+    - Disabled Skills window for now, till it has been implemented (0.8.5 or 0.9.x!)
   Changes:
     - Removed old mod settings
     - Completely revamped world generation of ruins. More stuff now generates

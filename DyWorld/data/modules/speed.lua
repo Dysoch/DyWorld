@@ -10,9 +10,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Speed_Module then
 	DyWorld_Prototype_Item.tier = v.DyWorld.Tier
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.effect = {
-      consumption = {bonus = v.DyWorld.Entity.Speed_Module.Speed_Module_Consumption_Boost},
-      pollution = {bonus = v.DyWorld.Entity.Speed_Module.Speed_Module_Pollution_Boost},
-      speed = {bonus = v.DyWorld.Entity.Speed_Module.Speed_Module_Speed_Boost}
+      consumption = {bonus = v.DyWorld.Entity.Speed_Module.Consumption_Boost},
+      pollution = {bonus = v.DyWorld.Entity.Speed_Module.Pollution_Boost},
+      speed = {bonus = v.DyWorld.Entity.Speed_Module.Speed_Boost}
     }
 	DyWorld_Prototype_Item.icons = {
 	  {
@@ -48,8 +48,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Speed_Module then
 		end
 	end
 	
-	if v.DyWorld.Entity.Speed_Module.Speed_Module_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Speed_Module.Speed_Module_Ingredients) do
+	if v.DyWorld.Entity.Speed_Module.Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Speed_Module.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-speed-module"].normal.ingredients, Ingredient)

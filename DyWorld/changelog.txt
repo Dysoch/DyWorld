@@ -21,6 +21,7 @@ Date: 21. 09. 2019
     - Steam now has a new max temperature: 50000 > 5000
     - Tin Nuclear Reactor removed, replaced by Steel Nuclear Reactor
     - Added several more incompatible mods to dependencies
+    - The last tier of an entity is no longer upgradable, meaning it will not be replaced with the upgrade tool
   Bugfixes:
     - Fixed belt related expensive recipe issue's
 ---------------------------------------------------------------------------------------------------

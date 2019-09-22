@@ -17,13 +17,15 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Boiler then
 	DyWorld_Prototype_Entity.structure.south.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.west.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.west.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.target_temperature = v.DyWorld.Entity.Boiler.Boiler_Max_Temp
-	DyWorld_Prototype_Entity.energy_source.effectivity = v.DyWorld.Entity.Boiler.Boiler_Effectivity
+	DyWorld_Prototype_Entity.target_temperature = v.DyWorld.Entity.Boiler.Max_Temp
+	DyWorld_Prototype_Entity.energy_source.effectivity = v.DyWorld.Entity.Boiler.Effectivity
 	DyWorld_Prototype_Entity.energy_source.emissions_per_minute = 20 + (10 * v.DyWorld.Tier)
 	DyWorld_Prototype_Entity.icon = nil
-	DyWorld_Prototype_Entity.energy_consumption = (v.DyWorld.Entity.Boiler.Boiler_Energy_Consumption_KW).."kW"
+	DyWorld_Prototype_Entity.energy_consumption = (v.DyWorld.Entity.Boiler.Energy_Consumption_KW).."kW"
 	DyWorld_Prototype_Entity.fast_replaceable_group = "boiler"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Boiler.Boiler_Next.."-boiler"
+	if v.DyWorld.Entity.Boiler.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Boiler.Next.."-boiler"
+	end
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/boiler.png",
@@ -71,16 +73,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Boiler then
 		DyWorld_Add_To_Tech("steam-energy-"..v.DyWorld.Tier, v.DyWorld.Name.."-boiler")
 	end
 	
-	if v.DyWorld.Entity.Boiler.Boiler_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Boiler.Boiler_Ingredients) do
+	if v.DyWorld.Entity.Boiler.Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Boiler.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-boiler"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-boiler"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Boiler.Boiler_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Boiler.Boiler_Previous.."-boiler", amount = 1}
+	if v.DyWorld.Entity.Boiler.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Boiler.Previous.."-boiler", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-boiler"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-boiler"].expensive.ingredients, Ingredient)
 	end

@@ -2,8 +2,6 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
---TODO Add more Roboports
---BODY @ZukiiG
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("roboport", "roboport", v.DyWorld.Name.."-roboport", true)
@@ -23,7 +21,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	DyWorld_Prototype_Entity.recharge_minimum = Round((v.DyWorld.Entity.Robot.Roboport_Buffer_MJ * 0.4), 0).."MJ"
 	DyWorld_Prototype_Entity.logistics_radius = v.DyWorld.Entity.Robot.Roboport_Range_Logistic
 	DyWorld_Prototype_Entity.construction_radius = v.DyWorld.Entity.Robot.Roboport_Range_Construction
-	DyWorld_Prototype_Entity.robot_slots_count = v.DyWorld.Entity.Robot.Roboport_Slot_Count
+	DyWorld_Prototype_Entity.slots_count = v.DyWorld.Entity.Robot.Roboport_Slot_Count
 	DyWorld_Prototype_Entity.material_slots_count = v.DyWorld.Entity.Robot.Roboport_Slot_Count
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.icons = {
@@ -79,8 +77,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-roboport"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Robot.Robot_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Robot.Robot_Previous.."-roboport", amount = 1}
+	if v.DyWorld.Entity.Robot.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Robot.Previous.."-roboport", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-roboport"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-roboport"].expensive.ingredients, Ingredient)
 	end

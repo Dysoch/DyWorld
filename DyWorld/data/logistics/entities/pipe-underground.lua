@@ -16,10 +16,12 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 	DyWorld_Prototype_Entity.pictures.left.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.pictures.right.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.pictures.right.hr_version.tint = Material_Colors[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.fluid_box.base_area = v.DyWorld.Entity.Pipe.Pipe_Amount / 10
-	DyWorld_Prototype_Entity.fluid_box.pipe_connections[2].max_underground_distance =v.DyWorld.Entity.Pipe.Pipe_Range
+	DyWorld_Prototype_Entity.fluid_box.base_area = v.DyWorld.Entity.Pipe.Amount / 10
+	DyWorld_Prototype_Entity.fluid_box.pipe_connections[2].max_underground_distance =v.DyWorld.Entity.Pipe.Range
 	DyWorld_Prototype_Entity.fast_replaceable_group = "pipe"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Pipe.Pipe_Next.."-pipe-to-ground"
+	if v.DyWorld.Entity.Pipe.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Pipe.Next.."-pipe-to-ground"
+	end
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/pipe-to-ground.png",
@@ -42,9 +44,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "pipe-to-ground", v.DyWorld.Name.."-pipe-to-ground", true)
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
-	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = v.DyWorld.Name.."-pipe", amount = v.DyWorld.Entity.Pipe.Pipe_Range}}
+	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = v.DyWorld.Name.."-pipe", amount = v.DyWorld.Entity.Pipe.Range}}
 	DyWorld_Prototype_Recipe.normal.results = {{type = "item", name = v.DyWorld.Name.."-pipe-to-ground", amount = 2}}
-	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-pipe", amount = v.DyWorld.Entity.Pipe.Pipe_Range}}
+	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = v.DyWorld.Name.."-pipe", amount = v.DyWorld.Entity.Pipe.Range}}
 	DyWorld_Prototype_Recipe.expensive.results = {{type = "item", name = v.DyWorld.Name.."-pipe-to-ground", amount = 2}}
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.pipe-to-ground-1", {"looped-name."..v.DyWorld.Name}}
@@ -67,16 +69,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 		DyWorld_Add_To_Tech("logistics-"..v.DyWorld.Tier, v.DyWorld.Name.."-pipe-to-ground")
 	end
 	
-	if v.DyWorld.Entity.Pipe.Pipe_Underground_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Pipe.Pipe_Underground_Ingredients) do
+	if v.DyWorld.Entity.Pipe.Underground_Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Pipe.Underground_Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pipe-to-ground"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pipe-to-ground"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Pipe.Pipe_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Pipe.Pipe_Previous.."-pipe-to-ground", amount = 2}
+	if v.DyWorld.Entity.Pipe.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Pipe.Previous.."-pipe-to-ground", amount = 2}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-pipe-to-ground"].normal.ingredients, Ingredient)
 	end
 end

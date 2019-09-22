@@ -10,14 +10,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Nuclear_Reactor then
 	DyWorld_Prototype_Entity.picture.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.picture.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
-	DyWorld_Prototype_Entity.heat_buffer.max_temperature = v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Max_Temperature
-	DyWorld_Prototype_Entity.heat_buffer.specific_heat = v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Specific_Heat_MJ.."MJ"
-	DyWorld_Prototype_Entity.heat_buffer.max_transfer = v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Max_Transfer_GW.."GW"
-	DyWorld_Prototype_Entity.consumption = v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Consumption_MW.."MW"
-	DyWorld_Prototype_Entity.neighbour_bonus = v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Neighbour_Bonus
-	DyWorld_Prototype_Entity.energy_source.effectivity = v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Effectivity
+	DyWorld_Prototype_Entity.heat_buffer.max_temperature = v.DyWorld.Entity.Nuclear_Reactor.Max_Temperature
+	DyWorld_Prototype_Entity.heat_buffer.specific_heat = v.DyWorld.Entity.Nuclear_Reactor.Specific_Heat_MJ.."MJ"
+	DyWorld_Prototype_Entity.heat_buffer.max_transfer = v.DyWorld.Entity.Nuclear_Reactor.Max_Transfer_GW.."GW"
+	DyWorld_Prototype_Entity.consumption = v.DyWorld.Entity.Nuclear_Reactor.Consumption_MW.."MW"
+	DyWorld_Prototype_Entity.neighbour_bonus = v.DyWorld.Entity.Nuclear_Reactor.Neighbour_Bonus
+	DyWorld_Prototype_Entity.energy_source.effectivity = v.DyWorld.Entity.Nuclear_Reactor.Effectivity
 	DyWorld_Prototype_Entity.fast_replaceable_group = "nuclear-reactor"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Next.."-nuclear-reactor"
+	if v.DyWorld.Entity.Nuclear_Reactor.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Nuclear_Reactor.Next.."-nuclear-reactor"
+	end
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/nuclear-reactor.png",
@@ -65,16 +67,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Nuclear_Reactor then
 		DyWorld_Add_To_Tech("nuclear-energy-"..v.DyWorld.Tier, v.DyWorld.Name.."-nuclear-reactor")
 	end
 	
-	if v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Ingredients) do
+	if v.DyWorld.Entity.Nuclear_Reactor.Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Nuclear_Reactor.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-nuclear-reactor"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-nuclear-reactor"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Nuclear_Reactor.Nuclear_Reactor_Previous.."-nuclear-reactor", amount = 1}
+	if v.DyWorld.Entity.Nuclear_Reactor.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Nuclear_Reactor.Previous.."-nuclear-reactor", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-nuclear-reactor"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-nuclear-reactor"].expensive.ingredients, Ingredient)
 	end

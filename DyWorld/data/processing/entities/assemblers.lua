@@ -12,8 +12,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Assembler then
 	DyWorld_Prototype_Entity.animation.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animation.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Assembler.Assembler_Next.."-assembling-machine"
-	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Assembler.Assembler_Speed_Mod), 2)
+	if v.DyWorld.Entity.Assembler.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Assembler.Next.."-assembling-machine"
+	end
+	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Assembler.Speed_Mod), 2)
 	DyWorld_Prototype_Entity.energy_usage = (250 * v.DyWorld.Tier).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
@@ -62,16 +64,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Assembler then
 	if data.raw.technology["automation-"..v.DyWorld.Tier] then
 		DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-assembling-machine")
 	end
-	if v.DyWorld.Entity.Assembler.Assembler_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Assembler.Assembler_Ingredients) do
+	if v.DyWorld.Entity.Assembler.Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Assembler.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-assembling-machine"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-assembling-machine"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Assembler.Assembler_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Assembler.Assembler_Previous.."-assembling-machine", amount = 1}
+	if v.DyWorld.Entity.Assembler.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Assembler.Previous.."-assembling-machine", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-assembling-machine"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-assembling-machine"].expensive.ingredients, Ingredient)
 	end

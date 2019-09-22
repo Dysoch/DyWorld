@@ -5,9 +5,11 @@ require "data/core/functions/amounts"
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("transport-belt", "transport-belt", v.DyWorld.Name.."-transport-belt", true)
-	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt.Belt_Speed / 426.67), 5)
+	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt.Speed / 426.67), 5)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-1", {"looped-name."..v.DyWorld.Name}}
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt.Belt_Next.."-transport-belt"
+	if v.DyWorld.Entity.Belt.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt.Next.."-transport-belt"
+	end
 	DyWorld_Prototype_Entity.max_health = 150 * Metal_Tiers[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.icons = {
@@ -16,7 +18,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
-	DyWorld_Prototype_Entity.belt_animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
+	DyWorld_Prototype_Entity.animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "transport-belt", v.DyWorld.Name.."-transport-belt", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-1", {"looped-name."..v.DyWorld.Name}}
@@ -59,16 +61,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	elseif data.raw.technology["logistics"] and v.DyWorld.Tier == 2 then
 		DyWorld_Add_To_Tech("logistics", v.DyWorld.Name.."-transport-belt")
 	end
-	if v.DyWorld.Entity.Belt.Belt_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Belt.Belt_Ingredients) do
+	if v.DyWorld.Entity.Belt.Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Belt.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-transport-belt"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-transport-belt"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Belt.Belt_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Belt.Belt_Previous.."-transport-belt", amount = 6}
+	if v.DyWorld.Entity.Belt.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Belt.Previous.."-transport-belt", amount = 6}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-transport-belt"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-transport-belt"].expensive.ingredients, Ingredient)
 	end

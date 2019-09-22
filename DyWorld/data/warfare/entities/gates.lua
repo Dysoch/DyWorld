@@ -28,7 +28,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then
 	DyWorld_Prototype_Entity.horizontal_rail_base.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	
 	DyWorld_Prototype_Entity.fast_replaceable_group = "wall"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Wall.Wall_Next.."-gate"
+	if v.DyWorld.Entity.Wall.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Wall.Next.."-gate"
+	end
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/gate.png",
@@ -84,13 +86,13 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Wall.Wall_Previous then
-		if v.DyWorld.Entity.Wall.Wall_Previous == "stone" then
+	if v.DyWorld.Entity.Wall.Previous then
+		if v.DyWorld.Entity.Wall.Previous == "stone" then
 			local Ingredient = {type = "item", name = "gate", amount = 1}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].expensive.ingredients, Ingredient)
 		else
-			local Ingredient = {type = "item", name = v.DyWorld.Entity.Wall.Wall_Previous.."-gate", amount = 1}
+			local Ingredient = {type = "item", name = v.DyWorld.Entity.Wall.Previous.."-gate", amount = 1}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-gate"].expensive.ingredients, Ingredient)
 		end

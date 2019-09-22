@@ -13,9 +13,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pollution_1_Module then
 	DyWorld_Prototype_Item.category = "pollution-1"
 	DyWorld_Prototype_Item.subgroup = dy.."pollution-1-module"
 	DyWorld_Prototype_Item.effect = {
-      --consumption = {bonus = v.DyWorld.Entity.Pollution_1_Module.Speed_Module_Consumption_Boost},
-      pollution = {bonus = v.DyWorld.Entity.Pollution_1_Module.Pollution_1_Module_Pollution_Boost},
-      speed = {bonus = v.DyWorld.Entity.Pollution_1_Module.Pollution_1_Module_Speed_Boost}
+      --consumption = {bonus = v.DyWorld.Entity.Pollution_1_Module.Consumption_Boost},
+      pollution = {bonus = v.DyWorld.Entity.Pollution_1_Module.Pollution_Boost},
+      speed = {bonus = v.DyWorld.Entity.Pollution_1_Module.Speed_Boost}
     }
 	DyWorld_Prototype_Item.icons = {
 	  {
@@ -52,8 +52,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pollution_1_Module then
 		end
 	end
 	
-	if v.DyWorld.Entity.Pollution_1_Module.Pollution_1_Module_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Pollution_1_Module.Pollution_1_Module_Ingredients) do
+	if v.DyWorld.Entity.Pollution_1_Module.Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Pollution_1_Module.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pollution-reduce-module"].normal.ingredients, Ingredient)

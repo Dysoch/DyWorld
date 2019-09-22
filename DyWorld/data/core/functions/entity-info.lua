@@ -4,10 +4,10 @@ Data_Entity = {
 --------------------------------------- TIER 1 --------------------------------------
 	["stone"] = {
 		Belt = {
-			Belt_Speed = 5,
-			Belt_Range = 4,
-			Belt_Next = "iron",
-			Belt_Ingredients = {
+			Speed = 5,
+			Range = 4,
+			Next = "iron",
+			Ingredients = {
 				["stone-gear-wheel"] = 2,
 				["stone-plate"] = 1,
 			},
@@ -25,18 +25,18 @@ Data_Entity = {
 			},	
 		},
 		Assembler = {
-			Assembler_Speed_Mod = 0.5,
-			Assembler_Next = "iron",
-			Assembler_Ingredients = {
+			Speed_Mod = 0.5,
+			Next = "iron",
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["stone-plate"] = 5,
 				["stone-gear-wheel"] = 4,
 			},
 		},
 		Centrifuge = {
-			Centrifuge_Speed_Mod = 0.8,
-			Centrifuge_Next = "copper",
-			Centrifuge_Ingredients = {
+			Speed_Mod = 0.8,
+			Next = "copper",
+			Ingredients = {
 				["stone-assembling-machine"] = 1,
 				["stone-gear-wheel"] = 4,
 				["stone-brick"] = 20,
@@ -44,80 +44,80 @@ Data_Entity = {
 			},
 		},
 		Drill = {
-			Drill_Speed = 0.5,
-			Drill_Range = 3,
-			Drill_Next = "iron",
-			Drill_Ingredients = {
+			Speed = 0.5,
+			Range = 3,
+			Next = "iron",
+			Ingredients = {
 				["simple-control-board"] = 5,
 				["stone-plate"] = 10,
 				["stone-gear-wheel"] = 5,
 			},
 		},
 		Pipe = {
-			Pipe_Amount = 5,
-			Pipe_Range = 4,
-			Pipe_Next = "nickel",
-			Pipe_Ingredients = {
+			Amount = 5,
+			Range = 4,
+			Next = "nickel",
+			Ingredients = {
 				["stone"] = 2,
 			},
-			Pipe_Underground_Ingredients = {
+			Underground_Ingredients = {
 				["stone-plate"] = 2,
 			},
 		},
 		Speed_Module = {
-			Speed_Module_Speed_Boost = 0.1,
-			Speed_Module_Consumption_Boost = 0.65,
-			Speed_Module_Pollution_Boost = 0.1,
-			Speed_Module_Ingredients = {
+			Speed_Boost = 0.1,
+			Consumption_Boost = 0.65,
+			Pollution_Boost = 0.1,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["stone-plate"] = 5,
 				["stone-gear-wheel"] = 1,
 			},
 		},
 		Effectivity_Module = {
-			Effectivity_Module_Consumption_Boost = -0.1,
-			Effectivity_Module_Pollution_Boost = 0.1,
-			Effectivity_Module_Ingredients = {
+			Consumption_Boost = -0.1,
+			Pollution_Boost = 0.1,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["stone-plate"] = 5,
 				["stone-gear-wheel"] = 1,
 			},
 		},
 		Productivity_Module = {
-			Productivity_Module_Speed_Boost = -0.4,
-			Productivity_Module_Consumption_Boost = 0.5,
-			Productivity_Module_Pollution_Boost = 0.25,
-			Productivity_Module_Productivity_Boost = 0.02,
-			Productivity_Module_Ingredients = {
+			Speed_Boost = -0.4,
+			Consumption_Boost = 0.5,
+			Pollution_Boost = 0.25,
+			Productivity_Boost = 0.02,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["stone-plate"] = 5,
 				["stone-gear-wheel"] = 1,
 			},
 		},
 		Pollution_1_Module = {
-			Pollution_1_Module_Speed_Boost = -0.1,
-			Pollution_1_Module_Pollution_Boost = -0.2,
-			Pollution_1_Module_Ingredients = {
+			Speed_Boost = -0.1,
+			Pollution_Boost = -0.2,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["stone-plate"] = 5,
 				["stone-gear-wheel"] = 1,
 			},
 		},
 		Pollution_2_Module = {
-			Pollution_2_Module_Consumption_Boost = 0.4,
-			Pollution_2_Module_Pollution_Boost = 0.2,
-			Pollution_2_Module_Ingredients = {
+			Consumption_Boost = 0.4,
+			Pollution_Boost = 0.2,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["stone-plate"] = 5,
 				["stone-gear-wheel"] = 1,
 			},
 		},
 		Super_Module = {
-			Super_Module_Speed_Boost = 0.1,
-			Super_Module_Consumption_Boost = -0.15,
-			Super_Module_Pollution_Boost = -0.05,
-			Super_Module_Productivity_Boost = 0.02,
-			Super_Module_Ingredients = {
+			Speed_Boost = 0.1,
+			Consumption_Boost = -0.15,
+			Pollution_Boost = -0.05,
+			Productivity_Boost = 0.02,
+			Ingredients = {
 				["basic-control-board"] = 50,
 				["stone-speed-module"] = 10,
 				["stone-productivity-module"] = 10,
@@ -127,22 +127,22 @@ Data_Entity = {
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "nickel",
-			Steam_Engine_Fluid_Usage = 0.4,
-			Steam_Engine_Effectivity = 0.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Next = "nickel",
+			Fluid_Usage = 0.4,
+			Effectivity = 0.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["stone-pipe"] = 4,
 				["stone"] = 50,
 				["stone-gear-wheel"] = 1,
 			},
 		},
 		Steam_Turbine = {
-			Steam_Turbine_Next = "stone",
-			Steam_Turbine_Fluid_Usage = 0.4,
-			Steam_Turbine_Effectivity = 0.75,
-			Steam_Turbine_Maximum_Temperature = 500,
-			Steam_Turbine_Ingredients = {
+			Next = "stone",
+			Fluid_Usage = 0.4,
+			Effectivity = 0.75,
+			Maximum_Temperature = 500,
+			Ingredients = {
 				["stone-steam-engine"] = 2,
 				["stone-pipe"] = 2,
 				["stone"] = 2,
@@ -150,20 +150,20 @@ Data_Entity = {
 			},
 		},
 		Pump = {
-			Pump_Next = "copper",
-			Pump_Speed = 150,
-			Pump_Amount = 50,
-			Pump_Ingredients = {
+			Next = "copper",
+			Speed = 150,
+			Amount = 50,
+			Ingredients = {
 				["stone-plate"] = 2,
 				["stone-pipe"] = 2,
 				["stone"] = 2,
 			},
 		},
 		Radar = {
-			Radar_Next = "nickel",
-			Radar_Active_Range = 2,
-			Radar_Scan_Range = 10,
-			Radar_Ingredients = {
+			Next = "nickel",
+			Active_Range = 2,
+			Scan_Range = 10,
+			Ingredients = {
 				["simple-control-board"] = 4,
 				["stone-plate"] = 5,
 				["stone-brick"] = 3,
@@ -171,11 +171,11 @@ Data_Entity = {
 			},
 		},
 		Boiler = {
-			Boiler_Next = "iron",
-			Boiler_Max_Temp = 150,
-			Boiler_Effectivity = 0.9,
-			Boiler_Energy_Consumption_KW = 1500,
-			Boiler_Ingredients = {
+			Next = "iron",
+			Max_Temp = 150,
+			Effectivity = 0.9,
+			Energy_Consumption_KW = 1500,
+			Ingredients = {
 				["stone-plate"] = 5,
 				["stone-brick"] = 3,
 				["stone-gear-wheel"] = 1,
@@ -185,11 +185,11 @@ Data_Entity = {
 --------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {
 		Belt = {
-			Belt_Speed = 9,
-			Belt_Range = 7,
-			Belt_Previous = "stone",
-			Belt_Next = "bronze",
-			Belt_Ingredients = {
+			Speed = 9,
+			Range = 7,
+			Previous = "stone",
+			Next = "bronze",
+			Ingredients = {
 				["iron-gear-wheel"] = 4,
 				["iron-plate"] = 5,
 			},
@@ -204,22 +204,22 @@ Data_Entity = {
 			},
 		},
 		Drill = {
-			Drill_Speed = 1,
-			Drill_Range = 6,
-			Drill_Previous = "stone",
-			Drill_Next = "nickel",
-			Drill_Ingredients = {
+			Speed = 1,
+			Range = 6,
+			Previous = "stone",
+			Next = "nickel",
+			Ingredients = {
 				["iron-gear-wheel"] = 5,
 				["basic-control-board"] = 2,
 				["rotor"] = 2,
 			},
 		},
 		Pumpjack = {
-			Pumpjack_Speed = 1,
-			Pumpjack_Range = 3,
-			--Pumpjack_Previous = "iron",
-			Pumpjack_Next = "bronze",
-			Pumpjack_Ingredients = {
+			Speed = 1,
+			Range = 3,
+			--Previous = "iron",
+			Next = "bronze",
+			Ingredients = {
 				["iron-plate"] = 10,
 				["electric-mining-drill"] = 1,
 				["iron-gear-wheel"] = 10,
@@ -228,19 +228,19 @@ Data_Entity = {
 			},
 		},
 		Assembler = {
-			Assembler_Speed_Mod = 1.11,
-			Assembler_Previous = "stone",
-			Assembler_Next = "tin",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.11,
+			Previous = "stone",
+			Next = "tin",
+			Ingredients = {
 				["iron-gear-wheel"] = 4,
 				["iron-plate"] = 20,
 				["basic-control-board"] = 1,
 			},
 		},
 		Furnace = {
-			Furnace_Speed_Mod = 1.11,
-			Furnace_Next = "steel",
-			Furnace_Ingredients = {
+			Speed_Mod = 1.11,
+			Next = "steel",
+			Ingredients = {
 				["basic-control-board"] = 5,
 				["iron-plate"] = 25,
 				["iron-stick"] = 10,
@@ -249,9 +249,9 @@ Data_Entity = {
 			},
 		},
 		Wall = {
-			Wall_Previous = "stone",
-			Wall_Next = "iron",
-			Wall_Ingredients = {
+			Previous = "stone",
+			Next = "iron",
+			Ingredients = {
 				["iron-plate"] = 10,
 			},
 			Gate_Ingredients = {
@@ -261,12 +261,12 @@ Data_Entity = {
 			},
 		},
 		Boiler = {
-			Boiler_Next = "iron",
-			Boiler_Previous = "stone",
-			Boiler_Max_Temp = 200,
-			Boiler_Effectivity = 1,
-			Boiler_Energy_Consumption_KW = 1900,
-			Boiler_Ingredients = {
+			Next = "iron",
+			Previous = "stone",
+			Max_Temp = 200,
+			Effectivity = 1,
+			Energy_Consumption_KW = 1900,
+			Ingredients = {
 				["basic-control-board"] = 4,
 				["copper-plate"] = 1,
 				["iron-plate"] = 5,
@@ -277,10 +277,10 @@ Data_Entity = {
 	},
 	["copper"] = {
 		Centrifuge = {
-			Centrifuge_Speed_Mod = 1,
-			Centrifuge_Previous = "stone",
-			Centrifuge_Next = "lead",
-			Centrifuge_Ingredients = {
+			Speed_Mod = 1,
+			Previous = "stone",
+			Next = "lead",
+			Ingredients = {
 				["copper-plate"] = 10,
 				["copper-cable"] = 15,
 				["rotor"] = 5,
@@ -288,18 +288,18 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 90,
-			Solar_Next = "silver",
-			Solar_Ingredients = {
+			Production = 90,
+			Next = "silver",
+			Ingredients = {
 				["copper-plate"] = 10,
 				["basic-control-board"] = 4,
 			},
 		},
 		Accumulator = {
-			Accumulator_Next = "bronze",
-			--Accumulator_Previous = "copper",
-			Accumulator_Buffer_MJ = 5,
-			Accumulator_Ingredients = {
+			Next = "bronze",
+			--Previous = "copper",
+			Buffer_MJ = 5,
+			Ingredients = {
 				["basic-control-board"] = 14,
 				["copper-plate"] = 5,
 				["iron-plate"] = 3,
@@ -307,11 +307,11 @@ Data_Entity = {
 			},
 		},
 		Pump = {
-			Pump_Previous = "stone",
-			Pump_Next = "steel",
-			Pump_Speed = 150 * 2,
-			Pump_Amount = 50 * 2,
-			Pump_Ingredients = {
+			Previous = "stone",
+			Next = "steel",
+			Speed = 150 * 2,
+			Amount = 50 * 2,
+			Ingredients = {
 				["copper-plate"] = 2,
 				["nickel-pipe"] = 2,
 				["basic-control-board"] = 2,
@@ -320,11 +320,11 @@ Data_Entity = {
 	},
 	["nickel"] = {
 		Drill = {
-			Drill_Speed = 1.5,
-			Drill_Range = 7,
-			Drill_Previous = "iron",
-			Drill_Next = "lead",
-			Drill_Ingredients = {
+			Speed = 1.5,
+			Range = 7,
+			Previous = "iron",
+			Next = "lead",
+			Ingredients = {
 				["nickel-gear-wheel"] = 4,
 				["nickel-plate"] = 10,
 				["basic-control-board"] = 10,
@@ -332,23 +332,23 @@ Data_Entity = {
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "steel",
-			Steam_Engine_Previous = "stone",
-			Steam_Engine_Fluid_Usage = 0.5,
-			Steam_Engine_Effectivity = 0.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Next = "steel",
+			Previous = "stone",
+			Fluid_Usage = 0.5,
+			Effectivity = 0.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["nickel-plate"] = 20,
 				["nickel-gear-wheel"] = 5,
 				["rotor"] = 5,
 			},
 		},
 		Robot = {
-			Robot_Speed = 0.05,
-			Robot_Energy_Max_MJ = 1.5,
-			Robot_Energy_Tick_KJ = 0.05,
-			Robot_Energy_Move_KJ = 5,
-			--Robot_Previous = "nickel",
+			Speed = 0.05,
+			Energy_Max_MJ = 1.5,
+			Energy_Tick_KJ = 0.05,
+			Energy_Move_KJ = 5,
+			--Previous = "nickel",
 			Roboport_Energy_Usage_KW = 50,
 			Roboport_Charging_Energy_KW = 1000,
 			Roboport_Input_MW = 5,
@@ -362,14 +362,14 @@ Data_Entity = {
 				["nickel-gear-wheel"] = 10,
 				["basic-control-board"] = 25,
 			},
-			Logistic_Robot_Ingredients = {
+			Logistic_Ingredients = {
 				["nickel-plate"] = 5,
 				["nickel-cable"] = 1,
 				["nickel-gear-wheel"] = 3,
 				["basic-control-board"] = 5,
 				["rotor"] = 2,
 			},
-			Construction_Robot_Ingredients = {
+			Construction_Ingredients = {
 				["nickel-plate"] = 5,
 				["nickel-cable"] = 3,
 				["nickel-gear-wheel"] = 2,
@@ -378,23 +378,23 @@ Data_Entity = {
 			},
 		},
 		Pipe = {
-			Pipe_Amount = 10,
-			Pipe_Range = 8,
-			Pipe_Previous = "stone",
-			Pipe_Next = "bronze",
-			Pipe_Ingredients = {
+			Amount = 10,
+			Range = 8,
+			Previous = "stone",
+			Next = "bronze",
+			Ingredients = {
 				["nickel-plate"] = 2,
 			},
-			Pipe_Underground_Ingredients = {
+			Underground_Ingredients = {
 				["nickel-plate"] = 10,
 			},
 		},
 		Radar = {
-			Radar_Previous = "stone",
-			Radar_Next = "steel",
-			Radar_Active_Range = 3,
-			Radar_Scan_Range = 15,
-			Radar_Ingredients = {
+			Previous = "stone",
+			Next = "steel",
+			Active_Range = 3,
+			Scan_Range = 15,
+			Ingredients = {
 				["basic-control-board"] = 4,
 				["nickel-plate"] = 5,
 				["nickel-gear-wheel"] = 1,
@@ -403,68 +403,68 @@ Data_Entity = {
 	},
 	["silver"] = {
 		Solar = {
-			Solar_Production = 170,
-			Solar_Previous = "copper",
-			Solar_Next = "gold",
-			Solar_Ingredients = {
+			Production = 170,
+			Previous = "copper",
+			Next = "gold",
+			Ingredients = {
 				["silver-plate"] = 10,
 				["basic-control-board"] = 4,
 			},
 		},
 		Speed_Module = {
-			Speed_Module_Speed_Boost = 0.25,
-			Speed_Module_Consumption_Boost = 0.95,
-			Speed_Module_Pollution_Boost = 0.2,
-			Speed_Module_Ingredients = {
+			Speed_Boost = 0.25,
+			Consumption_Boost = 0.95,
+			Pollution_Boost = 0.2,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["silver-plate"] = 5,
 				["stone-speed-module"] = 1,
 			},
 		},
 		Effectivity_Module = {
-			Effectivity_Module_Consumption_Boost = -0.2,
-			Effectivity_Module_Pollution_Boost = 0.2,
-			Effectivity_Module_Ingredients = {
+			Consumption_Boost = -0.2,
+			Pollution_Boost = 0.2,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["silver-plate"] = 5,
 				["stone-effectivity-module"] = 1,
 			},
 		},
 		Productivity_Module = {
-			Productivity_Module_Speed_Boost = -0.6,
-			Productivity_Module_Consumption_Boost = 0.6,
-			Productivity_Module_Pollution_Boost = 0.35,
-			Productivity_Module_Productivity_Boost = 0.05,
-			Productivity_Module_Ingredients = {
+			Speed_Boost = -0.6,
+			Consumption_Boost = 0.6,
+			Pollution_Boost = 0.35,
+			Productivity_Boost = 0.05,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["silver-plate"] = 5,
 				["stone-productivity-module"] = 1,
 			},
 		},
 		Pollution_1_Module = {
-			Pollution_1_Module_Speed_Boost = -0.2,
-			Pollution_1_Module_Pollution_Boost = -0.3,
-			Pollution_1_Module_Ingredients = {
+			Speed_Boost = -0.2,
+			Pollution_Boost = -0.3,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["silver-plate"] = 5,
 				["stone-pollution-reduce-module"] = 1,
 			},
 		},
 		Pollution_2_Module = {
-			Pollution_2_Module_Consumption_Boost = 0.8,
-			Pollution_2_Module_Pollution_Boost = 0.3,
-			Pollution_2_Module_Ingredients = {
+			Consumption_Boost = 0.8,
+			Pollution_Boost = 0.3,
+			Ingredients = {
 				["electronic-circuit"] = 2,
 				["silver-plate"] = 5,
 				["stone-pollution-increase-module"] = 1,
 			},
 		},
 		Super_Module = {
-			Super_Module_Speed_Boost = 0.3,
-			Super_Module_Consumption_Boost = -0.35,
-			Super_Module_Pollution_Boost = -0.15,
-			Super_Module_Productivity_Boost = 0.07,
-			Super_Module_Ingredients = {
+			Speed_Boost = 0.3,
+			Consumption_Boost = -0.35,
+			Pollution_Boost = -0.15,
+			Productivity_Boost = 0.07,
+			Ingredients = {
 				["electronic-control-board"] = 50,
 				["silver-speed-module"] = 10,
 				["silver-productivity-module"] = 10,
@@ -476,10 +476,10 @@ Data_Entity = {
 	},
 	["tin"] = {
 		Assembler = {
-			Assembler_Speed_Mod = 1.21,
-			Assembler_Previous = "iron",
-			Assembler_Next = "lead",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.21,
+			Previous = "iron",
+			Next = "lead",
+			Ingredients = {
 				["tin-gear-wheel"] = 4,
 				["tin-plate"] = 20,
 				["basic-control-board"] = 5,
@@ -487,10 +487,10 @@ Data_Entity = {
 			},
 		},
 		Refinery = {
-			Refinery_Speed_Mod = 1,
-			--Refinery_Previous = "neutrobaltium",
-			Refinery_Next = "stainless-steel",
-			Refinery_Ingredients = {
+			Speed_Mod = 1,
+			--Previous = "neutrobaltium",
+			Next = "stainless-steel",
+			Ingredients = {
 				["tin-assembling-machine"] = 1,
 				["tin-gear-wheel"] = 4,
 				["tin-plate"] = 50,
@@ -498,10 +498,10 @@ Data_Entity = {
 			},
 		},
 		Chemical = {
-			Chemical_Speed_Mod = 1,
-			--Chemical_Previous = "neutrobaltium",
-			Chemical_Next = "invar",
-			Chemical_Ingredients = {
+			Speed_Mod = 1,
+			--Previous = "neutrobaltium",
+			Next = "invar",
+			Ingredients = {
 				["tin-assembling-machine"] = 1,
 				["tin-gear-wheel"] = 4,
 				["tin-plate"] = 25,
@@ -512,11 +512,11 @@ Data_Entity = {
 --------------------------------------- TIER 3 --------------------------------------
 	["steel"] = {
 		Belt = {
-			Belt_Speed = 23,
-			Belt_Range = 14,
-			Belt_Previous = "bronze",
-			Belt_Next = "stainless-steel",
-			Belt_Ingredients = {
+			Speed = 23,
+			Range = 14,
+			Previous = "bronze",
+			Next = "stainless-steel",
+			Ingredients = {
 				["steel-gear-wheel"] = 4,
 				["steel-plate"] = 5,
 			},
@@ -531,12 +531,12 @@ Data_Entity = {
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "cobalt",
-			Steam_Engine_Previous = "nickel",
-			Steam_Engine_Fluid_Usage = 0.6,
-			Steam_Engine_Effectivity = 0.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Next = "cobalt",
+			Previous = "nickel",
+			Fluid_Usage = 0.6,
+			Effectivity = 0.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["steel-plate"] = 25,
 				["steel-stick"] = 10,
 				["steel-gear-wheel"] = 10,
@@ -544,21 +544,21 @@ Data_Entity = {
 			},
 		},
 		Pump = {
-			Pump_Previous = "copper",
-			Pump_Next = "electrum",
-			Pump_Speed = 150 * 3,
-			Pump_Amount = 50 * 3,
-			Pump_Ingredients = {
+			Previous = "copper",
+			Next = "electrum",
+			Speed = 150 * 3,
+			Amount = 50 * 3,
+			Ingredients = {
 				["steel-plate"] = 2,
 				["bronze-pipe"] = 2,
 				["electronic-control-board"] = 2,
 			},
 		},
 		Furnace = {
-			Furnace_Speed_Mod = 1.16,
-			Furnace_Previous = "iron",
-			Furnace_Next = "cobalt",
-			Furnace_Ingredients = {
+			Speed_Mod = 1.16,
+			Previous = "iron",
+			Next = "cobalt",
+			Ingredients = {
 				["electronic-control-board"] = 4,
 				["steel-plate"] = 15,
 				["heater"] = 2,
@@ -566,96 +566,104 @@ Data_Entity = {
 			},
 		},
 		Radar = {
-			Radar_Previous = "nickel",
-			Radar_Next = "invar",
-			Radar_Active_Range = 4,
-			Radar_Scan_Range = 22,
-			Radar_Ingredients = {
+			Previous = "nickel",
+			Next = "invar",
+			Active_Range = 4,
+			Scan_Range = 22,
+			Ingredients = {
 				["electronic-control-board"] = 4,
 				["steel-plate"] = 5,
 				["steel-gear-wheel"] = 1,
 			},
 		},
 		Nuclear_Reactor = {
-			--Nuclear_Reactor_Previous = "steel",
-			Nuclear_Reactor_Next = "stainless-steel",
-			Nuclear_Reactor_Consumption_MW = 10,
-			Nuclear_Reactor_Max_Temperature = 1000,
-			Nuclear_Reactor_Specific_Heat_MJ = 10,
-			Nuclear_Reactor_Max_Transfer_GW = 10,
-			Nuclear_Reactor_Neighbour_Bonus = 1,
-			Nuclear_Reactor_Effectivity = 1,
-			Nuclear_Reactor_Ingredients = {
-				["iron-assembling-machine"] = 1,
-				["tin-gear-wheel"] = 4,
+			--Previous = "steel",
+			Next = "stainless-steel",
+			Consumption_MW = 10,
+			Max_Temperature = 1000,
+			Specific_Heat_MJ = 10,
+			Max_Transfer_GW = 10,
+			Neighbour_Bonus = 1,
+			Effectivity = 1,
+			Ingredients = {
+				["steel-plate"] = 250,
+				["steel-stick"] = 50,
+				["steel-gear-wheel"] = 50,
+				["basic-control-board"] = 100,
+				["glass"] = 250,
+				["rotor"] = 5,
+				["coil"] = 10,
+				["frame"] = 10,
+				["rubber"] = 50,
+				["concrete"] = 250,
 			},
 		},
 	},
 	["gold"] = {
 		Solar = {
-			Solar_Production = 260,
-			Solar_Previous = "silver",
-			Solar_Next = "invar",
-			Solar_Ingredients = {
+			Production = 260,
+			Previous = "silver",
+			Next = "invar",
+			Ingredients = {
 				["gold-plate"] = 10,
 				["electronic-control-board"] = 4,
 				["frame"] = 1,
 			},
 		},
 		Speed_Module = {
-			Speed_Module_Speed_Boost = 0.35,
-			Speed_Module_Consumption_Boost = 1.35,
-			Speed_Module_Pollution_Boost = 0.35,
-			Speed_Module_Ingredients = {
+			Speed_Boost = 0.35,
+			Consumption_Boost = 1.35,
+			Pollution_Boost = 0.35,
+			Ingredients = {
 				["advanced-circuit"] = 5,
 				["gold-plate"] = 5,
 				["silver-speed-module"] = 1,
 			},
 		},
 		Effectivity_Module = {
-			Effectivity_Module_Consumption_Boost = -0.35,
-			Effectivity_Module_Pollution_Boost = 0.4,
-			Effectivity_Module_Ingredients = {
+			Consumption_Boost = -0.35,
+			Pollution_Boost = 0.4,
+			Ingredients = {
 				["advanced-circuit"] = 5,
 				["gold-plate"] = 5,
 				["silver-effectivity-module"] = 1,
 			},
 		},
 		Productivity_Module = {
-			Productivity_Module_Speed_Boost = -0.76,
-			Productivity_Module_Consumption_Boost = 0.86,
-			Productivity_Module_Pollution_Boost = 0.55,
-			Productivity_Module_Productivity_Boost = 0.1,
-			Productivity_Module_Ingredients = {
+			Speed_Boost = -0.76,
+			Consumption_Boost = 0.86,
+			Pollution_Boost = 0.55,
+			Productivity_Boost = 0.1,
+			Ingredients = {
 				["advanced-circuit"] = 5,
 				["gold-plate"] = 5,
 				["silver-productivity-module"] = 1,
 			},
 		},
 		Pollution_1_Module = {
-			Pollution_1_Module_Speed_Boost = -0.25,
-			Pollution_1_Module_Pollution_Boost = -0.4,
-			Pollution_1_Module_Ingredients = {
+			Speed_Boost = -0.25,
+			Pollution_Boost = -0.4,
+			Ingredients = {
 				["advanced-circuit"] = 5,
 				["gold-plate"] = 5,
 				["silver-pollution-reduce-module"] = 1,
 			},
 		},
 		Pollution_2_Module = {
-			Pollution_2_Module_Consumption_Boost = 0.68,
-			Pollution_2_Module_Pollution_Boost = 0.4,
-			Pollution_2_Module_Ingredients = {
+			Consumption_Boost = 0.68,
+			Pollution_Boost = 0.4,
+			Ingredients = {
 				["advanced-circuit"] = 5,
 				["gold-plate"] = 5,
 				["silver-pollution-increase-module"] = 1,
 			},
 		},
 		Super_Module = {
-			Super_Module_Speed_Boost = 0.3,
-			Super_Module_Consumption_Boost = -0.35,
-			Super_Module_Pollution_Boost = -0.2,
-			Super_Module_Productivity_Boost = 0.14,
-			Super_Module_Ingredients = {
+			Speed_Boost = 0.3,
+			Consumption_Boost = -0.35,
+			Pollution_Boost = -0.2,
+			Productivity_Boost = 0.14,
+			Ingredients = {
 				["advanced-control-board"] = 50,
 				["gold-speed-module"] = 10,
 				["gold-productivity-module"] = 10,
@@ -665,11 +673,11 @@ Data_Entity = {
 			},
 		},
 		Robot = {
-			Robot_Speed = 0.08,
-			Robot_Energy_Max_MJ = 2.5,
-			Robot_Energy_Tick_KJ = 0.08,
-			Robot_Energy_Move_KJ = 8,
-			Robot_Previous = "nickel",
+			Speed = 0.08,
+			Energy_Max_MJ = 2.5,
+			Energy_Tick_KJ = 0.08,
+			Energy_Move_KJ = 8,
+			Previous = "nickel",
 			Roboport_Energy_Usage_KW = 80,
 			Roboport_Charging_Energy_KW = 2000,
 			Roboport_Input_MW = 7,
@@ -682,13 +690,13 @@ Data_Entity = {
 				["gold-cable"] = 25,
 				["electronic-control-board"] = 25,
 			},
-			Logistic_Robot_Ingredients = {
+			Logistic_Ingredients = {
 				["gold-plate"] = 5,
 				["engine-unit"] = 1,
 				["frame"] = 1,
 				["electronic-control-board"] = 5,
 			},
-			Construction_Robot_Ingredients = {
+			Construction_Ingredients = {
 				["gold-plate"] = 5,
 				["engine-unit"] = 1,
 				["frame"] = 1,
@@ -698,11 +706,11 @@ Data_Entity = {
 	},
 	["bronze"] = {
 		Belt = {
-			Belt_Speed = 15,
-			Belt_Range = 10,
-			Belt_Previous = "iron",
-			Belt_Next = "steel",
-			Belt_Ingredients = {
+			Speed = 15,
+			Range = 10,
+			Previous = "iron",
+			Next = "steel",
+			Ingredients = {
 				["electronic-circuit"] = 1,
 				["bronze-plate"] = 5,
 			},
@@ -717,23 +725,23 @@ Data_Entity = {
 			},
 		},
 		Pipe = {
-			Pipe_Amount = 15,
-			Pipe_Range = 14,
-			Pipe_Previous = "nickel",
-			Pipe_Next = "electrum",
-			Pipe_Ingredients = {
+			Amount = 15,
+			Range = 14,
+			Previous = "nickel",
+			Next = "electrum",
+			Ingredients = {
 				["bronze-plate"] = 2,
 			},
-			Pipe_Underground_Ingredients = {
+			Underground_Ingredients = {
 				["bronze-plate"] = 10,
 			},
 		},
 		Pumpjack = {
-			Pumpjack_Speed = 1.75,
-			Pumpjack_Range = 6,
-			Pumpjack_Previous = "iron",
-			Pumpjack_Next = "electrum",
-			Pumpjack_Ingredients = {
+			Speed = 1.75,
+			Range = 6,
+			Previous = "iron",
+			Next = "electrum",
+			Ingredients = {
 				["bronze-plate"] = 10,
 				["bronze-gear-wheel"] = 10,
 				["bronze-pipe"] = 5,
@@ -741,10 +749,10 @@ Data_Entity = {
 			},
 		},
 		Accumulator = {
-			Accumulator_Previous = "copper",
-			Accumulator_Next = "electrum",
-			Accumulator_Buffer_MJ = 8,
-			Accumulator_Ingredients = {
+			Previous = "copper",
+			Next = "electrum",
+			Buffer_MJ = 8,
+			Ingredients = {
 				["electronic-control-board"] = 14,
 				["bronze-plate"] = 5,
 				["bronze-cable"] = 1,
@@ -753,11 +761,11 @@ Data_Entity = {
 	},
 	["lead"] = {
 		Drill = {
-			Drill_Speed = 2.5,
-			Drill_Range = 8,
-			Drill_Previous = "nickel",
-			Drill_Next = "cobalt",
-			Drill_Ingredients = {
+			Speed = 2.5,
+			Range = 8,
+			Previous = "nickel",
+			Next = "cobalt",
+			Ingredients = {
 				["lead-gear-wheel"] = 4,
 				["lead-plate"] = 10,
 				["electronic-control-board"] = 5,
@@ -765,10 +773,10 @@ Data_Entity = {
 			},
 		},
 		Assembler = {
-			Assembler_Speed_Mod = 1.29,
-			Assembler_Previous = "tin",
-			Assembler_Next = "invar",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.29,
+			Previous = "tin",
+			Next = "invar",
+			Ingredients = {
 				["lead-gear-wheel"] = 4,
 				["lead-plate"] = 20,
 				["electronic-control-board"] = 1,
@@ -776,10 +784,10 @@ Data_Entity = {
 			},
 		},
 		Centrifuge = {
-			Centrifuge_Speed_Mod = 1.08,
-			Centrifuge_Previous = "copper",
-			Centrifuge_Next = "cobalt",
-			Centrifuge_Ingredients = {
+			Speed_Mod = 1.08,
+			Previous = "copper",
+			Next = "cobalt",
+			Ingredients = {
 				["electronic-control-board"] = 5,
 				["lead-plate"] = 25,
 				["heater"] = 3,
@@ -787,9 +795,9 @@ Data_Entity = {
 			},
 		},
 		Wall = {
-			Wall_Previous = "iron",
-			Wall_Next = "invar",
-			Wall_Ingredients = {
+			Previous = "iron",
+			Next = "invar",
+			Ingredients = {
 				["lead-plate"] = 10,
 			},
 			Gate_Ingredients = {
@@ -802,11 +810,11 @@ Data_Entity = {
 --------------------------------------- TIER 4 --------------------------------------
 	["cobalt"] = {
 		Drill = {
-			Drill_Speed = 4,
-			Drill_Range = 10,
-			Drill_Previous = "lead",
-			Drill_Next = "arditium",
-			Drill_Ingredients = {
+			Speed = 4,
+			Range = 10,
+			Previous = "lead",
+			Next = "arditium",
+			Ingredients = {
 				["cobalt-gear-wheel"] = 4,
 				["cobalt-plate"] = 10,
 				["advanced-control-board"] = 5,
@@ -814,10 +822,10 @@ Data_Entity = {
 			},
 		},
 		Centrifuge = {
-			Centrifuge_Speed_Mod = 1.2,
-			Centrifuge_Previous = "lead",
-			Centrifuge_Next = "stainless-steel",
-			Centrifuge_Ingredients = {
+			Speed_Mod = 1.2,
+			Previous = "lead",
+			Next = "stainless-steel",
+			Ingredients = {
 				["advanced-control-board"] = 5,
 				["cobalt-plate"] = 25,
 				["intake"] = 3,
@@ -825,23 +833,23 @@ Data_Entity = {
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "stainless-steel",
-			Steam_Engine_Previous = "steel",
-			Steam_Engine_Fluid_Usage = 0.7,
-			Steam_Engine_Effectivity = 0.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Next = "stainless-steel",
+			Previous = "steel",
+			Fluid_Usage = 0.7,
+			Effectivity = 0.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["cobalt-plate"] = 40,
 				["cobalt-gear-wheel"] = 10,
 				["intake"] = 4,
 			},
 		},
 		Robot = {
-			Robot_Speed = 0.11,
-			Robot_Energy_Max_MJ = 4.5,
-			Robot_Energy_Tick_KJ = 0.11,
-			Robot_Energy_Move_KJ = 1,
-			Robot_Previous = "gold",
+			Speed = 0.11,
+			Energy_Max_MJ = 4.5,
+			Energy_Tick_KJ = 0.11,
+			Energy_Move_KJ = 1,
+			Previous = "gold",
 			Roboport_Energy_Usage_KW = 110,
 			Roboport_Charging_Energy_KW = 4000,
 			Roboport_Input_MW = 14,
@@ -855,13 +863,13 @@ Data_Entity = {
 				["cobalt-gear-wheel"] = 10,
 				["advanced-control-board"] = 25,
 			},
-			Logistic_Robot_Ingredients = {
+			Logistic_Ingredients = {
 				["cobalt-plate"] = 5,
 				["housing"] = 1,
 				["flying-robot-frame"] = 1,
 				["advanced-control-board"] = 5,
 			},
-			Construction_Robot_Ingredients = {
+			Construction_Ingredients = {
 				["cobalt-plate"] = 5,
 				["housing"] = 1,
 				["flying-robot-frame"] = 1,
@@ -869,10 +877,10 @@ Data_Entity = {
 			},
 		},
 		Furnace = {
-			Furnace_Speed_Mod = 1.25,
-			Furnace_Previous = "steel",
-			Furnace_Next = "tungsten",
-			Furnace_Ingredients = {
+			Speed_Mod = 1.25,
+			Previous = "steel",
+			Next = "tungsten",
+			Ingredients = {
 				["advanced-control-board"] = 4,
 				["cobalt-plate"] = 25,
 				["heater"] = 5,
@@ -882,10 +890,10 @@ Data_Entity = {
 	},
 	["invar"] = {
 		Assembler = {
-			Assembler_Speed_Mod = 1.33,
-			Assembler_Previous = "lead",
-			Assembler_Next = "electrum",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.33,
+			Previous = "lead",
+			Next = "electrum",
+			Ingredients = {
 				["invar-gear-wheel"] = 4,
 				["invar-plate"] = 20,
 				["advanced-control-board"] = 1,
@@ -893,19 +901,19 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 375,
-			Solar_Previous = "gold",
-			Solar_Next = "arditium",
-			Solar_Ingredients = {
+			Production = 375,
+			Previous = "gold",
+			Next = "arditium",
+			Ingredients = {
 				["invar-plate"] = 10,
 				["advanced-control-board"] = 4,
 				["housing"] = 1,
 			},
 		},
 		Wall = {
-			Wall_Previous = "lead",
-			Wall_Next = "stainless-steel",
-			Wall_Ingredients = {
+			Previous = "lead",
+			Next = "stainless-steel",
+			Ingredients = {
 				["invar-plate"] = 10,
 			},
 			Gate_Ingredients = {
@@ -915,21 +923,21 @@ Data_Entity = {
 			},
 		},
 		Chemical = {
-			Chemical_Speed_Mod = 1.2,
-			Chemical_Previous = "tin",
-			Chemical_Next = "arditium-tungstenate",
-			Chemical_Ingredients = {
+			Speed_Mod = 1.2,
+			Previous = "tin",
+			Next = "arditium-tungstenate",
+			Ingredients = {
 				["invar-gear-wheel"] = 4,
 				["invar-plate"] = 25,
 				["advanced-control-board"] = 12,
 			},
 		},
 		Radar = {
-			Radar_Previous = "steel",
-			Radar_Next = "stainless-steel",
-			Radar_Active_Range = 5,
-			Radar_Scan_Range = 28,
-			Radar_Ingredients = {
+			Previous = "steel",
+			Next = "stainless-steel",
+			Active_Range = 5,
+			Scan_Range = 28,
+			Ingredients = {
 				["advanced-control-board"] = 2,
 				["invar-plate"] = 25,
 				["invar-gear-wheel"] = 13,
@@ -938,10 +946,10 @@ Data_Entity = {
 	},
 	["electrum"] = {
 		Assembler = {
-			Assembler_Speed_Mod = 1.39,
-			Assembler_Previous = "invar",
-			Assembler_Next = "arditium",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.39,
+			Previous = "invar",
+			Next = "arditium",
+			Ingredients = {
 				["electrum-cable"] = 4,
 				["electrum-plate"] = 20,
 				["advanced-control-board"] = 3,
@@ -949,44 +957,44 @@ Data_Entity = {
 			},
 		},
 		Pipe = {
-			Pipe_Amount = 20,
-			Pipe_Range = 20,
-			Pipe_Previous = "bronze",
-			Pipe_Next = "arditium",
-			Pipe_Ingredients = {
+			Amount = 20,
+			Range = 20,
+			Previous = "bronze",
+			Next = "arditium",
+			Ingredients = {
 				["electrum-plate"] = 2,
 			},
-			Pipe_Underground_Ingredients = {
+			Underground_Ingredients = {
 				["electrum-plate"] = 10,
 			},
 		},
 		Pump = {
-			Pump_Previous = "steel",
-			Pump_Next = "stainless-steel",
-			Pump_Speed = 150 * 4,
-			Pump_Amount = 50 * 4,
-			Pump_Ingredients = {
+			Previous = "steel",
+			Next = "stainless-steel",
+			Speed = 150 * 4,
+			Amount = 50 * 4,
+			Ingredients = {
 				["electrum-plate"] = 2,
 				["electrum-pipe"] = 2,
 				["advanced-control-board"] = 2,
 			},
 		},
 		Pumpjack = {
-			Pumpjack_Speed = 3,
-			Pumpjack_Range = 9,
-			Pumpjack_Previous = "bronze",
-			Pumpjack_Next = "arditium",
-			Pumpjack_Ingredients = {
+			Speed = 3,
+			Range = 9,
+			Previous = "bronze",
+			Next = "arditium",
+			Ingredients = {
 				["electrum-plate"] = 10,
 				["electrum-pipe"] = 5,
 				["advanced-control-board"] = 3,
 			},
 		},
 		Accumulator = {
-			Accumulator_Previous = "bronze",
-			Accumulator_Next = "titanium",
-			Accumulator_Buffer_MJ = 13,
-			Accumulator_Ingredients = {
+			Previous = "bronze",
+			Next = "titanium",
+			Buffer_MJ = 13,
+			Ingredients = {
 				["advanced-control-board"] = 14,
 				["electrum-plate"] = 5,
 				["electrum-cable"] = 1,
@@ -996,11 +1004,11 @@ Data_Entity = {
 --------------------------------------- TIER 5 --------------------------------------
 	["stainless-steel"] = {
 		Belt = {
-			Belt_Speed = 32,
-			Belt_Range = 17,
-			Belt_Previous = "steel",
-			Belt_Next = "titanium",
-			Belt_Ingredients = {
+			Speed = 32,
+			Range = 17,
+			Previous = "steel",
+			Next = "titanium",
+			Ingredients = {
 				["stainless-steel-gear-wheel"] = 4,
 				["stainless-steel-plate"] = 5,
 			},
@@ -1017,10 +1025,10 @@ Data_Entity = {
 			},
 		},
 		Centrifuge = {
-			Centrifuge_Speed_Mod = 1.35,
-			Centrifuge_Previous = "cobalt",
-			Centrifuge_Next = "tungsten",
-			Centrifuge_Ingredients = {
+			Speed_Mod = 1.35,
+			Previous = "cobalt",
+			Next = "tungsten",
+			Ingredients = {
 				["tough-control-board"] = 5,
 				["stainless-steel-plate"] = 25,
 				["logistic-unit"] = 2,
@@ -1028,21 +1036,21 @@ Data_Entity = {
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "titanium",
-			Steam_Engine_Previous = "cobalt",
-			Steam_Engine_Fluid_Usage = 0.8,
-			Steam_Engine_Effectivity = 0.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Next = "titanium",
+			Previous = "cobalt",
+			Fluid_Usage = 0.8,
+			Effectivity = 0.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["stainless-steel-plate"] = 50,
 				["stainless-steel-stick"] = 10,
 				["tough-control-board"] = 5,
 			},
 		},
 		Wall = {
-			Wall_Previous = "invar",
-			Wall_Next = "titanium",
-			Wall_Ingredients = {
+			Previous = "invar",
+			Next = "titanium",
+			Ingredients = {
 				["stainless-steel-plate"] = 10,
 			},
 			Gate_Ingredients = {
@@ -1052,59 +1060,63 @@ Data_Entity = {
 			},
 		},
 		Pump = {
-			Pump_Previous = "electrum",
-			Pump_Next = "tungsten",
-			Pump_Speed = 150 * 5,
-			Pump_Amount = 50 * 5,
-			Pump_Ingredients = {
+			Previous = "electrum",
+			Next = "tungsten",
+			Speed = 150 * 5,
+			Amount = 50 * 5,
+			Ingredients = {
 				["stainless-steel-plate"] = 2,
 				["arditium-pipe"] = 2,
 				["tough-control-board"] = 2,
 			},
 		},
 		Refinery = {
-			Refinery_Speed_Mod = 1.25,
-			Refinery_Previous = "tin",
-			Refinery_Next = "arditium-tungstenate",
-			Refinery_Ingredients = {
+			Speed_Mod = 1.25,
+			Previous = "tin",
+			Next = "arditium-tungstenate",
+			Ingredients = {
 				["stainless-steel-gear-wheel"] = 4,
 				["stainless-steel-plate"] = 50,
 				["tough-control-board"] = 25,
 			},
 		},
 		Radar = {
-			Radar_Previous = "invar",
-			Radar_Next = "titanium",
-			Radar_Active_Range = 6,
-			Radar_Scan_Range = 37,
-			Radar_Ingredients = {
+			Previous = "invar",
+			Next = "titanium",
+			Active_Range = 6,
+			Scan_Range = 37,
+			Ingredients = {
 				["tough-control-board"] = 4,
 				["stainless-steel-plate"] = 15,
 				["stainless-steel-gear-wheel"] = 3,
 			},
 		},
 		Nuclear_Reactor = {
-			Nuclear_Reactor_Previous = "steel",
-			Nuclear_Reactor_Next = "tungsten",
-			Nuclear_Reactor_Consumption_MW = 20,
-			Nuclear_Reactor_Max_Temperature = 2000,
-			Nuclear_Reactor_Specific_Heat_MJ = 20,
-			Nuclear_Reactor_Max_Transfer_GW = 40,
-			Nuclear_Reactor_Neighbour_Bonus = 1,
-			Nuclear_Reactor_Effectivity = 1,
-			Nuclear_Reactor_Ingredients = {
-				["iron-assembling-machine"] = 1,
-				["tin-gear-wheel"] = 4,
+			Previous = "steel",
+			Next = "tungsten",
+			Consumption_MW = 20,
+			Max_Temperature = 2000,
+			Specific_Heat_MJ = 20,
+			Max_Transfer_GW = 40,
+			Neighbour_Bonus = 1,
+			Effectivity = 1,
+			Ingredients = {
+				["stainless-steel-plate"] = 250,
+				["stainless-steel-stick"] = 50,
+				["advanced-control-board"] = 100,
+				["housing"] = 10,
+				["intake"] = 10,
+				["concrete"] = 250,
 			},
 		},
 	},
 	["arditium"] = {
 		Drill = {
-			Drill_Speed = 6,
-			Drill_Range = 10,
-			Drill_Previous = "cobalt",
-			Drill_Next = "titanium",
-			Drill_Ingredients = {
+			Speed = 6,
+			Range = 10,
+			Previous = "cobalt",
+			Next = "titanium",
+			Ingredients = {
 				["arditium-gear-wheel"] = 6,
 				["arditium-plate"] = 15,
 				["tough-control-board"] = 5,
@@ -1113,10 +1125,10 @@ Data_Entity = {
 			},
 		},
 		Assembler = {
-			Assembler_Speed_Mod = 1.43,
-			Assembler_Previous = "electrum",
-			Assembler_Next = "tungsten",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.43,
+			Previous = "electrum",
+			Next = "tungsten",
+			Ingredients = {
 				["arditium-gear-wheel"] = 4,
 				["arditium-plate"] = 20,
 				["tough-control-board"] = 1,
@@ -1124,33 +1136,33 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 490,
-			Solar_Previous = "invar",
-			Solar_Next = "titanium",
-			Solar_Ingredients = {
+			Production = 490,
+			Previous = "invar",
+			Next = "titanium",
+			Ingredients = {
 				["arditium-plate"] = 10,
 				["tough-control-board"] = 4,
 				["housing"] = 4,
 			},
 		},
 		Pipe = {
-			Pipe_Amount = 30,
-			Pipe_Range = 25,
-			Pipe_Previous = "electrum",
-			Pipe_Next = "tungsten",
-			Pipe_Ingredients = {
+			Amount = 30,
+			Range = 25,
+			Previous = "electrum",
+			Next = "tungsten",
+			Ingredients = {
 				["arditium-plate"] = 2,
 			},
-			Pipe_Underground_Ingredients = {
+			Underground_Ingredients = {
 				["arditium-plate"] = 10,
 			},
 		},
 		Pumpjack = {
-			Pumpjack_Speed = 5,
-			Pumpjack_Range = 12,
-			Pumpjack_Previous = "electrum",
-			Pumpjack_Next = "titanium",
-			Pumpjack_Ingredients = {
+			Speed = 5,
+			Range = 12,
+			Previous = "electrum",
+			Next = "titanium",
+			Ingredients = {
 				["arditium-plate"] = 10,
 				["arditium-gear-wheel"] = 4,
 				["arditium-pipe"] = 5,
@@ -1158,11 +1170,11 @@ Data_Entity = {
 			},
 		},
 		Robot = {
-			Robot_Speed = 0.15,
-			Robot_Energy_Max_MJ = 6,
-			Robot_Energy_Tick_KJ = 0.15,
-			Robot_Energy_Move_KJ = 1.5,
-			Robot_Previous = "cobalt",
+			Speed = 0.15,
+			Energy_Max_MJ = 6,
+			Energy_Tick_KJ = 0.15,
+			Energy_Move_KJ = 1.5,
+			Previous = "cobalt",
 			Roboport_Energy_Usage_KW = 220,
 			Roboport_Charging_Energy_KW = 8000,
 			Roboport_Input_MW = 28,
@@ -1176,12 +1188,12 @@ Data_Entity = {
 				["logistic-unit"] = 5,
 				["tough-control-board"] = 25,
 			},
-			Logistic_Robot_Ingredients = {
+			Logistic_Ingredients = {
 				["arditium-plate"] = 5,
 				["logistic-unit"] = 1,
 				["tough-control-board"] = 5,
 			},
-			Construction_Robot_Ingredients = {
+			Construction_Ingredients = {
 				["arditium-plate"] = 5,
 				["logistic-unit"] = 1,
 				["tough-control-board"] = 5,
@@ -1191,11 +1203,11 @@ Data_Entity = {
 --------------------------------------- TIER 6 --------------------------------------
 	["titanium"] = {
 		Belt = {
-			Belt_Speed = 42,
-			Belt_Range = 21,
-			Belt_Previous = "stainless-steel",
-			Belt_Next = "tungsten",
-			Belt_Ingredients = {
+			Speed = 42,
+			Range = 21,
+			Previous = "stainless-steel",
+			Next = "tungsten",
+			Ingredients = {
 				["titanium-gear-wheel"] = 4,
 				["titanium-plate"] = 5,
 				["logistic-unit"] = 1,
@@ -1211,11 +1223,11 @@ Data_Entity = {
 			},
 		},
 		Drill = {
-			Drill_Speed = 9,
-			Drill_Range = 12,
-			Drill_Previous = "arditium",
-			Drill_Next = "electranium",
-			Drill_Ingredients = {
+			Speed = 9,
+			Range = 12,
+			Previous = "arditium",
+			Next = "electranium",
+			Ingredients = {
 				["titanium-gear-wheel"] = 10,
 				["titanium-plate"] = 20,
 				["processing-control-board"] = 5,
@@ -1223,31 +1235,31 @@ Data_Entity = {
 			},
 		},
 		Solar = {
-			Solar_Production = 620,
-			Solar_Previous = "arditium",
-			Solar_Next = "electranium",
-			Solar_Ingredients = {
+			Production = 620,
+			Previous = "arditium",
+			Next = "electranium",
+			Ingredients = {
 				["titanium-plate"] = 10,
 				["processing-control-board"] = 4,
 				["controller"] = 1,
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "electranium",
-			Steam_Engine_Previous = "stainless-steel",
-			Steam_Engine_Fluid_Usage = 0.9,
-			Steam_Engine_Effectivity = 0.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Next = "electranium",
+			Previous = "stainless-steel",
+			Fluid_Usage = 0.9,
+			Effectivity = 0.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["titanium-plate"] = 50,
 				["titanium-gear-wheel"] = 10,
 				["controller"] = 1,
 			},	
 		},
 		Wall = {
-			Wall_Previous = "stainless-steel",
-			Wall_Next = "arditium-tungstenate",
-			Wall_Ingredients = {
+			Previous = "stainless-steel",
+			Next = "arditium-tungstenate",
+			Ingredients = {
 				["titanium-plate"] = 10,
 			},
 			Gate_Ingredients = {
@@ -1257,11 +1269,11 @@ Data_Entity = {
 			},
 		},
 		Pumpjack = {
-			Pumpjack_Speed = 7.5,
-			Pumpjack_Range = 16,
-			Pumpjack_Previous = "arditium",
-			Pumpjack_Next = "tungstvar",
-			Pumpjack_Ingredients = {
+			Speed = 7.5,
+			Range = 16,
+			Previous = "arditium",
+			Next = "tungstvar",
+			Ingredients = {
 				["titanium-plate"] = 10,
 				["titanium-gear-wheel"] = 4,
 				["tungsten-pipe"] = 5,
@@ -1269,21 +1281,21 @@ Data_Entity = {
 			},	
 		},
 		Radar = {
-			Radar_Previous = "stainless-steel",
-			Radar_Next = "arditium-tungstenate",
-			Radar_Active_Range = 8,
-			Radar_Scan_Range = 50,
-			Radar_Ingredients = {
+			Previous = "stainless-steel",
+			Next = "arditium-tungstenate",
+			Active_Range = 8,
+			Scan_Range = 50,
+			Ingredients = {
 				["processing-control-board"] = 8,
 				["titanium-plate"] = 5,
 				["titanium-gear-wheel"] = 1,
 			},
 		},
 		Accumulator = {
-			Accumulator_Previous = "electrum",
-			Accumulator_Next = "electranium",
-			Accumulator_Buffer_MJ = 20,
-			Accumulator_Ingredients = {
+			Previous = "electrum",
+			Next = "electranium",
+			Buffer_MJ = 20,
+			Ingredients = {
 				["processing-control-board"] = 14,
 				["titanium-plate"] = 5,
 				["titanium-cable"] = 1,
@@ -1292,11 +1304,11 @@ Data_Entity = {
 	},
 	["tungsten"] = {
 		Belt = {
-			Belt_Speed = 55,
-			Belt_Range = 26,
-			Belt_Previous = "titanium",
-			Belt_Next = "arditium-tungstenate",
-			Belt_Ingredients = {
+			Speed = 55,
+			Range = 26,
+			Previous = "titanium",
+			Next = "arditium-tungstenate",
+			Ingredients = {
 				["tungsten-gear-wheel"] = 4,
 				["tungsten-plate"] = 5,
 			},
@@ -1311,33 +1323,33 @@ Data_Entity = {
 			},
 		},
 		Pipe = {
-			Pipe_Amount = 50,
-			Pipe_Range = 30,
-			Pipe_Previous = "arditium",
-			Pipe_Next = "electranium",
-			Pipe_Ingredients = {
+			Amount = 50,
+			Range = 30,
+			Previous = "arditium",
+			Next = "electranium",
+			Ingredients = {
 				["tungsten-plate"] = 2,
 			},
-			Pipe_Underground_Ingredients = {
+			Underground_Ingredients = {
 				["tungsten-plate"] = 10,
 			},
 		},
 		Pump = {
-			Pump_Previous = "stainless-steel",
-			Pump_Next = "arditium-tungstenate",
-			Pump_Speed = 150 * 6,
-			Pump_Amount = 50 * 6,
-			Pump_Ingredients = {
+			Previous = "stainless-steel",
+			Next = "arditium-tungstenate",
+			Speed = 150 * 6,
+			Amount = 50 * 6,
+			Ingredients = {
 				["tungsten-plate"] = 2,
 				["tungsten-pipe"] = 2,
 				["processing-control-board"] = 2,
 			},
 		},
 		Assembler = {
-			Assembler_Speed_Mod = 1.56,
-			Assembler_Previous = "arditium",
-			Assembler_Next = "electranium",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.56,
+			Previous = "arditium",
+			Next = "electranium",
+			Ingredients = {
 				["tungsten-gear-wheel"] = 4,
 				["tungsten-plate"] = 20,
 				["processing-control-board"] = 1,
@@ -1345,10 +1357,10 @@ Data_Entity = {
 			},
 		},
 		Centrifuge = {
-			Centrifuge_Speed_Mod = 1.5,
-			Centrifuge_Previous = "stainless-steel",
-			Centrifuge_Next = "tungstvar",
-			Centrifuge_Ingredients = {
+			Speed_Mod = 1.5,
+			Previous = "stainless-steel",
+			Next = "tungstvar",
+			Ingredients = {
 				["processing-control-board"] = 5,
 				["tungsten-plate"] = 25,
 				["tungsten-gear-wheel"] = 25,
@@ -1356,10 +1368,10 @@ Data_Entity = {
 			},
 		},
 		Furnace = {
-			Furnace_Speed_Mod = 1.4,
-			Furnace_Previous = "cobalt",
-			Furnace_Next = "tungstvar",
-			Furnace_Ingredients = {
+			Speed_Mod = 1.4,
+			Previous = "cobalt",
+			Next = "tungstvar",
+			Ingredients = {
 				["processing-control-board"] = 4,
 				["tungsten-plate"] = 30,
 				["heater"] = 10,
@@ -1367,71 +1379,74 @@ Data_Entity = {
 			},
 		},
 		Nuclear_Reactor = {
-			Nuclear_Reactor_Previous = "stainless-steel",
-			Nuclear_Reactor_Next = "electranium",
-			Nuclear_Reactor_Consumption_MW = 40,
-			Nuclear_Reactor_Max_Temperature = 3000,
-			Nuclear_Reactor_Specific_Heat_MJ = 40,
-			Nuclear_Reactor_Max_Transfer_GW = 60,
-			Nuclear_Reactor_Neighbour_Bonus = 1,
-			Nuclear_Reactor_Effectivity = 1,
-			Nuclear_Reactor_Ingredients = {
-				["iron-assembling-machine"] = 1,
-				["tin-gear-wheel"] = 4,
+			Previous = "stainless-steel",
+			Next = "electranium",
+			Consumption_MW = 40,
+			Max_Temperature = 3000,
+			Specific_Heat_MJ = 40,
+			Max_Transfer_GW = 60,
+			Neighbour_Bonus = 1,
+			Effectivity = 1,
+			Ingredients = {
+				["tungsten-plate"] = 300,
+				["tungsten-stick"] = 50,
+				["tough-control-board"] = 100,
+				["controller"] = 10,
+				["concrete"] = 250,
 			},
 		},
 	},
 --------------------------------------- TIER 7 --------------------------------------
 	["electranium"] = {
 		Drill = {
-			Drill_Speed = 12,
-			Drill_Range = 15,
-			Drill_Previous = "titanium",
-			Drill_Next = "tungstvar",
-			Drill_Ingredients = {
+			Speed = 12,
+			Range = 15,
+			Previous = "titanium",
+			Next = "tungstvar",
+			Ingredients = {
 				["electranium-cable"] = 10,
 				["electranium-plate"] = 25,
 				["logic-control-board"] = 5,
 			},
 		},
 		Pipe = {
-			Pipe_Amount = 80,
-			Pipe_Range = 40,
-			Pipe_Previous = "tungsten",
-			Pipe_Next = "tungstvar",
-			Pipe_Ingredients = {
+			Amount = 80,
+			Range = 40,
+			Previous = "tungsten",
+			Next = "tungstvar",
+			Ingredients = {
 				["electranium-plate"] = 2,
 			},
-			Pipe_Underground_Ingredients = {
+			Underground_Ingredients = {
 				["electranium-plate"] = 10,
 			},
 		},
 		Assembler = {
-			Assembler_Speed_Mod = 1.54,
-			Assembler_Previous = "tungsten",
-			Assembler_Next = "neutronium",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.54,
+			Previous = "tungsten",
+			Next = "neutronium",
+			Ingredients = {
 				["electranium-cable"] = 4,
 				["electranium-plate"] = 20,
 				["logic-control-board"] = 1,
 			},
 		},
 		Solar = {
-			Solar_Production = 860,
-			Solar_Previous = "titanium",
-			Solar_Next = "tungstvar",
-			Solar_Ingredients = {
+			Production = 860,
+			Previous = "titanium",
+			Next = "tungstvar",
+			Ingredients = {
 				["electranium-plate"] = 10,
 				["logic-control-board"] = 8,
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "tungstvar",
-			Steam_Engine_Previous = "titanium",
-			Steam_Engine_Fluid_Usage = 1,
-			Steam_Engine_Effectivity = 0.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Next = "tungstvar",
+			Previous = "titanium",
+			Fluid_Usage = 1,
+			Effectivity = 0.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["electranium-plate"] = 50,
 				["electranium-cable"] = 10,
 				["electranium-stick"] = 10,
@@ -1439,11 +1454,11 @@ Data_Entity = {
 			},	
 		},
 		Robot = {
-			Robot_Speed = 0.25,
-			Robot_Energy_Max_MJ = 12,
-			Robot_Energy_Tick_KJ = 0.17,
-			Robot_Energy_Move_KJ = 2,
-			Robot_Previous = "arditium",
+			Speed = 0.25,
+			Energy_Max_MJ = 12,
+			Energy_Tick_KJ = 0.17,
+			Energy_Move_KJ = 2,
+			Previous = "arditium",
 			Roboport_Energy_Usage_KW = 440,
 			Roboport_Charging_Energy_KW = 16000,
 			Roboport_Input_MW = 56,
@@ -1457,49 +1472,52 @@ Data_Entity = {
 				["controller"] = 5,
 				["logic-control-board"] = 25,
 			},
-			Logistic_Robot_Ingredients = {
+			Logistic_Ingredients = {
 				["electranium-plate"] = 5,
 				["controller"] = 1,
 				["logic-control-board"] = 5,
 			},
-			Construction_Robot_Ingredients = {
+			Construction_Ingredients = {
 				["electranium-plate"] = 5,
 				["controller"] = 1,
 				["logic-control-board"] = 5,
 			},	
 		},
 		Accumulator = {
-			Accumulator_Previous = "titanium",
-			Accumulator_Next = "tungstvar",
-			Accumulator_Buffer_MJ = 32,
-			Accumulator_Ingredients = {
+			Previous = "titanium",
+			Next = "tungstvar",
+			Buffer_MJ = 32,
+			Ingredients = {
 				["logic-control-board"] = 14,
 				["electranium-plate"] = 5,
 				["electranium-cable"] = 1,
 			},
 		},
 		Nuclear_Reactor = {
-			Nuclear_Reactor_Previous = "tungsten",
-			Nuclear_Reactor_Next = "neutronium",
-			Nuclear_Reactor_Consumption_MW = 80,
-			Nuclear_Reactor_Max_Temperature = 4000,
-			Nuclear_Reactor_Specific_Heat_MJ = 80,
-			Nuclear_Reactor_Max_Transfer_GW = 80,
-			Nuclear_Reactor_Neighbour_Bonus = 1,
-			Nuclear_Reactor_Effectivity = 1,
-			Nuclear_Reactor_Ingredients = {
-				["iron-assembling-machine"] = 1,
-				["tin-gear-wheel"] = 4,
+			Previous = "tungsten",
+			Next = "neutronium",
+			Consumption_MW = 80,
+			Max_Temperature = 4000,
+			Specific_Heat_MJ = 80,
+			Max_Transfer_GW = 80,
+			Neighbour_Bonus = 1,
+			Effectivity = 1,
+			Ingredients = {
+				["electranium-plate"] = 400,
+				["electranium-stick"] = 80,
+				["processing-control-board"] = 100,
+				["controller"] = 25,
+				["concrete"] = 250,
 			},
 		},
 	},
 	["arditium-tungstenate"] = {
 		Belt = {
-			Belt_Speed = 70,
-			Belt_Range = 32,
-			Belt_Previous = "tungsten",
-			Belt_Next = "tungstvar",
-			Belt_Ingredients = {
+			Speed = 70,
+			Range = 32,
+			Previous = "tungsten",
+			Next = "tungstvar",
+			Ingredients = {
 				["arditium-tungstenate-gear-wheel"] = 4,
 				["arditium-tungstenate-plate"] = 5,
 				["controller"] = 1,
@@ -1515,9 +1533,9 @@ Data_Entity = {
 			},
 		},
 		Wall = {
-			Wall_Previous = "titanium",
-			Wall_Next = "tungstvar",
-			Wall_Ingredients = {
+			Previous = "titanium",
+			Next = "tungstvar",
+			Ingredients = {
 				["arditium-tungstenate-plate"] = 10,
 			},
 			Gate_Ingredients = {
@@ -1527,42 +1545,42 @@ Data_Entity = {
 			},
 		},
 		Pump = {
-			Pump_Previous = "tungsten",
-			Pump_Next = "neutronium",
-			Pump_Speed = 150 * 7,
-			Pump_Amount = 50 * 7,
-			Pump_Ingredients = {
+			Previous = "tungsten",
+			Next = "neutronium",
+			Speed = 150 * 7,
+			Amount = 50 * 7,
+			Ingredients = {
 				["arditium-tungstenate-plate"] = 2,
 				["electranium-pipe"] = 2,
 				["logic-control-board"] = 2,
 			},
 		},
 		Refinery = {
-			Refinery_Speed_Mod = 1.5,
-			Refinery_Previous = "stainless-steel",
-			Refinery_Next = "neutrobaltium",
-			Refinery_Ingredients = {
+			Speed_Mod = 1.5,
+			Previous = "stainless-steel",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["arditium-tungstenate-gear-wheel"] = 4,
 				["arditium-tungstenate-plate"] = 50,
 				["logic-control-board"] = 25,
 			},
 		},
 		Chemical = {
-			Chemical_Speed_Mod = 1.4,
-			Chemical_Previous = "invar",
-			Chemical_Next = "neutronium",
-			Chemical_Ingredients = {
+			Speed_Mod = 1.4,
+			Previous = "invar",
+			Next = "neutronium",
+			Ingredients = {
 				["arditium-tungstenate-gear-wheel"] = 4,
 				["arditium-tungstenate-plate"] = 25,
 				["logic-control-board"] = 12,
 			},
 		},
 		Radar = {
-			Radar_Previous = "titanium",
-			Radar_Next = "neutrobaltium",
-			Radar_Active_Range = 10,
-			Radar_Scan_Range = 65,
-			Radar_Ingredients = {
+			Previous = "titanium",
+			Next = "neutrobaltium",
+			Active_Range = 10,
+			Scan_Range = 65,
+			Ingredients = {
 				["logic-control-board"] = 4,
 				["arditium-tungstenate-plate"] = 5,
 				["arditium-tungstenate-gear-wheel"] = 9,
@@ -1572,11 +1590,11 @@ Data_Entity = {
 --------------------------------------- TIER 8 --------------------------------------
 	["tungstvar"] = {
 		Belt = {
-			Belt_Speed = 88,
-			Belt_Range = 38,
-			Belt_Previous = "arditium-tungstenate",
-			Belt_Next = "neutrobaltium",
-			Belt_Ingredients = {
+			Speed = 88,
+			Range = 38,
+			Previous = "arditium-tungstenate",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["arditium-tungstenate-gear-wheel"] = 8,
 				["tungstvar-plate"] = 5,
 			},
@@ -1591,23 +1609,23 @@ Data_Entity = {
 			},
 		},
 		Pipe = {
-			Pipe_Amount = 100,
-			Pipe_Range = 50,
-			Pipe_Previous = "electranium",
-			Pipe_Next = "neutrobaltium",
-			Pipe_Ingredients = {
+			Amount = 100,
+			Range = 50,
+			Previous = "electranium",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["tungstvar-plate"] = 2,
 			},
-			Pipe_Underground_Ingredients = {
+			Underground_Ingredients = {
 				["tungstvar-plate"] = 10,
 			},
 		},
 		Pumpjack = {
-			Pumpjack_Speed = 12,
-			Pumpjack_Range = 20,
-			Pumpjack_Previous = "titanium",
-			Pumpjack_Next = "neutrobaltium",
-			Pumpjack_Ingredients = {
+			Speed = 12,
+			Range = 20,
+			Previous = "titanium",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["tungstvar-plate"] = 10,
 				["arditium-tungstenate-gear-wheel"] = 4,
 				["tungstvar-pipe"] = 5,
@@ -1615,50 +1633,50 @@ Data_Entity = {
 			},	
 		},
 		Drill = {
-			Drill_Speed = 15,
-			Drill_Range = 20,
-			Drill_Previous = "electranium",
-			Drill_Next = "neutronium",
-			Drill_Ingredients = {
+			Speed = 15,
+			Range = 20,
+			Previous = "electranium",
+			Next = "neutronium",
+			Ingredients = {
 				["tungstvar-stick"] = 20,
 				["tungstvar-plate"] = 50,
 				["super-control-board"] = 10,
 			},
 		},
 		Centrifuge = {
-			Centrifuge_Speed_Mod = 1.8,
-			Centrifuge_Previous = "tungsten",
-			Centrifuge_Next = "neutrobaltium",
-			Centrifuge_Ingredients = {
+			Speed_Mod = 1.8,
+			Previous = "tungsten",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["super-control-board"] = 5,
 				["tungstvar-plate"] = 25,
 			},
 		},
 		Solar = {
-			Solar_Production = 1175,
-			Solar_Previous = "electranium",
-			Solar_Next = "neutrobaltium",
-			Solar_Ingredients = {
+			Production = 1175,
+			Previous = "electranium",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["tungstvar-plate"] = 10,
 				["super-control-board"] = 8,
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "neutronium",
-			Steam_Engine_Previous = "electranium",
-			Steam_Engine_Fluid_Usage = 1.1,
-			Steam_Engine_Effectivity = 0.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Next = "neutronium",
+			Previous = "electranium",
+			Fluid_Usage = 1.1,
+			Effectivity = 0.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["tungstvar-plate"] = 50,
 				["tungstvar-stick"] = 10,
 				["housing"] = 10,
 			},
 		},
 		Wall = {
-			Wall_Previous = "arditium-tungstenate",
-			Wall_Next = "neutronium",
-			Wall_Ingredients = {
+			Previous = "arditium-tungstenate",
+			Next = "neutronium",
+			Ingredients = {
 				["tungstvar-plate"] = 10,
 			},
 			Gate_Ingredients = {
@@ -1668,20 +1686,20 @@ Data_Entity = {
 			},	
 		},	
 		Furnace = {
-			Furnace_Speed_Mod = 1.6,
-			Furnace_Previous = "tungsten",
-			Furnace_Next = "neutrobaltium",
-			Furnace_Ingredients = {
+			Speed_Mod = 1.6,
+			Previous = "tungsten",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["super-control-board"] = 4,
 				["tungstvar-plate"] = 40,
 				["heater"] = 25,
 			},
 		},
 		Accumulator = {
-			Accumulator_Previous = "electranium",
-			Accumulator_Next = "neutronium",
-			Accumulator_Buffer_MJ = 48,
-			Accumulator_Ingredients = {
+			Previous = "electranium",
+			Next = "neutronium",
+			Buffer_MJ = 48,
+			Ingredients = {
 				["super-control-board"] = 14,
 				["tungstvar-plate"] = 5,
 			},
@@ -1690,42 +1708,42 @@ Data_Entity = {
 --------------------------------------- TIER 9 --------------------------------------
 	["neutronium"] = {
 		Drill = {
-			Drill_Speed = 19,
-			Drill_Range = 22,
-			Drill_Previous = "tungstvar",
-			Drill_Next = "neutrobaltium",
-			Drill_Ingredients = {
+			Speed = 19,
+			Range = 22,
+			Previous = "tungstvar",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["neutronium-stick"] = 20,
 				["neutronium-plate"] = 50,
 				["super-control-board"] = 25,
 			},
 		},
 		Assembler = {
-			Assembler_Speed_Mod = 1.66,
-			Assembler_Previous = "electranium",
-			Assembler_Next = "neutrobaltium",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.66,
+			Previous = "electranium",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["neutronium-stick"] = 4,
 				["neutronium-plate"] = 20,
 				["extreme-control-board"] = 1,
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "neutrobaltium",
-			Steam_Engine_Previous = "tungstvar",
-			Steam_Engine_Fluid_Usage = 1.2,
-			Steam_Engine_Effectivity = 0.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Next = "neutrobaltium",
+			Previous = "tungstvar",
+			Fluid_Usage = 1.2,
+			Effectivity = 0.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["neutronium-plate"] = 50,
 				["neutronium-stick"] = 10,
 				["extreme-control-board"] = 15,
 			},	
 		},
 		Wall = {
-			Wall_Previous = "tungstvar",
-			Wall_Next = "neutrobaltium",
-			Wall_Ingredients = {
+			Previous = "tungstvar",
+			Next = "neutrobaltium",
+			Ingredients = {
 				["neutronium-plate"] = 10,
 			},
 			Gate_Ingredients = {
@@ -1735,59 +1753,58 @@ Data_Entity = {
 			},	
 		},
 		Pump = {
-			Pump_Previous = "arditium-tungstenate",
-			Pump_Next = "neutrobaltium",
-			Pump_Speed = 150 * 9,
-			Pump_Amount = 50 * 9,
-			Pump_Ingredients = {
+			Previous = "arditium-tungstenate",
+			Next = "neutrobaltium",
+			Speed = 150 * 9,
+			Amount = 50 * 9,
+			Ingredients = {
 				["neutronium-plate"] = 2,
 				["tungstvar-pipe"] = 2,
 				["extreme-control-board"] = 2,
 			},
 		},
 		Chemical = {
-			Chemical_Speed_Mod = 1.55,
-			Chemical_Previous = "arditium-tungstenate",
-			Chemical_Next = "neutronium",
-			Chemical_Ingredients = {
+			Speed_Mod = 1.55,
+			Previous = "arditium-tungstenate",
+			Ingredients = {
 				["neutronium-stick"] = 4,
 				["neutronium-plate"] = 25,
 				["extreme-control-board"] = 12,
 			},
 		},
 		Accumulator = {
-			Accumulator_Previous = "tungstvar",
-			Accumulator_Next = "neutronium",
-			Accumulator_Buffer_MJ = 70,
-			Accumulator_Ingredients = {
+			Previous = "tungstvar",
+			Buffer_MJ = 70,
+			Ingredients = {
 				["extreme-control-board"] = 14,
 				["neutronium-plate"] = 5,
 				["neutronium-stick"] = 5,
 			},
 		},
 		Nuclear_Reactor = {
-			Nuclear_Reactor_Previous = "electranium",
-			Nuclear_Reactor_Next = "neutronium",
-			Nuclear_Reactor_Consumption_MW = 160,
-			Nuclear_Reactor_Max_Temperature = 5000,
-			Nuclear_Reactor_Specific_Heat_MJ = 160,
-			Nuclear_Reactor_Max_Transfer_GW = 100,
-			Nuclear_Reactor_Neighbour_Bonus = 1,
-			Nuclear_Reactor_Effectivity = 1,
-			Nuclear_Reactor_Ingredients = {
-				["iron-assembling-machine"] = 1,
-				["tin-gear-wheel"] = 4,
+			Previous = "electranium",
+			Consumption_MW = 160,
+			Max_Temperature = 5000,
+			Specific_Heat_MJ = 160,
+			Max_Transfer_GW = 100,
+			Neighbour_Bonus = 1,
+			Effectivity = 1,
+			Ingredients = {
+				["neutronium-plate"] = 500,
+				["neutronium-stick"] = 100,
+				["super-control-board"] = 150,
+				["controller"] = 50,
+				["concrete"] = 250,
 			},
 		},
 	},
 --------------------------------------- TIER 10 -------------------------------------
 	["neutrobaltium"] = {
 		Belt = {
-			Belt_Speed = 110,
-			Belt_Range = 50,
-			Belt_Previous = "tungstvar",
-			Belt_Next = "neutrobaltium",
-			Belt_Ingredients = {
+			Speed = 110,
+			Range = 50,
+			Previous = "tungstvar",
+			Ingredients = {
 				["neutrobaltium-gear-wheel"] = 4,
 				["neutrobaltium-plate"] = 5,
 			},
@@ -1802,11 +1819,11 @@ Data_Entity = {
 			},
 		},
 		Robot = {
-			Robot_Speed = 0.40,
-			Robot_Energy_Max_MJ = 36,
-			Robot_Energy_Tick_KJ = 0.19,
-			Robot_Energy_Move_KJ = 1,
-			Robot_Previous = "electranium",
+			Speed = 0.40,
+			Energy_Max_MJ = 36,
+			Energy_Tick_KJ = 0.19,
+			Energy_Move_KJ = 1,
+			Previous = "electranium",
 			Roboport_Energy_Usage_KW = 880,
 			Roboport_Charging_Energy_KW = 32000,
 			Roboport_Input_MW = 112,
@@ -1821,73 +1838,67 @@ Data_Entity = {
 				["controller"] = 10,
 				["quantum-control-board"] = 25,
 			},
-			Logistic_Robot_Ingredients = {
+			Logistic_Ingredients = {
 				["neutrobaltium-plate"] = 10,
 				["controller"] = 3,
 				["quantum-control-board"] = 5,
 			},
-			Construction_Robot_Ingredients = {
+			Construction_Ingredients = {
 				["neutrobaltium-plate"] = 10,
 				["controller"] = 3,
 				["quantum-control-board"] = 5,
 			},	
 		},
 		Drill = {
-			Drill_Speed = 25,
-			Drill_Range = 25,
-			Drill_Previous = "neutronium",
-			Drill_Next = "neutrobaltium",
-			Drill_Ingredients = {
+			Speed = 25,
+			Range = 25,
+			Previous = "neutronium",
+			Ingredients = {
 				["neutrobaltium-gear-wheel"] = 20,
 				["neutrobaltium-plate"] = 50,
 				["quantum-control-board"] = 25,
 			},
 		},
 		Assembler = {
-			Assembler_Speed_Mod = 1.8,
-			Assembler_Previous = "neutronium",
-			Assembler_Next = "neutrobaltium",
-			Assembler_Ingredients = {
+			Speed_Mod = 1.8,
+			Previous = "neutronium",
+			Ingredients = {
 				["neutrobaltium-gear-wheel"] = 4,
 				["neutrobaltium-plate"] = 20,
 				["quantum-control-board"] = 2,
 			},
 		},
 		Refinery = {
-			Refinery_Speed_Mod = 1.8,
-			Refinery_Previous = "arditium-tungstenate",
-			Refinery_Next = "neutrobaltium",
-			Refinery_Ingredients = {
+			Speed_Mod = 1.8,
+			Previous = "arditium-tungstenate",
+			Ingredients = {
 				["neutrobaltium-gear-wheel"] = 4,
 				["neutrobaltium-plate"] = 50,
 				["extreme-control-board"] = 25,
 			},
 		},
 		Solar = {
-			Solar_Production = 1500,
-			Solar_Previous = "tungstvar",
-			Solar_Next = "neutrobaltium",
-			Solar_Ingredients = {
+			Production = 1500,
+			Previous = "tungstvar",
+			Ingredients = {
 				["neutrobaltium-plate"] = 10,
 				["quantum-control-board"] = 25,
 			},
 		},
 		Centrifuge = {
-			Centrifuge_Speed_Mod = 2.5,
-			Centrifuge_Previous = "tungstvar",
-			Centrifuge_Next = "neutrobaltium",
-			Centrifuge_Ingredients = {
+			Speed_Mod = 2.5,
+			Previous = "tungstvar",
+			Ingredients = {
 				["quantum-control-board"] = 5,
 				["neutrobaltium-plate"] = 25,
 			},
 		},
 		Steam_Engine = {
-			Steam_Engine_Next = "neutrobaltium",
-			Steam_Engine_Previous = "neutronium",
-			Steam_Engine_Fluid_Usage = 1,
-			Steam_Engine_Effectivity = 1.75,
-			Steam_Engine_Maximum_Temperature = 165,
-			Steam_Engine_Ingredients = {
+			Previous = "neutronium",
+			Fluid_Usage = 1,
+			Effectivity = 1.75,
+			Maximum_Temperature = 165,
+			Ingredients = {
 				["neutrobaltium-plate"] = 50,
 				["neutrobaltium-cable"] = 10,
 				["neutrobaltium-gear-wheel"] = 10,
@@ -1895,34 +1906,31 @@ Data_Entity = {
 			},
 		},
 		Pipe = {
-			Pipe_Amount = 200,
-			Pipe_Range = 75,
-			Pipe_Previous = "tungstvar",
-			Pipe_Next = "neutrobaltium",
-			Pipe_Ingredients = {
+			Amount = 200,
+			Range = 75,
+			Previous = "tungstvar",
+			Ingredients = {
 				["neutrobaltium-plate"] = 2,
 			},
-			Pipe_Underground_Ingredients = {
+			Underground_Ingredients = {
 				["neutrobaltium-plate"] = 10,
 			},
 		},
 		Pump = {
-			Pump_Previous = "neutronium",
-			Pump_Next = "neutrobaltium",
-			Pump_Speed = 150 * 10,
-			Pump_Amount = 50 * 10,
-			Pump_Ingredients = {
+			Previous = "neutronium",
+			Speed = 150 * 10,
+			Amount = 50 * 10,
+			Ingredients = {
 				["neutrobaltium-plate"] = 2,
 				["neutrobaltium-pipe"] = 2,
 				["quantum-control-board"] = 2,
 			},
 		},
 		Pumpjack = {
-			Pumpjack_Speed = 16,
-			Pumpjack_Range = 25,
-			Pumpjack_Previous = "tungstvar",
-			Pumpjack_Next = "neutrobaltium",
-			Pumpjack_Ingredients = {
+			Speed = 16,
+			Range = 25,
+			Previous = "tungstvar",
+			Ingredients = {
 				["neutrobaltium-plate"] = 10,
 				["neutrobaltium-gear-wheel"] = 7,
 				["neutrobaltium-pipe"] = 5,
@@ -1930,9 +1938,8 @@ Data_Entity = {
 			},	
 		},
 		Wall = {
-			Wall_Previous = "neutronium",
-			Wall_Next = "neutrobaltium",
-			Wall_Ingredients = {
+			Previous = "neutronium",
+			Ingredients = {
 				["neutrobaltium-plate"] = 10,
 			},
 			Gate_Ingredients = {
@@ -1942,21 +1949,19 @@ Data_Entity = {
 			},
 		},
 		Furnace = {
-			Furnace_Speed_Mod = 2,
-			Furnace_Previous = "tungstvar",
-			Furnace_Next = "neutrobaltium",
-			Furnace_Ingredients = {
+			Speed_Mod = 2,
+			Previous = "tungstvar",
+			Ingredients = {
 				["quantum-control-board"] = 5,
 				["neutrobaltium-plate"] = 75,
 				["heater"] = 50,
 			},
 		},
 		Radar = {
-			Radar_Previous = "arditium-tungstenate",
-			Radar_Next = "neutrobaltium",
-			Radar_Active_Range = 13,
-			Radar_Scan_Range = 90,
-			Radar_Ingredients = {
+			Previous = "arditium-tungstenate",
+			Active_Range = 13,
+			Scan_Range = 90,
+			Ingredients = {
 				["quantum-control-board"] = 20,
 				["neutrobaltium-plate"] = 25,
 				["neutrobaltium-gear-wheel"] = 15,

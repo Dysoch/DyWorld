@@ -6,10 +6,12 @@ require "data/core/functions/amounts"
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("mining-drill", "electric-mining-drill", v.DyWorld.Name.."-electric-mining-drill", true)
-	DyWorld_Prototype_Entity.resource_searching_radius = ((v.DyWorld.Entity.Drill.Drill_Range / 2) - 0.01)
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Drill.Drill_Next.."-electric-mining-drill"
-	DyWorld_Prototype_Entity.mining_speed = v.DyWorld.Entity.Drill.Drill_Speed
-	DyWorld_Prototype_Entity.energy_usage = Round((v.DyWorld.Entity.Drill.Drill_Speed * 180), 0).."kW"
+	DyWorld_Prototype_Entity.resource_searching_radius = ((v.DyWorld.Entity.Drill.Range / 2) - 0.01)
+	if v.DyWorld.Entity.Drill.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Drill.Next.."-electric-mining-drill"
+	end
+	DyWorld_Prototype_Entity.mining_speed = v.DyWorld.Entity.Drill.Speed
+	DyWorld_Prototype_Entity.energy_usage = Round((v.DyWorld.Entity.Drill.Speed * 180), 0).."kW"
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.drill-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.animations.north.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animations.north.hr_version.tint = Material_Colors[v.DyWorld.Name]
@@ -29,7 +31,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
-	DyWorld_Prototype_Entity.belt_animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
+	DyWorld_Prototype_Entity.animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "electric-mining-drill", v.DyWorld.Name.."-electric-mining-drill", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.drill-1", {"looped-name."..v.DyWorld.Name}}
@@ -70,16 +72,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 	if v.DyWorld.Tier >= 2 and data.raw.technology["automation-"..v.DyWorld.Tier] then
 		DyWorld_Add_To_Tech("automation-"..v.DyWorld.Tier, v.DyWorld.Name.."-electric-mining-drill")
 	end
-	if v.DyWorld.Entity.Drill.Drill_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Drill.Drill_Ingredients) do
+	if v.DyWorld.Entity.Drill.Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Drill.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Drill.Drill_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Drill.Drill_Previous.."-electric-mining-drill", amount = 1}
+	if v.DyWorld.Entity.Drill.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Drill.Previous.."-electric-mining-drill", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].expensive.ingredients, Ingredient)
 	end

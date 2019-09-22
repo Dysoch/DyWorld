@@ -11,8 +11,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then
 	DyWorld_Prototype_Entity.picture.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.fast_replaceable_group = "solar"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Solar.Solar_Next.."-solar-panel"
-	DyWorld_Prototype_Entity.production = v.DyWorld.Entity.Solar.Solar_Production.."kW"
+	if v.DyWorld.Entity.Solar.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Solar.Next.."-solar-panel"
+	end
+	DyWorld_Prototype_Entity.production = v.DyWorld.Entity.Solar.Production.."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/solar-panel.png",
@@ -35,9 +37,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "solar-panel", v.DyWorld.Name.."-solar-panel", true)
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
-	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Solar_Production / 10)}}
+	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Production / 10)}}
 	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-solar-panel"
-	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Solar_Production / 10)}}
+	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Production / 10)}}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-solar-panel"
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.solar-panel-1", {"looped-name."..v.DyWorld.Name}}
@@ -63,16 +65,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then
 		DyWorld_Add_To_Tech("solar-energy", v.DyWorld.Name.."-solar-panel")
 	end
 	
-	if v.DyWorld.Entity.Solar.Solar_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Solar.Solar_Ingredients) do
+	if v.DyWorld.Entity.Solar.Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Solar.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-solar-panel"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-solar-panel"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Solar.Solar_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Solar.Solar_Previous.."-solar-panel", amount = 1}
+	if v.DyWorld.Entity.Solar.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Solar.Previous.."-solar-panel", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-solar-panel"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-solar-panel"].expensive.ingredients, Ingredient)
 	end

@@ -5,9 +5,11 @@ require "data/core/functions/amounts"
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("splitter", "splitter", v.DyWorld.Name.."-splitter", true)
-	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt.Belt_Speed / 426.67), 5)
+	DyWorld_Prototype_Entity.speed = Round((v.DyWorld.Entity.Belt.Speed / 426.67), 5)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-3", {"looped-name."..v.DyWorld.Name}}
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt.Belt_Next.."-splitter"
+	if v.DyWorld.Entity.Belt.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt.Next.."-splitter"
+	end
 	DyWorld_Prototype_Entity.structure.north.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.north.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.east.tint = Material_Colors[v.DyWorld.Name]
@@ -24,7 +26,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
-	DyWorld_Prototype_Entity.belt_animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
+	DyWorld_Prototype_Entity.animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "splitter", v.DyWorld.Name.."-splitter", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-3", {"looped-name."..v.DyWorld.Name}}
@@ -75,8 +77,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-splitter"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Belt.Belt_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Belt.Belt_Previous.."-splitter", amount = 1}
+	if v.DyWorld.Entity.Belt.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Belt.Previous.."-splitter", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-splitter"].normal.ingredients, Ingredient)
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-splitter"].expensive.ingredients, Ingredient)
 	end

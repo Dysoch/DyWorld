@@ -9,9 +9,11 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 	DyWorld_Prototype_Entity.max_health = 100 * v.DyWorld.Tier
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.pictures = DyWorld_Pipepictures(Material_Colors[v.DyWorld.Name])
-	DyWorld_Prototype_Entity.fluid_box.base_area = v.DyWorld.Entity.Pipe.Pipe_Amount / 10
+	DyWorld_Prototype_Entity.fluid_box.base_area = v.DyWorld.Entity.Pipe.Amount / 10
 	DyWorld_Prototype_Entity.fast_replaceable_group = "pipe"
-	DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Pipe.Pipe_Next.."-pipe"
+	if v.DyWorld.Entity.Pipe.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Pipe.Next.."-pipe"
+	end
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/pipe.png",
@@ -59,16 +61,16 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 		DyWorld_Add_To_Tech("logistics-"..v.DyWorld.Tier, v.DyWorld.Name.."-pipe")
 	end
 	
-	if v.DyWorld.Entity.Pipe.Pipe_Ingredients then
-		for q,a in pairs(v.DyWorld.Entity.Pipe.Pipe_Ingredients) do
+	if v.DyWorld.Entity.Pipe.Ingredients then
+		for q,a in pairs(v.DyWorld.Entity.Pipe.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pipe"].normal.ingredients, Ingredient)
 			table.insert(data.raw.recipe[v.DyWorld.Name.."-pipe"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Entity.Pipe.Pipe_Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Entity.Pipe.Pipe_Previous.."-pipe", amount = 1}
+	if v.DyWorld.Entity.Pipe.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Entity.Pipe.Previous.."-pipe", amount = 1}
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-pipe"].normal.ingredients, Ingredient)
 	end
 end

@@ -20,6 +20,7 @@ Date: 21. 09. 2019
     - Heat pipes are now unlocked a lot earlier, and are cheaper
     - Steam now has a new max temperature: 50000 > 5000
     - Tin Nuclear Reactor removed, replaced by Steel Nuclear Reactor
+    - Added several more incompatible mods to dependencies
   Bugfixes:
     - Fixed belt related expensive recipe issue's
 ---------------------------------------------------------------------------------------------------

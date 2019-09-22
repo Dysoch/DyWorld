@@ -34,20 +34,52 @@ data:extend(
       connections =
       {
         {
-          position = {0, -1.5},
+          position = {0, -1},
           direction = defines.direction.north
         },
         {
-          position = {0, 1.4},
+          position = {0, 1},
           direction = defines.direction.south
         },
         {
-          position = {1.4, 0},
+          position = {1, 0},
           direction = defines.direction.east
         },
         {
-          position = {-1.5, 0},
+          position = {-1, 0},
           direction = defines.direction.west
+        },
+        {
+          position = {1, 1},
+          direction = defines.direction.south
+        },
+        {
+          position = {1, 1},
+          direction = defines.direction.east
+        },
+        {
+          position = {-1, 1},
+          direction = defines.direction.west
+        },
+        {
+          position = {-1, 1},
+          direction = defines.direction.south
+        },
+        {
+          position = {-1, -1},
+          direction = defines.direction.north
+        },
+        {
+          position = {-1, -1},
+          direction = defines.direction.west
+        },
+        {
+          position = {1, -1},
+          direction = defines.direction.north
+        },
+        {
+          position = {1, -1},
+          direction = defines.direction.east
         },
       },
     },

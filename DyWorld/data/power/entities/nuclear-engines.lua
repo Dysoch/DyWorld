@@ -2,8 +2,6 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
---TODO Add more Nuclear Reactors
---BODY @ZukiiG
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Nuclear_Reactor then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("reactor", "nuclear-reactor", v.DyWorld.Name.."-nuclear-reactor", true)

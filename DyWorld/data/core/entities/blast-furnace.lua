@@ -56,32 +56,32 @@ data:extend(
           direction = defines.direction.south
         },
         {
-          position = {-2, 2},
-          direction = defines.direction.south
-        },
-        {
-          position = {2, -2},
-          direction = defines.direction.north
-        },
-        {
-          position = {-2, -2},
-          direction = defines.direction.north
-        },
-        {
           position = {2, 2},
           direction = defines.direction.east
         },
         {
-          position = {2, -2},
-          direction = defines.direction.east
+          position = {-2, 2},
+          direction = defines.direction.south
         },
         {
           position = {-2, 2},
           direction = defines.direction.west
         },
         {
+          position = {2, -2},
+          direction = defines.direction.north
+        },
+        {
+          position = {2, -2},
+          direction = defines.direction.east
+        },
+        {
           position = {-2, -2},
           direction = defines.direction.west
+        },
+        {
+          position = {-2, -2},
+          direction = defines.direction.north
         },
       },
     },

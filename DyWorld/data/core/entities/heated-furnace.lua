@@ -44,7 +44,7 @@ data:extend(
     energy_source =
     {
       type = "heat",
-      max_temperature = 600,
+      max_temperature = 5000,
       specific_heat = "1MJ",
       max_transfer = "2GW",
       min_working_temperature = 450,

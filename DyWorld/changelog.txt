@@ -1,11 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.4
-Date: 21. 09. 2019
+Date: 22. 09. 2019
   Features:
     - A new early game entity has been added, the Heat Pipe Heater. 
     - Heated Inserters can now be made and placed. They are normal inserters, excet they use heat instead of electricity. They double as a heat pipe, so heat can be transferred through them
     - Heated Furnaces can now be made and placed. These are furnaces that dont take fuel, but use heat to smelt. They transfer heat down the line (they act as heat pipes)
-    - Damaged entities from the start can now be mined and removed to gain a nice amount of stuff
   Balancing:
     - Tweaked energy usage of Blast Furnaces
     - Tweaked crafting speeds of Blast Furnaces
@@ -13,22 +12,24 @@ Date: 21. 09. 2019
     - Reduced crafting times of plate casting
     - Reduced crafting times of slag melting
     - All Transport Belts recipe are now giving 6 Belts instead of 1
+  QoL:
+    - The last tier of an entity is no longer upgradable, meaning it will not be replaced with the upgrade tool
+    - Damaged entities (ship stuff, corpses and capsules) from the start can now be mined and removed to gain a nice amount of stuff
   Changes:
+    - Added several more incompatible mods to dependencies
     - Renamed Recycler to Waste Incinerator
     - Blast Furnaces now require different power source: Heat (from heat pipes)
     - Heat pipes now have a new max temperature: 1000 > 5000
     - Heat pipes are now unlocked a lot earlier, and are cheaper
     - Steam now has a new max temperature: 50000 > 5000
     - Tin Nuclear Reactor removed, replaced by Steel Nuclear Reactor
-    - Added several more incompatible mods to dependencies
-    - The last tier of an entity is no longer upgradable, meaning it will not be replaced with the upgrade tool
   Bugfixes:
     - Fixed belt related expensive recipe issue's
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.3
 Date: 17. 09. 2019
   Features:
-    - Expensive recipe multiplier is now a startu setting. You can input the x multiplier, and scripts will change the recipes accordingly
+    - Expensive recipe multiplier is now a startup setting. You can input the x multiplier, and scripts will change the recipes accordingly
   Balancing:
     - Tweaked resources a small bit
   Bugfixes:
@@ -38,10 +39,11 @@ Version: 0.8.2
 Date: 16. 09. 2019
   Features:
     - A complete new way to generate Ores. This should now spawn all ores (some were getting left out) and should make patches nicer sizes and at various placed. Still a work in progress, but works great already
-    - Hidden items are now shown in seperate tab in the filter menu. This to improve compatibility with Upgrade Planner so vanilla blueprints can be upgraded after being placed
     - A rewrite in infinite ore setting. Should now work with expensive recipe helper setting, and should also have reasonable ore value's now
   Balancing:
     - Increased stacksize of all DyWorld added tiered items to 200
+  QoL:
+    - Hidden items are now shown in seperate tab in the filter menu. This to improve compatibility with Upgrade Planner so vanilla blueprints can be upgraded after being placed
   Bugfixes:
     - Fixed multiplayer bug with wiping inventory and levels everytime a player joins
     - Fixed stack sizes not being correct
@@ -56,7 +58,9 @@ Date: 15. 09. 2019
     - Added a new wood farming recipe for greenhouses. This always gives 1 acorn, but requires more time and water (at a very specific temperature range though, good luck with that). Wood output is also increased
     - Stone resources now has a chance to give sand when mined
     - Added dedicated water boiler. This heats water to 95 degrees (doesn't create steam!)
+  QoL:
     - Added a new recipe for Electronic Control Board. This recipe doesn't use the previous Control Board, but is made from scratch. More expensive, but does not require any wood anymore. Cuts the wood usage back from later tiers. Unlocked at Intermediates-3 
+    - Stone has now a slighty different color, to hopefully not make it as dark as it was
   Balancing:
     - Cutting ANY tree will now have a chance to get acorns. This fixes compatibility issues with mods that add trees, since they give acorns now as well.
     - Rocks in the game, also any added by any mod, now give a chance for sand and obsidian depending on their size
@@ -70,7 +74,6 @@ Date: 15. 09. 2019
     - Changed max temperature of Iron Boiler: 165 > 200
   Changes:
     - Reworked info.json. Added a list of mods that are incompatible with DyWorld (bobs, angels, py, IR etc) should these mods be installed, DyWorld will not be loaded!
-    - Stone has now a slighty different color, to hopefully not make it as dark as it was
     - Greenhouses now have 2 fluid inputs
   Bugfixes:
     - Fixed joining a game in progress error

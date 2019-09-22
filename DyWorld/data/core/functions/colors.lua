@@ -47,7 +47,7 @@ Material_Colors = {
 	--- Tier 8 ---
 	["tungstvar"] = {r=87, g=116, b=149}, -- 
 	--- Tier 9 ---
-	["neutronium"] = {r=4, g=0, b=26}, -- 04001A
+	["neutronium"] = {r=54, g=50, b=76}, -- 04001A
 	--- Tier 10 ---
 	["neutrobaltium"] = {r=128, g=128, b=128}, -- TO DO
 	--- Unused ---

@@ -9,7 +9,7 @@ Date: 22. 09. 2019
     - Added more Steam Turbines
     - Added more Boilers
     - Added Heat Exchangers
-    - Added more Speed Modules (more types coming later)
+    - Added more Speed Modules (more module types coming next update, once beacons are in)
     - Added compatibility to the Reforested Wood mod. This fixes key issue's of the mod, as well as letting it harvest acorns. Added it as an optional mod, since i can be used early game quite handy
   Balancing:
     - Tweaked energy usage of Blast Furnaces
@@ -28,7 +28,7 @@ Date: 22. 09. 2019
     - Added several more incompatible mods to dependencies as well as a few optional, recommended mods
     - Renamed Nuclear Energy Technology to: Heat Management & Nuclear Energy
     - Blast Furnaces now require different power source: Heat (from heat pipes)
-    - Heat pipes now have a new max temperature: 1000 > 5000
+    - Heat pipes now have a new max temperature: 1000 > 5500
     - Heat pipes are now unlocked a lot earlier, and are cheaper
     - Steam now has a new max temperature: 50000 > 5000
     - Tin Nuclear Reactor removed, replaced by Steel Nuclear Reactor

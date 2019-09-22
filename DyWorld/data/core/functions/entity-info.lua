@@ -69,7 +69,7 @@ Data_Entity = {
 			Consumption_Boost = 0.65,
 			Pollution_Boost = 0.1,
 			Ingredients = {
-				["electronic-circuit"] = 2,
+				["simple-control-board"] = 2,
 				["stone-plate"] = 5,
 				["stone-gear-wheel"] = 1,
 			},
@@ -428,7 +428,7 @@ Data_Entity = {
 			Consumption_Boost = 0.95,
 			Pollution_Boost = 0.2,
 			Ingredients = {
-				["electronic-circuit"] = 2,
+				["basic-control-board"] = 2,
 				["silver-plate"] = 5,
 				["stone-speed-module"] = 1,
 			},
@@ -555,6 +555,17 @@ Data_Entity = {
 				["heater"] = 5,
 			},
 		},
+		Heat_Exchanger = {
+			Next = "stainless-steel",
+			Target_Temp = 500,
+			Ingredients = {
+				["steel-plate"] = 25,
+				["steel-stick"] = 10,
+				["copper-cable"] = 20,
+				["basic-control-board"] = 5,
+				["heater"] = 5,
+			},
+		},
 		Pump = {
 			Previous = "copper",
 			Next = "electrum",
@@ -627,7 +638,7 @@ Data_Entity = {
 			Consumption_Boost = 1.35,
 			Pollution_Boost = 0.35,
 			Ingredients = {
-				["advanced-circuit"] = 5,
+				["electronic-control-board"] = 5,
 				["gold-plate"] = 5,
 				["silver-speed-module"] = 1,
 			},
@@ -936,6 +947,16 @@ Data_Entity = {
 				["cobalt-gear-wheel"] = 5,
 			},
 		},
+		Speed_Module = {
+			Speed_Boost = 0.50,
+			Consumption_Boost = 1.45,
+			Pollution_Boost = 0.45,
+			Ingredients = {
+				["advanced-control-board"] = 5,
+				["cobalt-plate"] = 5,
+				["gold-speed-module"] = 1,
+			},
+		},
 	},
 	["invar"] = {
 		Assembler = {
@@ -1158,6 +1179,18 @@ Data_Entity = {
 				["concrete"] = 250,
 			},
 		},
+		Heat_Exchanger = {
+			Previous = "steel",
+			Next = "tungsten",
+			Target_Temp = 1500,
+			Ingredients = {
+				["stainless-steel-plate"] = 30,
+				["stainless-steel-stick"] = 10,
+				["copper-cable"] = 40,
+				["advanced-control-board"] = 5,
+				["heater"] = 10,
+			},
+		},
 	},
 	["arditium"] = {
 		Drill = {
@@ -1272,6 +1305,16 @@ Data_Entity = {
 				["arditium-plate"] = 15,
 				["arditium-gear-wheel"] = 1,
 				["heater"] = 10,
+			},
+		},
+		Speed_Module = {
+			Speed_Boost = 0.75,
+			Consumption_Boost = 1.55,
+			Pollution_Boost = 0.5,
+			Ingredients = {
+				["tough-control-board"] = 5,
+				["arditium-plate"] = 5,
+				["cobalt-speed-module"] = 1,
 			},
 		},
 	},
@@ -1481,6 +1524,28 @@ Data_Entity = {
 				["concrete"] = 250,
 			},
 		},
+		Heat_Exchanger = {
+			Previous = "stainless-steel",
+			Next = "electranium",
+			Target_Temp = 2500,
+			Ingredients = {
+				["tungsten-plate"] = 40,
+				["tungsten-stick"] = 10,
+				["copper-cable"] = 60,
+				["tough-control-board"] = 5,
+				["heater"] = 15,
+			},
+		},
+		Speed_Module = {
+			Speed_Boost = 1.05,
+			Consumption_Boost = 1.5,
+			Pollution_Boost = 0.5,
+			Ingredients = {
+				["processing-control-board"] = 5,
+				["tungsten-plate"] = 5,
+				["arditium-speed-module"] = 1,
+			},
+		},
 	},
 --------------------------------------- TIER 7 --------------------------------------
 	["electranium"] = {
@@ -1594,6 +1659,29 @@ Data_Entity = {
 				["processing-control-board"] = 100,
 				["controller"] = 25,
 				["concrete"] = 250,
+			},
+		},
+		Heat_Exchanger = {
+			Previous = "tungsten",
+			Next = "neutronium",
+			Target_Temp = 3500,
+			Ingredients = {
+				["electranium-plate"] = 50,
+				["electranium-stick"] = 10,
+				["copper-cable"] = 80,
+				["processing-control-board"] = 5,
+				["heater"] = 20,
+			},
+		},
+		Speed_Module = {
+			Speed_Boost = 1.45,
+			Consumption_Boost = 1.5,
+			Pollution_Boost = 0.5,
+			Ingredients = {
+				["logic-control-board"] = 5,
+				["electranium-plate"] = 5,
+				["tungsten-speed-module"] = 1,
+				["controller"] = 1,
 			},
 		},
 	},
@@ -1804,6 +1892,16 @@ Data_Entity = {
 				["tungstvar-plate"] = 5,
 			},
 		},
+		Speed_Module = {
+			Speed_Boost = 1.85,
+			Consumption_Boost = 2,
+			Pollution_Boost = 0.5,
+			Ingredients = {
+				["super-control-board"] = 5,
+				["tungstvar-plate"] = 5,
+				["electranium-speed-module"] = 1,
+			},
+		},
 	},
 --------------------------------------- TIER 9 --------------------------------------
 	["neutronium"] = {
@@ -1884,7 +1982,7 @@ Data_Entity = {
 		Nuclear_Reactor = {
 			Previous = "electranium",
 			Consumption_MW = 160,
-			Max_Temperature = 5000,
+			Max_Temperature = 5500,
 			Specific_Heat_MJ = 160,
 			Max_Transfer_GW = 100,
 			Neighbour_Bonus = 1,
@@ -1897,6 +1995,17 @@ Data_Entity = {
 				["concrete"] = 250,
 			},
 		},
+		Heat_Exchanger = {
+			Previous = "electranium",
+			Target_Temp = 5000,
+			Ingredients = {
+				["neutronium-plate"] = 75,
+				["neutronium-stick"] = 10,
+				["copper-cable"] = 100,
+				["super-control-board"] = 5,
+				["heater"] = 25,
+			},
+		},
 		Steam_Turbine = {
 			Previous = "arditium-tungstenate",
 			Fluid_Usage = 0.5,
@@ -1907,6 +2016,16 @@ Data_Entity = {
 				["super-control-board"] = 25,
 				["controller"] = 15,
 				["neutronium-plate"] = 50,
+			},
+		},
+		Speed_Module = {
+			Speed_Boost = 2.15,
+			Consumption_Boost = 1.5,
+			Pollution_Boost = 0.35,
+			Ingredients = {
+				["extreme-control-board"] = 5,
+				["neutronium-plate"] = 5,
+				["tungstvar-speed-module"] = 1,
 			},
 		},
 	},
@@ -2077,6 +2196,16 @@ Data_Entity = {
 				["quantum-control-board"] = 20,
 				["neutrobaltium-plate"] = 25,
 				["neutrobaltium-gear-wheel"] = 15,
+			},
+		},
+		Speed_Module = {
+			Speed_Boost = 2.5,
+			Consumption_Boost = 1.25,
+			Pollution_Boost = 0.25,
+			Ingredients = {
+				["quantum-control-board"] = 5,
+				["neutrobaltium-plate"] = 5,
+				["neutronium-speed-module"] = 1,
 			},
 		},
 	},

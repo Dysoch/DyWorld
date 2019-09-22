@@ -7,6 +7,7 @@ local Data_Table = {
 		Name = "nickel-plate",
 		Time = 3.2,
 		Recipe_Enabled = true,
+		Productivity = true,
 		Recipe_Ingredients = {
 			["nickel-ore"] = 2,
 		},
@@ -17,6 +18,7 @@ local Data_Table = {
 		Name = "silver-plate",
 		Time = 3.2,
 		Recipe_Enabled = true,
+		Productivity = true,
 		Recipe_Ingredients = {
 			["silver-ore"] = 2,
 		},
@@ -27,6 +29,7 @@ local Data_Table = {
 		Name = "tin-plate",
 		Time = 3.2,
 		Recipe_Enabled = true,
+		Productivity = true,
 		Recipe_Ingredients = {
 			["tin-ore"] = 2,
 		},
@@ -37,6 +40,7 @@ local Data_Table = {
 		Name = "gold-plate",
 		Time = 5,
 		Recipe_Enabled = true,
+		Productivity = true,
 		Recipe_Ingredients = {
 			["gold-ore"] = 2,
 		},
@@ -47,6 +51,7 @@ local Data_Table = {
 		Name = "lead-plate",
 		Time = 5,
 		Recipe_Enabled = true,
+		Productivity = true,
 		Recipe_Ingredients = {
 			["lead-ore"] = 2,
 		},

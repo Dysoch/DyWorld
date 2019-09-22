@@ -1,6 +1,7 @@
 
 -- Core Files (Need to be loaded first)
 require("data.core.functions.functions")
+-- functions file is ALWAYS first file loaded, holds functions that are used in other files
 require("data.core.functions.keys")
 require("data.core.functions.category")
 require("data.core.functions.deep-copy")

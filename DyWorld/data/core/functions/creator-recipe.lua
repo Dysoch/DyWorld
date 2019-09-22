@@ -77,6 +77,9 @@ data:extend(
 		end
 		data.raw.recipe[v.Name].subgroup = dy..v.Subgroup
 	end
+	if v.Productivity then
+		table.insert(DyWorld_Productivity_Module_Add, v.Name)
+	end
 end
 end
 

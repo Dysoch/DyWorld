@@ -343,3 +343,13 @@ if settings.startup["DyWorld_Tech_Increaser"].value > 1 then
 		end
 	end
 end
+
+for k,v in pairs(data.raw.module) do
+	if v.category == "productivity" then
+		if v.limitation then
+			for _,z in pairs(DyWorld_Productivity_Module_Add) do
+				table.insert(v.limitation, z)
+			end
+		end
+	end
+end

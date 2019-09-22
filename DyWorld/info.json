@@ -9,8 +9,8 @@
 	"description": "DyWorld, the successor of DyTech. Adding new systems, items, fluids, machines and enemies!!!! A complete overhaul that will change the way you play the game! Coding and idea's by Dysoch, Balancing by Zukii. Some models and code courtesy of Nova Kast, dgw and Anoyomouse",
 	"dependencies": [  
 		"base",
-		"(?) alien-biomes",
-		"(?) ReforestedWood",
+		"? alien-biomes",
+		"? ReforestedWood",
 		"! angelsrefining",
 		"! IndustrialRevolution",
 		"! MoreScience",

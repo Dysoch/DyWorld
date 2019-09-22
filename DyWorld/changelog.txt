@@ -7,6 +7,10 @@ Date: 22. 09. 2019
     - Heated Furnaces can now be made and placed. These are furnaces that dont take fuel, but use heat to smelt. They transfer heat down the line (they act as heat pipes)
     - Added more Nuclear Reactors (now 5 total) and made them A LOT more expensive! They trully are a good power generators
     - Added more Steam Turbines
+    - Added more Boilers
+    - Added Heat Exchangers
+    - Added more Speed Modules (more types coming later)
+    - Added compatibility to the Reforested Wood mod. This fixes key issue's of the mod, as well as letting it harvest acorns. Added it as an optional mod, since i can be used early game quite handy
   Balancing:
     - Tweaked energy usage of Blast Furnaces
     - Tweaked crafting speeds of Blast Furnaces
@@ -14,19 +18,21 @@ Date: 22. 09. 2019
     - Reduced crafting times of plate casting
     - Reduced crafting times of slag melting
     - All Transport Belts recipe are now giving 6 Belts instead of 1
+    - Productivity Modules can now be used on DyWorld Intermediates
   QoL:
     - The last tier of an entity is no longer upgradable, meaning it will not be replaced with the upgrade tool
     - Damaged entities (ship stuff, corpses and capsules) from the start can now be mined and removed to gain a nice amount of stuff
     - Renamed Recycler to Waste Incinerator to better show its purpose
     - Recolored materials that were the same color
   Changes:
-    - Added several more incompatible mods to dependencies
+    - Added several more incompatible mods to dependencies as well as a few optional, recommended mods
     - Renamed Nuclear Energy Technology to: Heat Management & Nuclear Energy
     - Blast Furnaces now require different power source: Heat (from heat pipes)
     - Heat pipes now have a new max temperature: 1000 > 5000
     - Heat pipes are now unlocked a lot earlier, and are cheaper
     - Steam now has a new max temperature: 50000 > 5000
     - Tin Nuclear Reactor removed, replaced by Steel Nuclear Reactor
+    - Updated Roadmap (numpad 3 or numpad 6 ingame)
   Bugfixes:
     - Fixed belt related expensive recipe issue's
 ---------------------------------------------------------------------------------------------------

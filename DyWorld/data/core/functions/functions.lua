@@ -10,3 +10,5 @@ function Expensive_Check(num)
 	local Setting = settings.startup["DyWorld_Expensive_Multiplier"].value
 	return Round((num * Setting))
 end
+
+DyWorld_Productivity_Module_Add = {}

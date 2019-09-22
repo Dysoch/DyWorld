@@ -261,8 +261,8 @@ Data_Entity = {
 			},
 		},
 		Boiler = {
-			Next = "iron",
 			Previous = "stone",
+			Next = "bronze",
 			Max_Temp = 200,
 			Effectivity = 1,
 			Energy_Consumption_KW = 1900,
@@ -348,7 +348,7 @@ Data_Entity = {
 			Previous = "stone",
 			Fluid_Usage = 0.5,
 			Effectivity = 0.75,
-			Maximum_Temperature = 165,
+			Maximum_Temperature = 200,
 			Ingredients = {
 				["nickel-plate"] = 20,
 				["nickel-gear-wheel"] = 5,
@@ -547,7 +547,7 @@ Data_Entity = {
 			Previous = "nickel",
 			Fluid_Usage = 0.6,
 			Effectivity = 0.75,
-			Maximum_Temperature = 165,
+			Maximum_Temperature = 240,
 			Ingredients = {
 				["steel-plate"] = 25,
 				["steel-stick"] = 10,
@@ -770,6 +770,18 @@ Data_Entity = {
 				["bronze-cable"] = 1,
 			},
 		},
+		Boiler = {
+			Previous = "iron",
+			Next = "arditium",
+			Max_Temp = 300,
+			Effectivity = 1,
+			Energy_Consumption_KW = 2500,
+			Ingredients = {
+				["bronze-plate"] = 5,
+				["bronze-gear-wheel"] = 1,
+				["heater"] = 1,
+			},
+		},
 	},
 	["lead"] = {
 		Drill = {
@@ -861,7 +873,7 @@ Data_Entity = {
 			Previous = "steel",
 			Fluid_Usage = 0.7,
 			Effectivity = 0.75,
-			Maximum_Temperature = 165,
+			Maximum_Temperature = 270,
 			Ingredients = {
 				["cobalt-plate"] = 40,
 				["cobalt-gear-wheel"] = 10,
@@ -1077,7 +1089,7 @@ Data_Entity = {
 			Previous = "cobalt",
 			Fluid_Usage = 0.8,
 			Effectivity = 0.75,
-			Maximum_Temperature = 165,
+			Maximum_Temperature = 310,
 			Ingredients = {
 				["stainless-steel-plate"] = 50,
 				["stainless-steel-stick"] = 10,
@@ -1250,6 +1262,18 @@ Data_Entity = {
 				["arditium-plate"] = 50,
 			},
 		},
+		Boiler = {
+			Previous = "bronze",
+			Next = "titanium",
+			Max_Temp = 400,
+			Effectivity = 1,
+			Energy_Consumption_KW = 2500,
+			Ingredients = {
+				["arditium-plate"] = 15,
+				["arditium-gear-wheel"] = 1,
+				["heater"] = 10,
+			},
+		},
 	},
 --------------------------------------- TIER 6 --------------------------------------
 	["titanium"] = {
@@ -1300,7 +1324,7 @@ Data_Entity = {
 			Previous = "stainless-steel",
 			Fluid_Usage = 0.9,
 			Effectivity = 0.75,
-			Maximum_Temperature = 165,
+			Maximum_Temperature = 360,
 			Ingredients = {
 				["titanium-plate"] = 50,
 				["titanium-gear-wheel"] = 10,
@@ -1350,6 +1374,17 @@ Data_Entity = {
 				["processing-control-board"] = 14,
 				["titanium-plate"] = 5,
 				["titanium-cable"] = 1,
+			},
+		},
+		Boiler = {
+			Previous = "arditium",
+			Max_Temp = 500,
+			Effectivity = 1,
+			Energy_Consumption_KW = 2500,
+			Ingredients = {
+				["titanium-plate"] = 25,
+				["titanium-gear-wheel"] = 5,
+				["heater"] = 25,
 			},
 		},
 	},
@@ -1496,7 +1531,7 @@ Data_Entity = {
 			Previous = "titanium",
 			Fluid_Usage = 1,
 			Effectivity = 0.75,
-			Maximum_Temperature = 165,
+			Maximum_Temperature = 400,
 			Ingredients = {
 				["electranium-plate"] = 50,
 				["electranium-cable"] = 10,
@@ -1731,7 +1766,7 @@ Data_Entity = {
 			Previous = "electranium",
 			Fluid_Usage = 1.1,
 			Effectivity = 0.75,
-			Maximum_Temperature = 165,
+			Maximum_Temperature = 430,
 			Ingredients = {
 				["tungstvar-plate"] = 50,
 				["tungstvar-stick"] = 10,
@@ -1798,7 +1833,7 @@ Data_Entity = {
 			Previous = "tungstvar",
 			Fluid_Usage = 1.2,
 			Effectivity = 0.75,
-			Maximum_Temperature = 165,
+			Maximum_Temperature = 460,
 			Ingredients = {
 				["neutronium-plate"] = 50,
 				["neutronium-stick"] = 10,
@@ -1974,7 +2009,7 @@ Data_Entity = {
 			Previous = "neutronium",
 			Fluid_Usage = 1,
 			Effectivity = 1.75,
-			Maximum_Temperature = 165,
+			Maximum_Temperature = 500,
 			Ingredients = {
 				["neutrobaltium-plate"] = 50,
 				["neutrobaltium-cable"] = 10,

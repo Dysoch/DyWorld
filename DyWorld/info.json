@@ -10,6 +10,7 @@
 	"dependencies": [  
 		"base",
 		"(?) alien-biomes",
+		"(?) ReforestedWood",
 		"! angelsrefining",
 		"! IndustrialRevolution",
 		"! MoreScience",

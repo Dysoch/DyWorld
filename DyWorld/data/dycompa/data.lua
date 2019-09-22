@@ -1,6 +1,7 @@
 
 -- Edits
 require("data.dycompa.edits.item-group-change")
+require("data.dycompa.edits.mod-changes")
 require("data.dycompa.changes.dyworld-core")
 
 if settings.startup["DyWorld_Logistics"].value then

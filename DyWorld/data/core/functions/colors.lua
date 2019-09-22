@@ -32,22 +32,22 @@ Material_Colors = {
 	["bronze"] = {r=126, g=112, b=109}, -- 7e706d
 	--- Tier 4 ---
 	["uranium"] = {r=21, g=121, b=10}, -- 15790a
-	["electrum"] = {r=128, g=128, b=128}, -- TO DO
-	["invar"] = {r=128, g=128, b=128}, -- TO DO
-	["cobalt"] = {r=128, g=128, b=128}, -- TO DO
+	["electrum"] = {r=146, g=135, b=41}, -- 928729
+	["invar"] = {r=87, g=144, b=210}, -- 
+	["cobalt"] = {r=77, g=166, b=255}, -- 4DA6FF
 	--- Tier 5 ---
 	["stainless-steel"] = {r=196, g=124, b=126}, -- c47c7e
-	["arditium"] = {r=128, g=128, b=128}, -- TO DO
+	["arditium"] = {r=102, g=102, b=0}, -- 666600
 	--- Tier 6 ---
 	["tungsten"] = {r=87, g=87, b=87}, -- 575757
 	["titanium"] = {r=57, g=61, b=112}, -- 393d70
 	--- Tier 7 ---
-	["electranium"] = {r=128, g=128, b=128}, -- TO DO
-	["arditium-tungstenate"] = {r=128, g=128, b=128}, -- TO DO
+	["electranium"] = {r=124, g=119, b=21}, -- 
+	["arditium-tungstenate"] = {r=95, g=95, b=44}, --
 	--- Tier 8 ---
-	["tungstvar"] = {r=128, g=128, b=128}, -- TO DO
+	["tungstvar"] = {r=87, g=116, b=149}, -- 
 	--- Tier 9 ---
-	["neutronium"] = {r=128, g=128, b=128}, -- TO DO
+	["neutronium"] = {r=4, g=0, b=26}, -- 04001A
 	--- Tier 10 ---
 	["neutrobaltium"] = {r=128, g=128, b=128}, -- TO DO
 	--- Unused ---

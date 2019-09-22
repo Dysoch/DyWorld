@@ -25,10 +25,10 @@
 "blade" = Blade (used in rotors)
 "resin" = Resin
 "iron-stick" = Iron Stick
-"copper-plate" = Copper Plate
-"iron-plate" = Iron Plate
-"copper-cable" = Copper Cable
 "iron-gear-wheel" = Iron Gear
+"iron-plate" = Iron Plate
+"copper-plate" = Copper Plate
+"copper-cable" = Copper Cable
 "nickel-stick" = Nickel Stick
 "nickel-plate" = Nickel Plate
 "nickel-cable" = Nickel Cable

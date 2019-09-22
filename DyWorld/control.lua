@@ -366,6 +366,10 @@ local selection = game.players[event.player_index].selected
 	end
 end)
 
+--------------------------------- TEST AREA ------------------------------------------
+
+------------------------------- END TEST AREA ----------------------------------------
+
 --remote calls
 remote.add_interface("DyWorld",
 {  

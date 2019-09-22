@@ -18,7 +18,7 @@ data:extend({
 	{
 		type = "custom-input",
 		name = "DyWorld_RoadMap",
-		key_sequence = "PAD 3"
+		key_sequence = "PAD 6"
 	},
 	{
 		type = "custom-input",
@@ -59,4 +59,5 @@ data:extend({
 		key_sequence = "CONTROL + SHIFT + R",
 		consuming = "script-only"
 	},
+	-- TEST KEY BINDINGS
 })

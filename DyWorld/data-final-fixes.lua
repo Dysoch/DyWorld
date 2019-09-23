@@ -353,3 +353,8 @@ for k,v in pairs(data.raw.module) do
 		end
 	end
 end
+
+-- Warfare Module --
+if settings.startup["DyWorld_Warfare"].value then
+	require("data.warfare.data-3")
+end

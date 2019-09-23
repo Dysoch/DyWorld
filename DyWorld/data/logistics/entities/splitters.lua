@@ -26,7 +26,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
-	DyWorld_Prototype_Entity.animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
+	DyWorld_Prototype_Entity.belt_animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "splitter", v.DyWorld.Name.."-splitter", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-3", {"looped-name."..v.DyWorld.Name}}

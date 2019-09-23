@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.5
+Date: 00. 00. 2019
+  Features:
+    - Pre Warfare (0.9.x) update
+    - With Warfare enabled, guns no longer stack
+    - With Warfare enabled, shooting guns no longer reduces speed
+  Balancing:
+    - Made Alloy mixing 10x larger recipes. Requires 10x more ingredients, outputs 10x more
+  QoL:
+    - 
+  Changes:
+    - 
+  Bugfixes:
+    - Fixed Belt related entities not showing correct colors
+---------------------------------------------------------------------------------------------------
 Version: 0.8.4
 Date: 22. 09. 2019
   Features:

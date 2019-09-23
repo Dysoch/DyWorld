@@ -19,7 +19,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
-	DyWorld_Prototype_Entity.animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
+	DyWorld_Prototype_Entity.belt_animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
 	DyWorld_Prototype_Entity.structure.direction_in.sheet.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.direction_in.sheet.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.direction_out.sheet.tint = Material_Colors[v.DyWorld.Name]

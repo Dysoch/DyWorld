@@ -18,7 +18,7 @@ data:extend(
 	  enabled = false,
 	  ingredients = {},
 	  results = { 
-	    {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 15},
+	    {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 150},
 	  },
 	},
     expensive = { 
@@ -26,7 +26,7 @@ data:extend(
 	  enabled = false,
 	  ingredients = {},
 	  results = { 
-	    {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 15},
+	    {type = "fluid", name = "molten-"..v.DyWorld.Name, amount = 150},
 	  },
 	},
   },

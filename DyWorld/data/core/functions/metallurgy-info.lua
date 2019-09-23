@@ -35,10 +35,10 @@ Data_Metallurgy = {
 		},
 		Mixed = true,
 		Mixed_Formula = {
-			["iron"] = 10,
+			["iron"] = 100,
 		},
 		Mixed_Item = {
-			["coal"] = 1,
+			["coal"] = 10,
 		},
 		Gear = true,
 		Tech_Processing = true,
@@ -107,11 +107,11 @@ Data_Metallurgy = {
 		},
 		Mixed = true,
 		Mixed_Formula = {
-			["copper"] = 12,
-			["tin"] = 2,
+			["copper"] = 120,
+			["tin"] = 20,
 		},
 		Mixed_Item = {
-			["stone"] = 3,
+			["stone"] = 30,
 		},
 		Stick = true,
 		Gear = true,
@@ -154,11 +154,11 @@ Data_Metallurgy = {
 		},
 		Mixed = true,
 		Mixed_Formula = {
-			["iron"] = 9,
-			["nickel"] = 4,
+			["iron"] = 90,
+			["nickel"] = 40,
 		},
 		Mixed_Item = {
-			["resin"] = 5,
+			["resin"] = 50,
 		},
 		Stick = true,
 		Gear = true,
@@ -174,11 +174,11 @@ Data_Metallurgy = {
 		},
 		Mixed = true,
 		Mixed_Formula = {
-			["gold"] = 10,
-			["silver"] = 4,
+			["gold"] = 100,
+			["silver"] = 40,
 		},
 		Mixed_Item = {
-			["sand"] = 6,
+			["sand"] = 60,
 		},
 		Stick = true,
 		Melting_Point = 100, --N/A
@@ -194,11 +194,11 @@ Data_Metallurgy = {
 		},
 		Mixed = true,
 		Mixed_Formula = {
-			["steel"] = 10,
-			["nickel"] = 4,
+			["steel"] = 100,
+			["nickel"] = 40,
 		},
 		Mixed_Item = {
-			["coal"] = 15,
+			["coal"] = 105,
 		},
 		Gear = true,
 		Melting_Point = 1643,
@@ -253,11 +253,11 @@ Data_Metallurgy = {
 		},
 		Mixed = true,
 		Mixed_Formula = {
-			["electrum"] = 8,
-			["arditium"] = 6,
+			["electrum"] = 80,
+			["arditium"] = 60,
 		},
 		Mixed_Item = {
-			["coal"] = 4,
+			["coal"] = 40,
 		},
 		Stick = true,
 		Melting_Point = 512,
@@ -272,11 +272,11 @@ Data_Metallurgy = {
 		},
 		Mixed = true,
 		Mixed_Formula = {
-			["arditium"] = 10,
-			["tungsten"] = 4,
+			["arditium"] = 100,
+			["tungsten"] = 40,
 		},
 		Mixed_Item = {
-			["uranium-ore"] = 6,
+			["uranium-ore"] = 60,
 		},
 		Gear = true,
 		Melting_Point = 901,
@@ -291,11 +291,11 @@ Data_Metallurgy = {
 		},
 		Mixed = true,
 		Mixed_Formula = {
-			["invar"] = 7,
-			["tungsten"] = 7,
+			["invar"] = 70,
+			["tungsten"] = 70,
 		},
 		Mixed_Item = {
-			["sulfur"] = 14,
+			["sulfur"] = 140,
 		},
 		Melting_Point = 2189,
 		Boiling_Point = 9146,
@@ -323,13 +323,13 @@ Data_Metallurgy = {
 		},
 		Mixed = true,
 		Mixed_Formula = {
-			["neutronium"] = 8,
-			["tungstvar"] = 2,
-			["arditium-tungstenate"] = 3,
-			["cobalt"] = 4,
+			["neutronium"] = 80,
+			["tungstvar"] = 20,
+			["arditium-tungstenate"] = 30,
+			["cobalt"] = 40,
 		},
 		Mixed_Item = {
-			["rocket-fuel"] = 10,
+			["rocket-fuel"] = 50,
 		},
 		Stick = true,
 		Gear = true,

@@ -354,7 +354,17 @@ for k,v in pairs(data.raw.module) do
 	end
 end
 
+for k, gun in pairs (data.raw.gun) do
+	gun.stack_size = 1
+	gun.attack_parameters.movement_slow_down_factor = 0
+end
+
 -- Warfare Module --
 if settings.startup["DyWorld_Warfare"].value then
 	require("data.warfare.data-3")
+end
+
+-- Warfare Module --
+if settings.startup["DyWorld_Collision_Projectiles"].value then
+	require("data.warfare.collisions")
 end

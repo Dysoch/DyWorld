@@ -10,6 +10,8 @@ Expensive_Modifier = 5
 Air_Filter_Amount = 5
 -- Air_Filter_Amount default: 5
 
+Transport_Belt_Modifier = 1.25
+-- Increases Transport Belt Speed
 
 Greenhouses_Amount = 5
 -- Greenhouse default: 5

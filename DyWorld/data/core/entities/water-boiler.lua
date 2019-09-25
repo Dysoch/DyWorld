@@ -32,7 +32,7 @@ data:extend(
     },
     collision_box = {{-1.29, -0.79}, {1.29, 0.79}},
     selection_box = {{-1.5, -1}, {1.5, 1}},
-    target_temperature = 95,
+    target_temperature = 50,
     fluid_box =
     {
       base_area = 1,

@@ -7,10 +7,11 @@ Date: 00. 00. 2019
     - With Warfare enabled, shooting guns no longer reduces speed
   Balancing:
     - Made Alloy mixing 10x larger recipes. Requires 10x more ingredients, outputs 10x more
+    - Increased all belt related entities speed by 25%
   QoL:
     - 
   Changes:
-    - 
+    - Changed Water Boiler heat to 50 degrees
   Bugfixes:
     - Fixed Belt related entities not showing correct colors
 ---------------------------------------------------------------------------------------------------

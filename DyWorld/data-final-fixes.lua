@@ -359,12 +359,24 @@ for k, gun in pairs (data.raw.gun) do
 	gun.attack_parameters.movement_slow_down_factor = 0
 end
 
+-- Increase Accumulators by 4x
+local function multiply_bc(bc)
+	local n, unit = string.match(bc, '([%d%.]+)(%a+)')
+	if n == nil then return '0MJ' end
+	return ('%d%s'):format(n * 5, unit)
+end
+
+for _, e in pairs(data.raw.accumulator) do
+	if not (e.energy_source and e.energy_source.buffer_capacity) then return end
+	e.energy_source.buffer_capacity = multiply_bc(e.energy_source.buffer_capacity)
+end
+
 -- Warfare Module --
 if settings.startup["DyWorld_Warfare"].value then
 	require("data.warfare.data-3")
 end
 
 -- Warfare Module --
-if settings.startup["DyWorld_Collision_Projectiles"].value then
-	require("data.warfare.collisions")
+if settings.startup["DyWorld_Combat_Overhaul"].value then
+	require("data.warfare.combat-overhaul")
 end

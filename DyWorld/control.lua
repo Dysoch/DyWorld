@@ -254,6 +254,17 @@ script.on_event(defines.events.on_tick, function(event)
 			end
 		end
 	end
+	-- Extend Day & Nights by 4x
+	if event.tick%(13)==1 and global.dyworld.Players ~= 0 then
+		if not global.Day_Longer then global.Day_Longer = 0 end
+		for _, s in pairs(game.surfaces) do
+			if not s.always_day then
+				if global.Day_Longer == 0 then s.freeze_daytime = false
+				elseif global.Day_Longer == 1 then s.freeze_daytime = true end
+			end
+		end
+		global.Day_Longer = (global.Day_Longer + 1) % 4
+	end
 end)
 
 -- keybinding hooks

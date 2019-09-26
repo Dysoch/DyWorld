@@ -85,7 +85,7 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
-		name = "DyWorld_Collision_Projectiles",
+		name = "DyWorld_Combat_Overhaul",
 		setting_type = "startup",
 		default_value = false,
 	},

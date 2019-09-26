@@ -1,17 +1,24 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.5
-Date: 00. 00. 2019
+Date: 26. 09. 2019
   Features:
     - Pre Warfare (0.9.x) update
     - With Warfare enabled, guns no longer stack
     - With Warfare enabled, shooting guns no longer reduces speed
+    - Days & Nights now last 4x longer. Accumulators hold 5x more energy, to compensate
+    - Added the Combat Overhaul option in. This is completely optional. This makes combat more interesting. Bullets have collisions (a few are not done yet, will be in 0.9.0), turrets have firing arcs (90 degrees) and can be placed in 8 directions and collision based turrets will lead the target. Will be extended in upcoming Warfare updates
+    - Added Heated Long Handed Inserter
   Balancing:
     - Made Alloy mixing 10x larger recipes. Requires 10x more ingredients, outputs 10x more
-    - Increased all belt related entities speed by 25%
+    - Increased all belt related entities speed by 35%. This should fix most slow belt issues. 
+  RPG/GUI:
+    - Changed the way inventory space bonus is calculated (Still WIP)
+    - Increased the max inventory space bonus: 250 slots > 1000 slots
   QoL:
     - Added option to automatically place a (invisible) heat pipe under transport belts. This one has a very tiny selection box, so it can be removed. Gives normal heat pipe back when mined. This only works on Belts! NOT splitters, loaders or undergrounds! This will only work on newly placed belts, already placed ones are not affected
   Changes:
-    - Changed Water Boiler heat to 50 degrees
+    - Changed Water Boiler heat: 95 degrees > 50 degrees
+    - Added more mods that are incompatible. These mods are Warfare/Enemies related, since Warfare update is coming up
   Bugfixes:
     - Fixed Belt related entities not showing correct colors
 ---------------------------------------------------------------------------------------------------
@@ -21,7 +28,7 @@ Date: 22. 09. 2019
     - A new early game entity has been added, the Heat Pipe Heater. 
     - Heated Inserters can now be made and placed. They are normal inserters, except they use heat instead of electricity. They double as a heat pipe, so heat can be transferred through them
     - Heated Furnaces can now be made and placed. These are furnaces that dont take fuel, but use heat to smelt. They transfer heat down the line (they act as heat pipes)
-    - Added more Nuclear Reactors (now 5 total) and made them A LOT more expensive! They trully are a good power generators
+    - Added more Nuclear Reactors (now 5 total) and made them A LOT more expensive! They truly are a good power generators
     - Added more Steam Turbines
     - Added more Boilers
     - Added Heat Exchangers

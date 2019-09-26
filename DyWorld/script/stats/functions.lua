@@ -231,10 +231,10 @@ function BodySkills(id)
 			end
 		end
 		if P_Level >= 10 then
-			if math.floor((p1)/5) <= 190 then
-				game.players[id].character_inventory_slots_bonus = math.floor((p1)/5)
+			if math.floor((p1+p2+p4)/8) <= 920 then
+				game.players[id].character_inventory_slots_bonus = math.floor((p1+p2+p4)/8)
 			else
-				game.players[id].character_inventory_slots_bonus = 190
+				game.players[id].character_inventory_slots_bonus = 920
 			end
 		end
 		if P_Level >= 15 then

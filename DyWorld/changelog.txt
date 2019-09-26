@@ -9,7 +9,7 @@ Date: 00. 00. 2019
     - Made Alloy mixing 10x larger recipes. Requires 10x more ingredients, outputs 10x more
     - Increased all belt related entities speed by 25%
   QoL:
-    - 
+    - Added option to automatically place a (invisible) heat pipe under transport belts. This one has a very tiny selection box, so it can be removed. Gives normal heat pipe back when mined. This only works on Belts! NOT splitters, loaders or undergrounds! This will only work on newly placed belts, already placed ones are not affected
   Changes:
     - Changed Water Boiler heat to 50 degrees
   Bugfixes:

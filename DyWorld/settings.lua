@@ -79,6 +79,12 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
+		name = "DyWorld_Heat_Pipe_Belt",
+		setting_type = "startup",
+		default_value = true,
+	},
+	{
+		type = "bool-setting",
 		name = "DyWorld_Collision_Projectiles",
 		setting_type = "startup",
 		default_value = false,

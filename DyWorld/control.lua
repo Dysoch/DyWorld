@@ -148,11 +148,11 @@ script.on_event(defines.events.on_built_entity, function(event)
 	if not global.dyworld.Guide[event.created_entity.type] then
 		global.dyworld.Guide[event.created_entity.type] = true
 	end
-	if settings.startup["DyWorld_Heat_Pipe_Belt"].value then
+	--[[if settings.startup["DyWorld_Heat_Pipe_Belt"].value then
 		if event.created_entity.type == "transport-belt" then
 			Heat_Pipe_Add(event)
 		end
-	end
+	end]]--
 end)
 
 script.on_event(defines.events.on_robot_mined, function(event)
@@ -167,11 +167,11 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
 	if not global.dyworld.Guide[event.created_entity.type] then
 		global.dyworld.Guide[event.created_entity.type] = true
 	end
-	if settings.startup["DyWorld_Heat_Pipe_Belt"].value then
+	--[[if settings.startup["DyWorld_Heat_Pipe_Belt"].value then
 		if event.created_entity.type == "transport-belt" then
 			Heat_Pipe_Add(event)
 		end
-	end
+	end]]--
 end)
 
 script.on_event(defines.events.on_sector_scanned, function(event)

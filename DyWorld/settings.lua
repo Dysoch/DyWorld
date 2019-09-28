@@ -77,12 +77,12 @@ data:extend({
 		setting_type = "startup",
 		default_value = false,
 	},
-	--[[{
+	{
 		type = "bool-setting",
 		name = "DyWorld_Heat_Pipe_Belt",
 		setting_type = "startup",
-		default_value = true,
-	},]]--
+		default_value = false,
+	},
 	{
 		type = "bool-setting",
 		name = "DyWorld_Combat_Overhaul",
@@ -139,7 +139,7 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "DyWorld_Distance_Resource_Tags",
+        name = "DyWorld_Distance_Beacon_Tags",
 		order = "a",
         setting_type = "runtime-per-user",
         default_value = false

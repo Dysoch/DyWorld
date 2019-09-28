@@ -9,7 +9,7 @@ function gui_5_RefreshGUI(player, id)
 	local frame = player.gui.top.add{type = "frame", name = "dyworld_distance_gui", direction = "vertical", caption = {"dyworld_distance_gui.title"}}
 	local frameflow = frame.add{type = "flow", name = "flow", direction = "vertical"}
 	local DyWorld_Distance_Map_Tags = settings.get_player_settings(game.players[id])["DyWorld_Distance_Map_Tags"].value
-	local DyWorld_Distance_Resource_Tags = settings.get_player_settings(game.players[id])["DyWorld_Distance_Resource_Tags"].value
+	local DyWorld_Distance_Beacon_Tags = settings.get_player_settings(game.players[id])["DyWorld_Distance_Beacon_Tags"].value
 	local DyWorld_Distance_Player_Tags = settings.get_player_settings(game.players[id])["DyWorld_Distance_Player_Tags"].value
 	for k,v in pairs(global.players) do
 		if v.Alive then
@@ -87,7 +87,7 @@ function gui_5_RefreshGUI(player, id)
 	else
 		frameflow.add{type = "label", caption = {"dyworld_distance_gui.map-tag-disabled"}, tooltip = {"dyworld_distance_gui.map-tag-disabled-tp"}}
 	end
-	if DyWorld_Distance_Resource_Tags then
+	if DyWorld_Distance_Beacon_Tags then
 	else
 		frameflow.add{type = "label", caption = {"dyworld_distance_gui.resource-tag-disabled"}, tooltip = {"dyworld_distance_gui.resource-tag-disabled-tp"}}
 	end

@@ -128,6 +128,12 @@ script.on_event(defines.events.on_player_mined_item, function(event)
 	end
 end)
 
+script.on_event(defines.events.on_player_mined_entity, function(event)
+    if event.entity.type == "transport-belt" then
+		Heat_Pipe_Remove(event)
+	end
+end)
+
 script.on_event(defines.events.on_picked_up_item, function(event)
 	if event.item_stack.count >= 100 then
 		IncrementerGlobal("pickup", 100, event.item_stack.name)
@@ -148,16 +154,22 @@ script.on_event(defines.events.on_built_entity, function(event)
 	if not global.dyworld.Guide[event.created_entity.type] then
 		global.dyworld.Guide[event.created_entity.type] = true
 	end
-	--[[if settings.startup["DyWorld_Heat_Pipe_Belt"].value then
+	if settings.startup["DyWorld_Heat_Pipe_Belt"].value then
 		if event.created_entity.type == "transport-belt" then
 			Heat_Pipe_Add(event)
 		end
-	end]]--
+	end
 end)
 
 script.on_event(defines.events.on_robot_mined, function(event)
 	IncrementerGlobal("ghostmined", event.item_stack.count, event.item_stack.name)
 	XP_All_Small()
+end)
+
+script.on_event(defines.events.on_robot_mined_entity, function(event)
+    if event.entity.type == "transport-belt" then
+		Heat_Pipe_Remove(event)
+	end
 end)
 
 script.on_event(defines.events.on_robot_built_entity, function(event)
@@ -167,11 +179,11 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
 	if not global.dyworld.Guide[event.created_entity.type] then
 		global.dyworld.Guide[event.created_entity.type] = true
 	end
-	--[[if settings.startup["DyWorld_Heat_Pipe_Belt"].value then
+	if settings.startup["DyWorld_Heat_Pipe_Belt"].value then
 		if event.created_entity.type == "transport-belt" then
 			Heat_Pipe_Add(event)
 		end
-	end]]--
+	end
 end)
 
 script.on_event(defines.events.on_sector_scanned, function(event)
@@ -183,6 +195,9 @@ script.on_event(defines.events.on_entity_died, function(event)
 	if event.force.name == "player" then
 		IncrementerGlobal("killed", 1)
 		XP_All_Small()
+	end
+    if event.entity.type == "transport-belt" then
+		Heat_Pipe_Remove(event)
 	end
 end)
 

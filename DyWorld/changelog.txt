@@ -1,6 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.0
 Date: 00. 00. 2019
+  Features:
+    - Warfare Update! Massive amount of warfare related content added!
+    - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. Sadly it has a drawback, belts cant be manually replaced with other entities (splitters, higher tier belts etc) because heat pipe is in the way. Belt has to be removed before hand to do this. Still working on the last issue
   Changes:
     - Methane now has correct chemical name
   Bugfixes:

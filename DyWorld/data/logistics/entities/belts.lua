@@ -19,7 +19,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	  },
 	}
 	DyWorld_Prototype_Entity.belt_animation_set = DyWorld_express_belt_animation_set(Material_Colors[v.DyWorld.Name])
-
+	
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "transport-belt", v.DyWorld.Name.."-transport-belt", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.belt-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]

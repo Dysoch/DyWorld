@@ -14,6 +14,7 @@ require("data.core.functions.pipe-pictures")
 require("data.core.functions.wall-pictures")
 require("data.core.functions.tech-add")
 require("data.core.tech.data-tech")
+require("data.core.functions.equipment-grids")
 
 -- Item Groups
 require("data.core.item-groups.metals")

@@ -19,6 +19,7 @@ Date: 00. 00. 2019
     - Filter Inserter stacksize: 50 > 200
     - Fast Inserter stacksize: 50 > 200
     - Long Handed Inserter stacksize: 50 > 200
+    - Disabled vanilla Heat Exchanger since its no longer needed
   Bugfixes:
     - Fixed compatibility with JunkTrain2 mod
 ---------------------------------------------------------------------------------------------------

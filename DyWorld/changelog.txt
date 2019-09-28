@@ -2,7 +2,9 @@
 Version: 0.9.0
 Date: 00. 00. 2019
   Changes:
-    - Removed heat pipes under belts
+    - Methane now has correct chemical name
+  Bugfixes:
+    - Fixed compatibility with JunkTrain2 mod
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.6
 Date: 26. 09. 2019

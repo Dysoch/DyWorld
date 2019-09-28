@@ -28,7 +28,7 @@ if mods["JunkTrain2"] then
     data.raw.recipe["ScrapTrailer"].ingredients = {
         {"stone-plate", 20},
         {"iron-gear-wheel", 5},
-        {"chests-storehouse", 1}
+        {"storehouse-basic", 1}
       }
     data.raw.recipe["train-stop-scrap"].ingredients = {
         {"iron-plate",4},

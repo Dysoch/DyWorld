@@ -16,3 +16,9 @@ require("data.core.recipes.3-low-density-structure")
 require("data.core.recipes.3-satellite")
 require("data.core.recipes.3-wood")
 require("data.core.recipes.3-rocks")
+
+-- Loot
+require("data.core.loot.trees")
+require("data.core.loot.enemy-units")
+require("data.core.loot.enemy-spawners")
+require("data.core.loot.enemy-worms")

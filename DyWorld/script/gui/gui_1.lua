@@ -147,14 +147,14 @@ function gui_1_openGui(player, id)
 		end
 		----- Inserter Stack Size Bonus -----
 		--if P_Level >= 1 then
-		if P_Level >= 20 and global.stats.pickup >= 5000 then
+		if P_Level >= 20 and global.stats.pickup and global.stats.pickup >= 5000 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Inserter Pickup Bonus: "..Round(game.forces.player.inserter_stack_size_bonus), style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 20}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
 		----- Stack Inserter Stack Size Bonus -----
 		--if P_Level >= 1 then
-		if P_Level >= 25 and global.stats.pickup >= 25000 then
+		if P_Level >= 25 and global.stats.pickup and global.stats.pickup >= 25000 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Stack Inserter Pickup Bonus: "..Round(game.forces.player.stack_inserter_capacity_bonus), style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 25}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}

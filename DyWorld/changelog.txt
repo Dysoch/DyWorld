@@ -1,14 +1,19 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.0
 Date: 00. 00. 2019
-  Features:
+  Major Features:
     - Warfare Update! Massive amount of warfare related content added!
+  Features:
     - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts as well, and in some cases, splitters (still working a bit funky)
+  Minor Features:
+    - Trees now have a small chance to give wood, acorns or resin when destroyed by weapons (loot dropped)
   Balancing:
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
     - Changed Iron Mining Drill Range: 6x6 > 5x5
-  CombatOverhaul:
-    - Atomic Bomb rocket with Combat overhaul is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE!
+  Combat Overhaul:
+    - Atomic Bomb rocket with Combat overhaul is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE! DROPS FPS IMMENSLY!!!!
+    - Artillery Turrets & Wagons now have much bigger range for automatic mode. 7 Chunks > 10 Chunks
+    - Artillery Turrets & Wagons now have much bigger range for manual mode. 17.5 Chunks > 35 Chunks
   RPG/GUI:
     - Added Mining Drill Productivity Bonus (level 50+)
     - Added Inserter Pickup Size Bonus (level 20+)
@@ -33,8 +38,9 @@ Date: 26. 09. 2019
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.5
 Date: 26. 09. 2019
-  Features:
+  Major Features:
     - Pre Warfare (0.9.x) update
+  Features:
     - With Warfare enabled, guns no longer stack
     - With Warfare enabled, shooting guns no longer reduces speed
     - Days & Nights now last 4x longer. Accumulators hold 5x more energy, to compensate
@@ -56,15 +62,17 @@ Date: 26. 09. 2019
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.4
 Date: 22. 09. 2019
-  Features:
+  Major Features:
     - A new early game entity has been added, the Heat Pipe Heater. 
     - Heated Inserters can now be made and placed. They are normal inserters, except they use heat instead of electricity. They double as a heat pipe, so heat can be transferred through them
     - Heated Furnaces can now be made and placed. These are furnaces that dont take fuel, but use heat to smelt. They transfer heat down the line (they act as heat pipes)
+  Features:
     - Added more Nuclear Reactors (now 5 total) and made them A LOT more expensive! They truly are a good power generators
     - Added more Steam Turbines
     - Added more Boilers
     - Added Heat Exchangers
     - Added more Speed Modules (more module types coming next update, once beacons are in)
+  Minor Features:
     - Added compatibility to the Reforested Wood mod. This fixes key issue's of the mod, as well as letting it harvest acorns. Added it as an optional mod, since i can be used early game quite handy
   Balancing:
     - Tweaked energy usage of Blast Furnaces
@@ -93,7 +101,7 @@ Date: 22. 09. 2019
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.3
 Date: 17. 09. 2019
-  Features:
+  Minor Features:
     - Expensive recipe multiplier is now a startup setting. You can input the x multiplier, and scripts will change the recipes accordingly
   Balancing:
     - Tweaked resources a small bit
@@ -102,7 +110,7 @@ Date: 17. 09. 2019
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.2
 Date: 16. 09. 2019
-  Features:
+  Minor Features:
     - A complete new way to generate Ores. This should now spawn all ores (some were getting left out) and should make patches nicer sizes and at various placed. Still a work in progress, but works great already
     - A rewrite in infinite ore setting. Should now work with expensive recipe helper setting, and should also have reasonable ore value's now
   Balancing:
@@ -117,7 +125,7 @@ Date: 16. 09. 2019
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.1
 Date: 15. 09. 2019
-  Features:
+  Minor Features:
     - NOTE: this update is released ahead of schedule, and does not contain all features that were originally planned for this update. These features have been pushed back to next update. This was done to fix a few issue's that were troubling for KatherineOfSky's playthrough on Youtube ( https://www.youtube.com/watch?v=TRT6uW2NOtA&list=PL4o6UvJIdPNqubR5oXdx9SqKFoYW_SL-q )
     - Mining trees now have an extremely low chance (0.5%) to give food items. Can be used to heal yourself, or for farming which can give more food related items
     - Added a new wood farming recipe for greenhouses. This always gives 1 acorn, but requires more time and water (at a very specific temperature range though, good luck with that). Wood output is also increased
@@ -148,11 +156,13 @@ Date: 15. 09. 2019
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.0
 Date: 24. 08. 2019
-  Features:
+  Major Features:
     - COMPLETE REWRITE OF DYWORLD! So many changes, that it is to much to write down. Its a completely new mod now, and upcoming changelogs will reflect changes and additions made after this versions.
     - Completely new Ores. Cobalt, Arditium, Tin, Nickel, Silver, Lead, Tungsten, Titanium and Neutronium.
+  Features:
     - Base game ores revamped and now generated the same as the rest
     - Added storehouses and warehouses in 3x3 and 6x6 size, courtesy of Nova Kast, dgw and Anoyomouse
+  Minor Features:
     - Starting ships replaced by new base game graphics. Broken down stuff sadly, will recieve update in next versions to repair them
     - Random debris can now be found in the starting area. This holds scrap metal (which gives some random stuff), corpses of your crew mates and impact craters. More to come in coming updates to bring more life into the world
     - During your crash landing, a lot of stuff has been ejected before you hit the ground. Some chests can be found further away from the starting area, these are hard to find, but give rewarding loot (all items in game can spawn in it!) Its quite far away though, and each one generated makes the next one even further generated.

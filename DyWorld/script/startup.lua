@@ -61,6 +61,8 @@ function Game_Startup()
 	end
 	game.forces.player.ghost_time_to_live = (60*60*60*172)
 	game.forces.player.deconstruction_time_to_live = (60*60*60*172)
+	remote.call("silo_script", "set_no_victory", true)
+	--remote.call("silo_script", "add_tracked_item", "")
 end
 
 function Player_Startup(PLAYER, ID, FORCE)

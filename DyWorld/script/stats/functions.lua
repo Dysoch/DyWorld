@@ -184,6 +184,10 @@ function BodySkills(id)
 	local gsm = global.players[id].stats.mined or 1 -- Mined
 	local gsb = global.players[id].stats.build or 1 -- Built
 	local gsp = global.players[id].stats.pickup or 1 -- Looted
+	local ggsm = global.stats.mined or 1 -- Global Mined
+	local ggsc = global.stats.crafted or 1 -- Global Crafted
+	local ggsb = global.stats.build or 1 -- Global Built
+	local ggsp = global.stats.pickup or 1 -- Global Looted
 	local gsk = global.stats.killed or 1 -- Killed
 	local gss = global.stats.scanned or 1 -- Scanned
 	local gsr = global.stats.research or 1 -- Researched
@@ -255,17 +259,24 @@ function BodySkills(id)
 				end
 			end
 		end
+		--if P_Level >= 1 and ggsm >= 1 then
+		if P_Level >= 50 and ggsm >= 100000 then
+			game.forces.player.mining_drill_productivity_bonus = Round((ggsm / 100000) / 10, 2)
+		end
+		--if P_Level >= 1 and ggsp >= 1 then
+		if P_Level >= 20 and ggsp >= 5000 then
+			game.forces.player.inserter_stack_size_bonus = Round(ggsp / 50000)
+		end
+		--if P_Level >= 1 and ggsp >= 1 then
+		if P_Level >= 25 and ggsp >= 25000 then
+			game.forces.player.stack_inserter_capacity_bonus = Round(ggsp / 5000)
+		end
 	end
-	--@todo add more bonuses
-	--
 	--@todo Add inserter and stack inserter stack size bonus 
 	--@body based on picked up stat, level 20+
 	--
 	--@todo Add worker robot bonus
 	--@body based on inventory bonus, level 35+
-	--
-	--@todo Add mining drill prod bonus
-	--@body based on mined and build stats, level 50+
 	--
 	--@todo Add train breaking bonus
 	--@body based on almost all stats, level 75+

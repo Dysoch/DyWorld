@@ -11,10 +11,19 @@ local StackSizes = {
 	{Name = "coal", Amount = 200, Type = "item"},
 	{Name = "pipe", Amount = 200, Type = "item"},
 	{Name = "pipe-to-ground", Amount = 200, Type = "item"},
+	{Name = "heat-pipe", Amount = 200, Type = "item"},
+	{Name = "inserter", Amount = 200, Type = "item"},
+	{Name = "fast-inserter", Amount = 200, Type = "item"},
+	{Name = "stack-inserter", Amount = 200, Type = "item"},
+	{Name = "long-handed-inserter", Amount = 200, Type = "item"},
+	{Name = "filter-inserter", Amount = 200, Type = "item"},
+	{Name = "stack-filter-inserter", Amount = 200, Type = "item"},
 }
 
 for k,v in pairs(StackSizes) do
-	data.raw[v.Type][v.Name].stack_size = v.Amount
+	if data.raw[v.Type][v.Name] then
+		data.raw[v.Type][v.Name].stack_size = v.Amount
+	end
 end
 
 data.raw.item["iron-ore"].subgroup = dy.."0-resource"

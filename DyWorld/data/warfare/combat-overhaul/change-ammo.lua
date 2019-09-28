@@ -17,5 +17,7 @@ end
 if data.raw.ammo["atomic-bomb"] then
 	data.raw.ammo["atomic-bomb"].ammo_type.action.action_delivery.direction_deviation = 0.25
 	data.raw.ammo["atomic-bomb"].ammo_type.action.action_delivery.range_deviation = 0.25
-	data.raw.ammo["atomic-bomb"].ammo_type.action.action_delivery.max_range = 75
+	data.raw.ammo["atomic-bomb"].ammo_type.action.action_delivery.max_range = 125
 end
+
+data.raw.character.character.guns = {"flamethrower", "rocket-launcher", "combat-shotgun", "railgun", "submachine-gun"}

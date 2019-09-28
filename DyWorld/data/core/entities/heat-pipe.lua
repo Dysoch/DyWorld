@@ -29,8 +29,9 @@ data:extend(
         percent = 30
       }
     },
-    collision_box = {{-0.05, -0.05}, {0.05, 0.05}},
+    collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     selection_box = {{-0.05, -0.05}, {0.05, 0.05}},
+    fast_replaceable_group = "transport-belt",
     heat_buffer =
     {
       max_temperature = 5500,

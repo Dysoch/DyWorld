@@ -109,28 +109,34 @@ function gui_1_openGui(player, id)
 	-- labels for stats_3
 	if P_Level >= 2 and game.players[id].character then
 		stats_frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3", (game.players[id].name)}}
+		----- Mining Bonus -----
 		if global.players[id].stats.mined and global.players[id].stats.mined >= 500 then
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_mining_tp"}, caption = {"dyworld_stats_gui.bonus_mining", (Round(game.players[id].character_mining_speed_modifier+1, 2))}, style = "dyworld_label"}
 		end
+		----- Crafting Bonus -----
 		if global.players[id].stats.crafted and global.players[id].stats.crafted >= 100 then
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_crafting_tp"}, caption = {"dyworld_stats_gui.bonus_mining", (Round(game.players[id].character_crafting_speed_modifier+1, 2))}, style = "dyworld_label"}
 		end
+		----- Resource Reach Distance Bonus -----
 		if P_Level >= 4 then
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_reachdistance_tp"}, caption = {"dyworld_stats_gui.bonus_reachdistance", (math.floor(game.players[id].character_resource_reach_distance_bonus+2.7))}, style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 4}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
+		----- Loot Pickup Bonus -----
 		if P_Level >= 7 and global.stats.killed and global.stats.killed >= 1 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Loot Pickup Range: "..math.floor(game.players[id].character_loot_pickup_distance_bonus+2), style = "dyworld_label"}
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Health: "..game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus, style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 7}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
+		----- Inventory Bonus -----
 		if P_Level >= 10 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Inventory Slots: "..game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus, style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 10}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
+		----- Reach Distance Bonus -----
 		if P_Level >= 15 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Reach Distance: "..math.floor(game.players[id].character_reach_distance_bonus+6), style = "dyworld_label"}
 			if global.players[id].stats.build and global.players[id].stats.build >= 15000 then
@@ -139,15 +145,38 @@ function gui_1_openGui(player, id)
 		else 
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 15}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
+		----- Inserter Stack Size Bonus -----
+		--if P_Level >= 1 then
+		if P_Level >= 20 and global.stats.pickup >= 5000 then
+			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Inserter Pickup Bonus: "..Round(game.forces.player.inserter_stack_size_bonus), style = "dyworld_label"}
+		else
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 20}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
+		end
+		----- Stack Inserter Stack Size Bonus -----
+		--if P_Level >= 1 then
+		if P_Level >= 25 and global.stats.pickup >= 25000 then
+			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Stack Inserter Pickup Bonus: "..Round(game.forces.player.stack_inserter_capacity_bonus), style = "dyworld_label"}
+		else
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 25}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
+		end
+		----- Robot Follower Count Bonus -----
 		if P_Level >= 25 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Robot Follower Count: "..math.floor(game.players[id].character_maximum_following_robot_count_bonus), style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 25}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
+		----- Logistic Slots Bonus -----
 		if P_Level >= 30 then
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Logistic Slots Count: "..math.floor(game.players[id].character_logistic_slot_count_bonus), style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 30}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
+		end
+		----- Mining Prod Bonus -----
+		--if P_Level >= 1 then
+		if P_Level >= 50 and global.stats.mined >= 100000 then
+			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Mining Drill Productivity Bonus: "..Round(game.forces.player.mining_drill_productivity_bonus, 2) * 100 .."%", style = "dyworld_label"}
+		else
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 50}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
 	end	
 end

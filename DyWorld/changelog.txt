@@ -3,9 +3,22 @@ Version: 0.9.0
 Date: 00. 00. 2019
   Features:
     - Warfare Update! Massive amount of warfare related content added!
-    - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. Sadly it has a drawback, belts cant be manually replaced with other entities (splitters, higher tier belts etc) because heat pipe is in the way. Belt has to be removed before hand to do this. Still working on the last issue
+    - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well
+  CombatOverhaul:
+    - Atomic Bomb rocket with Combat overhaul is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE!
+  RPG/GUI:
+    - Added Mining Drill Productivity Bonus (level 50+)
+    - Added Inserter Pickup Size Bonus (level 20+)
+    - Added Stack Inserter Pickup Size Bonus (level 25+)
   Changes:
     - Methane now has correct chemical name
+    - Heat Pipe stacksize: 50 > 200
+    - Inserter stacksize: 50 > 200
+    - Stack Inserter stacksize: 50 > 200
+    - Stack Filter Inserter stacksize: 50 > 200
+    - Filter Inserter stacksize: 50 > 200
+    - Fast Inserter stacksize: 50 > 200
+    - Long Handed Inserter stacksize: 50 > 200
   Bugfixes:
     - Fixed compatibility with JunkTrain2 mod
 ---------------------------------------------------------------------------------------------------

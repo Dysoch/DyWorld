@@ -110,13 +110,13 @@ function gui_1_openGui(player, id)
 	if P_Level >= 2 and game.players[id].character then
 		stats_frameflow3.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_3", (game.players[id].name)}}
 		if global.players[id].stats.mined and global.players[id].stats.mined >= 500 then
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Mining Speed: "..Round(game.players[id].character_mining_speed_modifier+1, 2), style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_mining_tp"}, caption = {"dyworld_stats_gui.bonus_mining", (Round(game.players[id].character_mining_speed_modifier+1, 2))}, style = "dyworld_label"}
 		end
 		if global.players[id].stats.crafted and global.players[id].stats.crafted >= 100 then
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Crafting Speed: "..Round(game.players[id].character_crafting_speed_modifier+1, 2), style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_crafting_tp"}, caption = {"dyworld_stats_gui.bonus_mining", (Round(game.players[id].character_crafting_speed_modifier+1, 2))}, style = "dyworld_label"}
 		end
 		if P_Level >= 4 then
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Resource Reach Distance: "..math.floor(game.players[id].character_resource_reach_distance_bonus+2.7), style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_reachdistance_tp"}, caption = {"dyworld_stats_gui.bonus_reachdistance", (math.floor(game.players[id].character_resource_reach_distance_bonus+2.7))}, style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 4}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end

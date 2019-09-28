@@ -3,7 +3,7 @@ Version: 0.9.0
 Date: 00. 00. 2019
   Features:
     - Warfare Update! Massive amount of warfare related content added!
-    - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well
+    - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts as well, and in some cases, splitters (still working a bit funky)
   CombatOverhaul:
     - Atomic Bomb rocket with Combat overhaul is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE!
   RPG/GUI:

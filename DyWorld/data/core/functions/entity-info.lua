@@ -205,7 +205,7 @@ Data_Entity = {
 		},
 		Drill = {
 			Speed = 1,
-			Range = 6,
+			Range = 5,
 			Previous = "stone",
 			Next = "nickel",
 			Ingredients = {
@@ -228,7 +228,7 @@ Data_Entity = {
 			},
 		},
 		Assembler = {
-			Speed_Mod = 1.11,
+			Speed_Mod = 0.76,
 			Previous = "stone",
 			Next = "tin",
 			Ingredients = {

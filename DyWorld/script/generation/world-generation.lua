@@ -16,6 +16,8 @@ function AddedItemsAll_Adder()
 			-- do nothing
 		elseif string.find(v.name, "debug", 1, true) then
 			-- do nothing
+		elseif string.find(v.name, "dummy", 1, true) then
+			-- do nothing
 		else
 			table.insert(AddedItemsAll, v.name)
 		end

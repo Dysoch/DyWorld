@@ -12,6 +12,7 @@ Date: 00. 00. 2019
   Balancing:
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
     - Changed Iron Mining Drill Range: 6x6 > 5x5
+    - Mods that add "dummy" items should no longer spawn in random loot chests
   Combat Overhaul:
     - Atomic Bomb rocket with Combat overhaul is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE! DROPS FPS IMMENSLY!!!!
     - Artillery Turrets & Wagons now have much bigger range for automatic mode. 7 Chunks > 10 Chunks

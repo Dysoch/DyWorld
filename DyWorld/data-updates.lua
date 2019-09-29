@@ -24,6 +24,11 @@ if settings.startup["DyWorld_Warfare"].value then
 	require("data.warfare.data")
 end
 
+-- Warfare Enemies Module --
+if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
+	require("data.warfare.data-enemies")
+end
+
 -- Equipment Module --
 if settings.startup["DyWorld_Equipment"].value then
 	require("data.equipment.data")

@@ -3,7 +3,7 @@ require "data/core/functions/colors"
 
 
 local Data_Table = {
-	"radiation", "electric", "poison", "acid", "gas", 
+	"nuclear", "electric", "poison", "acid", "gas", 
 	"fire", "water", "lightning", "fungal", "plasma", 
 	"laser", "lava", "earth", "fission", "chemical", 
 	"physical", "explosion", "impact", "sonic", "ice", 

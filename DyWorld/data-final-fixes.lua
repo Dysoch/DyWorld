@@ -352,6 +352,13 @@ for k,v in pairs(data.raw.module) do
 			end
 		end
 	end
+	if v.category == "super" then
+		if v.limitation then
+			for _,z in pairs(DyWorld_Productivity_Module_Add) do
+				table.insert(v.limitation, z)
+			end
+		end
+	end
 end
 
 for k, gun in pairs (data.raw.gun) do

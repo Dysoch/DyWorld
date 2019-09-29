@@ -14,7 +14,7 @@ Date: 00. 00. 2019
     - Changed Iron Mining Drill Range: 6x6 > 5x5
     - Mods that add "dummy" items should no longer spawn in random loot chests
   Combat Overhaul:
-    - Atomic Bomb rocket with Combat overhaul is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE! DROPS FPS IMMENSLY!!!!
+    - Atomic Bomb rocket is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE! DROPS FPS IMMENSLY!!!!
     - Artillery Turrets & Wagons now have much bigger range for automatic mode. 7 Chunks > 10 Chunks
     - Artillery Turrets & Wagons now have much bigger range for manual mode. 17.5 Chunks > 35 Chunks
   RPG/GUI:
@@ -34,6 +34,7 @@ Date: 00. 00. 2019
     - Disabled vanilla Heat Exchanger since its no longer needed
   Bugfixes:
     - Fixed compatibility with JunkTrain2 mod
+    - Fixed super modules not able to work on most intermediates
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.6
 Date: 26. 09. 2019

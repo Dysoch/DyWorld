@@ -1,15 +1,5 @@
 
 --settings.startup["DyWorld_Debug"].value
---settings.startup["DyWorld_Modules"].value
---settings.startup["DyWorld_Warfare"].value
---settings.startup["DyWorld_Warfare_Difficulty"].value
---settings.startup["DyWorld_Stack_Size_Mult"].value
---settings.startup["DyWorld_Tech_Increaser"].value
---settings.startup["DyWorld_Processing"].value
---settings.startup["DyWorld_Power"].value
---settings.startup["DyWorld_Logistics"].value
---settings.startup["DyWorld_Extraction"].value
---settings.startup["DyWorld_Equipment"].value
 
 -- can use: "runtime-global", "startup"
 
@@ -31,6 +21,12 @@ data:extend({
 	{
 		type = "bool-setting",
 		name = "DyWorld_Warfare",
+		setting_type = "startup",
+		default_value = true,
+	},
+	{
+		type = "bool-setting",
+		name = "DyWorld_Warfare_Enemies",
 		setting_type = "startup",
 		default_value = true,
 	},

@@ -80,7 +80,7 @@ for k,v in pairs(Tech_PreReq) do
 	end
 end
 
-function removeFirst(tbl, val)
+local function removeFirst(tbl, val)
 	for i, v in ipairs(tbl) do
 		if v == val then
 			return table.remove(tbl, i)

@@ -93,3 +93,8 @@ require("data.core.debug.armor")
 require("data.core.debug.equipment")
 
 require("data.core.achievements")
+
+if settings.startup["DyWorld_Warfare_Enemies"].value then
+	require("data.core.functions.warfare-autoplace")
+	require("data.core.edits.warfare-enemies")
+end

@@ -39,10 +39,6 @@ local Data_Table = {
 		Type = "recipe"
 	},
 	{
-		Name = "radiation",
-		Type = "dmg"
-	},
-	{
 		Name = "super",
 		Type = "module"
 	},

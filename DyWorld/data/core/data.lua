@@ -4,6 +4,7 @@ require("data.core.functions.functions")
 -- functions file is ALWAYS first file loaded, holds functions that are used in other files
 require("data.core.functions.keys")
 require("data.core.functions.category")
+require("data.core.functions.damage")
 require("data.core.functions.deep-copy")
 require("data.core.functions.creator-recipe")
 require("data.core.functions.gui_sprites")

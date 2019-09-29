@@ -3,8 +3,10 @@ Version: 0.9.0
 Date: 00. 00. 2019
   Major Features:
     - Warfare Update! Massive amount of warfare related content added!
+    - Introducing Damage Type related content. Certain objects can only be hurt by certain Damage types, and are massively resistant to others.
   Features:
     - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts as well, and in some cases, splitters (still working a bit funky)
+    - Added Atomic Artillery Shell
   Minor Features:
     - Trees now have a small chance to give wood, acorns or resin when destroyed by weapons (loot dropped)
   Balancing:
@@ -19,6 +21,7 @@ Date: 00. 00. 2019
     - Added Inserter Pickup Size Bonus (level 20+)
     - Added Stack Inserter Pickup Size Bonus (level 25+)
   Changes:
+    - Added new Thumbnail. Many thx to Sara for supplying it
     - Methane now has correct chemical name
     - Heat Pipe stacksize: 50 > 200
     - Inserter stacksize: 50 > 200

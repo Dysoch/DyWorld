@@ -9,10 +9,11 @@ data:extend(
   {
     type = "unit",
     name = Dmg.."-"..Size.."-biter",
+	localised_name = {"looped-name.biter", {"looped-name."..Size}},
     icon = "__base__/graphics/icons/medium-biter.png",
     icon_size = 32,
     flags = {"placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable"},
-    max_health = 75 * Damage_Tiers[Dmg],
+    max_health = Round(((100 * Scale) * Damage_Tiers[Dmg]) * Damage_Tiers[Dmg]),
 	Tier = Damage_Tiers[Dmg],
     order = Damage_Tiers[Dmg].."-"..Dmg.."-"..Size,
     subgroup = "enemies",
@@ -29,7 +30,7 @@ data:extend(
     },
     healing_per_tick = 0.01 * Damage_Tiers[Dmg],
     collision_box = DyWorld_scale_bounding_box({{-0.4, -0.4}, {0.4, 0.4}}, Scale),
-    selection_box = {{-0.7, -1.5}, {0.7, 0.3}},
+    selection_box = DyWorld_scale_bounding_box({{-0.7, -1.5}, {0.7, 0.3}}, Scale),
     sticker_box = {{-0.3, -0.5}, {0.3, 0.1}},
     distraction_cooldown = 300,
     min_pursue_time = 10 * 60,
@@ -37,7 +38,7 @@ data:extend(
     attack_parameters =
     {
       type = "projectile",
-      ammo_type = DyWorld_make_unit_melee_ammo_type(15*Damage_Tiers[Dmg], Dmg),
+      ammo_type = DyWorld_make_unit_melee_ammo_type(((10*Damage_Tiers[Dmg])*Damage_Mod[Dmg]), Dmg),
       range = 1 * Scale,
       cooldown = 40 / Damage_Tiers[Dmg],
       sound = make_biter_roars(0.5),

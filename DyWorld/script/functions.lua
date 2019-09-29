@@ -12,13 +12,19 @@ function Round(num, numDecimalPlaces)
 end
 
 function Debug_Items()
+	local player = game.players[1]
 	game.players[1].insert{name="dyworld-debug-armor",count=1}
-	game.players[1].insert{name="dyworld-debug-battery-equipment",count=200}
-	game.players[1].insert{name="dyworld-debug-exoskeleton-equipment",count=1}
-	game.players[1].insert{name="dyworld-debug-fusion-equipment",count=400}
-	game.players[1].insert{name="dyworld-debug-laser-defense-equipment",count=198}
-	game.players[1].insert{name="dyworld-debug-roboport-equipment",count=1}
-	game.players[1].insert{name="dyworld-debug-shield-equipment",count=400}
+	local p_armor = player.get_inventory(defines.inventory.character_armor)[1].grid
+	for i = 1,400 do
+		p_armor.put({name = "dyworld-debug-fusion-equipment"})
+		p_armor.put({name = "dyworld-debug-shield-equipment"})
+		if i <= 200 then
+			p_armor.put({name = "dyworld-debug-battery-equipment"})
+		end
+	end
+	p_armor.put({name = "dyworld-debug-roboport-equipment"})
+	p_armor.put({name = "dyworld-debug-exoskeleton-equipment"})
+	player.insert{name="dyworld-debug-laser-defense-equipment",count=198}
 end
 
 function GetInv()

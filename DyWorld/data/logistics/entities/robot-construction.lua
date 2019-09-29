@@ -17,9 +17,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	DyWorld_Prototype_Entity.working.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.max_payload_size = v.DyWorld.Tier
 	DyWorld_Prototype_Entity.speed = v.DyWorld.Entity.Robot.Speed + 0.01
-	DyWorld_Prototype_Entity.max_energy = v.DyWorld.Entity.Robot.Energy_Max
-	DyWorld_Prototype_Entity.energy_per_tick = v.DyWorld.Entity.Robot.Energy_Tick
-	DyWorld_Prototype_Entity.energy_per_move = v.DyWorld.Entity.Robot.Energy_Move
+	DyWorld_Prototype_Entity.max_energy = v.DyWorld.Entity.Robot.Energy_Max_MJ.."MJ"
+	DyWorld_Prototype_Entity.energy_per_tick = v.DyWorld.Entity.Robot.Energy_Tick_KJ.."kJ"
+	DyWorld_Prototype_Entity.energy_per_move = v.DyWorld.Entity.Robot.Energy_Move_KJ.."kJ"
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.icons = {
 	  {

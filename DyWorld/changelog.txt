@@ -35,6 +35,7 @@ Date: 00. 00. 2019
   Bugfixes:
     - Fixed compatibility with JunkTrain2 mod
     - Fixed super modules not able to work on most intermediates
+    - Fixed Construction Robots having wrong energy defined
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.6
 Date: 26. 09. 2019

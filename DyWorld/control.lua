@@ -397,7 +397,7 @@ end)
 
 script.on_event("DyWorld_rotate_inserter_pickup", function(event)
 local selection = game.players[event.player_index].selected
-	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and election.ghost_type == "inserter")) then
+	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
 		RotatePickup(selection, true)
 	end
 end)

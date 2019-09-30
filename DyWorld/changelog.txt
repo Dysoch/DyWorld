@@ -38,6 +38,7 @@ Date: 00. 00. 2019
     - Fixed compatibility with JunkTrain2 mod
     - Fixed super modules not able to work on most intermediates
     - Fixed Construction Robots having wrong energy defined
+    - Fixed crash with rotating ghost inserters
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.6
 Date: 26. 09. 2019

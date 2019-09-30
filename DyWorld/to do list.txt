@@ -2,4 +2,3 @@
 add plutonium
 add seperate tier 3/4 recipes for all
 add enemy bases
-add explosions: small, medium, big, huge, behemoth, massive, extreme (1,2,3,4,5,6,7)

@@ -16,5 +16,5 @@ end
 if data.raw.projectile["atomic-bomb-wave"] then
 	data.raw.projectile["atomic-bomb-wave"].action[2].radius = 9
 	data.raw.projectile["atomic-bomb-wave"].action[2].action_delivery.target_effects.damage.amount = 2500
-	data.raw.projectile["atomic-bomb-wave"].action[1].action_delivery.target_effects[1].entity_name = "big-explosion"
+	data.raw.projectile["atomic-bomb-wave"].action[1].action_delivery.target_effects[1].entity_name = dy.."explosion-big"
 end

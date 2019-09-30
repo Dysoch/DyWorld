@@ -97,11 +97,25 @@ data:extend(
           },
           {
             type = "create-entity",
-            entity_name = "big-artillery-explosion"
+            entity_name = dy.."explosion-extreme"
+          },
+          {
+            type = "create-fire",
+            entity_name = dy.."fire-flame-extreme",
+            show_in_tooltip = false,
+            initial_ground_flame_count = 2
           },
           {
             type = "damage",
-            damage = {amount = 25000, type = "explosion"}
+            damage = {amount = 25000, type = "nuclear"}
+          },
+          {
+            type = "damage",
+            damage = {amount = 5000, type = "explosion"}
+          },
+          {
+            type = "damage",
+            damage = {amount = 10000, type = "sonic"}
           },
           {
             type = "create-entity",
@@ -184,7 +198,7 @@ data:extend(
           {
             {
               type = "create-entity",
-              entity_name = "explosion"
+              entity_name = dy.."explosion-small"
             }
           }
         }
@@ -196,10 +210,30 @@ data:extend(
         {
           type = "instant",
           target_effects =
-          {
-            type = "damage",
-            damage = {amount = 200, type = "explosion"}
-          }
+		  {
+			{
+		      type = "damage",
+			  damage = {amount = 100, type = "explosion"}
+			},
+			{
+		      type = "damage",
+			  damage = {amount = 100, type = "impact"}
+			},
+			{
+		      type = "damage",
+			  damage = {amount = 200, type = "sonic"}
+			},
+            {
+              type = "create-sticker",
+              sticker = dy.."fire-sticker-small"
+            },
+            {
+              type = "create-fire",
+              entity_name = dy.."fire-flame-small",
+              show_in_tooltip = false,
+              initial_ground_flame_count = 2
+            },
+		  }
         }
       }
     },
@@ -236,7 +270,7 @@ data:extend(
           {
             {
               type = "create-entity",
-              entity_name = "big-explosion"
+              entity_name = dy.."explosion-huge"
             }
           }
         }
@@ -251,8 +285,26 @@ data:extend(
 		  {
 			{
 		      type = "damage",
-			  damage = {amount = 2500, type = "explosion"}
+			  damage = {amount = 500, type = "explosion"}
 			},
+			{
+		      type = "damage",
+			  damage = {amount = 500, type = "impact"}
+			},
+			{
+		      type = "damage",
+			  damage = {amount = 2000, type = "nuclear"}
+			},
+            {
+              type = "create-sticker",
+              sticker = dy.."fire-sticker-huge"
+            },
+            {
+              type = "create-fire",
+              entity_name = dy.."fire-flame-huge",
+              show_in_tooltip = true,
+              initial_ground_flame_count = 2
+            },
 			{
 			  type = "destroy-cliffs",
 			  radius = 15,

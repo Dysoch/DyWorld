@@ -63,6 +63,7 @@ require("data.core.items.filters")
 -- Entities & Entities Related Functions
 require("data.core.entities.air-filter")
 require("data.core.entities.greenhouse")
+require("data.core.entities.explosions")
 require("data.core.entities.pasture")
 require("data.core.entities.pipe-heater")
 require("data.core.entities.heated-furnace")

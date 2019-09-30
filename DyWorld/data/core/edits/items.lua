@@ -18,6 +18,7 @@ local StackSizes = {
 	{Name = "long-handed-inserter", Amount = 200, Type = "item"},
 	{Name = "filter-inserter", Amount = 200, Type = "item"},
 	{Name = "stack-filter-inserter", Amount = 200, Type = "item"},
+	{Name = "stone-wall", Amount = 200, Type = "item"},
 }
 
 for k,v in pairs(StackSizes) do

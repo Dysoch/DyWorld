@@ -103,7 +103,7 @@ for k,v in pairs(Tech_PreReq_Remove) do
 end
 
 local Tech_Recipe_Add = {
-	["intermediates-1"] = {"glass", "rotor", "obsidian", "filter-empty", "blade", "resin", "sand-filter", "resin-filter", "coal-filter", "stone-filter", "basic-control-board"},
+	["intermediates-1"] = {"glass", "rotor", "obsidian", "filter-empty", "blade", "resin", "sand-filter", "resin-filter", "sand-centrifuge", "coal-filter", "stone-filter", "basic-control-board"},
 	["intermediates-2"] = {"gunpowder", "frame", "heater", "gearbox", "coil", "battery-pack", "rubber", "obsidian-filter", "electronic-control-board"},
 	["intermediates-3"] = {"housing", "intake", "advanced-control-board", "electronic-control-board-2"},
 	["intermediates-4"] = {"logistic-unit", "diamond", "tough-control-board"},

@@ -19,6 +19,27 @@ local Data_Table = {
 		Enabled = true,
 	},
 	{
+		Name = "sand-centrifuge",
+		Time = 1,
+		Recipe_Enabled = true,
+		Icon_Type_Icons = true,
+		Icon = data.raw.item.sand.icons,
+		Subgroup = "intermediates-tier-0",
+		Category = "centrifuging",
+		Productivity = true,
+		Recipe_Ingredients = {
+			["resin-filter"] = 1,
+		},
+		Add_Fluid_1 = "water",
+		Add_Fluid_1_Amount = 500,
+		Multi_Output = {
+			{type = "item", name = "sand", amount_min = 10, amount_max = 50},
+			{type = "item", name = "filter-empty", amount = 1},
+			{type = "fluid", name = "water", amount_min = 100, amount_max = 250},
+		},
+		Enabled = true,
+	},
+	{
 		Name = "stone",
 		Time = 2,
 		Recipe_Enabled = true,

@@ -1,0 +1,7 @@
+
+add plutonium
+add seperate tier 3/4 recipes for all
+fix crash with inserters (ghost entities)
+change stone wall stacksize
+add enemy bases
+add explosions: small, medium, big, huge, behemoth, massive, extreme (1,2,3,4,5,6,7)

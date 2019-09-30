@@ -1,12 +1,9 @@
 require "data/core/functions/prefix"
 require "data/core/functions/colors"
 
---local enemy_autoplace = require "data/core/functions/enemy-autoplace"
-
 local noise = require("noise")
 
-local control_name = "enemy-base"
-local enemy_base_control_setting = noise.get_control_setting(control_name)
+local enemy_base_control_setting = noise.get_control_setting(DyWorld_control_name)
 
 local tne = noise.to_noise_expression
 local litexp = noise.literal_expression
@@ -141,6 +138,7 @@ end
 local function enemy_autoplace(params)
   distance_factor = params.distance_factor or 1
   order = params.order or "b[enemy]-misc"
+  autoplacer = params.autoplacer2 
   is_turret = params.is_turret or false
 
   local distance_unit = 312
@@ -165,7 +163,7 @@ local function enemy_autoplace(params)
   
   return
   {
-    control = control_name,
+    control = autoplacer,
     order = order,
     force = "enemy",
     probability_expression = probability_expression,
@@ -173,14 +171,15 @@ local function enemy_autoplace(params)
   }
 end
 
-local function enemy_spawner_autoplace(distance)
+function DyWorld_enemy_spawner_autoplace(distance, autoplacer)
   return enemy_autoplace{
     distance_factor = distance,
+    autoplacer2 = autoplacer,
     order = "b[enemy]-a[spawner]"
   }
 end
 
-local function enemy_worm_autoplace(distance)
+function DyWorld_enemy_worm_autoplace(distance)
   return enemy_autoplace{
     distance_factor = distance,
     order = "b[enemy]-b[worm]",
@@ -188,11 +187,11 @@ local function enemy_worm_autoplace(distance)
   }
 end
 
-return
+--[[return
 {
   sharpness = sharpness,
-  control_name = control_name,
+  control_name = DyWorld_control_name,
   enemy_autoplace = enemy_autoplace,
   enemy_spawner_autoplace = enemy_spawner_autoplace,
   enemy_worm_autoplace = enemy_worm_autoplace
-}
+}]]--

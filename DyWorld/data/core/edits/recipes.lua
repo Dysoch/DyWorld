@@ -68,3 +68,12 @@ data.raw.recipe["heat-pipe"].expensive = {
 	},
 	result = "heat-pipe",
 }
+
+data.raw.recipe["nuclear-fuel-reprocessing"].ingredients = {
+	{type = "item", name = "used-up-uranium-fuel-cell", amount = 2},
+	{type = "item", name = "uranium-238", amount = 10},
+	{type = "item", name = "uranium-235", amount = 2},
+	{type = "fluid", name = "argon", amount = 500},
+	{type = "fluid", name = "boron", amount = 100},
+}
+data.raw.recipe["nuclear-fuel-reprocessing"].results = {{"argonium-fuel-cell", 1}}

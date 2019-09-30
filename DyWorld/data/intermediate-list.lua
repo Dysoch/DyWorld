@@ -117,6 +117,7 @@
 "tungsten-plate" = Tungsten Plate
 "tungsten-gear-wheel" =  Tungsten Gear
 "titanium-stick" = Titanium Stick
+"argonium-fuel-cell" = Argonium Fuel Cell
 "titanium-plate" = Titanium Plate
 "titanium-cable" = Titanium Cable
 "titanium-gear-wheel" =  Titanium Gear

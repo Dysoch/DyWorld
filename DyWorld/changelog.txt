@@ -11,6 +11,7 @@ Date: 00. 00. 2019
   Minor Features:
     - Trees now have a small chance to give wood, acorns or resin when destroyed by weapons (loot dropped)
     - Added an early game to add sand
+    - Added a new nuclear fuel cell: Argonium
   Balancing:
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
     - Changed Iron Mining Drill Range: 6x6 > 5x5

@@ -17,6 +17,8 @@ require("data.core.functions.wall-pictures")
 require("data.core.functions.tech-add")
 require("data.core.tech.data-tech")
 require("data.core.functions.equipment-grids")
+DyWorld_control_name = "dyworld-enemies-tier-1"
+require("data.core.functions.enemy-autoplace")
 
 -- Item Groups
 require("data.core.item-groups.metals")

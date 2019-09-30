@@ -39,6 +39,7 @@ local Data_Table = {
 	
 	["controller"] = 6, --
 	["processing-control-board"] = 6,
+	["argonium-fuel-cell"] = 6,
 	
 	["logic-control-board"] = 7,
 	
@@ -72,3 +73,6 @@ data:extend(
   },
 })
 end	
+
+data.raw.item["argonium-fuel-cell"].fuel_category = "nuclear"
+data.raw.item["argonium-fuel-cell"].fuel_value = "32GJ"

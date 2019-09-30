@@ -17,26 +17,6 @@ data:extend(
     flags = {"hidden"},
     resistances =
     {
-      {
-        type = "physical",
-        decrease = 5000,
-        percent = 100
-      },
-      {
-        type = "acid",
-        decrease = 5000,
-        percent = 100
-      },
-      {
-        type = "explosion",
-        decrease = 5000,
-        percent = 100
-      },
-      {
-        type = "fire",
-        decrease = 5000,
-        percent = 100
-      }
     },
     durability = 20000000,
     --subgroup = dyworld_prefix.."debug",
@@ -47,3 +27,12 @@ data:extend(
   },
 }
 )
+
+for _,z in pairs(data.raw["damage-type"]) do
+	RESULT = {
+        type = z.name,
+        decrease = 5000,
+        percent = 100
+      }
+	table.insert(data.raw.armor[dyworld_debug_prefix.."armor"].resistances, RESULT)
+end

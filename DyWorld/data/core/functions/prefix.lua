@@ -78,6 +78,30 @@ Damage_Tiers = {
 	["nuclear"] = 20,
 }
 
+Damage_Spawn_Range = {
+	["water"] = 2,
+	["earth"] = 4,
+	["electric"] = 6,
+	["chemical"] = 8,
+	["poison"] = 10,
+	["fire"] = 12,
+	["physical"] = 14,
+	["impact"] = 16,
+	["explosion"] = 18,
+	["sonic"] = 20,
+	["fusion"] = 22,
+	["laser"] = 24,
+	["lightning"] = 25,
+	["acid"] = 26,
+	["plasma"] = 27,
+	["gas"] = 28,
+	["fungal"] = 29,
+	["lava"] = 30,
+	["fission"] = 31,
+	["ice"] = 32,
+	["nuclear"] = 33,
+}
+
 Damage_Mod = {
 	["water"] = 0.25,
 	["earth"] = 0.5,

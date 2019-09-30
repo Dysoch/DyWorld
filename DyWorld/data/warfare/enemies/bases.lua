@@ -90,7 +90,7 @@ data:extend(
     spawning_spacing = 3,
     max_spawn_shift = 0,
     max_richness_for_spawn_shift = 100,
-    autoplace = DyWorld_enemy_spawner_autoplace(Range_Mod[Dmg], DyWorld_control_name),
+    autoplace = DyWorld_enemy_spawner_autoplace(Damage_Spawn_Range[Dmg], DyWorld_control_name),
     call_for_help_radius = 50
   },
   {

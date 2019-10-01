@@ -139,6 +139,7 @@ local function enemy_autoplace(params)
   distance_factor = params.distance_factor or 1
   order = params.order or "b[enemy]-misc"
   autoplacer = params.autoplacer2 
+  force1 = params.force or  "enemy"
   is_turret = params.is_turret or false
 
   local distance_unit = 312
@@ -165,7 +166,7 @@ local function enemy_autoplace(params)
   {
     control = autoplacer,
     order = order,
-    force = "enemy",
+    force = force1,
     probability_expression = probability_expression,
     richness_expression = richness_expression
   }

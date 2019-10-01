@@ -9,13 +9,18 @@ data:extend(
   {
     type = "unit",
     name = Dmg.."-"..Size.."-biter",
-	localised_name = {"looped-name.biter", {"looped-name."..Size}},
-    icon = "__base__/graphics/icons/medium-biter.png",
+	localised_name = {"looped-name.enemy-unit", {"looped-name."..Size}, {"damage-type-name."..Dmg}},
+	icons = {
+	  {
+	    icon = "__base__/graphics/icons/medium-biter.png",
+		tint = Color,
+	  },
+	},
     icon_size = 32,
     flags = {"placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable"},
     max_health = Round(((100 * Scale) * Damage_Tiers[Dmg]) * Damage_Tiers[Dmg]),
 	Tier = Damage_Tiers[Dmg],
-    order = Damage_Tiers[Dmg].."-"..Dmg.."-"..Size,
+    order = Dmg.."-biter-"..Damage_Tiers[Dmg].."-"..Size,
     subgroup = "enemies",
     resistances =
     {

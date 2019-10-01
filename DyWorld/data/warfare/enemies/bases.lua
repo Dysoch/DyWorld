@@ -9,12 +9,18 @@ data:extend(
   {
     type = "unit-spawner",
     name = Dmg.."-spawner",
-    icon = "__base__/graphics/icons/biter-spawner.png",
+	localised_name = {"looped-name.enemy-base", {"damage-type-name."..Dmg}},
+	icons = {
+	  {
+	    icon = "__base__/graphics/icons/biter-spawner.png",
+		tint = Color,
+	  },
+	},
     icon_size = 32,
     flags = {"placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable"},
     max_health = Round(((500) * Damage_Tiers[Dmg]) * Damage_Tiers[Dmg]),
 	Tier = Damage_Tiers[Dmg],
-    order = Damage_Tiers[Dmg].."-"..Dmg.."-spawner",
+    order = Dmg.."-base"..Damage_Tiers[Dmg],
     subgroup = "enemies",
     resistances =
     {

@@ -308,5 +308,8 @@ data:extend(
 }
 )
 end
+
 INSERT = {name = "sand", amount_min = 1, amount_max = 1, probability = 0.05}
 table.insert(data.raw["resource"]["stone"].minable.results, INSERT)
+INSERT = {name = "sulfur", amount_min = 1, amount_max = 3, probability = 0.025}
+table.insert(data.raw["resource"]["coal"].minable.results, INSERT)

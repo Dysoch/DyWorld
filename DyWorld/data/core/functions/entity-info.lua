@@ -184,6 +184,7 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 2 --------------------------------------
 	["iron"] = {
+		Tile = true,
 		Belt = {
 			Speed = 9,
 			Range = 7,
@@ -288,6 +289,7 @@ Data_Entity = {
 		},
 	},
 	["copper"] = {
+		Tile = true,
 		Centrifuge = {
 			Speed_Mod = 1,
 			Previous = "stone",
@@ -331,6 +333,7 @@ Data_Entity = {
 		},
 	},
 	["nickel"] = {
+		Tile = true,
 		Drill = {
 			Speed = 1.5,
 			Range = 7,
@@ -414,6 +417,7 @@ Data_Entity = {
 		},
 	},
 	["silver"] = {
+		Tile = true,
 		Solar = {
 			Production = 170,
 			Previous = "copper",
@@ -487,6 +491,7 @@ Data_Entity = {
 		},
 	},
 	["tin"] = {
+		Tile = true,
 		Assembler = {
 			Speed_Mod = 1.21,
 			Previous = "iron",
@@ -523,6 +528,7 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 3 --------------------------------------
 	["steel"] = {
+		Tile = true,
 		Belt = {
 			Speed = 23,
 			Range = 14,
@@ -623,6 +629,7 @@ Data_Entity = {
 		},
 	},
 	["gold"] = {
+		Tile = true,
 		Solar = {
 			Production = 260,
 			Previous = "silver",
@@ -728,6 +735,7 @@ Data_Entity = {
 		},
 	},
 	["bronze"] = {
+		Tile = true,
 		Belt = {
 			Speed = 15,
 			Range = 10,
@@ -795,6 +803,7 @@ Data_Entity = {
 		},
 	},
 	["lead"] = {
+		Tile = true,
 		Drill = {
 			Speed = 2.5,
 			Range = 8,
@@ -856,6 +865,7 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 4 --------------------------------------
 	["cobalt"] = {
+		Tile = true,
 		Drill = {
 			Speed = 4,
 			Range = 10,
@@ -959,6 +969,7 @@ Data_Entity = {
 		},
 	},
 	["invar"] = {
+		Tile = true,
 		Assembler = {
 			Speed_Mod = 1.33,
 			Previous = "lead",
@@ -1015,6 +1026,7 @@ Data_Entity = {
 		},
 	},
 	["electrum"] = {
+		Tile = true,
 		Assembler = {
 			Speed_Mod = 1.39,
 			Previous = "invar",
@@ -1073,6 +1085,7 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 5 --------------------------------------
 	["stainless-steel"] = {
+		Tile = true,
 		Belt = {
 			Speed = 32,
 			Range = 17,
@@ -1193,6 +1206,7 @@ Data_Entity = {
 		},
 	},
 	["arditium"] = {
+		Tile = true,
 		Drill = {
 			Speed = 6,
 			Range = 10,
@@ -1320,6 +1334,7 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 6 --------------------------------------
 	["titanium"] = {
+		Tile = true,
 		Belt = {
 			Speed = 42,
 			Range = 21,
@@ -1432,6 +1447,7 @@ Data_Entity = {
 		},
 	},
 	["tungsten"] = {
+		Tile = true,
 		Belt = {
 			Speed = 55,
 			Range = 26,
@@ -1549,6 +1565,7 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 7 --------------------------------------
 	["electranium"] = {
+		Tile = true,
 		Drill = {
 			Speed = 12,
 			Range = 15,
@@ -1686,6 +1703,7 @@ Data_Entity = {
 		},
 	},
 	["arditium-tungstenate"] = {
+		Tile = true,
 		Belt = {
 			Speed = 70,
 			Range = 32,
@@ -1777,6 +1795,7 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 8 --------------------------------------
 	["tungstvar"] = {
+		Tile = true,
 		Belt = {
 			Speed = 88,
 			Range = 38,
@@ -1905,6 +1924,7 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 9 --------------------------------------
 	["neutronium"] = {
+		Tile = true,
 		Drill = {
 			Speed = 19,
 			Range = 22,
@@ -2031,6 +2051,7 @@ Data_Entity = {
 	},
 --------------------------------------- TIER 10 -------------------------------------
 	["neutrobaltium"] = {
+		Tile = true,
 		Belt = {
 			Speed = 110,
 			Range = 50,

@@ -8,6 +8,7 @@ Date: 00. 00. 2019
   Features:
     - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts as well, and in some cases, splitters (still working a bit funky)
     - Added Atomic Artillery Shell
+    - Added Metal flooring tiles. Use metals to color the world!
   Minor Features:
     - Trees now have a small chance to give wood, acorns or resin when destroyed by weapons (loot dropped)
     - Added an early game to add sand

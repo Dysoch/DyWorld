@@ -14,7 +14,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Radar then
 	DyWorld_Prototype_Entity.pictures.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.pictures.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
-	DyWorld_Prototype_Entity.energy_usage = (150 + (150 * v.DyWorld.Tier)).."kW"
+	DyWorld_Prototype_Entity.energy_usage = (50 + (50 * v.DyWorld.Entity.Radar.Active_Range) + (v.DyWorld.Entity.Radar.Scan_Range * 10)).."kW"
 	DyWorld_Prototype_Entity.fast_replaceable_group = "radar"
 	if v.DyWorld.Entity.Radar.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Radar.Next.."-radar"

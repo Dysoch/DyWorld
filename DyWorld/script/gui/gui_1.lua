@@ -115,7 +115,7 @@ function gui_1_openGui(player, id)
 		end
 		----- Crafting Bonus -----
 		if global.players[id].stats.crafted and global.players[id].stats.crafted >= 100 then
-			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_crafting_tp"}, caption = {"dyworld_stats_gui.bonus_mining", (Round(game.players[id].character_crafting_speed_modifier+1, 2))}, style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_crafting_tp"}, caption = {"dyworld_stats_gui.bonus_crafting", (Round(game.players[id].character_crafting_speed_modifier+1, 2))}, style = "dyworld_label"}
 		end
 		----- Resource Reach Distance Bonus -----
 		if P_Level >= 4 then

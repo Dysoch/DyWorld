@@ -55,3 +55,8 @@ if mods["JunkTrain2"] then
       }
     --end
 end
+
+ -- Nanobots --
+if mods["Nanobots"] then
+data.raw.ammo["ammo-nano-constructors"].magazine_size = 100
+end

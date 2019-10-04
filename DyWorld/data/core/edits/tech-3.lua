@@ -20,7 +20,7 @@ local Tech_PreReq = {
 	["automation-6"] = {"tungsten-processing", "titanium-processing", "farming-4"},
 	["automation-7"] = {"farming-5"},
 	["automation-9"] = {"neutronium-processing"},
-	["metallurgy-1"] = {"steel-processing", "smelting-1", "lead-processing"},
+	["metallurgy-1"] = {"steel-processing", "smelting-1", "lead-processing", "nuclear-energy-1"},
 	["metallurgy-2"] = {"silver-processing", "nickel-processing", "tin-processing", "smelting-2"},
 	["metallurgy-3"] = {"lead-processing", "gold-processing", "smelting-3"},
 	["metallurgy-4"] = {"cobalt-processing", "smelting-4"},
@@ -134,7 +134,6 @@ local Tech_Recipe_Add = {
 	["farming-2"] = {"wheat"},
 	["farming-4"] = {"wood-2"},
 	["nuclear-energy-1"] = {"heat-pipe", "heat-pipe-furnace", "heated-furnace", "heated-inserter", "heated-long-inserter"},
-	["nuclear-energy-2"] = {"heat-exchanger"},
 } 
 
 for k,v in pairs(Tech_Recipe_Add) do

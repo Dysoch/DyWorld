@@ -18,6 +18,7 @@ Date: 00. 00. 2019
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
     - Changed Iron Mining Drill Range: 6x6 > 5x5
     - Gunpowder is now available from the start
+    - Acorns now have a tiny fuel value, so the excess can be burned off 
     - Mods that add "dummy" items should no longer spawn in random loot chests
   Combat Overhaul:
     - Atomic Bomb rocket is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE! DROPS FPS IMMENSLY!!!!

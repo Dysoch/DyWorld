@@ -1,2 +1,13 @@
 
 add seperate tier 3/4 recipes for all
+add worms
+add landmines
+add sniper gun
+add laser gun
+add water turret
+add earth bullets
+add module beacons
+add super modules
+add early game modular armor (1 slot, for belt immume)
+change assembling machines power usage
+change radar power usage

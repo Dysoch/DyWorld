@@ -76,3 +76,6 @@ end
 
 data.raw.item["argonium-fuel-cell"].fuel_category = "nuclear"
 data.raw.item["argonium-fuel-cell"].fuel_value = "32GJ"
+
+data.raw.item["acorn"].fuel_category = "chemical"
+data.raw.item["acorn"].fuel_value = "0.5MJ"

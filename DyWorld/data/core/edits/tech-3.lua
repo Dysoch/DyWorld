@@ -133,7 +133,7 @@ local Tech_Recipe_Add = {
 	["farming-1"] = {"carrot", "boiler-water"},
 	["farming-2"] = {"wheat"},
 	["farming-4"] = {"wood-2"},
-	["nuclear-energy-1"] = {"heat-pipe", "heat-pipe-furnace", "heated-furnace", "heated-inserter", "heated-long-inserter"},
+	["nuclear-energy-1"] = {"heat-pipe", "heat-pipe-furnace", "heated-furnace", "heated-inserter", "heated-assembler", "heated-long-inserter"},
 } 
 
 for k,v in pairs(Tech_Recipe_Add) do

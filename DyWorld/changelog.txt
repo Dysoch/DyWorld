@@ -14,6 +14,7 @@ Date: 00. 00. 2019
     - Added an early game to add sand
     - Mining coal now has chance to give sulfur
     - Added a new nuclear fuel cell: Argonium
+    - Added Heated Assembling Machine
   Balancing:
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
     - Changed Iron Mining Drill Range: 6x6 > 5x5

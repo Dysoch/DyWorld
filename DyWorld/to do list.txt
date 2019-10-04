@@ -10,5 +10,3 @@ add module beacons
 add super modules
 add early game modular armor (1 slot, for belt immume)
 rework power
-add heated assembler
-add heated lamps

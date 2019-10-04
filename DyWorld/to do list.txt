@@ -9,5 +9,6 @@ add earth bullets
 add module beacons
 add super modules
 add early game modular armor (1 slot, for belt immume)
-change assembling machines power usage
-change radar power usage
+rework power
+add heated assembler
+add heated lamps

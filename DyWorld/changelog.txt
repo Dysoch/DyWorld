@@ -6,7 +6,7 @@ Date: 00. 00. 2019
     - Introducing Damage Type related content. Certain objects can only be hurt by certain Damage types, and are massively resistant to others.
     - Introducing 210 different mobile natives, and 63 stationary natives when Warfare Enemies are enabled. Base game generation of enemies is then disabled
   Features:
-    - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts as well, and in some cases, splitters (still working a bit funky)
+    - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts as well
     - Added Atomic Artillery Shell
     - Added Metal flooring tiles. Use metals to color the world!
   Minor Features:
@@ -18,6 +18,7 @@ Date: 00. 00. 2019
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
     - Changed Iron Mining Drill Range: 6x6 > 5x5
     - Gunpowder is now available from the start
+    - Reduced Stacksizes of Machines to 50 per stack
     - Acorns now have a tiny fuel value, so the excess can be burned off 
     - Mods that add "dummy" items should no longer spawn in random loot chests
     - Radars now have slighty different power usage calculations. They generally consume based on scanning range

@@ -2,6 +2,9 @@ require "data/core/functions/prefix"
 
 local Tech_PreReq_Remove = {
 	["automation-3"] = {"production-science-pack"},
+	["uranium-processing"] = {"chemical-science-pack"},
+	["military-science-pack"] = {"stone-walls"},
+	["nuclear-fuel-reprocessing"] = {"nuclear-power"},
 }
 local Tech_PreReq = {
 	["smelting-2"] = {"silver-processing", "nickel-processing", "tin-processing"},
@@ -20,6 +23,7 @@ local Tech_PreReq = {
 	["automation-6"] = {"tungsten-processing", "titanium-processing", "farming-4"},
 	["automation-7"] = {"farming-5"},
 	["automation-9"] = {"neutronium-processing"},
+	["nuclear-energy-3"] = {"uranium-processing"},
 	["metallurgy-1"] = {"steel-processing", "smelting-1", "lead-processing", "nuclear-energy-1"},
 	["metallurgy-2"] = {"silver-processing", "nickel-processing", "tin-processing", "smelting-2"},
 	["metallurgy-3"] = {"lead-processing", "gold-processing", "smelting-3"},
@@ -50,7 +54,7 @@ local Tech_PreReq = {
 	["super-module-10"] = {"productivity-module-10", "speed-module-10", "effectivity-module-10", "pollution-module-10"},
 	["chemical-science-pack"] = {"solar-energy-3", "logistics-2", "intermediates-3", "gold-processing", "lead-processing"},
 	["logistic-science-pack"] = {"fast-inserter", "logistics", "tin-processing", "steel-processing", "intermediates-1"},
-	["military-science-pack"] = {"turrets", "stone-wall", "intermediates-2", "lead-processing", "gold-processing"},
+	["military-science-pack"] = {"turrets", "defensive-structures-1", "intermediates-2", "lead-processing", "gold-processing"},
 	["production-science-pack"] = {"automation-4", "intermediates-4", "cobalt-processing", "arditium-processing"},
 	["utility-science-pack"] = {"solar-energy-7", "automation-7", "intermediates-6", "production-science-pack", "titanium-processing", "tungsten-processing"},
 	["space-science-pack"] = {"intermediates-7", "utility-science-pack", "titanium-processing", "solar-energy-6", "metallurgy-7"},
@@ -133,6 +137,7 @@ local Tech_Recipe_Add = {
 	["farming-1"] = {"carrot", "boiler-water"},
 	["farming-2"] = {"wheat"},
 	["farming-4"] = {"wood-2"},
+	["defensive-structures-1"] = {"stone-wall", "gate"},
 	["nuclear-energy-1"] = {"heat-pipe", "heat-pipe-furnace", "heated-furnace", "heated-inserter", "heated-assembler", "heated-long-inserter"},
 } 
 
@@ -169,7 +174,20 @@ local Tech_Science_Pack_Change = {
 	["logistics-2"] = 2,
 	["logistics-3"] = 3,
 	["solar-energy"] = 1,
+	["uranium-processing"] = 3,
 }
+
+local Tech_Remove = {
+	"stone-walls", 
+	"gates",
+	"nuclear-power",
+}
+
+for k,v in pairs(Tech_Remove) do
+	if data.raw.technology[v] then
+		data.raw.technology[v] = nil
+	end
+end
 
 for k,v in pairs(Tech_Science_Pack_Change) do
 	if v == 1 then

@@ -20,9 +20,13 @@ function gui_2_toggleGui(player, id)
 		----- RUNNING SKILL -----
 		if v.CD_On then
 			prioritized.add{type = "label", style = "dyworld_label", caption = {"dyworld_skills_gui."..v.Name.."-cd", v.CD}}
-		elseif (v.Active == false or v.Active == nil) then
+		elseif (v.Active == false or v.Active == nil) and v.Active_Time then
 			if (global.players[id].Skill_Points >= v.SP_Usage) then
-				prioritized.add{type = "button", name = v.Name, style = "dyworld_skills_sprite_button", caption = {"dyworld_skills_gui."..v.Name}}
+				prioritized.add{type = "button", name = v.Name, style = "dyworld_skills_sprite_button", caption = {"dyworld_skills_gui."..v.Name, v.Active_Time, v.SP_Usage}}
+			end
+		elseif (v.Active == false or v.Active == nil) and v.Strength then
+			if (global.players[id].Skill_Points >= v.SP_Usage) then
+				prioritized.add{type = "button", name = v.Name, style = "dyworld_skills_sprite_button", caption = {"dyworld_skills_gui."..v.Name, v.Strength, v.SP_Usage}}
 			end
 		elseif v.Active then
 			prioritized.add{type = "label", style = "dyworld_label", caption = {"dyworld_skills_gui."..v.Name.."-active", v.Active_Time_Left}}

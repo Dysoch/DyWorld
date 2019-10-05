@@ -119,6 +119,7 @@ function Player_Startup(PLAYER, ID, FORCE)
 				Skills = 
 				{
 					["dyworld-running-skill"] = {CD_On = false, CD_Time = 600, CD = 0, Name = "dyworld-running-skill", SP_Usage = 50, Active_Time = 60, Active = false, Active_Time_Left = 0},
+					["dyworld-chart-skill"] = {CD_On = false, CD_Time = 3600, CD = 0, Name = "dyworld-chart-skill", SP_Usage = 250, Strength = 500, Active = false},
 				},
 				XP_LevelUp = (100 + math.random(100)),
 				PosX = 0,
@@ -185,6 +186,7 @@ function Player_Startup(PLAYER, ID, FORCE)
 			Skills = 
 			{
 				["dyworld-running-skill"] = {CD_On = false, CD_Time = 600, CD = 0, Name = "dyworld-running-skill", SP_Usage = 50, Active_Time = 60, Active = false, Active_Time_Left = 0},
+				["dyworld-chart-skill"] = {CD_On = false, CD_Time = 3600, CD = 0, Name = "dyworld-chart-skill", SP_Usage = 250, Strength = 500, Active = false},
 			},
 			XP_LevelUp = (100 + math.random(100)),
 			PosX = 0,

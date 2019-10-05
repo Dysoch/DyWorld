@@ -155,8 +155,33 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"dyworld.migrate-2"})
 	end
 	if global.dyworld.Version == "0.8.6" then
-		remote.call("silo_script", "set_no_victory", true)
+		if remote.interfaces["silo_script"] then
+			remote.call("silo_script", "set_no_victory", true)
+			local tracked_items = remote.call("silo_script", "get_tracked_items")
+			if not tracked_items["automation-science-pack"] then
+				remote.call("silo_script", "add_tracked_item", "automation-science-pack")
+			end
+			if not tracked_items["logistic-science-pack"] then
+				remote.call("silo_script", "add_tracked_item", "logistic-science-pack")
+			end
+			if not tracked_items["chemical-science-pack"] then
+				remote.call("silo_script", "add_tracked_item", "chemical-science-pack")
+			end
+			if not tracked_items["military-science-pack"] then
+				remote.call("silo_script", "add_tracked_item", "military-science-pack")
+			end
+			if not tracked_items["production-science-pack"] then
+				remote.call("silo_script", "add_tracked_item", "production-science-pack")
+			end
+			if not tracked_items["utility-science-pack"] then
+				remote.call("silo_script", "add_tracked_item", "utility-science-pack")
+			end
+			if not tracked_items["space-science-pack"] then
+				remote.call("silo_script", "add_tracked_item", "space-science-pack")
+			end
+		end
 		for k,v in pairs(global.players) do	
+			v.Skill_Points = 0
 			v.physical_mod = {
 				strength = 0,
 				endurance = 0,

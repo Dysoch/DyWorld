@@ -11,6 +11,7 @@ require "script/gui/gui_5"
 require "script/gui/gui_6"
 require "script/gui/gui_click"
 require "script/stats/functions"
+require "script/stats/skills-functions"
 require "script/generation/noise"
 require "script/generation/world-generation"
 require "script/functions/side-inserter"
@@ -242,6 +243,47 @@ end)
 
 script.on_event(defines.events.on_gui_click, onGUIClick)
 
+script.on_event(defines.events.on_rocket_launched, function(event)
+	local rocket = event.rocket
+	local force = rocket.force
+	if rocket.get_item_count("automation-science-pack") > 0 then
+		for k,v in pairs(global.players) do	
+			if not v.Skill_Points then v.Skill_Points = 0 end
+			v.Skill_Points = v.Skill_Points + (rocket.get_item_count("automation-science-pack") * 1)
+		end
+	elseif rocket.get_item_count("logistic-science-pack") > 0 then
+		for k,v in pairs(global.players) do	
+			if not v.Skill_Points then v.Skill_Points = 0 end
+			v.Skill_Points = v.Skill_Points + (rocket.get_item_count("logistic-science-pack") * 2)
+		end
+	elseif rocket.get_item_count("chemical-science-pack") > 0 then
+		for k,v in pairs(global.players) do	
+			if not v.Skill_Points then v.Skill_Points = 0 end
+			v.Skill_Points = v.Skill_Points + (rocket.get_item_count("chemical-science-pack") * 3)
+		end
+	elseif rocket.get_item_count("military-science-pack") > 0 then
+		for k,v in pairs(global.players) do	
+			if not v.Skill_Points then v.Skill_Points = 0 end
+			v.Skill_Points = v.Skill_Points + (rocket.get_item_count("military-science-pack") * 5)
+		end
+	elseif rocket.get_item_count("production-science-pack") > 0 then
+		for k,v in pairs(global.players) do	
+			if not v.Skill_Points then v.Skill_Points = 0 end
+			v.Skill_Points = v.Skill_Points + (rocket.get_item_count("production-science-pack") * 10)
+		end
+	elseif rocket.get_item_count("utility-science-pack") > 0 then
+		for k,v in pairs(global.players) do	
+			if not v.Skill_Points then v.Skill_Points = 0 end
+			v.Skill_Points = v.Skill_Points + (rocket.get_item_count("utility-science-pack") * 25)
+		end
+	elseif rocket.get_item_count("space-science-pack") > 0 then
+		for k,v in pairs(global.players) do	
+			if not v.Skill_Points then v.Skill_Points = 0 end
+			v.Skill_Points = v.Skill_Points + (rocket.get_item_count("space-science-pack") * 5)
+		end
+	end
+end)
+
 -- ontick hooks
 script.on_event(defines.events.on_tick, function(event)
 	if event.tick%(60*60)==1 and global.dyworld.Players ~= 0 then
@@ -254,6 +296,10 @@ script.on_event(defines.events.on_tick, function(event)
 				end
 			end
 		end
+	end
+	if event.tick%(60)==1 and global.dyworld.Players ~= 0 then
+		Skills_CoolDown()
+		Skills_Active_Timer()
 	end
 	if global.dyworld.Players ~= 0 and event.tick%(15*1)==1 then
 		for k,v in pairs(global.players) do
@@ -351,9 +397,13 @@ script.on_event("DyWorld_Skills", function(event)
 			local player = game.players[event.player_index]
 			Player_Startup(player, event.player_index)
 		end
-		local player = game.players[event.player_index]
-		--gui_2_toggleGui(player) -- TEMP REMOVED!
-		BodySkills(event.player_index)
+		if global.players[event.player_index].Skill_Points >= 1 then
+			local player = game.players[event.player_index]
+			gui_2_toggleGui(player, event.player_index)
+			BodySkills(event.player_index)
+		else
+			game.players[event.player_index].print("You need to gain skill points to unlock this window!")
+		end
 	end
 end)
 script.on_event("DyWorld_Guide", function(event)

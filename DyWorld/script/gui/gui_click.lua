@@ -37,4 +37,8 @@ function onGUIClick(event)
 	if gui.name == "button_yes_items" then
 		util.insert_safe(player, sandbox_starting_items)
 	end
+	if gui.name == "dyworld-running-skill" then
+		gui_2_toggleGui(player, event.player_index)
+		Skills_Start_Skill(event.player_index, "dyworld-running-skill")
+	end
 end

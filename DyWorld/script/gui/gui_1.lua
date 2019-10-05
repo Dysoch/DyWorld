@@ -68,6 +68,9 @@ function gui_1_openGui(player, id)
 			frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_pickup_mp-tp"}, caption = {"dyworld_stats_gui.stats_pickup_mp", (global.players[id].stats.pickup or 0), (global.stats.pickup or 0)}, style = "dyworld_label"}
 		end
 	end
+	if global.players[id].Skill_Points and global.players[id].Skill_Points >= 1 then
+		frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.skill-points-tp"}, caption = {"dyworld_stats_gui.skill-points", (global.players[id].Skill_Points or 0)}, style = "dyworld_label"}
+	end
 	frameflow1.add{type = "label", style = "dyworld_stats_divider_header_label", caption = {"dyworld_stats_gui.stats_2"}, tooltip = {"dyworld_stats_gui.stats_2-tp"}}
 	if global.stats.killed and global.stats.killed >= 1 then
 		frameflow1.add{type = "label", tooltip = {"dyworld_stats_gui.stats_killed-tp"}, caption = {"dyworld_stats_gui.stats_killed", global.stats.killed}, style = "dyworld_label"}

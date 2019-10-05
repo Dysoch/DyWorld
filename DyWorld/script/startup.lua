@@ -59,10 +59,33 @@ function Game_Startup()
 		game.forces.player.maximum_following_robot_count = 500
 		game.forces.player.character_health_bonus = 99750
 	end
+	if remote.interfaces["silo_script"] then
+		remote.call("silo_script", "set_no_victory", true)
+		local tracked_items = remote.call("silo_script", "get_tracked_items")
+		if not tracked_items["automation-science-pack"] then
+			remote.call("silo_script", "add_tracked_item", "automation-science-pack")
+		end
+		if not tracked_items["logistic-science-pack"] then
+			remote.call("silo_script", "add_tracked_item", "logistic-science-pack")
+		end
+		if not tracked_items["chemical-science-pack"] then
+			remote.call("silo_script", "add_tracked_item", "chemical-science-pack")
+		end
+		if not tracked_items["military-science-pack"] then
+			remote.call("silo_script", "add_tracked_item", "military-science-pack")
+		end
+		if not tracked_items["production-science-pack"] then
+			remote.call("silo_script", "add_tracked_item", "production-science-pack")
+		end
+		if not tracked_items["utility-science-pack"] then
+			remote.call("silo_script", "add_tracked_item", "utility-science-pack")
+		end
+		if not tracked_items["space-science-pack"] then
+			remote.call("silo_script", "add_tracked_item", "space-science-pack")
+		end
+	end
 	game.forces.player.ghost_time_to_live = (60*60*60*172)
 	game.forces.player.deconstruction_time_to_live = (60*60*60*172)
-	remote.call("silo_script", "set_no_victory", true)
-	--remote.call("silo_script", "add_tracked_item", "")
 end
 
 function Player_Startup(PLAYER, ID, FORCE)
@@ -92,6 +115,11 @@ function Player_Startup(PLAYER, ID, FORCE)
 				Mining_Boost = true,
 				Level = 1,
 				XP = 0,
+				Skill_Points = 0,
+				Skills = 
+				{
+					["dyworld-running-skill"] = {CD_On = false, CD_Time = 600, CD = 0, Name = "dyworld-running-skill", SP_Usage = 50, Active_Time = 60, Active = false, Active_Time_Left = 0},
+				},
 				XP_LevelUp = (100 + math.random(100)),
 				PosX = 0,
 				PosY = 0,
@@ -153,6 +181,11 @@ function Player_Startup(PLAYER, ID, FORCE)
 			Mining_Boost = true,
 			Level = 1,
 			XP = 0,
+			Skill_Points = 0,
+			Skills = 
+			{
+				["dyworld-running-skill"] = {CD_On = false, CD_Time = 600, CD = 0, Name = "dyworld-running-skill", SP_Usage = 50, Active_Time = 60, Active = false, Active_Time_Left = 0},
+			},
 			XP_LevelUp = (100 + math.random(100)),
 			PosX = 0,
 			PosY = 0,

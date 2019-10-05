@@ -42,6 +42,9 @@ Date: 00. 00. 2019
     - Added Mining Drill Productivity Bonus (level 50+)
     - Added Inserter Pickup Size Bonus (level 20+)
     - Added Stack Inserter Pickup Size Bonus (level 25+)
+    - Added the first Skill: Running Boost! 
+    - Added Skill Points (a currency for using skills sort off)
+    - To gain Skill Points, launch science packs into space, different science packs give different about of Skill Points
   Changes:
     - Added new Thumbnail. Many thx to Sara for supplying it
     - Methane now has correct chemical name

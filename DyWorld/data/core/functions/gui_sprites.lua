@@ -50,6 +50,23 @@ data.raw["gui-style"].default["dyworld_stats_sprite_button"] = {
     }
 }
 
+data.raw["gui-style"].default["dyworld_skills_sprite_button"] = {
+    type = "button_style",
+    parent = "button",
+    width = 300,
+    height = 24,
+    top_padding = 0,
+    right_padding = 0,
+    bottom_padding = 0,
+    left_padding = 0,
+    left_click_sound = {
+        {
+            filename = "__core__/sound/gui-click.ogg",
+            volume = 1
+        }
+    }
+}
+
 data.raw["gui-style"].default["dyworld_stats_tech_label"] = {
     type = "label_style",
     parent = "label",

@@ -10,3 +10,7 @@ add module beacons
 add super modules
 add early game modular armor (1 slot, for belt immume)
 rework power
+add stone walls to defensive structure tech
+add gates to defensive structure tech 2
+remove stone walls tech
+remove gates tech

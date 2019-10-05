@@ -24,6 +24,15 @@ Date: 00. 00. 2019
     - Mods that add "dummy" items should no longer spawn in random loot chests
     - Radars now have slighty different power usage calculations. They generally consume based on scanning range
     - Assembling Machines now have slighty different power usage calculations. They generally consume based on crafting speed (before modules)
+    - Steam Engines now all use 30 fluid per second
+    - Steam Turbines now all use 60 fluid per second
+    - Steam Engines now gain 25% efficiency each tier
+    - Steam Turbines now gain 50% efficiency each tier
+    - Steam Engines now provide a lot more power
+    - Steam Turbines now provide a lot more power
+    - Solar Panels now provide a lot more power
+    - Solar Panels require less solar cells now
+    - Accumulators now store a lot more power, and output and input of power is higher
   Combat Overhaul:
     - Atomic Bomb rocket is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE! DROPS FPS IMMENSLY!!!!
     - Artillery Turrets & Wagons now have much bigger range for automatic mode. 7 Chunks > 10 Chunks

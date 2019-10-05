@@ -1,3 +1,4 @@
+inspect = require("script/lualib/inspect")
 require "roadmap"
 require "script/functions"
 require "script/startup"
@@ -239,7 +240,7 @@ script.on_event(defines.events.on_chunk_generated, function(event)
 	end
 end)
 
---script.on_event(defines.events.on_gui_click, gui_click.onClick)
+script.on_event(defines.events.on_gui_click, onGUIClick)
 
 -- ontick hooks
 script.on_event(defines.events.on_tick, function(event)
@@ -374,14 +375,9 @@ script.on_event("DyWorld_Debug", function(event)
 end)
 script.on_event("DyWorld_Debug_LOG", function(event)
 	if settings.startup["DyWorld_Debug"].value or game.players[event.player_index].name == "Dysoch" then
-		local player = game.players[event.player_index]
-		global.DyWorld_Debug = {}
-		global.DyWorld_Debug.Tech = {}
-		for _, v in pairs(game.forces.player.technologies) do
-			table.insert(global.DyWorld_Debug.Tech,v.name)
-			game.write_file("DyWorld/Debug/Techs.txt", v.name.."\n", true, event.player_index)
-		end
-		--game.write_file("DyWorld/Debug/Techs.txt", tostring(global.DyWorld_Debug.Tech))
+		DyWorld_write_mods()
+		DyWorld_write_statistics()
+		DyWorld_write_surfaces()
 	end
 end)
 
@@ -434,6 +430,14 @@ remote.add_interface("DyWorld",
 	
 	RegenerateOre = function(NAME)
 		game.regenerate_entity(NAME)
+	end,
+	
+	RPG_Increase_Physical = function(ID, NAME, AMOUNT)
+		global.player[ID].physical_mod[NAME] = AMOUNT
+	end,
+	
+	RPG_Increase_Mystical = function(ID, NAME, AMOUNT)
+		global.player[ID].mystical_mod[NAME] = AMOUNT
 	end,
 })
 

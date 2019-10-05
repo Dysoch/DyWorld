@@ -10,7 +10,7 @@ function Game_Startup()
 	if not global.dyworld then
 		global.dyworld = 
 		{
-			Version = "0.8.6",
+			Version = "0.8.90",
 			Items = {},
 			Research = {},
 			Guide = {},
@@ -111,6 +111,22 @@ function Player_Startup(PLAYER, ID, FORCE)
 					guile = 1,
 					knowledge = 1,
 				},
+				physical_mod =
+				{
+					strength = 0,
+					endurance = 0,
+					speed = 0,
+					creations = 0,
+					implants = 0,
+				},
+				mystical_mod = 
+				{ 
+					spirit = 0,
+					intelligence = 0,
+					wisdom = 0,
+					guile = 0,
+					knowledge = 0,
+				},
 				stats = {},
 				crafted = {},
 				mined = {},
@@ -155,6 +171,22 @@ function Player_Startup(PLAYER, ID, FORCE)
 				wisdom = 1,
 				guile = 1,
 				knowledge = 1,
+			},
+			physical_mod =
+			{
+				strength = 0,
+				endurance = 0,
+				speed = 0,
+				creations = 0,
+				implants = 0,
+			},
+			mystical_mod = 
+			{ 
+				spirit = 0,
+				intelligence = 0,
+				wisdom = 0,
+				guile = 0,
+				knowledge = 0,
 			},
 			stats = {},
 			crafted = {},

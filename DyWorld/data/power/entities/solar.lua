@@ -37,9 +37,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then
 	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "solar-panel", v.DyWorld.Name.."-solar-panel", true)
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
-	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Production / 10)}}
+	DyWorld_Prototype_Recipe.normal.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Production / 100)}}
 	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-solar-panel"
-	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Production / 10)}}
+	DyWorld_Prototype_Recipe.expensive.ingredients = {{type = "item", name = "solar-cell", amount = math.ceil(v.DyWorld.Entity.Solar.Production / 100)}}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-solar-panel"
 	DyWorld_Prototype_Recipe.ingredients = nil
 	DyWorld_Prototype_Recipe.localised_name = {"looped-name.solar-panel-1", {"looped-name."..v.DyWorld.Name}}

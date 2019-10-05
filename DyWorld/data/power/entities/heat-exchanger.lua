@@ -6,6 +6,7 @@ for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Heat_Exchanger then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("boiler", "heat-exchanger", v.DyWorld.Name.."-heat-exchanger", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.boiler-2", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Entity.localised_description = {"looped-name.boiler-2-tp", {"looped-name."..v.DyWorld.Name}, v.DyWorld.Entity.Heat_Exchanger.Target_Temp}
 	DyWorld_Prototype_Entity.max_health = 200 * v.DyWorld.Tier
 	DyWorld_Prototype_Entity.structure.north.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.north.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
@@ -32,6 +33,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Heat_Exchanger then
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "heat-exchanger", v.DyWorld.Name.."-heat-exchanger", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.boiler-2", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Item.localised_description = {"looped-name.boiler-2-tp", {"looped-name."..v.DyWorld.Name}, v.DyWorld.Entity.Heat_Exchanger.Target_Temp}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
 	DyWorld_Prototype_Item.stack_size = 50
 	DyWorld_Prototype_Item.icon = nil

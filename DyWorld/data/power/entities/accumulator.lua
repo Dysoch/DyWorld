@@ -11,9 +11,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Accumulator then
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("accumulator", "accumulator", v.DyWorld.Name.."-accumulator", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.accumulator-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.max_health = 200 * v.DyWorld.Tier
-	DyWorld_Prototype_Entity.energy_source.buffer_capacity = v.DyWorld.Entity.Accumulator.Buffer_MJ.."MJ"
-	DyWorld_Prototype_Entity.energy_source.input_flow_limit = (200 * v.DyWorld.Tier).."kW"
-	DyWorld_Prototype_Entity.energy_source.output_flow_limit = (200 * v.DyWorld.Tier).."kW"
+	DyWorld_Prototype_Entity.energy_source.buffer_capacity = (v.DyWorld.Entity.Accumulator.Buffer_MJ * v.DyWorld.Tier).."MJ"
+	DyWorld_Prototype_Entity.energy_source.input_flow_limit = (1000 * v.DyWorld.Tier).."kW"
+	DyWorld_Prototype_Entity.energy_source.output_flow_limit = (1000 * v.DyWorld.Tier).."kW"
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.fast_replaceable_group = "accumulator"
 	if v.DyWorld.Entity.Accumulator.Next then

@@ -154,8 +154,24 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"dyworld.migrate-1"})
 		PlayerPrint({"dyworld.migrate-2"})
 	end
-	--[[if global.dyworld.Version == "0.8.6" then
+	if global.dyworld.Version == "0.8.6" then
 		remote.call("silo_script", "set_no_victory", true)
+		for k,v in pairs(global.players) do	
+			v.physical_mod = {
+				strength = 0,
+				endurance = 0,
+				speed = 0,
+				creations = 0,
+				implants = 0,
+			}
+			v.mystical_mod = { 
+				spirit = 0,
+				intelligence = 0,
+				wisdom = 0,
+				guile = 0,
+				knowledge = 0,
+			}
+		end
 		-- This part below is done every migration!
 		global.dyworld.Max_Research = Research_Calc(),
 		global.dyworld.Research_Done == 0
@@ -172,11 +188,11 @@ function Migrate_To_Next_Version()
 			end
 		end
 		global.dyworld.Migration_Check = false
-		global.dyworld.Version = "0.9.0" 
+		global.dyworld.Version = "0.8.90" 
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 		PlayerPrint({"dyworld.migrate-1"})
 		PlayerPrint({"dyworld.migrate-2"})
-	end]]--
+	end
 end
 
 function Migrate_Debug()

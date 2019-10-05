@@ -203,17 +203,27 @@ function BodySkills(id)
 	local m3 = global.players[id].mystical.wisdom -- Wisdom
 	local m4 = global.players[id].mystical.guile -- Guile
 	local m5 = global.players[id].mystical.knowledge -- Knowledge
+	local mod_p1 = global.players[id].physical_mod.strength -- Strength
+	local mod_p2 = global.players[id].physical_mod.endurance -- Endurance
+	local mod_p3 = global.players[id].physical_mod.speed -- Speed
+	local mod_p4 = global.players[id].physical_mod.creations -- Creations
+	local mod_p5 = global.players[id].physical_mod.implants  -- Implants
+	local mod_m1 = global.players[id].mystical_mod.spirit -- Spirit
+	local mod_m2 = global.players[id].mystical_mod.intelligence -- Intelligence
+	local mod_m3 = global.players[id].mystical_mod.wisdom -- Wisdom
+	local mod_m4 = global.players[id].mystical_mod.guile -- Guile
+	local mod_m5 = global.players[id].mystical_mod.knowledge -- Knowledge
 	-- p5 is done with research and crafting! implants will be installed, each with a base number to increase the value
 	--@todo Implement Implants
-	global.players[id].physical.creations = math.floor(((gsb+gsc)+(gsgb/25))/(1000))
-	global.players[id].mystical.guile = math.floor(((((gsc+gsm)/25)+((gsb+(gsgb/100))/50)+gsk)/(1000))+1)
-	global.players[id].mystical.intelligence = math.floor(((((p4+m4)*5)+gss)/(1000))+1)
-	global.players[id].physical.endurance = math.floor((((gsc/25)+(gsm/25)+(gsb/5)+(gsk)+(p5*50)+(gsp/50))/(1000))+1)
-	global.players[id].physical.strength = math.floor((((gsm)+(gsb/5)+(gsc/25)+(p5*75)+(p2*100)+(m2*25)+(gsp/50))/(1000))+1)
-	global.players[id].mystical.spirit = math.floor((((p1*35)+((gsgb+gsgm)/5)+(gsk/25)+gss)/(1000))+1)
-	global.players[id].physical.speed = math.floor((((p1*25)+(p2*50)+(m1*10)+gsk+gss)/(1000))+1)
-	global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000))+1)
-	global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000))+1)
+	global.players[id].physical.creations = math.floor(((gsb+gsc)+(gsgb/25))/(1000)) + mod_p4
+	global.players[id].mystical.guile = math.floor(((((gsc+gsm)/25)+((gsb+(gsgb/100))/50)+gsk)/(1000))+1) + mod_m4
+	global.players[id].mystical.intelligence = math.floor(((((p4+m4)*5)+gss)/(1000))+1) + mod_m2
+	global.players[id].physical.endurance = math.floor((((gsc/25)+(gsm/25)+(gsb/5)+(gsk)+(p5*50)+(gsp/50))/(1000))+1) + mod_p2
+	global.players[id].physical.strength = math.floor((((gsm)+(gsb/5)+(gsc/25)+(p5*75)+(p2*100)+(m2*25)+(gsp/50))/(1000))+1) + mod_p1
+	global.players[id].mystical.spirit = math.floor((((p1*35)+((gsgb+gsgm)/5)+(gsk/25)+gss)/(1000))+1) + mod_m1
+	global.players[id].physical.speed = math.floor((((p1*25)+(p2*50)+(m1*10)+gsk+gss)/(1000))+1) + mod_p3
+	global.players[id].mystical.wisdom = math.floor(((((m1+m2+m4)*25)+((gsc+gsm+gsb+gsk+gss+gsgb+gsgm)/25))/(1000))+1) + mod_m3
+	global.players[id].mystical.knowledge = math.floor((((m1*5)+(m2*50)+(m3*40)+(m4*10)+(gsr))/(1000))+1) + mod_m5
 	if game.players[id].character then
 		if P_Level >= 2 then
 			if gsm >= 500 then

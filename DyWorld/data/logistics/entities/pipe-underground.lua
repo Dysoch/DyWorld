@@ -6,6 +6,7 @@ for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("pipe-to-ground", "pipe-to-ground", v.DyWorld.Name.."-pipe-to-ground", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.pipe-to-ground-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Entity.localised_description = {"looped-name.pipe-1-tp", v.DyWorld.Entity.Pipe.Amount}
 	DyWorld_Prototype_Entity.max_health = 150 * v.DyWorld.Tier
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.pictures.up.tint = Material_Colors[v.DyWorld.Name]
@@ -31,6 +32,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "pipe-to-ground", v.DyWorld.Name.."-pipe-to-ground", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.pipe-to-ground-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Item.localised_description = {"looped-name.pipe-1-tp", v.DyWorld.Entity.Pipe.Amount}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
 	DyWorld_Prototype_Item.stack_size = 200
 	DyWorld_Prototype_Item.icon = nil

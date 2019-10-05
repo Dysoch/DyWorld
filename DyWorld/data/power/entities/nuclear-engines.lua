@@ -6,6 +6,7 @@ for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Nuclear_Reactor then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("reactor", "nuclear-reactor", v.DyWorld.Name.."-nuclear-reactor", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.nuclear-reactor-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Entity.localised_description = {"looped-name.nuclear-reactor-1-tp", {"looped-name."..v.DyWorld.Name}, v.DyWorld.Entity.Nuclear_Reactor.Max_Temperature}
 	DyWorld_Prototype_Entity.max_health = 200 * v.DyWorld.Tier
 	DyWorld_Prototype_Entity.picture.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.picture.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
@@ -29,6 +30,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Nuclear_Reactor then
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "nuclear-reactor", v.DyWorld.Name.."-nuclear-reactor", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.nuclear-reactor-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Item.localised_description = {"looped-name.nuclear-reactor-1-tp", {"looped-name."..v.DyWorld.Name}, v.DyWorld.Entity.Nuclear_Reactor.Max_Temperature}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
 	DyWorld_Prototype_Item.stack_size = 50
 	DyWorld_Prototype_Item.icon = nil

@@ -9,3 +9,6 @@ require("data.warfare.entities.radars")
 
 -- Ammo
 require("data.warfare.ammo.artillery-shell-atomic")
+
+-- Landmines
+require("data.warfare.landmines.nuclear")

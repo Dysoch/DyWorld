@@ -12,3 +12,19 @@ function Expensive_Check(num)
 end
 
 DyWorld_Productivity_Module_Add = {}
+
+function DyWorld_Cloud(SCALE, TINT)
+    return {
+      filename = "__base__/graphics/entity/cloud/cloud-45-frames.png",
+      flags = {'compressed'},
+      priority = 'low',
+      width = 256,
+      height = 256,
+      frame_count = 45,
+      animation_speed = 0.5,
+      line_length = 7,
+      shift = {0.0, 0.75},
+      scale = SCALE,
+	  tint = TINT or nil,
+    }
+end

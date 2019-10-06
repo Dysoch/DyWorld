@@ -100,6 +100,10 @@ data:extend(
             entity_name = dy.."explosion-extreme"
           },
           {
+            type = "create-entity",
+            entity_name = "atomic-artillery-nuclear-cloud"
+          },
+          {
             type = "create-fire",
             entity_name = dy.."fire-flame-extreme",
             show_in_tooltip = false,
@@ -181,6 +185,47 @@ data:extend(
       }
     },
     height_from_ground = 280 / 64
+  },
+  {
+    type = "smoke-with-trigger",
+    name = "atomic-artillery-nuclear-cloud",
+    flags = {"not-on-map"},
+    show_when_smoke_off = true,
+    animation = DyWorld_Cloud(10),
+    slow_down_factor = 0,
+    affected_by_wind = false,
+    cyclic = true,
+    duration = 60 * 60 * 5,
+    fade_away_duration = 60,
+    spread_duration = 10,
+    color = Damage_Color["nuclear"],
+	action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          type = "nested-result",
+          action =
+          {
+            type = "area",
+            radius = 50,
+            action_delivery =
+            {
+              type = "instant",
+              target_effects =
+              {
+                type = "damage",
+                damage = { amount = 500, type = "nuclear"}
+              }
+            }
+          }
+        }
+      }
+    },
+    action_cooldown = 5
   },
   {
     type = "projectile",

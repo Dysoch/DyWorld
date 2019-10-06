@@ -20,7 +20,7 @@ data:extend(
     },
     minable = {mining_time = 0.5, result = "atomic-land-mine"},
     mined_sound = { filename = "__core__/sound/deconstruct-small.ogg" },
-    max_health = 15,
+    max_health = 250,
     corpse = "small-remnants",
     collision_box = {{-0.4,-0.4}, {0.4, 0.4}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
@@ -46,7 +46,7 @@ data:extend(
       width = 32,
       height = 32
     },
-    trigger_radius = 2.5,
+    trigger_radius = 6,
     ammo_category = "landmine",
     action =
     {
@@ -63,7 +63,6 @@ data:extend(
             {
               type = "area",
               radius = 15,
-              force = "enemy",
               action_delivery =
               {
                 type = "instant",
@@ -82,6 +81,25 @@ data:extend(
                     damage = { amount = 250, type = "nuclear"}
                   },
                 }
+              }
+            }
+          },
+		  {
+            type = "nested-result",
+            affects_target = true,
+            action =
+            {
+              type = "area",
+              target_entities = false,
+              trigger_from_target = true,
+              repeat_count = 50,
+              radius = 10,
+              action_delivery =
+              {
+                type = "projectile",
+                projectile = "landmine-wave",
+                starting_speed = 0.25,
+				acceleration = 0.15,
               }
             }
           },
@@ -111,6 +129,10 @@ data:extend(
           {
             type = "create-entity",
             entity_name = "atomic-landmine-nuclear-cloud",
+          },
+          {
+            type = "create-entity",
+            entity_name = "atomic-landmine-nuclear-cloud-2",
           },
         }
       }
@@ -173,6 +195,47 @@ data:extend(
     action_cooldown = 1
   },
   {
+    type = "smoke-with-trigger",
+    name = "atomic-landmine-nuclear-cloud-2",
+    flags = {"not-on-map"},
+    show_when_smoke_off = true,
+    animation = DyWorld_Cloud(2),
+    slow_down_factor = 0,
+    affected_by_wind = true,
+    cyclic = true,
+    duration = 60 * 60 * 1,
+    fade_away_duration = 60,
+    spread_duration = 10,
+    color = Damage_Color["nuclear"],
+	action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          type = "nested-result",
+          action =
+          {
+            type = "area",
+            radius = 5,
+            action_delivery =
+            {
+              type = "instant",
+              target_effects =
+              {
+                type = "damage",
+                damage = { amount = 50, type = "nuclear"}
+              }
+            }
+          }
+        }
+      }
+    },
+    action_cooldown = 1
+  },
+  {
     type = "projectile",
     name = "atomic-landmine-wave",
     flags = {"not-on-map"},
@@ -189,7 +252,7 @@ data:extend(
             {
               type = "create-entity",
               entity_name = dy.."explosion-medium"
-            }
+            },
           }
         }
       },

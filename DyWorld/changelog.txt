@@ -38,6 +38,7 @@ Date: 00. 00. 2019
     - Atomic Bomb rocket is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE! DROPS FPS IMMENSLY!!!!
     - Artillery Turrets & Wagons now have much bigger range for automatic mode. 7 Chunks > 10 Chunks
     - Artillery Turrets & Wagons now have much bigger range for manual mode. 17.5 Chunks > 35 Chunks
+    - Changed land mine to be more epic. Sadly, it now also damages EVERYTHING! even other mines. So space them out properly!
   RPG/GUI:
     - Added Mining Drill Productivity Bonus (level 50+)
     - Added Inserter Pickup Size Bonus (level 20+)

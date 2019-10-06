@@ -9,3 +9,4 @@ add earth bullets
 add module beacons
 add super modules
 add early game modular armor (1 slot, for belt immume)
+add collisions for vanilla ammo

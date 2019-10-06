@@ -23,18 +23,20 @@ local Turrets_Changed_Rest =
 	"flamethrower-turret",
 }
 
---[[for name, speed in pairs (Turrets_Changed_Leading) do
+local Turrets_Changed_To_8_Ways =
+{
+	"gun-turret",
+	"laser-turret",
+}
+
+for name, speed in pairs (Turrets_Changed_Leading) do
 	if Ammo_Turrets[name] then
 		DyWorld_Turret_Lead(Ammo_Turrets[name], speed * 1.05)
 	end
-end]]--
+end
 
 for index, name in pairs (Turrets_Changed_Rest) do
 	if Ammo_Turrets[name] then
-		if Ammo_Turrets[name].flags then
-			local INSERT = "building-direction-8-way"
-			table.insert(Ammo_Turrets[name].flags, INSERT)
-		end
 		if Ammo_Turrets[name].attack_parameters then
 			if Ammo_Turrets[name].attack_parameters.range then
 				Ammo_Turrets[name].attack_parameters.min_range = math.ceil(Ammo_Turrets[name].attack_parameters.range * 0.05)
@@ -46,10 +48,6 @@ for index, name in pairs (Turrets_Changed_Rest) do
 		end
 	end
 	if Electric_Turrets[name] then
-		if Electric_Turrets[name].flags then
-			local INSERT = "building-direction-8-way"
-			table.insert(Electric_Turrets[name].flags, INSERT)
-		end
 		if Electric_Turrets[name].attack_parameters then
 			if Electric_Turrets[name].attack_parameters.range then
 				Electric_Turrets[name].attack_parameters.min_range = math.ceil(Electric_Turrets[name].attack_parameters.range * 0.05)
@@ -61,18 +59,29 @@ for index, name in pairs (Turrets_Changed_Rest) do
 		end
 	end
 	if Fluid_Turrets[name] then
-		--if Fluid_Turrets[name].flags then
-			--local INSERT = "building-direction-8-way"
-			--table.insert(Fluid_Turrets[name].flags, INSERT)
-		--end
 		if Fluid_Turrets[name].attack_parameters then
 			if Fluid_Turrets[name].attack_parameters.range then
 				Fluid_Turrets[name].attack_parameters.min_range = math.ceil(Fluid_Turrets[name].attack_parameters.range * 0.05)
 			else
 				Fluid_Turrets[name].attack_parameters.min_range = 2
 			end
-			Fluid_Turrets[name].attack_parameters.turn_range = 90 / 360
+			Fluid_Turrets[name].attack_parameters.turn_range = 135 / 360
 			Fluid_Turrets[name].turret_base_has_direction = true
+		end
+	end
+end
+
+for index, name in pairs (Turrets_Changed_To_8_Ways) do
+	if Ammo_Turrets[name] then
+		if Ammo_Turrets[name].flags then
+			local INSERT = "building-direction-8-way"
+			table.insert(Ammo_Turrets[name].flags, INSERT)
+		end
+	end
+	if Electric_Turrets[name] then
+		if Electric_Turrets[name].flags then
+			local INSERT = "building-direction-8-way"
+			table.insert(Electric_Turrets[name].flags, INSERT)
 		end
 	end
 end

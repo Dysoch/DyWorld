@@ -3,13 +3,13 @@ require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
 Projectile_Table_To_Change = {
-	"grenade", --done
-	"rocket", --done
-	"atomic-rocket", --done
-	"explosive-rocket", --done
+	"grenade", 
+	"rocket", 
+	"atomic-rocket", 
+	"explosive-rocket", 
 	"explosive-uranium-cannon-projectile",
 	"explosive-cannon-projectile",
-	"cluster-grenade", --done
+	"cluster-grenade", 
 }
 
 for k,v in pairs(Projectile_Table_To_Change) do

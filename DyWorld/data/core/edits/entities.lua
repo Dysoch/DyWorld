@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 
 data.raw["heat-pipe"]["heat-pipe"].heat_buffer.max_temperature = 5500
+data.raw["heat-pipe"]["heat-pipe"].render_layer = "ground-tile"
+data.raw["heat-pipe"]["heat-pipe"].collision_mask = {"doodad-layer", "object-layer", "water-tile"}
 
 data.raw.unit["small-biter"].Tier = 1
 data.raw.unit["medium-biter"].Tier = 2

@@ -62,7 +62,7 @@ data:extend(
             action =
             {
               type = "area",
-              radius = 6,
+              radius = 15,
               force = "enemy",
               action_delivery =
               {
@@ -71,7 +71,15 @@ data:extend(
                 {
                   {
                     type = "damage",
-                    damage = { amount = 250, type = "explosion"}
+                    damage = { amount = 50, type = "explosion"}
+                  },
+                  {
+                    type = "damage",
+                    damage = { amount = 100, type = "sonic"}
+                  },
+                  {
+                    type = "damage",
+                    damage = { amount = 250, type = "nuclear"}
                   },
                 }
               }
@@ -85,8 +93,8 @@ data:extend(
               type = "area",
               target_entities = false,
               trigger_from_target = true,
-              repeat_count = 200,
-              radius = 20,
+              repeat_count = 100,
+              radius = 10,
               action_delivery =
               {
                 type = "projectile",
@@ -104,10 +112,6 @@ data:extend(
             type = "create-entity",
             entity_name = "atomic-landmine-nuclear-cloud",
           },
-          {
-            type = "damage",
-            damage = { amount = 1000, type = "explosion"}
-          }
         }
       }
     }
@@ -152,7 +156,7 @@ data:extend(
           action =
           {
             type = "area",
-            radius = 20,
+            radius = 15,
             action_delivery =
             {
               type = "instant",
@@ -219,7 +223,7 @@ data:extend(
             },
 			{
 			  type = "destroy-cliffs",
-			  radius = 15,
+			  radius = 5,
 			  explosion = "explosion"
 			},
 		  }
@@ -248,9 +252,22 @@ data:extend(
     name = "atomic-land-mine",
     icon = "__base__/graphics/icons/land-mine.png",
     icon_size = 32,
-    subgroup = "gun",
-    order = "f[land-mine]",
+    subgroup = dy.."landmine",
+    order = "atomic-land-mine",
     place_result = "atomic-land-mine",
     stack_size = 100,
+  },
+  {
+    type = "recipe",
+    name = "atomic-land-mine",
+    energy_required = 2.5,
+    enabled = false,
+    ingredients = {
+	  {"land-mine", 1}, 
+	  {"invar-plate", 6},
+	  {"uranium-238", 5},
+	  {"uranium-235", 5},
+	},
+    result = "atomic-land-mine",
   },
 })

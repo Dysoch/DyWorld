@@ -137,6 +137,7 @@ local Tech_Recipe_Add = {
 	["farming-1"] = {"carrot", "boiler-water"},
 	["farming-2"] = {"wheat"},
 	["farming-4"] = {"wood-2"},
+	["military-7"] = {"atomic-land-mine"},
 	["defensive-structures-1"] = {"stone-wall", "gate"},
 	["nuclear-energy-1"] = {"heat-pipe", "heat-pipe-furnace", "heated-furnace", "heated-inserter", "heated-assembler", "heated-long-inserter"},
 } 

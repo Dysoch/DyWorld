@@ -2,7 +2,6 @@
 add seperate tier 3/4 recipes for all
 add worms
 add landmines
-add sniper gun
 add laser gun
 add water turret
 add earth bullets

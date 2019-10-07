@@ -366,6 +366,10 @@ for k, gun in pairs (data.raw.gun) do
 	gun.attack_parameters.movement_slow_down_factor = 0
 end
 
+for k, tech in pairs (data.raw.technology) do
+	tech.order = tech.name
+end
+
 -- Increase Accumulators by 4x
 local function multiply_bc(bc)
 	local n, unit = string.match(bc, '([%d%.]+)(%a+)')

@@ -184,6 +184,22 @@ local Tech_Science_Pack_Change = {
 	["logistics-3"] = 3,
 	["solar-energy"] = 1,
 	["uranium-processing"] = 3,
+	["laser-ammo-enhancement-1"] = 2,
+	["laser-ammo-enhancement-4"] = 3,
+	["plasma-ammo-enhancement-1"] = 2,
+	["plasma-ammo-enhancement-4"] = 3,
+	["beam-ammo-enhancement-1"] = 2,
+	["beam-ammo-enhancement-4"] = 3,
+	["rocket-ammo-enhancement-1"] = 2,
+	["rocket-ammo-enhancement-4"] = 3,
+	["laser-gun-enhancement-1"] = 2,
+	["laser-gun-enhancement-4"] = 3,
+	["plasma-gun-enhancement-1"] = 2,
+	["plasma-gun-enhancement-4"] = 3,
+	["beam-gun-enhancement-1"] = 2,
+	["beam-gun-enhancement-4"] = 3,
+	["rocket-gun-enhancement-1"] = 2,
+	["rocket-gun-enhancement-4"] = 3,
 }
 
 local Tech_Remove = {

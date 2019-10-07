@@ -14,11 +14,13 @@ local Artillery_Turrets = data.raw["artillery-turret"]
 local Turrets_Changed_Leading =
 {
 	["gun-turret"] = 1,
+	["sniper-turret"] = 1,
 }
 
 local Turrets_Changed_Rest =
 {
 	"gun-turret",
+	"sniper-turret",
 	"laser-turret",
 	"flamethrower-turret",
 }
@@ -26,6 +28,7 @@ local Turrets_Changed_Rest =
 local Turrets_Changed_To_8_Ways =
 {
 	"gun-turret",
+	"sniper-turret",
 	"laser-turret",
 }
 

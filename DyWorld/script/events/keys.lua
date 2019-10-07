@@ -63,7 +63,7 @@ function DyWorld_Skills_Key(event)
 			local player = game.players[event.player_index]
 			Player_Startup(player, event.player_index)
 		end
-		if global.players[event.player_index].Skill_Points >= 1 then
+		if global.players[event.player_index].Level >= 4 then
 			local player = game.players[event.player_index]
 			if global.players[event.player_index].State_Distance_GUI then
 				global.players[event.player_index].State_Distance_GUI = false
@@ -77,11 +77,8 @@ function DyWorld_Skills_Key(event)
 				gui_2_toggleGui(player, event.player_index)
 			end
 			BodySkills(event.player_index)
-		elseif global.players[event.player_index].State_Skills_GUI then
-			global.players[event.player_index].State_Skills_GUI = false
-			gui_2_toggleGui(player, event.player_index)
 		else
-			game.players[event.player_index].print("You need to gain skill points to unlock this window!")
+			game.players[event.player_index].print("You need to gain levels to unlock this window! (level 4+)")
 		end
 	end
 end

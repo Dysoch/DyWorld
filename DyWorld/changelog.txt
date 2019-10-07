@@ -11,7 +11,7 @@ Date: 00. 00. 2019
     - Added Metal flooring tiles. Use metals to color the world!
   Minor Features:
     - Trees now have a small chance to give wood, acorns or resin when destroyed by weapons (loot dropped)
-    - Added an early game to add sand
+    - Added an early game way to gain sand
     - Mining coal now has chance to give sulfur
     - Added a new nuclear fuel cell: Argonium
     - Added Heated Assembling Machine
@@ -43,9 +43,11 @@ Date: 00. 00. 2019
     - Added Mining Drill Productivity Bonus (level 50+)
     - Added Inserter Pickup Size Bonus (level 20+)
     - Added Stack Inserter Pickup Size Bonus (level 25+)
-    - Added the first Skill: Running Boost! 
+    - The Skills GUI is now updated at the same time as the Stats window. They can be open at the same time, but close when the Distance Window is opened.
+    - Added a Skill: Running Boost. Unlocked at level 5
+    - Added a Skill: Chart Skill. Unlocked at level 15
     - Added Skill Points (a currency for using skills sort off)
-    - To gain Skill Points, launch science packs into space, different science packs give different about of Skill Points
+    - To gain Skill Points, launch science packs into space, different science packs give different amount of Skill Points. Also killing entities and scanning area's give Skill Points, but this has a diminishing gain in the long run
   Changes:
     - Added new Thumbnail. Many thx to Sara for supplying it
     - Methane now has correct chemical name

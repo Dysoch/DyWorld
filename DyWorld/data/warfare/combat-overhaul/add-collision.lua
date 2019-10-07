@@ -18,9 +18,7 @@ for k,v in pairs(Projectile_Table_To_Change) do
 		if not Changed.collision_box then
 			Changed.collision_box = {{-0.05, -0.25}, {0.05, 0.25}}
 		end
-		if not Changed.direction_only then
-			Changed.direction_only = true
-		end
+		Changed.direction_only = false
 		if not Changed.acceleration then
 			Changed.acceleration = 0
 		end

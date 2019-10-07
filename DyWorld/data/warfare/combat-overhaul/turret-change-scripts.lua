@@ -37,6 +37,7 @@ end
 
 for index, name in pairs (Turrets_Changed_Rest) do
 	if Ammo_Turrets[name] then
+		Ammo_Turrets[name].max_health = Round(Ammo_Turrets[name].max_health * 25)
 		if Ammo_Turrets[name].attack_parameters then
 			if Ammo_Turrets[name].attack_parameters.range then
 				Ammo_Turrets[name].attack_parameters.min_range = math.ceil(Ammo_Turrets[name].attack_parameters.range * 0.05)
@@ -48,6 +49,7 @@ for index, name in pairs (Turrets_Changed_Rest) do
 		end
 	end
 	if Electric_Turrets[name] then
+		Electric_Turrets[name].max_health = Round(Electric_Turrets[name].max_health * 25)
 		if Electric_Turrets[name].attack_parameters then
 			if Electric_Turrets[name].attack_parameters.range then
 				Electric_Turrets[name].attack_parameters.min_range = math.ceil(Electric_Turrets[name].attack_parameters.range * 0.05)
@@ -59,6 +61,7 @@ for index, name in pairs (Turrets_Changed_Rest) do
 		end
 	end
 	if Fluid_Turrets[name] then
+		Fluid_Turrets[name].max_health = Round(Fluid_Turrets[name].max_health * 25)
 		if Fluid_Turrets[name].attack_parameters then
 			if Fluid_Turrets[name].attack_parameters.range then
 				Fluid_Turrets[name].attack_parameters.min_range = math.ceil(Fluid_Turrets[name].attack_parameters.range * 0.05)

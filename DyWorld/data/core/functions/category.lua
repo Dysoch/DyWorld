@@ -50,6 +50,22 @@ local Data_Table = {
 		Name = "pollution-2",
 		Type = "module"
 	},
+	{
+		Name = "laser",
+		Type = "ammo"
+	},
+	{
+		Name = "plasma",
+		Type = "ammo"
+	},
+	{
+		Name = "beam",
+		Type = "ammo"
+	},
+	{
+		Name = "sniper",
+		Type = "ammo"
+	},
 }
 
 function DyWorld_Damage_Type(NAME)

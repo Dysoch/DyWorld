@@ -181,7 +181,20 @@ function Migrate_To_Next_Version()
 			end
 		end
 		for k,v in pairs(global.players) do	
+			v.State_Skills_GUI = false
 			v.Skill_Points = 0
+			v.Skill_Points_Gain = 
+			{
+				Killed = 0,
+				Killed_Gain = 100,
+				Scanned = 0,
+				Scanned_Gain = 150,
+			}
+			v.Skills = 
+			{
+				["dyworld-running-skill"] = {CD_On = false, CD_Time = 600, CD = 0, Name = "dyworld-running-skill", SP_Usage = 50, Active_Time = 60, Active = false, Active_Time_Left = 0},
+				["dyworld-chart-skill"] = {CD_On = false, CD_Time = 3600, CD = 0, Name = "dyworld-chart-skill", SP_Usage = 250, Strength = 500, Active = false},
+			}
 			v.physical_mod = {
 				strength = 0,
 				endurance = 0,

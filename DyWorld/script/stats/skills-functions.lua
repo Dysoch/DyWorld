@@ -64,3 +64,19 @@ function Skills_Stop_Skill(ID, SKILL)
 		game.players[ID].print({"dyworld_skills_gui."..SKILL.."-stopped"})
 	end
 end
+
+function Skill_Points_Gain(ID, STAT)
+	if STAT == "kill" then
+		global.players[ID].Skill_Points_Gain.Killed = global.players[ID].Skill_Points_Gain.Killed + 1
+		if global.players[ID].Skill_Points_Gain.Killed >= global.players[ID].Skill_Points_Gain.Killed_Gain then
+			global.players[ID].Skill_Points_Gain.Killed_Gain = global.players[ID].Skill_Points_Gain.Killed_Gain + math.floor(global.players[ID].Skill_Points_Gain.Killed_Gain * 0.1)
+			global.players[ID].Skill_Points = global.players[ID].Skill_Points + 1
+		end
+	elseif STAT == "scan" then
+		global.players[ID].Skill_Points_Gain.Scanned = global.players[ID].Skill_Points_Gain.Scanned + 1
+		if global.players[ID].Skill_Points_Gain.Scanned >= global.players[ID].Skill_Points_Gain.Scanned_Gain then
+			global.players[ID].Skill_Points_Gain.Scanned_Gain = global.players[ID].Skill_Points_Gain.Scanned_Gain + math.floor(global.players[ID].Skill_Points_Gain.Scanned_Gain * 0.1)
+			global.players[ID].Skill_Points = global.players[ID].Skill_Points + 1
+		end
+	end
+end

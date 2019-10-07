@@ -103,6 +103,7 @@ function Player_Startup(PLAYER, ID, FORCE)
 				PlayerID = ID,
 				Force = FORCE,
 				State_Stats_GUI = false,
+				State_Skills_GUI = false,
 				State_Distance_GUI = false,
 				Ship_1_Visited = false,
 				Ship_2_Visited = false,
@@ -116,6 +117,13 @@ function Player_Startup(PLAYER, ID, FORCE)
 				Level = 1,
 				XP = 0,
 				Skill_Points = 0,
+				Skill_Points_Gain = 
+				{
+					Killed = 0,
+					Killed_Gain = 100,
+					Scanned = 0,
+					Scanned_Gain = 150,
+				},
 				Skills = 
 				{
 					["dyworld-running-skill"] = {CD_On = false, CD_Time = 600, CD = 0, Name = "dyworld-running-skill", SP_Usage = 50, Active_Time = 60, Active = false, Active_Time_Left = 0},
@@ -170,6 +178,7 @@ function Player_Startup(PLAYER, ID, FORCE)
 			PlayerID = ID,
 			Force = FORCE,
 			State_Stats_GUI = false,
+			State_Skills_GUI = false,
 			State_Distance_GUI = false,
 			Ship_1_Visited = false,
 			Ship_2_Visited = false,
@@ -183,6 +192,13 @@ function Player_Startup(PLAYER, ID, FORCE)
 			Level = 1,
 			XP = 0,
 			Skill_Points = 0,
+			Skill_Points_Gain = 
+			{
+				Killed = 0,
+				Killed_Gain = 100,
+				Scanned = 0,
+				Scanned_Gain = 150,
+			},
 			Skills = 
 			{
 				["dyworld-running-skill"] = {CD_On = false, CD_Time = 600, CD = 0, Name = "dyworld-running-skill", SP_Usage = 50, Active_Time = 60, Active = false, Active_Time_Left = 0},

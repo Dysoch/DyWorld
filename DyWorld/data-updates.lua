@@ -25,7 +25,7 @@ if settings.startup["DyWorld_Warfare"].value then
 end
 
 -- Warfare Enemies Module --
-if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
+if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value and settings.startup["DyWorld_Combat_Overhaul"].value then
 	require("data.warfare.data-enemies")
 end
 

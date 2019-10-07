@@ -12,3 +12,8 @@ require("data.warfare.ammo.artillery-shell-atomic")
 
 -- Landmines
 require("data.warfare.landmines.nuclear")
+require("data.warfare.landmines.slowdown")
+
+-- Techs
+require("data.warfare.tech.gun-enhancement")
+require("data.warfare.tech.ammo-enhancement")

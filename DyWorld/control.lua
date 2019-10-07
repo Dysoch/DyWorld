@@ -3,13 +3,14 @@ require "roadmap"
 require "script/functions"
 require "script/startup"
 require "script/migration"
+require "script/events/gui_click"
+require "script/events/keys"
 require "script/gui/gui_0"
 require "script/gui/gui_1"
 require "script/gui/gui_2"
 require "script/gui/gui_3"
 require "script/gui/gui_5"
 require "script/gui/gui_6"
-require "script/gui/gui_click"
 require "script/stats/functions"
 require "script/stats/skills-functions"
 require "script/generation/noise"
@@ -199,12 +200,18 @@ end)
 script.on_event(defines.events.on_sector_scanned, function(event)
 	IncrementerGlobal("scanned", 1)
 	XP_All_Small()
+	for k,v in pairs(global.players) do
+		Skill_Points_Gain(v.PlayerID, "scan")
+	end
 end)
 
 script.on_event(defines.events.on_entity_died, function(event)
 	if event.force.name == "player" then
 		IncrementerGlobal("killed", 1)
 		XP_All_Small()
+		for k,v in pairs(global.players) do
+			Skill_Points_Gain(v.PlayerID, "kill")
+		end
 	end
     if event.entity.type == "transport-belt" then
 		Heat_Pipe_Remove(event)
@@ -322,6 +329,11 @@ script.on_event(defines.events.on_tick, function(event)
 						gui_1_closeGUI(player, v.PlayerID)
 						gui_1_openGui(player, v.PlayerID)
 					end
+					if v.State_Skills_GUI and v.Alive and v.Playing then
+					local player = game.players[v.PlayerID]
+						gui_2_toggleGui(player, v.PlayerID)
+						gui_2_toggleGui(player, v.PlayerID)
+					end
 				end
 			end
 		end
@@ -341,122 +353,42 @@ end)
 
 -- keybinding hooks
 script.on_event("DyWorld_Stats", function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		if not global.players or not global.players[event.player_index] then
-			local player = game.players[event.player_index]
-			Player_Startup(player, event.player_index)
-		end
-		local player = game.players[event.player_index]
-		gui_1_closeGUI(player, event.player_index)
-		if global.players[event.player_index].State_Distance_GUI then
-			global.players[event.player_index].State_Distance_GUI = false
-			gui_5_CloseGUI(player, event.player_index)
-		end
-		if global.players[event.player_index].State_Stats_GUI then
-			global.players[event.player_index].State_Stats_GUI = false
-			gui_1_closeGUI(player, event.player_index)
-		else
-			global.players[event.player_index].State_Stats_GUI = true
-			gui_1_openGui(player, event.player_index)
-		end
-	end
+	DyWorld_Stats_Key(event)
 end)
 script.on_event("DyWorld_Distance", function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		if not global.players or not global.players[event.player_index] then
-			local player = game.players[event.player_index]
-			Player_Startup(player, event.player_index)
-		end
-		local player = game.players[event.player_index]
-		if global.players[event.player_index].State_Stats_GUI then
-			global.players[event.player_index].State_Stats_GUI = false
-			gui_1_closeGUI(player, event.player_index)
-		end
-		if global.players[event.player_index].State_Distance_GUI then
-			global.players[event.player_index].State_Distance_GUI = false
-			gui_5_CloseGUI(player, event.player_index)
-		else
-			global.players[event.player_index].State_Distance_GUI = true
-			gui_5_RefreshGUI(player, event.player_index)
-		end
-	end
+	DyWorld_Distance_Key(event)
 end)
 script.on_event("DyWorld_RoadMap", function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		if not global.players or not global.players[event.player_index] then
-			local player = game.players[event.player_index]
-			Player_Startup(player, event.player_index)
-		end
-		local player = game.players[event.player_index]
-		gui_3_toggleGui(player)
-	end
+	DyWorld_RoadMap_Key(event)
 end)
 script.on_event("DyWorld_Skills", function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		if not global.players or not global.players[event.player_index] then
-			local player = game.players[event.player_index]
-			Player_Startup(player, event.player_index)
-		end
-		if global.players[event.player_index].Skill_Points >= 1 then
-			local player = game.players[event.player_index]
-			gui_2_toggleGui(player, event.player_index)
-			BodySkills(event.player_index)
-		else
-			game.players[event.player_index].print("You need to gain skill points to unlock this window!")
-		end
-	end
+	DyWorld_Skills_Key(event)
 end)
 script.on_event("DyWorld_Guide", function(event)
-	if global.dyworld.RPG_Mode == "normal" then
-		if not global.players or not global.players[event.player_index] then
-			local player = game.players[event.player_index]
-			Player_Startup(player, event.player_index)
-		end
-		local player = game.players[event.player_index]
-		gui_6_toggleGui(player)
-	end
+	DyWorld_Guide_Key(event)
 end)
 
 script.on_event("DyWorld_Debug", function(event)
-	if settings.startup["DyWorld_Debug"].value or game.players[event.player_index].name == "Dysoch" then
-		local player = game.players[event.player_index]
-		gui_0_toggleGui(player, event.player_index)
-	end
+	DyWorld_Debug_Key(event)
 end)
 script.on_event("DyWorld_Debug_LOG", function(event)
-	if settings.startup["DyWorld_Debug"].value or game.players[event.player_index].name == "Dysoch" then
-		DyWorld_write_mods()
-		DyWorld_write_statistics()
-		DyWorld_write_surfaces()
-	end
+	DyWorld_Debug_LOG_Key(event)
 end)
 
 script.on_event("DyWorld_rotate_inserter_pickup", function(event)
-local selection = game.players[event.player_index].selected
-	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
-		RotatePickup(selection, true)
-	end
+	DyWorld_rotate_inserter_pickup_Key(event)
 end)
 
 script.on_event("DyWorld_reverse_rotate_inserter_pickup", function(event)
-local selection = game.players[event.player_index].selected
-	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
-		RotatePickup(selection, false)
-	end
+	DyWorld_reverse_rotate_inserter_pickup_Key(event)
 end)
 
 script.on_event("DyWorld_inserter_drop_distance_toggle", function(event)
-local selection = game.players[event.player_index].selected
-	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
-		ToggleDropDistance(selection, event)
-	end
+	DyWorld_inserter_drop_distance_toggle_Key(event)
 end)
 
 script.on_event("DyWorld_inserter_drop_lateral_adjust", function(event)
-local selection = game.players[event.player_index].selected
-	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
-		LateralDropAdjust(selection)
-	end
+	DyWorld_inserter_drop_lateral_adjust_Key(event)
 end)
 
 --------------------------------- TEST AREA ------------------------------------------

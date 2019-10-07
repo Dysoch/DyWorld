@@ -9,4 +9,13 @@ add earth bullets
 add module beacons
 add super modules
 add early game modular armor (1 slot, for belt immume)
-add collisions for vanilla ammo
+add tech for gun turret speed modifier
+add tech for laser turret speed modifier
+add tech for laser turret damage modifier
+add tech for combat robot laser damage modifier
+add tech for combat robot beam damage modifier
+add tech for cannon damage modifier
+add tech for cannon speed modifier
+add tech for grenade damage modifier
+add tech for landmine damage modifier
+add uses for filters

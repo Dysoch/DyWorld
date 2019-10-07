@@ -10,7 +10,7 @@ data:extend(
     flags = {"not-on-map"},
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0,
-    direction_only = true,
+    direction_only = false,
     action =
     {
       type = "direct",
@@ -38,7 +38,6 @@ data:extend(
       height = 50,
       priority = "high"
     },
-    height_from_ground = 280 / 64,
   },
   {
     type = "projectile",
@@ -47,7 +46,7 @@ data:extend(
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0,
 	piercing_damage = 8,
-    direction_only = true,
+    direction_only = false,
     action =
     {
       type = "direct",
@@ -74,7 +73,7 @@ data:extend(
       width = 3,
       height = 50,
       priority = "high"
-    }
+    },
   },
   {
     type = "projectile",
@@ -83,7 +82,7 @@ data:extend(
     collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
     acceleration = 0,
 	piercing_damage = 24,
-    direction_only = true,
+    direction_only = false,
     action =
     {
       type = "direct",

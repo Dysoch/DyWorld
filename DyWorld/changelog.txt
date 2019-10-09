@@ -4,13 +4,15 @@ Date: 18. 10. 2019
   Major Features:
     - Warfare Update! Massive amount of warfare related content added!
     - Introducing Damage Type related content. Certain objects can only be hurt by certain Damage types, and are massively resistant to others.
-    - Introducing 210 different mobile natives, and 63 stationary natives when Warfare Enemies are enabled. Base game generation of enemies is then disabled
+    - Introducing 210 different mobile natives, and 105 stationary natives when Warfare Enemies are enabled. Base game generation of enemies is then disabled
   Features:
     - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts as well
     - Added Atomic Artillery Shell. This has a massive radius of destruction! USE WITH CARE. Leaves behind a radioactive wasteland, that is not passable for 15 minutes unless you want to die!
     - Added Metal flooring tiles. Use metals to color the world!
     - Added Sniper Rifle
     - Added Sniper Turret
+    - Added Laser Gun + 4 types of ammo
+    - Added a setting and a control key to mark all dropped loot deconstrucible. Robots will pick them up once in range. Normal script happens once an hour, the control key can be used anytime (NUMPAD +)
   Minor Features:
     - Trees now have a small chance to give wood, acorns or resin when destroyed by weapons (loot dropped)
     - Added an early game way to gain sand
@@ -32,6 +34,10 @@ Date: 18. 10. 2019
     - Steam Turbines now gain 100% efficiency each tier and now provide a lot more power
     - Solar Panels now provide a lot more power and require less solar cells
     - Accumulators now store a lot more power, and output and input of power is higher
+  Compatibility:
+    - Added Alien Ore to Ore (Alien Loot Economy)
+    - Fixed compatibility with JunkTrain2 mod
+    - Mods that add "dummy" items should no longer spawn in random loot chests
   Combat Overhaul:
     - Atomic Bomb rocket is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE! DROPS FPS IMMENSLY!!!!
     - Artillery Turrets & Wagons now have much bigger range for automatic mode. 7 Chunks > 10 Chunks
@@ -60,12 +66,10 @@ Date: 18. 10. 2019
     - Stone Wall health reduced to better match with the rest
     - Disabled vanilla Heat Exchanger since its no longer needed
   Bugfixes:
-    - Fixed compatibility with JunkTrain2 mod
     - Fixed super modules not able to work on most intermediates
     - Fixed Construction Robots having wrong energy defined
     - Fixed crash with rotating ghost inserters
     - Fixed (hopefully) an error with the random loot chests that spawn far away
-    - Mods that add "dummy" items should no longer spawn in random loot chests
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.6
 Date: 26. 09. 2019

@@ -1,7 +1,7 @@
 
 add seperate tier 3/4 recipes for all
 add landmines
-add laser gun
+add laser gun ammo
 add water turret
 add earth bullets
 add module beacons

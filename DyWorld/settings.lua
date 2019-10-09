@@ -131,6 +131,14 @@ data:extend({
         maximum_value = 1000000,
         minimum_value = 1,
 	},
+	----- Map Settings -----
+    {
+        type = "bool-setting",
+        name = "DyWorld_Loot_Deconstruct",
+		order = "a",
+        setting_type = "runtime-global",
+        default_value = true
+    },
 	----- Per Player Settings -----
     {
         type = "bool-setting",

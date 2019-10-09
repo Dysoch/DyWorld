@@ -22,6 +22,11 @@ data:extend({
 	},
 	{
 		type = "custom-input",
+		name = "DyWorld_Loot_Deconstruct",
+		key_sequence = "PAD +"
+	},
+	{
+		type = "custom-input",
 		name = "DyWorld_Guide",
 		key_sequence = "PAD 5"
 	},

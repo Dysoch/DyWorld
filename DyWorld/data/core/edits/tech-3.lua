@@ -3,6 +3,8 @@ require "data/core/functions/prefix"
 local Tech_PreReq_Remove = {
 	["automation-3"] = {"production-science-pack"},
 	["uranium-processing"] = {"chemical-science-pack"},
+	["military-3"] = {"chemical-science-pack"},
+	["military-4"] = {"utility-science-pack"},
 	["military-science-pack"] = {"stone-walls"},
 	["nuclear-fuel-reprocessing"] = {"nuclear-power"},
 }
@@ -17,6 +19,9 @@ local Tech_PreReq = {
 	["automation-3"] = {"lead-processing", "steel-processing", "gold-processing", "automation-2"},
 	["logistics-2"] = {"nickel-processing", "metallurgy-3"},
 	["logistics-3"] = {"logistics-2"},
+	["military-2"] = {"intermediates-2"},
+	["military-3"] = {"intermediates-3"},
+	["military-4"] = {"intermediates-4", "chemical-science-pack"},
 	["rocket-fuel"] = {"lead-processing"},
 	["automation-4"] = {"cobalt-processing"},
 	["automation-5"] = {"arditium-processing"},
@@ -200,6 +205,16 @@ local Tech_Science_Pack_Change = {
 	["beam-gun-enhancement-4"] = 3,
 	["rocket-gun-enhancement-1"] = 2,
 	["rocket-gun-enhancement-4"] = 3,
+	["military"] = 1,
+	["military-1"] = 1,
+	["military-2"] = 2,
+	["military-3"] = 3,
+	["military-4"] = 4,
+}
+
+local Tech_Science_Pack_Change_Military = {
+	["military-3"] = 1,
+	["military-4"] = 2,
 }
 
 local Tech_Remove = {
@@ -249,25 +264,34 @@ for k,v in pairs(Tech_Remove) do
 end
 
 for k,v in pairs(Tech_Science_Pack_Change) do
-	if v == 1 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1}}
-	elseif v == 2 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1}}
-	elseif v == 3 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 2},{"logistic-science-pack", 2}}
-	elseif v == 4 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
-	elseif v == 5 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 3},{"logistic-science-pack", 3},{"chemical-science-pack", 3}}
-	elseif v == 6 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
-	elseif v == 7 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 4},{"logistic-science-pack", 4},{"chemical-science-pack", 4},{"production-science-pack", 4}}
-	elseif v == 8 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1}}
-	elseif v == 9 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 5},{"logistic-science-pack", 5},{"chemical-science-pack", 5},{"production-science-pack", 5},{"utility-science-pack", 5}}
-	elseif v == 10 then
-		data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 5},{"logistic-science-pack", 5},{"chemical-science-pack", 5},{"production-science-pack", 5},{"utility-science-pack", 5},{"space-science-pack", 10}}
+	if data.raw.technology[k] then
+		if v == 1 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1}}
+		elseif v == 2 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1}}
+		elseif v == 3 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 2},{"logistic-science-pack", 2}}
+		elseif v == 4 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
+		elseif v == 5 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 3},{"logistic-science-pack", 3},{"chemical-science-pack", 3}}
+		elseif v == 6 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
+		elseif v == 7 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 4},{"logistic-science-pack", 4},{"chemical-science-pack", 4},{"production-science-pack", 4}}
+		elseif v == 8 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1}}
+		elseif v == 9 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 5},{"logistic-science-pack", 5},{"chemical-science-pack", 5},{"production-science-pack", 5},{"utility-science-pack", 5}}
+		elseif v == 10 then
+			data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 5},{"logistic-science-pack", 5},{"chemical-science-pack", 5},{"production-science-pack", 5},{"utility-science-pack", 5},{"space-science-pack", 10}}
+		end
+	end
+end	
+
+for k,v in pairs(Tech_Science_Pack_Change_Military) do
+	if data.raw.technology[k] then
+		local INSERT = {"military-science-pack", v}
+		table.insert(data.raw.technology[k].unit.ingredients, INSERT)
 	end
 end	

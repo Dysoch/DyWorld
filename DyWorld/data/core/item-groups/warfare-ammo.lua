@@ -12,6 +12,11 @@ local Data_Table_Item_Group = {
 		Main = "warfare-ammo"
 	},
 	{
+		Name = "ammo-laser",
+		Type = "sub",
+		Main = "warfare-ammo"
+	},
+	{
 		Name = "ammo-shotgun",
 		Type = "sub",
 		Main = "warfare-ammo"

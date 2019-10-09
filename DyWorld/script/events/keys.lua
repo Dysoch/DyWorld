@@ -101,6 +101,18 @@ function DyWorld_Debug_Key(event)
 	end
 end
 
+function DyWorld_Loot_Deconstruct_Key(event)
+	for _, surface in pairs(game.surfaces) do
+	local player = game.players[event.player_index]
+	local Loot = surface.find_entities_filtered{type = "item-entity"}
+		for _, item in pairs(Loot) do
+			if item.valid and item.stack.valid then
+				if item.order_deconstruction(player.force) then end
+			end
+		end
+	end
+end
+
 function DyWorld_Debug_LOG_Key(event)
 	if settings.startup["DyWorld_Debug"].value or game.players[event.player_index].name == "Dysoch" then
 		DyWorld_write_mods()

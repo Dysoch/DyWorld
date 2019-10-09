@@ -10,9 +10,11 @@ require("data.warfare.entities.radars")
 -- Ammo
 require("data.warfare.ammo.artillery-shell-atomic")
 require("data.warfare.ammo.sniper")
+require("data.warfare.ammo.laser")
 
 -- Guns
 require("data.warfare.guns.sniper")
+require("data.warfare.guns.laser")
 
 -- Turrets
 require("data.warfare.turrets.sniper")
@@ -25,3 +27,4 @@ require("data.warfare.landmines.slowdown")
 require("data.warfare.tech.gun-enhancement")
 require("data.warfare.tech.ammo-enhancement")
 require("data.warfare.tech.sniper")
+require("data.warfare.tech.laser")

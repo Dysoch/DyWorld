@@ -60,3 +60,108 @@ end
 if mods["Nanobots"] then
 data.raw.ammo["ammo-nano-constructors"].magazine_size = 100
 end
+
+ -- Alien Loot Economy --
+if mods["alien-module"] then
+data:extend({
+	{
+		type = "recipe",
+		name = "alien-ore-to-gold-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "gold-ore",
+		result_count = 5
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-nickel-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "nickel-ore",
+		result_count = 5
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-silver-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "silver-ore",
+		result_count = 5
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-tin-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "tin-ore",
+		result_count = 5
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-nickel-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "nickel-ore",
+		result_count = 5
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-lead-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "lead-ore",
+		result_count = 5
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-cobalt-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "cobalt-ore",
+		result_count = 3
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-arditium-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "arditium-ore",
+		result_count = 3
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-titanium-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "titanium-ore",
+		result_count = 2
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-tungsten-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "tungsten-ore",
+		result_count = 2
+	},
+	{
+		type = "recipe",
+		name = "alien-ore-to-neutronium-ore",
+		enabled = true,
+		energy_required = 10,
+		ingredients = { { "artifact-ore", 1 } },
+		result = "neutronium-ore",
+		result_count = 1
+	},
+})
+end

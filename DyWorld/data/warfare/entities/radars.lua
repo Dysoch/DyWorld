@@ -8,6 +8,7 @@ for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Radar then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("radar", "radar", v.DyWorld.Name.."-radar", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.radar-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Entity.localised_description = {"looped-name.radar-2", v.DyWorld.Entity.Radar.Scan_Range, v.DyWorld.Entity.Radar.Active_Range}
 	DyWorld_Prototype_Entity.max_health = 250 * v.DyWorld.Tier
 	DyWorld_Prototype_Entity.max_distance_of_sector_revealed = v.DyWorld.Entity.Radar.Scan_Range
 	DyWorld_Prototype_Entity.max_distance_of_nearby_sector_revealed = v.DyWorld.Entity.Radar.Active_Range
@@ -28,6 +29,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Radar then
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "radar", v.DyWorld.Name.."-radar", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.radar-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Item.localised_description = {"looped-name.radar-2", v.DyWorld.Entity.Radar.Scan_Range, v.DyWorld.Entity.Radar.Active_Range}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
 	DyWorld_Prototype_Item.stack_size = 50
 	DyWorld_Prototype_Item.icon = nil

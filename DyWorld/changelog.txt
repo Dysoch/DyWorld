@@ -18,6 +18,7 @@ Date: 18. 10. 2019
     - Added a new nuclear fuel cell: Argonium
     - Added Heated Assembling Machine
     - Rework of the tech tree. Removed technologies that are no longer needed, and shifted certain techs to higher or lower science packs
+    - Added information to certain entities and items on how much heat it requires, ranges, capacities, etc
   Balancing:
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
     - Changed Iron Mining Drill Range: 6x6 > 5x5

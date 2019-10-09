@@ -6,7 +6,7 @@ for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("pipe", "pipe", v.DyWorld.Name.."-pipe", true)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.pipe-1", {"looped-name."..v.DyWorld.Name}}
-	DyWorld_Prototype_Entity.localised_description = {"looped-name.pipe-1-tp", v.DyWorld.Entity.Pipe.Amount}
+	DyWorld_Prototype_Entity.localised_description = {"looped-name.pipe-1-tp", v.DyWorld.Entity.Pipe.Amount*10}
 	DyWorld_Prototype_Entity.max_health = 100 * v.DyWorld.Tier
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.pictures = DyWorld_Pipepictures(Material_Colors[v.DyWorld.Name])

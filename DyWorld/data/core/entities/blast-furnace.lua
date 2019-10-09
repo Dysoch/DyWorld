@@ -23,6 +23,7 @@ data:extend(
     type = "assembling-machine",
     name = "blast-furnace-"..i,
 	localised_name = {"looped-name.blast-furnace", i},
+	localised_description = {"looped-name.blast-furnace-tp", 500 * i},
     icons = 
 	{
 	  {
@@ -191,6 +192,7 @@ data:extend(
     type = "item",
     name = "blast-furnace-"..i,
 	localised_name = {"looped-name.blast-furnace", i},
+	localised_description = {"looped-name.blast-furnace-tp", 500 * i},
     icons = 
 	{
 	  {

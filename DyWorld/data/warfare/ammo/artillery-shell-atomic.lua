@@ -133,7 +133,7 @@ data:extend(
               type = "area",
               target_entities = false,
               trigger_from_target = true,
-              repeat_count = 1000,
+              repeat_count = 500,
               radius = 75,
               action_delivery =
               {
@@ -151,7 +151,7 @@ data:extend(
               type = "area",
               target_entities = false,
               trigger_from_target = true,
-              repeat_count = 2000,
+              repeat_count = 1000,
               radius = 100,
               action_delivery =
               {

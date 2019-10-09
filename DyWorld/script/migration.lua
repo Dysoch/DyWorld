@@ -155,6 +155,7 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"dyworld.migrate-2"})
 	end
 	if global.dyworld.Version == "0.8.6" then
+	--if global.dyworld.Version == "0.8.6" or global.dyworld.Version == "0.8.90" then
 		if remote.interfaces["silo_script"] then
 			remote.call("silo_script", "set_no_victory", true)
 			local tracked_items = remote.call("silo_script", "get_tracked_items")

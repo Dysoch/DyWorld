@@ -84,25 +84,6 @@ data:extend(
               }
             }
           },
-		  {
-            type = "nested-result",
-            affects_target = true,
-            action =
-            {
-              type = "area",
-              target_entities = false,
-              trigger_from_target = true,
-              repeat_count = 50,
-              radius = 10,
-              action_delivery =
-              {
-                type = "projectile",
-                projectile = "landmine-wave",
-                starting_speed = 0.25,
-				acceleration = 0.15,
-              }
-            }
-          },
           {
             type = "nested-result",
             affects_target = true,
@@ -283,6 +264,10 @@ data:extend(
             {
               type = "create-sticker",
               sticker = "atomic-landmine-nuclear-sticker"
+            },
+            {
+              type = "create-entity",
+              entity_name = dy.."explosion-medium"
             },
 			{
 			  type = "destroy-cliffs",

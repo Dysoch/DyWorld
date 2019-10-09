@@ -55,7 +55,6 @@ data:extend(
     extension_speed = 0.03,
     rotation_speed = 0.014,
     fast_replaceable_group = "inserter",
-    --next_upgrade = "fast-inserter",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {

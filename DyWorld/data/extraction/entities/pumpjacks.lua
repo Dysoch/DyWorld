@@ -11,6 +11,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pumpjack then
 	end
 	DyWorld_Prototype_Entity.mining_speed = v.DyWorld.Entity.Pumpjack.Speed
 	DyWorld_Prototype_Entity.energy_usage = Round((v.DyWorld.Entity.Pumpjack.Speed * 180), 0).."kW"
+	DyWorld_Prototype_Entity.energy_usage = Round(180 + (Round(((((v.DyWorld.Entity.Pumpjack.Range / 4) - 0.01) * (v.DyWorld.Tier * (v.DyWorld.Tier * ((v.DyWorld.Entity.Pumpjack.Range / 4) - 0.01)))) * v.DyWorld.Entity.Pumpjack.Speed), 2) * 50)).."kW"
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.pumpjack-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.base_picture.sheets[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.base_picture.sheets[1].hr_version.tint = Material_Colors[v.DyWorld.Name]

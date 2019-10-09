@@ -2,8 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
-for Dmg, Color in pairs(Damage_Color) do
-DyWorld_control_name = "dyworld-enemies-tier-"..Damage_Tiers[Dmg]
+for Dmg, Data in pairs(Damages) do
+DyWorld_control_name = "dyworld-enemies-tier-"..Data.Tier
 data:extend(
 {
   {
@@ -13,14 +13,14 @@ data:extend(
 	icons = {
 	  {
 	    icon = "__base__/graphics/icons/biter-spawner.png",
-		tint = Color,
+		tint = Data.Color,
 	  },
 	},
     icon_size = 32,
     flags = {"placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable"},
-    max_health = Round(((500) * Damage_Tiers[Dmg]) * Damage_Tiers[Dmg]),
-	Tier = Damage_Tiers[Dmg],
-    order = Dmg.."-base"..Damage_Tiers[Dmg],
+    max_health = Round(((Data.Health * 5) * Data.Tier) * Data.Tier),
+	Tier = Data.Tier,
+    order = Dmg.."-base"..Data.Tier,
     subgroup = "enemies",
     resistances =
     {
@@ -29,7 +29,7 @@ data:extend(
         percent = 100
       },
       {
-        type = Damage_Opposite[Dmg],
+        type = Data.Opposite,
         percent = -100
       },
     },
@@ -55,7 +55,7 @@ data:extend(
         volume = 1.0
       }
     },
-    healing_per_tick = 0.02 * Damage_Tiers[Dmg],
+    healing_per_tick = 0.02 * Data.Tier,
     collision_box = {{-3.2, -2.2}, {2.2, 2.2}},
     map_generator_bounding_box = {{-4.2, -3.2}, {3.2, 3.2}},
     selection_box = {{-3.5, -2.5}, {2.5, 2.5}},
@@ -64,14 +64,14 @@ data:extend(
     pollution_absorption_proportional = 0.01,
     corpse = Dmg.."-spawner-corpse",
     dying_explosion = "blood-explosion-huge",
-    max_count_of_owned_units = math.floor(7 * Damage_Tiers[Dmg]),
-    max_friends_around_to_spawn = math.floor(5 * Damage_Tiers[Dmg]),
+    max_count_of_owned_units = math.floor(7 * Data.Tier),
+    max_friends_around_to_spawn = math.floor(5 * Data.Tier),
     animations =
     {
-      spawner_idle_animation(0, Color),
-      spawner_idle_animation(1, Color),
-      spawner_idle_animation(2, Color),
-      spawner_idle_animation(3, Color)
+      spawner_idle_animation(0, Data.Color),
+      spawner_idle_animation(1, Data.Color),
+      spawner_idle_animation(2, Data.Color),
+      spawner_idle_animation(3, Data.Color)
     },
     integration =
     {
@@ -96,8 +96,8 @@ data:extend(
     spawning_spacing = 3,
     max_spawn_shift = 0,
     max_richness_for_spawn_shift = 100,
-    autoplace = DyWorld_enemy_spawner_autoplace(Damage_Spawn_Range[Dmg], DyWorld_control_name),
-    call_for_help_radius = 50
+    autoplace = DyWorld_enemy_spawner_autoplace(Data.Spawn_Distance, DyWorld_control_name),
+    call_for_help_radius = 25 + Data.Range,
   },
   {
     type = "corpse",
@@ -115,10 +115,10 @@ data:extend(
     final_render_layer = "remnants",
     animation =
     {
-      spawner_die_animation(0, Color),
-      spawner_die_animation(1, Color),
-      spawner_die_animation(2, Color),
-      spawner_die_animation(3, Color)
+      spawner_die_animation(0, Data.Color),
+      spawner_die_animation(1, Data.Color),
+      spawner_die_animation(2, Data.Color),
+      spawner_die_animation(3, Data.Color)
     },
     ground_patch =
     {
@@ -126,4 +126,57 @@ data:extend(
     }
   }
 })
+		if settings.startup["DyWorld_Warfare_Enemies_Effects"].value then
+		if Data.Dying_Explosion then
+		if not data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect then data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect = {} end
+			local INSERT_1 = {
+                type = "nested-result",
+                action =
+				{
+                  type = "area",
+                  radius = 12,
+                  action_delivery =
+                  {
+					type = "instant",
+					target_effects =
+					{
+					  {
+                        type = "damage",
+                        damage = {amount = ((25*Data.Tier)*Damage_Mod[Dmg]), type = Dmg}
+                      },
+                    }
+                  }
+                }
+              }
+            local INSERT_2 = {
+                type = "create-entity",
+                entity_name = Dmg.."-enemy-base-explosion-behemoth"
+              }
+			table.insert(data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect, INSERT_1)
+			table.insert(data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect, INSERT_2)
+		end
+		if Data.Dying_Splash then
+		if not data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect then data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect = {} end
+            local INSERT_1 = {
+                type = "nested-result",
+                action =
+				{
+                  type = "area",
+                  radius = 25,
+                  action_delivery =
+                  {
+					type = "instant",
+					target_effects =
+					{
+					  {
+                        type = "create-fire",
+                        entity_name = Dmg.."-enemy-splash-behemoth"
+                    }
+                    }
+                  }
+                }
+              }
+			table.insert(data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect, INSERT_1)
+		end
+		end
 end

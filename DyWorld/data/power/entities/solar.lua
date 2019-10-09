@@ -14,7 +14,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then
 	if v.DyWorld.Entity.Solar.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Solar.Next.."-solar-panel"
 	end
-	DyWorld_Prototype_Entity.production = v.DyWorld.Entity.Solar.Production.."kW"
+	DyWorld_Prototype_Entity.production = (v.DyWorld.Entity.Solar.Production * 5).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/solar-panel.png",

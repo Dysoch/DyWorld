@@ -54,54 +54,6 @@ Metal_Tiers = {
 	["neutrobaltium"] = 10,
 }
 
-Damage_Tiers = {
-	["water"] = 1,
-	["earth"] = 2,
-	["electric"] = 3,
-	["chemical"] = 4,
-	["poison"] = 5,
-	["fire"] = 6,
-	["physical"] = 7,
-	["impact"] = 8,
-	["explosion"] = 9,
-	["sonic"] = 10,
-	["fusion"] = 11,
-	["laser"] = 12,
-	["lightning"] = 13,
-	["acid"] = 14,
-	["plasma"] = 15,
-	["gas"] = 16,
-	["fungal"] = 17,
-	["lava"] = 18,
-	["fission"] = 19,
-	["ice"] = 20,
-	["nuclear"] = 20,
-}
-
-Damage_Spawn_Range = {
-	["water"] = 2,
-	["earth"] = 4,
-	["electric"] = 6,
-	["chemical"] = 8,
-	["poison"] = 10,
-	["fire"] = 12,
-	["physical"] = 14,
-	["impact"] = 16,
-	["explosion"] = 18,
-	["sonic"] = 20,
-	["fusion"] = 22,
-	["laser"] = 24,
-	["lightning"] = 25,
-	["acid"] = 26,
-	["plasma"] = 27,
-	["gas"] = 28,
-	["fungal"] = 29,
-	["lava"] = 30,
-	["fission"] = 31,
-	["ice"] = 32,
-	["nuclear"] = 33,
-}
-
 Damage_Mod = {
 	["water"] = 0.25,
 	["earth"] = 0.5,
@@ -148,30 +100,6 @@ Range_Mod = {
 	["fission"] = 4.7,
 	["ice"] = 5,
 	["nuclear"] = 5,
-}
-
-Damage_Opposite = {
-	["nuclear"] = "earth",
-	["electric"] = "earth",
-	["poison"] = "water",
-	["acid"] = "explosion",
-	["gas"] = "sonic",
-	["water"] = "lightning",
-	["fire"] = "water",
-	["lightning"] = "earth",
-	["fungal"] = "fire",
-	["plasma"] = "fusion",
-	["laser"] = "sonic",
-	["lava"] = "ice",
-	["earth"] = "explosion",
-	["fission"] = "plasma",
-	["chemical"] = "impact",
-	["physical"] = "laser",
-	["explosion"] = "sonic",
-	["impact"] = "chemical",
-	["sonic"] = "explosion",
-	["ice"] = "lava",
-	["fusion"] = "plasma",
 }
 
 Enemy_Names_Scales = {

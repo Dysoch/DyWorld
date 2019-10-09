@@ -2,7 +2,7 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
-for Dmg, Color in pairs(Damage_Color) do
+for Dmg, Data in pairs(Damages) do
 	for Size, Scale in pairs(Enemy_Names_Scales) do
 data:extend(
 {
@@ -13,14 +13,14 @@ data:extend(
 	icons = {
 	  {
 	    icon = "__base__/graphics/icons/medium-biter.png",
-		tint = Color,
+		tint = Data.Color,
 	  },
 	},
     icon_size = 32,
     flags = {"placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable"},
-    max_health = Round(((100 * Scale) * Damage_Tiers[Dmg]) * Damage_Tiers[Dmg]),
-	Tier = Damage_Tiers[Dmg],
-    order = Dmg.."-biter-"..Damage_Tiers[Dmg].."-"..Size,
+    max_health = Round(((Data.Health * Scale) * Data.Tier) * Data.Tier),
+	Tier = Data.Tier,
+    order = Dmg.."-biter-"..Data.Tier.."-"..Size,
     subgroup = "enemies",
     resistances =
     {
@@ -29,39 +29,39 @@ data:extend(
         percent = 100
       },
       {
-        type = Damage_Opposite[Dmg],
+        type = Data.Opposite,
         percent = -100
       },
     },
-    healing_per_tick = 0.01 * Damage_Tiers[Dmg],
+    healing_per_tick = 0.01 * Data.Tier,
     collision_box = DyWorld_scale_bounding_box({{-0.4, -0.4}, {0.4, 0.4}}, Scale),
     selection_box = DyWorld_scale_bounding_box({{-0.7, -1.5}, {0.7, 0.3}}, Scale),
     sticker_box = {{-0.3, -0.5}, {0.3, 0.1}},
     distraction_cooldown = 300,
     min_pursue_time = 10 * 60,
-    max_pursue_distance = 10 * Damage_Tiers[Dmg],
+    max_pursue_distance = 10 * Data.Tier,
     attack_parameters =
     {
       type = "projectile",
-      ammo_type = DyWorld_make_unit_melee_ammo_type(((10*Damage_Tiers[Dmg])*Damage_Mod[Dmg]), Dmg),
+      ammo_type = DyWorld_make_unit_melee_ammo_type(((10*Data.Tier)*Damage_Mod[Dmg]), Dmg),
       range = 1 * Scale,
-      cooldown = 40 / Damage_Tiers[Dmg],
+      cooldown = 40 / Data.Tier,
       sound = make_biter_roars(0.5),
-      animation = biterattackanimation(Scale, Color, Color)
+      animation = biterattackanimation(Scale, Data.Color, Data.Color)
     },
-    vision_distance = 5 * Damage_Tiers[Dmg],
-    movement_speed = 0.2 + (Damage_Tiers[Dmg] / 100),
+    vision_distance = 5 + Data.Range,
+    movement_speed = 0.2 + (Data.Tier / 100),
     distance_per_frame = 0.188,
     -- in pu
-    pollution_to_join_attack = 20 * Damage_Tiers[Dmg],
+    pollution_to_join_attack = 20 * Data.Tier,
     corpse = Dmg.."-"..Size.."-biter-corpse",
     dying_explosion = "blood-explosion-small",
     working_sound = make_biter_calls(0.4),
     dying_sound = make_biter_dying_sounds(0.5),
-    run_animation = biterrunanimation(Scale, Color, Color),
+    run_animation = biterrunanimation(Scale, Data.Color, Data.Color),
     ai_settings = DyWorld_ai_settings(true, true, true),
   },
-  add_biter_die_animation(Scale, Color, Color,
+  add_biter_die_animation(Scale, Data.Color, Data.Color,
   {
     type = "corpse",
     name = Dmg.."-"..Size.."-biter-corpse",
@@ -74,5 +74,58 @@ data:extend(
     flags = {"placeable-neutral", "placeable-off-grid", "building-direction-8-way", "not-on-map"}
   }),
 })
+		if settings.startup["DyWorld_Warfare_Enemies_Effects"].value then
+		if Data.Dying_Explosion then
+		if not data.raw.unit[Dmg.."-"..Size.."-biter"].dying_trigger_effect then data.raw.unit[Dmg.."-"..Size.."-biter"].dying_trigger_effect = {} end
+			local INSERT_1 = {
+                type = "nested-result",
+                action =
+				{
+                  type = "area",
+                  radius = 5 * Scale,
+                  action_delivery =
+                  {
+					type = "instant",
+					target_effects =
+					{
+					  {
+                        type = "damage",
+                        damage = {amount = ((5*Data.Tier)*Damage_Mod[Dmg]), type = Dmg}
+                      },
+                    }
+                  }
+                }
+              }
+            local INSERT_2 = {
+                type = "create-entity",
+                entity_name = Dmg.."-enemy-explosion-"..Size
+              }
+			table.insert(data.raw.unit[Dmg.."-"..Size.."-biter"].dying_trigger_effect, INSERT_1)
+			table.insert(data.raw.unit[Dmg.."-"..Size.."-biter"].dying_trigger_effect, INSERT_2)
+		end
+		if Data.Dying_Splash then
+		if not data.raw.unit[Dmg.."-"..Size.."-biter"].dying_trigger_effect then data.raw.unit[Dmg.."-"..Size.."-biter"].dying_trigger_effect = {} end
+            local INSERT_1 = {
+                type = "nested-result",
+                action =
+				{
+                  type = "area",
+                  radius = 5 * Scale,
+                  action_delivery =
+                  {
+					type = "instant",
+					target_effects =
+					{
+					  {
+                        type = "create-fire",
+                        entity_name = Dmg.."-enemy-splash-"..Size
+                    }
+                    }
+                  }
+                }
+              }
+			table.insert(data.raw.unit[Dmg.."-"..Size.."-biter"].dying_trigger_effect, INSERT_1)
+		end
+		end
 	end
 end

@@ -75,3 +75,5 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then
 	end
 end
 end
+
+data.raw.wall["stone-wall"].max_health = Round((150 * (math.exp(1) * 0.2)), 0)

@@ -8,8 +8,8 @@ if data.raw.projectile["cluster-grenade"] then
 end
 
 if data.raw.projectile["atomic-rocket"] then
-	data.raw.projectile["atomic-rocket"].action.action_delivery.target_effects[5].action.repeat_count = 4000
-	data.raw.projectile["atomic-rocket"].action.action_delivery.target_effects[5].action.radius = 70
+	data.raw.projectile["atomic-rocket"].action.action_delivery.target_effects[5].action.repeat_count = 400
+	data.raw.projectile["atomic-rocket"].action.action_delivery.target_effects[5].action.radius = 50
 	data.raw.projectile["atomic-rocket"].action.action_delivery.target_effects[3].damage.amount = 2500
 end
 

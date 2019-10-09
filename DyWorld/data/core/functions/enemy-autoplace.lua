@@ -180,9 +180,10 @@ function DyWorld_enemy_spawner_autoplace(distance, autoplacer)
   }
 end
 
-function DyWorld_enemy_worm_autoplace(distance)
+function DyWorld_enemy_worm_autoplace(distance, autoplacer)
   return enemy_autoplace{
     distance_factor = distance,
+    autoplacer2 = autoplacer,
     order = "b[enemy]-b[worm]",
     is_turret = true
   }

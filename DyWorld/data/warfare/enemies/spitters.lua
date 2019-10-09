@@ -2,7 +2,7 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
-for Dmg, Color in pairs(Damage_Color) do
+for Dmg, Data in pairs(Damages) do
 	for Size, Scale in pairs(Enemy_Names_Scales) do
 data:extend(
 {
@@ -13,14 +13,14 @@ data:extend(
 	icons = {
 	  {
 	    icon = "__base__/graphics/icons/medium-spitter.png",
-		tint = Color,
+		tint = Data.Color,
 	  },
 	},
     icon_size = 32,
     flags = {"placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable"},
-    max_health = Round(((100 * Scale) * Damage_Tiers[Dmg]) * Damage_Tiers[Dmg]),
-	Tier = Damage_Tiers[Dmg],
-    order = Dmg.."-spitter"..Damage_Tiers[Dmg].."-"..Size,
+    max_health = Round(((Data.Health * Scale) * Data.Tier) * Data.Tier),
+	Tier = Data.Tier,
+    order = Dmg.."-spitter"..Data.Tier.."-"..Size,
     subgroup = "enemies",
     resistances =
     {
@@ -29,44 +29,44 @@ data:extend(
         percent = 100
       },
       {
-        type = Damage_Opposite[Dmg],
+        type = Data.Opposite,
         percent = -100
       },
     },
     spawning_time_modifier = 3,
-    healing_per_tick = 0.01 * Damage_Tiers[Dmg],
+    healing_per_tick = 0.01 * Data.Tier,
     collision_box = DyWorld_scale_bounding_box({{-0.4, -0.4}, {0.4, 0.4}}, Scale),
     selection_box = DyWorld_scale_bounding_box({{-0.7, -1.0}, {0.7, 1.0}}, Scale),
     sticker_box = {{-0.3, -0.5}, {0.3, 0.1}},
     distraction_cooldown = 300,
     min_pursue_time = 10 * 60,
-    max_pursue_distance = 10 * Damage_Tiers[Dmg],
+    max_pursue_distance = 10 * Data.Tier,
     alternative_attacking_frame_sequence = spitter_alternative_attacking_animation_sequence,
     attack_parameters = DyWorld_spitter_attack_parameters(
     {
       acid_stream_name = Dmg.."-stream-spitter-"..Size,
-      range = math.floor((15 * Range_Mod[Dmg]) * Enemy_Names_Scales[Size]),
-      min_attack_distance = math.floor(5 * Range_Mod[Dmg]),
+      range = math.floor(Data.Range * Enemy_Names_Scales[Size]),
+      min_attack_distance = math.floor(Data.Range * 0.3),
       cooldown = Round((100 / Range_Mod[Dmg]) * Enemy_Names_Scales[Size]),
-      damage_modifier = 1, --Range_Mod[Dmg],
+      damage_modifier = 1, 
       scale = Scale,
-      tint1 = Color,
-      tint2 = Color,
+      tint1 = Data.Color,
+      tint2 = Data.Color,
       roarvolume = 0.6,
     }),
-    vision_distance = 5 * Damage_Tiers[Dmg],
-    movement_speed = 0.2 + (Damage_Tiers[Dmg] / 100),
+    vision_distance = 5 + Data.Range,
+    movement_speed = 0.2 + (Data.Tier / 100),
     distance_per_frame = 0.188,
     -- in pu
-    pollution_to_join_attack = 20 * Damage_Tiers[Dmg],
+    pollution_to_join_attack = 20 * Data.Tier,
     corpse = Dmg.."-"..Size.."-spitter-corpse",
     dying_explosion = "blood-explosion-small",
     working_sound = make_biter_calls(0.4),
     dying_sound = make_spitter_dying_sounds(0.5),
-    run_animation = spitterrunanimation(Scale, Color, Color),
+    run_animation = spitterrunanimation(Scale, Data.Color, Data.Color),
     ai_settings = DyWorld_ai_settings(true, true, true),
   },
-  add_spitter_die_animation(Scale, Color, Color,
+  add_spitter_die_animation(Scale, Data.Color, Data.Color,
   {
     type = "corpse",
     name = Dmg.."-"..Size.."-spitter-corpse",
@@ -88,7 +88,7 @@ data:extend(
     particle_spawn_timeout = 6,
     splash_fire_name = Dmg.."-splash-fire-spitter-"..Size,
     sticker_name = Dmg.."-sticker-"..Size,
-	damage = (Damage_Tiers[Dmg] * Damage_Mod[Dmg]),
+	damage = (Data.Tier * Damage_Mod[Dmg]),
 	damage_type = Dmg,
   }),
   DyWorld_spitter_splash_fire({
@@ -97,7 +97,7 @@ data:extend(
     tint = Damage_Color[Dmg],
     ground_patch_scale = Scale * 0.65,
     patch_tint_multiplier = 0.7,
-    splash_damage_per_tick = (Damage_Tiers[Dmg] * Damage_Mod[Dmg]),
+    splash_damage_per_tick = (Data.Tier * Damage_Mod[Dmg]),
     splash_damage_type = Dmg,
     sticker_name = Dmg.."-sticker-"..Size,
   }),
@@ -107,8 +107,61 @@ data:extend(
     slow_player_movement = 0.6,
     slow_vehicle_speed = 0.6,
     slow_vehicle_friction = 1.5,
-    slow_seconds = (Damage_Tiers[Dmg]),
+    slow_seconds = (Data.Tier),
   }),
 })
+		if settings.startup["DyWorld_Warfare_Enemies_Effects"].value then
+		if Data.Dying_Explosion then
+		if not data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect then data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect = {} end
+			local INSERT_1 = {
+                type = "nested-result",
+                action =
+				{
+                  type = "area",
+                  radius = 5 * Scale,
+                  action_delivery =
+                  {
+					type = "instant",
+					target_effects =
+					{
+					  {
+                        type = "damage",
+                        damage = {amount = ((10*Data.Tier)*Damage_Mod[Dmg]), type = Dmg}
+                      },
+                    }
+                  }
+                }
+              }
+            local INSERT_2 = {
+                type = "create-entity",
+                entity_name = Dmg.."-enemy-explosion-"..Size
+              }
+			table.insert(data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect, INSERT_1)
+			table.insert(data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect, INSERT_2)
+		end
+		if Data.Dying_Splash then
+		if not data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect then data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect = {} end
+            local INSERT_1 = {
+                type = "nested-result",
+                action =
+				{
+                  type = "area",
+                  radius = 5 * Scale,
+                  action_delivery =
+                  {
+					type = "instant",
+					target_effects =
+					{
+					  {
+                        type = "create-fire",
+                        entity_name = Dmg.."-enemy-splash-"..Size
+                    }
+                    }
+                  }
+                }
+              }
+			table.insert(data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect, INSERT_1)
+		end
+		end
 	end
 end

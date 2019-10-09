@@ -32,6 +32,12 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
+		name = "DyWorld_Warfare_Enemies_Effects",
+		setting_type = "startup",
+		default_value = true,
+	},
+	{
+		type = "bool-setting",
 		name = "DyWorld_Processing",
 		setting_type = "startup",
 		default_value = true,

@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.0
-Date: 00. 00. 2019
+Date: 18. 10. 2019
   Major Features:
     - Warfare Update! Massive amount of warfare related content added!
     - Introducing Damage Type related content. Certain objects can only be hurt by certain Damage types, and are massively resistant to others.
@@ -24,17 +24,12 @@ Date: 00. 00. 2019
     - Gunpowder is now available from the start
     - Reduced Stacksizes of Machines to 50 per stack
     - Acorns now have a tiny fuel value, so the excess can be burned off 
-    - Mods that add "dummy" items should no longer spawn in random loot chests
-    - Radars now have slighty different power usage calculations. They generally consume based on scanning range
-    - Assembling Machines now have slighty different power usage calculations. They generally consume based on crafting speed (before modules)
+    - All entities that use power are adjusted to use MORE power. They use power based on their statistics. The biggest affected entities are mining drills and pumpjacks, where they can shoot up by MW's each tier, or GW's in end game
     - Steam Engines now all use 30 fluid per second
     - Steam Turbines now all use 60 fluid per second
-    - Steam Engines now gain 25% efficiency each tier
-    - Steam Turbines now gain 50% efficiency each tier
-    - Steam Engines now provide a lot more power
-    - Steam Turbines now provide a lot more power
-    - Solar Panels now provide a lot more power
-    - Solar Panels require less solar cells now
+    - Steam Engines now gain 50% efficiency each tier and now provide a lot more power
+    - Steam Turbines now gain 100% efficiency each tier and now provide a lot more power
+    - Solar Panels now provide a lot more power and require less solar cells
     - Accumulators now store a lot more power, and output and input of power is higher
   Combat Overhaul:
     - Atomic Bomb rocket is now MUCH MUCH more powerful! Larger area of affect, longer wave, larger range and more damage! USE WITH CARE! DROPS FPS IMMENSLY!!!!
@@ -61,6 +56,7 @@ Date: 00. 00. 2019
     - Fast Inserter stacksize: 50 > 200
     - Long Handed Inserter stacksize: 50 > 200
     - Stone Wall stacksize: 50 > 200
+    - Stone Wall health reduced to better match with the rest
     - Disabled vanilla Heat Exchanger since its no longer needed
   Bugfixes:
     - Fixed compatibility with JunkTrain2 mod
@@ -68,6 +64,7 @@ Date: 00. 00. 2019
     - Fixed Construction Robots having wrong energy defined
     - Fixed crash with rotating ghost inserters
     - Fixed (hopefully) an error with the random loot chests that spawn far away
+    - Mods that add "dummy" items should no longer spawn in random loot chests
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.6
 Date: 26. 09. 2019

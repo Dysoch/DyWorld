@@ -14,7 +14,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	DyWorld_Prototype_Entity.base_patch.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.base_animation.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.base_animation.hr_version.tint = Material_Colors[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.energy_usage = v.DyWorld.Entity.Robot.Roboport_Energy_Usage_KW.."kW"
+	DyWorld_Prototype_Entity.energy_usage = Round(v.DyWorld.Entity.Robot.Roboport_Energy_Usage_KW + (Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Robot.Roboport_Slot_Count), 2) * 50)).."kW"
 	DyWorld_Prototype_Entity.charging_energy = v.DyWorld.Entity.Robot.Roboport_Charging_Energy_KW.."kW"
 	DyWorld_Prototype_Entity.energy_source.input_flow_limit = v.DyWorld.Entity.Robot.Roboport_Input_MW.."MW"
 	DyWorld_Prototype_Entity.energy_source.buffer_capacity = v.DyWorld.Entity.Robot.Roboport_Buffer_MJ.."MJ"

@@ -174,7 +174,7 @@ else
 end
 
 if settings.startup["DyWorld_Warfare"].value then
-	DyWorld_Add_To_Recipe("science-4", "gun-turret", 1)	--TEMP
+	DyWorld_Add_To_Recipe("science-4", "iron-gun-turret", 1)	--TEMP
 	DyWorld_Add_To_Recipe("science-4", "stone-wall", 3)	
 else
 	DyWorld_Add_To_Recipe("science-4", "gun-turret", 1)	

@@ -27,7 +27,17 @@ local Data_Table_Item_Group = {
 		Main = "warfare-defensive"
 	},
 	{
+		Name = "turret-rocket",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
 		Name = "turret-laser",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-beam",
 		Type = "sub",
 		Main = "warfare-defensive"
 	},

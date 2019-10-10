@@ -11,6 +11,8 @@ Date: 18. 10. 2019
     - Added Metal flooring tiles. Use metals to color the world!
     - Added Sniper Rifle
     - Added Sniper Turret
+    - Added 5 new Gun Turrets (use basic ammo magazines) and disabled the vanilla Gun Turret
+    - Added 4 new Shotgun Turrets
     - Added Laser Gun + 4 types of ammo
     - Added a setting and a control key to mark all dropped loot deconstrucible. Robots will pick them up once in range. Normal script happens once an hour, the control key can be used anytime (NUMPAD +)
   Minor Features:
@@ -18,7 +20,7 @@ Date: 18. 10. 2019
     - Added an early game way to gain sand
     - Mining coal now has chance to give sulfur
     - Added a new nuclear fuel cell: Argonium
-    - Added Heated Assembling Machine
+    - Added Heated Assembling Machine. Good news is it's quicker then a Stone Assembling Machine, but sad news is it can't use fluids in recipes
     - Rework of the tech tree. Removed technologies that are no longer needed, and shifted certain techs to higher or lower science packs
     - Added information to certain entities and items on how much heat it requires, ranges, capacities, etc
   Balancing:

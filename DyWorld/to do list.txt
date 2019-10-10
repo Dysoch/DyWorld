@@ -17,3 +17,6 @@ add tech for cannon speed modifier
 add tech for grenade damage modifier
 add tech for landmine damage modifier
 add uses for filters
+add boat
+add hovercraft
+add early car

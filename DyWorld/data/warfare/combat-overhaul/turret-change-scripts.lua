@@ -14,21 +14,60 @@ local Artillery_Turrets = data.raw["artillery-turret"]
 local Turrets_Changed_Leading =
 {
 	["gun-turret"] = 1,
+	
+	["stone-gun-turret"] = 1,
+	["iron-gun-turret"] = 1,
+	["lead-gun-turret"] = 1,
+	["invar-gun-turret"] = 1,
+	["arditium-gun-turret"] = 1,
+	
+	["nickel-shotgun-turret"] = 1,
+	["bronze-shotgun-turret"] = 1,
+	["cobalt-shotgun-turret"] = 1,
+	["tungsten-shotgun-turret"] = 1,
+	
 	["sniper-turret"] = 1,
 }
 
 local Turrets_Changed_Rest =
 {
 	"gun-turret",
+	
+	"stone-gun-turret",
+	"iron-gun-turret",
+	"lead-gun-turret",
+	"invar-gun-turret",
+	"arditium-gun-turret",
+	
+	"nickel-shotgun-turret",
+	"bronze-shotgun-turret",
+	"cobalt-shotgun-turret",
+	"tungsten-shotgun-turret",
+	
 	"sniper-turret",
+	
 	"laser-turret",
+	
 	"flamethrower-turret",
 }
 
 local Turrets_Changed_To_8_Ways =
 {
 	"gun-turret",
+	
+	"stone-gun-turret",
+	"iron-gun-turret",
+	"lead-gun-turret",
+	"invar-gun-turret",
+	"arditium-gun-turret",
+	
+	"nickel-shotgun-turret",
+	"bronze-shotgun-turret",
+	"cobalt-shotgun-turret",
+	"tungsten-shotgun-turret",
+	
 	"sniper-turret",
+	
 	"laser-turret",
 }
 

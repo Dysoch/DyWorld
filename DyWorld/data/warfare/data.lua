@@ -6,6 +6,9 @@ require("data.warfare.edits.turrets")
 require("data.warfare.entities.walls")
 require("data.warfare.entities.gates")
 require("data.warfare.entities.radars")
+require("data.warfare.entities.gun-turrets")
+require("data.warfare.entities.shotgun-turrets")
+data.raw.car.car.collision_mask = {"ground-tile", "player-layer", "train-layer"}
 
 -- Ammo
 require("data.warfare.ammo.artillery-shell-atomic")

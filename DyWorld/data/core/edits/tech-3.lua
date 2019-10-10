@@ -7,6 +7,8 @@ local Tech_PreReq_Remove = {
 	["military-4"] = {"utility-science-pack"},
 	["military-science-pack"] = {"stone-walls"},
 	["nuclear-fuel-reprocessing"] = {"nuclear-power"},
+	["laser-turrets"] = {"turrets"},
+	["ammo-turrets-1"] = {"intermediates-1"},
 }
 local Tech_PreReq = {
 	["smelting-2"] = {"silver-processing", "nickel-processing", "tin-processing"},
@@ -59,7 +61,7 @@ local Tech_PreReq = {
 	["super-module-10"] = {"productivity-module-10", "speed-module-10", "effectivity-module-10", "pollution-module-10"},
 	["chemical-science-pack"] = {"solar-energy-3", "logistics-2", "intermediates-3", "gold-processing", "lead-processing"},
 	["logistic-science-pack"] = {"fast-inserter", "logistics", "tin-processing", "steel-processing", "intermediates-1"},
-	["military-science-pack"] = {"turrets", "defensive-structures-1", "intermediates-2", "lead-processing", "gold-processing"},
+	["military-science-pack"] = {"ammo-turrets-2", "defensive-structures-1", "lead-processing", "gold-processing"},
 	["production-science-pack"] = {"automation-4", "intermediates-4", "cobalt-processing", "arditium-processing"},
 	["utility-science-pack"] = {"solar-energy-7", "automation-7", "intermediates-6", "production-science-pack", "titanium-processing", "tungsten-processing"},
 	["space-science-pack"] = {"intermediates-7", "utility-science-pack", "titanium-processing", "solar-energy-6", "metallurgy-7"},
@@ -220,6 +222,7 @@ local Tech_Science_Pack_Change_Military = {
 local Tech_Remove = {
 	"stone-walls", 
 	"gates",
+	"turrets",
 	"nuclear-power",
 	"weapon-shooting-speed-1",
 	"weapon-shooting-speed-2",

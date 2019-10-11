@@ -139,8 +139,8 @@ data:extend(
     name = "sniper-turret",
     icon = "__base__/graphics/icons/gun-turret.png",
     icon_size = 32,
-    subgroup = "defensive-structure",
-    order = "b[turret]-a[gun-turret]",
+    subgroup = dy.."turret-sniper",
+    order = "sniper",
     place_result = "sniper-turret",
     stack_size = 50
   },

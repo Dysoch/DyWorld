@@ -5,10 +5,42 @@ require "data/core/functions/amounts"
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Gun_Turret then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("ammo-turret", "gun-turret", v.DyWorld.Name.."-gun-turret", true)
+	local Scale = 1
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.turret-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.max_health = Round((150 * (v.DyWorld.Tier)), 0)
-	DyWorld_Prototype_Entity.base_picture.layers[1].tint = Material_Colors[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.base_picture.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
+	
+	DyWorld_Prototype_Entity.base_picture = DyWorld_gun_turret_base(Material_Colors[v.DyWorld.Name], Scale)
+	DyWorld_Prototype_Entity.collision_box = DyWorld_scale_bounding_box(DyWorld_Prototype_Entity.collision_box, Scale)
+	DyWorld_Prototype_Entity.selection_box = DyWorld_scale_bounding_box(DyWorld_Prototype_Entity.selection_box, Scale)
+	DyWorld_Prototype_Entity.folded_animation =
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({frame_count=1, line_length = 1}, Scale),
+        DyWorld_gun_turret_extension_mask({frame_count=1, line_length = 1}, Scale),
+        DyWorld_gun_turret_extension_shadow({frame_count=1, line_length = 1}, Scale),
+      }
+    }
+	DyWorld_Prototype_Entity.preparing_animation =
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({}, Scale),
+        DyWorld_gun_turret_extension_mask({}, Scale),
+        DyWorld_gun_turret_extension_shadow({}, Scale),
+      }
+    }
+	DyWorld_Prototype_Entity.prepared_animation = DyWorld_gun_turret_attack({frame_count=1}, Scale)
+    DyWorld_Prototype_Entity.attacking_animation = DyWorld_gun_turret_attack({}, Scale)
+	DyWorld_Prototype_Entity.folding_animation =
+    {
+      layers =
+      {
+        DyWorld_gun_turret_extension({run_mode = "backward"}, Scale),
+        DyWorld_gun_turret_extension_mask({run_mode = "backward"}, Scale),
+        DyWorld_gun_turret_extension_shadow({run_mode = "backward"}, Scale),
+      }
+    }
 	
 	DyWorld_Prototype_Entity.attack_parameters.cooldown = v.DyWorld.Warfare.Gun_Turret.Shoot_Speed
 	DyWorld_Prototype_Entity.attack_parameters.damage_modifier = v.DyWorld.Warfare.Gun_Turret.Dmg_Mod
@@ -24,6 +56,11 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Gun_Turret then
 		icon = "__base__/graphics/icons/gun-turret.png",
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
+	  {
+		icon = "__base__/graphics/icons/piercing-rounds-magazine.png", 
+		scale= 0.6, 
+		shift = {8, 9},
+	  },
 	}
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "gun-turret", v.DyWorld.Name.."-gun-turret", true)
@@ -35,6 +72,11 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Gun_Turret then
 	  {
 		icon = "__base__/graphics/icons/gun-turret.png",
 		tint = Material_Colors[v.DyWorld.Name],
+	  },
+	  {
+		icon = "__base__/graphics/icons/piercing-rounds-magazine.png", 
+		scale= 0.6, 
+		shift = {8, 9},
 	  },
 	}
 

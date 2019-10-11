@@ -26,6 +26,7 @@ Date: 18. 10. 2019
   Balancing:
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
     - Changed Iron Mining Drill Range: 6x6 > 5x5
+    - Proper recipes for Stick, Gear and Cable forges now
     - Gunpowder is now available from the start
     - Reduced Stacksizes of Machines to 50 per stack
     - Acorns now have a tiny fuel value, so the excess can be burned off 

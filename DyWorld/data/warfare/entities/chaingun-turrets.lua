@@ -3,11 +3,11 @@ require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
 for k,v in pairs(data.raw.item) do
-if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Shotgun_Turret then	
-	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("ammo-turret", "gun-turret", v.DyWorld.Name.."-shotgun-turret", true)
-	local Scale = 1
-	DyWorld_Prototype_Entity.localised_name = {"looped-name.turret-2", {"looped-name."..v.DyWorld.Name}}
-	DyWorld_Prototype_Entity.max_health = Round((150 * (v.DyWorld.Tier)), 0)
+if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Chaingun_Turret then	
+	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("ammo-turret", "gun-turret", v.DyWorld.Name.."-chaingun-turret", true)
+	local Scale = 1.5
+	DyWorld_Prototype_Entity.localised_name = {"looped-name.turret-5", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Entity.max_health = Round((300 * (v.DyWorld.Tier)), 0)
 	
 	DyWorld_Prototype_Entity.base_picture = DyWorld_gun_turret_base(Material_Colors[v.DyWorld.Name], Scale)
 	DyWorld_Prototype_Entity.collision_box = DyWorld_scale_bounding_box(DyWorld_Prototype_Entity.collision_box, Scale)
@@ -42,15 +42,14 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Shotgun_Turret then
       }
     }
 	
-	DyWorld_Prototype_Entity.attack_parameters.cooldown = v.DyWorld.Warfare.Shotgun_Turret.Shoot_Speed
-	DyWorld_Prototype_Entity.attack_parameters.ammo_category = "shotgun-shell"
-	DyWorld_Prototype_Entity.attack_parameters.damage_modifier = v.DyWorld.Warfare.Shotgun_Turret.Dmg_Mod
-	DyWorld_Prototype_Entity.attack_parameters.range = v.DyWorld.Warfare.Shotgun_Turret.Range
+	DyWorld_Prototype_Entity.attack_parameters.cooldown = v.DyWorld.Warfare.Chaingun_Turret.Shoot_Speed
+	DyWorld_Prototype_Entity.attack_parameters.damage_modifier = v.DyWorld.Warfare.Chaingun_Turret.Dmg_Mod
+	DyWorld_Prototype_Entity.attack_parameters.range = v.DyWorld.Warfare.Chaingun_Turret.Range
 	
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.fast_replaceable_group = "ammo-turret"
-	if v.DyWorld.Warfare.Shotgun_Turret.Next then
-		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Warfare.Shotgun_Turret.Next.."-shotgun-turret"
+	if v.DyWorld.Warfare.Chaingun_Turret.Next then
+		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Warfare.Chaingun_Turret.Next.."-chaingun-turret"
 	end
 	DyWorld_Prototype_Entity.icons = {
 	  {
@@ -58,16 +57,16 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Shotgun_Turret then
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	  {
-		icon = "__base__/graphics/icons/shotgun-shell.png", 
+		icon = "__base__/graphics/icons/piercing-rounds-magazine.png", 
 		scale= 0.6, 
 		shift = {8, 9},
 	  },
 	}
 
-	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "gun-turret", v.DyWorld.Name.."-shotgun-turret", true)
-	DyWorld_Prototype_Item.localised_name = {"looped-name.turret-2", {"looped-name."..v.DyWorld.Name}}
+	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "gun-turret", v.DyWorld.Name.."-chaingun-turret", true)
+	DyWorld_Prototype_Item.localised_name = {"looped-name.turret-5", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
-	DyWorld_Prototype_Item.subgroup = dy.."turret-shotgun"
+	DyWorld_Prototype_Item.subgroup = dy.."turret-gun-chain"
 	DyWorld_Prototype_Item.stack_size = 100
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.icons = {
@@ -76,21 +75,21 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Shotgun_Turret then
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	  {
-		icon = "__base__/graphics/icons/shotgun-shell.png", 
+		icon = "__base__/graphics/icons/piercing-rounds-magazine.png", 
 		scale= 0.6, 
 		shift = {8, 9},
 	  },
 	}
 
-	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "gun-turret", v.DyWorld.Name.."-shotgun-turret", true)
+	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "gun-turret", v.DyWorld.Name.."-chaingun-turret", true)
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
 	DyWorld_Prototype_Recipe.normal.ingredients = {}
-	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-shotgun-turret"
+	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-chaingun-turret"
 	DyWorld_Prototype_Recipe.expensive.ingredients = {}
-	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-shotgun-turret"
+	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-chaingun-turret"
 	DyWorld_Prototype_Recipe.ingredients = nil
-	DyWorld_Prototype_Recipe.localised_name = {"looped-name.turret-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Recipe.localised_name = {"looped-name.turret-5", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Recipe.energy_required = 0
 	DyWorld_Prototype_Recipe.normal.energy_required = (5 * v.DyWorld.Tier) * v.DyWorld.Tier
 	DyWorld_Prototype_Recipe.expensive.energy_required = (10 * v.DyWorld.Tier) * v.DyWorld.Tier
@@ -107,21 +106,21 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Shotgun_Turret then
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
 	if data.raw.technology["ammo-turrets-"..v.DyWorld.Tier] then
-		DyWorld_Add_To_Tech("ammo-turrets-"..v.DyWorld.Tier, v.DyWorld.Name.."-shotgun-turret")
+		DyWorld_Add_To_Tech("ammo-turrets-"..v.DyWorld.Tier, v.DyWorld.Name.."-chaingun-turret")
 	end
 	
-	if v.DyWorld.Warfare.Shotgun_Turret.Ingredients then
-		for q,a in pairs(v.DyWorld.Warfare.Shotgun_Turret.Ingredients) do
+	if v.DyWorld.Warfare.Chaingun_Turret.Ingredients then
+		for q,a in pairs(v.DyWorld.Warfare.Chaingun_Turret.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
-			table.insert(data.raw.recipe[v.DyWorld.Name.."-shotgun-turret"].normal.ingredients, Ingredient)
-			table.insert(data.raw.recipe[v.DyWorld.Name.."-shotgun-turret"].expensive.ingredients, Ingredient_2)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-chaingun-turret"].normal.ingredients, Ingredient)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-chaingun-turret"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Warfare.Shotgun_Turret.Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Warfare.Shotgun_Turret.Previous.."-shotgun-turret", amount = 1}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-shotgun-turret"].normal.ingredients, Ingredient)
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-shotgun-turret"].expensive.ingredients, Ingredient)
+	if v.DyWorld.Warfare.Chaingun_Turret.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Warfare.Chaingun_Turret.Previous.."-chaingun-turret", amount = 1}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-chaingun-turret"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-chaingun-turret"].expensive.ingredients, Ingredient)
 	end
 end
 end

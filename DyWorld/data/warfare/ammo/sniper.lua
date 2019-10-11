@@ -8,7 +8,7 @@ data:extend(
   {
     type = "ammo",
     name = "sniper-basic-ammo",
-    icon = "__base__/graphics/icons/firearm-magazine.png",
+    icon = dyworld_path_icon.."sniper-magazine.png",
     icon_size = 32,
     ammo_type =
     {
@@ -93,7 +93,7 @@ data:extend(
   {
     type = "ammo",
     name = "sniper-advanced-ammo",
-    icon = "__base__/graphics/icons/firearm-magazine.png",
+    icon = dyworld_path_icon.."sniper-magazine.png",
     icon_size = 32,
     ammo_type =
     {
@@ -182,7 +182,7 @@ data:extend(
   {
     type = "ammo",
     name = "sniper-basic-ammo",
-    icon = "__base__/graphics/icons/firearm-magazine.png",
+    icon = dyworld_path_icon.."sniper-magazine.png",
     icon_size = 32,
     ammo_type =
     {
@@ -224,7 +224,7 @@ data:extend(
   {
     type = "ammo",
     name = "sniper-advanced-ammo",
-    icon = "__base__/graphics/icons/firearm-magazine.png",
+    icon = dyworld_path_icon.."sniper-magazine.png",
     icon_size = 32,
     ammo_type =
     {

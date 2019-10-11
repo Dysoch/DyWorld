@@ -13,6 +13,7 @@
 "coal" = Coal
 "wood" = Wood
 "simple-control-board" = Circuit for this tier
+"simple-motor" = Motor for this tier
 
 --------------------------- Tier 2 ---------------------------------
 "glass" = Glass
@@ -39,12 +40,13 @@
 "tin-plate" = Tin Plate
 "tin-gear-wheel" = Tin Gear
 "basic-control-board" = Circuit for this tier
+"turret-barrel" = Turret Barrel
+"turret-base-2x2" = Turret Base 2 x 2
 
 --------------------------- Tier 3 ---------------------------------
 "red-wire" = Red Wires
 "concrete" = Concrete
 "green-wire" = Green Wires
-"engine-unit" = Engine Unit
 "battery" = Battery
 "flying-robot-frame" = Flying robot frame
 "plastic-bar" = Plastic
@@ -70,10 +72,11 @@
 "lead-plate" = Lead Plate
 "lead-gear-wheel" = Lead Gear
 "electronic-control-board" = Circuit for this tier
+"electronic-motor" = Motor for this tier
+"turret-base-3x3" = Turret Base 3 x 3
 
 --------------------------- Tier 4 ---------------------------------
 "empty-barrel" = Emty Barrels
-"electric-engine-unit" = Electric Engine Unit
 "explosives" = Explosive
 "low-density-structure" = Low Density Structure
 "solid-fuel" = Solid Fuel
@@ -94,6 +97,7 @@
 "electrum-plate" = Electrum Plate
 "electrum-cable" = Electrum Cable
 "advanced-control-board" = Circuit for this tier
+"turret-base-5x5" = Turret Base 5 x 5
 
 --------------------------- Tier 5 ---------------------------------
 "nuclear-fuel" = Nuclear Fuel
@@ -110,6 +114,7 @@
 "arditium-gear-wheel" =  Arditium Gear
 "arditium-plate" = Arditium Plate
 "tough-control-board" = Circuit for this tier
+"tough-motor" = Motor for this tier
 
 --------------------------- Tier 6 ---------------------------------
 "controller" = Controller
@@ -131,6 +136,7 @@
 "electranium-plate" = Electranium Plate
 "electranium-cable" = Electranium Cable
 "logic-control-board" = Circuit for this tier
+"logic-motor" = Motor for this tier
 
 --------------------------- Tier 8 ---------------------------------
 "tungstvar-stick" = Tungstvar Stick
@@ -141,6 +147,7 @@
 "neutronium-stick" = Neutronium Stick
 "neutronium-plate" = Neutronium Plate
 "extreme-control-board" = Circuit for this tier
+"extreme-motor" = Motor for this tier
 
 --------------------------- Tier 10 --------------------------------
 "neutrobaltium-stick" = Neutrobaltium Stick

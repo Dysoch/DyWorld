@@ -20,3 +20,24 @@ add uses for filters
 add boat
 add hovercraft
 add early car
+add beam turrets
+add laser turrets
+increase looting range
+add motors (intermediates for machines and belts)
+add warfare intermediates (gun bases, electric bases, barrels, scopes, etc)
+add biter that is invisible once it moves (only when moving) (named: Dysoch's Wrath)
+add speed mod to enemies table
+add more effectivity modules
+add more pollution modules (both)
+make super modules a lot more expensive
+change recipes of belts with new intermediates
+change recipes of blast furnaces
+add first boss: The Queen of the Sky
+increase power usages of Labs
+
+gun turrets shoot slow
+chaingun turrets shoot insanely quick, but lower damage and larger base
+shotgun turrets lower damage
+cannon turrets massively big, shoot slower then sniper turrets
+sniper turrets shoot slow, but MASSIVE damage and long range
+rocket turrets shoot slow, but can trully fuck up enemies

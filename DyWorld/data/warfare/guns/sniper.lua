@@ -7,7 +7,7 @@ data:extend(
   {
     type = "gun",
     name = "sniper",
-    icon = "__base__/graphics/icons/railgun.png",
+    icon = dyworld_path_icon.."sniper.png",
     icon_size = 32,
     flags = {},
     subgroup = dy.."guns",

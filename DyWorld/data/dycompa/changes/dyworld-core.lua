@@ -12,6 +12,8 @@ local Change = {
 	{Old = "electronic-circuit", New = "simple-control-board"},
 	{Old = "advanced-circuit", New = "advanced-control-board"},
 	{Old = "processing-unit", New = "logic-control-board"},
+	{Old = "engine-unit", New = "simple-motor"},
+	{Old = "electric-engine-unit", New = "electronic-motor"},
 	
 }
 

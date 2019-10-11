@@ -233,3 +233,51 @@ data:extend(
 		table.insert(data.raw.recipe["forge-gear-"..i].ingredients, Insert_Recipe)
 	end
 end
+
+if data.raw.recipe["forge-gear-1"] then
+	data.raw.recipe["forge-gear-1"].ingredients = {
+		{type = "item", name = "simple-control-board", amount = 5},
+		{type = "item", name = "iron-gear-wheel", amount = 3},
+		{type = "item", name = "iron-plate", amount = 20},
+	}
+end
+
+if data.raw.recipe["forge-gear-2"] then
+	data.raw.recipe["forge-gear-2"].ingredients = {
+		{type = "item", name = "forge-gear-1", amount = 1},
+		{type = "item", name = "frame", amount = 1},
+		{type = "item", name = "electronic-control-board", amount = 5},
+		{type = "item", name = "steel-gear-wheel", amount = 3},
+		{type = "item", name = "lead-plate", amount = 20},
+	}
+end
+
+if data.raw.recipe["forge-gear-3"] then
+	data.raw.recipe["forge-gear-3"].ingredients = {
+		{type = "item", name = "forge-gear-2", amount = 1},
+		{type = "item", name = "housing", amount = 1},
+		{type = "item", name = "advanced-control-board", amount = 5},
+		{type = "item", name = "cobalt-gear-wheel", amount = 3},
+		{type = "item", name = "electrum-plate", amount = 20},
+	}
+end
+
+if data.raw.recipe["forge-gear-4"] then
+	data.raw.recipe["forge-gear-4"].ingredients = {
+		{type = "item", name = "forge-gear-3", amount = 1},
+		{type = "item", name = "logistic-unit", amount = 1},
+		{type = "item", name = "tough-control-board", amount = 5},
+		{type = "item", name = "arditium-gear-wheel", amount = 3},
+		{type = "item", name = "stainless-steel-plate", amount = 20},
+	}
+end
+
+if data.raw.recipe["forge-gear-5"] then
+	data.raw.recipe["forge-gear-5"].ingredients = {
+		{type = "item", name = "forge-gear-4", amount = 1},
+		{type = "item", name = "controller", amount = 1},
+		{type = "item", name = "processing-control-board", amount = 5},
+		{type = "item", name = "titanium-gear-wheel", amount = 3},
+		{type = "item", name = "tungsten-plate", amount = 20},
+	}
+end

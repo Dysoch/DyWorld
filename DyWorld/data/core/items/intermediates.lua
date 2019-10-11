@@ -9,6 +9,7 @@ local Data_Table = {
 	["stone-gear-wheel"] = 1,
 	["stone-plate"] = 1,
 	["simple-control-board"] = 1,
+	["simple-motor"] = 1,
 	
 	["glass"] = 2, --
 	["rotor"] = 2, --
@@ -18,6 +19,8 @@ local Data_Table = {
 	["blade"] = 2, --
 	["resin"] = 2, --
 	["basic-control-board"] = 2,
+	["turret-barrel"] = 2,
+	["turret-base-2x2"] = 2,
 	
 	["gunpowder"] = 3, --
 	["frame"] = 3, --
@@ -28,24 +31,30 @@ local Data_Table = {
 	["battery-pack"] = 3, --
 	["rubber"] = 3, --
 	["electronic-control-board"] = 3,
+	["electronic-motor"] = 3,
+	["turret-base-3x3"] = 3,
 	
 	["housing"] = 4, --
 	["intake"] = 4,
+	["turret-base-5x5"] = 4,
 	["advanced-control-board"] = 4,
 	
 	["logistic-unit"] = 5, --
 	["diamond"] = 5,
 	["tough-control-board"] = 5,
+	["tough-motor"] = 5,
 	
 	["controller"] = 6, --
 	["processing-control-board"] = 6,
 	["argonium-fuel-cell"] = 6,
 	
 	["logic-control-board"] = 7,
+	["logic-motor"] = 7,
 	
 	["super-control-board"] = 8,
 	
 	["extreme-control-board"] = 9,
+	["extreme-motor"] = 9,
 	
 	["quantum-control-board"] = 10,
 	

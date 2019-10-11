@@ -6,12 +6,13 @@ Data_Warfare = {
 		Gun_Turret = {
 			Range = 15,
 			Dmg_Mod = 1,
-			Shoot_Speed = (60 / 5),
+			Shoot_Speed = (60 / 1),
 			Next = "iron",
 			Ingredients = {
 				["stone-gear-wheel"] = 2,
 				["stone-plate"] = 15,
 				["gunpowder"] = 15,
+				["turret-base-2x2"] = 1,
 			},
 		},
 	},
@@ -20,7 +21,7 @@ Data_Warfare = {
 		Gun_Turret = {
 			Range = 20,
 			Dmg_Mod = 1.25,
-			Shoot_Speed = (60 / 8),
+			Shoot_Speed = (60 / 2),
 			Previous = "stone",
 			Next = "lead",
 			Ingredients = {
@@ -43,15 +44,41 @@ Data_Warfare = {
 				["basic-control-board"] = 2,
 				["iron-gear-wheel"] = 2,
 				["iron-plate"] = 15,
+				["turret-base-2x2"] = 1,
 			},
 		},
 	},
 	["silver"] = {
+		Chaingun_Turret = {
+			Range = 20,
+			Dmg_Mod = 0.6,
+			Shoot_Speed = (60 / 100),
+			--Previous = "stone",
+			Next = "steel",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+				["turret-base-3x3"] = 1,
+			},
+		},
 	},
 	["tin"] = {
 	},
 --------------------------------------- TIER 3 --------------------------------------
 	["steel"] = {
+		Chaingun_Turret = {
+			Range = 25,
+			Dmg_Mod = 0.75,
+			Shoot_Speed = (60 / 150),
+			Previous = "silver",
+			Next = "invar",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+			},
+		},
 	},
 	["gold"] = {
 	},
@@ -73,7 +100,7 @@ Data_Warfare = {
 		Gun_Turret = {
 			Range = 28,
 			Dmg_Mod = 1.5,
-			Shoot_Speed = (60 / 12),
+			Shoot_Speed = (60 / 3.5),
 			Previous = "iron",
 			Next = "invar",
 			Ingredients = {
@@ -102,7 +129,7 @@ Data_Warfare = {
 		Gun_Turret = {
 			Range = 39,
 			Dmg_Mod = 1.75,
-			Shoot_Speed = (60 / 17),
+			Shoot_Speed = (60 / 5),
 			Previous = "lead",
 			Next = "arditium",
 			Ingredients = {
@@ -111,17 +138,55 @@ Data_Warfare = {
 				["iron-plate"] = 15,
 			},
 		},
+		Chaingun_Turret = {
+			Range = 30,
+			Dmg_Mod = 0.9,
+			Shoot_Speed = (60 / 200),
+			Previous = "steel",
+			Next = "titanium",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+			},
+		},
 	},
 	["electrum"] = {
+		Cannon_Turret = {
+			Range = 80,
+			Dmg_Mod = 1,
+			Shoot_Speed = (60 / 0.25),
+			--Previous = "lead",
+			Next = "tungsten",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+				["turret-base-5x5"] = 1,
+			},
+		},
 	},
 --------------------------------------- TIER 5 --------------------------------------
 	["stainless-steel"] = {
+		Rocket_Turret = {
+			Range = 80,
+			Dmg_Mod = 1,
+			Shoot_Speed = (60 / 0.5),
+			--Previous = "lead",
+			--Next = "arditium",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+				["turret-base-3x3"] = 1,
+			},
+		},
 	},
 	["arditium"] = {
 		Gun_Turret = {
 			Range = 50,
 			Dmg_Mod = 2,
-			Shoot_Speed = (60 / 22),
+			Shoot_Speed = (60 / 6),
 			Previous = "invar",
 			Ingredients = {
 				["basic-control-board"] = 2,
@@ -132,6 +197,17 @@ Data_Warfare = {
 	},
 --------------------------------------- TIER 6 --------------------------------------
 	["titanium"] = {
+		Chaingun_Turret = {
+			Range = 35,
+			Dmg_Mod = 1.05,
+			Shoot_Speed = (60 / 250),
+			Previous = "invar",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+			},
+		},
 	},
 	["tungsten"] = {
 		Shotgun_Turret = {
@@ -146,14 +222,49 @@ Data_Warfare = {
 				["iron-plate"] = 15,
 			},
 		},
+		Cannon_Turret = {
+			Range = 90,
+			Dmg_Mod = 2,
+			Shoot_Speed = (60 / 0.5),
+			Previous = "electrum",
+			Next = "electranium",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+			},
+		},
 	},
 --------------------------------------- TIER 7 --------------------------------------
 	["electranium"] = {
+		Cannon_Turret = {
+			Range = 100,
+			Dmg_Mod = 5,
+			Shoot_Speed = (60 / 0.75),
+			Previous = "tungsten",
+			Next = "tungstvar",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+			},
+		},
 	},
 	["arditium-tungstenate"] = {
 	},
 --------------------------------------- TIER 8 --------------------------------------
 	["tungstvar"] = {
+		Cannon_Turret = {
+			Range = 120,
+			Dmg_Mod = 10,
+			Shoot_Speed = (60 / 1),
+			Previous = "electranium",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+			},
+		},
 	},
 --------------------------------------- TIER 9 --------------------------------------
 	["neutronium"] = {

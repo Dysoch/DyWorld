@@ -45,7 +45,7 @@ data:extend(
         }
       }
     },
-    subgroup = "ammo",
+    subgroup = dy.."ammo-sniper",
     order = "sniper-1-ammo",
     stack_size = 100,
     magazine_size = 10,
@@ -130,7 +130,7 @@ data:extend(
         }
       }
     },
-    subgroup = "ammo",
+    subgroup = dy.."ammo-sniper",
     order = "sniper-2-ammo",
     stack_size = 100,
     magazine_size = 5,
@@ -216,7 +216,7 @@ data:extend(
         }
       }
     },
-    subgroup = "ammo",
+    subgroup = dy.."ammo-sniper",
     order = "sniper-1-ammo",
     stack_size = 100,
     magazine_size = 10,
@@ -258,7 +258,7 @@ data:extend(
         }
       }
     },
-    subgroup = "ammo",
+    subgroup = dy.."ammo-sniper",
     order = "sniper-2-ammo",
     stack_size = 100,
     magazine_size = 5,

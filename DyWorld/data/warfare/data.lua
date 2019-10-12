@@ -13,13 +13,19 @@ require("data.warfare.entities.cannon-turrets")
 require("data.warfare.entities.rocket-turrets")
 
 -- Ammo
+require("data.warfare.tech.ammo")
 require("data.warfare.ammo.artillery-shell-atomic")
 require("data.warfare.ammo.sniper")
 require("data.warfare.ammo.laser")
+require("data.warfare.ammo.gun-basic")
+require("data.warfare.ammo.gun-piercing")
+require("data.warfare.ammo.gun-explosive")
 
 -- Guns
 require("data.warfare.guns.sniper")
 require("data.warfare.guns.laser")
+require("data.warfare.guns.chaingun")
+require("data.warfare.guns.rifle")
 
 -- Turrets
 require("data.warfare.turrets.sniper")

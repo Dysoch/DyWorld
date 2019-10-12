@@ -4,6 +4,9 @@
 -- each with increasing strength compared to previous tier
 -- DO NOT INCREASE HIGHER THEN 100!!! It breaks the game xD (crashes the game)
 
+Character_Loot_Range = 15
+-- Character Looting Range
+
 Expensive_Modifier = 5
 -- Makes expensive recipes x this amount (default: 5)
 
@@ -48,6 +51,8 @@ Damages = {
 		Range = 10,
 		Dying_Explosion = false,
 		Dying_Splash = false,
+		Ammo_Damage = 5,
+		Ammo_Range = 10,
 	},
 	-- Tier 2 --
 	["earth"] = {
@@ -59,6 +64,8 @@ Damages = {
 		Range = 5,
 		Dying_Explosion = false,
 		Dying_Splash = false,
+		Ammo_Damage = 2.5,
+		Ammo_Range = 15,
 	},
 	-- Tier 3 --
 	["electric"] = {
@@ -70,6 +77,8 @@ Damages = {
 		Range = 25,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 5,
+		Ammo_Range = 20,
 	},
 	-- Tier 4 --
 	["chemical"] = {
@@ -81,6 +90,8 @@ Damages = {
 		Range = 30,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 40,
+		Ammo_Range = 27,
 	},
 	-- Tier 5 --
 	["poison"] = {
@@ -92,6 +103,8 @@ Damages = {
 		Range = 24,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 7.5,
+		Ammo_Range = 30,
 	},
 	-- Tier 6 --
 	["fire"] = {
@@ -103,6 +116,8 @@ Damages = {
 		Range = 40,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 9,
+		Ammo_Range = 75,
 	},
 	-- Tier 7 --
 	["physical"] = {
@@ -114,6 +129,8 @@ Damages = {
 		Range = 20,
 		Dying_Explosion = false,
 		Dying_Splash = false,
+		Ammo_Damage = 5,
+		Ammo_Range = 25,
 	},
 	-- Tier 8 --
 	["impact"] = {
@@ -125,6 +142,8 @@ Damages = {
 		Range = 20,
 		Dying_Explosion = false,
 		Dying_Splash = false,
+		Ammo_Damage = 100,
+		Ammo_Range = 20,
 	},
 	-- Tier 9 --
 	["explosion"] = {
@@ -136,6 +155,8 @@ Damages = {
 		Range = 30,
 		Dying_Explosion = true,
 		Dying_Splash = false,
+		Ammo_Damage = 25,
+		Ammo_Range = 60,
 	},
 	-- Tier 10 --
 	["sonic"] = {
@@ -147,6 +168,8 @@ Damages = {
 		Range = 50,
 		Dying_Explosion = true,
 		Dying_Splash = false,
+		Ammo_Damage = 1000,
+		Ammo_Range = 50,
 	},
 	-- Tier 11 --
 	["fusion"] = {
@@ -158,6 +181,8 @@ Damages = {
 		Range = 35,
 		Dying_Explosion = true,
 		Dying_Splash = true,
+		Ammo_Damage = 85,
+		Ammo_Range = 30,
 	},
 	-- Tier 12 --
 	["laser"] = {
@@ -169,6 +194,8 @@ Damages = {
 		Range = 60,
 		Dying_Explosion = false,
 		Dying_Splash = false,
+		Ammo_Damage = 100,
+		Ammo_Range = 75,
 	},
 	-- Tier 13 --
 	["lightning"] = {
@@ -180,6 +207,8 @@ Damages = {
 		Range = 75,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 5,
+		Ammo_Range = 100,
 	},
 	-- Tier 14 --
 	["acid"] = {
@@ -191,6 +220,8 @@ Damages = {
 		Range = 24,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 35,
+		Ammo_Range = 32,
 	},
 	-- Tier 15 --
 	["plasma"] = {
@@ -202,6 +233,8 @@ Damages = {
 		Range = 30,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 90,
+		Ammo_Range = 80,
 	},
 	-- Tier 16 --
 	["gas"] = {
@@ -213,6 +246,8 @@ Damages = {
 		Range = 15,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 45,
+		Ammo_Range = 30,
 	},
 	-- Tier 17 --
 	["fungal"] = {
@@ -224,6 +259,8 @@ Damages = {
 		Range = 10,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 7.5,
+		Ammo_Range = 25,
 	},
 	-- Tier 18 --
 	["lava"] = {
@@ -235,6 +272,8 @@ Damages = {
 		Range = 10,
 		Dying_Explosion = false,
 		Dying_Splash = true,
+		Ammo_Damage = 150,
+		Ammo_Range = 30,
 	},
 	-- Tier 19 --
 	["fission"] = {
@@ -246,6 +285,8 @@ Damages = {
 		Range = 15,
 		Dying_Explosion = true,
 		Dying_Splash = true,
+		Ammo_Damage = 75,
+		Ammo_Range = 30,
 	},
 	-- Tier 20 --
 	["nuclear"] = {
@@ -257,6 +298,8 @@ Damages = {
 		Range = 50,
 		Dying_Explosion = true,
 		Dying_Splash = true,
+		Ammo_Damage = 250,
+		Ammo_Range = 80,
 	},
 	["ice"] = {
 		Color = {r=0.34, g=0.12, b=0.7, a=1},
@@ -267,5 +310,7 @@ Damages = {
 		Range = 10,
 		Dying_Explosion = false,
 		Dying_Splash = false,
+		Ammo_Damage = 10,
+		Ammo_Range = 20,
 	},
 }

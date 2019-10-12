@@ -4,9 +4,9 @@ require "data/core/functions/amounts"
 
 Projectile_Table_To_Change = {
 	"grenade", 
-	"rocket", 
-	"atomic-rocket", 
-	"explosive-rocket", 
+	--"rocket", 
+	--"atomic-rocket", 
+	--"explosive-rocket", 
 	"explosive-uranium-cannon-projectile",
 	"explosive-cannon-projectile",
 	"cluster-grenade", 

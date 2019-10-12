@@ -16,7 +16,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Furnace then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Furnace.Next.."-electric-furnace"
 	end
 	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Furnace.Speed_Mod), 2)
-	DyWorld_Prototype_Entity.energy_usage = Round(250 + (Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Furnace.Speed_Mod), 2) * 50)).."kW"
+	DyWorld_Prototype_Entity.energy_usage = Round(500 + (Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Furnace.Speed_Mod), 2) * 50)).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/electric-furnace.png",

@@ -6,18 +6,24 @@ if data.raw.ammo["rocket"] then
 	data.raw.ammo["rocket"].ammo_type.action.action_delivery.direction_deviation = 0.25
 	data.raw.ammo["rocket"].ammo_type.action.action_delivery.range_deviation = 0.25
 	data.raw.ammo["rocket"].ammo_type.action.action_delivery.max_range = 35
+	data.raw.ammo["rocket"].ammo_type.target_type = "position"
+	data.raw.ammo["rocket"].ammo_type.clamp_position = true
 end
 
 if data.raw.ammo["explosive-rocket"] then
 	data.raw.ammo["explosive-rocket"].ammo_type.action.action_delivery.direction_deviation = 0.25
 	data.raw.ammo["explosive-rocket"].ammo_type.action.action_delivery.range_deviation = 0.25
 	data.raw.ammo["explosive-rocket"].ammo_type.action.action_delivery.max_range = 50
+	data.raw.ammo["explosive-rocket"].ammo_type.target_type = "position"
+	data.raw.ammo["explosive-rocket"].ammo_type.clamp_position = true
 end
 
 if data.raw.ammo["atomic-bomb"] then
 	data.raw.ammo["atomic-bomb"].ammo_type.action.action_delivery.direction_deviation = 0.25
 	data.raw.ammo["atomic-bomb"].ammo_type.action.action_delivery.range_deviation = 0.25
 	data.raw.ammo["atomic-bomb"].ammo_type.action.action_delivery.max_range = 125
+	data.raw.ammo["atomic-bomb"].ammo_type.target_type = "position"
+	data.raw.ammo["atomic-bomb"].ammo_type.clamp_position = true
 end
 
 if data.raw.ammo["firearm-magazine"] then

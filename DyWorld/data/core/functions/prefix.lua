@@ -3,6 +3,7 @@ dyworld_debug_prefix = "dyworld-debug-"
 
 -- graphical
 dyworld_path_icon = "__DyWorld__/graphics/icons/"
+dyworld_path_damage = "__DyWorld__/graphics/damage/"
 dyworld_path_fluid = "__DyWorld__/graphics/fluids/"
 dyworld_path_tech = "__DyWorld__/graphics/technology/"
 dyworld_path_entity = "__DyWorld__/graphics/entity/"

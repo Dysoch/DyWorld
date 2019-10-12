@@ -9,7 +9,11 @@ local Tech_PreReq_Remove = {
 	["nuclear-fuel-reprocessing"] = {"nuclear-power"},
 	["laser-turrets"] = {"turrets"},
 	["ammo-turrets-1"] = {"intermediates-1"},
+	["circuit-network"] = {"logistic-science-pack"},
 }
+-- Special Cases:
+data.raw.technology.automobilism.prerequisites = {}
+
 local Tech_PreReq = {
 	["smelting-2"] = {"silver-processing", "nickel-processing", "tin-processing"},
 	["smelting-3"] = {"lead-processing", "steel-processing", "gold-processing"},
@@ -84,6 +88,7 @@ local Tech_PreReq = {
 	["laser-ammo-enhancement-1"] = {"laser"},
 	["plasma-ammo-enhancement-1"] = {"plasma"},
 	["sniper-ammo-enhancement-1"] = {"sniper"},
+	["automobilism"] = {"steel-processing"},
 } 
 
 for k,v in pairs(Tech_PreReq) do
@@ -122,14 +127,14 @@ for k,v in pairs(Tech_PreReq_Remove) do
 end
 
 local Tech_Recipe_Add = {
-	["intermediates-1"] = {"glass", "rotor", "obsidian", "filter-empty", "blade", "resin", "sand-filter", "resin-filter", "sand-centrifuge", "coal-filter", "stone-filter", "basic-control-board"},
-	["intermediates-2"] = {"frame", "heater", "gearbox", "coil", "battery-pack", "rubber", "obsidian-filter", "electronic-control-board"},
-	["intermediates-3"] = {"housing", "intake", "advanced-control-board", "electronic-control-board-2"},
-	["intermediates-4"] = {"logistic-unit", "diamond", "tough-control-board"},
+	["intermediates-1"] = {"glass", "rotor", "obsidian", "filter-empty", "blade", "turret-base-2x2", "turret-barrel", "resin", "sand-filter", "resin-filter", "sand-centrifuge", "coal-filter", "stone-filter", "basic-control-board"},
+	["intermediates-2"] = {"frame", "heater", "gearbox", "coil", "battery-pack", "rubber", "obsidian-filter", "electronic-control-board", "electronic-motor"},
+	["intermediates-3"] = {"housing", "intake", "turret-base-3x3", "advanced-control-board", "electronic-control-board-2"},
+	["intermediates-4"] = {"logistic-unit", "turret-base-5x5", "diamond", "tough-control-board", "tough-motor"},
 	["intermediates-5"] = {"processing-control-board"},
-	["intermediates-6"] = {"logic-control-board", "controller"},
+	["intermediates-6"] = {"logic-control-board", "controller", "logic-motor"},
 	["intermediates-7"] = {"super-control-board"},
-	["intermediates-8"] = {"extreme-control-board"},
+	["intermediates-8"] = {"extreme-control-board", "extreme-motor"},
 	["intermediates-9"] = {"quantum-control-board"},
 	["nickel-processing"] = {"nickel-plate"},
 	["steel-processing"] = {"steel-plate"},
@@ -152,6 +157,8 @@ local Tech_Recipe_Add = {
 	["farming-1"] = {"carrot", "boiler-water"},
 	["farming-2"] = {"wheat"},
 	["farming-4"] = {"wood-2"},
+	["military-2"] = {"rifle"},
+	["military-4"] = {"chaingun"},
 	["military-7"] = {"atomic-land-mine"},
 	["defensive-structures-1"] = {"stone-wall", "gate"},
 	["nuclear-energy-1"] = {"heat-pipe", "heat-pipe-furnace", "heated-furnace", "heated-inserter", "heated-assembler", "heated-long-inserter"},
@@ -190,6 +197,7 @@ local Tech_Science_Pack_Change = {
 	["logistics-2"] = 2,
 	["logistics-3"] = 3,
 	["solar-energy"] = 1,
+	["automobilism"] = 1,
 	["uranium-processing"] = 3,
 	["laser-ammo-enhancement-1"] = 2,
 	["laser-ammo-enhancement-4"] = 3,
@@ -207,6 +215,7 @@ local Tech_Science_Pack_Change = {
 	["beam-gun-enhancement-4"] = 3,
 	["rocket-gun-enhancement-1"] = 2,
 	["rocket-gun-enhancement-4"] = 3,
+	["circuit-network"] = 1,
 	["military"] = 1,
 	["military-1"] = 1,
 	["military-2"] = 2,

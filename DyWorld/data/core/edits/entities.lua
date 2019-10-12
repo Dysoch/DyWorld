@@ -1,5 +1,6 @@
 require "data/core/functions/prefix"
 require "data/core/functions/colors"
+require "data/core/functions/amounts"
 
 data.raw["heat-pipe"]["heat-pipe"].heat_buffer.max_temperature = 5500
 data.raw["heat-pipe"]["heat-pipe"].render_layer = "ground-tile"
@@ -22,3 +23,5 @@ data.raw.turret["small-worm-turret"].Tier = 1
 data.raw.turret["medium-worm-turret"].Tier = 2
 data.raw.turret["big-worm-turret"].Tier = 3
 data.raw.turret["behemoth-worm-turret"].Tier = 4
+
+data.raw.character.character.loot_pickup_distance = Character_Loot_Range

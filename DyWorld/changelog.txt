@@ -23,9 +23,21 @@ Date: 18. 10. 2019
     - Added Heated Assembling Machine. Good news is it's quicker then a Stone Assembling Machine, but sad news is it can't use fluids in recipes
     - Rework of the tech tree. Removed technologies that are no longer needed, and shifted certain techs to higher or lower science packs
     - Added information to certain entities and items on how much heat it requires, ranges, capacities, etc
+    - Circuit Network Technology is now early available
   Balancing:
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
+    - Changed Electrum Assembling Machine Speed: 5.56 > 6.16
     - Changed Iron Mining Drill Range: 6x6 > 5x5
+    - Changed Lead Mining Drill Range: 8x8 > 9x9
+    - Changed Cobalt Mining Drill Range: 10x10 > 11x11
+    - Changed Arditium Mining Drill Range: 10x10 > 13x13
+    - Changed Titanium Mining Drill Range: 12x12 > 15x15
+    - Changed Electranium Mining Drill Range: 15x15 > 19x19
+    - Changed Tungstvar Mining Drill Range: 20x20 > 23x23
+    - Changed Neutronium Mining Drill Range: 22x22 > 29x29
+    - Changed Neuitrobaltium Mining Drill Range: 25x25 > 39x39
+    - Increased Character Loot Range (the default one)
+    - Labs require a lot more power now
     - Proper recipes for Stick, Gear and Cable forges now
     - Gunpowder is now available from the start
     - Reduced Stacksizes of Machines to 50 per stack

@@ -16,7 +16,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Assembler then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Assembler.Next.."-assembling-machine"
 	end
 	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Assembler.Speed_Mod), 2)
-	DyWorld_Prototype_Entity.energy_usage = Round(50 + (Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Assembler.Speed_Mod), 2) * 50)).."kW"
+	DyWorld_Prototype_Entity.energy_usage = Round(250 + (Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Assembler.Speed_Mod), 2) * 50)).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/assembling-machine-3.png",

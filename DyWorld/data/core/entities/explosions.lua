@@ -696,6 +696,7 @@ function fireutil.create_burnt_patch_pictures()
 end
 
 local Data_Table = {
+	["tiny"] = 0.3,
 	["small"] = 1,
 	["medium"] = 2,
 	["big"] = 3,
@@ -771,6 +772,48 @@ data:extend(
         }
       }
     }
+  },
+  {
+    type = "explosion",
+    name = dy.."explosion-"..k.."-no-particle",
+    flags = {"not-on-map"},
+    animations =
+    {
+      {
+        filename = "__base__/graphics/entity/big-explosion/big-explosion.png",
+        flags = { "compressed" },
+        width = 197,
+        height = 245,
+        frame_count = 47,
+        line_length = 6,
+        shift = {0.1875, -0.75},
+        animation_speed = 0.5,
+		scale = v,
+      }
+    },
+    light = {intensity = v, size = 20*v, color = {r=1.0, g=1.0, b=1.0}},
+    smoke = "smoke-fast",
+    smoke_count = v,
+    smoke_slow_down_factor = 1,
+    sound =
+    {
+      aggregation =
+      {
+        max_count = 1,
+        remove = true
+      },
+      variations =
+      {
+        {
+          filename = "__base__/sound/fight/large-explosion-1.ogg",
+          volume = 1.0
+        },
+        {
+          filename = "__base__/sound/fight/large-explosion-2.ogg",
+          volume = 1.0
+        }
+      }
+    },
   },
   {
     type = "sticker",

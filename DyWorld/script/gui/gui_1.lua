@@ -1,5 +1,6 @@
 -- gui_1 is the stats menu
 require "script/stats/functions"
+require "data/core/functions/amounts"
 
 function Round(num, numDecimalPlaces)
 	local mult = 10^(numDecimalPlaces or 0)
@@ -128,7 +129,7 @@ function gui_1_openGui(player, id)
 		end
 		----- Loot Pickup Bonus -----
 		if P_Level >= 7 and global.stats.killed and global.stats.killed >= 1 then
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Loot Pickup Range: "..math.floor(game.players[id].character_loot_pickup_distance_bonus+2), style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Loot Pickup Range: "..math.floor(game.players[id].character_loot_pickup_distance_bonus+Character_Loot_Range), style = "dyworld_label"}
 			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Health: "..game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus, style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 7}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}

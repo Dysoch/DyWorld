@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+data.raw.lab.lab.energy_usage = "1000kW"
+
 data:extend(
 {
   {
@@ -155,7 +157,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = "60kW",
+    energy_usage = "2000kW",
     researching_speed = 1,
     inputs =
     {
@@ -321,7 +323,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = "120kW",
+    energy_usage = "3000kW",
     researching_speed = 1.25,
     inputs =
     {
@@ -488,7 +490,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = "250kW",
+    energy_usage = "4000kW",
     researching_speed = 1.5,
     inputs =
     {
@@ -656,7 +658,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = "500kW",
+    energy_usage = "5000kW",
     researching_speed = 2,
     inputs =
     {
@@ -825,7 +827,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = "1000kW",
+    energy_usage = "6000kW",
     researching_speed = 2.5,
     inputs =
     {
@@ -995,7 +997,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = "2500kW",
+    energy_usage = "10000kW",
     researching_speed = 3,
     inputs =
     {

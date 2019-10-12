@@ -78,7 +78,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Centrifuge then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Centrifuge.Next.."-centrifuge"
 	end
 	DyWorld_Prototype_Entity.crafting_speed = Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Centrifuge.Speed_Mod), 2)
-	DyWorld_Prototype_Entity.energy_usage = Round(125 + (Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Centrifuge.Speed_Mod), 2) * 50)).."kW"
+	DyWorld_Prototype_Entity.energy_usage = Round(300 + (Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Centrifuge.Speed_Mod), 2) * 50)).."kW"
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = "__base__/graphics/icons/centrifuge.png",

@@ -12,6 +12,26 @@ local Data_Table_Item_Group = {
 		Main = "warfare-ammo"
 	},
 	{
+		Name = "ammo-sniper",
+		Type = "sub",
+		Main = "warfare-ammo"
+	},
+	{
+		Name = "ammo-bullet-basic",
+		Type = "sub",
+		Main = "warfare-ammo"
+	},
+	{
+		Name = "ammo-bullet-piercing",
+		Type = "sub",
+		Main = "warfare-ammo"
+	},
+	{
+		Name = "ammo-bullet-explosive",
+		Type = "sub",
+		Main = "warfare-ammo"
+	},
+	{
 		Name = "ammo-laser",
 		Type = "sub",
 		Main = "warfare-ammo"

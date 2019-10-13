@@ -17,19 +17,17 @@ add tech for cannon speed modifier
 add tech for grenade damage modifier
 add tech for landmine damage modifier
 add uses for filters
-add boat
-add hovercraft
 add beam turrets
-investigate beam rifle why it isnt working
 add laser turrets
 add biter that is invisible once it moves (only when moving) (named: Dysoch's Wrath)
-add speed mod to enemies table
 add more effectivity modules
 add more pollution modules (both)
 make super modules a lot more expensive
 change recipes of belts with new intermediates
 change recipes of blast furnaces
+
 add first boss: The Queen of the Sky
+investigate beam rifle why it isnt working
 
 gun turrets shoot slow
 chaingun turrets shoot insanely quick, but lower damage and larger base

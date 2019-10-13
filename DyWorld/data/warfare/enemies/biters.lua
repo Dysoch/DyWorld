@@ -50,10 +50,10 @@ data:extend(
       animation = biterattackanimation(Scale, Data.Color, Data.Color)
     },
     vision_distance = 5 + Data.Range,
-    movement_speed = 0.2 + (Data.Tier / 100),
+    movement_speed = (0.2 + (Data.Tier / 100)) * Data.Enemy_Speed,
     distance_per_frame = 0.188,
     -- in pu
-    pollution_to_join_attack = 20 * Data.Tier,
+    pollution_to_join_attack = Round((20 * Data.Tier) * Data.Enemy_Pollution),
     corpse = Dmg.."-"..Size.."-biter-corpse",
     dying_explosion = "blood-explosion-small",
     working_sound = make_biter_calls(0.4),

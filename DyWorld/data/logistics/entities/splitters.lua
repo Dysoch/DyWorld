@@ -9,6 +9,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-3", {"looped-name."..v.DyWorld.Name}}
 	if v.DyWorld.Entity.Belt.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt.Next.."-splitter"
+	else
+		DyWorld_Prototype_Entity.next_upgrade = nil
 	end
 	DyWorld_Prototype_Entity.structure.north.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.north.hr_version.tint = Material_Colors[v.DyWorld.Name]

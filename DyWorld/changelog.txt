@@ -87,6 +87,7 @@ Date: 18. 10. 2019
     - Fixed super modules not able to work on most intermediates
     - Fixed Construction Robots having wrong energy defined
     - Fixed crash with rotating ghost inserters
+    - Fixed upgrade bug with transport belt entities (at max tier)
     - Fixed (hopefully) an error with the random loot chests that spawn far away
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.6

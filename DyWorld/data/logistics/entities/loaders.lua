@@ -9,6 +9,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-4", {"looped-name."..v.DyWorld.Name}}
 	if v.DyWorld.Entity.Belt.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt.Next.."-loader"
+	else
+		DyWorld_Prototype_Entity.next_upgrade = nil
 	end
 	
 	DyWorld_Prototype_Entity.structure = {
@@ -93,10 +95,11 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
     }
 	
 	DyWorld_Prototype_Entity.max_health = 170 * Metal_Tiers[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.collision_box = { {-0.2, -0.2}, {0.2, 0.2} }
-	DyWorld_Prototype_Entity.selection_box = { {-0.5, -0.5}, {0.5, 0.5} }
+	DyWorld_Prototype_Entity.collision_box = {{-0.4, -0.4}, {0.4, 0.4}}
+	DyWorld_Prototype_Entity.selection_box = {{-0.05, -0.05}, {0.05, 0.05}}
+	DyWorld_Prototype_Entity.fast_replaceable_group = "transport-belt"
 	DyWorld_Prototype_Entity.icon = nil
-	DyWorld_Prototype_Entity.filter_count = v.DyWorld.Tier
+	DyWorld_Prototype_Entity.filter_count = 5
 	DyWorld_Prototype_Entity.belt_length = 0.5
 	DyWorld_Prototype_Entity.container_distance = 1.0
 	DyWorld_Prototype_Entity.belt_distance = 0

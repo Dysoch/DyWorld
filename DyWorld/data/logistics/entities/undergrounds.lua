@@ -9,6 +9,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-2", {"looped-name."..v.DyWorld.Name}}
 	if v.DyWorld.Entity.Belt.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt.Next.."-underground-belt"
+	else
+		DyWorld_Prototype_Entity.next_upgrade = nil
 	end
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.max_health = 150 * Metal_Tiers[v.DyWorld.Name]

@@ -5,8 +5,9 @@ Date: 18. 10. 2019
     - Warfare Update! Massive amount of warfare related content added!
     - Introducing Damage Type related content. Certain objects can only be hurt by certain Damage types, and are massively resistant to others.
     - Introducing 210 different mobile natives, and 105 stationary natives when Warfare Enemies are enabled. Base game generation of enemies is then disabled
+    - Loaders are now 1x1, with nicer graphics
   Features:
-    - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts as well
+    - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts and loaders as well
     - Added Atomic Artillery Shell. This has a massive radius of destruction! USE WITH CARE. Leaves behind a radioactive wasteland, that is not passable for 15 minutes unless you want to die!
     - Added Metal flooring tiles. Use metals to color the world!
     - Added Rifle

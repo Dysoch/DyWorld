@@ -14,7 +14,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.icons = {
 	  {
-		icon = "__base__/graphics/icons/transport-belt.png",
+		icon = dyworld_path_icon.."belt-icon-base.png",
+	  },
+	  {
+		icon = dyworld_path_icon.."belt-icon-mask.png",
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
@@ -27,7 +30,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.icons = {
 	  {
-		icon = "__base__/graphics/icons/transport-belt.png",
+		icon = dyworld_path_icon.."belt-icon-base.png",
+	  },
+	  {
+		icon = dyworld_path_icon.."belt-icon-mask.png",
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}

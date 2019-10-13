@@ -10,13 +10,103 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	if v.DyWorld.Entity.Belt.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt.Next.."-loader"
 	end
-	DyWorld_Prototype_Entity.structure.direction_in.sheet.tint = Material_Colors[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.structure.direction_out.sheet.tint = Material_Colors[v.DyWorld.Name]
+	
+	DyWorld_Prototype_Entity.structure = {
+        direction_in = {
+            sheets = {
+                {
+                    hr_version = {
+                        filename = dyworld_path_entity.."hr-loader-base.png",
+                        height = 64,
+                        priority = "extra-high",
+                        width = 80,
+                        scale = 0.5,
+                        shift = { 0.125, 0 }
+                    },
+                    filename = dyworld_path_entity.."lr-loader-base.png",
+                    height = 32,
+                    priority = "extra-high",
+                    width = 40,
+                    scale = 1,
+                    shift = { 0.125, 0 }
+                },
+                {
+                    hr_version = {
+                        filename = dyworld_path_entity.."hr-loader-mask.png",
+                        height = 64,
+                        priority = "extra-high",
+                        width = 80,
+                        scale = 0.5,
+                        tint = Material_Colors[v.DyWorld.Name],
+                        shift = { 0.125, 0 }
+                    },
+                    filename = dyworld_path_entity.."lr-loader-mask.png",
+                    height = 32,
+                    priority = "extra-high",
+                    width = 40,
+                    scale = 1,
+                    tint = Material_Colors[v.DyWorld.Name],
+                    shift = { 0.125, 0 }
+                },
+            },
+        },
+        direction_out = {
+            sheets = {
+                {
+                    hr_version = {
+                        filename = dyworld_path_entity.."hr-loader-base.png",
+                        height = 64,
+                        priority = "extra-high",
+                        width = 80,
+                        scale = 0.5,
+                        shift = { 0.125, 0 },
+                    },
+                    filename = dyworld_path_entity.."lr-loader-base.png",
+                    height = 32,
+                    priority = "extra-high",
+                    width = 40,
+                    scale = 1,
+                    shift = { 0.125, 0 },
+                },
+                {
+                    hr_version = {
+                        filename = dyworld_path_entity.."hr-loader-mask.png",
+                        height = 64,
+                        priority = "extra-high",
+                        width = 80,
+                        scale = 0.5,
+                        tint = Material_Colors[v.DyWorld.Name],
+                        shift = { 0.125, 0 },
+                        y = 64
+                    },
+                    filename = dyworld_path_entity.."lr-loader-mask.png",
+                    height = 32,
+                    priority = "extra-high",
+                    width = 40,
+                    scale = 1,
+                    tint = Material_Colors[v.DyWorld.Name],
+                    shift = { 0.125, 0 },
+                    y = 32
+                },
+            },
+        }
+    }
+	
 	DyWorld_Prototype_Entity.max_health = 170 * Metal_Tiers[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.collision_box = { {-0.2, -0.2}, {0.2, 0.2} }
+	DyWorld_Prototype_Entity.selection_box = { {-0.5, -0.5}, {0.5, 0.5} }
 	DyWorld_Prototype_Entity.icon = nil
+	DyWorld_Prototype_Entity.filter_count = v.DyWorld.Tier
+	DyWorld_Prototype_Entity.belt_length = 0.5
+	DyWorld_Prototype_Entity.container_distance = 1.0
+	DyWorld_Prototype_Entity.belt_distance = 0
+	DyWorld_Prototype_Entity.collision_mask = {"item-layer", "object-layer", "player-layer", "water-tile"}
 	DyWorld_Prototype_Entity.icons = {
 	  {
-		icon = "__base__/graphics/icons/loader.png",
+		icon = dyworld_path_icon.."loader-icon-base.png",
+	  },
+	  {
+		icon = dyworld_path_icon.."loader-icon-mask.png",
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}
@@ -30,7 +120,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Item.icon = nil
 	DyWorld_Prototype_Item.icons = {
 	  {
-		icon = "__base__/graphics/icons/loader.png",
+		icon = dyworld_path_icon.."loader-icon-base.png",
+	  },
+	  {
+		icon = dyworld_path_icon.."loader-icon-mask.png",
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	}

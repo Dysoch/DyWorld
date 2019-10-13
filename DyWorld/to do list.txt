@@ -9,6 +9,8 @@ add early game modular armor (1 slot, for belt immume)
 add tech for gun turret speed modifier
 add tech for laser turret speed modifier
 add tech for laser turret damage modifier
+add tech for beam turret speed modifier
+add tech for beam turret damage modifier
 add tech for combat robot laser damage modifier
 add tech for combat robot beam damage modifier
 add tech for cannon damage modifier
@@ -18,8 +20,8 @@ add tech for landmine damage modifier
 add uses for filters
 add boat
 add hovercraft
-add early car
 add beam turrets
+investigate beam rifle why it isnt working
 add laser turrets
 increase looting range
 add warfare intermediates (gun bases, electric bases, barrels, scopes, etc)
@@ -31,7 +33,6 @@ make super modules a lot more expensive
 change recipes of belts with new intermediates
 change recipes of blast furnaces
 add first boss: The Queen of the Sky
-increase power usages of Labs
 
 gun turrets shoot slow
 chaingun turrets shoot insanely quick, but lower damage and larger base

@@ -9,6 +9,8 @@ Date: 18. 10. 2019
     - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts as well
     - Added Atomic Artillery Shell. This has a massive radius of destruction! USE WITH CARE. Leaves behind a radioactive wasteland, that is not passable for 15 minutes unless you want to die!
     - Added Metal flooring tiles. Use metals to color the world!
+    - Added Rifle
+    - Added Chaingun
     - Added Sniper Rifle
     - Added Sniper Turret
     - Added 5 new Gun Turrets (use basic ammo magazines) and disabled the vanilla Gun Turret

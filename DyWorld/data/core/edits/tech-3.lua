@@ -1,18 +1,78 @@
 require "data/core/functions/prefix"
 
+local Tech_Remove = {
+	"stone-walls", 
+	"gates",
+	"engine",
+	"electric-engine",
+	"turrets",
+	"toolbelt",
+	"nuclear-power",
+	"weapon-shooting-speed-1",
+	"weapon-shooting-speed-2",
+	"weapon-shooting-speed-3",
+	"weapon-shooting-speed-4",
+	"weapon-shooting-speed-5",
+	"weapon-shooting-speed-6",
+	"physical-projectile-damage-1",
+	"physical-projectile-damage-2",
+	"physical-projectile-damage-3",
+	"physical-projectile-damage-4",
+	"physical-projectile-damage-5",
+	"physical-projectile-damage-6",
+	"physical-projectile-damage-7",
+	"energy-weapons-damage-1",
+	"energy-weapons-damage-2",
+	"energy-weapons-damage-3",
+	"energy-weapons-damage-4",
+	"energy-weapons-damage-5",
+	"energy-weapons-damage-6",
+	"energy-weapons-damage-7",
+	"stronger-explosives-1",
+	"stronger-explosives-2",
+	"stronger-explosives-3",
+	"stronger-explosives-4",
+	"stronger-explosives-5",
+	"stronger-explosives-6",
+	"stronger-explosives-7",
+	"laser-turret-speed-1",
+	"laser-turret-speed-2",
+	"laser-turret-speed-3",
+	"laser-turret-speed-4",
+	"laser-turret-speed-5",
+	"laser-turret-speed-6",
+	"laser-turret-speed-7",
+	"heavy-armor",
+	"modular-armor",
+	"power-armor",
+	"power-armor-mk2",
+}
+
+for _,Tech_Removed in pairs(Tech_Remove) do
+	for INDEX, TECH in pairs(data.raw.technology) do
+		if TECH.prerequisites then
+			for PreReqIndex,PreReq in pairs(TECH.prerequisites) do
+				if PreReq == Tech_Removed then
+					TECH.prerequisites[PreReqIndex] = nil
+				end
+			end
+		end
+	end
+	if data.raw.technology[Tech_Removed] then
+		data.raw.technology[Tech_Removed] = nil
+	end
+end
+
 local Tech_PreReq_Remove = {
+	["logistics-3"] = {"production-science-pack"},
 	["automation-3"] = {"production-science-pack"},
 	["uranium-processing"] = {"chemical-science-pack"},
 	["military-3"] = {"chemical-science-pack"},
 	["military-4"] = {"utility-science-pack"},
-	["military-science-pack"] = {"stone-walls"},
-	["nuclear-fuel-reprocessing"] = {"nuclear-power"},
-	["laser-turrets"] = {"turrets"},
 	["ammo-turrets-1"] = {"intermediates-1"},
 	["circuit-network"] = {"logistic-science-pack"},
+	["automobilism"] = {"logistics-2", "engine"},
 }
--- Special Cases:
-data.raw.technology.automobilism.prerequisites = {}
 
 local Tech_PreReq = {
 	["smelting-2"] = {"silver-processing", "nickel-processing", "tin-processing"},
@@ -104,21 +164,13 @@ for k,v in pairs(Tech_PreReq) do
 	end
 end
 
-local function removeFirst(tbl, val)
-	for i, v in ipairs(tbl) do
-		if v == val then
-			return table.remove(tbl, i)
-		end
-	end
-end
-
 for k,v in pairs(Tech_PreReq_Remove) do
 	if data.raw.technology[k] then
 		if data.raw.technology[k].prerequisites then
-			for _,z in pairs(data.raw.technology[k].prerequisites) do
+			for index,z in pairs(data.raw.technology[k].prerequisites) do
 				for _,x in pairs(v) do
 					if z == x then
-						removeFirst(data.raw.technology[k].prerequisites, x)
+						data.raw.technology[k].prerequisites[index] = nil
 					end
 				end
 			end
@@ -227,53 +279,6 @@ local Tech_Science_Pack_Change_Military = {
 	["military-3"] = 1,
 	["military-4"] = 2,
 }
-
-local Tech_Remove = {
-	"stone-walls", 
-	"gates",
-	"turrets",
-	"nuclear-power",
-	"weapon-shooting-speed-1",
-	"weapon-shooting-speed-2",
-	"weapon-shooting-speed-3",
-	"weapon-shooting-speed-4",
-	"weapon-shooting-speed-5",
-	"weapon-shooting-speed-6",
-	"physical-projectile-damage-1",
-	"physical-projectile-damage-2",
-	"physical-projectile-damage-3",
-	"physical-projectile-damage-4",
-	"physical-projectile-damage-5",
-	"physical-projectile-damage-6",
-	"physical-projectile-damage-7",
-	"energy-weapons-damage-1",
-	"energy-weapons-damage-2",
-	"energy-weapons-damage-3",
-	"energy-weapons-damage-4",
-	"energy-weapons-damage-5",
-	"energy-weapons-damage-6",
-	"energy-weapons-damage-7",
-	"stronger-explosives-1",
-	"stronger-explosives-2",
-	"stronger-explosives-3",
-	"stronger-explosives-4",
-	"stronger-explosives-5",
-	"stronger-explosives-6",
-	"stronger-explosives-7",
-	"laser-turret-speed-1",
-	"laser-turret-speed-2",
-	"laser-turret-speed-3",
-	"laser-turret-speed-4",
-	"laser-turret-speed-5",
-	"laser-turret-speed-6",
-	"laser-turret-speed-7",
-}
-
-for k,v in pairs(Tech_Remove) do
-	if data.raw.technology[v] then
-		data.raw.technology[v] = nil
-	end
-end
 
 for k,v in pairs(Tech_Science_Pack_Change) do
 	if data.raw.technology[k] then

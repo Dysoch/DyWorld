@@ -5,7 +5,13 @@ local Change = {
 	{Old = "piercing-rounds-magazine", New = "piercing-ammo-earth"},
 	{Old = "uranium-rounds-magazine", New = "piercing-ammo-poison"},
 	{Old = "radar", New = "stone-radar"},
+	{Old = "laser-turret", New = "gold-beam-turret"},
 	{Old = "gun-turret", New = "stone-gun-turret"},
+	{Old = "light-armor", New = "modular-armor-tier-1"},
+	{Old = "heavy-armor", New = "modular-armor-tier-2"},
+	{Old = "modular-armor", New = "modular-armor-tier-3"},
+	{Old = "power-armor", New = "modular-armor-tier-4"},
+	{Old = "power-armor-mk2", New = "modular-armor-tier-5"},
 }
 
 for k,v in pairs(Change) do
@@ -66,6 +72,10 @@ for k,m in pairs(Change) do
 		if data.raw.ammo[m.Old] then
 			data.raw.ammo[m.Old].DyWorld_Hidden = true
 			data.raw.ammo[m.Old].subgroup = "dyworld-hidden-items"
+		end
+		if data.raw.armor[m.Old] then
+			data.raw.armor[m.Old].DyWorld_Hidden = true
+			data.raw.armor[m.Old].subgroup = "dyworld-hidden-items"
 		end
 		if data.raw.capsule[m.Old] then
 			data.raw.capsule[m.Old].DyWorld_Hidden = true

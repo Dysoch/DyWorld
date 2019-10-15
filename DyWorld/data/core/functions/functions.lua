@@ -28,3 +28,21 @@ function DyWorld_Cloud(SCALE, TINT)
 	  tint = TINT or nil,
     }
 end
+
+function DyWorld_Add_To_Tech(TECH, RECIPE)
+	if data.raw.technology[TECH] and data.raw.recipe[RECIPE] then
+		local result = {type = "unlock-recipe", recipe = RECIPE}
+		table.insert(data.raw.technology[TECH].effects, result)
+	end
+	if data.raw.recipe[RECIPE] then
+		if data.raw.recipe[RECIPE].enabled then
+			data.raw.recipe[RECIPE].enabled = false
+		end
+		if data.raw.recipe[RECIPE].normal then
+			data.raw.recipe[RECIPE].normal.enabled = false
+		end
+		if data.raw.recipe[RECIPE].expensive then
+			data.raw.recipe[RECIPE].expensive.enabled = false
+		end
+	end	
+end

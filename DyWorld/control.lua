@@ -118,6 +118,12 @@ script.on_event(defines.events.on_player_crafted_item, function(event)
 	IncrementerGlobal("crafted", event.item_stack.count, event.item_stack.name)
 	IncrementerPersonal("crafted", event.item_stack.count, event.player_index, event.item_stack.name)
 	XP_Crafting(event.player_index, event.item_stack.name, event.item_stack.count)
+	
+	
+	--[[local pl = game.players[event.player_index]
+	local gh = pl.cursor_ghost
+	if gh == nil or gh.name ~= event.item_stack.name then return end
+	pl.cursor_stack.swap_stack (event.item_stack)]]--
 end)
 
 script.on_event(defines.events.on_player_mined_item, function(event)
@@ -418,6 +424,10 @@ end)
 script.on_event("DyWorld_inserter_drop_lateral_adjust", function(event)
 	DyWorld_inserter_drop_lateral_adjust_Key(event)
 end)
+
+--[[script.on_event("DyWorld_Create_Holding_Item", function(event)
+	DyWorld_Create_Holding_Item_Key(event)
+end)]]--
 
 --------------------------------- TEST AREA ------------------------------------------
 

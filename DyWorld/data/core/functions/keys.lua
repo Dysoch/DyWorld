@@ -23,8 +23,13 @@ data:extend({
 	{
 		type = "custom-input",
 		name = "DyWorld_Loot_Deconstruct",
-		key_sequence = "PAD +"
+		key_sequence = "PAD *"
 	},
+	--[[{
+		type = "custom-input",
+		name = "DyWorld_Create_Holding_Item",
+		key_sequence = "ALT + C"
+	},]]--
 	{
 		type = "custom-input",
 		name = "DyWorld_Guide",

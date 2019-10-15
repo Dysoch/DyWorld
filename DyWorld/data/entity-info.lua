@@ -8,19 +8,19 @@ Data_Entity = {
 			Range = 4,
 			Next = "iron",
 			Ingredients = {
-				["stone-gear-wheel"] = 2,
+				["simple-motor"] = 1,
 				["stone-plate"] = 1,
 			},
 			Underground_Ingredients = {
-				["stone-gear-wheel"] = 2,
+				["simple-motor"] = 1,
 				["stone-plate"] = 1,
 			},
 			Splitter_Ingredients = {
-				["stone-gear-wheel"] = 2,
+				["simple-motor"] = 1,
 				["stone-plate"] = 1,
 			},
 			Loader_Ingredients = {
-				["stone-gear-wheel"] = 2,
+				["simple-motor"] = 1,
 				["stone-plate"] = 1,
 			},	
 		},
@@ -722,13 +722,13 @@ Data_Entity = {
 			},
 			Logistic_Ingredients = {
 				["gold-plate"] = 5,
-				["engine-unit"] = 1,
+				["electronic-motor"] = 1,
 				["frame"] = 1,
 				["electronic-control-board"] = 5,
 			},
 			Construction_Ingredients = {
 				["gold-plate"] = 5,
-				["engine-unit"] = 1,
+				["electronic-motor"] = 1,
 				["frame"] = 1,
 				["electronic-control-board"] = 5,
 			},
@@ -742,17 +742,21 @@ Data_Entity = {
 			Previous = "iron",
 			Next = "steel",
 			Ingredients = {
-				["electronic-circuit"] = 1,
+				["electronic-control-board"] = 1,
 				["bronze-plate"] = 5,
+				["electronic-motor"] = 1,
 			},
 			Underground_Ingredients = {
 				["bronze-plate"] = 5,
+				["electronic-motor"] = 1,
 			},
 			Splitter_Ingredients = {
 				["electronic-control-board"] = 1,
+				["electronic-motor"] = 1,
 			},
 			Loader_Ingredients = {
 				["electronic-control-board"] = 1,
+				["electronic-motor"] = 1,
 			},
 		},
 		Pipe = {
@@ -1094,16 +1098,20 @@ Data_Entity = {
 			Ingredients = {
 				["stainless-steel-gear-wheel"] = 4,
 				["stainless-steel-plate"] = 5,
+				["tough-motor"] = 1,
 			},
 			Underground_Ingredients = {
 				["stainless-steel-plate"] = 5,
+				["tough-motor"] = 1,
 			},
 			Splitter_Ingredients = {
 				["tough-control-board"] = 1,
+				["tough-motor"] = 1,
 				["logistic-unit"] = 1,
 			},
 			Loader_Ingredients = {
 				["tough-control-board"] = 1,
+				["tough-motor"] = 1,
 				["logistic-unit"] = 1,
 			},
 		},
@@ -1713,15 +1721,19 @@ Data_Entity = {
 				["arditium-tungstenate-gear-wheel"] = 4,
 				["arditium-tungstenate-plate"] = 5,
 				["controller"] = 1,
+				["logic-motor"] = 1,
 			},
 			Underground_Ingredients = {
 				["arditium-tungstenate-plate"] = 5,
+				["logic-motor"] = 1,
 			},
 			Splitter_Ingredients = {
 				["logic-control-board"] = 1,
+				["logic-motor"] = 1,
 			},
 			Loader_Ingredients = {
 				["logic-control-board"] = 1,
+				["logic-motor"] = 1,
 			},
 		},
 		Wall = {
@@ -2059,15 +2071,19 @@ Data_Entity = {
 			Ingredients = {
 				["neutrobaltium-gear-wheel"] = 4,
 				["neutrobaltium-plate"] = 5,
+				["extreme-motor"] = 1,
 			},
 			Underground_Ingredients = {
 				["neutrobaltium-plate"] = 25,
+				["extreme-motor"] = 1,
 			},
 			Splitter_Ingredients = {
 				["quantum-control-board"] = 1,
+				["extreme-motor"] = 1,
 			},
 			Loader_Ingredients = {
 				["quantum-control-board"] = 1,
+				["extreme-motor"] = 1,
 			},
 		},
 		Robot = {

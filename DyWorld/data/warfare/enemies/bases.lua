@@ -126,6 +126,12 @@ data:extend(
     }
   }
 })
+		if Data.Enemy_Resistances then
+			for k,v in pairs(Data.Enemy_Resistances) do
+				local RESIST = {type = k, percent = Round(v.Percent), decrease = Round(v.Decrease)}
+				table.insert(data.raw["unit-spawner"][Dmg.."-spawner"].resistances, RESIST)
+			end
+		end
 		if settings.startup["DyWorld_Warfare_Enemies_Effects"].value then
 		if Data.Dying_Explosion then
 		if not data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect then data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect = {} end

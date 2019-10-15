@@ -58,7 +58,7 @@ data:extend(
     movement_speed = (0.2 + (Data.Tier / 100)) * Data.Enemy_Speed,
     distance_per_frame = 0.188,
     -- in pu
-    pollution_to_join_attack = Round((25 * Data.Tier) * Data.Enemy_Pollution),
+    pollution_to_join_attack = Round(((25 * Data.Tier) * Scale) * Data.Enemy_Pollution),
     corpse = Dmg.."-"..Size.."-spitter-corpse",
     dying_explosion = "blood-explosion-small",
     working_sound = make_biter_calls(0.4),
@@ -110,6 +110,12 @@ data:extend(
     slow_seconds = (Data.Tier),
   }),
 })
+		if Data.Enemy_Resistances then
+			for k,v in pairs(Data.Enemy_Resistances) do
+				local RESIST = {type = k, percent = Round(v.Percent * Scale), decrease = Round(v.Decrease * Scale)}
+				table.insert(data.raw.unit[Dmg.."-"..Size.."-spitter"].resistances, RESIST)
+			end
+		end
 		if settings.startup["DyWorld_Warfare_Enemies_Effects"].value then
 		if Data.Dying_Explosion then
 		if not data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect then data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect = {} end

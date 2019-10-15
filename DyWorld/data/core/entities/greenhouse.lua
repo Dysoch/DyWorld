@@ -66,6 +66,32 @@ data:extend(
       module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
+    --[[animation =
+    {
+      filename = dyworld_path_entity.."Pasute_Sprite_Sheet.png",
+      width = 512,
+      height = 512,
+      frame_count = 10,
+      shift = {0.2, 0.15},
+	  animation_speed = 0.2,
+	  scale = 0.5,
+	  --tint = Color_Tier[i],
+    },
+    working_visualisations =
+    {
+      --[[{
+        light = {intensity = 1, size = 6},
+        animation =
+        {
+          filename = dyworld_path_entity.."greenhouse-light.png",
+          width = 113,
+          height = 91,
+          frame_count = 1,
+          shift = {0.2, 0.15}
+        }
+      }]]--
+    },]]--
+	
     animation =
     {
       filename = dyworld_path_entity.."greenhouse.png",
@@ -89,6 +115,7 @@ data:extend(
         }
       }
     },
+	
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },

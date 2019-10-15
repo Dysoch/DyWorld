@@ -6,11 +6,13 @@ require("data.warfare.edits.turrets")
 require("data.warfare.entities.walls")
 require("data.warfare.entities.gates")
 require("data.warfare.entities.radars")
-require("data.warfare.entities.gun-turrets")
-require("data.warfare.entities.chaingun-turrets")
-require("data.warfare.entities.shotgun-turrets")
-require("data.warfare.entities.cannon-turrets")
-require("data.warfare.entities.rocket-turrets")
+
+-- Armor
+require("data.warfare.armor.tier-1")
+require("data.warfare.armor.tier-2")
+require("data.warfare.armor.tier-3")
+require("data.warfare.armor.tier-4")
+require("data.warfare.armor.tier-5")
 
 -- Ammo
 require("data.warfare.tech.ammo")
@@ -31,6 +33,12 @@ require("data.warfare.guns.rifle")
 
 -- Turrets
 require("data.warfare.turrets.sniper")
+require("data.warfare.turrets.beam")
+require("data.warfare.turrets.gun-turrets")
+require("data.warfare.turrets.chaingun-turrets")
+require("data.warfare.turrets.shotgun-turrets")
+require("data.warfare.turrets.cannon-turrets")
+require("data.warfare.turrets.rocket-turrets")
 
 -- Landmines
 require("data.warfare.landmines.nuclear")

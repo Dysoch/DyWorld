@@ -96,7 +96,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	
 	DyWorld_Prototype_Entity.max_health = 170 * Metal_Tiers[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.collision_box = {{-0.4, -0.4}, {0.4, 0.4}}
-	DyWorld_Prototype_Entity.selection_box = {{-0.05, -0.05}, {0.05, 0.05}}
+	DyWorld_Prototype_Entity.selection_box = {{-0.5, -0.5}, {0.5, 0.5}}
 	DyWorld_Prototype_Entity.fast_replaceable_group = "transport-belt"
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.filter_count = 5

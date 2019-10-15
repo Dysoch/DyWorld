@@ -81,6 +81,17 @@ Data_Warfare = {
 		},
 	},
 	["gold"] = {
+		Beam_Turret = {
+			Range = 30,
+			Damage = 15,
+			--Previous = "lead",
+			--Next = "arditium",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+			},
+		},
 	},
 	["bronze"] = {
 		Shotgun_Turret = {

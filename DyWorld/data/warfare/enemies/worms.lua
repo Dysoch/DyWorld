@@ -122,9 +122,15 @@ data:extend(
     }
   },
 })
+		if Data.Enemy_Resistances then
+			for k,v in pairs(Data.Enemy_Resistances) do
+				local RESIST = {type = k, percent = Round(v.Percent * Scale), decrease = Round(v.Decrease * Scale)}
+				table.insert(data.raw.turret[Dmg.."-"..Size.."-worm"].resistances, RESIST)
+			end
+		end
 		if settings.startup["DyWorld_Warfare_Enemies_Effects"].value then
 		if Data.Dying_Explosion then
-		if not data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect then data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect = {} end
+		if not data.raw.turret[Dmg.."-"..Size.."-worm"].dying_trigger_effect then data.raw.turret[Dmg.."-"..Size.."-worm"].dying_trigger_effect = {} end
 			local INSERT_1 = {
                 type = "nested-result",
                 action =
@@ -148,11 +154,11 @@ data:extend(
                 type = "create-entity",
                 entity_name = Dmg.."-enemy-explosion-"..Size
               }
-			table.insert(data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect, INSERT_1)
-			table.insert(data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect, INSERT_2)
+			table.insert(data.raw.turret[Dmg.."-"..Size.."-worm"].dying_trigger_effect, INSERT_1)
+			table.insert(data.raw.turret[Dmg.."-"..Size.."-worm"].dying_trigger_effect, INSERT_2)
 		end
 		if Data.Dying_Splash then
-		if not data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect then data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect = {} end
+		if not data.raw.turret[Dmg.."-"..Size.."-worm"].dying_trigger_effect then data.raw.turret[Dmg.."-"..Size.."-worm"].dying_trigger_effect = {} end
             local INSERT_1 = {
                 type = "nested-result",
                 action =
@@ -172,7 +178,7 @@ data:extend(
                   }
                 }
               }
-			table.insert(data.raw.unit[Dmg.."-"..Size.."-spitter"].dying_trigger_effect, INSERT_1)
+			table.insert(data.raw.turret[Dmg.."-"..Size.."-worm"].dying_trigger_effect, INSERT_1)
 		end
 		end
 	end

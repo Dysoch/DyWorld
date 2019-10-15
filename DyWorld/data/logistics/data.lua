@@ -13,3 +13,6 @@ require("data.logistics.entities.robot-logistic")
 require("data.logistics.entities.robot-roboport")
 require("data.logistics.entities.warehouses")
 require("data.logistics.entities.storehouses")
+
+-- Standalone Recipes
+require("data.logistics.recipes.tier-3")

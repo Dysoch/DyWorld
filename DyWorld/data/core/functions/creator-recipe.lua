@@ -80,6 +80,9 @@ data:extend(
 	if v.Productivity then
 		table.insert(DyWorld_Productivity_Module_Add, v.Name)
 	end
+	if v.Tech then
+		DyWorld_Add_To_Tech(v.Tech, v.Name)
+	end
 end
 end
 

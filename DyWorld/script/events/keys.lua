@@ -148,3 +148,36 @@ function DyWorld_inserter_drop_lateral_adjust_Key(event)
 		LateralDropAdjust(selection)
 	end
 end
+
+--[[function DyWorld_Create_Holding_Item_Key(event)
+	local pl = game.players[event.player_index]
+	local sel = pl.selected
+	if sel == nil then return end
+	local r = pl.force.recipes[sel.name]
+	if r == nil then return end
+	if r.name == nil then
+		pl.clean_cursor ()
+    return
+	end
+	local stack = pl.get_main_inventory().find_item_stack(r.name)
+    if stack ~= nil then
+		pl.cursor_stack.swap_stack (stack)
+	else
+		pl.cursor_ghost = r.name
+	end
+	local cursor = pl.cursor_stack
+
+	if not cursor.valid_for_read or cursor == nil then
+		cursor = pl.cursor_ghost
+	end
+
+	if cursor == nil then
+		return nil
+	else
+		cur = cursor.name
+	end
+	if cur == nil then return end
+	local r = pl.force.recipes[cur]
+	if r == nil then return end
+	pl.begin_crafting({count = 1, recipe = r, silent = false})
+end]]--

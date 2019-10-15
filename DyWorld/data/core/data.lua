@@ -38,6 +38,7 @@ require("data.core.item-groups.personal")
 require("data.core.item-groups.logistics")
 require("data.core.item-groups.logistics-2")
 require("data.core.item-groups.machine-production")
+require("data.core.item-groups.machine-production-single")
 
 -- Edits & Edits Related Functions
 require("data.core.edits.entities")

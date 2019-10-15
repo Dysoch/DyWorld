@@ -66,7 +66,8 @@ data:extend(
       module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    --[[animation =
+    --[[
+	animation =
     {
       filename = dyworld_path_entity.."Pasute_Sprite_Sheet.png",
       width = 512,
@@ -75,11 +76,11 @@ data:extend(
       shift = {0.2, 0.15},
 	  animation_speed = 0.2,
 	  scale = 0.5,
-	  --tint = Color_Tier[i],
+	  tint = Color_Tier[i],
     },
     working_visualisations =
     {
-      --[[{
+      {
         light = {intensity = 1, size = 6},
         animation =
         {
@@ -89,8 +90,9 @@ data:extend(
           frame_count = 1,
           shift = {0.2, 0.15}
         }
-      }]]--
-    },]]--
+      }
+    },
+	]]--
 	
     animation =
     {

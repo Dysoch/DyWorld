@@ -85,11 +85,13 @@ Data_Warfare = {
 			Range = 30,
 			Damage = 15,
 			--Previous = "lead",
-			--Next = "arditium",
+			Next = "arditium",
 			Ingredients = {
 				["basic-control-board"] = 2,
 				["iron-gear-wheel"] = 2,
 				["iron-plate"] = 15,
+				["diamond"] = 5,
+				["glass"] = 10,
 			},
 		},
 	},
@@ -205,6 +207,19 @@ Data_Warfare = {
 				["iron-plate"] = 15,
 			},
 		},
+		Beam_Turret = {
+			Range = 40,
+			Damage = 30,
+			Previous = "gold",
+			Next = "arditium-tungstenate",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+				["diamond"] = 15,
+				["glass"] = 10,
+			},
+		},
 	},
 --------------------------------------- TIER 6 --------------------------------------
 	["titanium"] = {
@@ -262,6 +277,19 @@ Data_Warfare = {
 		},
 	},
 	["arditium-tungstenate"] = {
+		Beam_Turret = {
+			Range = 60,
+			Damage = 50,
+			Previous = "arditium",
+			Next = "neutronium",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+				["diamond"] = 30,
+				["glass"] = 10,
+			},
+		},
 	},
 --------------------------------------- TIER 8 --------------------------------------
 	["tungstvar"] = {
@@ -279,6 +307,18 @@ Data_Warfare = {
 	},
 --------------------------------------- TIER 9 --------------------------------------
 	["neutronium"] = {
+		Beam_Turret = {
+			Range = 75,
+			Damage = 100,
+			Previous = "arditium-tungstenate",
+			Ingredients = {
+				["basic-control-board"] = 2,
+				["iron-gear-wheel"] = 2,
+				["iron-plate"] = 15,
+				["diamond"] = 50,
+				["glass"] = 15,
+			},
+		},
 	},
 --------------------------------------- TIER 10 -------------------------------------
 	["neutrobaltium"] = {

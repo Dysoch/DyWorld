@@ -182,6 +182,16 @@ local Data_Table = {
 		Barrel = false,
 	},
 	{
+		Name = "science-7",
+		Tier = 7,
+		Def_Temp = 15,
+		Max_Temp = 100,
+		Color_Base = {r=0, g=0.34, b=0.6},
+		Color_Flow = {r=0.7, g=0.7, b=0.7},
+		Pressure = 0.4, 
+		Barrel = false,
+	},
+	{
 		Name = "crude-refined-oil",
 		Tier = 2,
 		Def_Temp = 15,

@@ -42,3 +42,5 @@ data.raw.recipe["utility-science-pack"].ingredients = {
 	{type = "item", name = "tungsten-plate", amount = 2},
 	--{type = "item", name = "glass", amount = 1},
 }
+
+data.raw.item.satellite.rocket_launch_product = {"space-artifact", 100}

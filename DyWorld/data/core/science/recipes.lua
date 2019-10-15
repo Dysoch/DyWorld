@@ -125,19 +125,58 @@ data:extend(
     },
     results=
     {
-      {type = "fluid", name = "science-6", amount = 20},
+      {type = "fluid", name = "science-6", amount = 10},
     },
     subgroup = dy.."science-fluids",
     order = "science-6",
+  },
+  {
+    type = "recipe",
+    name = "science-7",
+	icons = data.raw.fluid["science-7"].icons,
+    category = "centrifuging",
+    energy_required = 60,
+	enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "science-base", amount = 10},
+      {type = "item", name = "space-artifact", amount = 10},
+    },
+    results=
+    {
+      {type = "fluid", name = "science-7", amount = 10},
+    },
+    subgroup = dy.."science-fluids",
+    order = "science-7",
+  },
+  {
+    type = "recipe",
+    name = "space-science-pack",
+    category = "crafting-with-fluid",
+    energy_required = 5,
+	enabled = false,
+    ingredients = 
+	{
+      {type = "fluid", name = "science-7", amount = 5},
+	  {type = "item", name = "neutronium-plate", amount = 2}
+	},
+    results=
+    {
+      {type = "item", name = "space-science-pack", amount = 1},
+    },
+    subgroup = dy.."science-fluids",
+    order = "science-7",
   },
 })
 
 DyWorld_Add_To_Recipe("science-3", "hydrogen", 150, true)	
 
 if settings.startup["DyWorld_Extraction"].value then
-	DyWorld_Add_To_Recipe("science-5", "cobalt-electric-mining-drill", 1)	
+	DyWorld_Add_To_Recipe("science-5", "cobalt-electric-mining-drill", 1)
+	DyWorld_Add_To_Recipe("science-7", "tungstvar-electric-mining-drill", 1)	
 else
 	DyWorld_Add_To_Recipe("science-5", "electric-mining-drill", 1)	
+	DyWorld_Add_To_Recipe("science-7", "electric-mining-drill", 10)	
 end
 
 if settings.startup["DyWorld_Logistics"].value then
@@ -146,19 +185,24 @@ if settings.startup["DyWorld_Logistics"].value then
 	DyWorld_Add_To_Recipe("science-2", "fast-inserter", 1)
 	DyWorld_Add_To_Recipe("science-2", "stone-pump", 1)
 	DyWorld_Add_To_Recipe("science-3", "bronze-splitter", 1)
+	DyWorld_Add_To_Recipe("science-7", "tungstvar-transport-belt", 1)
 else	
 	DyWorld_Add_To_Recipe("science-1", "transport-belt", 1)
 	DyWorld_Add_To_Recipe("science-2", "transport-belt", 3)
 	DyWorld_Add_To_Recipe("science-2", "pipe-to-ground", 2)
 	DyWorld_Add_To_Recipe("science-3", "fast-splitter", 1)
+	DyWorld_Add_To_Recipe("science-7", "express-transport-belt", 25)
 end
 
 if settings.startup["DyWorld_Power"].value then
 	DyWorld_Add_To_Recipe("science-3", "gold-solar-panel", 1)	
-	DyWorld_Add_To_Recipe("science-6", "electranium-solar-panel", 1)	
+	DyWorld_Add_To_Recipe("science-6", "electranium-solar-panel", 1)
+	DyWorld_Add_To_Recipe("science-7", "tungstvar-solar-panel", 1)	
+	DyWorld_Add_To_Recipe("science-7", "tungstvar-accumulator", 1)	
 else	
 	DyWorld_Add_To_Recipe("science-3", "solar-panel", 1)
 	DyWorld_Add_To_Recipe("science-6", "solar-panel", 5)
+	DyWorld_Add_To_Recipe("science-7", "solar-panel", 25)
 end
 
 if settings.startup["DyWorld_Processing"].value then
@@ -176,7 +220,9 @@ end
 if settings.startup["DyWorld_Warfare"].value then
 	DyWorld_Add_To_Recipe("science-4", "iron-gun-turret", 1)	--TEMP
 	DyWorld_Add_To_Recipe("science-4", "stone-wall", 3)	
+	DyWorld_Add_To_Recipe("science-7", "arditium-tungstenate-radar", 1)	
 else
 	DyWorld_Add_To_Recipe("science-4", "gun-turret", 1)	
 	DyWorld_Add_To_Recipe("science-4", "stone-wall", 1)	
+	DyWorld_Add_To_Recipe("science-7", "radar", 15)	
 end

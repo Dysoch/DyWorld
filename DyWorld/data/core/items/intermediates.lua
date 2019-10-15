@@ -50,6 +50,7 @@ local Data_Table = {
 	
 	["logic-control-board"] = 7,
 	["logic-motor"] = 7,
+	["space-artifact"] = 7,
 	
 	["super-control-board"] = 8,
 	

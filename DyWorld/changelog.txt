@@ -7,6 +7,7 @@ Date: 18. 10. 2019
     - Introducing 210 different mobile natives, and 105 stationary natives when Warfare Enemies are enabled. Base game generation of enemies is then disabled
     - Loaders are now 1x1, with nicer graphics
     - Added recipes for quite a bit tier 3 entities. These recipes are standalones, and dont need the previous tier. This drops the stone and wood usage for late game. They are unlocked a at tier 4 research 
+    - Space Science is now made with Space Science Fluid, made from high tier products
   Features:
     - Added Heat pipe under transport belts back. Option can be disabled (which is its default now) and now when a transport is mined or destroyed, the heat pipe is gone as well. It now works on underground belts and loaders as well
     - Added Atomic Artillery Shell. This has a massive radius of destruction! USE WITH CARE. Leaves behind a radioactive wasteland, that is not passable for 15 minutes unless you want to die!

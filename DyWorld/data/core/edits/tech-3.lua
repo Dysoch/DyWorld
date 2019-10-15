@@ -204,6 +204,7 @@ local Tech_Recipe_Add = {
 	["military-science-pack"] = {"science-4"},
 	["production-science-pack"] = {"science-5"},
 	["utility-science-pack"] = {"science-6"},
+	["space-science-pack"] = {"science-7", "space-science-pack"},
 	["oil-processing"] = {"crude-refined-oil-processing"},
 	["solar-energy"] = {"solar-cell"},
 	["farming-1"] = {"carrot", "boiler-water"},

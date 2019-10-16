@@ -62,6 +62,7 @@ require("data.warfare.tech.ammo-dmg.rocket")
 require("data.warfare.tech.ammo-dmg.shotgun")
 require("data.warfare.tech.ammo-dmg.sniper")
 
+require("data.warfare.tech.gun-speed.cannon")
 require("data.warfare.tech.gun-speed.beam")
 require("data.warfare.tech.gun-speed.bullet")
 require("data.warfare.tech.gun-speed.laser")

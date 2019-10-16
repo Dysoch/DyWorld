@@ -20,6 +20,11 @@ data:extend(
         ammo_category = k,
         modifier = v
       },
+      {
+        type = "ammo-damage",
+        ammo_category = k.."-turret",
+        modifier = v
+      },
     },
     prerequisites = {"military-5", "military-science-pack"},
     unit =
@@ -47,6 +52,11 @@ data:extend(
       {
         type = "gun-speed",
         ammo_category = k,
+        modifier = v * 2
+      },
+      {
+        type = "ammo-damage",
+        ammo_category = k.."-turret",
         modifier = v * 2
       },
     },
@@ -79,6 +89,11 @@ data:extend(
         ammo_category = k,
         modifier = v * 3
       },
+      {
+        type = "ammo-damage",
+        ammo_category = k.."-turret",
+        modifier = v * 3
+      },
     },
     prerequisites = {k.."-gun-enhancement-4"},
     unit =
@@ -107,6 +122,11 @@ data:extend(
       {
         type = "gun-speed",
         ammo_category = k,
+        modifier = v * 4
+      },
+      {
+        type = "ammo-damage",
+        ammo_category = k.."-turret",
         modifier = v * 4
       },
     },
@@ -140,6 +160,11 @@ data:extend(
         ammo_category = k,
         modifier = v * 5
       },
+      {
+        type = "ammo-damage",
+        ammo_category = k.."-turret",
+        modifier = v * 5
+      },
     },
     prerequisites = {k.."-gun-enhancement-10", "utility-science-pack"},
     unit =
@@ -170,6 +195,11 @@ data:extend(
       {
         type = "gun-speed",
         ammo_category = k,
+        modifier = v * 8
+      },
+      {
+        type = "ammo-damage",
+        ammo_category = k.."-turret",
         modifier = v * 8
       },
     },

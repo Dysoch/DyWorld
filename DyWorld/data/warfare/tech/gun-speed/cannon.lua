@@ -2,7 +2,7 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
-local k = "laser"
+local k = "cannon-shell"
 local v = 0.1
 
 data:extend(
@@ -20,20 +20,15 @@ data:extend(
         ammo_category = k,
         modifier = v
       },
-      {
-        type = "ammo-damage",
-        ammo_category = k.."-turret",
-        modifier = v
-      },
     },
-    prerequisites = {"military-3", "military-science-pack"},
+    prerequisites = {"military-4", "logistic-science-pack"},
     unit =
     {
       count_formula = "50*L",
       ingredients =
       {
         {"automation-science-pack", 1},
-        {"military-science-pack", 1},
+        {"logistic-science-pack", 1},
       },
       time = 5 
     },
@@ -54,13 +49,8 @@ data:extend(
         ammo_category = k,
         modifier = v * 2
       },
-      {
-        type = "ammo-damage",
-        ammo_category = k.."-turret",
-        modifier = v * 2
-      },
     },
-    prerequisites = {k.."-gun-enhancement-1", "logistic-science-pack"},
+    prerequisites = {k.."-gun-enhancement-1"},
     unit =
     {
       count_formula = "100*L",
@@ -68,7 +58,6 @@ data:extend(
       {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
-        {"military-science-pack", 1},
       },
       time = 10 
     },
@@ -89,13 +78,8 @@ data:extend(
         ammo_category = k,
         modifier = v * 3
       },
-      {
-        type = "ammo-damage",
-        ammo_category = k.."-turret",
-        modifier = v * 3
-      },
     },
-    prerequisites = {k.."-gun-enhancement-4"},
+    prerequisites = {k.."-gun-enhancement-4", "military-science-pack"},
     unit =
     {
       count_formula = "150*L",
@@ -122,11 +106,6 @@ data:extend(
       {
         type = "gun-speed",
         ammo_category = k,
-        modifier = v * 4
-      },
-      {
-        type = "ammo-damage",
-        ammo_category = k.."-turret",
         modifier = v * 4
       },
     },
@@ -160,11 +139,6 @@ data:extend(
         ammo_category = k,
         modifier = v * 5
       },
-      {
-        type = "ammo-damage",
-        ammo_category = k.."-turret",
-        modifier = v * 5
-      },
     },
     prerequisites = {k.."-gun-enhancement-10", "utility-science-pack"},
     unit =
@@ -195,11 +169,6 @@ data:extend(
       {
         type = "gun-speed",
         ammo_category = k,
-        modifier = v * 8
-      },
-      {
-        type = "ammo-damage",
-        ammo_category = k.."-turret",
         modifier = v * 8
       },
     },

@@ -26,6 +26,20 @@ local Turrets_Changed_Leading =
 	["cobalt-shotgun-turret"] = 1,
 	["tungsten-shotgun-turret"] = 1,
 	
+	["electrum-cannon-turret"] = 1,
+	["tungsten-cannon-turret"] = 1,
+	["electranium-cannon-turret"] = 1,
+	["tungstvar-cannon-turret"] = 1,
+	
+	["silver-chaingun-turret"] = 1,
+	["steel-chaingun-turret"] = 1,
+	["invar-chaingun-turret"] = 1,
+	["titanium-chaingun-turret"] = 1,
+	
+	["tin-laser-turret"] = 1,
+	["lead-laser-turret"] = 1,
+	["electrum-laser-turret"] = 1,
+	
 	["sniper-turret"] = 1,
 }
 
@@ -44,9 +58,28 @@ local Turrets_Changed_Rest =
 	"cobalt-shotgun-turret",
 	"tungsten-shotgun-turret",
 	
+	"electrum-cannon-turret",
+	"tungsten-cannon-turret",
+	"electranium-cannon-turret",
+	"tungstvar-cannon-turret",
+	
+	"silver-chaingun-turret",
+	"steel-chaingun-turret",
+	"invar-chaingun-turret",
+	"titanium-chaingun-turret",
+	
 	"sniper-turret",
 	
 	"laser-turret",
+	
+	"tin-laser-turret",
+	"lead-laser-turret",
+	"electrum-laser-turret",
+	
+	"gold-beam-turret",
+	"arditium-beam-turret",
+	"arditium-tungstenate-beam-turret",
+	"neutronium-beam-turret",
 	
 	"flamethrower-turret",
 }
@@ -65,6 +98,25 @@ local Turrets_Changed_To_8_Ways =
 	"bronze-shotgun-turret",
 	"cobalt-shotgun-turret",
 	"tungsten-shotgun-turret",
+	
+	"electrum-cannon-turret",
+	"tungsten-cannon-turret",
+	"electranium-cannon-turret",
+	"tungstvar-cannon-turret",
+	
+	"silver-chaingun-turret",
+	"steel-chaingun-turret",
+	"invar-chaingun-turret",
+	"titanium-chaingun-turret",
+	
+	"tin-laser-turret",
+	"lead-laser-turret",
+	"electrum-laser-turret",
+	
+	"gold-beam-turret",
+	"arditium-beam-turret",
+	"arditium-tungstenate-beam-turret",
+	"neutronium-beam-turret",
 	
 	"sniper-turret",
 	

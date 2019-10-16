@@ -11,6 +11,8 @@ local Data_Table = {
 	"acid",
 	"plasma",
 	"lava",
+	"sonic",
+	"fission",
 	"ice",
 }
 
@@ -183,14 +185,86 @@ data:extend(
     enabled = false,
     ingredients =
     {
-      {type = "item", name = "gunpowder", amount = math.ceil(Damages[Dmg].Ammo_Damage * 2.5)},
+      {type = "item", name = "gunpowder", amount = math.ceil(Damages[Dmg].Ammo_Damage  / 2.5)},
+      {type = "item", name = "steel-plate", amount = 2},
     },
     result = "piercing-ammo-"..Dmg,
   },
 })
-	if Damages[Dmg].Tier >= 3 then
-		DyWorld_Add_To_Tech(Dmg.."-ammo", "piercing-ammo-"..Dmg)
-	else
-		data.raw.recipe["piercing-ammo-"..Dmg].enabled = true
+local RECIPE = data.raw.recipe["piercing-ammo-"..Dmg]
+	DyWorld_Add_To_Tech(Dmg.."-ammo", "piercing-ammo-"..Dmg)
+	if Dmg == "water" then
+		local RESULT = {type = "fluid", name = "water", amount = 50}
+		table.insert(RECIPE.ingredients, RESULT)
+		RECIPE.category = "crafting-with-fluid"
+	elseif Dmg == "earth" then
+		local RESULT = {type = "item", name = "stone", amount = 5}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "electric" then
+		local RESULT = {type = "item", name = "battery", amount = 1}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "chemical" then
+		local RESULT = {type = "fluid", name = "argon", amount = 50}
+		table.insert(RECIPE.ingredients, RESULT)
+		RECIPE.category = "crafting-with-fluid"
+	elseif Dmg == "poison" then
+		local RESULT = {type = "fluid", name = "boron", amount = 50}
+		table.insert(RECIPE.ingredients, RESULT)
+		RECIPE.category = "crafting-with-fluid"
+	elseif Dmg == "fire" then
+		local RESULT = {type = "item", name = "coal", amount = 5}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "physical" then
+		local RESULT = {type = "item", name = "obsidian", amount = 2}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "impact" then
+		local RESULT = {type = "item", name = "obsidian", amount = 8}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "explosion" then
+		local RESULT = {type = "item", name = "explosives", amount = 1}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "sonic" then
+		local RESULT = {type = "fluid", name = "pollution", amount = 50}
+		table.insert(RECIPE.ingredients, RESULT)
+		RECIPE.category = "crafting-with-fluid"
+	elseif Dmg == "fusion" then
+		local RESULT = {type = "item", name = "uranium-235", amount = 5}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "laser" then
+		local RESULT = {type = "item", name = "diamond", amount = 1}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "lightning" then
+		local RESULT = {type = "item", name = "battery-pack", amount = 5}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "acid" then
+		local RESULT = {type = "fluid", name = "sulfuric-acid", amount = 50}
+		table.insert(RECIPE.ingredients, RESULT)
+		RECIPE.category = "crafting-with-fluid"
+	elseif Dmg == "plasma" then
+		local RESULT = {type = "fluid", name = "methane", amount = 50}
+		table.insert(RECIPE.ingredients, RESULT)
+		RECIPE.category = "crafting-with-fluid"
+	elseif Dmg == "gas" then
+		local RESULT = {type = "fluid", name = "carbon-dioxide", amount = 50}
+		table.insert(RECIPE.ingredients, RESULT)
+		RECIPE.category = "crafting-with-fluid"
+	elseif Dmg == "fungal" then
+		local RESULT = {type = "item", name = "wood", amount = 5}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "lava" then
+		local RESULT = {type = "item", name = "coal", amount = 5}
+		table.insert(RECIPE.ingredients, RESULT)
+		local RESULT = {type = "item", name = "sulfur", amount = 5}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "fission" then
+		local RESULT = {type = "item", name = "uranium-238", amount = 5}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "nuclear" then
+		local RESULT = {type = "item", name = "uranium-fuel-cell", amount = 1}
+		table.insert(RECIPE.ingredients, RESULT)
+	elseif Dmg == "ice" then
+		local RESULT = {type = "fluid", name = "water", amount = 250}
+		table.insert(RECIPE.ingredients, RESULT)
+		RECIPE.category = "crafting-with-fluid"
 	end
 end

@@ -3,14 +3,13 @@ require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
 for k,v in pairs(data.raw.item) do
-if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Beam_Turret then	
+if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Laser_Turret then	
 data:extend(
 {
-  DyWorld_make_beam(v.DyWorld.Name, v.DyWorld.Warfare.Beam_Turret.Damage, Material_Colors[v.DyWorld.Name], true),
   {
     type = "electric-turret",
-    name = v.DyWorld.Name.."-beam-turret",
-	localised_name = {"looped-name.turret-6", {"looped-name."..v.DyWorld.Name}},
+    name = v.DyWorld.Name.."-laser-turret",
+	localised_name = {"looped-name.turret-7", {"looped-name."..v.DyWorld.Name}},
 	icons = 
 	{
 	  {
@@ -20,7 +19,7 @@ data:extend(
 	},
     icon_size = 32,
     flags = { "placeable-player", "placeable-enemy", "player-creation"},
-    minable = { mining_time = 0.5, result = v.DyWorld.Name.."-beam-turret" },
+    minable = { mining_time = 0.5, result = v.DyWorld.Name.."-laser-turret" },
     max_health = 1000,
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{ -1, -1}, {1, 1}},
@@ -32,9 +31,9 @@ data:extend(
     energy_source =
     {
       type = "electric",
-      buffer_capacity = (4250 * v.DyWorld.Tier).."kJ",
-      input_flow_limit = ((4250 * v.DyWorld.Tier) * 12).."kW",
-      drain = Round((4250 * v.DyWorld.Tier) / 33).."kW",
+      buffer_capacity = (850 * v.DyWorld.Tier).."kJ",
+      input_flow_limit = ((850 * v.DyWorld.Tier) * 12).."kW",
+      drain = Round((850 * v.DyWorld.Tier) / 33).."kW",
       usage_priority = "primary-input"
     },
     folded_animation =
@@ -128,36 +127,79 @@ data:extend(
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     attack_parameters =
     {
-      type = "beam",
-      cooldown = 40,
-      range = v.DyWorld.Warfare.Beam_Turret.Range,
+      type = "projectile",
+      cooldown = 30,
+      range = v.DyWorld.Warfare.Laser_Turret.Range,
       source_direction_count = 64,
       source_offset = {0, -3.423489 / 4},
       damage_modifier = 1,
       ammo_type =
       {
-        category = "beam-turret",
-        energy_consumption = (4000 * v.DyWorld.Tier).."kJ",
+        category = "laser-turret",
+        target_type = "direction",
+        energy_consumption = (800 * v.DyWorld.Tier).."kJ",
+        clamp_position = true,
         action =
         {
-          type = "direct",
-          action_delivery =
           {
-            type = "beam",
-            beam = v.DyWorld.Name.."-beam",
-            max_length = v.DyWorld.Warfare.Beam_Turret.Range + 1,
-            duration = 40,
-            source_offset = {0, -1.31439 }
+			type = "direct",
+			action_delivery =
+			{
+              type = "projectile",
+              projectile = v.DyWorld.Name.."-laser-turret-projectile",
+              starting_speed = 1.5,
+              direction_deviation = 0.03,
+              range_deviation = 0.08,
+              max_range = v.DyWorld.Warfare.Laser_Turret.Range + 5
+            }
           }
         }
       }
     },
     call_for_help_radius = 40
   },
+  {
+    type = "projectile",
+    name = v.DyWorld.Name.."-laser-turret-projectile",
+    flags = {"not-on-map"},
+    acceleration = 0.03,
+    collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
+    direction_only = false,
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "create-entity",
+            entity_name = "laser-bubble"
+          },
+          {
+            type = "damage",
+            damage = { amount = v.DyWorld.Warfare.Laser_Turret.Damage, type = "laser"}
+          }
+        }
+      }
+    },
+    light = {intensity = 0.5, size = 10},
+    animation =
+    {
+      filename = "__base__/graphics/entity/laser/laser-to-tint-medium.png",
+      tint = {r=1.0, g=0.0, b=0.0},
+      frame_count = 1,
+      width = 12,
+      height = 33,
+      priority = "high",
+      blend_mode = "additive"
+    }
+  },
 })
 
-	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "laser-turret", v.DyWorld.Name.."-beam-turret", true)
-	DyWorld_Prototype_Item.localised_name = {"looped-name.turret-6", {"looped-name."..v.DyWorld.Name}}
+	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "laser-turret", v.DyWorld.Name.."-laser-turret", true)
+	DyWorld_Prototype_Item.localised_name = {"looped-name.turret-7", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Item.order = Order_Tiers[v.DyWorld.Tier]
 	DyWorld_Prototype_Item.stack_size = 100
 	DyWorld_Prototype_Item.icon = nil
@@ -168,15 +210,15 @@ data:extend(
 	  },
 	}
 
-	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "laser-turret", v.DyWorld.Name.."-beam-turret", true)
+	local DyWorld_Prototype_Recipe = DyWorld_CopyPrototype("recipe", "laser-turret", v.DyWorld.Name.."-laser-turret", true)
 	DyWorld_Prototype_Recipe.normal = {}
 	DyWorld_Prototype_Recipe.expensive = {}
 	DyWorld_Prototype_Recipe.normal.ingredients = {}
-	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-beam-turret"
+	DyWorld_Prototype_Recipe.normal.result = v.DyWorld.Name.."-laser-turret"
 	DyWorld_Prototype_Recipe.expensive.ingredients = {}
-	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-beam-turret"
+	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-laser-turret"
 	DyWorld_Prototype_Recipe.ingredients = nil
-	DyWorld_Prototype_Recipe.localised_name = {"looped-name.turret-6", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Recipe.localised_name = {"looped-name.turret-7", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Recipe.energy_required = 0
 	DyWorld_Prototype_Recipe.normal.energy_required = (5 * v.DyWorld.Tier) * v.DyWorld.Tier
 	DyWorld_Prototype_Recipe.expensive.energy_required = (10 * v.DyWorld.Tier) * v.DyWorld.Tier
@@ -192,22 +234,22 @@ data:extend(
 
 	data:extend({DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if data.raw.technology["beam-turrets"] then
-		DyWorld_Add_To_Tech("beam-turrets", v.DyWorld.Name.."-beam-turret")
+	if data.raw.technology["laser-turrets"] then
+		DyWorld_Add_To_Tech("laser-turrets", v.DyWorld.Name.."-laser-turret")
 	end
 	
-	if v.DyWorld.Warfare.Beam_Turret.Ingredients then
-		for q,a in pairs(v.DyWorld.Warfare.Beam_Turret.Ingredients) do
+	if v.DyWorld.Warfare.Laser_Turret.Ingredients then
+		for q,a in pairs(v.DyWorld.Warfare.Laser_Turret.Ingredients) do
 			local Ingredient = {type = "item", name = q, amount = a}
 			local Ingredient_2 = {type = "item", name = q, amount = Expensive_Check(a)}
-			table.insert(data.raw.recipe[v.DyWorld.Name.."-beam-turret"].normal.ingredients, Ingredient)
-			table.insert(data.raw.recipe[v.DyWorld.Name.."-beam-turret"].expensive.ingredients, Ingredient_2)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-laser-turret"].normal.ingredients, Ingredient)
+			table.insert(data.raw.recipe[v.DyWorld.Name.."-laser-turret"].expensive.ingredients, Ingredient_2)
 		end
 	end
-	if v.DyWorld.Warfare.Beam_Turret.Previous then
-		local Ingredient = {type = "item", name = v.DyWorld.Warfare.Beam_Turret.Previous.."-beam-turret", amount = 1}
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-beam-turret"].normal.ingredients, Ingredient)
-		table.insert(data.raw.recipe[v.DyWorld.Name.."-beam-turret"].expensive.ingredients, Ingredient)
+	if v.DyWorld.Warfare.Laser_Turret.Previous then
+		local Ingredient = {type = "item", name = v.DyWorld.Warfare.Laser_Turret.Previous.."-laser-turret", amount = 1}
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-laser-turret"].normal.ingredients, Ingredient)
+		table.insert(data.raw.recipe[v.DyWorld.Name.."-laser-turret"].expensive.ingredients, Ingredient)
 	end
 end
 end

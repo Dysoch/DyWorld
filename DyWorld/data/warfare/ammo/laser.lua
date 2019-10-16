@@ -50,7 +50,7 @@ data:extend(
     name = "laser-gun-basic-projectile",
     flags = {"not-on-map"},
     acceleration = 0.03,
-    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
     direction_only = false,
     action =
     {
@@ -129,7 +129,7 @@ data:extend(
     name = "laser-gun-advanced-projectile",
     flags = {"not-on-map"},
     acceleration = 0.03,
-    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
     direction_only = false,
     action =
     {
@@ -213,7 +213,7 @@ data:extend(
     name = "laser-gun-basic-shotgun-projectile",
     flags = {"not-on-map"},
     acceleration = 0.03,
-    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
     direction_only = false,
     action =
     {
@@ -293,7 +293,7 @@ data:extend(
     name = "laser-gun-advanced-shotgun-projectile",
     flags = {"not-on-map"},
     acceleration = 0.03,
-    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
+    collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
     direction_only = false,
     action =
     {

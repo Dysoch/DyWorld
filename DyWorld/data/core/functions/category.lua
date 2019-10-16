@@ -66,6 +66,18 @@ local Data_Table = {
 		Name = "sniper",
 		Type = "ammo"
 	},
+	{
+		Name = "laser-turret",
+		Type = "ammo"
+	},
+	{
+		Name = "beam-turret",
+		Type = "ammo"
+	},
+	{
+		Name = "plasma-turret",
+		Type = "ammo"
+	},
 }
 
 function DyWorld_Damage_Type(NAME)

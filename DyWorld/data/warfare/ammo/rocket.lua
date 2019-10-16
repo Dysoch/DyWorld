@@ -3,31 +3,38 @@ require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
 local Data_Table = {
+	"water",
 	"earth",
+	"electric",
 	"chemical",
 	"poison",
 	"fire",
 	"physical",
+	"sonic",
+	"fusion",
+	"laser",
+	"lightning",
 	"acid",
 	"plasma",
+	"gas",
+	"fungal",
 	"lava",
+	"fission",
+	"nuclear",
 	"ice",
-	"water",
-	"impact",
 }
 
 for _, Dmg in pairs(Data_Table) do
-	if settings.startup["DyWorld_Combat_Overhaul"].value then
 data:extend(
 {
   {
     type = "ammo",
-    name = "basic-ammo-"..Dmg,
-	localised_name = {"looped-name.ammo-1", {"damage-type-name."..Dmg}},
+    name = "rocket-"..Dmg,
+	localised_name = {"looped-name.ammo-8", {"damage-type-name."..Dmg}},
     icons = 
 	{
 	  {
-		icon = "__base__/graphics/icons/firearm-magazine.png",
+		icon = "__base__/graphics/icons/rocket.png",
 	  },
 	  {
 		icon = dyworld_path_damage..Dmg..".png",
@@ -38,51 +45,36 @@ data:extend(
     icon_size = 32,
     ammo_type =
     {
-      category = "bullet",
-      target_type = "direction",
-      clamp_position = true,
+      category = "rocket",
+	  target_type = "position",
+	  clamp_position = true,
       action =
       {
         {
           type = "direct",
           action_delivery =
           {
-            type = "instant",
-            source_effects =
-            {
-              {
-                type = "create-explosion",
-                entity_name = "explosion-gunshot"
-              }
-            }
-          }
-        },
-        {
-          type = "direct",
-          action_delivery =
-          {
             type = "projectile",
-            projectile = "basic-ammo-"..Dmg.."-projectile",
-            starting_speed = 1,
-            direction_deviation = 0.05,
-            range_deviation = 0.15,
-            max_range = Damages[Dmg].Ammo_Range,
+            projectile = "rocket-"..Dmg.."-projectile",
+            starting_speed = 0.1,
+            direction_deviation = 0.1,
+            range_deviation = 0.25,
+            max_range = Round(Damages[Dmg].Ammo_Range * 2.5),
           }
         }
       }
     },
-    subgroup = dy.."ammo-bullet-basic",
+    subgroup = dy.."ammo-rocket",
     order = Dmg,
     stack_size = 200,
-    magazine_size = (10 * Damages[Dmg].Tier),
+    magazine_size = (5 * Damages[Dmg].Tier),
   },
   {
     type = "projectile",
-    name = "basic-ammo-"..Dmg.."-projectile",
+    name = "rocket-"..Dmg.."-projectile",
     flags = {"not-on-map"},
-    collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
-    acceleration = 0,
-    direction_only = false,
+    acceleration = 0.005,
+    piercing_damage = Round((Damages[Dmg].Ammo_Damage * 25), 1),
     action =
     {
       type = "direct",
@@ -93,101 +85,99 @@ data:extend(
         {
           {
             type = "create-entity",
-            entity_name = "explosion-hit"
+            entity_name = dy.."explosion-medium"
           },
-          {
-            type = "damage",
-            damage = { amount = Damages[Dmg].Ammo_Damage, type = Dmg}
+		  {
+			type = "nested-result",
+			action =
+			{
+              type = "area",
+              radius = 5,
+              action_delivery =
+              {
+				type = "instant",
+				target_effects =
+				{
+				  {
+					type = "create-entity",
+					entity_name = "explosion-hit"
+				  },
+				  {
+					type = "damage",
+					damage = { amount = Round((Damages[Dmg].Ammo_Damage * 20), 1), type = Dmg}
+				  },
+				  {
+					type = "damage",
+					damage = { amount = 50, type = "explosion"}
+				  },
+				  {
+					type = "damage",
+					damage = { amount = 25, type = "impact"}
+				  },
+			    },
+              }
+            }
           },
-        },
+		}
       }
     },
+    light = {intensity = 0.5, size = 4},
     animation =
     {
-      filename = "__base__/graphics/entity/bullet/bullet.png",
-      frame_count = 1,
-      width = 3,
-      height = 50,
-      priority = "high",
+      filename = "__base__/graphics/entity/rocket/rocket.png",
+      frame_count = 8,
+      line_length = 8,
+      width = 9,
+      height = 35,
+      shift = {0, 0},
 	  tint = Damages[Dmg].Color,
+      priority = "high"
     },
-  },
-})
-	else
-data:extend(
-{
-  {
-    type = "ammo",
-    name = "basic-ammo-"..Dmg,
-	localised_name = {"looped-name.ammo-1", {"damage-type-name."..Dmg}},
-    icons = 
-	{
-	  {
-		icon = "__base__/graphics/icons/firearm-magazine.png",
-	  },
-	  {
-		icon = dyworld_path_damage..Dmg..".png",
-		scale= 0.6, 
-		shift = {8, 9},
-	  },
-	},
-    icon_size = 32,
-    ammo_type =
+    shadow =
     {
-      category = "bullet",
-      action =
-      {
-        type = "direct",
-        action_delivery =
-        {
-          type = "instant",
-          source_effects =
-          {
-            type = "create-explosion",
-            entity_name = "explosion-gunshot"
-          },
-          target_effects =
-          {
-            {
-              type = "create-entity",
-              entity_name = "explosion-hit"
-            },
-            {
-              type = "damage",
-              damage = { amount = Damages[Dmg].Ammo_Damage, type = Dmg}
-            },
-          }
-        }
-      }
+      filename = "__base__/graphics/entity/rocket/rocket-shadow.png",
+      frame_count = 1,
+      width = 7,
+      height = 24,
+      priority = "high",
+      shift = {0, 0}
     },
-    subgroup = dy.."ammo-bullet-basic",
-    order = Dmg,
-    stack_size = 200,
-    magazine_size = (10 * Damages[Dmg].Tier),
+    smoke =
+    {
+      {
+        name = "smoke-fast",
+        deviation = {0.15, 0.15},
+        frequency = 1,
+        position = {0, 1},
+        slow_down_factor = 1,
+        starting_frame = 3,
+        starting_frame_deviation = 5,
+        starting_frame_speed = 0,
+        starting_frame_speed_deviation = 5
+      }
+    }
   },
 })
-	end
+
 data:extend(
 {
   {
     type = "recipe",
-    name = "basic-ammo-"..Dmg,
+    name = "rocket-"..Dmg,
     energy_required = math.ceil(Damages[Dmg].Ammo_Damage / 2),
     enabled = false,
     ingredients =
     {
-      {type = "item", name = "gunpowder", amount = math.ceil(Damages[Dmg].Ammo_Damage / 5)},
-      {type = "item", name = "iron-plate", amount = 2},
+      {type = "item", name = "gunpowder", amount = math.ceil(Damages[Dmg].Ammo_Damage)},
+      {type = "item", name = "explosives", amount = 1},
+      {type = "item", name = "electronic-control-board", amount = 1},
+      {type = "item", name = "tungsten-plate", amount = 2},
     },
-    result = "basic-ammo-"..Dmg,
+    result = "rocket-"..Dmg,
   },
 })
-local RECIPE = data.raw.recipe["basic-ammo-"..Dmg]
-	if Damages[Dmg].Tier >= 3 then
-		DyWorld_Add_To_Tech(Dmg.."-ammo", "basic-ammo-"..Dmg)
-	else
-		RECIPE.enabled = true
-	end
+local RECIPE = data.raw.recipe["rocket-"..Dmg]
+	DyWorld_Add_To_Tech(Dmg.."-ammo", "rocket-"..Dmg)
 	if Dmg == "water" then
 		local RESULT = {type = "fluid", name = "water", amount = 50}
 		table.insert(RECIPE.ingredients, RESULT)

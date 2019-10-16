@@ -19,7 +19,7 @@ data:extend(
     resistances =
     {
     },
-    subgroup = "armor",
+    subgroup = dy.."armor",
     order = "modular-armor-tier-2",
     stack_size = 1,
     infinite = true,

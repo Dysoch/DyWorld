@@ -64,6 +64,20 @@ Data_Warfare = {
 		},
 	},
 	["tin"] = {
+		Laser_Turret = {
+			Range = 30,
+			Damage = 5,
+			--Previous = "lead",
+			Next = "lead",
+			Ingredients = {
+				["basic-control-board"] = 15,
+				["iron-gear-wheel"] = 2,
+				["tin-plate"] = 25,
+				["copper-plate"] = 5,
+				["turret-base-2x2"] = 1,
+				["glass"] = 15,
+			},
+		},
 	},
 --------------------------------------- TIER 3 --------------------------------------
 	["steel"] = {
@@ -122,6 +136,18 @@ Data_Warfare = {
 				["iron-plate"] = 15,
 			},
 		},
+		Laser_Turret = {
+			Range = 45,
+			Damage = 15,
+			Previous = "tin",
+			Next = "electrum",
+			Ingredients = {
+				["electronic-control-board"] = 15,
+				["lead-plate"] = 25,
+				["glass"] = 25,
+				["battery"] = 5,
+			},
+		},
 	},
 --------------------------------------- TIER 4 --------------------------------------
 	["cobalt"] = {
@@ -176,6 +202,17 @@ Data_Warfare = {
 				["iron-gear-wheel"] = 2,
 				["iron-plate"] = 15,
 				["turret-base-5x5"] = 1,
+			},
+		},
+		Laser_Turret = {
+			Range = 60,
+			Damage = 50,
+			Previous = "lead",
+			Ingredients = {
+				["advanced-control-board"] = 25,
+				["electrum-plate"] = 25,
+				["housing"] = 1,
+				["battery"] = 25,
 			},
 		},
 	},

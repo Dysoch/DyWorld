@@ -12,6 +12,15 @@ local Change = {
 	{Old = "modular-armor", New = "modular-armor-tier-3"},
 	{Old = "power-armor", New = "modular-armor-tier-4"},
 	{Old = "power-armor-mk2", New = "modular-armor-tier-5"},
+	{Old = "shotgun-shell", New = "basic-shotgun-ammo-earth"},
+	{Old = "piercing-shotgun-shell", New = "piercing-shotgun-ammo-earth"},
+	{Old = "cannon-shell", New = "cannon-shell-earth"},
+	{Old = "explosive-cannon-shell", New = "cannon-shell-fire"},
+	{Old = "uranium-cannon-shell", New = "cannon-shell-fusion"},
+	{Old = "explosive-uranium-cannon-shell", New = "cannon-shell-nuclear"},
+	{Old = "rocket", New = "rocket-earth"},
+	{Old = "explosive-rocket", New = "rocket-fire"},
+	{Old = "atomic-bomb", New = "rocket-nuclear"},
 }
 
 for k,v in pairs(Change) do

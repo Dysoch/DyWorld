@@ -40,7 +40,7 @@ data:extend(
     icon = "__base__/graphics/icons/solar-panel-equipment.png",
     icon_size = 32,
     placed_as_equipment_result = "portable-engine-equipment-tier-1",
-    subgroup = "equipment",
+    subgroup = dy.."equipment-power",
     order = "portable-engine-equipment-tier-1",
     stack_size = 1
   },

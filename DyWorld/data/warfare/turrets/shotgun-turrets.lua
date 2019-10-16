@@ -90,7 +90,7 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Shotgun_Turret then
 	DyWorld_Prototype_Recipe.expensive.ingredients = {}
 	DyWorld_Prototype_Recipe.expensive.result = v.DyWorld.Name.."-shotgun-turret"
 	DyWorld_Prototype_Recipe.ingredients = nil
-	DyWorld_Prototype_Recipe.localised_name = {"looped-name.turret-1", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Recipe.localised_name = {"looped-name.turret-2", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Recipe.energy_required = 0
 	DyWorld_Prototype_Recipe.normal.energy_required = (5 * v.DyWorld.Tier) * v.DyWorld.Tier
 	DyWorld_Prototype_Recipe.expensive.energy_required = (10 * v.DyWorld.Tier) * v.DyWorld.Tier

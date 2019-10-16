@@ -8,7 +8,6 @@ local Data_Table = {
 	["resin"] = 3,
 	["coal"] = 2,
 	["stone"] = 2,
-	--["silver"] = 2,
 }
 
 
@@ -45,7 +44,7 @@ data:extend(
 	  energy_required = 5,
 	  ingredients = {
 		{type = "item", name = "filter-empty", amount = 1},
-		{type = "item", name = k, amount = 5},
+		{type = "item", name = k, amount = 2},
 	  },
       result = k.."-filter",
 	},
@@ -53,7 +52,7 @@ data:extend(
 	  energy_required = 5,
 	  ingredients = {
 		{type = "item", name = "filter-empty", amount = 1},
-		{type = "item", name = k, amount = 25},
+		{type = "item", name = k, amount = 10},
 	  },
       result = k.."-filter",
 	},
@@ -90,7 +89,7 @@ data:extend(
 	  energy_required = 5,
 	  ingredients = {
 		{type = "item", name = "filter-empty", amount = 1},
-		{type = "item", name = k, amount = 5},
+		{type = "item", name = k, amount = 2},
 	  },
       result = k.."-filter",
 	},
@@ -98,7 +97,7 @@ data:extend(
 	  energy_required = 5,
 	  ingredients = {
 		{type = "item", name = "filter-empty", amount = 1},
-		{type = "item", name = k, amount = 25},
+		{type = "item", name = k, amount = 10},
 	  },
       result = k.."-filter",
 	},

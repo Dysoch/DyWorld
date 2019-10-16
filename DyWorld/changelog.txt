@@ -24,6 +24,7 @@ Date: 18. 10. 2019
   Minor Features:
     - Trees now have a small chance to give wood, acorns or resin when destroyed by weapons (loot dropped)
     - Added an early game way to gain sand
+    - Added uses for all filters. Now required to use in air filters
     - Mining coal now has chance to give sulfur
     - Added a new nuclear fuel cell: Argonium
     - Added Heated Assembling Machine. Good news is it's quicker then a Stone Assembling Machine, but sad news is it can't use fluids in recipes

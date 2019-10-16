@@ -32,6 +32,10 @@ data:extend(
 	if v.Category then
 		data.raw.recipe[v.Name].category = v.Category
 	end
+	-- Main_Product switcher if needed
+	if v.Main_Product then
+		data.raw.recipe[v.Name].main_product = v.Main_Product
+	end
 	-- Fluid adder if needed up to a max of 4 fluids
 	if v.Add_Fluid_1 then
 		local Ingredient = {type = "fluid", name = v.Add_Fluid_1, amount = v.Add_Fluid_1_Amount}

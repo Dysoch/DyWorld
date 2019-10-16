@@ -9,12 +9,17 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Enabled = true,
 		Category = dy.."air-filter",
+		Recipe_Ingredients = {
+			["stone-filter"] = 1,
+		},
 		Multi_Output = {
 			{type = "fluid", name = "oxygen", amount_min = 1, amount_max = 100, probability = 1},
+			{type = "item", name = "filter-empty", amount_min = 1, amount_max = 1, probability = 1},
 		},
 		Icon_Type_Icons = true,
 		Icon = data.raw.fluid["oxygen"].icons,
 		Subgroup = "fluids-0",
+		Main_Product = "oxygen",
 	},
 	{
 		Name = "hydrogen",
@@ -22,12 +27,17 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Enabled = true,
 		Category = dy.."air-filter",
+		Recipe_Ingredients = {
+			["sand-filter"] = 1,
+		},
 		Multi_Output = {
 			{type = "fluid", name = "hydrogen", amount_min = 1, amount_max = 100, probability = 1},
+			{type = "item", name = "filter-empty", amount_min = 1, amount_max = 1, probability = 1},
 		},
 		Icon_Type_Icons = true,
 		Icon = data.raw.fluid["hydrogen"].icons,
 		Subgroup = "fluids-0",
+		Main_Product = "hydrogen",
 	},
 	{
 		Name = "carbon-monoxide",
@@ -35,12 +45,17 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Enabled = true,
 		Category = dy.."air-filter",
+		Recipe_Ingredients = {
+			["sand-filter"] = 1,
+		},
 		Multi_Output = {
 			{type = "fluid", name = "carbon-monoxide", amount_min = 1, amount_max = 100, probability = 1},
+			{type = "item", name = "filter-empty", amount_min = 1, amount_max = 1, probability = 1},
 		},
 		Icon_Type_Icons = true,
 		Icon = data.raw.fluid["carbon-monoxide"].icons,
 		Subgroup = "fluids-0",
+		Main_Product = "carbon-monoxide",
 	},
 	{
 		Name = "carbon-dioxide",
@@ -48,12 +63,17 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Enabled = true,
 		Category = dy.."air-filter",
+		Recipe_Ingredients = {
+			["stone-filter"] = 1,
+		},
 		Multi_Output = {
 			{type = "fluid", name = "carbon-dioxide", amount_min = 1, amount_max = 100, probability = 1},
+			{type = "item", name = "filter-empty", amount_min = 1, amount_max = 1, probability = 1},
 		},
 		Icon_Type_Icons = true,
 		Icon = data.raw.fluid["carbon-dioxide"].icons,
 		Subgroup = "fluids-0",
+		Main_Product = "carbon-dioxide",
 	},
 	{
 		Name = "nitrogen",
@@ -61,12 +81,17 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Enabled = true,
 		Category = dy.."air-filter",
+		Recipe_Ingredients = {
+			["stone-filter"] = 1,
+		},
 		Multi_Output = {
 			{type = "fluid", name = "nitrogen", amount_min = 1, amount_max = 100, probability = 1},
+			{type = "item", name = "filter-empty", amount_min = 1, amount_max = 1, probability = 1},
 		},
 		Icon_Type_Icons = true,
 		Icon = data.raw.fluid["nitrogen"].icons,
 		Subgroup = "fluids-0",
+		Main_Product = "nitrogen",
 	},
 	{
 		Name = "methane",
@@ -74,12 +99,17 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Enabled = true,
 		Category = dy.."air-filter",
+		Recipe_Ingredients = {
+			["obsidian-filter"] = 1,
+		},
 		Multi_Output = {
 			{type = "fluid", name = "methane", amount_min = 1, amount_max = 100, probability = 1},
+			{type = "item", name = "filter-empty", amount_min = 1, amount_max = 1, probability = 1},
 		},
 		Icon_Type_Icons = true,
 		Icon = data.raw.fluid["methane"].icons,
 		Subgroup = "fluids-0",
+		Main_Product = "methane",
 	},
 	{
 		Name = "argon",
@@ -87,12 +117,17 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Enabled = true,
 		Category = dy.."air-filter",
+		Recipe_Ingredients = {
+			["coal-filter"] = 1,
+		},
 		Multi_Output = {
 			{type = "fluid", name = "argon", amount_min = 1, amount_max = 100, probability = 1},
+			{type = "item", name = "filter-empty", amount_min = 1, amount_max = 1, probability = 1},
 		},
 		Icon_Type_Icons = true,
 		Icon = data.raw.fluid["argon"].icons,
 		Subgroup = "fluids-0",
+		Main_Product = "argon",
 	},
 	{
 		Name = "boron",
@@ -100,12 +135,17 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Enabled = true,
 		Category = dy.."air-filter",
+		Recipe_Ingredients = {
+			["coal-filter"] = 1,
+		},
 		Multi_Output = {
 			{type = "fluid", name = "boron", amount_min = 1, amount_max = 100, probability = 1},
+			{type = "item", name = "filter-empty", amount_min = 1, amount_max = 1, probability = 1},
 		},
 		Icon_Type_Icons = true,
 		Icon = data.raw.fluid["boron"].icons,
 		Subgroup = "fluids-0",
+		Main_Product = "boron",
 	},
 	{
 		Name = "air-filtering",
@@ -113,11 +153,15 @@ local Data_Table = {
 		Recipe_Enabled = true,
 		Enabled = true,
 		Category = dy.."air-filter",
+		Recipe_Ingredients = {
+			["resin-filter"] = 1,
+		},
 		Multi_Output = {
 			{type = "fluid", name = "pollution", amount_min = 13, amount_max = 31, probability = 0.9}, --22
 			{type = "fluid", name = "nitrogen", amount_min = 50, amount_max = 70, probability = 0.9}, --60
 			{type = "fluid", name = "hydrogen", amount = 1, probability = 0.9}, --1
 			{type = "fluid", name = "oxygen", amount_min = 14, amount_max = 20, probability = 0.9}, --17
+			{type = "item", name = "filter-empty", amount_min = 1, amount_max = 1, probability = 1},
 		},
 		Icon_Type_Icons = true,
 		Icon = data.raw.fluid["pollution"].icons,

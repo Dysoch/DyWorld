@@ -2,41 +2,33 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
-local Data_Table = 
-{
-	["laser"] = 0.1,
-	["plasma"] = 0.05,
-	["beam"] = 0.15,
-	["sniper"] = 0.0125,
-	["bullet"] = 0.1,
-	["rocket"] = 0.15,
-	["shotgun-shell"] = 0.1,
-}
+local k = "laser"
+local v = 0.25
 
-for k,v in pairs(Data_Table) do
 data:extend(
 {
   {
     type = "technology",
-    name = k.."-gun-enhancement-1",
-	localised_name = {"looped-name.gun-enhancement", {"looped-name."..k}},
+    name = k.."-ammo-enhancement-1",
+	localised_name = {"looped-name.ammo-enhancement", {"looped-name."..k}},
     icon_size = 128,
     icon = "__base__/graphics/technology/weapon-shooting-speed-1.png",
     effects =
     {
       {
-        type = "gun-speed",
+        type = "ammo-damage",
         ammo_category = k,
-        modifier = v
+        modifier = v 
       },
     },
-    prerequisites = {"military"},
+    prerequisites = {"military-3", "military-science-pack"},
     unit =
     {
-      count_formula = "50*L",
+      count_formula = "100*L",
       ingredients =
       {
         {"automation-science-pack", 1},
+        {"military-science-pack", 1},
       },
       time = 5 
     },
@@ -46,26 +38,27 @@ data:extend(
   },
   {
     type = "technology",
-    name = k.."-gun-enhancement-4",
-	localised_name = {"looped-name.gun-enhancement", {"looped-name."..k}},
+    name = k.."-ammo-enhancement-4",
+	localised_name = {"looped-name.ammo-enhancement", {"looped-name."..k}},
     icon_size = 128,
     icon = "__base__/graphics/technology/weapon-shooting-speed-1.png",
     effects =
     {
       {
-        type = "gun-speed",
+        type = "ammo-damage",
         ammo_category = k,
         modifier = v * 2
       },
     },
-    prerequisites = {k.."-gun-enhancement-1", "logistic-science-pack"},
+    prerequisites = {k.."-ammo-enhancement-1", "logistic-science-pack"},
     unit =
     {
-      count_formula = "100*L",
+      count_formula = "200*L",
       ingredients =
       {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
+        {"military-science-pack", 1},
       },
       time = 10 
     },
@@ -75,22 +68,22 @@ data:extend(
   },
   {
     type = "technology",
-    name = k.."-gun-enhancement-7",
-	localised_name = {"looped-name.gun-enhancement", {"looped-name."..k}},
+    name = k.."-ammo-enhancement-7",
+	localised_name = {"looped-name.ammo-enhancement", {"looped-name."..k}},
     icon_size = 128,
     icon = "__base__/graphics/technology/weapon-shooting-speed-1.png",
     effects =
     {
       {
-        type = "gun-speed",
+        type = "ammo-damage",
         ammo_category = k,
         modifier = v * 3
       },
     },
-    prerequisites = {k.."-gun-enhancement-4", "military-science-pack"},
+    prerequisites = {k.."-ammo-enhancement-4"},
     unit =
     {
-      count_formula = "150*L",
+      count_formula = "300*L",
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -105,22 +98,22 @@ data:extend(
   },
   {
     type = "technology",
-    name = k.."-gun-enhancement-10",
-	localised_name = {"looped-name.gun-enhancement", {"looped-name."..k}},
+    name = k.."-ammo-enhancement-10",
+	localised_name = {"looped-name.ammo-enhancement", {"looped-name."..k}},
     icon_size = 128,
     icon = "__base__/graphics/technology/weapon-shooting-speed-1.png",
     effects =
     {
       {
-        type = "gun-speed",
+        type = "ammo-damage",
         ammo_category = k,
         modifier = v * 4
       },
     },
-    prerequisites = {k.."-gun-enhancement-7", "chemical-science-pack"},
+    prerequisites = {k.."-ammo-enhancement-7", "chemical-science-pack"},
     unit =
     {
-      count_formula = "200*L",
+      count_formula = "400*L",
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -136,22 +129,22 @@ data:extend(
   },
   {
     type = "technology",
-    name = k.."-gun-enhancement-13",
-	localised_name = {"looped-name.gun-enhancement", {"looped-name."..k}},
+    name = k.."-ammo-enhancement-13",
+	localised_name = {"looped-name.ammo-enhancement", {"looped-name."..k}},
     icon_size = 128,
     icon = "__base__/graphics/technology/weapon-shooting-speed-1.png",
     effects =
     {
       {
-        type = "gun-speed",
+        type = "ammo-damage",
         ammo_category = k,
         modifier = v * 5
       },
     },
-    prerequisites = {k.."-gun-enhancement-10", "utility-science-pack"},
+    prerequisites = {k.."-ammo-enhancement-10", "utility-science-pack"},
     unit =
     {
-      count_formula = "250*L",
+      count_formula = "500*L",
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -168,22 +161,22 @@ data:extend(
   },
   {
     type = "technology",
-    name = k.."-gun-enhancement-16",
-	localised_name = {"looped-name.gun-enhancement", {"looped-name."..k}},
+    name = k.."-ammo-enhancement-16",
+	localised_name = {"looped-name.ammo-enhancement", {"looped-name."..k}},
     icon_size = 128,
     icon = "__base__/graphics/technology/weapon-shooting-speed-1.png",
     effects =
     {
       {
-        type = "gun-speed",
+        type = "ammo-damage",
         ammo_category = k,
         modifier = v * 8
       },
     },
-    prerequisites = {k.."-gun-enhancement-13", "space-science-pack"},
+    prerequisites = {k.."-ammo-enhancement-13", "space-science-pack"},
     unit =
     {
-      count_formula = "500*L",
+      count_formula = "1000*L",
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -201,4 +194,3 @@ data:extend(
   },
 }
 )
-end

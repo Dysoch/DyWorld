@@ -51,7 +51,21 @@ require("data.warfare.landmines.nuclear")
 require("data.warfare.landmines.slowdown")
 
 -- Techs
-require("data.warfare.tech.gun-enhancement")
-require("data.warfare.tech.ammo-enhancement")
 require("data.warfare.tech.sniper")
 require("data.warfare.tech.laser")
+
+require("data.warfare.tech.ammo-dmg.beam")
+require("data.warfare.tech.ammo-dmg.bullet")
+require("data.warfare.tech.ammo-dmg.laser")
+require("data.warfare.tech.ammo-dmg.plasma")
+require("data.warfare.tech.ammo-dmg.rocket")
+require("data.warfare.tech.ammo-dmg.shotgun")
+require("data.warfare.tech.ammo-dmg.sniper")
+
+require("data.warfare.tech.gun-speed.beam")
+require("data.warfare.tech.gun-speed.bullet")
+require("data.warfare.tech.gun-speed.laser")
+require("data.warfare.tech.gun-speed.plasma")
+require("data.warfare.tech.gun-speed.rocket")
+require("data.warfare.tech.gun-speed.shotgun")
+require("data.warfare.tech.gun-speed.sniper")

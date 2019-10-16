@@ -1,29 +1,27 @@
 
-add seperate tier 3/4 recipes for power
-add seperate tier 3/4 recipes for processing
-add seperate tier 3/4 recipes for warfare
-add landmines
-add water turret
-add module beacons
-add super modules
-add early game modular armor (1 slot, for belt immume)
-add tech for gun turret speed modifier
-add tech for laser turret speed modifier
-add tech for laser turret damage modifier
-add tech for beam turret speed modifier
-add tech for beam turret damage modifier
-add tech for combat robot laser damage modifier
-add tech for combat robot beam damage modifier
-add tech for cannon damage modifier
-add tech for cannon speed modifier
-add tech for grenade damage modifier
-add tech for landmine damage modifier
-redo modifier techs
-add grenades
-add biter that is invisible once it moves (only when moving) (named: Dysoch's Wrath)
-add more effectivity modules
-add more pollution modules (both)
-make super modules a lot more expensive
+add seperate tier 3/4 recipes for power -- 0.9.1
+add seperate tier 3/4 recipes for processing -- 0.9.1
+add seperate tier 3/4 recipes for warfare -- 0.9.1
+add landmines -- 0.9.1
+add water turret -- 0.9.1
+add module beacons -- 0.9.1
+add super modules -- 0.9.0
+add tech for gun turret speed modifier -- 0.9.0
+add tech for laser turret speed modifier -- 0.9.0
+add tech for laser turret damage modifier -- 0.9.0
+add tech for beam turret speed modifier -- 0.9.0
+add tech for beam turret damage modifier -- 0.9.0
+add tech for combat robot laser damage modifier -- 0.9.0
+add tech for combat robot beam damage modifier -- 0.9.0
+add tech for cannon damage modifier -- 0.9.0
+add tech for cannon speed modifier -- 0.9.0
+add tech for grenade damage modifier -- 0.9.0
+add tech for landmine damage modifier -- 0.9.0
+add grenades -- 0.9.1
+add biter that is invisible once it moves (only when moving) (named: Dysoch's Wrath) -- 0.9.1
+add more effectivity modules -- 0.9.1
+add more pollution modules (both) -- 0.9.1
+make super modules a lot more expensive -- 0.9.1
 
 add first boss: The Queen of the Sky
 investigate beam rifle why it isnt working

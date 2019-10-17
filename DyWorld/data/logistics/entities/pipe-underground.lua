@@ -67,8 +67,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if data.raw.technology["logistics-"..v.DyWorld.Tier] then
-		DyWorld_Add_To_Tech("logistics-"..v.DyWorld.Tier, v.DyWorld.Name.."-pipe-to-ground")
+	if data.raw.technology["fluid-handling-"..v.DyWorld.Tier] then
+		DyWorld_Add_To_Tech("fluid-handling-"..v.DyWorld.Tier, v.DyWorld.Name.."-pipe-to-ground")
 	end
 	
 	if v.DyWorld.Entity.Pipe.Underground_Ingredients then

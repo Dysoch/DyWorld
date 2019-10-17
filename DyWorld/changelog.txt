@@ -15,6 +15,7 @@ Date: 18. 10. 2019
     - Added Rifle
     - Added Ammo for: Bullet guns (chaingun, pistol, etc), Shotguns, Rockets, Cannons
     - Added Chaingun
+    - Added Storage Tanks
     - Added Sniper Rifle
     - Added Sniper Turret
     - Added 5 new Gun Turrets (use basic ammo magazines) and disabled the vanilla Gun Turret
@@ -45,6 +46,7 @@ Date: 18. 10. 2019
     - Changed Neuitrobaltium Mining Drill Range: 25x25 > 39x39
     - Increased Character Loot Range (the default one)
     - Labs require a lot more power now
+    - Moved all pipe related items to Fluid Handling Techs
     - Proper recipes for Stick, Gear and Cable forges now
     - Gunpowder is now available from the start
     - Reduced Stacksizes of Machines to 50 per stack

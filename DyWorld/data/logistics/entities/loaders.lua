@@ -99,11 +99,11 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Entity.selection_box = {{-0.5, -0.5}, {0.5, 0.5}}
 	DyWorld_Prototype_Entity.fast_replaceable_group = "transport-belt"
 	DyWorld_Prototype_Entity.icon = nil
-	DyWorld_Prototype_Entity.filter_count = 5
+	DyWorld_Prototype_Entity.filter_count = math.ceil(v.DyWorld.Tier / 2)
 	DyWorld_Prototype_Entity.belt_length = 0.5
 	DyWorld_Prototype_Entity.container_distance = 1.0
 	DyWorld_Prototype_Entity.belt_distance = 0
-	DyWorld_Prototype_Entity.collision_mask = {"item-layer", "object-layer", "player-layer", "water-tile"}
+	--DyWorld_Prototype_Entity.collision_mask = {"item-layer", "object-layer", "player-layer", "water-tile"}
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = dyworld_path_icon.."loader-icon-base.png",

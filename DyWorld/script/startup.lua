@@ -10,7 +10,7 @@ function Game_Startup()
 	if not global.dyworld then
 		global.dyworld = 
 		{
-			Version = "0.8.90",
+			Version = "0.9.0",
 			Items = {},
 			Research = {},
 			Guide = {},

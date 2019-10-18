@@ -45,6 +45,7 @@ data:extend(
     {
       type = "heat",
       max_temperature = 5000,
+      emissions_per_minute = 30,
       specific_heat = "1MJ",
       max_transfer = "2GW",
       min_working_temperature = 450,

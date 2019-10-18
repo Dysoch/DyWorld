@@ -27,6 +27,7 @@ data:extend(
     heat_buffer =
     {
       max_temperature = 1000,
+      emissions_per_minute = 50,
       specific_heat = "10MJ",
       max_transfer = "10GW",
       minimum_glow_temperature = 350,

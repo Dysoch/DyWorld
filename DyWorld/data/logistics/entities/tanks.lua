@@ -10,7 +10,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.pictures.picture.sheets[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.pictures.picture.sheets[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.fluid_box.base_area = v.DyWorld.Entity.Pipe.Amount * 25
+	DyWorld_Prototype_Entity.fluid_box.base_area = v.DyWorld.Entity.Pipe.Amount * (25 * v.DyWorld.Tier)
 	DyWorld_Prototype_Entity.fast_replaceable_group = "storage-tank"
 	if v.DyWorld.Entity.Pipe.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Pipe.Next.."-storage-tank"

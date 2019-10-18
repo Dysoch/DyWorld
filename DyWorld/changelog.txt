@@ -18,6 +18,7 @@ Date: 18. 10. 2019
     - Added Storage Tanks
     - Added Sniper Rifle
     - Added Sniper Turret
+    - Added option for technologies to have upgrade or not (hides most of the tech tree when enabled)
     - Added 5 new Gun Turrets (use basic ammo magazines) and disabled the vanilla Gun Turret
     - Added 4 new Shotgun Turrets
     - Added Laser Gun + 4 types of ammo
@@ -25,6 +26,7 @@ Date: 18. 10. 2019
   Minor Features:
     - Trees now have a small chance to give wood, acorns or resin when destroyed by weapons (loot dropped)
     - Added an early game way to gain sand
+    - Added pollution output to all heated entities
     - Added uses for all filters. Now required to use in air filters
     - Mining coal now has chance to give sulfur
     - Added a new nuclear fuel cell: Argonium
@@ -32,6 +34,7 @@ Date: 18. 10. 2019
     - Rework of the tech tree. Removed technologies that are no longer needed, and shifted certain techs to higher or lower science packs
     - Added information to certain entities and items on how much heat it requires, ranges, capacities, etc
     - Circuit Network Technology is now early available
+    - Add slag to plate smelting (normal furnaces). Dont want to deal with multi pipes? just smelt the slag into its plate, at worse ratio's
   Balancing:
     - Changed Iron Assembling Machine Speed: 1.11 > 0.76
     - Changed Electrum Assembling Machine Speed: 5.56 > 6.16
@@ -46,6 +49,7 @@ Date: 18. 10. 2019
     - Changed Neuitrobaltium Mining Drill Range: 25x25 > 39x39
     - Increased Character Loot Range (the default one)
     - Labs require a lot more power now
+    - Loaders now have filter slots based on their Tier
     - Moved all pipe related items to Fluid Handling Techs
     - Proper recipes for Stick, Gear and Cable forges now
     - Gunpowder is now available from the start

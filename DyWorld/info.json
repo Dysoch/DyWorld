@@ -1,6 +1,6 @@
 {
 	"name": "DyWorld",
-	"version": "0.8.90",
+	"version": "0.9.0",
 	"factorio_version": "0.17",
 	"title": "DyWorld",
 	"author": "Dysoch, Zukii",
@@ -8,7 +8,7 @@
 	"homepage": "https://github.com/Dysoch/DyWorld/",
 	"description": "DyWorld, the successor of DyTech. Adding new systems, items, fluids, machines and enemies!!!! A complete overhaul that will change the way you play the game! Coding and idea's by Dysoch, Balancing by Zukii. Some models and code courtesy of Nova Kast, dgw and Anoyomouse",
 	"dependencies": [  
-		"base",
+		"base >= 0.17.69",
 		"? alien-biomes",
 		"? ReforestedWood",
 		"! angelsrefining",

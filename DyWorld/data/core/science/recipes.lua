@@ -4,23 +4,63 @@ data:extend(
 {
   {
     type = "recipe",
-    name = "science-base",
-	icons = data.raw.fluid["science-base"].icons,
+    name = "science-basic",
+	icons = data.raw.fluid["science-basic"].icons,
     category = "centrifuging",
     energy_required = 5,
 	enabled = true,
     ingredients =
     {
-      {type = "fluid", name = "water", amount = 100},
-      {type = "fluid", name = "carbon-dioxide", amount = 10},
+      {type = "fluid", name = "oxygen", amount = 10},
+      {type = "fluid", name = "hydrogen", amount = 10},
       {type = "item", name = "wood", amount = 3},
     },
     results=
     {
-      {type = "fluid", name = "science-base", amount = 100},
+      {type = "fluid", name = "science-basic", amount = 100},
     },
     subgroup = dy.."science-fluids",
-    order = "science-0",
+    order = "science-0-1",
+  },
+  {
+    type = "recipe",
+    name = "science-advanced",
+	icons = data.raw.fluid["science-advanced"].icons,
+    category = "centrifuging",
+    energy_required = 5,
+	enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "nitrogen", amount = 50},
+      {type = "fluid", name = "carbon-dioxide", amount = 10},
+      {type = "item", name = "sulfur", amount = 3},
+    },
+    results=
+    {
+      {type = "fluid", name = "science-advanced", amount = 100},
+    },
+    subgroup = dy.."science-fluids",
+    order = "science-0-2",
+  },
+  {
+    type = "recipe",
+    name = "science-extreme",
+	icons = data.raw.fluid["science-extreme"].icons,
+    category = "centrifuging",
+    energy_required = 5,
+	enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "methane", amount = 100},
+      {type = "fluid", name = "carbon-monoxide", amount = 10},
+      {type = "item", name = "rubber", amount = 3},
+    },
+    results=
+    {
+      {type = "fluid", name = "science-extreme", amount = 100},
+    },
+    subgroup = dy.."science-fluids",
+    order = "science-0-3",
   },
   {
     type = "recipe",
@@ -31,7 +71,7 @@ data:extend(
 	enabled = true,
     ingredients =
     {
-      {type = "fluid", name = "science-base", amount = 10},
+      {type = "fluid", name = "science-basic", amount = 10},
     },
     results=
     {
@@ -49,7 +89,7 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = "science-base", amount = 10},
+      {type = "fluid", name = "science-basic", amount = 10},
     },
     results=
     {
@@ -67,7 +107,7 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = "science-base", amount = 10},
+      {type = "fluid", name = "science-advanced", amount = 10},
     },
     results=
     {
@@ -85,7 +125,8 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = "science-base", amount = 10},
+      {type = "fluid", name = "science-advanced", amount = 10},
+      {type = "item", name = "chitin", amount = 5},
     },
     results=
     {
@@ -103,7 +144,7 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = "science-base", amount = 10},
+      {type = "fluid", name = "science-extreme", amount = 10},
     },
     results=
     {
@@ -121,7 +162,7 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = "science-base", amount = 10},
+      {type = "fluid", name = "science-extreme", amount = 10},
     },
     results=
     {
@@ -139,7 +180,7 @@ data:extend(
 	enabled = false,
     ingredients =
     {
-      {type = "fluid", name = "science-base", amount = 10},
+      {type = "fluid", name = "science-extreme", amount = 50},
       {type = "item", name = "space-artifact", amount = 10},
     },
     results=

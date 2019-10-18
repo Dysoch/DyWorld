@@ -15,6 +15,7 @@ local Change = {
 	{Old = "express-underground-belt", New = "titanium-underground-belt"},
 	{Old = "pipe", New = "stone-pipe"},
 	{Old = "pump", New = "stone-pump"},
+	{Old = "storage-tank", New = "stone-storage-tank"},
 	{Old = "pipe-to-ground", New = "stone-pipe-to-ground"},
 	{Old = "roboport", New = "nickel-roboport"},
 	{Old = "construction-robot", New = "nickel-construction-robot"},

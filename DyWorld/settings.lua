@@ -81,6 +81,12 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
+		name = "DyWorld_Tech_Upgrade",
+		setting_type = "startup",
+		default_value = true,
+	},
+	{
+		type = "bool-setting",
 		name = "DyWorld_Heat_Pipe_Belt",
 		setting_type = "startup",
 		default_value = false,

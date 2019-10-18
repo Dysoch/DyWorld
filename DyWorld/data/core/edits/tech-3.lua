@@ -72,6 +72,7 @@ local Tech_PreReq_Remove = {
 	["ammo-turrets-1"] = {"intermediates-1"},
 	["circuit-network"] = {"logistic-science-pack"},
 	["automobilism"] = {"logistics-2", "engine"},
+	["logistic-system"] = {"utility-science-pack"},
 }
 
 local Tech_PreReq = {
@@ -200,11 +201,11 @@ local Tech_Recipe_Add = {
 	["tungsten-processing"] = {"tungsten-plate"},
 	["neutronium-processing"] = {"neutronium-plate"},
 	["logistic-science-pack"] = {"science-2"},
-	["chemical-science-pack"] = {"science-3"},
-	["military-science-pack"] = {"science-4"},
-	["production-science-pack"] = {"science-5"},
-	["utility-science-pack"] = {"science-6"},
-	["space-science-pack"] = {"science-7", "space-science-pack"},
+	["chemical-science-pack"] = {"science-3", "science-advanced"},
+	["military-science-pack"] = {"science-4", "science-advanced"},
+	["production-science-pack"] = {"science-5", "science-extreme"},
+	["utility-science-pack"] = {"science-6", "science-extreme"},
+	["space-science-pack"] = {"science-7", "space-science-pack", "science-extreme"},
 	["oil-processing"] = {"crude-refined-oil-processing"},
 	["solar-energy"] = {"solar-cell"},
 	["farming-1"] = {"carrot", "boiler-water"},
@@ -239,9 +240,7 @@ for k,v in pairs(Tech_Recipe_Add) do
 end
 
 for k,v in pairs(data.raw.technology) do
-	if not v.upgrade then
-		v.upgrade = true
-	end
+	v.upgrade = settings.startup["DyWorld_Tech_Upgrade"].value
 end
 
 local Tech_Science_Pack_Change = {
@@ -274,6 +273,7 @@ local Tech_Science_Pack_Change = {
 	["military-2"] = 2,
 	["military-3"] = 3,
 	["military-4"] = 4,
+	["logistic-system"] = 4,
 }
 
 local Tech_Science_Pack_Change_Military = {

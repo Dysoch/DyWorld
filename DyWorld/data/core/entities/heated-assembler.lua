@@ -82,6 +82,7 @@ data:extend(
     {
       type = "heat",
 	  default_temperature = 15,
+      emissions_per_minute = 10,
       max_temperature = 5000,
       min_working_temperature = 100,
       minimum_glow_temperature = 80,

@@ -27,6 +27,7 @@ data:extend(
     {
       type = "heat",
 	  default_temperature = 15,
+      emissions_per_minute = 1,
       max_temperature = 5000,
       min_working_temperature = 250,
       minimum_glow_temperature = 100,
@@ -229,6 +230,7 @@ data:extend(
     {
       type = "heat",
 	  default_temperature = 15,
+      emissions_per_minute = 1.5,
       max_temperature = 5000,
       min_working_temperature = 250,
       minimum_glow_temperature = 100,

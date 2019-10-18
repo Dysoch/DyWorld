@@ -10,6 +10,30 @@ data:extend(
 {
   {
     type = "recipe",
+    name = v.DyWorld.Name.."-slag-to-plate",
+	localised_name = {"looped-name.molten-slag", {"looped-name."..v.DyWorld.Name}},
+	category = "smelting",
+    energy_required = 30 * v.DyWorld.Tier,
+    enabled = false,
+    normal = { 
+	  energy_required = 0.5 * v.DyWorld.Tier,
+	  enabled = false,
+	  ingredients = {{type = "item", name = v.DyWorld.Name.."-slag", amount = 50}},
+	  results = { 
+	    {type = "item", name = v.DyWorld.Name.."-plate", amount = 1, probability = 1},
+	  },
+	},
+    expensive = { 
+	  energy_required = 2 * v.DyWorld.Tier,
+	  enabled = false,
+	  ingredients = {{type = "item", name = v.DyWorld.Name.."-slag", amount = 50}},
+	  results = { 
+	    {type = "item", name = v.DyWorld.Name.."-plate", amount = 1, probability = 1},
+	  },
+	},
+  },
+  {
+    type = "recipe",
     name = "molten-"..v.DyWorld.Name.."-slag",
 	localised_name = {"looped-name.molten-slag", {"looped-name."..v.DyWorld.Name}},
 	icons = 
@@ -48,6 +72,7 @@ data:extend(
   },
 })
 	DyWorld_Add_To_Tech("metallurgy-"..v.DyWorld.Tier, "molten-"..v.DyWorld.Name.."-slag")
+	DyWorld_Add_To_Tech("metallurgy-"..v.DyWorld.Tier, v.DyWorld.Name.."-slag-to-plate")
 	if v.DyWorld.Metallurgy.Slag_Output then
 		for NAME,AMOUNT in pairs(v.DyWorld.Metallurgy.Slag_Output) do
 			local insert = {type = "fluid", name = "molten-"..NAME, amount = AMOUNT, probability = 0.8}

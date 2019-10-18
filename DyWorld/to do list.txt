@@ -1,6 +1,4 @@
 
-move requester and buffer to blue science
-fix last recipes
 -- 0.9.0
 
 add super modules -- 0.9.1

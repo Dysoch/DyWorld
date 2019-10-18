@@ -156,7 +156,7 @@ data:extend({
         name = "DyWorld_loaders_snap_to_front",
 		order = "b",
         setting_type = "runtime-per-user",
-        default_value = true
+        default_value = false
     },
     {
         type = "bool-setting",

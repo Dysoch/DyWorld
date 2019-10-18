@@ -161,6 +161,20 @@ data:extend({
         setting_type = "runtime-per-user",
         default_value = false
     },
+    {
+        type = "bool-setting",
+        name = "DyWorld_loaders_snap_to_back",
+		order = "a",
+        setting_type = "runtime-per-user",
+        default_value = true
+    },
+    {
+        type = "bool-setting",
+        name = "DyWorld_loaders_snap_to_front",
+		order = "b",
+        setting_type = "runtime-per-user",
+        default_value = true
+    },
 })
 
 Warfare_Modes =

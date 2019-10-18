@@ -17,6 +17,7 @@ require "script/generation/noise"
 require "script/generation/world-generation"
 require "script/functions/side-inserter"
 require "script/functions/heated-entities"
+require "script/functions/loaders"
 
 debugger_extensive = settings.startup["DyWorld_Debug_Extra"].value
 debugger = settings.startup["DyWorld_Debug"].value
@@ -176,6 +177,9 @@ script.on_event(defines.events.on_built_entity, function(event)
 		elseif event.created_entity.type == "loader" then
 			Heat_Pipe_Add(event)
 		end
+	end
+	if event.created_entity.type == "loader" then
+		DyWorld_Loaders_Rotate(event)
 	end
 end)
 

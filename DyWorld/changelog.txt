@@ -60,6 +60,7 @@ Date: 18. 10. 2019
     - Accumulators now store a lot more power, and output and input of power is higher
   QoL:
     - Loaders can now be fast replaced by splitters, belts and undergrounds. And vice versa 
+    - Add loader snapping. they will always insert into machine/chest first, can be rotated with selecting and pressing R
   Compatibility:
     - Added Alien Ore to Ore (Alien Loot Economy)
     - Fixed compatibility with JunkTrain2 mod

@@ -5,21 +5,27 @@ require "data/core/functions/colors"
 local Enemy_Loot_Table = {
 	{
 		Name = "chitin",
-		Chance = 0.15,
+		Chance = 0.35,
 		Max_Count = 2.5,
-		Tier = 1,
+		Tier = 11,
 	},
 	{
 		Name = "sulfur",
-		Chance = 0.05,
+		Chance = 0.1,
 		Max_Count = 5,
-		Tier = 2,
+		Tier = 22,
+	},
+	{
+		Name = "obsidian",
+		Chance = 0.08,
+		Max_Count = 1,
+		Tier = 27,
 	},
 	{
 		Name = "diamond",
 		Chance = 0.08,
 		Max_Count = 0.5,
-		Tier = 3,
+		Tier = 50,
 	},
 }
 
@@ -27,8 +33,8 @@ local Enemy_Loot_Table = {
 for k,v in pairs(Enemy_Loot_Table) do
 	for _,z in pairs(data.raw["unit-spawner"]) do
 		if not z.loot then z.loot = {} end
-		if z.Tier then
-			if z.Tier >= v.Tier then
+		if z.Tier and z.Loot_Tier then
+			if z.Loot_Tier >= v.Tier then
 				loottable = {
 					item = v.Name,
 					probability = v.Chance,

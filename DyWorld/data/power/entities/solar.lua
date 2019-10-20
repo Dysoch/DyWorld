@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+data.raw["solar-panel"]["solar-panel"].fast_replaceable_group = "solar"
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("solar-panel", "solar-panel", v.DyWorld.Name.."-solar-panel", true)

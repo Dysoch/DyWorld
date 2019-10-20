@@ -20,6 +20,7 @@ data:extend(
     flags = {"placeable-player", "placeable-enemy", "placeable-off-grid", "breaths-air", "not-repairable"},
     max_health = Round(((Data.Health * 5) * Data.Tier) * Data.Tier),
 	Tier = Data.Tier,
+	Loot_Tier = (Data.Tier * 15),
     order = Dmg.."-base"..Data.Tier,
     subgroup = "enemies",
     resistances =

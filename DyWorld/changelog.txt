@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.1
+Date: 20. 10. 2019
+  Major Features:
+    - Completely revamped the loot system. Now takes their size into account and their damage tier
+    - Military Science Pack is now completely optional. It can only be gotten with farming enemies, and only unlocks warfare related content. It is no longer needed for normal progression
+  Minor Features:
+    - Fluid Wagons now hold 500.000 fluid
+  Bugfixes:
+    - Fixed issue's with solar panels not being upgradable
+    - Fixed issue's with accumulators not being upgradable
+---------------------------------------------------------------------------------------------------
 Version: 0.9.0
 Date: 18. 10. 2019
   Major Features:

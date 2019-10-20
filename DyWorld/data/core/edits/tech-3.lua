@@ -46,6 +46,10 @@ local Tech_Remove = {
 	"modular-armor",
 	"power-armor",
 	"power-armor-mk2",
+	"stack-inserter",
+	"fast-inserter",
+	"advanced-electronics",
+	"advanced-electronics-2",
 }
 
 for _,Tech_Removed in pairs(Tech_Remove) do
@@ -150,6 +154,7 @@ local Tech_PreReq = {
 	["plasma-ammo-enhancement-1"] = {"plasma"},
 	["sniper-ammo-enhancement-1"] = {"sniper"},
 	["automobilism"] = {"steel-processing"},
+	["inserter-capacity-bonus-1"] = {"logistics-2", "logistic-science-pack"},
 } 
 
 for k,v in pairs(Tech_PreReq) do

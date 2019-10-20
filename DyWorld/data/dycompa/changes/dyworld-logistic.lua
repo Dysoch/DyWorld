@@ -20,6 +20,12 @@ local Change = {
 	{Old = "roboport", New = "nickel-roboport"},
 	{Old = "construction-robot", New = "nickel-construction-robot"},
 	{Old = "logistic-robot", New = "nickel-logistic-robot"},
+	{Old = "inserter", New = "inserter-tier-1"},
+	{Old = "fast-inserter", New = "inserter-tier-3"},
+	{Old = "stack-inserter", New = "stack-inserter-tier-1"},
+	{Old = "long-handed-inserter", New = "long-inserter-tier-1"},
+	{Old = "filter-inserter", New = "filter-inserter-tier-1"},
+	{Old = "stack-filter-inserter", New = "stack-filter-inserter-tier-1"},
 }
 
 for k,v in pairs(Change) do

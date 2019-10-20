@@ -10,6 +10,7 @@ for k,v in pairs(Data_Entity) do
 		end
 		data.raw.item[k.."-plate"].DyWorld.Name = k
 		data.raw.item[k.."-plate"].DyWorld.Tier = Metal_Tiers[k]
+		data.raw.item[k.."-plate"].DyWorld.Resistances = Metal_Resistances[k]
 		data.raw.item[k.."-plate"].DyWorld.Entity = v		
 	end
 end
@@ -24,6 +25,7 @@ for k,v in pairs(Data_Warfare) do
 		end
 		data.raw.item[k.."-plate"].DyWorld.Name = k
 		data.raw.item[k.."-plate"].DyWorld.Tier = Metal_Tiers[k]
+		data.raw.item[k.."-plate"].DyWorld.Resistances = Metal_Resistances[k]
 		data.raw.item[k.."-plate"].DyWorld.Warfare = v		
 	end
 end

@@ -10,6 +10,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pumpjack then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Pumpjack.Next.."-pumpjack"
 	end
 	DyWorld_Prototype_Entity.mining_speed = v.DyWorld.Entity.Pumpjack.Speed
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.energy_usage = Round((v.DyWorld.Entity.Pumpjack.Speed * 180), 0).."kW"
 	DyWorld_Prototype_Entity.energy_usage = Round(180 + (Round(((((v.DyWorld.Entity.Pumpjack.Range / 4) - 0.01) * (v.DyWorld.Tier * (v.DyWorld.Tier * ((v.DyWorld.Entity.Pumpjack.Range / 4) - 0.01)))) * v.DyWorld.Entity.Pumpjack.Speed), 2) * 50)).."kW"
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.pumpjack-1", {"looped-name."..v.DyWorld.Name}}

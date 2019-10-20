@@ -2,16 +2,19 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+local SPEED = 10
+local TIER = 5
+
 data:extend(
 {
   {
     type = "inserter",
-    name = "super-stack-inserter",
-    icon = "__base__/graphics/icons/stack-inserter.png",
+    name = "long-inserter-tier-"..TIER,
+	localised_name = {"looped-name.inserter-3", TIER},
+    icon = "__base__/graphics/icons/long-handed-inserter.png",
     icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    stack = true,
-    minable = { mining_time = 0.1, result = "super-stack-inserter" },
+    minable = { mining_time = 0.1, result = "long-inserter-tier-"..TIER },
     max_health = 160,
     corpse = "stack-inserter-remnants",
     resistances =
@@ -23,18 +26,25 @@ data:extend(
     },
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
-    pickup_position = {0, -1},
-    insert_position = {0, 1.2},
-    energy_per_movement = "20KJ",
-    energy_per_rotation = "20KJ",
+	
+    pickup_position = {0, -2},
+    insert_position = {0, 2.2},
+	
+    energy_per_movement = (SPEED * 7).."KJ",
+    energy_per_rotation = (SPEED * 7).."KJ",
+	
+    stack = false,
+    filter_count = 0,
+	
+    extension_speed = DyWorld_Inserter_Tiered_Extension(SPEED),
+    rotation_speed = DyWorld_Inserter_Tiered_Rotation(SPEED),
+	
     energy_source =
     {
       type = "electric",
       usage_priority = "secondary-input",
       drain = "1kW"
     },
-    extension_speed = 0.14,
-    rotation_speed = 0.08,
     fast_replaceable_group = "inserter",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
@@ -66,13 +76,13 @@ data:extend(
     },
     hand_base_picture =
     {
-      filename = "__base__/graphics/entity/stack-inserter/stack-inserter-hand-base.png",
+      filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-base.png",
       priority = "extra-high",
       width = 8,
       height = 34,
       hr_version =
       {
-        filename = "__base__/graphics/entity/stack-inserter/hr-stack-inserter-hand-base.png",
+        filename = "__base__/graphics/entity/long-handed-inserter/hr-long-handed-inserter-hand-base.png",
         priority = "extra-high",
         width = 32,
         height = 136,
@@ -81,30 +91,30 @@ data:extend(
     },
     hand_closed_picture =
     {
-      filename = "__base__/graphics/entity/stack-inserter/stack-inserter-hand-closed.png",
+      filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-closed.png",
       priority = "extra-high",
-      width = 24,
+      width = 18,
       height = 41,
       hr_version =
       {
-        filename = "__base__/graphics/entity/stack-inserter/hr-stack-inserter-hand-closed.png",
+        filename = "__base__/graphics/entity/long-handed-inserter/hr-long-handed-inserter-hand-closed.png",
         priority = "extra-high",
-        width = 100,
+        width = 72,
         height = 164,
         scale = 0.25
       }
     },
     hand_open_picture =
     {
-      filename = "__base__/graphics/entity/stack-inserter/stack-inserter-hand-open.png",
+      filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-open.png",
       priority = "extra-high",
-      width = 32,
+      width = 18,
       height = 41,
       hr_version =
       {
-        filename = "__base__/graphics/entity/stack-inserter/hr-stack-inserter-hand-open.png",
+        filename = "__base__/graphics/entity/long-handed-inserter/hr-long-handed-inserter-hand-open.png",
         priority = "extra-high",
-        width = 130,
+        width = 72,
         height = 164,
         scale = 0.25
       }
@@ -126,30 +136,30 @@ data:extend(
     },
     hand_closed_shadow =
     {
-      filename = "__base__/graphics/entity/stack-inserter/stack-inserter-hand-closed-shadow.png",
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
       priority = "extra-high",
-      width = 24,
+      width = 18,
       height = 41,
       hr_version =
       {
-        filename = "__base__/graphics/entity/stack-inserter/hr-stack-inserter-hand-closed-shadow.png",
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-closed-shadow.png",
         priority = "extra-high",
-        width = 100,
+        width = 72,
         height = 164,
         scale = 0.25
       }
     },
     hand_open_shadow =
     {
-      filename = "__base__/graphics/entity/stack-inserter/stack-inserter-hand-open-shadow.png",
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
       priority = "extra-high",
-      width = 32,
+      width = 18,
       height = 41,
       hr_version =
       {
-        filename = "__base__/graphics/entity/stack-inserter/hr-stack-inserter-hand-open-shadow.png",
+        filename = "__base__/graphics/entity/burner-inserter/hr-burner-inserter-hand-open-shadow.png",
         priority = "extra-high",
-        width = 130,
+        width = 72,
         height = 164,
         scale = 0.25
       }
@@ -158,18 +168,20 @@ data:extend(
     {
       sheet =
       {
-        filename = "__base__/graphics/entity/stack-inserter/stack-inserter-platform.png",
+        filename = "__base__/graphics/entity/inserter/inserter-platform.png",
         priority = "extra-high",
         width = 46,
         height = 46,
         shift = {0.09375, 0},
+		tint = Color_Tier[TIER],
         hr_version =
         {
-          filename = "__base__/graphics/entity/stack-inserter/hr-stack-inserter-platform.png",
+          filename = "__base__/graphics/entity/inserter/hr-inserter-platform.png",
           priority = "extra-high",
           width = 105,
           height = 79,
           shift = util.by_pixel(1.5, 7.5-1),
+		  tint = Color_Tier[TIER],
           scale = 0.5
         }
       }
@@ -181,25 +193,28 @@ data:extend(
   },
   {
     type = "item",
-    name = "super-stack-inserter",
-    icon = "__base__/graphics/icons/inserter.png",
+    name = "long-inserter-tier-"..TIER,
+	localised_name = {"looped-name.inserter-3", TIER},
+    icon = "__base__/graphics/icons/long-handed-inserter.png",
 	flags = {},
-    subgroup = dy.."inserter-2-heat",
-    order = "super-stack-inserter",
-    place_result = "super-stack-inserter",
+    subgroup = dy.."inserter-tier-"..(TIER-1),
+    order = "2",
+    place_result = "long-inserter-tier-"..TIER,
     stack_size = 200
   },
   {
     type = "recipe",
-    name = "super-stack-inserter",
-    energy_required = 2.5,
+    name = "long-inserter-tier-"..TIER,
+    energy_required = SPEED,
     enabled = false,
     ingredients = {
-	  {"inserter", 1}, 
-	  {"iron-plate", 6},
-	  {"heat-pipe", 1},
+      {"long-inserter-tier-1", 1},
+      {"tough-control-board", 1},
+      {"arditium-plate", 5},
 	},
-    result = "super-stack-inserter"
+    result = "long-inserter-tier-"..TIER
   },
 }
 )
+
+DyWorld_Add_To_Tech("automation-"..TIER, "long-inserter-tier-"..TIER)

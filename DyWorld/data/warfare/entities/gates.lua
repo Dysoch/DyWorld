@@ -2,6 +2,9 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+data.raw.gate.gate.resistances = Metal_Resistances["stone"]
+data.raw.gate.gate.hide_resistances = false
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("gate", "gate", v.DyWorld.Name.."-gate", true)
@@ -28,6 +31,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then
 	DyWorld_Prototype_Entity.horizontal_rail_base.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	
 	DyWorld_Prototype_Entity.fast_replaceable_group = "wall"
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = false
 	if v.DyWorld.Entity.Wall.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Wall.Next.."-gate"
 	end

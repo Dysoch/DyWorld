@@ -55,6 +55,93 @@ Metal_Tiers = {
 	["neutrobaltium"] = 10,
 }
 
+Metal_Resistances = {
+	["stone"] = {
+	  {type = "physical", decrease = 0, percent = 5},
+	  {type = "impact", decrease = 0, percent = 10},
+	},
+	["wood"] = {
+	  {type = "physical", decrease = 0, percent = 1},
+	  {type = "fire", decrease = 0, percent = -100},
+	  {type = "impact", decrease = 0, percent = 1},
+	},
+	["silver"] = {
+	  {type = "physical", decrease = 0, percent = 4},
+	},
+	["nickel"] = {
+	  {type = "physical", decrease = 0, percent = 4},
+	},
+	["tin"] = {
+	  {type = "physical", decrease = 0, percent = 4},
+	},
+	["copper"] = {
+	  {type = "physical", decrease = 0, percent = 4},
+	},
+	["iron"] = {
+	  {type = "physical", decrease = 0, percent = 5},
+	},
+	["coal"] = {
+	  {type = "physical", decrease = 0, percent = 6},
+	},
+	["gold"] = {
+	  {type = "physical", decrease = 0, percent = 7},
+	},
+	["steel"] = {
+	  {type = "physical", decrease = 0, percent = 9},
+	},
+	["bronze"] = {
+	  {type = "physical", decrease = 0, percent = 9},
+	},
+	["lead"] = {
+	  {type = "physical", decrease = 0, percent = 12},
+	},
+	["cobalt"] = {
+	  {type = "physical", decrease = 0, percent = 12},
+	},
+	["invar"] = {
+	  {type = "physical", decrease = 0, percent = 15},
+	},
+	["electrum"] = {
+	  {type = "physical", decrease = 0, percent = 15},
+	},
+	["uranium"] = {
+	  {type = "physical", decrease = 0, percent = 15},
+	  {type = "nuclear", decrease = 0, percent = 100},
+	},
+	["stainless-steel"] = {
+	  {type = "physical", decrease = 0, percent = 20},
+	},
+	["arditium"] = {
+	  {type = "physical", decrease = 0, percent = 20},
+	},
+	["titanium"] = {
+	  {type = "physical", decrease = 1, percent = 25},
+	},
+	["tungsten"] = {
+	  {type = "physical", decrease = 1, percent = 25},
+	  {type = "impact", decrease = 0, percent = 50},
+	},
+	["electranium"] = {
+	  {type = "physical", decrease = 2, percent = 30},
+	},
+	["arditium-tungstenate"] = {
+	  {type = "physical", decrease = 2, percent = 30},
+	  {type = "impact", decrease = 0, percent = 50},
+	},
+	["tungstvar"] = {
+	  {type = "physical", decrease = 3, percent = 35},
+	  {type = "impact", decrease = 0, percent = 50},
+	},
+	["neutronium"] = {
+	  {type = "physical", decrease = 7, percent = 40},
+	  {type = "impact", decrease = 0, percent = 30},
+	},
+	["neutrobaltium"] = {
+	  {type = "physical", decrease = 10, percent = 50},
+	  {type = "impact", decrease = 0, percent = 50},
+	},
+}
+
 Damage_Mod = {
 	["water"] = 0.25,
 	["earth"] = 0.5,

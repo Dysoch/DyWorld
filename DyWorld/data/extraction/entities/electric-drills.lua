@@ -11,6 +11,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Drill.Next.."-electric-mining-drill"
 	end
 	DyWorld_Prototype_Entity.mining_speed = v.DyWorld.Entity.Drill.Speed
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.energy_usage = Round(90 + (Round(((((v.DyWorld.Entity.Drill.Range / 4) - 0.01) * (v.DyWorld.Tier * (v.DyWorld.Tier * ((v.DyWorld.Entity.Drill.Range / 4) - 0.01)))) * v.DyWorld.Entity.Drill.Speed), 2) * 50)).."kW"
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.drill-1", {"looped-name."..v.DyWorld.Name}}
 	DyWorld_Prototype_Entity.animations.north.tint = Material_Colors[v.DyWorld.Name]

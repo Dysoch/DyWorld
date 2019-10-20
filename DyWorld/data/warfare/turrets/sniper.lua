@@ -12,6 +12,7 @@ data:extend(
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.5, result = "sniper-turret"},
     max_health = 400,
+	hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value,
     corpse = "gun-turret-remnants",
     collision_box = {{-0.7, -0.7 }, {0.7, 0.7}},
     selection_box = {{-1, -1 }, {1, 1}},

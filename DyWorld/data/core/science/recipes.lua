@@ -223,7 +223,7 @@ end
 if settings.startup["DyWorld_Logistics"].value then
 	DyWorld_Add_To_Recipe("science-1", "stone-transport-belt", 1)
 	DyWorld_Add_To_Recipe("science-2", "iron-loader", 1)
-	DyWorld_Add_To_Recipe("science-2", "fast-inserter", 1)
+	DyWorld_Add_To_Recipe("science-2", "inserter-tier-1", 2)
 	DyWorld_Add_To_Recipe("science-2", "stone-pump", 1)
 	DyWorld_Add_To_Recipe("science-3", "bronze-splitter", 1)
 	DyWorld_Add_To_Recipe("science-7", "tungstvar-transport-belt", 1)
@@ -231,6 +231,7 @@ else
 	DyWorld_Add_To_Recipe("science-1", "transport-belt", 1)
 	DyWorld_Add_To_Recipe("science-2", "transport-belt", 3)
 	DyWorld_Add_To_Recipe("science-2", "pipe-to-ground", 2)
+	DyWorld_Add_To_Recipe("science-2", "fast-inserter", 1)
 	DyWorld_Add_To_Recipe("science-3", "fast-splitter", 1)
 	DyWorld_Add_To_Recipe("science-7", "express-transport-belt", 25)
 end

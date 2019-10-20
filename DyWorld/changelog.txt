@@ -2,13 +2,19 @@
 Version: 0.9.1
 Date: 20. 10. 2019
   Major Features:
-    - Completely revamped the loot system. Now takes their size into account and their damage tier
+    - Completely revamped the loot system. Now takes their size into account and their damage tier. Also now drops obsidian
+    - Added a lot new inserters. 5 basic, 5 long handed, 5 stack, 5 stack long handed, 2 filter, 2 stack filter, 2 long handed filter, 2 stack long handed filter
     - Military Science Pack is now completely optional. It can only be gotten with farming enemies, and only unlocks warfare related content. It is no longer needed for normal progression
+    - Added resistances to all material based entities. (at least, the first part of it, will be expanded in later versions) They will by default always show, but this can be turned off in the settings. (walls and gates ALWAYS show, no matter the setting)
   Minor Features:
     - Fluid Wagons now hold 500.000 fluid
+    - Removed several technologies that were no longer needed
+  Compatibility:
+    - Fixed compatibility with Robot Tree Farm not giving the proper seeds
   Bugfixes:
     - Fixed issue's with solar panels not being upgradable
     - Fixed issue's with accumulators not being upgradable
+    - Fixed issue's with inserters not being upgradable
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.0
 Date: 18. 10. 2019

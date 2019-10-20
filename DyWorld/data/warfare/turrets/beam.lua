@@ -22,6 +22,8 @@ data:extend(
     flags = { "placeable-player", "placeable-enemy", "player-creation"},
     minable = { mining_time = 0.5, result = v.DyWorld.Name.."-beam-turret" },
     max_health = 1000,
+	resistances = v.DyWorld.Resistances,
+	hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value,
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{ -1, -1}, {1, 1}},
     rotation_speed = 0.01,

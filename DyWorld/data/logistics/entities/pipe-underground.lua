@@ -13,6 +13,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 	DyWorld_Prototype_Entity.pictures.up.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.pictures.down.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.pictures.down.hr_version.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.pictures.left.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.pictures.left.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.pictures.right.tint = Material_Colors[v.DyWorld.Name]

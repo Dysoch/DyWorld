@@ -12,6 +12,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	DyWorld_Prototype_Entity.in_motion.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.in_motion.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.in_motion_with_cargo.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.in_motion_with_cargo.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.idle_with_cargo.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.idle_with_cargo.hr_version.tint = Material_Colors[v.DyWorld.Name]

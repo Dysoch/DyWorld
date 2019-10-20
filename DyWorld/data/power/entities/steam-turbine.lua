@@ -12,6 +12,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Steam_Turbine then
 	DyWorld_Prototype_Entity.vertical_animation.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.vertical_animation.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.fast_replaceable_group = "steam"
 	if v.DyWorld.Entity.Steam_Turbine.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Steam_Turbine.Next.."-steam-turbine"

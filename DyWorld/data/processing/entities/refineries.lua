@@ -11,6 +11,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Refinery then
 	DyWorld_Prototype_Entity.module_specification.module_slots = 0 + v.DyWorld.Tier
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.fast_replaceable_group = "refinery"
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	if v.DyWorld.Entity.Refinery.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Refinery.Next.."-oil-refinery"
 	end

@@ -12,6 +12,8 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Chaingun_Turret then
 	DyWorld_Prototype_Entity.base_picture = DyWorld_gun_turret_base(Material_Colors[v.DyWorld.Name], Scale)
 	DyWorld_Prototype_Entity.collision_box = DyWorld_scale_bounding_box(DyWorld_Prototype_Entity.collision_box, Scale)
 	DyWorld_Prototype_Entity.selection_box = DyWorld_scale_bounding_box(DyWorld_Prototype_Entity.selection_box, Scale)
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.folded_animation =
     {
       layers =

@@ -17,27 +17,52 @@ local Data_Table_Item_Group = {
 		Main = "inserters"
 	},
 	{
-		Name = "inserter-2-basic",
+		Name = "inserter-tier-0",
 		Type = "sub",
 		Main = "inserters"
 	},
 	{
-		Name = "inserter-2-filter",
+		Name = "inserter-tier-1",
 		Type = "sub",
 		Main = "inserters"
 	},
 	{
-		Name = "inserter-2-long",
+		Name = "inserter-tier-2",
 		Type = "sub",
 		Main = "inserters"
 	},
 	{
-		Name = "inserter-3-stack",
+		Name = "inserter-tier-3",
 		Type = "sub",
 		Main = "inserters"
 	},
 	{
-		Name = "inserter-3-stack-filter",
+		Name = "inserter-tier-4",
+		Type = "sub",
+		Main = "inserters"
+	},
+	{
+		Name = "inserter-tier-5",
+		Type = "sub",
+		Main = "inserters"
+	},
+	{
+		Name = "inserter-tier-6",
+		Type = "sub",
+		Main = "inserters"
+	},
+	{
+		Name = "inserter-tier-7",
+		Type = "sub",
+		Main = "inserters"
+	},
+	{
+		Name = "inserter-tier-8",
+		Type = "sub",
+		Main = "inserters"
+	},
+	{
+		Name = "inserter-tier-9",
 		Type = "sub",
 		Main = "inserters"
 	},

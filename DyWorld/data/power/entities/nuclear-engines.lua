@@ -11,6 +11,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Nuclear_Reactor then
 	DyWorld_Prototype_Entity.picture.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.picture.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.heat_buffer.max_temperature = v.DyWorld.Entity.Nuclear_Reactor.Max_Temperature
 	DyWorld_Prototype_Entity.heat_buffer.specific_heat = v.DyWorld.Entity.Nuclear_Reactor.Specific_Heat_MJ.."MJ"
 	DyWorld_Prototype_Entity.heat_buffer.max_transfer = v.DyWorld.Entity.Nuclear_Reactor.Max_Transfer_GW.."GW"

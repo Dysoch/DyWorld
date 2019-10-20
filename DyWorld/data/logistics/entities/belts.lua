@@ -14,6 +14,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	end
 	DyWorld_Prototype_Entity.max_health = 150 * Metal_Tiers[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.icon = nil
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.icons = {
 	  {
 		icon = dyworld_path_icon.."belt-icon-base.png",

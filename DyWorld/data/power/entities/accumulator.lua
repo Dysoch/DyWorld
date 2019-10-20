@@ -13,6 +13,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Accumulator then
 	DyWorld_Prototype_Entity.energy_source.input_flow_limit = (5000 * v.DyWorld.Tier).."kW"
 	DyWorld_Prototype_Entity.energy_source.output_flow_limit = (5000 * v.DyWorld.Tier).."kW"
 	DyWorld_Prototype_Entity.icon = nil
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.fast_replaceable_group = "accumulator"
 	if v.DyWorld.Entity.Accumulator.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Accumulator.Next.."-accumulator"

@@ -240,17 +240,17 @@ data.raw.armor["power-armor-mk2"].order = Order_Tiers[5]
 
 data.raw.item["burner-inserter"].subgroup = dy.."inserter-1-simple"
 data.raw.item["burner-inserter"].order = Order_Tiers[1]
-data.raw.item["inserter"].subgroup = dy.."inserter-2-basic"
+data.raw.item["inserter"].subgroup = dy.."inserter-tier-0"
 data.raw.item["inserter"].order = Order_Tiers[1]
-data.raw.item["fast-inserter"].subgroup = dy.."inserter-2-basic"
-data.raw.item["fast-inserter"].order = Order_Tiers[2]
-data.raw.item["filter-inserter"].subgroup = dy.."inserter-2-filter"
+data.raw.item["fast-inserter"].subgroup = dy.."inserter-tier-1"
+data.raw.item["fast-inserter"].order = Order_Tiers[1]
+data.raw.item["filter-inserter"].subgroup = dy.."inserter-tier-1"
 data.raw.item["filter-inserter"].order = Order_Tiers[1]
-data.raw.item["long-handed-inserter"].subgroup = dy.."inserter-2-long"
+data.raw.item["long-handed-inserter"].subgroup = dy.."inserter-tier-1"
 data.raw.item["long-handed-inserter"].order = Order_Tiers[1]
-data.raw.item["stack-inserter"].subgroup = dy.."inserter-3-stack"
+data.raw.item["stack-inserter"].subgroup = dy.."inserter-tier-4"
 data.raw.item["stack-inserter"].order = Order_Tiers[1]
-data.raw.item["stack-filter-inserter"].subgroup = dy.."inserter-3-stack-filter"
+data.raw.item["stack-filter-inserter"].subgroup = dy.."inserter-tier-4"
 data.raw.item["stack-filter-inserter"].order = Order_Tiers[1]
 
 data.raw.item["copper-cable"].subgroup = dy.."intermediates-tier-0"

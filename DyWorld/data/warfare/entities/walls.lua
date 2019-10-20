@@ -2,6 +2,9 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+data.raw.wall["stone-wall"].resistances = Metal_Resistances["stone"]
+data.raw.wall["stone-wall"].hide_resistances = false
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("wall", "stone-wall", v.DyWorld.Name.."-wall", true)
@@ -10,6 +13,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.pictures = DyWorld_Wall_Pictures(Material_Colors[v.DyWorld.Name])
 	DyWorld_Prototype_Entity.fast_replaceable_group = "wall"
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = false
 	if v.DyWorld.Entity.Wall.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Wall.Next.."-wall"
 	end

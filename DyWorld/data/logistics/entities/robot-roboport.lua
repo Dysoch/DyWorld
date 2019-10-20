@@ -12,6 +12,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	DyWorld_Prototype_Entity.base.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.base_patch.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.base_patch.hr_version.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.base_animation.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.base_animation.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.energy_usage = Round(v.DyWorld.Entity.Robot.Roboport_Energy_Usage_KW + (Round(((0.5 * (v.DyWorld.Tier * (v.DyWorld.Tier * 0.5))) * v.DyWorld.Entity.Robot.Roboport_Slot_Count), 2) * 50)).."kW"

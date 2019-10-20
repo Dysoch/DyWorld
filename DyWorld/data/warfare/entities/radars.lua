@@ -2,8 +2,6 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
---TODO Add more Radars
---BODY @ZukiiG
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Radar then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("radar", "radar", v.DyWorld.Name.."-radar", true)
@@ -17,6 +15,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Radar then
 	DyWorld_Prototype_Entity.icon = nil
 	DyWorld_Prototype_Entity.energy_usage = (50 + (50 * v.DyWorld.Entity.Radar.Active_Range) + (v.DyWorld.Entity.Radar.Scan_Range * 10)).."kW"
 	DyWorld_Prototype_Entity.fast_replaceable_group = "radar"
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	if v.DyWorld.Entity.Radar.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Radar.Next.."-radar"
 	end

@@ -46,3 +46,11 @@ function DyWorld_Add_To_Tech(TECH, RECIPE)
 		end
 	end	
 end
+
+function DyWorld_Inserter_Tiered_Extension(AMOUNT)
+	return Round((0.03 * AMOUNT), 3)
+end
+
+function DyWorld_Inserter_Tiered_Rotation(AMOUNT)
+	return Round((0.014 * AMOUNT), 3)
+end

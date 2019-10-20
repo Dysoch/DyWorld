@@ -12,6 +12,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Boiler then
 	DyWorld_Prototype_Entity.max_health = 200 * v.DyWorld.Tier
 	DyWorld_Prototype_Entity.structure.north.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.north.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.structure.east.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.east.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.south.layers[1].tint = Material_Colors[v.DyWorld.Name]

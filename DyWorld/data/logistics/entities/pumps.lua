@@ -14,6 +14,8 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pump then
 	DyWorld_Prototype_Entity.animations.north.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animations.east.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animations.east.hr_version.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.resistances = v.DyWorld.Resistances
+	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.animations.south.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animations.south.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.animations.west.tint = Material_Colors[v.DyWorld.Name]

@@ -1,12 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.2
 Date: 26. 10. 2019
-  Major Features:
-    - 
+  Features:
+    - Added Compressor. Used to compress sand > stone, sulfur > coal, coal > diamond and stone > obsidian
   Minor Features:
     - 
   Compatibility:
     - 
+  Balancing:
+    - Changed Recipe Time of sand to stone: 2 sec > 5 sec
   Bugfixes:
     - Fixed Crude Oil Recipe not having locale
 ---------------------------------------------------------------------------------------------------

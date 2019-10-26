@@ -27,6 +27,10 @@ local Data_Table = {
 		Type = "recipe"
 	},
 	{
+		Name = dy.."compressor",
+		Type = "recipe"
+	},
+	{
 		Name = dy.."forging-gear",
 		Type = "recipe"
 	},

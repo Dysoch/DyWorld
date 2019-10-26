@@ -87,6 +87,9 @@ data:extend(
 	if v.Tech then
 		DyWorld_Add_To_Tech(v.Tech, v.Name)
 	end
+	if v.No_Decomp then
+		data.raw.recipe[v.Name].allow_decomposition = false
+	end
 end
 end
 

@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.2
+Date: 26. 10. 2019
+  Major Features:
+    - 
+  Minor Features:
+    - 
+  Compatibility:
+    - 
+  Bugfixes:
+    - Fixed Crude Oil Recipe not having locale
+---------------------------------------------------------------------------------------------------
 Version: 0.9.1
 Date: 20. 10. 2019
   Major Features:

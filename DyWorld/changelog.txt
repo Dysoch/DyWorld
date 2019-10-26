@@ -9,6 +9,7 @@ Date: 26. 10. 2019
     - 
   Balancing:
     - Changed Recipe Time of sand to stone: 2 sec > 5 sec
+    - Removed Belt immumity technology
   Bugfixes:
     - Fixed Crude Oil Recipe not having locale
 ---------------------------------------------------------------------------------------------------

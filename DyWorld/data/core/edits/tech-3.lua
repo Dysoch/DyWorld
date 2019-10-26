@@ -50,6 +50,7 @@ local Tech_Remove = {
 	"fast-inserter",
 	"advanced-electronics",
 	"advanced-electronics-2",
+	"belt-immunity-equipment",
 }
 
 for _,Tech_Removed in pairs(Tech_Remove) do

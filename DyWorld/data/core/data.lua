@@ -102,7 +102,7 @@ require("data.core.debug.equipment")
 
 require("data.core.achievements")
 
-if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value and settings.startup["DyWorld_Combat_Overhaul"].value then
+if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
 	DyWorld_control_name = "dyworld-enemies-tier-1"
 	require("data.core.functions.enemy-autoplace")
 	require("data.core.functions.warfare-autoplace")

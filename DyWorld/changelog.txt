@@ -7,11 +7,17 @@ Date: 26. 10. 2019
     - 
   Compatibility:
     - 
+  RPG/GUI:
+    - Added Personal Killings! When Combat Overhaul is active, this only works with melee attacks. Without combat overhaul, it works on all player fired guns. This stat is useless for now, till i can make it work with combat overhaul on as well
+    - Removed Global info from MP games in the stats windows. Now it will only show your stats
+    - Reworked XP gain with killing entities. Only units, spawners and worms will give killing xp now! Trees no longer give XP
   Balancing:
     - Changed Recipe Time of sand to stone: 2 sec > 5 sec
     - Removed Belt immumity technology
   Bugfixes:
     - Fixed Crude Oil Recipe not having locale
+    - Fixed Combat Overhaul having to be active with enemies
+    - Fixed bug when something was killed by a non force related item or entity
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.1
 Date: 20. 10. 2019

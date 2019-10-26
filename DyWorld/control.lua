@@ -225,18 +225,26 @@ script.on_event(defines.events.on_sector_scanned, function(event)
 end)
 
 script.on_event(defines.events.on_entity_died, function(event)
-	if event.force.name == "player" then
+	local type_killed = event.entity.type 
+	if (type_killed == "unit" or type_killed == "turret" or type_killed == "unit-spawner") then
+	local force = event.force  -- force that kill
+	local killer = event.cause -- cause of the kill
+		if killer and killer.valid and killer.type == "character" then
+			local ID = killer.player.index
+			IncrementerPersonal("killed", 1, ID, event.entity.name)
+			XP_Killing(ID, event.entity.name, 1)
+		end
 		IncrementerGlobal("killed", 1)
-		XP_All_Small()
+		XP_All_Full()
 		for k,v in pairs(global.players) do
 			Skill_Points_Gain(v.PlayerID, "kill")
 		end
 	end
-    if event.entity.type == "transport-belt" then
+    if type_killed == "transport-belt" then
 		Heat_Pipe_Remove(event)
-    elseif event.entity.type == "underground-belt" then
+    elseif type_killed == "underground-belt" then
 		Heat_Pipe_Remove(event)
-    elseif event.entity.type == "loader" then
+    elseif type_killed == "loader" then
 		Heat_Pipe_Remove(event)
 	end
 end)

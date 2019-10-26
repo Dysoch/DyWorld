@@ -14,6 +14,7 @@ function IncrementerPersonal(NAME, AMOUNT, ID, ITEMNAME)
 	if not global.players[ID].crafted then global.players[ID].crafted = {} end
 	if not global.players[ID].mined then global.players[ID].mined = {} end
 	if not global.players[ID].build then global.players[ID].build = {} end
+	if not global.players[ID].killed then global.players[ID].killed = {} end
 	if not global.players[ID].stats[NAME] then 
 		global.players[ID].stats[NAME] = AMOUNT 
 	else
@@ -53,6 +54,18 @@ function IncrementerPersonal(NAME, AMOUNT, ID, ITEMNAME)
 			Calc_Building_XP(AMOUNT, ID, ITEMNAME)
 			--debug2("Player "..ID..": XP multiplier (Building): "..global.players[ID].build[ITEMNAME].XP_Multiplier.." for "..ITEMNAME)
 			debug2("Player "..ID..": XP added (Building): "..Round((1 * global.players[ID].build[ITEMNAME].XP_Multiplier), 2).." for "..ITEMNAME.." ("..global.players[ID].build[ITEMNAME].Amount_Build.." build total)")
+		end
+	end
+	if NAME == "killed" then
+		if not global.players[ID].killed[ITEMNAME] then 
+			global.players[ID].killed[ITEMNAME] = {Amount_Killed = AMOUNT, XP_Multiplier = 1} 
+			Calc_Killing_XP(AMOUNT, ID, ITEMNAME)
+			debug2("Player "..ID..": XP added (Building): "..Round((1 * global.players[ID].killed[ITEMNAME].XP_Multiplier), 2).." for "..ITEMNAME.." ("..global.players[ID].killed[ITEMNAME].Amount_Killed.." killed total)")
+		else
+			global.players[ID].killed[ITEMNAME].Amount_Killed = global.players[ID].killed[ITEMNAME].Amount_Killed + AMOUNT
+			Calc_Killing_XP(AMOUNT, ID, ITEMNAME)
+			--debug2("Player "..ID..": XP multiplier (Building): "..global.players[ID].killed[ITEMNAME].XP_Multiplier.." for "..ITEMNAME)
+			debug2("Player "..ID..": XP added (Building): "..Round((1 * global.players[ID].killed[ITEMNAME].XP_Multiplier), 2).." for "..ITEMNAME.." ("..global.players[ID].killed[ITEMNAME].Amount_Killed.." killed total)")
 		end
 	end
 end
@@ -108,6 +121,24 @@ function XP_Building(ID, NAME, AMOUNT)
 	else
 		global.players[ID].XP = global.players[ID].XP + (Round((1 * global.players[ID].build[NAME].XP_Multiplier), 2) * AMOUNT)
 		global.dyworld.XP = global.dyworld.XP + (Round((1 * global.players[ID].build[NAME].XP_Multiplier), 2) * AMOUNT)
+	end
+	Level_Up(ID)
+end
+
+function Calc_Killing_XP(AMOUNT, ID, ITEMNAME)
+	if global.players[ID].killed[ITEMNAME].XP_Multiplier >= 0.06 then
+		global.players[ID].killed[ITEMNAME].XP_Multiplier = 1 - Round((global.players[ID].killed[ITEMNAME].Amount_Killed / 250000), 5)
+	else
+		global.players[ID].killed[ITEMNAME].XP_Multiplier = 0.05
+	end
+end
+
+function XP_Killing(ID, NAME, AMOUNT)
+	if not global.players[ID].XP then 
+		global.players[ID].XP = (Round((1 * global.players[ID].killed[NAME].XP_Multiplier), 2) * AMOUNT)
+	else
+		global.players[ID].XP = global.players[ID].XP + (Round((1 * global.players[ID].killed[NAME].XP_Multiplier), 2) * AMOUNT)
+		global.dyworld.XP = global.dyworld.XP + (Round((1 * global.players[ID].killed[NAME].XP_Multiplier), 2) * AMOUNT)
 	end
 	Level_Up(ID)
 end

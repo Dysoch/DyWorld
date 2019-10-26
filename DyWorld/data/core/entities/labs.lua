@@ -3,6 +3,8 @@ require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
 data.raw.lab.lab.energy_usage = "1000kW"
+data.raw.lab.lab.fast_replaceable_group = "lab"
+data.raw.lab.lab.next_upgrade = "lab-2"
 
 data:extend(
 {
@@ -17,6 +19,7 @@ data:extend(
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
 	fast_replaceable_group = "lab",
+	next_upgrade = "lab-3",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     light = {intensity = 0.75, size = 8, color = {r = 1.0, g = 1.0, b = 1.0}},
@@ -183,6 +186,7 @@ data:extend(
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
 	fast_replaceable_group = "lab",
+	next_upgrade = "lab-4",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     light = {intensity = 0.75, size = 8, color = {r = 1.0, g = 1.0, b = 1.0}},
@@ -351,6 +355,7 @@ data:extend(
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
 	fast_replaceable_group = "lab",
+	next_upgrade = "lab-5",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     light = {intensity = 0.75, size = 8, color = {r = 1.0, g = 1.0, b = 1.0}},
@@ -520,6 +525,7 @@ data:extend(
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
 	fast_replaceable_group = "lab",
+	next_upgrade = "lab-6",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     light = {intensity = 0.75, size = 8, color = {r = 1.0, g = 1.0, b = 1.0}},

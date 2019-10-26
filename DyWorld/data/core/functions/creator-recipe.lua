@@ -90,6 +90,9 @@ data:extend(
 	if v.No_Decomp then
 		data.raw.recipe[v.Name].allow_decomposition = false
 	end
+	if v.No_Allow_As_Intermediate then
+		data.raw.recipe[v.Name].allow_as_intermediate = false
+	end
 end
 end
 

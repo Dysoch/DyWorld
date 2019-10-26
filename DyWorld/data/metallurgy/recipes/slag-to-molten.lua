@@ -14,6 +14,7 @@ data:extend(
 	localised_name = {"looped-name.molten-slag", {"looped-name."..v.DyWorld.Name}},
 	category = "smelting",
     energy_required = 30 * v.DyWorld.Tier,
+	allow_decomposition = false,
     enabled = false,
     normal = { 
 	  energy_required = 0.5 * v.DyWorld.Tier,

@@ -13,6 +13,7 @@ data:extend(
     name = "metallurgy-"..v.DyWorld.Name.."-gear",
     enabled = true,
 	category = dy.."forging-gear",
+	allow_decomposition = false,
 	hidden = true,
     normal = { 
 	  energy_required = 0.5 * v.DyWorld.Tier,

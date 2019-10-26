@@ -3,10 +3,6 @@ Version: 0.9.2
 Date: 26. 10. 2019
   Features:
     - Added Compressor. Used to compress sand > stone, sulfur > coal, coal > diamond and stone > obsidian
-  Minor Features:
-    - 
-  Compatibility:
-    - 
   RPG/GUI:
     - Added Personal Killings! When Combat Overhaul is active, this only works with melee attacks. Without combat overhaul, it works on all player fired guns. This stat is useless for now, till i can make it work with combat overhaul on as well
     - Removed Global info from MP games in the stats windows. Now it will only show your stats
@@ -14,10 +10,14 @@ Date: 26. 10. 2019
   Balancing:
     - Changed Recipe Time of sand to stone: 2 sec > 5 sec
     - Removed Belt immumity technology
+    - Added that certain metallurgy recipes will no longer showup in the total raw data of other recipes. This is done to avoid confusion with the liquid metals drops in those recipes
   Bugfixes:
     - Fixed Crude Oil Recipe not having locale
     - Fixed Combat Overhaul having to be active with enemies
     - Fixed bug when something was killed by a non force related item or entity
+    - Fixed labs not being able to be fast replaced
+    - Fixed pipes having to be manually replaced one by one without upgrade planner. Can now be dragged again
+    - Fixed replacement issue with inserter to long handed inserter. The 2 kinds can no longer be fast replaced, since that bugs their reach
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.1
 Date: 20. 10. 2019

@@ -15,6 +15,7 @@ data:extend(
 	icons = data.raw.item[v.DyWorld.Name.."-plate"].icons,
     enabled = false,
 	category = dy.."casting",
+	allow_decomposition = false,
 	icon_size = 32,
     subgroup = dy.."material-"..(Metal_Tiers[v.DyWorld.Name]-1),
     normal = { 

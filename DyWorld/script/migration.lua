@@ -253,7 +253,6 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"dyworld.migrate-1"})
 		PlayerPrint({"dyworld.migrate-2"})
 	end
-	--[[
 	if global.dyworld.Version == "0.9.1" then
 		for k,v in pairs(global.players) do	
 			v.killed = {}
@@ -278,7 +277,7 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
 		PlayerPrint({"dyworld.migrate-1"})
 		PlayerPrint({"dyworld.migrate-2"})
-	end ]]--
+	end
 end
 
 function Migrate_Debug()

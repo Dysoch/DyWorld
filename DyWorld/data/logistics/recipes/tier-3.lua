@@ -22,6 +22,8 @@ local Data_Table = {
 			{type = "item", name = "steel-underground-belt", amount = 2},
 		},
 		Tech = "logistics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "steel-transport-belt-2",
@@ -40,6 +42,8 @@ local Data_Table = {
 			{type = "item", name = "steel-transport-belt", amount = 1},
 		},
 		Tech = "logistics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "steel-loader-2",
@@ -59,6 +63,8 @@ local Data_Table = {
 			{type = "item", name = "steel-loader", amount = 1},
 		},
 		Tech = "logistics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "steel-splitter-2",
@@ -79,6 +85,8 @@ local Data_Table = {
 			{type = "item", name = "steel-splitter", amount = 1},
 		},
 		Tech = "logistics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "steel-pump-2",
@@ -99,6 +107,8 @@ local Data_Table = {
 			{type = "item", name = "steel-pump", amount = 1},
 		},
 		Tech = "logistics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "bronze-pipe-2",
@@ -116,6 +126,8 @@ local Data_Table = {
 			{type = "item", name = "bronze-pipe", amount = 1},
 		},
 		Tech = "logistics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "bronze-pipe-to-ground-2",
@@ -134,6 +146,8 @@ local Data_Table = {
 			{type = "item", name = "bronze-pipe-to-ground", amount = 1},
 		},
 		Tech = "logistics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "gold-roboport-2",
@@ -154,6 +168,8 @@ local Data_Table = {
 			{type = "item", name = "gold-roboport", amount = 1},
 		},
 		Tech = "construction-robotics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "gold-logistic-robot-2",
@@ -174,6 +190,8 @@ local Data_Table = {
 			{type = "item", name = "gold-logistic-robot", amount = 1},
 		},
 		Tech = "logistic-robotics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "gold-construction-robot-2",
@@ -194,6 +212,8 @@ local Data_Table = {
 			{type = "item", name = "gold-construction-robot", amount = 1},
 		},
 		Tech = "construction-robotics-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 }
 

@@ -22,6 +22,8 @@ local Data_Table = {
 			{type = "item", name = "lead-electric-mining-drill", amount = 1},
 		},
 		Tech = "automation-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 	{
 		Name = "bronze-pumpjack-2",
@@ -42,6 +44,8 @@ local Data_Table = {
 			{type = "item", name = "bronze-pumpjack", amount = 1},
 		},
 		Tech = "automation-4",
+		No_Decomp = true,
+		No_Allow_As_Intermediate = true,
 	},
 }
 

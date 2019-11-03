@@ -4,6 +4,11 @@ require "data/core/functions/amounts"
 
 if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
 
+data.raw.unit["small-spitter"].attack_parameters.damage_modifier = 1
+data.raw.unit["medium-spitter"].attack_parameters.damage_modifier = 1
+data.raw.unit["big-spitter"].attack_parameters.damage_modifier = 1
+data.raw.unit["behemoth-spitter"].attack_parameters.damage_modifier = 1
+
 for Dmg, Data in pairs(Damages) do
 	for Size, Scale in pairs(Enemy_Names_Scales) do
 data:extend(
@@ -91,7 +96,7 @@ data:extend(
     particle_spawn_timeout = 6,
     splash_fire_name = Dmg.."-splash-fire-spitter-"..Size,
     sticker_name = Dmg.."-sticker-"..Size,
-	damage = (Data.Tier * Damage_Mod[Dmg]),
+	damage = ((Data.Tier * Damage_Mod[Dmg]) * Scale),
 	damage_type = Dmg,
   }),
   DyWorld_spitter_splash_fire({

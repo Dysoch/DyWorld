@@ -46,7 +46,7 @@ data:extend(
     attack_parameters =
     {
       type = "projectile",
-      ammo_type = DyWorld_make_unit_melee_ammo_type(((10*Data.Tier)*Damage_Mod[Dmg]), Dmg),
+      ammo_type = DyWorld_make_unit_melee_ammo_type(((Data.Tier * Damage_Mod[Dmg]) * Scale), Dmg),
       range = 1 * Scale,
       cooldown = 40 / Data.Tier,
       sound = make_biter_roars(0.5),

@@ -12,6 +12,7 @@ function Expensive_Check(num)
 end
 
 DyWorld_Productivity_Module_Add = {}
+DyWorld_Super_Module_Add = {}
 
 function DyWorld_Cloud(SCALE, TINT)
     return {

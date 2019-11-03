@@ -2,9 +2,7 @@
 Version: 0.9.3
 Date: 03. 11. 2019
   Features:
-    - 
-  RPG/GUI:
-    - 
+    - Add option for deconstruct to turn messages off
   Balancing:
     - Tweaked damages of Enemies. Should take size into account, and no longer are biters more powerful then spitters
     - Increased stacksize of Uranium: 50 > 200
@@ -13,6 +11,7 @@ Date: 03. 11. 2019
     - Fixed long inserter mk4 not requiring previous tier
     - Fixed mods mismatch on MP games. This is a massive fix since nearly all files had to be edited, and can be buggy still. If so, report it please
     - Fixed Compatibility Patcher not working correctly on some mods. Moved it into the last stage of loading
+    - Removed inserter pickup bonuses technologies. Handled by RPG system from now on
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.2
 Date: 26. 10. 2019

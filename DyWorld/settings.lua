@@ -151,6 +151,21 @@ data:extend({
         setting_type = "runtime-global",
         default_value = true
     },
+    {
+        type = "bool-setting",
+        name = "DyWorld_Loot_Deconstruct_Message",
+		order = "a",
+        setting_type = "runtime-global",
+        default_value = false
+    },
+	--[[{
+		type = "int-setting",
+		name = "DyWorld_Loot_Deconstruct_Timer",
+        setting_type = "runtime-global",
+		default_value = 60,
+        maximum_value = 300,
+        minimum_value = 5,
+	},]]--
 	----- Per Player Settings -----
     {
         type = "bool-setting",

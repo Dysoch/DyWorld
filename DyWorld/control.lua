@@ -22,7 +22,11 @@ require "script/functions/loaders"
 debugger_extensive = settings.startup["DyWorld_Debug_Extra"].value
 debugger = settings.startup["DyWorld_Debug"].value
 debug_test = settings.startup["DyWorld_Debug"].value
-Loot_Check_Setting = settings.global["DyWorld_Loot_Deconstruct"].value
+
+Loot_Check_Toggle_Setting = settings.global["DyWorld_Loot_Deconstruct"].value
+Loot_Check_Message_Setting = settings.global["DyWorld_Loot_Deconstruct_Message"].value
+--Loot_Check_Timer_Setting = settings.global["DyWorld_Loot_Deconstruct_Timer"].value
+
 Migrate_Debug = false
 
 function debug(str, statement)
@@ -334,8 +338,10 @@ script.on_event(defines.events.on_tick, function(event)
 		end
 	end
 	if event.tick%(60*60*60)==1 and global.dyworld.Players >= 1 then
-		if Loot_Check_Setting then
-			PlayerPrint("WARNING, LAG SPIKE IMMENENT! LOOT DECONSTRUCT HAPPENING! (you can turn this off in mod settings/map)")
+		if Loot_Check_Toggle_Setting then
+			if Loot_Check_Message_Setting then
+				PlayerPrint("[DyWorld] WARNING, LAG SPIKE IMMENENT! LOOT DECONSTRUCT HAPPENING! (you can turn this off in mod settings/map)")
+			end			
 			for _, surface in pairs(game.surfaces) do
 			local player = game.players[1]
 			local Loot = surface.find_entities_filtered{type = "item-entity"}

@@ -292,13 +292,7 @@ function Migrate_Debug()
 end
 
 function Check_Tech(TECH)
-	if TECH == "toolbelt" then
-		return false
-	elseif TECH == "toolbelt-2" then
-		return false
-	elseif TECH == "toolbelt-3" then
-		return false
-	elseif TECH == "character-logistic-slots-1" then
+	if TECH == "character-logistic-slots-1" then
 		return false
 	elseif TECH == "character-logistic-slots-2" then
 		return false

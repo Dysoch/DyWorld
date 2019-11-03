@@ -2,6 +2,9 @@
 -- Core Module --
 require("data.core.data-3")
 
+-- DyComPa Module --
+require("data.dycompa.data")
+
 function Round(num, numDecimalPlaces)
 	local mult = 10^(numDecimalPlaces or 0)
 	return math.floor(num * mult + 0.5) / mult

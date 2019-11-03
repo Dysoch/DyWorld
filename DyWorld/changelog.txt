@@ -12,6 +12,7 @@ Date: 03. 11. 2019
     - Fixed base game enemies being overpowered when still present after switching on DyWorld Enemies
     - Fixed long inserter mk4 not requiring previous tier
     - Fixed mods mismatch on MP games. This is a massive fix since nearly all files had to be edited, and can be buggy still. If so, report it please
+    - Fixed Compatibility Patcher not working correctly on some mods. Moved it into the last stage of loading
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.2
 Date: 26. 10. 2019

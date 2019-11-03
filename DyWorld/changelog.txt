@@ -6,7 +6,7 @@ Date: 03. 11. 2019
   RPG/GUI:
     - 
   Balancing:
-    - 
+    - Tweaked damages of Enemies. Should take size into account, and no longer are biters more powerful then spitters
   Bugfixes:
     - Fixed base game enemies being overpowered when still present after switching on DyWorld Enemies
     - Fixed long inserter mk4 not requiring previous tier

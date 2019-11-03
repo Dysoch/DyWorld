@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Combat_Overhaul"].value then
+
 if data.raw.ammo["rocket"] then
 	data.raw.ammo["rocket"].ammo_type.action.action_delivery.direction_deviation = 0.25
 	data.raw.ammo["rocket"].ammo_type.action.action_delivery.range_deviation = 0.25
@@ -141,4 +143,6 @@ if data.raw.ammo["uranium-rounds-magazine"] then
         }
       }
     }
+end
+
 end

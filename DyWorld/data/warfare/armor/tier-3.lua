@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value then
+
 data:extend(
 {
   {
@@ -42,3 +44,5 @@ data:extend(
 })
 
 DyWorld_Add_To_Tech("military-5", "modular-armor-tier-3")
+
+end

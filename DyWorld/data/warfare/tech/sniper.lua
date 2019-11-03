@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value then
+
 data:extend(
 {
   {
@@ -66,3 +68,5 @@ data:extend(
   },
 }
 )
+
+end

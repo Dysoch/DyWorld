@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Decor"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Tile then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("tile", "concrete", v.DyWorld.Name.."-concrete", true)
@@ -22,4 +24,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Tile then
     }
 	
 end
+end
+
 end

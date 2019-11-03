@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
+
 for Dmg, Data in pairs(Damages) do
 DyWorld_control_name = "dyworld-enemies-tier-"..Data.Tier
 data:extend(
@@ -186,4 +188,6 @@ data:extend(
 			table.insert(data.raw["unit-spawner"][Dmg.."-spawner"].dying_trigger_effect, INSERT_1)
 		end
 		end
+end
+
 end

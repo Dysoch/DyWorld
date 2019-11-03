@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Power"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Heat_Exchanger then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("boiler", "heat-exchanger", v.DyWorld.Name.."-heat-exchanger", true)
@@ -88,4 +90,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Heat_Exchanger then
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-heat-exchanger"].expensive.ingredients, Ingredient)
 	end
 end
+end
+
 end

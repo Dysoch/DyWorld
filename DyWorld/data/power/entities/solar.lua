@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Power"].value then
+
 data.raw["solar-panel"]["solar-panel"].fast_replaceable_group = "solar"
 
 for k,v in pairs(data.raw.item) do
@@ -83,4 +85,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Solar then
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-solar-panel"].expensive.ingredients, Ingredient)
 	end
 end
+end
+
 end

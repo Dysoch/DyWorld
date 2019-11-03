@@ -1,6 +1,7 @@
 require "data/core/functions/prefix"
 require "data/core/functions/colors"
 
+if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
 local Data_Table = {
 	["dyworld-enemies-tier-1"] = {1, "a"},
 	["dyworld-enemies-tier-2"] = {2, "b"},
@@ -36,4 +37,5 @@ data:extend(
     category = "enemy",
   }
 })
+end
 end

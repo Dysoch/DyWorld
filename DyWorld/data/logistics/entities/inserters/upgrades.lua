@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Logistics"].value then
+
 data.raw.inserter["inserter-tier-1"].next_upgrade = "inserter-tier-2"
 data.raw.inserter["inserter-tier-2"].next_upgrade = "inserter-tier-3"
 data.raw.inserter["inserter-tier-3"].next_upgrade = "inserter-tier-4"
@@ -36,3 +38,5 @@ data.raw.inserter["stack-inserter"].next_upgrade = "stack-inserter-tier-1"
 data.raw.inserter["filter-inserter"].next_upgrade = "filter-inserter-tier-1"
 data.raw.inserter["long-handed-inserter"].next_upgrade = "long-inserter-tier-1"
 data.raw.inserter["stack-filter-inserter"].next_upgrade = "stack-filter-inserter-tier-1"
+
+end

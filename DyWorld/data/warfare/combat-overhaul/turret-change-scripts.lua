@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Combat_Overhaul"].value then
+
 function DyWorld_Turret_Lead(turret_prototype, speed)
 	turret_prototype.attack_parameters.lead_target_for_projectile_speed = speed
 end
@@ -181,4 +183,6 @@ for index, name in pairs (Turrets_Changed_To_8_Ways) do
 			table.insert(Electric_Turrets[name].flags, INSERT)
 		end
 	end
+end
+
 end

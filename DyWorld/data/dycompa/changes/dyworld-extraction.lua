@@ -1,5 +1,7 @@
 
 
+if settings.startup["DyWorld_Extraction"].value then
+
 local Change = {
 	{Old = "pumpjack", New = "iron-pumpjack"},
 	{Old = "electric-mining-drill", New = "stone-electric-mining-drill"},
@@ -74,4 +76,6 @@ for k,m in pairs(Change) do
 			end
 		end
 	end
+end
+
 end

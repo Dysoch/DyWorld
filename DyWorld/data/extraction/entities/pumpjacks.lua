@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Extraction"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pumpjack then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("mining-drill", "pumpjack", v.DyWorld.Name.."-pumpjack", true)
@@ -83,4 +85,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pumpjack then
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-pumpjack"].expensive.ingredients, Ingredient)
 	end
 end
+end
+
 end

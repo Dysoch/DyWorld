@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
+
 for Dmg, Data in pairs(Damages) do
 	for Size, Scale in pairs(Enemy_Names_Scales) do
 DyWorld_control_name = "dyworld-enemies-tier-"..Data.Tier
@@ -183,4 +185,6 @@ data:extend(
 		end
 		end
 	end
+end
+
 end

@@ -104,7 +104,9 @@ require("data.core.achievements")
 
 if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
 	DyWorld_control_name = "dyworld-enemies-tier-1"
-	require("data.core.functions.enemy-autoplace")
-	require("data.core.functions.warfare-autoplace")
-	require("data.core.edits.warfare-enemies")
 end
+
+-- Requires DyWorld_Warfare and DyWorld_Warfare_Enemies
+require("data.core.edits.warfare-enemies")
+require("data.core.functions.enemy-autoplace")
+require("data.core.functions.warfare-autoplace")

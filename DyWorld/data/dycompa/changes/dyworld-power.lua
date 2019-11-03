@@ -1,5 +1,7 @@
 
 
+if settings.startup["DyWorld_Power"].value then
+
 local Change = {
 	{Old = "boiler", New = "stone-boiler"},
 	{Old = "nuclear-reactor", New = "steel-nuclear-reactor"},
@@ -94,4 +96,6 @@ for k,m in pairs(Change) do
 			end
 		end
 	end
+end
+
 end

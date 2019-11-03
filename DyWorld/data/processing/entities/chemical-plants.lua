@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Processing"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Chemical then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("assembling-machine", "chemical-plant", v.DyWorld.Name.."-chemical-plant", true)
@@ -83,3 +85,5 @@ end
 
 --data.raw["assembling-machine"]["chemical-plant"].next_upgrade = "iron-chemical-plant"
 data.raw["assembling-machine"]["chemical-plant"].fast_replaceable_group = "chemical-plant"
+
+end

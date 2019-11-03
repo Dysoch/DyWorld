@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Processing"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Centrifuge then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("assembling-machine", "centrifuge", v.DyWorld.Name.."-centrifuge", true)
@@ -144,3 +146,5 @@ end
 end
 
 data.raw["assembling-machine"]["centrifuge"].next_upgrade = "copper-centrifuge"
+
+end

@@ -2,7 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
---@todo change belt script to work with predefined data table
+if settings.startup["DyWorld_Extraction"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("mining-drill", "electric-mining-drill", v.DyWorld.Name.."-electric-mining-drill", true)
@@ -88,4 +89,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Drill then
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-mining-drill"].expensive.ingredients, Ingredient)
 	end
 end
+end
+
 end

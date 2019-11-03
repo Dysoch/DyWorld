@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Power"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Steam_Engine then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("generator", "steam-engine", v.DyWorld.Name.."-steam-engine", true)
@@ -82,4 +84,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Steam_Engine then
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-steam-engine"].expensive.ingredients, Ingredient)
 	end
 end
+end
+
 end

@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Logistics"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("loader", "loader", v.DyWorld.Name.."-loader", true)
@@ -176,4 +178,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-loader"].expensive.ingredients, Ingredient)
 	end
 end
+end
+
 end

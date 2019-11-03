@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value then
+
 local k = "shotgun-shell"
 local v = 0.25
 
@@ -193,3 +195,5 @@ data:extend(
   },
 }
 )
+
+end

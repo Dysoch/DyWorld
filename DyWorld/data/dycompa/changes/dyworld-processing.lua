@@ -1,5 +1,7 @@
 
 
+if settings.startup["DyWorld_Processing"].value then
+
 local Change = {
 	{Old = "assembling-machine-1", New = "stone-assembling-machine"},
 	{Old = "assembling-machine-2", New = "tin-assembling-machine"},
@@ -79,4 +81,6 @@ for k,m in pairs(Change) do
 			end
 		end
 	end
+end
+
 end

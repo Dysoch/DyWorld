@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Logistics"].value then
+
 local SPEED = 20
 local TIER = 10
 local STACK_TIER = 2
@@ -219,3 +221,5 @@ data:extend(
 )
 
 DyWorld_Add_To_Tech("automation-"..TIER, "stack-long-filter-inserter-tier-"..STACK_TIER)
+
+end

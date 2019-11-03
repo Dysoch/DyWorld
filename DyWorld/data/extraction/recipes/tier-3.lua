@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 -- Balancing here recipes
 
+if settings.startup["DyWorld_Extraction"].value then
+
 local Data_Table = {
 	{
 		Name = "lead-electric-mining-drill-2",
@@ -54,3 +56,5 @@ for k,v in pairs(Data_Table) do
 		DyWorld_Master_Recipe_Creator(v)
 	end
 end	
+
+end

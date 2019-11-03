@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value then
+
 local function Check_PreReq(TIER)
 	if TIER >= 3 then
 		return {"military-"..math.ceil(TIER/2)}
@@ -66,4 +68,6 @@ data:extend(
 		local results = {{"automation-science-pack", 5},{"logistic-science-pack", 5},{"chemical-science-pack", 5},{"production-science-pack", 5},{"utility-science-pack", 5},{"military-science-pack", v.Tier},{"space-science-pack", 10}}
 		data.raw.technology[k.."-ammo"].unit.ingredients = results
 	end
+end
+
 end

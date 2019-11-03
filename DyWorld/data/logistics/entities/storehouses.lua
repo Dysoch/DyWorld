@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Logistics"].value then
+
 data:extend({
 	{
 		type = "container",
@@ -226,3 +228,5 @@ DyWorld_Add_To_Tech("storage-solutions-3", "storehouse-storage")
 DyWorld_Add_To_Tech("storage-solutions-3", "storehouse-requester")
 DyWorld_Add_To_Tech("storage-solutions-4", "storehouse-active-provider")
 DyWorld_Add_To_Tech("storage-solutions-4", "storehouse-buffer")
+
+end

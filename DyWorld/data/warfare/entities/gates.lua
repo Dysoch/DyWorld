@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value then
+
 data.raw.gate.gate.resistances = Metal_Resistances["stone"]
 data.raw.gate.gate.hide_resistances = false
 
@@ -103,4 +105,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Wall then
 		end
 	end
 end
+end
+
 end

@@ -1,5 +1,7 @@
 
 
+if settings.startup["DyWorld_Warfare"].value then
+
 local Change = {
 	{Old = "firearm-magazine", New = "basic-ammo-earth"},
 	{Old = "piercing-rounds-magazine", New = "piercing-ammo-earth"},
@@ -119,4 +121,6 @@ for k,m in pairs(Change) do
 			end
 		end
 	end
+end
+
 end

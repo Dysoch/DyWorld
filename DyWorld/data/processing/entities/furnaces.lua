@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Processing"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Furnace then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("furnace", "electric-furnace", v.DyWorld.Name.."-electric-furnace", true)
@@ -78,4 +80,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Furnace then
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-electric-furnace"].expensive.ingredients, Ingredient)
 	end
 end
+end
+
 end

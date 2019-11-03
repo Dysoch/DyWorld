@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Logistics"].value then
+
 local SPEED = 1
 local TIER = 1
 
@@ -216,3 +218,5 @@ data:extend(
   },
 }
 )
+
+end

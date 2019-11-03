@@ -17,7 +17,7 @@ function StackSizeCheck(StackSize)
 end
 
 if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
----------------------------------- Enemies -------------------------------------------
+---------------------------------- Enemies ------------------------------------
 	for k,v in pairs(data.raw.unit) do	
 		if v.max_health then
 			v.max_health = math.floor(v.max_health * 0.25)
@@ -56,7 +56,7 @@ if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
 		v.spawning_cooldown[1] = v.spawning_cooldown[1] * 2.5
 		v.spawning_cooldown[2] = v.spawning_cooldown[2] * 2.5
 	end	
--------------------------------- Stack Sizes -----------------------------------------
+-------------------------------- Stack Sizes ----------------------------------
 	for k, v in pairs(data.raw.item) do
 		v.default_request_amount = v.stack_size
 		v.stack_size = 1000000000
@@ -93,7 +93,7 @@ if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
 		v.default_request_amount = v.stack_size
 		v.stack_size = 1000000000
 	end
----------------------------------  Resources -----------------------------------------
+---------------------------------  Resources ----------------------------------
 	if settings.startup["DyWorld_Infinite_Resources"].value then
 		for k, v in pairs(data.raw.resource) do
 			v.infinite = true
@@ -160,7 +160,7 @@ if settings.startup["DyWorld_Expensive_Recipe_Helper"].value then
 		end
 	end
 else
----------------------------------- Enemies -------------------------------------------
+---------------------------------- Enemies ------------------------------------
 	if settings.startup["DyWorld_Warfare_Difficulty"].value == 1 then
 		for k,v in pairs(data.raw.unit) do	
 			if v.max_health then
@@ -263,7 +263,7 @@ else
 			v.spawning_cooldown[2] = v.spawning_cooldown[2] * 0.125
 		end	
 	end
--------------------------------- Stack Sizes -----------------------------------------
+-------------------------------- Stack Sizes ----------------------------------
 	if settings.startup["DyWorld_Stack_Size_Mult"].value > 1 then
 		for k, v in pairs(data.raw.item) do
 			v.default_request_amount = v.stack_size
@@ -302,7 +302,7 @@ else
 			v.stack_size = StackSizeCheck(v.stack_size)
 		end
 	end
-------------------------- Infinite Resources -----------------------------------------
+------------------------- Infinite Resources ----------------------------------
 	if settings.startup["DyWorld_Infinite_Resources"].value then
 		for k, v in pairs(data.raw.resource) do
 			v.infinite = true
@@ -382,12 +382,5 @@ for _, e in pairs(data.raw.accumulator) do
 	e.energy_source.buffer_capacity = multiply_bc(e.energy_source.buffer_capacity)
 end
 
--- Warfare Module --
-if settings.startup["DyWorld_Warfare"].value then
-	require("data.warfare.data-3")
-end
-
--- Warfare Module --
-if settings.startup["DyWorld_Combat_Overhaul"].value then
-	require("data.warfare.combat-overhaul")
-end
+-- Combat Overhaul Module --
+require("data.warfare.combat-overhaul")

@@ -2,8 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
---TODO Add more Boilers
---BODY @ZukiiG
+if settings.startup["DyWorld_Power"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Boiler then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("boiler", "boiler", v.DyWorld.Name.."-boiler", true)
@@ -91,4 +91,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Boiler then
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-boiler"].expensive.ingredients, Ingredient)
 	end
 end
+end
+
 end

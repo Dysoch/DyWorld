@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value then
+
 data.raw.wall["stone-wall"].resistances = Metal_Resistances["stone"]
 data.raw.wall["stone-wall"].hide_resistances = false
 
@@ -82,3 +84,6 @@ end
 end
 
 data.raw.wall["stone-wall"].max_health = Round((150 * (math.exp(1) * 0.2)), 0)
+data.raw.item["stone-wall"].stack_size = 500
+
+end

@@ -3,31 +3,10 @@
 require("data.dycompa.edits.item-group-change")
 require("data.dycompa.edits.mod-changes")
 require("data.dycompa.changes.dyworld-core")
-
-if settings.startup["DyWorld_Logistics"].value then
-	require("data.dycompa.changes.dyworld-logistic")
-end
-
-if settings.startup["DyWorld_Processing"].value then
-	require("data.dycompa.changes.dyworld-processing")
-end
-
-if settings.startup["DyWorld_Power"].value then
-	require("data.dycompa.changes.dyworld-power")
-end
-
-if settings.startup["DyWorld_Extraction"].value then
-	require("data.dycompa.changes.dyworld-extraction")
-end
-
-if settings.startup["DyWorld_Warfare"].value then
-	require("data.dycompa.changes.dyworld-warfare")
-end
-
-if settings.startup["DyWorld_Equipment"].value then
-	
-end
-
-if settings.startup["DyWorld_Decor"].value then
-	
-end
+require("data.dycompa.changes.dyworld-logistic")
+require("data.dycompa.changes.dyworld-processing")
+require("data.dycompa.changes.dyworld-power")
+require("data.dycompa.changes.dyworld-extraction")
+require("data.dycompa.changes.dyworld-warfare")
+--require("data.dycompa.changes.dyworld-equipment")
+--require("data.dycompa.changes.dyworld-decor")

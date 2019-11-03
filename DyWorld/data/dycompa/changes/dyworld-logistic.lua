@@ -1,5 +1,7 @@
 
 
+if settings.startup["DyWorld_Logistics"].value then
+
 local Change = {
 	{Old = "transport-belt", New = "stone-transport-belt"},
 	{Old = "splitter", New = "stone-splitter"},
@@ -112,4 +114,6 @@ for k,m in pairs(Change) do
 			end
 		end
 	end
+end
+
 end

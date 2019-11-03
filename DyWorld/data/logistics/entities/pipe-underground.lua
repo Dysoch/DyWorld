@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Logistics"].value then
+
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then	
 	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("pipe-to-ground", "pipe-to-ground", v.DyWorld.Name.."-pipe-to-ground", true)
@@ -86,4 +88,6 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Pipe then
 		table.insert(data.raw.recipe[v.DyWorld.Name.."-pipe-to-ground"].normal.ingredients, Ingredient)
 	end
 end
+end
+
 end

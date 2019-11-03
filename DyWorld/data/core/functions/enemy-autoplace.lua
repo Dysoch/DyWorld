@@ -1,6 +1,7 @@
 require "data/core/functions/prefix"
 require "data/core/functions/colors"
 
+if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
 local noise = require("noise")
 
 local enemy_base_control_setting = noise.get_control_setting(DyWorld_control_name)
@@ -197,3 +198,4 @@ end
   enemy_spawner_autoplace = enemy_spawner_autoplace,
   enemy_worm_autoplace = enemy_worm_autoplace
 }]]--
+end

@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 -- Balancing here recipes
 
+if settings.startup["DyWorld_Logistics"].value then
+
 local Data_Table = {
 	{
 		Name = "steel-underground-belt-2",
@@ -222,3 +224,5 @@ for k,v in pairs(Data_Table) do
 		DyWorld_Master_Recipe_Creator(v)
 	end
 end	
+
+end

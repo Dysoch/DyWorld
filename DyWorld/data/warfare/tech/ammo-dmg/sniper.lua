@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value then
+
 local k = "sniper"
 local v = 0.5
 
@@ -196,3 +198,5 @@ data:extend(
   },
 }
 )
+
+end

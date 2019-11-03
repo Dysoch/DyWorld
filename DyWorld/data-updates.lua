@@ -1,43 +1,27 @@
 
 -- Extraction Module --
-if settings.startup["DyWorld_Extraction"].value then
-	require("data.extraction.data")
-end
+require("data.extraction.data")
 
 -- Logistics Module --
-if settings.startup["DyWorld_Logistics"].value then
-	require("data.logistics.data")
-end
+require("data.logistics.data")
 
 -- Power Module --
-if settings.startup["DyWorld_Power"].value then
-	require("data.power.data")
-end
+require("data.power.data")
 
 -- Processing Module --
-if settings.startup["DyWorld_Processing"].value then
-	require("data.processing.data")
-end
+require("data.processing.data")
 
 -- Warfare Module --
-if settings.startup["DyWorld_Warfare"].value then
-	require("data.warfare.data")
-end
+require("data.warfare.data")
 
 -- Warfare Enemies Module --
-if settings.startup["DyWorld_Warfare"].value and settings.startup["DyWorld_Warfare_Enemies"].value then
-	require("data.warfare.data-enemies")
-end
+require("data.warfare.data-enemies")
 
 -- Equipment Module --
-if settings.startup["DyWorld_Equipment"].value then
-	require("data.equipment.data")
-end
+require("data.equipment.data")
 
 -- Decor Module --
-if settings.startup["DyWorld_Decor"].value then
-	require("data.decor.data")
-end
+require("data.decor.data")
 
 -- Core Module --
 require("data.core.data-2")
@@ -95,7 +79,7 @@ end
 
 for i,inserter in pairs(data.raw["inserter"]) do
     inserter.allow_custom_vectors = true
-	inserter.fast_replaceable_group = "inserter"
+	--inserter.fast_replaceable_group = "inserter"
 end
 
 if settings.startup["DyWorld_Collision_Projectiles"] then

@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Combat_Overhaul"].value then
+
 Projectile_Table_To_Change = {
 	"grenade", 
 	--"rocket", 
@@ -31,4 +33,6 @@ for k,v in pairs(data.raw["ammo"]) do
 	else
 		v.magazine_size = math.floor(v.magazine_size * 2.5)
 	end
+end
+
 end

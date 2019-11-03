@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Warfare"].value then
+
 local Data_Table = {
 	"earth",
 	"chemical",
@@ -204,4 +206,6 @@ local RECIPE = data.raw.recipe["basic-shotgun-ammo-"..Dmg]
 		table.insert(RECIPE.ingredients, RESULT)
 		RECIPE.category = "crafting-with-fluid"
 	end
+end
+
 end

@@ -2,6 +2,8 @@ require "data/core/functions/prefix"
 require "data/core/functions/colors"
 require "data/core/functions/amounts"
 
+if settings.startup["DyWorld_Combat_Overhaul"].value then
+
 data:extend(
 {
   {
@@ -137,3 +139,5 @@ data.raw.projectile["piercing-shotgun-pellet"].action.action_delivery.target_eff
             damage = { amount = 8, type = "physical"}
           }
         }
+		
+end

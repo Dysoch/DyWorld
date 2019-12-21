@@ -312,6 +312,10 @@ function BodySkills(id)
 		if P_Level >= 25 and ggsp >= 25000 then
 			game.forces.player.stack_inserter_capacity_bonus = Round(ggsp / 5000)
 		end
+		--stack_inserter_capacity_bonus cannot exceed 200, hitting max on lvl45
+		if P_Level >= 45 and ggsp >= 25000 then
+			game.forces.player.stack_inserter_capacity_bonus = 200
+		end
 	end
 	--@todo Add inserter and stack inserter stack size bonus 
 	--@body based on picked up stat, level 20+

@@ -194,8 +194,8 @@ data:extend(
 
 	data:extend({DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	
-	if data.raw.technology["beam-turrets"] then
-		DyWorld_Add_To_Tech("beam-turrets", v.DyWorld.Name.."-beam-turret")
+	if data.raw.technology["electric-turrets"] then
+		DyWorld_Add_To_Tech("electric-turrets", v.DyWorld.Name.."-beam-turret")
 	end
 	
 	if v.DyWorld.Warfare.Beam_Turret.Ingredients then

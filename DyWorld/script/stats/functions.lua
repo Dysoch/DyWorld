@@ -269,18 +269,10 @@ function BodySkills(id)
 		end
 		if P_Level >= 7 and gsk >= 1 then
 			game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
-			if math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50) > 320 then
-				game.players[id].character_loot_pickup_distance_bonus = 320
-			else
-				game.players[id].character_loot_pickup_distance_bonus = math.floor(((p4*5)+(p2*3)+p3+m1+m2+m3)/50)
-			end
+			game.players[id].character_loot_pickup_distance_bonus = math.min(Round(((p4*5)+(p2*3)+p3+m1+m2+m3)/50), 320)
 		end
 		if P_Level >= 10 then
-			if math.floor((p1+p2+p4)/8) <= 920 then
-				game.players[id].character_inventory_slots_bonus = math.floor((p1+p2+p4)/8)
-			else
-				game.players[id].character_inventory_slots_bonus = 920
-			end
+			game.players[id].character_inventory_slots_bonus = math.min(Round((p1+p2+p4)/8), 920)
 		end
 		if P_Level >= 15 then
 			game.players[id].character_reach_distance_bonus = math.floor((gsp+gsb+(p2*5)+(m1*2))/5000)
@@ -293,11 +285,7 @@ function BodySkills(id)
 		end
 		if P_Level >= 30 then
 			if game.forces.player.technologies["character-logistic-slots-1"].researched then 
-				if math.floor((((gsgb + gsgm) / 25)+(p1))/15) <= 190 then
-					game.players[id].character_logistic_slot_count_bonus = math.floor((((gsgb + gsgm) / 25)+(m2))/15)
-				else
-					game.players[id].character_logistic_slot_count_bonus = 190
-				end
+				game.players[id].character_logistic_slot_count_bonus = 	math.min(Round((((gsgb + gsgm) / 25)+(m2))/15), 190)
 			end
 		end
 		--if P_Level >= 1 and ggsm >= 1 then
@@ -306,11 +294,11 @@ function BodySkills(id)
 		end
 		--if P_Level >= 1 and ggsp >= 1 then
 		if P_Level >= 20 and ggsp >= 5000 then
-			game.forces.player.inserter_stack_size_bonus = Round(ggsp / 50000)
+			game.forces.player.inserter_stack_size_bonus = math.min(Round(ggsp / 75000), 200)
 		end
 		--if P_Level >= 1 and ggsp >= 1 then
 		if P_Level >= 25 and ggsp >= 25000 then
-			game.forces.player.stack_inserter_capacity_bonus = Round(ggsp / 5000)
+			game.forces.player.stack_inserter_capacity_bonus = math.min(Round(ggsp / 15000), 200)
 		end
 	end
 	--@todo Add inserter and stack inserter stack size bonus 

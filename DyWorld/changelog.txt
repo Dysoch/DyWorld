@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.4
+Date: 10. 11. 2019
+  Features:
+    - Added first batch of Experimental Features (read Experimental tab in Changelog)
+  Changes:
+    - Improved RPG Bonus calculations. Should run smoother now
+  Balancing:
+    - 
+  Bugfixes:
+    - Fixed Beam Turrets not being able to be unlocked
+    - Fixed script error with inserter stacksize bonus being above 200
+  Experimental:
+    - Currently in Experimental:
+    - New Science Packs! 12 total now, one for each tier plus 2 military packs
+---------------------------------------------------------------------------------------------------
 Version: 0.9.3
 Date: 03. 11. 2019
   Features:

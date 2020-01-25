@@ -17,7 +17,7 @@ data:extend(
 		tint = Material_Colors[v.DyWorld.Name],
 	  },
 	},
-	icon_size = 32,
+	icon_size = 64,
     subgroup = dy.."intermediates-tier-"..(v.DyWorld.Tier-1),
     stack_size = 200,
 	order = v.DyWorld.Name.."-stick",

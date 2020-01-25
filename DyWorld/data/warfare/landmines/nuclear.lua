@@ -11,7 +11,7 @@ data:extend(
     type = "land-mine",
     name = "atomic-land-mine",
     icon = "__base__/graphics/icons/land-mine.png",
-    icon_size = 32,
+    icon_size = 64,
     flags =
     {
       "placeable-player",
@@ -301,7 +301,7 @@ data:extend(
     type = "item",
     name = "atomic-land-mine",
     icon = "__base__/graphics/icons/land-mine.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = dy.."landmine",
     order = "atomic-land-mine",
     place_result = "atomic-land-mine",

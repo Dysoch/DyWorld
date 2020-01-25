@@ -11,7 +11,7 @@ data:extend(
     name = "portable-engine-equipment-tier-1",
     sprite =
     {
-      filename = "__base__/graphics/equipment/discharge-defense-equipment.png",
+      filename = dyworld_path_equipment.."discharge-defense-equipment.png",
       width = 64,
       height = 64,
       priority = "medium"
@@ -40,7 +40,7 @@ data:extend(
     type = "item",
     name = "portable-engine-equipment-tier-1",
     icon = "__base__/graphics/icons/solar-panel-equipment.png",
-    icon_size = 32,
+    icon_size = 64,
     placed_as_equipment_result = "portable-engine-equipment-tier-1",
     subgroup = dy.."equipment-power",
     order = "portable-engine-equipment-tier-1",

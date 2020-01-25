@@ -11,7 +11,7 @@ data:extend(
     type = "land-mine",
     name = "cryo-land-mine",
     icon = "__base__/graphics/icons/land-mine.png",
-    icon_size = 32,
+    icon_size = 64,
     flags =
     {
       "placeable-player",
@@ -165,7 +165,7 @@ data:extend(
     type = "item",
     name = "cryo-land-mine",
     icon = "__base__/graphics/icons/land-mine.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = dy.."landmine",
     order = "cryo-land-mine",
     place_result = "cryo-land-mine",

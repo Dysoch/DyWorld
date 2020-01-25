@@ -90,3 +90,5 @@ data.raw.item["argonium-fuel-cell"].fuel_value = "32GJ"
 
 data.raw.item["acorn"].fuel_category = "chemical"
 data.raw.item["acorn"].fuel_value = "0.5MJ"
+
+data.raw.item["sand"].stack_size = 500

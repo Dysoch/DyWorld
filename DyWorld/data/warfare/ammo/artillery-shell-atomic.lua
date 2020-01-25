@@ -10,7 +10,7 @@ data:extend(
     type = "ammo",
     name = "atomic-artillery-shell",
     icon = "__base__/graphics/icons/artillery-shell.png",
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "artillery-shell",

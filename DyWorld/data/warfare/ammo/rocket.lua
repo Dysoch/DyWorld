@@ -40,11 +40,11 @@ data:extend(
 	  },
 	  {
 		icon = dyworld_path_damage..Dmg..".png",
-		scale= 0.6, 
+		scale = 0.3, 
 		shift = {8, 9},
 	  },
 	},
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "rocket",

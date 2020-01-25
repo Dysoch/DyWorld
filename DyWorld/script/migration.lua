@@ -300,6 +300,28 @@ function Migrate_To_Next_Version()
 		PlayerPrint({"dyworld.migrate-1"})
 		PlayerPrint({"dyworld.migrate-2"})
 	end
+	if global.dyworld.Version == "0.9.3" then
+		-- This part below is done every migration!
+		global.dyworld.Max_Research = Research_Calc(),
+		global.dyworld.Research_Done == 0
+		global.stats.research = 0
+		global.dyworld.Migration_Check = true
+		if game.players and game.players[1] then
+			for k,v in pairs(game.players[1].force.technologies) do
+				if Check_Tech(v.name) then
+					if v.researched then
+						v.researched = false
+						v.researched = true
+					end
+				end
+			end
+		end
+		global.dyworld.Migration_Check = false
+		global.dyworld.Version = "0.9.4" 
+		PlayerPrint({"dyworld.new-version", (global.dyworld.Version)})
+		PlayerPrint({"dyworld.migrate-1"})
+		PlayerPrint({"dyworld.migrate-2"})
+	end
 end
 
 function Migrate_Debug()

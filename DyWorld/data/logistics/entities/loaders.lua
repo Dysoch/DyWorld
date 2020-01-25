@@ -156,6 +156,9 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 		DyWorld_Prototype_Recipe.normal.enabled = false
 		DyWorld_Prototype_Recipe.expensive.enabled = false
 	end
+	
+	DyWorld_Prototype_Entity.icon_size = 32
+	DyWorld_Prototype_Item.icon_size = 32
 
 	data:extend({DyWorld_Prototype_Entity, DyWorld_Prototype_Item, DyWorld_Prototype_Recipe})
 	

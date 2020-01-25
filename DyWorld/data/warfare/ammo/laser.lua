@@ -17,10 +17,10 @@ data:extend(
 	  {
 		icon = "__base__/graphics/icons/battery.png",
 		tint = {r=1.0, g=0.0, b=0.0},
-		scale = 0.9,
+		scale = 0.45,
 	  },
 	},
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "laser",
@@ -96,10 +96,10 @@ data:extend(
 	  {
 		icon = "__base__/graphics/icons/battery.png",
 		tint = {r=1.0, g=0.0, b=0.0},
-		scale = 0.9,
+		scale = 0.45,
 	  },
 	},
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "laser",
@@ -179,10 +179,10 @@ data:extend(
 	  {
 		icon = "__base__/graphics/icons/battery.png",
 		tint = {r=1.0, g=1.0, b=0.0},
-		scale = 0.9,
+		scale = 0.45,
 	  },
 	},
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "laser",
@@ -259,10 +259,10 @@ data:extend(
 	  {
 		icon = "__base__/graphics/icons/battery.png",
 		tint = {r=1.0, g=1.0, b=0.0},
-		scale = 0.9,
+		scale = 0.45,
 	  },
 	},
-    icon_size = 32,
+    icon_size = 64,
     ammo_type =
     {
       category = "laser",

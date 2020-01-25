@@ -60,7 +60,7 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Chaingun_Turret then
 	  },
 	  {
 		icon = "__base__/graphics/icons/piercing-rounds-magazine.png", 
-		scale= 0.6, 
+		scale = 0.3, 
 		shift = {8, 9},
 	  },
 	}
@@ -78,7 +78,7 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Chaingun_Turret then
 	  },
 	  {
 		icon = "__base__/graphics/icons/piercing-rounds-magazine.png", 
-		scale= 0.6, 
+		scale = 0.3, 
 		shift = {8, 9},
 	  },
 	}

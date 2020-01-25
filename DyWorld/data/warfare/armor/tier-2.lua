@@ -17,7 +17,7 @@ data:extend(
     type = "armor",
     name = "modular-armor-tier-2",
     icon = "__base__/graphics/icons/modular-armor.png",
-    icon_size = 32,
+    icon_size = 64,
     resistances =
     {
     },

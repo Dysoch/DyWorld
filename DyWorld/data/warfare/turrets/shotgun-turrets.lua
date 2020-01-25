@@ -61,7 +61,7 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Shotgun_Turret then
 	  },
 	  {
 		icon = "__base__/graphics/icons/shotgun-shell.png", 
-		scale= 0.6, 
+		scale = 0.3, 
 		shift = {8, 9},
 	  },
 	}
@@ -79,7 +79,7 @@ if v.DyWorld and v.DyWorld.Warfare and v.DyWorld.Warfare.Shotgun_Turret then
 	  },
 	  {
 		icon = "__base__/graphics/icons/shotgun-shell.png", 
-		scale= 0.6, 
+		scale = 0.3, 
 		shift = {8, 9},
 	  },
 	}

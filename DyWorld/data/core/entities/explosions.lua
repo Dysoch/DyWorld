@@ -750,7 +750,7 @@ data:extend(
         }
       }
     },
-    created_effect =
+    --[[created_effect =
     {
       type = "direct",
       action_delivery =
@@ -771,7 +771,7 @@ data:extend(
           }
         }
       }
-    }
+    }]]--
   },
   {
     type = "explosion",

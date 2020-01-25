@@ -20,6 +20,10 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then
 	DyWorld_Prototype_Entity.hide_resistances = settings.startup["DyWorld_Hide_Resistances"].value
 	DyWorld_Prototype_Entity.structure.east.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.east.hr_version.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.structure_patch.east.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.structure_patch.east.hr_version.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.structure_patch.west.tint = Material_Colors[v.DyWorld.Name]
+	DyWorld_Prototype_Entity.structure_patch.west.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.south.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.south.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.west.tint = Material_Colors[v.DyWorld.Name]

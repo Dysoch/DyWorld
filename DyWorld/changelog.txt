@@ -1,6 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.5
+Date: ?????
+  Features:
+    - 
+  Changes:
+    - 
+  Balancing:
+    - 
+  Bugfixes:
+    - Fixed graphical glitch splitters
+---------------------------------------------------------------------------------------------------
 Version: 0.9.4
-Date: 06. 01. 2020
+Date: 25. 01. 2020
   Features:
     - Ported to Factorio version 0.18.x
     - Added eggs! These are gained from enemy bases, and can be used to "grow" enemies for their loot! This is somewhat of timely process though

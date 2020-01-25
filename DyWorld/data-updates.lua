@@ -26,6 +26,10 @@ require("data.decor.data")
 -- Core Module --
 require("data.core.data-2")
 
+-- Experimental Module --
+--require("data.experimental.data")
+-- Will be added in 0.9.5
+
 for k,v in pairs(data.raw.fluid) do
 	if not v.icon_size then v.icon_size = 32 end
 end	

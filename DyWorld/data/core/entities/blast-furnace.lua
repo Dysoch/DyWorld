@@ -230,6 +230,7 @@ data:extend(
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
 		local Insert_Recipe = {type = "item", name = "neutronium-plate", amount = 40*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
+		data.raw["assembling-machine"]["blast-furnace-"..i].crafting_categories = {dy.."melting", dy.."melting-2", dy.."melting-3", dy.."melting-4", dy.."melting-5"}
 		DyWorld_Add_To_Tech("metallurgy-9", "blast-furnace-"..i) 
 		DyWorld_Add_To_Tech("metallurgy-9", "caster-"..i) 
 		DyWorld_Add_To_Tech("metallurgy-9", "forge-gear-"..i) 
@@ -240,6 +241,7 @@ data:extend(
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
 		local Insert_Recipe = {type = "item", name = "tungsten-plate", amount = 20*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
+		data.raw["assembling-machine"]["blast-furnace-"..i].crafting_categories = {dy.."melting", dy.."melting-2", dy.."melting-3", dy.."melting-4"}
 		DyWorld_Add_To_Tech("metallurgy-7", "blast-furnace-"..i)
 		DyWorld_Add_To_Tech("metallurgy-7", "caster-"..i) 
 		DyWorld_Add_To_Tech("metallurgy-7", "forge-gear-"..i) 
@@ -250,6 +252,7 @@ data:extend(
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
 		local Insert_Recipe = {type = "item", name = "invar-plate", amount = 20*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
+		data.raw["assembling-machine"]["blast-furnace-"..i].crafting_categories = {dy.."melting", dy.."melting-2", dy.."melting-3"}
 		DyWorld_Add_To_Tech("metallurgy-5", "blast-furnace-"..i)
 		DyWorld_Add_To_Tech("metallurgy-5", "caster-"..i) 
 		DyWorld_Add_To_Tech("metallurgy-5", "forge-gear-"..i) 
@@ -260,6 +263,7 @@ data:extend(
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
 		local Insert_Recipe = {type = "item", name = "bronze-plate", amount = 20*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
+		data.raw["assembling-machine"]["blast-furnace-"..i].crafting_categories = {dy.."melting", dy.."melting-2"}
 		DyWorld_Add_To_Tech("metallurgy-3", "blast-furnace-"..i)
 		DyWorld_Add_To_Tech("metallurgy-3", "caster-"..i) 
 		DyWorld_Add_To_Tech("metallurgy-3", "forge-gear-"..i) 
@@ -270,6 +274,7 @@ data:extend(
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
 		local Insert_Recipe = {type = "item", name = "lead-plate", amount = 10*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
+		data.raw["assembling-machine"]["blast-furnace-"..i].crafting_categories = {dy.."melting"}
 		DyWorld_Add_To_Tech("metallurgy-1", "blast-furnace-"..i)
 		DyWorld_Add_To_Tech("metallurgy-1", "caster-"..i) 
 		DyWorld_Add_To_Tech("metallurgy-1", "forge-gear-"..i) 

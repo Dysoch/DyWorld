@@ -32,6 +32,17 @@ data:extend(
 	},
   },
 })
+	if v.DyWorld.Tier >= 9 then
+		data.raw.recipe["molten-"..v.DyWorld.Name].category = dy.."melting-5"
+	elseif v.DyWorld.Tier >= 7 then
+		data.raw.recipe["molten-"..v.DyWorld.Name].category = dy.."melting-4"
+	elseif v.DyWorld.Tier >= 5 then
+		data.raw.recipe["molten-"..v.DyWorld.Name].category = dy.."melting-3"
+	elseif v.DyWorld.Tier >= 3 then
+		data.raw.recipe["molten-"..v.DyWorld.Name].category = dy.."melting-2"
+	elseif v.DyWorld.Tier >= 1 then
+		data.raw.recipe["molten-"..v.DyWorld.Name].category = dy.."melting"
+	end
 	DyWorld_Add_To_Tech("metallurgy-"..v.DyWorld.Tier, "molten-"..v.DyWorld.Name)
 	end
 end	

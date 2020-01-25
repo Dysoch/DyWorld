@@ -30,7 +30,7 @@ local Data_Table = {
 		},
 		-- Water ingredient is added at bottom of file because of temperature
 		Enabled = true,
-		Category = dy.."farming",
+		Category = dy.."farming-2",
 		Multi_Output = {
 			{type = "item", name = "wood", amount_min = 10, amount_max = 50, probability = 0.95},
 			{type = "item", name = "acorn", amount_min = 1, amount_max = 1, probability = 1},

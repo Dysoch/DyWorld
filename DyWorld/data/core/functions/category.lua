@@ -7,6 +7,22 @@ local Data_Table = {
 		Type = "recipe"
 	},
 	{
+		Name = dy.."farming-2",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."farming-3",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."farming-4",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."farming-5",
+		Type = "recipe"
+	},
+	{
 		Name = dy.."pasture",
 		Type = "recipe"
 	},
@@ -20,6 +36,22 @@ local Data_Table = {
 	},
 	{
 		Name = dy.."melting",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."melting-2",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."melting-3",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."melting-4",
+		Type = "recipe"
+	},
+	{
+		Name = dy.."melting-5",
 		Type = "recipe"
 	},
 	{

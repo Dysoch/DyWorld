@@ -162,6 +162,7 @@ data:extend(
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
 		local Insert_Recipe = {type = "item", name = "bronze-plate", amount = 10}
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		data.raw["assembling-machine"]["greenhouse-"..i].crafting_categories = {dy.."farming", dy.."farming-2"}
 	end
 	if i == 3 then 
 		data.raw.recipe["greenhouse-"..i].ingredients = {}
@@ -171,6 +172,7 @@ data:extend(
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
 		local Insert_Recipe = {type = "item", name = "frame", amount = 1}
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		data.raw["assembling-machine"]["greenhouse-"..i].crafting_categories = {dy.."farming", dy.."farming-2", dy.."farming-3"}
 	end
 	if i == 4 then 
 		data.raw.recipe["greenhouse-"..i].ingredients = {}
@@ -180,6 +182,7 @@ data:extend(
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
 		local Insert_Recipe = {type = "item", name = "heater", amount = 1}
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		data.raw["assembling-machine"]["greenhouse-"..i].crafting_categories = {dy.."farming", dy.."farming-2", dy.."farming-3", dy.."farming-4"}
 	end
 	if i == 5 then 
 		data.raw.recipe["greenhouse-"..i].ingredients = {}
@@ -189,6 +192,7 @@ data:extend(
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
 		local Insert_Recipe = {type = "item", name = "housing", amount = 1}
 		table.insert(data.raw.recipe["greenhouse-"..i].ingredients, Insert_Recipe)
+		data.raw["assembling-machine"]["greenhouse-"..i].crafting_categories = {dy.."farming", dy.."farming-2", dy.."farming-3", dy.."farming-4", dy.."farming-5"}
 	end
 	if i >= 2 then 
 		local Insert_Recipe = {type = "item", name = "greenhouse-"..(i-1), amount = 1}

@@ -27,6 +27,12 @@ local Enemy_Loot_Table = {
 		Max_Count = 0.5,
 		Tier = 50,
 	},
+	{
+		Name = "egg",
+		Chance = 0.33,
+		Max_Count = 1,
+		Tier = 1,
+	},
 }
 
 

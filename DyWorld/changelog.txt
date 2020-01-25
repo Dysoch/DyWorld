@@ -1,18 +1,16 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.4
-Date: 10. 11. 2019
+Date: 06. 01. 2020
   Features:
-    - Added first batch of Experimental Features (read Experimental tab in Changelog)
+    - Added eggs! These are gained from enemy bases, and can be used to "grow" enemies for their loot! This is somewhat of timely process though
   Changes:
     - Improved RPG Bonus calculations. Should run smoother now
+    - Certain recipes can now only be made in higher tier machines. This includes farming and metallurgy
   Balancing:
     - 
   Bugfixes:
     - Fixed Beam Turrets not being able to be unlocked
     - Fixed script error with inserter stacksize bonus being above 200
-  Experimental:
-    - Currently in Experimental:
-    - New Science Packs! 12 total now, one for each tier plus 2 military packs
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.3
 Date: 03. 11. 2019

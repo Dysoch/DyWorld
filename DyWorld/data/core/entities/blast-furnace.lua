@@ -228,7 +228,7 @@ data:extend(
 	if i >= 5 then
 		local Insert_Recipe = {type = "item", name = "processing-unit", amount = 15*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
-		local Insert_Recipe = {type = "item", name = "neutronium-plate", amount = 40*i}
+		local Insert_Recipe = {type = "item", name = "titanium-plate", amount = 40*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
 		data.raw["assembling-machine"]["blast-furnace-"..i].crafting_categories = {dy.."melting", dy.."melting-2", dy.."melting-3", dy.."melting-4", dy.."melting-5"}
 		DyWorld_Add_To_Tech("metallurgy-9", "blast-furnace-"..i) 
@@ -261,7 +261,7 @@ data:extend(
 	elseif i >= 2 then 
 		local Insert_Recipe = {type = "item", name = "advanced-circuit", amount = 10*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
-		local Insert_Recipe = {type = "item", name = "bronze-plate", amount = 20*i}
+		local Insert_Recipe = {type = "item", name = "lead-plate", amount = 20*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
 		data.raw["assembling-machine"]["blast-furnace-"..i].crafting_categories = {dy.."melting", dy.."melting-2"}
 		DyWorld_Add_To_Tech("metallurgy-3", "blast-furnace-"..i)
@@ -272,7 +272,7 @@ data:extend(
 	else
 		local Insert_Recipe = {type = "item", name = "electronic-circuit", amount = 15*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
-		local Insert_Recipe = {type = "item", name = "lead-plate", amount = 10*i}
+		local Insert_Recipe = {type = "item", name = "iron-plate", amount = 10*i}
 		table.insert(data.raw.recipe["blast-furnace-"..i].ingredients, Insert_Recipe)
 		data.raw["assembling-machine"]["blast-furnace-"..i].crafting_categories = {dy.."melting"}
 		DyWorld_Add_To_Tech("metallurgy-1", "blast-furnace-"..i)

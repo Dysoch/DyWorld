@@ -25,8 +25,8 @@ data:extend(
     automated_ammo_count = 10,
     attacking_speed = 0.5,
     alert_when_attacking = true,
-    open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
-    close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
+    open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.6 },
+    close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.6 },
     folded_animation =
     {
       layers =
@@ -111,7 +111,7 @@ data:extend(
 
       }
     },
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    vehicle_impact_sound =  Dy_sounds.generic_impact,
 
     attack_parameters =
     {
@@ -132,7 +132,7 @@ data:extend(
         starting_frame_speed_deviation = 0.1
       },
       range = 100,
-      sound = make_heavy_gunshot_sounds()
+      sound = Dy_sounds.heavy_gunshot,
     },
     call_for_help_radius = 40
   },

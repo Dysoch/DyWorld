@@ -11,6 +11,7 @@ Date: ?????
     - Fixed graphical glitch splitters
     - Fixed non loading issue with sniper not there with certain settings
     - Fixed sniper sounds error
+    - Fixed loader not working
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.4
 Date: 25. 01. 2020

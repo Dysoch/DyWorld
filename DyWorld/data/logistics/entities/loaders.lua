@@ -6,9 +6,11 @@ if settings.startup["DyWorld_Logistics"].value then
 
 for k,v in pairs(data.raw.item) do
 if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Belt then	
-	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("loader", "loader", v.DyWorld.Name.."-loader", true)
+	local DyWorld_Prototype_Entity = DyWorld_CopyPrototype("loader-1x1", "loader-1x1", v.DyWorld.Name.."-loader", true)
 	DyWorld_Prototype_Entity.speed = Round(((v.DyWorld.Entity.Belt.Speed * Transport_Belt_Modifier) / 426.67), 5)
 	DyWorld_Prototype_Entity.localised_name = {"looped-name.belt-4", {"looped-name."..v.DyWorld.Name}}
+	DyWorld_Prototype_Entity.minable = {mining_time = 0.1, result = v.DyWorld.Name.."-loader"}
+	DyWorld_Prototype_Entity.flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"}
 	if v.DyWorld.Entity.Belt.Next then
 		DyWorld_Prototype_Entity.next_upgrade = v.DyWorld.Entity.Belt.Next.."-loader"
 	else

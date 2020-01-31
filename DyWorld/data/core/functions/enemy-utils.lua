@@ -66,7 +66,7 @@ function DyWorld_spitter_attack_parameters(data)
         }
       }
     },
-    sound = make_spitter_roars(data.roarvolume),
+    sound = Dy_sounds_spitter_roars(data.roarvolume),
     animation = spitterattackanimation(data.scale, data.tint1, data.tint2)
   }
 end

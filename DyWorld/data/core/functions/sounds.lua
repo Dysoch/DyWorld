@@ -1,6 +1,4 @@
-local Dy_sounds = {}
-
-Dy_sounds.plant =
+Dy_sounds_plant =
 {
   {
     filename = "__base__/sound/walking/plant/plant-01.ogg",
@@ -24,7 +22,7 @@ Dy_sounds.plant =
   }
 }
 
-Dy_sounds.big_bush =
+Dy_sounds_big_bush =
 {
   {
     filename = "__base__/sound/walking/plant/bush-big-01.ogg",
@@ -56,7 +54,7 @@ Dy_sounds.big_bush =
   }
 }
 
-Dy_sounds.small_bush =
+Dy_sounds_small_bush =
 {
   {
     filename = "__base__/sound/walking/plant/bush-small-01.ogg",
@@ -87,7 +85,7 @@ Dy_sounds.small_bush =
     volume = 0.6
   }
 }
-Dy_sounds.pebble =
+Dy_sounds_pebble =
 {
   {
     filename = "__base__/sound/walking/pebble/stones_01.ogg",
@@ -131,7 +129,7 @@ Dy_sounds.pebble =
   }
 }
 
-Dy_sounds.car_stone_impact =
+Dy_sounds_car_stone_impact =
 {
   { 
     filename = "__base__/sound/car-stone-impact.ogg", volume = 0.5
@@ -153,7 +151,7 @@ Dy_sounds.car_stone_impact =
   }
 }
 
-Dy_sounds.generic_impact =
+Dy_sounds_generic_impact =
 {
   {
     filename = "__base__/sound/car-metal-impact.ogg", volume = 0.5
@@ -175,7 +173,7 @@ Dy_sounds.generic_impact =
   }
 }
 
-Dy_sounds.flying_robot = function(volume)
+Dy_sounds_flying_robot = function(volume)
   return
   {
     sound =
@@ -214,7 +212,7 @@ Dy_sounds.flying_robot = function(volume)
   }
 end
 
-Dy_sounds.construction_robot = function(volume)
+Dy_sounds_construction_robot = function(volume)
   return
   {
     sound =
@@ -254,7 +252,7 @@ Dy_sounds.construction_robot = function(volume)
 end
 
 
-Dy_sounds.heavy_gunshot =
+Dy_sounds_heavy_gunshot =
 {
   {
     filename = "__base__/sound/fight/heavy-gunshot-1.ogg",
@@ -274,7 +272,7 @@ Dy_sounds.heavy_gunshot =
   }
 }
 
-Dy_sounds.light_gunshot = 
+Dy_sounds_light_gunshot = 
 {
   {
     filename = "__base__/sound/fight/light-gunshot-1.ogg",
@@ -290,7 +288,7 @@ Dy_sounds.light_gunshot =
   }
 }
 
-Dy_sounds.shotgun =
+Dy_sounds_shotgun =
 {
   {
     filename = "__base__/sound/fight/pump-shotgun-1.ogg",
@@ -306,7 +304,7 @@ Dy_sounds.shotgun =
   }
 }
 
-Dy_sounds.small_explosion = function(volume)
+Dy_sounds_small_explosion = function(volume)
   return
   {
     aggregation =
@@ -341,7 +339,7 @@ Dy_sounds.small_explosion = function(volume)
   }
 end
 
-Dy_sounds.large_explosion = function(volume)
+Dy_sounds_large_explosion = function(volume)
   return
   {
     aggregation =
@@ -364,7 +362,7 @@ Dy_sounds.large_explosion = function(volume)
 end
 
 
-Dy_sounds.biter_roars = function(volume)
+Dy_sounds_biter_roars = function(volume)
   return
   {
     {
@@ -394,7 +392,7 @@ Dy_sounds.biter_roars = function(volume)
   }
 end
 
-Dy_sounds.biter_roars_big = function(volume)
+Dy_sounds_biter_roars_big = function(volume)
   return
   {
     {
@@ -420,7 +418,7 @@ Dy_sounds.biter_roars_big = function(volume)
   }
 end
 
-Dy_sounds.biter_dying = function(volume)
+Dy_sounds_biter_dying = function(volume)
   return
   {
     {
@@ -446,7 +444,7 @@ Dy_sounds.biter_dying = function(volume)
   }
 end
 
-Dy_sounds.biter_dying_big = function(volume)
+Dy_sounds_biter_dying_big = function(volume)
   return
   {
     {
@@ -472,7 +470,7 @@ Dy_sounds.biter_dying_big = function(volume)
   }
 end
 
-Dy_sounds.biter_calls = function(volume)
+Dy_sounds_biter_calls = function(volume)
   return
   {
     sound =
@@ -504,7 +502,7 @@ Dy_sounds.biter_calls = function(volume)
   }
 end
 
-Dy_sounds.biter_calls_big = function(volume)
+Dy_sounds_biter_calls_big = function(volume)
   return
   {
     sound =
@@ -539,7 +537,7 @@ Dy_sounds.biter_calls_big = function(volume)
   }
 end
 
-Dy_sounds.biter_walk = function(volume)
+Dy_sounds_biter_walk = function(volume)
   return
   {
     aggregation =
@@ -581,7 +579,7 @@ Dy_sounds.biter_walk = function(volume)
   }
 end
 
-Dy_sounds.biter_walk_big = function(volume)
+Dy_sounds_biter_walk_big = function(volume)
   return
   {
     aggregation =
@@ -635,7 +633,7 @@ Dy_sounds.biter_walk_big = function(volume)
   }
 end
 
-Dy_sounds.spitter_walk = function(volume)
+Dy_sounds_spitter_walk = function(volume)
   return
   {
     aggregation =
@@ -689,7 +687,7 @@ Dy_sounds.spitter_walk = function(volume)
   }
 end
 
-Dy_sounds.spitter_walk_big = function(volume)
+Dy_sounds_spitter_walk_big = function(volume)
   return
   {
     aggregation =
@@ -743,7 +741,7 @@ Dy_sounds.spitter_walk_big = function(volume)
   }
 end
 
-Dy_sounds.spitter_calls = function(volume)
+Dy_sounds_spitter_calls = function(volume)
   return
   {
     sound =
@@ -791,7 +789,7 @@ Dy_sounds.spitter_calls = function(volume)
   }
 end
 
-Dy_sounds.spitter_calls_med = function(volume)
+Dy_sounds_spitter_calls_med = function(volume)
   return
   {
     --aggregation =
@@ -847,7 +845,7 @@ Dy_sounds.spitter_calls_med = function(volume)
   }
 end
 
-Dy_sounds.spitter_calls_big = function(volume)
+Dy_sounds_spitter_calls_big = function(volume)
   return
   {
     sound =
@@ -879,7 +877,7 @@ Dy_sounds.spitter_calls_big = function(volume)
   }
 end
 
-Dy_sounds.spitter_roars = function(volume)
+Dy_sounds_spitter_roars = function(volume)
   return
   {
     layers =
@@ -934,7 +932,7 @@ Dy_sounds.spitter_roars = function(volume)
   }
 end
 
-Dy_sounds.spitter_dying = function(volume)
+Dy_sounds_spitter_dying = function(volume)
   return
   {
     {
@@ -960,7 +958,7 @@ Dy_sounds.spitter_dying = function(volume)
   }
 end
 
-Dy_sounds.spitter_dying_big = function(volume)
+Dy_sounds_spitter_dying_big = function(volume)
   return
   {
     {
@@ -987,7 +985,7 @@ Dy_sounds.spitter_dying_big = function(volume)
 end
 
 
-Dy_sounds.worm_roars = function(volume)
+Dy_sounds_worm_roars = function(volume)
   return
   {
     variations =
@@ -1013,7 +1011,7 @@ Dy_sounds.worm_roars = function(volume)
   }
 end
 
-Dy_sounds.worm_roar_alternative = function(volume)
+Dy_sounds_worm_roar_alternative = function(volume)
   return
   {
     variations =
@@ -1043,7 +1041,7 @@ Dy_sounds.worm_roar_alternative = function(volume)
   }
 end
 
-Dy_sounds.worm_breath = function(volume)
+Dy_sounds_worm_breath = function(volume)
   return
   {
     variations =
@@ -1085,7 +1083,7 @@ Dy_sounds.worm_breath = function(volume)
   }
 end
 
-Dy_sounds.worm_dying = function(volume)
+Dy_sounds_worm_dying = function(volume)
   return
   {
     {
@@ -1119,7 +1117,7 @@ Dy_sounds.worm_dying = function(volume)
   }
 end
 
-Dy_sounds.worm_dying_small = function(volume)
+Dy_sounds_worm_dying_small = function(volume)
   return
   {
     {
@@ -1141,7 +1139,7 @@ Dy_sounds.worm_dying_small = function(volume)
   }
 end
 
-Dy_sounds.worm_fold = function(volume)
+Dy_sounds_worm_fold = function(volume)
   return
   {
     {
@@ -1159,7 +1157,7 @@ Dy_sounds.worm_fold = function(volume)
   }
 end
 
-Dy_sounds.worm_standup = function(volume)
+Dy_sounds_worm_standup = function(volume)
   return
   {
     {
@@ -1185,7 +1183,7 @@ Dy_sounds.worm_standup = function(volume)
   }
 end
 
-Dy_sounds.worm_standup_small = function(volume)
+Dy_sounds_worm_standup_small = function(volume)
   return
   {
     {
@@ -1202,5 +1200,3 @@ Dy_sounds.worm_standup_small = function(volume)
     }
   }
 end
-
-return sounds

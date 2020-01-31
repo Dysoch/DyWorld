@@ -111,7 +111,7 @@ data:extend(
 
       }
     },
-    vehicle_impact_sound =  Dy_sounds.generic_impact,
+    vehicle_impact_sound =  Dy_sounds_generic_impact,
 
     attack_parameters =
     {
@@ -132,7 +132,7 @@ data:extend(
         starting_frame_speed_deviation = 0.1
       },
       range = 100,
-      sound = Dy_sounds.heavy_gunshot,
+      sound = Dy_sounds_heavy_gunshot,
     },
     call_for_help_radius = 40
   },

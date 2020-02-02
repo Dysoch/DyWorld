@@ -7,6 +7,8 @@ Date: ?????
     - 
   Balancing:
     - 
+  RPG/GUI:
+    - Added player level as variable into bonuses. Increase your level to increase the max bonuses (WIP, still experimental, only a few are implemented)
   Bugfixes:
     - Fixed graphical glitch splitters
     - Fixed non loading issue with sniper not there with certain settings

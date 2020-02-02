@@ -258,17 +258,17 @@ function BodySkills(id)
 	if game.players[id].character then
 		if P_Level >= 2 then
 			if gsm >= 500 then
-				game.players[id].character_mining_speed_modifier = ((((p1*25)+(p2*15)+(p3*15)+gsm)/10000)-0.0016)
+				game.players[id].character_mining_speed_modifier = math.min((((p1*25)+(p2*15)+(p3*15)+gsm)/10000)-0.0016, (math.floor(P_Level * 1.1)))
 			end
 			if gsc >= 100 then
-				game.players[id].character_crafting_speed_modifier = ((((p4*25)+(p3*15)+gsc)/10000)-0.0016)
+				game.players[id].character_crafting_speed_modifier = math.min((((p4*25)+(p3*15)+gsc)/10000)-0.0016, (math.floor(P_Level * 1.1)))
 			end
 		end
 		if P_Level >= 4 then
 			game.players[id].character_resource_reach_distance_bonus = math.floor((gsp+gsm+(p2*5)+(m1*2))/10000)
 		end
 		if P_Level >= 7 and gsk >= 1 then
-			game.players[id].character_health_bonus = math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13)
+			game.players[id].character_health_bonus = math.min(math.floor(((p1*5)+(p2*2)+(m1*5)+p3+(gsk/250))-13), (math.floor(P_Level * 50)))
 			game.players[id].character_loot_pickup_distance_bonus = math.min(Round(((p4*5)+(p2*3)+p3+m1+m2+m3)/50), 320)
 		end
 		if P_Level >= 10 then

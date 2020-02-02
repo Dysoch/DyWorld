@@ -326,14 +326,12 @@ end)
 
 -- ontick hooks
 script.on_event(defines.events.on_tick, function(event)
-	if event.tick%(60*60)==1 and global.dyworld.Players ~= 0 then
-		if global.dyworld.RPG_Mode == "normal" then
-			GlobalSkillsReset()
-			for k,v in pairs(global.players) do
-				if v.Alive and v.Playing then
-					BodySkills(v.PlayerID)
-					GlobalSkills(v.PlayerID)
-				end
+	if event.tick%(60*60)==1 and global.dyworld.Players >= 1 then
+		GlobalSkillsReset()
+		for k,v in pairs(global.players) do
+			if v.Alive and v.Playing then
+				BodySkills(v.PlayerID)
+				GlobalSkills(v.PlayerID)
 			end
 		end
 	end
@@ -353,11 +351,11 @@ script.on_event(defines.events.on_tick, function(event)
 			end
 		end
 	end
-	if event.tick%(60)==1 and global.dyworld.Players ~= 0 then
+	if event.tick%(60)==1 and global.dyworld.Players >= 1 then
 		Skills_CoolDown()
 		Skills_Active_Timer()
 	end
-	if global.dyworld.Players ~= 0 and event.tick%(15*1)==1 then
+	if global.dyworld.Players >= 1 and event.tick%(15*1)==1 then
 		for k,v in pairs(global.players) do
 			if v.Alive and v.Playing then
 				v.PosX = game.players[v.PlayerID].position.x
@@ -369,26 +367,24 @@ script.on_event(defines.events.on_tick, function(event)
 			end
 		end
 	end
-	if event.tick%(60*5)==1 and global.dyworld.Players ~= 0 then
-		if global.dyworld.RPG_Mode == "normal" then
-			if global.players then
-				for k,v in pairs(global.players) do
-					if v.State_Stats_GUI and v.Alive and v.Playing then
-					local player = game.players[v.PlayerID]
-						gui_1_closeGUI(player, v.PlayerID)
-						gui_1_openGui(player, v.PlayerID)
-					end
-					if v.State_Skills_GUI and v.Alive and v.Playing then
-					local player = game.players[v.PlayerID]
-						gui_2_toggleGui(player, v.PlayerID)
-						gui_2_toggleGui(player, v.PlayerID)
-					end
+	if event.tick%(60*5)==1 and global.dyworld.Players >= 1 then
+		if global.players then
+			for k,v in pairs(global.players) do
+				if v.State_Stats_GUI and v.Alive and v.Playing then
+				local player = game.players[v.PlayerID]
+					gui_1_closeGUI(player, v.PlayerID)
+					gui_1_openGui(player, v.PlayerID)
+				end
+				if v.State_Skills_GUI and v.Alive and v.Playing then
+				local player = game.players[v.PlayerID]
+					gui_2_toggleGui(player, v.PlayerID)
+					gui_2_toggleGui(player, v.PlayerID)
 				end
 			end
 		end
 	end
 	-- Extend Day & Nights by 4x
-	if event.tick%(13)==1 and global.dyworld.Players ~= 0 then
+	if event.tick%(13)==1 and global.dyworld.Players >= 1 then
 		if not global.Day_Longer then global.Day_Longer = 0 end
 		for _, s in pairs(game.surfaces) do
 			if not s.always_day then

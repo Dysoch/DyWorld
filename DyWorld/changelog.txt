@@ -1,8 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.5
 Date: 02. 02. 2020
-  Features:
-    - 
   Balancing:
     - Chitin can now be gained from all walking enemies
   RPG/GUI:
@@ -14,6 +12,7 @@ Date: 02. 02. 2020
     - Fixed loader not working
     - Fixed very rare crash where ruins or loot chests couldn't find a suitable position
     - Fixed blast furnaces not being able to be crafted (mk 2 and 5)
+    - Fixed (Hopefully!) issue's with starting a map on a headless server and/or without players
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.4
 Date: 25. 01. 2020

@@ -54,7 +54,9 @@ function Ruins_Spawner_Start(event)
 		PosX = event.area.left_top.x + math.random(-63, 63)
 		PosY = event.area.left_top.y + math.random(-63, 63)
 		Pos_1 = game.surfaces[1].find_non_colliding_position(BuildEntity1, {PosX, PosY}, 150, 1)
-		game.surfaces[1].create_entity{name = (BuildEntity), position = Pos_1, force = game.forces.player}
+		if Pos_1 ~= nil then
+			game.surfaces[1].create_entity{name = (BuildEntity), position = Pos_1, force = game.forces.player}
+		end
 	end
 end
 
@@ -64,12 +66,14 @@ function Ruins_Spawner_FarOut(event)
 	PosY = event.area.left_top.y + math.random(-150, 150)
 	BuildEntity = "crash-site-chest-2"
 	Chest_Pos = game.surfaces[1].find_non_colliding_position(BuildEntity, {PosX,PosY}, 250, 1)
-	Chest_Created = game.surfaces[1].create_entity{name = (BuildEntity), position = Chest_Pos, force = game.forces.player}
-	for i = 1, (math.random(5,25)) do
-		AddedItem = AddedItemsAll[keysetAddedItemAll[math.random(#keysetAddedItemAll)]]
-		Chest_Created.insert{name = AddedItem, count = math.random(25)}
+	if Chest_Pos ~= nil then
+		Chest_Created = game.surfaces[1].create_entity{name = (BuildEntity), position = Chest_Pos, force = game.forces.player}
+		for i = 1, (math.random(5,25)) do
+			AddedItem = AddedItemsAll[keysetAddedItemAll[math.random(#keysetAddedItemAll)]]
+			Chest_Created.insert{name = AddedItem, count = math.random(25)}
+		end
+		global.dyworld.Chunks_Generation_1 = math.floor(global.dyworld.Chunks_Generation_1 * (math.random() + 1))
 	end
-	global.dyworld.Chunks_Generation_1 = math.floor(global.dyworld.Chunks_Generation_1 * (math.random() + 1))
 end
 
 function Ship_Spawner(event)

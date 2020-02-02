@@ -3,8 +3,6 @@ Version: 0.9.5
 Date: 02. 02. 2020
   Features:
     - 
-  Changes:
-    - 
   Balancing:
     - Chitin can now be gained from all walking enemies
   RPG/GUI:
@@ -22,11 +20,11 @@ Date: 25. 01. 2020
   Features:
     - Ported to Factorio version 0.18.x
     - Added eggs! These are gained from enemy bases, and can be used to "grow" enemies for their loot! This is somewhat of timely process though
-  Changes:
+  RPG/GUI:
     - Improved RPG Bonus calculations. Should run smoother now
-    - Certain recipes can now only be made in higher tier machines. This includes farming and metallurgy
   Balancing:
     - Increased Sand stacksize: 200 > 500
+    - Certain recipes can now only be made in higher tier machines. This includes farming and metallurgy
   Bugfixes:
     - Fixed Beam Turrets not being able to be unlocked
     - Fixed script error with inserter stacksize bonus being above 200

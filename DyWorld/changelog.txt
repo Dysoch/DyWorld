@@ -1,12 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.5
-Date: ?????
+Date: 02. 02. 2020
   Features:
     - 
   Changes:
     - 
   Balancing:
-    - 
+    - Chitin can now be gained from all walking enemies
   RPG/GUI:
     - Added player level as variable into bonuses. Increase your level to increase the max bonuses (WIP, still experimental, only a few are implemented)
   Bugfixes:

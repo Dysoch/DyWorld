@@ -7,7 +7,7 @@ local Enemy_Loot_Table = {
 		Name = "chitin",
 		Chance = 0.45,
 		Max_Count = 3,
-		Tier = 7,
+		Tier = 1,
 	},
 	{
 		Name = "sulfur",

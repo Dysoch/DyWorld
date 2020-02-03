@@ -21,6 +21,7 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Heat_Exchanger then
 	DyWorld_Prototype_Entity.structure.west.layers[1].tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.structure.west.layers[1].hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.target_temperature = v.DyWorld.Entity.Heat_Exchanger.Target_Temp
+	DyWorld_Prototype_Entity.energy_source.specific_heat = Round(v.DyWorld.Tier * 1.5).."MJ"
 	DyWorld_Prototype_Entity.energy_source.max_temperature = v.DyWorld.Entity.Heat_Exchanger.Target_Temp + 500
 	DyWorld_Prototype_Entity.energy_source.min_working_temperature = v.DyWorld.Entity.Heat_Exchanger.Target_Temp
 	DyWorld_Prototype_Entity.icon = nil

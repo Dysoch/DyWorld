@@ -2,7 +2,7 @@
 Version: 0.9.6
 Date: 02. 02. 2020
   Balancing:
-    - 
+    - Made Heat Exchangers more powerful. This is dependant on tier (tier * 1.5MJ, instead of a constant 1 MJ)
   RPG/GUI:
     - 
   Bugfixes:

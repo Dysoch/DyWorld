@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.6
+Date: 02. 02. 2020
+  Balancing:
+    - 
+  RPG/GUI:
+    - 
+  Bugfixes:
+    - Fixed weird circuit boards in recipes for blast furnaces. Should be craftable now
+---------------------------------------------------------------------------------------------------
 Version: 0.9.5
 Date: 02. 02. 2020
   Balancing:

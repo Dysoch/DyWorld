@@ -134,6 +134,32 @@ data:extend(
 	if i >= 2 then 
 		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
 	end
+	if i >= 5 then
+		local Insert_Recipe = {type = "item", name = "logic-control-board", amount = 10 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "titanium-plate", amount = 40 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+	elseif i >= 4 then 
+		local Insert_Recipe = {type = "item", name = "tough-control-board", amount = 5 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "tungsten-plate", amount = 20 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+	elseif i >= 3 then 
+		local Insert_Recipe = {type = "item", name = "advanced-control-board", amount = 5 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "invar-plate", amount = 20 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+	elseif i >= 2 then 
+		local Insert_Recipe = {type = "item", name = "basic-control-board", amount = 5 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "lead-plate", amount = 20 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+	else
+		local Insert_Recipe = {type = "item", name = "simple-control-board", amount = 5 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+		local Insert_Recipe = {type = "item", name = "iron-plate", amount = 10 * i}
+		table.insert(data.raw.recipe["air-filter-"..i].ingredients, Insert_Recipe)
+	end
 end
 
 

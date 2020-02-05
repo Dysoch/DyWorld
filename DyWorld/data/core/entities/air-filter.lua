@@ -122,9 +122,6 @@ data:extend(
     enabled = true,
     ingredients =
     {
-      {type = "item", name = "iron-plate", amount = 5*i},
-      {type = "item", name = "copper-plate", amount = 4*i},
-      {type = "item", name = "stone", amount = 2*i},
     },
     result = "air-filter-"..i
   },

@@ -6,7 +6,7 @@ Date: 05. 02. 2020
     - Changed recipes of Air Filters (the machines)
     - Changed stacksize sulfur: 50 > 500
   RPG/GUI:
-    - 
+    - Added a few more tooltips
   Bugfixes:
     - Fixed weird circuit boards in recipes for blast furnaces. Should be craftable now
 ---------------------------------------------------------------------------------------------------

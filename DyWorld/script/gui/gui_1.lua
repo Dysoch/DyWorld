@@ -116,22 +116,22 @@ function gui_1_openGui(player, id)
 		end
 		----- Loot Pickup Bonus -----
 		if P_Level >= 7 and global.stats.killed and global.stats.killed >= 1 then
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Loot Pickup Range: "..math.floor(game.players[id].character_loot_pickup_distance_bonus+Character_Loot_Range), style = "dyworld_label"}
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Health: "..game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus, style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_lootdistance_tp"}, caption = "Loot Pickup Range: "..math.floor(game.players[id].character_loot_pickup_distance_bonus+Character_Loot_Range), style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_health_tp"}, caption = "Health: "..game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus, style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 7}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
 		----- Inventory Bonus -----
 		if P_Level >= 10 then
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Inventory Slots: "..game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus, style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_inventory_tp"}, caption = "Inventory Slots: "..game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus, style = "dyworld_label"}
 		else
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 10}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}
 		end
 		----- Reach Distance Bonus -----
 		if P_Level >= 15 then
-			stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Reach Distance: "..math.floor(game.players[id].character_reach_distance_bonus+6), style = "dyworld_label"}
+			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_reach_tp"}, caption = "Reach Distance: "..math.floor(game.players[id].character_reach_distance_bonus+6), style = "dyworld_label"}
 			if global.players[id].stats.build and global.players[id].stats.build >= 15000 then
-				stats_frameflow3.add{type = "label", tooltip = "WIP", caption = "Build Distance: "..math.floor(game.players[id].character_build_distance_bonus+6), style = "dyworld_label"}
+				stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.bonus_reach_1_tp"}, caption = "Build Distance: "..math.floor(game.players[id].character_build_distance_bonus+6), style = "dyworld_label"}
 			end
 		else 
 			stats_frameflow3.add{type = "label", tooltip = {"dyworld_stats_gui.locked-1", 15}, caption = {"dyworld_stats_gui.locked-2"}, style = "dyworld_label"}

@@ -4,6 +4,7 @@ local StackSizes = {
 	{Name = "iron-ore", Amount = 200, Type = "item"},
 	{Name = "copper-ore", Amount = 200, Type = "item"},
 	{Name = "iron-plate", Amount = 200, Type = "item"},
+	{Name = "iron-gear-wheel", Amount = 200, Type = "item"},
 	{Name = "copper-plate", Amount = 200, Type = "item"},
 	{Name = "steel-plate", Amount = 200, Type = "item"},
 	{Name = "stone", Amount = 200, Type = "item"},

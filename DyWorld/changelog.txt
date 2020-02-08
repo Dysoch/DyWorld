@@ -4,6 +4,10 @@ Date: 05. 02. 2020
   Balancing:
     - Changed stack size iron gears: 100 > 200
     - Updated sounds (same as Factorio)
+    - Changed max temp of Steel Nuclear Reactor: 1000 > 1500
+    - Changed max temp of Stainless Steel Nuclear Reactor: 2000 > 2500
+    - Changed max temp of Tungsten Nuclear Reactor: 3000 > 3500
+    - Changed max temp of Electranium Nuclear Reactor: 4000 > 4500
   RPG/GUI:
     - 
   Bugfixes:

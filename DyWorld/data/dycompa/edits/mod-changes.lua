@@ -61,6 +61,13 @@ if mods["Nanobots"] then
 data.raw.ammo["ammo-nano-constructors"].magazine_size = 100
 end
 
+ -- HeatPipeAlwaysGlow --
+if mods["HeatPipeAlwaysGlow"] then
+	if data.raw.technology["heat-pipes"] then
+		data.raw.technology["heat-pipes"].prerequisites = {"nuclear-energy-1"}
+	end
+end
+
  -- Alien Loot Economy --
 if mods["alien-module"] then
 data:extend({

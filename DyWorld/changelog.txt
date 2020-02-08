@@ -8,12 +8,11 @@ Date: 05. 02. 2020
     - Changed max temp of Stainless Steel Nuclear Reactor: 2000 > 2500
     - Changed max temp of Tungsten Nuclear Reactor: 3000 > 3500
     - Changed max temp of Electranium Nuclear Reactor: 4000 > 4500
-  RPG/GUI:
-    - 
   Bugfixes:
     - Moved heated assembler to correct item group
     - Moved minimum factorio version to 0.18.4
     - Fixed graphical issue's with Robots
+    - Fixed loaders not having heat pipes anymore when turned option on
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.6
 Date: 05. 02. 2020

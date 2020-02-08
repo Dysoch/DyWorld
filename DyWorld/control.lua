@@ -150,6 +150,8 @@ script.on_event(defines.events.on_player_mined_entity, function(event)
 		Heat_Pipe_Remove(event)
     elseif event.entity.type == "loader" then
 		Heat_Pipe_Remove(event)
+    elseif event.entity.type == "loader-1x1" then
+		Heat_Pipe_Remove(event)
 	end
 end)
 
@@ -180,6 +182,8 @@ script.on_event(defines.events.on_built_entity, function(event)
 			Heat_Pipe_Add(event)
 		elseif event.created_entity.type == "loader" then
 			Heat_Pipe_Add(event)
+		elseif event.created_entity.type == "loader-1x1" then
+			Heat_Pipe_Add(event)
 		end
 	end
 	if event.created_entity.type == "loader" then
@@ -199,6 +203,8 @@ script.on_event(defines.events.on_robot_mined_entity, function(event)
 		Heat_Pipe_Remove(event)
     elseif event.entity.type == "loader" then
 		Heat_Pipe_Remove(event)
+    elseif event.entity.type == "loader-1x1" then
+		Heat_Pipe_Remove(event)
 	end
 end)
 
@@ -215,6 +221,8 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
 		elseif event.created_entity.type == "underground-belt" then
 			Heat_Pipe_Add(event)
 		elseif event.created_entity.type == "loader" then
+			Heat_Pipe_Add(event)
+		elseif event.created_entity.type == "loader-1x1" then
 			Heat_Pipe_Add(event)
 		end
 	end
@@ -249,6 +257,8 @@ script.on_event(defines.events.on_entity_died, function(event)
     elseif type_killed == "underground-belt" then
 		Heat_Pipe_Remove(event)
     elseif type_killed == "loader" then
+		Heat_Pipe_Remove(event)
+    elseif type_killed == "loader-1x1" then
 		Heat_Pipe_Remove(event)
 	end
 end)

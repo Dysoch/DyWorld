@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.7
-Date: 05. 02. 2020
+Date: 08. 02. 2020
   Balancing:
     - Changed stack size iron gears: 100 > 200
     - Updated sounds (same as Factorio)

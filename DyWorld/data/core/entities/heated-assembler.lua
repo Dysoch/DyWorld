@@ -152,7 +152,7 @@ data:extend(
     icon = "__base__/graphics/icons/assembling-machine-1.png",
 	flags = {},
     icon_size = 64,
-    subgroup = dy.."lamps",
+    subgroup = dy.."special-machines",
     order = "heated-assembler",
     place_result = "heated-assembler",
     stack_size = 200

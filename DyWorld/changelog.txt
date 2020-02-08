@@ -6,7 +6,7 @@ Date: 05. 02. 2020
   RPG/GUI:
     - 
   Bugfixes:
-    - 
+    - Moved heated assembler to correct item group
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.6
 Date: 05. 02. 2020

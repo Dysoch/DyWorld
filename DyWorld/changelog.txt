@@ -3,10 +3,13 @@ Version: 0.9.7
 Date: 05. 02. 2020
   Balancing:
     - Changed stack size iron gears: 100 > 200
+    - Updated sounds (same as Factorio)
   RPG/GUI:
     - 
   Bugfixes:
     - Moved heated assembler to correct item group
+    - Moved minimum factorio version to 0.18.4
+    - Fixed graphical issue's with Robots
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.6
 Date: 05. 02. 2020

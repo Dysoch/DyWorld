@@ -26,15 +26,12 @@ if v.DyWorld and v.DyWorld.Entity and v.DyWorld.Entity.Robot then
 	
 	DyWorld_Prototype_Entity.idle.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.idle.hr_version.tint = Material_Colors[v.DyWorld.Name]
-	
-	DyWorld_Prototype_Entity.idle_with_cargo.tint = Material_Colors[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.idle_with_cargo.hr_version.tint = Material_Colors[v.DyWorld.Name]
-	
+	--DyWorld_Prototype_Entity.idle_with_cargo.tint = Material_Colors[v.DyWorld.Name]
+	--DyWorld_Prototype_Entity.idle_with_cargo.hr_version.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.in_motion.tint = Material_Colors[v.DyWorld.Name]
 	DyWorld_Prototype_Entity.in_motion.hr_version.tint = Material_Colors[v.DyWorld.Name]
-	
-	DyWorld_Prototype_Entity.in_motion_with_cargo.tint = Material_Colors[v.DyWorld.Name]
-	DyWorld_Prototype_Entity.in_motion_with_cargo.hr_version.tint = Material_Colors[v.DyWorld.Name]
+	--DyWorld_Prototype_Entity.in_motion_with_cargo.tint = Material_Colors[v.DyWorld.Name]
+	--DyWorld_Prototype_Entity.in_motion_with_cargo.hr_version.tint = Material_Colors[v.DyWorld.Name]
 
 	local DyWorld_Prototype_Item = DyWorld_CopyPrototype("item", "construction-robot", v.DyWorld.Name.."-construction-robot", true)
 	DyWorld_Prototype_Item.localised_name = {"looped-name.construction-robot-1", {"looped-name."..v.DyWorld.Name}}

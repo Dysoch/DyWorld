@@ -1,5 +1,5 @@
 require "data/core/functions/prefix"
-
+--[[
 local StackSizes = {
 	{Name = "iron-ore", Amount = 200, Type = "item"},
 	{Name = "copper-ore", Amount = 200, Type = "item"},
@@ -30,6 +30,51 @@ local StackSizes = {
 for k,v in pairs(StackSizes) do
 	if data.raw[v.Type][v.Name] then
 		data.raw[v.Type][v.Name].stack_size = v.Amount
+	end
+end]]--
+
+local StackSizes = {
+	["iron-ore"] = 200,
+	["copper-ore"] = 200,
+	["iron-plate"] = 200,
+	["iron-gear-wheel"] = 200,
+	["copper-plate"] = 200,
+	["steel-plate"] = 200,
+	["stone"] = 200,
+	["wood"] = 200,
+	["coal"] = 200,
+	["sulfur"] = 500,
+	["landfill"] = 500,
+	["pipe"] = 200,
+	["pipe-to-ground"] = 200,
+	["heat-pipe"] = 200,
+	["inserter"] = 200,
+	["fast-inserter"] = 200,
+	["stack-inserter"] = 200,
+	["long-handed-inserter"] = 200,
+	["filter-inserter"] = 200,
+	["stack-filter-inserter"] = 200,
+	["stone-wall"] = 500,
+	["uranium-235"] = 200,
+	["uranium-238"] = 200,
+	["uranium-ore"] = 200,
+}
+
+for k,v in pairs(StackSizes) do
+	if data.raw.item[k] then
+		data.raw.item[k].stack_size = v
+	elseif data.raw.ammo[k] then
+		data.raw.ammo[k].stack_size = v
+	elseif data.raw.tool[k] then
+		data.raw.tool[k].stack_size = v
+	elseif data.raw.module[k] then
+		data.raw.module[k].stack_size = v
+	elseif data.raw.capsule[k] then
+		data.raw.capsule[k].stack_size = v
+	elseif data.raw["rail-planner"][k] then
+		data.raw["rail-planner"][k].stack_size = v
+	elseif data.raw["repair-tool"][k] then
+		data.raw["repair-tool"][k].stack_size = v
 	end
 end
 

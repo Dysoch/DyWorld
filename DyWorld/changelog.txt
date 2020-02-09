@@ -2,11 +2,11 @@
 Version: 0.9.8
 Date: ??. 02. 2020
   Balancing:
-    - 
+    - Changed stacksize Landfill: 100 > 500
   Compatibility:
     - 
   Bugfixes:
-    - 
+    - Removed migrations from all versions before 0.8.6. If still on there, use version 0.9.7 to update first, then update to 0.9.8
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.7
 Date: 08. 02. 2020

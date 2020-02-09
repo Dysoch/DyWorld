@@ -35,6 +35,9 @@ end]]--
 
 local StackSizes = {
 	["iron-ore"] = 200,
+	["uranium-235"] = 200,
+	["uranium-238"] = 200,
+	["uranium-ore"] = 200,
 	["copper-ore"] = 200,
 	["iron-plate"] = 200,
 	["iron-gear-wheel"] = 200,
@@ -43,8 +46,6 @@ local StackSizes = {
 	["stone"] = 200,
 	["wood"] = 200,
 	["coal"] = 200,
-	["sulfur"] = 500,
-	["landfill"] = 500,
 	["pipe"] = 200,
 	["pipe-to-ground"] = 200,
 	["heat-pipe"] = 200,
@@ -54,10 +55,10 @@ local StackSizes = {
 	["long-handed-inserter"] = 200,
 	["filter-inserter"] = 200,
 	["stack-filter-inserter"] = 200,
+	
 	["stone-wall"] = 500,
-	["uranium-235"] = 200,
-	["uranium-238"] = 200,
-	["uranium-ore"] = 200,
+	["sulfur"] = 500,
+	["landfill"] = 500,
 }
 
 for k,v in pairs(StackSizes) do

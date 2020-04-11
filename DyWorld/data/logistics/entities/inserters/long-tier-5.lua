@@ -211,7 +211,7 @@ data:extend(
     energy_required = SPEED,
     enabled = false,
     ingredients = {
-      {"long-inserter-tier-1", 1},
+      {"long-inserter-tier-4", 1},
       {"tough-control-board", 1},
       {"arditium-plate", 5},
 	},

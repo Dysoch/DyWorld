@@ -83,8 +83,8 @@ data.raw.item["rail-chain-signal"].order = Order_Tiers[3]
 data.raw.item["storage-tank"].subgroup = dy.."chests"
 data.raw.item["storage-tank"].order = Order_Tiers[5]
 
-data.raw.item["compilatron-chest"].subgroup = dy.."chests"
-data.raw.item["compilatron-chest"].order = Order_Tiers[1]
+--data.raw.item["compilatron-chest"].subgroup = dy.."chests"
+--data.raw.item["compilatron-chest"].order = Order_Tiers[1]
 data.raw.item["wooden-chest"].subgroup = dy.."chests"
 data.raw.item["wooden-chest"].order = Order_Tiers[1]
 data.raw.item["iron-chest"].subgroup = dy.."chests"

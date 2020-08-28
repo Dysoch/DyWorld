@@ -1,155 +1,51 @@
 
--- Tech --
 
-function Disable_Tech_DyDs(NAME)
+
+
+
+-- Tech --
+for NAME in pairs(data.raw.technology) do
 	data.raw.technology[NAME] = nil
 end
 
-for NAME in pairs(data.raw.technology) do
-	Disable_Tech_DyDs(NAME)
+-- Change Shortcuts --
+data.raw.shortcut["undo"].technology_to_unlock = nil
+data.raw.shortcut["copy"].technology_to_unlock = nil
+data.raw.shortcut["cut"].technology_to_unlock = nil
+data.raw.shortcut["paste"].technology_to_unlock = nil
+data.raw.shortcut["import-string"].technology_to_unlock = nil
+data.raw.shortcut["give-blueprint"].technology_to_unlock = nil
+data.raw.shortcut["give-blueprint-book"].technology_to_unlock = nil
+data.raw.shortcut["give-upgrade-planner"].technology_to_unlock = nil
+data.raw.shortcut["give-deconstruction-planner"].technology_to_unlock = nil
+data.raw.shortcut["toggle-personal-roboport"].technology_to_unlock = nil
+data.raw.shortcut["toggle-equipment-movement-bonus"].technology_to_unlock = nil
+
+-- Remove Tutorial --
+for NAME in pairs(data.raw.tutorial) do
+	data.raw.tutorial[NAME] = nil
 end
-	--[[Disable_Tech_DyDs("physical-projectile-damage-1")
-	Disable_Tech_DyDs("physical-projectile-damage-2")
-	Disable_Tech_DyDs("weapon-shooting-speed-1")
-	Disable_Tech_DyDs("weapon-shooting-speed-2")
-	Disable_Tech_DyDs("stronger-explosives-1")
-	--Disable_Tech_DyDs("automation")
-	Disable_Tech_DyDs("automation-2")
-	Disable_Tech_DyDs("electronics")
-	Disable_Tech_DyDs("logistic-science-pack")
-	Disable_Tech_DyDs("steel-processing")
-	Disable_Tech_DyDs("steel-axe")
-	Disable_Tech_DyDs("military")
-	Disable_Tech_DyDs("military-2")
-	Disable_Tech_DyDs("fast-inserter")
-	Disable_Tech_DyDs("logistics")
-	Disable_Tech_DyDs("railway")
-	Disable_Tech_DyDs("automated-rail-transportation")
-	Disable_Tech_DyDs("rail-signals")
-	Disable_Tech_DyDs("automobilism")
-	Disable_Tech_DyDs("optics")
-	Disable_Tech_DyDs("solar-energy")
-	Disable_Tech_DyDs("heavy-armor")
-	Disable_Tech_DyDs("turrets")
-	Disable_Tech_DyDs("research-speed-1")
-	Disable_Tech_DyDs("research-speed-2")
-	Disable_Tech_DyDs("electric-energy-distribution-1")
-	Disable_Tech_DyDs("advanced-material-processing")
-	Disable_Tech_DyDs("concrete")
-	Disable_Tech_DyDs("engine")
-	Disable_Tech_DyDs("landfill")
-	Disable_Tech_DyDs("logistics-2")
-	Disable_Tech_DyDs("toolbelt")
-	Disable_Tech_DyDs("stone-walls")
-	Disable_Tech_DyDs("gates")
-	Disable_Tech_DyDs("stack-inserter")
-	Disable_Tech_DyDs("inserter-capacity-bonus-1")
-	Disable_Tech_DyDs("inserter-capacity-bonus-2")
-	Disable_Tech_DyDs("inserter-capacity-bonus-3")
-	Disable_Tech_DyDs("inserter-capacity-bonus-4")
-	Disable_Tech_DyDs("inserter-capacity-bonus-5")
-	Disable_Tech_DyDs("inserter-capacity-bonus-6")
-	Disable_Tech_DyDs("inserter-capacity-bonus-7")
-	Disable_Tech_DyDs("physical-projectile-damage-3")
-	Disable_Tech_DyDs("physical-projectile-damage-4")
-	Disable_Tech_DyDs("physical-projectile-damage-5")
-	Disable_Tech_DyDs("physical-projectile-damage-6")
-	Disable_Tech_DyDs("physical-projectile-damage-7")
-	Disable_Tech_DyDs("stronger-explosives-2")
-	Disable_Tech_DyDs("stronger-explosives-3")
-	Disable_Tech_DyDs("stronger-explosives-4")
-	Disable_Tech_DyDs("stronger-explosives-5")
-	Disable_Tech_DyDs("stronger-explosives-6")
-	Disable_Tech_DyDs("stronger-explosives-7")
-	Disable_Tech_DyDs("refined-flammables-1")
-	Disable_Tech_DyDs("refined-flammables-2")
-	Disable_Tech_DyDs("refined-flammables-3")
-	Disable_Tech_DyDs("refined-flammables-4")
-	Disable_Tech_DyDs("refined-flammables-5")
-	Disable_Tech_DyDs("refined-flammables-6")
-	Disable_Tech_DyDs("refined-flammables-7")
-	Disable_Tech_DyDs("energy-weapons-damage-1")
-	Disable_Tech_DyDs("energy-weapons-damage-2")
-	Disable_Tech_DyDs("energy-weapons-damage-3")
-	Disable_Tech_DyDs("energy-weapons-damage-4")
-	Disable_Tech_DyDs("energy-weapons-damage-5")
-	Disable_Tech_DyDs("energy-weapons-damage-6")
-	Disable_Tech_DyDs("energy-weapons-damage-7")
-	Disable_Tech_DyDs("weapon-shooting-speed-3")
-	Disable_Tech_DyDs("weapon-shooting-speed-4")
-	Disable_Tech_DyDs("weapon-shooting-speed-5")
-	Disable_Tech_DyDs("weapon-shooting-speed-6")
-	Disable_Tech_DyDs("laser-turret-speed-1")
-	Disable_Tech_DyDs("laser-turret-speed-2")
-	Disable_Tech_DyDs("laser-turret-speed-3")
-	Disable_Tech_DyDs("laser-turret-speed-4")
-	Disable_Tech_DyDs("laser-turret-speed-5")
-	Disable_Tech_DyDs("laser-turret-speed-6")
-	Disable_Tech_DyDs("laser-turret-speed-7")
-	Disable_Tech_DyDs("artillery-shell-range-1")
-	Disable_Tech_DyDs("artillery-shell-speed-1")
-	Disable_Tech_DyDs("follower-robot-count-1")
-	Disable_Tech_DyDs("follower-robot-count-2")
-	Disable_Tech_DyDs("follower-robot-count-3")
-	Disable_Tech_DyDs("follower-robot-count-4")
-	Disable_Tech_DyDs("follower-robot-count-5")
-	Disable_Tech_DyDs("follower-robot-count-6")
-	Disable_Tech_DyDs("follower-robot-count-7")
-	Disable_Tech_DyDs("chemical-science-pack")
-	Disable_Tech_DyDs("military-science-pack")
-	Disable_Tech_DyDs("production-science-pack")
-	Disable_Tech_DyDs("utility-science-pack")
-	Disable_Tech_DyDs("space-science-pack")
-	Disable_Tech_DyDs("military-3")
-	Disable_Tech_DyDs("military-4")
-	Disable_Tech_DyDs("uranium-ammo")
-	Disable_Tech_DyDs("atomic-bomb")
-	Disable_Tech_DyDs("automation-3")
-	Disable_Tech_DyDs("explosives")
-	Disable_Tech_DyDs("cliff-explosives")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")
-	Disable_Tech_DyDs("")]]
+
+-- Remove Achievements --
+Remove_Achievements = {"build-entity-achievement", "research-achievement", "finish-the-game-achievement", "group-attack-achievement", "construct-with-robots-achievement", "deconstruct-with-robots-achievement", "deliver-by-robots-achievement", "train-path-achievement", "player-damaged-achievement", "build-entity-achievement", "produce-achievement", "produce-per-hour-achievement", "dont-use-entity-in-energy-production-achievement", "kill-achievement", "combat-robot-count", "dont-craft-manually-achievement", "dont-use-entity-in-energy-production-achievement", "dont-build-entity-achievement", "achievement"}
+
+for k,v in pairs(Remove_Achievements) do
+	for NAME in pairs(data.raw[v]) do
+		data.raw[v][NAME] = nil
+	end
+end
+
+-- Remove Recipes --
+for NAME in pairs(data.raw.recipe) do
+	data.raw.recipe[NAME] = nil
+end
+
+-- Removed Recipes from Prod Modules --
+for k,v in pairs(data.raw.module) do
+	if v.limitation then
+		v.limitation = {}
+	end
+end
+
+-- Change silo --
+data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil

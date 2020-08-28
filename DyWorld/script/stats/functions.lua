@@ -294,7 +294,7 @@ function BodySkills(id)
 		end
 		--if P_Level >= 1 and ggsp >= 1 then
 		if P_Level >= 20 and ggsp >= 5000 then
-			game.forces.player.inserter_stack_size_bonus = math.min(Round(ggsp / 75000), 200)
+			game.forces.player.inserter_stack_size_bonus = math.min(Round(ggsp / 75000), 150)
 		end
 		--if P_Level >= 1 and ggsp >= 1 then
 		if P_Level >= 25 and ggsp >= 25000 then

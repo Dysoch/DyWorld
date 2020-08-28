@@ -14,4 +14,5 @@ DyDs_icon_temp = "__DyWorld-Dynamics__/graphics/questionmark.png"
 
 -- data paths
 DyDs_data_core = "data.core."
+DyDs_data_base_edits = "data.base-edits."
 DyDs_data_resources = "data.resources."

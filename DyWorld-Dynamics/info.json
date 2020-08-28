@@ -1,0 +1,25 @@
+{
+	"name": "DyWorld-Dynamics",
+	"version": "0.9.0",
+	"factorio_version": "1.0",
+	"title": "DyWorld-Dynamics",
+	"author": "Dysoch",
+    "contact": "Via Discord!",
+	"homepage": "https://github.com/Dysoch/DyWorld/",
+	"description": "DyWorld-Dynamics, the successor of DyWorld, which is the successor of DyTech. ",
+	"dependencies": [  
+		"base >= 1.0.0",
+		"(?) robot_tree_farm",
+		"! pyindustry",
+		"! pycoalprocessing",
+		"! boblibrary",
+		"! angelsrefining",
+		"! IndustrialRevolution",
+		"! Yuoki",
+		"! bobenemies",
+		"! 5dim_core",
+		"! Krastorio",
+		"! Krastorio2"
+	]
+}
+

@@ -8,7 +8,10 @@ Date: 12. 12. 2020
   Minor Features:
     - 
   Changes:
-    - 
+    - Player Health: 250 > 1000
+    - Player Inventory: 80 slots > 120 slots
+    - Player healing automatically is disabled
+    - Player Build distance: 10 > 15
   Balancing:
     - 
   Bugfixes:

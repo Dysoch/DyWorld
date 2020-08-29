@@ -29,3 +29,5 @@ into blast furnace with limestone and charcoal and liquid oxygen (more efficient
 steel (0.8-2% carbon) process
 into blast furnace with limestone and coal and liquid oxygen (more efficient)
 200 ore > 80 steel plate
+
+wood is resource. Use tree farm with slow crafting speed

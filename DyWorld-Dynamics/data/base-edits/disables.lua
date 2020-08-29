@@ -49,3 +49,18 @@ end
 
 -- Change silo --
 data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
+
+-- Remove resources and autoplace--
+for NAME in pairs(data.raw.resource) do
+	data.raw.resource[NAME] = nil
+end
+
+for NAME in pairs(data.raw["autoplace-control"]) do
+	if data.raw["autoplace-control"][NAME].category == "resource" then
+		data.raw["autoplace-control"][NAME] = nil
+	end
+end
+
+data.raw["map-gen-presets"]["default"]["rich-resources"].basic_settings.autoplace_controls = nil
+data.raw["map-gen-presets"]["default"]["rail-world"].basic_settings.autoplace_controls = nil
+data.raw["map-gen-presets"]["default"]["ribbon-world"].basic_settings.autoplace_controls = nil

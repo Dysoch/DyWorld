@@ -81,8 +81,11 @@ local on_player_created = function(event)
   if not global.skip_intro then
     if game.is_multiplayer() then
       player.print({"msg-intro"})
+      player.print({"msg-intro-2"})
     else
       game.show_message_dialog{text = {"msg-intro"}}
+      game.show_message_dialog{text = {"msg-intro-2"}}
+      --game.show_message_dialog{}
     end
   end
 
@@ -104,8 +107,10 @@ local on_cutscene_waypoint_reached = function(event)
   if not global.skip_intro then
     if game.is_multiplayer() then
       player.print({"msg-intro"})
+      player.print({"msg-intro-2"})
     else
       game.show_message_dialog{text = {"msg-intro"}}
+      game.show_message_dialog{text = {"msg-intro-2"}}
     end
   end
 end

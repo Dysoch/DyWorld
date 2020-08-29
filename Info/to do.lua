@@ -1,10 +1,10 @@
 
 Iron deposits percentages:
-{10, 20, 30, 40, 50, 60, 70, 80, 90}
+{!10, 20, 30, !40, 50, 60, !70, 80, 90}
 copper deposits percentages:
-{5, 15, 25, 35, 45, 55, 65, 75, 85, 95}
+{!5, 15, 25, !35, 45, !55, 65, 75, 85, 95}
 coal deposits percentages:
-{25, 40, 50, 60, 75, 87}
+{25, !40, 50, 60, !75, 87}
 
 iron deposits byproducts:
 
@@ -31,3 +31,6 @@ into blast furnace with limestone and coal and liquid oxygen (more efficient)
 200 ore > 80 steel plate
 
 wood is resource. Use tree farm with slow crafting speed
+
+stone types:
+limestone, quartzite, granite, sandstone

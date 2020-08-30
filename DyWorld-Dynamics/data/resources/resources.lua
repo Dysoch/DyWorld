@@ -124,6 +124,7 @@ local function resource(resource_parameters, autoplace_parameters)
   }
 end
 
+--for i = 1, 25 do
 data:extend({
           -- Usually earlier order takes priority, but there's some special
           -- case buried in the code about resources removing other things
@@ -139,10 +140,12 @@ data:extend({
   resource(
     {
       name = "iron-ore-10",
+      --name = "iron-ore-".. i*4,
 	  minable = "iron-ore",
 	  minable_probability = 0.1,
+	  --minable_probability = i*4 / 100,
       order = "c",
-      map_color = {0.415, 0.525, 0.580},
+      map_color = {0.415, 0.525, 0.580, 0.1},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.895, g = 0.965, b = 1.000, a = 1.000}, -- #e4f6ffff
@@ -163,7 +166,7 @@ data:extend({
 	  minable = "iron-ore",
 	  minable_probability = 0.2,
       order = "c",
-      map_color = {0.415, 0.525, 0.580},
+      map_color = {0.415, 0.525, 0.580, 0.2},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.895, g = 0.965, b = 1.000, a = 1.000}, -- #e4f6ffff
@@ -184,7 +187,7 @@ data:extend({
 	  minable = "iron-ore",
 	  minable_probability = 0.3,
       order = "c",
-      map_color = {0.415, 0.525, 0.580},
+      map_color = {0.415, 0.525, 0.580, 0.3},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.895, g = 0.965, b = 1.000, a = 1.000}, -- #e4f6ffff
@@ -205,7 +208,7 @@ data:extend({
 	  minable = "iron-ore",
 	  minable_probability = 0.4,
       order = "c",
-      map_color = {0.415, 0.525, 0.580},
+      map_color = {0.415, 0.525, 0.580, 0.4},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.895, g = 0.965, b = 1.000, a = 1.000}, -- #e4f6ffff
@@ -226,7 +229,7 @@ data:extend({
 	  minable = "iron-ore",
 	  minable_probability = 0.5,
       order = "c",
-      map_color = {0.415, 0.525, 0.580},
+      map_color = {0.415, 0.525, 0.580, 0.5},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.895, g = 0.965, b = 1.000, a = 1.000}, -- #e4f6ffff
@@ -247,7 +250,7 @@ data:extend({
 	  minable = "iron-ore",
 	  minable_probability = 0.6,
       order = "c",
-      map_color = {0.415, 0.525, 0.580},
+      map_color = {0.415, 0.525, 0.580, 0.6},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.895, g = 0.965, b = 1.000, a = 1.000}, -- #e4f6ffff
@@ -268,7 +271,7 @@ data:extend({
 	  minable = "iron-ore",
 	  minable_probability = 0.7,
       order = "c",
-      map_color = {0.415, 0.525, 0.580},
+      map_color = {0.415, 0.525, 0.580, 0.7},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.895, g = 0.965, b = 1.000, a = 1.000}, -- #e4f6ffff
@@ -289,7 +292,7 @@ data:extend({
 	  minable = "iron-ore",
 	  minable_probability = 0.8,
       order = "c",
-      map_color = {0.415, 0.525, 0.580},
+      map_color = {0.415, 0.525, 0.580, 0.8},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.895, g = 0.965, b = 1.000, a = 1.000}, -- #e4f6ffff
@@ -310,7 +313,7 @@ data:extend({
 	  minable = "iron-ore",
 	  minable_probability = 0.9,
       order = "c",
-      map_color = {0.415, 0.525, 0.580},
+      map_color = {0.415, 0.525, 0.580, 0.9},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.895, g = 0.965, b = 1.000, a = 1.000}, -- #e4f6ffff
@@ -326,8 +329,11 @@ data:extend({
     }
   ),
   
+})
+--end
  ---------- COPPER ----------
- 
+
+data:extend({ 
   
   resource(
     {
@@ -335,7 +341,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.05,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.05},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -356,7 +362,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.15,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.15},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -377,7 +383,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.25,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.25},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -398,7 +404,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.35,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.35},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -419,7 +425,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.45,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.45},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -440,7 +446,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.55,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.55},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -461,7 +467,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.65,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.65},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -482,7 +488,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.75,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.75},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -503,7 +509,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.85,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.85},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -524,7 +530,7 @@ data:extend({
 	  minable = "copper-ore",
 	  minable_probability = 0.95,
       order = "c",
-      map_color = {0.803, 0.388, 0.215},
+      map_color = {0.803, 0.388, 0.215, 0.95},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}, -- #ffac89ff
@@ -550,7 +556,7 @@ data:extend({
 	  minable_probability = .25,
       order = "c",
       map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0},
+      mining_visualisation_tint = {0, 0, 0, 0.25},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
@@ -571,7 +577,7 @@ data:extend({
 	  minable_probability = 0.4,
       order = "c",
       map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0},
+      mining_visualisation_tint = {0, 0, 0, 0.40},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
@@ -592,7 +598,7 @@ data:extend({
 	  minable_probability = 0.5,
       order = "c",
       map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0},
+      mining_visualisation_tint = {0, 0, 0, 0.50},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
@@ -613,7 +619,7 @@ data:extend({
 	  minable_probability = 0.6,
       order = "c",
       map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0},
+      mining_visualisation_tint = {0, 0, 0, 0.60},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
@@ -634,7 +640,7 @@ data:extend({
 	  minable_probability = 0.75,
       order = "c",
       map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0},
+      mining_visualisation_tint = {0, 0, 0, 0.75},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
@@ -655,7 +661,7 @@ data:extend({
 	  minable_probability = 0.87,
       order = "c",
       map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0},
+      mining_visualisation_tint = {0, 0, 0, 0.87},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff

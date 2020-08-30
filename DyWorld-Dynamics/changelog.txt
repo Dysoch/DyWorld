@@ -4,7 +4,7 @@ Date: 12. 12. 2020
   Major Features:
     - Complete and utter rewrite of DyWorld. Now called DyWorld-Dynamics, this mod is like DyWorld, but better written, less bugs, more features (and almost the same features as DyWorld) and a lot changes!
   Features:
-    - 
+    - Ores have been reworked. There is different percentages of each ore. They can be seperate, or clumped into the same patch. This basically means that you have a chance to get less ores (you will never mine the full amount). A lot of different density of ores exist, and each have different byproducts and percentages for them
   Minor Features:
     - 
   Changes:

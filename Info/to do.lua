@@ -34,3 +34,7 @@ wood is resource. Use tree farm with slow crafting speed
 
 stone types:
 limestone, quartzite, granite, sandstone
+
+add recipe generator script with all definitions
+
+research is done with materials

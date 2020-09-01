@@ -31,6 +31,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "iron-ore",
 	order = "iron-ore",
+    icon = "__base__/graphics/icons/iron-ore.png",
 	localised_name = {"looped-name.iron-2"},
 	stack_size = 1000,
 	durability = 1,
@@ -39,6 +40,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "copper-ore",
 	order = "copper-ore",
+    icon = "__base__/graphics/icons/copper-ore.png",
 	localised_name = {"looped-name.copper-2"},
 	stack_size = 1000,
 	durability = 1,
@@ -94,6 +96,7 @@ DyDS_Add_Item({
 DyDS_Add_Tool({
 	name = "iron-plate",
 	order = "iron-plate",
+    icon = "__base__/graphics/icons/iron-plate.png",
 	localised_name = {"looped-name.iron-4"},
 	stack_size = 500,
 	durability = 1,
@@ -102,6 +105,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "copper-plate",
 	order = "copper-plate",
+    icon = "__base__/graphics/icons/copper-plate.png",
 	localised_name = {"looped-name.copper-4"},
 	stack_size = 500,
 	durability = 1,
@@ -110,6 +114,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "steel-plate",
 	order = "steel-plate",
+    icon = "__base__/graphics/icons/steel-plate.png",
 	localised_name = {"looped-name.steel-4"},
 	stack_size = 500,
 	durability = 1,
@@ -136,6 +141,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "limestone",
 	order = "limestone",
+    icon = "__base__/graphics/icons/stone.png",
 	localised_name = {"looped-name.limestone"},
 	stack_size = 1000,
 	durability = 1,
@@ -144,6 +150,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "quartzite",
 	order = "quartzite",
+    icon = "__base__/graphics/icons/stone.png",
 	localised_name = {"looped-name.quartzite"},
 	stack_size = 1000,
 	durability = 1,
@@ -152,6 +159,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "granite",
 	order = "granite",
+    icon = "__base__/graphics/icons/stone.png",
 	localised_name = {"looped-name.granite"},
 	stack_size = 1000,
 	durability = 1,
@@ -160,6 +168,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "sandstone",
 	order = "sandstone",
+    icon = "__base__/graphics/icons/stone.png",
 	localised_name = {"looped-name.sandstone"},
 	stack_size = 1000,
 	durability = 1,
@@ -170,6 +179,7 @@ DyDS_Add_Tool({
 DyDS_Add_Item({
 	name = "charcoal",
 	order = "charcoal",
+    icon = "__base__/graphics/icons/coal.png",
 	--localised_name = {"looped-name.iron-3"},
 	stack_size = 500,
 })

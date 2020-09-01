@@ -13,10 +13,20 @@ function Main_GUI(player, id)
 		local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
 		tabbed_pane.add_tab(tab1, frameflow1)
 
--------------------------------- Player Bonuses TAB ------------------------------------
-		local tab2 = tabbed_pane.add{type="tab", caption="Player Bonuses"}
+-------------------------------- Player stats TAB -------------------------------------
+		local tab2 = tabbed_pane.add{type="tab", caption="Player Stats"}
 		local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 		tabbed_pane.add_tab(tab2, frameflow2)
+		
+		frameflow2.add{type = "label", caption = "Crafted: "..global.dyworld.players[id].crafted}
+		frameflow2.add{type = "label", caption = "Mined: "..global.dyworld.players[id].mined}
+		frameflow2.add{type = "label", caption = "Built: "..global.dyworld.players[id].build}
+		frameflow2.add{type = "label", caption = "Killed: "..global.dyworld.players[id].killed}
+
+-------------------------------- Player Bonuses TAB ------------------------------------
+		local tab3 = tabbed_pane.add{type="tab", caption="Player Bonuses"}
+		local frameflow3 = tabbed_pane.add{type = "flow", name = "flow3", direction = "vertical"}
+		tabbed_pane.add_tab(tab3, frameflow3)
 
 		
 		if debugger then

@@ -859,7 +859,7 @@ data:extend({
 	  minable = "tin-ore",
 	  minable_probability = 0.20,
       order = "b",
-      map_color = {0.560, 0.545, 0.588},
+      map_color = {0.560, 0.545, 0.588, 0.20},
       mining_time = 0.5,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
@@ -879,7 +879,7 @@ data:extend({
 	  minable = "tin-ore",
 	  minable_probability = 0.40,
       order = "b",
-      map_color = {0.560, 0.545, 0.588},
+      map_color = {0.560, 0.545, 0.588, 0.40},
       mining_time = 0.5,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
@@ -899,7 +899,7 @@ data:extend({
 	  minable = "tin-ore",
 	  minable_probability = 0.60,
       order = "b",
-      map_color = {0.560, 0.545, 0.588},
+      map_color = {0.560, 0.545, 0.588, 0.60},
       mining_time = 0.5,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
@@ -919,7 +919,7 @@ data:extend({
 	  minable = "tin-ore",
 	  minable_probability = 0.8,
       order = "b",
-      map_color = {0.560, 0.545, 0.588},
+      map_color = {0.560, 0.545, 0.588, 0.80},
       mining_time = 0.5,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
@@ -939,7 +939,7 @@ data:extend({
 	  minable = "tin-ore",
 	  minable_probability = 0.95,
       order = "b",
-      map_color = {0.560, 0.545, 0.588},
+      map_color = {0.560, 0.545, 0.588, 0.95},
       mining_time = 0.5,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff

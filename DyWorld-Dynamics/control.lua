@@ -1,4 +1,14 @@
+
+debugger = true
+
+-- LuaLib
+require "script/lualib/debug"
+require "script/lualib/player"
+require "script/lualib/gui"
 inspect = require("script/lualib/inspect")
+
+-- GUI
+require "script/gui/main-gui"
 
 -- Event Handlers --
 require "script/events/keys"

@@ -31,6 +31,11 @@ local Autoplace_Categories = {
 	"deposit-copper",
 	"deposit-stone",
 	"deposit-coal",
+	"deposit-tin",
+}
+
+local Fuel_Categories = {
+	"carbon",
 }
 
 
@@ -51,6 +56,16 @@ data:extend(
 {
   {
     type = "recipe-category",
+    name = v
+  }			
+})
+end
+
+for k,v in pairs(Fuel_Categories) do
+data:extend(
+{
+  {
+    type = "fuel-category",
     name = v
   }			
 })

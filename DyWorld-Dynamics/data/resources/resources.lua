@@ -855,11 +855,31 @@ data:extend({
   
   resource_ore(
     {
-      name = "tin-ore-80",
+      name = "tin-ore-20",
 	  minable = "tin-ore",
-	  minable_probability = 0.8,
+	  minable_probability = 0.20,
       order = "b",
-      map_color = {0.690, 0.611, 0.427},
+      map_color = {0.560, 0.545, 0.588},
+      mining_time = 0.5,
+      walking_sound = ore_sound,
+      mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
+	  category = "resource-solid-tier-0",
+    },
+    {
+      has_starting_area_placement = false,
+      base_density = 4,
+      regular_rq_factor_multiplier = 1.0,
+      starting_rq_factor_multiplier = 1.1,
+	  autoplace_control_name = "deposit-tin",
+    }
+  ),
+  resource_ore(
+    {
+      name = "tin-ore-40",
+	  minable = "tin-ore",
+	  minable_probability = 0.40,
+      order = "b",
+      map_color = {0.560, 0.545, 0.588},
       mining_time = 0.5,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
@@ -867,6 +887,66 @@ data:extend({
     },
     {
       has_starting_area_placement = true,
+      base_density = 4,
+      regular_rq_factor_multiplier = 1.0,
+      starting_rq_factor_multiplier = 1.1,
+	  autoplace_control_name = "deposit-tin",
+    }
+  ),
+  resource_ore(
+    {
+      name = "tin-ore-60",
+	  minable = "tin-ore",
+	  minable_probability = 0.60,
+      order = "b",
+      map_color = {0.560, 0.545, 0.588},
+      mining_time = 0.5,
+      walking_sound = ore_sound,
+      mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
+	  category = "resource-solid-tier-0",
+    },
+    {
+      has_starting_area_placement = false,
+      base_density = 4,
+      regular_rq_factor_multiplier = 1.0,
+      starting_rq_factor_multiplier = 1.1,
+	  autoplace_control_name = "deposit-tin",
+    }
+  ),
+  resource_ore(
+    {
+      name = "tin-ore-80",
+	  minable = "tin-ore",
+	  minable_probability = 0.8,
+      order = "b",
+      map_color = {0.560, 0.545, 0.588},
+      mining_time = 0.5,
+      walking_sound = ore_sound,
+      mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
+	  category = "resource-solid-tier-0",
+    },
+    {
+      has_starting_area_placement = true,
+      base_density = 4,
+      regular_rq_factor_multiplier = 1.0,
+      starting_rq_factor_multiplier = 1.1,
+	  autoplace_control_name = "deposit-tin",
+    }
+  ),
+  resource_ore(
+    {
+      name = "tin-ore-95",
+	  minable = "tin-ore",
+	  minable_probability = 0.95,
+      order = "b",
+      map_color = {0.560, 0.545, 0.588},
+      mining_time = 0.5,
+      walking_sound = ore_sound,
+      mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
+	  category = "resource-solid-tier-0",
+    },
+    {
+      has_starting_area_placement = false,
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,

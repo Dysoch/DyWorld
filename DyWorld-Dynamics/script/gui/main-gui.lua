@@ -12,6 +12,10 @@ function Main_GUI(player, id)
 		local tab1 = tabbed_pane.add{type="tab", caption="Game Stats"}
 		local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
 		tabbed_pane.add_tab(tab1, frameflow1)
+		
+		frameflow1.add{type = "label", caption = "Sectors Scanned: "..global.dyworld.game_stats.sector_scanned}
+		frameflow1.add{type = "label", caption = "Chunks: "..global.dyworld.game_stats.chunks}
+		frameflow1.add{type = "label", caption = "Game Days: "..global.dyworld.game_stats.days}
 
 -------------------------------- Player stats TAB -------------------------------------
 		local tab2 = tabbed_pane.add{type="tab", caption="Player Stats"}
@@ -22,6 +26,7 @@ function Main_GUI(player, id)
 		frameflow2.add{type = "label", caption = "Mined: "..global.dyworld.players[id].mined}
 		frameflow2.add{type = "label", caption = "Built: "..global.dyworld.players[id].build}
 		frameflow2.add{type = "label", caption = "Killed: "..global.dyworld.players[id].killed}
+		frameflow2.add{type = "label", caption = "Position: "..math.floor(global.dyworld.players[id].posx).." , "..math.floor(global.dyworld.players[id].posy)}
 
 -------------------------------- Player Bonuses TAB ------------------------------------
 		local tab3 = tabbed_pane.add{type="tab", caption="Player Bonuses"}

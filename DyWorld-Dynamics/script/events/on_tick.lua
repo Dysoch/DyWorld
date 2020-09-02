@@ -14,5 +14,13 @@ function Event_on_tick(event)
 		global.dyworld.game_stats.days = global.dyworld.game_stats.days + 1
 		debug("Game Days: "..global.dyworld.game_stats.days)
 	end
+	if event.tick%(15*1)==1 then
+		for k,v in pairs(global.dyworld.players) do
+			if v.alive and v.playing then
+				v.posx = game.players[v.id].position.x
+				v.posy = game.players[v.id].position.y
+			end
+		end
+	end
 end
 

@@ -9,6 +9,7 @@ function Event_on_player_created(event)
 	global.dyworld.players[id] = {
 		playerinfo = player,
 		force = force,
+		id = id,
 		name = name,
 		crafted = 0,
 		mined = 0,
@@ -19,5 +20,7 @@ function Event_on_player_created(event)
 		xp = 0,
 		xp_levelup = (100 + math.random(100)),
 		level = 1,
+		alive = true,
+		playing = true,
 	}
 end

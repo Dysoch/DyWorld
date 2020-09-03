@@ -12,6 +12,7 @@ data:extend({
       },
       result = "charcoal",
 	  result_count = 5,
+	  enabled = true,
     },
     expensive =
     {
@@ -22,6 +23,7 @@ data:extend({
       },
       result = "charcoal",
 	  result_count = 5,
+	  enabled = true,
     },
   },
 })

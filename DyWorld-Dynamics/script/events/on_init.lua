@@ -27,24 +27,62 @@ function Event_on_init()
 			story = {
 				tier = 0,
 				phase = 1,
-				phase_001 = true,
-				phase_002 = false,
-				phase_003 = false,
-				phase_004 = false,
-				phase_005 = false,
-				phase_006 = false,
-				phase_007 = false,
-				phase_008 = false,
-				phase_009 = false,
-				phase_101 = false,
-				phase_102 = false,
-				phase_103 = false,
-				phase_104 = false,
-				phase_105 = false,
-				phase_106 = false,
-				phase_107 = false,
-				phase_108 = false,
-				phase_109 = false,
+				phases = {
+					[1] = {
+						done = false,
+						objectives = {
+							
+						},
+					},
+					[2] = {
+						done = false,
+						objectives = {
+							
+						},
+					},
+					[3] = {
+						done = false,
+						objectives = {
+							
+						},
+					},
+					[4] = {
+						done = false,
+						objectives = {
+							
+						},
+					},
+					[5] = {
+						done = false,
+						objectives = {
+							
+						},
+					},
+					[6] = {
+						done = false,
+						objectives = {
+							
+						},
+					},
+					[7] = {
+						done = false,
+						objectives = {
+							
+						},
+					},
+					[8] = {
+						done = false,
+						objectives = {
+							
+						},
+					},
+					[9] = {
+						done = false,
+						objectives = {
+							
+						},
+					},
+				},
 			},
 		}
 	end

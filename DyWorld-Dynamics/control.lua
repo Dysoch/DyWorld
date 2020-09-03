@@ -7,6 +7,7 @@ require "script/lualib/debug"
 require "script/lualib/player"
 require "script/lualib/gui"
 inspect = require("script/lualib/inspect")
+require("script/database/recipes")
 
 -- GUI
 require "script/gui/main-gui"
@@ -77,8 +78,12 @@ remote.add_interface("DyWorld",
 		game.forces.player.chart(game.player.surface, {lefttop = {x = -AMOUNT, y = -AMOUNT}, rightbottom = {x = AMOUNT, y = AMOUNT}})
 	end,
 	
-	RegenerateOre = function(NAME)
+	Regenerate_Ore = function(NAME)
 		game.regenerate_entity(NAME)
+	end,
+	
+	Unlock_Recipes = function()
+		Reunlock_Recipes()
 	end,
 })
 

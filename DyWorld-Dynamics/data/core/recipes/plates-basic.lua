@@ -12,6 +12,7 @@ data:extend({
       },
       result = "iron-plate",
 	  result_count = 1,
+	  enabled = true,
     },
     expensive =
     {
@@ -22,6 +23,7 @@ data:extend({
       },
       result = "iron-plate",
 	  result_count = 1,
+	  enabled = true,
     },
   },
   {
@@ -37,6 +39,7 @@ data:extend({
       },
       result = "bronze-plate",
 	  result_count = 5,
+	  enabled = false,
     },
     expensive =
     {
@@ -47,6 +50,7 @@ data:extend({
       },
       result = "bronze-plate",
 	  result_count = 5,
+	  enabled = false,
     },
   },
 })

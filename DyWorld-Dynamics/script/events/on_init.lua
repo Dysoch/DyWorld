@@ -24,6 +24,27 @@ function Event_on_init()
 				time_stamp = "",
 				building_locations = {},
 			},
+			story = {
+				tier = 0,
+				phase_001 = false,
+				phase_002 = false,
+				phase_003 = false,
+				phase_004 = false,
+				phase_005 = false,
+				phase_006 = false,
+				phase_007 = false,
+				phase_008 = false,
+				phase_009 = false,
+				phase_101 = false,
+				phase_102 = false,
+				phase_103 = false,
+				phase_104 = false,
+				phase_105 = false,
+				phase_106 = false,
+				phase_107 = false,
+				phase_108 = false,
+				phase_109 = false,
+			},
 		}
 	end
 end

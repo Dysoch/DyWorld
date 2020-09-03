@@ -2,6 +2,7 @@
 debugger = true
 
 -- LuaLib
+require "script/lualib/function"
 require "script/lualib/debug"
 require "script/lualib/player"
 require "script/lualib/gui"

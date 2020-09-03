@@ -10,8 +10,9 @@ function Event_on_robot_built_entity(event)
 	local type = event.created_entity.type
 	
 	----- Building Placement -----
-	local BuildingTable = {posx = position.x, posy = position.y}
-	table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
-	--debug("build at: "..position.x..", "..position.y)
-	
+	if Entity_Check(type) then
+		local BuildingTable = {posx = position.x, posy = position.y}
+		table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
+		--debug("build at: "..position.x..", "..position.y)
+	end
 end

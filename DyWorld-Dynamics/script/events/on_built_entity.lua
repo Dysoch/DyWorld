@@ -21,7 +21,9 @@ function Event_on_built_entity(event)
 	global.dyworld.game_stats.build_amount = global.dyworld.game_stats.build_amount + 1
 	
 	----- Building Placement -----
-	local BuildingTable = {posx = position.x, posy = position.y}
-	table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
-	--debug("build at: "..position.x..", "..position.y)
+	if Entity_Check(type) then
+		local BuildingTable = {posx = position.x, posy = position.y}
+		table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
+		--debug("build at: "..position.x..", "..position.y)
+	end
 end

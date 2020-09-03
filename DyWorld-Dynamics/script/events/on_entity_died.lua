@@ -24,11 +24,13 @@ function Event_on_entity_died(event)
 	end
 	
 	----- Building Placement -----
-	for k,v in pairs(global.dyworld.game_stats.building_locations) do
-		if (position.x == v.posx and position.y == v.posy) then
-			table.remove(global.dyworld.game_stats.building_locations, k)
-			--debug("removed building at: "..position.x..", "..position.y)
-			break
+	if Entity_Check(type_killed) then
+		for k,v in pairs(global.dyworld.game_stats.building_locations) do
+			if (position.x == v.posx and position.y == v.posy) then
+				table.remove(global.dyworld.game_stats.building_locations, k)
+				--debug("removed building at: "..position.x..", "..position.y)
+				break
+			end
 		end
 	end
 end

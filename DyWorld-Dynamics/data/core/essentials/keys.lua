@@ -7,6 +7,11 @@ data:extend({
 	},
 	{
 		type = "custom-input",
+		name = "DyWorld_Story",
+		key_sequence = "PAD 6"
+	},
+	{
+		type = "custom-input",
 		name = "DyWorld_inserter_drop_distance_toggle",
 		key_sequence = "CONTROL + F",
 	},

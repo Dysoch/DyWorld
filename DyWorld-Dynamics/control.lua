@@ -9,6 +9,11 @@ inspect = require("script/lualib/inspect")
 
 -- GUI
 require "script/gui/main-gui"
+require "script/gui/story-gui"
+
+-- Story
+require "script/story/functions"
+require "script/story/tier-0"
 
 -- Event Handlers --
 require "script/events/keys"

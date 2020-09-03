@@ -2,6 +2,9 @@
 
 
 function Main_GUI(player, id)
+	if player.gui.top.DyDs_Story_GUI then
+		player.gui.top.DyDs_Story_GUI.destroy()
+	end
 	if player.gui.top.DyDs_Main_GUI then
 		player.gui.top.DyDs_Main_GUI.destroy()
 	else
@@ -96,8 +99,10 @@ function Main_GUI(player, id)
 			scrollbar_debug99.style.bottom_padding = 0
 			scrollbar_debug99.style.maximal_height = 250
 			scrollbar_debug99.style.maximal_width = 750
-			for _, NAME in pairs(global.debug) do
-				scrollbar_debug99.add{type = "label", caption = NAME}
+			if global.debug then
+				for _, NAME in pairs(global.debug) do
+					scrollbar_debug99.add{type = "label", caption = NAME}
+				end
 			end
 		end
 	end

@@ -26,7 +26,8 @@ function Event_on_init()
 			},
 			story = {
 				tier = 0,
-				phase_001 = false,
+				phase = 1,
+				phase_001 = true,
 				phase_002 = false,
 				phase_003 = false,
 				phase_004 = false,

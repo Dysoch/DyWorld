@@ -6,6 +6,7 @@ function Event_on_built_entity(event)
 	local force = player.force
 	local id = event.player_index
 	local name = event.created_entity.name
+	local position = event.created_entity.position
 	local type = event.created_entity.type
 	
 	----- Global counter -----
@@ -18,4 +19,9 @@ function Event_on_built_entity(event)
 	----- Personal counter -----
 	global.dyworld.players[id].build = global.dyworld.players[id].build + 1
 	global.dyworld.game_stats.build_amount = global.dyworld.game_stats.build_amount + 1
+	
+	----- Building Placement -----
+	local BuildingTable = {posx = position.x, posy = position.y}
+	table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
+	--debug("build at: "..position.x..", "..position.y)
 end

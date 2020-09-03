@@ -22,6 +22,7 @@ function Event_on_init()
 				picked_names = {},
 				days = 0,
 				time_stamp = "",
+				building_locations = {},
 			},
 		}
 	end

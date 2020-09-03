@@ -18,4 +18,7 @@ function Event_on_player_mined_item(event)
 	----- Personal counter -----
 	global.dyworld.players[id].mined = global.dyworld.players[id].mined + count
 	global.dyworld.game_stats.mined_amount = global.dyworld.game_stats.mined_amount + count
+	
+	----- Story Objective Check -----
+	Story_Objectives("mining-item", event)
 end

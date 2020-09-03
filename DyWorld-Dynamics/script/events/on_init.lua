@@ -30,8 +30,32 @@ function Event_on_init()
 				phases = {
 					[1] = {
 						done = false,
+						amount_left = 3,
 						objectives = {
-							
+							[1] = {
+								type_1 = "build", 
+								type_2 = "name", 
+								name = "basic-kiln", 
+								amount_needed = 10,
+								amount_done = 0,
+								done = false,
+							},
+							[2] = {
+								type_1 = "mine", 
+								type_2 = "item", 
+								name = "limestone", 
+								amount_needed = 100,
+								amount_done = 0,
+								done = false,
+							},
+							[3] = {
+								type_1 = "mine", 
+								type_2 = "item", 
+								name = "wood", 
+								amount_needed = 50,
+								amount_done = 0,
+								done = false,
+							},
 						},
 					},
 					[2] = {

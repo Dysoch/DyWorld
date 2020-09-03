@@ -15,4 +15,7 @@ function Event_on_robot_built_entity(event)
 		table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
 		--debug("build at: "..position.x..", "..position.y)
 	end
+	
+	----- Story Objective Check -----
+	Story_Objectives("building-robot", event)
 end

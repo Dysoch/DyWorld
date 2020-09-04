@@ -86,6 +86,17 @@ remote.add_interface("DyWorld",
 	Unlock_Recipes = function()
 		Reunlock_Recipes()
 	end,
+	
+	Debug_Start = function()
+		game.players[1].insert{name = "gun-turret", count = 10}
+		game.players[1].insert{name = "firearm-magazine", count = 1000}
+		game.players[1].insert{name = "coal", count = 1000}
+		game.players[1].insert{name = "wooden-chest", count = 10}
+		game.players[1].insert{name = "burner-mining-drill", count = 50}
+		game.players[1].insert{name = "electric-mining-drill", count = 50}
+		game.players[1].insert{name = "substation", count = 50}
+		game.players[1].insert{name = "solar-panel", count = 50}
+	end,
 })
 
 --commands.add_command("dyworld-debug-items", "Debug time :) (only for player 1!)", Debug_Items())

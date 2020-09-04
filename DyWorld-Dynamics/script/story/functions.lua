@@ -142,7 +142,7 @@ function Story_Objectives(type, event)
 				if (v.type_1 == "died" and v.type_2 == "name") then
 					if (name == v.name and v.done == false) then
 						if v.amount_done < v.amount_needed then
-							v.amount_done = v.amount_done + count
+							v.amount_done = v.amount_done + 1
 						end
 						if v.amount_done >= v.amount_needed then
 							v.done = true

@@ -77,7 +77,7 @@ local function resource(resource_parameters, autoplace_parameters)
       mining_particle = "stone-particle",
       mining_time = resource_parameters.mining_time,
       results = {
-        {name = resource_parameters.minable, amount_min = 1, amount_max = 1, probability = resource_parameters.minable_probability},
+        {name = resource_parameters.minable, amount_min = 1, amount_max = resource_parameters.amount_max or 1, probability = resource_parameters.minable_probability},
       }
     },
     walking_sound = resource_parameters.walking_sound,
@@ -835,6 +835,7 @@ data:extend({
       name = "treefarm",
 	  minable = "wood",
 	  minable_probability = 1,
+	  amount_max = 30,
       order = "c",
       map_color = {0.690, 0.611, 0.427},
       mining_time = 120,
@@ -954,3 +955,10 @@ data:extend({
     }
   ),
 })
+
+
+data.raw.resource.treefarm.infinite = true
+data.raw.resource.treefarm.highlight = false
+data.raw.resource.treefarm.minimum = 600
+data.raw.resource.treefarm.normal = 600
+data.raw.resource.treefarm.infinite_depletion_amount = 1

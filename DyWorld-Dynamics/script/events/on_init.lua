@@ -69,19 +69,25 @@ function Event_on_init()
 					},
 					[2] = {
 						done = false,
-						amount_left = 0,
-						objectives_amount = 4,
+						amount_left = 1,
+						objectives_amount = 1,
 						message = "DyDs-story.message-phase-2",
 						objectives = {
-							
+							[1] = {
+								type_1 = "died", 
+								type_2 = "name", 
+								name = "small-biter", 
+								amount_needed = 10,
+								amount_done = 0,
+								done = false,
+							},
 						},
 					},
 					[3] = {
 						done = false,
-						amount_left = 0,
+						amount_left = 4,
 						objectives_amount = 4,
 						objectives = {
-							
 						},
 					},
 					[4] = {
@@ -89,7 +95,6 @@ function Event_on_init()
 						amount_left = 4,
 						objectives_amount = 4,
 						objectives = {
-							
 						},
 					},
 					[5] = {
@@ -97,7 +102,6 @@ function Event_on_init()
 						amount_left = 4,
 						objectives_amount = 4,
 						objectives = {
-							
 						},
 					},
 					[6] = {
@@ -105,7 +109,6 @@ function Event_on_init()
 						amount_left = 4,
 						objectives_amount = 4,
 						objectives = {
-							
 						},
 					},
 					[7] = {
@@ -113,7 +116,6 @@ function Event_on_init()
 						amount_left = 4,
 						objectives_amount = 4,
 						objectives = {
-							
 						},
 					},
 					[8] = {
@@ -121,7 +123,6 @@ function Event_on_init()
 						amount_left = 4,
 						objectives_amount = 4,
 						objectives = {
-							
 						},
 					},
 					[9] = {
@@ -129,7 +130,6 @@ function Event_on_init()
 						amount_left = 4,
 						objectives_amount = 4,
 						objectives = {
-							
 						},
 					},
 				},

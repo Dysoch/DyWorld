@@ -22,5 +22,9 @@ function Event_on_player_created(event)
 		level = 1,
 		alive = true,
 		playing = true,
+		story_gui = false,
+		story_gui_index = 1,
+		stats_gui = false,
+		stats_gui_index = 1,
 	}
 end

@@ -132,6 +132,28 @@ function Story_Objectives(type, event)
 					end
 				end
 			end
+		elseif type == "died" then
+			local force = event.force  -- force that kill
+			local killer = event.cause -- cause of the kill
+			local type_killed = event.entity.type 
+			local name = event.entity.name
+			local position = event.entity.position
+			for k,v in pairs(global.dyworld.story.phases[global.dyworld.story.phase].objectives) do
+				if (v.type_1 == "died" and v.type_2 == "name") then
+					if (name == v.name and v.done == false) then
+						if v.amount_done < v.amount_needed then
+							v.amount_done = v.amount_done + count
+						end
+						if v.amount_done >= v.amount_needed then
+							v.done = true
+							global.dyworld.story.phases[global.dyworld.story.phase].amount_left = global.dyworld.story.phases[global.dyworld.story.phase].amount_left - 1
+							if global.dyworld.story.phases[global.dyworld.story.phase].amount_left <= 0 then
+								Phase_Forward()
+							end
+						end
+					end
+				end
+			end
 		end
 	end
 end

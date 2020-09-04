@@ -66,6 +66,7 @@ script.on_event(defines.events.on_robot_mined_entity, Event_on_robot_mined_entit
 script.on_event(defines.events.on_rocket_launched, Event_on_rocket_launched)
 script.on_event(defines.events.on_sector_scanned, Event_on_sector_scanned)
 script.on_event(defines.events.on_tick, Event_on_tick)
+script.on_event(defines.events.on_gui_selected_tab_changed, Event_on_gui_selected_tab_changed)
 
 --------------------------------- TEST AREA ------------------------------------------
 

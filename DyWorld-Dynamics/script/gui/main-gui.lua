@@ -1,13 +1,13 @@
 
 
 
-function Main_GUI(player, id)
-	if player.gui.top.DyDs_Story_GUI then
-		player.gui.top.DyDs_Story_GUI.destroy()
-	end
+function Close_Main_GUI(player, id)
 	if player.gui.top.DyDs_Main_GUI then
 		player.gui.top.DyDs_Main_GUI.destroy()
-	else
+	end
+end
+
+function Main_GUI(player, id)
 		local force = player.force
 		local tabbed_pane = player.gui.top.add{type = "tabbed-pane", name = "DyDs_Main_GUI"}
 
@@ -105,5 +105,4 @@ function Main_GUI(player, id)
 				end
 			end
 		end
-	end
 end

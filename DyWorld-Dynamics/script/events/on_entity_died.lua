@@ -33,4 +33,7 @@ function Event_on_entity_died(event)
 			end
 		end
 	end
+	
+	----- Story Objective Check -----
+	Story_Objectives("died", event)
 end

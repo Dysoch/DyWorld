@@ -12,7 +12,7 @@ data:extend({
       },
       result = "iron-plate",
 	  result_count = 1,
-	  enabled = true,
+	  enabled = false,
     },
     expensive =
     {
@@ -23,7 +23,32 @@ data:extend({
       },
       result = "iron-plate",
 	  result_count = 1,
-	  enabled = true,
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "cast-copper",
+	category = "kiln-basic",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "copper-ore-impure", amount = 2},
+      },
+      result = "copper-plate",
+	  result_count = 1,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "copper-ore-impure", amount = 5},
+      },
+      result = "copper-plate",
+	  result_count = 1,
+	  enabled = false,
     },
   },
   {

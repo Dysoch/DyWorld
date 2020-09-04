@@ -7,6 +7,11 @@ local Data_Table_Item_Group = {
 		Icon = "personal.png"
 	},
 	{
+		Name = "med-pack",
+		Type = "sub",
+		Main = "personal"
+	},
+	{
 		Name = "labs",
 		Type = "sub",
 		Main = "personal"

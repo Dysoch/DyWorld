@@ -7,22 +7,17 @@ local Data_Table_Item_Group = {
 		Icon = "machines.png"
 	},
 	{
+		Name = "burner-machines",
+		Type = "sub",
+		Main = "machine-production"
+	},
+	{
 		Name = "assemblers",
 		Type = "sub",
 		Main = "machine-production"
 	},
 	{
 		Name = "greenhouse",
-		Type = "sub",
-		Main = "machine-production"
-	},
-	{
-		Name = "special-machines",
-		Type = "sub",
-		Main = "machine-production"
-	},
-	{
-		Name = "pasture",
 		Type = "sub",
 		Main = "machine-production"
 	},

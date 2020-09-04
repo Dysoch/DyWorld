@@ -32,8 +32,10 @@ require(DyDs_data_core.. "items.ores-plates")
 
 -- Machines --
 require(DyDs_data_core.. "machines.kiln-basic")
+require(DyDs_data_core.. "machines.storage-small")
 
 -- Recipes --
 require(DyDs_data_core.. "recipes.charcoal")
+require(DyDs_data_core.. "recipes.stones")
 require(DyDs_data_core.. "recipes.plates-basic")
 

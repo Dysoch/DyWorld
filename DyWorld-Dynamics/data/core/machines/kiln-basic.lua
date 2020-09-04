@@ -155,7 +155,7 @@ data:extend({
     name = "basic-kiln",
     icon = "__base__/graphics/icons/stone-furnace.png",
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "other",
+    subgroup = DyDs.."furnaces",
     order = "basic-kiln",
     place_result = "basic-kiln",
     stack_size = 200,
@@ -170,7 +170,8 @@ data:extend({
       {
         {"limestone", 10}
       },
-      result = "basic-kiln"
+      result = "basic-kiln",
+	  enabled = true,
     },
     expensive =
     {
@@ -178,7 +179,8 @@ data:extend({
       {
         {"limestone", 25}
       },
-      result = "basic-kiln"
+      result = "basic-kiln",
+	  enabled = true,
     },
   },
 })

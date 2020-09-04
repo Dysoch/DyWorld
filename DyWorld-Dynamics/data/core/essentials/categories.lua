@@ -15,6 +15,14 @@ local Resource_Categories = {
 	"resource-trees",
 }
 
+local Damage_Table = {
+	"nuclear", "electric", "poison", "acid", "gas", 
+	"fire", "water", "lightning", "fungal", "plasma", 
+	"laser", "lava", "earth", "fission", "chemical", 
+	"physical", "explosion", "impact", "sonic", "ice", 
+	"fusion", 
+}
+
 local Recipe_Categories = {
 	"hand-crafting",
 	"kiln-basic",
@@ -82,4 +90,15 @@ data:extend(
 	category = "resource"
   }			
 })
+end
+
+for k,v in pairs(Damage_Table) do
+	data:extend(
+	{
+		{
+			type = "damage-type",
+			name = v,
+			order = v,
+		}
+	})
 end

@@ -18,4 +18,7 @@ function Event_on_player_crafted_item(event)
 	----- Personal counter -----
 	global.dyworld.players[id].crafted = global.dyworld.players[id].crafted + count
 	global.dyworld.game_stats.crafted_amount = global.dyworld.game_stats.crafted_amount + count
+	
+	----- Story Objective Check -----
+	Story_Objectives("crafting", event)
 end

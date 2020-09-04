@@ -20,7 +20,12 @@ function Phase_Forward()
 		PlayerPrint("Objectives Updated, next Phase available.")
 	end
 	if global.dyworld.story.phases[global.dyworld.story.phase].message then
-		PlayerPrint({lobal.dyworld.story.phases[global.dyworld.story.phase].message})
+		if game.is_multiplayer() then
+			PlayerPrint({global.dyworld.story.phases[global.dyworld.story.phase].message, global.dyworld.game_stats.days})
+		else
+			game.show_message_dialog{text = {global.dyworld.story.phases[global.dyworld.story.phase].message, global.dyworld.game_stats.days}}
+		end
+			
 	end
 end
 
@@ -94,6 +99,28 @@ function Story_Objectives(type, event)
 					if (name == v.name and v.done == false) then
 						if v.amount_done < v.amount_needed then
 							v.amount_done = v.amount_done + 1
+						end
+						if v.amount_done >= v.amount_needed then
+							v.done = true
+							global.dyworld.story.phases[global.dyworld.story.phase].amount_left = global.dyworld.story.phases[global.dyworld.story.phase].amount_left - 1
+							if global.dyworld.story.phases[global.dyworld.story.phase].amount_left <= 0 then
+								Phase_Forward()
+							end
+						end
+					end
+				end
+			end
+		elseif type == "crafting" then
+			local player = game.players[event.player_index]
+			local force = player.force
+			local id = event.player_index
+			local name = event.item_stack.name
+			local count = event.item_stack.count
+			for k,v in pairs(global.dyworld.story.phases[global.dyworld.story.phase].objectives) do
+				if (v.type_1 == "craft" and v.type_2 == "item") then
+					if (name == v.name and v.done == false) then
+						if v.amount_done < v.amount_needed then
+							v.amount_done = v.amount_done + count
 						end
 						if v.amount_done >= v.amount_needed then
 							v.done = true

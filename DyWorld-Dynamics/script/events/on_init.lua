@@ -30,7 +30,8 @@ function Event_on_init()
 				phases = {
 					[1] = {
 						done = false,
-						amount_left = 3,
+						amount_left = 4,
+						objectives_amount = 4,
 						objectives = {
 							[1] = {
 								type_1 = "build", 
@@ -56,52 +57,77 @@ function Event_on_init()
 								amount_done = 0,
 								done = false,
 							},
+							[4] = {
+								type_1 = "craft", 
+								type_2 = "item", 
+								name = "basic-kiln", 
+								amount_needed = 10,
+								amount_done = 0,
+								done = false,
+							},
 						},
 					},
 					[2] = {
 						done = false,
+						amount_left = 0,
+						objectives_amount = 4,
+						message = "DyDs-story.message-phase-2",
 						objectives = {
 							
 						},
 					},
 					[3] = {
 						done = false,
+						amount_left = 0,
+						objectives_amount = 4,
 						objectives = {
 							
 						},
 					},
 					[4] = {
 						done = false,
+						amount_left = 4,
+						objectives_amount = 4,
 						objectives = {
 							
 						},
 					},
 					[5] = {
 						done = false,
+						amount_left = 4,
+						objectives_amount = 4,
 						objectives = {
 							
 						},
 					},
 					[6] = {
 						done = false,
+						amount_left = 4,
+						objectives_amount = 4,
 						objectives = {
 							
 						},
 					},
 					[7] = {
 						done = false,
+						amount_left = 4,
+						objectives_amount = 4,
 						objectives = {
 							
 						},
 					},
 					[8] = {
 						done = false,
+						amount_left = 4,
+						objectives_amount = 4,
 						objectives = {
 							
 						},
 					},
 					[9] = {
 						done = false,
+						amount_left = 4,
+						objectives_amount = 4,
 						objectives = {
 							
 						},

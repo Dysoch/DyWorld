@@ -12,7 +12,7 @@ function Story_GUI(player, id)
 		local tabbed_pane = player.gui.top.add{type = "tabbed-pane", name = "DyDs_Story_GUI"}
 
 -------------------------------- Objectives TAB ----------------------------------------
-		local tab2 = tabbed_pane.add{type = "tab", caption = "Objectives"}
+		local tab2 = tabbed_pane.add{type = "tab", caption = "Objectives: "..(global.dyworld.story.phases[global.dyworld.story.phase].objectives_amount - global.dyworld.story.phases[global.dyworld.story.phase].amount_left).."/"..global.dyworld.story.phases[global.dyworld.story.phase].objectives_amount}
 		local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 		tabbed_pane.add_tab(tab2, frameflow2)
 		

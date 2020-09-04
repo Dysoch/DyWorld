@@ -1,4 +1,4 @@
-require "data/core/functions/prefix"
+
 
 local Data_Table_Item_Group = {
 	{
@@ -7,12 +7,17 @@ local Data_Table_Item_Group = {
 		Icon = "metals.png"
 	},
 	{
-		Name = "0-resource",
+		Name = "0-resource-1",
 		Type = "sub",
 		Main = "metals"
 	},
 	{
-		Name = "material-0",
+		Name = "0-resource-2",
+		Type = "sub",
+		Main = "metals"
+	},
+	{
+		Name = "0-resource-3",
 		Type = "sub",
 		Main = "metals"
 	},
@@ -32,32 +37,17 @@ local Data_Table_Item_Group = {
 		Main = "metals"
 	},
 	{
-		Name = "material-4",
+		Name = "metal-1",
 		Type = "sub",
 		Main = "metals"
 	},
 	{
-		Name = "material-5",
+		Name = "metal-2",
 		Type = "sub",
 		Main = "metals"
 	},
 	{
-		Name = "material-6",
-		Type = "sub",
-		Main = "metals"
-	},
-	{
-		Name = "material-7",
-		Type = "sub",
-		Main = "metals"
-	},
-	{
-		Name = "material-8",
-		Type = "sub",
-		Main = "metals"
-	},
-	{
-		Name = "material-9",
+		Name = "metal-3",
 		Type = "sub",
 		Main = "metals"
 	},

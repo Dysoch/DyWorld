@@ -17,7 +17,9 @@ function Main_GUI(player, id)
 		tabbed_pane.add_tab(tab1, frameflow1)
 		
 		frameflow1.add{type = "label", caption = "Sectors Scanned: "..global.dyworld.game_stats.sector_scanned}
-		frameflow1.add{type = "label", caption = "Chunks: "..global.dyworld.game_stats.chunks}
+		if debugger then
+			frameflow1.add{type = "label", caption = "Chunks: "..global.dyworld.game_stats.chunks}
+		end
 		frameflow1.add{type = "label", caption = "Game Days: "..global.dyworld.game_stats.days}
 		frameflow1.add{type = "label", caption = "Game Kills: "..global.dyworld.game_stats.killed_amount}
 

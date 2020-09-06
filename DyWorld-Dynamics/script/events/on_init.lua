@@ -32,6 +32,7 @@ function Event_on_init()
 						done = false,
 						amount_left = 4,
 						objectives_amount = 4,
+						recipes = true,
 						objectives = {
 							[1] = {
 								type_1 = "build", 
@@ -60,8 +61,8 @@ function Event_on_init()
 							[4] = {
 								type_1 = "craft", 
 								type_2 = "item", 
-								name = "basic-kiln", 
-								amount_needed = math.random(4,12),
+								name = "small-storage", 
+								amount_needed = math.random(4,8),
 								amount_done = 0,
 								done = false,
 							},
@@ -72,6 +73,7 @@ function Event_on_init()
 						amount_left = 1,
 						objectives_amount = 1,
 						message = "DyDs-story.message-phase-2",
+						recipes = true,
 						objectives = {
 							[1] = {
 								type_1 = "died", 
@@ -88,6 +90,7 @@ function Event_on_init()
 						amount_left = 1,
 						objectives_amount = 1,
 						--message = "DyDs-story.message-phase-2",
+						recipes = true,
 						objectives = {
 							[1] = {
 								type_1 = "died", 
@@ -104,6 +107,7 @@ function Event_on_init()
 						amount_left = 1,
 						objectives_amount = 1,
 						--message = "DyDs-story.message-phase-2",
+						recipes = true,
 						objectives = {
 							[1] = {
 								type_1 = "died", 
@@ -120,6 +124,7 @@ function Event_on_init()
 						amount_left = 1,
 						objectives_amount = 1,
 						--message = "DyDs-story.message-phase-2",
+						recipes = true,
 						objectives = {
 							[1] = {
 								type_1 = "died", 
@@ -136,6 +141,7 @@ function Event_on_init()
 						amount_left = 1,
 						objectives_amount = 1,
 						--message = "DyDs-story.message-phase-2",
+						recipes = true,
 						objectives = {
 							[1] = {
 								type_1 = "died", 
@@ -152,6 +158,7 @@ function Event_on_init()
 						amount_left = 1,
 						objectives_amount = 1,
 						--message = "DyDs-story.message-phase-2",
+						recipes = true,
 						objectives = {
 							[1] = {
 								type_1 = "died", 
@@ -168,6 +175,7 @@ function Event_on_init()
 						amount_left = 1,
 						objectives_amount = 1,
 						--message = "DyDs-story.message-phase-2",
+						recipes = true,
 						objectives = {
 							[1] = {
 								type_1 = "died", 
@@ -184,6 +192,7 @@ function Event_on_init()
 						amount_left = 1,
 						objectives_amount = 1,
 						--message = "DyDs-story.message-phase-2",
+						recipes = true,
 						objectives = {
 							[1] = {
 								type_1 = "died", 

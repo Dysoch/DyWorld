@@ -29,6 +29,7 @@ require("data.core.item-groups.machine-production-single")
 
 -- Items --
 require(DyDs_data_core.. "items.ores-plates")
+require(DyDs_data_core.. "items.med-packs")
 
 -- Machines --
 require(DyDs_data_core.. "machines.kiln-basic")

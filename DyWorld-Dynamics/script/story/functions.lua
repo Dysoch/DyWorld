@@ -14,7 +14,7 @@ function Phase_Forward()
 		end
 	end
 	global.dyworld.story.phases[(global.dyworld.story.phase - 1)].done = true
-	if global.dyworld.story.phase <= 15 then
+	if global.dyworld.story.phases[global.dyworld.story.phase].recipes then
 		PlayerPrint("Objectives Updated, next Phase available. New recipes unlocked")
 	else
 		PlayerPrint("Objectives Updated, next Phase available.")
@@ -28,6 +28,8 @@ function Phase_Forward()
 			
 	end
 end
+
+--for _,player in pairs(game.players) do player.force.recipes["basic-med-pack"].enabled == true end
 
 function Reunlock_Recipes()
 	for k,v in pairs(Story_Recipes) do

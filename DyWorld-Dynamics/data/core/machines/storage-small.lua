@@ -71,7 +71,7 @@ data:extend({
   {
     type = "recipe",
     name = "small-storage",
-	category = "hand-crafting",
+	category = "assembling-tier-1",
     normal =
     {
       ingredients =

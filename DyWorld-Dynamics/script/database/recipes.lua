@@ -34,10 +34,10 @@ Story_Recipes  = {
 	--["basic-transport-belt"] = 5,
 	--["basic-underground-belt"] = 5,
 	--["burner-inserter"] = 5,
+	--["bronze-gear"] = 5,
 	
 	----- Act 1, Phase 6 -----
 	--["burner-assembler-machine"] = 6,
-	--["bronze-gear"] = 6,
 	--["simple-circuit-board"] = 6,
 	--["tin-plate"] = 6,
 	

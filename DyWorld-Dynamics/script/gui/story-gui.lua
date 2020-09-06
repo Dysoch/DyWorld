@@ -18,8 +18,10 @@ function Story_GUI(player, id)
 		
 		if global.dyworld.story.phases[global.dyworld.story.phase].objectives[1] then
 			for k,v in pairs(global.dyworld.story.phases[global.dyworld.story.phase].objectives) do
-				if v.done == false then
+				if (v.done == false and v.type_1 ~= "label") then
 					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-name."..v.name}, v.amount_done, v.amount_needed}}
+				elseif (v.done == false and v.type_1 == "label") then
+					frameflow2.add{type = "label", caption = {"DyDs-story."..v.name}}
 				end
 			end
 		end

@@ -155,6 +155,20 @@ function Story_Objectives(type, event)
 						end
 					end
 				end
+				if (v.type_1 == "died" and v.type_2 == "type") then
+					if (type_killed == v.name and v.done == false) then
+						if v.amount_done < v.amount_needed then
+							v.amount_done = v.amount_done + 1
+						end
+						if v.amount_done >= v.amount_needed then
+							v.done = true
+							global.dyworld.story.phases[global.dyworld.story.phase].amount_left = global.dyworld.story.phases[global.dyworld.story.phase].amount_left - 1
+							if global.dyworld.story.phases[global.dyworld.story.phase].amount_left <= 0 then
+								Phase_Forward()
+							end
+						end
+					end
+				end
 			end
 		end
 	end

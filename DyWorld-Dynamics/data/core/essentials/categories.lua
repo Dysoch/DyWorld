@@ -24,14 +24,13 @@ local Damage_Table = {
 }
 
 local Recipe_Categories = {
-	"hand-crafting",
 	"kiln-basic",
 	"kiln-normal",
-	"assembler-tier-1",
-	"assembler-tier-2",
-	"assembler-tier-3",
-	"assembler-tier-4",
-	"assembler-tier-5",
+	"assembling-tier-1",
+	"assembling-tier-2",
+	"assembling-tier-3",
+	"assembling-tier-4",
+	"assembling-tier-5",
 }
 
 local Autoplace_Categories = {

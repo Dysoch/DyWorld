@@ -163,7 +163,7 @@ data:extend({
   {
     type = "recipe",
     name = "basic-kiln",
-	category = "hand-crafting",
+	category = "assembling-tier-1",
     normal =
     {
       ingredients =

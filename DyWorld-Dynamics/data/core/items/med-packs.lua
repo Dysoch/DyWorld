@@ -44,7 +44,7 @@ data:extend({
   {
     type = "recipe",
     name = "basic-med-pack",
-	category = "kiln-basic",
+	category = "assembling-tier-1",
     normal =
     {
       ingredients =

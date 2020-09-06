@@ -14,9 +14,9 @@ Story_Recipes  = {
 	
 	----- Act 1, Phase 2 -----
 	["basic-med-pack"] = 2,
-	--["ballistic-ammo-1"] = 2,
+	["ballistic-ammo-1"] = 2,
 	--["basic-pistol"] = 2,
-	--["basic-burner-drill"] = 2,
+	["basic-burner-drill"] = 2,
 	
 	----- Act 1, Phase 3 -----
 	["bronze-basic"] = 3,

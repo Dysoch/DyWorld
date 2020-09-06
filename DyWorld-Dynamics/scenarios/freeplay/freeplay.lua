@@ -24,7 +24,7 @@ end
 local ship_items = function()
   return
   {
-    ["firearm-magazine"] = math.random(4, 15),
+    ["ballistic-ammo-1"] = math.random(4, 15),
     ["copper-plate"] = math.random(15, 25),
     ["iron-plate"] = math.random(5, 10),
     ["pistol"] = 1,
@@ -39,7 +39,7 @@ local debris_items = function()
     ["copper-plate"] = math.random(5, 25),
     ["tin-plate"] = math.random(5, 15),
     ["bronze-plate"] = math.random(1, 10),
-    ["firearm-magazine"] = math.random(1, 5),
+    ["ballistic-ammo-1"] = math.random(1, 5),
   }
 end
 

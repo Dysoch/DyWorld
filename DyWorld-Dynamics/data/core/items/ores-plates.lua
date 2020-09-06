@@ -5,6 +5,7 @@
 DyDS_Add_Tool({
 	name = "iron-ore-impure",
 	order = "iron-ore-impure",
+    icon = DyDs_path_icon.."ores/iron-1.png",
 	localised_name = {"looped-name.iron-1"},
 	stack_size = 1000,
 	durability = 1,
@@ -14,6 +15,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "copper-ore-impure",
 	order = "copper-ore-impure",
+    icon = DyDs_path_icon.."ores/copper-1.png",
 	localised_name = {"looped-name.copper-1"},
 	stack_size = 1000,
 	durability = 1,
@@ -23,6 +25,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "tin-ore-impure",
 	order = "tin-ore-impure",
+    icon = DyDs_path_icon.."ores/tin-1.png",
 	localised_name = {"looped-name.tin-1"},
 	stack_size = 1000,
 	durability = 1,
@@ -34,7 +37,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "iron-ore",
 	order = "iron-ore",
-    icon = "__base__/graphics/icons/iron-ore.png",
+    icon = DyDs_path_icon.."ores/iron-2.png",
 	localised_name = {"looped-name.iron-2"},
 	stack_size = 1000,
 	durability = 1,
@@ -44,7 +47,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "copper-ore",
 	order = "copper-ore",
-    icon = "__base__/graphics/icons/copper-ore.png",
+    icon = DyDs_path_icon.."ores/copper-2.png",
 	localised_name = {"looped-name.copper-2"},
 	stack_size = 1000,
 	durability = 1,
@@ -54,6 +57,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "tin-ore",
 	order = "tin-ore",
+    icon = DyDs_path_icon.."ores/tin-2.png",
 	localised_name = {"looped-name.tin-2"},
 	stack_size = 1000,
 	durability = 1,

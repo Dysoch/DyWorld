@@ -20,7 +20,7 @@ local Damage_Table = {
 	"fire", "water", "lightning", "fungal", "plasma", 
 	"laser", "lava", "earth", "fission", "chemical", 
 	"physical", "explosion", "impact", "sonic", "ice", 
-	"fusion", 
+	"fusion", "ballistic",
 }
 
 local Recipe_Categories = {

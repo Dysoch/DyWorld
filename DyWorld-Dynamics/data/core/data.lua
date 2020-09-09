@@ -31,9 +31,13 @@ require("data.core.item-groups.machine-production-single")
 -- Items --
 require(DyDs_data_core.. "items.ores-plates")
 require(DyDs_data_core.. "items.med-packs")
+require(DyDs_data_core.. "items.gears")
+require(DyDs_data_core.. "items.cables")
 
 -- Recipes --
 require(DyDs_data_core.. "recipes.charcoal")
 require(DyDs_data_core.. "recipes.stones")
+require(DyDs_data_core.. "recipes.gears")
+require(DyDs_data_core.. "recipes.cables")
 require(DyDs_data_core.. "recipes.plates-basic")
 

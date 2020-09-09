@@ -1,16 +1,6 @@
 
 
 
-
-iron deposits byproducts:
-limestone, 
-
-copper deposits byproducts:
-
-coal deposits byproducts:
-sulfur, lignite (brown coal, low fuel)
-
-
 iron stages:
 cast iron (2-4% carbon) recipe tier 1:
 into bloomery with charcoal and oxygen canister (less efficient)
@@ -24,11 +14,13 @@ steel (0.8-2% carbon) process
 into blast furnace with limestone and coal and liquid oxygen (more efficient)
 200 ore > 80 steel plate
 
-wood is resource. Use tree farm with slow crafting speed
-
-add recipe generator script with all definitions
-
 research is done with materials
+
+lower 9mm damage
+rewrite oninit into acts and phases into it
+rewrite story functions to work with acts
+add command to skip phase
+
 
 
 

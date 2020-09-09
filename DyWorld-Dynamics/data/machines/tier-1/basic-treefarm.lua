@@ -11,6 +11,7 @@ local DyWorld_Prototype_1 = DyDs_CopyPrototype("mining-drill", "burner-mining-dr
 	DyWorld_Prototype_1.energy_source.fuel_category = "carbon"
 	DyWorld_Prototype_1.energy_source.emissions_per_minute = 1
 	DyWorld_Prototype_1.input_fluid_box = data.raw["mining-drill"]["electric-mining-drill"].input_fluid_box
+	DyWorld_Prototype_1.input_fluid_box.base_area = 5
 	DyWorld_Prototype_1.vector_to_place_result = data.raw["mining-drill"]["electric-mining-drill"].vector_to_place_result
 	DyWorld_Prototype_1.resource_searching_radius = data.raw["mining-drill"]["electric-mining-drill"].resource_searching_radius
 	DyWorld_Prototype_1.animations.north = {

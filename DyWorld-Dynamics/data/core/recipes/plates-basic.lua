@@ -75,10 +75,37 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "iron-ore-impure", amount = 21},
+        {type = "item", name = "copper-ore-impure", amount = 21},
         {type = "item", name = "tin-ore-impure", amount = 3},
       },
       result = "bronze-plate",
+	  result_count = 5,
+	  energy_required = 15,
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "tin-basic",
+	category = "kiln-basic",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "tin-ore-impure", amount = 7},
+      },
+      result = "tin-plate",
+	  result_count = 5,
+	  energy_required = 2.5,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "tin-ore-impure", amount = 17},
+      },
+      result = "tin-plate",
 	  result_count = 5,
 	  energy_required = 15,
 	  enabled = false,

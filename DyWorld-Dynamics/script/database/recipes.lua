@@ -31,16 +31,17 @@ Story_Recipes  = {
 	["bronze-pipe-to-ground"] = 4,
 	
 	----- Act 1, Phase 5 -----
-	--["basic-transport-belt"] = 5,
-	--["basic-underground-belt"] = 5,
-	--["basic-splitter"] = 5,
+	["basic-transport-belt"] = 5,
+	["basic-underground-belt"] = 5,
+	["basic-splitter"] = 5,
+	["basic-loader"] = 5,
 	["burner-inserter"] = 5,
-	--["bronze-gear"] = 5,
+	["bronze-gear"] = 5,
 	
 	----- Act 1, Phase 6 -----
-	--["burner-assembler-machine"] = 6,
+	["burner-assembler"] = 6,
 	--["simple-circuit-board"] = 6,
-	--["tin-plate"] = 6,
+	["tin-basic"] = 6,
 	
 	----- Act 1, Phase 7 -----
 	--["med-pack"] = 7,
@@ -49,8 +50,8 @@ Story_Recipes  = {
 	----- Act 1, Phase 8 -----
 	["cast-iron"] = 8,
 	["cast-copper"] = 8,
-	--["iron-gear"] = 8,
-	--["copper-cable"] = 8,
+	["iron-gear"] = 8,
+	["copper-cable"] = 8,
 	
 	----- Act 1, Phase 9 -----
 	--["basic-inserter"] = 9,

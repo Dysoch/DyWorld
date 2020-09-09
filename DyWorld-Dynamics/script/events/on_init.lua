@@ -226,7 +226,7 @@ function Event_on_init()
 							[3] = {
 								type_1 = "build", 
 								type_2 = "name", 
-								name = "burner-assembler-machine", 
+								name = "burner-assembler", 
 								amount_needed = math.random(1,5),
 								amount_done = 0,
 								done = false,

@@ -15,20 +15,20 @@ Story_Recipes  = {
 	----- Act 1, Phase 2 -----
 	["basic-med-pack"] = 2,
 	["ballistic-ammo-1"] = 2,
-	--["basic-pistol"] = 2,
+	["basic-pistol"] = 2,
 	["basic-burner-drill"] = 2,
 	
 	----- Act 1, Phase 3 -----
 	["bronze-basic"] = 3,
-	--["basic-wall"] = 3,
-	--["basic-turret"] = 3,
-	--["basic-armor"] = 3,
+	["basic-wall"] = 3,
+	["basic-ballistic-turret"] = 3,
+	["basic-armor"] = 3,
 	
 	----- Act 1, Phase 4 -----
-	--["basic-treefarm"] = 4,
-	--["offshore-pump"] = 4,
-	--["bronze-pipe"] = 4,
-	--["bronze-pipe-to-ground"] = 4,
+	["basic-treefarm"] = 4,
+	["offshore-pump"] = 4,
+	["bronze-pipe"] = 4,
+	["bronze-pipe-to-ground"] = 4,
 	
 	----- Act 1, Phase 5 -----
 	--["basic-transport-belt"] = 5,

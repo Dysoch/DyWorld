@@ -306,6 +306,7 @@ data:extend({
       },
       result = "basic-burner-drill",
 	  enabled = false,
+	  energy_required = 2,
     },
     expensive =
     {
@@ -315,6 +316,7 @@ data:extend({
       },
       result = "basic-burner-drill",
 	  enabled = false,
+	  energy_required = 10,
     },
   },
 })

@@ -20,8 +20,10 @@ function Story_GUI(player, id)
 			for k,v in pairs(global.dyworld.story.phases[global.dyworld.story.phase].objectives) do
 				if (v.done == false and v.type_1 ~= "label") then
 					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-name."..v.name}, v.amount_done, v.amount_needed}}
+					frameflow2.add{type = "line", direction = "horizontal"}
 				elseif (v.done == false and v.type_1 == "label") then
 					frameflow2.add{type = "label", caption = {"DyDs-story."..v.name}}
+					frameflow2.add{type = "line", direction = "horizontal"}
 				end
 			end
 		end
@@ -33,15 +35,21 @@ function Story_GUI(player, id)
 		
 		if global.dyworld.story.tier == 0 then
 			frameflow1.add{type = "label", caption = "Stage: Crashlanded, Phase: "..global.dyworld.story.phase}
+			frameflow1.add{type = "line", direction = "horizontal"}
 		elseif global.dyworld.story.tier == 1 then
 			frameflow1.add{type = "label", caption = "Stage: Bronze Works, Phase: "..global.dyworld.story.phase}
+			frameflow1.add{type = "line", direction = "horizontal"}
 		elseif global.dyworld.story.tier == 2 then
 			frameflow1.add{type = "label", caption = "Stage: Iron Age, Phase: "..global.dyworld.story.phase}
+			frameflow1.add{type = "line", direction = "horizontal"}
 		elseif global.dyworld.story.tier == 3 then
 			frameflow1.add{type = "label", caption = "Stage: Advanced Metal Age, Phase: "..global.dyworld.story.phase}
+			frameflow1.add{type = "line", direction = "horizontal"}
 		elseif global.dyworld.story.tier == 4 then
 			frameflow1.add{type = "label", caption = "Stage: Nanotech Age, Phase: "..global.dyworld.story.phase}
+			frameflow1.add{type = "line", direction = "horizontal"}
 		end
 		frameflow1.add{type = "label", caption = "Game Days: "..global.dyworld.game_stats.days}
+		frameflow1.add{type = "line", direction = "horizontal"}
 end
 

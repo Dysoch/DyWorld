@@ -841,7 +841,7 @@ data:extend({
       mining_time = 120,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.984, g = 0.883, b = 0.646, a = 1.000}, -- #fae1a4ff
-	  category = "resource-solid-tier-0",
+	  category = "resource-trees",
     },
     {
       has_starting_area_placement = true,
@@ -962,3 +962,5 @@ data.raw.resource.treefarm.highlight = false
 data.raw.resource.treefarm.minimum = 600
 data.raw.resource.treefarm.normal = 600
 data.raw.resource.treefarm.infinite_depletion_amount = 1
+data.raw.resource.treefarm.minable.fluid_amount = 500
+data.raw.resource.treefarm.minable.required_fluid = "water"

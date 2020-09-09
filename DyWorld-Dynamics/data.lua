@@ -8,4 +8,5 @@ require(DyDs_data_core.. "data")
 require(DyDs_data_resources.. "data")
 require(DyDs_data_machines.. "data")
 require(DyDs_data_warfare.. "data")
+require(DyDs_data_logistics.. "data")
 

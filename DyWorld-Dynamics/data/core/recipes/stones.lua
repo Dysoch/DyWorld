@@ -12,6 +12,7 @@ data:extend({
       },
       result = "stone-brick",
 	  result_count = 5,
+	  energy_required = 5,
 	  enabled = true,
     },
     expensive =
@@ -23,6 +24,7 @@ data:extend({
       },
       result = "stone-brick",
 	  result_count = 5,
+	  energy_required = 25,
 	  enabled = true,
     },
   },
@@ -39,6 +41,7 @@ data:extend({
       },
       result = "stone-brick",
 	  result_count = 5,
+	  energy_required = 5,
 	  enabled = true,
     },
     expensive =
@@ -50,6 +53,7 @@ data:extend({
       },
       result = "stone-brick",
 	  result_count = 5,
+	  energy_required = 25,
 	  enabled = true,
     },
   },
@@ -66,6 +70,7 @@ data:extend({
       },
       result = "stone-brick",
 	  result_count = 5,
+	  energy_required = 5,
 	  enabled = true,
     },
     expensive =
@@ -77,6 +82,7 @@ data:extend({
       },
       result = "stone-brick",
 	  result_count = 5,
+	  energy_required = 25,
 	  enabled = true,
     },
   },
@@ -93,6 +99,7 @@ data:extend({
       },
       result = "stone-brick",
 	  result_count = 5,
+	  energy_required = 5,
 	  enabled = true,
     },
     expensive =
@@ -104,6 +111,7 @@ data:extend({
       },
       result = "stone-brick",
 	  result_count = 5,
+	  energy_required = 25,
 	  enabled = true,
     },
   },

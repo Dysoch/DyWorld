@@ -171,6 +171,7 @@ data:extend({
         {"limestone", 10}
       },
       result = "basic-kiln",
+	  energy_required = 1.5,
 	  enabled = true,
     },
     expensive =
@@ -180,6 +181,7 @@ data:extend({
         {"limestone", 25}
       },
       result = "basic-kiln",
+	  energy_required = 5,
 	  enabled = true,
     },
   },

@@ -110,7 +110,7 @@ function Event_on_init()
 						objectives = {
 							[1] = {
 								type_1 = "craft", 
-								type_2 = "name", 
+								type_2 = "item", 
 								name = "basic-armor", 
 								amount_needed = 1,
 								amount_done = 0,
@@ -127,7 +127,7 @@ function Event_on_init()
 							[3] = {
 								type_1 = "build", 
 								type_2 = "name", 
-								name = "basic-turret", 
+								name = "basic-ballistic-turret", 
 								amount_needed = math.random(5,20),
 								amount_done = 0,
 								done = false,
@@ -143,7 +143,7 @@ function Event_on_init()
 						objectives = {
 							[1] = {
 								type_1 = "craft", 
-								type_2 = "name", 
+								type_2 = "item", 
 								name = "offshore-pump", 
 								amount_needed = 1,
 								amount_done = 0,
@@ -151,7 +151,7 @@ function Event_on_init()
 							},
 							[2] = {
 								type_1 = "craft", 
-								type_2 = "name", 
+								type_2 = "item", 
 								name = "bronze-pipe", 
 								amount_needed = math.random(5,25),
 								amount_done = 0,
@@ -176,7 +176,7 @@ function Event_on_init()
 						objectives = {
 							[1] = {
 								type_1 = "craft", 
-								type_2 = "name", 
+								type_2 = "item", 
 								name = "burner-inserter", 
 								amount_needed = math.random(5,15),
 								amount_done = 0,
@@ -184,7 +184,7 @@ function Event_on_init()
 							},
 							[2] = {
 								type_1 = "craft", 
-								type_2 = "name", 
+								type_2 = "item", 
 								name = "bronze-gear", 
 								amount_needed = math.random(30,100),
 								amount_done = 0,

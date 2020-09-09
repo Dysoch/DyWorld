@@ -60,6 +60,7 @@ data:extend({
       },
       result = "ballistic-ammo-1",
 	  result_count = 1,
+	  energy_required = 1,
 	  enabled = false,
     },
     expensive =
@@ -71,6 +72,7 @@ data:extend({
       },
       result = "ballistic-ammo-1",
 	  result_count = 1,
+	  energy_required = 5,
 	  enabled = false,
     },
   },

@@ -79,6 +79,7 @@ data:extend({
         {"wood", 3}
       },
       result = "small-storage",
+	  energy_required = 1,
 	  enabled = true,
     },
     expensive =
@@ -88,6 +89,7 @@ data:extend({
         {"wood", 10}
       },
       result = "small-storage",
+	  energy_required = 5,
 	  enabled = true,
     },
   },

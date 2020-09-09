@@ -12,6 +12,7 @@ data:extend({
       },
       result = "iron-plate",
 	  result_count = 1,
+	  energy_required = 5,
 	  enabled = false,
     },
     expensive =
@@ -23,6 +24,7 @@ data:extend({
       },
       result = "iron-plate",
 	  result_count = 1,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -38,6 +40,7 @@ data:extend({
       },
       result = "copper-plate",
 	  result_count = 1,
+	  energy_required = 5,
 	  enabled = false,
     },
     expensive =
@@ -48,6 +51,7 @@ data:extend({
       },
       result = "copper-plate",
 	  result_count = 1,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -64,6 +68,7 @@ data:extend({
       },
       result = "bronze-plate",
 	  result_count = 5,
+	  energy_required = 5,
 	  enabled = false,
     },
     expensive =
@@ -75,6 +80,7 @@ data:extend({
       },
       result = "bronze-plate",
 	  result_count = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },

@@ -95,7 +95,7 @@ DyDS_Add_Item({
 DyDS_Add_Tool({
 	name = "iron-plate",
 	order = "iron-plate",
-    icon = "__base__/graphics/icons/iron-plate.png",
+    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = {r=82, g=174, b=212}}},
 	localised_name = {"looped-name.iron-4"},
 	stack_size = 500,
 	durability = 1,
@@ -105,7 +105,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "copper-plate",
 	order = "copper-plate",
-    icon = "__base__/graphics/icons/copper-plate.png",
+    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = {r=212, g=119, b=82}}},
 	localised_name = {"looped-name.copper-4"},
 	stack_size = 500,
 	durability = 1,
@@ -115,7 +115,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "steel-plate",
 	order = "steel-plate",
-    icon = "__base__/graphics/icons/steel-plate.png",
+    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = {r=229, g=227, b=227}}},
 	localised_name = {"looped-name.steel-4"},
 	stack_size = 500,
 	durability = 1,
@@ -125,6 +125,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "bronze-plate",
 	order = "bronze-plate",
+    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = {r=126, g=112, b=109}}},
 	localised_name = {"looped-name.bronze-4"},
 	stack_size = 500,
 	durability = 1,
@@ -134,6 +135,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "tin-plate",
 	order = "tin-plate",
+    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = {r=39, g=105, b=135}}},
 	localised_name = {"looped-name.tin-4"},
 	stack_size = 500,
 	durability = 1,
@@ -145,7 +147,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "limestone",
 	order = "limestone",
-    icon = "__base__/graphics/icons/stone.png",
+    icons = {{icon = "__base__/graphics/icons/stone.png", tint = {r=141, g=91, b=74}}},
 	localised_name = {"looped-name.limestone"},
 	stack_size = 1000,
 	durability = 1,
@@ -155,7 +157,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "quartzite",
 	order = "quartzite",
-    icon = "__base__/graphics/icons/stone.png",
+    icons = {{icon = "__base__/graphics/icons/stone.png", tint = {r=170, g=170, b=170}}},
 	localised_name = {"looped-name.quartzite"},
 	stack_size = 1000,
 	durability = 1,
@@ -165,7 +167,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "granite",
 	order = "granite",
-    icon = "__base__/graphics/icons/stone.png",
+    icons = {{icon = "__base__/graphics/icons/stone.png", tint = {r=146, g=135, b=41}}},
 	localised_name = {"looped-name.granite"},
 	stack_size = 1000,
 	durability = 1,
@@ -175,7 +177,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "sandstone",
 	order = "sandstone",
-    icon = "__base__/graphics/icons/stone.png",
+    icons = {{icon = "__base__/graphics/icons/stone.png", tint = {r=242, g=244, b=212}}},
 	localised_name = {"looped-name.sandstone"},
 	stack_size = 1000,
 	durability = 1,
@@ -197,7 +199,7 @@ DyDS_Add_Item({
 DyDS_Add_Item({
 	name = "lignite",
 	order = "lignite",
-    icon = "__base__/graphics/icons/coal.png",
+    icons = {{icon = "__base__/graphics/icons/coal.png", tint = {r=141, g=91, b=74}}},
 	stack_size = 1000,
 	subgroup = DyDs.."material-1",
     fuel_value = "4MJ",
@@ -207,7 +209,7 @@ DyDS_Add_Item({
 DyDS_Add_Item({
 	name = "charcoal",
 	order = "charcoal",
-    icon = "__base__/graphics/icons/coal.png",
+    icons = {{icon = "__base__/graphics/icons/coal.png", tint = {r=182, g=155, b=76}}},
 	stack_size = 1000,
 	subgroup = DyDs.."material-1",
     fuel_value = "5MJ",

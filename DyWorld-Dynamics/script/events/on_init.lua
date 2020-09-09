@@ -127,7 +127,7 @@ function Event_on_init()
 							[3] = {
 								type_1 = "build", 
 								type_2 = "name", 
-								name = "basic-ballistic-turret", 
+								name = "basic-9mm-turret", 
 								amount_needed = math.random(5,20),
 								amount_done = 0,
 								done = false,

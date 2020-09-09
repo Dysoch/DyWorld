@@ -34,3 +34,31 @@ local player = game.players[id]
 		Story_GUI(player, id)
 	end
 end)
+
+script.on_event("DyWorld_rotate_inserter_pickup", function(event)
+	local selection = game.players[event.player_index].selected
+	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
+		RotatePickup(selection, true)
+	end
+end)
+
+script.on_event("DyWorld_reverse_rotate_inserter_pickup", function(event)
+	local selection = game.players[event.player_index].selected
+	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
+		RotatePickup(selection, false)
+	end
+end)
+
+script.on_event("DyWorld_inserter_drop_distance_toggle", function(event)
+	local selection = game.players[event.player_index].selected
+	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
+		ToggleDropDistance(selection, event)
+	end
+end)
+
+script.on_event("DyWorld_inserter_drop_lateral_adjust", function(event)
+	local selection = game.players[event.player_index].selected
+	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
+		LateralDropAdjust(selection)
+	end
+end)

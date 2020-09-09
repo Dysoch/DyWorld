@@ -1,14 +1,14 @@
 
-  ----- Basic Ballistic Ammo -----
+
 data:extend({
   {
     type = "ammo",
-    name = "ballistic-ammo-1",
-    icon = "__base__/graphics/icons/firearm-magazine.png",
+    name = "9mm-bullet",
+    icon = DyDs_path_icon.."bullet-9mm.png",
     icon_size = 64, icon_mipmaps = 4,
     ammo_type =
     {
-      category = "bullet",
+      category = "900mm",
       action =
       {
         {
@@ -34,7 +34,7 @@ data:extend({
                 },
                 {
                   type = "damage",
-                  damage = { amount = 5 , type = "ballistic"}
+                  damage = { amount = 5 , type = "physical"}
                 }
               }
             }
@@ -42,14 +42,14 @@ data:extend({
         }
       }
     },
-    magazine_size = 25,
+    magazine_size = 1,
     subgroup = DyDs.."ammo-bullet-basic",
-    order = "ballistic-ammo-1",
-    stack_size = 200,
+    order = "9mm",
+    stack_size = 1000,
   },
   {
     type = "recipe",
-    name = "ballistic-ammo-1",
+    name = "9mm-bullet",
 	category = "assembling-tier-1",
     normal =
     {
@@ -58,8 +58,8 @@ data:extend({
         {type = "item", name = "charcoal", amount = 1},
         {type = "item", name = "limestone", amount = 3},
       },
-      result = "ballistic-ammo-1",
-	  result_count = 1,
+      result = "9mm-bullet",
+	  result_count = 5,
 	  energy_required = 1,
 	  enabled = false,
     },
@@ -70,8 +70,8 @@ data:extend({
         {type = "item", name = "charcoal", amount = 3},
         {type = "item", name = "limestone", amount = 10},
       },
-      result = "ballistic-ammo-1",
-	  result_count = 1,
+      result = "9mm-bullet",
+	  result_count = 3,
 	  energy_required = 5,
 	  enabled = false,
     },

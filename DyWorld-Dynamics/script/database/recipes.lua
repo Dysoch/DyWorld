@@ -14,14 +14,14 @@ Story_Recipes  = {
 	
 	----- Act 1, Phase 2 -----
 	["basic-med-pack"] = 2,
-	["ballistic-ammo-1"] = 2,
-	["basic-pistol"] = 2,
+	["9mm-bullet"] = 2,
+	["9mm-pistol"] = 2,
 	["basic-burner-drill"] = 2,
 	
 	----- Act 1, Phase 3 -----
 	["bronze-basic"] = 3,
 	["basic-wall"] = 3,
-	["basic-ballistic-turret"] = 3,
+	["basic-9mm-turret"] = 3,
 	["basic-armor"] = 3,
 	
 	----- Act 1, Phase 4 -----
@@ -33,7 +33,8 @@ Story_Recipes  = {
 	----- Act 1, Phase 5 -----
 	--["basic-transport-belt"] = 5,
 	--["basic-underground-belt"] = 5,
-	--["burner-inserter"] = 5,
+	--["basic-splitter"] = 5,
+	["burner-inserter"] = 5,
 	--["bronze-gear"] = 5,
 	
 	----- Act 1, Phase 6 -----

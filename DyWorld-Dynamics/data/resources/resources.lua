@@ -193,6 +193,75 @@ local function resource_ore(resource_parameters, autoplace_parameters)
   }
 end
 
+local function resource_coal(resource_parameters, autoplace_parameters)
+  if coverage == nil then coverage = 0.02 end
+
+  return
+  {
+    type = "resource",
+    name = resource_parameters.name,
+    --icon = "__base__/graphics/icons/" .. resource_parameters.name .. ".png",
+    icon = "__base__/graphics/icons/stone.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
+    category = resource_parameters.category,
+    flags = {"placeable-neutral"},
+    order="a-b-"..resource_parameters.order,
+    tree_removal_probability = 0.8,
+    tree_removal_max_distance = 32 * 32,
+    minable =
+    {
+      mining_particle = "stone-particle",
+      mining_time = resource_parameters.mining_time,
+      results = {
+        {name = resource_parameters.minable, amount_min = 1, amount_max = 1, probability = resource_parameters.minable_probability},
+        {name = "lignite", amount_min = 1, amount_max = 1, probability = (1 - resource_parameters.minable_probability)},
+      }
+    },
+    walking_sound = resource_parameters.walking_sound,
+    collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    autoplace = resource_autoplace.resource_autoplace_settings
+    {
+      name = resource_parameters.name,
+      order = resource_parameters.order,
+      base_density = autoplace_parameters.base_density,
+      has_starting_area_placement = autoplace_parameters.has_starting_area_placement,
+      regular_rq_factor_multiplier = autoplace_parameters.regular_rq_factor_multiplier,
+      starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
+      candidate_spot_count = autoplace_parameters.candidate_spot_count,
+	  autoplace_control_name = autoplace_parameters.autoplace_control_name,
+    },
+    stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
+    stages =
+    {
+      sheet =
+      {
+        --filename = "__base__/graphics/entity/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+        filename = "__base__/graphics/entity/stone/stone.png",
+		tint = resource_parameters.map_color,
+        priority = "extra-high",
+        size = 64,
+        frame_count = 8,
+        variation_count = 8,
+        hr_version =
+        {
+          --filename = "__base__/graphics/entity/" .. resource_parameters.name .. "/hr-" .. resource_parameters.name .. ".png",
+          filename = "__base__/graphics/entity/stone/hr-stone.png",
+		  tint = resource_parameters.map_color,
+          priority = "extra-high",
+          size = 128,
+          frame_count = 8,
+          variation_count = 8,
+          scale = 0.5
+        }
+      }
+    },
+    map_color = resource_parameters.map_color,
+    mining_visualisation_tint = resource_parameters.mining_visualisation_tint
+  }
+end
+
 --for i = 1, 25 do
 data:extend({
           -- Usually earlier order takes priority, but there's some special
@@ -221,7 +290,7 @@ data:extend({
 	  category = "resource-solid-tier-1",
     },
     {
-      has_starting_area_placement = true,
+      has_starting_area_placement = false,
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
@@ -284,7 +353,7 @@ data:extend({
 	  category = "resource-solid-tier-1",
     },
     {
-      has_starting_area_placement = true,
+      has_starting_area_placement = false,
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
@@ -347,7 +416,7 @@ data:extend({
 	  category = "resource-solid-tier-1",
     },
     {
-      has_starting_area_placement = true,
+      has_starting_area_placement = false,
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
@@ -618,7 +687,7 @@ data:extend({
  ---------- COAL ----------
  
   
-  resource(
+  resource_coal(
     {
       name = "coal-25",
 	  minable = "coal",
@@ -639,7 +708,7 @@ data:extend({
 	  autoplace_control_name = "deposit-coal",
     }
   ),
-  resource(
+  resource_coal(
     {
       name = "coal-40",
 	  minable = "coal",
@@ -660,7 +729,7 @@ data:extend({
 	  autoplace_control_name = "deposit-coal",
     }
   ),
-  resource(
+  resource_coal(
     {
       name = "coal-50",
 	  minable = "coal",
@@ -681,7 +750,7 @@ data:extend({
 	  autoplace_control_name = "deposit-coal",
     }
   ),
-  resource(
+  resource_coal(
     {
       name = "coal-60",
 	  minable = "coal",
@@ -702,7 +771,7 @@ data:extend({
 	  autoplace_control_name = "deposit-coal",
     }
   ),
-  resource(
+  resource_coal(
     {
       name = "coal-75",
 	  minable = "coal",
@@ -723,7 +792,7 @@ data:extend({
 	  autoplace_control_name = "deposit-coal",
     }
   ),
-  resource(
+  resource_coal(
     {
       name = "coal-87",
 	  minable = "coal",

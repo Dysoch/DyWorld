@@ -1,6 +1,6 @@
 
 -- Ammo --
-require(DyDs_data_warfare.. "ammo.ballistic")
+require(DyDs_data_warfare.. "ammo.9mm")
 
 -- Ammo --
 require(DyDs_data_warfare.. "armor.basic")

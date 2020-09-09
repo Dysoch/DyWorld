@@ -24,10 +24,10 @@ end
 local ship_items = function()
   return
   {
-    ["ballistic-ammo-1"] = math.random(4, 15),
+    ["9mm-bullet"] = math.random(100, 400),
     ["copper-plate"] = math.random(15, 25),
     ["iron-plate"] = math.random(5, 10),
-    ["basic-pistol"] = 1,
+    ["9mm-pistol"] = 1,
     --["medpack-2"] = math.random(2, 5),
   }
 end
@@ -39,13 +39,13 @@ local debris_items = function()
     ["copper-plate"] = math.random(5, 25),
     ["tin-plate"] = math.random(5, 15),
     ["bronze-plate"] = math.random(1, 10),
-    ["ballistic-ammo-1"] = math.random(1, 5),
+    ["9mm-bullet"] = math.random(25, 125),
   }
 end
 
 local chart_starting_area = function()
 
-  local r = global.chart_distance or 250
+  local r = global.chart_distance or 350
   local force = game.forces.player
   local surface = game.surfaces[1]
   local origin = force.get_spawn_position(surface)

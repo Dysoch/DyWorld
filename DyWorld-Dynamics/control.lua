@@ -8,10 +8,14 @@ require "script/lualib/player"
 require "script/lualib/gui"
 inspect = require("script/lualib/inspect")
 require("script/database/recipes")
+require("script/lualib/side-inserter")
 
 -- GUI
 require "script/gui/main-gui"
 require "script/gui/story-gui"
+
+-- Stats
+require "script/stats/functions"
 
 -- Story
 require "script/story/functions"

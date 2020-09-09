@@ -31,6 +31,7 @@ function Event_on_tick(event)
 					Main_GUI(player, v.id)
 					player.gui.top.DyDs_Main_GUI.selected_tab_index = global.dyworld.players[v.id].stats_gui_index
 				end
+				Bonuses(v.id)
 			end
 		end
 	end

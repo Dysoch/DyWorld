@@ -1,17 +1,18 @@
 
 
- ----- Basic Pistol -----
+ ----- 9mm Pistol -----
 
-local DyWorld_Prototype = DyDs_CopyPrototype("gun", "pistol", "basic-pistol", true)
+local DyWorld_Prototype = DyDs_CopyPrototype("gun", "pistol", "9mm-pistol", true)
 	DyWorld_Prototype.attack_parameters.cooldown = 12.5
 	DyWorld_Prototype.attack_parameters.range = 12.5
 	DyWorld_Prototype.stack_size = 1
+	DyWorld_Prototype.attack_parameters.ammo_category = "900mm"
 
 data:extend({
   DyWorld_Prototype,
   {
     type = "recipe",
-    name = "basic-pistol",
+    name = "9mm-pistol",
 	category = "assembling-tier-1",
     normal =
     {
@@ -20,7 +21,7 @@ data:extend({
         {type = "item", name = "bronze-plate", amount = 3},
         {type = "item", name = "limestone", amount = 2},
       },
-      result = "basic-pistol",
+      result = "9mm-pistol",
 	  result_count = 1,
 	  energy_required = 2.5,
 	  enabled = false,
@@ -32,7 +33,7 @@ data:extend({
         {type = "item", name = "bronze-plate", amount = 7},
         {type = "item", name = "limestone", amount = 5},
       },
-      result = "basic-pistol",
+      result = "9mm-pistol",
 	  result_count = 1,
 	  energy_required = 5,
 	  enabled = false,

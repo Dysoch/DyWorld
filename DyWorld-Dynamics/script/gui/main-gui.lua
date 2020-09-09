@@ -40,7 +40,10 @@ function Main_GUI(player, id)
 		local tab3 = tabbed_pane.add{type="tab", caption="Player Bonuses"}
 		local frameflow3 = tabbed_pane.add{type = "flow", name = "flow3", direction = "vertical"}
 		tabbed_pane.add_tab(tab3, frameflow3)
-
+		frameflow3.add{type = "label", caption = "Crafting Bonus: "..(Round(game.players[id].character_crafting_speed_modifier+1, 2))}
+		frameflow3.add{type = "label", caption = "Mining Bonus: "..(Round(game.players[id].character_mining_speed_modifier+1, 2))}
+		frameflow3.add{type = "label", caption = "Health: "..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus)}
+		frameflow3.add{type = "label", caption = "Inventory Slots: "..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus)}
 		
 		if debugger then
 -------------------------------- Crafting Debug TAB -----------------------------------

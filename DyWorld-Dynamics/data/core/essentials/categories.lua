@@ -45,6 +45,15 @@ local Fuel_Categories = {
 	"carbon",
 }
 
+local Ammo_Categories = {
+	"400mm", "500mm", "554mm", "560mm", 
+	"570mm", "600mm", "635mm", "650mm", 
+	"680mm", "700mm", "762mm", "790mm", 
+	"794mm", "800mm", "860mm", "900mm", 
+	"930mm", "950mm", "1000mm", "1090mm", 
+	"1143mm", "1270mm",
+}
+
 
 ----- Loops for adding -----
 
@@ -73,6 +82,16 @@ data:extend(
 {
   {
     type = "fuel-category",
+    name = v
+  }			
+})
+end
+
+for k,v in pairs(Ammo_Categories) do
+data:extend(
+{
+  {
+    type = "ammo-category",
     name = v
   }			
 })

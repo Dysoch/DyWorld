@@ -3,29 +3,34 @@
 
 
 function Phase_Forward()
-	global.dyworld.story.phase = global.dyworld.story.phase + 1
-	for k,v in pairs(Story_Recipes) do
-		if v <= global.dyworld.story.phase then
-			for _,player in pairs(game.players) do
-				if not player.force.recipes[k].enabled then
-					player.force.recipes[k].enabled = true
+	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase+1] then
+		global.dyworld.story.phase = global.dyworld.story.phase + 1
+		for k,v in pairs(Story_Recipes) do
+			if v <= global.dyworld.story.phase then
+				for _,player in pairs(game.players) do
+					if not player.force.recipes[k].enabled then
+						player.force.recipes[k].enabled = true
+					end
 				end
 			end
 		end
-	end
-	global.dyworld.story.phases[(global.dyworld.story.phase - 1)].done = true
-	if global.dyworld.story.phases[global.dyworld.story.phase].recipes then
-		PlayerPrint("Objectives Updated, next Phase available. New recipes unlocked")
-	else
-		PlayerPrint("Objectives Updated, next Phase available.")
-	end
-	if global.dyworld.story.phases[global.dyworld.story.phase].message then
-		if game.is_multiplayer() then
-			PlayerPrint({global.dyworld.story.phases[global.dyworld.story.phase].message, global.dyworld.game_stats.days})
+		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase - 1].done = true
+		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].recipes then
+			PlayerPrint("Objectives Updated, next Phase available. New recipes unlocked")
 		else
-			game.show_message_dialog{text = {global.dyworld.story.phases[global.dyworld.story.phase].message, global.dyworld.game_stats.days}}
+			PlayerPrint("Objectives Updated, next Phase available.")
 		end
-			
+		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message then
+			if game.is_multiplayer() then
+				PlayerPrint({global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message, global.dyworld.game_stats.days})
+			else
+				game.show_message_dialog{text = {global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message, global.dyworld.game_stats.days}}
+			end
+				
+		end
+	else
+		global.dyworld.story.act = global.dyworld.story.act + 1
+		global.dyworld.story.phase = global.dyworld.story.phase + 1
 	end
 end
 
@@ -44,14 +49,14 @@ function Reunlock_Recipes()
 end
 
 function Story_Objectives(type, event)
-	if global.dyworld.story.phases[global.dyworld.story.phase].objectives[1] then
+	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives[1] then
 		if type == "mining-item" then
 			local player = game.players[event.player_index]
 			local force = player.force
 			local id = event.player_index
 			local name = event.item_stack.name
 			local count = event.item_stack.count
-			for k,v in pairs(global.dyworld.story.phases[global.dyworld.story.phase].objectives) do
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if (v.type_1 == "mine" and v.type_2 == "item") then
 					if (name == v.name and v.done == false) then
 						if v.amount_done < v.amount_needed then
@@ -59,8 +64,8 @@ function Story_Objectives(type, event)
 						end
 						if v.amount_done >= v.amount_needed then
 							v.done = true
-							global.dyworld.story.phases[global.dyworld.story.phase].amount_left = global.dyworld.story.phases[global.dyworld.story.phase].amount_left - 1
-							if global.dyworld.story.phases[global.dyworld.story.phase].amount_left <= 0 then
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left <= 0 then
 								Phase_Forward()
 							end
 						end
@@ -76,7 +81,7 @@ function Story_Objectives(type, event)
 			local name = event.created_entity.name
 			local position = event.created_entity.position
 			local type = event.created_entity.type
-			for k,v in pairs(global.dyworld.story.phases[global.dyworld.story.phase].objectives) do
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if (v.type_1 == "build" and v.type_2 == "name") then
 					if (name == v.name and v.done == false) then
 						if v.amount_done < v.amount_needed then
@@ -84,8 +89,8 @@ function Story_Objectives(type, event)
 						end
 						if v.amount_done >= v.amount_needed then
 							v.done = true
-							global.dyworld.story.phases[global.dyworld.story.phase].amount_left = global.dyworld.story.phases[global.dyworld.story.phase].amount_left - 1
-							if global.dyworld.story.phases[global.dyworld.story.phase].amount_left <= 0 then
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left <= 0 then
 								Phase_Forward()
 							end
 						end
@@ -96,7 +101,7 @@ function Story_Objectives(type, event)
 			local name = event.created_entity.name
 			local position = event.created_entity.position
 			local type = event.created_entity.type
-			for k,v in pairs(global.dyworld.story.phases[global.dyworld.story.phase].objectives) do
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if (v.type_1 == "build" and v.type_2 == "name") then
 					if (name == v.name and v.done == false) then
 						if v.amount_done < v.amount_needed then
@@ -104,8 +109,8 @@ function Story_Objectives(type, event)
 						end
 						if v.amount_done >= v.amount_needed then
 							v.done = true
-							global.dyworld.story.phases[global.dyworld.story.phase].amount_left = global.dyworld.story.phases[global.dyworld.story.phase].amount_left - 1
-							if global.dyworld.story.phases[global.dyworld.story.phase].amount_left <= 0 then
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left <= 0 then
 								Phase_Forward()
 							end
 						end
@@ -118,7 +123,7 @@ function Story_Objectives(type, event)
 			local id = event.player_index
 			local name = event.item_stack.name
 			local count = event.item_stack.count
-			for k,v in pairs(global.dyworld.story.phases[global.dyworld.story.phase].objectives) do
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if (v.type_1 == "craft" and v.type_2 == "item") then
 					if (name == v.name and v.done == false) then
 						if v.amount_done < v.amount_needed then
@@ -126,8 +131,8 @@ function Story_Objectives(type, event)
 						end
 						if v.amount_done >= v.amount_needed then
 							v.done = true
-							global.dyworld.story.phases[global.dyworld.story.phase].amount_left = global.dyworld.story.phases[global.dyworld.story.phase].amount_left - 1
-							if global.dyworld.story.phases[global.dyworld.story.phase].amount_left <= 0 then
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left <= 0 then
 								Phase_Forward()
 							end
 						end
@@ -140,7 +145,7 @@ function Story_Objectives(type, event)
 			local type_killed = event.entity.type 
 			local name = event.entity.name
 			local position = event.entity.position
-			for k,v in pairs(global.dyworld.story.phases[global.dyworld.story.phase].objectives) do
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if (v.type_1 == "died" and v.type_2 == "name") then
 					if (name == v.name and v.done == false) then
 						if v.amount_done < v.amount_needed then
@@ -148,8 +153,8 @@ function Story_Objectives(type, event)
 						end
 						if v.amount_done >= v.amount_needed then
 							v.done = true
-							global.dyworld.story.phases[global.dyworld.story.phase].amount_left = global.dyworld.story.phases[global.dyworld.story.phase].amount_left - 1
-							if global.dyworld.story.phases[global.dyworld.story.phase].amount_left <= 0 then
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left <= 0 then
 								Phase_Forward()
 							end
 						end
@@ -162,8 +167,8 @@ function Story_Objectives(type, event)
 						end
 						if v.amount_done >= v.amount_needed then
 							v.done = true
-							global.dyworld.story.phases[global.dyworld.story.phase].amount_left = global.dyworld.story.phases[global.dyworld.story.phase].amount_left - 1
-							if global.dyworld.story.phases[global.dyworld.story.phase].amount_left <= 0 then
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left <= 0 then
 								Phase_Forward()
 							end
 						end

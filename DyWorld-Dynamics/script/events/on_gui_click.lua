@@ -29,4 +29,10 @@ function Event_on_gui_selected_tab_changed(event)
 		--PlayerPrint(gui_index)
 		--PlayerPrint(gui_tab_name)
 	end
+	if gui_name == "DyDs_Log_GUI" then
+		global.dyworld.players[event.player_index].log_gui_index = gui_index
+		--PlayerPrint(gui_name)
+		--PlayerPrint(gui_index)
+		--PlayerPrint(gui_tab_name)
+	end
 end

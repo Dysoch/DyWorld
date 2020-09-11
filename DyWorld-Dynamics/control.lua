@@ -13,6 +13,7 @@ require("script/lualib/side-inserter")
 -- GUI
 require "script/gui/main-gui"
 require "script/gui/story-gui"
+require "script/gui/log-gui"
 
 -- Stats
 require "script/stats/functions"

@@ -115,7 +115,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "steel-plate",
 	order = "steel-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = {r=229, g=227, b=227}}},
+    icons = {{icon = DyDs_path_icon.."base-plate-3.png", tint = {r=229, g=227, b=227}}},
 	localised_name = {"looped-name.steel-4"},
 	stack_size = 500,
 	durability = 1,
@@ -125,7 +125,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "bronze-plate",
 	order = "bronze-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = {r=126, g=112, b=109}}},
+    icons = {{icon = DyDs_path_icon.."base-plate-3.png", tint = {r=126, g=112, b=109}}},
 	localised_name = {"looped-name.bronze-4"},
 	stack_size = 500,
 	durability = 1,
@@ -135,7 +135,7 @@ DyDS_Add_Tool({
 DyDS_Add_Tool({
 	name = "tin-plate",
 	order = "tin-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = {r=39, g=105, b=135}}},
+    icons = {{icon = DyDs_path_icon.."base-plate-2.png", tint = {r=39, g=105, b=135}}},
 	localised_name = {"looped-name.tin-4"},
 	stack_size = 500,
 	durability = 1,

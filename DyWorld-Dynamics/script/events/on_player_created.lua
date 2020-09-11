@@ -26,5 +26,11 @@ function Event_on_player_created(event)
 		story_gui_index = 1,
 		stats_gui = false,
 		stats_gui_index = 1,
+		log_gui = false,
+		log_gui_index = 1,
 	}
+	player.minimap_enabled = false
+	--[[if id == 1 then
+		game.player.force.disable_research()
+	end]]
 end

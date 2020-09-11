@@ -40,8 +40,8 @@ data:extend({
       type = "burner",
       fuel_category = "carbon",
       effectivity = 1,
-      fuel_inventory_size = 1,
-      emissions_per_minute = 15,
+      fuel_inventory_size = 2,
+      emissions_per_minute = 5,
       smoke =
       {
         {

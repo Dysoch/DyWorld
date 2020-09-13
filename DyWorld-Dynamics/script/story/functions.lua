@@ -2,12 +2,11 @@
 
 
 
-function Phase_Forward(ARG)
-if ARG == nil then
+function Phase_Forward()
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase+1] then
 		global.dyworld.story.phase = global.dyworld.story.phase + 1
 		for k,v in pairs(Story_Recipes) do
-			if v <= global.dyworld.story.phase then
+			if (v.phase <= global.dyworld.story.phase and v.act <= global.dyworld.story.act) then
 				for _,player in pairs(game.players) do
 					if not player.force.recipes[k].enabled then
 						player.force.recipes[k].enabled = true
@@ -16,42 +15,32 @@ if ARG == nil then
 			end
 		end
 		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase - 1].done = true
-		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message then
-			DyLog(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message, "days")
-		end
-		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].recipes then
-			DyLog("Objectives Updated, next Phase available. New recipes unlocked")
-		else
-			DyLog("Objectives Updated, next Phase available.")
-		end
 	else
 		global.dyworld.story.act = global.dyworld.story.act + 1
 		global.dyworld.story.phase = 1
 	end
-elseif ARG == "debug" then
-	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase+1] then
-		global.dyworld.story.phase = global.dyworld.story.phase + 1
-		for k,v in pairs(Story_Recipes) do
-			if v <= global.dyworld.story.phase then
-				for _,player in pairs(game.players) do
-					if not player.force.recipes[k].enabled then
-						player.force.recipes[k].enabled = true
-					end
-				end
-			end
-		end
-	else
-		global.dyworld.story.act = global.dyworld.story.act + 1
-		global.dyworld.story.phase = 1
+	if (global.dyworld.story.phase == 10 and global.dyworld.story.act == 1) then
+		DyLog("DyDs-story.message-act-1-phase-10-1", "days")
+		DyLog("DyDs-story.message-act-1-phase-10-2", true)
+		DyLog("DyDs-story.message-act-1-phase-10-3", true)
+		DyLog("DyDs-story.message-act-1-phase-10-4", true)
+		DyLog("DyDs-story.message-act-1-phase-10-5", true)
 	end
-end
+	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message then
+		DyLog(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message, "days")
+	end
+	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].recipes then
+		DyLog("Objectives Updated, next Phase available. New recipes unlocked")
+	else
+		DyLog("Objectives Updated, next Phase available.")
+	end
 end
 
 --for _,player in pairs(game.players) do player.force.recipes["basic-med-pack"].enabled == true end
 
 function Reunlock_Recipes()
 	for k,v in pairs(Story_Recipes) do
-		if v <= global.dyworld.story.phase then
+		if (v.phase <= global.dyworld.story.phase and v.act <= global.dyworld.story.act) then
 			for _,player in pairs(game.players) do
 				if not player.force.recipes[k].enabled then
 					player.force.recipes[k].enabled = true

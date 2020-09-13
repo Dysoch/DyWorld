@@ -93,7 +93,7 @@ remote.add_interface("DyWorld",
 	end,
 	
 	Skip_Phase = function()
-		Phase_Forward("debug")
+		Phase_Forward()
 	end,
 	
 	Debug_Start = function()

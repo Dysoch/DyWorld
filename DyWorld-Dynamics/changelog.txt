@@ -6,13 +6,13 @@ Date: 12. 12. 2020
   Features:
     - Ores have been reworked. There is different percentages of each ore. They can be seperate, or clumped into the same patch. This basically means that you have a chance to get less ores (you will never mine the full amount). A lot of different density of ores exist, and each have different byproducts and percentages for them
   Minor Features:
-    - 
+    - bla
   Changes:
     - Player Health: 250 > 1000
     - Player Inventory: 80 slots > 120 slots
     - Player healing automatically is disabled
     - Player Build distance: 10 > 15
   Balancing:
-    - 
+    - bla
   Bugfixes:
-    - 
+    - bla

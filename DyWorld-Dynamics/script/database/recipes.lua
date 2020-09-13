@@ -40,12 +40,12 @@ Story_Recipes  = {
 	
 	----- Act 1, Phase 6 -----
 	["burner-assembler"] = 6,
-	--["simple-circuit-board"] = 6,
+	["control-board-1"] = 6,
 	["tin-basic"] = 6,
 	
 	----- Act 1, Phase 7 -----
 	--["med-pack"] = 7,
-	--["ballistic-ammo-2"] = 7,
+	["9mm-bullet-ap"] = 7,
 	
 	----- Act 1, Phase 8 -----
 	["cast-iron"] = 8,
@@ -59,5 +59,6 @@ Story_Recipes  = {
 	--["basic-electric-drill"] = 9,
 	--["basic-boiler"] = 9,
 	--["basic-steam-engine"] = 9,
+	--["basic-power-pole"] = 9,
 	
 }

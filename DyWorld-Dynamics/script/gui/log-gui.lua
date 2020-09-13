@@ -8,6 +8,7 @@ function Close_Log_GUI(player, id)
 end
 
 function Log_GUI(player, id)
+	if not global.dylog then global.dylog = {} end
 		local force = player.force
 		local tabbed_pane = player.gui.top.add{type = "tabbed-pane", name = "DyDs_Log_GUI"}
 

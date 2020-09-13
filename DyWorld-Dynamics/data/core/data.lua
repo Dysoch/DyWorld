@@ -33,6 +33,7 @@ require(DyDs_data_core.. "items.ores-plates")
 require(DyDs_data_core.. "items.med-packs")
 require(DyDs_data_core.. "items.gears")
 require(DyDs_data_core.. "items.cables")
+require(DyDs_data_core.. "items.control-boards")
 
 -- Recipes --
 require(DyDs_data_core.. "recipes.charcoal")
@@ -40,4 +41,5 @@ require(DyDs_data_core.. "recipes.stones")
 require(DyDs_data_core.. "recipes.gears")
 require(DyDs_data_core.. "recipes.cables")
 require(DyDs_data_core.. "recipes.plates-basic")
+require(DyDs_data_core.. "recipes.control-boards")
 

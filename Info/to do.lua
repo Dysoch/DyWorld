@@ -19,10 +19,6 @@ research is done with materials
 lower 9mm damage
 lower 9mm turret range and shoot speed
 
-Add log gui
-
-add log function that prints, logs and dialogs
-
 add unlocks at phases script
 
 

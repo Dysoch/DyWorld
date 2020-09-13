@@ -39,7 +39,9 @@ data:extend({
     {
       ingredients =
       {
-        {"wood", 3}
+        {type = "item", name = "control-board-1", amount = 1},
+        {type = "item", name = "bronze-plate", amount = 3},
+        {type = "item", name = "tin-plate", amount = 1},
       },
       result = "burner-assembler",
 	  enabled = false,
@@ -49,7 +51,9 @@ data:extend({
     {
       ingredients =
       {
-        {"wood", 10}
+        {type = "item", name = "control-board-1", amount = 2},
+        {type = "item", name = "bronze-plate", amount = 5},
+        {type = "item", name = "tin-plate", amount = 1},
       },
       result = "burner-assembler",
 	  enabled = false,

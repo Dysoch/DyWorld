@@ -35,5 +35,11 @@ function Event_on_tick(event)
 			end
 		end
 	end
+	if event.tick%(60*60)==800 then
+		for k,v in pairs(global.dyworld.players) do
+			if (global.dyworld.story.act == 1 and global.dyworld.story.phase <= 8) then
+				game.players[v.id].minimap_enabled = false
+			end
+		end
+	end
 end
-

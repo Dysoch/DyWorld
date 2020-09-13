@@ -92,11 +92,15 @@ remote.add_interface("DyWorld",
 		Reunlock_Recipes()
 	end,
 	
+	Skip_Phase = function()
+		Phase_Forward("debug")
+	end,
+	
 	Debug_Start = function()
-		game.players[1].insert{name = "gun-turret", count = 10}
+		game.players[1].insert{name = "gun-turret", count = 100}
 		game.players[1].insert{name = "firearm-magazine", count = 1000}
 		game.players[1].insert{name = "coal", count = 1000}
-		game.players[1].insert{name = "wooden-chest", count = 10}
+		game.players[1].insert{name = "wooden-chest", count = 100}
 		game.players[1].insert{name = "burner-mining-drill", count = 50}
 		game.players[1].insert{name = "electric-mining-drill", count = 50}
 		game.players[1].insert{name = "substation", count = 50}

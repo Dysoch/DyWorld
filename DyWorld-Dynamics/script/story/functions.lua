@@ -2,7 +2,8 @@
 
 
 
-function Phase_Forward()
+function Phase_Forward(ARG)
+if ARG == nil then
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase+1] then
 		global.dyworld.story.phase = global.dyworld.story.phase + 1
 		for k,v in pairs(Story_Recipes) do
@@ -15,23 +16,35 @@ function Phase_Forward()
 			end
 		end
 		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase - 1].done = true
-		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].recipes then
-			PlayerPrint("Objectives Updated, next Phase available. New recipes unlocked")
-		else
-			PlayerPrint("Objectives Updated, next Phase available.")
-		end
 		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message then
-			if game.is_multiplayer() then
-				PlayerPrint({global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message, global.dyworld.game_stats.days})
-			else
-				game.show_message_dialog{text = {global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message, global.dyworld.game_stats.days}}
-			end
-				
+			DyLog(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message, "days")
+		end
+		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].recipes then
+			DyLog("Objectives Updated, next Phase available. New recipes unlocked")
+		else
+			DyLog("Objectives Updated, next Phase available.")
 		end
 	else
 		global.dyworld.story.act = global.dyworld.story.act + 1
-		global.dyworld.story.phase = global.dyworld.story.phase + 1
+		global.dyworld.story.phase = 1
 	end
+elseif ARG == "debug" then
+	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase+1] then
+		global.dyworld.story.phase = global.dyworld.story.phase + 1
+		for k,v in pairs(Story_Recipes) do
+			if v <= global.dyworld.story.phase then
+				for _,player in pairs(game.players) do
+					if not player.force.recipes[k].enabled then
+						player.force.recipes[k].enabled = true
+					end
+				end
+			end
+		end
+	else
+		global.dyworld.story.act = global.dyworld.story.act + 1
+		global.dyworld.story.phase = 1
+	end
+end
 end
 
 --for _,player in pairs(game.players) do player.force.recipes["basic-med-pack"].enabled == true end

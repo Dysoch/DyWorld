@@ -19,11 +19,6 @@ research is done with materials
 lower 9mm damage
 lower 9mm turret range and shoot speed
 
-rewrite oninit into acts and phases into it
-rewrite story functions to work with acts
-
-add command to skip phase
-
 Add log gui
 
 add log function that prints, logs and dialogs

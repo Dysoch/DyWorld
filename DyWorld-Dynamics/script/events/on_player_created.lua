@@ -29,8 +29,5 @@ function Event_on_player_created(event)
 		log_gui = false,
 		log_gui_index = 1,
 	}
-	player.minimap_enabled = false
-	--[[if id == 1 then
-		game.player.force.disable_research()
-	end]]
+	game.players[id].force.disable_research()
 end

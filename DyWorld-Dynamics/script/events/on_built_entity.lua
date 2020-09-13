@@ -29,4 +29,11 @@ function Event_on_built_entity(event)
 	
 	----- Story Objective Check -----
 	Story_Objectives("building-player", event)
+	
+	-- Reenable Minimap
+	if (type == "radar" and player.minimap_enabled == false) then
+		for _,player in pairs(game.players) do
+			player.minimap_enabled = true
+		end
+	end
 end

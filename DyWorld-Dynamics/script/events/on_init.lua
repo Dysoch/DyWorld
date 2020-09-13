@@ -263,6 +263,42 @@ local Story = {
 					},
 				},
 			},
+			[10] = {
+				done = false,
+				amount_left = 1,
+				objectives_amount = 1,
+				--message = "DyDs-story.message-phase-2",
+				recipes = true,
+				objectives = {
+					[1] = {
+						type_1 = "died", 
+						type_2 = "name", 
+						name = "small-biter", 
+						amount_needed = 10,
+						amount_done = 0,
+						done = false,
+					},
+				},
+			},
+		},
+		[2] = {
+			[1] = {
+				done = false,
+				amount_left = 1,
+				objectives_amount = 1,
+				message = "DyDs-story.message-act-2",
+				recipes = true,
+				objectives = {
+					[1] = {
+						type_1 = "died", 
+						type_2 = "type", 
+						name = "unit", 
+						amount_needed = 999999999,
+						amount_done = 0,
+						done = false,
+					},
+				},
+			},
 		},
 	}
 }

@@ -13,7 +13,7 @@ function Log_GUI(player, id)
 		local tabbed_pane = player.gui.top.add{type = "tabbed-pane", name = "DyDs_Log_GUI"}
 
 -------------------------------- General TAB ----------------------------------------
-		local tab1 = tabbed_pane.add{type = "tab", name = "DyDs_log_general_tab", caption = "General Tab"}
+		local tab1 = tabbed_pane.add{type = "tab", name = "DyDs_log_general_tab", caption = "Log"}
 		local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
 		tabbed_pane.add_tab(tab1, frameflow1)
 		

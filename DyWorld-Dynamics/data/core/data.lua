@@ -7,6 +7,7 @@ require(DyDs_data_core.. "templates.deep-copy")
 -- Essentials --
 require(DyDs_data_core.. "essentials.categories")
 require(DyDs_data_core.. "essentials.keys")
+require(DyDs_data_core.. "essentials.equipment-grid")
 
 -- Item Groups
 require("data.core.item-groups.metals")
@@ -38,6 +39,7 @@ require(DyDs_data_core.. "items.control-boards")
 -- Recipes --
 require(DyDs_data_core.. "recipes.charcoal")
 require(DyDs_data_core.. "recipes.stones")
+require(DyDs_data_core.. "recipes.coica")
 require(DyDs_data_core.. "recipes.gears")
 require(DyDs_data_core.. "recipes.cables")
 require(DyDs_data_core.. "recipes.plates-basic")

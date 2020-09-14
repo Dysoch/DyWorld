@@ -92,8 +92,11 @@ remote.add_interface("DyWorld",
 		Reunlock_Recipes()
 	end,
 	
-	Skip_Phase = function()
-		Phase_Forward()
+	Skip_Phase = function(nmb)
+		nmb = nmb or 1
+		for i = 1,nmb do
+			Phase_Forward()
+		end
 	end,
 	
 	Debug_Start = function()

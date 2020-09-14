@@ -289,7 +289,7 @@ data:extend({
     name = "basic-burner-drill",
     icon = "__base__/graphics/icons/burner-mining-drill.png",
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = DyDs.."chests",
+    subgroup = DyDs.."miners",
     order = "basic-burner-drill",
     place_result = "basic-burner-drill",
     stack_size = 200,

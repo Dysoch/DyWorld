@@ -1,7 +1,7 @@
 
 
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "burner-assembler", true)
-DyWorld_Prototype_1.crafting_categories = {"assembling-tier-1", "assembling-tier-2"}
+DyWorld_Prototype_1.crafting_categories = {"assembling-tier-1"}
 DyWorld_Prototype_1.energy_source = {
       type = "burner",
       fuel_category = "carbon",
@@ -26,7 +26,7 @@ data:extend({
     name = "burner-assembler",
     icon = "__base__/graphics/icons/assembling-machine-1.png",
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = DyDs.."chests",
+    subgroup = DyDs.."burner-machines",
     order = "burner-assembler",
     place_result = "burner-assembler",
     stack_size = 200,

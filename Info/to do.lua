@@ -1,5 +1,10 @@
 
+ -- TO DO ACT 1 --
 
+lower 9mm damage
+lower 9mm turret range and shoot speed
+
+-- TO DO ACT 2 --
 
 iron stages:
 cast iron (2-4% carbon) recipe tier 1:
@@ -15,9 +20,6 @@ into blast furnace with limestone and coal and liquid oxygen (more efficient)
 200 ore > 80 steel plate
 
 research is done with materials
-
-lower 9mm damage
-lower 9mm turret range and shoot speed
 
 add unlocks at phases script
 

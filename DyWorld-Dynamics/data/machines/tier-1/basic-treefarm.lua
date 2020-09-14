@@ -98,7 +98,7 @@ data:extend({
     name = "basic-treefarm",
     icon = DyDs_path_icon.."greenhouse.png",
     icon_size = 32, icon_mipmaps = 4,
-    subgroup = DyDs.."chests",
+    subgroup = DyDs.."burner-machines",
     order = "basic-treefarm",
     place_result = "basic-treefarm",
     stack_size = 200,

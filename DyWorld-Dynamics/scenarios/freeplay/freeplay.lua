@@ -28,6 +28,7 @@ local ship_items = function()
     ["copper-plate"] = math.random(15, 25),
     ["iron-plate"] = math.random(5, 10),
     ["9mm-pistol"] = 1,
+    ["gun-nano-emitter"] = 1,
     --["medpack-2"] = math.random(2, 5),
   }
 end

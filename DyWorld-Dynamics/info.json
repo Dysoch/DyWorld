@@ -9,6 +9,7 @@
 	"description": "DyWorld-Dynamics, the successor of DyWorld, which is the successor of DyTech. ",
 	"dependencies": [  
 		"base >= 1.0.0",
+		"Nanobots >= 3.2.8",
 		"(?) robot_tree_farm",
 		"! pyindustry",
 		"! pycoalprocessing",

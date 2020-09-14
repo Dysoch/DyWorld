@@ -44,7 +44,7 @@ Story_Recipes  = {
 	["tin-basic"] = {act = 1, phase = 6},
 	
 	----- Act 1, Phase 7 -----
-	--["med-pack"] = {act = 1, phase = 7},
+	["med-pack"] = {act = 1, phase = 7},
 	["9mm-bullet-ap"] = {act = 1, phase = 7},
 	
 	----- Act 1, Phase 8 -----
@@ -54,14 +54,16 @@ Story_Recipes  = {
 	["copper-cable"] = {act = 1, phase = 8},
 	
 	----- Act 1, Phase 9 -----
-	--["basic-inserter"] = {act = 1, phase = 9},
-	--["lab-1"] = {act = 1, phase = 9},
-	--["basic-electric-drill"] = {act = 1, phase = 9},
-	--["basic-boiler"] = {act = 1, phase = 9},
-	--["basic-steam-engine"] = {act = 1, phase = 9},
-	--["basic-power-pole"] = {act = 1, phase = 9},
+	["basic-power-armor"] = {act = 1, phase = 9},
+	["ammo-nano-constructors"] = {act = 1, phase = 9},
 	
 	----- Act 1, Phase 10 -----
-	--["basic-assembler"] = {act = 1, phase = 10},
+	["basic-assembler"] = {act = 1, phase = 10},
+	["basic-inserter"] = {act = 1, phase = 10},
+	["lab-1"] = {act = 1, phase = 10},
+	--["basic-electric-drill"] = {act = 1, phase = 10},
+	--["basic-boiler"] = {act = 1, phase = 10},
+	--["basic-steam-engine"] = {act = 1, phase = 10},
+	--["basic-power-pole"] = {act = 1, phase = 10},
 	
 }

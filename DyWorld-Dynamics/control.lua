@@ -1,5 +1,5 @@
 
-debugger = true
+debugger = false
 
 -- LuaLib
 require "script/lualib/function"

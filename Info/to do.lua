@@ -1,10 +1,8 @@
 
- -- TO DO ACT 1 --
+ -- TO DO PHASE 1 DEVELOPMENT --
+DONE
 
-lower 9mm damage
-lower 9mm turret range and shoot speed
-
--- TO DO ACT 2 --
+-- TO DO PHASE 2 DEVELOPMENT --
 
 iron stages:
 cast iron (2-4% carbon) recipe tier 1:

@@ -10,6 +10,8 @@
 	"dependencies": [  
 		"base >= 1.0.0",
 		"Nanobots >= 3.2.8",
+		"even-distribution >= 0.3.18",
+		"? Squeak Through >= 1.8.0",
 		"(?) robot_tree_farm",
 		"! pyindustry",
 		"! pycoalprocessing",

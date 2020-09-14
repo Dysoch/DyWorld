@@ -26,6 +26,11 @@ function Phase_Forward()
 		DyLog("DyDs-story.message-act-1-phase-10-4", true)
 		DyLog("DyDs-story.message-act-1-phase-10-5", true)
 	end
+	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then
+		DyLog("DyDs-story.message-act-2-phase-1", true)
+		game.surfaces[1].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {0,0}}
+		DyLog("DyDs-story.message-act-2-phase-1-1", true)
+	end
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message then
 		DyLog(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message, "days")
 	end

@@ -302,7 +302,8 @@ data:extend({
     {
       ingredients =
       {
-        {"wood", 3}
+        {type = "item", name = "wood", amount = 1},
+        {type = "item", name = "limestone", amount = 5},
       },
       result = "basic-burner-drill",
 	  enabled = false,
@@ -312,7 +313,8 @@ data:extend({
     {
       ingredients =
       {
-        {"wood", 10}
+        {type = "item", name = "wood", amount = 5},
+        {type = "item", name = "limestone", amount = 5*6},
       },
       result = "basic-burner-drill",
 	  enabled = false,

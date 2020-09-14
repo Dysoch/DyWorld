@@ -27,7 +27,7 @@ local Data_Table_Item_Group = {
 		Main = "personal"
 	},
 	{
-		Name = "repair-packs",
+		Name = "repair-pack",
 		Type = "sub",
 		Main = "personal"
 	},

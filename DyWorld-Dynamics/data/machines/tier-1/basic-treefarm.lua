@@ -111,7 +111,9 @@ data:extend({
     {
       ingredients =
       {
-        {"wood", 3}
+        {type = "item", name = "bronze-pipe", amount = 1},
+        {type = "item", name = "bronze-plate", amount = 4},
+        {type = "item", name = "wood", amount = 1},
       },
       result = "basic-treefarm",
 	  enabled = false,
@@ -121,7 +123,9 @@ data:extend({
     {
       ingredients =
       {
-        {"wood", 10}
+        {type = "item", name = "bronze-pipe", amount = 1*3},
+        {type = "item", name = "bronze-plate", amount = 4*6},
+        {type = "item", name = "wood", amount = 1*12},
       },
       result = "basic-treefarm",
 	  enabled = false,

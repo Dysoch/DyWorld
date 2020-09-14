@@ -8,6 +8,7 @@ function Event_on_built_entity(event)
 	local name = event.created_entity.name
 	local position = event.created_entity.position
 	local type = event.created_entity.type
+	local Time = global.dyworld.game_stats.time_stamp
 	
 	----- Global counter -----
 	if not global.dyworld.game_stats.build_names[name] then
@@ -34,6 +35,15 @@ function Event_on_built_entity(event)
 	if (type == "radar" and player.minimap_enabled == false) then
 		for _,player in pairs(game.players) do
 			player.minimap_enabled = true
+			DyLog(Time..": Minimap Unlocked")
+		end
+	end
+	
+	-- Reenable Research
+	if (type == "lab" and player.force.research_enabled == false) then
+		for _,player in pairs(game.players) do
+			player.force.enable_research()
+			DyLog(Time..": Research Unlocked")
 		end
 	end
 end

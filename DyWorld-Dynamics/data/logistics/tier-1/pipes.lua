@@ -26,7 +26,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 5},
+        {type = "item", name = "bronze-plate", amount = 3},
       },
       result = "bronze-pipe",
       result_count = 2,
@@ -37,7 +37,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 5},
+        {type = "item", name = "bronze-plate", amount = 6},
       },
       result = "bronze-pipe",
       result_count = 1,
@@ -64,7 +64,7 @@ data:extend({
       ingredients =
       {
         {type = "item", name = "bronze-pipe", amount = 10},
-        {type = "item", name = "bronze-plate", amount = 5},
+        {type = "item", name = "bronze-plate", amount = 2},
       },
       result = "bronze-pipe-to-ground",
       result_count = 2,
@@ -76,7 +76,7 @@ data:extend({
       ingredients =
       {
         {type = "item", name = "bronze-pipe", amount = 10},
-        {type = "item", name = "bronze-plate", amount = 15},
+        {type = "item", name = "bronze-plate", amount = 7},
       },
       result = "bronze-pipe-to-ground",
       result_count = 2,

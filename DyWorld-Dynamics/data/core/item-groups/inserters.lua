@@ -17,16 +17,6 @@ local Data_Table_Item_Group = {
 		Main = "inserters"
 	},
 	{
-		Name = "inserter-tier-0",
-		Type = "sub",
-		Main = "inserters"
-	},
-	{
-		Name = "inserter-tier-1",
-		Type = "sub",
-		Main = "inserters"
-	},
-	{
 		Name = "inserter-tier-2",
 		Type = "sub",
 		Main = "inserters"

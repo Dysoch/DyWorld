@@ -36,6 +36,8 @@ function Event_on_built_entity(event)
 		for _,player in pairs(game.players) do
 			player.minimap_enabled = true
 			DyLog(Time..": Minimap Unlocked")
+			game.forces.player.ghost_time_to_live = (60*60*60*250)
+			game.forces.player.deconstruction_time_to_live = (60*60*60*250)
 		end
 	end
 	
@@ -44,6 +46,8 @@ function Event_on_built_entity(event)
 		for _,player in pairs(game.players) do
 			player.force.enable_research()
 			DyLog(Time..": Research Unlocked")
+			game.forces.player.ghost_time_to_live = (60*60*60*1)
+			game.forces.player.deconstruction_time_to_live = (60*60*60*1)
 		end
 	end
 end

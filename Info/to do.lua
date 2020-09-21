@@ -33,8 +33,6 @@ add loader speeder as tooltip
 
 remove base game stuff from menu's
 
-add loction based objectives
-
 add enemy atacks (amount_attacks, time_between)
 
 

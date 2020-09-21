@@ -12,6 +12,7 @@ function Entity_Check(type)
 	elseif type == "pipe" then return false
 	elseif type == "lamp" then return false
 	elseif type == "pipe-to-ground" then return false
+	elseif type == "transport-belt" then return false
 	elseif type == "underground-belt" then return false
 	elseif type == "loader" then return false
 	elseif type == "loader-1x1" then return false
@@ -37,4 +38,13 @@ function getDistance(objA_X, objA_Y, objB_X, objB_Y)
     local yDist = objB_Y - objA_Y
 
     return math.sqrt((xDist^2)+(yDist^2)) 
+end
+
+function Pick_Random_Attack_Location()
+	local Location = {x = 0, y = 0}
+	local Loc_table = global.dyworld.game_stats.building_locations
+	local randomized = math.random(#Loc_table)
+	Location = {x = Loc_table[randomized].posx, y = Loc_table[randomized].posy}
+	debug("Random Attack Location: x = "..Location.x..", y = "..Location.y)
+	return Location
 end

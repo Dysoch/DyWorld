@@ -1,10 +1,9 @@
 
 
-
-function Event_on_init()
+function Story_Add(ACT, PHASE)
 local Story = {
-	act = 1,
-	phase = 1,
+	act = ACT,
+	phase = PHASE,
 	acts = {
 		[1] = {
 			[1] = {
@@ -436,10 +435,14 @@ local Story = {
 		},
 	}
 }
+return Story
+end
 
+
+function Event_on_init()
 	if not global.dyworld then
 		global.dyworld = {
-			version = "0.9.0",
+			version = Version_Build,
 			players = {},
 			game_stats = {
 				ticks = 0,
@@ -459,7 +462,7 @@ local Story = {
 				time_stamp = "",
 				building_locations = {},
 			},
-			story = Story,
+			story = Story_Add(1, 1),
 		}
 	end
 end

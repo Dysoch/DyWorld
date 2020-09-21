@@ -1,5 +1,6 @@
 
 debugger = true
+Version_Build = "0.9.0"
 
 -- LuaLib
 require "script/lualib/function"
@@ -99,6 +100,10 @@ remote.add_interface("DyWorld",
 	
 	Unlock_Recipes = function()
 		Reunlock_Recipes()
+	end,
+	
+	Pick_Random_Attack_Location = function()
+		Pick_Random_Attack_Location()
 	end,
 	
 	Skip_Phase = function(nmb)

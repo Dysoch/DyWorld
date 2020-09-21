@@ -18,11 +18,20 @@ function Story_GUI(player, id)
 		
 		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives[1] then
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
-				if (v.done == false and v.type_1 ~= "label") then
-					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_2.."."..v.name}, v.amount_done, v.amount_needed}}
-					frameflow2.add{type = "line", direction = "horizontal"}
-				elseif (v.done == false and v.type_1 == "label") then
+				if (v.done == false and v.type_1 == "label") then
 					frameflow2.add{type = "label", caption = {"DyDs-story."..v.name}}
+					frameflow2.add{type = "line", direction = "horizontal"}
+				elseif (v.done == false and v.type_1 == "research") then
+					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_1.."."..v.name}}}
+					frameflow2.add{type = "line", direction = "horizontal"}
+				elseif (v.done == false and v.type_1 == "corpse") then
+					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_1.."."..v.name}}}
+					frameflow2.add{type = "line", direction = "horizontal"}
+				elseif (v.done == false and v.type_1 == "position") then
+					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, Round(getDistance(game.players[id].position.x, game.players[id].position.y, v.PosX, v.PosY), 0)}}
+					frameflow2.add{type = "line", direction = "horizontal"}
+				elseif (v.done == false and v.type_1 ~= "label") then
+					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_2.."."..v.name}, v.amount_done, v.amount_needed}}
 					frameflow2.add{type = "line", direction = "horizontal"}
 				end
 			end

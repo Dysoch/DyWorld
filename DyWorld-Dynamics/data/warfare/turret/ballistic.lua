@@ -4,6 +4,7 @@
 
 local DyWorld_Prototype = DyDs_CopyPrototype("ammo-turret", "gun-turret", "basic-9mm-turret", true)
 	DyWorld_Prototype.attack_parameters.cooldown = 6
+	DyWorld_Prototype.automated_ammo_count = 100
 	DyWorld_Prototype.attack_parameters.range = 15
 	DyWorld_Prototype.attack_parameters.ammo_category = "900mm"
 

@@ -1,5 +1,5 @@
 
-debugger = false
+debugger = true
 
 -- LuaLib
 require "script/lualib/function"
@@ -24,54 +24,63 @@ require "script/story/tier-0"
 
 -- Event Handlers --
 require "script/events/keys"
-require "script/events/on_built_entity"
-require "script/events/on_chunk_generated"
+require "script/events/build-events"
+require "script/events/craft-events"
+require "script/events/mine-events"
+require "script/events/gui-events"
+require "script/events/kill-events"
+require "script/events/misc-events"
+require "script/events/player-events"
+
 require "script/events/on_configuration_changed"
-require "script/events/on_entity_died"
 require "script/events/on_init"
-require "script/events/on_gui_click"
-require "script/events/on_picked_up_item"
-require "script/events/on_player_changed_force"
-require "script/events/on_player_crafted_item"
-require "script/events/on_player_created"
-require "script/events/on_player_died"
-require "script/events/on_player_joined_game"
-require "script/events/on_player_left_game"
-require "script/events/on_player_mined_entity"
-require "script/events/on_player_mined_item"
-require "script/events/on_player_respawned"
-require "script/events/on_research_finished"
-require "script/events/on_robot_built_entity"
-require "script/events/on_robot_mined"
-require "script/events/on_robot_mined_entity"
-require "script/events/on_rocket_launched"
-require "script/events/on_sector_scanned"
 require "script/events/on_tick"
 
+-- Build Events --
 script.on_event(defines.events.on_built_entity, Event_on_built_entity)
-script.on_event(defines.events.on_chunk_generated, Event_on_chunk_generated)
-script.on_configuration_changed(Event_on_configuration_changed)
-script.on_event(defines.events.on_entity_died, Event_on_entity_died)
-script.on_init(Event_on_init)
-script.on_event(defines.events.on_gui_click, Event_on_gui_click)
-script.on_event(defines.events.on_picked_up_item, Event_on_picked_up_item)
-script.on_event(defines.events.on_player_changed_force, Event_on_player_changed_force)
+script.on_event(defines.events.on_robot_built_entity, Event_on_robot_built_entity)
+--script.on_event(defines.events.script_raised_built, Event_script_raised_built)
+script.on_event(defines.events.script_raised_revive, Event_script_raised_revive)
+
+-- Mine Events
+script.on_event(defines.events.on_player_mined_entity, Event_on_player_mined_entity)
+script.on_event(defines.events.on_player_mined_item, Event_on_player_mined_item)
+script.on_event(defines.events.on_robot_mined, Event_on_robot_mined)
+script.on_event(defines.events.on_robot_mined_entity, Event_on_robot_mined_entity)
+
+-- Craft Events
 script.on_event(defines.events.on_player_crafted_item, Event_on_player_crafted_item)
+
+-- Kill Events
+script.on_event(defines.events.on_entity_died, Event_on_entity_died)
+
+-- Research Events
+script.on_event(defines.events.on_research_finished, Event_on_research_finished)
+
+-- Misc Events
+script.on_event(defines.events.on_chunk_generated, Event_on_chunk_generated)
+script.on_event(defines.events.on_picked_up_item, Event_on_picked_up_item)
+script.on_event(defines.events.on_rocket_launched, Event_on_rocket_launched)
+script.on_event(defines.events.on_sector_scanned, Event_on_sector_scanned)
+script.on_event(defines.events.on_character_corpse_expired, Event_on_character_corpse_expired)
+
+-- Player Events
+script.on_event(defines.events.on_player_changed_force, Event_on_player_changed_force)
 script.on_event(defines.events.on_player_created, Event_on_player_created)
 script.on_event(defines.events.on_player_died, Event_on_player_died)
 script.on_event(defines.events.on_player_joined_game, Event_on_player_joined_game)
 script.on_event(defines.events.on_player_left_game, Event_on_player_left_game)
-script.on_event(defines.events.on_player_mined_entity, Event_on_player_mined_entity)
-script.on_event(defines.events.on_player_mined_item, Event_on_player_mined_item)
 script.on_event(defines.events.on_player_respawned, Event_on_player_respawned)
-script.on_event(defines.events.on_research_finished, Event_on_research_finished)
-script.on_event(defines.events.on_robot_built_entity, Event_on_robot_built_entity)
-script.on_event(defines.events.on_robot_mined, Event_on_robot_mined)
-script.on_event(defines.events.on_robot_mined_entity, Event_on_robot_mined_entity)
-script.on_event(defines.events.on_rocket_launched, Event_on_rocket_launched)
-script.on_event(defines.events.on_sector_scanned, Event_on_sector_scanned)
-script.on_event(defines.events.on_tick, Event_on_tick)
+script.on_event(defines.events.on_pre_player_mined_item, Event_on_pre_player_mined_item)
+
+-- GUI Events
+script.on_event(defines.events.on_gui_click, Event_on_gui_click)
 script.on_event(defines.events.on_gui_selected_tab_changed, Event_on_gui_selected_tab_changed)
+
+-- Config Events
+script.on_configuration_changed(Event_on_configuration_changed)
+script.on_init(Event_on_init)
+script.on_event(defines.events.on_tick, Event_on_tick)
 
 --------------------------------- TEST AREA ------------------------------------------
 

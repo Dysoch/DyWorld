@@ -26,11 +26,13 @@ local Damage_Table = {
 local Recipe_Categories = {
 	"kiln-basic",
 	"kiln-normal",
+	"assembling-tier-0",
 	"assembling-tier-1",
 	"assembling-tier-2",
 	"assembling-tier-3",
 	"assembling-tier-4",
 	"assembling-tier-5",
+	"bloomery",
 }
 
 local Autoplace_Categories = {

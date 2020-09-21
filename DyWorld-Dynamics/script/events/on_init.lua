@@ -181,8 +181,9 @@ local Story = {
 			},
 			[6] = {
 				done = false,
-				amount_left = 3,
-				objectives_amount = 3,
+				amount_left = 4,
+				objectives_amount = 4,
+				location_objective = true,
 				message = "DyDs-story.message-act-1-phase-6",
 				recipes = true,
 				objectives = {
@@ -209,6 +210,12 @@ local Story = {
 						amount_needed = math.random(1,5),
 						amount_done = 0,
 						done = false,
+					},
+					[4] = {
+						type_1 = "position", 
+						done = false,
+						PosX = 0,
+						PosY = 0,
 					},
 				},
 			},
@@ -378,11 +385,50 @@ local Story = {
 				recipes = false,
 				objectives = {
 					[1] = {
+						type_1 = "corpse", 
+						type_2 = "corpse", 
+						name = "corpse", 
+						done = false,
+					},
+				},
+			},
+			[2] = {
+				done = false,
+				amount_left = 4,
+				objectives_amount = 4,
+				--message done script wise,
+				recipes = false,
+				objectives = {
+					[1] = {
 						type_1 = "died", 
 						type_2 = "type", 
 						name = "unit", 
 						amount_needed = 999999999,
 						amount_done = 0,
+						done = false,
+					},
+					[2] = {
+						type_1 = "research", 
+						type_2 = "name", 
+						name = "copper-processing", 
+						done = false,
+					},
+					[3] = {
+						type_1 = "research", 
+						type_2 = "name", 
+						name = "iron-processing", 
+						done = false,
+					},
+					[4] = {
+						type_1 = "research", 
+						type_2 = "name", 
+						name = "tin-processing", 
+						done = false,
+					},
+					[5] = {
+						type_1 = "label", 
+						type_2 = "name", 
+						name = "rebuild", 
 						done = false,
 					},
 				},

@@ -35,12 +35,12 @@ Story_Recipes  = {
 	["basic-transport-belt"] = {act = 1, phase = 5},
 	["basic-underground-belt"] = {act = 1, phase = 5},
 	["basic-splitter"] = {act = 1, phase = 5},
-	["basic-loader"] = {act = 1, phase = 5},
 	["burner-inserter"] = {act = 1, phase = 5},
 	["bronze-gear"] = {act = 1, phase = 5},
 	
 	----- Act 1, Phase 6 -----
 	["burner-assembler"] = {act = 1, phase = 6},
+	["basic-loader"] = {act = 1, phase = 6},
 	["control-board-1"] = {act = 1, phase = 6},
 	["tin-basic"] = {act = 1, phase = 6},
 	

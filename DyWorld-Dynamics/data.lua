@@ -9,4 +9,4 @@ require(DyDs_data_resources.. "data")
 require(DyDs_data_machines.. "data")
 require(DyDs_data_warfare.. "data")
 require(DyDs_data_logistics.. "data")
-
+require(DyDs_data_tech.. "data")

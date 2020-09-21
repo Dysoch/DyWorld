@@ -64,28 +64,11 @@ DyDS_Add_Tool({
 	subgroup = DyDs.."0-resource-2",
 }) 
 
-  ----- Nuggets -----
+  ----- Slag & Nuggets -----
   
 DyDS_Add_Item({
-	name = "iron-nugget",
-	order = "iron-nugget",
-	localised_name = {"looped-name.iron-3"},
-	stack_size = 5000,
-	subgroup = DyDs.."0-resource-3",
-})
-
-DyDS_Add_Item({
-	name = "copper-nugget",
-	order = "copper-nugget",
-	localised_name = {"looped-name.copper-3"},
-	stack_size = 5000,
-	subgroup = DyDs.."0-resource-3",
-})
-
-DyDS_Add_Item({
-	name = "tin-nugget",
-	order = "tin-nugget",
-	localised_name = {"looped-name.tin-3"},
+	name = "slag",
+	order = "slag",
 	stack_size = 5000,
 	subgroup = DyDs.."0-resource-3",
 })

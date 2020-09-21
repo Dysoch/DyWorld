@@ -32,6 +32,9 @@ function Event_on_tick(event)
 					player.gui.top.DyDs_Main_GUI.selected_tab_index = global.dyworld.players[v.id].stats_gui_index
 				end
 				Bonuses(v.id)
+				if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective then
+					Story_Objectives("position", nil, (game.players[v.id].position.x), (game.players[v.id].position.y))
+				end
 			end
 		end
 	end

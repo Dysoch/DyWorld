@@ -1,6 +1,7 @@
 
 
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("boiler", "boiler", "basic-boiler", true)
+DyWorld_Prototype_1.energy_source.fuel_category = "carbon"
 
 
 data:extend({

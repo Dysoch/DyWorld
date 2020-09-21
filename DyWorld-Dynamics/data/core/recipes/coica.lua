@@ -2,7 +2,7 @@ data:extend({
   {
     type = "recipe",
     name = "ammo-nano-constructors",
-	category = "assembling-tier-1",
+	category = "assembling-tier-0",
     normal =
     {
       ingredients =

@@ -29,6 +29,19 @@ function Phase_Forward()
 			DyLog("DyDs-story.message-act-1-phase-10-5", true)
 		end
 	end
+	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective then
+		if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_2 and global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_2 == "enemy-find") then
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
+				if v.type_1 == "position" then
+					local Finder = game.surfaces[1].find_nearest_enemy{position={0,0}, max_distance=global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_3}
+					local X = Finder.position.x
+					local Y = Finder.position.y
+					v.PosX = X
+					v.PosY = Y
+				end
+			end
+		end
+	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then
 		if not debugger then
 			DyLog("DyDs-story.message-act-2-phase-1", true)

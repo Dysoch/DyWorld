@@ -61,5 +61,18 @@ function Story_GUI(player, id)
 		end
 		frameflow1.add{type = "label", caption = "Game Days: "..global.dyworld.game_stats.days}
 		frameflow1.add{type = "line", direction = "horizontal"}
+		if global.dyworld.game_stats.attack_warning_3 then
+			frameflow1.add{type = "label", caption = "Attacks inbound: "..tostring(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack)}
+			frameflow1.add{type = "label", caption = "Last Attack Location: "..global.dyworld.game_stats.attack_loc_x..","..global.dyworld.game_stats.attack_loc_y}
+			frameflow1.add{type = "label", caption = "Last Attack Strength: "..global.dyworld.game_stats.attack_loc_amount.." Natives"}
+			frameflow1.add{type = "line", direction = "horizontal"}
+		elseif global.dyworld.game_stats.attack_warning_2 then
+			frameflow1.add{type = "label", caption = "Attacks inbound: "..tostring(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack)}
+			frameflow1.add{type = "label", caption = "Last Attack Strength: "..global.dyworld.game_stats.attack_loc_amount.." Natives"}
+			frameflow1.add{type = "line", direction = "horizontal"}
+		elseif global.dyworld.game_stats.attack_warning_1 then
+			frameflow1.add{type = "label", caption = "Attacks inbound: "..tostring(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack)}
+			frameflow1.add{type = "line", direction = "horizontal"}
+		end
 end
 

@@ -45,13 +45,13 @@ function Pick_Random_Attack_Location()
 	local Loc_table = global.dyworld.game_stats.building_locations
 	local randomized = math.random(#Loc_table)
 	Location = {x = Loc_table[randomized].posx, y = Loc_table[randomized].posy}
-	debug("Random Attack Location: x = "..Location.x..", y = "..Location.y)
+	--debug("Random Attack Location: x = "..Location.x..", y = "..Location.y)
 	return Location
 end
 
 function Pick_Random_Attack_Strength(STRENGTH)
 	local Amount = 1
 	Amount = math.random((1 * STRENGTH), ((4 + STRENGTH) * STRENGTH))
-	debug("random attack amount: "..Amount)
+	--debug("random attack amount: "..Amount)
 	return Amount
 end

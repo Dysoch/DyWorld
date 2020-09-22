@@ -48,3 +48,10 @@ function Pick_Random_Attack_Location()
 	debug("Random Attack Location: x = "..Location.x..", y = "..Location.y)
 	return Location
 end
+
+function Pick_Random_Attack_Strength(STRENGTH)
+	local Amount = 1
+	Amount = math.random((1 * STRENGTH), ((4 + STRENGTH) * STRENGTH))
+	debug("random attack amount: "..Amount)
+	return Amount
+end

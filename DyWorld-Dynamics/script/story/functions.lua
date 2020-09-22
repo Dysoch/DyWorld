@@ -20,6 +20,7 @@ function Phase_Forward()
 		global.dyworld.story.phase = 1
 	end
 	if (global.dyworld.story.phase == 10 and global.dyworld.story.act == 1) then
+		global.dyworld.game_stats.attack_warning_1 = true
 		if not debugger then
 			DyLog("DyDs-story.message-act-1-phase-10-1", "days")
 			DyLog("DyDs-story.message-act-1-phase-10-2", true)

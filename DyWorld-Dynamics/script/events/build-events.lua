@@ -35,6 +35,7 @@ function Event_on_built_entity(event)
 	if (type == "radar" and player.minimap_enabled == false) then
 		for _,player in pairs(game.players) do
 			player.minimap_enabled = true
+			global.dyworld.game_stats.attack_warning_2 = true
 			DyLog(Time..": Minimap Unlocked")
 			game.forces.player.ghost_time_to_live = (60*60*60*250)
 			game.forces.player.deconstruction_time_to_live = (60*60*60*250)
@@ -74,6 +75,31 @@ function Event_on_robot_built_entity(event)
 		--debug("build at: "..position.x..", "..position.y)
 	end
 	
+	-- Reenable Minimap
+	if (type == "radar") then
+		for _,player in pairs(game.players) do
+			if player.minimap_enabled == false then
+				player.minimap_enabled = true
+				global.dyworld.game_stats.attack_warning_2 = true
+				DyLog(Time..": Minimap Unlocked")
+				game.forces.player.ghost_time_to_live = (60*60*60*250)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*250)
+			end
+		end
+	end
+	
+	-- Reenable Research
+	if (type == "lab") then
+		for _,player in pairs(game.players) do
+			if player.force.research_enabled == false then
+				player.force.enable_research()
+				DyLog(Time..": Research Unlocked")
+				game.forces.player.ghost_time_to_live = (60*60*60*1)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*1)
+			end
+		end
+	end
+	
 	----- Story Objective Check -----
 	Story_Objectives("building-robot", event)
 end
@@ -100,6 +126,31 @@ function Event_script_raised_built(event)
 		--debug("build at: "..position.x..", "..position.y)
 	end
 	
+	-- Reenable Minimap
+	if (type == "radar") then
+		for _,player in pairs(game.players) do
+			if player.minimap_enabled == false then
+				player.minimap_enabled = true
+				global.dyworld.game_stats.attack_warning_2 = true
+				DyLog(Time..": Minimap Unlocked")
+				game.forces.player.ghost_time_to_live = (60*60*60*250)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*250)
+			end
+		end
+	end
+	
+	-- Reenable Research
+	if (type == "lab") then
+		for _,player in pairs(game.players) do
+			if player.force.research_enabled == false then
+				player.force.enable_research()
+				DyLog(Time..": Research Unlocked")
+				game.forces.player.ghost_time_to_live = (60*60*60*1)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*1)
+			end
+		end
+	end
+	
 	----- Story Objective Check -----
 	Story_Objectives("building-robot", event)
 end
@@ -124,6 +175,31 @@ function Event_script_raised_revive(event)
 		local BuildingTable = {posx = position.x, posy = position.y}
 		table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
 		--debug("build at: "..position.x..", "..position.y)
+	end
+	
+	-- Reenable Minimap
+	if (type == "radar") then
+		for _,player in pairs(game.players) do
+			if player.minimap_enabled == false then
+				player.minimap_enabled = true
+				global.dyworld.game_stats.attack_warning_2 = true
+				DyLog(Time..": Minimap Unlocked")
+				game.forces.player.ghost_time_to_live = (60*60*60*250)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*250)
+			end
+		end
+	end
+	
+	-- Reenable Research
+	if (type == "lab") then
+		for _,player in pairs(game.players) do
+			if player.force.research_enabled == false then
+				player.force.enable_research()
+				DyLog(Time..": Research Unlocked")
+				game.forces.player.ghost_time_to_live = (60*60*60*1)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*1)
+			end
+		end
 	end
 	
 	----- Story Objective Check -----

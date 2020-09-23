@@ -31,9 +31,8 @@ Redo act 1 (phase 6,7,8,9,10)
 
 add loader speeder as tooltip
 
-remove base game stuff from menu's
+add playerport to act 1.3
 
-add enemy atacks (amount_attacks, time_between)
 
 
   ---------- DONE ----------

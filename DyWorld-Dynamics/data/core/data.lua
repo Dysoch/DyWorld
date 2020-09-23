@@ -2,6 +2,7 @@
 -- Core Templates --
 require(DyDs_data_core.. "templates.item")
 require(DyDs_data_core.. "templates.tool")
+require(DyDs_data_core.. "templates.ammo")
 require(DyDs_data_core.. "templates.deep-copy")
 
 -- Essentials --

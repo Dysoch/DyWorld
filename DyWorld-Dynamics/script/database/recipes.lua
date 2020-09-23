@@ -23,6 +23,7 @@ Story_Recipes  = {
 	["basic-wall"] = {act = 1, phase = 3},
 	["basic-9mm-turret"] = {act = 1, phase = 3},
 	["basic-armor"] = {act = 1, phase = 3},
+	--["basic-heal-station"] = {act = 1, phase = 3}, -- TODO
 	
 	----- Act 1, Phase 4 -----
 	["basic-treefarm"] = {act = 1, phase = 4},
@@ -57,6 +58,7 @@ Story_Recipes  = {
 	----- Act 1, Phase 9 -----
 	["basic-power-armor"] = {act = 1, phase = 9},
 	["ammo-nano-constructors"] = {act = 1, phase = 9},
+	--["burner-radar"] = {act = 1, phase = 9}, -- TODO
 	
 	----- Act 1, Phase 10 -----
 	["basic-assembler"] = {act = 1, phase = 10},

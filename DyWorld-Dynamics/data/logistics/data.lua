@@ -7,4 +7,5 @@ require(DyDs_data_logistics.. "tier-1.basic-splitter")
 require(DyDs_data_logistics.. "tier-1.basic-loader")
 require(DyDs_data_logistics.. "tier-1.basic-transport-belt")
 require(DyDs_data_logistics.. "tier-1.basic-underground-belt")
+require(DyDs_data_logistics.. "tier-1.pump")
 

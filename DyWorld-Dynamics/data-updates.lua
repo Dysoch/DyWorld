@@ -9,3 +9,4 @@ for i,inserter in pairs(data.raw["inserter"]) do
 end
 
 require("data.dycompa.data")
+require("data.core.templates.canisters")

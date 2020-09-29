@@ -33,6 +33,10 @@ local Recipe_Categories = {
 	"assembling-tier-4",
 	"assembling-tier-5",
 	"bloomery",
+	"grinder",
+	"electrolysis",
+	"blast-furnace",
+	--"bloomery",
 }
 
 local Autoplace_Categories = {
@@ -41,6 +45,7 @@ local Autoplace_Categories = {
 	"deposit-stone",
 	"deposit-coal",
 	"deposit-tin",
+	"deposit-gas",
 }
 
 local Fuel_Categories = {

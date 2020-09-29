@@ -1,7 +1,7 @@
 data:extend({
   {
     type = "recipe",
-    name = "cast-iron",
+    name = "cast-iron-1",
 	category = "kiln-basic",
     normal =
     {
@@ -30,7 +30,7 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "cast-copper",
+    name = "cast-copper-1",
 	category = "kiln-basic",
     normal =
     {

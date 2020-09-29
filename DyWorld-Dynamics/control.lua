@@ -98,8 +98,15 @@ remote.add_interface("DyWorld",
 		game.regenerate_entity(NAME)
 	end,
 	
-	Unlock_Recipes = function()
+	Migrate = function()
 		Reunlock_Recipes()
+	
+		for k,v in pairs(game.forces.player.technologies) do
+			if v.researched then
+				v.researched = false
+				v.researched = true
+			end
+		end
 	end,
 	
 	Pick_Random_Attack_Location = function()

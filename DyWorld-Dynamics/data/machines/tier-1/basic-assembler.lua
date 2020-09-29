@@ -5,6 +5,7 @@ DyWorld_Prototype_1.icon = "__base__/graphics/icons/assembling-machine-2.png"
 DyWorld_Prototype_1.crafting_categories = {"assembling-tier-1", "assembling-tier-2"}
 DyWorld_Prototype_1.energy_usage = "125kW"
 DyWorld_Prototype_1.crafting_speed = 1
+DyWorld_Prototype_1.fluid_boxes = data.raw["assembling-machine"]["assembling-machine-3"].fluid_boxes
 DyWorld_Prototype_1.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",

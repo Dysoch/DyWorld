@@ -69,6 +69,7 @@ DyDS_Add_Tool({
 DyDS_Add_Item({
 	name = "slag",
 	order = "slag",
+    icon = DyDs_path_icon.."slag.png",
 	stack_size = 5000,
 	subgroup = DyDs.."0-resource-3",
 })

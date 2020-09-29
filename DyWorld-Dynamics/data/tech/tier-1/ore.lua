@@ -1,81 +1,34 @@
 
 
 
+DyWorld_Add_To_Tech("copper-processing", "bloomery")
+DyWorld_Add_To_Tech("copper-processing", "centrifuge")
+DyWorld_Add_To_Tech("copper-processing", "bronze-pump")
+DyWorld_Add_To_Tech("copper-processing", "canister-nitrogen")
+DyWorld_Add_To_Tech("copper-processing", "canister-empty")
+DyWorld_Add_To_Tech("copper-processing", "ore-purify-copper")
+DyWorld_Add_To_Tech("copper-processing", "cast-copper-2")
+DyWorld_Add_To_Tech("copper-processing", "slag-processing")
+DyWorld_Add_To_Tech("copper-processing", "water-centrifuge")
 
-data:extend({
-  {
-    type = "technology",
-    name = "copper-processing",
-    icon_size = 128,
-    icon = "__base__/graphics/technology/automation-1.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "bloomery"
-      },
-    },
-    unit =
-    {
-      count = 15,
-      ingredients = 
-	  {
-		{"copper-ore-impure", 25},
-		{"copper-ore", 25},
-		{"copper-plate", 1},
-	  },
-      time = 2.5
-    },
-    order = "1-1"
-  },
-  {
-    type = "technology",
-    name = "iron-processing",
-    icon_size = 128,
-    icon = "__base__/graphics/technology/automation-1.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "bloomery"
-      },
-    },
-    unit =
-    {
-      count = 25,
-      ingredients = 
-	  {
-		{"iron-ore-impure", 25},
-		{"iron-ore", 25},
-		{"iron-plate", 1},
-	  },
-      time = 5
-    },
-    order = "1-1"
-  },
-  {
-    type = "technology",
-    name = "tin-processing",
-    icon_size = 128,
-    icon = "__base__/graphics/technology/automation-1.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "bloomery"
-      },
-    },
-    unit =
-    {
-      count = 10,
-      ingredients = 
-	  {
-		{"tin-ore-impure", 25},
-		{"tin-ore", 25},
-		{"tin-plate", 1},
-	  },
-      time = 1
-    },
-    order = "1-1"
-  },
-})
+DyWorld_Add_To_Tech("iron-processing", "bloomery")
+DyWorld_Add_To_Tech("iron-processing", "centrifuge")
+DyWorld_Add_To_Tech("iron-processing", "bronze-pump")
+DyWorld_Add_To_Tech("iron-processing", "canister-oxygen")
+DyWorld_Add_To_Tech("iron-processing", "canister-water")
+DyWorld_Add_To_Tech("iron-processing", "canister-empty")
+DyWorld_Add_To_Tech("iron-processing", "ore-purify-iron")
+DyWorld_Add_To_Tech("iron-processing", "cast-iron-2")
+DyWorld_Add_To_Tech("iron-processing", "slag-processing")
+DyWorld_Add_To_Tech("iron-processing", "water-centrifuge")
+
+DyWorld_Add_To_Tech("tin-processing", "bloomery")
+DyWorld_Add_To_Tech("tin-processing", "centrifuge")
+DyWorld_Add_To_Tech("tin-processing", "bronze-pump")
+DyWorld_Add_To_Tech("tin-processing", "canister-hydrogen")
+DyWorld_Add_To_Tech("tin-processing", "canister-empty")
+DyWorld_Add_To_Tech("tin-processing", "ore-purify-tin")
+DyWorld_Add_To_Tech("tin-processing", "cast-tin-2")
+DyWorld_Add_To_Tech("tin-processing", "slag-processing")
+DyWorld_Add_To_Tech("tin-processing", "water-centrifuge")
+

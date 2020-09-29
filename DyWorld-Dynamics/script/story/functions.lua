@@ -8,8 +8,12 @@ function Phase_Forward()
 		for k,v in pairs(Story_Recipes) do
 			if (v.phase <= global.dyworld.story.phase and v.act <= global.dyworld.story.act) then
 				for _,player in pairs(game.players) do
-					if not player.force.recipes[k].enabled then
-						player.force.recipes[k].enabled = true
+					if player.force.recipes[k] then
+						if not player.force.recipes[k].enabled then
+							player.force.recipes[k].enabled = true
+						end
+					else
+						debug("Recipe unlock failed! Does it exist? ("..k..")")
 					end
 				end
 			end
@@ -71,8 +75,12 @@ function Reunlock_Recipes()
 	for k,v in pairs(Story_Recipes) do
 		if (v.phase <= global.dyworld.story.phase and v.act <= global.dyworld.story.act) then
 			for _,player in pairs(game.players) do
-				if not player.force.recipes[k].enabled then
-					player.force.recipes[k].enabled = true
+				if player.force.recipes[k] then
+					if not player.force.recipes[k].enabled then
+						player.force.recipes[k].enabled = true
+					end
+				else
+					debug("Recipe unlock failed! Does it exist? ("..k..")")
 				end
 			end
 		end

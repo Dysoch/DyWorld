@@ -57,6 +57,9 @@ data:extend({
         }
       }
     },
+	circuit_wire_connection_point = data.raw.container["wooden-chest"].circuit_wire_connection_point,
+	circuit_connector_sprites = data.raw.container["wooden-chest"].circuit_connector_sprites,
+	circuit_wire_max_distance = data.raw.container["wooden-chest"].circuit_wire_max_distance,
   },
   {
     type = "item",

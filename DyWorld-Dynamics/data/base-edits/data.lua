@@ -9,4 +9,5 @@ require(DyDs_data_base_edits.. "entities.crash")
 require(DyDs_data_base_edits.. "entities.trees")
 require(DyDs_data_base_edits.. "entities.rocks")
 require(DyDs_data_base_edits.. "entities.subgroups")
+require(DyDs_data_base_edits.. "entities.centrifuge")
 

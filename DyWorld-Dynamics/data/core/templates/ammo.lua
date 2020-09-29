@@ -129,7 +129,7 @@ data:extend({
     },
     animation =
     {
-      filename = "__base__/graphics/entity/bullet/bullet.png",
+      filename = DyDs_path_entity.."bullet.png",
       frame_count = 1,
       width = 3,
       height = 50,

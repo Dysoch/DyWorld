@@ -26,7 +26,6 @@ local Change = {
 	"assembling-machine-1",
 	"assembling-machine-2",
 	"assembling-machine-3",
-	"centrifuge",
 	"electric-furnace",
 	"oil-refinery",
 	"chemical-plant",

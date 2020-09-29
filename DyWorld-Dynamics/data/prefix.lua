@@ -10,6 +10,7 @@ DyDs_path_entity = "__DyWorld-Dynamics__/graphics/entity/"
 DyDs_path_equipment = "__DyWorld-Dynamics__/graphics/equipment/"
 DyDs_path_tile = "__DyWorld-Dynamics__/graphics/tiles/"
 DyDs_path_item_group = "__DyWorld-Dynamics__/graphics/item-group/"
+DyDs_tech_temp = "__DyWorld-Dynamics__/graphics/technology/questionmark.png"
 DyDs_icon_temp = "__DyWorld-Dynamics__/graphics/questionmark.png"
 
 -- data paths

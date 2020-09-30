@@ -54,7 +54,6 @@ function Phase_Forward()
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then
 		if not debugger then
 			DyLog("DyDs-story.message-act-2-phase-1", true)
-			DyLog("DyDs-story.message-act-2-phase-1-1", true)
 		end
 		game.surfaces[1].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {(math.random(-10,10)),(math.random(-10,10))}}
 	end

@@ -5,7 +5,7 @@ DONE
 -- TO DO PHASE 2 DEVELOPMENT --
 
 wrought iron (0.08% carbon) process
-into blast furnace with limestone and charcoal and liquid oxygen (more efficient)
+into blast furnace with limestone and lignite and liquid oxygen (more efficient)
 100 ore > 95 iron plate, 1-5 slag
 
 steel (0.8-2% carbon) process
@@ -14,23 +14,17 @@ into blast furnace with limestone and coal and liquid oxygen (more efficient)
 
 copper minerals (such as chalcopyrite), the ore is crushed and ground to liberate the valuable minerals from the waste ('gangue') minerals. It is then concentrated using mineral flotation. The concentrate is typically then sold to distant smelters, although some large mines have smelters located nearby. Such colocation of mines and smelters was more typical in the 19th and early 20th centuries, when smaller smelters could be economic. The sulfide concentrates are typically smelted in such furnaces as the Outokumpu or Inco flash furnace or the ISASMELT furnace to produce matte, which must be converted and refined to produce anode copper. Finally, the final refining process is electrolysis. For economic and environmental reasons, many of the byproducts of extraction are reclaimed. Sulfur dioxide gas, for example, is captured and turned into sulfuric acid — which can then be used in the extraction process or sold for such purposes as fertiliser manufacture
 
-add unlocks at phases script
-
 If I may make a suggestion... is it possible to have all the tabs on top at all times?  (And click on them to expand?)  I feel like its easy to forget the numpad keys, especially for people new to mods.  The objectives tab, specifically is going to generate a LOT of questions: e.g. I cant make progress, what am I supposed to do? end
 
 unlock logistics tab start of act 2
 
 add loader speeder as tooltip
 
-check attack script
-
 add recycler
 
 add recycler internal complexity meter
 
 make story mode mp
-
-canisters to tool
 
   ---------- DONE ----------
 

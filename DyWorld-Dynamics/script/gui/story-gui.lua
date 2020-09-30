@@ -59,7 +59,7 @@ function Story_GUI(player, id)
 			frameflow1.add{type = "label", caption = "Stage: Space Age"}
 			frameflow1.add{type = "line", direction = "horizontal"}
 		end
-		frameflow1.add{type = "label", caption = "Game Days: "..global.dyworld.game_stats.days}
+		frameflow1.add{type = "label", caption = "Time since crash: "..global.dyworld.game_stats.time_stamp}
 		frameflow1.add{type = "line", direction = "horizontal"}
 		if global.dyworld.game_stats.attack_warning_3 then
 			frameflow1.add{type = "label", caption = "Attacks inbound: "..tostring(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack)}

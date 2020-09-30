@@ -41,7 +41,7 @@ local Time = global.dyworld.game_stats.time_stamp
 			if game.is_multiplayer() then
 				PlayerPrint({str, global.dyworld.game_stats.days})
 			else
-				game.show_message_dialog{text = {str, global.dyworld.game_stats.days}}
+				game.show_message_dialog{text = {str, Time}}
 			end
 		end
 		local Logger = {str, global.dyworld.game_stats.days}

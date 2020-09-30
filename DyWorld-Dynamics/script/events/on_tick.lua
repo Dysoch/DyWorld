@@ -48,7 +48,15 @@ function Event_on_tick(event)
 	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack and event.tick%(60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency) == math.random((60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency)-1)) then
 		local Loc = Pick_Random_Attack_Location()
 		local Str = Pick_Random_Attack_Strength(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_strength)
+		
+		if not settings.startup["DyWorld_Combat_Overhaul"].value then
+			for i = 1, Str do
+				game.surfaces[1].create_entity{name = ("small-biter"), position = {x = (math.random((Loc.x-100),(Loc.x+100))), y = (math.random((Loc.x-100),(Loc.x+100)))}}
+			end
+		end
+		
 		game.surfaces[1].build_enemy_base(Loc, Str)
+		
 		global.dyworld.game_stats.attack_loc_amount = Str
 		global.dyworld.game_stats.attack_loc_x = Loc.x
 		global.dyworld.game_stats.attack_loc_y = Loc.y

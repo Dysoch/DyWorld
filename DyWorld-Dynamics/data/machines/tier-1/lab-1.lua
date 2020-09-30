@@ -18,6 +18,8 @@ local lab_inputs =
   "quartzite",
   "granite",
   "sandstone",
+  "slag",
+  "coal",
 }
 
 DyWorld_Prototype_1.inputs = lab_inputs

@@ -66,11 +66,12 @@ DyDS_Add_Tool({
 
   ----- Slag & Nuggets -----
   
-DyDS_Add_Item({
+DyDS_Add_Tool({
 	name = "slag",
 	order = "slag",
     icon = DyDs_path_icon.."slag.png",
 	stack_size = 5000,
+	durability = 1,
 	subgroup = DyDs.."0-resource-3",
 })
 
@@ -200,7 +201,7 @@ DyDS_Add_Item({
     fuel_category = "carbon",
 })
   
-DyDS_Add_Item({
+DyDS_Add_Tool({
 	name = "coal",
 	order = "coal",
     icon = "__base__/graphics/icons/coal.png",
@@ -208,4 +209,5 @@ DyDS_Add_Item({
 	subgroup = DyDs.."material-2",
     fuel_value = "15MJ",
     fuel_category = "carbon",
+	durability = 1,
 })

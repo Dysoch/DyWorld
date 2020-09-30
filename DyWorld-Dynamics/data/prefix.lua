@@ -6,11 +6,12 @@ DyDs_path_icon = "__DyWorld-Dynamics__/graphics/icons/"
 DyDs_path_damage = "__DyWorld-Dynamics__/graphics/damage/"
 DyDs_path_fluid = "__DyWorld-Dynamics__/graphics/fluids/"
 DyDs_path_tech = "__DyWorld-Dynamics__/graphics/technology/"
+DyDs_path_tech_base = "__base__/graphics/technology/"
 DyDs_path_entity = "__DyWorld-Dynamics__/graphics/entity/"
 DyDs_path_equipment = "__DyWorld-Dynamics__/graphics/equipment/"
 DyDs_path_tile = "__DyWorld-Dynamics__/graphics/tiles/"
 DyDs_path_item_group = "__DyWorld-Dynamics__/graphics/item-group/"
-DyDs_tech_temp = "__DyWorld-Dynamics__/graphics/technology/questionmark.png"
+DyDs_tech_temp = "__base__/graphics/technology/radar.png"
 DyDs_icon_temp = "__DyWorld-Dynamics__/graphics/questionmark.png"
 
 -- data paths

@@ -4,6 +4,7 @@ local Chemical_Techs = {
 	----- Core Techs -----
 	{
 		name = "fluids-1",
+		icon = DyDs_path_tech_base.."fluid-handling.png",
 		count = 15,
 		prerequisites = {
 			"automation-2",
@@ -16,6 +17,7 @@ local Chemical_Techs = {
 	},
 	{
 		name = "fluids-2",
+		icon = DyDs_path_tech_base.."fluid-handling.png",
 		count = 15,
 		prerequisites = {
 			"fluids-1",
@@ -28,6 +30,7 @@ local Chemical_Techs = {
 	},
 	{
 		name = "fluids-3",
+		icon = DyDs_path_tech_base.."fluid-handling.png",
 		count = 15,
 		prerequisites = {
 			"fluids-2",
@@ -40,6 +43,7 @@ local Chemical_Techs = {
 	},
 	{
 		name = "space-mining",
+		icon = DyDs_path_tech_base.."rocket-silo.png",
 		count = 15,
 		prerequisites = {
 			"fluids-3",
@@ -55,6 +59,7 @@ local Chemical_Techs = {
 	----- Extraction -----
 	{
 		name = "gas-extraction",
+		icon = DyDs_path_tech_base.."oil-gathering.png",
 		count = 15,
 		prerequisites = {
 			"fluids-1",
@@ -67,6 +72,7 @@ local Chemical_Techs = {
 	},
 	{
 		name = "oil-extraction",
+		icon = DyDs_path_tech_base.."oil-gathering.png",
 		count = 15,
 		prerequisites = {
 			"fluids-2",
@@ -81,6 +87,7 @@ local Chemical_Techs = {
 	----- Power -----
 	{
 		name = "gas-power",
+		icon = DyDs_path_tech_base.."electric-engine.png",
 		count = 15,
 		prerequisites = {
 			"gas-extraction",
@@ -94,6 +101,7 @@ local Chemical_Techs = {
 	},
 	{
 		name = "turbines",
+		icon = DyDs_path_tech_base.."electric-engine.png",
 		count = 15,
 		prerequisites = {
 			"fluids-2",
@@ -107,6 +115,7 @@ local Chemical_Techs = {
 	},
 	{
 		name = "nuclear",
+		icon = DyDs_path_tech_base.."nuclear-power.png",
 		count = 15,
 		prerequisites = {
 			"fluids-3",
@@ -122,6 +131,7 @@ local Chemical_Techs = {
 	----- Oil -----
 	{
 		name = "oil-processing",
+		icon = DyDs_path_tech_base.."oil-processing.png",
 		count = 15,
 		prerequisites = {
 			"oil-extraction",
@@ -134,6 +144,7 @@ local Chemical_Techs = {
 	},
 	{
 		name = "gasoline",
+		icon = DyDs_path_tech_base.."oil-processing.png",
 		count = 15,
 		prerequisites = {
 			"oil-processing",

@@ -20,8 +20,8 @@ require "script/gui/log-gui"
 require "script/stats/functions"
 
 -- Story
+require "script/story/story"
 require "script/story/functions"
-require "script/story/tier-0"
 
 -- Event Handlers --
 require "script/events/keys"

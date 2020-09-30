@@ -53,11 +53,11 @@ function Event_on_tick(event)
 		global.dyworld.game_stats.attack_loc_x = Loc.x
 		global.dyworld.game_stats.attack_loc_y = Loc.y
 		if global.dyworld.game_stats.attack_warning_3 then
-			PlayerPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
+			AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
 		elseif global.dyworld.game_stats.attack_warning_2 then
-			PlayerPrint({"DyDs-story.attack-2", Str})
+			AttackPrint({"DyDs-story.attack-2", Str})
 		elseif global.dyworld.game_stats.attack_warning_1 then
-			PlayerPrint({"DyDs-story.attack-1"})
+			AttackPrint({"DyDs-story.attack-1"})
 		end
 	end
 end

@@ -12,7 +12,8 @@ function Event_on_chunk_generated(event)
 end
 
 function Event_on_research_finished(event)
-	
+	----- Story Objective Check -----
+	Story_Objectives("research", event)
 end
 
 function Event_on_character_corpse_expired(event)

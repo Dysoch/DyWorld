@@ -2,6 +2,24 @@ local noise = require("noise")
 local tne = noise.to_noise_expression
 local resource_autoplace = require("resource-autoplace")
 
+local Iron_Base_Per_KM = 1.8
+local Iron_Random_Min = 0.25
+local Iron_Random_Max = 1.5
+local Iron_Richness = 0
+local Iron_Spot = 22
+
+local Copper_Base_Per_KM = 1.5
+local Copper_Random_Min = 0.2
+local Copper_Random_Max = 1.4
+local Copper_Richness = 0
+local Copper_Spot = 20
+
+local Tin_Base_Per_KM = 1.6
+local Tin_Random_Min = 0.3
+local Tin_Random_Max = 1.3
+local Tin_Richness = 0
+local Tin_Spot = 24
+
 ore_sound =
 {
   {
@@ -45,16 +63,6 @@ ore_sound =
     volume = 0.7
   }
 }
-
--- Initialize the core patch sets in a predictable order
-resource_autoplace.initialize_patch_set("iron-ore", true)
-resource_autoplace.initialize_patch_set("copper-ore", true)
-resource_autoplace.initialize_patch_set("coal", false)
-resource_autoplace.initialize_patch_set("browncoal", true)
-resource_autoplace.initialize_patch_set("limestone", true)
-resource_autoplace.initialize_patch_set("quartzite", false)
-resource_autoplace.initialize_patch_set("granite", false)
-resource_autoplace.initialize_patch_set("sandstone", true)
 
 local function resource(resource_parameters, autoplace_parameters)
   if coverage == nil then coverage = 0.02 end
@@ -162,6 +170,11 @@ local function resource_ore(resource_parameters, autoplace_parameters)
       starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
       candidate_spot_count = autoplace_parameters.candidate_spot_count,
 	  autoplace_control_name = autoplace_parameters.autoplace_control_name,
+	  base_spots_per_km2 = autoplace_parameters.base_spots_per_km2,
+	  random_spot_size_minimum = autoplace_parameters.random_spot_size_minimum,
+	  random_spot_size_maximum = autoplace_parameters.random_spot_size_maximum,
+	  minimum_richness = autoplace_parameters.minimum_richness,
+	  patch_set_name = autoplace_parameters.patch_set_name,
     },
     stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
     stages =
@@ -278,10 +291,8 @@ data:extend({
   resource_ore(
     {
       name = "iron-ore-10",
-      --name = "iron-ore-".. i*4,
 	  minable = "iron-ore",
 	  minable_probability = 0.1,
-	  --minable_probability = i*4 / 100,
       order = "c",
       color = {82, 174, 212, 0.1},
       map_color = {82, 174, 212},
@@ -295,8 +306,13 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Iron_Spot, 
 	  autoplace_control_name = "deposit-iron",
+	  base_spots_per_km2 = Iron_Base_Per_KM,
+	  random_spot_size_minimum = Iron_Random_Min,
+	  random_spot_size_maximum = Iron_Random_Max,
+	  minimum_richness = Iron_Richness,
+	  patch_set_name = "iron",
     }
   ),
   resource_ore(
@@ -317,8 +333,13 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Iron_Spot, 
 	  autoplace_control_name = "deposit-iron",
+	  base_spots_per_km2 = Iron_Base_Per_KM,
+	  random_spot_size_minimum = Iron_Random_Min,
+	  random_spot_size_maximum = Iron_Random_Max,
+	  minimum_richness = Iron_Richness,
+	  patch_set_name = "iron",
     }
   ),
   resource_ore(
@@ -339,8 +360,13 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Iron_Spot, 
 	  autoplace_control_name = "deposit-iron",
+	  base_spots_per_km2 = Iron_Base_Per_KM,
+	  random_spot_size_minimum = Iron_Random_Min,
+	  random_spot_size_maximum = Iron_Random_Max,
+	  minimum_richness = Iron_Richness,
+	  patch_set_name = "iron",
     }
   ),
   resource_ore(
@@ -361,8 +387,13 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Iron_Spot, 
 	  autoplace_control_name = "deposit-iron",
+	  base_spots_per_km2 = Iron_Base_Per_KM,
+	  random_spot_size_minimum = Iron_Random_Min,
+	  random_spot_size_maximum = Iron_Random_Max,
+	  minimum_richness = Iron_Richness,
+	  patch_set_name = "iron",
     }
   ),
   resource_ore(
@@ -383,8 +414,13 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Iron_Spot, 
 	  autoplace_control_name = "deposit-iron",
+	  base_spots_per_km2 = Iron_Base_Per_KM,
+	  random_spot_size_minimum = Iron_Random_Min,
+	  random_spot_size_maximum = Iron_Random_Max,
+	  minimum_richness = Iron_Richness,
+	  patch_set_name = "iron",
     }
   ),
   resource_ore(
@@ -405,8 +441,13 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Iron_Spot, 
 	  autoplace_control_name = "deposit-iron",
+	  base_spots_per_km2 = Iron_Base_Per_KM,
+	  random_spot_size_minimum = Iron_Random_Min,
+	  random_spot_size_maximum = Iron_Random_Max,
+	  minimum_richness = Iron_Richness,
+	  patch_set_name = "iron",
     }
   ),
   resource_ore(
@@ -427,8 +468,13 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Iron_Spot, 
 	  autoplace_control_name = "deposit-iron",
+	  base_spots_per_km2 = Iron_Base_Per_KM,
+	  random_spot_size_minimum = Iron_Random_Min,
+	  random_spot_size_maximum = Iron_Random_Max,
+	  minimum_richness = Iron_Richness,
+	  patch_set_name = "iron",
     }
   ),
   resource_ore(
@@ -449,8 +495,13 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Iron_Spot, 
 	  autoplace_control_name = "deposit-iron",
+	  base_spots_per_km2 = Iron_Base_Per_KM,
+	  random_spot_size_minimum = Iron_Random_Min,
+	  random_spot_size_maximum = Iron_Random_Max,
+	  minimum_richness = Iron_Richness,
+	  patch_set_name = "iron",
     }
   ),
   resource_ore(
@@ -471,8 +522,13 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Iron_Spot, 
 	  autoplace_control_name = "deposit-iron",
+	  base_spots_per_km2 = Iron_Base_Per_KM,
+	  random_spot_size_minimum = Iron_Random_Min,
+	  random_spot_size_maximum = Iron_Random_Max,
+	  minimum_richness = Iron_Richness,
+	  patch_set_name = "iron",
     }
   ),
   
@@ -500,8 +556,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   resource_ore(
@@ -522,8 +583,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   resource_ore(
@@ -544,8 +610,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   resource_ore(
@@ -566,8 +637,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   resource_ore(
@@ -588,8 +664,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   resource_ore(
@@ -610,8 +691,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   resource_ore(
@@ -632,8 +718,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   resource_ore(
@@ -654,8 +745,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   resource_ore(
@@ -676,8 +772,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   resource_ore(
@@ -698,8 +799,13 @@ data:extend({
       base_density = 8,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = 22, -- To match 0.17.50 placement
+      candidate_spot_count = Copper_Spot, 
 	  autoplace_control_name = "deposit-copper",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   
@@ -966,7 +1072,13 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
+      candidate_spot_count = Tin_Spot, 
 	  autoplace_control_name = "deposit-tin",
+	  base_spots_per_km2 = Tin_Base_Per_KM,
+	  random_spot_size_minimum = Tin_Random_Min,
+	  random_spot_size_maximum = Tin_Random_Max,
+	  minimum_richness = Tin_Richness,
+	  patch_set_name = "tin",
     }
   ),
   resource_ore(
@@ -987,7 +1099,13 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
+      candidate_spot_count = Tin_Spot, 
 	  autoplace_control_name = "deposit-tin",
+	  base_spots_per_km2 = Tin_Base_Per_KM,
+	  random_spot_size_minimum = Tin_Random_Min,
+	  random_spot_size_maximum = Tin_Random_Max,
+	  minimum_richness = Tin_Richness,
+	  patch_set_name = "tin",
     }
   ),
   resource_ore(
@@ -1008,7 +1126,13 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
+      candidate_spot_count = Tin_Spot, 
 	  autoplace_control_name = "deposit-tin",
+	  base_spots_per_km2 = Tin_Base_Per_KM,
+	  random_spot_size_minimum = Tin_Random_Min,
+	  random_spot_size_maximum = Tin_Random_Max,
+	  minimum_richness = Tin_Richness,
+	  patch_set_name = "tin",
     }
   ),
   resource_ore(
@@ -1029,7 +1153,13 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
+      candidate_spot_count = Tin_Spot, 
 	  autoplace_control_name = "deposit-tin",
+	  base_spots_per_km2 = Tin_Base_Per_KM,
+	  random_spot_size_minimum = Tin_Random_Min,
+	  random_spot_size_maximum = Tin_Random_Max,
+	  minimum_richness = Tin_Richness,
+	  patch_set_name = "tin",
     }
   ),
   resource_ore(
@@ -1050,7 +1180,13 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
+      candidate_spot_count = Tin_Spot, 
 	  autoplace_control_name = "deposit-tin",
+	  base_spots_per_km2 = Tin_Base_Per_KM,
+	  random_spot_size_minimum = Tin_Random_Min,
+	  random_spot_size_maximum = Tin_Random_Max,
+	  minimum_richness = Tin_Richness,
+	  patch_set_name = "tin",
     }
   ),
 })

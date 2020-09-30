@@ -3,11 +3,11 @@
 
 for k,v in pairs(data.raw.fluid) do
 	if v.auto_canister then
-		DyDS_Add_Item({
+		DyDS_Add_Tool({
 			name = "canister-"..v.name,
 			icons = {
 				{
-					icon = data.raw.item["canister-empty"].icon,
+					icon = data.raw.tool["canister-empty"].icon,
 				},
 				{
 					icon = data.raw.fluid[v.name].icon,
@@ -17,8 +17,10 @@ for k,v in pairs(data.raw.fluid) do
 			},
 			order = v.name,
 			stack_size = 10,
+			durability = 1,
 			subgroup = DyDs.."z-canisters",
 		})
+	table.insert(data.raw.lab["lab-2"].inputs, "canister-"..v.name)
 data:extend({
   {
     type = "recipe",

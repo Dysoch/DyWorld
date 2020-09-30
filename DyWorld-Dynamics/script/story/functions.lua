@@ -23,6 +23,11 @@ function Phase_Forward()
 		global.dyworld.story.act = global.dyworld.story.act + 1
 		global.dyworld.story.phase = 1
 	end
+	for k,v in pairs(game.forces.player.technologies) do
+		if v.researched then
+			Story_Objectives_Research(v.name)
+		end
+	end
 	if (global.dyworld.story.phase == 10 and global.dyworld.story.act == 1) then
 		global.dyworld.game_stats.attack_warning_1 = true
 		if not debugger then
@@ -59,12 +64,16 @@ function Phase_Forward()
 		end
 	end
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].recipes then
-		if not debugger then
-			DyLog("DyDs-story.phase-forward-1", true)
+		for index,player in pairs(game.players) do
+			if settings.get_player_settings(index)["DyWorld_Phase_Messages"].value then
+				DyLog("DyDs-story.phase-forward-1", true)
+			end
 		end
 	else
-		if not debugger then
-			DyLog("DyDs-story.phase-forward-2", true)
+		for index,player in pairs(game.players) do
+			if settings.get_player_settings(index)["DyWorld_Phase_Messages"].value then
+				DyLog("DyDs-story.phase-forward-2", true)
+			end
 		end
 	end
 end
@@ -82,6 +91,17 @@ function Reunlock_Recipes()
 				else
 					debug("Recipe unlock failed! Does it exist? ("..k..")")
 				end
+			end
+		end
+	end
+end
+
+function Story_Objectives_Research(name)
+	for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
+		if (v.type_1 == "research" and v.type_2 == "name") then
+			if (name == v.name and v.done == false) then
+				v.done = true
+				global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
 			end
 		end
 	end
@@ -209,11 +229,7 @@ function Story_Objectives(type, event, Posx, PosY)
 				end
 			end
 		elseif type == "research" then
-			local player = game.players[event.player_index]
-			local force = player.force
-			local id = event.player_index
-			local name = event.item_stack.name
-			local count = event.item_stack.count
+			local name = event.name
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if (v.type_1 == "research" and v.type_2 == "name") then
 					if (name == v.name and v.done == false) then

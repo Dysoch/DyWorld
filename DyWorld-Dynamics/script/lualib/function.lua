@@ -1,7 +1,6 @@
 
 
 
-
 function Entity_Check(type)
 	if type == "transport-belt" then return false
 	elseif type == "splitter" then return false

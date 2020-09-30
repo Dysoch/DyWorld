@@ -8,6 +8,15 @@ local DyWorld = "DyWorld-Dynamics: "
 	end
 end
 
+function AttackPrint(message)
+local DyWorld = "DyWorld-Dynamics: "
+	for index,player in pairs(game.players) do
+		if settings.get_player_settings(index)["DyWorld_Attack_Messages"].value then
+			player.print(message)
+		end
+	end
+end
+
 function DyLog(str, sta)
 local Time = global.dyworld.game_stats.time_stamp
 	if not global.dylog then 

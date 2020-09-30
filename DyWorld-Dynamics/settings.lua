@@ -16,14 +16,14 @@ data:extend({
 		default_value = false,
 	},
 	----- Map Settings -----
-    {
+    --[[{
         type = "bool-setting",
         name = "DyWorld_Loot_Deconstruct",
 		order = "a",
         setting_type = "runtime-global",
         default_value = true
     },
-    --[[{
+    {
         type = "bool-setting",
         name = "DyWorld_Loot_Deconstruct_Message",
 		order = "a",
@@ -39,12 +39,19 @@ data:extend({
         minimum_value = 5,
 	},]]--
 	----- Per Player Settings -----
-   --[[ {
+   {
         type = "bool-setting",
-        name = "DyWorld_Distance_Map_Tags",
+        name = "DyWorld_Phase_Messages",
 		order = "a",
         setting_type = "runtime-per-user",
         default_value = true
-    },]]--
+    },
+   {
+        type = "bool-setting",
+        name = "DyWorld_Attack_Messages",
+		order = "a",
+        setting_type = "runtime-per-user",
+        default_value = true
+    },
 })
 

@@ -1,11 +1,12 @@
 
 
 
-DyDS_Add_Item({
+DyDS_Add_Tool({
 	name = "canister-empty",
     icon = DyDs_path_icon.."canister.png",
 	order = "1",
 	stack_size = 10,
+	durability = 1,
 	subgroup = DyDs.."z-canisters",
 })
 

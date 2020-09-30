@@ -3,9 +3,10 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("underground-belt", "fast-underground-belt", "underground-belt-2", true)
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("item", "fast-underground-belt", "underground-belt-2", true)
 DyWorld_Prototype_1.speed = (30 / 480)
-	DyWorld_Prototype_2.stack_size = 200
-	DyWorld_Prototype_2.order = "2"
-	DyWorld_Prototype_2.subgroup = DyDs.."transport-belt-underground"
+DyWorld_Prototype_2.stack_size = 200
+DyWorld_Prototype_1.max_distance = 10
+DyWorld_Prototype_2.order = "2"
+DyWorld_Prototype_2.subgroup = DyDs.."transport-belt-underground"
 
 data:extend({
   DyWorld_Prototype_1,

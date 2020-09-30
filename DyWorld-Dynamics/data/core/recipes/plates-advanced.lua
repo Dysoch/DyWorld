@@ -191,4 +191,44 @@ data:extend({
 	  enabled = false,
     },
   },
+  {
+    type = "recipe",
+    name = "cast-bronze-2",
+	category = "bloomery",
+	main_product = "bronze-plate",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "tin-ore", amount = 10},
+        {type = "item", name = "copper-ore", amount = 70},
+        {type = "item", name = "canister-water", amount = 2},
+      },
+      results = 
+      {
+        {type = "item", name = "bronze-plate", amount = 70},
+        {type = "item", name = "canister-empty", amount = 2},
+      },
+	  energy_required = 30,
+	  main_product = "bronze-plate",
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "tin-ore", amount = 10},
+        {type = "item", name = "copper-ore", amount = 70},
+        {type = "item", name = "canister-water", amount = 10},
+      },
+      results = 
+      {
+        {type = "item", name = "bronze-plate", amount = 50},
+        {type = "item", name = "canister-empty", amount = 10},
+      },
+	  energy_required = 30*5,
+	  main_product = "bronze-plate",
+	  enabled = false,
+    },
+  },
 })

@@ -18,6 +18,7 @@ local Recipes = {
 	["cast-copper-2"] = {"copper-processing"},
 	["cast-iron-2"] = {"iron-processing"},
 	["cast-tin-2"] = {"tin-processing"},
+	["cast-bronze-2"] = {"bronze-processing"},
 	["cast-copper-3"] = {"advanced-copper-processing"},
 	["cast-iron-3"] = {"advanced-iron-processing"},
 	["cast-tin-3"] = {"advanced-tin-processing"},

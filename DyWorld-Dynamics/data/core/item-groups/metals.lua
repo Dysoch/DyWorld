@@ -4,7 +4,7 @@ local Data_Table_Item_Group = {
 	{
 		Name = "metals",
 		Type = "main",
-		Icon = "metals.png"
+		Icon = "items.png"
 	},
 	{
 		Name = "0-resource-1",
@@ -68,6 +68,11 @@ local Data_Table_Item_Group = {
 	},
 	{
 		Name = "z-canisters",
+		Type = "sub",
+		Main = "metals"
+	},
+	{
+		Name = "z-loot",
 		Type = "sub",
 		Main = "metals"
 	},

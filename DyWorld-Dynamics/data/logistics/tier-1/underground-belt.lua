@@ -2,9 +2,11 @@
 
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("underground-belt", "underground-belt", "basic-underground-belt", true)
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("item", "underground-belt", "basic-underground-belt", true)
-	DyWorld_Prototype_2.stack_size = 200
-	DyWorld_Prototype_2.order = "1"
-	DyWorld_Prototype_2.subgroup = DyDs.."transport-splitter"
+DyWorld_Prototype_1.speed = (15 / 480)
+DyWorld_Prototype_1.next_upgrade = "underground-belt-2"
+DyWorld_Prototype_2.stack_size = 200
+DyWorld_Prototype_2.order = "1"
+DyWorld_Prototype_2.subgroup = DyDs.."transport-belt-underground"
 
 data:extend({
   DyWorld_Prototype_1,

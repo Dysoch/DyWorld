@@ -1,9 +1,10 @@
 
 
-local DyWorld_Prototype_1 = DyDs_CopyPrototype("transport-belt", "transport-belt", "basic-transport-belt", true)
-local DyWorld_Prototype_2 = DyDs_CopyPrototype("item", "transport-belt", "basic-transport-belt", true)
+local DyWorld_Prototype_1 = DyDs_CopyPrototype("transport-belt", "express-transport-belt", "transport-belt-4", true)
+local DyWorld_Prototype_2 = DyDs_CopyPrototype("item", "express-transport-belt", "transport-belt-4", true)
+DyWorld_Prototype_1.speed = (120 / 480)
 	DyWorld_Prototype_2.stack_size = 200
-	DyWorld_Prototype_2.order = "1"
+	DyWorld_Prototype_2.order = "4"
 	DyWorld_Prototype_2.subgroup = DyDs.."transport-belt"
 
 data:extend({
@@ -11,8 +12,8 @@ data:extend({
   DyWorld_Prototype_2,
   {
     type = "recipe",
-    name = "basic-transport-belt",
-	category = "assembling-tier-1",
+    name = "transport-belt-4",
+	category = "assembling-tier-4",
     normal =
     {
       ingredients =
@@ -20,7 +21,7 @@ data:extend({
         {type = "item", name = "bronze-plate", amount = 2},
         {type = "item", name = "bronze-gear", amount = 1},
       },
-      result = "basic-transport-belt",
+      result = "transport-belt-4",
 	  result_count = 2,
 	  energy_required = 1,
 	  enabled = false,
@@ -32,7 +33,7 @@ data:extend({
         {type = "item", name = "bronze-plate", amount = 4},
         {type = "item", name = "bronze-gear", amount = 1},
       },
-      result = "basic-transport-belt",
+      result = "transport-belt-4",
 	  result_count = 1,
 	  energy_required = 5,
 	  enabled = false,

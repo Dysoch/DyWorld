@@ -1,9 +1,11 @@
 
 
-local DyWorld_Prototype_1 = DyDs_CopyPrototype("loader-1x1", "loader-1x1", "basic-loader", true)
-DyWorld_Prototype_1.minable = {mining_time = 0.5, result = "basic-loader"}
+local DyWorld_Prototype_1 = DyDs_CopyPrototype("loader-1x1", "loader-1x1", "loader-2", true)
+DyWorld_Prototype_1.minable = {mining_time = 0.5, result = "loader-2"}
 DyWorld_Prototype_1.flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"}
+DyWorld_Prototype_1.speed = (30 / 480)
 DyWorld_Prototype_1.icon = nil
+DyWorld_Prototype_1.fast_replaceable_group = "transport-belt"
 DyWorld_Prototype_1.icons = {
 	  {
 		icon = DyDs_path_icon.."loader-icon-base.png",
@@ -98,7 +100,7 @@ data:extend({
   DyWorld_Prototype_1,
   {
     type = "item",
-    name = "basic-loader",
+    name = "loader-2",
     icons = 
 	{
 	  {
@@ -111,23 +113,23 @@ data:extend({
 	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."transport-loader",
-    order = "1",
-    place_result = "basic-loader",
+    order = "2",
+    place_result = "loader-2",
     stack_size = 200,
   },
   {
     type = "recipe",
-    name = "basic-loader",
-	category = "assembling-tier-1",
+    name = "loader-2",
+	category = "assembling-tier-2",
     normal =
     {
       ingredients =
       {
         {type = "item", name = "bronze-plate", amount = 3},
         {type = "item", name = "bronze-gear", amount = 1},
-        {type = "item", name = "basic-transport-belt", amount = 1},
+        {type = "item", name = "transport-belt-2", amount = 1},
       },
-      result = "basic-loader",
+      result = "loader-2",
 	  result_count = 1,
 	  energy_required = 2,
 	  enabled = false,
@@ -138,9 +140,9 @@ data:extend({
       {
         {type = "item", name = "bronze-plate", amount = 4},
         {type = "item", name = "bronze-gear", amount = 3},
-        {type = "item", name = "basic-transport-belt", amount = 2},
+        {type = "item", name = "transport-belt-2", amount = 2},
       },
-      result = "basic-loader",
+      result = "loader-2",
 	  result_count = 1,
 	  energy_required = 5,
 	  enabled = false,

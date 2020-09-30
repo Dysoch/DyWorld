@@ -33,5 +33,18 @@ function Event_on_init()
 			story = Story_Add(1, 1, false, 1, 1),
 		}
 	end
+	if remote.interfaces["silo_script"] then
+		remote.call("silo_script", "set_no_victory", true)
+		local tracked_items = remote.call("silo_script", "get_tracked_items")
+		if not tracked_items["asteroid-miner-iron"] then
+			remote.call("silo_script", "add_tracked_item", "asteroid-miner-iron")
+		end
+		if not tracked_items["asteroid-miner-tin"] then
+			remote.call("silo_script", "add_tracked_item", "asteroid-miner-tin")
+		end
+		if not tracked_items["asteroid-miner-copper"] then
+			remote.call("silo_script", "add_tracked_item", "asteroid-miner-copper")
+		end
+	end
 end
 

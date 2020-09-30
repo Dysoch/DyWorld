@@ -19,4 +19,6 @@ require(DyDs_data_machines.. "tier-2.bloomery")
 require(DyDs_data_machines.. "tier-2.gas-engine")
 require(DyDs_data_machines.. "tier-2.gas-extractor")
 require(DyDs_data_machines.. "tier-2.lab-2")
+require(DyDs_data_machines.. "tier-2.rocket-silo-1")
+require(DyDs_data_machines.. "tier-2.rocket-silo-1-products")
 

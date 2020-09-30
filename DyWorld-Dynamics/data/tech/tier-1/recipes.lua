@@ -18,7 +18,18 @@ local Recipes = {
 	["cast-copper-2"] = {"copper-processing"},
 	["cast-iron-2"] = {"iron-processing"},
 	["cast-tin-2"] = {"tin-processing"},
+	["cast-copper-3"] = {"advanced-copper-processing"},
+	["cast-iron-3"] = {"advanced-iron-processing"},
+	["cast-tin-3"] = {"advanced-tin-processing"},
 	["slag-processing"] = {"slag-processing"},
+	["storehouse-basic"] = {"storage-2"},
+	["asteroid-miner-tin"] = {"basic-asteroid-mining"},
+	["asteroid-miner-iron"] = {"basic-asteroid-mining"},
+	["asteroid-miner-copper"] = {"basic-asteroid-mining"},
+	["transport-belt-2"] = {"logistics-1"},
+	["underground-belt-2"] = {"logistics-1"},
+	["splitter-2"] = {"filters-1"},
+	["loader-2"] = {"filters-1"},
 }
 
 

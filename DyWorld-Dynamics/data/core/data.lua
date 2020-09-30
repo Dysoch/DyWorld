@@ -37,6 +37,7 @@ require(DyDs_data_core.. "items.med-packs")
 require(DyDs_data_core.. "items.repair-pack")
 require(DyDs_data_core.. "items.gears")
 require(DyDs_data_core.. "items.cables")
+require(DyDs_data_core.. "items.loot")
 require(DyDs_data_core.. "items.canisters")
 require(DyDs_data_core.. "items.control-boards")
 

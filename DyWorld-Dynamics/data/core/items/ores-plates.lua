@@ -211,3 +211,4 @@ DyDS_Add_Tool({
     fuel_category = "carbon",
 	durability = 1,
 })
+data.raw.item.coal = nil

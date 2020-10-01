@@ -146,7 +146,7 @@ DyDS_Add_Tool({
 	localised_name = {"looped-name.quartzite"},
 	stack_size = 1000,
 	durability = 1,
-	subgroup = DyDs.."material-1",
+	subgroup = DyDs.."material-2",
 })
   
 DyDS_Add_Tool({
@@ -156,7 +156,8 @@ DyDS_Add_Tool({
 	localised_name = {"looped-name.granite"},
 	stack_size = 1000,
 	durability = 1,
-	subgroup = DyDs.."material-1",
+	subgroup = DyDs.."material-2",
+	-- Aluminum, Titanium, Iron, Manganese
 })
   
 DyDS_Add_Tool({

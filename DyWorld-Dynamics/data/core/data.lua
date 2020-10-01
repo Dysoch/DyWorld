@@ -43,6 +43,7 @@ require(DyDs_data_core.. "items.control-boards")
 
 -- Fluids --
 require(DyDs_data_core.. "fluids.basics")
+require(DyDs_data_core.. "fluids.metals")
 
 -- Recipes --
 require(DyDs_data_core.. "recipes.charcoal")
@@ -55,4 +56,5 @@ require(DyDs_data_core.. "recipes.plates-advanced")
 require(DyDs_data_core.. "recipes.control-boards")
 require(DyDs_data_core.. "recipes.ore-purify")
 require(DyDs_data_core.. "recipes.water")
+require(DyDs_data_core.. "recipes.air")
 

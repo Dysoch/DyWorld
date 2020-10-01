@@ -64,7 +64,7 @@ data:extend({
 	  enabled = false,
     },
   },
--- Iron Ore Stage 2
+-- Ores Stage 2
   {
     type = "recipe",
     name = "cast-iron-2",
@@ -228,6 +228,89 @@ data:extend({
       },
 	  energy_required = 30*5,
 	  main_product = "bronze-plate",
+	  enabled = false,
+    },
+  },
+-- Ores Stage 3
+  {
+    type = "recipe",
+    name = "cast-iron-3a",
+	category = "blast-furnace",
+	main_product = "iron-plate",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "iron-ore", amount = 100},
+        {type = "item", name = "lignite", amount = 1},
+        {type = "item", name = "limestone", amount = 1},
+        {type = "fluid", name = "oxygen", amount = 50},
+      },
+      results = 
+      {
+        {type = "item", name = "iron-plate", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30,
+	  main_product = "iron-plate",
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "iron-ore", amount = 100*2},
+        {type = "item", name = "lignite", amount = 10},
+        {type = "item", name = "limestone", amount = 10},
+        {type = "fluid", name = "oxygen", amount = 50*3},
+      },
+      results = 
+      {
+        {type = "item", name = "iron-plate", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30*5,
+	  main_product = "iron-plate",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "cast-copper-3a",
+	category = "blast-furnace",
+	main_product = "copper-plate",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "copper-ore", amount = 100},
+        {type = "item", name = "sandstone", amount = 1},
+        {type = "fluid", name = "nitrogen", amount = 75},
+      },
+      results = 
+      {
+        {type = "item", name = "copper-plate", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30,
+	  main_product = "copper-plate",
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "copper-ore", amount = 100*2},
+        {type = "item", name = "sandstone", amount = 10},
+        {type = "fluid", name = "nitrogen", amount = 50*3},
+      },
+      results = 
+      {
+        {type = "item", name = "copper-plate", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30*5,
+	  main_product = "copper-plate",
 	  enabled = false,
     },
   },

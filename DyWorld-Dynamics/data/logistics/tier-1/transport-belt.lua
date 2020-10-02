@@ -4,6 +4,27 @@ local DyWorld_Prototype_1 = DyDs_CopyPrototype("transport-belt", "transport-belt
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("item", "transport-belt", "basic-transport-belt", true)
 DyWorld_Prototype_1.speed = (15 / 480)
 DyWorld_Prototype_1.next_upgrade = "transport-belt-2"
+DyWorld_Prototype_1.belt_animation_set = DyWorld_basic_belt_animation_set(Tier_1)
+DyWorld_Prototype_1.icon = nil
+DyWorld_Prototype_1.icons = {
+	  {
+		icon = DyDs_path_icon.."belt-icon-base.png",
+	  },
+	  {
+		icon = DyDs_path_icon.."belt-icon-mask.png",
+		tint = Tier_1,
+	  },
+	}
+DyWorld_Prototype_2.icon = nil
+DyWorld_Prototype_2.icons = {
+	  {
+		icon = DyDs_path_icon.."belt-icon-base.png",
+	  },
+	  {
+		icon = DyDs_path_icon.."belt-icon-mask.png",
+		tint = Tier_1,
+	  },
+	}
 DyWorld_Prototype_2.stack_size = 200
 DyWorld_Prototype_2.order = "1"
 DyWorld_Prototype_2.subgroup = DyDs.."transport-belt"

@@ -22,3 +22,9 @@ DyDs_data_warfare = "data.warfare."
 DyDs_data_machines = "data.machines."
 DyDs_data_logistics = "data.logistics."
 DyDs_data_tech = "data.tech."
+
+Tier_1 = {255, 255, 0}
+Tier_2 = {255, 165, 0}
+Tier_3 = {255, 0, 0}
+Tier_4 = {0, 255, 255}
+Tier_5 = {0, 0, 255}

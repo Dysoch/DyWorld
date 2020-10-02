@@ -3,6 +3,7 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("splitter", "express-splitter", "splitter-5", true)
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("item", "express-splitter", "splitter-5", true)
 	DyWorld_Prototype_2.stack_size = 200
+DyWorld_Prototype_1.belt_animation_set = DyWorld_basic_belt_animation_set(Tier_5)
 	DyWorld_Prototype_1.speed = (240 / 480)
 	DyWorld_Prototype_2.order = "5"
 	DyWorld_Prototype_2.subgroup = DyDs.."transport-splitter"

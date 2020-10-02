@@ -234,9 +234,9 @@ data:extend({
 -- Ores Stage 3
   {
     type = "recipe",
-    name = "cast-iron-3a",
+    name = "cast-iron-3",
 	category = "blast-furnace",
-	main_product = "iron-plate",
+	main_product = "molten-iron",
     normal =
     {
       ingredients =
@@ -248,11 +248,11 @@ data:extend({
       },
       results = 
       {
-        {type = "item", name = "iron-plate", amount_min = 90, amount_max = 100},
+        {type = "fluid", name = "molten-iron", amount_min = 90, amount_max = 100},
         {type = "item", name = "slag", amount_min = 1, amount_max = 5},
       },
 	  energy_required = 30,
-	  main_product = "iron-plate",
+	  main_product = "molten-iron",
 	  enabled = false,
     },
     expensive =
@@ -266,19 +266,19 @@ data:extend({
       },
       results = 
       {
-        {type = "item", name = "iron-plate", amount_min = 90, amount_max = 100},
+        {type = "fluid", name = "molten-iron", amount_min = 90, amount_max = 100},
         {type = "item", name = "slag", amount_min = 1, amount_max = 5},
       },
 	  energy_required = 30*5,
-	  main_product = "iron-plate",
+	  main_product = "molten-iron",
 	  enabled = false,
     },
   },
   {
     type = "recipe",
-    name = "cast-copper-3a",
+    name = "cast-copper-3",
 	category = "blast-furnace",
-	main_product = "copper-plate",
+	main_product = "molten-copper",
     normal =
     {
       ingredients =
@@ -289,11 +289,11 @@ data:extend({
       },
       results = 
       {
-        {type = "item", name = "copper-plate", amount_min = 90, amount_max = 100},
+        {type = "fluid", name = "molten-copper", amount_min = 90, amount_max = 100},
         {type = "item", name = "slag", amount_min = 1, amount_max = 5},
       },
 	  energy_required = 30,
-	  main_product = "copper-plate",
+	  main_product = "molten-copper",
 	  enabled = false,
     },
     expensive =
@@ -306,11 +306,11 @@ data:extend({
       },
       results = 
       {
-        {type = "item", name = "copper-plate", amount_min = 90, amount_max = 100},
+        {type = "fluid", name = "molten-copper", amount_min = 90, amount_max = 100},
         {type = "item", name = "slag", amount_min = 1, amount_max = 5},
       },
 	  energy_required = 30*5,
-	  main_product = "copper-plate",
+	  main_product = "molten-copper",
 	  enabled = false,
     },
   },

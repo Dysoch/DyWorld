@@ -4,6 +4,7 @@ local DyWorld_Prototype_1 = DyDs_CopyPrototype("loader-1x1", "loader-1x1", "load
 DyWorld_Prototype_1.minable = {mining_time = 0.5, result = "loader-3"}
 DyWorld_Prototype_1.flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"}
 DyWorld_Prototype_1.speed = (60 / 480)
+DyWorld_Prototype_1.belt_animation_set = DyWorld_basic_belt_animation_set(Tier_3)
 DyWorld_Prototype_1.icon = nil
 DyWorld_Prototype_1.fast_replaceable_group = "transport-belt"
 DyWorld_Prototype_1.icons = {
@@ -12,7 +13,7 @@ DyWorld_Prototype_1.icons = {
 	  },
 	  {
 		icon = DyDs_path_icon.."loader-icon-mask.png",
-		--tint = Material_Colors[v.DyWorld.Name],
+		tint = Tier_3,
 	  },
 	}
 DyWorld_Prototype_1.structure = {
@@ -41,7 +42,7 @@ DyWorld_Prototype_1.structure = {
                         priority = "extra-high",
                         width = 80,
                         scale = 0.5,
-                        --tint = Material_Colors[v.DyWorld.Name],
+                        tint = Tier_3,
                         shift = { 0.125, 0 }
                     },
                     filename = DyDs_path_entity.."lr-loader-mask.png",
@@ -49,7 +50,7 @@ DyWorld_Prototype_1.structure = {
                     priority = "extra-high",
                     width = 40,
                     scale = 1,
-                    --tint = Material_Colors[v.DyWorld.Name],
+                    tint = Tier_3,
                     shift = { 0.125, 0 }
                 },
             },
@@ -79,7 +80,7 @@ DyWorld_Prototype_1.structure = {
                         priority = "extra-high",
                         width = 80,
                         scale = 0.5,
-                        --tint = Material_Colors[v.DyWorld.Name],
+                        tint = Tier_3,
                         shift = { 0.125, 0 },
                         y = 64
                     },
@@ -88,7 +89,7 @@ DyWorld_Prototype_1.structure = {
                     priority = "extra-high",
                     width = 40,
                     scale = 1,
-                    --tint = Material_Colors[v.DyWorld.Name],
+                    tint = Tier_3,
                     shift = { 0.125, 0 },
                     y = 32
                 },
@@ -108,7 +109,7 @@ data:extend({
 	  },
 	  {
 		icon = DyDs_path_icon.."loader-icon-mask.png",
-		--tint = Material_Colors[v.DyWorld.Name],
+		tint = Tier_3,
 	  },
 	},
     icon_size = 64, icon_mipmaps = 4,

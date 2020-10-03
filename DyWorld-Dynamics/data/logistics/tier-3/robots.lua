@@ -11,14 +11,14 @@ DyWorld_Prototype_1.max_energy = "10MJ"
 DyWorld_Prototype_2.max_energy = "10MJ"
 DyWorld_Prototype_1.speed_multiplier_when_out_of_energy = 0.5
 DyWorld_Prototype_2.speed_multiplier_when_out_of_energy = 0.5
-DyWorld_Prototype_1.speed = (40 / 216)
-DyWorld_Prototype_2.speed = (30 / 216)
+DyWorld_Prototype_1.speed = (80 / 216)
+DyWorld_Prototype_2.speed = (60 / 216)
 DyWorld_Prototype_3.max_health = 2500
 DyWorld_Prototype_3.energy_source.input_flow_limit = "25MW"
 DyWorld_Prototype_3.energy_source.buffer_capacity = "500MJ"
 DyWorld_Prototype_3.energy_usage = "250kW"
 DyWorld_Prototype_3.charging_energy = "5000kW"
-DyWorld_Prototype_3.logistics_radius = 50
+DyWorld_Prototype_3.logistics_radius = 70
 DyWorld_Prototype_3.construction_radius = 110
 DyWorld_Prototype_3.robot_slots_count = 2
 DyWorld_Prototype_3.material_slots_count = 7
@@ -128,7 +128,7 @@ data:extend({
     subgroup = DyDs.."roboport",
     order = "2",
     place_result = "roboport-2",
-    stack_size = 500,
+    stack_size = 50,
   },
   {
     type = "recipe",

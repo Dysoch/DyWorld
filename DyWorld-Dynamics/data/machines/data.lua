@@ -20,6 +20,15 @@ require(DyDs_data_machines.. "tier-2.bloomery")
 require(DyDs_data_machines.. "tier-2.gas-engine")
 require(DyDs_data_machines.. "tier-2.gas-extractor")
 require(DyDs_data_machines.. "tier-2.lab-2")
-require(DyDs_data_machines.. "tier-2.rocket-silo-1")
-require(DyDs_data_machines.. "tier-2.rocket-silo-1-products")
+require(DyDs_data_machines.. "tier-2.rocket-silo")
+require(DyDs_data_machines.. "tier-2.rocket-silo-products")
+
+-- Tier 3 --
+require(DyDs_data_machines.. "tier-3.rocket-silo")
+
+-- Tier 4 --
+require(DyDs_data_machines.. "tier-4.rocket-silo")
+
+-- Tier 5 --
+require(DyDs_data_machines.. "tier-5.rocket-silo")
 

@@ -28,3 +28,9 @@ Tier_2 = {255, 165, 0}
 Tier_3 = {255, 0, 0}
 Tier_4 = {0, 255, 255}
 Tier_5 = {0, 0, 255}
+
+Iron_Color = {82, 174, 212}
+Copper_Color = {212, 119, 82}
+Tin_Color = {39, 105, 135}
+Steel_Color = {229, 227, 227}
+Bronze_Color = {126, 112, 109}

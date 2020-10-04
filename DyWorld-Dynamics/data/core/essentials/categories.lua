@@ -37,6 +37,7 @@ local Recipe_Categories = {
 	"air-filter",
 	"electrolysis",
 	"blast-furnace",
+	"casting-furnace",
 	--"bloomery",
 }
 

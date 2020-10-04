@@ -17,6 +17,8 @@ require(DyDs_data_machines.. "tier-1.heal-station")
 -- Tier 2 --
 require(DyDs_data_machines.. "tier-2.air-filter")
 require(DyDs_data_machines.. "tier-2.bloomery")
+require(DyDs_data_machines.. "tier-2.caster")
+require(DyDs_data_machines.. "tier-2.blast-furnace")
 require(DyDs_data_machines.. "tier-2.gas-engine")
 require(DyDs_data_machines.. "tier-2.gas-extractor")
 require(DyDs_data_machines.. "tier-2.lab-2")

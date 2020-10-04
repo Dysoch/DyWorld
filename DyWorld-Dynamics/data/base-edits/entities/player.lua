@@ -10,3 +10,5 @@ data.raw.character.character.mining_categories = {"resource-solid-tier-0"}
 data.raw.character.character.inventory_size = 120
 data.raw.character.character.healing_per_tick = 0
 data.raw.character.character.build_distance = 15
+
+data.raw["solar-panel"]["solar-panel"].production = "60MW"

@@ -14,8 +14,8 @@ data:extend({
     stack_size = 1,
     rocket_launch_products = 
 	{
-      {type = "item", name = "iron-ore", amount_min = 250, amount_max = 100},
-      {type = "item", name = "iron-ore-impure", amount_min = 500, amount_max = 3000},
+      {type = "item", name = "iron-ore", amount_min = 1, amount_max = 1000},
+      {type = "item", name = "iron-ore-impure", amount_min = 1, amount_max = 1000},
 	},
   },
   {
@@ -58,8 +58,8 @@ data:extend({
     stack_size = 1,
     rocket_launch_products = 
 	{
-      {type = "item", name = "copper-ore", amount_min = 250, amount_max = 1000},
-      {type = "item", name = "copper-ore-impure", amount_min = 500, amount_max = 3000},
+      {type = "item", name = "copper-ore", amount_min = 1, amount_max = 1000},
+      {type = "item", name = "copper-ore-impure", amount_min = 1, amount_max = 1000},
 	},
   },
   {
@@ -102,8 +102,8 @@ data:extend({
     stack_size = 1,
     rocket_launch_products = 
 	{
-      {type = "item", name = "tin-ore", amount_min = 250, amount_max = 1000},
-      {type = "item", name = "tin-ore-impure", amount_min = 500, amount_max = 3000},
+      {type = "item", name = "tin-ore", amount_min = 1, amount_max = 1000},
+      {type = "item", name = "tin-ore-impure", amount_min = 1, amount_max = 1000},
 	},
   },
   {

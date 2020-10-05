@@ -18,13 +18,19 @@ If I may make a suggestion... is it possible to have all the tabs on top at all 
 
 unlock logistics tab start of act 2
 
-add loader speeder as tooltip
-
 add recycler
 
 add recycler internal complexity meter
 
 make story mode mp
+
+add intermediates
+add metallurgy plates
+add recipes asteroid miners
+add modules
+add storage network techs
+balance chemical techs
+
 
   ---------- DONE ----------
 

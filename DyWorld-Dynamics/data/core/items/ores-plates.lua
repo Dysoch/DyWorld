@@ -75,6 +75,32 @@ DyDS_Add_Tool({
 	subgroup = DyDs.."0-resource-3",
 })
 
+  ----- Other materials -----
+  
+DyDS_Add_Item({
+	name = "glass",
+	order = "glass",
+    icon = DyDs_path_icon.."glass.png",
+	stack_size = 1000,
+	subgroup = DyDs.."0-resource-3",
+})
+  
+DyDS_Add_Item({
+	name = "resin",
+	order = "resin",
+    icon = DyDs_path_icon.."resin.png",
+	stack_size = 1000,
+	subgroup = DyDs.."0-resource-3",
+})
+  
+DyDS_Add_Item({
+	name = "rubber",
+	order = "rubber",
+    icon = DyDs_path_icon.."rubber.png",
+	stack_size = 1000,
+	subgroup = DyDs.."0-resource-3",
+})
+
   ----- Plates -----
   
 DyDS_Add_Tool({

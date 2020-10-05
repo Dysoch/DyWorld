@@ -50,6 +50,8 @@ local Recipes = {
 	["filter-nitrogen"] = {"filters-1"},
 	["filter-oxygen"] = {"filters-1"},
 	["filter-hydrogen"] = {"filters-1"},
+	["blast-furnace"] = {"metallurgy-1"},
+	["caster"] = {"metallurgy-1"},
 }
 
 

@@ -32,7 +32,7 @@ data:extend(
     prerequisites = params.prerequisites or {},
     unit =
     {
-      count = params.count,
+      count = params.count or 1,
       ingredients = params.ingredients,
       time = params.time,
     },

@@ -8,9 +8,12 @@ local Chemical_Techs = {
 		count = 15,
 		prerequisites = {
 			"automation-2",
+			"filters-1",
+			"intermediates-1",
 		},
 		ingredients = {
 			{"canister-empty", 1},
+			{"canister-oxygen", 1},
 		},
 		time = 2.5,
 		order = "2",
@@ -21,6 +24,7 @@ local Chemical_Techs = {
 		count = 15,
 		prerequisites = {
 			"fluids-1",
+			"intermediates-2",
 		},
 		ingredients = {
 			{"canister-empty", 1},
@@ -34,6 +38,7 @@ local Chemical_Techs = {
 		count = 15,
 		prerequisites = {
 			"fluids-2",
+			"intermediates-3",
 		},
 		ingredients = {
 			{"canister-empty", 1},
@@ -44,16 +49,19 @@ local Chemical_Techs = {
 	{
 		name = "space-mining",
 		icon = DyDs_path_tech_base.."rocket-silo.png",
-		count = 15,
+		count = 150,
 		prerequisites = {
 			"fluids-3",
 			"metallurgy-2",
 			"power-2",
 		},
 		ingredients = {
-			{"canister-empty", 1},
+			{"canister-oxygen", 1},
+			{"canister-nitrogen", 1},
+			{"canister-water", 1},
+			{"canister-hydrogen", 1},
 		},
-		time = 2.5,
+		time = 10,
 		order = "2",
 	},
 	----- Extraction -----

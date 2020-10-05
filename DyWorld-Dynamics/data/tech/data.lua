@@ -6,5 +6,4 @@ require(DyDs_data_tech.. "tier-1.metal-research") -- Core adder
 require(DyDs_data_tech.. "tier-2.chemical-research") -- Core adder
 
 
-require(DyDs_data_tech.. "tier-1.recipes")
-require(DyDs_data_tech.. "tier-2.recipes")
+require(DyDs_data_tech.. "recipes")

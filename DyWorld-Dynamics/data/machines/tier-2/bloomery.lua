@@ -10,6 +10,10 @@ DyWorld_Prototype_1.dying_explosion = "electric-furnace-explosion"
 DyWorld_Prototype_1.animation = data.raw.furnace["electric-furnace"].animation
 DyWorld_Prototype_1.working_visualisations = data.raw.furnace["electric-furnace"].working_visualisations
 DyWorld_Prototype_1.water_reflection = data.raw.furnace["electric-furnace"].water_reflection
+DyWorld_Prototype_1.allowed_effects = {"consumption", "speed", "pollution"}
+DyWorld_Prototype_1.module_specification = {
+      module_slots = 3
+    }
 DyWorld_Prototype_1.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",

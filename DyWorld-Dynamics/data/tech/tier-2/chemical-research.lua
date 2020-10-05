@@ -68,28 +68,30 @@ local Chemical_Techs = {
 	{
 		name = "gas-extraction",
 		icon = DyDs_path_tech_base.."oil-gathering.png",
-		count = 15,
+		count = 40,
 		prerequisites = {
 			"fluids-1",
 		},
 		ingredients = {
-			{"canister-empty", 1},
+			{"canister-water", 1},
+			{"canister-hydrogen", 1},
 		},
-		time = 2.5,
+		time = 30,
 		order = "2",
 	},
 	{
 		name = "oil-extraction",
 		icon = DyDs_path_tech_base.."oil-gathering.png",
-		count = 15,
+		count = 25,
 		prerequisites = {
 			"fluids-2",
 			"automation-3",
 		},
 		ingredients = {
-			{"canister-empty", 1},
+			{"canister-water", 1},
+			{"canister-hydrogen", 1},
 		},
-		time = 2.5,
+		time = 35,
 		order = "2",
 	},
 	----- Power -----
@@ -140,14 +142,15 @@ local Chemical_Techs = {
 	{
 		name = "oil-processing",
 		icon = DyDs_path_tech_base.."oil-processing.png",
-		count = 15,
+		count = 250,
 		prerequisites = {
 			"oil-extraction",
 		},
 		ingredients = {
-			{"canister-empty", 1},
+			{"canister-water", 1},
+			{"canister-hydrogen", 1},
 		},
-		time = 2.5,
+		time = 12.5,
 		order = "2",
 	},
 	{

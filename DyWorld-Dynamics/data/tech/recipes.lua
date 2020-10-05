@@ -61,9 +61,13 @@ local Recipes = {
 	["rubber"] = {"intermediates-1"},
 	["glass"] = {"intermediates-2"},
 	["engine-unit"] = {"intermediates-2"},
-	["plastic-bar"] = {"intermediates-3"},
 	["flying-robot-frame"] = {"intermediates-3"},
 	["control-board-2"] = {"intermediates-3"},
+	["plastic-bar"] = {"oil-processing"},
+	["chemical-plant"] = {"oil-processing"},
+	["oil-processing"] = {"oil-processing"},
+	["oil-refinery"] = {"oil-processing"},
+	["oil-extractor"] = {"oil-extraction"},
 }
 
 

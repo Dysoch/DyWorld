@@ -58,4 +58,5 @@ require(DyDs_data_core.. "recipes.control-boards")
 require(DyDs_data_core.. "recipes.ore-purify")
 require(DyDs_data_core.. "recipes.water")
 require(DyDs_data_core.. "recipes.air")
+require(DyDs_data_core.. "recipes.oil")
 

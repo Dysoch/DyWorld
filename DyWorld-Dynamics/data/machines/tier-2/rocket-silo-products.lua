@@ -9,8 +9,8 @@ data:extend({
     name = "asteroid-miner-iron",
     icon = "__base__/graphics/icons/satellite.png",
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "intermediate-product",
-    order = "m[satellite]",
+    subgroup = DyDs.."z-space",
+    order = "1",
     stack_size = 1,
     rocket_launch_products = 
 	{
@@ -27,8 +27,9 @@ data:extend({
       ingredients =
       {
         {type = "item", name = "control-board-2", amount = 10},
-        {type = "item", name = "steel-plate", amount = 80},
-        {type = "item", name = "bronze-plate", amount = 20},
+        {type = "item", name = "plastic-bar", amount = 20},
+        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "flying-robot-frame", amount = 5},
       },
       result = "asteroid-miner-iron",
 	  enabled = false,
@@ -38,9 +39,10 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-2", amount = 10*5},
-        {type = "item", name = "steel-plate", amount = 80*4},
-        {type = "item", name = "bronze-plate", amount = 20*3},
+        {type = "item", name = "control-board-2", amount = 10*3},
+        {type = "item", name = "plastic-bar", amount = 20*3},
+        {type = "item", name = "steel-plate", amount = 10*3},
+        {type = "item", name = "flying-robot-frame", amount = 5*5},
       },
       result = "asteroid-miner-iron",
 	  enabled = false,
@@ -53,8 +55,8 @@ data:extend({
     name = "asteroid-miner-copper",
     icon = "__base__/graphics/icons/satellite.png",
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "intermediate-product",
-    order = "m[satellite]",
+    subgroup = DyDs.."z-space",
+    order = "1",
     stack_size = 1,
     rocket_launch_products = 
 	{
@@ -71,8 +73,9 @@ data:extend({
       ingredients =
       {
         {type = "item", name = "control-board-2", amount = 10},
-        {type = "item", name = "steel-plate", amount = 80},
-        {type = "item", name = "bronze-plate", amount = 20},
+        {type = "item", name = "plastic-bar", amount = 20},
+        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "flying-robot-frame", amount = 5},
       },
       result = "asteroid-miner-copper",
 	  enabled = false,
@@ -82,9 +85,10 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-2", amount = 10*5},
-        {type = "item", name = "steel-plate", amount = 80*4},
-        {type = "item", name = "bronze-plate", amount = 20*3},
+        {type = "item", name = "control-board-2", amount = 10*3},
+        {type = "item", name = "plastic-bar", amount = 20*3},
+        {type = "item", name = "steel-plate", amount = 10*3},
+        {type = "item", name = "flying-robot-frame", amount = 5*5},
       },
       result = "asteroid-miner-copper",
 	  enabled = false,
@@ -97,8 +101,8 @@ data:extend({
     name = "asteroid-miner-tin",
     icon = "__base__/graphics/icons/satellite.png",
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "intermediate-product",
-    order = "m[satellite]",
+    subgroup = DyDs.."z-space",
+    order = "1",
     stack_size = 1,
     rocket_launch_products = 
 	{
@@ -115,8 +119,9 @@ data:extend({
       ingredients =
       {
         {type = "item", name = "control-board-2", amount = 10},
-        {type = "item", name = "steel-plate", amount = 80},
-        {type = "item", name = "bronze-plate", amount = 20},
+        {type = "item", name = "plastic-bar", amount = 20},
+        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "flying-robot-frame", amount = 5},
       },
       result = "asteroid-miner-tin",
 	  enabled = false,
@@ -126,9 +131,10 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-2", amount = 10*5},
-        {type = "item", name = "steel-plate", amount = 80*4},
-        {type = "item", name = "bronze-plate", amount = 20*3},
+        {type = "item", name = "control-board-2", amount = 10*3},
+        {type = "item", name = "plastic-bar", amount = 20*3},
+        {type = "item", name = "steel-plate", amount = 10*3},
+        {type = "item", name = "flying-robot-frame", amount = 5*5},
       },
       result = "asteroid-miner-tin",
 	  enabled = false,

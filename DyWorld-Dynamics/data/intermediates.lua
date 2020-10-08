@@ -3,61 +3,61 @@
 
 
 ----- Tier 1 -----
-	"copper-cable" -- Item
-	"iron-gear" -- Item
-	"bronze-gear" -- Item
-	"control-board-1" -- Item
-	"iron-plate" -- Item
-	"bronze-plate" -- Item
-	"copper-plate" -- Item
-	"tin-plate" -- Item
-	"wood" -- Item
-	"stone-brick" -- Item
-	"water" -- Fluid
+	type = "item", name = "copper-cable"
+	type = "item", name = "iron-gear"
+	type = "item", name = "bronze-gear"
+	type = "item", name = "control-board-1"
+	type = "item", name = "iron-plate"
+	type = "item", name = "bronze-plate"
+	type = "item", name = "copper-plate"
+	type = "item", name = "tin-plate"
+	type = "item", name = "wood"
+	type = "item", name = "stone-brick"
+	type = "fluid", name = "water"
 
 ----- Tier 2 -----
 	-- Intermediates 1 --
-	"oxygen" -- Fluid -- TODO TECH
-	"hydrogen" -- Fluid -- TODO TECH
-	"nitrogen" -- Fluid -- TODO TECH
-	"red-wire" -- Item
-	"green-wire" -- Item
-	"resin" -- Item -- TODO RECIPE
-	"rubber" -- Item -- TODO RECIPE TECH
+	type = "fluid", name = "oxygen"
+	type = "fluid", name = "hydrogen"
+	type = "fluid", name = "nitrogen"
+	type = "item", name = "red-wire"
+	type = "item", name = "green-wire"
+	type = "item", name = "resin"
+	type = "item", name = "rubber"
 	-- Intermediates 2 --
-	"glass" -- Item -- TODO RECIPE TECH
-	"steel-plate" -- Item -- TODO RECIPE TECH
-	"engine-unit" -- Item -- TODO RECIPE TECH
-	"natural-gas" -- Fluid -- TODO RECIPE TECH
-	"methane" -- Fluid -- TODO RECIPE TECH
-	"crude-oil" -- Fluid -- TODO RECIPE TECH
-	"heavy-oil" -- Fluid -- TODO RECIPE TECH
-	"light-oil" -- Fluid -- TODO RECIPE TECH
-	"petroleum-gas" -- Fluid -- TODO RECIPE TECH
+	type = "item", name = "glass"
+	type = "item", name = "steel-plate"
+	type = "item", name = "engine-unit"
+	type = "fluid", name = "methane" -- TODO RECIPE TECH
+	type = "fluid", name = "crude-oil"
+	type = "fluid", name = "heavy-oil"
+	type = "fluid", name = "light-oil"
+	type = "fluid", name = "petroleum-gas"
+	type = "fluid", name = "natural-gas" -- TODO RECIPE TECH
 	-- Intermediates 3 --
-	"plastic-bar" -- Item -- TODO RECIPE TECH
-	"flying-robot-frame" -- Item -- TODO RECIPE TECH
-	"control-board-2" -- Item -- TODO RECIPE TECH
+	type = "item", name = "plastic-bar"
+	type = "item", name = "flying-robot-frame"
+	type = "item", name = "control-board-2"
 
 ----- Tier 3 -----
 	-- Intermediates 4 --
-	"electric-engine-unit" -- Item -- TODO RECIPE TECH
-	"low-density-structure" -- Item -- TODO RECIPE TECH
+	type = "item", name = "electric-engine-unit" -- TODO RECIPE TECH
+	type = "item", name = "low-density-structure" -- TODO RECIPE TECH
 	-- Intermediates 5 --
-	"rocket-control-unit" -- Item -- TODO RECIPE TECH
-	"sulfur" -- Item -- TODO RECIPE TECH
-	"sulfuric-acid" -- Fluid -- TODO RECIPE TECH
-	"battery" -- Item -- TODO RECIPE TECH
-	"concrete" -- Item -- TODO RECIPE TECH
-	"obsidian" -- Item -- TODO RECIPE ITEM TECH
+	type = "item", name = "rocket-control-unit" -- TODO RECIPE TECH
+	type = "item", name = "sulfur" -- TODO RECIPE TECH
+	type = "fluid", name = "sulfuric-acid" -- TODO RECIPE TECH
+	type = "item", name = "battery" -- TODO RECIPE TECH
+	type = "item", name = "concrete" -- TODO RECIPE TECH
+	type = "item", name = "obsidian" -- TODO RECIPE ITEM TECH
 	-- Intermediates 6 --
-	"computer" -- Item -- TODO RECIPE ITEMFIX TECH
-	"control-board-3" -- Item -- TODO RECIPE TECH
-	"lubricant" -- Fluid -- TODO RECIPE TECH
+	type = "item", name = "computer" -- TODO RECIPE ITEMFIX TECH
+	type = "item", name = "control-board-3" -- TODO RECIPE TECH
+	type = "fluid", name = "lubricant" -- TODO RECIPE TECH
 
 ----- Tier 4 -----
-	"refined-concrete" -- Item -- TODO RECIPE TECH
-	"control-board-4" -- Item -- TODO RECIPE TECH
+	type = "item", name = "refined-concrete" -- TODO RECIPE TECH
+	type = "item", name = "control-board-4" -- TODO RECIPE TECH
 
 ----- Tier 5 -----
-	"control-board-5" -- Item -- TODO RECIPE TECH
+	type = "item", name = "control-board-5" -- TODO RECIPE TECH

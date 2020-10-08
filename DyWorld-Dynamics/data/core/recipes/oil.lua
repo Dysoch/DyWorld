@@ -3,7 +3,7 @@ data:extend({
     type = "recipe",
     name = "oil-processing",
 	category = "oil-processing",
-	main_product = "crude-oil",
+	main_product = "petroleum-gas",
     normal =
     {
       ingredients =
@@ -16,7 +16,7 @@ data:extend({
         {type = "fluid", name = "light-oil", amount_min = 15, amount_max = 30, probability = 0.8},
         {type = "fluid", name = "petroleum-gas", amount_min = 25, amount_max = 50, probability = 0.95},
       },
-	  main_product = "crude-oil",
+	  main_product = "petroleum-gas",
 	  energy_required = 25,
 	  enabled = false,
     },
@@ -32,7 +32,7 @@ data:extend({
         {type = "fluid", name = "light-oil", amount_min = 15, amount_max = 300, probability = 0.5},
         {type = "fluid", name = "petroleum-gas", amount_min = 25, amount_max = 500, probability = 0.65},
       },
-	  main_product = "crude-oil",
+	  main_product = "petroleum-gas",
 	  energy_required = 25*5,
 	  enabled = false,
     },

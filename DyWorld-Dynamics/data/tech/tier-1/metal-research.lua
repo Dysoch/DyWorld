@@ -128,6 +128,22 @@ local Metal_Techs = {
 		time = 5,
 		order = "1",
 	},
+	{
+		name = "advanced-steel-processing",
+		icon = DyDs_path_tech.."iron.png",
+		count = 100,
+		prerequisites = {
+			"metallurgy-3",
+			"steel-processing",
+		},
+		ingredients = {
+			{"limestone", 15},
+			{"coal", 15},
+			{"steel-plate", 10},
+		},
+		time = 25,
+		order = "1",
+	},
 	----- Automation -----
 	{
 		name = "automation-1",

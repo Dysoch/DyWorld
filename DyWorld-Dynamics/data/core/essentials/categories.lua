@@ -13,6 +13,8 @@ local Resource_Categories = {
 	"resource-fluid-tier-4",
 	"resource-fluid-tier-5",
 	"resource-trees",
+	"resource-oil",
+	"resource-gas",
 }
 
 local Damage_Table = {

@@ -28,4 +28,39 @@ data:extend({
 	  enabled = false,
     },
   },
+  {
+    type = "recipe",
+    name = "control-board-2",
+	category = "assembling-tier-2",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "green-wire", amount = 1},
+        {type = "item", name = "red-wire", amount = 1},
+        {type = "item", name = "copper-cable", amount = 2},
+        {type = "item", name = "steel-plate", amount = 1},
+        {type = "item", name = "plastic-bar", amount = 2},
+      },
+      result = "control-board-2",
+	  result_count = 2,
+	  energy_required = 2.5,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "green-wire", amount = 3},
+        {type = "item", name = "red-wire", amount = 3},
+        {type = "item", name = "copper-cable", amount = 5},
+        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "plastic-bar", amount = 5},
+      },
+      result = "control-board-2",
+	  result_count = 1,
+	  energy_required = 5,
+	  enabled = false,
+    },
+  },
 })

@@ -1,5 +1,6 @@
 
 -- Ammo --
+require(DyDs_data_warfare.. "ammo.7mm")
 require(DyDs_data_warfare.. "ammo.9mm")
 require(DyDs_data_warfare.. "ammo.artillery-shell-atomic")
 
@@ -8,6 +9,7 @@ require(DyDs_data_warfare.. "armor.basic")
 
 -- Gun --
 require(DyDs_data_warfare.. "gun.pistol")
+require(DyDs_data_warfare.. "gun.smg")
 
 -- Gun --
 require(DyDs_data_warfare.. "wall.basic")

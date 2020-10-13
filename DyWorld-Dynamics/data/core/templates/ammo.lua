@@ -138,5 +138,8 @@ data:extend({
     },
   },
 })
+		if params.piercing then
+			data.raw.projectile[params.name.."-projectile"].piercing_damage = params.dmg_amount * 2
+		end
 	end
 end

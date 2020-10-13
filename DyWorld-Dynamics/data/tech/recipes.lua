@@ -68,6 +68,9 @@ local Recipes = {
 	["oil-processing"] = {"oil-processing"},
 	["oil-refinery"] = {"oil-processing"},
 	["oil-extractor"] = {"oil-extraction"},
+	["762mm-bullet"] = {"warfare-1"},
+	["762mm-bullet-ap"] = {"warfare-2"},
+	["762mm-gun"] = {"warfare-1"},
 }
 
 

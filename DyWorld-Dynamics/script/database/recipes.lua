@@ -72,6 +72,7 @@ Story_Recipes  = {
 	
 	----- Act 2, Phase 3 -----
 	["heal-station"] = {act = 2, phase = 3},
+	["dead-pill"] = {act = 2, phase = 3},
 	
 	----- Act 2, Phase 5 -----
 	["lab-2"] = {act = 2, phase = 5},

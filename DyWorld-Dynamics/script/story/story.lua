@@ -448,7 +448,7 @@ local Story = {
 				enemy_attack = false,
 				enemy_frequency = 3,
 				enemy_strength = 5,
-				--message done script wise,
+				message = "DyDs-story.message-act-2-phase-1",
 				recipes = false,
 				objectives = {
 					[1] = {
@@ -467,7 +467,7 @@ local Story = {
 				enemy_attack = true,
 				enemy_frequency = 2,
 				enemy_strength = 10,
-				--message done script wise,
+				message = "DyDs-story.message-act-2-phase-2",
 				recipes = false,
 				objectives = {
 					[1] = {
@@ -512,15 +512,21 @@ local Story = {
 				enemy_attack = true,
 				enemy_frequency = 1,
 				enemy_strength = 1,
-				--message done script wise,
+				message = "DyDs-story.message-act-2-phase-3",
 				recipes = false,
 				objectives = {
 					[1] = {
-						type_1 = "died", 
-						type_2 = "type", 
-						name = "unit", 
-						amount_needed = 999999999,
+						type_1 = "build", 
+						type_2 = "name", 
+						name = "heal-station", 
+						amount_needed = 3,
 						amount_done = 0,
+						done = false,
+					},
+					[2] = {
+						type_1 = "label", 
+						type_2 = "name", 
+						name = "buildup", 
 						done = false,
 					},
 				},
@@ -544,6 +550,12 @@ local Story = {
 						amount_done = 0,
 						done = false,
 					},
+					[2] = {
+						type_1 = "label", 
+						type_2 = "name", 
+						name = "buildup", 
+						done = false,
+					},
 				},
 			},
 			[5] = {
@@ -563,6 +575,12 @@ local Story = {
 						name = "unit", 
 						amount_needed = 999999999,
 						amount_done = 0,
+						done = false,
+					},
+					[2] = {
+						type_1 = "label", 
+						type_2 = "name", 
+						name = "buildup", 
 						done = false,
 					},
 				},
@@ -586,6 +604,12 @@ local Story = {
 						amount_done = 0,
 						done = false,
 					},
+					[2] = {
+						type_1 = "label", 
+						type_2 = "name", 
+						name = "buildup", 
+						done = false,
+					},
 				},
 			},
 			[7] = {
@@ -607,6 +631,12 @@ local Story = {
 						amount_done = 0,
 						done = false,
 					},
+					[2] = {
+						type_1 = "label", 
+						type_2 = "name", 
+						name = "buildup", 
+						done = false,
+					},
 				},
 			},
 			[8] = {
@@ -621,11 +651,15 @@ local Story = {
 				recipes = false,
 				objectives = {
 					[1] = {
-						type_1 = "died", 
-						type_2 = "type", 
-						name = "unit", 
-						amount_needed = 999999999,
-						amount_done = 0,
+						type_1 = "research", 
+						type_2 = "name", 
+						name = "basic-asteroid-mining", 
+						done = false,
+					},
+					[2] = {
+						type_1 = "label", 
+						type_2 = "name", 
+						name = "buildup", 
 						done = false,
 					},
 				},

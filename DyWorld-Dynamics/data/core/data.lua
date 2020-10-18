@@ -41,6 +41,7 @@ require(DyDs_data_core.. "items.cables")
 require(DyDs_data_core.. "items.loot")
 require(DyDs_data_core.. "items.canisters")
 require(DyDs_data_core.. "items.control-boards")
+require(DyDs_data_core.. "items.rocket-silo-products")
 
 -- Fluids --
 require(DyDs_data_core.. "fluids.basics")
@@ -60,4 +61,5 @@ require(DyDs_data_core.. "recipes.water")
 require(DyDs_data_core.. "recipes.air")
 require(DyDs_data_core.. "recipes.oil")
 require(DyDs_data_core.. "recipes.intermediates")
+require(DyDs_data_core.. "recipes.rocket-silo-products")
 

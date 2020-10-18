@@ -77,6 +77,9 @@ Story_Recipes  = {
 	----- Act 2, Phase 5 -----
 	["lab-2"] = {act = 2, phase = 5},
 	
+	----- Act 2, Phase 9 -----
+	["asteroid-miner-titanium"] = {act = 2, phase = 9},
+	
 	----- Act 3, Phase 1 -----
 	["lab-3"] = {act = 3, phase = 1},
 	

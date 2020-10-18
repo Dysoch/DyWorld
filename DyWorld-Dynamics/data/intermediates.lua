@@ -38,6 +38,7 @@
 	type = "item", name = "plastic-bar"
 	type = "item", name = "flying-robot-frame"
 	type = "item", name = "control-board-2"
+	type = "item", name = "satellite"
 
 ----- Tier 3 -----
 	-- Intermediates 4 --

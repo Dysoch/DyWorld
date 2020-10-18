@@ -42,7 +42,7 @@ function Phase_Forward()
 		if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_2 and global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_2 == "enemy-find") then
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if v.type_1 == "position" then
-					local Finder = game.surfaces[1].find_nearest_enemy{position={0,0}, max_distance=global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_3}
+					local Finder = game.surfaces[1].find_nearest_enemy{position={0,0}, max_distance = ((global.dyworld.game_stats.chunks / 4) * 32)}
 					local X = Finder.position.x
 					local Y = Finder.position.y
 					v.PosX = X
@@ -52,9 +52,6 @@ function Phase_Forward()
 		end
 	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then
-		if not debugger then
-			DyLog("DyDs-story.message-act-2-phase-1", true)
-		end
 		game.surfaces[1].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {(math.random(-10,10)),(math.random(-10,10))}}
 	end
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message then

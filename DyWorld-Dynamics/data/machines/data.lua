@@ -24,7 +24,6 @@ require(DyDs_data_machines.. "tier-2.gas-extractor")
 require(DyDs_data_machines.. "tier-2.oil-extractor")
 require(DyDs_data_machines.. "tier-2.lab-2")
 require(DyDs_data_machines.. "tier-2.rocket-silo")
-require(DyDs_data_machines.. "tier-2.rocket-silo-products")
 
 -- Tier 3 --
 require(DyDs_data_machines.. "tier-3.rocket-silo")

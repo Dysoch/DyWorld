@@ -12,10 +12,16 @@ local DyWorld_Prototype_2 = DyDs_CopyPrototype("ammo-turret", "gun-turret", "bas
 	DyWorld_Prototype_2.automated_ammo_count = 100
 	DyWorld_Prototype_2.attack_parameters.range = 25
 	DyWorld_Prototype_2.attack_parameters.ammo_category = "762mm"
+local DyWorld_Prototype_3 = DyDs_CopyPrototype("ammo-turret", "gun-turret", "advanced-762mm-turret", true)
+	DyWorld_Prototype_3.attack_parameters.cooldown = (60/60)
+	DyWorld_Prototype_3.automated_ammo_count = 100
+	DyWorld_Prototype_3.attack_parameters.range = 30
+	DyWorld_Prototype_3.attack_parameters.ammo_category = "762mm"
 
 data:extend({
   DyWorld_Prototype_1,
   DyWorld_Prototype_2,
+  DyWorld_Prototype_3,
   {
     type = "item",
     name = "basic-9mm-turret",
@@ -95,6 +101,47 @@ data:extend({
       result = "basic-762mm-turret",
 	  result_count = 1,
 	  energy_required = 15,
+	  enabled = false,
+    },
+  },
+  {
+    type = "item",
+    name = "advanced-762mm-turret",
+    icon = "__base__/graphics/icons/gun-turret.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = DyDs.."turret-gun",
+    order = "advanced-762mm-turret",
+    place_result = "advanced-762mm-turret",
+    stack_size = 200,
+  },
+  {
+    type = "recipe",
+    name = "advanced-762mm-turret",
+	category = "assembling-tier-2",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "steel-plate", amount = 45},
+        {type = "item", name = "control-board-2", amount = 3},
+        {type = "item", name = "basic-762mm-turret", amount = 1},
+      },
+      result = "advanced-762mm-turret",
+	  result_count = 1,
+	  energy_required = 15,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "steel-plate", amount = 45*3},
+        {type = "item", name = "control-board-2", amount = 3*5},
+        {type = "item", name = "basic-762mm-turret", amount = 1},
+      },
+      result = "advanced-762mm-turret",
+	  result_count = 1,
+	  energy_required = 55,
 	  enabled = false,
     },
   },

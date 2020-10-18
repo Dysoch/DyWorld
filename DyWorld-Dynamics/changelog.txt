@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.0
-Date: 14. 09. 2020
+Date: 18. 10. 2020
   Major Features:
     - Complete and utter rewrite of DyWorld. Now called DyWorld-Dynamics, this mod is like DyWorld, but better written, less bugs, more features (and almost the same features as DyWorld) and a lot changes!
   Features:

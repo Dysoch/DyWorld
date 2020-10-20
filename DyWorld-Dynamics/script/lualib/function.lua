@@ -50,7 +50,7 @@ end
 
 function Pick_Random_Attack_Strength(STRENGTH)
 	local Amount = 1
-	Amount = math.random((1 * STRENGTH), ((4 + STRENGTH) * STRENGTH))
+	Amount = math.random(STRENGTH)
 	--debug("random attack amount: "..Amount)
 	return Amount
 end

@@ -6,6 +6,7 @@ DyWorld_Prototype_1.flags = {"placeable-neutral", "player-creation", "fast-repla
 DyWorld_Prototype_1.speed = (60 / 480)
 DyWorld_Prototype_1.belt_animation_set = DyWorld_basic_belt_animation_set(Tier_3)
 DyWorld_Prototype_1.icon = nil
+DyWorld_Prototype_1.next_upgrade = "loader-4"
 DyWorld_Prototype_1.fast_replaceable_group = "transport-belt"
 DyWorld_Prototype_1.icons = {
 	  {

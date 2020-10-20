@@ -5,6 +5,7 @@ DyWorld_Prototype_1.minable = {mining_time = 0.5, result = "loader-2"}
 DyWorld_Prototype_1.flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"}
 DyWorld_Prototype_1.speed = (30 / 480)
 DyWorld_Prototype_1.icon = nil
+DyWorld_Prototype_1.next_upgrade = "loader-3"
 DyWorld_Prototype_1.fast_replaceable_group = "transport-belt"
 DyWorld_Prototype_1.belt_animation_set = DyWorld_basic_belt_animation_set(Tier_2)
 DyWorld_Prototype_1.icons = {

@@ -1,7 +1,7 @@
 
 
-local DyWorld_Prototype_1 = DyDs_CopyPrototype("underground-belt", "underground-belt", "basic-underground-belt", true)
-local DyWorld_Prototype_2 = DyDs_CopyPrototype("item", "underground-belt", "basic-underground-belt", true)
+local DyWorld_Prototype_1 = DyDs_CopyPrototype("underground-belt", "underground-belt", "underground-belt-1", true)
+local DyWorld_Prototype_2 = DyDs_CopyPrototype("item", "underground-belt", "underground-belt-1", true)
 DyWorld_Prototype_1.speed = (15 / 480)
 DyWorld_Prototype_1.next_upgrade = "underground-belt-2"
 DyWorld_Prototype_1.belt_animation_set = DyWorld_basic_belt_animation_set(Tier_1)
@@ -34,17 +34,17 @@ data:extend({
   DyWorld_Prototype_2,
   {
     type = "recipe",
-    name = "basic-underground-belt",
+    name = "underground-belt-1",
 	category = "assembling-tier-1",
     normal =
     {
       ingredients =
       {
-        {type = "item", name = "basic-transport-belt", amount = 3},
+        {type = "item", name = "transport-belt-1", amount = 3},
         {type = "item", name = "bronze-gear", amount = 1},
         {type = "item", name = "bronze-plate", amount = 2},
       },
-      result = "basic-underground-belt",
+      result = "underground-belt-1",
 	  result_count = 2,
 	  energy_required = 1,
 	  enabled = false,
@@ -53,11 +53,11 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "basic-transport-belt", amount = 4},
+        {type = "item", name = "transport-belt-1", amount = 4},
         {type = "item", name = "bronze-gear", amount = 1},
         {type = "item", name = "bronze-plate", amount = 5},
       },
-      result = "basic-underground-belt",
+      result = "underground-belt-1",
 	  result_count = 1,
 	  energy_required = 5,
 	  enabled = false,

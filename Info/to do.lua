@@ -14,13 +14,11 @@ add recycler
 
 add recycler internal complexity meter
 
-make story mode mp
 
-add recipes asteroid miners
 add modules
-add storage network techs
 balance chemical techs
 add trains network
+rework equipment
 
 
   ---------- DONE ----------

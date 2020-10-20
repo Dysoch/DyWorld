@@ -37,6 +37,40 @@ function Event_on_entity_died(event)
 	----- Story Objective Check -----
 	Story_Objectives("died", event)
 	
-	----- Difficulty Story -----
-	--Difficulty_Change("-", VAR1)
+	----- Difficulty -----
+	if (name == "burner-radar") then
+		if global.dyworld.game_stats.difficulty > ((10 * global.dyworld.game_stats.players) + 1) then
+			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (10 * global.dyworld.game_stats.players)
+		else
+			global.dyworld.game_stats.difficulty = 1
+		end
+	end
+	if (name == "radar-1") then
+		if global.dyworld.game_stats.difficulty > ((100 * global.dyworld.game_stats.players) + 1) then
+			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (100 * global.dyworld.game_stats.players)
+		else
+			global.dyworld.game_stats.difficulty = 1
+		end
+	end
+	if (name == "radar-2") then
+		if global.dyworld.game_stats.difficulty > ((250 * global.dyworld.game_stats.players) + 1) then
+			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (250 * global.dyworld.game_stats.players)
+		else
+			global.dyworld.game_stats.difficulty = 1
+		end
+	end
+	if (name == "radar-3") then
+		if global.dyworld.game_stats.difficulty > ((500 * global.dyworld.game_stats.players) + 1) then
+			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (500 * global.dyworld.game_stats.players)
+		else
+			global.dyworld.game_stats.difficulty = 1
+		end
+	end
+	if (name == "radar-4") then
+		if global.dyworld.game_stats.difficulty > ((1000 * global.dyworld.game_stats.players) + 1) then
+			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (1000 * global.dyworld.game_stats.players)
+		else
+			global.dyworld.game_stats.difficulty = 1
+		end
+	end
 end

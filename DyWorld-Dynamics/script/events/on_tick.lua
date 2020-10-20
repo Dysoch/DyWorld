@@ -10,8 +10,12 @@ function Event_on_tick(event)
 		local seconds = (seconds_start-(minutes_start*60))
 		global.dyworld.game_stats.time_stamp = (hours..":"..minutes..":"..seconds)
 	end
-	if (event.tick%(60*60*3)==1 and global.dyworld.game_stats.difficulty <= 9999.9) then
-		global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + 0.1
+	if (event.tick%(60*60*3)==1 and global.dyworld.game_stats.difficulty < 10000) then
+		if not global.dyworld.game_stats.players then global.dyworld.game_stats.players = 1 end
+		global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (0.1 * (global.dyworld.game_stats.players * global.dyworld.game_stats.players))
+		if global.dyworld.game_stats.difficulty > 10000 then
+			global.dyworld.game_stats.difficulty = 10000
+		end
 	end
 	if event.tick%(25001)==25000 then
 		global.dyworld.game_stats.days = global.dyworld.game_stats.days + 1
@@ -49,6 +53,7 @@ function Event_on_tick(event)
 		end
 	end
 	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack and event.tick%(60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency) == math.random((60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency)-1)) then
+		if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
 		local Loc = Pick_Random_Attack_Location()
 		local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 10))
 		

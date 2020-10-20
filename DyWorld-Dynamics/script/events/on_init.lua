@@ -8,6 +8,7 @@ function Event_on_init()
 			players = {},
 			game_stats = {
 				ticks = 0,
+				players = 0,
 				chunks = 0,
 				sector_scanned = 0,
 				crafted_amount = 0,

@@ -10,6 +10,11 @@ local Tree_Loot_Table = {
 		Chance = 0.05,
 		Max_Count = 1,
 	},
+	{
+		Name = "exotic-partical",
+		Chance = 0.0005,
+		Max_Count = 1,
+	},
 }
 
 

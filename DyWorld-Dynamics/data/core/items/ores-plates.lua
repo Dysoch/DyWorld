@@ -32,6 +32,15 @@ DyDS_Add_Tool({
 	subgroup = DyDs.."0-resource-1",
 })
 
+DyDS_Add_Item({
+	name = "titanium-ore-impure",
+	order = "titanium-ore-impure",
+    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Tin_Color}},
+	localised_name = {"looped-name.titanium-1"},
+	stack_size = 1000,
+	subgroup = DyDs.."0-resource-1",
+})
+
   ----- Pure Ores -----
   
 DyDS_Add_Tool({
@@ -63,6 +72,15 @@ DyDS_Add_Tool({
 	durability = 1,
 	subgroup = DyDs.."0-resource-2",
 }) 
+
+DyDS_Add_Item({
+	name = "titanium-ore",
+	order = "titanium-ore",
+    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Tin_Color}},
+	localised_name = {"looped-name.titanium-2"},
+	stack_size = 1000,
+	subgroup = DyDs.."0-resource-2",
+})
 
   ----- Slag & Nuggets -----
   
@@ -151,6 +169,16 @@ DyDS_Add_Tool({
 	stack_size = 500,
 	durability = 1,
 	subgroup = DyDs.."metal-2",
+})
+
+DyDS_Add_Item({
+	name = "titanium-plate",
+	order = "titanium-plate",
+    icons = {{icon = DyDs_path_icon.."base-plate-2.png", tint = Tin_Color}},
+	localised_name = {"looped-name.titanium-4"},
+	stack_size = 500,
+	durability = 1,
+	subgroup = DyDs.."metal-3",
 })
 
   ----- Stones -----

@@ -73,6 +73,10 @@ function Phase_Forward()
 	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then
 		game.surfaces[1].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {(math.random(-10,10)),(math.random(-10,10))}}
+		global.dyworld.game_stats.difficulty = 1
+	end
+	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 3) then
+		global.dyworld.game_stats.difficulty = 1
 	end
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message then
 		if not debugger then

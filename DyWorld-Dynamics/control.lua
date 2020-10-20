@@ -1,5 +1,6 @@
 
-debugger = true
+--debugger = true
+debugger = settings.startup["DyWorld_Debug"].value
 Version_Build = "0.9.0"
 
 -- LuaLib

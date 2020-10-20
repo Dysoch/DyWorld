@@ -5,6 +5,12 @@
 
 data:extend({
 	----- Debug Settings -----
+	{
+		type = "bool-setting",
+		name = "DyWorld_Debug",
+		setting_type = "startup",
+		default_value = false,
+	},
 	
 	----- Content Altering Settings -----
 	

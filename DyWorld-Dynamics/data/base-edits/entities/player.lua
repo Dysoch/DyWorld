@@ -12,3 +12,6 @@ data.raw.character.character.healing_per_tick = 0
 data.raw.character.character.build_distance = 15
 
 data.raw["solar-panel"]["solar-panel"].production = "60MW"
+data.raw["accumulator"]["accumulator"].input_flow_limit = "60MW"
+data.raw["accumulator"]["accumulator"].output_flow_limit = "60MW"
+data.raw["accumulator"]["accumulator"].buffer_capacity = "1000MJ"

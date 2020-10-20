@@ -10,6 +10,9 @@ function Event_on_tick(event)
 		local seconds = (seconds_start-(minutes_start*60))
 		global.dyworld.game_stats.time_stamp = (hours..":"..minutes..":"..seconds)
 	end
+	if (event.tick%(60*60*3)==1 and global.dyworld.game_stats.difficulty <= 9999.9) then
+		global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + 0.1
+	end
 	if event.tick%(25001)==25000 then
 		global.dyworld.game_stats.days = global.dyworld.game_stats.days + 1
 		--debug("Game Days: "..global.dyworld.game_stats.days)
@@ -40,14 +43,14 @@ function Event_on_tick(event)
 	end
 	if event.tick%(60*60)==800 then
 		for k,v in pairs(global.dyworld.players) do
-			if (global.dyworld.story.act == 1 and global.dyworld.story.phase <= 8) then
+			if (global.dyworld.story.act == 1 and global.dyworld.story.phase <= 8 and game.players[v.id].minimap_enabled == true) then
 				game.players[v.id].minimap_enabled = false
 			end
 		end
 	end
 	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack and event.tick%(60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency) == math.random((60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency)-1)) then
 		local Loc = Pick_Random_Attack_Location()
-		local Str = Pick_Random_Attack_Strength(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_strength)
+		local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 10))
 		
 		if not settings.startup["DyWorld_Combat_Overhaul"].value then
 			for i = 1, Str do

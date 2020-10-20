@@ -1,6 +1,21 @@
 
+function Find_Enemy()
+	if game.surfaces[1].find_nearest_enemy{position={0,0}, max_distance = ((global.dyworld.game_stats.chunks / 4) * 32)} then
+		return game.surfaces[1].find_nearest_enemy{position={0,0}, max_distance = ((global.dyworld.game_stats.chunks / 4) * 32)}
+	else
+		return nil
+	end
+end
 
-
+function Difficulty_Change(ARG1, VAR1)
+	if ARG1 == "+" then
+		global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + VAR1
+	elseif ARG1 == "-" then
+		if (global.dyworld.game_stats.difficulty - VAR1 >= 1) then
+			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - VAR1
+		end
+	end
+end
 
 function Phase_Forward()
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase+1] then
@@ -42,11 +57,16 @@ function Phase_Forward()
 		if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_2 and global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_2 == "enemy-find") then
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if v.type_1 == "position" then
-					local Finder = game.surfaces[1].find_nearest_enemy{position={0,0}, max_distance = ((global.dyworld.game_stats.chunks / 4) * 32)}
-					local X = Finder.position.x
-					local Y = Finder.position.y
-					v.PosX = X
-					v.PosY = Y
+					local Finder = Find_Enemy()
+					if Finder == nil then
+						
+					else
+						local X = Finder.position.x
+						local Y = Finder.position.y
+						v.PosX = X
+						v.PosY = Y
+					
+					end
 				end
 			end
 		end

@@ -27,6 +27,7 @@ function Event_on_init()
 				attack_loc_x = 0,
 				attack_loc_y = 0,
 				attack_loc_amount = 0,
+				difficulty = 1,
 				time_stamp = "",
 				building_locations = {},
 			},

@@ -36,4 +36,7 @@ function Event_on_entity_died(event)
 	
 	----- Story Objective Check -----
 	Story_Objectives("died", event)
+	
+	----- Difficulty Story -----
+	--Difficulty_Change("-", VAR1)
 end

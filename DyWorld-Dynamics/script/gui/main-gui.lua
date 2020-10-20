@@ -19,6 +19,7 @@ function Main_GUI(player, id)
 		frameflow1.add{type = "label", caption = "Sectors Scanned: "..global.dyworld.game_stats.sector_scanned}
 		if debugger then
 			frameflow1.add{type = "label", caption = "Chunks: "..global.dyworld.game_stats.chunks}
+			frameflow1.add{type = "label", caption = "Difficulty of game: "..global.dyworld.game_stats.difficulty}
 		end
 		frameflow1.add{type = "label", caption = "Game Days: "..global.dyworld.game_stats.days}
 		frameflow1.add{type = "label", caption = "Game Kills: "..global.dyworld.game_stats.killed_amount}
@@ -29,10 +30,18 @@ function Main_GUI(player, id)
 		local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 		tabbed_pane.add_tab(tab2, frameflow2)
 		
-		frameflow2.add{type = "label", caption = "Crafted: "..global.dyworld.players[id].crafted}
-		frameflow2.add{type = "label", caption = "Mined: "..global.dyworld.players[id].mined}
-		frameflow2.add{type = "label", caption = "Built: "..global.dyworld.players[id].build}
-		frameflow2.add{type = "label", caption = "Personal Killed: "..global.dyworld.players[id].killed}
+		if global.dyworld.players[id].crafted >= 0 then
+			frameflow2.add{type = "label", caption = "Crafted: "..global.dyworld.players[id].crafted}
+		end
+		if global.dyworld.players[id].mined >= 0 then
+			frameflow2.add{type = "label", caption = "Mined: "..global.dyworld.players[id].mined}
+		end
+		if global.dyworld.players[id].build >= 0 then
+			frameflow2.add{type = "label", caption = "Built: "..global.dyworld.players[id].build}
+		end
+		if global.dyworld.players[id].killed >= 0 then
+			frameflow2.add{type = "label", caption = "Personal Killed: "..global.dyworld.players[id].killed}
+		end
 		frameflow2.add{type = "line", direction = "horizontal"}
 		frameflow2.add{type = "label", caption = "Position: "..math.floor(global.dyworld.players[id].posx).." , "..math.floor(global.dyworld.players[id].posy)}
 

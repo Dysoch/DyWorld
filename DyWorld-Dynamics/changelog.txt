@@ -16,3 +16,5 @@ Date: 18. 10. 2020
     - Stacksizes of ores: 1000
     - Stacksizes of plates: 500
     - Stacksizes of other materials: 500
+  Compatibility:
+    - Afraid of the Dark like features are implemented into DyWorld-Dynamics. Use Light setting in the mod settings to enable it (increases light cone and radius, also strength of it). Mod is now marked as incompatible with DyWorld-Dynamics

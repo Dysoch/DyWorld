@@ -21,6 +21,12 @@ data:extend({
 		setting_type = "startup",
 		default_value = false,
 	},
+	{
+		type = "bool-setting",
+		name = "DyWorld_Light_Setting",
+		setting_type = "startup",
+		default_value = false,
+	},
 	----- Map Settings -----
     --[[{
         type = "bool-setting",

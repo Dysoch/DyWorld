@@ -40,8 +40,6 @@ discarge defense
 discharge remote
 artillery targeting remote
 
-move nano emitter (nanobot)
-move termite bots (nanobot)
 automatic item retriever (nanobot)
 automatic unit launcher (nanobot)
 automatic tree cutter (nanobot)

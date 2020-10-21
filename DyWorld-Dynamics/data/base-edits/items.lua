@@ -32,8 +32,34 @@ data.raw.capsule["raw-fish"].subgroup = DyDs.."material-1"
 
 data.raw["repair-tool"]["repair-pack"].subgroup = "dyworld-hidden-items"
 
+data.raw.item["solar-panel-equipment"].subgroup = DyDs.."equipment-energy"
+data.raw.item["fusion-reactor-equipment"].subgroup = DyDs.."equipment-energy"
+data.raw.item["battery-equipment"].subgroup = DyDs.."equipment-energy"
+data.raw.item["battery-mk2-equipment"].subgroup = DyDs.."equipment-energy"
+
+data.raw.item["energy-shield-equipment"].subgroup = DyDs.."equipment-defense"
+data.raw.item["energy-shield-mk2-equipment"].subgroup = DyDs.."equipment-defense"
+data.raw.item["personal-laser-defense-equipment"].subgroup = DyDs.."equipment-defense"
+data.raw.item["discharge-defense-equipment"].subgroup = DyDs.."equipment-defense"
+data.raw.capsule["discharge-defense-remote"].subgroup = DyDs.."equipment-defense"
+
+data.raw.item["belt-immunity-equipment"].subgroup = DyDs.."equipment-qol"
+data.raw.item["exoskeleton-equipment"].subgroup = DyDs.."equipment-qol"
+data.raw.item["personal-roboport-equipment"].subgroup = DyDs.."equipment-qol"
+data.raw.item["personal-roboport-mk2-equipment"].subgroup = DyDs.."equipment-qol"
+data.raw.item["night-vision-equipment"].subgroup = DyDs.."equipment-qol"
+
 -- Nanobots --
 data.raw.ammo["ammo-nano-constructors"].magazine_size = 100000000000000000000000000000000
 data.raw.ammo["ammo-nano-constructors"].localised_name = {"DyDs-story.coica-1"}
 data.raw.ammo["ammo-nano-constructors"].localised_description = {"DyDs-story.coica-2"}
 data.raw.ammo["ammo-nano-constructors"].subgroup = DyDs.."mod-nanobots"
+data.raw.ammo["ammo-nano-termites"].subgroup = DyDs.."mod-nanobots"
+data.raw.gun["gun-nano-emitter"].subgroup = DyDs.."mod-nanobots"
+
+data.raw.item["equipment-bot-chip-trees"].subgroup = DyDs.."equipment-qol"
+data.raw.item["equipment-bot-chip-nanointerface"].subgroup = DyDs.."equipment-qol"
+data.raw.item["equipment-bot-chip-launcher"].subgroup = DyDs.."equipment-defense"
+data.raw.item["equipment-bot-chip-items"].subgroup = DyDs.."equipment-qol"
+data.raw.item["equipment-bot-chip-feeder"].subgroup = DyDs.."equipment-qol"
+data.raw.item["roboport-interface"].subgroup = DyDs.."equipment-qol"

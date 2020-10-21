@@ -17,27 +17,7 @@ local Data_Table_Item_Group = {
 		Main = "warfare-personal"
 	},
 	{
-		Name = "equipment-solar",
-		Type = "sub",
-		Main = "warfare-personal"
-	},
-	{
-		Name = "equipment-reactor",
-		Type = "sub",
-		Main = "warfare-personal"
-	},
-	{
-		Name = "equipment-power",
-		Type = "sub",
-		Main = "warfare-personal"
-	},
-	{
-		Name = "equipment-shield",
-		Type = "sub",
-		Main = "warfare-personal"
-	},
-	{
-		Name = "equipment-battery",
+		Name = "equipment-energy",
 		Type = "sub",
 		Main = "warfare-personal"
 	},
@@ -47,22 +27,7 @@ local Data_Table_Item_Group = {
 		Main = "warfare-personal"
 	},
 	{
-		Name = "equipment-exoskeleton",
-		Type = "sub",
-		Main = "warfare-personal"
-	},
-	{
-		Name = "equipment-roboport",
-		Type = "sub",
-		Main = "warfare-personal"
-	},
-	{
-		Name = "equipment-vision",
-		Type = "sub",
-		Main = "warfare-personal"
-	},
-	{
-		Name = "equipment-immunity",
+		Name = "equipment-qol",
 		Type = "sub",
 		Main = "warfare-personal"
 	},

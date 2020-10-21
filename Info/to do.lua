@@ -20,6 +20,9 @@ balance chemical techs
 add trains network
 rework equipment
 
+add nanobot tech
+add nanobot tech cliff
+
 equipment;
 portable-solar
 portable-fusion
@@ -37,7 +40,6 @@ discarge defense
 discharge remote
 artillery targeting remote
 
-move atomic artillery shell
 move nano emitter (nanobot)
 move termite bots (nanobot)
 automatic item retriever (nanobot)
@@ -47,6 +49,9 @@ automatic health feeder (nanobot)
 nanobot logistic interface (nanobot)
 remove spidertron remote
 move cliff explosives
+move lamp
+move logistic chests
+move railway
 
 
   ---------- DONE ----------

@@ -28,7 +28,7 @@ data:extend(
         }
       }
     },
-    subgroup = "ammo",
+    subgroup = DyDs.."ammo-artillery",
     order = "d[explosive-cannon-shell]-d[artillery]",
     stack_size = 1
   },

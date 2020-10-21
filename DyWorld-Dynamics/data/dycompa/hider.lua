@@ -81,6 +81,7 @@ local Change = {
 	"wooden-chest",
 	"iron-chest",
 	"steel-chest",
+	"spidertron",
 	"tank",
 	"car",
 	"artillery-wagon",
@@ -140,7 +141,7 @@ local Change = {
 	"defender-capsule",
 	"distractor-capsule",
 	"destroyer-capsule",
-	"wall",
+	"stone-wall",
 	"gate",
 	"flamethrower-turret",
 	"artillery-turret",
@@ -151,6 +152,10 @@ for k,m in pairs(Change) do
 	if data.raw.item[m] then
 		data.raw.item[m].DyWorld_Hidden = true
 		data.raw.item[m].subgroup = "dyworld-hidden-items"
+	end
+	if data.raw["item-with-entity-data"][m] then
+		data.raw["item-with-entity-data"][m].DyWorld_Hidden = true
+		data.raw["item-with-entity-data"][m].subgroup = "dyworld-hidden-items"
 	end
 	if data.raw.ammo[m] then
 		data.raw.ammo[m].DyWorld_Hidden = true
@@ -176,6 +181,10 @@ for k,m in pairs(Change) do
 		data.raw.capsule[m].DyWorld_Hidden = true
 		data.raw.capsule[m].subgroup = "dyworld-hidden-items"
 	end
+	--[[if data.raw[m][m] then
+		data.raw[m][m].DyWorld_Hidden = true
+		data.raw[m][m].subgroup = "dyworld-hidden-items"
+	end]]--
 	if data.raw["transport-belt"][m] then
 		if data.raw["transport-belt"][m].next_upgrade then
 			data.raw["transport-belt"][m].next_upgrade = nil

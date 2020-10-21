@@ -20,6 +20,34 @@ balance chemical techs
 add trains network
 rework equipment
 
+equipment;
+portable-solar
+portable-fusion
+battery-1
+battery-2
+belt immunity
+exoskeleton
+personal roboport
+roboport 2
+nightvision
+energy shield 1
+energy shield 2
+laser defence
+discarge defense
+discharge remote
+artillery targeting remote
+
+move atomic artillery shell
+move nano emitter (nanobot)
+move termite bots (nanobot)
+automatic item retriever (nanobot)
+automatic unit launcher (nanobot)
+automatic tree cutter (nanobot)
+automatic health feeder (nanobot)
+nanobot logistic interface (nanobot)
+remove spidertron remote
+move cliff explosives
+
 
   ---------- DONE ----------
 

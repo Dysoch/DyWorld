@@ -85,8 +85,6 @@ local Change = {
 	"tank",
 	"car",
 	"artillery-wagon",
-	"rail-wagon",
-	"fluid-wagon",
 	"locomotive",
 	"substation",
 	"small-electric-pole",

@@ -70,8 +70,8 @@ Story_Recipes  = {
 	["basic-boiler"] = {act = 1, phase = 10},
 	["basic-steam-engine"] = {act = 1, phase = 10},
 	["basic-power-pole"] = {act = 1, phase = 10},
-	["equipment-bot-chip-trees"] = {act = 1, phase = 10},
 	["solar-panel-equipment"] = {act = 1, phase = 10},
+	["belt-immunity-equipment"] = {act = 1, phase = 10},
 	
 	----- Act 2, Phase 3 -----
 	["heal-station"] = {act = 2, phase = 3},

@@ -23,6 +23,26 @@ data.raw.item["programmable-speaker"].subgroup = DyDs.."circuit-network"
 data.raw.item["red-wire"].subgroup = DyDs.."material-2"
 data.raw.item["green-wire"].subgroup = DyDs.."material-2"
 
+data.raw.item["logistic-chest-passive-provider"].subgroup = DyDs.."chests"
+data.raw.item["logistic-chest-passive-provider"].order = "5a"
+data.raw.item["logistic-chest-active-provider"].subgroup = DyDs.."chests"
+data.raw.item["logistic-chest-active-provider"].order = "5d"
+data.raw.item["logistic-chest-storage"].subgroup = DyDs.."chests"
+data.raw.item["logistic-chest-storage"].order = "5c"
+data.raw.item["logistic-chest-buffer"].subgroup = DyDs.."chests"
+data.raw.item["logistic-chest-buffer"].order = "5e"
+data.raw.item["logistic-chest-requester"].subgroup = DyDs.."chests"
+data.raw.item["logistic-chest-requester"].order = "5b"
+
+data.raw.item["small-lamp"].subgroup = DyDs.."lamps"
+
+data.raw["rail-planner"]["rail"].subgroup = DyDs.."rail"
+data.raw.item["train-stop"].subgroup = DyDs.."rail"
+data.raw.item["rail-signal"].subgroup = DyDs.."rail"
+data.raw.item["rail-chain-signal"].subgroup = DyDs.."rail"
+data.raw["item-with-entity-data"]["cargo-wagon"].subgroup = DyDs.."rail"
+data.raw["item-with-entity-data"]["fluid-wagon"].subgroup = DyDs.."rail"
+
 data.raw.item["stone-brick"].stack_size = 500
 data.raw.item["stone-brick"].subgroup = DyDs.."material-1"
 data.raw.item["stone-brick"].order = "stone-brick"

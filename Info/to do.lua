@@ -49,9 +49,6 @@ automatic health feeder (nanobot)
 nanobot logistic interface (nanobot)
 remove spidertron remote
 move cliff explosives
-move lamp
-move logistic chests
-move railway
 
 
   ---------- DONE ----------

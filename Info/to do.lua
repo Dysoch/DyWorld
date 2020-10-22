@@ -48,6 +48,14 @@ nanobot logistic interface (nanobot)
 remove spidertron remote
 move cliff explosives
 
+make titanium and aluminium required for rocket launches
+granite to ilmenite to titanium/iron
+granite to biotite to aluminium/iron/magnesium
+quartzite/water to quartz
+limestone/sand to conrete powder
+limestone/quartz/aluminium to refined conrete powder
+concrete powder/water to concrete
+refined concrete powder/water/light oil to refined concrete
 
   ---------- DONE ----------
 

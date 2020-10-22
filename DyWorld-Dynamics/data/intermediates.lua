@@ -35,6 +35,9 @@
 	type = "fluid", name = "petroleum-gas"
 	type = "fluid", name = "natural-gas" -- TODO RECIPE TECH
 	-- Intermediates 3 --
+	type = "item", name = "titanium-plate"
+	type = "item", name = "aluminium-plate"
+	type = "item", name = "magnesium-plate"
 	type = "item", name = "plastic-bar"
 	type = "item", name = "flying-robot-frame"
 	type = "item", name = "control-board-2"

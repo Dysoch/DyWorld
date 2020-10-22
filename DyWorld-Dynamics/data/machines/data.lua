@@ -13,6 +13,7 @@ require(DyDs_data_machines.. "tier-1.basic-boiler")
 require(DyDs_data_machines.. "tier-1.basic-steam-engine")
 require(DyDs_data_machines.. "tier-1.basic-power-pole")
 require(DyDs_data_machines.. "tier-1.heal-station")
+require(DyDs_data_machines.. "tier-1.grinder")
 
 -- Tier 2 --
 require(DyDs_data_machines.. "tier-2.air-filter")

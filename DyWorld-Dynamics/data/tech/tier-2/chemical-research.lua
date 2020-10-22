@@ -54,6 +54,8 @@ local Chemical_Techs = {
 			"fluids-3",
 			"metallurgy-2",
 			"power-2",
+			"titanium-processing",
+			"aluminium-processing",
 		},
 		ingredients = {
 			{"canister-oxygen", 1},

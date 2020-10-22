@@ -35,3 +35,6 @@ Copper_Color = {212, 119, 82}
 Tin_Color = {39, 105, 135}
 Steel_Color = {229, 227, 227}
 Bronze_Color = {126, 112, 109}
+Titanium_Color = {57, 61, 112}
+Magnesium_Color = {92, 114, 208}
+Aluminium_Color = {170, 170, 170}

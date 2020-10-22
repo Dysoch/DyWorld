@@ -109,7 +109,7 @@ data:extend({
 	  enabled = false,
     },
   },
-	-- Copper -- ³
+	-- Copper -- 
   {
     type = "recipe",
     name = "cast-copper-2",
@@ -573,6 +573,237 @@ data:extend({
       },
 	  energy_required = 1,
 	  main_product = "steel-plate",
+	  enabled = false,
+    },
+  },
+	-- Titanium -- 
+  {
+    type = "recipe",
+    name = "cast-titanium-3a",
+	category = "blast-furnace",
+	main_product = "molten-titanium",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "titanium-ore", amount = 100},
+        {type = "item", name = "lignite", amount = 1},
+        {type = "item", name = "limestone", amount = 1},
+        {type = "fluid", name = "oxygen", amount = 50},
+      },
+      results = 
+      {
+        {type = "fluid", name = "molten-titanium", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30,
+	  main_product = "molten-titanium",
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "titanium-ore", amount = 100*2},
+        {type = "item", name = "lignite", amount = 10},
+        {type = "item", name = "limestone", amount = 10},
+        {type = "fluid", name = "oxygen", amount = 50*3},
+      },
+      results = 
+      {
+        {type = "fluid", name = "molten-titanium", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30*5,
+	  main_product = "molten-titanium",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "cast-titanium-3b",
+	category = "casting-furnace",
+	main_product = "titanium-plate",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-titanium", amount = 1},
+      },
+      results = 
+      {
+        {type = "item", name = "titanium-plate", amount = 1},
+      },
+	  energy_required = 0.25,
+	  main_product = "titanium-plate",
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-titanium", amount = 3},
+      },
+      results = 
+      {
+        {type = "item", name = "titanium-plate", amount = 1},
+      },
+	  energy_required = 1,
+	  main_product = "titanium-plate",
+	  enabled = false,
+    },
+  },
+	-- Aluminium -- 
+  {
+    type = "recipe",
+    name = "cast-aluminium-3a",
+	category = "blast-furnace",
+	main_product = "molten-aluminium",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "aluminium-ore", amount = 100},
+        {type = "item", name = "lignite", amount = 1},
+        {type = "item", name = "limestone", amount = 1},
+        {type = "fluid", name = "oxygen", amount = 50},
+      },
+      results = 
+      {
+        {type = "fluid", name = "molten-aluminium", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30,
+	  main_product = "molten-aluminium",
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "aluminium-ore", amount = 100*2},
+        {type = "item", name = "lignite", amount = 10},
+        {type = "item", name = "limestone", amount = 10},
+        {type = "fluid", name = "oxygen", amount = 50*3},
+      },
+      results = 
+      {
+        {type = "fluid", name = "molten-aluminium", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30*5,
+	  main_product = "molten-aluminium",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "cast-aluminium-3b",
+	category = "casting-furnace",
+	main_product = "aluminium-plate",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-aluminium", amount = 1},
+      },
+      results = 
+      {
+        {type = "item", name = "aluminium-plate", amount = 1},
+      },
+	  energy_required = 0.25,
+	  main_product = "aluminium-plate",
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-aluminium", amount = 3},
+      },
+      results = 
+      {
+        {type = "item", name = "aluminium-plate", amount = 1},
+      },
+	  energy_required = 1,
+	  main_product = "aluminium-plate",
+	  enabled = false,
+    },
+  },
+	-- Magnesium -- 
+  {
+    type = "recipe",
+    name = "cast-magnesium-3a",
+	category = "blast-furnace",
+	main_product = "molten-magnesium",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "magnesium-ore", amount = 100},
+        {type = "item", name = "lignite", amount = 1},
+        {type = "item", name = "limestone", amount = 1},
+        {type = "fluid", name = "oxygen", amount = 50},
+      },
+      results = 
+      {
+        {type = "fluid", name = "molten-magnesium", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30,
+	  main_product = "molten-magnesium",
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "magnesium-ore", amount = 100*2},
+        {type = "item", name = "lignite", amount = 10},
+        {type = "item", name = "limestone", amount = 10},
+        {type = "fluid", name = "oxygen", amount = 50*3},
+      },
+      results = 
+      {
+        {type = "fluid", name = "molten-magnesium", amount_min = 90, amount_max = 100},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
+      },
+	  energy_required = 30*5,
+	  main_product = "molten-magnesium",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "cast-magnesium-3b",
+	category = "casting-furnace",
+	main_product = "magnesium-plate",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-magnesium", amount = 1},
+      },
+      results = 
+      {
+        {type = "item", name = "magnesium-plate", amount = 1},
+      },
+	  energy_required = 0.25,
+	  main_product = "magnesium-plate",
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-magnesium", amount = 3},
+      },
+      results = 
+      {
+        {type = "item", name = "magnesium-plate", amount = 1},
+      },
+	  energy_required = 1,
+	  main_product = "magnesium-plate",
 	  enabled = false,
     },
   },

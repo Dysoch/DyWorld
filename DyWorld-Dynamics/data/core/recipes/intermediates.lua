@@ -40,7 +40,7 @@ data:extend({
   {
     type = "recipe",
     name = "rubber",
-	category = "kiln-basic",
+	category = "smelting",
 	main_product = "rubber",
     normal =
     {
@@ -73,8 +73,8 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "glass",
-	category = "kiln-basic",
+    name = "glass-1",
+	category = "smelting",
 	main_product = "glass",
     normal =
     {
@@ -104,6 +104,110 @@ data:extend({
       },
 	  main_product = "glass",
 	  energy_required = 1.5*5,
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "glass-2",
+	category = "smelting",
+	main_product = "glass",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "sand", amount = 100},
+      },
+      results = 
+      {
+        {type = "item", name = "glass", amount_min = 5, amount_max = 8},
+      },
+	  main_product = "glass",
+	  energy_required = 1.5,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "sand", amount = 100*5},
+      },
+      results = 
+      {
+        {type = "item", name = "glass", amount_min = 3, amount_max = 5},
+      },
+	  main_product = "glass",
+	  energy_required = 1.5*5,
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "sand-1",
+	category = "grinder",
+	main_product = "sand",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "sandstone", amount = 100},
+      },
+      results = 
+      {
+        {type = "item", name = "sand", amount_min = 50, amount_max = 180},
+      },
+	  main_product = "sand",
+	  energy_required = 12.5,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "sandstone", amount = 100*5},
+      },
+      results = 
+      {
+        {type = "item", name = "sand", amount_min = 30, amount_max = 150},
+      },
+	  main_product = "sand",
+	  energy_required = 12.5*5,
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "sand-2",
+	category = "grinder",
+	main_product = "sand",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "quartzite", amount = 75},
+        {type = "item", name = "limestone", amount = 25},
+      },
+      results = 
+      {
+        {type = "item", name = "sand", amount_min = 50, amount_max = 180},
+      },
+	  main_product = "sand",
+	  energy_required = 25,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "quartzite", amount = 75*5},
+        {type = "item", name = "limestone", amount = 25*5},
+      },
+      results = 
+      {
+        {type = "item", name = "sand", amount_min = 30, amount_max = 150},
+      },
+	  main_product = "sand",
+	  energy_required = 25*5,
 	  enabled = false,
     },
   },

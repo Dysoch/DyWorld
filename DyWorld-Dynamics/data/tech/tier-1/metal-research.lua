@@ -129,6 +129,51 @@ local Metal_Techs = {
 		order = "1",
 	},
 	{
+		name = "titanium-processing",
+		icon = DyDs_path_tech.."iron.png",
+		count = 10,
+		prerequisites = {
+			"metallurgy-3",
+		},
+		ingredients = {
+			{"limestone", 15},
+			{"coal", 15},
+			{"iron-plate", 10},
+		},
+		time = 5,
+		order = "1",
+	},
+	{
+		name = "aluminium-processing",
+		icon = DyDs_path_tech.."iron.png",
+		count = 10,
+		prerequisites = {
+			"metallurgy-3",
+		},
+		ingredients = {
+			{"limestone", 15},
+			{"coal", 15},
+			{"iron-plate", 10},
+		},
+		time = 5,
+		order = "1",
+	},
+	{
+		name = "magnesium-processing",
+		icon = DyDs_path_tech.."iron.png",
+		count = 10,
+		prerequisites = {
+			"metallurgy-3",
+		},
+		ingredients = {
+			{"limestone", 15},
+			{"coal", 15},
+			{"iron-plate", 10},
+		},
+		time = 5,
+		order = "1",
+	},
+	{
 		name = "advanced-steel-processing",
 		icon = DyDs_path_tech.."iron.png",
 		count = 100,

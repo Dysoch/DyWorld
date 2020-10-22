@@ -36,6 +36,7 @@ local Recipe_Categories = {
 	"assembling-tier-5",
 	"bloomery",
 	"grinder",
+	"smelting",
 	"air-filter",
 	"electrolysis",
 	"blast-furnace",

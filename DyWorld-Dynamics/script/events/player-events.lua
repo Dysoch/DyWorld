@@ -40,26 +40,6 @@ function Event_on_player_created(event)
 	game.forces.player.auto_character_trash_slots = true
 	game.forces.player.character_logistic_requests = true
 	game.forces.player.character_trash_slot_count = 10
-	if debugger then
-		game.players[id].insert{name = "762mm-gun", count = 1}
-		game.players[id].insert{name = "basic-762mm-turret", count = 1}
-		game.players[id].insert{name = "762mm-bullet-ap", count = 5000}
-		game.players[id].insert{name = "coal", count = 1000}
-		game.players[id].insert{name = "storehouse-basic", count = 50}
-		game.players[id].insert{name = "storehouse-passive-provider", count = 50}
-		game.players[id].insert{name = "storehouse-requester", count = 50}
-		game.players[id].insert{name = "storehouse-storage", count = 50}
-		game.players[id].insert{name = "warehouse-basic", count = 50}
-		game.players[id].insert{name = "warehouse-passive-provider", count = 50}
-		game.players[id].insert{name = "warehouse-requester", count = 50}
-		game.players[id].insert{name = "warehouse-storage", count = 50}
-		game.players[id].insert{name = "basic-electric-drill", count = 50}
-		game.players[id].insert{name = "radar-4", count = 50}
-		game.players[id].insert{name = "roboport-3", count = 50}
-		game.players[id].insert{name = "accumulator", count = 50}
-		game.players[id].insert{name = "substation", count = 50}
-		game.players[id].insert{name = "solar-panel", count = 50}
-	end
 end
 
 function Event_on_player_died(event)

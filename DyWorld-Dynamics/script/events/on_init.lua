@@ -47,6 +47,24 @@ function Event_on_init()
 		if not tracked_items["asteroid-miner-copper"] then
 			remote.call("silo_script", "add_tracked_item", "asteroid-miner-copper")
 		end
+		if not tracked_items["asteroid-miner-random"] then
+			remote.call("silo_script", "add_tracked_item", "asteroid-miner-random")
+		end
+		if not tracked_items["asteroid-miner-titanium"] then
+			remote.call("silo_script", "add_tracked_item", "asteroid-miner-titanium")
+		end
+		if not tracked_items["asteroid-miner-stone"] then
+			remote.call("silo_script", "add_tracked_item", "asteroid-miner-stone")
+		end
+		if not tracked_items["asteroid-miner-coal-1"] then
+			remote.call("silo_script", "add_tracked_item", "asteroid-miner-coal-1")
+		end
+		if not tracked_items["asteroid-miner-coal-2"] then
+			remote.call("silo_script", "add_tracked_item", "asteroid-miner-coal-2")
+		end
+		if not tracked_items["asteroid-miner-coal-3"] then
+			remote.call("silo_script", "add_tracked_item", "asteroid-miner-coal-3")
+		end
 	end
 end
 

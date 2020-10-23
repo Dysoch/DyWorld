@@ -41,6 +41,36 @@ data:extend({
 	  energy_required = 250,
     },
   },
+	----- Random Ores -----
+  {
+    type = "recipe",
+    name = "asteroid-miner-random",
+	category = "assembling-tier-2",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "titanium-plate", amount = 12},
+        {type = "item", name = "basic-electric-drill", amount = 5},
+        {type = "item", name = "satellite", amount = 2},
+      },
+      result = "asteroid-miner-random",
+	  enabled = false,
+	  energy_required = 35,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "titanium-plate", amount = 12*5},
+        {type = "item", name = "basic-electric-drill", amount = 5*5},
+        {type = "item", name = "satellite", amount = 2*2},
+      },
+      result = "asteroid-miner-random",
+	  enabled = false,
+	  energy_required = 350,
+    },
+  },
 	----- Titanium Ores -----
   {
     type = "recipe",

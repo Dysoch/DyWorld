@@ -7,7 +7,17 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner-titanium",
-    icon = "__base__/graphics/icons/satellite.png",
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/satellite.png",
+	  },
+	  {
+		icon = data.raw.item["titanium-ore"].icons[1].icon,
+		tint = data.raw.item["titanium-ore"].icons[1].tint,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."z-space",
     order = "2",
@@ -21,7 +31,17 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner-iron",
-    icon = "__base__/graphics/icons/satellite.png",
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/satellite.png",
+	  },
+	  {
+		icon = data.raw.tool["iron-ore"].icons[1].icon,
+		tint = data.raw.tool["iron-ore"].icons[1].tint,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."z-space",
     order = "1",
@@ -36,7 +56,17 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner-copper",
-    icon = "__base__/graphics/icons/satellite.png",
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/satellite.png",
+	  },
+	  {
+		icon = data.raw.tool["copper-ore"].icons[1].icon,
+		tint = data.raw.tool["copper-ore"].icons[1].tint,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."z-space",
     order = "1",
@@ -51,7 +81,17 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner-tin",
-    icon = "__base__/graphics/icons/satellite.png",
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/satellite.png",
+	  },
+	  {
+		icon = data.raw.tool["tin-ore"].icons[1].icon,
+		tint = data.raw.tool["tin-ore"].icons[1].tint,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."z-space",
     order = "1",
@@ -66,7 +106,17 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner-stone",
-    icon = "__base__/graphics/icons/satellite.png",
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/satellite.png",
+	  },
+	  {
+		icon = data.raw.tool["limestone"].icons[1].icon,
+		tint = data.raw.tool["limestone"].icons[1].tint,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."z-space",
     order = "1",
@@ -83,7 +133,16 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner-coal-1",
-    icon = "__base__/graphics/icons/satellite.png",
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/satellite.png",
+	  },
+	  {
+		icon = data.raw.tool["coal"].icon,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."z-space",
     order = "1",
@@ -97,7 +156,17 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner-coal-2",
-    icon = "__base__/graphics/icons/satellite.png",
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/satellite.png",
+	  },
+	  {
+		icon = data.raw.item["lignite"].icons[1].icon,
+		tint = data.raw.item["lignite"].icons[1].tint,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."z-space",
     order = "1",
@@ -110,7 +179,16 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner-coal-3",
-    icon = "__base__/graphics/icons/satellite.png",
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/satellite.png",
+	  },
+	  {
+		icon = data.raw.tool["coal"].icon,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."z-space",
     order = "1",

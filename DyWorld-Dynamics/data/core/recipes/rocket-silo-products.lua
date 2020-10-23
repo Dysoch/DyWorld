@@ -12,9 +12,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 10},
-        {type = "item", name = "iron-plate", amount = 15},
-        {type = "item", name = "copper-plate", amount = 5},
+        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "aluminium-plate", amount = 15},
+        {type = "item", name = "magnesium-plate", amount = 5},
         {type = "item", name = "control-board-2", amount = 2},
         {type = "item", name = "plastic-bar", amount = 10},
         {type = "item", name = "engine-unit", amount = 2},
@@ -28,9 +28,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 10*5},
-        {type = "item", name = "iron-plate", amount = 15*5},
-        {type = "item", name = "copper-plate", amount = 5*5},
+        {type = "item", name = "steel-plate", amount = 10*5},
+        {type = "item", name = "aluminium-plate", amount = 15*5},
+        {type = "item", name = "magnesium-plate", amount = 5*5},
         {type = "item", name = "control-board-2", amount = 2*5},
         {type = "item", name = "plastic-bar", amount = 10*5},
         {type = "item", name = "engine-unit", amount = 2*5},
@@ -50,7 +50,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 25},
+        {type = "item", name = "titanium-plate", amount = 25},
         {type = "item", name = "basic-electric-drill", amount = 5},
         {type = "item", name = "satellite", amount = 2},
       },
@@ -62,7 +62,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 25*5},
+        {type = "item", name = "titanium-plate", amount = 25*5},
         {type = "item", name = "basic-electric-drill", amount = 5*5},
         {type = "item", name = "satellite", amount = 2*2},
       },
@@ -80,7 +80,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
         {type = "item", name = "satellite", amount = 1},
         {type = "item", name = "iron-ore", amount = 5},
@@ -93,7 +93,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10*5},
+        {type = "item", name = "titanium-plate", amount = 10*5},
         {type = "item", name = "basic-electric-drill", amount = 2*5},
         {type = "item", name = "satellite", amount = 1*2},
         {type = "item", name = "iron-ore", amount = 5*5},
@@ -112,7 +112,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
         {type = "item", name = "satellite", amount = 1},
         {type = "item", name = "copper-ore", amount = 5},
@@ -125,7 +125,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10*5},
+        {type = "item", name = "titanium-plate", amount = 10*5},
         {type = "item", name = "basic-electric-drill", amount = 2*5},
         {type = "item", name = "satellite", amount = 1*2},
         {type = "item", name = "copper-ore", amount = 5*5},
@@ -144,7 +144,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
         {type = "item", name = "satellite", amount = 1},
         {type = "item", name = "tin-ore", amount = 5},
@@ -157,7 +157,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10*5},
+        {type = "item", name = "titanium-plate", amount = 10*5},
         {type = "item", name = "basic-electric-drill", amount = 2*5},
         {type = "item", name = "satellite", amount = 1*2},
         {type = "item", name = "tin-ore", amount = 5*5},
@@ -176,7 +176,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
         {type = "item", name = "satellite", amount = 1},
         {type = "item", name = "limestone", amount = 5},
@@ -189,7 +189,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10*5},
+        {type = "item", name = "titanium-plate", amount = 10*5},
         {type = "item", name = "basic-electric-drill", amount = 2*5},
         {type = "item", name = "satellite", amount = 1*2},
         {type = "item", name = "limestone", amount = 5*5},
@@ -208,7 +208,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
         {type = "item", name = "satellite", amount = 1},
         {type = "item", name = "coal", amount = 5},
@@ -221,7 +221,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10*5},
+        {type = "item", name = "titanium-plate", amount = 10*5},
         {type = "item", name = "basic-electric-drill", amount = 2*5},
         {type = "item", name = "satellite", amount = 1*2},
         {type = "item", name = "coal", amount = 5*5},
@@ -239,7 +239,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
         {type = "item", name = "satellite", amount = 1},
         {type = "item", name = "coal", amount = 5},
@@ -252,7 +252,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10*5},
+        {type = "item", name = "titanium-plate", amount = 10*5},
         {type = "item", name = "basic-electric-drill", amount = 2*5},
         {type = "item", name = "satellite", amount = 1*2},
         {type = "item", name = "coal", amount = 5*5},
@@ -270,7 +270,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
         {type = "item", name = "satellite", amount = 1},
         {type = "item", name = "coal", amount = 5},
@@ -283,7 +283,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10*5},
+        {type = "item", name = "titanium-plate", amount = 10*5},
         {type = "item", name = "basic-electric-drill", amount = 2*5},
         {type = "item", name = "satellite", amount = 1*2},
         {type = "item", name = "coal", amount = 5*5},

@@ -27,7 +27,12 @@ data:extend({
         type = "fire",
         decrease = 0,
         percent = 10
-      }
+      },
+      {
+        type = "teleport",
+        decrease = 999999,
+        percent = 100
+      },
     },
     subgroup = DyDs.."armor",
     order = "basic-armor",
@@ -93,7 +98,12 @@ data:extend({
         type = "fire",
         decrease = 0,
         percent = 40
-      }
+      },
+      {
+        type = "teleport",
+        decrease = 999999,
+        percent = 100
+      },
     },
     subgroup = DyDs.."armor",
     order = "basic-power-armor",

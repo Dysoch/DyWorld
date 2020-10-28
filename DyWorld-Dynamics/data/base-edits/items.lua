@@ -37,9 +37,12 @@ data.raw.item["logistic-chest-requester"].order = "5b"
 data.raw.item["small-lamp"].subgroup = DyDs.."lamps"
 
 data.raw["rail-planner"]["rail"].subgroup = DyDs.."rail"
+data.raw["rail-planner"]["rail"].stack_size = 500
 data.raw.item["train-stop"].subgroup = DyDs.."rail"
 data.raw.item["rail-signal"].subgroup = DyDs.."rail"
+data.raw.item["rail-signal"].stack_size = 500
 data.raw.item["rail-chain-signal"].subgroup = DyDs.."rail"
+data.raw.item["rail-chain-signal"].stack_size = 500
 data.raw["item-with-entity-data"]["cargo-wagon"].subgroup = DyDs.."rail"
 data.raw["item-with-entity-data"]["fluid-wagon"].subgroup = DyDs.."rail"
 

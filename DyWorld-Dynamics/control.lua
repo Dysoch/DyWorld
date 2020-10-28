@@ -1,7 +1,7 @@
 
 --debugger = true
 debugger = settings.startup["DyWorld_Debug"].value
-Version_Build = "0.9.0"
+Version_Build = "0.7.9"
 
 -- LuaLib
 require "script/lualib/function"

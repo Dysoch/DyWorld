@@ -1,7 +1,7 @@
 
 --debugger = true
 debugger = settings.startup["DyWorld_Debug"].value
-Version_Build = "0.7.9"
+Version_Build = "0.7.90"
 
 -- LuaLib
 require "script/lualib/function"
@@ -112,6 +112,10 @@ remote.add_interface("DyWorld",
 	
 	Pick_Random_Attack_Location = function()
 		Pick_Random_Attack_Location()
+	end,
+	
+	Story_Start = function()
+		global.dyworld_story = true
 	end,
 	
 	Skip_Phase = function(nmb)

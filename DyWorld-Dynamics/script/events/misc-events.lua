@@ -12,13 +12,17 @@ function Event_on_chunk_generated(event)
 end
 
 function Event_on_research_finished(event)
-	----- Story Objective Check -----
-	Story_Objectives("research", event)
+	if global.dyworld_story then
+		----- Story Objective Check -----
+		Story_Objectives("research", event)
+	end
 end
 
 function Event_on_character_corpse_expired(event)
-	----- Story Objective Check -----
-	Story_Objectives("corpse-player", event)
+	if global.dyworld_story then
+		----- Story Objective Check -----
+		Story_Objectives("corpse-player", event)
+	end
 end
 
 function Event_on_rocket_launched(event)

@@ -35,6 +35,7 @@ function Event_on_init()
 			story = Story_Add(1, 1, false, 1, 1),
 		}
 	end
+	Reunlock_Recipes()
 	if remote.interfaces["silo_script"] then
 		remote.call("silo_script", "set_no_victory", true)
 		local tracked_items = remote.call("silo_script", "get_tracked_items")

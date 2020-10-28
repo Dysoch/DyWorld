@@ -46,8 +46,9 @@ local ship_items = function()
     ["copper-plate"] = math.random(15, 25),
     ["iron-plate"] = math.random(5, 10),
     ["9mm-pistol"] = 1,
+    ["car-1"] = 1,
     ["gun-nano-emitter"] = 1,
-    --["medpack-2"] = math.random(2, 5),
+    ["medpack-2"] = math.random(2, 5),
   }
 end
 
@@ -242,7 +243,7 @@ freeplay.on_init = function()
   global.respawn_items = respawn_items()
   global.crashed_ship_items = ship_items()
   global.crashed_debris_items = debris_items()
-  global.dyworld_story = true
+  remote.call("DyWorld", "Story_Start")
 
   if is_debug() then
     global.skip_intro = true

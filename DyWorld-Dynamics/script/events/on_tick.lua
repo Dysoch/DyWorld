@@ -11,10 +11,12 @@ function Event_on_tick(event)
 		global.dyworld.game_stats.time_stamp = (hours..":"..minutes..":"..seconds)
 	end
 	if (event.tick%(60*60*3)==1 and global.dyworld.game_stats.difficulty < 10000) then
-		if not global.dyworld.game_stats.players then global.dyworld.game_stats.players = 1 end
-		global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (0.1 * (global.dyworld.game_stats.players * global.dyworld.game_stats.players))
-		if global.dyworld.game_stats.difficulty > 10000 then
-			global.dyworld.game_stats.difficulty = 10000
+		if global.dyworld_story then
+			if not global.dyworld.game_stats.players then global.dyworld.game_stats.players = 1 end
+			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (0.1 * (global.dyworld.game_stats.players * global.dyworld.game_stats.players))
+			if global.dyworld.game_stats.difficulty > 10000 then
+				global.dyworld.game_stats.difficulty = 10000
+			end
 		end
 	end
 	if event.tick%(25001)==25000 then
@@ -39,29 +41,25 @@ function Event_on_tick(event)
 					player.gui.top.DyDs_Main_GUI.selected_tab_index = global.dyworld.players[v.id].stats_gui_index
 				end
 				Bonuses(v.id)
-				if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective then
-					Story_Objectives("position", nil, (game.players[v.id].position.x), (game.players[v.id].position.y))
+				if global.dyworld_story then
+					if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective then
+						Story_Objectives("position", nil, (game.players[v.id].position.x), (game.players[v.id].position.y))
+					end
 				end
 			end
 		end
 	end
-	if event.tick%(60*60)==800 then
+	if event.tick%(60*60)==800 and global.dyworld_story then
 		for k,v in pairs(global.dyworld.players) do
 			if (global.dyworld.story.act == 1 and global.dyworld.story.phase <= 8 and game.players[v.id].minimap_enabled == true) then
 				game.players[v.id].minimap_enabled = false
 			end
 		end
 	end
-	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack and event.tick%(60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency) == math.random((60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency)-1)) then
+	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack and event.tick%(60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency) == math.random((60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency)-1)) and global.dyworld_story then
 		if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
 		local Loc = Pick_Random_Attack_Location()
 		local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 10))
-		
-		if not settings.startup["DyWorld_Combat_Overhaul"].value then
-			for i = 1, Str do
-				game.surfaces[1].create_entity{name = ("small-biter"), position = {x = (math.random((Loc.x-100),(Loc.x+100))), y = (math.random((Loc.x-100),(Loc.x+100)))}}
-			end
-		end
 		
 		game.surfaces[1].build_enemy_base(Loc, Str)
 		

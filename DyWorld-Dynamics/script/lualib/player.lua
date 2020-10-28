@@ -21,10 +21,12 @@ function DyLog(str, sta)
 local Time = global.dyworld.game_stats.time_stamp
 	if not global.dylog then 
 		global.dylog = {} 
-		local message_1 = {"DyDs-story.message-act-1-phase-1-1"}
-		local message_2 = {"DyDs-story.message-act-1-phase-1-2"}
-		table.insert(global.dylog, message_1)
-		table.insert(global.dylog, message_2)
+		if global.dyworld_story then
+			local message_1 = {"DyDs-story.message-act-1-phase-1-1"}
+			local message_2 = {"DyDs-story.message-act-1-phase-1-2"}
+			table.insert(global.dylog, message_1)
+			table.insert(global.dylog, message_2)
+		end
 	end
 	if sta == true then
 		for _,player in pairs(game.players) do

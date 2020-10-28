@@ -10,9 +10,11 @@ end
 function Log_GUI(player, id)
 	if not global.dylog then 
 		global.dylog = {} 
-		local message_1 = {"DyDs-story.message-act-1-phase-1-1"}
+		if global.dyworld_story then
+			local message_1 = {"DyDs-story.message-act-1-phase-1-1"}
+			table.insert(global.dylog, message_1)
+		end
 		local message_2 = {"DyDs-story.message-act-1-phase-1-2"}
-		table.insert(global.dylog, message_1)
 		table.insert(global.dylog, message_2)
 	end
 		local force = player.force

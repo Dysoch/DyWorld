@@ -8,6 +8,7 @@ require(DyDs_data_logistics.. "tier-1.loader")
 require(DyDs_data_logistics.. "tier-1.transport-belt")
 require(DyDs_data_logistics.. "tier-1.underground-belt")
 require(DyDs_data_logistics.. "tier-1.pump")
+require(DyDs_data_logistics.. "tier-1.car")
 
 -- Tier 2 --
 require(DyDs_data_logistics.. "tier-2.storehouses")

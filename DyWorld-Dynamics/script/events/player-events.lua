@@ -36,7 +36,11 @@ function Event_on_player_created(event)
 		log_gui_index = 1,
 	}
 	global.dyworld.game_stats.players = global.dyworld.game_stats.players + 1
-	game.players[id].force.disable_research()
+	if global.dyworld_story then
+		game.players[id].force.disable_research()
+	else
+		Reunlock_Recipes()
+	end
 	game.forces.player.auto_character_trash_slots = true
 	game.forces.player.character_logistic_requests = true
 	game.forces.player.character_trash_slot_count = 10

@@ -27,8 +27,10 @@ function Event_on_player_mined_item(event)
 	global.dyworld.players[id].mined = global.dyworld.players[id].mined + count
 	global.dyworld.game_stats.mined_amount = global.dyworld.game_stats.mined_amount + count
 	
-	----- Story Objective Check -----
-	Story_Objectives("mining-item", event)
+	if global.dyworld_story then
+		----- Story Objective Check -----
+		Story_Objectives("mining-item", event)
+	end
 end
 
 function Event_on_pre_player_mined_item(event)
@@ -38,8 +40,10 @@ function Event_on_pre_player_mined_item(event)
 	local name = event.entity.name
 	local type = event.entity.type
 	
-	----- Story Objective Check -----
-	Story_Objectives("pre-mining-item", event)
+	if global.dyworld_story then
+		----- Story Objective Check -----
+		Story_Objectives("pre-mining-item", event)
+	end
 end
 
 function Event_on_player_mined_entity(event)
@@ -60,40 +64,42 @@ function Event_on_player_mined_entity(event)
 		end
 	end
 	
-	----- Difficulty -----
-	if (name == "burner-radar") then
-		if global.dyworld.game_stats.difficulty > ((5 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (5 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+	if global.dyworld_story then
+		----- Difficulty -----
+		if (name == "burner-radar") then
+			if global.dyworld.game_stats.difficulty > ((5 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (5 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
-	end
-	if (name == "radar-1") then
-		if global.dyworld.game_stats.difficulty > ((50 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (50 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+		if (name == "radar-1") then
+			if global.dyworld.game_stats.difficulty > ((50 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (50 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
-	end
-	if (name == "radar-2") then
-		if global.dyworld.game_stats.difficulty > ((125 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (125 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+		if (name == "radar-2") then
+			if global.dyworld.game_stats.difficulty > ((125 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (125 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
-	end
-	if (name == "radar-3") then
-		if global.dyworld.game_stats.difficulty > ((250 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (250 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+		if (name == "radar-3") then
+			if global.dyworld.game_stats.difficulty > ((250 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (250 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
-	end
-	if (name == "radar-4") then
-		if global.dyworld.game_stats.difficulty > ((500 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (500 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+		if (name == "radar-4") then
+			if global.dyworld.game_stats.difficulty > ((500 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (500 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
 	end
 end
@@ -114,40 +120,42 @@ function Event_on_robot_mined_entity(event)
 		end
 	end
 	
-	----- Difficulty -----
-	if (name == "burner-radar") then
-		if global.dyworld.game_stats.difficulty > ((5 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (5 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+	if global.dyworld_story then
+		----- Difficulty -----
+		if (name == "burner-radar") then
+			if global.dyworld.game_stats.difficulty > ((5 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (5 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
-	end
-	if (name == "radar-1") then
-		if global.dyworld.game_stats.difficulty > ((50 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (50 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+		if (name == "radar-1") then
+			if global.dyworld.game_stats.difficulty > ((50 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (50 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
-	end
-	if (name == "radar-2") then
-		if global.dyworld.game_stats.difficulty > ((125 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (125 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+		if (name == "radar-2") then
+			if global.dyworld.game_stats.difficulty > ((125 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (125 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
-	end
-	if (name == "radar-3") then
-		if global.dyworld.game_stats.difficulty > ((250 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (250 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+		if (name == "radar-3") then
+			if global.dyworld.game_stats.difficulty > ((250 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (250 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
-	end
-	if (name == "radar-4") then
-		if global.dyworld.game_stats.difficulty > ((500 * global.dyworld.game_stats.players) + 1) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (500 * global.dyworld.game_stats.players)
-		else
-			global.dyworld.game_stats.difficulty = 1
+		if (name == "radar-4") then
+			if global.dyworld.game_stats.difficulty > ((500 * global.dyworld.game_stats.players) + 1) then
+				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (500 * global.dyworld.game_stats.players)
+			else
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
 	end
 end

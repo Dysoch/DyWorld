@@ -121,6 +121,14 @@ local Recipes = {
 	["762mm-gun"] = {"warfare-1"},
 	["basic-762mm-turret"] = {"warfare-1"},
 	["advanced-762mm-turret"] = {"warfare-3"},
+	["train-stop"] = {"railway-1"},
+	["rail-1"] = {"railway-1"},
+	["rail-2"] = {"railway-3"},
+	["rail-3"] = {"railway-5"},
+	["locomotive-1"] = {"railway-1"},
+	["cargo-wagon-1"] = {"railway-1"},
+	["rail-signal"] = {"railway-2"},
+	["rail-chain-signal"] = {"railway-2"},
 }
 
 

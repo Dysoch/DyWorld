@@ -359,6 +359,36 @@ local Metal_Techs = {
 		time = 10,
 		order = "1",
 	},
+	{
+		name = "railway-1",
+		icon = DyDs_path_tech_base.."railway.png",
+		count = 50,
+		prerequisites = {
+			"logistics-1",
+		},
+		ingredients = {
+			{"iron-plate", 5},
+			{"copper-plate", 5},
+			{"bronze-plate", 1},
+		},
+		time = 10,
+		order = "1",
+	},
+	{
+		name = "railway-2",
+		icon = DyDs_path_tech_base.."railway.png",
+		count = 100,
+		prerequisites = {
+			"railway-1",
+		},
+		ingredients = {
+			{"iron-plate", 15},
+			{"copper-plate", 15},
+			{"bronze-plate", 10},
+		},
+		time = 10,
+		order = "1",
+	},
 	----- Power -----
 	{
 		name = "power-1",

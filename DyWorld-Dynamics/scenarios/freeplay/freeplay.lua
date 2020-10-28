@@ -4,12 +4,30 @@ local crash_site = require("crash-site")
 local created_items = function()
   return
   {
-    ["iron-plate"] = 8,
-    ["wood"] = 1,
-    ["pistol"] = 1,
-    ["firearm-magazine"] = 10,
-    ["burner-mining-drill"] = 1,
-    ["stone-furnace"] = 1
+    ["762mm-gun"] = 1,
+    ["basic-762mm-turret"] = 50,
+    ["762mm-bullet-ap"] = 5000,
+    ["coal"] = 1000,
+    ["transport-belt-5"] = 1000,
+    ["underground-belt-5"] = 1000,
+    ["loader-5"] = 1000,
+    ["splitter-5"] = 1000,
+    ["storehouse-basic"] = 50,
+    ["storehouse-passive-provider"] = 50,
+    ["storehouse-requester"] = 50,
+    ["storehouse-storage"] = 50,
+    ["warehouse-basic"] = 50,
+    ["warehouse-passive-provider"] = 50,
+    ["warehouse-requester"] = 50,
+    ["warehouse-storage"] = 50,
+    ["basic-electric-drill"] = 50,
+    ["radar-4"] = 50,
+    ["roboport-3"] = 50,
+    ["construction-robot-3"] = 50,
+    ["logistic-robot-3"] = 50,
+    ["accumulator"] = 50,
+    ["substation"] = 50,
+    ["solar-panel"] = 50,
   }
 end
 
@@ -57,8 +75,9 @@ end
 
 local on_player_created = function(event)
   local player = game.players[event.player_index]
-  --util.insert_safe(player, global.created_items)
-	-- DyWorld gives player items in the spaceship
+	if settings.startup["DyWorld_Debug"].value then
+		util.insert_safe(player, global.created_items)
+	end
 
   if not global.init_ran then
 
@@ -223,6 +242,7 @@ freeplay.on_init = function()
   global.respawn_items = respawn_items()
   global.crashed_ship_items = ship_items()
   global.crashed_debris_items = debris_items()
+  global.dyworld_story = true
 
   if is_debug() then
     global.skip_intro = true

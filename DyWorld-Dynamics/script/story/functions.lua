@@ -43,28 +43,6 @@ function Phase_Forward()
 			Story_Objectives_Research(v.name)
 		end
 	end
-	if (global.dyworld.story.phase == 2 and global.dyworld.story.act == 1) then
-		if debugger then
-			game.players[1].insert{name = "762mm-gun", count = 1}
-			game.players[1].insert{name = "basic-762mm-turret", count = 1}
-			game.players[1].insert{name = "762mm-bullet-ap", count = 5000}
-			game.players[1].insert{name = "coal", count = 1000}
-			game.players[1].insert{name = "storehouse-basic", count = 50}
-			game.players[1].insert{name = "storehouse-passive-provider", count = 50}
-			game.players[1].insert{name = "storehouse-requester", count = 50}
-			game.players[1].insert{name = "storehouse-storage", count = 50}
-			game.players[1].insert{name = "warehouse-basic", count = 50}
-			game.players[1].insert{name = "warehouse-passive-provider", count = 50}
-			game.players[1].insert{name = "warehouse-requester", count = 50}
-			game.players[1].insert{name = "warehouse-storage", count = 50}
-			game.players[1].insert{name = "basic-electric-drill", count = 50}
-			game.players[1].insert{name = "radar-4", count = 50}
-			game.players[1].insert{name = "roboport-3", count = 50}
-			game.players[1].insert{name = "accumulator", count = 50}
-			game.players[1].insert{name = "substation", count = 50}
-			game.players[1].insert{name = "solar-panel", count = 50}
-		end
-	end 
 	if (global.dyworld.story.phase == 10 and global.dyworld.story.act == 1) then
 		global.dyworld.game_stats.attack_warning_1 = true
 		if not debugger then

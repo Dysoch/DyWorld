@@ -43,7 +43,8 @@ data:extend({
       {
         {type = "item", name = "control-board-2", amount = 10},
         {type = "item", name = "steel-plate", amount = 80},
-        {type = "item", name = "bronze-plate", amount = 20},
+        {type = "item", name = "aluminium-plate", amount = 20},
+        {type = "item", name = "concrete", amount = 20},
       },
       result = "rocket-silo-1",
 	  enabled = false,
@@ -55,7 +56,8 @@ data:extend({
       {
         {type = "item", name = "control-board-2", amount = 10*5},
         {type = "item", name = "steel-plate", amount = 80*4},
-        {type = "item", name = "bronze-plate", amount = 20*3},
+        {type = "item", name = "aluminium-plate", amount = 20*3},
+        {type = "item", name = "concrete", amount = 20*5},
       },
       result = "rocket-silo-1",
 	  enabled = false,
@@ -73,7 +75,7 @@ data:extend({
       {
         {type = "item", name = "control-board-2", amount = 5},
         {type = "item", name = "steel-plate", amount = 20},
-        {type = "item", name = "bronze-plate", amount = 15},
+        {type = "item", name = "titanium-plate", amount = 5},
       },
       result = "rocket-part-1",
 	  enabled = false,
@@ -86,7 +88,7 @@ data:extend({
       {
         {type = "item", name = "control-board-2", amount = 5*4},
         {type = "item", name = "steel-plate", amount = 20*5},
-        {type = "item", name = "bronze-plate", amount = 15*4},
+        {type = "item", name = "titanium-plate", amount = 5*4},
       },
       result = "rocket-part-1",
 	  enabled = false,

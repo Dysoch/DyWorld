@@ -6,11 +6,13 @@ function Event_on_init()
 		global.dyworld = {
 			version = Version_Build,
 			players = {},
+			research_done = {},
 			game_stats = {
 				ticks = 0,
 				players = 0,
 				chunks = 0,
 				sector_scanned = 0,
+				rockets_launched = 0,
 				crafted_amount = 0,
 				crafted_names = {},
 				mined_amount = 0,

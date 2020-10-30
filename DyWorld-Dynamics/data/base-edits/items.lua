@@ -46,7 +46,7 @@ data.raw.item["rail-chain-signal"].stack_size = 500
 data.raw["item-with-entity-data"]["cargo-wagon"].subgroup = DyDs.."rail"
 data.raw["item-with-entity-data"]["fluid-wagon"].subgroup = DyDs.."rail"
 
-data.raw.item["stone-brick"].stack_size = 500
+data.raw.item["stone-brick"].stack_size = 5000
 data.raw.item["stone-brick"].subgroup = DyDs.."material-1"
 data.raw.item["stone-brick"].order = "stone-brick"
 

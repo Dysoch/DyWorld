@@ -16,11 +16,19 @@ function Main_GUI(player, id)
 		local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
 		tabbed_pane.add_tab(tab1, frameflow1)
 		
-		frameflow1.add{type = "label", caption = "Sectors Scanned: "..global.dyworld.game_stats.sector_scanned}
+		
+		if global.dyworld.game_stats.sector_scanned > 0 then
+			frameflow1.add{type = "label", caption = "Sectors Scanned: "..global.dyworld.game_stats.sector_scanned}
+		end
+		if global.dyworld.game_stats.rockets_launched > 0 then
+			frameflow1.add{type = "label", caption = "Rockets Launched: "..global.dyworld.game_stats.rockets_launched}
+		end
+		
 		if debugger then
 			frameflow1.add{type = "label", caption = "Chunks: "..global.dyworld.game_stats.chunks}
 			frameflow1.add{type = "label", caption = "Difficulty of game: "..global.dyworld.game_stats.difficulty}
 		end
+		
 		frameflow1.add{type = "label", caption = "Game Days: "..global.dyworld.game_stats.days}
 		frameflow1.add{type = "label", caption = "Game Kills: "..global.dyworld.game_stats.killed_amount}
 		frameflow1.add{type = "line", direction = "horizontal"}
@@ -30,16 +38,16 @@ function Main_GUI(player, id)
 		local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 		tabbed_pane.add_tab(tab2, frameflow2)
 		
-		if global.dyworld.players[id].crafted >= 0 then
+		if global.dyworld.players[id].crafted > 0 then
 			frameflow2.add{type = "label", caption = "Crafted: "..global.dyworld.players[id].crafted}
 		end
-		if global.dyworld.players[id].mined >= 0 then
+		if global.dyworld.players[id].mined > 0 then
 			frameflow2.add{type = "label", caption = "Mined: "..global.dyworld.players[id].mined}
 		end
-		if global.dyworld.players[id].build >= 0 then
+		if global.dyworld.players[id].build > 0 then
 			frameflow2.add{type = "label", caption = "Built: "..global.dyworld.players[id].build}
 		end
-		if global.dyworld.players[id].killed >= 0 then
+		if global.dyworld.players[id].killed > 0 then
 			frameflow2.add{type = "label", caption = "Personal Killed: "..global.dyworld.players[id].killed}
 		end
 		frameflow2.add{type = "line", direction = "horizontal"}

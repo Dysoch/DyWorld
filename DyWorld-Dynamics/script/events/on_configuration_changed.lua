@@ -2,6 +2,7 @@
 
 
 function Event_on_configuration_changed()
+	local Time = global.dyworld.game_stats.time_stamp
 	if (global.dyworld and global.dyworld.story and global.dyworld.story.act) then
 		global.dyworld.story = Story_Add(global.dyworld.story.act, global.dyworld.story.phase, false, 1, 1)
 	end
@@ -10,10 +11,10 @@ function Event_on_configuration_changed()
 	
 	Reunlock_Recipes()
 	
-	for k,v in pairs(game.forces.player.technologies) do
-		if v.researched then
-			v.researched = false
-			v.researched = true
+	for k,v in pairs(global.dyworld.research_done) do
+		if game.forces.player.technologies[v].researched then
+			game.forces.player.technologies[v].researched = false
+			game.forces.player.technologies[v].researched = true
 		end
 	end
 end

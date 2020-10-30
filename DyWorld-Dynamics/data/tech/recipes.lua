@@ -141,6 +141,11 @@ local Recipes = {
 	["cargo-wagon-1"] = {"railway-1"},
 	["rail-signal"] = {"railway-2"},
 	["rail-chain-signal"] = {"railway-2"},
+	["advanced-power-pole"] = {"power-1"},
+	["quantum-power-pole"] = {"power-4"},
+	["basic-power-relay"] = {"power-2"},
+	["advanced-power-relay"] = {"power-5"},
+	["quantum-power-relay"] = {"power-8"},
 }
 
 

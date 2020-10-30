@@ -51,18 +51,111 @@ data:extend(
     subgroup = params.subgroup or DyDs.."ammo-bullet-basic",
     order = params.order or "a",
     stack_size = params.stack_size or 1000,
-  }
+  },
+  {
+    type = "ammo",
+    name = params.name.."-mag",
+	localised_name = params.localised_name or nil,
+	localised_description = params.localised_description or nil,
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/firearm-magazine.png",
+	  },
+	  {
+		icon = DyDs_icon_temp,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
+    icon_size = 64, 
+	icon_mipmaps = 4,
+    ammo_type =
+    {
+      category = params.ammo_cat or "900mm",
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery =
+          {
+            {
+              type = "instant",
+              source_effects =
+              {
+                {
+                  type = "create-explosion",
+                  entity_name = "explosion-gunshot"
+                }
+              },
+              target_effects =
+              {
+                {
+                  type = "create-entity",
+                  entity_name = "explosion-hit",
+                  offsets = {{0, 1}},
+                  offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}}
+                },
+                {
+                  type = "damage",
+                  damage = {amount = params.dmg_amount or 5 , type = params.dmg_type or "physical"}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    magazine_size = 1000,
+    subgroup = params.subgroup or DyDs.."ammo-bullet-basic",
+    order = params.order.."-mag" or "a-mag",
+    stack_size = params.stack_size or 100,
+  },
 })
-	if params.icons then
-		data.raw.ammo[params.name].icon = nil
-		data.raw.ammo[params.name].icons = params.icons
-	elseif params.icon then
+	if params.icon then
 		data.raw.ammo[params.name].icon = params.icon
+		data.raw.ammo[params.name.."-mag"].icons[2].icon = params.icon
 	elseif data.raw.ammo[params.name].icon == DyDs_icon_temp then
+		data.raw.ammo[params.name].icon_size = 32
 		data.raw.ammo[params.name].icon_size = 32
 	end
 	if settings.startup["DyWorld_Combat_Overhaul"].value then 
 	data.raw.ammo[params.name].ammo_type = {
+	  category = params.ammo_cat or "900mm",
+      target_type = "direction",
+      clamp_position = true,
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery =
+          {
+            {
+              type = "instant",
+              source_effects =
+              {
+                {
+                  type = "create-explosion",
+                  entity_name = "explosion-gunshot"
+                },
+              },
+            },
+          },
+        },
+        {
+          type = "direct",
+          action_delivery =
+          {
+            type = "projectile",
+            projectile = params.name.."-projectile",
+            starting_speed = 1,
+            direction_deviation = 0.05,
+            range_deviation = 0.15,
+            max_range = params.range or 15,
+          }
+        }
+      }
+	}
+	data.raw.ammo[params.name.."-mag"].ammo_type = {
 	  category = params.ammo_cat or "900mm",
       target_type = "direction",
       clamp_position = true,

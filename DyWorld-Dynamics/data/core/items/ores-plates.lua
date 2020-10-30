@@ -156,6 +156,14 @@ DyDS_Add_Item({
 })
   
 DyDS_Add_Item({
+	name = "quartz",
+	order = "quartz",
+    icon = DyDs_path_icon.."glass.png",
+	stack_size = 1000,
+	subgroup = DyDs.."0-resource-3",
+})
+  
+DyDS_Add_Item({
 	name = "resin",
 	order = "resin",
     icon = DyDs_path_icon.."resin.png",
@@ -174,6 +182,22 @@ DyDS_Add_Item({
 DyDS_Add_Item({
 	name = "sand",
 	order = "sand",
+    icon = DyDs_path_icon.."sand.png",
+	stack_size = 5000,
+	subgroup = DyDs.."0-resource-3",
+})
+  
+DyDS_Add_Item({
+	name = "concrete-powder",
+	order = "concrete-powder",
+    icon = DyDs_path_icon.."sand.png",
+	stack_size = 5000,
+	subgroup = DyDs.."0-resource-3",
+})
+  
+DyDS_Add_Item({
+	name = "refined-concrete-powder",
+	order = "refined-concrete-powder",
     icon = DyDs_path_icon.."sand.png",
 	stack_size = 5000,
 	subgroup = DyDs.."0-resource-3",

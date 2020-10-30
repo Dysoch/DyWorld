@@ -48,6 +48,8 @@ require(DyDs_data_core.. "fluids.basics")
 require(DyDs_data_core.. "fluids.metals")
 
 -- Recipes --
+require(DyDs_data_core.. "recipes.centrifuge")
+require(DyDs_data_core.. "recipes.grinder")
 require(DyDs_data_core.. "recipes.charcoal")
 require(DyDs_data_core.. "recipes.stones")
 require(DyDs_data_core.. "recipes.coica")

@@ -73,6 +73,80 @@ data:extend({
   },
   {
     type = "recipe",
+    name = "concrete",
+	category = "centrifuging",
+	main_product = "concrete",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "concrete-powder", amount = 10},
+        {type = "fluid", name = "water", amount = 100},
+      },
+      results = 
+      {
+        {type = "item", name = "concrete", amount_min = 8, amount_max = 10},
+      },
+	  main_product = "concrete",
+	  energy_required = 2.5,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "concrete-powder", amount = 10 * ER_Mod},
+        {type = "fluid", name = "water", amount = 100 * ER_Mod},
+      },
+      results = 
+      {
+        {type = "item", name = "concrete", amount_min = 1, amount_max = 10},
+      },
+	  main_product = "concrete",
+	  energy_required = 2.5 * ER_Mod,
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "refined-concrete",
+	category = "centrifuging",
+	main_product = "refined-concrete",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "refined-concrete-powder", amount = 10},
+        {type = "fluid", name = "water", amount = 100},
+        {type = "fluid", name = "light-oil", amount = 50},
+      },
+      results = 
+      {
+        {type = "item", name = "refined-concrete", amount_min = 8, amount_max = 10},
+      },
+	  main_product = "refined-concrete",
+	  energy_required = 2.5,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "refined-concrete-powder", amount = 10 * ER_Mod},
+        {type = "fluid", name = "water", amount = 100 * ER_Mod},
+        {type = "fluid", name = "light-oil", amount = 50 * ER_Mod},
+      },
+      results = 
+      {
+        {type = "item", name = "refined-concrete", amount_min = 1, amount_max = 10},
+      },
+	  main_product = "refined-concrete",
+	  energy_required = 2.5 * ER_Mod,
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
     name = "glass-1",
 	category = "smelting",
 	main_product = "glass",

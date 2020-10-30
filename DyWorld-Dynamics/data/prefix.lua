@@ -1,6 +1,8 @@
 DyDs = "dyworld-"
 DyDs_debug_prefix = "dyworld-debug-"
 
+ER_Mod = 5
+
 -- graphical
 DyDs_path_icon = "__DyWorld-Dynamics__/graphics/icons/"
 DyDs_path_damage = "__DyWorld-Dynamics__/graphics/damage/"

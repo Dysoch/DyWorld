@@ -2,7 +2,7 @@
 
 DyDS_Add_Ammo({
 	name = "762mm-bullet",
-	icon = DyDs_path_icon.."bullet-9mm.png",
+	icon = DyDs_path_icon.."bullet-762mm.png",
 	order = "copper-cable",
 	stack_size = 1000,
 	ammo_cat = "762mm",
@@ -16,7 +16,7 @@ DyDS_Add_Ammo({
 
 DyDS_Add_Ammo({
 	name = "762mm-bullet-ap",
-	icon = DyDs_path_icon.."bullet-9mm.png",
+	icon = DyDs_path_icon.."bullet-762mm.png",
 	order = "copper-cable",
 	stack_size = 1000,
 	ammo_cat = "762mm",

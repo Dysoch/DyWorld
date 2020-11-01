@@ -91,6 +91,11 @@ local Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "logistics"
 	},
+	{
+		Name = "vehicles",
+		Type = "sub",
+		Main = "logistics"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

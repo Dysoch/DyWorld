@@ -11,8 +11,10 @@ require(DyDs_data_warfare.. "armor.basic")
 require(DyDs_data_warfare.. "gun.pistol")
 require(DyDs_data_warfare.. "gun.smg")
 
--- Gun --
+require(DyDs_data_warfare.. "gun.vehicle-guns") -- always last
+
+-- Walls --
 require(DyDs_data_warfare.. "wall.basic")
 
--- Gun --
+-- Turrets --
 require(DyDs_data_warfare.. "turret.ballistic")

@@ -24,6 +24,9 @@ function Story_GUI(player, id)
 				elseif (v.done == false and v.type_1 == "research") then
 					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_1.."."..v.name}}}
 					frameflow2.add{type = "line", direction = "horizontal"}
+				elseif (v.done == false and v.type_1 == "launch" and v.type_2 == "rocket") then
+					frameflow2.add{type = "label", caption = {"DyDs-story.launch-rocket", v.amount_done, v.amount_needed}}
+					frameflow2.add{type = "line", direction = "horizontal"}
 				elseif (v.done == false and v.type_1 == "corpse") then
 					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_1.."."..v.name}}}
 					frameflow2.add{type = "line", direction = "horizontal"}

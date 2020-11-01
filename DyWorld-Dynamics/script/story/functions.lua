@@ -60,7 +60,8 @@ function Phase_Forward()
 				if v.type_1 == "position" then
 					local Finder = Find_Enemy()
 					if Finder == nil then
-						
+						v.done = true
+						global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
 					else
 						local X = Finder.position.x
 						local Y = Finder.position.y
@@ -265,12 +266,26 @@ function Story_Objectives(type, event, Posx, PosY)
 				end
 			end
 		elseif type == "research" then
-			local name = event.name
+			local name = event.research.name
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if (v.type_1 == "research" and v.type_2 == "name") then
 					if (name == v.name and v.done == false) then
 						v.done = true
 						global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+					end
+				end
+			end
+		elseif type == "launch-rocket" then
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
+				if (v.type_1 == "launch" and v.type_2 == "rocket") then
+					if (v.done == false) then
+						if v.amount_done < v.amount_needed then
+							v.amount_done = v.amount_done + 1
+						end
+						if v.amount_done >= v.amount_needed then
+							v.done = true
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+						end
 					end
 				end
 			end

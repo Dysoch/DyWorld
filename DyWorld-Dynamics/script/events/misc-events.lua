@@ -17,9 +17,9 @@ function Event_on_research_finished(event)
 		----- Story Objective Check -----
 		Story_Objectives("research", event)
 	end
-	if not global.dyworld.research_done[event.name] then
-		table.insert(global.dyworld.research_done, event.name)
-		debug("Researched: "..event.name)
+	if not global.dyworld.research_done[event.research.name] then
+		table.insert(global.dyworld.research_done, event.research.name)
+		debug("Researched: "..event.research.name)
 	end
 end
 
@@ -31,6 +31,8 @@ function Event_on_character_corpse_expired(event)
 end
 
 function Event_on_rocket_launched(event)
+		----- Story Objective Check -----
+		Story_Objectives("launch-rocket", event)
 	
 	----- Global counter -----
 	if not global.dyworld.game_stats.rockets_launched then

@@ -9,7 +9,7 @@ local DyWorld_Prototype = DyDs_CopyPrototype("gun", "pistol", "9mm-pistol", true
 	DyWorld_Prototype.subgroup = DyDs.."guns"
 	DyWorld_Prototype.order = "1"
 	DyWorld_Prototype.attack_parameters.ammo_category = "900mm"
-	DyWorld_Prototype.icon = DyDs_path_icon.."9mm-pistol.png"
+	DyWorld_Prototype.icon = DyDs_path_icon.."9mm-gun.png"
 
 data:extend({
   DyWorld_Prototype,

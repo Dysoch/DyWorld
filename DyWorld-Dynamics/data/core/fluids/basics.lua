@@ -19,7 +19,8 @@ data:extend({
     order = "oxygen",
     subgroup = DyDs.."z-fluids",
 	auto_barrel = false,
-	auto_canister = false,
+	auto_canister = true,
+	auto_canister_tier = 2,
   },
   {
     type = "fluid",
@@ -37,6 +38,7 @@ data:extend({
     subgroup = DyDs.."z-fluids",
 	auto_barrel = false,
 	auto_canister = true,
+	auto_canister_tier = 1,
   },
   {
     type = "fluid",
@@ -54,6 +56,7 @@ data:extend({
     subgroup = DyDs.."z-fluids",
 	auto_barrel = false,
 	auto_canister = true,
+	auto_canister_tier = 1,
   },
   {
     type = "fluid",
@@ -71,6 +74,7 @@ data:extend({
     subgroup = DyDs.."z-fluids",
 	auto_barrel = false,
 	auto_canister = true,
+	auto_canister_tier = 1,
   },
   {
     type = "fluid",
@@ -88,8 +92,16 @@ data:extend({
     subgroup = DyDs.."z-fluids",
 	auto_barrel = false,
 	auto_canister = true,
+	auto_canister_tier = 1,
   },
 })
 
 data.raw.fluid.water.auto_barrel = false
 data.raw.fluid.water.auto_canister = true
+data.raw.fluid.water.auto_canister_tier = 1
+data.raw.fluid["crude-oil"].auto_canister = true
+data.raw.fluid["crude-oil"].auto_canister_tier = 2
+data.raw.fluid["heavy-oil"].auto_canister = true
+data.raw.fluid["heavy-oil"].auto_canister_tier = 3
+data.raw.fluid["light-oil"].auto_canister = true
+data.raw.fluid["light-oil"].auto_canister_tier = 3

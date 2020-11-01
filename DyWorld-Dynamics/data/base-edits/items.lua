@@ -7,6 +7,10 @@
 data.raw.item["wood"].fuel_category = "carbon"
 data.raw.item["coal"].fuel_category = "carbon"
 
+data.raw.item["stone-furnace"].subgroup = DyDs.."furnaces"
+data.raw.furnace["steel-furnace"].crafting_categories = {"hidden"}
+data.raw.furnace["electric-furnace"].crafting_categories = {"hidden"}
+
 data.raw.item["landfill"].subgroup = DyDs.."flooring-1"
 data.raw.item["concrete"].subgroup = DyDs.."flooring-2"
 data.raw.item["hazard-concrete"].subgroup = DyDs.."flooring-2"

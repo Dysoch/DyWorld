@@ -39,6 +39,26 @@ data:extend({
   },
   {
     type = "recipe",
+    name = "stone-furnace",
+	category = "assembling-tier-1",
+	main_product = "stone-furnace",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "stone-brick", amount = 10},
+      },
+      results = 
+      {
+        {type = "item", name = "stone-furnace", amount = 1},
+      },
+	  main_product = "stone-furnace",
+	  energy_required = 2.5,
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
     name = "rubber",
 	category = "smelting",
 	main_product = "rubber",

@@ -27,6 +27,14 @@ data:extend({
 		setting_type = "startup",
 		default_value = false,
 	},
+	{
+		type = "int-setting",
+		name = "DyWorld_Expensive_Modifier",
+		setting_type = "startup",
+		default_value = 5,
+        maximum_value = 1000,
+        minimum_value = 1,
+	},
 	----- Map Settings -----
     --[[{
         type = "bool-setting",

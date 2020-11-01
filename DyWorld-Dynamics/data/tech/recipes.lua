@@ -106,6 +106,7 @@ local Recipes = {
 	["satellite"] = {"space-mining"},
 	["resin"] = {"intermediates-1"},
 	["rubber"] = {"intermediates-1"},
+	["stone-furnace"] = {"intermediates-1"},
 	["glass-1"] = {"intermediates-2"},
 	["glass-2"] = {"intermediates-2"},
 	["sand-1"] = {"intermediates-2"},

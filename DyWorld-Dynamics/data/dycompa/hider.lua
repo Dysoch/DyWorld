@@ -93,7 +93,6 @@ local Change = {
 	"repair-pack",
 	"beacon",
 	"lab",
-	"stone-furnace",
 	"steel-furnace",
 	"heat-pipe",
 	"stone",
@@ -219,9 +218,11 @@ for k,m in pairs(Change) do
 		end
 	end
 	if data.raw.recipe[m] then
+		if data.raw.recipe[m].expensive then
+			data.raw.recipe[m].expensive.hidden = true
+		end
 		if data.raw.recipe[m].normal then
 			data.raw.recipe[m].normal.hidden = true
-			data.raw.recipe[m].expensive.hidden = true
 		else
 			data.raw.recipe[m].hidden = true
 		end

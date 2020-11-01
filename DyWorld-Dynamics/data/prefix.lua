@@ -1,7 +1,7 @@
 DyDs = "dyworld-"
 DyDs_debug_prefix = "dyworld-debug-"
 
-ER_Mod = 5
+ER_Mod = settings.startup["DyWorld_Expensive_Modifier"].value
 
 -- graphical
 DyDs_path_icon = "__DyWorld-Dynamics__/graphics/icons/"

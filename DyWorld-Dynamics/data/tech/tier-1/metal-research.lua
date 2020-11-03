@@ -114,7 +114,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "steel-processing",
-		icon = DyDs_path_tech.."iron.png",
+		icon = DyDs_path_tech_base.."steel-processing.png",
 		count = 10,
 		prerequisites = {
 			"metallurgy-2",
@@ -130,7 +130,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "titanium-processing",
-		icon = DyDs_path_tech.."iron.png",
+		icon = DyDs_path_tech.."titanium.png",
 		count = 10,
 		prerequisites = {
 			"metallurgy-3",
@@ -145,7 +145,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "aluminium-processing",
-		icon = DyDs_path_tech.."iron.png",
+		icon = DyDs_path_tech.."aluminium.png",
 		count = 10,
 		prerequisites = {
 			"metallurgy-3",
@@ -160,7 +160,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "magnesium-processing",
-		icon = DyDs_path_tech.."iron.png",
+		icon = DyDs_path_tech.."magnesium.png",
 		count = 10,
 		prerequisites = {
 			"metallurgy-3",
@@ -175,7 +175,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "advanced-steel-processing",
-		icon = DyDs_path_tech.."iron.png",
+		icon = DyDs_path_tech_base.."steel-processing.png",
 		count = 100,
 		prerequisites = {
 			"metallurgy-3",
@@ -241,7 +241,7 @@ local Metal_Techs = {
 	----- Intermediates -----
 	{
 		name = "intermediates-1",
-		icon = DyDs_path_tech_base.."automation.png",
+		icon = DyDs_path_tech.."intermediates.png",
 		count = 100,
 		prerequisites = {
 			"bronze-processing",
@@ -257,7 +257,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "intermediates-2",
-		icon = DyDs_path_tech_base.."automation.png",
+		icon = DyDs_path_tech.."intermediates.png",
 		count = 100,
 		prerequisites = {
 			"filters-1",
@@ -276,7 +276,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "intermediates-3",
-		icon = DyDs_path_tech_base.."automation.png",
+		icon = DyDs_path_tech.."intermediates.png",
 		count = 100,
 		prerequisites = {
 			"storage-2",
@@ -536,7 +536,7 @@ local Metal_Techs = {
 	{
 		name = "storage-1",
 		icon = DyDs_path_tech.."storage.png",
-		count = 100,
+		count = 50,
 		prerequisites = {
 			"logistics-1",
 		},
@@ -552,7 +552,7 @@ local Metal_Techs = {
 	{
 		name = "storage-2",
 		icon = DyDs_path_tech.."storage.png",
-		count = 100,
+		count = 75,
 		prerequisites = {
 			"storage-1",
 			"automation-2",
@@ -564,6 +564,22 @@ local Metal_Techs = {
 			{"bronze-plate", 1},
 		},
 		time = 20,
+		order = "1",
+	},
+	{
+		name = "storage-3",
+		icon = DyDs_path_tech.."storage.png",
+		count = 100,
+		prerequisites = {
+			"storage-2",
+			"automation-3",
+		},
+		ingredients = {
+			{"iron-plate", 5},
+			{"copper-plate", 5},
+			{"steel-plate", 5},
+		},
+		time = 30,
 		order = "1",
 	},
 	{

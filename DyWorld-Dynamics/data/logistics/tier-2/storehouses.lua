@@ -144,6 +144,7 @@ data:extend({
 		type = "recipe",
 		name = "storehouse-basic",
 		enabled = false,
+		category = "assembling-tier-2",
 		ingredients =
 		{
 			{ "iron-plate", 200 },
@@ -156,10 +157,11 @@ data:extend({
 		type = "recipe",
 		name = "storehouse-passive-provider",
 		enabled = false,
+		category = "assembling-tier-2",
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "control-board-1", 12 },
+			{ "control-board-2", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-passive-provider",
@@ -168,10 +170,11 @@ data:extend({
 		type = "recipe",
 		name = "storehouse-active-provider",
 		enabled = false,
+		category = "assembling-tier-2",
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "control-board-1", 12 },
+			{ "control-board-2", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-active-provider",
@@ -180,10 +183,11 @@ data:extend({
 		type = "recipe",
 		name = "storehouse-storage",
 		enabled = false,
+		category = "assembling-tier-2",
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "control-board-1", 12 },
+			{ "control-board-2", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-storage",
@@ -192,10 +196,11 @@ data:extend({
 		type = "recipe",
 		name = "storehouse-requester",
 		enabled = false,
+		category = "assembling-tier-2",
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "control-board-1", 12 },
+			{ "control-board-2", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-requester",
@@ -204,10 +209,11 @@ data:extend({
 		type = "recipe",
 		name = "storehouse-buffer",
 		enabled = false,
+		category = "assembling-tier-2",
 		ingredients =
 		{
 			{ "storehouse-basic", 1 },
-			{ "control-board-1", 12 },
+			{ "control-board-2", 12 },
 		},
 		energy_required = 5,
 		result = "storehouse-buffer",

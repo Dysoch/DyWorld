@@ -142,12 +142,13 @@ data:extend({
 		type = "recipe",
 		name = "warehouse-basic",
 		enabled = false,
+		category = "assembling-tier-3",
 		ingredients =
 		{
 			{ "steel-plate", 200 },
 			{ "concrete", 40 },
 			{ "tin-plate", 20 },
-			{ "control-board-1", 50 },
+			{ "control-board-2", 50 },
 		},
 		energy_required = 30,
 		result = "warehouse-basic",
@@ -156,10 +157,11 @@ data:extend({
 		type = "recipe",
 		name = "warehouse-passive-provider",
 		enabled = false,
+		category = "assembling-tier-3",
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "control-board-1", 50 },
+			{ "control-board-3", 50 },
 		},
 		energy_required = 5,
 		result = "warehouse-passive-provider",
@@ -168,10 +170,11 @@ data:extend({
 		type = "recipe",
 		name = "warehouse-active-provider",
 		enabled = false,
+		category = "assembling-tier-3",
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "control-board-1", 50 },
+			{ "control-board-3", 50 },
 		},
 		energy_required = 5,
 		result = "warehouse-active-provider",
@@ -180,10 +183,11 @@ data:extend({
 		type = "recipe",
 		name = "warehouse-storage",
 		enabled = false,
+		category = "assembling-tier-3",
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "control-board-1", 50 },
+			{ "control-board-3", 50 },
 		},
 		energy_required = 5,
 		result = "warehouse-storage",
@@ -192,10 +196,11 @@ data:extend({
 		type = "recipe",
 		name = "warehouse-requester",
 		enabled = false,
+		category = "assembling-tier-3",
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "control-board-1", 50 },
+			{ "control-board-3", 50 },
 		},
 		energy_required = 5,
 		result = "warehouse-requester",
@@ -204,10 +209,11 @@ data:extend({
 		type = "recipe",
 		name = "warehouse-buffer",
 		enabled = false,
+		category = "assembling-tier-3",
 		ingredients =
 		{
 			{ "warehouse-basic", 1 },
-			{ "control-board-1", 50 },
+			{ "control-board-3", 50 },
 		},
 		energy_required = 5,
 		result = "warehouse-buffer",

@@ -2,11 +2,12 @@
 
 
   
-DyDS_Add_Item({
+DyDS_Add_Tool({
 	name = "enemy-corpse",
     icon = DyDs_path_icon.."enemy-corpse.png",
 	order = "enemy-corpse",
 	stack_size = 500,
+	durability = 1,
 	subgroup = DyDs.."z-loot",
 })
   

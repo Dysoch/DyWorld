@@ -44,24 +44,13 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 3},
-        {type = "item", name = "bronze-gear", amount = 1},
+        {type = "item", name = "flying-robot-frame", amount = 1},
+        {type = "item", name = "control-board-2", amount = 1},
+        {type = "item", name = "aluminium-plate", amount = 3},
       },
       result = "construction-robot-1",
 	  result_count = 1,
 	  energy_required = 2,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-plate", amount = 4},
-        {type = "item", name = "bronze-gear", amount = 3},
-      },
-      result = "construction-robot-1",
-	  result_count = 1,
-	  energy_required = 5,
 	  enabled = false,
     },
   },
@@ -88,24 +77,13 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 3},
-        {type = "item", name = "bronze-gear", amount = 1},
+        {type = "item", name = "flying-robot-frame", amount = 1},
+        {type = "item", name = "control-board-2", amount = 1},
+        {type = "item", name = "aluminium-plate", amount = 3},
       },
       result = "logistic-robot-1",
 	  result_count = 1,
 	  energy_required = 2,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-plate", amount = 4},
-        {type = "item", name = "bronze-gear", amount = 3},
-      },
-      result = "logistic-robot-1",
-	  result_count = 1,
-	  energy_required = 5,
 	  enabled = false,
     },
   },
@@ -132,24 +110,13 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 3},
-        {type = "item", name = "bronze-gear", amount = 1},
+        {type = "item", name = "control-board-2", amount = 5},
+        {type = "item", name = "titanium-plate", amount = 5},
+        {type = "item", name = "steel-plate", amount = 25},
       },
       result = "roboport-1",
 	  result_count = 1,
 	  energy_required = 2,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-plate", amount = 4},
-        {type = "item", name = "bronze-gear", amount = 3},
-      },
-      result = "roboport-1",
-	  result_count = 1,
-	  energy_required = 5,
 	  enabled = false,
     },
   },

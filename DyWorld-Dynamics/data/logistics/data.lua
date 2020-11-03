@@ -21,6 +21,8 @@ require(DyDs_data_logistics.. "tier-2.robots")
 require(DyDs_data_logistics.. "tier-2.railway")
 require(DyDs_data_logistics.. "tier-2.railway-loco")
 require(DyDs_data_logistics.. "tier-2.railway-cargo")
+require(DyDs_data_logistics.. "tier-2.storage")
+require(DyDs_data_logistics.. "tier-2.lamps")
 
 -- Tier 3 --
 require(DyDs_data_logistics.. "tier-3.splitter")

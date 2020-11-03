@@ -115,4 +115,164 @@ data:extend({
 	  enabled = true,
     },
   },
+  {
+    type = "recipe",
+    name = "stone-brick-advanced-1",
+	category = "bloomery",
+	main_product = "stone-brick",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "quartzite", amount = 35},
+      },
+      results = 
+      {
+        {type = "item", name = "stone-brick", amount_min = 10, amount_max = 20},
+      },
+	  energy_required = 10,
+	  main_product = "stone-brick",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "stone-brick-advanced-2",
+	category = "bloomery",
+	main_product = "stone-brick",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "limestone", amount = 15},
+      },
+      results = 
+      {
+        {type = "item", name = "stone-brick", amount_min = 10, amount_max = 20},
+      },
+	  energy_required = 10,
+	  main_product = "stone-brick",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "stone-brick-advanced-3",
+	category = "bloomery",
+	main_product = "stone-brick",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "granite", amount = 10},
+      },
+      results = 
+      {
+        {type = "item", name = "stone-brick", amount_min = 10, amount_max = 20},
+      },
+	  energy_required = 10,
+	  main_product = "stone-brick",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "stone-brick-advanced-4",
+	category = "bloomery",
+	main_product = "stone-brick",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "sandstone", amount = 50},
+      },
+      results = 
+      {
+        {type = "item", name = "stone-brick", amount_min = 10, amount_max = 20},
+      },
+	  energy_required = 10,
+	  main_product = "stone-brick",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "landfill-1",
+	category = "bloomery",
+	main_product = "landfill",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "limestone", amount = 50},
+      },
+      results = 
+      {
+        {type = "item", name = "landfill", amount_min = 25, amount_max = 50},
+      },
+	  energy_required = 30,
+	  main_product = "landfill",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "landfill-2",
+	category = "bloomery",
+	main_product = "landfill",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "quartzite", amount = 50},
+      },
+      results = 
+      {
+        {type = "item", name = "landfill", amount_min = 25, amount_max = 50},
+      },
+	  energy_required = 30,
+	  main_product = "landfill",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "landfill-3",
+	category = "bloomery",
+	main_product = "landfill",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "granite", amount = 50},
+      },
+      results = 
+      {
+        {type = "item", name = "landfill", amount_min = 25, amount_max = 50},
+      },
+	  energy_required = 30,
+	  main_product = "landfill",
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "landfill-4",
+	category = "bloomery",
+	main_product = "landfill",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "sandstone", amount = 50},
+      },
+      results = 
+      {
+        {type = "item", name = "landfill", amount_min = 25, amount_max = 50},
+      },
+	  energy_required = 30,
+	  main_product = "landfill",
+	  enabled = false,
+    },
+  },
 })

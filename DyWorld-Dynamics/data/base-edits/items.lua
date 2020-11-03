@@ -59,7 +59,7 @@ data.raw.capsule["raw-fish"].subgroup = DyDs.."material-1"
 
 data.raw["repair-tool"]["repair-pack"].subgroup = "dyworld-hidden-items"
 
-data.raw.item["solar-panel-equipment"].subgroup = DyDs.."equipment-energy"
+data.raw.item["solar-panel-equipment"].subgroup = DyDs.."equipment-energy" --X
 data.raw.item["fusion-reactor-equipment"].subgroup = DyDs.."equipment-energy"
 data.raw.item["battery-equipment"].subgroup = DyDs.."equipment-energy"
 data.raw.item["battery-mk2-equipment"].subgroup = DyDs.."equipment-energy"
@@ -70,11 +70,11 @@ data.raw.item["personal-laser-defense-equipment"].subgroup = DyDs.."equipment-de
 data.raw.item["discharge-defense-equipment"].subgroup = DyDs.."equipment-defense"
 data.raw.capsule["discharge-defense-remote"].subgroup = DyDs.."equipment-defense"
 
-data.raw.item["belt-immunity-equipment"].subgroup = DyDs.."equipment-qol"
-data.raw.item["exoskeleton-equipment"].subgroup = DyDs.."equipment-qol"
+data.raw.item["belt-immunity-equipment"].subgroup = DyDs.."equipment-qol" --X
+data.raw.item["exoskeleton-equipment"].subgroup = DyDs.."equipment-qol" --X
 data.raw.item["personal-roboport-equipment"].subgroup = DyDs.."equipment-qol"
 data.raw.item["personal-roboport-mk2-equipment"].subgroup = DyDs.."equipment-qol"
-data.raw.item["night-vision-equipment"].subgroup = DyDs.."equipment-qol"
+data.raw.item["night-vision-equipment"].subgroup = DyDs.."equipment-qol" --X
 
 -- Nanobots --
 data.raw.ammo["ammo-nano-constructors"].magazine_size = 100000000000000000000000000000000

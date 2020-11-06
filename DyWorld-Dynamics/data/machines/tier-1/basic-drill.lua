@@ -3,6 +3,8 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("mining-drill", "electric-mining-drill", "basic-electric-drill", true)
 
 DyWorld_Prototype_1.resource_categories = {"resource-solid-tier-0", "resource-solid-tier-1", "resource-solid-tier-2"}
+DyWorld_Prototype_1.resistances = Resist_Tier_1(1.2)
+DyWorld_Prototype_1.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
 
 
 data:extend({

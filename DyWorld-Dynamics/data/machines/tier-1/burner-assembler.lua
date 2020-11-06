@@ -2,6 +2,8 @@
 
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "burner-assembler", true)
 DyWorld_Prototype_1.crafting_categories = {"assembling-tier-1"}
+DyWorld_Prototype_1.resistances = Resist_Tier_1(0.75)
+DyWorld_Prototype_1.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
 DyWorld_Prototype_1.energy_source = {
       type = "burner",
       fuel_category = "carbon",

@@ -48,6 +48,14 @@ nanobot logistic interface (nanobot)
 remove spidertron remote
 move cliff explosives
 
+act 3 story add vegemash (planet)
+
+names backers to add:
+Vegemash, Olinator
+
+names backers done:
+Zaydon
+
   ---------- DONE ----------
 
 iron stages:

@@ -8,6 +8,8 @@ data:extend({
     resource_categories = {"resource-solid-tier-0", "resource-solid-tier-1"},
     minable = {mining_time = 0.3, result = "basic-burner-drill"},
     max_health = 50,
+	resistances = Resist_Tier_1(0.75),
+	hide_resistances = settings.startup["DyWorld_Show_Resistances"].value,
     corpse = "burner-mining-drill-remnants",
     dying_explosion = "burner-mining-drill-explosion",
     collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},

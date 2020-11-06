@@ -1,6 +1,8 @@
 
 
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("electric-pole", "small-electric-pole", "basic-power-pole", true)
+DyWorld_Prototype_1.resistances = Resist_Tier_1(0.6)
+DyWorld_Prototype_1.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
 
 
 data:extend({

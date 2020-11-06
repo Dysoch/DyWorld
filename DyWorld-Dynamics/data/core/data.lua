@@ -5,6 +5,7 @@ require(DyDs_data_core.. "templates.tool")
 require(DyDs_data_core.. "templates.ammo")
 require(DyDs_data_core.. "templates.deep-copy")
 require(DyDs_data_core.. "templates.tech")
+require(DyDs_data_core.. "templates.resistances")
 require(DyDs_data_core.. "templates.belt-pictures")
 
 -- Essentials --

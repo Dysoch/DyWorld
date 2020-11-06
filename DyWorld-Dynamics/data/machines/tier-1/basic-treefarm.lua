@@ -1,6 +1,8 @@
 
 
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("mining-drill", "burner-mining-drill", "basic-treefarm", true)
+	DyWorld_Prototype_1.resistances = Resist_Tier_1(0.2)
+	DyWorld_Prototype_1.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
 	DyWorld_Prototype_1.collision_box = {{ -1.4, -1.4}, {1.4, 1.4}}
 	DyWorld_Prototype_1.selection_box = {{ -1.5, -1.5}, {1.5, 1.5}}
 	DyWorld_Prototype_1.energy_usage = "150W"

@@ -170,6 +170,7 @@ local Recipes = {
 	["762mm-bullet-ap"] = {"warfare-2"},
 	["advanced-762mm-turret"] = {"warfare-3"},
 	["radar-2"] = {"warfare-3"},
+	["zaydon-power-armor"] = {"warfare-3"},
 	["radar-3"] = {"warfare-5"},
 	["radar-4"] = {"warfare-7"},
 	

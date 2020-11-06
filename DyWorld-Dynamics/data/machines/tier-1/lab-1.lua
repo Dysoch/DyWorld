@@ -23,6 +23,8 @@ local lab_inputs =
 }
 
 DyWorld_Prototype_1.inputs = lab_inputs
+DyWorld_Prototype_1.resistances = Resist_Tier_1(0.8)
+DyWorld_Prototype_1.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
 
 
 data:extend({

@@ -28,6 +28,12 @@ data:extend({
 		default_value = false,
 	},
 	{
+		type = "bool-setting",
+		name = "DyWorld_Show_Resistances",
+		setting_type = "startup",
+		default_value = false,
+	},
+	{
 		type = "int-setting",
 		name = "DyWorld_Expensive_Modifier",
 		setting_type = "startup",

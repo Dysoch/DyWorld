@@ -14,13 +14,8 @@ data:extend(
     max_health = 500,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 80
-      }
-    },
+	resistances = Resist_Tier_1(1.4),
+	hide_resistances = settings.startup["DyWorld_Show_Resistances"].value,
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fluid_boxes =

@@ -18,11 +18,8 @@ local Resource_Categories = {
 }
 
 local Damage_Table = {
-	"nuclear", "electric", "poison", "acid", "gas", 
-	"fire", "water", "lightning", "fungal", "plasma", 
-	"laser", "lava", "earth", "fission", "chemical", 
-	"physical", "explosion", "impact", "sonic", "ice", 
-	"fusion", "ballistic", "teleport",
+	"nuclear", "poison", "acid", "fire", "water", "plasma", "laser", "chemical", 
+	"physical", "explosion", "impact", "sonic", "ballistic", "teleport",
 }
 
 local Recipe_Categories = {
@@ -133,3 +130,5 @@ for k,v in pairs(Damage_Table) do
 		}
 	})
 end
+
+data.raw["damage-type"]["teleport"].hidden = true

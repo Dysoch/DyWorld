@@ -9,13 +9,8 @@ data:extend({
     max_health = 300,
     corpse = "stone-furnace-remnants",
     dying_explosion = "stone-furnace-explosion",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 70
-      }
-    },
+	resistances = Resist_Tier_1(1.2),
+	hide_resistances = settings.startup["DyWorld_Show_Resistances"].value,
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-0.8, -1}, {0.8, 1}},
     fast_replaceable_group = "furnace",

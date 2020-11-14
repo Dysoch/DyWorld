@@ -19,3 +19,5 @@ Date: 18. 10. 2020
     - Stacksizes of other materials: 500
   Compatibility:
     - Afraid of the Dark like features are implemented into DyWorld-Dynamics. Use Light setting in the mod settings to enable it (increases light cone and radius, also strength of it). Mod is now marked as incompatible with DyWorld-Dynamics
+  Translations:
+    - German Translation added (made by Maxi_der_ZockerYT). Still WIP

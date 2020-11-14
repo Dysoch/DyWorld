@@ -72,6 +72,7 @@ local Recipes = {
 	
 	["grinder"] = {"automation-1"},
 	["quartz"] = {"automation-1"},
+	["advanced-assembler"] = {"automation-3"},
 	
 	["small-lamp"] = {"optics"},
 	["night-vision-equipment"] = {"optics"},

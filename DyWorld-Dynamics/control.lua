@@ -15,7 +15,6 @@ require("script/lualib/side-inserter")
 -- GUI
 require "script/gui/main-gui"
 require "script/gui/story-gui"
-require "script/gui/log-gui"
 
 -- Stats
 require "script/stats/functions"
@@ -23,6 +22,7 @@ require "script/stats/functions"
 -- Story
 require "script/story/story"
 require "script/story/functions"
+require "script/database/informatron"
 
 -- Event Handlers --
 require "script/events/keys"
@@ -135,6 +135,14 @@ remote.add_interface("DyWorld",
 		game.players[1].insert{name = "substation", count = 50}
 		game.players[1].insert{name = "solar-panel", count = 50}
 	end,
+	
+	informatron_menu = function(data)
+		return dyworld_menu(data.player_index)
+	end,
+	
+	informatron_page_content = function(data)
+		return dyworld_page_content(data.page_name, data.player_index, data.element)
+	end
 })
 
 --commands.add_command("dyworld-debug-items", "Debug time :) (only for player 1!)", Debug_Items())

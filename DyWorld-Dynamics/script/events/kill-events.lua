@@ -23,6 +23,11 @@ function Event_on_entity_died(event)
 	end
 	global.dyworld.game_stats.killed_amount = global.dyworld.game_stats.killed_amount + 1
 	
+	if not global.dyworld.game_stats.killed then global.dyworld.game_stats.killed = {} end
+	if not global.dyworld.game_stats.killed[name] then
+		global.dyworld.game_stats.killed[name] = true
+	end
+	
 	----- Building Placement -----
 	if Entity_Check(type_killed) then
 		for k,v in pairs(global.dyworld.game_stats.building_locations) do

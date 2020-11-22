@@ -8,6 +8,21 @@ data.raw.item["wood"].fuel_category = "carbon"
 data.raw.item["coal"].fuel_category = "carbon"
 
 data.raw.item["stone-furnace"].subgroup = DyDs.."furnaces"
+data.raw.furnace["stone-furnace"].energy_source = {
+      type = "burner",
+      fuel_category = "carbon",
+      effectivity = 1,
+      fuel_inventory_size = 1,
+      emissions_per_minute = 8,
+      smoke =
+      {
+        {
+          name = "smoke",
+          deviation = {0.1, 0.1},
+          frequency = 3
+        }
+      }
+    }
 data.raw.furnace["steel-furnace"].crafting_categories = {"hidden"}
 data.raw.furnace["electric-furnace"].crafting_categories = {"hidden"}
 

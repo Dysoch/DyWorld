@@ -17,6 +17,11 @@ function Event_on_built_entity(event)
 		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
 	end
 	
+	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
+	if not global.dyworld.game_stats.build[name] then
+		global.dyworld.game_stats.build[name] = true
+	end
+	
 	----- Personal counter -----
 	global.dyworld.players[id].build = global.dyworld.players[id].build + 1
 	global.dyworld.game_stats.build_amount = global.dyworld.game_stats.build_amount + 1
@@ -101,6 +106,11 @@ function Event_on_robot_built_entity(event)
 		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
 	end
 	
+	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
+	if not global.dyworld.game_stats.build[name] then
+		global.dyworld.game_stats.build[name] = true
+	end
+	
 	----- Building Placement -----
 	if Entity_Check(type) then
 		local BuildingTable = {posx = position.x, posy = position.y}
@@ -183,6 +193,11 @@ function Event_script_raised_built(event)
 		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
 	end
 	
+	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
+	if not global.dyworld.game_stats.build[name] then
+		global.dyworld.game_stats.build[name] = true
+	end
+	
 	----- Building Placement -----
 	if Entity_Check(type) then
 		local BuildingTable = {posx = position.x, posy = position.y}
@@ -263,6 +278,11 @@ function Event_script_raised_revive(event)
 		global.dyworld.game_stats.build_names[name] = 1
 	else
 		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
+	end
+	
+	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
+	if not global.dyworld.game_stats.build[name] then
+		global.dyworld.game_stats.build[name] = true
 	end
 	
 	----- Building Placement -----

@@ -23,6 +23,8 @@ function Event_on_init()
 				killed_names = {},
 				picked_amount = 0,
 				picked_names = {},
+				build = {},
+				killed = {},
 				days = 0,
 				attack_warning_1 = false,
 				attack_warning_2 = false,

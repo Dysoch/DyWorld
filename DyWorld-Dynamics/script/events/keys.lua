@@ -45,28 +45,6 @@ local player = game.players[id]
 	end
 end)
 
-script.on_event("DyWorld_Log", function(event)
-local id = event.player_index
-local player = game.players[id]
-	--debug("Player "..id..": pressed DyWorld_Log")
-	--Log_GUI(player, id)
-	if global.dyworld.players[id].stats_gui then
-		global.dyworld.players[id].stats_gui = false
-		Close_Main_GUI(player, id)
-	end
-	if global.dyworld.players[id].story_gui then
-		global.dyworld.players[id].story_gui = false
-		Close_Story_GUI(player, id)
-	end
-	if global.dyworld.players[id].log_gui then
-		global.dyworld.players[id].log_gui = false
-		Close_Log_GUI(player, id)
-	else 
-		global.dyworld.players[id].log_gui = true
-		Log_GUI(player, id)
-	end
-end)
-
 script.on_event("DyWorld_rotate_inserter_pickup", function(event)
 	local selection = game.players[event.player_index].selected
 	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then

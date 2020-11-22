@@ -163,15 +163,31 @@ local Recipes = {
 	["oil-refinery"] = {"oil-processing"},
 	["oil-extractor"] = {"oil-extraction"},
 	
-	["radar-1"] = {"warfare-1"},
 	["762mm-gun"] = {"warfare-1"},
-	["basic-762mm-turret"] = {"warfare-1"},
 	["762mm-bullet"] = {"warfare-1"},
 	["762mm-bullet-mag"] = {"warfare-1"},
 	["762mm-bullet-ap"] = {"warfare-2"},
+	["762mm-bullet-ap-mag"] = {"warfare-2"},
+	
+	["1853mm-gun"] = {"warfare-2"},
+	["1853mm-bullet"] = {"warfare-2"},
+	["1853mm-bullet-mag"] = {"warfare-2"},
+	["1853mm-bullet-ap"] = {"warfare-3"},
+	["1853mm-bullet-ap-mag"] = {"warfare-3"},
+	
+	["860mm-gun"] = {"warfare-3"},
+	["860mm-bullet"] = {"warfare-3"},
+	["860mm-bullet-mag"] = {"warfare-3"},
+	["860mm-bullet-ap"] = {"warfare-4"},
+	["860mm-bullet-ap-mag"] = {"warfare-4"},
+	
+	["basic-762mm-turret"] = {"warfare-1"},
 	["advanced-762mm-turret"] = {"warfare-3"},
-	["radar-2"] = {"warfare-3"},
+	
 	["zaydon-power-armor"] = {"warfare-3"},
+	
+	["radar-1"] = {"warfare-1"},
+	["radar-2"] = {"warfare-3"},
 	["radar-3"] = {"warfare-5"},
 	["radar-4"] = {"warfare-7"},
 	

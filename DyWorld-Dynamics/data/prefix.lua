@@ -5,6 +5,7 @@ ER_Mod = settings.startup["DyWorld_Expensive_Modifier"].value
 
 -- graphical
 DyDs_path_icon = "__DyWorld-Dynamics__/graphics/icons/"
+DyDs_path_icon_base = "__base__/graphics/icons/"
 DyDs_path_damage = "__DyWorld-Dynamics__/graphics/damage/"
 DyDs_path_fluid = "__DyWorld-Dynamics__/graphics/fluids/"
 DyDs_path_tech = "__DyWorld-Dynamics__/graphics/technology/"

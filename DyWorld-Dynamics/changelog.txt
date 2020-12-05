@@ -13,6 +13,7 @@ Date: 18. 10. 2020
     - Player Inventory: 80 slots > 120 slots
     - Player healing automatically is disabled
     - Player Build distance: 10 > 15
+    - Alien-Biomes trees minable results altered to fit into DyWorld-Dynamics
   Balancing:
     - Stacksizes of ores: 1000
     - Stacksizes of plates: 500

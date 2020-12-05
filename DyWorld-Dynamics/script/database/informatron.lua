@@ -5,8 +5,7 @@ function dyworld_menu(player_index)
 		tips = 1,
 		info = 1,
 		entities = {
-			enemy = {
-			},
+			trees = 1,
 		},
 		story = {
 			act_1 = {
@@ -28,6 +27,40 @@ function dyworld_menu(player_index)
 	end
 	if (global.dyworld.story.act >= 5) then
 		Table.story.act_5 = {}
+	end
+	if (global.dyworld.game_stats.killed["small-biter"] or global.dyworld.game_stats.killed["medium-biter"] or global.dyworld.game_stats.killed["big-biter"] or global.dyworld.game_stats.killed["behemoth-biter"] or global.dyworld.game_stats.killed["small-spitter"] or global.dyworld.game_stats.killed["medium-spitter"] or global.dyworld.game_stats.killed["big-spitter"] or global.dyworld.game_stats.killed["behemoth-spitter"]) then
+		Table.entities.enemy = {}
+		Table.entities.enemy.arthropod = {}
+	end
+	if (global.dyworld.game_stats.killed["small-biter"] or global.dyworld.game_stats.killed["medium-biter"] or global.dyworld.game_stats.killed["big-biter"] or global.dyworld.game_stats.killed["behemoth-biter"]) then
+		Table.entities.enemy.arthropod.arachnid = {}
+	end
+	if (global.dyworld.game_stats.killed["small-biter"]) then
+		Table.entities.enemy.arthropod.arachnid.small_arachnid = 1
+	end
+	if (global.dyworld.game_stats.killed["medium-biter"]) then
+		Table.entities.enemy.arthropod.arachnid.medium_arachnid = 1
+	end
+	if (global.dyworld.game_stats.killed["big-biter"]) then
+		Table.entities.enemy.arthropod.arachnid.big_arachnid = 1
+	end
+	if (global.dyworld.game_stats.killed["behemoth-biter"]) then
+		Table.entities.enemy.arthropod.arachnid.behemoth_arachnid = 1
+	end
+	if (global.dyworld.game_stats.killed["small-spitter"] or global.dyworld.game_stats.killed["medium-spitter"] or global.dyworld.game_stats.killed["big-spitter"] or global.dyworld.game_stats.killed["behemoth-spitter"]) then
+		Table.entities.enemy.arthropod.myriapods = {}
+	end
+	if (global.dyworld.game_stats.killed["small-spitter"]) then
+		Table.entities.enemy.arthropod.myriapods.small_myriapods = 1
+	end
+	if (global.dyworld.game_stats.killed["medium-spitter"]) then
+		Table.entities.enemy.arthropod.myriapods.medium_myriapods = 1
+	end
+	if (global.dyworld.game_stats.killed["big-spitter"]) then
+		Table.entities.enemy.arthropod.myriapods.big_myriapods = 1
+	end
+	if (global.dyworld.game_stats.killed["behemoth-spitter"]) then
+		Table.entities.enemy.arthropod.myriapods.behemoth_myriapods = 1
 	end
 	
 		-- Act 1 --
@@ -62,6 +95,9 @@ function dyworld_menu(player_index)
 	
 		-- Act 2 --
 	
+	if ((global.dyworld.story.act >= 2 and global.dyworld.story.phase >= 1) or global.dyworld.story.act >= 3) then 
+		Table.story.act_2.phase_2_1 = 1
+	end
 	if ((global.dyworld.story.act >= 2 and global.dyworld.story.phase >= 2) or global.dyworld.story.act >= 3) then 
 		Table.story.act_2.phase_2_2 = 1
 	end
@@ -194,8 +230,43 @@ function dyworld_page_content(page_name, player_index, element)
     element.add{type="label", name="text_1", caption={"DyDs-story.message-act-2-phase-10"}}
   end
 
+  if page_name == "trees" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_trees_text_1"}}
+	if (global.dyworld.game_stats.mined["tree-wetland-a"] or global.dyworld.game_stats.mined["tree-wetland-b"] or global.dyworld.game_stats.mined["tree-wetland-c"] or global.dyworld.game_stats.mined["tree-wetland-d"] or global.dyworld.game_stats.mined["tree-wetland-e"] or global.dyworld.game_stats.mined["tree-wetland-f"] or global.dyworld.game_stats.mined["tree-wetland-g"] or global.dyworld.game_stats.mined["tree-wetland-h"] or global.dyworld.game_stats.mined["tree-wetland-i"] or global.dyworld.game_stats.mined["tree-wetland-j"] or global.dyworld.game_stats.mined["tree-wetland-k"] or global.dyworld.game_stats.mined["tree-wetland-l"] or global.dyworld.game_stats.mined["tree-wetland-m"] or global.dyworld.game_stats.mined["tree-wetland-n"] or global.dyworld.game_stats.mined["tree-wetland-o"]) then
+		element.add{type="label", name="text_2", caption={"DyWorld.page_trees_wetland"}}
+	end
+	if (global.dyworld.game_stats.mined["tree-grassland-a"] or global.dyworld.game_stats.mined["tree-grassland-b"] or global.dyworld.game_stats.mined["tree-grassland-c"] or global.dyworld.game_stats.mined["tree-grassland-d"] or global.dyworld.game_stats.mined["tree-grassland-e"] or global.dyworld.game_stats.mined["tree-grassland-f"] or global.dyworld.game_stats.mined["tree-grassland-g"] or global.dyworld.game_stats.mined["tree-grassland-h"] or global.dyworld.game_stats.mined["tree-grassland-i"] or global.dyworld.game_stats.mined["tree-grassland-j"] or global.dyworld.game_stats.mined["tree-grassland-k"] or global.dyworld.game_stats.mined["tree-grassland-l"] or global.dyworld.game_stats.mined["tree-grassland-m"] or global.dyworld.game_stats.mined["tree-grassland-n"] or global.dyworld.game_stats.mined["tree-grassland-o"] or global.dyworld.game_stats.mined["tree-grassland-p"] or global.dyworld.game_stats.mined["tree-grassland-q"]) then
+		element.add{type="label", name="text_3", caption={"DyWorld.page_trees_grassland"}}
+	end
+	if (global.dyworld.game_stats.mined["tree-dryland-a"] or global.dyworld.game_stats.mined["tree-dryland-b"] or global.dyworld.game_stats.mined["tree-dryland-c"] or global.dyworld.game_stats.mined["tree-dryland-d"] or global.dyworld.game_stats.mined["tree-dryland-e"] or global.dyworld.game_stats.mined["tree-dryland-f"] or global.dyworld.game_stats.mined["tree-dryland-g"] or global.dyworld.game_stats.mined["tree-dryland-h"] or global.dyworld.game_stats.mined["tree-dryland-i"] or global.dyworld.game_stats.mined["tree-dryland-j"] or global.dyworld.game_stats.mined["tree-dryland-k"] or global.dyworld.game_stats.mined["tree-dryland-l"] or global.dyworld.game_stats.mined["tree-dryland-m"] or global.dyworld.game_stats.mined["tree-dryland-n"] or global.dyworld.game_stats.mined["tree-dryland-o"]) then
+		element.add{type="label", name="text_4", caption={"DyWorld.page_trees_dryland"}}
+	end
+	if (global.dyworld.game_stats.mined["tree-desert-a"] or global.dyworld.game_stats.mined["tree-desert-b"] or global.dyworld.game_stats.mined["tree-desert-c"] or global.dyworld.game_stats.mined["tree-desert-d"] or global.dyworld.game_stats.mined["tree-desert-e"] or global.dyworld.game_stats.mined["tree-desert-f"] or global.dyworld.game_stats.mined["tree-desert-g"] or global.dyworld.game_stats.mined["tree-desert-h"] or global.dyworld.game_stats.mined["tree-desert-i"] or global.dyworld.game_stats.mined["tree-desert-j"] or global.dyworld.game_stats.mined["tree-desert-k"] or global.dyworld.game_stats.mined["tree-desert-l"] or global.dyworld.game_stats.mined["tree-desert-m"] or global.dyworld.game_stats.mined["tree-desert-n"]) then
+		element.add{type="label", name="text_5", caption={"DyWorld.page_trees_desert"}}
+	end
+	if (global.dyworld.game_stats.mined["tree-palm-a"] or global.dyworld.game_stats.mined["tree-palm-b"]) then
+		element.add{type="label", name="text_6", caption={"DyWorld.page_trees_palm"}}
+	end
+	if (global.dyworld.game_stats.mined["tree-snow-a"]) then
+		element.add{type="label", name="text_7", caption={"DyWorld.page_trees_snow"}}
+	end
+	if (global.dyworld.game_stats.mined["tree-volcanic-a"]) then
+		element.add{type="label", name="text_8", caption={"DyWorld.page_trees_volcanic"}}
+	end
+  end
+
   if page_name == "enemy" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_enemy_text_1"}}
+  end
+
+  if page_name == "arthropod" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_arthropod_text_1"}}
+  end
+  if page_name == "arachnid" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_arachnid_text_1"}}
+  end
+  if page_name == "myriapods" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_myriapods_text_1"}}
   end
 
   --[[if page_name == "penguin" then

@@ -23,6 +23,11 @@ function Event_on_player_mined_item(event)
 		global.dyworld.game_stats.mined_names[name] = global.dyworld.game_stats.mined_names[name] + count
 	end
 	
+	if not global.dyworld.game_stats.mined then global.dyworld.game_stats.mined = {} end
+	if not global.dyworld.game_stats.mined[name] then
+		global.dyworld.game_stats.mined[name] = true
+	end
+	
 	----- Personal counter -----
 	global.dyworld.players[id].mined = global.dyworld.players[id].mined + count
 	global.dyworld.game_stats.mined_amount = global.dyworld.game_stats.mined_amount + count
@@ -52,6 +57,11 @@ function Event_on_player_mined_entity(event)
 	local position = event.entity.position
 	local type = event.entity.type
 	local name = event.entity.name
+	
+	if not global.dyworld.game_stats.mined then global.dyworld.game_stats.mined = {} end
+	if not global.dyworld.game_stats.mined[name] then
+		global.dyworld.game_stats.mined[name] = true
+	end
 	
 	----- Building Placement -----
 	if Entity_Check(type) then
@@ -108,6 +118,11 @@ function Event_on_robot_mined_entity(event)
 	local position = event.entity.position
 	local type = event.entity.type
 	local name = event.entity.name
+	
+	if not global.dyworld.game_stats.mined then global.dyworld.game_stats.mined = {} end
+	if not global.dyworld.game_stats.mined[name] then
+		global.dyworld.game_stats.mined[name] = true
+	end
 	
 	----- Building Placement -----
 	if Entity_Check(type) then

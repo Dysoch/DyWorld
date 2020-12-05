@@ -25,6 +25,7 @@ function Event_on_init()
 				picked_names = {},
 				build = {},
 				killed = {},
+				mined = {},
 				days = 0,
 				attack_warning_1 = false,
 				attack_warning_2 = false,

@@ -44,7 +44,7 @@ move cliff explosives
 act 3 story add vegemash (planet)
 
 names backers to add:
-Vegemash, Olinator, La Gatta (echodeaf), Tels, me2m8
+Olinator, La Gatta (echodeaf), Tels, me2m8
 
 names backers done:
 Zaydon

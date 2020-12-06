@@ -11,8 +11,7 @@ require(DyDs_data_logistics.. "tier-1.pump")
 require(DyDs_data_logistics.. "tier-1.car")
 
 -- Tier 2 --
-require(DyDs_data_logistics.. "tier-2.storehouses")
-require(DyDs_data_logistics.. "tier-2.warehouses")
+require(DyDs_data_logistics.. "tier-2.aai-warehouses")
 require(DyDs_data_logistics.. "tier-2.splitter")
 require(DyDs_data_logistics.. "tier-2.loader")
 require(DyDs_data_logistics.. "tier-2.transport-belt")

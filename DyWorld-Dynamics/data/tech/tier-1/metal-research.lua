@@ -192,7 +192,7 @@ local Metal_Techs = {
 	----- Automation -----
 	{
 		name = "automation-1",
-		icon = DyDs_path_tech_base.."automation.png",
+		icon = DyDs_path_tech_base.."automation-1.png",
 		count = 100,
 		prerequisites = {
 			"intermediates-1",
@@ -208,7 +208,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "automation-2",
-		icon = DyDs_path_tech_base.."automation.png",
+		icon = DyDs_path_tech_base.."automation-1.png",
 		count = 100,
 		prerequisites = {
 			"intermediates-2",
@@ -224,7 +224,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "automation-3",
-		icon = DyDs_path_tech_base.."automation.png",
+		icon = DyDs_path_tech_base.."automation-2.png",
 		count = 100,
 		prerequisites = {
 			"intermediates-3",
@@ -345,7 +345,7 @@ local Metal_Techs = {
 	----- Logistics -----
 	{
 		name = "logistics-1",
-		icon = DyDs_path_tech_base.."logistics.png",
+		icon = DyDs_path_tech_base.."logistics-1.png",
 		count = 100,
 		prerequisites = {
 			"automation-1",
@@ -392,7 +392,7 @@ local Metal_Techs = {
 	----- Power -----
 	{
 		name = "power-1",
-		icon = DyDs_path_tech_base.."electric-energy-distribution.png",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-1.png",
 		count = 100,
 		prerequisites = {
 			"automation-1",
@@ -406,7 +406,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "power-2",
-		icon = DyDs_path_tech_base.."electric-energy-distribution.png",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-1.png",
 		count = 100,
 		prerequisites = {
 			"power-1",
@@ -422,7 +422,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "power-3",
-		icon = DyDs_path_tech_base.."electric-energy-distribution.png",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
 		count = 100,
 		prerequisites = {
 			"power-2",

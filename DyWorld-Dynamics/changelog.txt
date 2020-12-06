@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.90
-Date: 18. 10. 2020
+Date: 10. 12. 2020
   Major Features:
+    - Compatibility with Factorio 1.1
     - Complete and utter rewrite of DyWorld. Now called DyWorld-Dynamics, this mod is like DyWorld, but better written, less bugs, more features (and almost the same features as DyWorld) and a lot changes!
     - To Start the story, use the DyWorld-Dynamics Story Mode scenario when starting (NOT FREEPLAY). If you dont want the story, use normal freeplay from the base game
   Features:

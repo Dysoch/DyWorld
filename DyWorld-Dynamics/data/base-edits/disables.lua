@@ -47,6 +47,11 @@ for k,v in pairs(data.raw.module) do
 	end
 end
 
+-- Remove Tips and Tricks
+for NAME in pairs(data.raw["tips-and-tricks-item"]) do
+	data.raw["tips-and-tricks-item"][NAME] = nil
+end
+
 -- Change silo --
 data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
 

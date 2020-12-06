@@ -73,8 +73,16 @@ function Phase_Forward()
 			end
 		end
 	end
+	if (global.dyworld.story.phase == 8 and global.dyworld.story.act == 1) then
+		for index,player in pairs(game.players) do
+			player.play_sound{path = "DySound_alien_ufo_lab_1"}
+		end
+	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then
 		game.surfaces[1].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {(math.random(-10,10)),(math.random(-10,10))}}
+		for index,player in pairs(game.players) do
+			player.play_sound{path = "DySound_nuclear_alarm"}
+		end
 		global.dyworld.game_stats.difficulty = 1
 	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 3) then

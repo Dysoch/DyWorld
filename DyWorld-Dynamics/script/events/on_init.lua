@@ -43,7 +43,7 @@ function Event_on_init()
 	Reunlock_Recipes()
 	if remote.interfaces["silo_script"] then
 		remote.call("silo_script", "set_no_victory", true)
-		local tracked_items = remote.call("silo_script", "get_tracked_items")
+		--[[local tracked_items = remote.call("silo_script", "get_tracked_items")
 		if not tracked_items["asteroid-miner-iron"] then
 			remote.call("silo_script", "add_tracked_item", "asteroid-miner-iron")
 		end
@@ -70,7 +70,7 @@ function Event_on_init()
 		end
 		if not tracked_items["asteroid-miner-coal-3"] then
 			remote.call("silo_script", "add_tracked_item", "asteroid-miner-coal-3")
-		end
+		end]]
 	end
 end
 

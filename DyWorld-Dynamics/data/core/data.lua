@@ -11,6 +11,7 @@ require(DyDs_data_core.. "templates.belt-pictures")
 -- Essentials --
 require(DyDs_data_core.. "essentials.categories")
 require(DyDs_data_core.. "essentials.keys")
+require(DyDs_data_core.. "essentials.sounds")
 require(DyDs_data_core.. "essentials.equipment-grid")
 
 -- Item Groups

@@ -41,9 +41,8 @@ function Event_on_player_created(event)
 	else
 		Reunlock_Recipes()
 	end
-	game.forces.player.auto_character_trash_slots = true
 	game.forces.player.character_logistic_requests = true
-	game.forces.player.character_trash_slot_count = 10
+	game.forces.player.character_trash_slot_count = 20
 end
 
 function Event_on_player_died(event)

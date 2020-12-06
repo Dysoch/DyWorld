@@ -84,6 +84,13 @@ data:extend(
             repeat_count = 4 * 4 * 15
           },
           {
+            type = "play-sound",
+            sound = 
+			{
+			  filename  = "__DyWorld-Dynamics__/sounds/explosion-2.ogg",
+			},
+          },
+          {
             type = "create-entity",
             entity_name = "cluster-nuke-explosion"
           },

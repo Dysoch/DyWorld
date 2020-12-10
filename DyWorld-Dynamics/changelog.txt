@@ -9,6 +9,14 @@ Date: 10. 12. 2020
     - Ores have been reworked. There is different percentages of each ore. They can be seperate, or clumped into the same patch. This basically means that you have a chance to get less ores (you will never mine the full amount). A lot of different density of ores exist, and each have different byproducts and percentages for them
   Minor Features:
     - The mod features a comprehensive expensive modifier for recipes. All recipes have expensive sets
+    - Added completely new sounds. These are for:
+    - Added enemy roar sounds (Still WIP)
+    - Added enemy attack sounds (Still WIP)
+    - Added enemy dying sounds (Still WIP)
+    - Added 3 new main menu sounds to better fit the atmosphere of the game
+    - Added a lot of new ambiance sounds ingame. Mostly scifi winds and nature sounds (Still WIP)
+    - Added scripted sounds for the story (Still WIP)
+    - Added a few new weapon sounds (Still WIP)
   Changes:
     - Player Health: 250 > 1000
     - Player Inventory: 80 slots > 120 slots
@@ -23,3 +31,5 @@ Date: 10. 12. 2020
     - Afraid of the Dark like features are implemented into DyWorld-Dynamics. Use Light setting in the mod settings to enable it (increases light cone and radius, also strength of it). Mod is now marked as incompatible with DyWorld-Dynamics
   Translations:
     - German Translation added (made by Maxi_der_ZockerYT). Still WIP
+  Licenses:
+    - All sounds taken from free sound sites, royalty free. Sites used are splatz and freesound

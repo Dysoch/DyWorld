@@ -13,6 +13,8 @@ add modules
 balance chemical techs
 rework equipment
 
+add linked chest
+
 add nanobot tech
 add nanobot tech cliff
 

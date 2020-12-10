@@ -10,6 +10,7 @@ local DyWorld_Prototype = DyDs_CopyPrototype("gun", "pistol", "860mm-gun", true)
 	DyWorld_Prototype.order = "2"
 	DyWorld_Prototype.attack_parameters.ammo_category = "860mm"
 	DyWorld_Prototype.icon = DyDs_path_icon.."860mm-gun.png"
+	DyWorld_Prototype.sound = {filename = "__DyWorld-Dynamics__/sounds/sniper-shot.ogg", volume = 1}
 
 data:extend({
   DyWorld_Prototype,

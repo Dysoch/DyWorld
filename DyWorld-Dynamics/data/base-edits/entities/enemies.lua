@@ -27,3 +27,42 @@ data.raw.unit["behemoth-spitter"].localised_name = {"enemies-name.behemoth-spitt
 
 data.raw["unit-spawner"]["biter-spawner"].localised_name = {"enemies-name.biter-base"}
 data.raw["unit-spawner"]["spitter-spawner"].localised_name = {"enemies-name.biter-base"}
+
+for k,v in pairs(data.raw.unit) do
+	if v.dying_sound then
+		v.dying_sound = {
+			{
+				filename = "__DyWorld-Dynamics__/sounds/alien-dead-1.ogg", 
+				volume = 0.6,
+			},
+			{
+				filename = "__DyWorld-Dynamics__/sounds/alien-dead-2.ogg", 
+				volume = 0.6,
+			},
+		}
+	end
+	if v.working_sound then
+		v.working_sound = {
+			{
+				filename = "__DyWorld-Dynamics__/sounds/alien-call-1.ogg", 
+				volume = 0.75,
+			},
+			{
+				filename = "__DyWorld-Dynamics__/sounds/alien-call-2.ogg", 
+				volume = 0.75,
+			},
+		}
+	end
+	if (v.attack_parameters and v.attack_parameters.sound) then
+		v.attack_parameters.sound = {
+			{
+				filename = "__DyWorld-Dynamics__/sounds/alien-roar-1.ogg", 
+				volume = 0.5,
+			},
+			{
+				filename = "__DyWorld-Dynamics__/sounds/alien-roar-2.ogg", 
+				volume = 0.5,
+			},
+		}
+	end
+end

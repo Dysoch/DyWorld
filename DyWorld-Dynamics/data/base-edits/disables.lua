@@ -52,6 +52,11 @@ for NAME in pairs(data.raw["tips-and-tricks-item"]) do
 	data.raw["tips-and-tricks-item"][NAME] = nil
 end
 
+-- Remove ambient-sound
+for NAME in pairs(data.raw["ambient-sound"]) do
+	data.raw["ambient-sound"][NAME] = nil
+end
+
 -- Change silo --
 data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
 

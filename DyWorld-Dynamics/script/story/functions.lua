@@ -75,7 +75,12 @@ function Phase_Forward()
 	end
 	if (global.dyworld.story.phase == 8 and global.dyworld.story.act == 1) then
 		for index,player in pairs(game.players) do
-			player.play_sound{path = "DySound_alien_ufo_lab_1"}
+			player.play_sound{path = "DySound_future_sounds_1"}
+		end
+	end
+	if (global.dyworld.story.phase == 10 and global.dyworld.story.act == 1) then
+		for index,player in pairs(game.players) do
+			player.play_sound{path = "DySound_drone_1"}
 		end
 	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then

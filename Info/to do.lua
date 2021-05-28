@@ -3,6 +3,12 @@
 
 If I may make a suggestion... is it possible to have all the tabs on top at all times?  (And click on them to expand?)  I feel like its easy to forget the numpad keys, especially for people new to mods.  The objectives tab, specifically is going to generate a LOT of questions: e.g. I cant make progress, what am I supposed to do? end
 
+Rework electricity 
+(if you put a full stack of coal in a burner assembler it will last for 55 hours)
+( For example, he was surprised that the greenhouses needed 1 coal every 20-something hours, and that the inserters needed more power than the assemblers)end
+
+limit amount items in fuel slot (if possible)end
+
 unlock logistics tab start of act 2
 
 add recycler (space ex)

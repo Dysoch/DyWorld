@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.91
+Date: 30. 05. 2021
+  Major Features:
+    - 
+  Features:
+    - 
+  Minor Features:
+    - 
+  Changes:
+    - Resized technology icons to correctly show again
+    - Fixed stone appearing on destroyed stones as loot (affects Alien-Biomes as well)
+  Balancing:
+    - 
+  Compatibility:
+    - 
+  Translations:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.7.90
 Date: 10. 12. 2020
   Major Features:

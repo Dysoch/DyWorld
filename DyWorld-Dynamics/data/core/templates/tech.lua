@@ -27,7 +27,7 @@ data:extend(
     type = "technology",
    	name = params.name,
     icon = params.icon or DyDs_tech_temp,
-    icon_size = 128,
+    icon_size = 256,
     effects = { },
     prerequisites = params.prerequisites or {},
     unit =

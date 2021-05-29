@@ -500,26 +500,26 @@ local Story = {
 					[2] = {
 						type_1 = "position", -- Northwest
 						done = false,
-						PosX = -3500,
-						PosY = -3500,
+						PosX = -1750,
+						PosY = -1750,
 					},
 					[3] = {
 						type_1 = "position", -- Northeast
 						done = false,
-						PosX = 3500,
-						PosY = -3500,
+						PosX = 1750,
+						PosY = -1750,
 					},
 					[4] = {
 						type_1 = "position", -- Southeast
 						done = false,
-						PosX = 3500,
-						PosY = 3500,
+						PosX = 1750,
+						PosY = 1750,
 					},
 					[5] = {
 						type_1 = "position", -- Southwest
 						done = false,
-						PosX = -3500,
-						PosY = 3500,
+						PosX = -1750,
+						PosY = 1750,
 					},
 				},
 			},

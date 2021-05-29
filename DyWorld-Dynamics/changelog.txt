@@ -6,10 +6,11 @@ Date: 30. 05. 2021
   Features:
     - 
   Minor Features:
-    - 
+    - Added Fluid Storage Tanks for storing massive amounts of fluids/gases
   Changes:
     - Resized technology icons to correctly show again
     - Fixed stone appearing on destroyed stones as loot (affects Alien-Biomes as well)
+    - Reduced Native sounds a bit
   Balancing:
     - 
   Compatibility:

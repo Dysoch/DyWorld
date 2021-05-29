@@ -69,6 +69,8 @@ data.raw.item["stone-brick"].stack_size = 500
 data.raw.item["stone-brick"].subgroup = DyDs.."material-1"
 data.raw.item["stone-brick"].order = "stone-brick"
 
+data.raw.item["satellite"].rocket_launch_product = nil
+
 data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1].damage.amount = 25
 data.raw.capsule["raw-fish"].subgroup = DyDs.."material-1"
 

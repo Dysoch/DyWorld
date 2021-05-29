@@ -33,11 +33,11 @@ for k,v in pairs(data.raw.unit) do
 		v.dying_sound = {
 			{
 				filename = "__DyWorld-Dynamics__/sounds/alien-dead-1.ogg", 
-				volume = 0.6,
+				volume = 0.5,
 			},
 			{
 				filename = "__DyWorld-Dynamics__/sounds/alien-dead-2.ogg", 
-				volume = 0.6,
+				volume = 0.5,
 			},
 		}
 	end
@@ -45,11 +45,11 @@ for k,v in pairs(data.raw.unit) do
 		v.working_sound = {
 			{
 				filename = "__DyWorld-Dynamics__/sounds/alien-call-1.ogg", 
-				volume = 0.75,
+				volume = 0.5,
 			},
 			{
 				filename = "__DyWorld-Dynamics__/sounds/alien-call-2.ogg", 
-				volume = 0.75,
+				volume = 0.5,
 			},
 		}
 	end
@@ -57,11 +57,11 @@ for k,v in pairs(data.raw.unit) do
 		v.attack_parameters.sound = {
 			{
 				filename = "__DyWorld-Dynamics__/sounds/alien-roar-1.ogg", 
-				volume = 0.5,
+				volume = 0.4,
 			},
 			{
 				filename = "__DyWorld-Dynamics__/sounds/alien-roar-2.ogg", 
-				volume = 0.5,
+				volume = 0.4,
 			},
 		}
 	end

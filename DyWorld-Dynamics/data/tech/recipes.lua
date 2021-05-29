@@ -110,41 +110,23 @@ local Recipes = {
 	["roboport-3"] = {"storage-7"},
 	
 	["aai-strongbox"] = {"storage-1"},
-	["aai-storehouse"] = {"storage-3"},
-	["aai-warehouse"] = {"storage-5"},
-	
 	["aai-strongbox-passive-provider"] = {"storage-2"},
-	["aai-storehouse-passive-provider"] = {"storage-4"},
-	["aai-warehouse-passive-provider"] = {"storage-6"},
-	
-	["aai-strongbox-active-provider"] = {"storage-3"},
-	["aai-storehouse-active-provider"] = {"storage-5"},
-	["aai-warehouse-active-provider"] = {"storage-7"},
-	
-	["aai-strongbox-buffer"] = {"storage-3"},
-	["aai-storehouse-buffer"] = {"storage-5"},
-	["aai-warehouse-buffer"] = {"storage-7"},
-	
 	["aai-strongbox-storage"] = {"storage-2"},
-	["aai-storehouse-storage"] = {"storage-4"},
-	["aai-warehouse-storage"] = {"storage-6"},
-	
 	["aai-strongbox-requester"] = {"storage-3"},
+	["aai-strongbox-active-provider"] = {"storage-3"},
+	["aai-strongbox-buffer"] = {"storage-3"},
+	["aai-storehouse"] = {"storage-3"},
+	["aai-storehouse-storage"] = {"storage-4"},
+	["aai-storehouse-passive-provider"] = {"storage-4"},
+	["aai-warehouse"] = {"storage-5"},
 	["aai-storehouse-requester"] = {"storage-5"},
+	["aai-storehouse-buffer"] = {"storage-5"},
+	["aai-storehouse-active-provider"] = {"storage-5"},
+	["aai-warehouse-passive-provider"] = {"storage-6"},
+	["aai-warehouse-storage"] = {"storage-6"},
+	["aai-warehouse-active-provider"] = {"storage-7"},
+	["aai-warehouse-buffer"] = {"storage-7"},
 	["aai-warehouse-requester"] = {"storage-7"},
-	
-	--[[["storehouse-basic"] = {"storage-3"},
-	["storehouse-requester"] = {"storage-4"},
-	["storehouse-passive-provider"] = {"storage-4"},
-	["storehouse-storage"] = {"storage-4"},
-	["storehouse-buffer"] = {"storage-5"},
-	["storehouse-active-provider"] = {"storage-5"},
-	["warehouse-basic"] = {"storage-5"},
-	["warehouse-storage"] = {"storage-6"},
-	["warehouse-requester"] = {"storage-6"},
-	["warehouse-passive-provider"] = {"storage-6"},
-	["warehouse-buffer"] = {"storage-7"},
-	["warehouse-active-provider"] = {"storage-7"},]]
 	
 	["air-filter"] = {"filters-1"},
 	["filter-nitrogen-1"] = {"filters-1"},
@@ -153,6 +135,11 @@ local Recipes = {
 	["filter-nitrogen-2"] = {"filters-3"},
 	["filter-oxygen-2"] = {"filters-3"},
 	["filter-hydrogen-2"] = {"filters-3"},
+	
+	["storage-tank-1"] = {"fluids-1"},
+	["storage-tank-2"] = {"fluids-4"},
+	["storage-tank-3"] = {"fluids-7"},
+	["storage-tank-4"] = {"fluids-10"},
 	
 	["rocket-silo-1"] = {"space-mining"},
 	["rocket-part-1"] = {"space-mining"},

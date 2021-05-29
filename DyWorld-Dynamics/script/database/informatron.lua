@@ -262,11 +262,37 @@ function dyworld_page_content(page_name, player_index, element)
   if page_name == "arthropod" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_arthropod_text_1"}}
   end
+  
   if page_name == "arachnid" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_arachnid_text_1"}}
   end
+  if page_name == "small_arachnid" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_small_arachnid"}}
+  end
+  if page_name == "medium_arachnid" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_medium_arachnid"}}
+  end
+  if page_name == "big_arachnid" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_big_arachnid"}}
+  end
+  if page_name == "behemoth_arachnid" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_arachnid"}}
+  end
+  
   if page_name == "myriapods" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_myriapods_text_1"}}
+  end
+  if page_name == "small_myriapods" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_small_myriapods"}}
+  end
+  if page_name == "medium_myriapods" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_medium_myriapods"}}
+  end
+  if page_name == "big_myriapods" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_big_myriapods"}}
+  end
+  if page_name == "behemoth_myriapods" then
+    element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_myriapods"}}
   end
 
   --[[if page_name == "penguin" then

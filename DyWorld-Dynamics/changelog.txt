@@ -4,7 +4,7 @@ Date: 30. 05. 2021
   Major Features:
     - 
   Features:
-    - 
+    - Added new information to Informatron (enemy statistics)
   Minor Features:
     - Added Fluid Storage Tanks for storing massive amounts of fluids/gases
   Changes:

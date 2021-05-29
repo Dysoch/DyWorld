@@ -267,32 +267,32 @@ function dyworld_page_content(page_name, player_index, element)
     element.add{type="label", name="text_1", caption={"DyWorld.page_arachnid_text_1"}}
   end
   if page_name == "small_arachnid" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_small_arachnid"}}
+    element.add{type="label", name="text_1", caption={"DyWorld.page_small_arachnid", global.dyworld.game_stats.killed_names["small-biter"]}}
   end
   if page_name == "medium_arachnid" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_medium_arachnid"}}
+    element.add{type="label", name="text_1", caption={"DyWorld.page_medium_arachnid", global.dyworld.game_stats.killed_names["medium-biter"]}}
   end
   if page_name == "big_arachnid" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_big_arachnid"}}
+    element.add{type="label", name="text_1", caption={"DyWorld.page_big_arachnid", global.dyworld.game_stats.killed_names["big-biter"]}}
   end
   if page_name == "behemoth_arachnid" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_arachnid"}}
+    element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_arachnid", global.dyworld.game_stats.killed_names["behemoth-biter"]}}
   end
   
   if page_name == "myriapods" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_myriapods_text_1"}}
   end
   if page_name == "small_myriapods" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_small_myriapods"}}
+    element.add{type="label", name="text_1", caption={"DyWorld.page_small_myriapods", global.dyworld.game_stats.killed_names["small-spitter"]}}
   end
   if page_name == "medium_myriapods" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_medium_myriapods"}}
+    element.add{type="label", name="text_1", caption={"DyWorld.page_medium_myriapods", global.dyworld.game_stats.killed_names["medium-spitter"]}}
   end
   if page_name == "big_myriapods" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_big_myriapods"}}
+    element.add{type="label", name="text_1", caption={"DyWorld.page_big_myriapods", global.dyworld.game_stats.killed_names["big-spitter"]}}
   end
   if page_name == "behemoth_myriapods" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_myriapods"}}
+    element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_myriapods", global.dyworld.game_stats.killed_names["behemoth-spitter"]}}
   end
 
   --[[if page_name == "penguin" then

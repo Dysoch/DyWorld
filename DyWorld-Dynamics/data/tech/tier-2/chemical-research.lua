@@ -13,7 +13,6 @@ local Chemical_Techs = {
 		},
 		ingredients = {
 			{"canister-empty", 1},
-			{"canister-oxygen", 1},
 		},
 		time = 5,
 		order = "2",

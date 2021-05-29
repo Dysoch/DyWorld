@@ -48,8 +48,8 @@ local Metal_Techs = {
 		},
 		ingredients = {
 			{"iron-plate", 1},
-			{"copper-plate", 10},
-			{"tin-plate", 10},
+			{"copper-plate", 5},
+			{"tin-plate", 5},
 		},
 		time = 10,
 		order = "1",
@@ -62,8 +62,8 @@ local Metal_Techs = {
 			"metallurgy-1",
 		},
 		ingredients = {
-			{"copper-ore", 15},
-			{"copper-plate", 10},
+			{"copper-ore", 6},
+			{"copper-plate", 5},
 		},
 		time = 15,
 		order = "1",
@@ -76,9 +76,9 @@ local Metal_Techs = {
 			"metallurgy-2",
 		},
 		ingredients = {
-			{"limestone", 15},
-			{"iron-ore", 15},
-			{"iron-plate", 10},
+			{"limestone", 10},
+			{"iron-ore", 8},
+			{"iron-plate", 6},
 		},
 		time = 20,
 		order = "1",
@@ -91,7 +91,7 @@ local Metal_Techs = {
 			"metallurgy-1",
 		},
 		ingredients = {
-			{"tin-ore", 15},
+			{"tin-ore", 10},
 			{"tin-plate", 5},
 		},
 		time = 15,
@@ -107,7 +107,7 @@ local Metal_Techs = {
 			"advanced-tin-processing",
 		},
 		ingredients = {
-			{"bronze-plate", 25},
+			{"bronze-plate", 12},
 		},
 		time = 60,
 		order = "1",
@@ -121,9 +121,9 @@ local Metal_Techs = {
 			"advanced-iron-processing",
 		},
 		ingredients = {
-			{"limestone", 15},
-			{"coal", 15},
-			{"iron-plate", 10},
+			{"limestone", 10},
+			{"coal", 8},
+			{"iron-plate", 6},
 		},
 		time = 5,
 		order = "1",
@@ -182,9 +182,9 @@ local Metal_Techs = {
 			"steel-processing",
 		},
 		ingredients = {
-			{"limestone", 15},
-			{"coal", 15},
-			{"steel-plate", 10},
+			{"limestone", 10},
+			{"coal", 8},
+			{"steel-plate", 6},
 		},
 		time = 25,
 		order = "1",
@@ -193,7 +193,7 @@ local Metal_Techs = {
 	{
 		name = "automation-1",
 		icon = DyDs_path_tech_base.."automation-1.png",
-		count = 100,
+		count = 25,
 		prerequisites = {
 			"intermediates-1",
 		},
@@ -209,7 +209,7 @@ local Metal_Techs = {
 	{
 		name = "automation-2",
 		icon = DyDs_path_tech_base.."automation-1.png",
-		count = 100,
+		count = 50,
 		prerequisites = {
 			"intermediates-2",
 		},
@@ -242,7 +242,7 @@ local Metal_Techs = {
 	{
 		name = "intermediates-1",
 		icon = DyDs_path_tech.."intermediates.png",
-		count = 100,
+		count = 25,
 		prerequisites = {
 			"bronze-processing",
 		},
@@ -258,7 +258,7 @@ local Metal_Techs = {
 	{
 		name = "intermediates-2",
 		icon = DyDs_path_tech.."intermediates.png",
-		count = 100,
+		count = 50,
 		prerequisites = {
 			"filters-1",
 			"storage-1",
@@ -377,7 +377,7 @@ local Metal_Techs = {
 	{
 		name = "railway-2",
 		icon = DyDs_path_tech_base.."railway.png",
-		count = 100,
+		count = 75,
 		prerequisites = {
 			"railway-1",
 		},

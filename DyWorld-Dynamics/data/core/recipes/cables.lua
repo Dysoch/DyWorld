@@ -14,17 +14,6 @@ data:extend({
 	  energy_required = 2.5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "copper-plate", amount = 5},
-      },
-      result = "copper-cable",
-	  result_count = 5,
-	  energy_required = 5,
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -43,19 +32,6 @@ data:extend({
 	  energy_required = 1.5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "copper-plate", amount = 5},
-        {type = "item", name = "control-board-1", amount = 3},
-        {type = "item", name = "tin-plate", amount = 3},
-      },
-      result = "red-wire",
-	  result_count = 1,
-	  energy_required = 5,
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -72,19 +48,6 @@ data:extend({
       result = "green-wire",
 	  result_count = 2,
 	  energy_required = 1.5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "copper-plate", amount = 5},
-        {type = "item", name = "control-board-1", amount = 3},
-        {type = "item", name = "bronze-plate", amount = 3},
-      },
-      result = "green-wire",
-	  result_count = 1,
-	  energy_required = 5,
 	  enabled = false,
     },
   },

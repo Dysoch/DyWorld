@@ -19,21 +19,6 @@ data:extend({
 	  main_product = "quartz",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "granite", amount = 10 * ER_Mod},
-        {type = "fluid", name = "water", amount = 50 * ER_Mod},
-      },
-      results = 
-      {
-        {type = "item", name = "quartz", amount_min = 5, amount_max = 15},
-      },
-	  energy_required = 7.5 * ER_Mod,
-	  main_product = "quartz",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -52,21 +37,6 @@ data:extend({
         {type = "item", name = "concrete-powder", amount_min = 10, amount_max = 30},
       },
 	  energy_required = 30,
-	  main_product = "concrete-powder",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "granite", amount = 10 * ER_Mod},
-        {type = "item", name = "sand", amount = 50 * ER_Mod},
-      },
-      results = 
-      {
-        {type = "item", name = "concrete-powder", amount_min = 5, amount_max = 15},
-      },
-	  energy_required = 30 * ER_Mod,
 	  main_product = "concrete-powder",
 	  enabled = false,
     },
@@ -89,22 +59,6 @@ data:extend({
         {type = "item", name = "refined-concrete-powder", amount_min = 10, amount_max = 30},
       },
 	  energy_required = 30,
-	  main_product = "refined-concrete-powder",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "limestone", amount = 10 * ER_Mod},
-        {type = "item", name = "quartz", amount = 50 * ER_Mod},
-        {type = "item", name = "aluminium-plate", amount = 5 * ER_Mod},
-      },
-      results = 
-      {
-        {type = "item", name = "refined-concrete-powder", amount_min = 5, amount_max = 15},
-      },
-	  energy_required = 30 * ER_Mod,
 	  main_product = "refined-concrete-powder",
 	  enabled = false,
     },

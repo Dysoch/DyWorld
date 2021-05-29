@@ -20,26 +20,14 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 3},
-        {type = "item", name = "bronze-gear", amount = 1},
+        {type = "item", name = "tin-plate", amount = 2},
+        {type = "item", name = "control-board-1", amount = 2},
         {type = "item", name = "transport-belt-2", amount = 2},
+        {type = "item", name = "splitter-1", amount = 1},
       },
       result = "splitter-2",
 	  result_count = 1,
 	  energy_required = 2,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-plate", amount = 4},
-        {type = "item", name = "bronze-gear", amount = 1},
-        {type = "item", name = "transport-belt-2", amount = 2},
-      },
-      result = "splitter-2",
-	  result_count = 1,
-	  energy_required = 5,
 	  enabled = false,
     },
   },

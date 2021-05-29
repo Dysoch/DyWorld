@@ -17,20 +17,6 @@ data:extend({
 	  energy_required = 2.5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-plate", amount = 4*5},
-        {type = "item", name = "iron-plate", amount = 6*5},
-        {type = "item", name = "control-board-1", amount = 1*5},
-        {type = "item", name = "stone-brick", amount = 1*5},
-      },
-      result = "train-stop",
-	  result_count = 1,
-	  energy_required = 5,
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -46,18 +32,6 @@ data:extend({
       result = "rail",
 	  result_count = 1,
 	  energy_required = 1.5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "iron-plate", amount = 2*5},
-        {type = "item", name = "stone-brick", amount = 1*5},
-      },
-      result = "rail",
-	  result_count = 1,
-	  energy_required = 3,
 	  enabled = false,
     },
   },
@@ -79,20 +53,6 @@ data:extend({
 	  energy_required = 1.5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "glass", amount = 3*3},
-        {type = "item", name = "control-board-1", amount = 1*3},
-        {type = "item", name = "iron-plate", amount = 2*5},
-        {type = "item", name = "stone-brick", amount = 1*5},
-      },
-      result = "rail-signal",
-	  result_count = 1,
-	  energy_required = 3,
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -112,20 +72,6 @@ data:extend({
 	  energy_required = 1.5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "glass", amount = 3*3},
-        {type = "item", name = "control-board-1", amount = 1*3},
-        {type = "item", name = "iron-plate", amount = 2*5},
-        {type = "item", name = "stone-brick", amount = 1*5},
-      },
-      result = "rail-chain-signal",
-	  result_count = 1,
-	  energy_required = 3,
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -141,18 +87,6 @@ data:extend({
       result = "rail",
 	  result_count = 2,
 	  energy_required = 1.5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "steel-plate", amount = 2*5},
-        {type = "item", name = "stone-brick", amount = 1*5},
-      },
-      result = "rail",
-	  result_count = 2,
-	  energy_required = 3,
 	  enabled = false,
     },
   },
@@ -171,19 +105,6 @@ data:extend({
       result = "rail",
 	  result_count = 5,
 	  energy_required = 1.5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "steel-plate", amount = 2*5},
-        {type = "item", name = "titanium-plate", amount = 2*5},
-        {type = "item", name = "stone-brick", amount = 1*5},
-      },
-      result = "rail",
-	  result_count = 5,
-	  energy_required = 3,
 	  enabled = false,
     },
   },

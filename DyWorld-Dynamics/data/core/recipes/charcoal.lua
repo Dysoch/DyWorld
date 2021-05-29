@@ -15,17 +15,5 @@ data:extend({
 	  energy_required = 2.5,
 	  enabled = true,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "limestone", amount = 5},
-        {type = "item", name = "wood", amount = 15},
-      },
-      result = "charcoal",
-	  result_count = 5,
-	  energy_required = 5,
-	  enabled = true,
-    },
   },
 })

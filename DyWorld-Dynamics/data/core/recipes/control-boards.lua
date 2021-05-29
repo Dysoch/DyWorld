@@ -15,18 +15,6 @@ data:extend({
 	  energy_required = 2.5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "wood", amount = 2},
-        {type = "item", name = "tin-plate", amount = 2},
-      },
-      result = "control-board-1",
-	  result_count = 1,
-	  energy_required = 5,
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -45,21 +33,6 @@ data:extend({
       result = "control-board-2",
 	  result_count = 2,
 	  energy_required = 2.5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "green-wire", amount = 3},
-        {type = "item", name = "red-wire", amount = 3},
-        {type = "item", name = "copper-cable", amount = 5},
-        {type = "item", name = "steel-plate", amount = 10},
-        {type = "item", name = "plastic-bar", amount = 5},
-      },
-      result = "control-board-2",
-	  result_count = 1,
-	  energy_required = 5,
 	  enabled = false,
     },
   },

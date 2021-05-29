@@ -493,33 +493,33 @@ local Story = {
 						type_1 = "died", 
 						type_2 = "type", 
 						name = "unit", 
-						amount_needed = 5000,
+						amount_needed = 1000,
 						amount_done = 0,
 						done = false,
 					},
 					[2] = {
 						type_1 = "position", -- Northwest
 						done = false,
-						PosX = -1750,
-						PosY = -1750,
+						PosX = -1000,
+						PosY = -1000,
 					},
 					[3] = {
 						type_1 = "position", -- Northeast
 						done = false,
-						PosX = 1750,
-						PosY = -1750,
+						PosX = 1000,
+						PosY = -1000,
 					},
 					[4] = {
 						type_1 = "position", -- Southeast
 						done = false,
-						PosX = 1750,
-						PosY = 1750,
+						PosX = 1000,
+						PosY = 1000,
 					},
 					[5] = {
 						type_1 = "position", -- Southwest
 						done = false,
-						PosX = -1750,
-						PosY = 1750,
+						PosX = -1000,
+						PosY = 1000,
 					},
 				},
 			},

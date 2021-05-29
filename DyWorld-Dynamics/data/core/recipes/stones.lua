@@ -15,18 +15,6 @@ data:extend({
 	  energy_required = 5,
 	  enabled = true,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "limestone", amount = 20},
-        {type = "item", name = "lignite", amount = 1},
-      },
-      result = "stone-brick",
-	  result_count = 5,
-	  energy_required = 25,
-	  enabled = true,
-    },
   },
   {
     type = "recipe",
@@ -42,18 +30,6 @@ data:extend({
       result = "stone-brick",
 	  result_count = 5,
 	  energy_required = 5,
-	  enabled = true,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "granite", amount = 10},
-        {type = "item", name = "lignite", amount = 1},
-      },
-      result = "stone-brick",
-	  result_count = 5,
-	  energy_required = 25,
 	  enabled = true,
     },
   },
@@ -73,18 +49,6 @@ data:extend({
 	  energy_required = 5,
 	  enabled = true,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "sandstone", amount = 40},
-        {type = "item", name = "lignite", amount = 1},
-      },
-      result = "stone-brick",
-	  result_count = 5,
-	  energy_required = 25,
-	  enabled = true,
-    },
   },
   {
     type = "recipe",
@@ -100,18 +64,6 @@ data:extend({
       result = "stone-brick",
 	  result_count = 5,
 	  energy_required = 5,
-	  enabled = true,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "quartzite", amount = 50},
-        {type = "item", name = "lignite", amount = 1},
-      },
-      result = "stone-brick",
-	  result_count = 5,
-	  energy_required = 25,
 	  enabled = true,
     },
   },

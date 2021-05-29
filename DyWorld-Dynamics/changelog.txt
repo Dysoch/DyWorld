@@ -11,14 +11,19 @@ Date: 30. 05. 2021
     - Resized technology icons to correctly show again
     - Fixed stone appearing on destroyed stones as loot (affects Alien-Biomes as well)
     - Reduced Native sounds a bit
+    - Fixed recipes not showing correctly
+    - 
   Bugfixes:
     - Fixed Fluid technology requiring canisters while none are available
   Balancing:
-    - 
+    - Fixed recipes wrong ingredients
+    - Tweaked research costs
   Compatibility:
     - 
   Translations:
     - 
+  Story:
+    - Reduced objectives Act 2 Phase 4
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.90
 Date: 10. 12. 2020

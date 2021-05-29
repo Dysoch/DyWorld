@@ -15,18 +15,6 @@ data:extend({
 	  energy_required = 5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "iron-ore-impure", amount = 5},
-        {type = "item", name = "charcoal", amount = 1},
-      },
-      result = "iron-plate",
-	  result_count = 1,
-	  energy_required = 15,
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -41,17 +29,6 @@ data:extend({
       result = "copper-plate",
 	  result_count = 1,
 	  energy_required = 5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "copper-ore-impure", amount = 5},
-      },
-      result = "copper-plate",
-	  result_count = 1,
-	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -71,18 +48,6 @@ data:extend({
 	  energy_required = 5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "copper-ore-impure", amount = 21},
-        {type = "item", name = "tin-ore-impure", amount = 3},
-      },
-      result = "bronze-plate",
-	  result_count = 5,
-	  energy_required = 15,
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -97,17 +62,6 @@ data:extend({
       result = "tin-plate",
 	  result_count = 5,
 	  energy_required = 2.5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "tin-ore-impure", amount = 17},
-      },
-      result = "tin-plate",
-	  result_count = 5,
-	  energy_required = 15,
 	  enabled = false,
     },
   },

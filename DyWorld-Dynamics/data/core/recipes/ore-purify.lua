@@ -22,23 +22,6 @@ data:extend({
 	  main_product = "copper-ore",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "copper-ore-impure", amount = 10},
-        {type = "item", name = "canister-nitrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "nitrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "copper-ore", amount_min = 3, amount_max = 5},
-      },
-	  energy_required = 5*5,
-	  main_product = "copper-ore",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -59,23 +42,6 @@ data:extend({
         {type = "item", name = "iron-ore", amount_min = 6, amount_max = 10},
       },
 	  energy_required = 5,
-	  main_product = "iron-ore",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "iron-ore-impure", amount = 10},
-        {type = "item", name = "canister-water", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "oxygen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "iron-ore", amount_min = 3, amount_max = 5},
-      },
-	  energy_required = 5*5,
 	  main_product = "iron-ore",
 	  enabled = false,
     },
@@ -102,23 +68,6 @@ data:extend({
 	  main_product = "tin-ore",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "tin-ore-impure", amount = 10},
-        {type = "item", name = "canister-hydrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "tin-ore", amount_min = 3, amount_max = 5},
-      },
-	  energy_required = 5*5,
-	  main_product = "tin-ore",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -139,23 +88,6 @@ data:extend({
         {type = "item", name = "titanium-ore", amount_min = 6, amount_max = 10},
       },
 	  energy_required = 5,
-	  main_product = "titanium-ore",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "titanium-ore-impure", amount = 10},
-        {type = "item", name = "canister-hydrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "titanium-ore", amount_min = 3, amount_max = 5},
-      },
-	  energy_required = 5*5,
 	  main_product = "titanium-ore",
 	  enabled = false,
     },
@@ -182,23 +114,6 @@ data:extend({
 	  main_product = "aluminium-ore",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "aluminium-ore-impure", amount = 10},
-        {type = "item", name = "canister-hydrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "aluminium-ore", amount_min = 3, amount_max = 5},
-      },
-	  energy_required = 5*5,
-	  main_product = "aluminium-ore",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -219,23 +134,6 @@ data:extend({
         {type = "item", name = "magnesium-ore", amount_min = 6, amount_max = 10},
       },
 	  energy_required = 5,
-	  main_product = "magnesium-ore",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "magnesium-ore-impure", amount = 10},
-        {type = "item", name = "canister-nitrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "nitrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "magnesium-ore", amount_min = 3, amount_max = 5},
-      },
-	  energy_required = 5*5,
 	  main_product = "magnesium-ore",
 	  enabled = false,
     },
@@ -263,23 +161,6 @@ data:extend({
 	  main_product = "copper-ore",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "copper-ore-impure", amount = 100},
-        {type = "item", name = "canister-nitrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "nitrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "copper-ore", amount_min = 30, amount_max = 50},
-      },
-	  energy_required = 5*5,
-	  main_product = "copper-ore",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -300,23 +181,6 @@ data:extend({
         {type = "item", name = "iron-ore", amount_min = 60, amount_max = 100},
       },
 	  energy_required = 5,
-	  main_product = "iron-ore",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "iron-ore-impure", amount = 100},
-        {type = "item", name = "canister-water", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "oxygen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "iron-ore", amount_min = 30, amount_max = 50},
-      },
-	  energy_required = 5*5,
 	  main_product = "iron-ore",
 	  enabled = false,
     },
@@ -343,23 +207,6 @@ data:extend({
 	  main_product = "tin-ore",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "tin-ore-impure", amount = 100},
-        {type = "item", name = "canister-hydrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "tin-ore", amount_min = 30, amount_max = 50},
-      },
-	  energy_required = 5*5,
-	  main_product = "tin-ore",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -380,23 +227,6 @@ data:extend({
         {type = "item", name = "titanium-ore", amount_min = 60, amount_max = 100},
       },
 	  energy_required = 5,
-	  main_product = "titanium-ore",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "titanium-ore-impure", amount = 10},
-        {type = "item", name = "canister-hydrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "titanium-ore", amount_min = 30, amount_max = 50},
-      },
-	  energy_required = 5*5,
 	  main_product = "titanium-ore",
 	  enabled = false,
     },
@@ -423,23 +253,6 @@ data:extend({
 	  main_product = "aluminium-ore",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "aluminium-ore-impure", amount = 10},
-        {type = "item", name = "canister-hydrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "aluminium-ore", amount_min = 30, amount_max = 50},
-      },
-	  energy_required = 5*5,
-	  main_product = "aluminium-ore",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -460,23 +273,6 @@ data:extend({
         {type = "item", name = "magnesium-ore", amount_min = 60, amount_max = 100},
       },
 	  energy_required = 5,
-	  main_product = "magnesium-ore",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "magnesium-ore-impure", amount = 100},
-        {type = "item", name = "canister-nitrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "nitrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "magnesium-ore", amount_min = 30, amount_max = 50},
-      },
-	  energy_required = 5*5,
 	  main_product = "magnesium-ore",
 	  enabled = false,
     },
@@ -504,23 +300,6 @@ data:extend({
 	  main_product = "copper-ore",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "copper-ore-impure", amount = 1000},
-        {type = "item", name = "canister-nitrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "nitrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "copper-ore", amount_min = 300, amount_max = 500},
-      },
-	  energy_required = 5*5,
-	  main_product = "copper-ore",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -541,23 +320,6 @@ data:extend({
         {type = "item", name = "iron-ore", amount_min = 600, amount_max = 1000},
       },
 	  energy_required = 5,
-	  main_product = "iron-ore",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "iron-ore-impure", amount = 1000},
-        {type = "item", name = "canister-water", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "oxygen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "iron-ore", amount_min = 300, amount_max = 500},
-      },
-	  energy_required = 5*5,
 	  main_product = "iron-ore",
 	  enabled = false,
     },
@@ -584,23 +346,6 @@ data:extend({
 	  main_product = "tin-ore",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "tin-ore-impure", amount = 1000},
-        {type = "item", name = "canister-hydrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "tin-ore", amount_min = 300, amount_max = 500},
-      },
-	  energy_required = 5*5,
-	  main_product = "tin-ore",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -621,23 +366,6 @@ data:extend({
         {type = "item", name = "titanium-ore", amount_min = 600, amount_max = 1000},
       },
 	  energy_required = 5,
-	  main_product = "titanium-ore",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "titanium-ore-impure", amount = 100},
-        {type = "item", name = "canister-hydrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "titanium-ore", amount_min = 300, amount_max = 500},
-      },
-	  energy_required = 5*5,
 	  main_product = "titanium-ore",
 	  enabled = false,
     },
@@ -664,23 +392,6 @@ data:extend({
 	  main_product = "aluminium-ore",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "aluminium-ore-impure", amount = 100},
-        {type = "item", name = "canister-hydrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "aluminium-ore", amount_min = 300, amount_max = 500},
-      },
-	  energy_required = 5*5,
-	  main_product = "aluminium-ore",
-	  enabled = false,
-    },
   },
   {
     type = "recipe",
@@ -701,23 +412,6 @@ data:extend({
         {type = "item", name = "magnesium-ore", amount_min = 600, amount_max = 1000},
       },
 	  energy_required = 5,
-	  main_product = "magnesium-ore",
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "magnesium-ore-impure", amount = 1000},
-        {type = "item", name = "canister-nitrogen", amount = 10},
-      },
-      results = 
-      {
-        {type = "fluid", name = "nitrogen", amount = 50},
-        {type = "item", name = "canister-empty", amount = 10},
-        {type = "item", name = "magnesium-ore", amount_min = 300, amount_max = 500},
-      },
-	  energy_required = 5*5,
 	  main_product = "magnesium-ore",
 	  enabled = false,
     },

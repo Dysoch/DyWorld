@@ -1,8 +1,23 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.92
+Date: ??. 05. 2021
+  Features:
+    - 
+  Minor Features:
+    - 
+  Changes:
+    - 
+  Bugfixes:
+    - 
+  Balancing:
+    - 
+  Story:
+    - 
+  Compatibility:
+    - AAI-Industry is now compatible and required by DyWorld-Dynamics
+---------------------------------------------------------------------------------------------------
 Version: 0.7.91
 Date: 30. 05. 2021
-  Major Features:
-    - 
   Features:
     - Added new information to Informatron (enemy statistics)
   Minor Features:
@@ -12,16 +27,11 @@ Date: 30. 05. 2021
     - Fixed stone appearing on destroyed stones as loot (affects Alien-Biomes as well)
     - Reduced Native sounds a bit
     - Fixed recipes not showing correctly
-    - 
   Bugfixes:
     - Fixed Fluid technology requiring canisters while none are available
   Balancing:
     - Fixed recipes wrong ingredients
     - Tweaked research costs
-  Compatibility:
-    - 
-  Translations:
-    - 
   Story:
     - Reduced objectives Act 2 Phase 4
 ---------------------------------------------------------------------------------------------------

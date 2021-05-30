@@ -502,24 +502,28 @@ local Story = {
 						done = false,
 						PosX = -1000,
 						PosY = -1000,
+						HigherDis = true,
 					},
 					[3] = {
 						type_1 = "position", -- Northeast
 						done = false,
 						PosX = 1000,
 						PosY = -1000,
+						HigherDis = true,
 					},
 					[4] = {
 						type_1 = "position", -- Southeast
 						done = false,
 						PosX = 1000,
 						PosY = 1000,
+						HigherDis = true,
 					},
 					[5] = {
 						type_1 = "position", -- Southwest
 						done = false,
 						PosX = -1000,
 						PosY = 1000,
+						HigherDis = true,
 					},
 				},
 			},

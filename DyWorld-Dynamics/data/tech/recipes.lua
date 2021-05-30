@@ -3,6 +3,7 @@
 
 
 local Recipes = {
+	["aai-strongbox"] = {"copper-processing", "iron-processing", "tin-processing"},
 	["bloomery"] = {"copper-processing", "iron-processing", "tin-processing"},
 	["centrifuge"] = {"copper-processing", "iron-processing", "tin-processing"},
 	["bronze-pump"] = {"copper-processing", "iron-processing", "tin-processing"},
@@ -109,7 +110,6 @@ local Recipes = {
 	["logistic-robot-3"] = {"storage-7"},
 	["roboport-3"] = {"storage-7"},
 	
-	["aai-strongbox"] = {"storage-1"},
 	["aai-strongbox-passive-provider"] = {"storage-2"},
 	["aai-strongbox-storage"] = {"storage-2"},
 	["aai-strongbox-requester"] = {"storage-3"},

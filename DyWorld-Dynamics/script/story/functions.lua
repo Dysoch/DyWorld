@@ -185,9 +185,16 @@ function Story_Objectives(type, event, Posx, PosY)
 		elseif type == "position" then
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if (v.type_1 == "position" and v.done == false) then
-					if getDistance(Posx, PosY, v.PosX, v.PosY) <= 10 then
-						v.done = true
-						global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+					if v.HigherDis then
+						if getDistance(Posx, PosY, v.PosX, v.PosY) <= 100 then
+							v.done = true
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+						end
+					else
+						if getDistance(Posx, PosY, v.PosX, v.PosY) <= 10 then
+							v.done = true
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+						end
 					end
 				end
 			end

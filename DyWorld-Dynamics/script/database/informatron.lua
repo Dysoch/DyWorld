@@ -268,15 +268,23 @@ function dyworld_page_content(page_name, player_index, element)
   end
   if page_name == "small_arachnid" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_small_arachnid", global.dyworld.game_stats.killed_names["small-biter"]}}
+    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+    image_container.add{type="button", name="image_1", style="small_biter_1"}
   end
   if page_name == "medium_arachnid" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_medium_arachnid", global.dyworld.game_stats.killed_names["medium-biter"]}}
+    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+    image_container.add{type="button", name="image_1", style="medium_biter_1"}
   end
   if page_name == "big_arachnid" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_big_arachnid", global.dyworld.game_stats.killed_names["big-biter"]}}
+    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+    image_container.add{type="button", name="image_1", style="big_biter_1"}
   end
   if page_name == "behemoth_arachnid" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_arachnid", global.dyworld.game_stats.killed_names["behemoth-biter"]}}
+    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+    image_container.add{type="button", name="image_1", style="behemoth_biter_1"}
   end
   
   if page_name == "myriapods" then
@@ -284,15 +292,23 @@ function dyworld_page_content(page_name, player_index, element)
   end
   if page_name == "small_myriapods" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_small_myriapods", global.dyworld.game_stats.killed_names["small-spitter"]}}
+    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+    image_container.add{type="button", name="image_1", style="small_spitter_1"}
   end
   if page_name == "medium_myriapods" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_medium_myriapods", global.dyworld.game_stats.killed_names["medium-spitter"]}}
+    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+    image_container.add{type="button", name="image_1", style="medium_spitter_1"}
   end
   if page_name == "big_myriapods" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_big_myriapods", global.dyworld.game_stats.killed_names["big-spitter"]}}
+    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+    image_container.add{type="button", name="image_1", style="big_spitter_1"}
   end
   if page_name == "behemoth_myriapods" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_myriapods", global.dyworld.game_stats.killed_names["behemoth-spitter"]}}
+    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+    image_container.add{type="button", name="image_1", style="behemoth_spitter_1"}
   end
 
   --[[if page_name == "penguin" then

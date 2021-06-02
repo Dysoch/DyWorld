@@ -1,18 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.92
 Date: ??. 05. 2021
+  Major Features:
+    - Space Exploration is now required to run DyWorld-Dynamics. Compatibility is ongoing, but it works and plays normally
   Features:
     - Added a new mod (DyWorld-Compatibility-Patcher) as required mod which patches other mods
-  Minor Features:
-    - 
   Changes:
     - Massive change to the way resources are generated. All old resources are converted to the new ones (as done for compatibility with Space Exploration)
-  Bugfixes:
-    - 
-  Balancing:
-    - 
-  Story:
-    - 
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.91
 Date: 30. 05. 2021

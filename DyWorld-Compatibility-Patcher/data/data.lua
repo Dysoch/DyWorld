@@ -16,5 +16,6 @@ require("data.entity.units")
 require("data.items.space-exploration")
 
 -- Recipes --
+require("data.recipes.base")
 require("data.recipes.aai-containers")
 require("data.recipes.space-exploration")

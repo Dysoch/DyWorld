@@ -33,17 +33,6 @@ data:extend({
 	  enabled = false,
 	  energy_required = 1,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-plate", amount = 6},
-      },
-      result = "bronze-pipe",
-      result_count = 1,
-	  enabled = false,
-	  energy_required = 5,
-    },
   },
   {
     type = "item",
@@ -70,47 +59,6 @@ data:extend({
       result_count = 2,
 	  enabled = false,
 	  energy_required = 1,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-pipe", amount = 10},
-        {type = "item", name = "bronze-plate", amount = 7},
-      },
-      result = "bronze-pipe-to-ground",
-      result_count = 2,
-	  enabled = false,
-	  energy_required = 5,
-    },
-  },
-  {
-    type = "recipe",
-    name = "offshore-pump",
-	category = "assembling-tier-1",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-pipe", amount = 1},
-        {type = "item", name = "bronze-plate", amount = 5},
-      },
-      result = "offshore-pump",
-      result_count = 1,
-	  enabled = false,
-	  energy_required = 1,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-pipe", amount = 1},
-        {type = "item", name = "bronze-plate", amount = 15},
-      },
-      result = "offshore-pump",
-      result_count = 1,
-	  enabled = false,
-	  energy_required = 5,
     },
   },
 })

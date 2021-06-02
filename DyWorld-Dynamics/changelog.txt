@@ -7,7 +7,10 @@ Date: 02. 06. 2021
     - 
   Changes:
     - 
+  Balancing:
+    - Fixed recipe of Offshore Pump
   Bugfixes:
+    - Fixed issue with inventory searchbar closing while one of DyWorld's GUI was open
     - Fixed issue with inventory searchbar closing while one of DyWorld's GUI was open
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.92

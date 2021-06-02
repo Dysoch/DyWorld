@@ -28,6 +28,8 @@ Story_Recipes  = {
 	----- Act 1, Phase 4 -----
 	["basic-treefarm"] = {act = 1, phase = 4},
 	["offshore-pump"] = {act = 1, phase = 4},
+	["burner-turbine"] = {act = 1, phase = 4}, 
+	["basic-power-pole"] = {act = 1, phase = 4},
 	["bronze-pipe"] = {act = 1, phase = 4},
 	["bronze-pipe-to-ground"] = {act = 1, phase = 4},
 	["basic-repair-pack"] = {act = 1, phase = 4},
@@ -71,7 +73,6 @@ Story_Recipes  = {
 	["basic-electric-drill"] = {act = 1, phase = 10},
 	["basic-boiler"] = {act = 1, phase = 10},
 	["basic-steam-engine"] = {act = 1, phase = 10},
-	["basic-power-pole"] = {act = 1, phase = 10},
 	["solar-panel-equipment"] = {act = 1, phase = 10},
 	["belt-immunity-equipment"] = {act = 1, phase = 10},
 	
@@ -87,11 +88,5 @@ Story_Recipes  = {
 	
 	----- Act 3, Phase 1 -----
 	["lab-3"] = {act = 3, phase = 1},
-	
-	----- Act 4, Phase 1 -----
-	["lab-4"] = {act = 4, phase = 1},
-	
-	----- Act 5, Phase 1 -----
-	["lab-5"] = {act = 5, phase = 1},
 	
 }

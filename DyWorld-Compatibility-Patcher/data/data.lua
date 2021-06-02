@@ -11,6 +11,7 @@ require("data.entity.player")
 require("data.entity.rocks")
 require("data.entity.trees")
 require("data.entity.units")
+require("data.entity.aai-industry")
 
 -- Items --
 require("data.items.space-exploration")
@@ -18,4 +19,5 @@ require("data.items.space-exploration")
 -- Recipes --
 require("data.recipes.base")
 require("data.recipes.aai-containers")
+require("data.recipes.aai-industry")
 require("data.recipes.space-exploration")

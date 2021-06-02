@@ -26,25 +26,12 @@ data:extend({
       ingredients =
       {
         {type = "item", name = "wood", amount = 4},
-        {type = "item", name = "iron-plate", amount = 1},
-        {type = "item", name = "copper-cable", amount = 2},
+        {type = "item", name = "bronze-plate", amount = 1},
       },
       result = "basic-power-pole",
       result_count = 4,
 	  enabled = false,
 	  energy_required = 1,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "wood", amount = 4*3},
-        {type = "item", name = "iron-plate", amount = 1*5},
-        {type = "item", name = "copper-cable", amount = 2*4},
-      },
-      result = "basic-power-pole",
-	  enabled = false,
-	  energy_required = 10,
     },
   },
 })

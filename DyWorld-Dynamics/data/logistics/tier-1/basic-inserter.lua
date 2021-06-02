@@ -34,18 +34,5 @@ data:extend({
 	  energy_required = 1,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "iron-plate", amount = 12},
-        {type = "item", name = "bronze-gear", amount = 6},
-        {type = "item", name = "control-board-1", amount = 3},
-      },
-      result = "basic-inserter",
-	  result_count = 1,
-	  energy_required = 5,
-	  enabled = false,
-    },
   },
 })

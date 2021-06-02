@@ -41,3 +41,7 @@ Bronze_Color = {126, 112, 109}
 Titanium_Color = {57, 61, 112}
 Magnesium_Color = {92, 114, 208}
 Aluminium_Color = {170, 170, 170}
+
+Dy_Exclude_Recipes = {
+	["burner-turbine"] = 1, 
+}

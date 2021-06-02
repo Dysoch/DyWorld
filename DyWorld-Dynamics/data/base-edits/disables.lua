@@ -3,6 +3,16 @@
 
 
 
+-- Remove Recipes --
+for k,v in pairs(data.raw.recipe) do
+	if Dy_Exclude_Recipes[v.name] then
+		Dy_Log("Excluded Recipe from Hider ("..v.name..")")
+	else
+		data.raw.recipe[v.name].DyWorld_Hider = true
+		--Dy_Log("Recipe Hidden ("..v.name..")")
+	end
+end
+
 -- Tech --
 for NAME in pairs(data.raw.technology) do
 	--data.raw.technology[NAME] = nil
@@ -36,11 +46,6 @@ for k,v in pairs(Remove_Achievements) do
 	end
 end
 
--- Remove Recipes --
-for NAME in pairs(data.raw.recipe) do
-	--data.raw.recipe[NAME] = nil
-	data.raw.recipe[NAME].DyWorld_Hider = true
-end
 
 -- Removed Recipes from Prod Modules --
 for k,v in pairs(data.raw.module) do

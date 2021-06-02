@@ -38,6 +38,7 @@ data:extend(
     },
     order = params.order,
 	upgrade = false,
+	DyWorld_Hider = false,
   },
 })
 end

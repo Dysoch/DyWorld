@@ -286,39 +286,11 @@ data:extend({
           -- "d" is available for another resource, but isn't used for now.
 
   
- ---------- IRON ----------
- 
-  
+ --- IRON ---
+
   resource_ore(
     {
-      name = "iron-ore-10",
-	  minable = "iron-ore",
-	  minable_probability = 0.1,
-      order = "c",
-      color = Iron_Color,
-      map_color = Iron_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Iron_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-	  base_density = 10,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = Iron_Spot, 
-	  autoplace_control_name = "deposit-iron",
-	  base_spots_per_km2 = Iron_Base_Per_KM,
-	  random_spot_size_minimum = Iron_Random_Min,
-	  random_spot_size_maximum = Iron_Random_Max,
-	  minimum_richness = Iron_Richness,
-	  patch_set_name = "iron",
-    }
-  ),
-  resource_ore(
-    {
-      name = "iron-ore-20",
+      name = "iron-ore-1",
 	  minable = "iron-ore",
 	  minable_probability = 0.2,
       order = "c",
@@ -335,7 +307,7 @@ data:extend({
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
       candidate_spot_count = Iron_Spot, 
-	  autoplace_control_name = "deposit-iron",
+	  autoplace_control_name = "iron-ore-1",
 	  base_spots_per_km2 = Iron_Base_Per_KM,
 	  random_spot_size_minimum = Iron_Random_Min,
 	  random_spot_size_maximum = Iron_Random_Max,
@@ -345,61 +317,7 @@ data:extend({
   ),
   resource_ore(
     {
-      name = "iron-ore-30",
-	  minable = "iron-ore",
-	  minable_probability = 0.3,
-      order = "c",
-      color = Iron_Color,
-      map_color = Iron_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Iron_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-	  base_density = 10,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = Iron_Spot, 
-	  autoplace_control_name = "deposit-iron",
-	  base_spots_per_km2 = Iron_Base_Per_KM,
-	  random_spot_size_minimum = Iron_Random_Min,
-	  random_spot_size_maximum = Iron_Random_Max,
-	  minimum_richness = Iron_Richness,
-	  patch_set_name = "iron",
-    }
-  ),
-  resource_ore(
-    {
-      name = "iron-ore-40",
-	  minable = "iron-ore",
-	  minable_probability = 0.4,
-      order = "c",
-      color = Iron_Color,
-      map_color = Iron_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Iron_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-	  base_density = 10,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = Iron_Spot, 
-	  autoplace_control_name = "deposit-iron",
-	  base_spots_per_km2 = Iron_Base_Per_KM,
-	  random_spot_size_minimum = Iron_Random_Min,
-	  random_spot_size_maximum = Iron_Random_Max,
-	  minimum_richness = Iron_Richness,
-	  patch_set_name = "iron",
-    }
-  ),
-  resource_ore(
-    {
-      name = "iron-ore-50",
+      name = "iron-ore-2",
 	  minable = "iron-ore",
 	  minable_probability = 0.5,
       order = "c",
@@ -411,12 +329,12 @@ data:extend({
 	  category = "resource-solid-tier-1",
     },
     {
-      has_starting_area_placement = false,
+      has_starting_area_placement = true,
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
       candidate_spot_count = Iron_Spot, 
-	  autoplace_control_name = "deposit-iron",
+	  autoplace_control_name = "iron-ore-2",
 	  base_spots_per_km2 = Iron_Base_Per_KM,
 	  random_spot_size_minimum = Iron_Random_Min,
 	  random_spot_size_maximum = Iron_Random_Max,
@@ -426,61 +344,7 @@ data:extend({
   ),
   resource_ore(
     {
-      name = "iron-ore-60",
-	  minable = "iron-ore",
-	  minable_probability = 0.6,
-      order = "c",
-      color = Iron_Color,
-      map_color = Iron_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Iron_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-	  base_density = 10,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = Iron_Spot, 
-	  autoplace_control_name = "deposit-iron",
-	  base_spots_per_km2 = Iron_Base_Per_KM,
-	  random_spot_size_minimum = Iron_Random_Min,
-	  random_spot_size_maximum = Iron_Random_Max,
-	  minimum_richness = Iron_Richness,
-	  patch_set_name = "iron",
-    }
-  ),
-  resource_ore(
-    {
-      name = "iron-ore-70",
-	  minable = "iron-ore",
-	  minable_probability = 0.7,
-      order = "c",
-      color = Iron_Color,
-      map_color = Iron_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Iron_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-	  base_density = 10,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = Iron_Spot, 
-	  autoplace_control_name = "deposit-iron",
-	  base_spots_per_km2 = Iron_Base_Per_KM,
-	  random_spot_size_minimum = Iron_Random_Min,
-	  random_spot_size_maximum = Iron_Random_Max,
-	  minimum_richness = Iron_Richness,
-	  patch_set_name = "iron",
-    }
-  ),
-  resource_ore(
-    {
-      name = "iron-ore-80",
+      name = "iron-ore-3",
 	  minable = "iron-ore",
 	  minable_probability = 0.8,
       order = "c",
@@ -497,7 +361,7 @@ data:extend({
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
       candidate_spot_count = Iron_Spot, 
-	  autoplace_control_name = "deposit-iron",
+	  autoplace_control_name = "iron-ore-3",
 	  base_spots_per_km2 = Iron_Base_Per_KM,
 	  random_spot_size_minimum = Iron_Random_Min,
 	  random_spot_size_maximum = Iron_Random_Max,
@@ -505,17 +369,20 @@ data:extend({
 	  patch_set_name = "iron",
     }
   ),
+  
+  --- COPPER ---
+  
   resource_ore(
     {
-      name = "iron-ore-90",
-	  minable = "iron-ore",
-	  minable_probability = 0.9,
+      name = "copper-ore-1",
+	  minable = "copper-ore",
+	  minable_probability = 0.2,
       order = "c",
-      color = Iron_Color,
-      map_color = Iron_Color,
+      color = Copper_Color,
+      map_color = Copper_Color,
       mining_time = 1,
       walking_sound = ore_sound,
-      mining_visualisation_tint = Iron_Color,
+      mining_visualisation_tint = Copper_Color,
 	  category = "resource-solid-tier-1",
     },
     {
@@ -523,42 +390,8 @@ data:extend({
 	  base_density = 10,
       regular_rq_factor_multiplier = 1.10,
       starting_rq_factor_multiplier = 1.5,
-      candidate_spot_count = Iron_Spot, 
-	  autoplace_control_name = "deposit-iron",
-	  base_spots_per_km2 = Iron_Base_Per_KM,
-	  random_spot_size_minimum = Iron_Random_Min,
-	  random_spot_size_maximum = Iron_Random_Max,
-	  minimum_richness = Iron_Richness,
-	  patch_set_name = "iron",
-    }
-  ),
-  
-})
---end
- ---------- COPPER ----------
-
-data:extend({ 
-  
-  resource_ore(
-    {
-      name = "copper-ore-5",
-	  minable = "copper-ore",
-	  minable_probability = 0.05,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = true,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
       candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
+	  autoplace_control_name = "copper-ore-1",
 	  base_spots_per_km2 = Copper_Base_Per_KM,
 	  random_spot_size_minimum = Copper_Random_Min,
 	  random_spot_size_maximum = Copper_Random_Max,
@@ -568,386 +401,145 @@ data:extend({
   ),
   resource_ore(
     {
-      name = "copper-ore-15",
+      name = "copper-ore-2",
 	  minable = "copper-ore",
-	  minable_probability = 0.15,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
-	  base_spots_per_km2 = Copper_Base_Per_KM,
-	  random_spot_size_minimum = Copper_Random_Min,
-	  random_spot_size_maximum = Copper_Random_Max,
-	  minimum_richness = Copper_Richness,
-	  patch_set_name = "copper",
-    }
-  ),
-  resource_ore(
-    {
-      name = "copper-ore-25",
-	  minable = "copper-ore",
-	  minable_probability = 0.25,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
-	  base_spots_per_km2 = Copper_Base_Per_KM,
-	  random_spot_size_minimum = Copper_Random_Min,
-	  random_spot_size_maximum = Copper_Random_Max,
-	  minimum_richness = Copper_Richness,
-	  patch_set_name = "copper",
-    }
-  ),
-  resource_ore(
-    {
-      name = "copper-ore-35",
-	  minable = "copper-ore",
-	  minable_probability = 0.35,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = true,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
-	  base_spots_per_km2 = Copper_Base_Per_KM,
-	  random_spot_size_minimum = Copper_Random_Min,
-	  random_spot_size_maximum = Copper_Random_Max,
-	  minimum_richness = Copper_Richness,
-	  patch_set_name = "copper",
-    }
-  ),
-  resource_ore(
-    {
-      name = "copper-ore-45",
-	  minable = "copper-ore",
-	  minable_probability = 0.45,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
-	  base_spots_per_km2 = Copper_Base_Per_KM,
-	  random_spot_size_minimum = Copper_Random_Min,
-	  random_spot_size_maximum = Copper_Random_Max,
-	  minimum_richness = Copper_Richness,
-	  patch_set_name = "copper",
-    }
-  ),
-  resource_ore(
-    {
-      name = "copper-ore-55",
-	  minable = "copper-ore",
-	  minable_probability = 0.55,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = true,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
-	  base_spots_per_km2 = Copper_Base_Per_KM,
-	  random_spot_size_minimum = Copper_Random_Min,
-	  random_spot_size_maximum = Copper_Random_Max,
-	  minimum_richness = Copper_Richness,
-	  patch_set_name = "copper",
-    }
-  ),
-  resource_ore(
-    {
-      name = "copper-ore-65",
-	  minable = "copper-ore",
-	  minable_probability = 0.65,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
-	  base_spots_per_km2 = Copper_Base_Per_KM,
-	  random_spot_size_minimum = Copper_Random_Min,
-	  random_spot_size_maximum = Copper_Random_Max,
-	  minimum_richness = Copper_Richness,
-	  patch_set_name = "copper",
-    }
-  ),
-  resource_ore(
-    {
-      name = "copper-ore-75",
-	  minable = "copper-ore",
-	  minable_probability = 0.75,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
-	  base_spots_per_km2 = Copper_Base_Per_KM,
-	  random_spot_size_minimum = Copper_Random_Min,
-	  random_spot_size_maximum = Copper_Random_Max,
-	  minimum_richness = Copper_Richness,
-	  patch_set_name = "copper",
-    }
-  ),
-  resource_ore(
-    {
-      name = "copper-ore-85",
-	  minable = "copper-ore",
-	  minable_probability = 0.85,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
-	  base_spots_per_km2 = Copper_Base_Per_KM,
-	  random_spot_size_minimum = Copper_Random_Min,
-	  random_spot_size_maximum = Copper_Random_Max,
-	  minimum_richness = Copper_Richness,
-	  patch_set_name = "copper",
-    }
-  ),
-  resource_ore(
-    {
-      name = "copper-ore-95",
-	  minable = "copper-ore",
-	  minable_probability = 0.95,
-      order = "c",
-      color = Copper_Color,
-      map_color = Copper_Color,
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Copper_Color,
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.10,
-      starting_rq_factor_multiplier = 1.2,
-      candidate_spot_count = Copper_Spot, 
-	  autoplace_control_name = "deposit-copper",
-	  base_spots_per_km2 = Copper_Base_Per_KM,
-	  random_spot_size_minimum = Copper_Random_Min,
-	  random_spot_size_maximum = Copper_Random_Max,
-	  minimum_richness = Copper_Richness,
-	  patch_set_name = "copper",
-    }
-  ),
-  
- ---------- COAL ----------
- 
-  
-  resource_coal(
-    {
-      name = "coal-25",
-	  minable = "coal",
-	  minable_probability = 0.25,
-      order = "c",
-      color = {0, 0, 0},
-      map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0, 0.25},
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.0,
-      starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-coal",
-    }
-  ),
-  resource_coal(
-    {
-      name = "coal-40",
-	  minable = "coal",
-	  minable_probability = 0.4,
-      order = "c",
-      color = {0, 0, 0},
-      map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0, 0.40},
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = true,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.0,
-      starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-coal",
-    }
-  ),
-  resource_coal(
-    {
-      name = "coal-50",
-	  minable = "coal",
 	  minable_probability = 0.5,
       order = "c",
-      color = {0, 0, 0},
-      map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0, 0.50},
+      color = Copper_Color,
+      map_color = Copper_Color,
       mining_time = 1,
       walking_sound = ore_sound,
-      mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.0,
-      starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-coal",
-    }
-  ),
-  resource_coal(
-    {
-      name = "coal-60",
-	  minable = "coal",
-	  minable_probability = 0.6,
-      order = "c",
-      color = {0, 0, 0},
-      map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0, 0.60},
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
-	  category = "resource-solid-tier-1",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.0,
-      starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-coal",
-    }
-  ),
-  resource_coal(
-    {
-      name = "coal-75",
-	  minable = "coal",
-	  minable_probability = 0.75,
-      order = "c",
-      color = {0, 0, 0},
-      map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0, 0.75},
-      mining_time = 1,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
+      mining_visualisation_tint = Copper_Color,
 	  category = "resource-solid-tier-1",
     },
     {
       has_starting_area_placement = true,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.0,
-      starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-coal",
+	  base_density = 10,
+      regular_rq_factor_multiplier = 1.10,
+      starting_rq_factor_multiplier = 1.5,
+      candidate_spot_count = Copper_Spot, 
+	  autoplace_control_name = "copper-ore-2",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
-  resource_coal(
+  resource_ore(
     {
-      name = "coal-87",
-	  minable = "coal",
-	  minable_probability = 0.87,
+      name = "copper-ore-3",
+	  minable = "copper-ore",
+	  minable_probability = 0.8,
       order = "c",
-      color = {0, 0, 0},
-      map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0, 0.87},
+      color = Copper_Color,
+      map_color = Copper_Color,
       mining_time = 1,
       walking_sound = ore_sound,
-      mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
+      mining_visualisation_tint = Copper_Color,
 	  category = "resource-solid-tier-1",
     },
     {
       has_starting_area_placement = false,
-      base_density = 8,
-      regular_rq_factor_multiplier = 1.0,
-      starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-coal",
+	  base_density = 10,
+      regular_rq_factor_multiplier = 1.10,
+      starting_rq_factor_multiplier = 1.5,
+      candidate_spot_count = Copper_Spot, 
+	  autoplace_control_name = "copper-ore-3",
+	  base_spots_per_km2 = Copper_Base_Per_KM,
+	  random_spot_size_minimum = Copper_Random_Min,
+	  random_spot_size_maximum = Copper_Random_Max,
+	  minimum_richness = Copper_Richness,
+	  patch_set_name = "copper",
     }
   ),
   
- ---------- STONES ----------
- 
+  --- TIN ---
+  
+  resource_ore(
+    {
+      name = "tin-ore-1",
+	  minable = "tin-ore",
+	  minable_probability = 0.2,
+      order = "c",
+      color = Tin_Color,
+      map_color = Tin_Color,
+      mining_time = 1,
+      walking_sound = ore_sound,
+      mining_visualisation_tint = Tin_Color,
+	  category = "resource-solid-tier-1",
+    },
+    {
+      has_starting_area_placement = true,
+	  base_density = 10,
+      regular_rq_factor_multiplier = 1.10,
+      starting_rq_factor_multiplier = 1.5,
+      candidate_spot_count = Tin_Spot, 
+	  autoplace_control_name = "tin-ore-1",
+	  base_spots_per_km2 = Tin_Base_Per_KM,
+	  random_spot_size_minimum = Tin_Random_Min,
+	  random_spot_size_maximum = Tin_Random_Max,
+	  minimum_richness = Tin_Richness,
+	  patch_set_name = "tin",
+    }
+  ),
+  resource_ore(
+    {
+      name = "tin-ore-2",
+	  minable = "tin-ore",
+	  minable_probability = 0.5,
+      order = "c",
+      color = Tin_Color,
+      map_color = Tin_Color,
+      mining_time = 1,
+      walking_sound = ore_sound,
+      mining_visualisation_tint = Tin_Color,
+	  category = "resource-solid-tier-1",
+    },
+    {
+      has_starting_area_placement = false,
+	  base_density = 10,
+      regular_rq_factor_multiplier = 1.10,
+      starting_rq_factor_multiplier = 1.5,
+      candidate_spot_count = Tin_Spot, 
+	  autoplace_control_name = "tin-ore-2",
+	  base_spots_per_km2 = Tin_Base_Per_KM,
+	  random_spot_size_minimum = Tin_Random_Min,
+	  random_spot_size_maximum = Tin_Random_Max,
+	  minimum_richness = Tin_Richness,
+	  patch_set_name = "tin",
+    }
+  ),
+  resource_ore(
+    {
+      name = "tin-ore-3",
+	  minable = "tin-ore",
+	  minable_probability = 0.8,
+      order = "c",
+      color = Tin_Color,
+      map_color = Tin_Color,
+      mining_time = 1,
+      walking_sound = ore_sound,
+      mining_visualisation_tint = Tin_Color,
+	  category = "resource-solid-tier-1",
+    },
+    {
+      has_starting_area_placement = false,
+	  base_density = 10,
+      regular_rq_factor_multiplier = 1.10,
+      starting_rq_factor_multiplier = 1.5,
+      candidate_spot_count = Tin_Spot, 
+	  autoplace_control_name = "tin-ore-3",
+	  base_spots_per_km2 = Tin_Base_Per_KM,
+	  random_spot_size_minimum = Tin_Random_Min,
+	  random_spot_size_maximum = Tin_Random_Max,
+	  minimum_richness = Tin_Richness,
+	  patch_set_name = "tin",
+    }
+  ),
+  
+  --- STONES ---
+  
   resource(
     {
       name = "limestone",
@@ -965,7 +557,7 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-stone",
+	  autoplace_control_name = "limestone",
     }
   ),
   resource(
@@ -985,7 +577,7 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-stone",
+	  autoplace_control_name = "quartzite",
     }
   ),
   resource(
@@ -1005,7 +597,7 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-stone",
+	  autoplace_control_name = "granite",
     }
   ),
   resource(
@@ -1025,7 +617,7 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-stone",
+	  autoplace_control_name = "sandstone",
     }
   ),
   
@@ -1049,145 +641,76 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "deposit-stone",
+	  autoplace_control_name = "treefarm",
     }
   ),
   
- ---------- TIN ----------
+  --- COAL ---
   
-  resource_ore(
+  resource_coal(
     {
-      name = "tin-ore-20",
-	  minable = "tin-ore",
-	  minable_probability = 0.20,
-      order = "b",
-      color = Tin_Color,
-      map_color = Tin_Color,
-      mining_time = 0.5,
+      name = "coal-1",
+	  minable = "coal",
+	  minable_probability = 0.30,
+      order = "c",
+      color = {0, 0, 0},
+      map_color = {0, 0, 0},
+      mining_visualisation_tint = {0, 0, 0, 0.87},
+      mining_time = 1,
       walking_sound = ore_sound,
-      mining_visualisation_tint = Tin_Color,
-	  category = "resource-solid-tier-0",
-    },
-    {
-      has_starting_area_placement = false,
-      base_density = 4,
-      regular_rq_factor_multiplier = 1.0,
-      starting_rq_factor_multiplier = 1.1,
-      candidate_spot_count = Tin_Spot, 
-	  autoplace_control_name = "deposit-tin",
-	  base_spots_per_km2 = Tin_Base_Per_KM,
-	  random_spot_size_minimum = Tin_Random_Min,
-	  random_spot_size_maximum = Tin_Random_Max,
-	  minimum_richness = Tin_Richness,
-	  patch_set_name = "tin",
-    }
-  ),
-  resource_ore(
-    {
-      name = "tin-ore-40",
-	  minable = "tin-ore",
-	  minable_probability = 0.40,
-      order = "b",
-      color = Tin_Color,
-      map_color = Tin_Color,
-      mining_time = 0.5,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Tin_Color,
-	  category = "resource-solid-tier-0",
+      mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
+	  category = "resource-solid-tier-1",
     },
     {
       has_starting_area_placement = true,
-      base_density = 4,
+      base_density = 8,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
-      candidate_spot_count = Tin_Spot, 
-	  autoplace_control_name = "deposit-tin",
-	  base_spots_per_km2 = Tin_Base_Per_KM,
-	  random_spot_size_minimum = Tin_Random_Min,
-	  random_spot_size_maximum = Tin_Random_Max,
-	  minimum_richness = Tin_Richness,
-	  patch_set_name = "tin",
+	  autoplace_control_name = "coal-1",
     }
   ),
-  resource_ore(
+  resource_coal(
     {
-      name = "tin-ore-60",
-	  minable = "tin-ore",
+      name = "coal-2",
+	  minable = "coal",
 	  minable_probability = 0.60,
-      order = "b",
-      color = Tin_Color,
-      map_color = Tin_Color,
-      mining_time = 0.5,
+      order = "c",
+      color = {0, 0, 0},
+      map_color = {0, 0, 0},
+      mining_visualisation_tint = {0, 0, 0, 0.87},
+      mining_time = 1,
       walking_sound = ore_sound,
-      mining_visualisation_tint = Tin_Color,
-	  category = "resource-solid-tier-0",
+      mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
+	  category = "resource-solid-tier-1",
     },
     {
       has_starting_area_placement = false,
-      base_density = 4,
+      base_density = 8,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
-      candidate_spot_count = Tin_Spot, 
-	  autoplace_control_name = "deposit-tin",
-	  base_spots_per_km2 = Tin_Base_Per_KM,
-	  random_spot_size_minimum = Tin_Random_Min,
-	  random_spot_size_maximum = Tin_Random_Max,
-	  minimum_richness = Tin_Richness,
-	  patch_set_name = "tin",
+	  autoplace_control_name = "coal-2",
     }
   ),
-  resource_ore(
+  resource_coal(
     {
-      name = "tin-ore-80",
-	  minable = "tin-ore",
-	  minable_probability = 0.8,
-      order = "b",
-      color = Tin_Color,
-      map_color = Tin_Color,
-      mining_time = 0.5,
+      name = "coal-3",
+	  minable = "coal",
+	  minable_probability = 0.90,
+      order = "c",
+      color = {0, 0, 0},
+      map_color = {0, 0, 0},
+      mining_visualisation_tint = {0, 0, 0, 0.87},
+      mining_time = 1,
       walking_sound = ore_sound,
-      mining_visualisation_tint = Tin_Color,
-	  category = "resource-solid-tier-0",
-    },
-    {
-      has_starting_area_placement = true,
-      base_density = 4,
-      regular_rq_factor_multiplier = 1.0,
-      starting_rq_factor_multiplier = 1.1,
-      candidate_spot_count = Tin_Spot, 
-	  autoplace_control_name = "deposit-tin",
-	  base_spots_per_km2 = Tin_Base_Per_KM,
-	  random_spot_size_minimum = Tin_Random_Min,
-	  random_spot_size_maximum = Tin_Random_Max,
-	  minimum_richness = Tin_Richness,
-	  patch_set_name = "tin",
-    }
-  ),
-  resource_ore(
-    {
-      name = "tin-ore-95",
-	  minable = "tin-ore",
-	  minable_probability = 0.95,
-      order = "b",
-      color = Tin_Color,
-      map_color = Tin_Color,
-      mining_time = 0.5,
-      walking_sound = ore_sound,
-      mining_visualisation_tint = Tin_Color,
-	  category = "resource-solid-tier-0",
+      mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
+	  category = "resource-solid-tier-1",
     },
     {
       has_starting_area_placement = false,
-      base_density = 4,
+      base_density = 8,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
-      candidate_spot_count = Tin_Spot, 
-	  autoplace_control_name = "deposit-tin",
-	  base_spots_per_km2 = Tin_Base_Per_KM,
-	  random_spot_size_minimum = Tin_Random_Min,
-	  random_spot_size_maximum = Tin_Random_Max,
-	  minimum_richness = Tin_Richness,
-	  patch_set_name = "tin",
+	  autoplace_control_name = "coal-3",
     }
   ),
 })
@@ -1239,7 +762,7 @@ data:extend(
       additional_richness = 220000, -- this increases the total everywhere, so base_density needs to be decreased to compensate
       has_starting_area_placement = false,
       regular_rq_factor_multiplier = 1,
-	  autoplace_control_name = "deposit-gas",
+	  autoplace_control_name = "natural-gas",
     },
     stage_counts = {0},
     stages =
@@ -1304,7 +827,7 @@ data:extend(
       additional_richness = 220000, -- this increases the total everywhere, so base_density needs to be decreased to compensate
       has_starting_area_placement = false,
       regular_rq_factor_multiplier = 1,
-	  autoplace_control_name = "deposit-gas",
+	  autoplace_control_name = "crude-oil",
     },
     stage_counts = {0},
     stages =

@@ -1,0 +1,21 @@
+{
+	"name": "DyWorld-Compatibility-Patcher",
+	"version": "0.1.0",
+	"factorio_version": "1.1",
+	"title": "DyWorld-Compatibility-Patcher",
+	"author": "Dysoch",
+    "contact": "Via Discord!",
+	"homepage": "https://github.com/Dysoch/DyWorld/",
+	"description": "DyWorld-Compatibility-Patcher (AKA: DyComPa), which patches other mods for use with DyWorld-Dynamics",
+	"dependencies": [  
+		"base >= 1.1.5",
+		"DyWorld-Dynamics >= 0.7.91",
+		"(?) space-exploration-graphics >= 0.5.3",
+		"(?) space-exploration >= 0.5.16",
+		"informatron >= 0.2.1",
+		"aai-containers >= 0.2.6",
+		"Nanobots >= 3.2.13",
+		"alien-biomes >= 0.6.1"
+	]
+}
+

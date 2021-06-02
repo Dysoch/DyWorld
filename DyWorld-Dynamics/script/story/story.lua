@@ -599,7 +599,7 @@ local Story = {
 					[2] = {
 						type_1 = "research", 
 						type_2 = "name", 
-						name = "automation-3", 
+						name = "automatica-3", 
 						done = false,
 					},
 					[3] = {

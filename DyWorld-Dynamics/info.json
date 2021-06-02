@@ -1,6 +1,6 @@
 {
 	"name": "DyWorld-Dynamics",
-	"version": "0.7.91",
+	"version": "0.7.92",
 	"factorio_version": "1.1",
 	"title": "DyWorld-Dynamics",
 	"author": "Dysoch",
@@ -9,6 +9,7 @@
 	"description": "DyWorld-Dynamics, the successor of DyWorld, which is the successor of DyTech. Adds a massive story into the game. Use the mod scenario to start the story",
 	"dependencies": [  
 		"base >= 1.1.5",
+		"~ DyWorld-Compatibility-Patcher >= 0.1.0",
 		"(?) space-exploration-graphics >= 0.5.3",
 		"(?) space-exploration >= 0.5.16",
 		"informatron >= 0.2.1",

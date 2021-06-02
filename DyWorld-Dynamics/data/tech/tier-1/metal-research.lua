@@ -191,7 +191,7 @@ local Metal_Techs = {
 	},
 	----- Automation -----
 	{
-		name = "automation-1",
+		name = "automatica-1",
 		icon = DyDs_path_tech_base.."automation-1.png",
 		count = 25,
 		prerequisites = {
@@ -207,7 +207,7 @@ local Metal_Techs = {
 		order = "1",
 	},
 	{
-		name = "automation-2",
+		name = "automatica-2",
 		icon = DyDs_path_tech_base.."automation-1.png",
 		count = 50,
 		prerequisites = {
@@ -223,7 +223,7 @@ local Metal_Techs = {
 		order = "1",
 	},
 	{
-		name = "automation-3",
+		name = "automatica-3",
 		icon = DyDs_path_tech_base.."automation-2.png",
 		count = 100,
 		prerequisites = {
@@ -298,7 +298,7 @@ local Metal_Techs = {
 		icon = DyDs_path_tech_base.."optics.png",
 		count = 50,
 		prerequisites = {
-			"automation-1",
+			"automatica-1",
 		},
 		ingredients = {
 			{"iron-plate", 1},
@@ -315,7 +315,7 @@ local Metal_Techs = {
 		icon = DyDs_path_tech_base.."radar.png",
 		count = 250,
 		prerequisites = {
-			"automation-1",
+			"automatica-1",
 		},
 		ingredients = {
 			{"iron-plate", 1},
@@ -331,7 +331,7 @@ local Metal_Techs = {
 		name = "water-filtering",
 		count = 250,
 		prerequisites = {
-			"automation-3",
+			"automatica-3",
 		},
 		ingredients = {
 			{"iron-plate", 5},
@@ -344,11 +344,11 @@ local Metal_Techs = {
 	},
 	----- Logistics -----
 	{
-		name = "logistics-1",
+		name = "logistica-1",
 		icon = DyDs_path_tech_base.."logistics-1.png",
 		count = 100,
 		prerequisites = {
-			"automation-1",
+			"automatica-1",
 		},
 		ingredients = {
 			{"iron-plate", 5},
@@ -360,11 +360,11 @@ local Metal_Techs = {
 		order = "1",
 	},
 	{
-		name = "railway-1",
+		name = "rails-1",
 		icon = DyDs_path_tech_base.."railway.png",
 		count = 50,
 		prerequisites = {
-			"logistics-1",
+			"logistica-1",
 		},
 		ingredients = {
 			{"iron-plate", 5},
@@ -375,11 +375,11 @@ local Metal_Techs = {
 		order = "1",
 	},
 	{
-		name = "railway-2",
+		name = "rails-2",
 		icon = DyDs_path_tech_base.."railway.png",
 		count = 75,
 		prerequisites = {
-			"railway-1",
+			"rails-1",
 		},
 		ingredients = {
 			{"iron-plate", 15},
@@ -395,7 +395,7 @@ local Metal_Techs = {
 		icon = DyDs_path_tech_base.."electric-energy-distribution-1.png",
 		count = 100,
 		prerequisites = {
-			"automation-1",
+			"automatica-1",
 		},
 		ingredients = {
 			{"tin-plate", 3},
@@ -410,7 +410,7 @@ local Metal_Techs = {
 		count = 100,
 		prerequisites = {
 			"power-1",
-			"automation-2",
+			"automatica-2",
 		},
 		ingredients = {
 			{"copper-plate", 5},
@@ -426,7 +426,7 @@ local Metal_Techs = {
 		count = 100,
 		prerequisites = {
 			"power-2",
-			"automation-3",
+			"automatica-3",
 		},
 		ingredients = {
 			{"iron-plate", 5},
@@ -443,7 +443,7 @@ local Metal_Techs = {
 		icon = DyDs_path_tech_base.."military.png",
 		count = 100,
 		prerequisites = {
-			"automation-1",
+			"automatica-1",
 		},
 		ingredients = {
 			{"tin-plate", 3},
@@ -457,7 +457,7 @@ local Metal_Techs = {
 		count = 250,
 		prerequisites = {
 			"warfare-1",
-			"automation-2",
+			"automatica-2",
 			"fluids-2",
 		},
 		ingredients = {
@@ -473,7 +473,7 @@ local Metal_Techs = {
 		icon = DyDs_path_tech_base.."military.png",
 		count = 100,
 		prerequisites = {
-			"automation-3",
+			"automatica-3",
 			"warfare-2",
 		},
 		ingredients = {
@@ -491,7 +491,7 @@ local Metal_Techs = {
 		icon = DyDs_path_tech.."metallurgy.png",
 		count = 100,
 		prerequisites = {
-			"automation-1",
+			"automatica-1",
 		},
 		ingredients = {
 			{"iron-plate", 1},
@@ -538,7 +538,7 @@ local Metal_Techs = {
 		icon = DyDs_path_tech.."storage.png",
 		count = 50,
 		prerequisites = {
-			"logistics-1",
+			"logistica-1",
 		},
 		ingredients = {
 			{"iron-plate", 5},
@@ -555,7 +555,7 @@ local Metal_Techs = {
 		count = 75,
 		prerequisites = {
 			"storage-1",
-			"automation-2",
+			"automatica-2",
 		},
 		ingredients = {
 			{"iron-plate", 5},
@@ -572,7 +572,7 @@ local Metal_Techs = {
 		count = 100,
 		prerequisites = {
 			"storage-2",
-			"automation-3",
+			"automatica-3",
 		},
 		ingredients = {
 			{"iron-plate", 5},
@@ -586,7 +586,7 @@ local Metal_Techs = {
 		name = "filters-1",
 		count = 100,
 		prerequisites = {
-			"logistics-1",
+			"logistica-1",
 		},
 		ingredients = {
 			{"iron-plate", 5},
@@ -617,7 +617,7 @@ local Metal_Techs = {
 		count = 100,
 		prerequisites = {
 			"storage-2",
-			"automation-3",
+			"automatica-3",
 			"metallurgy-3",
 			"advanced-copper-processing",
 			"advanced-iron-processing",

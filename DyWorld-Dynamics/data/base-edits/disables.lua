@@ -5,7 +5,8 @@
 
 -- Tech --
 for NAME in pairs(data.raw.technology) do
-	data.raw.technology[NAME] = nil
+	--data.raw.technology[NAME] = nil
+	data.raw.technology[NAME].DyWorld_Hider = true
 end
 
 -- Change Shortcuts --
@@ -37,7 +38,8 @@ end
 
 -- Remove Recipes --
 for NAME in pairs(data.raw.recipe) do
-	data.raw.recipe[NAME] = nil
+	--data.raw.recipe[NAME] = nil
+	data.raw.recipe[NAME].DyWorld_Hider = true
 end
 
 -- Removed Recipes from Prod Modules --
@@ -74,41 +76,3 @@ end
 data.raw["map-gen-presets"]["default"]["rich-resources"].basic_settings.autoplace_controls = nil
 data.raw["map-gen-presets"]["default"]["rail-world"].basic_settings.autoplace_controls = nil
 data.raw["map-gen-presets"]["default"]["ribbon-world"].basic_settings.autoplace_controls = nil
-
--- Remove items, fluids and others
-Remove_Items = {
-	"iron-plate", "copper-plate", "steel-plate", "iron-ore", "copper-ore",
-}
-
-for k,v in pairs(Remove_Items) do
-	if data.raw.item[v] then
-		data.raw.item[v] = nil
-	end
-	if data.raw.fluid[v] then
-		data.raw.fluid[v] = nil
-	end
-	if data.raw.module[v] then
-		data.raw.module[v] = nil
-	end
-	if data.raw.ammo[v] then
-		data.raw.ammo[v] = nil
-	end
-	if data.raw.capsule[v] then
-		data.raw.capsule[v] = nil
-	end
-	if data.raw.tool[v] then
-		data.raw.tool[v] = nil
-	end
-	if data.raw.gun[v] then
-		data.raw.gun[v] = nil
-	end
-	if data.raw.armor[v] then
-		data.raw.armor[v] = nil
-	end
-	if data.raw["rail-planner"][v] then
-		data.raw["rail-planner"][v] = nil
-	end
-	if data.raw["repair-tool"][v] then
-		data.raw["repair-tool"][v] = nil
-	end
-end

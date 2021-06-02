@@ -1,7 +1,7 @@
 
 --debugger = true
 debugger = settings.startup["DyWorld_Debug"].value
-Version_Build = "0.7.91"
+Version_Build = "0.7.92"
 
 -- LuaLib
 require "script/lualib/function"
@@ -101,13 +101,6 @@ remote.add_interface("DyWorld",
 	
 	Migrate = function()
 		Reunlock_Recipes()
-	
-		for k,v in pairs(game.forces.player.technologies) do
-			if v.researched then
-				v.researched = false
-				v.researched = true
-			end
-		end
 	end,
 	
 	Pick_Random_Attack_Location = function()

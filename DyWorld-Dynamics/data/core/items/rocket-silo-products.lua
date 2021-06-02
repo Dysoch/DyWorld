@@ -69,8 +69,8 @@ data:extend({
 		icon = "__base__/graphics/icons/satellite.png",
 	  },
 	  {
-		icon = data.raw.tool["iron-ore"].icons[1].icon,
-		tint = data.raw.tool["iron-ore"].icons[1].tint,
+		icon = data.raw.item["iron-ore"].icons[1].icon,
+		tint = data.raw.item["iron-ore"].icons[1].tint,
 		scale = 0.25,
 		shift = {-8, 9},
 	  },
@@ -94,8 +94,8 @@ data:extend({
 		icon = "__base__/graphics/icons/satellite.png",
 	  },
 	  {
-		icon = data.raw.tool["copper-ore"].icons[1].icon,
-		tint = data.raw.tool["copper-ore"].icons[1].tint,
+		icon = data.raw.item["copper-ore"].icons[1].icon,
+		tint = data.raw.item["copper-ore"].icons[1].tint,
 		scale = 0.25,
 		shift = {-8, 9},
 	  },

@@ -7,7 +7,7 @@ local Chemical_Techs = {
 		icon = DyDs_path_tech_base.."fluid-handling.png",
 		count = 15,
 		prerequisites = {
-			"automation-2",
+			"automatica-2",
 			"filters-1",
 			"intermediates-1",
 		},
@@ -89,7 +89,7 @@ local Chemical_Techs = {
 		count = 50,
 		prerequisites = {
 			"fluids-2",
-			"automation-3",
+			"automatica-3",
 		},
 		ingredients = {
 			{"canister-water", 2},

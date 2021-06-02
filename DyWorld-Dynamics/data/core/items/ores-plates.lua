@@ -1,5 +1,3 @@
-
-
   ----- Impure Ores -----
   
 DyDS_Add_Tool({
@@ -61,7 +59,7 @@ DyDS_Add_Item({
 
   ----- Pure Ores -----
   
-DyDS_Add_Tool({
+DyDS_Add_Item({
 	name = "iron-ore",
 	order = "iron-ore",
     icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Iron_Color}},
@@ -71,7 +69,7 @@ DyDS_Add_Tool({
 	subgroup = DyDs.."0-resource-2",
 })
 
-DyDS_Add_Tool({
+DyDS_Add_Item({
 	name = "copper-ore",
 	order = "copper-ore",
     icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Copper_Color}},
@@ -205,7 +203,7 @@ DyDS_Add_Item({
 
   ----- Plates -----
   
-DyDS_Add_Tool({
+DyDS_Add_Item({
 	name = "iron-plate",
 	order = "iron-plate",
     icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = Iron_Color}},
@@ -215,7 +213,7 @@ DyDS_Add_Tool({
 	subgroup = DyDs.."metal-2",
 })
 
-DyDS_Add_Tool({
+DyDS_Add_Item({
 	name = "copper-plate",
 	order = "copper-plate",
     icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = Copper_Color}},
@@ -225,7 +223,7 @@ DyDS_Add_Tool({
 	subgroup = DyDs.."metal-2",
 })
 
-DyDS_Add_Tool({
+DyDS_Add_Item({
 	name = "steel-plate",
 	order = "steel-plate",
     icons = {{icon = DyDs_path_icon.."base-plate-3.png", tint = Steel_Color}},

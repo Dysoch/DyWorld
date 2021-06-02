@@ -43,12 +43,25 @@ local Recipe_Categories = {
 }
 
 local Autoplace_Categories = {
-	"deposit-iron",
-	"deposit-copper",
-	"deposit-stone",
-	"deposit-coal",
-	"deposit-tin",
-	"deposit-gas",
+	"iron-ore-1",
+	"iron-ore-2",
+	"iron-ore-3",
+	"copper-ore-1",
+	"copper-ore-2",
+	"copper-ore-3",
+	"tin-ore-1",
+	"tin-ore-2",
+	"tin-ore-3",
+	"coal-1",
+	"coal-2",
+	"coal-3",
+	"limestone",
+	"quartzite",
+	"granite",
+	"sandstone",
+	"treefarm",
+	"natural-gas",
+	"crude-oil",
 }
 
 local Fuel_Categories = {

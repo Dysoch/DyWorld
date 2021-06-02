@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.7.92
+Date: ??. 05. 2021
+  Features:
+    - Added a new mod (DyWorld-Compatibility-Patcher) as required mod which patches other mods
+  Minor Features:
+    - 
+  Changes:
+    - 
+  Bugfixes:
+    - 
+  Balancing:
+    - 
+  Story:
+    - 
+  Compatibility:
+    - AAI-Industry is now compatible and required by DyWorld-Dynamics
+---------------------------------------------------------------------------------------------------
+Version: 0.7.91
+Date: 30. 05. 2021
+  Features:
+    - Added new information to Informatron (enemy statistics)
+  Minor Features:
+    - Added Fluid Storage Tanks for storing massive amounts of fluids/gases
+  Changes:
+    - Resized technology icons to correctly show again
+    - Fixed stone appearing on destroyed stones as loot (affects Alien-Biomes as well)
+    - Reduced Native sounds a bit
+    - Fixed recipes not showing correctly
+  Bugfixes:
+    - Fixed Fluid technology requiring canisters while none are available
+  Balancing:
+    - Fixed recipes wrong ingredients
+    - Tweaked research costs
+  Story:
+    - Reduced objectives Act 2 Phase 4
+---------------------------------------------------------------------------------------------------
+Version: 0.7.90
+Date: 10. 12. 2020
+  Major Features:
+    - Compatibility with Factorio 1.1
+    - Complete and utter rewrite of DyWorld. Now called DyWorld-Dynamics, this mod is like DyWorld, but better written, less bugs, more features (and almost the same features as DyWorld) and a lot changes!
+    - To Start the story, use the DyWorld-Dynamics Story Mode scenario when starting (NOT FREEPLAY). If you dont want the story, use normal freeplay from the base game
+  Features:
+    - Ores have been reworked. There is different percentages of each ore. They can be seperate, or clumped into the same patch. This basically means that you have a chance to get less ores (you will never mine the full amount). A lot of different density of ores exist, and each have different byproducts and percentages for them
+  Minor Features:
+    - The mod features a comprehensive expensive modifier for recipes. All recipes have expensive sets
+    - Added completely new sounds. These are for:
+    - Added enemy roar sounds (Still WIP)
+    - Added enemy attack sounds (Still WIP)
+    - Added enemy dying sounds (Still WIP)
+    - Added 3 new main menu sounds to better fit the atmosphere of the game
+    - Added a lot of new ambiance sounds ingame. Mostly scifi winds and nature sounds (Still WIP)
+    - Added scripted sounds for the story (Still WIP)
+    - Added a few new weapon sounds (Still WIP)
+  Changes:
+    - Player Health: 250 > 1000
+    - Player Inventory: 80 slots > 120 slots
+    - Player healing automatically is disabled
+    - Player Build distance: 10 > 15
+    - Alien-Biomes trees minable results altered to fit into DyWorld-Dynamics
+  Balancing:
+    - Stacksizes of ores: 1000
+    - Stacksizes of plates: 500
+    - Stacksizes of other materials: 500
+  Compatibility:
+    - Afraid of the Dark like features are implemented into DyWorld-Dynamics. Use Light setting in the mod settings to enable it (increases light cone and radius, also strength of it). Mod is now marked as incompatible with DyWorld-Dynamics
+  Translations:
+    - German Translation added (made by Maxi_der_ZockerYT). Still WIP
+  Licenses:
+    - All sounds taken from free sound sites, royalty free. Sites used are splatz and freesound

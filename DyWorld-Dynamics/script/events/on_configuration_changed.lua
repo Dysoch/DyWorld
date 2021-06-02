@@ -9,12 +9,11 @@ function Event_on_configuration_changed()
 	PlayerPrint("Update for DyWorld-Dynamics detected. Updating Story. Objectives reset. Migrated from version: "..global.dyworld.version.." to version: "..Version_Build)
 	global.dyworld.version = Version_Build
 	
-	Reunlock_Recipes()
-	
-	for k,v in pairs(global.dyworld.research_done) do
-		if game.forces.player.technologies[v].researched then
-			game.forces.player.technologies[v].researched = false
-			game.forces.player.technologies[v].researched = true
+	if game.players and game.players[1] then
+		for k,v in pairs(game.players) do
+			v.force.reset_technology_effects()
 		end
 	end
+	
+	Reunlock_Recipes()
 end

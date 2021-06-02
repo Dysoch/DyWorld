@@ -6,6 +6,7 @@ require("data.automated-edits.tech")
 
 -- Entity --
 require("data.entity.crash")
+require("data.entity.centrifuge")
 require("data.entity.dyworld")
 require("data.entity.player")
 require("data.entity.rocks")

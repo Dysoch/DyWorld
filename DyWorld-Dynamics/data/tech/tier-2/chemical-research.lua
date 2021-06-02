@@ -8,7 +8,7 @@ local Chemical_Techs = {
 		flags = {Act_2 = true},
 		count = 15,
 		prerequisites = {
-			"automatica-2",
+			"automatica-1",
 			"filters-1",
 			"intermediates-1",
 		},

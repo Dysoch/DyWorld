@@ -4,14 +4,18 @@ Date: 02. 06. 2021
   Major Features:
     - 
   Features:
-    - 
+    - Added Labratory 3 (Advanced Lab)
   Changes:
     - 
   Balancing:
     - Fixed recipe of Offshore Pump
+    - Changed requirement of Fluid 1 tech to Automation 1 instead 2
   Bugfixes:
     - Fixed issue with inventory searchbar closing while one of DyWorld's GUI was open
     - Fixed migration issue when new mod configuration was detected
+    - Fixed canisters not being unlocked by certain techs
+  Story:
+    - Added 50 dummy phases for act 3
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.92
 Date: 02. 06. 2021

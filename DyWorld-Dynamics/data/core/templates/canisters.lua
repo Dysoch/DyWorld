@@ -39,18 +39,6 @@ data:extend({
 	  energy_required = 2.5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "canister-empty", amount = 2},
-        {type = "fluid", name = v.name, amount = 400*5},
-      },
-      result = "canister-"..v.name,
-	  result_count = 2,
-	  energy_required = 5,
-	  enabled = false,
-    },
   },
 })
 	DyWorld_Add_To_Tech("fluids-"..v.auto_canister_tier, "canister-"..v.name)

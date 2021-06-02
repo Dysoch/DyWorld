@@ -5,6 +5,7 @@ local Chemical_Techs = {
 	{
 		name = "fluids-1",
 		icon = DyDs_path_tech_base.."fluid-handling.png",
+		flags = {Act_2 = true},
 		count = 15,
 		prerequisites = {
 			"automatica-2",
@@ -20,6 +21,7 @@ local Chemical_Techs = {
 	{
 		name = "fluids-2",
 		icon = DyDs_path_tech_base.."fluid-handling.png",
+		flags = {Act_2 = true},
 		count = 75,
 		prerequisites = {
 			"fluids-1",
@@ -35,6 +37,7 @@ local Chemical_Techs = {
 	{
 		name = "fluids-3",
 		icon = DyDs_path_tech_base.."fluid-handling.png",
+		flags = {Act_2 = true},
 		count = 300,
 		prerequisites = {
 			"fluids-2",
@@ -51,6 +54,7 @@ local Chemical_Techs = {
 	{
 		name = "space-mining",
 		icon = DyDs_path_tech_base.."rocket-silo.png",
+		flags = {Act_2 = true},
 		count = 1000,
 		prerequisites = {
 			"fluids-3",
@@ -72,6 +76,7 @@ local Chemical_Techs = {
 	{
 		name = "gas-extraction",
 		icon = DyDs_path_tech_base.."oil-gathering.png",
+		flags = {Act_2 = true},
 		count = 25,
 		prerequisites = {
 			"fluids-1",
@@ -86,6 +91,7 @@ local Chemical_Techs = {
 	{
 		name = "oil-extraction",
 		icon = DyDs_path_tech_base.."oil-gathering.png",
+		flags = {Act_2 = true},
 		count = 50,
 		prerequisites = {
 			"fluids-2",
@@ -102,6 +108,7 @@ local Chemical_Techs = {
 	{
 		name = "gas-power",
 		icon = DyDs_path_tech_base.."electric-engine.png",
+		flags = {Act_2 = true},
 		count = 250,
 		prerequisites = {
 			"gas-extraction",
@@ -116,6 +123,7 @@ local Chemical_Techs = {
 	{
 		name = "turbines",
 		icon = DyDs_path_tech_base.."electric-engine.png",
+		flags = {Act_2 = true},
 		count = 1,
 		prerequisites = {
 			"fluids-2",
@@ -130,6 +138,7 @@ local Chemical_Techs = {
 	{
 		name = "nuclear",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
+		flags = {Act_2 = true},
 		count = 1,
 		prerequisites = {
 			"fluids-3",
@@ -146,6 +155,7 @@ local Chemical_Techs = {
 	{
 		name = "oil-processing",
 		icon = DyDs_path_tech_base.."oil-processing.png",
+		flags = {Act_2 = true},
 		count = 250,
 		prerequisites = {
 			"oil-extraction",
@@ -160,6 +170,7 @@ local Chemical_Techs = {
 	{
 		name = "gasoline",
 		icon = DyDs_path_tech_base.."oil-processing.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"oil-processing",

@@ -1,5 +1,5 @@
 
--- TO DO PHASE 2 DEVELOPMENT --
+-- TO DO PHASE 3 DEVELOPMENT --
 
 If I may make a suggestion... is it possible to have all the tabs on top at all times?  (And click on them to expand?)  I feel like its easy to forget the numpad keys, especially for people new to mods.  The objectives tab, specifically is going to generate a LOT of questions: e.g. I cant make progress, what am I supposed to do? end
 
@@ -8,6 +8,8 @@ Rework electricity
 ( For example, he was surprised that the greenhouses needed 1 coal every 20-something hours, and that the inserters needed more power than the assemblers)end
 
 limit amount items in fuel slot (if possible)end
+remove massive fish spawns (Space ex)
+Change Recipe Offshore Pump (AAI-Industry)
 
 unlock logistics tab start of act 2
 
@@ -49,10 +51,8 @@ nanobot logistic interface (nanobot)
 remove spidertron remote
 move cliff explosives
 
-act 3 story add vegemash (planet)
-
 names backers to add:
-Olinator, La Gatta (echodeaf), Tels, me2m8
+Olinator, Senital2011
 
 names backers done:
 Zaydon

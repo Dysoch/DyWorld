@@ -28,6 +28,7 @@ data:extend(
    	name = params.name,
     icon = params.icon or DyDs_tech_temp,
     icon_size = 256,
+	flag = params.flags or {},
     effects = { },
     prerequisites = params.prerequisites or {},
     unit =

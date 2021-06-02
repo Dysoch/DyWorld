@@ -4,6 +4,7 @@ local Metal_Techs = {
 	{
 		name = "copper-processing",
 		icon = DyDs_path_tech.."copper.png",
+		flags = {Act_2 = true},
 		count = 15,
 		ingredients = {
 			{"copper-ore-impure", 25},
@@ -16,6 +17,7 @@ local Metal_Techs = {
 	{
 		name = "iron-processing",
 		icon = DyDs_path_tech.."iron.png",
+		flags = {Act_2 = true},
 		count = 25,
 		ingredients = {
 			{"iron-ore-impure", 25},
@@ -28,6 +30,7 @@ local Metal_Techs = {
 	{
 		name = "tin-processing",
 		icon = DyDs_path_tech.."tin.png",
+		flags = {Act_2 = true},
 		count = 10,
 		ingredients = {
 			{"tin-ore-impure", 25},
@@ -40,6 +43,7 @@ local Metal_Techs = {
 	{
 		name = "bronze-processing",
 		icon = DyDs_path_tech.."bronze.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"tin-processing",
@@ -57,6 +61,7 @@ local Metal_Techs = {
 	{
 		name = "advanced-copper-processing",
 		icon = DyDs_path_tech.."copper.png",
+		flags = {Act_2 = true},
 		count = 150,
 		prerequisites = {
 			"metallurgy-1",
@@ -71,6 +76,7 @@ local Metal_Techs = {
 	{
 		name = "advanced-iron-processing",
 		icon = DyDs_path_tech.."iron.png",
+		flags = {Act_2 = true},
 		count = 150,
 		prerequisites = {
 			"metallurgy-2",
@@ -86,6 +92,7 @@ local Metal_Techs = {
 	{
 		name = "advanced-tin-processing",
 		icon = DyDs_path_tech.."tin.png",
+		flags = {Act_2 = true},
 		count = 150,
 		prerequisites = {
 			"metallurgy-1",
@@ -100,6 +107,7 @@ local Metal_Techs = {
 	{
 		name = "advanced-bronze-processing",
 		icon = DyDs_path_tech.."bronze.png",
+		flags = {Act_2 = true},
 		count = 200,
 		prerequisites = {
 			"metallurgy-2",
@@ -115,6 +123,7 @@ local Metal_Techs = {
 	{
 		name = "steel-processing",
 		icon = DyDs_path_tech_base.."steel-processing.png",
+		flags = {Act_2 = true},
 		count = 10,
 		prerequisites = {
 			"metallurgy-2",
@@ -131,6 +140,7 @@ local Metal_Techs = {
 	{
 		name = "titanium-processing",
 		icon = DyDs_path_tech.."titanium.png",
+		flags = {Act_2 = true},
 		count = 10,
 		prerequisites = {
 			"metallurgy-3",
@@ -146,6 +156,7 @@ local Metal_Techs = {
 	{
 		name = "aluminium-processing",
 		icon = DyDs_path_tech.."aluminium.png",
+		flags = {Act_2 = true},
 		count = 10,
 		prerequisites = {
 			"metallurgy-3",
@@ -161,6 +172,7 @@ local Metal_Techs = {
 	{
 		name = "magnesium-processing",
 		icon = DyDs_path_tech.."magnesium.png",
+		flags = {Act_2 = true},
 		count = 10,
 		prerequisites = {
 			"metallurgy-3",
@@ -176,6 +188,7 @@ local Metal_Techs = {
 	{
 		name = "advanced-steel-processing",
 		icon = DyDs_path_tech_base.."steel-processing.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"metallurgy-3",
@@ -193,6 +206,7 @@ local Metal_Techs = {
 	{
 		name = "automatica-1",
 		icon = DyDs_path_tech_base.."automation-1.png",
+		flags = {Act_2 = true},
 		count = 25,
 		prerequisites = {
 			"intermediates-1",
@@ -209,6 +223,7 @@ local Metal_Techs = {
 	{
 		name = "automatica-2",
 		icon = DyDs_path_tech_base.."automation-1.png",
+		flags = {Act_2 = true},
 		count = 50,
 		prerequisites = {
 			"intermediates-2",
@@ -225,6 +240,7 @@ local Metal_Techs = {
 	{
 		name = "automatica-3",
 		icon = DyDs_path_tech_base.."automation-2.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"intermediates-3",
@@ -242,6 +258,7 @@ local Metal_Techs = {
 	{
 		name = "intermediates-1",
 		icon = DyDs_path_tech.."intermediates.png",
+		flags = {Act_2 = true},
 		count = 25,
 		prerequisites = {
 			"bronze-processing",
@@ -258,6 +275,7 @@ local Metal_Techs = {
 	{
 		name = "intermediates-2",
 		icon = DyDs_path_tech.."intermediates.png",
+		flags = {Act_2 = true},
 		count = 50,
 		prerequisites = {
 			"filters-1",
@@ -277,6 +295,7 @@ local Metal_Techs = {
 	{
 		name = "intermediates-3",
 		icon = DyDs_path_tech.."intermediates.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"storage-2",
@@ -296,6 +315,7 @@ local Metal_Techs = {
 	{
 		name = "optics",
 		icon = DyDs_path_tech_base.."optics.png",
+		flags = {Act_2 = true},
 		count = 50,
 		prerequisites = {
 			"automatica-1",
@@ -313,6 +333,7 @@ local Metal_Techs = {
 	{
 		name = "recycling",
 		icon = DyDs_path_tech_base.."radar.png",
+		flags = {Act_2 = true},
 		count = 250,
 		prerequisites = {
 			"automatica-1",
@@ -329,6 +350,7 @@ local Metal_Techs = {
 	----- Water Filtering -----
 	{
 		name = "water-filtering",
+		flags = {Act_2 = true},
 		count = 250,
 		prerequisites = {
 			"automatica-3",
@@ -346,6 +368,7 @@ local Metal_Techs = {
 	{
 		name = "logistica-1",
 		icon = DyDs_path_tech_base.."logistics-1.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"automatica-1",
@@ -362,6 +385,7 @@ local Metal_Techs = {
 	{
 		name = "rails-1",
 		icon = DyDs_path_tech_base.."railway.png",
+		flags = {Act_2 = true},
 		count = 50,
 		prerequisites = {
 			"logistica-1",
@@ -377,6 +401,7 @@ local Metal_Techs = {
 	{
 		name = "rails-2",
 		icon = DyDs_path_tech_base.."railway.png",
+		flags = {Act_2 = true},
 		count = 75,
 		prerequisites = {
 			"rails-1",
@@ -393,6 +418,7 @@ local Metal_Techs = {
 	{
 		name = "power-1",
 		icon = DyDs_path_tech_base.."electric-energy-distribution-1.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"automatica-1",
@@ -407,6 +433,7 @@ local Metal_Techs = {
 	{
 		name = "power-2",
 		icon = DyDs_path_tech_base.."electric-energy-distribution-1.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"power-1",
@@ -423,6 +450,7 @@ local Metal_Techs = {
 	{
 		name = "power-3",
 		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"power-2",
@@ -441,6 +469,7 @@ local Metal_Techs = {
 	{
 		name = "warfare-1",
 		icon = DyDs_path_tech_base.."military.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"automatica-1",
@@ -454,6 +483,7 @@ local Metal_Techs = {
 	{
 		name = "warfare-2",
 		icon = DyDs_path_tech_base.."military.png",
+		flags = {Act_2 = true},
 		count = 250,
 		prerequisites = {
 			"warfare-1",
@@ -471,6 +501,7 @@ local Metal_Techs = {
 	{
 		name = "warfare-3",
 		icon = DyDs_path_tech_base.."military.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"automatica-3",
@@ -489,6 +520,7 @@ local Metal_Techs = {
 	{
 		name = "metallurgy-1",
 		icon = DyDs_path_tech.."metallurgy.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"automatica-1",
@@ -506,6 +538,7 @@ local Metal_Techs = {
 	{
 		name = "metallurgy-2",
 		icon = DyDs_path_tech.."metallurgy.png",
+		flags = {Act_2 = true},
 		count = 25,
 		prerequisites = {
 			"metallurgy-1",
@@ -521,6 +554,7 @@ local Metal_Techs = {
 	{
 		name = "metallurgy-3",
 		icon = DyDs_path_tech.."metallurgy.png",
+		flags = {Act_2 = true},
 		count = 50,
 		prerequisites = {
 			"metallurgy-2",
@@ -536,6 +570,7 @@ local Metal_Techs = {
 	{
 		name = "storage-1",
 		icon = DyDs_path_tech.."storage.png",
+		flags = {Act_2 = true},
 		count = 50,
 		prerequisites = {
 			"logistica-1",
@@ -552,6 +587,7 @@ local Metal_Techs = {
 	{
 		name = "storage-2",
 		icon = DyDs_path_tech.."storage.png",
+		flags = {Act_2 = true},
 		count = 75,
 		prerequisites = {
 			"storage-1",
@@ -569,6 +605,7 @@ local Metal_Techs = {
 	{
 		name = "storage-3",
 		icon = DyDs_path_tech.."storage.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"storage-2",
@@ -584,6 +621,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "filters-1",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"logistica-1",
@@ -601,6 +639,7 @@ local Metal_Techs = {
 	{
 		name = "slag-processing",
 		icon = DyDs_path_tech.."slag.png",
+		flags = {Act_2 = true},
 		count = 10,
 		prerequisites = {
 			"metallurgy-1",
@@ -614,6 +653,7 @@ local Metal_Techs = {
 	{
 		name = "basic-asteroid-mining",
 		icon = DyDs_path_tech.."asteroid.png",
+		flags = {Act_2 = true},
 		count = 100,
 		prerequisites = {
 			"storage-2",

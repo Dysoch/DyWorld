@@ -28,13 +28,13 @@ function Event_on_tick(event)
 			if v.alive and v.playing then
 				v.posx = game.players[v.id].position.x
 				v.posy = game.players[v.id].position.y
-				if v.story_gui then
+				if v.story_gui and not game.players[v.id].opened_self then
 					local player = game.players[v.id]
 					Close_Story_GUI(player, v.id)
 					Story_GUI(player, v.id)
 					player.gui.top.DyDs_Story_GUI.selected_tab_index = global.dyworld.players[v.id].story_gui_index
 				end
-				if v.stats_gui then
+				if v.stats_gui and not game.players[v.id].opened_self then
 					local player = game.players[v.id]
 					Close_Main_GUI(player, v.id)
 					Main_GUI(player, v.id)

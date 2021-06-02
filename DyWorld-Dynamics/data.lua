@@ -1,4 +1,11 @@
 
+
+function Dy_Log(String)
+	if settings.startup["DyWorld_Debug"].value then
+		log(String)
+	end
+end
+
 data.raw["utility-constants"]["default"].main_menu_background_image_location = "__DyWorld-Dynamics__/graphics/dyworldlogo.jpg"
 
 -- Core Modules --

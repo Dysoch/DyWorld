@@ -1,6 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.93
+Date: 02. 06. 2021
+  Major Features:
+    - 
+  Features:
+    - 
+  Changes:
+    - 
+  Bugfixes:
+    - Fixed issue with inventory searchbar closing while one of DyWorld's GUI was open
+---------------------------------------------------------------------------------------------------
 Version: 0.7.92
-Date: ??. 05. 2021
+Date: 02. 06. 2021
   Major Features:
     - Space Exploration is now required to run DyWorld-Dynamics. Compatibility is ongoing, but it works and plays normally
   Features:

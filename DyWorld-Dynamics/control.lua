@@ -1,7 +1,13 @@
 
 --debugger = true
 debugger = settings.startup["DyWorld_Debug"].value
-Version_Build = "0.7.92"
+Version_Build = "0.7.93"
+
+function Dy_Log(String)
+	if settings.startup["DyWorld_Debug"].value then
+		log(String)
+	end
+end
 
 -- LuaLib
 require "script/lualib/function"

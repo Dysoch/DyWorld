@@ -9,7 +9,6 @@ Rework electricity
 
 limit amount items in fuel slot (if possible)end
 remove massive fish spawns (Space ex)
-Change Recipe Offshore Pump (AAI-Industry)
 
 unlock logistics tab start of act 2
 

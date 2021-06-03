@@ -64,9 +64,6 @@ for NAME in pairs(data.raw["ambient-sound"]) do
 	data.raw["ambient-sound"][NAME] = nil
 end
 
--- Change silo --
-data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
-
 -- Remove resources and autoplace--
 for NAME in pairs(data.raw.resource) do
 	data.raw.resource[NAME] = nil

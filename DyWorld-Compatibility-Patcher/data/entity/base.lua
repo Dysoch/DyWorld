@@ -2,6 +2,38 @@
 
 
 
+
+data.raw.furnace["stone-furnace"].energy_source = {
+      type = "burner",
+      fuel_category = "carbon",
+      effectivity = 1,
+      fuel_inventory_size = 1,
+      emissions_per_minute = 8,
+      smoke =
+      {
+        {
+          name = "smoke",
+          deviation = {0.1, 0.1},
+          frequency = 3
+        }
+      }
+    }
+data.raw.furnace["steel-furnace"].crafting_categories = {"hidden"}
+data.raw.furnace["electric-furnace"].crafting_categories = {"hidden"}
+
+data.raw["rail-planner"]["rail"].subgroup = DyDs.."rail"
+data.raw["rail-planner"]["rail"].stack_size = 500
+
+data.raw["item-with-entity-data"]["cargo-wagon"].subgroup = DyDs.."rail"
+data.raw["item-with-entity-data"]["fluid-wagon"].subgroup = DyDs.."rail"
+
+data.raw["mining-drill"]["burner-mining-drill"].resource_categories = {"resource-solid-tier-0", "resource-solid-tier-1"}
+data.raw["mining-drill"]["electric-mining-drill"].resource_categories = {"resource-solid-tier-0", "resource-solid-tier-1", "resource-solid-tier-2"}
+data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_category = "carbon"
+
+-- Change silo --
+data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
+
 	-- Hide Resistances --
 data.raw.unit["small-biter"].hide_resistances = true
 data.raw.unit["medium-biter"].hide_resistances = true

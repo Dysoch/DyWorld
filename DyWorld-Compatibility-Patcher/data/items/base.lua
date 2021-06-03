@@ -2,29 +2,10 @@
 
 
 
-
--- Fuel --
 data.raw.item["wood"].fuel_category = "carbon"
 data.raw.item["coal"].fuel_category = "carbon"
 
 data.raw.item["stone-furnace"].subgroup = DyDs.."furnaces"
-data.raw.furnace["stone-furnace"].energy_source = {
-      type = "burner",
-      fuel_category = "carbon",
-      effectivity = 1,
-      fuel_inventory_size = 1,
-      emissions_per_minute = 8,
-      smoke =
-      {
-        {
-          name = "smoke",
-          deviation = {0.1, 0.1},
-          frequency = 3
-        }
-      }
-    }
-data.raw.furnace["steel-furnace"].crafting_categories = {"hidden"}
-data.raw.furnace["electric-furnace"].crafting_categories = {"hidden"}
 
 data.raw.item["landfill"].subgroup = DyDs.."flooring-1"
 data.raw.item["concrete"].subgroup = DyDs.."flooring-2"
@@ -55,28 +36,15 @@ data.raw.item["logistic-chest-requester"].order = "5b"
 
 data.raw.item["small-lamp"].subgroup = DyDs.."lamps"
 
-data.raw["rail-planner"]["rail"].subgroup = DyDs.."rail"
-data.raw["rail-planner"]["rail"].stack_size = 500
 data.raw.item["train-stop"].subgroup = DyDs.."rail"
 data.raw.item["rail-signal"].subgroup = DyDs.."rail"
 data.raw.item["rail-signal"].stack_size = 500
 data.raw.item["rail-chain-signal"].subgroup = DyDs.."rail"
 data.raw.item["rail-chain-signal"].stack_size = 500
-data.raw["item-with-entity-data"]["cargo-wagon"].subgroup = DyDs.."rail"
-data.raw["item-with-entity-data"]["fluid-wagon"].subgroup = DyDs.."rail"
 
 data.raw.item["stone-brick"].stack_size = 500
 data.raw.item["stone-brick"].subgroup = DyDs.."material-1"
 data.raw.item["stone-brick"].order = "stone-brick"
-
-data.raw.item["satellite"].rocket_launch_product = nil
-
-if data.raw.capsule["raw-fish"] and data.raw.capsule["raw-fish"].capsule_action and data.raw.capsule["raw-fish"].capsule_action.attack_parameters and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1] and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1].damage.amount then
-	data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1].damage.amount = 25
-end
-data.raw.capsule["raw-fish"].subgroup = DyDs.."material-1"
-
-data.raw["repair-tool"]["repair-pack"].subgroup = "dyworld-hidden-items"
 
 data.raw.item["solar-panel-equipment"].subgroup = DyDs.."equipment-energy" --X
 data.raw.item["fusion-reactor-equipment"].subgroup = DyDs.."equipment-energy"
@@ -87,13 +55,19 @@ data.raw.item["energy-shield-equipment"].subgroup = DyDs.."equipment-defense"
 data.raw.item["energy-shield-mk2-equipment"].subgroup = DyDs.."equipment-defense"
 data.raw.item["personal-laser-defense-equipment"].subgroup = DyDs.."equipment-defense"
 data.raw.item["discharge-defense-equipment"].subgroup = DyDs.."equipment-defense"
-data.raw.capsule["discharge-defense-remote"].subgroup = DyDs.."equipment-defense"
 
 data.raw.item["belt-immunity-equipment"].subgroup = DyDs.."equipment-qol" --X
 data.raw.item["exoskeleton-equipment"].subgroup = DyDs.."equipment-qol" --X
 data.raw.item["personal-roboport-equipment"].subgroup = DyDs.."equipment-qol"
 data.raw.item["personal-roboport-mk2-equipment"].subgroup = DyDs.."equipment-qol"
 data.raw.item["night-vision-equipment"].subgroup = DyDs.."equipment-qol" --X
+
+data.raw.item["satellite"].rocket_launch_product = nil
+
+data.raw["item"]["offshore-pump"].subgroup = DyDs.."pump-offshore"
+data.raw["item"]["offshore-pump"].order = "1"
+
+data.raw["repair-tool"]["repair-pack"].subgroup = "dyworld-hidden-items"
 
 -- Nanobots --
 data.raw.ammo["ammo-nano-constructors"].magazine_size = 100000000000000000000000000000000
@@ -109,3 +83,12 @@ data.raw.item["equipment-bot-chip-launcher"].subgroup = DyDs.."equipment-defense
 data.raw.item["equipment-bot-chip-items"].subgroup = DyDs.."equipment-qol"
 data.raw.item["equipment-bot-chip-feeder"].subgroup = DyDs.."equipment-qol"
 data.raw.item["roboport-interface"].subgroup = DyDs.."equipment-qol"
+
+-- Capsules --
+
+data.raw.capsule["discharge-defense-remote"].subgroup = DyDs.."equipment-defense"
+data.raw.capsule["raw-fish"].subgroup = DyDs.."material-1"
+if data.raw.capsule["raw-fish"] and data.raw.capsule["raw-fish"].capsule_action and data.raw.capsule["raw-fish"].capsule_action.attack_parameters and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1] and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1].damage.amount then
+	data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1].damage.amount = 25
+end
+

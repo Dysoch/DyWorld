@@ -7,6 +7,9 @@
 for k,v in pairs(data.raw.recipe) do
 	if Dy_Exclude_Recipes[v.name] then
 		Dy_Log("Excluded Recipe from Hider ("..v.name..")")
+		if (v.category and v.category == "crafting") then
+			v.category = "assembling-tier-1"
+		end
 	else
 		data.raw.recipe[v.name].DyWorld_Hider = true
 		--Dy_Log("Recipe Hidden ("..v.name..")")

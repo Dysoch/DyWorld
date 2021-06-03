@@ -3,6 +3,7 @@
 require("data.hider")
 require("data.automated-edits.item-tool")
 require("data.automated-edits.tech")
+require("data.automated-edits.stone")
 
 -- Entity --
 require("data.entity.base")
@@ -25,5 +26,6 @@ require("data.recipes.aai-industry")
 require("data.recipes.space-exploration")
 
 -- Tech --
+require("data.tech.added-recipes")
 require("data.tech.base")
-require("data.tech.dyworld")
+require("data.tech.aai-industry")

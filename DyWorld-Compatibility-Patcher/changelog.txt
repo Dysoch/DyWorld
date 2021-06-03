@@ -6,7 +6,7 @@ Date: 02. 06. 2021
   Minor Features:
     - 
   Changes:
-    - 
+    - Made Recipe adding to Technologies loaded as last (to prevent overrides)
   Bugfixes:
     - Fixed technologies not being able to research
   Balancing:

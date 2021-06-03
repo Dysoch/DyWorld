@@ -24,10 +24,12 @@
 	type = "item", name = "green-wire"
 	type = "item", name = "resin"
 	type = "item", name = "rubber"
+	type = "item", name = "motor"
 	-- Intermediates 2 --
 	type = "item", name = "glass"
 	type = "item", name = "steel-plate"
 	type = "item", name = "engine-unit"
+	type = "item", name = "electric-motor"
 	type = "fluid", name = "methane" -- TODO RECIPE TECH
 	type = "fluid", name = "crude-oil"
 	type = "fluid", name = "heavy-oil"

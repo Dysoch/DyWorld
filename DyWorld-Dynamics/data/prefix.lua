@@ -44,4 +44,6 @@ Aluminium_Color = {170, 170, 170}
 
 Dy_Exclude_Recipes = {
 	["burner-turbine"] = 1, 
+	["electric-motor"] = 1, 
+	["motor"] = 1, 
 }

@@ -42,15 +42,5 @@ data:extend({
 	  energy_required = 15,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {"wood", 10}
-      },
-      result = "heal-station",
-	  energy_required = 75,
-	  enabled = false,
-    },
   },
 })

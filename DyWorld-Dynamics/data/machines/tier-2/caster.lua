@@ -116,17 +116,5 @@ data:extend(
 	  enabled = false,
 	  energy_required = 5,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "control-board-1", amount = 3*5},
-        {type = "item", name = "iron-plate", amount = 8*4},
-        {type = "item", name = "bronze-plate", amount = 2*3},
-      },
-      result = "caster",
-	  enabled = false,
-	  energy_required = 25,
-    },
   },
 })

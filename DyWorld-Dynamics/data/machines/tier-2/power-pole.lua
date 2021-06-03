@@ -37,18 +37,6 @@ data:extend({
 	  enabled = false,
 	  energy_required = 2.5,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "iron-plate", amount = 3 * ER_Mod},
-        {type = "item", name = "copper-cable", amount = 4 * ER_Mod},
-        {type = "item", name = "rubber", amount = 2 * ER_Mod},
-      },
-      result = "advanced-power-pole",
-	  enabled = false,
-	  energy_required = 10,
-    },
   },
   {
     type = "item",
@@ -76,18 +64,6 @@ data:extend({
       result_count = 1,
 	  enabled = false,
 	  energy_required = 2.5,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "iron-plate", amount = 3 * ER_Mod},
-        {type = "item", name = "copper-cable", amount = 4 * ER_Mod},
-        {type = "item", name = "rubber", amount = 2 * ER_Mod},
-      },
-      result = "basic-power-relay",
-	  enabled = false,
-	  energy_required = 10,
     },
   },
 })

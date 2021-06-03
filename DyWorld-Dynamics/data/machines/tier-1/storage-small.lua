@@ -85,15 +85,5 @@ data:extend({
 	  energy_required = 1,
 	  enabled = true,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {"wood", 10}
-      },
-      result = "small-storage",
-	  energy_required = 5,
-	  enabled = true,
-    },
   },
 })

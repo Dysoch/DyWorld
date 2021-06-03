@@ -33,18 +33,5 @@ data:extend({
 	  enabled = false,
 	  energy_required = 2,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "burner-radar", amount = 1},
-        {type = "item", name = "control-board-1", amount = 3*5},
-        {type = "item", name = "iron-plate", amount = 12*5},
-        {type = "item", name = "bronze-plate", amount = 3*5},
-      },
-      result = "radar-1",
-	  enabled = false,
-	  energy_required = 10,
-    },
   },
 })

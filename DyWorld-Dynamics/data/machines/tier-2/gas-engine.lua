@@ -39,19 +39,5 @@ data:extend({
 	  enabled = false,
 	  energy_required = 2,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "control-board-1", amount = 10*3},
-        {type = "item", name = "bronze-pipe", amount = 3*5},
-        {type = "item", name = "basic-steam-engine", amount = 1},
-        {type = "item", name = "tin-plate", amount = 5*6},
-        {type = "item", name = "iron-plate", amount = 25*4},
-      },
-      result = "gas-engine",
-	  enabled = false,
-	  energy_required = 10,
-    },
   },
 })

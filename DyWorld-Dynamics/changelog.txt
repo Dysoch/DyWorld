@@ -6,7 +6,7 @@ Date: 02. 06. 2021
   Features:
     - Added Labratory 3 (Advanced Lab)
   Changes:
-    - 
+    - Changes made to expensive recipes format. Now completely automated for all recipes (modifier in settings)
   Balancing:
     - Fixed recipe of Offshore Pump
     - Changed requirement of Fluid 1 tech to Automation 1 instead 2

@@ -121,17 +121,5 @@ data:extend({
 	  enabled = false,
 	  energy_required = 2,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-pipe", amount = 1*3},
-        {type = "item", name = "bronze-plate", amount = 4*6},
-        {type = "item", name = "wood", amount = 1*12},
-      },
-      result = "basic-treefarm",
-	  enabled = false,
-	  energy_required = 10,
-    },
   },
 })

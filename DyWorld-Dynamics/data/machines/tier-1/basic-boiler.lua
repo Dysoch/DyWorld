@@ -35,18 +35,5 @@ data:extend({
 	  enabled = false,
 	  energy_required = 2,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "control-board-1", amount = 1*5},
-        {type = "item", name = "bronze-pipe", amount = 1*5},
-        {type = "item", name = "iron-plate", amount = 6*5},
-        {type = "item", name = "copper-plate", amount = 1*5},
-      },
-      result = "basic-boiler",
-	  enabled = false,
-	  energy_required = 10,
-    },
   },
 })

@@ -311,16 +311,5 @@ data:extend({
 	  enabled = false,
 	  energy_required = 2,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "wood", amount = 5},
-        {type = "item", name = "limestone", amount = 5*6},
-      },
-      result = "basic-burner-drill",
-	  enabled = false,
-	  energy_required = 10,
-    },
   },
 })

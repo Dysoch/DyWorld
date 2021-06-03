@@ -42,4 +42,23 @@ data:extend({
 	  enabled = false,
     },
   },
+  {
+    type = "recipe",
+    name = "oil-extractor",
+	category = "assembling-tier-2",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "control-board-1", amount = 10},
+        {type = "item", name = "bronze-pipe", amount = 3},
+        {type = "item", name = "basic-steam-engine", amount = 1},
+        {type = "item", name = "tin-plate", amount = 5},
+        {type = "item", name = "iron-plate", amount = 25},
+      },
+      result = "oil-extractor",
+	  enabled = false,
+	  energy_required = 2,
+    },
+  },
 })

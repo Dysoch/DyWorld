@@ -50,19 +50,6 @@ data:extend({
 	  enabled = false,
 	  energy_required = 25,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "control-board-2", amount = 10*5},
-        {type = "item", name = "steel-plate", amount = 80*4},
-        {type = "item", name = "aluminium-plate", amount = 20*3},
-        {type = "item", name = "concrete", amount = 20*5},
-      },
-      result = "rocket-silo-1",
-	  enabled = false,
-	  energy_required = 250,
-    },
   },
   {
     type = "recipe",
@@ -81,19 +68,6 @@ data:extend({
 	  enabled = false,
       hidden = true,
 	  energy_required = 5,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "control-board-2", amount = 5*4},
-        {type = "item", name = "steel-plate", amount = 20*5},
-        {type = "item", name = "titanium-plate", amount = 5*4},
-      },
-      result = "rocket-part-1",
-	  enabled = false,
-      hidden = true,
-	  energy_required = 25,
     },
   },
 })

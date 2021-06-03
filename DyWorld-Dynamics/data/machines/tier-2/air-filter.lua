@@ -118,20 +118,5 @@ data:extend(
 	  main_product = "air-filter",
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "tin-plate", amount = 5*3},
-        {type = "item", name = "copper-plate", amount = 8*3},
-      },
-      results = 
-      {
-        {type = "item", name = "air-filter", amount = 1},
-      },
-	  energy_required = 5*5,
-	  main_product = "air-filter",
-	  enabled = false,
-    },
   },
 })

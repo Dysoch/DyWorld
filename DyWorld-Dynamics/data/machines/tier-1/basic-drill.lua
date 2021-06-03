@@ -35,17 +35,5 @@ data:extend({
 	  enabled = false,
 	  energy_required = 5,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "control-board-1", amount = 2*6},
-        {type = "item", name = "iron-plate", amount = 12*4},
-        {type = "item", name = "bronze-plate", amount = 4*5},
-      },
-      result = "basic-electric-drill",
-	  enabled = false,
-	  energy_required = 25,
-    },
   },
 })

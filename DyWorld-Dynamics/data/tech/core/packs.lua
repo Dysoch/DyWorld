@@ -70,3 +70,60 @@ function Dy_Metal_Tech_Pack(STR, AMOUNT)
 		return returner
 	end
 end
+
+
+function Dy_Chemical_Tech_Pack(STR, AMOUNT)
+	local SET = settings.startup["DyWorld_Expensive_Tech_Modifier"].value
+	if STR == "empty" then
+		local returner = {"canister-empty", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == "oxygen" then
+		local returner = {"canister-oxygen", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == "hydrogen" then
+		local returner = {"canister-hydrogen", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == "nitrogen" then
+		local returner = {"canister-nitrogen", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == "water" then
+		local returner = {"canister-water", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == "heavy-oil" then
+		local returner = {"canister-heavy-oil", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == "light-oil" then
+		local returner = {"canister-light-oil", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == "crude-oil" then
+		local returner = {"canister-crude-oil", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == "natural-gas" then
+		local returner = {"canister-natural-gas", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == nil then 
+		local returner = {"canister-empty", math.ceil(SET * AMOUNT)}
+		return returner
+	else
+		local returner = {"canister-empty", math.ceil(SET * AMOUNT)}
+		return returner
+	end
+end
+
+
+function Dy_Main_Tech_Pack(STR, AMOUNT)
+	local SET = settings.startup["DyWorld_Expensive_Tech_Modifier"].value
+	if STR == 1 then
+		local returner = {"canister-empty", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == 2 then
+		local returner = {"canister-oxygen", math.ceil(SET * AMOUNT)}
+		return returner
+	elseif STR == nil then 
+		local returner = {"canister-empty", math.ceil(SET * AMOUNT)}
+		return returner
+	else
+		local returner = {"canister-empty", math.ceil(SET * AMOUNT)}
+		return returner
+	end
+end

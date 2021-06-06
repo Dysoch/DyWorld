@@ -176,5 +176,5 @@ local Chemical_Techs = {
 }
 
 for k,v in pairs(Chemical_Techs) do
-	DyWorld_Tech_Add(v)
+	DyWorld_Tech_Add(v) 
 end

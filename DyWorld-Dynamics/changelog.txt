@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.94
+Date: ??. 06. 2021
+  Major Features:
+    - 
+  Features:
+    - Added an Expensive technology modifier that works only on DyWorld-Dynamics Technologies
+  Changes:
+    - Rewrote technologies. No longer requiring multiple counts of the same ingredient. The total costs are now show normally
+  Balancing:
+    - 
+  Bugfixes:
+    - 
+  Story:
+    - Fixed typo in Act 2 Phase 5 that prevented Refinery as completed
+---------------------------------------------------------------------------------------------------
 Version: 0.7.93
 Date: 06. 06. 2021
   Major Features:

@@ -23,14 +23,16 @@ require(DyDs_data_machines.. "tier-2.blast-furnace")
 require(DyDs_data_machines.. "tier-2.gas-engine")
 require(DyDs_data_machines.. "tier-2.gas-extractor")
 require(DyDs_data_machines.. "tier-2.oil-extractor")
-require(DyDs_data_machines.. "tier-2.lab-2")
 require(DyDs_data_machines.. "tier-2.rocket-silo")
 require(DyDs_data_machines.. "tier-2.radar")
+require(DyDs_data_machines.. "tier-2.lab-2")
 require(DyDs_data_machines.. "tier-2.power-pole")
 
 -- Tier 3 --
 require(DyDs_data_machines.. "tier-3.rocket-silo")
 require(DyDs_data_machines.. "tier-3.radar")
+require(DyDs_data_machines.. "tier-3.lab-3")
+require(DyDs_data_machines.. "tier-3.lab-4")
 
 -- Tier 4 --
 require(DyDs_data_machines.. "tier-4.rocket-silo")

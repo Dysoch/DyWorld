@@ -1,7 +1,7 @@
 
 --debugger = true
 debugger = settings.startup["DyWorld_Debug"].value
-Version_Build = "0.7.93"
+Version_Build = "0.7.94"
 
 function Dy_Log(String)
 	if settings.startup["DyWorld_Debug"].value then

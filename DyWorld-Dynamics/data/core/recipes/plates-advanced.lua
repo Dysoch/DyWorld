@@ -130,6 +130,7 @@ data:extend({
       {
         {type = "item", name = "bronze-plate", amount = 70},
         {type = "item", name = "canister-empty", amount = 2},
+        {type = "item", name = "slag", amount_min = 5, amount_max = 50},
       },
 	  energy_required = 30,
 	  main_product = "bronze-plate",
@@ -154,6 +155,7 @@ data:extend({
       {
         {type = "item", name = "steel-plate", amount = 3},
         {type = "item", name = "canister-empty", amount = 2},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
       },
 	  energy_required = 15,
 	  main_product = "steel-plate",
@@ -310,6 +312,7 @@ data:extend({
       results = 
       {
         {type = "fluid", name = "molten-steel", amount_min = 75, amount_max = 85},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 5},
       },
 	  energy_required = 30,
 	  main_product = "molten-steel",

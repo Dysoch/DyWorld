@@ -4,6 +4,8 @@ require("data.hider")
 require("data.automated-edits.item-tool")
 require("data.automated-edits.tech")
 require("data.automated-edits.stone")
+require("data.automated-edits.circuits")
+require("data.automated-edits.gears")
 
 -- Entity --
 require("data.entity.base")

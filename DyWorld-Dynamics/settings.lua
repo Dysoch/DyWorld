@@ -42,14 +42,20 @@ data:extend({
         minimum_value = 1,
 	},
 	----- Map Settings -----
-    --[[{
-        type = "bool-setting",
-        name = "DyWorld_Loot_Deconstruct",
-		order = "a",
-        setting_type = "runtime-global",
-        default_value = true
-    },
     {
+        type = "bool-setting",
+        name = "DyWorld_Autosave_Story",
+        setting_type = "runtime-global",
+        default_value = true,
+    },
+	{
+		type = "string-setting",
+		name = "DyWorld_Attack_Difficulty",
+        setting_type = "runtime-global",
+		default_value = "Easy",
+		allowed_values = {"Peaceful", "Easy", "Medium", "Hard", "Death"},
+	},
+    --[[{
         type = "bool-setting",
         name = "DyWorld_Loot_Deconstruct_Message",
 		order = "a",

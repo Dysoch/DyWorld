@@ -10,6 +10,8 @@ Rework electricity
 limit amount items in fuel slot (if possible)end
 remove massive fish spawns (Space ex)
 
+rewrite attack script to spawn the enemies based on evolution (like projectile act 1 phase 10)
+
 unlock logistics tab start of act 2
 
 add recycler (space ex)

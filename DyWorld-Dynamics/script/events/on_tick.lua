@@ -43,7 +43,7 @@ function Event_on_tick(event)
 				Bonuses(v.id)
 				if global.dyworld_story then
 					if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective then
-						Story_Objectives("position", nil, (game.players[v.id].position.x), (game.players[v.id].position.y))
+						Story_Objectives("position", v.id, (game.players[v.id].position.x), (game.players[v.id].position.y))
 					end
 				end
 			end
@@ -56,22 +56,24 @@ function Event_on_tick(event)
 			end
 		end
 	end
-	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack and event.tick%(60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency) == math.random((60*60*global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_frequency)-1)) and global.dyworld_story then
-		if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
-		local Loc = Pick_Random_Attack_Location()
-		local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 10))
-		
-		game.surfaces[1].build_enemy_base(Loc, Str)
-		
-		global.dyworld.game_stats.attack_loc_amount = Str
-		global.dyworld.game_stats.attack_loc_x = Loc.x
-		global.dyworld.game_stats.attack_loc_y = Loc.y
-		if global.dyworld.game_stats.attack_warning_3 then
-			AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
-		elseif global.dyworld.game_stats.attack_warning_2 then
-			AttackPrint({"DyDs-story.attack-2", Str})
-		elseif global.dyworld.game_stats.attack_warning_1 then
-			AttackPrint({"DyDs-story.attack-1"})
+	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack and global.dyworld_story and settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful") then
+		if event.tick%(Pick_Attack_Time()) == (Pick_Attack_Time() - 1) then
+			if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
+			local Loc = Pick_Random_Attack_Location()
+			local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 10))
+			local Surface = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_surface
+			game.surfaces[Surface].build_enemy_base(Loc, Str)
+			
+			global.dyworld.game_stats.attack_loc_amount = Str
+			global.dyworld.game_stats.attack_loc_x = Loc.x
+			global.dyworld.game_stats.attack_loc_y = Loc.y
+			if global.dyworld.game_stats.attack_warning_3 then
+				AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
+			elseif global.dyworld.game_stats.attack_warning_2 then
+				AttackPrint({"DyDs-story.attack-2", Str})
+			elseif global.dyworld.game_stats.attack_warning_1 then
+				AttackPrint({"DyDs-story.attack-1"})
+			end
 		end
 	end
 end

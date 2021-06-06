@@ -31,8 +31,13 @@ function Story_GUI(player, id)
 					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_1.."."..v.name}}}
 					frameflow2.add{type = "line", direction = "horizontal"}
 				elseif (v.done == false and v.type_1 == "position") then
-					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, Round(getDistance(game.players[id].position.x, game.players[id].position.y, v.PosX, v.PosY), 0)}}
-					frameflow2.add{type = "line", direction = "horizontal"}
+					if game.players[id].surface.name == v.Surface then
+						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, Round(getDistance(game.players[id].position.x, game.players[id].position.y, v.PosX, v.PosY), 0)}}
+						frameflow2.add{type = "line", direction = "horizontal"}
+					else
+						frameflow2.add{type = "label", caption = "Location on different Surface"}
+						frameflow2.add{type = "line", direction = "horizontal"}
+					end
 				elseif (v.done == false and v.type_1 ~= "label") then
 					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_2.."."..v.name}, v.amount_done, v.amount_needed}}
 					frameflow2.add{type = "line", direction = "horizontal"}
@@ -53,13 +58,13 @@ function Story_GUI(player, id)
 			frameflow1.add{type = "label", caption = "Stage: Metal Works"}
 			frameflow1.add{type = "line", direction = "horizontal"}
 		elseif global.dyworld.story.act == 3 then
-			frameflow1.add{type = "label", caption = "Stage: Advanced Metal Age"}
+			frameflow1.add{type = "label", caption = "Stage: Space Age"}
 			frameflow1.add{type = "line", direction = "horizontal"}
 		elseif global.dyworld.story.act == 4 then
-			frameflow1.add{type = "label", caption = "Stage: Nanotech Age"}
+			frameflow1.add{type = "label", caption = "Stage: Advanced Space Age"}
 			frameflow1.add{type = "line", direction = "horizontal"}
 		elseif global.dyworld.story.act == 5 then
-			frameflow1.add{type = "label", caption = "Stage: Space Age"}
+			frameflow1.add{type = "label", caption = "Stage: Universe Age"}
 			frameflow1.add{type = "line", direction = "horizontal"}
 		end
 		frameflow1.add{type = "label", caption = "Time since crash: "..global.dyworld.game_stats.time_stamp}

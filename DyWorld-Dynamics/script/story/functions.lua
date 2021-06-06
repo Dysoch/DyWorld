@@ -1,7 +1,7 @@
 
-function Find_Enemy()
-	if game.surfaces[1].find_nearest_enemy{position={0,0}, max_distance = ((global.dyworld.game_stats.chunks / 4) * 32)} then
-		return game.surfaces[1].find_nearest_enemy{position={0,0}, max_distance = ((global.dyworld.game_stats.chunks / 4) * 32)}
+function Find_Enemy(SURFACE)
+	if game.surfaces[SURFACE].find_nearest_enemy{position={0,0}, max_distance = ((global.dyworld.game_stats.chunks / 4) * 32)} then
+		return game.surfaces[SURFACE].find_nearest_enemy{position={0,0}, max_distance = ((global.dyworld.game_stats.chunks / 4) * 32)}
 	else
 		return nil
 	end
@@ -58,7 +58,7 @@ function Phase_Forward()
 		if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_2 and global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective_2 == "enemy-find") then
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if v.type_1 == "position" then
-					local Finder = Find_Enemy()
+					local Finder = Find_Enemy(v.Surface)
 					if Finder == nil then
 						v.done = true
 						global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
@@ -70,6 +70,19 @@ function Phase_Forward()
 					
 					end
 				end
+			end
+		end
+		-- Add location Tag
+		for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
+			if v.type_1 == "position" and v.done == false then
+				if not game.surfaces[v.Surface].is_chunk_generated({v.PosX/32, v.PosY/32}) then
+					game.surfaces[v.Surface].request_to_generate_chunks({v.PosX, v.PosY}, 1)
+					game.surfaces[v.Surface].force_generate_chunk_requests()
+				end
+				local SAct = global.dyworld.story.act
+				local SPhase = global.dyworld.story.phase
+				local ObjTag = "Dy-Story-Tag-"..SAct.."-"..SPhase.."-"..k
+				game.forces.player.add_chart_tag(v.Surface, {position = {v.PosX, v.PosY}, object_name = ObjTag, surface = v.Surface, text = "Story Objective"})
 			end
 		end
 	end
@@ -84,7 +97,7 @@ function Phase_Forward()
 		end
 	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then
-		game.surfaces[1].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {(math.random(-10,10)),(math.random(-10,10))}}
+		game.surfaces["nauvis"].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {(math.random(-10,10)),(math.random(-10,10))}}
 		for index,player in pairs(game.players) do
 			player.play_sound{path = "DySound_nuclear_alarm"}
 		end
@@ -101,15 +114,22 @@ function Phase_Forward()
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].recipes then
 		for index,player in pairs(game.players) do
 			if settings.get_player_settings(index)["DyWorld_Phase_Messages"].value then
-				DyLog("DyDs-story.phase-forward-1", true)
+				if not debugger then
+					DyLog("DyDs-story.phase-forward-1", true)
+				end
 			end
 		end
 	else
 		for index,player in pairs(game.players) do
 			if settings.get_player_settings(index)["DyWorld_Phase_Messages"].value then
-				DyLog("DyDs-story.phase-forward-2", true)
+				if not debugger then
+					DyLog("DyDs-story.phase-forward-2", true)
+				end
 			end
 		end
+	end
+	if settings.global["DyWorld_Autosave_Story"].value then
+		game.auto_save("DyWorld-Dynamics Act "..global.dyworld.story.act.." Phase "..global.dyworld.story.phase)
 	end
 	end
 end
@@ -173,15 +193,26 @@ function Story_Objectives(type, event, Posx, PosY)
 		elseif type == "position" then
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 				if (v.type_1 == "position" and v.done == false) then
-					if v.HigherDis then
-						if getDistance(Posx, PosY, v.PosX, v.PosY) <= 100 then
-							v.done = true
-							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
-						end
-					else
-						if getDistance(Posx, PosY, v.PosX, v.PosY) <= 10 then
-							v.done = true
-							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+				local player = game.players[event]
+					if player.surface.name == v.Surface then
+						if v.HigherDis then
+							if getDistance(Posx, PosY, v.PosX, v.PosY) <= 100 then
+								v.done = true
+								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+								local TAG = game.forces.player.find_chart_tags(v.Surface, {{(Posx-150), (PosY-150)},{(Posx+150), (PosY+150)}})
+								for k,v in pairs(TAG) do
+									v.destroy()
+								end
+							end
+						else
+							if getDistance(Posx, PosY, v.PosX, v.PosY) <= 10 then
+								v.done = true
+								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+								local TAG = game.forces.player.find_chart_tags(v.Surface, {{(Posx-15), (PosY-15)},{(Posx+15), (PosY+15)}})
+								for k,v in pairs(TAG) do
+									v.destroy()
+								end
+							end
 						end
 					end
 				end

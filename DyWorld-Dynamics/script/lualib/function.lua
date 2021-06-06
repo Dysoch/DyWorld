@@ -50,7 +50,34 @@ end
 
 function Pick_Random_Attack_Strength(STRENGTH)
 	local Amount = 1
-	Amount = math.random(STRENGTH)
-	--debug("random attack amount: "..Amount)
-	return Amount
+	if settings.global["DyWorld_Attack_Difficulty"].value == "Easy" then
+		Amount = math.random(STRENGTH)
+		return Amount
+	elseif settings.global["DyWorld_Attack_Difficulty"].value == "Medium" then
+		Amount = math.random(STRENGTH*3)
+		return Amount
+	elseif settings.global["DyWorld_Attack_Difficulty"].value == "Hard" then
+		Amount = math.random(STRENGTH*9)
+		return Amount
+	elseif settings.global["DyWorld_Attack_Difficulty"].value == "Death" then
+		Amount = math.random(STRENGTH*27)
+		return Amount
+	end
+end
+
+function Pick_Attack_Time()
+	local Amount = 1
+	if settings.global["DyWorld_Attack_Difficulty"].value == "Easy" then
+		Amount = 60*60*15
+		return Amount
+	elseif settings.global["DyWorld_Attack_Difficulty"].value == "Medium" then
+		Amount = 60*60*10
+		return Amount
+	elseif settings.global["DyWorld_Attack_Difficulty"].value == "Hard" then
+		Amount = 60*60*5
+		return Amount
+	elseif settings.global["DyWorld_Attack_Difficulty"].value == "Death" then
+		Amount = 60*60*1
+		return Amount
+	end
 end

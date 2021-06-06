@@ -9,8 +9,8 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "copper-ore", amount = 10},
-        {type = "item", name = "tin-ore", amount = 70},
+        {type = "item", name = "copper-ore", amount = 70},
+        {type = "item", name = "tin-ore", amount = 10},
         {type = "fluid", name = "nitrogen", amount = 75},
       },
       results = 

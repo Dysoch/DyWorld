@@ -24,9 +24,9 @@ end
 function Resist_Tier_1(Mult)
 	
 	p = {
-	  Resist("impact", 0, Round((2.5 * Mult), 2)),
-	  Resist("fire", 0, Round((20 * Mult), 2)),
-	  Resist("physical", 0, Round((5 * Mult), 2)),
+	  Resist("impact", 0, Round_Resist_Percent((2.5 * Mult), 2)),
+	  Resist("fire", 0, Round_Resist_Percent((20 * Mult), 2)),
+	  Resist("physical", 0, Round_Resist_Percent((5 * Mult), 2)),
 	}
 	return p
 end

@@ -2,6 +2,11 @@
 
 local Change = {
 	{Old = "stone", New = "stone-brick"},
+	{Old = "iron-gear-wheel", New = "iron-gear"},
+	{Old = "electronic-circuit", New = "control-board-1"},
+	{Old = "advanced-circuit", New = "control-board-2"},
+	{Old = "processing-unit", New = "control-board-3"},
+	{Old = "raw-fish", New = "raw-fish-pike"},
 	
 }
 

@@ -7,6 +7,15 @@ function Round(num, numDecimalPlaces)
 	return math.floor(num * mult + 0.5) / mult
 end
 
+function Round_Resist_Percent(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	if math.floor(num * mult + 0.5) / mult >= 100 then
+		return 100
+	else
+		return math.floor(num * mult + 0.5) / mult
+	end
+end
+
 function DyDs_CopyPrototype(type, name, newName, change_results)
     if not data.raw[type][name] then error("type "..type.." "..name.." doesn't exist") end
     local p = table.deepcopy(data.raw[type][name])

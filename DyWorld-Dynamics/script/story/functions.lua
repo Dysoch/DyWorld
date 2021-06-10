@@ -103,6 +103,15 @@ function Phase_Forward()
 		end
 		global.dyworld.game_stats.difficulty = 1
 	end
+	if (global.dyworld.story.phase == 2 and global.dyworld.story.act == 2) then
+		local Loot = game.surfaces["nauvis"].find_entities_filtered{type = "item-entity", position = {0,0}, radius = 300}
+		for _, item in pairs(Loot) do
+			local player = game.players[1]
+			if item.valid and item.stack.valid then
+				if item.destroy() then end
+			end
+		end
+	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 3) then
 		global.dyworld.game_stats.difficulty = 1
 	end

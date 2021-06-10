@@ -5,14 +5,18 @@ Date: ??. 06. 2021
     - 
   Features:
     - Added an Expensive technology modifier that works only on DyWorld-Dynamics Technologies
+    - Added bronze recipe for Blast Furnaces (Advanced Bronze Processing)
   Changes:
     - Rewrote technologies. No longer requiring multiple counts of the same ingredient. The total costs are now show normally
+    - Information in Informatron now requires technologies to be researched in certain cases
+    - Fish now gives different fishes
   Balancing:
     - 
   Bugfixes:
     - 
   Story:
     - Fixed typo in Act 2 Phase 5 that prevented Refinery as completed
+    - At the end of Phase 1 of Act 2 all items on ground in a radius of 300 from spawn will be deleted (mostly wood). Reduces lag
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.93
 Date: 06. 06. 2021

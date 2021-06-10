@@ -3,9 +3,7 @@
 require("data.hider")
 require("data.automated-edits.item-tool")
 require("data.automated-edits.tech")
-require("data.automated-edits.stone")
-require("data.automated-edits.circuits")
-require("data.automated-edits.gears")
+require("data.automated-edits.intermediates")
 
 -- Entity --
 require("data.entity.base")
@@ -15,6 +13,7 @@ require("data.entity.player")
 require("data.entity.rocks")
 require("data.entity.trees")
 require("data.entity.units")
+require("data.entity.wreckage")
 require("data.entity.aai-industry")
 
 -- Items --

@@ -4,14 +4,15 @@ Date: 02. 06. 2021
   Features:
     - First Release
   Minor Features:
-    - 
+    - Rocks, Boulders, Trees and Wreckages now have a small chance (Extremely Small!) to give an Exotic Particle
   Changes:
     - Made Recipe adding to Technologies loaded as last (to prevent overrides)
+    - Improved loottables of rocks and boulders to only do rocks and boulders (not wreckages, etc)
   Bugfixes:
     - Fixed technologies not being able to research
   Balancing:
-    - 
+    - Rewrote Tree mining results. Should be a bit more balanced now
   Story:
     - 
   Compatibility:
-    - AAI-Industry is now compatible made ingame
+    - AAI-Industry wreckage now has DyWorld materials

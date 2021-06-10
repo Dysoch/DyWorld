@@ -42,4 +42,8 @@ data:extend(
 	DyWorld_Hider = false,
   },
 })
+	if params.icons then
+		data.raw.technology[params.name].icons = params.icons
+		data.raw.technology[params.name].icon = nil
+	end
 end

@@ -56,6 +56,11 @@ local Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "intermediates"
 	},
+	{
+		Name = "intermediates-bio", -- 10
+		Type = "sub",
+		Main = "intermediates"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

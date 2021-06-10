@@ -134,3 +134,23 @@ function Dy_Main_Tech_Pack(STR, AMOUNT)
 		return returner
 	end
 end
+
+
+function Dy_Bio_Tech_Pack(STR, AMOUNT)
+	if STR == "fish-pike" then
+		local returner = {"raw-fish-pike-filet", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == "fish-salmon" then
+		local returner = {"raw-fish-salmon-filet", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 1 then
+		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == nil then 
+		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
+		return returner
+	else
+		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
+		return returner
+	end
+end

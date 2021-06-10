@@ -267,48 +267,96 @@ function dyworld_page_content(page_name, player_index, element)
     element.add{type="label", name="text_1", caption={"DyWorld.page_arachnid_text_1"}}
   end
   if page_name == "small_arachnid" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_small_arachnid", global.dyworld.game_stats.killed_names["small-biter"]}}
     local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
     image_container.add{type="button", name="image_1", style="small_biter_1"}
+    element.add{type="label", name="", caption={"DyWorld.page_small_arachnid-1", global.dyworld.game_stats.killed_names["small-biter"]}}
+	if game.forces.player.technologies["arachnid-1"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_small_arachnid-2"}}
+	end
+	if game.forces.player.technologies["arachnid-2"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_small_arachnid-3"}}
+	end
   end
   if page_name == "medium_arachnid" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_medium_arachnid", global.dyworld.game_stats.killed_names["medium-biter"]}}
     local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
     image_container.add{type="button", name="image_1", style="medium_biter_1"}
+    element.add{type="label", name="", caption={"DyWorld.page_medium_arachnid-1", global.dyworld.game_stats.killed_names["medium-biter"]}}
+	if game.forces.player.technologies["arachnid-2"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_medium_arachnid-2"}}
+	end
+	if game.forces.player.technologies["arachnid-3"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_medium_arachnid-3"}}
+	end
   end
   if page_name == "big_arachnid" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_big_arachnid", global.dyworld.game_stats.killed_names["big-biter"]}}
     local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
     image_container.add{type="button", name="image_1", style="big_biter_1"}
+    element.add{type="label", name="", caption={"DyWorld.page_big_arachnid-1", global.dyworld.game_stats.killed_names["big-biter"]}}
+	if game.forces.player.technologies["arachnid-3"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_big_arachnid-2"}}
+	end
+	if game.forces.player.technologies["arachnid-4"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_big_arachnid-3"}}
+	end
   end
   if page_name == "behemoth_arachnid" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_arachnid", global.dyworld.game_stats.killed_names["behemoth-biter"]}}
     local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
     image_container.add{type="button", name="image_1", style="behemoth_biter_1"}
+    element.add{type="label", name="", caption={"DyWorld.page_behemoth_arachnid-1", global.dyworld.game_stats.killed_names["behemoth-biter"]}}
+	if game.forces.player.technologies["arachnid-4"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_behemoth_arachnid-2"}}
+	end
+	if game.forces.player.technologies["arachnid-5"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_behemoth_arachnid-3"}}
+	end
   end
   
   if page_name == "myriapods" then
     element.add{type="label", name="text_1", caption={"DyWorld.page_myriapods_text_1"}}
   end
   if page_name == "small_myriapods" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_small_myriapods", global.dyworld.game_stats.killed_names["small-spitter"]}}
     local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
     image_container.add{type="button", name="image_1", style="small_spitter_1"}
+    element.add{type="label", name="", caption={"DyWorld.page_small_myriapods-1", global.dyworld.game_stats.killed_names["small-spitter"]}}
+	if game.forces.player.technologies["myriapod-1"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_small_myriapods-2"}}
+	end
+	if game.forces.player.technologies["myriapod-2"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_small_myriapods-3"}}
+	end
   end
   if page_name == "medium_myriapods" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_medium_myriapods", global.dyworld.game_stats.killed_names["medium-spitter"]}}
     local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
     image_container.add{type="button", name="image_1", style="medium_spitter_1"}
+    element.add{type="label", name="", caption={"DyWorld.page_medium_myriapods-1", global.dyworld.game_stats.killed_names["medium-spitter"]}}
+	if game.forces.player.technologies["myriapod-2"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_medium_myriapods-2"}}
+	end
+	if game.forces.player.technologies["myriapod-3"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_medium_myriapods-3"}}
+	end
   end
   if page_name == "big_myriapods" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_big_myriapods", global.dyworld.game_stats.killed_names["big-spitter"]}}
     local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
     image_container.add{type="button", name="image_1", style="big_spitter_1"}
+    element.add{type="label", name="", caption={"DyWorld.page_big_myriapods-1", global.dyworld.game_stats.killed_names["big-spitter"]}}
+	if game.forces.player.technologies["myriapod-3"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_big_myriapods-2"}}
+	end
+	if game.forces.player.technologies["myriapod-4"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_big_myriapods-3"}}
+	end
   end
   if page_name == "behemoth_myriapods" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_behemoth_myriapods", global.dyworld.game_stats.killed_names["behemoth-spitter"]}}
     local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
     image_container.add{type="button", name="image_1", style="behemoth_spitter_1"}
+    element.add{type="label", name="", caption={"DyWorld.page_behemoth_myriapods-1", global.dyworld.game_stats.killed_names["behemoth-spitter"]}}
+	if game.forces.player.technologies["myriapod-4"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_behemoth_myriapods-2"}}
+	end
+	if game.forces.player.technologies["myriapod-5"].researched then
+      element.add{type="label", name="", caption={"DyWorld.page_behemoth_myriapods-3"}}
+	end
   end
 
   --[[if page_name == "penguin" then

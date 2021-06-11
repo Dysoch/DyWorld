@@ -37,14 +37,17 @@ function Event_on_built_entity(event)
 		----- Story Objective Check -----
 		Story_Objectives("building-player", event)
 		
-		-- Reenable Minimap
+		
 		if (type == "radar") then
-			if (player.minimap_enabled == false and name == "burner-radar") then
-				for _,player in pairs(game.players) do
-					player.minimap_enabled = true
-					DyLog(Time..": Minimap Unlocked")
-					game.forces.player.ghost_time_to_live = (60*60*60*24)
-					game.forces.player.deconstruction_time_to_live = (60*60*60*24)
+			if (name == "burner-radar") then
+				game.forces.player.ghost_time_to_live = (60*60*60*24)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
+			end
+			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars + 1
+			for k,v in pairs(global.dyworld.players) do
+				if not game.players[v.id].minimap_enabled then
+					game.players[v.id].minimap_enabled = true
 				end
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
@@ -121,12 +124,15 @@ function Event_on_robot_built_entity(event)
 	if global.dyworld_story then
 		-- Reenable Minimap
 		if (type == "radar") then
-			for _,player in pairs(game.players) do
-				if (player.minimap_enabled == false and name == "burner-radar") then
-					player.minimap_enabled = true
-					DyLog(Time..": Minimap Unlocked")
-					game.forces.player.ghost_time_to_live = (60*60*60*24)
-					game.forces.player.deconstruction_time_to_live = (60*60*60*24)
+			if (name == "burner-radar") then
+				game.forces.player.ghost_time_to_live = (60*60*60*24)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
+			end
+			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars + 1
+			for k,v in pairs(global.dyworld.players) do
+				if not game.players[v.id].minimap_enabled then
+					game.players[v.id].minimap_enabled = true
 				end
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
@@ -208,12 +214,15 @@ function Event_script_raised_built(event)
 	if global.dyworld_story then
 		-- Reenable Minimap
 		if (type == "radar") then
-			for _,player in pairs(game.players) do
-				if (player.minimap_enabled == false and name == "burner-radar") then
-					player.minimap_enabled = true
-					DyLog(Time..": Minimap Unlocked")
-					game.forces.player.ghost_time_to_live = (60*60*60*24)
-					game.forces.player.deconstruction_time_to_live = (60*60*60*24)
+			if (name == "burner-radar") then
+				game.forces.player.ghost_time_to_live = (60*60*60*24)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
+			end
+			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars + 1
+			for k,v in pairs(global.dyworld.players) do
+				if not game.players[v.id].minimap_enabled then
+					game.players[v.id].minimap_enabled = true
 				end
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
@@ -295,12 +304,15 @@ function Event_script_raised_revive(event)
 	if global.dyworld_story then
 		-- Reenable Minimap
 		if (type == "radar") then
-			for _,player in pairs(game.players) do
-				if (player.minimap_enabled == false and name == "burner-radar") then
-					player.minimap_enabled = true
-					DyLog(Time..": Minimap Unlocked")
-					game.forces.player.ghost_time_to_live = (60*60*60*24)
-					game.forces.player.deconstruction_time_to_live = (60*60*60*24)
+			if (name == "burner-radar") then
+				game.forces.player.ghost_time_to_live = (60*60*60*24)
+				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
+			end
+			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars + 1
+			for k,v in pairs(global.dyworld.players) do
+				if not game.players[v.id].minimap_enabled then
+					game.players[v.id].minimap_enabled = true
 				end
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then

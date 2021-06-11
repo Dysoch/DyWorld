@@ -5,6 +5,7 @@ Date: ??. 06. 2021
     - 
   Changes:
     - Treefarm now has visualization for its radius
+    - Rewrote minimap script. Now when no radars are present, the minimap will be gone. (this includes mid game when last is destroyed)
     - 
   Story:
     - 

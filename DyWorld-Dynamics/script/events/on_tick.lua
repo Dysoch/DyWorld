@@ -49,9 +49,10 @@ function Event_on_tick(event)
 			end
 		end
 	end
-	if event.tick%(60*60)==800 and global.dyworld_story then
+	if game.tick == 800 and global.dyworld_story then
 		for k,v in pairs(global.dyworld.players) do
-			if (global.dyworld.story.act == 1 and global.dyworld.story.phase <= 8 and game.players[v.id].minimap_enabled == true) then
+			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+			if (global.dyworld.game_stats.radars <= 0) then
 				game.players[v.id].minimap_enabled = false
 			end
 		end

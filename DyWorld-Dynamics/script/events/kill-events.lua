@@ -43,6 +43,19 @@ function Event_on_entity_died(event)
 		----- Story Objective Check -----
 		Story_Objectives("died", event)
 		
+		if (type_killed == "radar") then
+			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars - 1
+			if global.dyworld.game_stats.radars <= 0 then
+				global.dyworld.game_stats.radars = 0 
+				for k,v in pairs(global.dyworld.players) do
+					if game.players[v.id].minimap_enabled then
+						game.players[v.id].minimap_enabled = false
+					end
+				end
+			end
+		end
+		
 		----- Difficulty -----
 		if (name == "burner-radar") then
 			if global.dyworld.game_stats.difficulty > ((10 * global.dyworld.game_stats.players) + 1) then

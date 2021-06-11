@@ -75,6 +75,18 @@ function Event_on_player_mined_entity(event)
 	end
 	
 	if global.dyworld_story then
+		if (type == "radar") then
+			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars - 1
+			if global.dyworld.game_stats.radars <= 0 then
+				global.dyworld.game_stats.radars = 0 
+				for k,v in pairs(global.dyworld.players) do
+					if game.players[v.id].minimap_enabled then
+						game.players[v.id].minimap_enabled = false
+					end
+				end
+			end
+		end
 		----- Difficulty -----
 		if (name == "burner-radar") then
 			if global.dyworld.game_stats.difficulty > ((5 * global.dyworld.game_stats.players) + 1) then
@@ -136,6 +148,18 @@ function Event_on_robot_mined_entity(event)
 	end
 	
 	if global.dyworld_story then
+		if (type == "radar") then
+			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars - 1
+			if global.dyworld.game_stats.radars <= 0 then
+				global.dyworld.game_stats.radars = 0 
+				for k,v in pairs(global.dyworld.players) do
+					if game.players[v.id].minimap_enabled then
+						game.players[v.id].minimap_enabled = false
+					end
+				end
+			end
+		end
 		----- Difficulty -----
 		if (name == "burner-radar") then
 			if global.dyworld.game_stats.difficulty > ((5 * global.dyworld.game_stats.players) + 1) then

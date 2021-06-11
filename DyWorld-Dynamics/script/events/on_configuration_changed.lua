@@ -16,4 +16,7 @@ function Event_on_configuration_changed()
 	end
 	
 	Reunlock_Recipes()
+	if global.dyworld.version == "0.7.94" then
+		global.dyworld.game_stats.radars = 0
+	end
 end

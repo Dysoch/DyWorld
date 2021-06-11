@@ -12,7 +12,7 @@ Date: ??. 06. 2021
   Balancing:
     - 
   Compatibility:
-    - 
+    - Added in automated compatibility for Science Packs added by DyWorld
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 10. 06. 2021

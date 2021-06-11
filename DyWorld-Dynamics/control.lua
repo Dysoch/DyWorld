@@ -1,7 +1,7 @@
 
 --debugger = true
 debugger = settings.startup["DyWorld_Debug"].value
-Version_Build = "0.7.94"
+Version_Build = "0.7.95"
 
 function Dy_Log(String)
 	if settings.startup["DyWorld_Debug"].value then
@@ -123,6 +123,8 @@ remote.add_interface("DyWorld",
 			Phase_Forward()
 		end
 	end,
+	
+	allow_aai_crash_sequence = function(data) return {allow = false, weight = 1} end,
 	
 	Debug_Start = function()
 		game.players[1].insert{name = "gun-turret", count = 100}

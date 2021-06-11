@@ -39,6 +39,24 @@ function getDistance(objA_X, objA_Y, objB_X, objB_Y)
     return math.sqrt((xDist^2)+(yDist^2)) 
 end
 
+function tablelength(T)
+	local count = 0
+	for _ in pairs(T) do count = count + 1 end
+	return count
+end
+
+function Story_tablelength(T)
+	local count = 0
+	for k,v in pairs(T) do 
+		if (v.type_1 == "label" and (v.name == "explore" or v.name == "wait")) then
+			-- do nothing, since its a dummy objective
+		else
+			count = count + 1 
+		end
+	end
+	return count
+end
+
 function Pick_Random_Attack_Location()
 	local Location = {x = 0, y = 0}
 	local Loc_table = global.dyworld.game_stats.building_locations

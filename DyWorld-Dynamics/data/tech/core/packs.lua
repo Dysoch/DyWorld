@@ -75,7 +75,7 @@ function Dy_Metal_Tech_Pack(STR, AMOUNT)
 		local returner = {"limestone", StackSizeCheck(AMOUNT)}
 		return returner
 	else
-		local returner = {"limestone", StackSizeCheck(AMOUNT)}
+		local returner = {"limestone", StackSizeCheck(50)}
 		return returner
 	end
 end
@@ -113,24 +113,7 @@ function Dy_Chemical_Tech_Pack(STR, AMOUNT)
 		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
 		return returner
 	else
-		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
-		return returner
-	end
-end
-
-
-function Dy_Main_Tech_Pack(STR, AMOUNT)
-	if STR == 1 then
-		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
-		return returner
-	elseif STR == 2 then
-		local returner = {"canister-oxygen", StackSizeCheck(AMOUNT)}
-		return returner
-	elseif STR == nil then 
-		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
-		return returner
-	else
-		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
+		local returner = {"canister-empty", StackSizeCheck(50)}
 		return returner
 	end
 end
@@ -150,7 +133,39 @@ function Dy_Bio_Tech_Pack(STR, AMOUNT)
 		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
 		return returner
 	else
-		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
+		local returner = {"canister-empty", StackSizeCheck(50)}
+		return returner
+	end
+end
+
+
+function Dy_Main_Tech_Pack(STR, AMOUNT)
+	if STR == 1 then
+		local returner = {"dysci-01", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 2 then
+		local returner = {"dysci-02", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 3 then
+		local returner = {"dysci-03", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 4 then
+		local returner = {"dysci-04", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 5 then
+		local returner = {"dysci-05", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 6 then
+		local returner = {"dysci-06", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 7 then
+		local returner = {"dysci-07", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == nil then 
+		local returner = {"dysci-1", StackSizeCheck(AMOUNT)}
+		return returner
+	else
+		local returner = {"dysci-1", StackSizeCheck(50)}
 		return returner
 	end
 end

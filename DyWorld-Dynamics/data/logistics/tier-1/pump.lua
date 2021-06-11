@@ -33,18 +33,5 @@ data:extend({
 	  enabled = false,
 	  energy_required = 1,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "bronze-plate", amount = 6},
-        {type = "item", name = "bronze-pipe", amount = 3},
-        {type = "item", name = "control-board-1", amount = 3},
-      },
-      result = "bronze-pump",
-      result_count = 1,
-	  enabled = false,
-	  energy_required = 5,
-    },
   },
 })

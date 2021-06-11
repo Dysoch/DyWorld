@@ -17,9 +17,12 @@ for k,v in pairs(data.raw.recipe) do
 end
 
 -- Tech --
-for NAME in pairs(data.raw.technology) do
-	--data.raw.technology[NAME] = nil
-	data.raw.technology[NAME].DyWorld_Hider = true
+for k,v in pairs(data.raw.technology) do
+	if (Dy_Exclude_Tech[v.name] or string.find(v.name, "se-", 1, true)) then
+		Dy_Log("Excluded Technology from Hider ("..v.name..")")
+	else
+		data.raw.technology[v.name].DyWorld_Hider = true
+	end
 end
 
 -- Change Shortcuts --

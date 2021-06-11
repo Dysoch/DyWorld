@@ -1,6 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: ??. 06. 2021
+  Features:
+    - 
+  Minor Features:
+    - 
+  Changes:
+    - 
+  Bugfixes:
+    - 
+  Balancing:
+    - 
+  Compatibility:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
-Date: 02. 06. 2021
+Date: 10. 06. 2021
   Features:
     - First Release
   Minor Features:
@@ -12,7 +27,6 @@ Date: 02. 06. 2021
     - Fixed technologies not being able to research
   Balancing:
     - Rewrote Tree mining results. Should be a bit more balanced now
-  Story:
-    - 
   Compatibility:
     - AAI-Industry wreckage now has DyWorld materials
+    - Added in more automated compatibility patchers

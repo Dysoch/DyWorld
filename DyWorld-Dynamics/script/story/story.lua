@@ -11,7 +11,7 @@ local Story = {
 			[1] = {
 				done = false,
 				amount_left = 4,
-				objectives_amount = 4,
+				objectives_amount = 1,
 				recipes = true,
 				objectives = {
 					[1] = {
@@ -1816,6 +1816,11 @@ local Story = {
 	if BOOL then
 		return Story.acts[ACT_2][PHASE_2]
 	else
+		for _, Acts in pairs(Story.acts) do
+			for _, Phase in pairs (Acts) do
+				Phase.objectives_amount = Story_tablelength(Phase.objectives)
+			end
+		end
 		return Story
 	end
 end

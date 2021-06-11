@@ -3,7 +3,8 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("lab", "lab", "lab-4", true)
 local lab_inputs =
 {
-  "canister-empty",
+  "raw-fish-pike-filet",
+  "raw-fish-salmon-filet",
 }
 
 DyWorld_Prototype_1.inputs = lab_inputs
@@ -15,7 +16,7 @@ DyWorld_Prototype_1.on_animation = {
       layers =
       {
         {
-          filename = "__space-exploration-graphics__/graphics/entity/genetics-laboratory/sr/genetics-laboratory.png",
+          filename = "__space-exploration-graphics-2__/graphics/entity/genetics-laboratory/sr/genetics-laboratory.png",
           priority = "high",
           width = 3584/8/2,
           height = 2048/4/2,
@@ -26,7 +27,7 @@ DyWorld_Prototype_1.on_animation = {
         },
         {
           draw_as_shadow = true,
-          filename = "__space-exploration-graphics__/graphics/entity/genetics-laboratory/sr/genetics-laboratory-shadow.png",
+          filename = "__space-exploration-graphics-2__/graphics/entity/genetics-laboratory/sr/genetics-laboratory-shadow.png",
           priority = "high",
           width = 604/2,
           height = 302/2,
@@ -42,7 +43,7 @@ DyWorld_Prototype_1.off_animation = {
       layers =
       {
         {
-          filename = "__space-exploration-graphics__/graphics/entity/genetics-laboratory/sr/genetics-laboratory.png",
+          filename = "__space-exploration-graphics-2__/graphics/entity/genetics-laboratory/sr/genetics-laboratory.png",
           priority = "high",
           width = 3584/8/2,
           height = 2048/4/2,
@@ -53,7 +54,7 @@ DyWorld_Prototype_1.off_animation = {
         },
         {
           draw_as_shadow = true,
-          filename = "__space-exploration-graphics__/graphics/entity/genetics-laboratory/sr/genetics-laboratory-shadow.png",
+          filename = "__space-exploration-graphics-2__/graphics/entity/genetics-laboratory/sr/genetics-laboratory-shadow.png",
           priority = "high",
           width = 604/2,
           height = 302/2,

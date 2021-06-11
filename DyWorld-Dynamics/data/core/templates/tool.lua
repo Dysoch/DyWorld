@@ -15,7 +15,7 @@ data:extend(
     icon_size = 64, 
 	icon_mipmaps = 4,
     subgroup = params.subgroup or "other",
-    order = params.order or "a",
+    order = params.order or params.name,
     rocket_launch_product = params.rocket_launch_product or nil,
     place_result = params.place_result or nil,
     place_as_tile = params.place_as_tile or nil,
@@ -39,9 +39,9 @@ data:extend(
 	if params.icons then
 		data.raw.tool[params.name].icon = nil
 		data.raw.tool[params.name].icons = params.icons
+		data.raw.tool[params.name].icon_size = 64
 	elseif params.icon then
 		data.raw.tool[params.name].icon = params.icon
-	elseif data.raw.tool[params.name].icon == DyDs_icon_temp then
-		data.raw.tool[params.name].icon_size = 32
+		data.raw.tool[params.name].icon_size = 64
 	end
 end

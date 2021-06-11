@@ -1,22 +1,32 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.94
+Version: 0.7.95
 Date: ??. 06. 2021
-  Major Features:
+  Features:
     - 
+  Changes:
+    - 
+  Story:
+    - 
+  Balancing:
+    - Recipe Charcoal output: 5 > 3
+  Compatibility:
+    - Removed wrecks from AAI-Industry. Their setting for crash no longer works
+---------------------------------------------------------------------------------------------------
+Version: 0.7.94
+Date: 10. 06. 2021
   Features:
     - Added an Expensive technology modifier that works only on DyWorld-Dynamics Technologies
     - Added bronze recipe for Blast Furnaces (Advanced Bronze Processing)
+    - Added back in the Natural Gas and its machines
   Changes:
     - Rewrote technologies. No longer requiring multiple counts of the same ingredient. The total costs are now show normally
     - Information in Informatron now requires technologies to be researched in certain cases
     - Fish now gives different fishes
-  Balancing:
-    - 
-  Bugfixes:
-    - 
   Story:
     - Fixed typo in Act 2 Phase 5 that prevented Refinery as completed
     - At the end of Phase 1 of Act 2 all items on ground in a radius of 300 from spawn will be deleted (mostly wood). Reduces lag
+  Compatibility:
+    - Fixed Compatibility issue's with Space Exploration and SE Graphics
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.93
 Date: 06. 06. 2021

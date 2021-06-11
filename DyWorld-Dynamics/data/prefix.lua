@@ -33,6 +33,27 @@ Tier_3 = {255, 0, 0}
 Tier_4 = {0, 255, 255}
 Tier_5 = {0, 0, 255}
 
+Sci_Tier_1 = {128, 0, 0}
+Sci_Tier_2 = {170, 110, 40}
+Sci_Tier_3 = {128, 128, 0}
+Sci_Tier_4 = {0, 128, 128}
+Sci_Tier_5 = {0, 0, 128}
+Sci_Tier_6 = {0, 0, 0}
+Sci_Tier_7 = {230, 25, 75}
+Sci_Tier_8 = {245, 130, 48}
+Sci_Tier_9 = {255, 225, 25}
+Sci_Tier_10 = {210, 245, 60}
+Sci_Tier_11 = {60, 180, 75}
+Sci_Tier_12 = {70, 240, 240}
+Sci_Tier_13 = {0, 130, 200}
+Sci_Tier_14 = {145, 30, 180}
+Sci_Tier_15 = {240, 50, 230}
+Sci_Tier_16 = {128, 128, 128}
+Sci_Tier_17 = {250, 190, 212}
+Sci_Tier_18 = {255, 215, 180}
+Sci_Tier_19 = {255, 250, 200}
+Sci_Tier_20 = {170, 255, 195}
+
 Iron_Color = {82, 174, 212}
 Copper_Color = {212, 119, 82}
 Tin_Color = {39, 105, 135}
@@ -46,4 +67,8 @@ Dy_Exclude_Recipes = {
 	["burner-turbine"] = 1, 
 	["electric-motor"] = 1, 
 	["motor"] = 1, 
+}
+
+Dy_Exclude_Tech = {
+	["piscis"] = 1, 
 }

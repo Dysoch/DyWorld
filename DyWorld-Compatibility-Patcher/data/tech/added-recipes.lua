@@ -177,6 +177,9 @@ local Recipes = {
 	["oil-refinery"] = {"oil-processing"},
 	["oil-extractor"] = {"oil-extraction"},
 	
+	["gas-engine"] = {"gas-power"},
+	["gas-extractor"] = {"gas-extraction"},
+	
 	["762mm-gun"] = {"warfare-1"},
 	["762mm-bullet"] = {"warfare-1"},
 	["762mm-bullet-mag"] = {"warfare-1"},

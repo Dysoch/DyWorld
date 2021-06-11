@@ -7,6 +7,12 @@ local Change = {
 	{Old = "advanced-circuit", New = "control-board-2"},
 	{Old = "processing-unit", New = "control-board-3"},
 	{Old = "raw-fish", New = "raw-fish-pike"},
+	{Old = "pump", New = "bronze-pump"},
+	{Old = "pipe", New = "bronze-pipe"},
+	{Old = "pipe-to-ground", New = "bronze-pipe-to-ground"},
+	{Old = "inserter", New = "basic-inserter"},
+	{Old = "storage-tank", New = "storage-tank-1"},
+	--{Old = "raw", New = "raw"},
 	
 }
 

@@ -4,6 +4,7 @@ Date: ??. 06. 2021
   Features:
     - 
   Changes:
+    - Treefarm now has visualization for its radius
     - 
   Story:
     - 

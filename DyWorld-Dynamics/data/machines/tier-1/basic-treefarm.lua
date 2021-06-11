@@ -9,6 +9,7 @@ local DyWorld_Prototype_1 = DyDs_CopyPrototype("mining-drill", "burner-mining-dr
 	DyWorld_Prototype_1.icon = DyDs_path_icon.."greenhouse.png"
 	DyWorld_Prototype_1.icon_size = 32
 	DyWorld_Prototype_1.mining_speed = 1
+	DyWorld_Prototype_1.radius_visualisation_picture = data.raw["mining-drill"]["electric-mining-drill"].radius_visualisation_picture
 	DyWorld_Prototype_1.resource_categories = {"resource-trees"}
 	DyWorld_Prototype_1.energy_source.fuel_category = "carbon"
 	DyWorld_Prototype_1.energy_source.emissions_per_minute = -10

@@ -9,6 +9,7 @@ Date: ??. 06. 2021
     - 
   Balancing:
     - Recipe Charcoal output: 5 > 3
+    - Treefarm energy consumption: 150W > 450W
   Compatibility:
     - Removed wrecks from AAI-Industry. Their setting for crash no longer works
 ---------------------------------------------------------------------------------------------------

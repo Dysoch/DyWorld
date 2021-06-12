@@ -4,7 +4,7 @@ DyDS_Add_Ammo({
 	name = "762mm-bullet",
 	icon = DyDs_path_icon.."bullet-762mm.png",
 	order = "copper-cable",
-	stack_size = 1000,
+	stack_size = 250,
 	ammo_cat = "762mm",
 	dmg_amount = 2.5,
 	range = 19,
@@ -18,7 +18,7 @@ DyDS_Add_Ammo({
 	name = "762mm-bullet-ap",
 	icon = DyDs_path_icon.."bullet-762mm.png",
 	order = "copper-cable",
-	stack_size = 1000,
+	stack_size = 250,
 	ammo_cat = "762mm",
 	dmg_amount = 6,
 	range = 23,
@@ -42,21 +42,11 @@ data:extend({
         {type = "item", name = "iron-plate", amount = 1},
         {type = "fluid", name = "nitrogen", amount = 3},
       },
-      result = "762mm-bullet",
-	  result_count = 5,
-	  energy_required = 1,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
+      results = 
       {
-        {type = "item", name = "iron-plate", amount = 1*5},
-        {type = "fluid", name = "nitrogen", amount = 3*10},
+        {type = "item", name = "762mm-bullet", amount_min = 3, amount_max = 7},
       },
-      result = "762mm-bullet",
-	  result_count = 3,
-	  energy_required = 5,
+	  energy_required = 1,
 	  enabled = false,
     },
   },
@@ -72,21 +62,11 @@ data:extend({
         {type = "item", name = "762mm-bullet", amount = 5},
         {type = "item", name = "steel-plate", amount = 1},
       },
-      result = "762mm-bullet-ap",
-	  result_count = 5,
-	  energy_required = 1.5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
+      results = 
       {
-        {type = "item", name = "762mm-bullet", amount = 7},
-        {type = "item", name = "steel-plate", amount = 3},
+        {type = "item", name = "762mm-bullet-ap", amount_min = 3, amount_max = 7},
       },
-      result = "762mm-bullet-ap",
-	  result_count = 5,
-	  energy_required = 7.5,
+	  energy_required = 1.5,
 	  enabled = false,
     },
   },

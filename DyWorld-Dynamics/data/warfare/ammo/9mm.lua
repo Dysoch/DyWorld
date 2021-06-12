@@ -4,7 +4,7 @@ DyDS_Add_Ammo({
 	name = "9mm-bullet",
 	icon = DyDs_path_icon.."bullet-9mm.png",
 	order = "copper-cable",
-	stack_size = 1000,
+	stack_size = 250,
 	ammo_cat = "900mm",
 	dmg_amount = 5,
 	range = 15,
@@ -18,7 +18,7 @@ DyDS_Add_Ammo({
 	name = "9mm-bullet-ap",
 	icon = DyDs_path_icon.."bullet-9mm.png",
 	order = "copper-cable",
-	stack_size = 1000,
+	stack_size = 250,
 	ammo_cat = "900mm",
 	dmg_amount = 10,
 	range = 19,
@@ -42,21 +42,11 @@ data:extend({
         {type = "item", name = "charcoal", amount = 1},
         {type = "item", name = "limestone", amount = 3},
       },
-      result = "9mm-bullet",
-	  result_count = 5,
-	  energy_required = 1,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
+      results = 
       {
-        {type = "item", name = "charcoal", amount = 3},
-        {type = "item", name = "limestone", amount = 10},
+        {type = "item", name = "9mm-bullet", amount_min = 3, amount_max = 7},
       },
-      result = "9mm-bullet",
-	  result_count = 3,
-	  energy_required = 5,
+	  energy_required = 1,
 	  enabled = false,
     },
   },
@@ -73,22 +63,11 @@ data:extend({
         {type = "item", name = "tin-plate", amount = 1},
         {type = "item", name = "lignite", amount = 1},
       },
-      result = "9mm-bullet-ap",
-	  result_count = 5,
-	  energy_required = 1.5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
+      results = 
       {
-        {type = "item", name = "9mm-bullet", amount = 7},
-        {type = "item", name = "tin-plate", amount = 3},
-        {type = "item", name = "lignite", amount = 2},
+        {type = "item", name = "9mm-bullet-ap", amount_min = 3, amount_max = 7},
       },
-      result = "9mm-bullet-ap",
-	  result_count = 5,
-	  energy_required = 7.5,
+	  energy_required = 1.5,
 	  enabled = false,
     },
   },

@@ -12,6 +12,9 @@ Date: ??. 06. 2021
   Balancing:
     - Recipe Charcoal output: 5 > 3
     - Treefarm energy consumption: 150W > 450W
+    - Stacksize bullets: 1000 > 250
+    - Recipe output bullets: 5 > 3-7 (1853mm: 10 > 7-13)
+    - Magazine Size magazines: 1000 > 250
   Compatibility:
     - Removed wrecks from AAI-Industry. Their setting for crash no longer works
 ---------------------------------------------------------------------------------------------------

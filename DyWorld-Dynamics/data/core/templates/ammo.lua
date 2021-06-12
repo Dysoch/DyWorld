@@ -50,7 +50,7 @@ data:extend(
     magazine_size = params.magazine_size or 1,
     subgroup = params.subgroup or DyDs.."ammo-bullet-basic",
     order = params.order or "a",
-    stack_size = params.stack_size or 1000,
+    stack_size = params.stack_size or 250,
   },
   {
     type = "ammo",
@@ -105,7 +105,7 @@ data:extend(
         }
       }
     },
-    magazine_size = params.stack_size,
+    magazine_size = params.stack_size or 250,
     subgroup = params.subgroup or DyDs.."ammo-bullet-basic",
     order = params.order.."-mag" or "a-mag",
     stack_size = 100,
@@ -305,7 +305,7 @@ data:extend(
     magazine_size = params.magazine_size or 1,
     subgroup = params.subgroup or DyDs.."ammo-bullet-basic",
     order = params.order or "a",
-    stack_size = params.stack_size or 1000,
+    stack_size = params.stack_size or 250,
   },
   {
     type = "ammo",
@@ -361,7 +361,7 @@ data:extend(
         }
       }
 	},
-    magazine_size = params.stack_size,
+    magazine_size = params.stack_size or 250,
     subgroup = params.subgroup or DyDs.."ammo-bullet-basic",
     order = params.order.."-mag" or "a-mag",
     stack_size = 100,

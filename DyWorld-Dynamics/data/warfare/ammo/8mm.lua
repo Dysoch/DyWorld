@@ -4,7 +4,7 @@ DyDS_Add_Ammo({
 	name = "860mm-bullet",
 	icon = DyDs_path_icon.."bullet-860mm.png",
 	order = "copper-cable",
-	stack_size = 50,
+	stack_size = 250,
 	ammo_cat = "860mm",
 	dmg_amount = 25,
 	direction_deviation = 0.005,
@@ -20,7 +20,7 @@ DyDS_Add_Ammo({
 	name = "860mm-bullet-ap",
 	icon = DyDs_path_icon.."bullet-860mm.png",
 	order = "copper-cable",
-	stack_size = 50,
+	stack_size = 250,
 	ammo_cat = "860mm",
 	dmg_amount = 50,
 	direction_deviation = 0.005,
@@ -46,8 +46,10 @@ data:extend({
         {type = "item", name = "charcoal", amount = 1},
         {type = "item", name = "limestone", amount = 3},
       },
-      result = "860mm-bullet",
-	  result_count = 5,
+      results = 
+      {
+        {type = "item", name = "860mm-bullet", amount_min = 3, amount_max = 7},
+      },
 	  energy_required = 1,
 	  enabled = false,
     },
@@ -65,8 +67,10 @@ data:extend({
         {type = "item", name = "tin-plate", amount = 1},
         {type = "item", name = "lignite", amount = 1},
       },
-      result = "860mm-bullet-ap",
-	  result_count = 5,
+      results = 
+      {
+        {type = "item", name = "860mm-bullet-ap", amount_min = 3, amount_max = 7},
+      },
 	  energy_required = 1.5,
 	  enabled = false,
     },

@@ -6,8 +6,6 @@ function Dy_Log(String)
 	end
 end
 
-data.raw["utility-constants"]["default"].main_menu_background_image_location = "__DyWorld-Dynamics__/graphics/dyworldlogo.jpg"
-
 -- Core Modules --
 require("data.prefix")
 require("data.informatron")

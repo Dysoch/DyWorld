@@ -161,6 +161,45 @@ function Dy_Main_Tech_Pack(STR, AMOUNT)
 	elseif STR == 7 then
 		local returner = {"dysci-07", StackSizeCheck(AMOUNT)}
 		return returner
+	elseif STR == 8 then
+		local returner = {"dysci-08", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 9 then
+		local returner = {"dysci-09", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 10 then
+		local returner = {"dysci-10", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 11 then
+		local returner = {"dysci-11", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 12 then
+		local returner = {"dysci-12", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 13 then
+		local returner = {"dysci-13", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 14 then
+		local returner = {"dysci-14", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 15 then
+		local returner = {"dysci-15", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 16 then
+		local returner = {"dysci-16", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 17 then
+		local returner = {"dysci-17", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 18 then
+		local returner = {"dysci-18", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 19 then
+		local returner = {"dysci-19", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == 20 then
+		local returner = {"dysci-20", StackSizeCheck(AMOUNT)}
+		return returner
 	elseif STR == nil then 
 		local returner = {"dysci-1", StackSizeCheck(AMOUNT)}
 		return returner

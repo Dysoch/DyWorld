@@ -128,7 +128,7 @@ local Chemical_Techs = {
 		order = "2",
 	},
 	{
-		name = "nuclear",
+		name = "nuclear-1",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
 		flags = {Act_2 = true},
 		prerequisites = {

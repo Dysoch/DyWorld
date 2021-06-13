@@ -9,23 +9,8 @@ local Tech_Act_2 = {
 	["military-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
 	["production-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
 	["utility-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
-	["space-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
+	["space-science-pack"] = {Replace = "iron-plate", Ratio = 2.5}, 
 }
-
-for _, tech in pairs (data.raw.technology) do
-	if tech.flag and tech.flag.Act_2 then
-		if tech.unit and tech.unit.ingredients then
-			for k,v in pairs(tech.unit.ingredients) do
-				for Old,New in pairs(Tech_Act_2) do
-					if v[1] == Old then
-						--Dy_Log("DyComPa: Found old science-pack ("..Old..") in act-2 technology: "..tech.name..". Removing it from technology")
-						data.raw.technology[tech.name].unit.ingredients[k] = nil
-					end
-				end
-			end
-		end
-	end
-end
 
 local Tech_Act_3 = {
 	["automation-science-pack"] = {Replace = "canister-empty", Ratio = 2.5},
@@ -37,21 +22,6 @@ local Tech_Act_3 = {
 	["space-science-pack"] = {Replace = "canister-empty", Ratio = 2.5},
 }
 
-for _, tech in pairs (data.raw.technology) do
-	if tech.flag and tech.flag.Act_3 then
-		if tech.unit and tech.unit.ingredients then
-			for k,v in pairs(tech.unit.ingredients) do
-				for Old,New in pairs(Tech_Act_3) do
-					if v[1] == Old then
-						--Dy_Log("DyComPa: Found old science-pack ("..Old..") in act-3 technology: "..tech.name..". Removing it from technology")
-						data.raw.technology[tech.name].unit.ingredients[k] = nil
-					end
-				end
-			end
-		end
-	end
-end
-
 local Tech_Main = {
 	["automation-science-pack"] = {Replace = "dysci-01"},
 	["logistic-science-pack"] = {Replace = "dysci-02"},
@@ -61,19 +31,6 @@ local Tech_Main = {
 	["utility-science-pack"] = {Replace = "dysci-06"},
 	["space-science-pack"] = {Replace = "dysci-07"},
 }
-
-for _, tech in pairs (data.raw.technology) do
-	if tech.unit and tech.unit.ingredients then
-		for k,v in pairs(tech.unit.ingredients) do
-			for Old,New in pairs(Tech_Main) do
-				if v[1] == Old then
-					--Dy_Log("DyComPa: Found old science-pack ("..Old..") in technology: "..tech.name..". Changing pack to: "..New.Replace)
-					v[1] = New.Replace
-				end
-			end
-		end
-	end
-end
 
 local Tech_Base_Game = {
 	["physical-projectile-damage-1"] = {Replace = nil},
@@ -268,50 +225,83 @@ local Tech_Base_Game = {
 }
 
 for _, tech in pairs (data.raw.technology) do
-	if tech.prerequisites then
-		for k,v in pairs(tech.prerequisites) do
-			for Old,New in pairs(Tech_Base_Game) do
-				if v == Old then
-					if New.Replace ~= nil then
-						if data.raw.technology[New.Replace] then
-							if v[New.Replace] then
-								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
-								v = nil
-							else
-								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
-								v = New.Replace
-							end
-						else
-							Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")
-							v = nil
+	if not tech.DyWorld_Hider then
+		if tech.flag and tech.flag.Act_2 then
+			if tech.unit and tech.unit.ingredients then
+				for k,v in pairs(tech.unit.ingredients) do
+					for Old,New in pairs(Tech_Act_2) do
+						if v[1] == Old then
+							--Dy_Log("DyComPa: Found old science-pack ("..Old..") in act-2 technology: "..tech.name..". Removing it from technology")
+							data.raw.technology[tech.name].unit.ingredients[k] = nil
 						end
-					else
-						Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". No substitute found, removing it completely")
-						v = nil
 					end
 				end
 			end
 		end
-	end
-end
-
-for _, tech in pairs (data.raw.technology) do
-	if (tech.unit and tech.unit.count and tonumber(tech.unit.count) > 1) then
-		local AMOUNT = tech.unit.count
-		if tech.unit.ingredients then
-			for k,v in pairs(tech.unit.ingredients) do
-				if math.ceil(v[2] * AMOUNT) >= 65000 then
-					v[2] = 65000
-				elseif math.ceil(v[2] * AMOUNT) <= 1 then
-					v[2] = 1
-				else
-					v[2] = (math.ceil(v[2] * AMOUNT))
+		if tech.flag and tech.flag.Act_3 then
+			if tech.unit and tech.unit.ingredients then
+				for k,v in pairs(tech.unit.ingredients) do
+					for Old,New in pairs(Tech_Act_3) do
+						if v[1] == Old then
+							--Dy_Log("DyComPa: Found old science-pack ("..Old..") in act-3 technology: "..tech.name..". Removing it from technology")
+							data.raw.technology[tech.name].unit.ingredients[k] = nil
+						end
+					end
 				end
 			end
 		end
-		if tech.unit.time then
-			tech.unit.time = math.ceil(tech.unit.time * AMOUNT)
+		if tech.unit and tech.unit.ingredients then
+			for k,v in pairs(tech.unit.ingredients) do
+				for Old,New in pairs(Tech_Main) do
+					if v[1] == Old then
+						--Dy_Log("DyComPa: Found old science-pack ("..Old..") in technology: "..tech.name..". Changing pack to: "..New.Replace)
+						v[1] = New.Replace
+					end
+				end
+			end
 		end
-		tech.unit.count = 1
+		if tech.prerequisites then
+			for k,v in pairs(tech.prerequisites) do
+				for Old,New in pairs(Tech_Base_Game) do
+					if v == Old then
+						if New.Replace ~= nil then
+							if data.raw.technology[New.Replace] then
+								if v[New.Replace] then
+									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
+									v = nil
+								else
+									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
+									v = New.Replace
+								end
+							else
+								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")
+								v = nil
+							end
+						else
+							Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". No substitute found, removing it completely")
+							v = nil
+						end
+					end
+				end
+			end
+		end
+		if (tech.unit and tech.unit.count and tonumber(tech.unit.count) > 1) then
+			local AMOUNT = tech.unit.count
+			if tech.unit.ingredients then
+				for k,v in pairs(tech.unit.ingredients) do
+					if math.ceil(v[2] * AMOUNT) >= 65000 then
+						v[2] = 65000
+					elseif math.ceil(v[2] * AMOUNT) <= 1 then
+						v[2] = 1
+					else
+						v[2] = (math.ceil(v[2] * AMOUNT))
+					end
+				end
+			end
+			if tech.unit.time then
+				tech.unit.time = math.ceil(tech.unit.time * AMOUNT)
+			end
+			tech.unit.count = 1
+		end
 	end
 end

@@ -40,11 +40,11 @@ data:extend({
       ingredients =
       {
         {type = "item", name = "charcoal", amount = 1},
-        {type = "item", name = "limestone", amount = 3},
+        {type = "item", name = "limestone", amount = 2},
       },
       results = 
       {
-        {type = "item", name = "9mm-bullet", amount_min = 3, amount_max = 7},
+        {type = "item", name = "9mm-bullet", amount_min = 5, amount_max = 7},
       },
 	  energy_required = 1,
 	  enabled = false,
@@ -65,7 +65,7 @@ data:extend({
       },
       results = 
       {
-        {type = "item", name = "9mm-bullet-ap", amount_min = 3, amount_max = 7},
+        {type = "item", name = "9mm-bullet-ap", amount_min = 5, amount_max = 7},
       },
 	  energy_required = 1.5,
 	  enabled = false,

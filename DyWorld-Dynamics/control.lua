@@ -16,7 +16,8 @@ require "script/lualib/player"
 require "script/lualib/gui"
 inspect = require("script/lualib/inspect")
 require("script/database/recipes")
-require("script/lualib/side-inserter")
+require("script/database/inserter")
+require("script/lualib/inserter")
 
 -- GUI
 require "script/gui/main-gui"

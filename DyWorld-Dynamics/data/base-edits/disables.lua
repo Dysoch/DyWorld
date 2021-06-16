@@ -6,7 +6,7 @@
 -- Remove Recipes --
 for k,v in pairs(data.raw.recipe) do
 	if Dy_Exclude_Recipes[v.name] then
-		Dy_Log("Excluded Recipe from Hider ("..v.name..")")
+		--Dy_Log("Excluded Recipe from Hider ("..v.name..")")
 		if (v.category and v.category == "crafting") then
 			v.category = "assembling-tier-1"
 		end
@@ -18,8 +18,8 @@ end
 
 -- Tech --
 for k,v in pairs(data.raw.technology) do
-	if (Dy_Exclude_Tech[v.name] or string.find(v.name, "se-", 1, true)) then
-		Dy_Log("Excluded Technology from Hider ("..v.name..")")
+	if Dy_Exclude_Tech[v.name] then
+		--Dy_Log("Excluded Technology from Hider ("..v.name..")")
 	else
 		data.raw.technology[v.name].DyWorld_Hider = true
 	end

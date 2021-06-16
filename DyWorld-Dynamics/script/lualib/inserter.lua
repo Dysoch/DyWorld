@@ -113,3 +113,20 @@ function LateralDropAdjust(entity, event)
   -- set direction to force update of insert location when hand is already full
   entity.direction = entity.direction
 end
+
+function InserterCheck(VAR)
+	for k,v in pairs(Inserters_Recipes) do
+		for index,player in pairs(game.players) do
+			if player.force.recipes[k] then
+				if VAR <= v.Disable and player.force.recipes[k].enabled then
+					player.force.recipes[k].enabled = false
+					PlayerPrint({"looped-name.lost-knowledge", {"item-name."..k}})
+				end
+				if VAR >= v.Enable and not player.force.recipes[k].enabled then
+					player.force.recipes[k].enabled = true
+					PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+				end
+			end
+		end
+	end
+end

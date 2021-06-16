@@ -44,6 +44,9 @@ function Main_GUI(player, id)
 		if global.dyworld.players[id].mined > 0 then
 			frameflow2.add{type = "label", caption = "Mined: "..global.dyworld.players[id].mined}
 		end
+		if global.dyworld.players[id].picked > 0 then
+			frameflow2.add{type = "label", caption = "Picked Up: "..global.dyworld.players[id].picked}
+		end
 		if global.dyworld.players[id].build > 0 then
 			frameflow2.add{type = "label", caption = "Built: "..global.dyworld.players[id].build}
 		end
@@ -52,6 +55,16 @@ function Main_GUI(player, id)
 		end
 		frameflow2.add{type = "line", direction = "horizontal"}
 		frameflow2.add{type = "label", caption = "Position: "..math.floor(global.dyworld.players[id].posx).." , "..math.floor(global.dyworld.players[id].posy)}
+		frameflow2.add{type = "label", caption = "Distance Traveled: "..Round(global.dyworld.players[id].distance, 2).." Km"}
+		
+		if debugger then
+			frameflow2.add{type = "label", caption = "Strength: "..global.dyworld.players[id].strength}
+			frameflow2.add{type = "label", caption = "Constitution: "..global.dyworld.players[id].constitution}
+			frameflow2.add{type = "label", caption = "Dexterity: "..global.dyworld.players[id].dexterity}
+			frameflow2.add{type = "label", caption = "Intelligence: "..global.dyworld.players[id].intelligence}
+			frameflow2.add{type = "label", caption = "Wisdom: "..global.dyworld.players[id].wisdom}
+			frameflow2.add{type = "label", caption = "Charisma: "..global.dyworld.players[id].charisma}
+		end
 
 -------------------------------- Player Bonuses TAB ------------------------------------
 		local tab3 = tabbed_pane.add{type="tab", caption="Player Bonuses"}

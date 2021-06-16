@@ -3,18 +3,23 @@ Version: 0.7.95
 Date: ??. 06. 2021
   Features:
     - 
+  Minor Features:
+    - Added in 21 new inserters. Unlocked in a specific way (building inserters)(REQUIRES MORE BALANCING!). Removing inserters from the world can and will disable recipes (in backwards order) Most inserters are still not ready to be used though, so effective inserters is for now 10 (11 if you count burner inserter) (TEMP GRAPHICS)
   Changes:
     - Treefarm now has visualization for its radius
     - Rewrote minimap script. Now when no radars are present, the minimap will be gone. (this includes mid game when last is destroyed)
+    - Rewrote bonuses script. Much more balanced (requires testing) and more accurate then before
     - 
   Story:
-    - 
+    - Added in texts showing what is unlocked (if any) when a new phase begins
+    - Fixed typo's
   Balancing:
     - Recipe Charcoal output: 5 > 3
     - Treefarm energy consumption: 150W > 450W
     - Stacksize bullets: 1000 > 250
     - Recipe output bullets: 5 > 5-7 (1853mm: 10 > 7-13)
     - Magazine Size magazines: 1000 > 250
+    - Storage Tank is now available much more earlier
   Compatibility:
     - Removed wrecks from AAI-Industry. Their setting for crash no longer works
 ---------------------------------------------------------------------------------------------------

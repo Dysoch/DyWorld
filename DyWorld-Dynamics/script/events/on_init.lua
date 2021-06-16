@@ -28,6 +28,9 @@ function Event_on_init()
 				mined = {},
 				days = 0,
 				radars = 0,
+				inserters = 0,
+				research = 0,
+				rockets_launched = 0,
 				attack_warning_1 = false,
 				attack_warning_2 = false,
 				attack_warning_3 = false,
@@ -44,34 +47,6 @@ function Event_on_init()
 	Reunlock_Recipes()
 	if remote.interfaces["silo_script"] then
 		remote.call("silo_script", "set_no_victory", true)
-		--[[local tracked_items = remote.call("silo_script", "get_tracked_items")
-		if not tracked_items["asteroid-miner-iron"] then
-			remote.call("silo_script", "add_tracked_item", "asteroid-miner-iron")
-		end
-		if not tracked_items["asteroid-miner-tin"] then
-			remote.call("silo_script", "add_tracked_item", "asteroid-miner-tin")
-		end
-		if not tracked_items["asteroid-miner-copper"] then
-			remote.call("silo_script", "add_tracked_item", "asteroid-miner-copper")
-		end
-		if not tracked_items["asteroid-miner-random"] then
-			remote.call("silo_script", "add_tracked_item", "asteroid-miner-random")
-		end
-		if not tracked_items["asteroid-miner-titanium"] then
-			remote.call("silo_script", "add_tracked_item", "asteroid-miner-titanium")
-		end
-		if not tracked_items["asteroid-miner-stone"] then
-			remote.call("silo_script", "add_tracked_item", "asteroid-miner-stone")
-		end
-		if not tracked_items["asteroid-miner-coal-1"] then
-			remote.call("silo_script", "add_tracked_item", "asteroid-miner-coal-1")
-		end
-		if not tracked_items["asteroid-miner-coal-2"] then
-			remote.call("silo_script", "add_tracked_item", "asteroid-miner-coal-2")
-		end
-		if not tracked_items["asteroid-miner-coal-3"] then
-			remote.call("silo_script", "add_tracked_item", "asteroid-miner-coal-3")
-		end]]
 	end
 end
 

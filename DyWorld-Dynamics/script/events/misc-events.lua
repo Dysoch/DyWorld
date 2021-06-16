@@ -21,6 +21,8 @@ function Event_on_research_finished(event)
 		table.insert(global.dyworld.research_done, event.research.name)
 		debug("Researched: "..event.research.name)
 	end
+	if not global.dyworld.game_stats.research then global.dyworld.game_stats.research = 0 end
+	global.dyworld.game_stats.research = global.dyworld.game_stats.research + 1
 end
 
 function Event_on_character_corpse_expired(event)

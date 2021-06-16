@@ -55,6 +55,14 @@ function Event_on_entity_died(event)
 				end
 			end
 		end
+		if (type_killed == "inserter") then
+			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
+			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters - 1
+			if global.dyworld.game_stats.inserters <= 0 then
+				global.dyworld.game_stats.inserters = 0 
+			end
+			InserterCheck(global.dyworld.game_stats.inserters)
+		end
 		
 		----- Difficulty -----
 		if (name == "burner-radar") then

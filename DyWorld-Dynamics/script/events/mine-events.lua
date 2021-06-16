@@ -7,6 +7,10 @@ function Event_on_picked_up_item(event)
 	local name = event.item_stack.name
 	local count = event.item_stack.count
 	--PlayerPrint("picked up item: "..name.." "..count.."x")
+	
+	----- Personal counter -----
+	global.dyworld.players[event.player_index].picked = global.dyworld.players[event.player_index].picked + count
+	global.dyworld.game_stats.picked_amount = global.dyworld.game_stats.picked_amount + count
 end
 
 function Event_on_player_mined_item(event)
@@ -87,6 +91,14 @@ function Event_on_player_mined_entity(event)
 				end
 			end
 		end
+		if (type == "inserter") then
+			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
+			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters - 1
+			if global.dyworld.game_stats.inserters <= 0 then
+				global.dyworld.game_stats.inserters = 0 
+			end
+			InserterCheck(global.dyworld.game_stats.inserters)
+		end
 		----- Difficulty -----
 		if (name == "burner-radar") then
 			if global.dyworld.game_stats.difficulty > ((5 * global.dyworld.game_stats.players) + 1) then
@@ -159,6 +171,14 @@ function Event_on_robot_mined_entity(event)
 					end
 				end
 			end
+		end
+		if (type == "inserter") then
+			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
+			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters - 1
+			if global.dyworld.game_stats.inserters <= 0 then
+				global.dyworld.game_stats.inserters = 0 
+			end
+			InserterCheck(global.dyworld.game_stats.inserters)
 		end
 		----- Difficulty -----
 		if (name == "burner-radar") then

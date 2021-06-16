@@ -35,8 +35,7 @@ function getDistance(objA_X, objA_Y, objB_X, objB_Y)
     -- Get the length for each of the components x and y
     local xDist = objB_X - objA_X
     local yDist = objB_Y - objA_Y
-
-    return math.sqrt((xDist^2)+(yDist^2)) 
+	return math.sqrt((xDist^2)+(yDist^2)) 
 end
 
 function tablelength(T)

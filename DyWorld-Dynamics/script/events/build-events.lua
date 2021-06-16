@@ -61,6 +61,11 @@ function Event_on_built_entity(event)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
 		end
+		if (type == "inserter") then
+			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
+			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters + 1
+			InserterCheck(global.dyworld.game_stats.inserters)
+		end
 		
 		-- Reenable Research
 		if (type == "lab" and player.force.research_enabled == false) then
@@ -145,6 +150,11 @@ function Event_on_robot_built_entity(event)
 				game.forces.player.ghost_time_to_live = (60*60*60*240)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
+		end
+		if (type == "inserter") then
+			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
+			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters + 1
+			InserterCheck(global.dyworld.game_stats.inserters)
 		end
 		
 		-- Reenable Research
@@ -236,6 +246,11 @@ function Event_script_raised_built(event)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
 		end
+		if (type == "inserter") then
+			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
+			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters + 1
+			InserterCheck(global.dyworld.game_stats.inserters)
+		end
 		
 		-- Reenable Research
 		if (type == "lab") then
@@ -325,6 +340,11 @@ function Event_script_raised_revive(event)
 				game.forces.player.ghost_time_to_live = (60*60*60*240)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
+		end
+		if (type == "inserter") then
+			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
+			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters + 1
+			InserterCheck(global.dyworld.game_stats.inserters)
 		end
 		
 		-- Reenable Research

@@ -1,5 +1,29 @@
 
+local function tech_remove_prerequisites (prototype_name, prerequisites)
+	local prototype = data.raw.technology[prototype_name]
+	if not prototype then return end
+	for _, new_prerequisite in pairs(prerequisites) do
+		if prototype.prerequisites then
+			for i = #prototype.prerequisites, 1, -1 do
+				if prototype.prerequisites[i] == new_prerequisite then
+					table.remove(prototype.prerequisites, i)
+				end
+			end
+		end
+	end
+end
 
+local function CheckPreReq(Tech, Check)
+	local AMOUNT = 0
+	if data.raw.technology[Tech] and data.raw.technology[Tech].unit and data.raw.technology[Tech].unit.ingredients then
+		for k,v in pairs(data.raw.technology[Tech].unit.ingredients) do
+			if v[1] == Check then
+				AMOUNT = AMOUNT + 1
+			end
+		end
+	end
+	return AMOUNT
+end
 
 
 local Tech_Act_2 = {
@@ -30,6 +54,41 @@ local Tech_Main = {
 	["production-science-pack"] = {Replace = "dysci-05"},
 	["utility-science-pack"] = {Replace = "dysci-06"},
 	["space-science-pack"] = {Replace = "dysci-07"},
+	
+	["se-rocket-science-pack"] = {Replace = "dysci-07"},
+	
+	["se-astronomic-science-pack-1"] = {Replace = "dysci-09"},
+	["se-astronomic-science-pack-2"] = {Replace = "dysci-13"},
+	["se-astronomic-science-pack-3"] = {Replace = "dysci-17"},
+	["se-astronomic-science-pack-4"] = {Replace = "dysci-17"},
+	
+	["se-biological-science-pack-1"] = {Replace = "raw-fish-pike-filet"},
+	["se-biological-science-pack-2"] = {Replace = "raw-fish-salmon-filet"},
+	--["se-biological-science-pack-3"] = {Replace = "dysci-08"},
+	["se-biological-science-pack-4"] = {Replace = "dysci-08"},
+	
+	["se-energy-science-pack-1"] = {Replace = "dysci-10"},
+	["se-energy-science-pack-2"] = {Replace = "dysci-14"},
+	["se-energy-science-pack-3"] = {Replace = "dysci-18"},
+	["se-energy-science-pack-4"] = {Replace = "dysci-18"},
+	
+	["se-material-science-pack-1"] = {Replace = "dysci-11"},
+	["se-material-science-pack-2"] = {Replace = "dysci-15"},
+	["se-material-science-pack-3"] = {Replace = "dysci-19"},
+	["se-material-science-pack-4"] = {Replace = "dysci-19"},
+	
+	["se-deep-space-science-pack-1"] = {Replace = "dysci-12"},
+	["se-deep-space-science-pack-2"] = {Replace = "dysci-16"},
+	["se-deep-space-science-pack-3"] = {Replace = "dysci-20"},
+	["se-deep-space-science-pack-4"] = {Replace = "dysci-20"},
+}
+
+local Tech_Main_2 = {
+	
+	
+	
+	
+	
 }
 
 local Tech_Base_Game = {
@@ -129,6 +188,11 @@ local Tech_Base_Game = {
 	["engine"] = {Replace = "intermediates-1"},
 	["landfill"] = {Replace = nil},
 	["toolbelt"] = {Replace = nil},
+	["toolbelt-2"] = {Replace = nil},
+	["toolbelt-3"] = {Replace = nil},
+	["toolbelt-4"] = {Replace = nil},
+	["toolbelt-6"] = {Replace = nil},
+	["toolbelt-7"] = {Replace = nil},
 	["stone-wall"] = {Replace = nil},
 	["gate"] = {Replace = nil},
 	["uranium-ammo"] = {Replace = nil},
@@ -222,6 +286,94 @@ local Tech_Base_Game = {
 	["production-science-pack"] = {Replace = "dy-science-pack-5"},
 	["utility-science-pack"] = {Replace = "dy-science-pack-6"},
 	["space-science-pack"] = {Replace = "dy-science-pack-7"},
+	["aai-strongbox-base"] = {Replace = "storage-1"},
+	["aai-strongbox-storage"] = {Replace = "storage-3"},
+	["aai-strongbox-logistic"] = {Replace = "storage-5"},
+	["aai-storehouse-base"] = {Replace = "storage-2"},
+	["aai-storehouse-storage"] = {Replace = "storage-4"},
+	["aai-storehouse-logistic"] = {Replace = "storage-6"},
+	["aai-warehouse-base"] = {Replace = "storage-3"},
+	["aai-warehouse-storage"] = {Replace = "storage-5"},
+	["aai-warehouse-logistic"] = {Replace = "storage-7"},
+	["basic-automation"] = {Replace = "automatica-1"},
+	["basic-logistics"] = {Replace = "logistica-1"},
+	["electricity"] = {Replace = "power-1"},
+	["steam-power"] = {Replace = "power-1"},
+	["filter-inserter"] = {Replace = "logistica-1"},
+	["stack-filter-inserter"] = {Replace = "logistica-1"},
+	["radar"] = {Replace = nil},
+	["basic-fluid-handling"] = {Replace = "fluids-1"},
+	["electric-lab"] = {Replace = nil},
+	["electric-mining"] = {Replace = nil},
+	["concrete-walls"] = {Replace = nil},
+	["steel-walls"] = {Replace = nil},
+	["sand-processing"] = {Replace = "intermediates-1"},
+	["glass-processing"] = {Replace = "intermediates-1"},
+	["medium-electric-pole"] = {Replace = "power-1"},
+	["se-bio-upgrade-constitution-1"] = {Replace = nil},
+	["se-bio-upgrade-constitution-2"] = {Replace = nil},
+	["se-bio-upgrade-constitution-3"] = {Replace = nil},
+	["se-bio-upgrade-constitution-4"] = {Replace = nil},
+	["se-bio-upgrade-constitution-5"] = {Replace = nil},
+	["se-bio-upgrade-strength-1"] = {Replace = nil},
+	["se-bio-upgrade-strength-2"] = {Replace = nil},
+	["se-bio-upgrade-strength-3"] = {Replace = nil},
+	["se-bio-upgrade-strength-4"] = {Replace = nil},
+	["se-bio-upgrade-strength-5"] = {Replace = nil},
+	["se-bio-upgrade-agility-1"] = {Replace = nil},
+	["se-bio-upgrade-agility-2"] = {Replace = nil},
+	["se-bio-upgrade-agility-3"] = {Replace = nil},
+	["se-bio-upgrade-agility-4"] = {Replace = nil},
+	["se-bio-upgrade-agility-5"] = {Replace = nil},
+	["se-bio-upgrade-dexterity-1"] = {Replace = nil},
+	["se-bio-upgrade-dexterity-2"] = {Replace = nil},
+	["se-bio-upgrade-dexterity-3"] = {Replace = nil},
+	["se-bio-upgrade-dexterity-4"] = {Replace = nil},
+	["se-bio-upgrade-dexterity-5"] = {Replace = nil},
+	["se-bio-upgrade-intelligence-1"] = {Replace = nil},
+	["se-bio-upgrade-intelligence-2"] = {Replace = nil},
+	["se-bio-upgrade-intelligence-3"] = {Replace = nil},
+	["se-bio-upgrade-intelligence-4"] = {Replace = nil},
+	["se-bio-upgrade-intelligence-5"] = {Replace = nil},
+	["energy-shield-mk3-equipment"] = {Replace = nil},
+	["energy-shield-mk4-equipment"] = {Replace = nil},
+	["energy-shield-mk5-equipment"] = {Replace = nil},
+	["energy-shield-mk6-equipment"] = {Replace = nil},
+	["se-adaptive-armour-1"] = {Replace = nil},
+	["se-adaptive-armour-2"] = {Replace = nil},
+	["se-adaptive-armour-3"] = {Replace = nil},
+	["se-adaptive-armour-4"] = {Replace = nil},
+	["se-adaptive-armour-5"] = {Replace = nil},
+	
+	----- TO BE CHECKED -----
+	
+	["se-rocket-science-pack"] = {Replace = "dy-science-pack-7"},
+	
+	["se-astronomic-science-pack-1"] = {Replace = "dy-science-pack-9"},
+	["se-astronomic-science-pack-2"] = {Replace = "dy-science-pack-13"},
+	["se-astronomic-science-pack-3"] = {Replace = "dy-science-pack-17"},
+	["se-astronomic-science-pack-4"] = {Replace = "dy-science-pack-17"},
+	
+	["se-biological-science-pack-1"] = {Replace = "dy-science-pack-8"},
+	["se-biological-science-pack-2"] = {Replace = "dy-science-pack-8"},
+	["se-biological-science-pack-3"] = {Replace = "dy-science-pack-8"},
+	["se-biological-science-pack-4"] = {Replace = "dy-science-pack-8"},
+	
+	["se-energy-science-pack-1"] = {Replace = "dy-science-pack-10"},
+	["se-energy-science-pack-2"] = {Replace = "dy-science-pack-14"},
+	["se-energy-science-pack-3"] = {Replace = "dy-science-pack-18"},
+	["se-energy-science-pack-4"] = {Replace = "dy-science-pack-18"},
+	
+	["se-material-science-pack-1"] = {Replace = "dy-science-pack-11"},
+	["se-material-science-pack-2"] = {Replace = "dy-science-pack-15"},
+	["se-material-science-pack-3"] = {Replace = "dy-science-pack-19"},
+	["se-material-science-pack-4"] = {Replace = "dy-science-pack-19"},
+	
+	["se-deep-space-science-pack-1"] = {Replace = "dy-science-pack-12"},
+	["se-deep-space-science-pack-2"] = {Replace = "dy-science-pack-16"},
+	["se-deep-space-science-pack-3"] = {Replace = "dy-science-pack-20"},
+	["se-deep-space-science-pack-4"] = {Replace = "dy-science-pack-20"},
+	
 }
 
 for _, tech in pairs (data.raw.technology) do
@@ -253,9 +405,12 @@ for _, tech in pairs (data.raw.technology) do
 		if tech.unit and tech.unit.ingredients then
 			for k,v in pairs(tech.unit.ingredients) do
 				for Old,New in pairs(Tech_Main) do
-					if v[1] == Old then
-						--Dy_Log("DyComPa: Found old science-pack ("..Old..") in technology: "..tech.name..". Changing pack to: "..New.Replace)
-						v[1] = New.Replace
+					if v and v[1] and v[1] == Old then
+						if CheckPreReq(tech.name, New.Replace) == 0 then
+							v[1] = New.Replace
+						else
+							v = nil
+						end
 					end
 				end
 			end
@@ -266,20 +421,29 @@ for _, tech in pairs (data.raw.technology) do
 					if v == Old then
 						if New.Replace ~= nil then
 							if data.raw.technology[New.Replace] then
-								if v[New.Replace] then
+								if v == New.Replace then
 									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
-									v = nil
+									tech_remove_prerequisites(tech.name, {Old})
+									--v = nil
+									--data.raw.technology[tech.name].prerequisites[k] = nil
 								else
 									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
-									v = New.Replace
+									tech_remove_prerequisites(tech.name, {Old})
+									--v = nil
+									--data.raw.technology[tech.name].prerequisites[k] = nil
+									table.insert(tech.prerequisites, New.Replace)
 								end
 							else
 								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")
-								v = nil
+								tech_remove_prerequisites(tech.name, {Old})
+								--v = nil
+								--data.raw.technology[tech.name].prerequisites[k] = nil
 							end
 						else
 							Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". No substitute found, removing it completely")
-							v = nil
+							tech_remove_prerequisites(tech.name, {Old})
+							--v = nil
+							--data.raw.technology[tech.name].prerequisites[k] = nil
 						end
 					end
 				end
@@ -303,5 +467,33 @@ for _, tech in pairs (data.raw.technology) do
 			end
 			tech.unit.count = 1
 		end
+	else
+		--[[for _,tech2 in pairs(data.raw.technology) do
+			if tech2.prerequisites then
+				for k,v in pairs(tech2.prerequisites) do
+					if v == tech.name then
+						v = nil
+					end
+				end
+			end
+		end]]
+		--data.raw.technology[tech.name] = nil
+		--tech.hidden = true
 	end
 end
+
+--[[for _,tech in pairs(data.raw.technology) do
+	if tech.unit and tech.unit.ingredients then
+		for Old,New in pairs(Tech_Main_2) do
+			for k,v in pairs(tech.unit.ingredients) do
+				if v[1] == Old then
+					if CheckPreReq(tech.name, New.Replace) == 0 then
+						v[1] = New.Replace
+					else
+						v = nil
+					end
+				end
+			end
+		end
+	end
+end]]

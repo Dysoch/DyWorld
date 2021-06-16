@@ -68,7 +68,6 @@ Story_Recipes  = {
 	----- Act 1, Phase 10 -----
 	["basic-assembler"] = {act = 1, phase = 10},
 	["burner-radar"] = {act = 1, phase = 10}, 
-	["basic-inserter"] = {act = 1, phase = 10},
 	["lab-1"] = {act = 1, phase = 10},
 	["basic-electric-drill"] = {act = 1, phase = 10},
 	["basic-boiler"] = {act = 1, phase = 10},

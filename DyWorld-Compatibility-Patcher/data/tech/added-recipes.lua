@@ -138,10 +138,10 @@ local Recipes = {
 	["filter-oxygen-2"] = {"filters-3"},
 	["filter-hydrogen-2"] = {"filters-3"},
 	
-	["storage-tank-1"] = {"fluids-1"},
-	["storage-tank-2"] = {"fluids-4"},
-	["storage-tank-3"] = {"fluids-7"},
-	["storage-tank-4"] = {"fluids-10"},
+	["storage-tank-1"] = {"copper-processing", "iron-processing", "tin-processing"},
+	["storage-tank-2"] = {"fluids-3"},
+	["storage-tank-3"] = {"fluids-6"},
+	["storage-tank-4"] = {"fluids-9"},
 	
 	["rocket-silo-1"] = {"space-mining"},
 	["rocket-part-1"] = {"space-mining"},

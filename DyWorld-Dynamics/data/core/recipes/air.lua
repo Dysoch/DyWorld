@@ -11,23 +11,10 @@ data:extend({
       },
       results = 
       {
-        {type = "fluid", name = "oxygen", amount_min = 50, amount_max = 500},
+        {type = "fluid", name = "oxygen", amount_min = 200, amount_max = 1000},
       },
 	  main_product = "oxygen",
 	  energy_required = 5,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-      },
-      results = 
-      {
-        {type = "fluid", name = "oxygen", amount_min = 50, amount_max = 500},
-      },
-	  main_product = "oxygen",
-	  energy_required = 5*5,
 	  enabled = false,
     },
   },
@@ -44,7 +31,7 @@ data:extend({
       },
       results = 
       {
-        {type = "fluid", name = "oxygen", amount_min = 500, amount_max = 5000},
+        {type = "fluid", name = "oxygen", amount_min = 2000, amount_max = 10000},
       },
 	  main_product = "oxygen",
 	  energy_required = 5,
@@ -63,23 +50,10 @@ data:extend({
       },
       results = 
       {
-        {type = "fluid", name = "hydrogen", amount_min = 50, amount_max = 500},
+        {type = "fluid", name = "hydrogen", amount_min = 200, amount_max = 1000},
       },
 	  main_product = "hydrogen",
 	  energy_required = 10,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-      },
-      results = 
-      {
-        {type = "fluid", name = "hydrogen", amount_min = 50, amount_max = 500},
-      },
-	  main_product = "hydrogen",
-	  energy_required = 10*5,
 	  enabled = false,
     },
   },
@@ -96,7 +70,7 @@ data:extend({
       },
       results = 
       {
-        {type = "fluid", name = "hydrogen", amount_min = 500, amount_max = 5000},
+        {type = "fluid", name = "hydrogen", amount_min = 2000, amount_max = 10000},
       },
 	  main_product = "hydrogen",
 	  energy_required = 10,
@@ -115,23 +89,10 @@ data:extend({
       },
       results = 
       {
-        {type = "fluid", name = "nitrogen", amount_min = 50, amount_max = 500},
+        {type = "fluid", name = "nitrogen", amount_min = 200, amount_max = 1000},
       },
 	  main_product = "nitrogen",
 	  energy_required = 20,
-	  enabled = false,
-    },
-    expensive =
-    {
-      ingredients =
-      {
-      },
-      results = 
-      {
-        {type = "fluid", name = "nitrogen", amount_min = 50, amount_max = 500},
-      },
-	  main_product = "nitrogen",
-	  energy_required = 20*5,
 	  enabled = false,
     },
   },
@@ -148,7 +109,7 @@ data:extend({
       },
       results = 
       {
-        {type = "fluid", name = "nitrogen", amount_min = 500, amount_max = 5000},
+        {type = "fluid", name = "nitrogen", amount_min = 2000, amount_max = 10000},
       },
 	  main_product = "nitrogen",
 	  energy_required = 20,

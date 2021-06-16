@@ -14,6 +14,7 @@ Date: ??. 06. 2021
     - Added in texts showing what is unlocked (if any) when a new phase begins
     - Fixed typo's
   Balancing:
+    - Buffed air filter output (minimum output 4x, maximum output 2x)
     - Recipe Charcoal output: 5 > 3
     - Treefarm energy consumption: 150W > 450W
     - Stacksize bullets: 1000 > 250

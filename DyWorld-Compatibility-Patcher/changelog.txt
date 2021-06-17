@@ -1,19 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
-Date: ??. 06. 2021
-  Features:
-    - 
-  Minor Features:
-    - 
-  Changes:
-    - 
-  Bugfixes:
-    - 
-  Balancing:
-    - 
+Date: 16. 06. 2021
   Compatibility:
     - Added in automated compatibility for Science Packs added by DyWorld
-    - Added in automated compatibility for technologies replaced by DyWorld. All technologies should transition to DyWorld technologies
+    - Added in automated compatibility for technologies replaced by DyWorld. All technologies should transition to DyWorld technologies (Most SE techs are not touched)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 10. 06. 2021

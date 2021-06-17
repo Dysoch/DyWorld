@@ -126,6 +126,22 @@ data:extend(
 	  enabled = false,
     },
   },
+  {
+    type = "recipe",
+    name = params.name.."-mag-del",
+	category = "assembling-tier-1",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = params.name.."-mag", amount = 1},
+      },
+      result = params.name,
+	  result_count = math.floor(params.stack_size * 0.8),
+	  energy_required = 1,
+	  enabled = false,
+    },
+  },
 })
 	Mag_Check_Ingredients(params)
 	if params.icon then

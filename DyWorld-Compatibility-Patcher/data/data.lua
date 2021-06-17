@@ -2,6 +2,7 @@
 
 require("data.hider")
 require("data.automated-edits.item-tool")
+require("data.automated-edits.recipes")
 require("data.automated-edits.tech")
 require("data.automated-edits.intermediates")
 

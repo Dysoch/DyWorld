@@ -1,15 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.95
-Date: ??. 06. 2021
-  Features:
-    - 
+Date: 16. 06. 2021
   Minor Features:
     - Added in 21 new inserters. Unlocked in a specific way (building inserters)(REQUIRES MORE BALANCING!). Removing inserters from the world can and will disable recipes (in backwards order) Most inserters are still not ready to be used though, so effective inserters is for now 10 (11 if you count burner inserter) (TEMP GRAPHICS)
   Changes:
     - Treefarm now has visualization for its radius
     - Rewrote minimap script. Now when no radars are present, the minimap will be gone. (this includes mid game when last is destroyed)
     - Rewrote bonuses script. Much more balanced (requires testing) and more accurate then before
-    - 
+    - Fixed most recipes not being able to be crafted (From AAI, SE, etc)
   Story:
     - Added in texts showing what is unlocked (if any) when a new phase begins
     - Fixed typo's

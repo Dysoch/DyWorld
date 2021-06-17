@@ -16,6 +16,7 @@ Story_Recipes  = {
 	["basic-med-pack"] = {act = 1, phase = 2},
 	["9mm-bullet"] = {act = 1, phase = 2},
 	["9mm-bullet-mag"] = {act = 1, phase = 2},
+	["9mm-bullet-mag-del"] = {act = 1, phase = 2},
 	["9mm-pistol"] = {act = 1, phase = 2},
 	["basic-burner-drill"] = {act = 1, phase = 2},
 	
@@ -53,6 +54,7 @@ Story_Recipes  = {
 	["med-pack"] = {act = 1, phase = 7},
 	["9mm-bullet-ap"] = {act = 1, phase = 7},
 	["9mm-bullet-ap-mag"] = {act = 1, phase = 7},
+	["9mm-bullet-ap-mag-del"] = {act = 1, phase = 7},
 	
 	----- Act 1, Phase 8 -----
 	["cast-iron-1"] = {act = 1, phase = 8},

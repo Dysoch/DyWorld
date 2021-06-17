@@ -62,9 +62,9 @@ local Tech_Main = {
 	["se-astronomic-science-pack-3"] = {Replace = "dysci-17"},
 	["se-astronomic-science-pack-4"] = {Replace = "dysci-17"},
 	
-	["se-biological-science-pack-1"] = {Replace = "raw-fish-pike-filet"},
-	["se-biological-science-pack-2"] = {Replace = "raw-fish-salmon-filet"},
-	--["se-biological-science-pack-3"] = {Replace = "dysci-08"},
+	["se-biological-science-pack-1"] = {Replace = "dysci-08"},
+	["se-biological-science-pack-2"] = {Replace = "dysci-08"},
+	["se-biological-science-pack-3"] = {Replace = "dysci-08"},
 	["se-biological-science-pack-4"] = {Replace = "dysci-08"},
 	
 	["se-energy-science-pack-1"] = {Replace = "dysci-10"},
@@ -81,14 +81,6 @@ local Tech_Main = {
 	["se-deep-space-science-pack-2"] = {Replace = "dysci-16"},
 	["se-deep-space-science-pack-3"] = {Replace = "dysci-20"},
 	["se-deep-space-science-pack-4"] = {Replace = "dysci-20"},
-}
-
-local Tech_Main_2 = {
-	
-	
-	
-	
-	
 }
 
 local Tech_Base_Game = {
@@ -424,6 +416,70 @@ for _, tech in pairs (data.raw.technology) do
 								if v == New.Replace then
 									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
 									tech_remove_prerequisites(tech.name, {Old})
+								else
+									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
+									tech_remove_prerequisites(tech.name, {Old})
+									table.insert(tech.prerequisites, New.Replace)
+								end
+							else
+								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")
+								tech_remove_prerequisites(tech.name, {Old})
+							end
+						else
+							Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". No substitute found, removing it completely")
+							tech_remove_prerequisites(tech.name, {Old})
+						end
+					end
+					if data.raw.technology[Old] and not data.raw.technology[Old].hidden then
+						data.raw.technology[Old].hidden = true
+					end
+				end
+			end
+		end
+		if (tech.unit and tech.unit.count and tonumber(tech.unit.count) > 1) then
+			local AMOUNT = tech.unit.count
+			if tech.unit.ingredients then
+				for k,v in pairs(tech.unit.ingredients) do
+					if math.ceil(v[2] * AMOUNT) >= 65000 then
+						v[2] = 65000
+					elseif math.ceil(v[2] * AMOUNT) <= 1 then
+						v[2] = 1
+					else
+						v[2] = (math.ceil(v[2] * AMOUNT))
+					end
+				end
+			end
+			if tech.unit.time then
+				tech.unit.time = math.ceil(tech.unit.time * AMOUNT)
+			end
+			tech.unit.count = 1
+		end
+	end
+end
+
+for _,tech in pairs(data.raw.technology) do
+	if tech.unit and tech.unit.ingredients then
+		for k,v in pairs(tech.unit.ingredients) do
+			for Old,New in pairs(Tech_Main) do
+				if v and v[1] and v[1] == Old then
+					if CheckPreReq(tech.name, New.Replace) == 0 then
+						v[1] = New.Replace
+					else
+						v = nil
+					end
+				end
+			end
+		end
+	end
+	if tech.prerequisites then
+			for k,v in pairs(tech.prerequisites) do
+				for Old,New in pairs(Tech_Base_Game) do
+					if v == Old then
+						if New.Replace ~= nil then
+							if data.raw.technology[New.Replace] then
+								if v == New.Replace then
+									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
+									tech_remove_prerequisites(tech.name, {Old})
 									--v = nil
 									--data.raw.technology[tech.name].prerequisites[k] = nil
 								else
@@ -449,51 +505,4 @@ for _, tech in pairs (data.raw.technology) do
 				end
 			end
 		end
-		if (tech.unit and tech.unit.count and tonumber(tech.unit.count) > 1) then
-			local AMOUNT = tech.unit.count
-			if tech.unit.ingredients then
-				for k,v in pairs(tech.unit.ingredients) do
-					if math.ceil(v[2] * AMOUNT) >= 65000 then
-						v[2] = 65000
-					elseif math.ceil(v[2] * AMOUNT) <= 1 then
-						v[2] = 1
-					else
-						v[2] = (math.ceil(v[2] * AMOUNT))
-					end
-				end
-			end
-			if tech.unit.time then
-				tech.unit.time = math.ceil(tech.unit.time * AMOUNT)
-			end
-			tech.unit.count = 1
-		end
-	else
-		--[[for _,tech2 in pairs(data.raw.technology) do
-			if tech2.prerequisites then
-				for k,v in pairs(tech2.prerequisites) do
-					if v == tech.name then
-						v = nil
-					end
-				end
-			end
-		end]]
-		--data.raw.technology[tech.name] = nil
-		--tech.hidden = true
-	end
 end
-
---[[for _,tech in pairs(data.raw.technology) do
-	if tech.unit and tech.unit.ingredients then
-		for Old,New in pairs(Tech_Main_2) do
-			for k,v in pairs(tech.unit.ingredients) do
-				if v[1] == Old then
-					if CheckPreReq(tech.name, New.Replace) == 0 then
-						v[1] = New.Replace
-					else
-						v = nil
-					end
-				end
-			end
-		end
-	end
-end]]

@@ -1,6 +1,6 @@
 {
 	"name": "DyWorld-Dynamics",
-	"version": "0.7.95",
+	"version": "0.7.96",
 	"factorio_version": "1.1",
 	"title": "DyWorld-Dynamics",
 	"author": "Dysoch",
@@ -8,7 +8,7 @@
 	"homepage": "https://github.com/Dysoch/DyWorld/",
 	"description": "DyWorld-Dynamics, the successor of DyWorld, which is the successor of DyTech. Adds a massive story into the game. Use the mod scenario to start the story",
 	"dependencies": [  
-		"base >= 1.1.34",
+		"base >= 1.1.35",
 		"space-exploration-graphics >= 0.5.10",
 		"space-exploration-graphics-2 >= 0.1.1",
 		"space-exploration-graphics-2 >= 0.1.1",
@@ -21,7 +21,7 @@
 		"Nanobots >= 3.2.15",
 		"alien-biomes >= 0.6.5",
 		
-		"~ DyComPa >= 0.1.1",
+		"~ DyComPa >= 0.1.2",
 		
 		"! angelsindustries",
 		"! angelspetrochem",

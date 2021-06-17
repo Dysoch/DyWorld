@@ -29,10 +29,12 @@ function Event_on_tick(event)
 				if not v.posx2 then v.posx2 = 0 end
 				if not v.posy2 then v.posy2 = 0 end
 				if not v.distance then v.distance = 0 end
+				if not v.surface then v.surface = "nauvis" end
 				v.posx2 = v.posx
 				v.posy2 = v.posy
 				v.posx = game.players[v.id].position.x
 				v.posy = game.players[v.id].position.y
+				v.surface = game.players[v.id].surface
 				v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
 				if v.story_gui and not game.players[v.id].opened_self then
 					local player = game.players[v.id]

@@ -1,5 +1,5 @@
 
-
+local CC = 100
 
 function Event_on_picked_up_item(event)
 	local player = game.players[event.player_index]
@@ -22,9 +22,9 @@ function Event_on_player_mined_item(event)
 	
 	----- Global counter -----
 	if not global.dyworld.game_stats.mined_names[name] then
-		global.dyworld.game_stats.mined_names[name] = count
+		global.dyworld.game_stats.mined_names[name] = (count >= CC and (math.floor(count/CC)) or count)
 	else
-		global.dyworld.game_stats.mined_names[name] = global.dyworld.game_stats.mined_names[name] + count
+		global.dyworld.game_stats.mined_names[name] = global.dyworld.game_stats.mined_names[name] + (count >= CC and (math.floor(count/CC)) or count)
 	end
 	
 	if not global.dyworld.game_stats.mined then global.dyworld.game_stats.mined = {} end
@@ -33,8 +33,8 @@ function Event_on_player_mined_item(event)
 	end
 	
 	----- Personal counter -----
-	global.dyworld.players[id].mined = global.dyworld.players[id].mined + count
-	global.dyworld.game_stats.mined_amount = global.dyworld.game_stats.mined_amount + count
+	global.dyworld.players[id].mined = global.dyworld.players[id].mined + (count >= CC and (math.floor(count/CC)) or count)
+	global.dyworld.game_stats.mined_amount = global.dyworld.game_stats.mined_amount + (count >= CC and (math.floor(count/CC)) or count)
 	
 	if global.dyworld_story then
 		----- Story Objective Check -----

@@ -2,6 +2,9 @@
 
 
 function Event_on_tick(event)
+
+	script.on_event(remote.call("space-exploration", "get_on_player_respawned_event"), Event_on_player_respawned)
+	
 	if event.tick%(60*1)==1 then
 		local seconds_start = math.floor(game.tick/60)
 		local minutes_start = math.floor(seconds_start/60)
@@ -36,20 +39,22 @@ function Event_on_tick(event)
 				v.posy = game.players[v.id].position.y
 				v.surface = game.players[v.id].surface
 				v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
-				if v.story_gui and not game.players[v.id].opened_self then
+				Food_Lose(v.id, 1)
+				Water_Lose(v.id, 1)
+				if v.story_gui and v.alive and not game.players[v.id].opened_self then
 					local player = game.players[v.id]
 					Close_Story_GUI(player, v.id)
 					Story_GUI(player, v.id)
 					player.gui.top.DyDs_Story_GUI.selected_tab_index = global.dyworld.players[v.id].story_gui_index
 				end
-				if v.stats_gui and not game.players[v.id].opened_self then
+				if v.stats_gui and v.alive and not game.players[v.id].opened_self then
 					local player = game.players[v.id]
 					Close_Main_GUI(player, v.id)
 					Main_GUI(player, v.id)
 					player.gui.top.DyDs_Main_GUI.selected_tab_index = global.dyworld.players[v.id].stats_gui_index
 				end
 				Bonuses(v.id)
-				if global.dyworld_story then
+				if global.dyworld_story and v.alive then
 					if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective then
 						Story_Objectives("position", v.id, (game.players[v.id].position.x), (game.players[v.id].position.y))
 					end

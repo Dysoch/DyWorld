@@ -1,10 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.96
 Date: ??. 06. 2021
+  Major Features:
+    - Added in the first build of Survival. This means you need to eat and drink. The game will notify you when food or water is running low. Eat or drink with carrots, fish or water and the like. Use them like capsules to increase the value's. You can see your food and water bar in the personal gui from DyWorld-Dynamics. This feature will be mandatory for DyWorld-Dynamics, since it will interact with the story, and allow implants/extra bonuses, etc
   Minor Features:
     - 
   Changes:
-    - 
+    - Rewrote bonuses script for mining. The exploit it had should be fixed now (somewhat)
   Story:
     - 
   Balancing:

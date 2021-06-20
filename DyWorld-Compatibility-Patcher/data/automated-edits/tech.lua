@@ -13,11 +13,23 @@ local function tech_remove_prerequisites (prototype_name, prerequisites)
 	end
 end
 
-local function CheckPreReq(Tech, Check)
+local function CheckIngre(Tech, Check)
 	local AMOUNT = 0
 	if data.raw.technology[Tech] and data.raw.technology[Tech].unit and data.raw.technology[Tech].unit.ingredients then
 		for k,v in pairs(data.raw.technology[Tech].unit.ingredients) do
 			if v[1] == Check then
+				AMOUNT = AMOUNT + 1
+			end
+		end
+	end
+	return AMOUNT
+end
+
+local function CheckPreReq(Tech, Check)
+	local AMOUNT = 0
+	if data.raw.technology[Tech] and data.raw.technology[Tech].prerequisites then
+		for k,v in pairs(data.raw.technology[Tech].prerequisites) do
+			if v == Check then
 				AMOUNT = AMOUNT + 1
 			end
 		end
@@ -398,7 +410,7 @@ for _, tech in pairs (data.raw.technology) do
 			for k,v in pairs(tech.unit.ingredients) do
 				for Old,New in pairs(Tech_Main) do
 					if v and v[1] and v[1] == Old then
-						if CheckPreReq(tech.name, New.Replace) == 0 then
+						if CheckIngre(tech.name, New.Replace) == 0 then
 							v[1] = New.Replace
 						else
 							v = nil
@@ -413,13 +425,13 @@ for _, tech in pairs (data.raw.technology) do
 					if v == Old then
 						if New.Replace ~= nil then
 							if data.raw.technology[New.Replace] then
-								if v == New.Replace then
-									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
-									tech_remove_prerequisites(tech.name, {Old})
-								else
+								if CheckPreReq(tech.name, New.Replace) == 0 then
 									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
 									tech_remove_prerequisites(tech.name, {Old})
 									table.insert(tech.prerequisites, New.Replace)
+								else
+									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
+									tech_remove_prerequisites(tech.name, {Old})
 								end
 							else
 								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")
@@ -462,7 +474,7 @@ for _,tech in pairs(data.raw.technology) do
 		for k,v in pairs(tech.unit.ingredients) do
 			for Old,New in pairs(Tech_Main) do
 				if v and v[1] and v[1] == Old then
-					if CheckPreReq(tech.name, New.Replace) == 0 then
+					if CheckIngre(tech.name, New.Replace) == 0 then
 						v[1] = New.Replace
 					else
 						v = nil
@@ -477,17 +489,13 @@ for _,tech in pairs(data.raw.technology) do
 					if v == Old then
 						if New.Replace ~= nil then
 							if data.raw.technology[New.Replace] then
-								if v == New.Replace then
-									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
-									tech_remove_prerequisites(tech.name, {Old})
-									--v = nil
-									--data.raw.technology[tech.name].prerequisites[k] = nil
-								else
+								if CheckPreReq(tech.name, New.Replace) == 0 then
 									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
 									tech_remove_prerequisites(tech.name, {Old})
-									--v = nil
-									--data.raw.technology[tech.name].prerequisites[k] = nil
 									table.insert(tech.prerequisites, New.Replace)
+								else
+									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
+									tech_remove_prerequisites(tech.name, {Old})
 								end
 							else
 								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")

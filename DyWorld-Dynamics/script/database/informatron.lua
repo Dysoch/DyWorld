@@ -131,11 +131,11 @@ end
 function dyworld_page_content(page_name, player_index, element)
   -- main page
   if page_name == "dyworld" then
-    element.add{type="label", name="text_1", caption={"DyDs-story.message-act-1-phase-1-2"}}
+    element.add{type="label", name="", caption={"DyDs-story.message-act-1-phase-1-2"}}
   end
   
   if page_name == "tips" then
-    element.add{type="label", name="text_1", caption={"DyDs-story.message-act-1-phase-1-2"}}
+    element.add{type="label", name="", caption={"DyWorld.page_tips"}}
   end
   
   if page_name == "info" then

@@ -1,6 +1,27 @@
 
 
 
+function Event_on_player_used_capsule(event)
+	local player = game.players[event.player_index]
+	local force = player.force
+	local id = event.player_index
+	local name = event.item.name
+	local Time = global.dyworld.game_stats.time_stamp
+	local P_Water = global.dyworld.players[id].water
+	local P_Water_Max = global.dyworld.players[id].water_max
+	local P_Food = global.dyworld.players[id].food
+	local P_Food_Max = global.dyworld.players[id].food_max
+	
+	if Food_Values[name] then
+		if Food_Values[name].Water then
+			Water_Add(id, Food_Values[name].Water)
+		end
+		if Food_Values[name].Food then
+			Food_Add(id, Food_Values[name].Food)
+		end
+	end
+end
+
 function Event_on_built_entity(event)
 	local player = game.players[event.player_index]
 	local force = player.force

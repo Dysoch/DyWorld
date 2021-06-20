@@ -38,6 +38,14 @@ function Main_GUI(player, id)
 		local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 		tabbed_pane.add_tab(tab2, frameflow2)
 		
+		frameflow2.add{type = "label", caption = "Water:"}
+		frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: "..Round(global.dyworld.players[id].water, 2)..", Max Water: "..global.dyworld.players[id].water_max..", Use Rate: "..global.dyworld.players[id].water_rate.." per second"}
+		
+		frameflow2.add{type = "label", caption = "Food:"}
+		frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: "..Round(global.dyworld.players[id].food, 2)..", Max Food: "..global.dyworld.players[id].food_max..", Use Rate: "..global.dyworld.players[id].food_rate.." per second"}
+		frameflow2.add{type = "line", direction = "horizontal"}
+		
+		
 		if global.dyworld.players[id].crafted > 0 then
 			frameflow2.add{type = "label", caption = "Crafted: "..global.dyworld.players[id].crafted}
 		end
@@ -70,10 +78,12 @@ function Main_GUI(player, id)
 		local tab3 = tabbed_pane.add{type="tab", caption="Player Bonuses"}
 		local frameflow3 = tabbed_pane.add{type = "flow", name = "flow3", direction = "vertical"}
 		tabbed_pane.add_tab(tab3, frameflow3)
-		frameflow3.add{type = "label", caption = "Crafting Bonus: "..(Round(game.players[id].character_crafting_speed_modifier+1, 2))}
-		frameflow3.add{type = "label", caption = "Mining Bonus: "..(Round(game.players[id].character_mining_speed_modifier+1, 2))}
-		frameflow3.add{type = "label", caption = "Health: "..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus)}
-		frameflow3.add{type = "label", caption = "Inventory Slots: "..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus)}
+		if game.players[id].character then
+			frameflow3.add{type = "label", caption = "Crafting Bonus: "..(Round(game.players[id].character_crafting_speed_modifier+1, 2))}
+			frameflow3.add{type = "label", caption = "Mining Bonus: "..(Round(game.players[id].character_mining_speed_modifier+1, 2))}
+			frameflow3.add{type = "label", caption = "Health: "..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus)}
+			frameflow3.add{type = "label", caption = "Inventory Slots: "..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus)}
+		end
 		
 		if debugger then
 -------------------------------- Crafting Debug TAB -----------------------------------

@@ -17,6 +17,7 @@ function Event_on_player_created(event)
 		force = force,
 		id = id,
 		name = name,
+		surface = "nauvis",
 		crafted = 0,
 		mined = 0,
 		build = 0,
@@ -27,6 +28,18 @@ function Event_on_player_created(event)
 		posx2 = 0,
 		posy2 = 0,
 		distance = 0,
+		food = 1000,
+		food_max = 1000,
+		food_rate = 0.33,
+		food_mess_1 = false,
+		food_mess_2 = false,
+		food_mess_3 = false,
+		water = 1000,
+		water_max = 1000,
+		water_rate = 1.25,
+		water_mess_1 = false,
+		water_mess_2 = false,
+		water_mess_3 = false,
 		xp = 0,
 		xp_levelup = (100 + math.random(100)),
 		level = 1,
@@ -52,23 +65,44 @@ end
 function Event_on_player_died(event)
 	local player = game.players[event.player_index]
 	local force = player.force
+	local id = event.player_index
+	
+	global.dyworld.players[id].alive = false
 	
 end
 
 function Event_on_player_joined_game(event)
 	local player = game.players[event.player_index]
 	local force = player.force
+	local id = event.player_index
+	
+	global.dyworld.players[id].playing = true
+	global.dyworld.players[id].alive = true
 	
 end
 
 function Event_on_player_left_game(event)
 	local player = game.players[event.player_index]
 	local force = player.force
+	local id = event.player_index
+	
+	global.dyworld.players[id].playing = false
+	global.dyworld.players[id].alive = false
 	
 end
 
 function Event_on_player_respawned(event)
 	local player = game.players[event.player_index]
 	local force = player.force
+	local id = event.player_index
 	
+	global.dyworld.players[id].alive = true
+end
+
+function Event_on_player_respawned(event)
+	local id = event.player_index
+	
+	global.dyworld.players[id].alive = true
+	global.dyworld.players[id].water = global.dyworld.players[id].water_max
+	global.dyworld.players[id].food = global.dyworld.players[id].food_max
 end

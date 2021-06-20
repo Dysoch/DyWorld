@@ -7,6 +7,26 @@ local Data_Table_Item_Group = {
 		Icon = "personal.png"
 	},
 	{
+		Name = "consume-water",
+		Type = "sub",
+		Main = "personal"
+	},
+	{
+		Name = "consume-food",
+		Type = "sub",
+		Main = "personal"
+	},
+	{
+		Name = "consume-both",
+		Type = "sub",
+		Main = "personal"
+	},
+	{
+		Name = "consume-zzz",
+		Type = "sub",
+		Main = "personal"
+	},
+	{
 		Name = "med-pack",
 		Type = "sub",
 		Main = "personal"

@@ -17,6 +17,7 @@ require "script/lualib/gui"
 inspect = require("script/lualib/inspect")
 require("script/database/recipes")
 require("script/database/inserter")
+require("script/database/food")
 require("script/lualib/inserter")
 
 -- GUI
@@ -25,6 +26,7 @@ require "script/gui/story-gui"
 
 -- Stats
 require "script/stats/functions"
+require "script/stats/food"
 
 -- Story
 require "script/story/story"
@@ -45,11 +47,17 @@ require "script/events/on_configuration_changed"
 require "script/events/on_init"
 require "script/events/on_tick"
 
+-- Config Events
+script.on_configuration_changed(Event_on_configuration_changed)
+script.on_init(Event_on_init)
+script.on_event(defines.events.on_tick, Event_on_tick)
+
 -- Build Events --
 script.on_event(defines.events.on_built_entity, Event_on_built_entity)
 script.on_event(defines.events.on_robot_built_entity, Event_on_robot_built_entity)
 --script.on_event(defines.events.script_raised_built, Event_script_raised_built)
 script.on_event(defines.events.script_raised_revive, Event_script_raised_revive)
+script.on_event(defines.events.on_player_used_capsule, Event_on_player_used_capsule)
 
 -- Mine Events
 script.on_event(defines.events.on_player_mined_entity, Event_on_player_mined_entity)
@@ -79,17 +87,12 @@ script.on_event(defines.events.on_player_created, Event_on_player_created)
 script.on_event(defines.events.on_player_died, Event_on_player_died)
 script.on_event(defines.events.on_player_joined_game, Event_on_player_joined_game)
 script.on_event(defines.events.on_player_left_game, Event_on_player_left_game)
-script.on_event(defines.events.on_player_respawned, Event_on_player_respawned)
 script.on_event(defines.events.on_pre_player_mined_item, Event_on_pre_player_mined_item)
 
 -- GUI Events
 script.on_event(defines.events.on_gui_click, Event_on_gui_click)
 script.on_event(defines.events.on_gui_selected_tab_changed, Event_on_gui_selected_tab_changed)
 
--- Config Events
-script.on_configuration_changed(Event_on_configuration_changed)
-script.on_init(Event_on_init)
-script.on_event(defines.events.on_tick, Event_on_tick)
 
 --------------------------------- TEST AREA ------------------------------------------
 

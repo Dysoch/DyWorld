@@ -1,7 +1,9 @@
 
 --debugger = true
 debugger = settings.startup["DyWorld_Debug"].value
-Version_Build = "0.7.96"
+Version_Build = "0.7.98"
+Food_Start = 2500
+Water_Start = 5000
 
 function Dy_Log(String)
 	if settings.startup["DyWorld_Debug"].value then
@@ -18,6 +20,7 @@ inspect = require("script/lualib/inspect")
 require("script/database/recipes")
 require("script/database/inserter")
 require("script/database/food")
+require("script/database/implants")
 require("script/lualib/inserter")
 
 -- GUI
@@ -27,6 +30,7 @@ require "script/gui/story-gui"
 -- Stats
 require "script/stats/functions"
 require "script/stats/food"
+require "script/stats/implants"
 
 -- Story
 require "script/story/story"
@@ -55,7 +59,7 @@ script.on_event(defines.events.on_tick, Event_on_tick)
 -- Build Events --
 script.on_event(defines.events.on_built_entity, Event_on_built_entity)
 script.on_event(defines.events.on_robot_built_entity, Event_on_robot_built_entity)
---script.on_event(defines.events.script_raised_built, Event_script_raised_built)
+script.on_event(defines.events.script_raised_built, Event_script_raised_built)
 script.on_event(defines.events.script_raised_revive, Event_script_raised_revive)
 script.on_event(defines.events.on_player_used_capsule, Event_on_player_used_capsule)
 
@@ -70,6 +74,7 @@ script.on_event(defines.events.on_player_crafted_item, Event_on_player_crafted_i
 
 -- Kill Events
 script.on_event(defines.events.on_entity_died, Event_on_entity_died)
+script.on_event(defines.events.script_raised_destroy, Event_script_raised_destroy)
 
 -- Research Events
 script.on_event(defines.events.on_research_finished, Event_on_research_finished)
@@ -82,20 +87,32 @@ script.on_event(defines.events.on_sector_scanned, Event_on_sector_scanned)
 script.on_event(defines.events.on_character_corpse_expired, Event_on_character_corpse_expired)
 
 -- Player Events
+script.on_event(defines.events.script_raised_revive, Event_on_raised_revive)
 script.on_event(defines.events.on_player_changed_force, Event_on_player_changed_force)
 script.on_event(defines.events.on_player_created, Event_on_player_created)
+script.on_event(defines.events.on_player_respawned, Event_on_player_respawned)
+--script.on_event(defines.events.on_player_respawned_event, Event_on_player_respawned_script)
 script.on_event(defines.events.on_player_died, Event_on_player_died)
+script.on_event(defines.events.on_pre_player_died, Event_on_pre_player_died)
 script.on_event(defines.events.on_player_joined_game, Event_on_player_joined_game)
 script.on_event(defines.events.on_player_left_game, Event_on_player_left_game)
 script.on_event(defines.events.on_pre_player_mined_item, Event_on_pre_player_mined_item)
 
 -- GUI Events
 script.on_event(defines.events.on_gui_click, Event_on_gui_click)
+script.on_event(defines.events.on_gui_closed, Event_on_gui_closed)
+script.on_event(defines.events.on_gui_elem_changed, Event_on_gui_elem_changed)
+script.on_event(defines.events.on_gui_location_changed, Event_on_gui_location_changed)
+script.on_event(defines.events.on_gui_opened, Event_on_gui_opened)
+--script.on_event(defines.events.on_gui_selection_state_changed, Event_on_gui_closed)
+--script.on_event(defines.events.on_gui_switch_state_changed, Event_on_gui_closed)
+--script.on_event(defines.events.on_gui_text_changed, Event_on_gui_closed)
+--script.on_event(defines.events.on_gui_value_changed, Event_on_gui_closed)
 script.on_event(defines.events.on_gui_selected_tab_changed, Event_on_gui_selected_tab_changed)
 
 
---------------------------------- TEST AREA ------------------------------------------
 
+--------------------------------- TEST AREA ------------------------------------------
 ------------------------------- END TEST AREA ----------------------------------------
 
 --remote calls

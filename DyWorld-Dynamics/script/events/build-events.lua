@@ -20,6 +20,17 @@ function Event_on_player_used_capsule(event)
 			Food_Add(id, Food_Values[name].Food)
 		end
 	end
+	
+	----- Personal counter -----
+	if not global.dyworld.players[id].capsules then global.dyworld.players[id].capsules = 0 end
+	global.dyworld.players[id].capsules = global.dyworld.players[id].capsules + 1
+	
+	if not global.dyworld.players[id].implants then global.dyworld.players[id].implants = {} end
+	if not global.dyworld.players[id].implants_used then global.dyworld.players[id].implants_used = 0 end
+	if Implants[name] then
+		global.dyworld.players[id].implants_used = global.dyworld.players[id].implants_used + 1
+		Implant_Check(id, name)
+	end
 end
 
 function Event_on_built_entity(event)
@@ -216,98 +227,7 @@ function Event_on_robot_built_entity(event)
 end
 
 function Event_script_raised_built(event)
-	--local player = game.players[event.player_index]
-	--local force = player.force
-	--local id = event.player_index
-	local name = event.created_entity.name
-	local position = event.created_entity.position
-	local type = event.created_entity.type
-	
-	----- Global counter -----
-	if not global.dyworld.game_stats.build_names[name] then
-		global.dyworld.game_stats.build_names[name] = 1
-	else
-		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
-	end
-	
-	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
-	if not global.dyworld.game_stats.build[name] then
-		global.dyworld.game_stats.build[name] = true
-	end
-	
-	----- Building Placement -----
-	if Entity_Check(type) then
-		local BuildingTable = {posx = position.x, posy = position.y}
-		table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
-		--debug("build at: "..position.x..", "..position.y)
-	end
-	
-	if global.dyworld_story then
-		-- Reenable Minimap
-		if (type == "radar") then
-			if (name == "burner-radar") then
-				game.forces.player.ghost_time_to_live = (60*60*60*24)
-				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
-			end
-			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
-			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars + 1
-			for k,v in pairs(global.dyworld.players) do
-				if not game.players[v.id].minimap_enabled then
-					game.players[v.id].minimap_enabled = true
-				end
-			end
-			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
-				global.dyworld.game_stats.attack_warning_2 = true
-				game.forces.player.ghost_time_to_live = (60*60*60*48)
-				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
-			end
-			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
-				global.dyworld.game_stats.attack_warning_3 = true
-				game.forces.player.ghost_time_to_live = (60*60*60*240)
-				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
-			end
-		end
-		if (type == "inserter") then
-			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
-			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters + 1
-			InserterCheck(global.dyworld.game_stats.inserters)
-		end
-		
-		-- Reenable Research
-		if (type == "lab") then
-			for _,player in pairs(game.players) do
-				if player.force.research_enabled == false then
-					player.force.enable_research()
-					DyLog(Time..": Research Unlocked")
-					game.forces.player.ghost_time_to_live = (60*60*60*1)
-					game.forces.player.deconstruction_time_to_live = (60*60*60*1)
-				end
-			end
-		end
-		
-		----- Story Objective Check -----
-		Story_Objectives("building-robot", event)
-		
-		-- Increase Difficulty 
-		if (global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + 0.0001
-		end
-		if (name == "burner-radar" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (10 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-1" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (100 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-2" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (250 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-3" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (500 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-4" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (1000 * global.dyworld.game_stats.players)
-		end
-	end
+	script.on_event(remote.call("space-exploration", "get_on_player_respawned_event"), Event_on_player_respawned_script)
 end
 
 function Event_script_raised_revive(event)

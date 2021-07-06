@@ -7,6 +7,14 @@ DyWorld_Prototype_1.pickup_position = DyDs_Inserter_Normal_Pickup
 DyWorld_Prototype_1.insert_position = DyDs_Inserter_Normal_Insert
 DyWorld_Prototype_1.filter_count = 0
 DyWorld_Prototype_1.stack = false
+DyWorld_Prototype_1.platform_picture.sheet.tint = Tier_1
+DyWorld_Prototype_1.platform_picture.sheet.hr_version.tint = Tier_1
+DyWorld_Prototype_1.hand_base_picture.tint = Tier_1
+DyWorld_Prototype_1.hand_base_picture.hr_version.tint = Tier_1
+DyWorld_Prototype_1.hand_closed_picture.tint = Tier_1
+DyWorld_Prototype_1.hand_closed_picture.hr_version.tint = Tier_1
+DyWorld_Prototype_1.hand_open_picture.tint = Tier_1
+DyWorld_Prototype_1.hand_open_picture.hr_version.tint = Tier_1
 
 
 data:extend({
@@ -14,7 +22,12 @@ data:extend({
   {
     type = "item",
     name = "basic-inserter",
-    icon = "__base__/graphics/icons/inserter.png",
+    icons = {
+	  {
+	    icon = "__base__/graphics/icons/inserter.png",
+	    tint = Tier_1,
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."inserter-tier-1",
     order = "2",
@@ -73,7 +86,12 @@ data:extend({
   {
     type = "item",
     name = "basic-inserter-long",
-    icon = "__base__/graphics/icons/inserter.png",
+    icons = {
+	  {
+	    icon = "__base__/graphics/icons/inserter.png",
+	    tint = Tier_1,
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."inserter-tier-1",
     order = "3",
@@ -83,7 +101,12 @@ data:extend({
   {
     type = "item",
     name = "basic-inserter-filter",
-    icon = "__base__/graphics/icons/inserter.png",
+    icons = {
+	  {
+	    icon = "__base__/graphics/icons/inserter.png",
+	    tint = Tier_1,
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."inserter-tier-1",
     order = "4",
@@ -93,7 +116,12 @@ data:extend({
   {
     type = "item",
     name = "basic-inserter-long-filter",
-    icon = "__base__/graphics/icons/inserter.png",
+    icons = {
+	  {
+	    icon = "__base__/graphics/icons/inserter.png",
+	    tint = Tier_1,
+	  },
+	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."inserter-tier-1",
     order = "5",

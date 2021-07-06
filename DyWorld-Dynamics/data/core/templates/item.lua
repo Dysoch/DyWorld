@@ -28,6 +28,7 @@ data:extend(
     fuel_emissions_multiplier = params.fuel_emissions_multiplier or nil,
     fuel_glow_color = params.fuel_glow_color or nil,
     stack_size = params.stack_size or 200,
+	Chemical_Formula = params.Chemical_Formula or "none",
   }
 })
 	if params.icons then

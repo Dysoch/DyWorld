@@ -20,9 +20,11 @@ require(DyDs_data_logistics.. "tier-2.robots")
 require(DyDs_data_logistics.. "tier-2.railway")
 require(DyDs_data_logistics.. "tier-2.railway-loco")
 require(DyDs_data_logistics.. "tier-2.railway-cargo")
+require(DyDs_data_logistics.. "tier-2.railway-fluid")
 require(DyDs_data_logistics.. "tier-2.storage")
 require(DyDs_data_logistics.. "tier-2.lamps")
 require(DyDs_data_logistics.. "tier-2.tank")
+require(DyDs_data_logistics.. "tier-2.inserter")
 
 -- Tier 3 --
 require(DyDs_data_logistics.. "tier-3.splitter")
@@ -31,6 +33,7 @@ require(DyDs_data_logistics.. "tier-3.transport-belt")
 require(DyDs_data_logistics.. "tier-3.underground-belt")
 require(DyDs_data_logistics.. "tier-3.robots")
 require(DyDs_data_logistics.. "tier-3.tank")
+require(DyDs_data_logistics.. "tier-3.inserter")
 
 -- Tier 4 --
 require(DyDs_data_logistics.. "tier-4.splitter")
@@ -38,6 +41,7 @@ require(DyDs_data_logistics.. "tier-4.loader")
 require(DyDs_data_logistics.. "tier-4.transport-belt")
 require(DyDs_data_logistics.. "tier-4.underground-belt")
 require(DyDs_data_logistics.. "tier-4.tank")
+require(DyDs_data_logistics.. "tier-4.inserter")
 
 -- Tier 5 --
 require(DyDs_data_logistics.. "tier-5.splitter")

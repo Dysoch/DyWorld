@@ -5,6 +5,7 @@ function Dy_Log(String)
 		log(String)
 	end
 end
+DyWorld_Automated_Tech_Add = {}
 
 -- Core Modules --
 require("data.prefix")

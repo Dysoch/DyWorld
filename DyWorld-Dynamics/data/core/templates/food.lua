@@ -21,9 +21,9 @@ data:extend(
       {
         type = "projectile",
         activation_type = "consume",
-        ammo_category = "capsule",
-        cooldown = 30,
-        range = 0,
+        ammo_category = params.cat and "consume-"..params.cat or "consume-both",
+        cooldown = (params.rate * 60) or (60/5),
+        range = 500,
         ammo_type =
         {
           category = "capsule",

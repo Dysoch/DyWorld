@@ -331,7 +331,7 @@ local Metal_Techs = {
 		name = "water-filtering",
 		flags = {Act_2 = true},
 		prerequisites = {
-			"automatica-3",
+			"automatica-1",
 		},
 		ingredients = {
 			Dy_Metal_Tech_Pack("iron-3", 350),
@@ -622,7 +622,7 @@ local Metal_Techs = {
 			"advanced-copper-processing",
 			"advanced-iron-processing",
 			"space-mining",
-			"gasoline",
+			"oil-processing-2",
 		},
 		ingredients = {
 			Dy_Metal_Tech_Pack("iron-3", 3000),
@@ -639,3 +639,5 @@ local Metal_Techs = {
 for k,v in pairs(Metal_Techs) do
 	DyWorld_Tech_Add(v)
 end
+
+data.raw.technology["basic-asteroid-mining"].effects = data.raw.technology["rocket-silo"].effects

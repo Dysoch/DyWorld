@@ -1,18 +1,101 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.96
-Date: ??. 06. 2021
+Version: 0.7.99
+Date: ??. 07. 2021
   Major Features:
-    - Added in the first build of Survival. This means you need to eat and drink. The game will notify you when food or water is running low. Eat or drink with carrots, fish or water and the like. Use them like capsules to increase the value's. You can see your food and water bar in the personal gui from DyWorld-Dynamics. This feature will be mandatory for DyWorld-Dynamics, since it will interact with the story, and allow implants/extra bonuses, etc
+    - 
   Minor Features:
     - 
+  Graphics:
+    - 
+  Bugfixes:
+    - 
+  Changes:
+    - 
+  Story:
+    - Act 2 Phase 4 objectives: Removed position objectives
+    - Act 2 Phase 4 objectives: Added radar scanning objective
+    - Act 2 Phase 4 objectives: Added chunk generating objective (which requires new chunks to be generated, can be increased by scanning more sectors)
+  Survival:
+    - When you died, custom difficulity will lower
+---------------------------------------------------------------------------------------------------
+Version: 0.7.98
+Date: 04. 07. 2021
+  Major Features:
+    - Added in implants. They are the same as food and water in regards to usage, but will give you boosts to your survival stats (water/food usage, running speed, attributes, etc). Use once to activate it, and use an new item to disable it (active implants can be seen in Implants GUI)
+    - Added in all recipes for the new science packs, although 4 are usable for now, the rest are temporary recipes and will recieve an update next build
+    - Added in alloys. Mostly unused at the moment
+    - Added in new ore purifying recipes. Second tier recipes use fluids now instead of canisters
+  Minor Features:
+    - Added in upgrade modifier for technologies as setting (declutters tech screen, only applied to DyWorld-Dynamics technologies)
+    - Added in fluid wagon
+    - Added in 2 new assembling machines
+    - Added in 3 new control boards 
+    - Added in recipes for new plastic types
+    - Added in 12 new inserters
+    - Added in easy way to get carbon
+  Graphics:
+    - Added in icons for water
+    - Added in icons for implants
+  Bugfixes:
+    - Fixed major bug with an script event from Space Exploration that only caused issue's in Multiplayer when a second player joined which caused savegame loading state issue's
+  Changes:
+    - Moved nuclear technology to main tech tree, added 4 more
+    - Removed turbine technology
+  Story:
+    - Act 2 Phase 10 rocket objective: 1000 > 100
+  Survival:
+    - Added in early game water generation: The rain collector
+    - Added in time left till death for both food and water (in tooltip)
+    - Added in the water and food bar in each gui
+    - Removed usage modifier from bonuses, now done by implants
+    - Added in charisma calculations (Attribute)
+    - When you die and respawn, all stats and bonuses get reset back to 0, unless a certain implant is used prior to death. This only applies to personal stats and bonuses, game stats and thus their influence on the bonuses are untouched
+    - When you die and respawn, food and water storage bonuses are applied again (bugfix)
+    - Added 45 implants. Currently 40 are craftable
+---------------------------------------------------------------------------------------------------
+Version: 0.7.97
+Date: 27. 06. 2021
+  Major Features:
+    - Complete new setup for Oil. More tuned to real life, but a bit simplyfied (WIP)
+    - Added 6 new plastic bars to replace the vanilla one (WIP)
+    - Added in 5 oil boilers which will heat only oil to different temperatures (WIP)
+  Minor Features:
+    - Added in water bottles and a way to get them (WIP)
+    - Oil is now required to be heated for different recipes
+    - Added in Basic Gate
+    - Added in recipes for circuit network related items
+    - Added in most locale's for items, fluids, techs, etc. Please report the ones missing
+  Changes:
+    - Rewrote bonus from food and water level. No longer instant mining from it
+    - Changed around SE Techs. They will use their own science packs. 
+    - Massive Changes to statistics GUI
+    - Player stats are now shown as total of all. Hover with mouse over it to see them each (Tooltip)
+    - Player Attributes added (tooltip shows each one)
+    - Added color to bonuses
+    - Added color to story gui
+    - Food and Water messages now appear again once you died and respawned
+    - Food and Water progress bars now change color when it is starting to run low
+    - Food and Water progress bars now have changed tooltips
+  Balancing:
+    - Blast Furnaces recipes now give slightly more liquid metal (90-100 > 90-125)
+    - Inserters are now tier colored
+    - Inserters are now faster then basic inserters
+  Survival:
+    - Changed Food and Water messages to be 50%, 25% and 10% based instead of set numbers
+    - Food and Water max capacity now increases as a bonus (Like mining speed bonus, based on stats)
+    - Food and Water use rate now decreases as a bonus (Like mining speed bonus, based on stats)
+    - Added new bonuses: Build Distance, Reach Distance, Research Speed, Research Productivity, Stack Inserter Stack Size, Loot Pickup Distance
+---------------------------------------------------------------------------------------------------
+Version: 0.7.96
+Date: 23. 06. 2021
+  Major Features:
+    - Added in the first build of Survival. This means you need to eat and drink. The game will notify you when food or water is running low. Eat or drink with carrots, fish or water and the like. Use them like capsules to increase the value's. You can see your food and water bar in the personal gui from DyWorld-Dynamics. This feature will be mandatory for DyWorld-Dynamics, since it will interact with the story, and allow implants/extra bonuses, etc
+    - Added in completely new ammo. Much more diverse, and probably balanced
+    - Added in the bio tech tree (still under construction, but should work for now)
+  Minor Features:
+    - Unhid all recipes from Space Exploration. They should work, most of them at least
   Changes:
     - Rewrote bonuses script for mining. The exploit it had should be fixed now (somewhat)
-  Story:
-    - 
-  Balancing:
-    - 
-  Compatibility:
-    - 
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.95
 Date: 16. 06. 2021

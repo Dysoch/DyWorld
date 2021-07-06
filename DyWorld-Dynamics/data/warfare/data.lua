@@ -1,9 +1,6 @@
 
 -- Ammo --
-require(DyDs_data_warfare.. "ammo.7mm")
-require(DyDs_data_warfare.. "ammo.8mm")
-require(DyDs_data_warfare.. "ammo.9mm")
-require(DyDs_data_warfare.. "ammo.18mm")
+require(DyDs_data_warfare.. "ammo.tiered")
 require(DyDs_data_warfare.. "ammo.artillery-shell-atomic")
 
 -- Ammo --

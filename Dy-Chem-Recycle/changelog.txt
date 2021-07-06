@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 05. 07. 2021
+  Features:
+    - Added in check for Silicon ("Si-")
+    - Added in check for Aluminium and Impure Aluminium ("Al-")
+    - Added in check for Gold and Impure Gold ("Au-")
+    - Added in check for Tin and Impure Tin ("Sn-")
+    - Added in check for Lead and Impure Lead ("Pb-")
+    - Added in check for Nickel and Impure Nickel ("Ni-")
+    - Added in check for Titanium and Impure Titanium ("Ti-")
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 30. 06. 2021
+  Features:
+    - First Release

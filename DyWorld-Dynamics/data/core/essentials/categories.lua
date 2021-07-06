@@ -31,10 +31,20 @@ local Recipe_Categories = {
 	"assembling-tier-3",
 	"assembling-tier-4",
 	"assembling-tier-5",
+	"assembling-tier-6",
+	"assembling-tier-7",
+	"assembling-tier-8",
+	"assembling-tier-9",
+	"assembling-tier-10",
 	"bloomery",
 	"grinder",
 	"hidden",
+	"soil-miner",
+	"fish-miner",
+	"rain-collector",
+	"farming",
 	"smelting",
+	"dy-recycling",
 	"air-filter",
 	"electrolysis",
 	"blast-furnace",
@@ -75,6 +85,7 @@ local Ammo_Categories = {
 	"794mm", "800mm", "860mm", "900mm", 
 	"930mm", "950mm", "1000mm", "1090mm", 
 	"1143mm", "1270mm", "1563mm", "1853mm", 
+	"consume-food", "consume-water", "consume-both",
 }
 
 

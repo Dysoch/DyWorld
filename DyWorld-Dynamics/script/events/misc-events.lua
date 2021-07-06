@@ -2,6 +2,8 @@
 
 
 function Event_on_chunk_generated(event)
+		----- Story Objective Check -----
+		Story_Objectives("chunk-gen", event)
 	
 	----- Global counter -----
 	if not global.dyworld.game_stats.chunks then
@@ -46,6 +48,8 @@ function Event_on_rocket_launched(event)
 end
 
 function Event_on_sector_scanned(event)
+		----- Story Objective Check -----
+		Story_Objectives("sector-scan", event)
 	
 	----- Global counter -----
 	if not global.dyworld.game_stats.sector_scanned then

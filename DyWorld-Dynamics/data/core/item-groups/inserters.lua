@@ -7,12 +7,12 @@ local Data_Table_Item_Group = {
 		Icon = "inserters.png"
 	},
 	{
-		Name = "inserter-1-simple",
+		Name = "inserter-tier-0",
 		Type = "sub",
 		Main = "inserters"
 	},
 	{
-		Name = "inserter-2-heat",
+		Name = "inserter-tier-1",
 		Type = "sub",
 		Main = "inserters"
 	},

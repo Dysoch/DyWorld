@@ -34,6 +34,7 @@ data:extend(
     durability_description_value = params.durability_description_value or "description.science-pack-remaining-amount-value",
     --durability_description_key = params.durability_description_key or "description.durability-key",
     --durability_description_value = params.durability_description_value or "description.durability-value",
+	Chemical_Formula = params.Chemical_Formula or "none",
   }
 })
 	if params.icons then

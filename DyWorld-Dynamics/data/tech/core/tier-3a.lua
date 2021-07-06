@@ -4,108 +4,122 @@ local Biological_Techs = {
 	----- Core Techs -----
 	{
 		name = "bio-centrifuge",
+		icon = DyDs_path_tech.."bio.png",
 		flags = {Act_3 = true},
 		prerequisites = {
+			"basic-asteroid-mining",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("wood", 1500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(20),
 		order = "3",
 	},
 	----- Agro -----
 	{
 		name = "agroforestry",
+		icon = DyDs_path_tech.."agroforestry.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"bio-centrifuge",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("wood", 4500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(30),
 		order = "3",
 	},
 	{
 		name = "agroforestry-sulfur",
+		icon = DyDs_path_tech.."agroforestry.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"agroforestry",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("wood", 3500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(45),
 		order = "3",
 	},
 	{
 		name = "agroforestry-oak",
+		icon = DyDs_path_tech.."agroforestry.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"agroforestry",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("wood", 2500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(45),
 		order = "3",
 	},
 	{
 		name = "agroforestry-dead",
+		icon = DyDs_path_tech.."agroforestry.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"agroforestry-oak",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("wood", 5000),
+			Dy_Bio_Tech_Pack("chitin", 350),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(45),
 		order = "3",
 	},
 	{
 		name = "agriculture",
+		icon = DyDs_path_tech.."agriculture.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"bio-centrifuge",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("wood", 5000),
 		},
 		time = Dy_Tech_Time_Calc(5),
 		order = "3",
 	},
 	{
 		name = "agriculture-herbs-1",
+		icon = DyDs_path_tech.."agriculture.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"agriculture",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("soil", 5000),
+			Dy_Bio_Tech_Pack("chitin", 350),
 		},
 		time = Dy_Tech_Time_Calc(5),
 		order = "3",
 	},
 	{
 		name = "agriculture-herbs-2",
+		icon = DyDs_path_tech.."agriculture.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"agriculture-herbs-1",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("soil", 5000),
+			Dy_Bio_Tech_Pack("chitin", 350),
 		},
 		time = Dy_Tech_Time_Calc(5),
 		order = "3",
 	},
 	{
 		name = "agriculture-food",
+		icon = DyDs_path_tech.."agriculture.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"agriculture",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("soil", 5000),
+			Dy_Bio_Tech_Pack("chitin", 350),
 		},
 		time = Dy_Tech_Time_Calc(5),
 		order = "3",
@@ -118,7 +132,8 @@ local Biological_Techs = {
 			"bio-centrifuge",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 350),
+			Dy_Bio_Tech_Pack("blood-bottle", 350),
 		},
 		time = Dy_Tech_Time_Calc(5),
 		order = "3",
@@ -130,9 +145,11 @@ local Biological_Techs = {
 			"natives",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-arachnid", 500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(30),
 		order = "3",
 	},
 	{
@@ -142,9 +159,11 @@ local Biological_Techs = {
 			"arachnid-1",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-arachnid", 1500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(60),
 		order = "3",
 	},
 	{
@@ -154,9 +173,11 @@ local Biological_Techs = {
 			"arachnid-2",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-arachnid", 4500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(90),
 		order = "3",
 	},
 	{
@@ -166,9 +187,11 @@ local Biological_Techs = {
 			"arachnid-3",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-arachnid", 15000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(120),
 		order = "3",
 	},
 	{
@@ -178,9 +201,11 @@ local Biological_Techs = {
 			"arachnid-4",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-arachnid", 45000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(150),
 		order = "3",
 	},
 	{
@@ -190,9 +215,11 @@ local Biological_Techs = {
 			"natives",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(30),
 		order = "3",
 	},
 	{
@@ -202,9 +229,11 @@ local Biological_Techs = {
 			"myriapod-1",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 1500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(60),
 		order = "3",
 	},
 	{
@@ -214,9 +243,11 @@ local Biological_Techs = {
 			"myriapod-2",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 4500),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(90),
 		order = "3",
 	},
 	{
@@ -226,9 +257,11 @@ local Biological_Techs = {
 			"myriapod-3",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 15000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(120),
 		order = "3",
 	},
 	{
@@ -238,9 +271,11 @@ local Biological_Techs = {
 			"myriapod-4",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("chitin", 500),
+			Dy_Bio_Tech_Pack("blood-bottle", 500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 45000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(150),
 		order = "3",
 	},
 	----- Genetics -----
@@ -252,9 +287,11 @@ local Biological_Techs = {
 			"arachnid-1",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("exotic", 500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 1000),
+			Dy_Bio_Tech_Pack("dna-arachnid", 1000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(60),
 		order = "3",
 	},
 	{
@@ -266,9 +303,11 @@ local Biological_Techs = {
 			"genetics-1",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("exotic", 2500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 3000),
+			Dy_Bio_Tech_Pack("dna-arachnid", 3000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(120),
 		order = "3",
 	},
 	{
@@ -280,9 +319,11 @@ local Biological_Techs = {
 			"genetics-2",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("exotic", 5000),
+			Dy_Bio_Tech_Pack("dna-myriapod", 9000),
+			Dy_Bio_Tech_Pack("dna-arachnid", 9000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(180),
 		order = "3",
 	},
 	{
@@ -294,9 +335,11 @@ local Biological_Techs = {
 			"genetics-3",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("exotic", 7500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 15000),
+			Dy_Bio_Tech_Pack("dna-arachnid", 15000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(240),
 		order = "3",
 	},
 	{
@@ -308,14 +351,17 @@ local Biological_Techs = {
 			"genetics-4",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("exotic", 10000),
+			Dy_Bio_Tech_Pack("dna-myriapod", 30000),
+			Dy_Bio_Tech_Pack("dna-arachnid", 30000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(300),
 		order = "3",
 	},
 	---- Misc 1 -----
 	{
 		name = "bio-waste",
+		icon = DyDs_path_tech.."bio-waste.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"agriculture-herbs-2",
@@ -323,22 +369,25 @@ local Biological_Techs = {
 			"agroforestry-sulfur",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("wood", 5000),
+			Dy_Bio_Tech_Pack("soil", 5000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(45),
 		order = "3",
 	},
 	{
 		name = "salinization",
+		icon = DyDs_path_tech.."salt.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"bio-waste",
 			"agroforestry-dead",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("wood", 5000),
+			Dy_Bio_Tech_Pack("soil", 5000),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(60),
 		order = "3",
 	},
 	---- Fish -----
@@ -350,9 +399,9 @@ local Biological_Techs = {
 			"natives",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("wood", 50),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(15),
 		order = "3",
 	},
 	{
@@ -363,9 +412,9 @@ local Biological_Techs = {
 			"piscis",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack("fish-pike", 50),
+			Dy_Bio_Tech_Pack("fish-pike", 100),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(30),
 		order = "3",
 	},
 	{
@@ -376,9 +425,9 @@ local Biological_Techs = {
 			"piscis",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack("fish-salmon", 50),
+			Dy_Bio_Tech_Pack("fish-salmon", 100),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(30),
 		order = "3",
 	},
 	{
@@ -391,10 +440,10 @@ local Biological_Techs = {
 			"salinization",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack("fish-salmon", 50),
-			Dy_Bio_Tech_Pack("fish-pike", 50),
+			Dy_Bio_Tech_Pack("fish-salmon", 100),
+			Dy_Bio_Tech_Pack("fish-pike", 100),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(60),
 		order = "3",
 	},
 	---- Misc 2 -----
@@ -407,9 +456,12 @@ local Biological_Techs = {
 			"piscis-farm",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack(1, 50),
+			Dy_Bio_Tech_Pack("acidic-residue", 1000),
+			Dy_Bio_Tech_Pack("wood", 5000),
+			Dy_Bio_Tech_Pack("soil", 5000),
+			Dy_Bio_Tech_Pack("exotic", 100),
 		},
-		time = Dy_Tech_Time_Calc(5),
+		time = Dy_Tech_Time_Calc(45),
 		order = "3",
 	},
 }

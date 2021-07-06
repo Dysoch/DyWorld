@@ -13,7 +13,7 @@ data:extend({
     attack_parameters =
     {
       type = "projectile",
-      ammo_category = "900mm",
+      ammo_category = "9mm",
       cooldown = 10,
       movement_slow_down_factor = 0.7,
       shell_particle =

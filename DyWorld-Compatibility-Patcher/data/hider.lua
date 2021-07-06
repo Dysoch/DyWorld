@@ -146,6 +146,22 @@ local Change = {
 }
 
 for k,m in pairs(Change) do
+	--[[for _,type in pairs({"item", "fluid", "recipe", "module", "ammo", "capsule", "tool", "gun", "armor", "rail-planner", "repair-tool", "item-with-entity-data"}) do
+		for _,v in pairs(data.raw[type]) do
+			if v.DyWorld_Hider then
+				--v.hidden = true
+				if v.normal then
+					v.normal.hidden = true
+				end
+				if v.expensive then
+					v.expensive.hidden = true
+				end
+				if v.prerequisites then
+					v.prerequisites = {}
+				end
+			end
+		end
+	end]]
 	if data.raw.item[m] then
 		data.raw.item[m].DyWorld_Hidden = true
 		data.raw.item[m].subgroup = "dyworld-hidden-items"

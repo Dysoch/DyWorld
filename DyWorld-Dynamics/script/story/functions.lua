@@ -13,6 +13,9 @@ function Difficulty_Change(ARG1, VAR1)
 	elseif ARG1 == "-" then
 		if (global.dyworld.game_stats.difficulty - VAR1 >= 1) then
 			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - VAR1
+			if (global.dyworld.game_stats.difficulty < 1) then
+				global.dyworld.game_stats.difficulty = 1
+			end
 		end
 	end
 end
@@ -103,6 +106,10 @@ function Phase_Forward()
 	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then
 		game.surfaces["nauvis"].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {(math.random(-10,10)),(math.random(-10,10))}}
+		game.surfaces["nauvis"].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-500,500)),(math.random(-500,500))}, force = game.forces.enemy, speed = 2.5, target = {250,250}}
+		game.surfaces["nauvis"].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-500,500)),(math.random(-500,500))}, force = game.forces.enemy, speed = 2.5, target = {250,-250}}
+		game.surfaces["nauvis"].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-500,500)),(math.random(-500,500))}, force = game.forces.enemy, speed = 2.5, target = {-250,-250}}
+		game.surfaces["nauvis"].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-500,500)),(math.random(-500,500))}, force = game.forces.enemy, speed = 2.5, target = {-250,250}}
 		for index,player in pairs(game.players) do
 			player.play_sound{path = "DySound_nuclear_alarm"}
 		end
@@ -325,6 +332,34 @@ function Story_Objectives(type, event, Posx, PosY)
 					if (name == v.name and v.done == false) then
 						v.done = true
 						global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+					end
+				end
+			end
+		elseif type == "sector-scan" then
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
+				if (v.type_1 == "world" and v.type_2 == "radar-scan") then
+					if (v.done == false) then
+						if v.amount_done < v.amount_needed then
+							v.amount_done = v.amount_done + 1
+						end
+						if v.amount_done >= v.amount_needed then
+							v.done = true
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+						end
+					end
+				end
+			end
+		elseif type == "chunk-gen" then
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
+				if (v.type_1 == "world" and v.type_2 == "chunk") then
+					if (v.done == false) then
+						if v.amount_done < v.amount_needed then
+							v.amount_done = v.amount_done + 1
+						end
+						if v.amount_done >= v.amount_needed then
+							v.done = true
+							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+						end
 					end
 				end
 			end

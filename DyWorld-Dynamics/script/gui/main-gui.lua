@@ -1,5 +1,45 @@
 
 
+local function Progress_Surival_Style_Check(VAR)
+	local Percent = VAR * 100
+	if Percent >= 90 then return "dy-bar-1"
+	elseif Percent >= 80 then return "dy-bar-2"
+	elseif Percent >= 70 then return "dy-bar-3"
+	elseif Percent >= 60 then return "dy-bar-4"
+	elseif Percent >= 50 then return "dy-bar-5"
+	elseif Percent >= 40 then return "dy-bar-6"
+	elseif Percent >= 30 then return "dy-bar-7"
+	elseif Percent >= 20 then return "dy-bar-8"
+	elseif Percent >= 10 then return "dy-bar-9"
+	elseif Percent < 10 then return "dy-bar-10"
+	else return "dy-bar-10"
+	end
+end
+
+local function Time_Surival_Check(id, VAR)
+	if VAR == "food" then
+		local rate = global.dyworld.players[id].food_rate
+		local capacity = global.dyworld.players[id].food
+		local total = capacity / rate
+		local seconds_start = math.floor(total)
+		local minutes_start = math.floor(seconds_start/60)
+		local hours = math.floor(minutes_start/60)
+		local minutes = (minutes_start-(hours*60))
+		local seconds = (seconds_start-(minutes_start*60))
+		return (hours..":"..minutes..":"..seconds)
+	elseif VAR == "water" then
+		local rate = global.dyworld.players[id].water_rate
+		local capacity = global.dyworld.players[id].water
+		local total = capacity / rate
+		local seconds_start = math.floor(total)
+		local minutes_start = math.floor(seconds_start/60)
+		local hours = math.floor(minutes_start/60)
+		local minutes = (minutes_start-(hours*60))
+		local seconds = (seconds_start-(minutes_start*60))
+		return (hours..":"..minutes..":"..seconds)
+	end
+end
+
 
 function Close_Main_GUI(player, id)
 	if player.gui.top.DyDs_Main_GUI then
@@ -8,149 +48,107 @@ function Close_Main_GUI(player, id)
 end
 
 function Main_GUI(player, id)
-		local force = player.force
-		local tabbed_pane = player.gui.top.add{type = "tabbed-pane", name = "DyDs_Main_GUI"}
+	local force = player.force
+	local tabbed_pane = player.gui.top.add{type = "tabbed-pane", name = "DyDs_Main_GUI"}
 
 -------------------------------- Game Stats TAB ----------------------------------------
-		local tab1 = tabbed_pane.add{type="tab", caption="Game Stats"}
-		local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
-		tabbed_pane.add_tab(tab1, frameflow1)
+	local tab1 = tabbed_pane.add{type="tab", caption="Game Stats"}
+	local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
+	tabbed_pane.add_tab(tab1, frameflow1)
 		
+	frameflow1.add{type = "label", caption = "Water:"}
+	frameflow1.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].water_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max))}
 		
-		if global.dyworld.game_stats.sector_scanned > 0 then
-			frameflow1.add{type = "label", caption = "Sectors Scanned: "..global.dyworld.game_stats.sector_scanned}
-		end
-		if global.dyworld.game_stats.rockets_launched > 0 then
-			frameflow1.add{type = "label", caption = "Rockets Launched: "..global.dyworld.game_stats.rockets_launched}
-		end
+	frameflow1.add{type = "label", caption = "Food:"}
+	frameflow1.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
+	frameflow1.add{type = "line", direction = "horizontal"}
+			
+	if global.dyworld.game_stats.sector_scanned > 0 then
+		frameflow1.add{type = "label", caption = "Sectors Scanned: [color=blue]"..global.dyworld.game_stats.sector_scanned.."[/color]"}
+	end
+	if global.dyworld.game_stats.rockets_launched > 0 then
+		frameflow1.add{type = "label", caption = "Rockets Launched: [color=blue]"..global.dyworld.game_stats.rockets_launched.."[/color]"}
+	end
+	frameflow1.add{type = "label", caption = "Special Entities Built: [color=blue]"..((global.dyworld.game_stats.inserters or 0) + (global.dyworld.game_stats.radars or 0)).."[/color]", tooltip = "Inserters: [color=blue]"..(global.dyworld.game_stats.inserters or 0).."[/color]\nRadars: [color=blue]"..(global.dyworld.game_stats.radars or 0).."[/color]"}
 		
-		if debugger then
-			frameflow1.add{type = "label", caption = "Chunks: "..global.dyworld.game_stats.chunks}
-			frameflow1.add{type = "label", caption = "Difficulty of game: "..global.dyworld.game_stats.difficulty}
-		end
+	if debugger then
+		frameflow1.add{type = "label", caption = "Chunks: [color=blue]"..global.dyworld.game_stats.chunks.."[/color]"}
+		frameflow1.add{type = "label", caption = "Difficulty of game: [color=blue]"..global.dyworld.game_stats.difficulty.."[/color]"}
+	end
 		
-		frameflow1.add{type = "label", caption = "Game Days: "..global.dyworld.game_stats.days}
-		frameflow1.add{type = "label", caption = "Game Kills: "..global.dyworld.game_stats.killed_amount}
-		frameflow1.add{type = "line", direction = "horizontal"}
+	frameflow1.add{type = "label", caption = "Game Days: [color=blue]"..global.dyworld.game_stats.days.."[/color]"}
+	frameflow1.add{type = "label", caption = "Game Kills: [color=blue]"..global.dyworld.game_stats.killed_amount.."[/color]"}
+	frameflow1.add{type = "line", direction = "horizontal"}
 
 -------------------------------- Player stats TAB -------------------------------------
-		local tab2 = tabbed_pane.add{type="tab", caption="Player Stats"}
-		local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
-		tabbed_pane.add_tab(tab2, frameflow2)
+	local tab2 = tabbed_pane.add{type="tab", caption="Player Stats"}
+	local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
+	tabbed_pane.add_tab(tab2, frameflow2)
+	
+	frameflow2.add{type = "label", caption = "Water:"}
+	frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].water_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max))}
 		
-		frameflow2.add{type = "label", caption = "Water:"}
-		frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: "..Round(global.dyworld.players[id].water, 2)..", Max Water: "..global.dyworld.players[id].water_max..", Use Rate: "..global.dyworld.players[id].water_rate.." per second"}
+	frameflow2.add{type = "label", caption = "Food:"}
+	frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
+	frameflow2.add{type = "line", direction = "horizontal"}
 		
-		frameflow2.add{type = "label", caption = "Food:"}
-		frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: "..Round(global.dyworld.players[id].food, 2)..", Max Food: "..global.dyworld.players[id].food_max..", Use Rate: "..global.dyworld.players[id].food_rate.." per second"}
-		frameflow2.add{type = "line", direction = "horizontal"}
+	frameflow2.add{type = "label", caption = "Total Attributes: [color=blue]"..(global.dyworld.players[id].strength + global.dyworld.players[id].constitution + global.dyworld.players[id].dexterity + global.dyworld.players[id].intelligence + global.dyworld.players[id].wisdom + global.dyworld.players[id].charisma).."[/color]", tooltip = "Strength: [color=blue]"..global.dyworld.players[id].strength.."[/color]\nConstitution: [color=blue]"..global.dyworld.players[id].constitution.."[/color]\nDexterity: [color=blue]"..global.dyworld.players[id].dexterity.."[/color]\nIntelligence: [color=blue]"..global.dyworld.players[id].intelligence.."[/color]\nWisdom: [color=blue]"..global.dyworld.players[id].wisdom.."[/color]\nCharisma: [color=blue]"..global.dyworld.players[id].charisma.."[/color]"}
 		
+	frameflow2.add{type = "label", caption = "Total Stats: [color=blue]"..(global.dyworld.players[id].crafted + global.dyworld.players[id].mined + global.dyworld.players[id].picked + global.dyworld.players[id].build + global.dyworld.players[id].killed).."[/color]", tooltip = "Crafted: [color=blue]"..global.dyworld.players[id].crafted.."[/color]\nMined: [color=blue]"..global.dyworld.players[id].mined.."[/color]\nPicked Up: [color=blue]"..global.dyworld.players[id].picked.."[/color]\nBuilt: [color=blue]"..global.dyworld.players[id].build.."[/color]\nPersonal Killed: [color=blue]"..global.dyworld.players[id].killed.."[/color]\nCapsules Used: [color=blue]"..(global.dyworld.players[id].capsules or 0).."[/color]\nTimes Died: [color=blue]"..(global.dyworld.players[id].died or 0).."[/color]"}
 		
-		if global.dyworld.players[id].crafted > 0 then
-			frameflow2.add{type = "label", caption = "Crafted: "..global.dyworld.players[id].crafted}
-		end
-		if global.dyworld.players[id].mined > 0 then
-			frameflow2.add{type = "label", caption = "Mined: "..global.dyworld.players[id].mined}
-		end
-		if global.dyworld.players[id].picked > 0 then
-			frameflow2.add{type = "label", caption = "Picked Up: "..global.dyworld.players[id].picked}
-		end
-		if global.dyworld.players[id].build > 0 then
-			frameflow2.add{type = "label", caption = "Built: "..global.dyworld.players[id].build}
-		end
-		if global.dyworld.players[id].killed > 0 then
-			frameflow2.add{type = "label", caption = "Personal Killed: "..global.dyworld.players[id].killed}
-		end
-		frameflow2.add{type = "line", direction = "horizontal"}
-		frameflow2.add{type = "label", caption = "Position: "..math.floor(global.dyworld.players[id].posx).." , "..math.floor(global.dyworld.players[id].posy)}
-		frameflow2.add{type = "label", caption = "Distance Traveled: "..Round(global.dyworld.players[id].distance, 2).." Km"}
+	frameflow2.add{type = "label", caption = "Position: [color=blue]"..math.floor(global.dyworld.players[id].posx).."[/color] , [color=blue]"..math.floor(global.dyworld.players[id].posy).."[/color]"}
 		
-		if debugger then
-			frameflow2.add{type = "label", caption = "Strength: "..global.dyworld.players[id].strength}
-			frameflow2.add{type = "label", caption = "Constitution: "..global.dyworld.players[id].constitution}
-			frameflow2.add{type = "label", caption = "Dexterity: "..global.dyworld.players[id].dexterity}
-			frameflow2.add{type = "label", caption = "Intelligence: "..global.dyworld.players[id].intelligence}
-			frameflow2.add{type = "label", caption = "Wisdom: "..global.dyworld.players[id].wisdom}
-			frameflow2.add{type = "label", caption = "Charisma: "..global.dyworld.players[id].charisma}
-		end
+	frameflow2.add{type = "label", caption = "Distance Total: [color=blue]"..(Round(global.dyworld.players[id].distance, 2) + Round(global.dyworld.players[id].distance_car, 2) + Round(global.dyworld.players[id].distance_train, 2)).."[/color] Km", tooltip = "Walked: [color=blue]"..Round(global.dyworld.players[id].distance, 2).."[/color] Km\nDriven Vehicles: [color=blue]"..Round(global.dyworld.players[id].distance_car, 2).."[/color] Km\nDriven Trains: [color=blue]"..Round(global.dyworld.players[id].distance_train, 2).."[/color] Km"}
 
--------------------------------- Player Bonuses TAB ------------------------------------
-		local tab3 = tabbed_pane.add{type="tab", caption="Player Bonuses"}
-		local frameflow3 = tabbed_pane.add{type = "flow", name = "flow3", direction = "vertical"}
-		tabbed_pane.add_tab(tab3, frameflow3)
-		if game.players[id].character then
-			frameflow3.add{type = "label", caption = "Crafting Bonus: "..(Round(game.players[id].character_crafting_speed_modifier+1, 2))}
-			frameflow3.add{type = "label", caption = "Mining Bonus: "..(Round(game.players[id].character_mining_speed_modifier+1, 2))}
-			frameflow3.add{type = "label", caption = "Health: "..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus)}
-			frameflow3.add{type = "label", caption = "Inventory Slots: "..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus)}
-		end
+-------------------------------- Bonuses TAB ------------------------------------
+	local tab3 = tabbed_pane.add{type="tab", caption="Bonuses"}
+	local frameflow3 = tabbed_pane.add{type = "flow", name = "flow3", direction = "vertical"}
+	tabbed_pane.add_tab(tab3, frameflow3)
 		
-		if debugger then
--------------------------------- Crafting Debug TAB -----------------------------------
-			local tab91 = tabbed_pane.add{type="tab", caption="Crafting Debug"}
-			local frameflow91 = tabbed_pane.add{type = "flow", name = "flow91", direction = "vertical"}
-			tabbed_pane.add_tab(tab91, frameflow91)
-			local scrollbar_debug91 = frameflow91.add{type = "scroll-pane", name = "", horizontal_scroll_policy = "auto-and-reserve-space", vertical_scroll_policy = "auto-and-reserve-space"}
-			scrollbar_debug91.style.top_padding = 0
-			scrollbar_debug91.style.bottom_padding = 0
-			scrollbar_debug91.style.maximal_height = 250
-			scrollbar_debug91.style.maximal_width = 750
-			for k,v in pairs(global.dyworld.game_stats.crafted_names) do
-				scrollbar_debug91.add{type = "label", caption = k..": "..v.."x"}
-			end
+	frameflow3.add{type = "label", caption = "Water:"}
+	frameflow3.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].water_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max))}
 		
--------------------------------- Mining Debug TAB -------------------------------------
-			local tab92 = tabbed_pane.add{type="tab", caption="Mining Debug"}
-			local frameflow92 = tabbed_pane.add{type = "flow", name = "flow92", direction = "vertical"}
-			tabbed_pane.add_tab(tab92, frameflow92)
-			local scrollbar_debug92 = frameflow92.add{type = "scroll-pane", name = "", horizontal_scroll_policy = "auto-and-reserve-space", vertical_scroll_policy = "auto-and-reserve-space"}
-			scrollbar_debug92.style.top_padding = 0
-			scrollbar_debug92.style.bottom_padding = 0
-			scrollbar_debug92.style.maximal_height = 250
-			scrollbar_debug92.style.maximal_width = 750
-			for k,v in pairs(global.dyworld.game_stats.mined_names) do
-				scrollbar_debug92.add{type = "label", caption = k..": "..v.."x"}
-			end
+	frameflow3.add{type = "label", caption = "Food:"}
+	frameflow3.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
+	frameflow3.add{type = "line", direction = "horizontal"}
+		
+	if game.players[id].character then
+		----- Player Bonuses -----
+		frameflow3.add{type = "label", caption = "Build Distance: [color=blue]"..(Round((game.entity_prototypes["character"].build_distance + game.players[id].character_build_distance_bonus), 2)).."[/color]"}
+		frameflow3.add{type = "label", caption = "Reach Distance: [color=blue]"..(Round((game.entity_prototypes["character"].reach_distance + game.players[id].character_reach_distance_bonus), 2)).."[/color]"}
+		frameflow3.add{type = "label", caption = "Loot Pickup Distance: [color=blue]"..(Round((game.entity_prototypes["character"].loot_pickup_distance + game.players[id].character_loot_pickup_distance_bonus), 2)).."[/color]"}
+		frameflow3.add{type = "label", caption = "Crafting Speed: [color=blue]"..(Round(game.players[id].character_crafting_speed_modifier + 1, 2)).."[/color]"}
+		frameflow3.add{type = "label", caption = "Mining Speed: [color=blue]"..(Round(game.players[id].character_mining_speed_modifier + game.entity_prototypes["character"].mining_speed, 2)).."[/color]"}
+		frameflow3.add{type = "label", caption = "Inventory Slots: [color=blue]"..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus).."[/color]"}
+		frameflow3.add{type = "label", caption = "Health: [color=blue]"..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus).."[/color]"}
+			
+		----- Game Bonuses ----
+		frameflow3.add{type = "line", direction = "horizontal"}
+		frameflow3.add{type = "label", caption = "Stack Inserter Stack Bonus: [color=blue]"..(Round((game.forces.player.stack_inserter_capacity_bonus), 0)).."[/color]"}
+		frameflow3.add{type = "label", caption = "Laboratory Productivity: [color=blue]"..(Round((game.forces.player.laboratory_productivity_bonus), 2)).."[/color]"}
+		frameflow3.add{type = "label", caption = "Laboratory Speed: [color=blue]"..(Round((game.forces.player.laboratory_speed_modifier + 1), 2)).."[/color]"}
+	end
 
--------------------------------- Building Debug TAB -----------------------------------
-			local tab93 = tabbed_pane.add{type="tab", caption="Building Debug"}
-			local frameflow93 = tabbed_pane.add{type = "flow", name = "flow93", direction = "vertical"}
-			tabbed_pane.add_tab(tab93, frameflow93)
-			local scrollbar_debug93 = frameflow93.add{type = "scroll-pane", name = "", horizontal_scroll_policy = "auto-and-reserve-space", vertical_scroll_policy = "auto-and-reserve-space"}
-			scrollbar_debug93.style.top_padding = 0
-			scrollbar_debug93.style.bottom_padding = 0
-			scrollbar_debug93.style.maximal_height = 250
-			scrollbar_debug93.style.maximal_width = 750
-			for k,v in pairs(global.dyworld.game_stats.build_names) do
-				scrollbar_debug93.add{type = "label", caption = k..": "..v.."x"}
-			end
-
--------------------------------- Killing Debug TAB ------------------------------------
-			local tab94 = tabbed_pane.add{type="tab", caption="Killing Debug"}
-			local frameflow94 = tabbed_pane.add{type = "flow", name = "flow94", direction = "vertical"}
-			tabbed_pane.add_tab(tab94, frameflow94)
-			local scrollbar_debug94 = frameflow94.add{type = "scroll-pane", name = "", horizontal_scroll_policy = "auto-and-reserve-space", vertical_scroll_policy = "auto-and-reserve-space"}
-			scrollbar_debug94.style.top_padding = 0
-			scrollbar_debug94.style.bottom_padding = 0
-			scrollbar_debug94.style.maximal_height = 250
-			scrollbar_debug94.style.maximal_width = 750
-			for k,v in pairs(global.dyworld.game_stats.killed_names) do
-				scrollbar_debug94.add{type = "label", caption = k..": "..v.."x"}
-			end
+-------------------------------- Implants TAB ------------------------------------
+	if not global.dyworld.players[id].implants_used then global.dyworld.players[id].implants_used = 0 end
+	if global.dyworld.players[id].implants_used >= 1 then
+		local tab4 = tabbed_pane.add{type="tab", caption="Implants"}
+		local frameflow4 = tabbed_pane.add{type = "flow", name = "flow4", direction = "vertical"}
+		tabbed_pane.add_tab(tab4, frameflow4)
 		
--------------------------------- Debug TAB ---------------------------------------------
-			local tab99 = tabbed_pane.add{type="tab", caption="Debug"}
-			local frameflow99 = tabbed_pane.add{type = "flow", name = "flow99", direction = "vertical"}
-			tabbed_pane.add_tab(tab99, frameflow99)
-			local scrollbar_debug99 = frameflow99.add{type = "scroll-pane", name = "", horizontal_scroll_policy = "auto-and-reserve-space", vertical_scroll_policy = "auto-and-reserve-space"}
-			scrollbar_debug99.style.top_padding = 0
-			scrollbar_debug99.style.bottom_padding = 0
-			scrollbar_debug99.style.maximal_height = 250
-			scrollbar_debug99.style.maximal_width = 750
-			if global.debug then
-				for _, NAME in pairs(global.debug) do
-					scrollbar_debug99.add{type = "label", caption = NAME}
-				end
+		frameflow4.add{type = "label", caption = "Water:"}
+		frameflow4.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].water_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max))}
+		
+		frameflow4.add{type = "label", caption = "Food:"}
+		frameflow4.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
+		frameflow4.add{type = "line", direction = "horizontal"}
+		
+		frameflow4.add{type = "label", caption = "[color=green]Active Implants:[/color]"}
+		frameflow4.add{type = "line", direction = "horizontal"}
+		for k,v in pairs(global.dyworld.players[id].implants) do
+			if v == true then
+				frameflow4.add{type = "label", caption = {"looped-name.implant", {"item-name."..k}, tostring(v)}, tooltip = {"item-description."..k}}
 			end
 		end
+	end
 end

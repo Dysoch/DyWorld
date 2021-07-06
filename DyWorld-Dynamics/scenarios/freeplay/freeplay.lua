@@ -27,6 +27,8 @@ local created_items = function()
     ["logistic-robot-3"] = 50,
     ["accumulator"] = 50,
     ["substation"] = 50,
+    ["normal-inserter"] = 50,
+    ["basic-inserter"] = 50,
     ["solar-panel"] = 50,
   }
 end
@@ -42,7 +44,7 @@ end
 local ship_items = function()
   return
   {
-    ["9mm-bullet"] = math.random(100, 400),
+    ["9mm-mag-bronze"] = math.random(100, 400),
     ["copper-plate"] = math.random(15, 25),
     ["iron-plate"] = math.random(5, 10),
     ["9mm-pistol"] = 1,
@@ -59,7 +61,7 @@ local debris_items = function()
     ["copper-plate"] = math.random(5, 25),
     ["tin-plate"] = math.random(5, 15),
     ["bronze-plate"] = math.random(1, 10),
-    ["9mm-bullet"] = math.random(25, 125),
+    ["9mm-mag-bronze"] = math.random(25, 125),
   }
 end
 

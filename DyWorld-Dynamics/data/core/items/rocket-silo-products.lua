@@ -57,7 +57,7 @@ data:extend({
     stack_size = 1,
     rocket_launch_products = 
 	{
-      {type = "item", name = "titanium-ore-impure", amount_min = 1, amount_max = 1000, probability = 0.80},
+      {type = "item", name = "titanium-ore-impure", amount_min = 1, amount_max = 1000, probability = 0.99},
 	},
   },
 	----- Iron Ores -----

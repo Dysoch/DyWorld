@@ -1,7 +1,7 @@
 
 
 local Change = {
-	{Old = "stone", New = "stone-brick"},
+	{Old = "stone", New = "limestone"},
 	{Old = "iron-gear-wheel", New = "iron-gear"},
 	{Old = "electronic-circuit", New = "control-board-1"},
 	{Old = "advanced-circuit", New = "control-board-2"},
@@ -12,6 +12,7 @@ local Change = {
 	{Old = "pipe-to-ground", New = "bronze-pipe-to-ground"},
 	{Old = "inserter", New = "basic-inserter"},
 	{Old = "storage-tank", New = "storage-tank-1"},
+	{Old = "plastic-bar", New = "polycarbonate"},
 	--{Old = "raw", New = "raw"},
 	
 }

@@ -20,6 +20,10 @@ function DyWorld_Add_To_Tech(TECH, RECIPE)
 	end	
 end
 
+function DyWorld_ATTA(RECIPE, TECHS)
+	DyWorld_Automated_Tech_Add[RECIPE] = TECHS
+end
+
 function DyWorld_Tech_Add(params)
 data:extend(
 {
@@ -38,7 +42,7 @@ data:extend(
       time = params.time,
     },
     order = params.order,
-	upgrade = false,
+	upgrade = settings.startup["DyWorld_Tech_Upgrade"].value,
 	DyWorld_Hider = false,
   },
 })

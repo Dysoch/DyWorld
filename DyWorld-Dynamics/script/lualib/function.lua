@@ -26,6 +26,21 @@ function Entity_Check(type)
 	end
 end
 
+function Distance_Car_Check(name)
+	if name == "car-1" then return true
+	elseif name == "car" then return true
+	elseif name == "splitter" then return true
+	else return false
+	end
+end
+
+function Distance_Train_Check(name)
+	if name == "locomotive" then return true
+	elseif name == "cargo-wagon-1" then return true
+	else return false
+	end
+end
+
 function Round(num, numDecimalPlaces)
 	local mult = 10^(numDecimalPlaces or 0)
 	return math.floor(num * mult + 0.5) / mult
@@ -42,6 +57,13 @@ function tablelength(T)
 	local count = 0
 	for _ in pairs(T) do count = count + 1 end
 	return count
+end
+
+function Table_Empty(T)
+    for _, _ in pairs(T) do
+        return false
+    end
+    return true
 end
 
 function Story_tablelength(T)

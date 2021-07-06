@@ -14,7 +14,7 @@ data:extend({
     fuel_value = "50MJ",
     base_color = {r=0, g=0.34, b=0.6},
     flow_color = {r=0.7, g=0.7, b=0.7},
-    icon = DyDs_path_fluid.."oxygen.png",
+    icon = DyDs_path_fluid.."natural-gas.png",
     icon_size = 64, icon_mipmaps = 4,
     order = "oxygen",
     subgroup = DyDs.."z-fluids",
@@ -38,6 +38,24 @@ data:extend({
     subgroup = DyDs.."z-fluids",
 	auto_barrel = false,
 	auto_canister = true,
+	auto_canister_tier = 1,
+  },
+  {
+    type = "fluid",
+    name = "gasoline",
+    default_temperature = 20,
+    max_temperature = 2800,
+	gas_temperature = 20,
+	emissions_multiplier = -1,
+    heat_capacity = "5J",
+    base_color = {r=0, g=0.34, b=0.6},
+    flow_color = {r=0.7, g=0.7, b=0.7},
+    icon = DyDs_path_fluid.."gasoline.png",
+    icon_size = 64, icon_mipmaps = 4,
+    order = "gasoline",
+    subgroup = DyDs.."z-fluids",
+	auto_barrel = false,
+	auto_canister = false,
 	auto_canister_tier = 1,
   },
   {
@@ -94,6 +112,51 @@ data:extend({
 	auto_canister = true,
 	auto_canister_tier = 1,
   },
+  {
+    type = "fluid",
+    name = "bodily-fluid",
+    default_temperature = 20,
+    max_temperature = 20,
+	gas_temperature = 20,
+	emissions_multiplier = 1,
+    heat_capacity = "0J",
+    fuel_value = "0MJ",
+    base_color = {r=0.75, g=0.6, b=0.6},
+    flow_color = {r=0.75, g=0.6, b=0.6},
+	icons = {
+	  {
+		icon = DyDs_path_fluid.."metal.png",
+		tint = {r=0.75, g=0.6, b=0.6},
+	  },
+	},
+    icon_size = 64, icon_mipmaps = 4,
+    order = "bodily-fluid",
+    subgroup = DyDs.."z-fluids",
+	auto_barrel = false,
+	auto_canister = false,
+  },
+  {
+    type = "fluid",
+    name = "blood",
+    default_temperature = 20,
+    max_temperature = 20,
+	gas_temperature = 20,
+	emissions_multiplier = 1,
+    heat_capacity = "0J",
+    fuel_value = "0MJ",
+    base_color = {r=1, g=0, b=0},
+    flow_color = {r=1, g=0, b=0},
+	icons = {
+	  {
+		icon = DyDs_path_fluid.."blood.png",
+	  },
+	},
+    icon_size = 64, icon_mipmaps = 4,
+    order = "blood",
+    subgroup = DyDs.."z-fluids",
+	auto_barrel = false,
+	auto_canister = false,
+  },
 })
 
 data.raw.fluid.water.auto_barrel = false
@@ -101,6 +164,8 @@ data.raw.fluid.water.auto_canister = true
 data.raw.fluid.water.auto_canister_tier = 1
 data.raw.fluid["crude-oil"].auto_canister = true
 data.raw.fluid["crude-oil"].auto_canister_tier = 2
+data.raw.fluid["crude-oil"].default_temperature = 20
+data.raw.fluid["crude-oil"].max_temperature = 500
 data.raw.fluid["heavy-oil"].auto_canister = true
 data.raw.fluid["heavy-oil"].auto_canister_tier = 3
 data.raw.fluid["light-oil"].auto_canister = true

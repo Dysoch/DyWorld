@@ -60,39 +60,12 @@ local Tech_Act_3 = {
 
 local Tech_Main = {
 	["automation-science-pack"] = {Replace = "dysci-01"},
-	["logistic-science-pack"] = {Replace = "dysci-02"},
-	["chemical-science-pack"] = {Replace = "dysci-03"},
-	["military-science-pack"] = {Replace = "dysci-04"},
-	["production-science-pack"] = {Replace = "dysci-05"},
-	["utility-science-pack"] = {Replace = "dysci-06"},
-	["space-science-pack"] = {Replace = "dysci-07"},
-	
-	["se-rocket-science-pack"] = {Replace = "dysci-07"},
-	
-	["se-astronomic-science-pack-1"] = {Replace = "dysci-09"},
-	["se-astronomic-science-pack-2"] = {Replace = "dysci-13"},
-	["se-astronomic-science-pack-3"] = {Replace = "dysci-17"},
-	["se-astronomic-science-pack-4"] = {Replace = "dysci-17"},
-	
-	["se-biological-science-pack-1"] = {Replace = "dysci-08"},
-	["se-biological-science-pack-2"] = {Replace = "dysci-08"},
-	["se-biological-science-pack-3"] = {Replace = "dysci-08"},
-	["se-biological-science-pack-4"] = {Replace = "dysci-08"},
-	
-	["se-energy-science-pack-1"] = {Replace = "dysci-10"},
-	["se-energy-science-pack-2"] = {Replace = "dysci-14"},
-	["se-energy-science-pack-3"] = {Replace = "dysci-18"},
-	["se-energy-science-pack-4"] = {Replace = "dysci-18"},
-	
-	["se-material-science-pack-1"] = {Replace = "dysci-11"},
-	["se-material-science-pack-2"] = {Replace = "dysci-15"},
-	["se-material-science-pack-3"] = {Replace = "dysci-19"},
-	["se-material-science-pack-4"] = {Replace = "dysci-19"},
-	
-	["se-deep-space-science-pack-1"] = {Replace = "dysci-12"},
-	["se-deep-space-science-pack-2"] = {Replace = "dysci-16"},
-	["se-deep-space-science-pack-3"] = {Replace = "dysci-20"},
-	["se-deep-space-science-pack-4"] = {Replace = "dysci-20"},
+	["logistic-science-pack"] = {Replace = "dysci-03"},
+	["chemical-science-pack"] = {Replace = "dysci-05"},
+	["military-science-pack"] = {Replace = "dysci-07"},
+	["production-science-pack"] = {Replace = "dysci-09"},
+	["utility-science-pack"] = {Replace = "dysci-11"},
+	["space-science-pack"] = {Replace = "dysci-13"},
 }
 
 local Tech_Base_Game = {
@@ -284,12 +257,12 @@ local Tech_Base_Game = {
 	["artillery"] = {Replace = nil},
 	["spidertron"] = {Replace = nil},
 	["circuit-network"] = {Replace = "intermediates-3"},
-	["logistic-science-pack"] = {Replace = "dy-science-pack-2"},
-	["chemical-science-pack"] = {Replace = "dy-science-pack-3"},
-	["military-science-pack"] = {Replace = "dy-science-pack-4"},
-	["production-science-pack"] = {Replace = "dy-science-pack-5"},
-	["utility-science-pack"] = {Replace = "dy-science-pack-6"},
-	["space-science-pack"] = {Replace = "dy-science-pack-7"},
+	["logistic-science-pack"] = {Replace = "dy-science-pack-3"},
+	["chemical-science-pack"] = {Replace = "dy-science-pack-5"},
+	["military-science-pack"] = {Replace = "dy-science-pack-7"},
+	["production-science-pack"] = {Replace = "dy-science-pack-9"},
+	["utility-science-pack"] = {Replace = "dy-science-pack-11"},
+	["space-science-pack"] = {Replace = "dy-science-pack-13"},
 	["aai-strongbox-base"] = {Replace = "storage-1"},
 	["aai-strongbox-storage"] = {Replace = "storage-3"},
 	["aai-strongbox-logistic"] = {Replace = "storage-5"},
@@ -351,33 +324,6 @@ local Tech_Base_Game = {
 	
 	----- TO BE CHECKED -----
 	
-	["se-rocket-science-pack"] = {Replace = "dy-science-pack-7"},
-	
-	["se-astronomic-science-pack-1"] = {Replace = "dy-science-pack-9"},
-	["se-astronomic-science-pack-2"] = {Replace = "dy-science-pack-13"},
-	["se-astronomic-science-pack-3"] = {Replace = "dy-science-pack-17"},
-	["se-astronomic-science-pack-4"] = {Replace = "dy-science-pack-17"},
-	
-	["se-biological-science-pack-1"] = {Replace = "dy-science-pack-8"},
-	["se-biological-science-pack-2"] = {Replace = "dy-science-pack-8"},
-	["se-biological-science-pack-3"] = {Replace = "dy-science-pack-8"},
-	["se-biological-science-pack-4"] = {Replace = "dy-science-pack-8"},
-	
-	["se-energy-science-pack-1"] = {Replace = "dy-science-pack-10"},
-	["se-energy-science-pack-2"] = {Replace = "dy-science-pack-14"},
-	["se-energy-science-pack-3"] = {Replace = "dy-science-pack-18"},
-	["se-energy-science-pack-4"] = {Replace = "dy-science-pack-18"},
-	
-	["se-material-science-pack-1"] = {Replace = "dy-science-pack-11"},
-	["se-material-science-pack-2"] = {Replace = "dy-science-pack-15"},
-	["se-material-science-pack-3"] = {Replace = "dy-science-pack-19"},
-	["se-material-science-pack-4"] = {Replace = "dy-science-pack-19"},
-	
-	["se-deep-space-science-pack-1"] = {Replace = "dy-science-pack-12"},
-	["se-deep-space-science-pack-2"] = {Replace = "dy-science-pack-16"},
-	["se-deep-space-science-pack-3"] = {Replace = "dy-science-pack-20"},
-	["se-deep-space-science-pack-4"] = {Replace = "dy-science-pack-20"},
-	
 }
 
 for _, tech in pairs (data.raw.technology) do
@@ -426,19 +372,19 @@ for _, tech in pairs (data.raw.technology) do
 						if New.Replace ~= nil then
 							if data.raw.technology[New.Replace] then
 								if CheckPreReq(tech.name, New.Replace) == 0 then
-									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
+									--Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
 									tech_remove_prerequisites(tech.name, {Old})
 									table.insert(tech.prerequisites, New.Replace)
 								else
-									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
+									--Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
 									tech_remove_prerequisites(tech.name, {Old})
 								end
 							else
-								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")
+								--Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")
 								tech_remove_prerequisites(tech.name, {Old})
 							end
 						else
-							Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". No substitute found, removing it completely")
+							--Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". No substitute found, removing it completely")
 							tech_remove_prerequisites(tech.name, {Old})
 						end
 					end
@@ -484,33 +430,33 @@ for _,tech in pairs(data.raw.technology) do
 		end
 	end
 	if tech.prerequisites then
-			for k,v in pairs(tech.prerequisites) do
-				for Old,New in pairs(Tech_Base_Game) do
-					if v == Old then
-						if New.Replace ~= nil then
-							if data.raw.technology[New.Replace] then
-								if CheckPreReq(tech.name, New.Replace) == 0 then
-									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
-									tech_remove_prerequisites(tech.name, {Old})
-									table.insert(tech.prerequisites, New.Replace)
-								else
-									Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
-									tech_remove_prerequisites(tech.name, {Old})
-								end
-							else
-								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")
+		for k,v in pairs(tech.prerequisites) do
+			for Old,New in pairs(Tech_Base_Game) do
+				if v == Old then
+					if New.Replace ~= nil then
+						if data.raw.technology[New.Replace] then
+							if CheckPreReq(tech.name, New.Replace) == 0 then
+								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Changing it to: "..New.Replace)
 								tech_remove_prerequisites(tech.name, {Old})
-								--v = nil
-								--data.raw.technology[tech.name].prerequisites[k] = nil
+								table.insert(tech.prerequisites, New.Replace)
+							else
+								Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing not needed, since "..New.Replace.." already exists. Removing old prerequisite")
+								tech_remove_prerequisites(tech.name, {Old})
 							end
 						else
-							Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". No substitute found, removing it completely")
+							Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". Replacing tech ("..New.Replace..") not found, removing it completely")
 							tech_remove_prerequisites(tech.name, {Old})
 							--v = nil
 							--data.raw.technology[tech.name].prerequisites[k] = nil
 						end
+					else
+						Dy_Log("DyComPa: Found Factorio technology prerequisite ("..Old..") in technology: "..tech.name..". No substitute found, removing it completely")
+						tech_remove_prerequisites(tech.name, {Old})
+						--v = nil
+						--data.raw.technology[tech.name].prerequisites[k] = nil
 					end
 				end
 			end
 		end
+	end
 end

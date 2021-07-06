@@ -9,6 +9,18 @@ function Event_on_gui_click(event)
 	
 end
 
+function Event_on_gui_closed(event)
+end
+
+function Event_on_gui_elem_changed(event)
+end
+
+function Event_on_gui_location_changed(event)
+end
+
+function Event_on_gui_opened(event)
+end
+
 function Event_on_gui_selected_tab_changed(event)
 	local player = game.players[event.player_index]
 	local force = player.force

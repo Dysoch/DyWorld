@@ -1,6 +1,18 @@
 
 
 
+function Event_on_raised_revive(event)
+	--local id = event.player_index
+	--local entity = event.entity
+	
+end
+
+function Event_script_raised_destroy(event)
+	--local id = event.player_index
+	--local entity = event.entity
+	
+end
+
 function Event_on_player_changed_force(event)
 	local player = game.players[event.player_index]
 	local force = player.force
@@ -28,18 +40,23 @@ function Event_on_player_created(event)
 		posx2 = 0,
 		posy2 = 0,
 		distance = 0,
-		food = 1000,
-		food_max = 1000,
+		distance_car = 0,
+		distance_train = 0,
+		food = Food_Start,
+		food_max = Food_Start,
 		food_rate = 0.33,
 		food_mess_1 = false,
 		food_mess_2 = false,
 		food_mess_3 = false,
-		water = 1000,
-		water_max = 1000,
+		food_mess_4 = false,
+		water = Water_Start,
+		water_max = Water_Start,
 		water_rate = 1.25,
 		water_mess_1 = false,
 		water_mess_2 = false,
 		water_mess_3 = false,
+		water_mess_4 = false,
+		death_reduce = 0,
 		xp = 0,
 		xp_levelup = (100 + math.random(100)),
 		level = 1,
@@ -71,6 +88,87 @@ function Event_on_player_died(event)
 	
 end
 
+function Event_on_pre_player_died(event)
+	local player = game.players[event.player_index]
+	local force = player.force
+	local id = event.player_index
+	
+	global.dyworld.players[id].alive = false
+	if not global.dyworld.players[id].died then global.dyworld.players[id].died = 0 end
+	if not global.dyworld.players[id].survival then global.dyworld.players[id].survival = {} end
+	if not global.dyworld.players[id].survival["constitution"] then global.dyworld.players[id].survival["constitution"] = 0 end
+	if not global.dyworld.players[id].death_reduce then global.dyworld.players[id].death_reduce = 0 end
+	global.dyworld.players[id].died = global.dyworld.players[id].died + 1
+	
+	Difficulty_Change("-", 250)
+	
+	if global.dyworld.players[id].death_reduce == 0 then 
+		global.dyworld.players[id].water_max = Water_Start
+		global.dyworld.players[id].food_max = Food_Start
+		Implant_Check(id, nil, true)
+		global.dyworld.players[id].water_rate = 1.25
+		global.dyworld.players[id].food_rate = 0.33
+		global.dyworld.players[id].water = global.dyworld.players[id].water_max
+		global.dyworld.players[id].food = global.dyworld.players[id].food_max
+		global.dyworld.players[id].food_mess_1 = false
+		global.dyworld.players[id].food_mess_2 = false
+		global.dyworld.players[id].food_mess_3 = false
+		global.dyworld.players[id].food_mess_4 = false
+		global.dyworld.players[id].water_mess_1 = false
+		global.dyworld.players[id].water_mess_2 = false
+		global.dyworld.players[id].water_mess_3 = false
+		global.dyworld.players[id].water_mess_4 = false
+		global.dyworld.players[id].crafted = 0
+		global.dyworld.players[id].mined = 0
+		global.dyworld.players[id].build = 0
+		global.dyworld.players[id].killed = 0
+		global.dyworld.players[id].picked = 0
+		global.dyworld.players[id].distance = 0
+		global.dyworld.players[id].distance_car = 0
+		global.dyworld.players[id].distance_train = 0
+		global.dyworld.players[id].survival["constitution"] = 0
+		Bonuses(id)
+	elseif global.dyworld.players[id].death_reduce == 1 then 
+		global.dyworld.players[id].water = global.dyworld.players[id].water_max
+		global.dyworld.players[id].food = global.dyworld.players[id].food_max
+		global.dyworld.players[id].food_mess_1 = false
+		global.dyworld.players[id].food_mess_2 = false
+		global.dyworld.players[id].food_mess_3 = false
+		global.dyworld.players[id].food_mess_4 = false
+		global.dyworld.players[id].water_mess_1 = false
+		global.dyworld.players[id].water_mess_2 = false
+		global.dyworld.players[id].water_mess_3 = false
+		global.dyworld.players[id].water_mess_4 = false
+	else
+		local Death = global.dyworld.players[id].death_reduce
+		global.dyworld.players[id].water_max = math.max(Round((global.dyworld.players[id].water_max * Death), 0), Water_Start)
+		global.dyworld.players[id].food_max = math.max(Round((global.dyworld.players[id].food_max * Death), 0), Food_Start)
+		Implant_Check(id, nil, true)
+		global.dyworld.players[id].water_rate = 1.25
+		global.dyworld.players[id].food_rate = 0.33
+		global.dyworld.players[id].water = global.dyworld.players[id].water_max
+		global.dyworld.players[id].food = global.dyworld.players[id].food_max
+		global.dyworld.players[id].food_mess_1 = false
+		global.dyworld.players[id].food_mess_2 = false
+		global.dyworld.players[id].food_mess_3 = false
+		global.dyworld.players[id].food_mess_4 = false
+		global.dyworld.players[id].water_mess_1 = false
+		global.dyworld.players[id].water_mess_2 = false
+		global.dyworld.players[id].water_mess_3 = false
+		global.dyworld.players[id].water_mess_4 = false
+		global.dyworld.players[id].survival["constitution"] = Round((global.dyworld.players[id].survival["constitution"] * Death), 0)
+		global.dyworld.players[id].crafted = Round((global.dyworld.players[id].crafted * Death), 0)
+		global.dyworld.players[id].mined = Round((global.dyworld.players[id].mined * Death), 0)
+		global.dyworld.players[id].build = Round((global.dyworld.players[id].build * Death), 0)
+		global.dyworld.players[id].killed = Round((global.dyworld.players[id].killed * Death), 0)
+		global.dyworld.players[id].picked = Round((global.dyworld.players[id].picked * Death), 0)
+		global.dyworld.players[id].distance = Round((global.dyworld.players[id].distance * Death), 2)
+		global.dyworld.players[id].distance_car = Round((global.dyworld.players[id].distance_car * Death), 2)
+		global.dyworld.players[id].distance_train = Round((global.dyworld.players[id].distance_train * Death), 2)
+		Bonuses(id)
+	end
+end
+
 function Event_on_player_joined_game(event)
 	local player = game.players[event.player_index]
 	local force = player.force
@@ -97,12 +195,26 @@ function Event_on_player_respawned(event)
 	local id = event.player_index
 	
 	global.dyworld.players[id].alive = true
+	global.dyworld.players[id].strength = 0
+	global.dyworld.players[id].constitution = 0
+	global.dyworld.players[id].dexterity = 0
+	global.dyworld.players[id].intelligence = 0
+	global.dyworld.players[id].wisdom = 0
+	global.dyworld.players[id].charisma = 0
+	global.dyworld.players[id].crafted = 0
+	global.dyworld.players[id].mined = 0
+	global.dyworld.players[id].build = 0
+	global.dyworld.players[id].killed = 0
+	global.dyworld.players[id].picked = 0
+	global.dyworld.players[id].distance = 0
+	global.dyworld.players[id].distance_car = 0
+	global.dyworld.players[id].distance_train = 0
 end
 
-function Event_on_player_respawned(event)
+function Event_on_player_respawned_script(event)
 	local id = event.player_index
 	
-	global.dyworld.players[id].alive = true
-	global.dyworld.players[id].water = global.dyworld.players[id].water_max
-	global.dyworld.players[id].food = global.dyworld.players[id].food_max
+	if not global.dyworld.players[id].alive then
+		global.dyworld.players[id].alive = true
+	end
 end

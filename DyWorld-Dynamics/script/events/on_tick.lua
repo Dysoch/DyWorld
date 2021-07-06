@@ -3,7 +3,7 @@
 
 function Event_on_tick(event)
 
-	script.on_event(remote.call("space-exploration", "get_on_player_respawned_event"), Event_on_player_respawned)
+	--script.on_event(remote.call("space-exploration", "get_on_player_respawned_event"), Event_on_player_respawned_script)
 	
 	if event.tick%(60*1)==1 then
 		local seconds_start = math.floor(game.tick/60)
@@ -32,13 +32,21 @@ function Event_on_tick(event)
 				if not v.posx2 then v.posx2 = 0 end
 				if not v.posy2 then v.posy2 = 0 end
 				if not v.distance then v.distance = 0 end
+				if not v.distance_car then v.distance_car = 0 end
+				if not v.distance_train then v.distance_train = 0 end
 				if not v.surface then v.surface = "nauvis" end
 				v.posx2 = v.posx
 				v.posy2 = v.posy
 				v.posx = game.players[v.id].position.x
 				v.posy = game.players[v.id].position.y
 				v.surface = game.players[v.id].surface
-				v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
+				if (game.players[v.id].vehicle and Distance_Car_Check(game.players[v.id].vehicle.name)) then
+					v.distance_car = (v.distance_car + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
+				elseif (game.players[v.id].vehicle and Distance_Train_Check(game.players[v.id].vehicle.name)) then
+					v.distance_train = (v.distance_train + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
+				elseif game.players[v.id].vehicle == nil then
+					v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
+				end
 				Food_Lose(v.id, 1)
 				Water_Lose(v.id, 1)
 				if v.story_gui and v.alive and not game.players[v.id].opened_self then
@@ -62,12 +70,16 @@ function Event_on_tick(event)
 			end
 		end
 	end
-	if game.tick == 800 and global.dyworld_story then
-		for k,v in pairs(global.dyworld.players) do
-			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
-			if (global.dyworld.game_stats.radars <= 0) then
-				game.players[v.id].minimap_enabled = false
+	if game.tick == 800 then
+		if global.dyworld_story then
+			for k,v in pairs(global.dyworld.players) do
+				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+				if (global.dyworld.game_stats.radars <= 0) then
+					game.players[v.id].minimap_enabled = false
+				end
 			end
+		else
+			PlayerPrint("You are playing WITHOUT the story added. If you want to play with it, start a new game with the mod scenario added by DyWorld. (NOT NORMAL FREEPLAY). If this is intentional, ignore this message")
 		end
 	end
 	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack and global.dyworld_story and settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful") then

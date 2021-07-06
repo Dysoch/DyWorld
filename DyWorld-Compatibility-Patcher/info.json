@@ -1,6 +1,6 @@
 {
 	"name": "DyComPa",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"factorio_version": "1.1",
 	"title": "DyComPa (DyWorld-Compatibility-Patcher)",
 	"author": "Dysoch",
@@ -9,7 +9,7 @@
 	"description": "DyWorld-Compatibility-Patcher (AKA: DyComPa), which patches other mods for use with DyWorld-Dynamics",
 	"dependencies": [  
 		"base >= 1.1.34",
-		"DyWorld-Dynamics >= 0.7.96",
+		"DyWorld-Dynamics >= 0.7.97",
 		"space-exploration-graphics >= 0.5.10",
 		"space-exploration-graphics-2 >= 0.1.1",
 		"space-exploration-graphics-2 >= 0.1.1",

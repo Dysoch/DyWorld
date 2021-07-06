@@ -10,11 +10,16 @@ for k,v in pairs(data.raw.recipe) do
 		if (v.category and v.category == "crafting") then
 			v.category = "assembling-tier-1"
 		end
+	elseif string.find(v.name, "se-", 1, true) then
+		-- Nada
 	else
 		data.raw.recipe[v.name].DyWorld_Hider = true
 		--Dy_Log("Recipe Hidden ("..v.name..")")
 	end
 end
+data.raw.recipe["iron-plate"].hidden = true
+data.raw.recipe["copper-plate"].hidden = true
+data.raw.recipe["stone-brick"].hidden = true
 
 -- Tech --
 for k,v in pairs(data.raw.technology) do

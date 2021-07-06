@@ -12,10 +12,8 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 10},
         {type = "item", name = "aluminium-plate", amount = 15},
         {type = "item", name = "magnesium-plate", amount = 5},
-        {type = "item", name = "control-board-2", amount = 2},
         {type = "item", name = "plastic-bar", amount = 10},
         {type = "item", name = "engine-unit", amount = 2},
         {type = "fluid", name = "petroleum-gas", amount = 50},
@@ -36,7 +34,8 @@ data:extend({
       {
         {type = "item", name = "titanium-plate", amount = 12},
         {type = "item", name = "basic-electric-drill", amount = 5},
-        {type = "item", name = "satellite", amount = 2},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 10},
       },
       result = "asteroid-miner-random",
 	  enabled = false,
@@ -54,7 +53,8 @@ data:extend({
       {
         {type = "item", name = "titanium-plate", amount = 25},
         {type = "item", name = "basic-electric-drill", amount = 5},
-        {type = "item", name = "satellite", amount = 2},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 10},
       },
       result = "asteroid-miner-titanium",
 	  enabled = false,
@@ -72,7 +72,8 @@ data:extend({
       {
         {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
-        {type = "item", name = "satellite", amount = 1},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 10},
         {type = "item", name = "iron-ore", amount = 5},
       },
       result = "asteroid-miner-iron",
@@ -91,7 +92,8 @@ data:extend({
       {
         {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
-        {type = "item", name = "satellite", amount = 1},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 10},
         {type = "item", name = "copper-ore", amount = 5},
       },
       result = "asteroid-miner-copper",
@@ -110,7 +112,8 @@ data:extend({
       {
         {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
-        {type = "item", name = "satellite", amount = 1},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 10},
         {type = "item", name = "tin-ore", amount = 5},
       },
       result = "asteroid-miner-tin",
@@ -129,7 +132,8 @@ data:extend({
       {
         {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
-        {type = "item", name = "satellite", amount = 1},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 10},
         {type = "item", name = "limestone", amount = 5},
       },
       result = "asteroid-miner-stone",
@@ -148,7 +152,8 @@ data:extend({
       {
         {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
-        {type = "item", name = "satellite", amount = 1},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 10},
         {type = "item", name = "coal", amount = 5},
       },
       result = "asteroid-miner-coal-1",
@@ -166,7 +171,8 @@ data:extend({
       {
         {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
-        {type = "item", name = "satellite", amount = 1},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 10},
         {type = "item", name = "coal", amount = 5},
       },
       result = "asteroid-miner-coal-2",
@@ -184,7 +190,8 @@ data:extend({
       {
         {type = "item", name = "titanium-plate", amount = 10},
         {type = "item", name = "basic-electric-drill", amount = 2},
-        {type = "item", name = "satellite", amount = 1},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 10},
         {type = "item", name = "coal", amount = 5},
       },
       result = "asteroid-miner-coal-3",

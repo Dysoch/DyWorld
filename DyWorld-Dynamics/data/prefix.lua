@@ -5,6 +5,7 @@ ER_Mod = settings.startup["DyWorld_Expensive_Modifier"].value
 
 -- graphical
 DyDs_path_icon = "__DyWorld-Dynamics__/graphics/icons/"
+DyDs_path_looped = "__DyWorld-Dynamics__/graphics/looped/"
 DyDs_path_icon_base = "__base__/graphics/icons/"
 DyDs_path_damage = "__DyWorld-Dynamics__/graphics/damage/"
 DyDs_path_fluid = "__DyWorld-Dynamics__/graphics/fluids/"
@@ -40,26 +41,35 @@ Tier_3 = {255, 0, 0}
 Tier_4 = {0, 255, 255}
 Tier_5 = {0, 0, 255}
 
-Sci_Tier_1 = {128, 0, 0}
-Sci_Tier_2 = {170, 110, 40}
-Sci_Tier_3 = {128, 128, 0}
-Sci_Tier_4 = {0, 128, 128}
-Sci_Tier_5 = {0, 0, 128}
-Sci_Tier_6 = {0, 0, 0}
-Sci_Tier_7 = {230, 25, 75}
-Sci_Tier_8 = {245, 130, 48}
-Sci_Tier_9 = {255, 225, 25}
-Sci_Tier_10 = {210, 245, 60}
-Sci_Tier_11 = {60, 180, 75}
-Sci_Tier_12 = {70, 240, 240}
-Sci_Tier_13 = {0, 130, 200}
-Sci_Tier_14 = {145, 30, 180}
-Sci_Tier_15 = {240, 50, 230}
-Sci_Tier_16 = {128, 128, 128}
-Sci_Tier_17 = {250, 190, 212}
-Sci_Tier_18 = {255, 215, 180}
-Sci_Tier_19 = {255, 250, 200}
-Sci_Tier_20 = {170, 255, 195}
+-- Automation --
+Sci_Tier_1 = {200, 0, 0}
+Sci_Tier_2 = {255, 0, 0}
+-- Logistical --
+Sci_Tier_3 = {50, 200, 50}
+Sci_Tier_4 = {50, 255, 50}
+-- Chemical --
+Sci_Tier_5 = {0, 0, 200}
+Sci_Tier_6 = {0, 0, 255}
+-- Military --
+Sci_Tier_7 = {25, 25, 25}
+Sci_Tier_8 = {0, 0, 0}
+-- Production --
+Sci_Tier_9 = {200, 0, 200}
+Sci_Tier_10 = {255, 0, 255}
+-- Utility --
+Sci_Tier_11 = {200, 200, 0}
+Sci_Tier_12 = {255, 255, 0}
+-- Space --
+Sci_Tier_13 = {128, 128, 128}
+Sci_Tier_14 = {170, 170, 170}
+-- Bio --
+Sci_Tier_15 = {0, 200, 0}
+Sci_Tier_16 = {0, 255, 0}
+-- Unused --
+Sci_Tier_17 = {255, 255, 255}
+Sci_Tier_18 = {255, 255, 255}
+Sci_Tier_19 = {255, 255, 255}
+Sci_Tier_20 = {255, 255, 255}
 
 Iron_Color = {82, 174, 212}
 Copper_Color = {212, 119, 82}
@@ -69,11 +79,51 @@ Bronze_Color = {126, 112, 109}
 Titanium_Color = {57, 61, 112}
 Magnesium_Color = {92, 114, 208}
 Aluminium_Color = {170, 170, 170}
+Lead_Color = {118, 136, 143}
+Silver_Color = {192, 192, 192}
+Gold_Color = {212, 175, 55}
+
+Dy_Metal_Colors = {
+	["iron"] = {82, 174, 212},
+	["copper"] = {212, 119, 82},
+	["tin"] = {39, 105, 135},
+	["steel"] = {229, 227, 227},
+	["bronze"] = {126, 112, 109},
+	["titanium"] = {57, 61, 112},
+	["magnesium"] = {92, 114, 208},
+	["aluminium"] = {170, 170, 170},
+	["lead"] = {118, 136, 143},
+	["silver"] = {192, 192, 192},
+	["gold"] = {212, 175, 55},
+}
+Dy_Alloys = {
+	["purple-gold"] = {Ingre_1 = "gold", Rat_1 = 0.8, Ingre_2 = "aluminium", Rat_2 = 0.2, Tier = 1},
+	["magnox"] = {Ingre_1 = "aluminium", Rat_1 = 0.8, Ingre_2 = "magnesium", Rat_2 = 0.2, Tier = 1},
+	["duralumin"] = {Ingre_1 = "aluminium", Rat_1 = 0.8, Ingre_2 = "copper", Rat_2 = 0.2, Tier = 1},
+	["solder"] = {Ingre_1 = "lead", Rat_1 = 0.9, Ingre_2 = "tin", Rat_2 = 0.1, Tier = 1},
+	["silver-solder"] = {Ingre_1 = "solder", Rat_1 = 0.75, Ingre_2 = "silver", Rat_2 = 0.25, Tier = 1},
+	["copper-solder"] = {Ingre_1 = "solder", Rat_1 = 0.75, Ingre_2 = "copper", Rat_2 = 0.25, Tier = 1},
+}
+
+Dy_Ammo_Mods = {
+	{Name = "bronze", Mod = 0.35, Tier = 1},
+	{Name = "tin", Mod = 0.3, Tier = 1, Dmg_T = "acid", Dmg_A = 2.5},
+	{Name = "copper", Mod = 0.75, Tier = 1},
+	{Name = "iron", Mod = 1, Tier = 2, Dmg_T = "acid", Dmg_A = 5},
+	{Name = "steel", Mod = 1.5, Tier = 2},
+	{Name = "titanium", Mod = 1.75, Tier = 3},
+	{Name = "aluminium", Mod = 1.25, Tier = 2},
+	{Name = "lead", Mod = 0.25, Tier = 3, Dmg_T = "acid", Dmg_A = 15},
+	{Name = "gold", Mod = 1.65, Tier = 3},
+	{Name = "silver", Mod = 1.45, Tier = 3},
+}
 
 Dy_Exclude_Recipes = {
 	["burner-turbine"] = 1, 
 	["electric-motor"] = 1, 
 	["motor"] = 1, 
+	["rocket-part"] = 1, 
+	["rocket-silo"] = 1, 
 }
 
 Dy_Exclude_Tech = { 
@@ -259,4 +309,25 @@ Dy_Exclude_Tech = {
 	["se-zone-discovery-random"] = 1, 
 	["se-zone-discovery-targeted"] = 1, 
 	["se-zone-discovery-deep"] = 1, 
+	["se-rocket-science-pack"] = 1,
+	["se-astronomic-science-pack-1"] = 1,
+	["se-astronomic-science-pack-2"] = 1,
+	["se-astronomic-science-pack-3"] = 1,
+	["se-astronomic-science-pack-4"] = 1,
+	["se-biological-science-pack-1"] = 1,
+	["se-biological-science-pack-2"] = 1,
+	["se-biological-science-pack-3"] = 1,
+	["se-biological-science-pack-4"] = 1,
+	["se-energy-science-pack-1"] = 1,
+	["se-energy-science-pack-2"] = 1,
+	["se-energy-science-pack-3"] = 1,
+	["se-energy-science-pack-4"] = 1,
+	["se-material-science-pack-1"] = 1,
+	["se-material-science-pack-2"] = 1,
+	["se-material-science-pack-3"] = 1,
+	["se-material-science-pack-4"] = 1,
+	["se-deep-space-science-pack-1"] = 1,
+	["se-deep-space-science-pack-2"] = 1,
+	["se-deep-space-science-pack-3"] = 1,
+	["se-deep-space-science-pack-4"] = 1,
 }

@@ -126,6 +126,33 @@ function Dy_Bio_Tech_Pack(STR, AMOUNT)
 	elseif STR == "fish-salmon" then
 		local returner = {"raw-fish-salmon-filet", StackSizeCheck(AMOUNT)}
 		return returner
+	elseif STR == "wood" then
+		local returner = {"wood", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == "sulfur" then
+		local returner = {"sulfur", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == "soil" then
+		local returner = {"soil", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == "chitin" then
+		local returner = {"chitin", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == "exotic" then
+		local returner = {"exotic-partical", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == "acidic-residue" then
+		local returner = {"acidic-residue", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == "blood-bottle" then
+		local returner = {"blood-bottle", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == "dna-myriapod" then
+		local returner = {"dna-myriapod", StackSizeCheck(AMOUNT)}
+		return returner
+	elseif STR == "dna-arachnid" then
+		local returner = {"dna-arachnid", StackSizeCheck(AMOUNT)}
+		return returner
 	elseif STR == 1 then
 		local returner = {"canister-empty", StackSizeCheck(AMOUNT)}
 		return returner
@@ -140,71 +167,59 @@ end
 
 
 function Dy_Main_Tech_Pack(STR, AMOUNT)
-	if STR == 1 then
+	if STR == 1.1 then
 		local returner = {"dysci-01", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 2 then
+	elseif STR == 1.2 then
 		local returner = {"dysci-02", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 3 then
+	elseif STR == 2.1 then
 		local returner = {"dysci-03", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 4 then
+	elseif STR == 2.2 then
 		local returner = {"dysci-04", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 5 then
+	elseif STR == 3.1 then
 		local returner = {"dysci-05", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 6 then
+	elseif STR == 3.2 then
 		local returner = {"dysci-06", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 7 then
+	elseif STR == "mil-1" then
 		local returner = {"dysci-07", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 8 then
+	elseif STR == "mil-2" then
 		local returner = {"dysci-08", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 9 then
+	elseif STR == 5.1 then
 		local returner = {"dysci-09", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 10 then
+	elseif STR == 5.2 then
 		local returner = {"dysci-10", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 11 then
+	elseif STR == 6.1 then
 		local returner = {"dysci-11", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 12 then
+	elseif STR == 6.2 then
 		local returner = {"dysci-12", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 13 then
+	elseif STR == 7.1 then
 		local returner = {"dysci-13", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 14 then
+	elseif STR == 7.2 then
 		local returner = {"dysci-14", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 15 then
+	elseif STR == 4.1 then
 		local returner = {"dysci-15", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 16 then
+	elseif STR == 4.2 then
 		local returner = {"dysci-16", StackSizeCheck(AMOUNT)}
 		return returner
-	elseif STR == 17 then
-		local returner = {"dysci-17", StackSizeCheck(AMOUNT)}
-		return returner
-	elseif STR == 18 then
-		local returner = {"dysci-18", StackSizeCheck(AMOUNT)}
-		return returner
-	elseif STR == 19 then
-		local returner = {"dysci-19", StackSizeCheck(AMOUNT)}
-		return returner
-	elseif STR == 20 then
-		local returner = {"dysci-20", StackSizeCheck(AMOUNT)}
-		return returner
 	elseif STR == nil then 
-		local returner = {"dysci-1", StackSizeCheck(AMOUNT)}
+		local returner = {"dysci-01", StackSizeCheck(AMOUNT)}
 		return returner
 	else
-		local returner = {"dysci-1", StackSizeCheck(50)}
+		local returner = {"dysci-01", StackSizeCheck(50)}
 		return returner
 	end
 end

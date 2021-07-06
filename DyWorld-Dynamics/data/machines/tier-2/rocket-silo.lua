@@ -60,9 +60,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-2", amount = 5},
-        {type = "item", name = "steel-plate", amount = 20},
-        {type = "item", name = "titanium-plate", amount = 5},
+        {type = "item", name = "control-board-2", amount = 2},
+        {type = "item", name = "steel-plate", amount = 5},
+        {type = "item", name = "titanium-plate", amount = 4},
       },
       result = "rocket-part-1",
 	  enabled = false,

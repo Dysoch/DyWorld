@@ -16,7 +16,7 @@ data:extend({
       },
       results = 
       {
-        {type = "fluid", name = "molten-aluminium", amount_min = 90, amount_max = 100},
+        {type = "fluid", name = "molten-aluminium", amount_min = 90, amount_max = 125},
         {type = "item", name = "slag", amount_min = 1, amount_max = 5},
       },
 	  energy_required = 30,

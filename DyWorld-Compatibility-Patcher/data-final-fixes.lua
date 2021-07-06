@@ -30,7 +30,7 @@ end
 for _,type in pairs({"item", "fluid", "recipe", "module", "ammo", "capsule", "tool", "gun", "armor", "rail-planner", "repair-tool"}) do
 	for _,v in pairs(data.raw[type]) do
 		if v.DyWorld_Hider then
-			--v.hidden = true
+			v.hidden = true
 			if v.normal then
 				v.normal.hidden = true
 			end

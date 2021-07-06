@@ -62,6 +62,11 @@ local Data_Table_Item_Group = {
 		Main = "metals"
 	},
 	{
+		Name = "metal-4",
+		Type = "sub",
+		Main = "metals"
+	},
+	{
 		Name = "z-fluids",
 		Type = "sub",
 		Main = "metals"

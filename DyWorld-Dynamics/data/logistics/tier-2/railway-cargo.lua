@@ -34,19 +34,5 @@ data:extend({
 	  energy_required = 2,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "rubber", amount = 2*5},
-        {type = "item", name = "iron-plate", amount = 10*5},
-        {type = "item", name = "iron-gear", amount = 4*5},
-        {type = "item", name = "bronze-plate", amount = 2*5},
-      },
-      result = "cargo-wagon-1",
-	  result_count = 1,
-	  energy_required = 5,
-	  enabled = false,
-    },
   },
 })

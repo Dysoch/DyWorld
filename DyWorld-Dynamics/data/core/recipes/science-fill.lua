@@ -27,12 +27,12 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "tin-plate", amount = 3},
+        {type = "item", name = "gold-plate", amount = 3},
         {type = "fluid", name = "dysci-02", amount = 10},
       },
       result = "dysci-02",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -44,7 +44,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 3},
+        {type = "item", name = "iron-plate", amount = 3},
         {type = "fluid", name = "dysci-03", amount = 10},
       },
       result = "dysci-03",
@@ -61,12 +61,12 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "iron-plate", amount = 3},
+        {type = "item", name = "gold-plate", amount = 3},
         {type = "fluid", name = "dysci-04", amount = 10},
       },
       result = "dysci-04",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -95,12 +95,12 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 3},
+        {type = "item", name = "gold-plate", amount = 3},
         {type = "fluid", name = "dysci-06", amount = 10},
       },
       result = "dysci-06",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -129,12 +129,12 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "magnesium-plate", amount = 3},
+        {type = "item", name = "gold-plate", amount = 3},
         {type = "fluid", name = "dysci-08", amount = 10},
       },
       result = "dysci-08",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -163,12 +163,12 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "titanium-plate", amount = 3},
+        {type = "item", name = "gold-plate", amount = 3},
         {type = "fluid", name = "dysci-10", amount = 10},
       },
       result = "dysci-10",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -197,12 +197,12 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "titanium-plate", amount = 3},
+        {type = "item", name = "gold-plate", amount = 3},
         {type = "fluid", name = "dysci-12", amount = 10},
       },
       result = "dysci-12",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -231,12 +231,12 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "titanium-plate", amount = 3},
+        {type = "item", name = "gold-plate", amount = 3},
         {type = "fluid", name = "dysci-14", amount = 10},
       },
       result = "dysci-14",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -265,12 +265,12 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "titanium-plate", amount = 3},
+        {type = "item", name = "gold-plate", amount = 3},
         {type = "fluid", name = "dysci-16", amount = 10},
       },
       result = "dysci-16",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -304,7 +304,7 @@ data:extend({
       },
       result = "dysci-18",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },
@@ -338,7 +338,7 @@ data:extend({
       },
       result = "dysci-20",
 	  result_count = 1,
-	  energy_required = 5,
+	  energy_required = 15,
 	  enabled = false,
     },
   },

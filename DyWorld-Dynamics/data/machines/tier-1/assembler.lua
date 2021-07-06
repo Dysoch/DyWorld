@@ -3,7 +3,7 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "basic-assembler", true)
 DyWorld_Prototype_1.icon = "__base__/graphics/icons/assembling-machine-2.png"
 DyWorld_Prototype_1.crafting_categories = {"assembling-tier-1", "assembling-tier-2"}
-DyWorld_Prototype_1.energy_usage = "125kW"
+DyWorld_Prototype_1.energy_usage = "500kW"
 DyWorld_Prototype_1.crafting_speed = 1
 DyWorld_Prototype_1.fluid_boxes = data.raw["assembling-machine"]["assembling-machine-3"].fluid_boxes
 DyWorld_Prototype_1.resistances = Resist_Tier_1(1)
@@ -16,7 +16,7 @@ DyWorld_Prototype_1.energy_source = {
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "advanced-assembler", true)
 DyWorld_Prototype_2.icon = "__base__/graphics/icons/assembling-machine-3.png"
 DyWorld_Prototype_2.crafting_categories = {"assembling-tier-1", "assembling-tier-2", "assembling-tier-3"}
-DyWorld_Prototype_2.energy_usage = "250kW"
+DyWorld_Prototype_2.energy_usage = "1000kW"
 DyWorld_Prototype_2.crafting_speed = 2.5
 DyWorld_Prototype_2.fluid_boxes = data.raw["assembling-machine"]["assembling-machine-3"].fluid_boxes
 DyWorld_Prototype_2.resistances = Resist_Tier_1(3.5)

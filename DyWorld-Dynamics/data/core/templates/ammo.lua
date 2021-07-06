@@ -1,5 +1,7 @@
 
 
+Dy_Ammo_Tech_Add = {}
+
 function DyDS_Add_Ammo(params)
 data:extend(
 {
@@ -488,5 +490,211 @@ function Mag_Check_Ingredients(params)
 			local result = {type = "item", name = "bronze-plate", amount = 2}
 			table.insert(data.raw.recipe[params.name.."-mag"].normal.ingredients, result)
 		end
+	end
+end
+
+function DyDS_Add_Ammo_2(params)
+data:extend(
+{
+  {
+    type = "item-subgroup",
+    name = DyDs..params.name,
+    group = DyDs.."warfare-ammo",
+    order = DyDs..params.tier.."a"
+  },
+  {
+    type = "item-subgroup",
+    name = DyDs..params.name.."-mag",
+    group = DyDs.."warfare-ammo",
+    order = DyDs..params.tier.."b"
+  },
+  {
+    type = "ammo-category",
+    name = params.name
+  },
+})
+	for k,v in pairs(Dy_Ammo_Mods) do
+data:extend(
+{
+  {
+    type = "ammo",
+    name = params.name.."-bullet-"..v.Name,
+	localised_name = {"looped-name.ammo-name-1", params.name, {"looped-name."..v.Name}},
+    icon = params.icon,
+    icon_size = 64, 
+    ammo_type =
+    {
+      category = params.name,
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery =
+          {
+            {
+              type = "instant",
+              source_effects =
+              {
+                {
+                  type = "create-explosion",
+                  entity_name = "explosion-gunshot"
+                }
+              },
+              target_effects =
+              {
+                {
+                  type = "create-entity",
+                  entity_name = "explosion-hit",
+                  offsets = {{0, 1}},
+                  offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}}
+                },
+              }
+            }
+          }
+        }
+      }
+    },
+    magazine_size = 1,
+    subgroup = DyDs..params.name,
+    order = v.Tier,
+    stack_size = 250,
+  },
+  {
+    type = "ammo",
+    name = params.name.."-mag-"..v.Name,
+	localised_name = {"looped-name.ammo-name-2", params.name, {"looped-name."..v.Name}},
+	icons = {
+	  {
+		icon = "__base__/graphics/icons/firearm-magazine.png",
+	  },
+	  {
+		icon = params.icon,
+		scale = 0.25,
+		shift = {-8, 9},
+	  },
+	},
+    icon_size = 64, 
+    ammo_type =
+    {
+      category = params.name,
+      action =
+      {
+        {
+          type = "direct",
+          action_delivery =
+          {
+            {
+              type = "instant",
+              source_effects =
+              {
+                {
+                  type = "create-explosion",
+                  entity_name = "explosion-gunshot"
+                }
+              },
+              target_effects =
+              {
+                {
+                  type = "create-entity",
+                  entity_name = "explosion-hit",
+                  offsets = {{0, 1}},
+                  offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}}
+                },
+              }
+            }
+          }
+        }
+      }
+    },
+    magazine_size = 250,
+    subgroup = DyDs..params.name.."-mag",
+    order = v.Tier,
+    stack_size = 100,
+  },
+})
+
+data:extend(
+{
+  {
+    type = "recipe",
+    name = params.name.."-bullet-"..v.Name,
+	category = "assembling-tier-"..v.Tier,
+    normal =
+    {
+      ingredients = 
+	  {
+		{type = "item", name = v.Name.."-plate", amount = 1},
+	  },
+      results = 
+      {
+        {type = "item", name = params.name.."-bullet-"..v.Name, amount_min = 5, amount_max = 7},
+      },
+	  energy_required = 1 * (v.Tier * params.tier),
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = params.name.."-mag-"..v.Name,
+	category = "assembling-tier-"..v.Tier,
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = params.name.."-bullet-"..v.Name, amount = 250},
+		{type = "item", name = v.Name.."-plate", amount = 5},
+      },
+      result = params.name.."-mag-"..v.Name,
+	  result_count = 1,
+	  energy_required = 2.5 * (v.Tier * params.tier),
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = params.name.."-mag-"..v.Name.."-del",
+	category = "dy-recycling",
+	hidden = true,
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = params.name.."-mag-"..v.Name, amount = 1},
+      },
+      result = params.name.."-bullet-"..v.Name,
+	  result_count = math.floor(250 * 0.8),
+	  energy_required = 1,
+	  enabled = false,
+	  hidden = true,
+	  allow_decomposition = false,
+	  allow_as_intermediate = false,
+    },
+  },
+})
+	for Dmg_Type, Dmg in pairs(params.dmg_types) do
+		local result = {
+                  type = "damage",
+                  damage = {amount = Round((Dmg * v.Mod), 2), type = Dmg_Type}
+                }
+		table.insert(data.raw.ammo[params.name.."-bullet-"..v.Name].ammo_type.action[1].action_delivery[1].target_effects, result)
+		table.insert(data.raw.ammo[params.name.."-mag-"..v.Name].ammo_type.action[1].action_delivery[1].target_effects, result)
+	end
+	if v.Dmg_T and v.Dmg_A then
+		local result = {
+				  type = "damage",
+				  damage = {amount = v.Dmg_A, type = v.Dmg_T}
+				}
+		table.insert(data.raw.ammo[params.name.."-bullet-"..v.Name].ammo_type.action[1].action_delivery[1].target_effects, result)
+		table.insert(data.raw.ammo[params.name.."-mag-"..v.Name].ammo_type.action[1].action_delivery[1].target_effects, result)
+	end
+	for _, Ingredient in pairs(params.base_ingredients) do
+		table.insert(data.raw.recipe[params.name.."-bullet-"..v.Name].normal.ingredients, Ingredient)
+	end
+	if params.tier >= 2 then
+		local tech = "warfare-"..((params.tier + v.Tier) - 2)
+		Dy_Ammo_Tech_Add[params.name.."-bullet-"..v.Name] = {tech}
+		Dy_Ammo_Tech_Add[params.name.."-mag-"..v.Name] = {tech}
+		Dy_Ammo_Tech_Add[params.name.."-mag-"..v.Name.."-del"] = {tech}
+	end
 	end
 end

@@ -34,6 +34,12 @@ data:extend({
 		default_value = false,
 	},
 	{
+		type = "bool-setting",
+		name = "DyWorld_Tech_Upgrade",
+		setting_type = "startup",
+		default_value = true,
+	},
+	{
 		type = "int-setting",
 		name = "DyWorld_Expensive_Modifier",
 		setting_type = "startup",

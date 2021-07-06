@@ -5,6 +5,15 @@ local lab_inputs =
 {
   "raw-fish-pike-filet",
   "raw-fish-salmon-filet",
+  "chitin",
+  "soil",
+  "acidic-residue",
+  "blood-bottle",
+  "dna-myriapod",
+  "dna-arachnid",
+  "wood",
+  "sulfur",
+  "exotic-partical",
 }
 
 DyWorld_Prototype_1.inputs = lab_inputs

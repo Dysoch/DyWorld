@@ -10,11 +10,8 @@ local Recipes = {
 	["water-centrifuge"] = {"copper-processing", "iron-processing", "tin-processing"},
 	["canister-empty"] = {"copper-processing", "iron-processing", "tin-processing"},
 	["canister-oxygen"] = {"copper-processing", "iron-processing", "tin-processing"},
-	["ore-purify-titanium"] = {"titanium-processing"},
 	["titanium-ore"] = {"titanium-processing"},
-	["ore-purify-aluminium"] = {"aluminium-processing"},
 	["aluminium-ore"] = {"aluminium-processing"},
-	["ore-purify-magnesium"] = {"magnesium-processing"},
 	["aluminium-ore"] = {"magnesium-processing"},
 	["cast-titanium-3a"] = {"titanium-processing"},
 	["cast-titanium-3b"] = {"titanium-processing"},
@@ -25,9 +22,6 @@ local Recipes = {
 	["canister-nitrogen"] = {"copper-processing"},
 	["canister-water"] = {"iron-processing"},
 	["canister-hydrogen"] = {"tin-processing"},
-	["ore-purify-copper"] = {"copper-processing"},
-	["ore-purify-iron"] = {"iron-processing"},
-	["ore-purify-tin"] = {"tin-processing"},
 	["cast-copper-2"] = {"copper-processing"},
 	["cast-iron-2"] = {"iron-processing"},
 	["cast-tin-2"] = {"tin-processing"},
@@ -46,20 +40,39 @@ local Recipes = {
 	
 	["blast-furnace"] = {"metallurgy-1"},
 	["caster"] = {"metallurgy-1"},
+	
 	["ilmenite"] = {"metallurgy-2"},
 	["biotite"] = {"metallurgy-2"},
-	["ore-purify-copper-2"] = {"metallurgy-3"},
-	["ore-purify-iron-2"] = {"metallurgy-3"},
-	["ore-purify-tin-2"] = {"metallurgy-3"},
-	["ore-purify-magnesium-2"] = {"metallurgy-4"},
-	["ore-purify-titanium-2"] = {"metallurgy-4"},
-	["ore-purify-aluminium-2"] = {"metallurgy-4"},
-	["ore-purify-copper-3"] = {"metallurgy-6"},
-	["ore-purify-iron-3"] = {"metallurgy-6"},
-	["ore-purify-tin-3"] = {"metallurgy-6"},
-	["ore-purify-magnesium-3"] = {"metallurgy-7"},
-	["ore-purify-titanium-3"] = {"metallurgy-7"},
-	["ore-purify-aluminium-3"] = {"metallurgy-7"},
+	
+	["ore-purify-copper-1"] = {"copper-processing"},
+	["ore-purify-iron-1"] = {"iron-processing"},
+	["ore-purify-tin-1"] = {"tin-processing"},
+	["ore-purify-magnesium-1"] = {"magnesium-processing"},
+	["ore-purify-titanium-1"] = {"titanium-processing"},
+	["ore-purify-aluminium-1"] = {"aluminium-processing"},
+	["ore-purify-gold-1"] = {"metallurgy-3"},
+	["ore-purify-lead-1"] = {"metallurgy-3"},
+	["ore-purify-silver-1"] = {"metallurgy-3"},
+	
+	["ore-purify-copper-2"] = {"metallurgy-2"},
+	["ore-purify-iron-2"] = {"metallurgy-2"},
+	["ore-purify-tin-2"] = {"metallurgy-2"},
+	["ore-purify-magnesium-2"] = {"metallurgy-3"},
+	["ore-purify-titanium-2"] = {"metallurgy-3"},
+	["ore-purify-aluminium-2"] = {"metallurgy-3"},
+	["ore-purify-gold-2"] = {"metallurgy-5"},
+	["ore-purify-lead-2"] = {"metallurgy-5"},
+	["ore-purify-silver-2"] = {"metallurgy-5"},
+	
+	["ore-purify-copper-3"] = {"metallurgy-4"},
+	["ore-purify-iron-3"] = {"metallurgy-4"},
+	["ore-purify-tin-3"] = {"metallurgy-4"},
+	["ore-purify-magnesium-3"] = {"metallurgy-5"},
+	["ore-purify-titanium-3"] = {"metallurgy-5"},
+	["ore-purify-aluminium-3"] = {"metallurgy-5"},
+	["ore-purify-gold-3"] = {"metallurgy-7"},
+	["ore-purify-lead-3"] = {"metallurgy-7"},
+	["ore-purify-silver-3"] = {"metallurgy-7"},
 	
 	["slag-processing"] = {"slag-processing"},
 	
@@ -75,7 +88,18 @@ local Recipes = {
 	
 	["grinder"] = {"automatica-1"},
 	["quartz"] = {"automatica-1"},
+	["dy-arithmetic-combinator"] = {"automatica-1"},
+	["dy-decider-combinator"] = {"automatica-1"},
+	["dy-constant-combinator"] = {"automatica-1"},
+	
+	["dy-power-switch"] = {"automatica-2"},
+	
+	["dy-programmable-speaker"] = {"automatica-3"},
 	["advanced-assembler"] = {"automatica-3"},
+	
+	["nano-assembler"] = {"automatica-5"},
+	
+	["quantum-assembler"] = {"automatica-8"},
 	
 	["small-lamp"] = {"optics"},
 	["night-vision-equipment"] = {"optics"},
@@ -130,6 +154,8 @@ local Recipes = {
 	["aai-warehouse-buffer"] = {"storage-7"},
 	["aai-warehouse-requester"] = {"storage-7"},
 	
+	["water-centrifuge-2"] = {"water-filtering"},
+	
 	["air-filter"] = {"filters-1"},
 	["filter-nitrogen-1"] = {"filters-1"},
 	["filter-oxygen-1"] = {"filters-1"},
@@ -145,7 +171,9 @@ local Recipes = {
 	
 	["rocket-silo-1"] = {"space-mining"},
 	["rocket-part-1"] = {"space-mining"},
-	["satellite"] = {"space-mining"},
+	--["satellite"] = {"space-mining"},
+	
+	["recycler"] = {"recycling"},
 	
 	["resin"] = {"intermediates-1"},
 	["rubber"] = {"intermediates-1"},
@@ -158,6 +186,7 @@ local Recipes = {
 	["stone-brick-advanced-3"] = {"intermediates-1"},
 	["stone-brick-advanced-4"] = {"intermediates-1"},
 	["stone-furnace"] = {"intermediates-1"},
+	
 	["glass-1"] = {"intermediates-2"},
 	["glass-2"] = {"intermediates-2"},
 	["sand-1"] = {"intermediates-2"},
@@ -165,47 +194,85 @@ local Recipes = {
 	["engine-unit"] = {"intermediates-2"},
 	["concrete-powder"] = {"intermediates-2"},
 	["concrete"] = {"intermediates-2"},
+	
 	["flying-robot-frame"] = {"intermediates-3"},
 	["control-board-2"] = {"intermediates-3"},
+	
+	["electric-engine-unit"] = {"intermediates-4"},
+	["low-density-structure"] = {"intermediates-4"},
+	
+	["rocket-control-unit"] = {"intermediates-5"},
+	["sulfur"] = {"intermediates-5"},
 	["quartz"] = {"intermediates-5"},
+	["sulfuric-acid"] = {"intermediates-5"},
+	["battery"] = {"intermediates-5"},
+	["obsidian"] = {"intermediates-5"},
 	["refined-concrete-powder"] = {"intermediates-5"},
 	["refined-concrete"] = {"intermediates-5"},
 	
-	["plastic-bar"] = {"oil-processing"},
-	["chemical-plant"] = {"oil-processing"},
-	["oil-processing"] = {"oil-processing"},
-	["oil-refinery"] = {"oil-processing"},
+	["computer"] = {"intermediates-6"},
+	["control-board-3"] = {"intermediates-6"},
+	["lubricant"] = {"intermediates-6"},
+	
+	["control-board-4"] = {"intermediates-7"},
+	--["lubricant"] = {"intermediates-7"},
+	
+	--["lubricant"] = {"intermediates-8"},
+	
+	--["lubricant"] = {"intermediates-9"},
+	
+	--["lubricant"] = {"intermediates-10"},
+	["control-board-5"] = {"intermediates-10"},
+	
+	--["lubricant"] = {"intermediates-11"},
+	
+	--["lubricant"] = {"intermediates-12"},
+	
 	["oil-extractor"] = {"oil-extraction"},
+	
+	["chemical-plant"] = {"oil-processing"},
+	["oil-refinery"] = {"oil-processing"},
+	["oil-to-petroleum"] = {"oil-processing"},
+	["oil-to-gasoline"] = {"oil-processing"},
+	["oil-to-naphtha"] = {"oil-processing"},
+	["polycarbonate"] = {"oil-processing"},
+	["oil-boiler-1"] = {"oil-processing"},
+	["oil-boiler-2"] = {"oil-processing"},
+	["oil-boiler-3"] = {"oil-processing"},
+	["petroleum-centrifuge"] = {"oil-processing"},
+	["charcoal-centrifuge"] = {"oil-processing"},
+	
+	["oil-to-light-oil"] = {"oil-processing-2"},
+	["oil-to-heavy-oil"] = {"oil-processing-2"},
+	["oil-to-lubricant"] = {"oil-processing-2"},
+	["oil-boiler-4"] = {"oil-processing-2"},
+	["oil-boiler-5"] = {"oil-processing-2"},
+	["polyurethane"] = {"oil-processing-2"},
+	
+	["polyvinyl-chloride"] = {"oil-processing-3"},
+	["polylactic-acid"] = {"oil-processing-3"},
+	["polyepoxide"] = {"oil-processing-3"},
 	
 	["gas-engine"] = {"gas-power"},
 	["gas-extractor"] = {"gas-extraction"},
+	["natural-gas-centrifuge"] = {"gas-extraction"},
 	
-	["762mm-gun"] = {"warfare-1"},
-	["762mm-bullet"] = {"warfare-1"},
-	["762mm-bullet-mag"] = {"warfare-1"},
-	["762mm-bullet-mag-del"] = {"warfare-1"},
-	["762mm-bullet-ap"] = {"warfare-2"},
-	["762mm-bullet-ap-mag"] = {"warfare-2"},
-	["762mm-bullet-ap-mag-del"] = {"warfare-2"},
+	--["basic-762mm-turret"] = {"nuclear-1"},
 	
-	["1853mm-gun"] = {"warfare-2"},
-	["1853mm-bullet"] = {"warfare-2"},
-	["1853mm-bullet-mag"] = {"warfare-2"},
-	["1853mm-bullet-mag-del"] = {"warfare-2"},
-	["1853mm-bullet-ap"] = {"warfare-3"},
-	["1853mm-bullet-ap-mag"] = {"warfare-3"},
-	["1853mm-bullet-ap-mag-del"] = {"warfare-3"},
+	--["basic-762mm-turret"] = {"nuclear-2"},
 	
-	["860mm-gun"] = {"warfare-3"},
-	["860mm-bullet"] = {"warfare-3"},
-	["860mm-bullet-mag"] = {"warfare-3"},
-	["860mm-bullet-mag-del"] = {"warfare-3"},
-	["860mm-bullet-ap"] = {"warfare-4"},
-	["860mm-bullet-ap-mag"] = {"warfare-4"},
-	["860mm-bullet-ap-mag-del"] = {"warfare-4"},
+	--["basic-762mm-turret"] = {"nuclear-3"},
+	
+	--["basic-762mm-turret"] = {"nuclear-4"},
+	
+	--["basic-762mm-turret"] = {"nuclear-5"},
 	
 	["basic-762mm-turret"] = {"warfare-1"},
 	["advanced-762mm-turret"] = {"warfare-3"},
+	
+	["762mm-gun"] = {"warfare-1"},
+	["1853mm-gun"] = {"warfare-2"},
+	["860mm-gun"] = {"warfare-3"},
 	
 	["zaydon-power-armor"] = {"warfare-3"},
 	
@@ -218,6 +285,7 @@ local Recipes = {
 	["rail-1"] = {"rails-1"},
 	["locomotive-1"] = {"rails-1"},
 	["cargo-wagon-1"] = {"rails-1"},
+	["fluid-wagon-1"] = {"rails-2"},
 	["rail-signal"] = {"rails-2"},
 	["rail-chain-signal"] = {"rails-2"},
 	["rail-2"] = {"rails-3"},
@@ -261,18 +329,50 @@ local Recipes = {
 	["dysci-15"] = {"dy-science-pack-15"},
 	["dysci-16-fluid"] = {"dy-science-pack-16"},
 	["dysci-16"] = {"dy-science-pack-16"},
-	["dysci-17-fluid"] = {"dy-science-pack-17"},
+	--[[["dysci-17-fluid"] = {"dy-science-pack-17"},
 	["dysci-17"] = {"dy-science-pack-17"},
 	["dysci-18-fluid"] = {"dy-science-pack-18"},
 	["dysci-18"] = {"dy-science-pack-18"},
 	["dysci-19-fluid"] = {"dy-science-pack-19"},
 	["dysci-19"] = {"dy-science-pack-19"},
 	["dysci-20-fluid"] = {"dy-science-pack-20"},
-	["dysci-20"] = {"dy-science-pack-20"},
+	["dysci-20"] = {"dy-science-pack-20"},]]--
+	
+	["soil-miner"] = {"bio-centrifuge"},
+	["soil-mining"] = {"bio-centrifuge"},
+	["dy-wood-0"] = {"bio-centrifuge"},
+	["corpse-centrifuge"] = {"bio-centrifuge"},
+	["blood-centrifuge"] = {"bio-centrifuge"},
+	["bodily-fluid-centrifuge"] = {"bio-centrifuge"},
+	["greenhouse"] = {"agroforestry", "agriculture"},
+	["dy-wood-1"] = {"agroforestry-oak"},
+	["dy-wood-2"] = {"agroforestry-sulfur"},
+	["dy-wood-3"] = {"agroforestry-dead"},
+	["dy-wood-4"] = {"agroforestry-dead"},
+	["acidic-residue-centrifuge"] = {"acidification"},
+	["fish-centrifuge-1"] = {"piscis-pike"},
+	["cooked-fish-filet-1"] = {"piscis-pike"},
+	["fish-centrifuge-2"] = {"piscis-salmon"},
+	["cooked-fish-filet-2"] = {"piscis-salmon"},
+	["fish-miner"] = {"piscis-farm"},
+	["fish-mining"] = {"piscis-farm"},
+	["bio-waste-refining"] = {"bio-waste"},
 }
 
 
 for name, techtable in pairs(Recipes) do
+	for _,tech in pairs(techtable) do
+		DyWorld_Add_To_Tech(tech, name)
+	end
+end
+
+for name, techtable in pairs(Dy_Ammo_Tech_Add) do
+	for _,tech in pairs(techtable) do
+		DyWorld_Add_To_Tech(tech, name)
+	end
+end
+
+for name, techtable in pairs(DyWorld_Automated_Tech_Add) do
 	for _,tech in pairs(techtable) do
 		DyWorld_Add_To_Tech(tech, name)
 	end

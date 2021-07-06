@@ -7,16 +7,6 @@ local Data_Table_Item_Group = {
 		Icon = "logistics.png"
 	},
 	{
-		Name = "inserter-tier-0",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
-		Name = "inserter-tier-1",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
 		Name = "transport-belt",
 		Type = "sub",
 		Main = "logistics"

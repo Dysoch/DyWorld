@@ -8,9 +8,6 @@ Rework electricity
 ( For example, he was surprised that the greenhouses needed 1 coal every 20-something hours, and that the inserters needed more power than the assemblers)end
 
 limit amount items in fuel slot (if possible)end
-remove massive fish spawns (Space ex)
-
-rewrite attack script to spawn the enemies based on evolution (like projectile act 1 phase 10)
 
 pykrite
 
@@ -19,6 +16,9 @@ unlock logistics tab start of act 2
 add recycler (space ex)
 add recycler internal complexity meter
 
+mods to add: 
+	Factorisimo 2
+	AAI Vehicles
 
 add modules
 balance chemical techs
@@ -55,7 +55,7 @@ remove spidertron remote
 move cliff explosives
 
 names backers to add:
-Olinator, Senital2011
+Olinator, Senital2011, Pepsillian (Peps)
 
 names backers done:
 Zaydon

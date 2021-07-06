@@ -75,7 +75,7 @@ local Autoplace_Categories = {
 }
 
 local Fuel_Categories = {
-	"carbon",
+	"carbon", "fusion",
 }
 
 local Ammo_Categories = {

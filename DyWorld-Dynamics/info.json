@@ -1,6 +1,6 @@
 {
 	"name": "DyWorld-Dynamics",
-	"version": "0.7.98",
+	"version": "0.7.99",
 	"factorio_version": "1.1",
 	"title": "DyWorld-Dynamics",
 	"author": "Dysoch",
@@ -21,7 +21,7 @@
 		"Nanobots >= 3.2.15",
 		"alien-biomes >= 0.6.5",
 		
-		"~ DyComPa >= 0.1.3",
+		"~ DyComPa >= 0.1.4",
 		
 		"! angelsindustries",
 		"! angelspetrochem",

@@ -1,7 +1,7 @@
 
 --debugger = true
 debugger = settings.startup["DyWorld_Debug"].value
-Version_Build = "0.7.98"
+Version_Build = "0.7.99"
 Food_Start = debugger and 250000 or 2500
 Water_Start = debugger and 500000 or 5000
 

@@ -422,7 +422,7 @@ local Metal_Techs = {
 	},
 	{
 		name = "power-3",
-		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-1.png",
 		flags = {Act_2 = true},
 		prerequisites = {
 			"power-2",

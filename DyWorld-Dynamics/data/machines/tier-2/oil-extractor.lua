@@ -10,7 +10,7 @@ data:extend({
     name = "oil-extractor",
     icon = "__base__/graphics/icons/pumpjack.png",
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = DyDs.."oil-pumps",
+    subgroup = DyDs.."oil-machines",
     order = "1",
     place_result = "oil-extractor",
     stack_size = 200,

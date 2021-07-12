@@ -2,7 +2,7 @@
 Version: 0.7.99
 Date: ??. 07. 2021
   Major Features:
-    - 
+    - Added a technology path towards the space exploration content. Should be accessible now
   Minor Features:
     - Added Fusion Fuel Source
     - Added in 3 new asteroid mining technologies
@@ -14,6 +14,7 @@ Date: ??. 07. 2021
   Changes:
     - Rocket Silo's now require fuel in their recipe when crafting rockets. First silo uses a solid fuel type (coal), the rest requires liquid fuel
     - Changed the thresholds when inserters get locked and unlocked (script)
+    - Moved several machines into correct item group (refinery, chem plant, rocket silo, solar, accumulator)
   Story:
     - Act 2 Phase 4 objectives: Removed position objectives
     - Act 2 Phase 4 objectives: Added radar scanning objective
@@ -22,7 +23,7 @@ Date: ??. 07. 2021
 	- Biological lab unlocked at phase 5 act 2 instead phase 1 act 3
 	- Science lab unlocked at phase 9 act 2 instead phase 1 act 3
   Survival:
-    - When you died, custom difficulity will lower
+    - When you die, custom difficulity will lower
   Required Mods:
     - Updated required version DyComPa: 0.1.3 > 0.1.4
     - Updated required version Space Exploration: 0.5.58 > 0.5.72

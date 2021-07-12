@@ -27,14 +27,10 @@ local Change = {
 	"assembling-machine-2",
 	"assembling-machine-3",
 	"electric-furnace",
-	"oil-refinery",
-	"chemical-plant",
 	"boiler",
 	"nuclear-reactor",
-	"accumulator",
 	"steam-engine",
 	"steam-turbine",
-	"solar-panel",
 	"heat-exchanger",
 	"transport-belt",
 	"splitter",
@@ -142,7 +138,6 @@ local Change = {
 	"gate",
 	"flamethrower-turret",
 	"artillery-turret",
-	"rocket-silo",
 }
 
 for k,m in pairs(Change) do

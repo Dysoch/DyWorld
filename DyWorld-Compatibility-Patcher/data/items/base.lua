@@ -69,6 +69,21 @@ data.raw["item"]["offshore-pump"].order = "1"
 
 data.raw["repair-tool"]["repair-pack"].subgroup = "dyworld-hidden-items"
 
+data.raw.item["solar-panel"].subgroup = DyDs.."solar"
+data.raw.item["solar-panel"].order = "1"
+
+data.raw.item["accumulator"].subgroup = DyDs.."accumulator"
+data.raw.item["accumulator"].order = "1"
+
+data.raw.item["rocket-silo"].subgroup = DyDs.."rocket-silo"
+data.raw.item["rocket-silo"].order = "1"
+
+data.raw.item["chemical-plant"].subgroup = DyDs.."oil-machines"
+data.raw.item["chemical-plant"].order = "3"
+
+data.raw.item["oil-refinery"].subgroup = DyDs.."oil-machines"
+data.raw.item["oil-refinery"].order = "2"
+
 -- Nanobots --
 data.raw.ammo["ammo-nano-constructors"].magazine_size = 100000000000000000000000000000000
 data.raw.ammo["ammo-nano-constructors"].localised_name = {"DyDs-story.coica-1"}

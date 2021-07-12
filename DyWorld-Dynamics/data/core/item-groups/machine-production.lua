@@ -42,6 +42,17 @@ local Data_Table_Item_Group = {
 		Main = "machine-production"
 	},
 	{
+		Name = "oil-machines",
+		Type = "sub",
+		Main = "machine-production"
+	},
+	{
+		Name = "rocket-silo",
+		Type = "sub",
+		Main = "machine-production"
+	},
+	-- Unused --
+	{
 		Name = "oil-pumps",
 		Type = "sub",
 		Main = "machine-production"
@@ -53,11 +64,6 @@ local Data_Table_Item_Group = {
 	},
 	{
 		Name = "oil-refinery",
-		Type = "sub",
-		Main = "machine-production"
-	},
-	{
-		Name = "rocket-silo",
 		Type = "sub",
 		Main = "machine-production"
 	},

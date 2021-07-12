@@ -751,7 +751,123 @@ local Main_Techs = {
 		time = Dy_Tech_Time_Calc(300),
 		order = "4",
 	},
+	-- Power -- 
+	{
+		name = "power-4",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"power-3",
+			"intermediates-4",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(50),
+		order = "4",
+	},
+	{
+		name = "power-5",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"power-4",
+			"dy-science-pack-3",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(200),
+		order = "4",
+	},
+	{
+		name = "power-6",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"power-5",
+			"dy-science-pack-5",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+			Dy_Main_Tech_Pack(3.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(500),
+		order = "4",
+	},
+	{
+		name = "power-7",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"power-6",
+			"dy-science-pack-9",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+			Dy_Main_Tech_Pack(3.1, 1000),
+			Dy_Main_Tech_Pack(5.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(500),
+		order = "4",
+	},
+	{
+		name = "power-8",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"power-7",
+			"dy-science-pack-11",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+			Dy_Main_Tech_Pack(3.1, 1000),
+			Dy_Main_Tech_Pack(5.1, 1000),
+			Dy_Main_Tech_Pack(6.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(500),
+		order = "4",
+	},
+	{
+		name = "power-9",
+		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"power-8",
+			"dy-science-pack-13",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+			Dy_Main_Tech_Pack(3.1, 1000),
+			Dy_Main_Tech_Pack(5.1, 1000),
+			Dy_Main_Tech_Pack(6.1, 1000),
+			Dy_Main_Tech_Pack(7.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(500),
+		order = "4",
+	},
 	-- Seperate Technologies -- 
+	{
+		name = "space-travel",
+		icon = DyDs_path_tech.."asteroid.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"dy-science-pack-3",
+			"intermediates-4",
+			"power-4",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(1, true),
+		order = "4",
+	},
 	{
 		name = "normal-asteroid-mining",
 		icon = DyDs_path_tech.."asteroid.png",

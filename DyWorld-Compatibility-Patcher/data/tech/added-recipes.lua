@@ -76,6 +76,9 @@ local Recipes = {
 	
 	["slag-processing"] = {"slag-processing"},
 	
+	["rocket-silo-1"] = {"space-mining"},
+	["rocket-part-1"] = {"space-mining"},
+	
 	["asteroid-miner-tin"] = {"basic-asteroid-mining"},
 	["asteroid-miner-iron"] = {"basic-asteroid-mining"},
 	["asteroid-miner-copper"] = {"basic-asteroid-mining"},
@@ -100,6 +103,10 @@ local Recipes = {
 	
 	["rocket-silo-4"] = {"quantum-asteroid-mining"},
 	["rocket-part-4"] = {"quantum-asteroid-mining"},
+	
+	["satellite"] = {"space-travel"},
+	["rocket-silo"] = {"space-travel"},
+	["rocket-part"] = {"space-travel"},
 	
 	["grinder"] = {"automatica-1"},
 	["quartz"] = {"automatica-1"},
@@ -183,10 +190,6 @@ local Recipes = {
 	["storage-tank-2"] = {"fluids-3"},
 	["storage-tank-3"] = {"fluids-6"},
 	["storage-tank-4"] = {"fluids-9"},
-	
-	["rocket-silo-1"] = {"space-mining"},
-	["rocket-part-1"] = {"space-mining"},
-	--["satellite"] = {"space-mining"},
 	
 	["recycler"] = {"recycling"},
 	
@@ -307,9 +310,15 @@ local Recipes = {
 	["rail-3"] = {"rails-5"},
 	
 	["advanced-power-pole"] = {"power-1"},
+	
 	["basic-power-relay"] = {"power-2"},
+	
 	["quantum-power-pole"] = {"power-4"},
+	["solar-panel"] = {"power-4"},
+	["accumulator"] = {"power-4"},
+	
 	["advanced-power-relay"] = {"power-5"},
+	
 	["quantum-power-relay"] = {"power-8"},
 	
 	["dysci-01-fluid"] = {"dy-science-pack-1"},

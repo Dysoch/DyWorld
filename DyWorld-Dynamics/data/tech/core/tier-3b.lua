@@ -751,6 +751,58 @@ local Main_Techs = {
 		time = Dy_Tech_Time_Calc(300),
 		order = "4",
 	},
+	-- Seperate Technologies -- 
+	{
+		name = "normal-asteroid-mining",
+		icon = DyDs_path_tech.."asteroid.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"basic-asteroid-mining",
+			"dy-science-pack-3",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(2, true),
+		order = "4",
+	},
+	{
+		name = "advanced-asteroid-mining",
+		icon = DyDs_path_tech.."asteroid.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"normal-asteroid-mining",
+			"dy-science-pack-9",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+			Dy_Main_Tech_Pack(3.1, 1000),
+			Dy_Main_Tech_Pack(5.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(5, true),
+		order = "4",
+	},
+	{
+		name = "quantum-asteroid-mining",
+		icon = DyDs_path_tech.."asteroid.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"advanced-asteroid-mining",
+			"dy-science-pack-13",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+			Dy_Main_Tech_Pack(3.1, 1000),
+			Dy_Main_Tech_Pack(5.1, 1000),
+			Dy_Main_Tech_Pack(6.1, 1000),
+			Dy_Main_Tech_Pack(7.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(10, true),
+		order = "4",
+	},
 }
 
 for k,v in pairs(Main_Techs) do

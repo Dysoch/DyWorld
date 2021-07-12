@@ -1,6 +1,12 @@
 
 
 
+function Dy_Log(String)
+	if settings.startup["DyWorld_Debug"].value then
+		log(String)
+	end
+end
+
 function Entity_Check(type)
 	if type == "transport-belt" then return false
 	elseif type == "splitter" then return false

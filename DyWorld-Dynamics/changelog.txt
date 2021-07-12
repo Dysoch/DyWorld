@@ -5,18 +5,26 @@ Date: ??. 07. 2021
     - 
   Minor Features:
     - Added Fusion Fuel Source
+    - Added in 3 new asteroid mining technologies
+    - Unlocked 3 new rocket silo's for asteroid mining
   Graphics:
     - 
   Bugfixes:
     - 
   Changes:
-    - 
+    - Rocket Silo's now require fuel in their recipe when crafting rockets. First silo uses a solid fuel type (coal), the rest requires liquid fuel
   Story:
     - Act 2 Phase 4 objectives: Removed position objectives
     - Act 2 Phase 4 objectives: Added radar scanning objective
     - Act 2 Phase 4 objectives: Added chunk generating objective (which requires new chunks to be generated, can be increased by scanning more sectors)
+	- Chemical lab unlocked at phase: 5 > 3 of act 2
+	- Biological lab unlocked at phase 5 act 2 instead phase 1 act 3
+	- Science lab unlocked at phase 9 act 2 instead phase 1 act 3
   Survival:
     - When you died, custom difficulity will lower
+  Required Mods:
+    - Updated required version Space Exploration: 0.5.58 > 0.5.72
+    - Updated required version Space Exploration Graphics Part 5: 0.1.1 > 0.1.2
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.98
 Date: 04. 07. 2021

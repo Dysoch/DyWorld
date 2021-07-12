@@ -35,10 +35,22 @@ function Event_on_character_corpse_expired(event)
 end
 
 function Event_on_rocket_launched(event)
+    local rocket = event.rocket
+    local inventory = rocket.get_inventory(1)
+    local contents = inventory.get_contents()
+    --game.print(serpent.block(contents))
 		----- Story Objective Check -----
 		Story_Objectives("launch-rocket", event)
 	
 	----- Global counter -----
+	if not global.dyworld.game_stats.rockets_launch_items then global.dyworld.game_stats.rockets_launch_items = {} end
+	for k,v in pairs(contents) do
+		if not global.dyworld.game_stats.rockets_launch_items[k] then
+			global.dyworld.game_stats.rockets_launch_items[k] = v
+		else
+			global.dyworld.game_stats.rockets_launch_items[k] = global.dyworld.game_stats.rockets_launch_items[k] + v
+		end
+	end
 	if not global.dyworld.game_stats.rockets_launched then
 		global.dyworld.game_stats.rockets_launched = 1
 	else

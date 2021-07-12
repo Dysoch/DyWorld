@@ -86,6 +86,21 @@ local Recipes = {
 	["asteroid-miner-coal-2"] = {"basic-asteroid-mining"},
 	["asteroid-miner-coal-3"] = {"basic-asteroid-mining"},
 	
+	["rocket-silo-2"] = {"normal-asteroid-mining"},
+	["rocket-part-2"] = {"normal-asteroid-mining"},
+	["asteroid-miner-magnesium"] = {"normal-asteroid-mining"},
+	["asteroid-miner-aluminium"] = {"normal-asteroid-mining"},
+	["asteroid-miner-gold"] = {"normal-asteroid-mining"},
+	["asteroid-miner-lead"] = {"normal-asteroid-mining"},
+	["asteroid-miner-silver"] = {"normal-asteroid-mining"},
+	
+	["rocket-silo-3"] = {"advanced-asteroid-mining"},
+	["rocket-part-3"] = {"advanced-asteroid-mining"},
+	["asteroid-miner-uranium"] = {"advanced-asteroid-mining"},
+	
+	["rocket-silo-4"] = {"quantum-asteroid-mining"},
+	["rocket-part-4"] = {"quantum-asteroid-mining"},
+	
 	["grinder"] = {"automatica-1"},
 	["quartz"] = {"automatica-1"},
 	["dy-arithmetic-combinator"] = {"automatica-1"},

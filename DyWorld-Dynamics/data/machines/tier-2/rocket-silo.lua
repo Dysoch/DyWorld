@@ -63,6 +63,7 @@ data:extend({
         {type = "item", name = "control-board-2", amount = 2},
         {type = "item", name = "steel-plate", amount = 5},
         {type = "item", name = "titanium-plate", amount = 4},
+        {type = "item", name = "coal", amount = 1},
       },
       result = "rocket-part-1",
 	  enabled = false,

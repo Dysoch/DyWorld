@@ -13,8 +13,6 @@ pykrite
 
 unlock logistics tab start of act 2
 
-add recycler (space ex)
-add recycler internal complexity meter
 
 mods to add: 
 	Factorisimo 2
@@ -54,8 +52,13 @@ nanobot logistic interface (nanobot)
 remove spidertron remote
 move cliff explosives
 
+names testers to add:
+Emperor (Kejser64), Maxi_der_ZockerYT, Omega, Poparen, RedKatana, AnnaLaura, EthereanOne, Rockman_64, Veare the Great
+
 names backers to add:
 Olinator, Senital2011, Pepsillian (Peps)
 
-names backers done:
+names backers to remove:
 Zaydon
+
+names backers/testers done:

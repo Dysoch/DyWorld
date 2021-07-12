@@ -2,14 +2,8 @@
 --debugger = true
 debugger = settings.startup["DyWorld_Debug"].value
 Version_Build = "0.7.98"
-Food_Start = 2500
-Water_Start = 5000
-
-function Dy_Log(String)
-	if settings.startup["DyWorld_Debug"].value then
-		log(String)
-	end
-end
+Food_Start = debugger and 250000 or 2500
+Water_Start = debugger and 500000 or 5000
 
 -- LuaLib
 require "script/lualib/function"

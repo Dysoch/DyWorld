@@ -97,8 +97,8 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-1", amount = 3},
-        {type = "item", name = "iron-plate", amount = 8},
+        {type = "item", name = "lab-1", amount = 1},
+        {type = "item", name = "control-board-2", amount = 3},
         {type = "item", name = "bronze-plate", amount = 2},
       },
       result = "lab-4",

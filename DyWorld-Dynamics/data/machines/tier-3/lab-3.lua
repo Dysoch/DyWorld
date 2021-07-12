@@ -105,9 +105,10 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-1", amount = 3},
-        {type = "item", name = "iron-plate", amount = 8},
-        {type = "item", name = "bronze-plate", amount = 2},
+        {type = "item", name = "lab-2", amount = 1},
+        {type = "item", name = "control-board-2", amount = 3},
+        {type = "item", name = "steel-plate", amount = 8},
+        {type = "item", name = "titanium-plate", amount = 2},
       },
       result = "lab-3",
 	  enabled = false,

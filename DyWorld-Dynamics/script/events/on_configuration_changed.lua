@@ -18,6 +18,7 @@ function Event_on_configuration_changed()
 	if game.players and game.players[1] then
 		for k,v in pairs(game.players) do
 			v.force.reset_technology_effects()
+			Dy_update_overhead_buttons(game.players[v.index])
 		end
 	end
 	

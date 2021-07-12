@@ -248,3 +248,22 @@ data.raw["gui-style"].default["dy-bar-10"] = {
       font_color = {1, 1, 1},
       embed_text_in_bar = false
     }
+	
+data:extend({
+  {
+    type = "virtual-signal",
+    name = "dyworld_story_button",
+    icon = "__DyWorld-Dynamics__/graphics/signal/story_button.png",
+    icon_size = 64,
+    subgroup = "virtual-signal-utility",
+    order = "i[informatron]",
+  },
+  {
+    type = "virtual-signal",
+    name = "dyworld_stats_button",
+    icon = "__DyWorld-Dynamics__/graphics/signal/stats_button.png",
+    icon_size = 64,
+    subgroup = "virtual-signal-utility",
+    order = "i[informatron]",
+  },
+})

@@ -30,6 +30,16 @@ local created_items = function()
     ["normal-inserter"] = 50,
     ["basic-inserter"] = 50,
     ["solar-panel"] = 50,
+    ["usage-reduction-1"] = 1,
+    ["usage-reduction-2"] = 1,
+    ["usage-reduction-3"] = 1,
+    ["usage-reduction-4"] = 1,
+    ["usage-reduction-5"] = 1,
+    ["death-implant-1"] = 1,
+    ["death-implant-2"] = 1,
+    ["death-implant-3"] = 1,
+    ["death-implant-4"] = 1,
+    ["death-implant-5"] = 1,
   }
 end
 

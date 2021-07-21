@@ -6,6 +6,7 @@ Food_Start = debugger and 250000 or 2500
 Water_Start = debugger and 500000 or 5000
 
 -- LuaLib
+require("data.prefix")
 require "script/lualib/function"
 require "script/lualib/debug"
 require "script/lualib/player"

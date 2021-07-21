@@ -7,6 +7,7 @@ Date: ??. 07. 2021
     - 
   Changes:
     - Updated some locales
+    - Optimized Mining Network Script
   Story:
     - 
   Survival:

@@ -8,21 +8,15 @@ function Event_on_configuration_changed()
 	end
 	PlayerPrint("Update for DyWorld-Dynamics detected. Updating Story. Objectives reset. Migrated from version: "..global.dyworld.version.." to version: "..Version_Build)
 	
-	--[[if global.dyworld.version == "0.7.95" then
-		for k,v in pairs(global.dyworld.players) do
+	if global.dyworld.version == "0.7.99" then
+		--for k,v in pairs(global.dyworld.players) do
+		--end
+		global.dyworld.game_stats.space_mining = {}
+		for k,v in pairs(Dy_Metals) do
+			global.dyworld.game_stats.space_mining[k] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900, tier = v.Tier}
 		end
-	end]]
-	
-	if not global.dyworld.game_stats.dyson then global.dyworld.game_stats.dyson = {
-			power_total = 0,
-			power = 0,
-			power_used = 0,
-			effect = 0,
-			sats = 0,
-			structures = 0,
-		} end
-	if not global.dyworld.game_stats.dyson_1 then global.dyworld.game_stats.dyson_1 = {} end
-	
+	end
+		
 	global.dyworld.version = Version_Build
 	
 	if game.players and game.players[1] then

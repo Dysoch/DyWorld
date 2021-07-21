@@ -183,93 +183,26 @@ function Event_on_research_finished(event)
 		global.dyworld.game_stats.dyson.power_drain = global.dyworld.game_stats.dyson.power_drain + 500
 	end
 	if not global.dyworld.game_stats.space_mining then
-		global.dyworld.game_stats.space_mining = {
-			["iron"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-			["copper"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-			["tin"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-			["titanium"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-			["magnesium"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-			["aluminium"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-			["gold"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-			["silver"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-			["lead"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-			["uranium"] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900},
-		}
+		global.dyworld.game_stats.space_mining = {}
+		for k,v in pairs(Dy_Metals) do
+			global.dyworld.game_stats.space_mining[k] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900, tier = v.Tier}
+		end
 	end
 	if Dy_Find_Str(name, "space-mining-storage-") then
-		if Dy_Find_Str(name, "iron") then
-		local Type = "iron"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
-		elseif Dy_Find_Str(name, "copper") then
-		local Type = "copper"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
-		elseif Dy_Find_Str(name, "tin") then
-		local Type = "tin"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
-		elseif Dy_Find_Str(name, "titanium") then
-		local Type = "titanium"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
-		elseif Dy_Find_Str(name, "magnesium") then
-		local Type = "magnesium"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
-		elseif Dy_Find_Str(name, "aluminium") then
-		local Type = "aluminium"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
-		elseif Dy_Find_Str(name, "gold") then
-		local Type = "gold"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
-		elseif Dy_Find_Str(name, "silver") then
-		local Type = "silver"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
-		elseif Dy_Find_Str(name, "lead") then
-		local Type = "lead"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
-		elseif Dy_Find_Str(name, "uranium") then
-		local Type = "uranium"
-			global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
-			global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
+		for k,v in pairs(Dy_Metals) do
+			if Dy_Find_Str(name, k) then
+			local Type = k
+				global.dyworld.game_stats.space_mining[Type].pure_storage = global.dyworld.game_stats.space_mining[Type].pure_storage * 2
+				global.dyworld.game_stats.space_mining[Type].impure_storage = global.dyworld.game_stats.space_mining[Type].impure_storage * 2
+			end
 		end
 	end
 	if Dy_Find_Str(name, "space-mining-efficiency-") then
-		if Dy_Find_Str(name, "iron") then
-		local Type = "iron"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
-		elseif Dy_Find_Str(name, "copper") then
-		local Type = "copper"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
-		elseif Dy_Find_Str(name, "tin") then
-		local Type = "tin"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
-		elseif Dy_Find_Str(name, "titanium") then
-		local Type = "titanium"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
-		elseif Dy_Find_Str(name, "magnesium") then
-		local Type = "magnesium"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
-		elseif Dy_Find_Str(name, "aluminium") then
-		local Type = "aluminium"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
-		elseif Dy_Find_Str(name, "gold") then
-		local Type = "gold"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
-		elseif Dy_Find_Str(name, "silver") then
-		local Type = "silver"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
-		elseif Dy_Find_Str(name, "lead") then
-		local Type = "lead"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
-		elseif Dy_Find_Str(name, "uranium") then
-		local Type = "uranium"
-			global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
+		for k,v in pairs(Dy_Metals) do
+			if Dy_Find_Str(name, k) then
+			local Type = k
+				global.dyworld.game_stats.space_mining[Type].efficiency = global.dyworld.game_stats.space_mining[Type].efficiency + 0.05
+			end
 		end
 	end
 end
@@ -351,9 +284,13 @@ function Event_on_rocket_launched(event)
 	
 	-- Mining Network --
 	for k,v in pairs(contents) do
-		if Space_Mining[k] then
-			global.dyworld.game_stats.space_mining[Space_Mining[k].Ore].pure_rate = global.dyworld.game_stats.space_mining[Space_Mining[k].Ore].pure_rate + 0.05
-			global.dyworld.game_stats.space_mining[Space_Mining[k].Ore].impure_rate = global.dyworld.game_stats.space_mining[Space_Mining[k].Ore].impure_rate + 0.45
+		if Dy_Find_Str(k, "advanced-asteroid-miner-") then
+			for Name,Table in pairs(Dy_Metals) do
+				if Dy_Find_Str(k, Name) then
+					global.dyworld.game_stats.space_mining[Name].pure_rate = global.dyworld.game_stats.space_mining[Name].pure_rate + (0.05 * v)
+					global.dyworld.game_stats.space_mining[Name].impure_rate = global.dyworld.game_stats.space_mining[Name].impure_rate + (0.45 * v)
+				end
+			end
 		end
 	end
 end

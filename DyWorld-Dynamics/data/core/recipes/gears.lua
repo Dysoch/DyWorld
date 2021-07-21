@@ -23,10 +23,10 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "iron-plate", amount = 2},
+        {type = "item", name = "iron-ingot", amount = 1},
       },
       result = "iron-gear",
-	  result_count = 1,
+	  result_count = 2,
 	  energy_required = 3.5,
 	  enabled = false,
     },

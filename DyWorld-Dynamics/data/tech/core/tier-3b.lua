@@ -565,11 +565,12 @@ local Main_Techs = {
 	},
 	-- Nuclear --
 	{
-		name = "nuclear-1",
+		name = "reactor-1",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
 		flags = {Act_3 = true},
 		prerequisites = {
 			"fluids-3",
+			"metallurgy-alloy-1",
 			"power-3",
 			"dy-science-pack-5",
 		},
@@ -582,11 +583,11 @@ local Main_Techs = {
 		order = "4",
 	},
 	{
-		name = "nuclear-2",
+		name = "reactor-2",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
 		flags = {Act_3 = true},
 		prerequisites = {
-			"nuclear-1",
+			"reactor-1",
 			"dy-science-pack-9",
 		},
 		ingredients = {
@@ -599,11 +600,13 @@ local Main_Techs = {
 		order = "4",
 	},
 	{
-		name = "nuclear-3",
+		name = "reactor-3",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
 		flags = {Act_3 = true},
 		prerequisites = {
-			"nuclear-2",
+			"reactor-2",
+			"power-4",
+			"metallurgy-alloy-3",
 			"dy-science-pack-11",
 		},
 		ingredients = {
@@ -617,11 +620,11 @@ local Main_Techs = {
 		order = "4",
 	},
 	{
-		name = "nuclear-4",
+		name = "reactor-4",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
 		flags = {Act_3 = true},
 		prerequisites = {
-			"nuclear-3",
+			"reactor-3",
 			"dy-science-pack-13",
 		},
 		ingredients = {
@@ -636,11 +639,12 @@ local Main_Techs = {
 		order = "4",
 	},
 	{
-		name = "nuclear-5",
+		name = "reactor-5",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
 		flags = {Act_3 = true},
 		prerequisites = {
-			"nuclear-4",
+			"reactor-4",
+			"power-7",
 			"dy-science-pack-2",
 			"dy-science-pack-4",
 			"dy-science-pack-6",
@@ -919,6 +923,91 @@ local Main_Techs = {
 		time = Dy_Tech_Time_Calc(10, true),
 		order = "4",
 	},
+	{
+		name = "dyson-network-1",
+		icon = DyDs_path_tech.."asteroid.png",
+		flags = {Act_3 = true},
+        effects = {
+			{type = "nothing", effect_description = {"dyson-network-1"}},
+		},
+		prerequisites = {
+			"advanced-asteroid-mining",
+			"dy-science-pack-13",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 1000),
+			Dy_Main_Tech_Pack(2.1, 1000),
+			Dy_Main_Tech_Pack(3.1, 1000),
+			Dy_Main_Tech_Pack(5.1, 1000),
+			Dy_Main_Tech_Pack(6.1, 1000),
+			Dy_Main_Tech_Pack(7.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(5, true),
+		order = "4",
+	},
+	{
+		name = "dyson-network-2",
+		icon = DyDs_path_tech.."asteroid.png",
+		flags = {Act_3 = true},
+        effects = {
+			{type = "nothing", effect_description = {"dyson-network-2"}},
+		},
+		prerequisites = {
+			"dyson-network-1",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.2, 1000),
+			Dy_Main_Tech_Pack(2.2, 1000),
+			Dy_Main_Tech_Pack(3.1, 1000),
+			Dy_Main_Tech_Pack(5.1, 1000),
+			Dy_Main_Tech_Pack(6.1, 1000),
+			Dy_Main_Tech_Pack(7.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(10, true),
+		order = "4",
+	},
+	{
+		name = "dyson-network-3",
+		icon = DyDs_path_tech.."asteroid.png",
+		flags = {Act_3 = true},
+        effects = {
+			{type = "nothing", effect_description = {"dyson-network-3"}},
+		},
+		prerequisites = {
+			"dyson-network-2",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.2, 1000),
+			Dy_Main_Tech_Pack(2.2, 1000),
+			Dy_Main_Tech_Pack(3.2, 1000),
+			Dy_Main_Tech_Pack(5.2, 1000),
+			Dy_Main_Tech_Pack(6.1, 1000),
+			Dy_Main_Tech_Pack(7.1, 1000),
+		},
+		time = Dy_Tech_Time_Calc(15, true),
+		order = "4",
+	},
+	{
+		name = "dyson-network-4",
+		icon = DyDs_path_tech.."asteroid.png",
+		flags = {Act_3 = true},
+        effects = {
+			{type = "nothing", effect_description = {"dyson-network-4"}},
+		},
+		prerequisites = {
+			"dyson-network-3",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.2, 1000),
+			Dy_Main_Tech_Pack(2.2, 1000),
+			Dy_Main_Tech_Pack(3.2, 1000),
+			Dy_Main_Tech_Pack(5.2, 1000),
+			Dy_Main_Tech_Pack(6.2, 1000),
+			Dy_Main_Tech_Pack(7.2, 1000),
+		},
+		time = Dy_Tech_Time_Calc(20, true),
+		order = "4",
+	},
 }
 
 for k,v in pairs(Main_Techs) do
@@ -926,6 +1015,53 @@ for k,v in pairs(Main_Techs) do
 end
 
 for i = 1,5 do
+	DyWorld_Tech_Add({
+		name = "warfare-"..(i+3),
+		icon = DyDs_path_tech_base.."military.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"warfare-"..(i+2),
+			i == 2 and "dy-science-pack-7" or nil,
+			i == 2 and "dy-science-pack-3" or nil,
+			i == 3 and "dy-science-pack-5" or nil,
+			i == 4 and "dy-science-pack-9" or nil,
+			i == 5 and "dy-science-pack-11" or nil,
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 250),
+			i >= 2 and Dy_Main_Tech_Pack(2.1, 250) or nil,
+			i >= 2 and Dy_Main_Tech_Pack("mil-1", 250*i) or nil,
+			i >= 3 and Dy_Main_Tech_Pack(3.1, 250) or nil,
+			i >= 4 and Dy_Main_Tech_Pack(5.1, 250) or nil,
+			i >= 5 and Dy_Main_Tech_Pack(6.1, 250) or nil,
+		},
+		time = Dy_Tech_Time_Calc((10*(i+3))),
+		order = "4",
+	}) 
+	DyWorld_Tech_Add({
+		name = "warfare-"..(i+8),
+		icon = DyDs_path_tech_base.."military.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"warfare-"..(i+7),
+			i == 1 and "dy-science-pack-2" or nil,
+			i == 1 and "dy-science-pack-8" or nil,
+			i == 2 and "dy-science-pack-4" or nil,
+			i == 3 and "dy-science-pack-6" or nil,
+			i == 4 and "dy-science-pack-10" or nil,
+			i == 5 and "dy-science-pack-12" or nil,
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.2, 250),
+			i >= 2 and Dy_Main_Tech_Pack(2.2, 250) or nil,
+			Dy_Main_Tech_Pack("mil-2", 500*i) or nil,
+			i >= 3 and Dy_Main_Tech_Pack(3.2, 250) or nil,
+			i >= 4 and Dy_Main_Tech_Pack(5.2, 250) or nil,
+			i >= 5 and Dy_Main_Tech_Pack(6.2, 250) or nil,
+		},
+		time = Dy_Tech_Time_Calc((10*(i+8))),
+		order = "4",
+	}) 
 	DyWorld_Tech_Add({
 		name = "metallurgy-"..(i+3),
 		icon = DyDs_path_tech.."metallurgy.png",

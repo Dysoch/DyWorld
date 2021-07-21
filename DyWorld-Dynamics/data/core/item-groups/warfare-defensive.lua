@@ -62,6 +62,86 @@ local Data_Table_Item_Group = {
 		Main = "warfare-defensive"
 	},
 	{
+		Name = "turret-laser-1a",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-laser-1b",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-laser-2a",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-laser-2b",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-laser-3a",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-laser-3b",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-laser-4a",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-laser-4b",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-laser-5a",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-laser-5b",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-beam-1a",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-beam-1b",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-beam-2a",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-beam-2b",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-beam-3a",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
+		Name = "turret-beam-3b",
+		Type = "sub",
+		Main = "warfare-defensive"
+	},
+	{
 		Name = "wall",
 		Type = "sub",
 		Main = "warfare-defensive"

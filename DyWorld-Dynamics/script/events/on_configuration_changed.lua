@@ -13,6 +13,16 @@ function Event_on_configuration_changed()
 		end
 	end]]
 	
+	if not global.dyworld.game_stats.dyson then global.dyworld.game_stats.dyson = {
+			power_total = 0,
+			power = 0,
+			power_used = 0,
+			effect = 0,
+			sats = 0,
+			structures = 0,
+		} end
+	if not global.dyworld.game_stats.dyson_1 then global.dyworld.game_stats.dyson_1 = {} end
+	
 	global.dyworld.version = Version_Build
 	
 	if game.players and game.players[1] then

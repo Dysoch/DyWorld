@@ -16,6 +16,24 @@ local function Progress_Surival_Style_Check(VAR)
 	end
 end
 
+local function Dyson_Power_Check(VAR)
+	if VAR >= 1000000000 then
+		local Return = VAR / 1000000000
+		return "[color=blue]"..Round(Return, 2).."[/color] PW"
+	elseif VAR >= 1000000 then
+		local Return = VAR / 1000000
+		return "[color=blue]"..Round(Return, 2).."[/color] TW"
+	elseif VAR >= 1000 then
+		local Return = VAR / 1000
+		return "[color=blue]"..Round(Return, 2).."[/color] GW"
+	elseif VAR < 1 then
+		local Return = VAR * 1000
+		return "[color=blue]"..Round(Return, 2).."[/color] kW"
+	else 
+		return "[color=blue]"..Round(VAR, 2).."[/color] MW"
+	end
+end
+
 local function Time_Surival_Check(id, VAR)
 	if VAR == "food" then
 		local rate = global.dyworld.players[id].food_rate
@@ -49,6 +67,7 @@ end
 
 function Main_GUI(player, id)
 	local force = player.force
+	local surface = game.players[id].surface.name
 	local tabbed_pane = player.gui.top.add{type = "tabbed-pane", name = "DyDs_Main_GUI"}
 
 -------------------------------- Game Stats TAB ----------------------------------------
@@ -63,13 +82,37 @@ function Main_GUI(player, id)
 	frameflow1.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
 	frameflow1.add{type = "line", direction = "horizontal"}
 			
-	if global.dyworld.game_stats.sector_scanned > 0 then
+	if global.dyworld.game_stats.sector_scanned > 0 or debugger then
 		frameflow1.add{type = "label", caption = "Sectors Scanned: [color=blue]"..global.dyworld.game_stats.sector_scanned.."[/color]"}
 	end
-	if global.dyworld.game_stats.rockets_launched > 0 then
+	if global.dyworld.game_stats.rockets_launched > 0 or debugger then
 		frameflow1.add{type = "label", caption = "Rockets Launched: [color=blue]"..global.dyworld.game_stats.rockets_launched.."[/color]"}
 	end
 	frameflow1.add{type = "label", caption = "Special Entities Built: [color=blue]"..((global.dyworld.game_stats.inserters or 0) + (global.dyworld.game_stats.radars or 0)).."[/color]", tooltip = "Inserters: [color=blue]"..(global.dyworld.game_stats.inserters or 0).."[/color]\nRadars: [color=blue]"..(global.dyworld.game_stats.radars or 0).."[/color]"}
+	
+	if not global.dyworld.game_stats.dyson then
+		global.dyworld.game_stats.dyson = {
+			power_total = 0,
+			power = 0,
+			power_used = 0,
+			effect = 0,
+			sats = 0,
+			structures = 0,
+		}
+	end
+	if not global.dyworld.game_stats.dyson_1[surface] then
+		global.dyworld.game_stats.dyson_1[surface] = {
+			power_total = 0,
+			power = 0,
+			power_used = 0,
+			effect = game.surfaces[surface].solar_power_multiplier,
+			sats = 0,
+			structures = 0,
+		}
+	end
+	if game.forces.player.technologies["dyson-network-1"].researched or debugger then
+		frameflow1.add{type = "label", caption = "Dyson Network Power: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_total), tooltip = "Universal Dyson Network:\nPower Total: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_total).."\nPower Available: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power).."\nPower Used: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_used).."\nNetwork Efficiency: [color=blue]"..Round(global.dyworld.game_stats.dyson.effect, 2).."[/color]%\nSatellites: [color=blue]"..global.dyworld.game_stats.dyson.sats.."[/color]\nStructures: [color=blue]"..global.dyworld.game_stats.dyson.structures.."[/color]\n\n"..surface.." Dyson Network: \n(Contribution to the Universal Network)\nPower Total Gained: "..Dyson_Power_Check(global.dyworld.game_stats.dyson_1[surface].power_total).."\nSolar Efficiency: [color=blue]"..Round((global.dyworld.game_stats.dyson_1[surface].effect * 100), 2).."[/color]%\nSatellites: [color=blue]"..global.dyworld.game_stats.dyson_1[surface].sats.."[/color]\nStructures: [color=blue]"..global.dyworld.game_stats.dyson_1[surface].structures.."[/color]"}
+	end
 		
 	if debugger then
 		frameflow1.add{type = "label", caption = "Chunks: [color=blue]"..global.dyworld.game_stats.chunks.."[/color]"}
@@ -96,7 +139,7 @@ function Main_GUI(player, id)
 		
 	frameflow2.add{type = "label", caption = "Total Stats: [color=blue]"..(global.dyworld.players[id].crafted + global.dyworld.players[id].mined + global.dyworld.players[id].picked + global.dyworld.players[id].build + global.dyworld.players[id].killed).."[/color]", tooltip = "Crafted: [color=blue]"..global.dyworld.players[id].crafted.."[/color]\nMined: [color=blue]"..global.dyworld.players[id].mined.."[/color]\nPicked Up: [color=blue]"..global.dyworld.players[id].picked.."[/color]\nBuilt: [color=blue]"..global.dyworld.players[id].build.."[/color]\nPersonal Killed: [color=blue]"..global.dyworld.players[id].killed.."[/color]\nCapsules Used: [color=blue]"..(global.dyworld.players[id].capsules or 0).."[/color]\nTimes Died: [color=blue]"..(global.dyworld.players[id].died or 0).."[/color]"}
 		
-	frameflow2.add{type = "label", caption = "Position: [color=blue]"..math.floor(global.dyworld.players[id].posx).."[/color] , [color=blue]"..math.floor(global.dyworld.players[id].posy).."[/color]"}
+	frameflow2.add{type = "label", caption = "Position: [color=blue]"..math.floor(global.dyworld.players[id].posx).."[/color] , [color=blue]"..math.floor(global.dyworld.players[id].posy).."[/color] on [color=blue]"..global.dyworld.players[id].surface.."[/color]"}
 		
 	frameflow2.add{type = "label", caption = "Distance Total: [color=blue]"..(Round(global.dyworld.players[id].distance, 2) + Round(global.dyworld.players[id].distance_car, 2) + Round(global.dyworld.players[id].distance_train, 2)).."[/color] Km", tooltip = "Walked: [color=blue]"..Round(global.dyworld.players[id].distance, 2).."[/color] Km\nDriven Vehicles: [color=blue]"..Round(global.dyworld.players[id].distance_car, 2).."[/color] Km\nDriven Trains: [color=blue]"..Round(global.dyworld.players[id].distance_train, 2).."[/color] Km"}
 
@@ -148,6 +191,23 @@ function Main_GUI(player, id)
 		for k,v in pairs(global.dyworld.players[id].implants) do
 			if v == true then
 				frameflow4.add{type = "label", caption = {"looped-name.implant", {"item-name."..k}, tostring(v)}, tooltip = {"item-description."..k}}
+			end
+		end
+	end
+
+-------------------------------- Space Mining TAB ------------------------------------
+
+	if game.forces.player.technologies["advanced-asteroid-mining"].researched or debugger then
+		if global.dyworld.game_stats.space_mining then
+			local tab5 = tabbed_pane.add{type="tab", caption = {"gui-stats.space-mining-title"}}
+			local frameflow5 = tabbed_pane.add{type = "flow", name = "flow5", direction = "vertical"}
+			tabbed_pane.add_tab(tab5, frameflow5)
+			
+			frameflow5.add{type = "label", caption = {"gui-stats.space-mining-time"}}
+			for k,v in pairs(global.dyworld.game_stats.space_mining) do
+				frameflow5.add{type = "line", direction = "horizontal"}
+				frameflow5.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, Round((v.pure_mined + v.impure_mined), 2)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, Round(v.impure_mined, 2), v.impure_storage, Round(v.impure_rate, 2), Round(v.pure_mined, 2), v.pure_storage, Round(v.pure_rate, 2), Round((v.efficiency * 100), 2)}}
+				frameflow5.add{type = "progressbar", size = 26, value = (Round((v.pure_mined + v.impure_mined), 2)/Round((v.pure_storage + v.impure_storage), 2)), style = "dy-bar-1"}
 			end
 		end
 	end

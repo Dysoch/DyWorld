@@ -31,6 +31,101 @@ local Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "warfare-personal"
 	},
+	{
+		Name = "ammo-basic",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-sniper",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-bullet-basic",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-bullet-piercing",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-bullet-explosive",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-shotgun-basic",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-shotgun-piercing",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-shotgun-explosive",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-laser",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-shotgun",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-rocket",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-cannon",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-artillery",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "ammo-flame",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "grenade",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "capsule",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "landmine",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "robots",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "capsule-others",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

@@ -499,13 +499,13 @@ data:extend(
   {
     type = "item-subgroup",
     name = DyDs..params.name,
-    group = DyDs.."warfare-ammo",
+    group = DyDs.."warfare-personal",
     order = DyDs..params.tier.."a"
   },
   {
     type = "item-subgroup",
     name = DyDs..params.name.."-mag",
-    group = DyDs.."warfare-ammo",
+    group = DyDs.."warfare-personal",
     order = DyDs..params.tier.."b"
   },
   {

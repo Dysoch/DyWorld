@@ -24,6 +24,7 @@ data.raw.furnace["electric-furnace"].crafting_categories = {"hidden"}
 data.raw["rail-planner"]["rail"].subgroup = DyDs.."rail"
 data.raw["rail-planner"]["rail"].stack_size = 500
 
+
 data.raw["item-with-entity-data"]["cargo-wagon"].subgroup = DyDs.."rail"
 data.raw["item-with-entity-data"]["fluid-wagon"].subgroup = DyDs.."rail"
 
@@ -31,8 +32,11 @@ data.raw["mining-drill"]["burner-mining-drill"].resource_categories = {"resource
 data.raw["mining-drill"]["electric-mining-drill"].resource_categories = {"resource-solid-tier-0", "resource-solid-tier-1", "resource-solid-tier-2"}
 data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_category = "carbon"
 
+data.raw.resource["stone"].autoplace = nil
+
 -- Change silo --
 data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
+data.raw["rocket-silo"]["rocket-silo"].hidden = true
 
 	-- Hide Resistances --
 data.raw.unit["small-biter"].hide_resistances = true
@@ -96,5 +100,11 @@ for k,v in pairs(data.raw.unit) do
 				volume = 0.4,
 			},
 		}
+	end
+end
+
+for k,v in pairs(data.raw.corpse) do
+	if v.time_before_removed then
+		v.time_before_removed = 60 * 60 * 60 * 2 -- 2 hours
 	end
 end

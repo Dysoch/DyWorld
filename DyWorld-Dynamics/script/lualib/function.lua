@@ -7,6 +7,10 @@ function Dy_Log(String)
 	end
 end
 
+function Dy_Find_Str(Table, String)
+	return string.find(Table, String, 1, true)
+end
+
 function Entity_Check(type)
 	if type == "transport-belt" then return false
 	elseif type == "splitter" then return false

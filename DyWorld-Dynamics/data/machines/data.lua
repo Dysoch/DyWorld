@@ -39,6 +39,7 @@ require(DyDs_data_machines.. "tier-3.radar")
 require(DyDs_data_machines.. "tier-3.greenhouse")
 require(DyDs_data_machines.. "tier-3.lab-3")
 require(DyDs_data_machines.. "tier-3.lab-4")
+require(DyDs_data_machines.. "tier-3.thermo-centrifuge")
 
 -- Tier 4 --
 require(DyDs_data_machines.. "tier-4.rocket-silo")

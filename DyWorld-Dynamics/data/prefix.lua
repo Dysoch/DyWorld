@@ -27,6 +27,7 @@ DyDs_data_machines = "data.machines."
 DyDs_data_logistics = "data.logistics."
 DyDs_data_tech = "data.tech."
 DyDs_data_equipment = "data.equipment."
+DyDs_data_nuclear = "data.nuclear."
 
 DyDs_Inserter_Normal_Pickup = {0, -1}
 DyDs_Inserter_Normal_Insert = {0, 1.2}
@@ -40,6 +41,14 @@ Tier_2 = {255, 165, 0}
 Tier_3 = {255, 0, 0}
 Tier_4 = {0, 255, 255}
 Tier_5 = {0, 0, 255}
+
+Tier_Colors = {
+	[1] = {255, 255, 0},
+	[2] = {255, 165, 0},
+	[3] = {255, 0, 0},
+	[4] = {0, 255, 255},
+	[5] = {0, 0, 255},
+}
 
 -- Automation --
 Sci_Tier_1 = {200, 0, 0}
@@ -95,14 +104,63 @@ Dy_Metal_Colors = {
 	["lead"] = {118, 136, 143},
 	["silver"] = {192, 192, 192},
 	["gold"] = {212, 175, 55},
+	
+	["nickel"] = {114, 116, 114},
+	["cobalt"] = {0, 71, 171},
+	["chromium"] = {198, 200, 201},
+	["zinc"] = {145, 136, 139},
+	["tungsten"] = {120, 124, 133},
 }
+
+Dy_Metals = {
+	["iron"] = {Ore_1 = "tool", Ore_2 = "item", Ingot = "tool", Plate = "item", Tier = 1},
+	["copper"] = {Ore_1 = "tool", Ore_2 = "item", Ingot = "tool", Plate = "item", Tier = 1},
+	["tin"] = {Ore_1 = "tool", Ore_2 = "item", Ingot = "tool", Plate = "item", Tier = 2},
+	["titanium"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 3},
+	["magnesium"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 2},
+	["aluminium"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 1},
+	["lead"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 3},
+	["silver"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 2},
+	["gold"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 2},
+	["nickel"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 1},
+	["zinc"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 1},
+	["cobalt"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 2},
+	["chromium"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 3},
+	["tungsten"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 3},
+}
+
 Dy_Alloys = {
 	["purple-gold"] = {Ingre_1 = "gold", Rat_1 = 0.8, Ingre_2 = "aluminium", Rat_2 = 0.2, Tier = 1},
 	["magnox"] = {Ingre_1 = "aluminium", Rat_1 = 0.8, Ingre_2 = "magnesium", Rat_2 = 0.2, Tier = 1},
 	["duralumin"] = {Ingre_1 = "aluminium", Rat_1 = 0.8, Ingre_2 = "copper", Rat_2 = 0.2, Tier = 1},
 	["solder"] = {Ingre_1 = "lead", Rat_1 = 0.9, Ingre_2 = "tin", Rat_2 = 0.1, Tier = 1},
-	["silver-solder"] = {Ingre_1 = "solder", Rat_1 = 0.75, Ingre_2 = "silver", Rat_2 = 0.25, Tier = 1},
-	["copper-solder"] = {Ingre_1 = "solder", Rat_1 = 0.75, Ingre_2 = "copper", Rat_2 = 0.25, Tier = 1},
+	["leaded-copper"] = {Ingre_1 = "copper", Rat_1 = 0.9, Ingre_2 = "lead", Rat_2 = 0.1, Tier = 1},
+	["silver-solder"] = {Ingre_1 = "solder", Rat_1 = 0.75, Ingre_2 = "silver", Rat_2 = 0.25, Tier = 2},
+	["copper-solder"] = {Ingre_1 = "solder", Rat_1 = 0.75, Ingre_2 = "copper", Rat_2 = 0.25, Tier = 2},
+	["electrum"] = {Ingre_1 = "gold", Rat_1 = 0.55, Ingre_2 = "silver", Rat_2 = 0.45, Tier = 2},
+}
+
+Dy_Focals = {
+	["lense-1"] = {
+		Tier = 1, 
+		Mod = 1,
+	},
+	["lense-2"] = {
+		Tier = 2, 
+		Mod = 1.5,
+	},
+	["lense-3"] = {
+		Tier = 3, 
+		Mod = 2.75,
+	},
+	["lense-4"] = {
+		Tier = 4, 
+		Mod = 5,
+	},
+	["lense-5"] = {
+		Tier = 5, 
+		Mod = 8,
+	},
 }
 
 Dy_Ammo_Mods = {
@@ -122,8 +180,7 @@ Dy_Exclude_Recipes = {
 	["burner-turbine"] = 1, 
 	["electric-motor"] = 1, 
 	["motor"] = 1, 
-	["rocket-part"] = 1, 
-	["rocket-silo"] = 1, 
+	["satellite"] = 1, 
 }
 
 Dy_Exclude_Tech = { 

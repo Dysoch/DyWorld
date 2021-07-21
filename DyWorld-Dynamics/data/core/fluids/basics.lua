@@ -159,7 +159,7 @@ data:extend({
   },
 })
 
-data.raw.fluid.water.auto_barrel = false
+data.raw.fluid.water.auto_barrel = true
 data.raw.fluid.water.auto_canister = true
 data.raw.fluid.water.auto_canister_tier = 1
 data.raw.fluid["crude-oil"].auto_canister = true

@@ -15,6 +15,8 @@ require("script/database/recipes")
 require("script/database/inserter")
 require("script/database/food")
 require("script/database/implants")
+require("script/database/dyson")
+require("script/database/mining")
 require("script/lualib/inserter")
 
 -- GUI
@@ -130,6 +132,10 @@ remote.add_interface("DyWorld",
 	
 	Story_Start = function()
 		global.dyworld_story = true
+	end,
+	
+	Reset_Dyson_1 = function()
+		global.dyworld.game_stats.dyson_1 = {}
 	end,
 	
 	Skip_Phase = function(nmb)

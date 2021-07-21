@@ -26,6 +26,16 @@ function Event_on_tick(event)
 		global.dyworld.game_stats.days = global.dyworld.game_stats.days + 1
 		--debug("Game Days: "..global.dyworld.game_stats.days)
 	end
+	if event.tick%(60*60)==1 then
+		if global.dyworld.game_stats.space_mining then
+			for k,v in pairs(global.dyworld.game_stats.space_mining) do
+				v.pure_mined = v.pure_mined + v.pure_rate
+				v.impure_mined = v.impure_mined + v.impure_rate
+				if v.pure_mined >= v.pure_storage then v.pure_mined = v.pure_storage end
+				if v.impure_mined >= v.impure_storage then v.impure_mined = v.impure_storage end
+			end
+		end
+	end
 	if event.tick%(60*1)==1 then
 		for k,v in pairs(global.dyworld.players) do
 			if v.alive and v.playing then
@@ -39,13 +49,15 @@ function Event_on_tick(event)
 				v.posy2 = v.posy
 				v.posx = game.players[v.id].position.x
 				v.posy = game.players[v.id].position.y
-				v.surface = game.players[v.id].surface
+				v.surface = game.players[v.id].surface.name
 				if (game.players[v.id].vehicle and Distance_Car_Check(game.players[v.id].vehicle.name)) then
 					v.distance_car = (v.distance_car + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
 				elseif (game.players[v.id].vehicle and Distance_Train_Check(game.players[v.id].vehicle.name)) then
 					v.distance_train = (v.distance_train + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
 				elseif game.players[v.id].vehicle == nil then
-					v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
+					if game.players[v.id].character then
+						v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
+					end
 				end
 				Food_Lose(v.id, 1)
 				Water_Lose(v.id, 1)

@@ -42,6 +42,7 @@ data:extend({
   {
     type = "fluid",
     name = "molten-"..k,
+	localised_name = {"looped-name.molten", {"looped-name."..k}},
     default_temperature = 500,
     max_temperature = 500,
 	gas_temperature = 1000,
@@ -68,6 +69,7 @@ data:extend({
 		DyDS_Add_Item({
 			name = k.."-plate",
 			order = k.."-plate",
+			localised_name = {"looped-name.plate", {"looped-name."..k}},
 			icons = {{icon = DyDs_path_icon.."base-plate-3.png", tint = Dy_Combine_RGB_Alloy(k, v)}},
 			--localised_name = {"looped-name.gold-4"},
 			stack_size = 500,

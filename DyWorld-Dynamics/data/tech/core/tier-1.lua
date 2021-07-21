@@ -7,7 +7,6 @@ local Metal_Techs = {
 		flags = {Act_2 = true},
 		ingredients = {
 			Dy_Metal_Tech_Pack("copper-1", 375),
-			Dy_Metal_Tech_Pack("copper-2", 250),
 			Dy_Metal_Tech_Pack("copper-3", 15),
 		},
 		time = Dy_Tech_Time_Calc(3),
@@ -19,7 +18,6 @@ local Metal_Techs = {
 		flags = {Act_2 = true},
 		ingredients = {
 			Dy_Metal_Tech_Pack("iron-1", 450),
-			Dy_Metal_Tech_Pack("iron-2", 300),
 			Dy_Metal_Tech_Pack("iron-3", 25),
 		},
 		time = Dy_Tech_Time_Calc(4),
@@ -31,7 +29,6 @@ local Metal_Techs = {
 		flags = {Act_2 = true},
 		ingredients = {
 			Dy_Metal_Tech_Pack("tin-1", 300),
-			Dy_Metal_Tech_Pack("tin-2", 175),
 			Dy_Metal_Tech_Pack("tin-3", 10),
 		},
 		time = Dy_Tech_Time_Calc(2),

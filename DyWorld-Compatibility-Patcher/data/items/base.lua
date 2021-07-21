@@ -19,6 +19,12 @@ data.raw.item["constant-combinator"].subgroup = DyDs.."circuit-network"
 data.raw.item["power-switch"].subgroup = DyDs.."circuit-network"
 data.raw.item["programmable-speaker"].subgroup = DyDs.."circuit-network"
 
+data.raw.item["arithmetic-combinator"].hidden = false
+data.raw.item["decider-combinator"].hidden = false
+data.raw.item["constant-combinator"].hidden = false
+data.raw.item["power-switch"].hidden = false
+data.raw.item["programmable-speaker"].hidden = false
+
 
 data.raw.item["red-wire"].subgroup = DyDs.."material-2"
 data.raw.item["green-wire"].subgroup = DyDs.."material-2"
@@ -43,7 +49,10 @@ data.raw.item["rail-chain-signal"].subgroup = DyDs.."rail"
 data.raw.item["rail-chain-signal"].stack_size = 500
 
 data.raw.item["stone-brick"].stack_size = 500
-data.raw.item["stone-brick"].subgroup = DyDs.."material-1"
+data.raw.item["sand"].subgroup = DyDs.."intermediates-all"
+data.raw.item["glass"].subgroup = DyDs.."intermediates-all"
+data.raw.item["flying-robot-frame"].subgroup = DyDs.."intermediates-tier-2"
+data.raw.item["stone-brick"].subgroup = DyDs.."intermediates-all"
 data.raw.item["stone-brick"].order = "stone-brick"
 
 data.raw.item["solar-panel-equipment"].subgroup = DyDs.."equipment-energy" --X
@@ -63,6 +72,7 @@ data.raw.item["personal-roboport-mk2-equipment"].subgroup = DyDs.."equipment-qol
 data.raw.item["night-vision-equipment"].subgroup = DyDs.."equipment-qol" --X
 
 data.raw.item["satellite"].rocket_launch_product = nil
+data.raw.item["satellite"].subgroup = DyDs.."satellites-1"
 
 data.raw["item"]["offshore-pump"].subgroup = DyDs.."pump-offshore"
 data.raw["item"]["offshore-pump"].order = "1"

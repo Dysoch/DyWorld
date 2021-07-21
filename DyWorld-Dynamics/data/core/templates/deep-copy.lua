@@ -45,3 +45,44 @@ function DyDs_CopyPrototype(type, name, newName, change_results)
     end
     return p
 end
+
+function DyDs_CopyItem(name, newName)
+    if not data.raw.item[name] then error("item "..name.." doesn't exist") end
+    local p = table.deepcopy(data.raw.item[name])
+    p.name = newName
+    if p.minable and p.minable.result then
+        p.minable.result = newName
+    end
+    if p.place_result then
+        p.place_result = newName
+    end
+    if p.result then
+        p.result = newName
+    end
+    if p.take_result then
+        p.take_result = newName
+    end
+    if p.placed_as_equipment_result then
+        p.placed_as_equipment_result = newName
+    end
+    return p
+end
+
+function DyDs_CopyRecipe(name, newName, Ingredients, Results, Time, Cat)
+    if not data.raw.recipe[name] then error("recpe "..name.." doesn't exist") end
+    local p = table.deepcopy(data.raw.recipe[name])
+    p.name = newName
+    if p.result then
+        p.result = nil
+    end
+	p.category = Cat and Cat or "assembling-tier-1"
+	p.main_product = newName
+	p.normal = {
+		ingredients = Ingredients,
+		results = Results,
+		main_product = newName,
+		energy_required = Time,
+		enabled = false,
+	}
+    return p
+end

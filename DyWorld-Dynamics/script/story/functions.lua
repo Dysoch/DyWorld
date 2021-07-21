@@ -163,7 +163,7 @@ function Reunlock_Recipes()
 			if (v.phase <= global.dyworld.story.phase and v.act <= global.dyworld.story.act) or (v.act < global.dyworld.story.act) then
 				for _,player in pairs(game.players) do
 					if player.force.recipes[k] then
-						if not player.force.recipes[k].enabled then
+						if player.force.recipes[k].enabled == false then
 							player.force.recipes[k].enabled = true
 						end
 					else

@@ -62,6 +62,21 @@ local Data_Table_Item_Group = {
 		Main = "logistics"
 	},
 	{
+		Name = "chests-aai-1",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "chests-aai-2",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "chests-aai-3",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
 		Name = "chests-storehouse",
 		Type = "sub",
 		Main = "logistics"
@@ -88,6 +103,31 @@ local Data_Table_Item_Group = {
 	},
 	{
 		Name = "vehicles",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "locomotive",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "tank",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "cargo-wagon",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "fluid-wagon",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
+		Name = "artillery-wagon",
 		Type = "sub",
 		Main = "logistics"
 	},

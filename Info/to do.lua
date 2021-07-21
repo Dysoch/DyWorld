@@ -9,6 +9,8 @@ Rework electricity
 
 limit amount items in fuel slot (if possible)end
 
+Capacitors are a different thing, they are the physics-based, instant discharge, small capacity energy storage
+
 pykrite
 
 unlock logistics tab start of act 2
@@ -24,8 +26,17 @@ rework equipment
 
 add linked chest
 
+For lasers there are the following types:
+> Single shot: Fires slow, medium damage, medium range
+> Gatling: Fires very quick, very low damage, medium range
+> Shotgun: Fires multiple shots of low damage, not very quick, but medium-large range
+> Sniper: Fires very slow, extreme damage, extreme fast projectile, large range
+> A special named turret: Fires slow, no damage, large range, but spawns a radioactive zone that kills weaker units instantly. take care with this turret
+
 add nanobot tech
 add nanobot tech cliff
+
+Tier 4 lense: byproduct nuclear
 
 equipment;
 portable-solar

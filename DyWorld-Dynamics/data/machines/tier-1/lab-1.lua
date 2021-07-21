@@ -4,14 +4,11 @@ local DyWorld_Prototype_1 = DyDs_CopyPrototype("lab", "lab", "lab-1", true)
 local lab_inputs =
 {
   "iron-ore-impure",
+  "iron-ingot",
   "copper-ore-impure",
+  "copper-ingot",
   "tin-ore-impure",
-  "iron-ore",
-  "copper-ore",
-  "tin-ore",
-  "iron-plate",
-  "copper-plate",
-  "tin-plate",
+  "tin-ingot",
   "steel-plate",
   "bronze-plate",
   "limestone",

@@ -49,6 +49,7 @@ local Recipe_Categories = {
 	"electrolysis",
 	"blast-furnace",
 	"casting-furnace",
+	"thermo-centrifuge",
 	--"bloomery",
 }
 
@@ -75,7 +76,7 @@ local Autoplace_Categories = {
 }
 
 local Fuel_Categories = {
-	"carbon", "fusion",
+	"carbon", "fusion", "fission",
 }
 
 local Ammo_Categories = {
@@ -86,6 +87,9 @@ local Ammo_Categories = {
 	"930mm", "950mm", "1000mm", "1090mm", 
 	"1143mm", "1270mm", "1563mm", "1853mm", 
 	"consume-food", "consume-water", "consume-both",
+	"beam-gun", "laser-single", "laser-chain", 
+	"laser-sniper", "laser-shotgun", "laser-peps", 
+	"beam-low", "beam-medium", "beam-high",
 }
 
 

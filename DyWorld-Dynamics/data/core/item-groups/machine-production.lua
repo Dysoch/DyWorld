@@ -67,6 +67,26 @@ local Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "machine-production"
 	},
+	{
+		Name = "machine-blasting",
+		Type = "sub",
+		Main = "machine-production"
+	},
+	{
+		Name = "machine-forger",
+		Type = "sub",
+		Main = "machine-production"
+	},
+	{
+		Name = "machine-caster",
+		Type = "sub",
+		Main = "machine-production"
+	},
+	{
+		Name = "standalone",
+		Type = "sub",
+		Main = "machine-production"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

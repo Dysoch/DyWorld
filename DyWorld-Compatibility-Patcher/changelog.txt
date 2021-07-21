@@ -1,8 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
-Date: ??. 07. 2021
+Date: 20. 07. 2021
+  Features:
+    - Added in script for reading total entries in the data tables. Read factorio-current.log once the game has loaded and is on main menu (bottom of the log file)
   Changes:
     - Updated some scripts to work better
+    - Changed around several items from other mods to DyWorld item groups
   Compatibility:
     - Fixed technology mishaps with Space Exploration
     - Fixed technology mishaps with Robot Attrition

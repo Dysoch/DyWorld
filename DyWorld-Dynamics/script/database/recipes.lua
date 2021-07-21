@@ -50,6 +50,7 @@ Story_Recipes  = {
 	["control-board-1"] = {act = 1, phase = 6},
 	["basic-gate"] = {act = 1, phase = 6},
 	["tin-basic"] = {act = 1, phase = 6},
+	["tin-basic-2"] = {act = 1, phase = 6},
 	["9mm-bullet-tin"] = {act = 1, phase = 6},
 	["9mm-mag-tin"] = {act = 1, phase = 6},
 	["9mm-mag-tin-del"] = {act = 1, phase = 6},
@@ -61,7 +62,9 @@ Story_Recipes  = {
 	
 	----- Act 1, Phase 8 -----
 	["cast-iron-1"] = {act = 1, phase = 8},
+	["cast-iron-1b"] = {act = 1, phase = 8},
 	["cast-copper-1"] = {act = 1, phase = 8},
+	["cast-copper-1b"] = {act = 1, phase = 8},
 	["iron-gear"] = {act = 1, phase = 8},
 	["copper-cable"] = {act = 1, phase = 8},
 	["9mm-bullet-copper"] = {act = 1, phase = 8},

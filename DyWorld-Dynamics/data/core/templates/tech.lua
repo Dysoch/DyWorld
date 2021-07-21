@@ -33,7 +33,9 @@ data:extend(
     icon = params.icon or DyDs_tech_temp,
     icon_size = 256,
 	flag = params.flags or {},
-    effects = { },
+	localised_name = params.localised_name or nil,
+	localised_description = params.localised_description or nil,
+    effects = params.effects or {},
     prerequisites = params.prerequisites or {},
     unit =
     {

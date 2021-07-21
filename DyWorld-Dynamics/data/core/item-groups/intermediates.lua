@@ -61,6 +61,181 @@ local Data_Table_Item_Group = {
 		Type = "sub",
 		Main = "intermediates"
 	},
+	{
+		Name = "intermediates-all",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "satellites-1",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "satellites-2",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "satellites-3",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "satellites-4",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "0-resource-1",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "0-resource-2",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "0-resource-3",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "0-resource-4",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "0-resource-5",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "material-1",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "material-2",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "material-3",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "material-4",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "material-5",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "metal-1",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "metal-2",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "metal-3",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "metal-4",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "z-fluids",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "z-canisters",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "z-loot",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "z-space",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "zzz-void-recipes",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-0",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-1",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-2",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-3",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-4",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-5",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-6",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-7",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-8",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "fluids-9",
+		Type = "sub",
+		Main = "intermediates"
+	},
+	{
+		Name = "slags",
+		Type = "sub",
+		Main = "intermediates"
+	},
 }
 
 function DyWorld_Item_Main_Group(NAME, ICON)

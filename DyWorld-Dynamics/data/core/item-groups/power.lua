@@ -27,6 +27,11 @@ local Data_Table_Item_Group = {
 		Main = "power"
 	},
 	{
+		Name = "generator",
+		Type = "sub",
+		Main = "power"
+	},
+	{
 		Name = "reactor",
 		Type = "sub",
 		Main = "power"

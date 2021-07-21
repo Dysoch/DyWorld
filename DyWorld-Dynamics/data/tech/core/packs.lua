@@ -30,22 +30,22 @@ function Dy_Metal_Tech_Pack(STR, AMOUNT)
 		local returner = {"tin-ore-impure", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == "iron-2" then
-		local returner = {"iron-ore", StackSizeCheck(AMOUNT)}
+		local returner = {"iron-ore-impure", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == "copper-2" then
-		local returner = {"copper-ore", StackSizeCheck(AMOUNT)}
+		local returner = {"copper-ore-impure", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == "tin-2" then
-		local returner = {"tin-ore", StackSizeCheck(AMOUNT)}
+		local returner = {"tin-ore-impure", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == "iron-3" then
-		local returner = {"iron-plate", StackSizeCheck(AMOUNT)}
+		local returner = {"iron-ingot", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == "copper-3" then
-		local returner = {"copper-plate", StackSizeCheck(AMOUNT)}
+		local returner = {"copper-ingot", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == "tin-3" then
-		local returner = {"tin-plate", StackSizeCheck(AMOUNT)}
+		local returner = {"tin-ingot", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == "steel" then
 		local returner = {"steel-plate", StackSizeCheck(AMOUNT)}

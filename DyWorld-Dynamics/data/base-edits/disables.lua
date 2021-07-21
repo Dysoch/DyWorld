@@ -77,7 +77,11 @@ end
 
 -- Remove resources and autoplace--
 for NAME in pairs(data.raw.resource) do
-	data.raw.resource[NAME] = nil
+	if NAME == "stone" then
+		data.raw.resource[NAME].autoplace = nil
+	else
+		data.raw.resource[NAME] = nil
+	end
 end
 
 for NAME in pairs(data.raw["autoplace-control"]) do

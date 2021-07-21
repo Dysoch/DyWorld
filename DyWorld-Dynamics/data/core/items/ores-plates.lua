@@ -1,190 +1,62 @@
-  ----- Impure Ores -----
-  
+
+for k,v in pairs(Dy_Metals) do
+	if v.Ore_1 == "item" then
+DyDS_Add_Item({
+	name = k.."-ore-impure",
+	order = k.."-ore-impure",
+    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Dy_Metal_Colors[k]}},
+	localised_name = {"looped-name."..k.."-1"},
+	stack_size = 1000,
+	subgroup = DyDs.."0-resource-1",
+})	
+	elseif v.Ore_1 == "tool" then
 DyDS_Add_Tool({
-	name = "iron-ore-impure",
-	order = "iron-ore-impure",
-    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Iron_Color}},
-	localised_name = {"looped-name.iron-1"},
+	name = k.."-ore-impure",
+	order = k.."-ore-impure",
+    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Dy_Metal_Colors[k]}},
+	localised_name = {"looped-name."..k.."-1"},
 	stack_size = 1000,
 	durability = 1,
 	subgroup = DyDs.."0-resource-1",
-	Chemical_Formula = "Fe-",
 })
-
+	end
+DyDS_Add_Item({
+	name = k.."-ore",
+	order = k.."-ore",
+    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Dy_Metal_Colors[k]}},
+	localised_name = {"looped-name."..k.."-2"},
+	stack_size = 1000,
+	subgroup = DyDs.."0-resource-2",
+})	
+	if v.Ingot == "item" then
+DyDS_Add_Item({
+	name = k.."-ingot",
+	order = k.."-ingot",
+    icons = {{icon = DyDs_path_icon.."ores/ingot.png", tint = Dy_Metal_Colors[k]}},
+	localised_name = {"looped-name."..k.."-3"},
+	stack_size = 500,
+	subgroup = DyDs.."0-resource-3",
+})	
+	elseif v.Ingot == "tool" then
 DyDS_Add_Tool({
-	name = "copper-ore-impure",
-	order = "copper-ore-impure",
-    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Copper_Color}},
-	localised_name = {"looped-name.copper-1"},
-	stack_size = 1000,
+	name = k.."-ingot",
+	order = k.."-ingot",
+    icons = {{icon = DyDs_path_icon.."ores/ingot.png", tint = Dy_Metal_Colors[k]}},
+	localised_name = {"looped-name."..k.."-3"},
+	stack_size = 500,
 	durability = 1,
-	subgroup = DyDs.."0-resource-1",
-	Chemical_Formula = "Cu-",
+	subgroup = DyDs.."0-resource-3",
 })
-
-DyDS_Add_Tool({
-	name = "tin-ore-impure",
-	order = "tin-ore-impure",
-    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Tin_Color}},
-	localised_name = {"looped-name.tin-1"},
-	stack_size = 1000,
-	durability = 1,
-	subgroup = DyDs.."0-resource-1",
-	Chemical_Formula = "Sn-",
-})
-
+	end
 DyDS_Add_Item({
-	name = "titanium-ore-impure",
-	order = "titanium-ore-impure",
-    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Titanium_Color}},
-	localised_name = {"looped-name.titanium-1"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-1",
-	Chemical_Formula = "Ti-",
-})
-
-DyDS_Add_Item({
-	name = "magnesium-ore-impure",
-	order = "magnesium-ore-impure",
-    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Magnesium_Color}},
-	localised_name = {"looped-name.magnesium-1"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-1",
-})
-
-DyDS_Add_Item({
-	name = "aluminium-ore-impure",
-	order = "aluminium-ore-impure",
-    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Aluminium_Color}},
-	localised_name = {"looped-name.aluminium-1"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-1",
-	Chemical_Formula = "Al-",
-})
-
-DyDS_Add_Item({
-	name = "gold-ore-impure",
-	order = "gold-ore-impure",
-    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Gold_Color}},
-	localised_name = {"looped-name.gold-1"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-1",
-	Chemical_Formula = "Au-",
-})
-
-DyDS_Add_Item({
-	name = "silver-ore-impure",
-	order = "silver-ore-impure",
-    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Silver_Color}},
-	localised_name = {"looped-name.silver-1"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-1",
-	Chemical_Formula = "Ag-",
-})
-
-DyDS_Add_Item({
-	name = "lead-ore-impure",
-	order = "lead-ore-impure",
-    icons = {{icon = DyDs_path_icon.."ores/impure-ore.png", tint = Lead_Color}},
-	localised_name = {"looped-name.lead-1"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-1",
-	Chemical_Formula = "Pb-",
-})
-
-  ----- Pure Ores -----
-  
-DyDS_Add_Item({
-	name = "iron-ore",
-	order = "iron-ore",
-    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Iron_Color}},
-	localised_name = {"looped-name.iron-2"},
-	stack_size = 1000,
-	durability = 1,
-	subgroup = DyDs.."0-resource-2",
-	Chemical_Formula = "Fe-",
-})
-
-DyDS_Add_Item({
-	name = "copper-ore",
-	order = "copper-ore",
-    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Copper_Color}},
-	localised_name = {"looped-name.copper-2"},
-	stack_size = 1000,
-	durability = 1,
-	subgroup = DyDs.."0-resource-2",
-	Chemical_Formula = "Cu-",
-})
-
-DyDS_Add_Tool({
-	name = "tin-ore",
-	order = "tin-ore",
-    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Tin_Color}},
-	localised_name = {"looped-name.tin-2"},
-	stack_size = 1000,
-	durability = 1,
-	subgroup = DyDs.."0-resource-2",
-	Chemical_Formula = "Sn-",
-}) 
-
-DyDS_Add_Item({
-	name = "titanium-ore",
-	order = "titanium-ore",
-    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Titanium_Color}},
-	localised_name = {"looped-name.titanium-2"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-2",
-	Chemical_Formula = "Ti-",
-})
-
-DyDS_Add_Item({
-	name = "magnesium-ore",
-	order = "magnesium-ore",
-    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Magnesium_Color}},
-	localised_name = {"looped-name.magnesium-2"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-2",
-})
-
-DyDS_Add_Item({
-	name = "aluminium-ore",
-	order = "aluminium-ore",
-    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Aluminium_Color}},
-	localised_name = {"looped-name.aluminium-2"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-2",
-	Chemical_Formula = "Al-",
-})
-
-DyDS_Add_Item({
-	name = "gold-ore",
-	order = "gold-ore",
-    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Gold_Color}},
-	localised_name = {"looped-name.gold-2"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-2",
-	Chemical_Formula = "Au-",
-})
-
-DyDS_Add_Item({
-	name = "silver-ore",
-	order = "silver-ore",
-    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Silver_Color}},
-	localised_name = {"looped-name.silver-2"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-2",
-	Chemical_Formula = "Ag-",
-})
-
-DyDS_Add_Item({
-	name = "lead-ore",
-	order = "lead-ore",
-    icons = {{icon = DyDs_path_icon.."ores/pure-ore.png", tint = Lead_Color}},
-	localised_name = {"looped-name.lead-2"},
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-2",
-	Chemical_Formula = "Pb-",
-})
+	name = k.."-plate",
+	order = k.."-plate",
+    icons = {{icon = DyDs_path_icon.."base-plate-"..v.Tier..".png", tint = Dy_Metal_Colors[k]}},
+	localised_name = {"looped-name."..k.."-4"},
+	stack_size = 500,
+	subgroup = DyDs.."0-resource-4",
+})	
+end
 
   ----- Slag & Nuggets -----
   
@@ -194,117 +66,11 @@ DyDS_Add_Tool({
     icon = DyDs_path_icon.."slag.png",
 	stack_size = 5000,
 	durability = 1,
-	subgroup = DyDs.."0-resource-3",
+	subgroup = DyDs.."0-resource-5",
 	Chemical_Formula = "C-",
-})
-  
-DyDS_Add_Item({
-	name = "ilmenite",
-	order = "ilmenite",
-    icon = DyDs_path_icon.."ilmenite.png",
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-3",
-	Chemical_Formula = "C-Ti-Fe-",
-})
-  
-DyDS_Add_Item({
-	name = "biotite",
-	order = "biotite",
-    icon = DyDs_path_icon.."biotite.png",
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-3",
-	Chemical_Formula = "C-Al-Ti-Cu-",
-})
-
-  ----- Other materials -----
-  
-DyDS_Add_Item({
-	name = "glass",
-	order = "glass",
-    icon = DyDs_path_icon.."glass.png",
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-3",
-	Chemical_Formula = "Si-O2-C-",
-})
-  
-DyDS_Add_Item({
-	name = "quartz",
-	order = "quartz",
-    icon = DyDs_path_icon.."glass.png",
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-3",
-	Chemical_Formula = "Si-O2-",
-})
-  
-DyDS_Add_Item({
-	name = "resin",
-	order = "resin",
-    icon = DyDs_path_icon.."resin.png",
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-3",
-	Chemical_Formula = "C-O2-H3-",
-})
-  
-DyDS_Add_Item({
-	name = "rubber",
-	order = "rubber",
-    icon = DyDs_path_icon.."rubber.png",
-	stack_size = 1000,
-	subgroup = DyDs.."0-resource-3",
-	Chemical_Formula = "C-O2-H3-Naphtha-",
-})
-  
-DyDS_Add_Item({
-	name = "sand",
-	order = "sand",
-    icon = DyDs_path_icon.."sand.png",
-	stack_size = 5000,
-	subgroup = DyDs.."0-resource-3",
-	Chemical_Formula = "Si-O2-",
-})
-  
-DyDS_Add_Item({
-	name = "concrete-powder",
-	order = "concrete-powder",
-    icon = DyDs_path_icon.."sand.png",
-	stack_size = 5000,
-	subgroup = DyDs.."0-resource-3",
-	Chemical_Formula = "Si-O2-Fe-",
-})
-  
-DyDS_Add_Item({
-	name = "refined-concrete-powder",
-	order = "refined-concrete-powder",
-    icon = DyDs_path_icon.."sand.png",
-	stack_size = 5000,
-	subgroup = DyDs.."0-resource-3",
-	Chemical_Formula = "Si-O2-Fe-C-",
 })
 
   ----- Plates -----
-  
-DyDS_Add_Item({
-	name = "iron-plate",
-	order = "iron-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = Iron_Color}},
-	localised_name = {"looped-name.iron-4"},
-	stack_size = 500,
-	durability = 1,
-	subgroup = DyDs.."metal-2",
-	Chemical_Formula = "Fe-",
-})
-
-DyDS_Add_Item({
-	name = "copper-plate",
-	order = "copper-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = Copper_Color}},
-	localised_name = {"looped-name.copper-4"},
-	stack_size = 500,
-	durability = 1,
-	subgroup = DyDs.."metal-2",
-	Chemical_Formula = "Cu-",
-})
-
 DyDS_Add_Item({
 	name = "steel-plate",
 	order = "steel-plate",
@@ -312,7 +78,7 @@ DyDS_Add_Item({
 	localised_name = {"looped-name.steel-4"},
 	stack_size = 500,
 	durability = 1,
-	subgroup = DyDs.."metal-3",
+	subgroup = DyDs.."0-resource-4",
 	Chemical_Formula = "Fe-C-",
 })
 
@@ -323,78 +89,8 @@ DyDS_Add_Tool({
 	localised_name = {"looped-name.bronze-4"},
 	stack_size = 500,
 	durability = 1,
-	subgroup = DyDs.."metal-1",
+	subgroup = DyDs.."0-resource-4",
 	Chemical_Formula = "Sn-Cu-",
-})
-
-DyDS_Add_Tool({
-	name = "tin-plate",
-	order = "tin-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-2.png", tint = Tin_Color}},
-	localised_name = {"looped-name.tin-4"},
-	stack_size = 500,
-	durability = 1,
-	subgroup = DyDs.."metal-2",
-	Chemical_Formula = "Sn-",
-})
-
-DyDS_Add_Item({
-	name = "titanium-plate",
-	order = "titanium-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-3.png", tint = Titanium_Color}},
-	localised_name = {"looped-name.titanium-4"},
-	stack_size = 500,
-	subgroup = DyDs.."metal-3",
-	Chemical_Formula = "Ti-",
-})
-
-DyDS_Add_Item({
-	name = "magnesium-plate",
-	order = "magnesium-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-2.png", tint = Magnesium_Color}},
-	localised_name = {"looped-name.magnesium-4"},
-	stack_size = 500,
-	subgroup = DyDs.."metal-3",
-})
-
-DyDS_Add_Item({
-	name = "aluminium-plate",
-	order = "aluminium-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-1.png", tint = Aluminium_Color}},
-	localised_name = {"looped-name.aluminium-4"},
-	stack_size = 500,
-	subgroup = DyDs.."metal-3",
-	Chemical_Formula = "Al-",
-})
-
-DyDS_Add_Item({
-	name = "gold-plate",
-	order = "gold-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-2.png", tint = Gold_Color}},
-	localised_name = {"looped-name.gold-4"},
-	stack_size = 500,
-	subgroup = DyDs.."metal-4",
-	Chemical_Formula = "Ag-",
-})
-
-DyDS_Add_Item({
-	name = "silver-plate",
-	order = "silver-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-2.png", tint = Silver_Color}},
-	localised_name = {"looped-name.silver-4"},
-	stack_size = 500,
-	subgroup = DyDs.."metal-4",
-	Chemical_Formula = "Au-",
-})
-
-DyDS_Add_Item({
-	name = "lead-plate",
-	order = "lead-plate",
-    icons = {{icon = DyDs_path_icon.."base-plate-3.png", tint = Lead_Color}},
-	localised_name = {"looped-name.lead-4"},
-	stack_size = 500,
-	subgroup = DyDs.."metal-4",
-	Chemical_Formula = "Pb-",
 })
 
   ----- Stones -----

@@ -27,17 +27,5 @@ data:extend({
 	  energy_required = 0.5,
 	  enabled = false,
     },
-    expensive =
-    {
-      ingredients =
-      {
-        {type = "item", name = "copper-plate", amount = 1},
-        {type = "item", name = "iron-plate", amount = 2},
-      },
-      result = "canister-empty",
-	  result_count = 1,
-	  energy_required = 5,
-	  enabled = false,
-    },
   },
 })

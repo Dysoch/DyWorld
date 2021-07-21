@@ -21,6 +21,7 @@ require("data.entity.aai-industry")
 
 -- Items --
 require("data.items.base")
+require("data.items.aai")
 require("data.items.space-exploration")
 
 -- Recipes --

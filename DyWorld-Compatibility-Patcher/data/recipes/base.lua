@@ -6,6 +6,8 @@ data.raw.item["burner-inserter"].stack_size = 200
 data.raw.item["burner-inserter"].subgroup = DyDs.."inserter-tier-1"
 data.raw.item["burner-inserter"].order = "1"
 
+data.raw.recipe["rocket-part"].hidden = false
+
 data:extend({
   {
     type = "recipe",
@@ -192,6 +194,27 @@ data:extend({
 	  main_product = "flying-robot-frame",
 	  energy_required = 2.5,
 	  enabled = false,
+    },
+  },
+	----- Satellite -----
+  {
+    type = "recipe",
+    name = "satellite",
+	category = "assembling-tier-2",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "aluminium-plate", amount = 15},
+        {type = "item", name = "magnesium-plate", amount = 5},
+        {type = "item", name = "plastic-bar", amount = 10},
+        {type = "item", name = "engine-unit", amount = 2},
+        {type = "fluid", name = "petroleum-gas", amount = 50},
+        {type = "item", name = "solar-cell", amount = 8},
+      },
+      result = "satellite",
+	  enabled = false,
+	  energy_required = 15,
     },
   },
 })

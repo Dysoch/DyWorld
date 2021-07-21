@@ -1,95 +1,40 @@
-data:extend({
-  {
-    type = "recipe",
-    name = "control-board-1",
-	category = "assembling-tier-1",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "wood", amount = 1},
-        {type = "item", name = "tin-plate", amount = 1},
-      },
-      result = "control-board-1",
-	  result_count = 2,
-	  energy_required = 2.5,
-	  enabled = false,
-    },
-  },
-  {
-    type = "recipe",
-    name = "control-board-2",
-	category = "assembling-tier-2",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "green-wire", amount = 1},
-        {type = "item", name = "red-wire", amount = 1},
-        {type = "item", name = "copper-cable", amount = 2},
-        {type = "item", name = "steel-plate", amount = 1},
-        {type = "item", name = "polycarbonate", amount = 2},
-      },
-      result = "control-board-2",
-	  result_count = 2,
-	  energy_required = 2.5,
-	  enabled = false,
-    },
-  },
-  {
-    type = "recipe",
-    name = "control-board-3",
-	category = "assembling-tier-2",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "control-board-2", amount = 1},
-        {type = "item", name = "polyurethane", amount = 2},
-        {type = "item", name = "quartz", amount = 2},
-        {type = "fluid", name = "sulfuric-acid", amount = 25},
-      },
-      result = "control-board-3",
-	  result_count = 1,
-	  energy_required = 10,
-	  enabled = false,
-    },
-  },
-  {
-    type = "recipe",
-    name = "control-board-4",
-	category = "assembling-tier-3",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "control-board-3", amount = 1},
-        {type = "item", name = "polylactic-acid", amount = 2},
-        {type = "fluid", name = "lubricant", amount = 20},
-      },
-      result = "control-board-4",
-	  result_count = 1,
-	  energy_required = 25,
-	  enabled = false,
-    },
-  },
-  {
-    type = "recipe",
-    name = "control-board-5",
-	category = "assembling-tier-4",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "control-board-4", amount = 1},
-        {type = "item", name = "polyvinyl-chloride", amount = 2},
-        {type = "item", name = "polyepoxide", amount = 2},
-        {type = "item", name = "exotic-partical", amount = 25},
-      },
-      result = "control-board-5",
-	  result_count = 1,
-	  energy_required = 50,
-	  enabled = false,
-    },
-  },
-})
+
+
+
+DyDS_Recipe_Set_Tier("control-board-1", "1")
+DyDS_Add_Ingredient_To_Recipe("control-board-1", {type = "item", name = "wood", amount = 1})
+DyDS_Add_Ingredient_To_Recipe("control-board-1", {type = "item", name = "tin-plate", amount = 1})
+DyDS_Override_Results_Recipe("control-board-1", 2)
+DyDS_Recipe_Set_Time("control-board-1", 2.5)
+
+DyDS_Recipe_Set_Tier("control-board-2", "2")
+DyDS_Add_Ingredient_To_Recipe("control-board-2", {type = "item", name = "green-wire", amount = 1})
+DyDS_Add_Ingredient_To_Recipe("control-board-2", {type = "item", name = "red-wire", amount = 1})
+DyDS_Add_Ingredient_To_Recipe("control-board-2", {type = "item", name = "copper-cable", amount = 2})
+DyDS_Add_Ingredient_To_Recipe("control-board-2", {type = "item", name = "steel-plate", amount = 1})
+DyDS_Add_Ingredient_To_Recipe("control-board-2", {type = "item", name = "polycarbonate", amount = 2})
+DyDS_Override_Results_Recipe("control-board-2", 2)
+DyDS_Recipe_Set_Time("control-board-2", 2.5)
+
+DyDS_Recipe_Set_Tier("control-board-3", "2")
+DyDS_Add_Ingredient_To_Recipe("control-board-3", {type = "item", name = "control-board-2", amount = 1})
+DyDS_Add_Ingredient_To_Recipe("control-board-3", {type = "item", name = "polyurethane", amount = 2})
+DyDS_Add_Ingredient_To_Recipe("control-board-3", {type = "item", name = "quartz", amount = 2})
+DyDS_Add_Ingredient_To_Recipe("control-board-3", {type = "fluid", name = "sulfuric-acid", amount = 25})
+DyDS_Override_Results_Recipe("control-board-3", 1)
+DyDS_Recipe_Set_Time("control-board-3", 10)
+
+DyDS_Recipe_Set_Tier("control-board-4", "3")
+DyDS_Add_Ingredient_To_Recipe("control-board-4", {type = "item", name = "control-board-3", amount = 1})
+DyDS_Add_Ingredient_To_Recipe("control-board-4", {type = "item", name = "polylactic-acid", amount = 2})
+DyDS_Add_Ingredient_To_Recipe("control-board-4", {type = "fluid", name = "lubricant", amount = 20})
+DyDS_Override_Results_Recipe("control-board-4", 1)
+DyDS_Recipe_Set_Time("control-board-4", 25)
+
+DyDS_Recipe_Set_Tier("control-board-5", "4")
+DyDS_Add_Ingredient_To_Recipe("control-board-5", {type = "item", name = "control-board-4", amount = 1})
+DyDS_Add_Ingredient_To_Recipe("control-board-5", {type = "item", name = "polyvinyl-chloride", amount = 2})
+DyDS_Add_Ingredient_To_Recipe("control-board-5", {type = "item", name = "polyepoxide", amount = 2})
+DyDS_Add_Ingredient_To_Recipe("control-board-5", {type = "item", name = "exotic-partical", amount = 25})
+DyDS_Override_Results_Recipe("control-board-5", 1)
+DyDS_Recipe_Set_Time("control-board-5", 50)

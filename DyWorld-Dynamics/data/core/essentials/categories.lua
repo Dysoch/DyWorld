@@ -18,8 +18,9 @@ local Resource_Categories = {
 }
 
 local Damage_Table = {
-	"nuclear", "poison", "acid", "fire", "water", "plasma", "laser", "chemical", 
-	"physical", "explosion", "impact", "sonic", "ballistic", "teleport",
+	"nuclear", "poison", "acid", "fire", "water", 
+	"plasma", "laser", "chemical", "physical", "explosion", 
+	"impact", "sonic", "ballistic", "teleport", "radiation",
 }
 
 local Recipe_Categories = {

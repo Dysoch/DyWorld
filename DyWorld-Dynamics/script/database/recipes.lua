@@ -22,7 +22,7 @@ Story_Recipes  = {
 	
 	----- Act 1, Phase 3 -----
 	["bronze-basic"] = {act = 1, phase = 3},
-	["basic-wall"] = {act = 1, phase = 3},
+	["stone-brick-wall"] = {act = 1, phase = 3},
 	["basic-9mm-turret"] = {act = 1, phase = 3},
 	["basic-armor"] = {act = 1, phase = 3},
 	
@@ -48,7 +48,7 @@ Story_Recipes  = {
 	["burner-assembler"] = {act = 1, phase = 6},
 	["loader-1"] = {act = 1, phase = 6},
 	["control-board-1"] = {act = 1, phase = 6},
-	["basic-gate"] = {act = 1, phase = 6},
+	["stone-brick-gate"] = {act = 1, phase = 6},
 	["tin-basic"] = {act = 1, phase = 6},
 	["tin-basic-2"] = {act = 1, phase = 6},
 	["9mm-bullet-tin"] = {act = 1, phase = 6},

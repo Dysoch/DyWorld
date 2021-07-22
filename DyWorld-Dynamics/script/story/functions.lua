@@ -43,23 +43,15 @@ function Phase_Forward()
 			end
 		end
 		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase - 1].done = true
+		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].started = true
 	else
 		global.dyworld.story.act = global.dyworld.story.act + 1
 		global.dyworld.story.phase = 1
+		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].started = true
 	end
 	for k,v in pairs(game.forces.player.technologies) do
 		if v.researched then
 			Story_Objectives_Research(v.name)
-		end
-	end
-	if (global.dyworld.story.phase == 10 and global.dyworld.story.act == 1) then
-		global.dyworld.game_stats.attack_warning_1 = true
-		if not debugger then
-			DyLog("DyDs-story.message-act-1-phase-10-1", "days")
-			DyLog("DyDs-story.message-act-1-phase-10-2", true)
-			DyLog("DyDs-story.message-act-1-phase-10-3", true)
-			DyLog("DyDs-story.message-act-1-phase-10-4", true)
-			DyLog("DyDs-story.message-act-1-phase-10-5", true)
 		end
 	end
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective then
@@ -103,6 +95,7 @@ function Phase_Forward()
 		for index,player in pairs(game.players) do
 			player.play_sound{path = "DySound_drone_1"}
 		end
+		global.dyworld.game_stats.attack_warning_1 = true
 	end
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 2) then
 		game.surfaces["nauvis"].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {(math.random(-10,10)),(math.random(-10,10))}}
@@ -128,24 +121,11 @@ function Phase_Forward()
 		global.dyworld.game_stats.difficulty = 1
 	end
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message then
-		if not debugger then
-			DyLog(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message, "days")
-		end
-	end
-	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].recipes then
-		for index,player in pairs(game.players) do
-			if settings.get_player_settings(index)["DyWorld_Phase_Messages"].value then
-				if not debugger then
-					DyLog("DyDs-story.phase-forward-1", true)
-				end
-			end
-		end
-	else
-		for index,player in pairs(game.players) do
-			if settings.get_player_settings(index)["DyWorld_Phase_Messages"].value then
-				if not debugger then
-					DyLog("DyDs-story.phase-forward-2", true)
-				end
+		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message == 1 then
+			DyLog("DyDs-story.message-act-"..global.dyworld.story.act.."-phase-"..global.dyworld.story.phase.."-1", true)
+		else
+			for i = 1,(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message) do
+				DyLog("DyDs-story.message-act-"..global.dyworld.story.act.."-phase-"..global.dyworld.story.phase.."-"..i, true)
 			end
 		end
 	end

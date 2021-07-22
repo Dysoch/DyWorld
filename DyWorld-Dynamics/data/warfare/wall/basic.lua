@@ -1,67 +1,85 @@
 
 
- ----- Basic Pistol -----
 
-local DyWorld_Prototype = DyDs_CopyPrototype("wall", "stone-wall", "basic-wall", true)
-	DyWorld_Prototype.max_health = 250
-local DyWorld_Prototype_1 = DyDs_CopyPrototype("gate", "gate", "basic-gate", true)
-	DyWorld_Prototype_1.max_health = 250
-
+for k,v in pairs(Dy_Walls) do
+local DyWorld_Prototype_Wall = DyDs_CopyPrototype("wall", "stone-wall", k.."-wall", true)
+local DyWorld_Prototype_Gate = DyDs_CopyPrototype("gate", "gate", k.."-gate", true)
+	DyWorld_Prototype_Wall.max_health = v.Health
+	DyWorld_Prototype_Gate.max_health = math.floor(v.Health * 0.8)
+	DyWorld_Prototype_Wall.hide_resistances = false
+	DyWorld_Prototype_Gate.hide_resistances = false
+	DyWorld_Prototype_Wall.localised_name = {"looped-name.wall-1", {"looped-name."..k}}
+	DyWorld_Prototype_Gate.localised_name = {"looped-name.wall-2", {"looped-name."..k}}
+	DyWorld_Prototype_Wall.resistances = {}
+	DyWorld_Prototype_Gate.resistances = {}
+	for Type, Numbers in pairs(v.Resistances) do
+		local Resistance = {type = Type, decrease = Numbers[1], percent = Numbers[2]}
+		table.insert(DyWorld_Prototype_Wall.resistances, Resistance)
+		table.insert(DyWorld_Prototype_Gate.resistances, Resistance)
+	end
+	
 data:extend({
-  DyWorld_Prototype,
+  DyWorld_Prototype_Wall,
+  DyWorld_Prototype_Gate,
   {
     type = "item",
-    name = "basic-wall",
+    name = k.."-wall",
+	localised_name = {"looped-name.wall-1", {"looped-name."..k}},
     icon = "__base__/graphics/icons/wall.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."wall",
-    order = "1a",
-    place_result = "basic-wall",
+    order = v.Tier.."-"..k,
+    place_result = k.."-wall",
+    stack_size = 200,
+  },
+  {
+    type = "item",
+    name = k.."-gate",
+	localised_name = {"looped-name.wall-2", {"looped-name."..k}},
+    icon = "__base__/graphics/icons/gate.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = DyDs.."wall-gate",
+    order = v.Tier.."-"..k,
+    place_result = k.."-gate",
     stack_size = 200,
   },
   {
     type = "recipe",
-    name = "basic-wall",
-	category = "assembling-tier-1",
+    name = k.."-wall",
+	category = "assembling-tier-"..v.Tier,
     normal =
     {
       ingredients =
       {
-        {type = "item", name = "stone-brick", amount = 5},
-        {type = "item", name = "limestone", amount = 1},
+        {type = "item", name = k, amount = 5},
       },
-      result = "basic-wall",
+      result = k.."-wall",
 	  result_count = 2,
-	  energy_required = 1,
+	  energy_required = v.Tier > 1 and v.Tier or 0.5,
 	  enabled = false,
     },
   },
-  DyWorld_Prototype_1,
-  {
-    type = "item",
-    name = "basic-gate",
-    icon = "__base__/graphics/icons/gate.png",
-    icon_size = 64, icon_mipmaps = 4,
-    subgroup = DyDs.."wall",
-    order = "1b",
-    place_result = "basic-gate",
-    stack_size = 200,
-  },
   {
     type = "recipe",
-    name = "basic-gate",
-	category = "assembling-tier-1",
+    name = k.."-gate",
+	category = "assembling-tier-"..v.Tier,
     normal =
     {
       ingredients =
       {
-        {type = "item", name = "basic-wall", amount = 5},
-        {type = "item", name = "control-board-1", amount = 1},
+        {type = "item", name = k.."-wall", amount = 5},
+        {type = "item", name = "control-board-"..v.Control_Tier, amount = 1},
       },
-      result = "basic-gate",
+      result = k.."-gate",
 	  result_count = 1,
-	  energy_required = 1,
+	  energy_required = 2 * v.Tier,
+	  energy_required = v.Tier > 1 and (v.Tier * 2) or 1,
 	  enabled = false,
     },
   },
 })
+	if v.Tier >= 1 then
+		DyWorld_ATTA(k.."-wall", {"warfare-"..v.Tier})
+		DyWorld_ATTA(k.."-gate", {"warfare-"..v.Tier})
+	end
+end

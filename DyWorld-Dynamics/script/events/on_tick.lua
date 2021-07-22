@@ -73,6 +73,12 @@ function Event_on_tick(event)
 					Main_GUI(player, v.id)
 					player.gui.top.DyDs_Main_GUI.selected_tab_index = global.dyworld.players[v.id].stats_gui_index
 				end
+				if v.smn_gui and v.alive and not game.players[v.id].opened_self then
+					local player = game.players[v.id]
+					Close_SMN_GUI(player, v.id)
+					SMN_GUI(player, v.id)
+					player.gui.top.DyDs_SMN_GUI.selected_tab_index = global.dyworld.players[v.id].smn_gui_index
+				end
 				Bonuses(v.id)
 				if global.dyworld_story and v.alive then
 					if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective then

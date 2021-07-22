@@ -10,6 +10,10 @@ function Dy_update_overhead_buttons(player)
 		button_flow["dyworld_stats"].destroy()
 	end
 	button_flow.add{type = "sprite-button", name = "dyworld_stats", sprite = "virtual-signal/dyworld_stats_button", tooltip = {"looped-name.dyworld_stats_button"}}
+	if button_flow["dyworld_smn"] then
+		button_flow["dyworld_smn"].destroy()
+	end
+	button_flow.add{type = "sprite-button", name = "dyworld_smn", sprite = "item/satellite", tooltip = {"looped-name.dyworld_smn_button"}}
 end
 
 function Event_on_raised_revive(event)

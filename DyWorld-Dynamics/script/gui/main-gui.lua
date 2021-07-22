@@ -194,21 +194,4 @@ function Main_GUI(player, id)
 			end
 		end
 	end
-
--------------------------------- Space Mining TAB ------------------------------------
-
-	if game.forces.player.technologies["advanced-asteroid-mining"].researched or debugger then
-		if global.dyworld.game_stats.space_mining then
-			local tab5 = tabbed_pane.add{type="tab", caption = {"gui-stats.space-mining-title"}}
-			local frameflow5 = tabbed_pane.add{type = "flow", name = "flow5", direction = "vertical"}
-			tabbed_pane.add_tab(tab5, frameflow5)
-			
-			frameflow5.add{type = "label", caption = {"gui-stats.space-mining-time"}}
-			for k,v in pairs(global.dyworld.game_stats.space_mining) do
-				frameflow5.add{type = "line", direction = "horizontal"}
-				frameflow5.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, Round((v.pure_mined + v.impure_mined), 2)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, Round(v.impure_mined, 2), v.impure_storage, Round(v.impure_rate, 2), Round(v.pure_mined, 2), v.pure_storage, Round(v.pure_rate, 2), Round((v.efficiency * 100), 2)}}
-				frameflow5.add{type = "progressbar", size = 26, value = (Round((v.pure_mined + v.impure_mined), 2)/Round((v.pure_storage + v.impure_storage), 2)), style = "dy-bar-1"}
-			end
-		end
-	end
 end

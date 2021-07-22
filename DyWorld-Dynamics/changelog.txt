@@ -4,7 +4,7 @@ Date: ??. 07. 2021
   Major Features:
     - 
   Minor Features:
-    - 
+    - Added new GUI special for SMN (Space Mining Network)
   Changes:
     - Updated some locales
     - Optimized Mining Network Script

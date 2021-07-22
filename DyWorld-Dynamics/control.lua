@@ -1,12 +1,12 @@
+require("data.prefix")
+require("data.prefix-data")
 
---debugger = true
-debugger = settings.startup["DyWorld_Debug"].value
+debugger = Dy_Sett.Debug
 Version_Build = "0.7.99"
 Food_Start = debugger and 250000 or 2500
 Water_Start = debugger and 500000 or 5000
 
 -- LuaLib
-require("data.prefix")
 require "script/lualib/function"
 require "script/lualib/debug"
 require "script/lualib/player"
@@ -23,6 +23,7 @@ require("script/lualib/inserter")
 -- GUI
 require "script/gui/main-gui"
 require "script/gui/story-gui"
+require "script/gui/smn-gui"
 
 -- Stats
 require "script/stats/functions"

@@ -146,3 +146,10 @@ data:extend({
     },
   },
 })
+
+DyDS_Recipe_Set_Tier("solar-cell", "2")
+DyDS_Add_Ingredient_To_Recipe("solar-cell", {type = "item", name = "tin-plate", amount = 1})
+DyDS_Add_Ingredient_To_Recipe("solar-cell", {type = "item", name = "copper-plate", amount = 1})
+DyDS_Add_Ingredient_To_Recipe("solar-cell", {type = "item", name = "resin", amount = 2})
+DyDS_Override_Results_Recipe("solar-cell", 1)
+DyDS_Recipe_Set_Time("solar-cell", 2.5)

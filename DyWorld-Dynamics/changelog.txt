@@ -5,9 +5,10 @@ Date: ??. 07. 2021
     - 
   Minor Features:
     - Added new GUI special for SMN (Space Mining Network)
-    - Added in 12 Walls
-    - Added in 12 Gates
+    - Added in 12 Walls (WIP for the resistances, please provide feedback)
+    - Added in 12 Gates (WIP for the resistances, please provide feedback)
   Changes:
+    - Added recipe for Solar Cell
     - Updated some locales
     - Optimized Mining Network Script
   Story:

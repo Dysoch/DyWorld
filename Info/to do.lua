@@ -1,3 +1,19 @@
+-- TO DO BEFORE KoS Release --
+
+Add phase 1-10 Act 3
+add temp enemies scripted
+rewrite story act 1
+rewrite story act 2
+add story act 3 phase 1-10
+rewrite story scripts to work with main/side/tips
+add tips to each phase
+
+
+-- TO DO BEFORE PUBLIC RELEASE --
+
+Add phase 11-50 Act 3
+add story act 3 phase 11-50
+finalize enemies
 
 -- TO DO PHASE 3 DEVELOPMENT --
 

@@ -72,7 +72,6 @@ data:extend({
       },
       result = k.."-gate",
 	  result_count = 1,
-	  energy_required = 2 * v.Tier,
 	  energy_required = v.Tier > 1 and (v.Tier * 2) or 1,
 	  enabled = false,
     },

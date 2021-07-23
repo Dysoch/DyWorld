@@ -1,0 +1,28 @@
+{
+    "Lua.diagnostics.globals": [
+        "global",
+        "game",
+        "settings",
+        "log",
+        "data",
+        "defines",
+        "script",
+        "informatron_make_image",
+        "util",
+        "remote",
+        "assembler3pipepictures",
+        "pipecoverspictures",
+        "ore_sound",
+        "coverage",
+        "Time",
+        "Close_Log_GUI",
+        "debugger",
+        "inspect",
+        "p",
+        "dyworld_menu",
+        "dyworld_page_content",
+        "mod_gui",
+        "getDistance",
+        "tablelength"
+    ]
+}

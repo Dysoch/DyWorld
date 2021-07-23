@@ -3,7 +3,6 @@
 DyDS_Add_Ammo({
 	name = "860mm-bullet",
 	icon = DyDs_path_icon.."bullet-860mm.png",
-	order = "copper-cable",
 	stack_size = 250,
 	ammo_cat = "860mm",
 	dmg_amount = 25,
@@ -19,7 +18,6 @@ DyDS_Add_Ammo({
 DyDS_Add_Ammo({
 	name = "860mm-bullet-ap",
 	icon = DyDs_path_icon.."bullet-860mm.png",
-	order = "copper-cable",
 	stack_size = 250,
 	ammo_cat = "860mm",
 	dmg_amount = 50,

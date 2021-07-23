@@ -71,7 +71,6 @@ data:extend(
         target_effects =
         {
           {
-            repeat_count = 100,
             type = "create-trivial-smoke",
             smoke_name = "nuclear-smoke",
             offset_deviation = {{-1, -1}, {1, 1}},

@@ -521,7 +521,7 @@ local Story = {
 						amount_needed = 1000,
 						amount_done = 0,
 					},
-					[2] = {
+					[3] = {
 						type_1 = "world", 
 						type_2 = "chunk", 
 						done = false,

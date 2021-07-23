@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.5
+Date: ??. 07. 2021
+  Features:
+    - 
+  Changes:
+    - 
+  Compatibility:
+    - 
+  Required Mods:
+    - Space Exploration: required version: 0.5.72 > 0.5.76
+---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 20. 07. 2021
   Features:
@@ -6,30 +17,29 @@ Date: 20. 07. 2021
   Changes:
     - Updated some scripts to work better
     - Changed around several items from other mods to DyWorld item groups
-  Compatibility:
-    - Fixed technology mishaps with Space Exploration
-    - Fixed technology mishaps with Robot Attrition
-    - Fixed technology mishaps with Nanobots
-    - Fixed technology mishaps with AAI-Industry
-  Required Mods:
-    - Updated required version DyWorld-Dynamics: 0.7.97 > 0.7.99
-    - Updated required version Space Exploration: 0.5.58 > 0.5.72
-    - Updated required version Space Exploration Graphics Part 5: 0.1.1 > 0.1.2
+  Other Mods:
+    - Space Exploration: Fixed technology mishaps
+    - Space Exploration: required version: 0.5.58 > 0.5.72
+    - Robot Attrition: Fixed technology mishaps
+    - Nanobots: Fixed technology mishaps
+    - AAI-Industry: Fixed technology mishaps
+    - DyWorld-Dynamics: required version: 0.7.97 > 0.7.99
+    - Space Exploration Graphics Part 5: required version: 0.1.1 > 0.1.2
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 27. 06. 2021
-  Compatibility:
-    - Removed science pack replacer from SE techs
+  Other Mods:
+    - Space Exploration: Removed science pack replacer from SE techs
     - Added in more automated compatibility patchers
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 23. 06. 2021
-  Compatibility:
-    - Fixed Meteor mining results
+  Other Mods:
+    - Space Exploration: Fixed Meteor mining results
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 16. 06. 2021
-  Compatibility:
+  Other Mods:
     - Added in automated compatibility for Science Packs added by DyWorld
     - Added in automated compatibility for technologies replaced by DyWorld. All technologies should transition to DyWorld technologies (Most SE techs are not touched)
 ---------------------------------------------------------------------------------------------------
@@ -46,6 +56,6 @@ Date: 10. 06. 2021
     - Fixed technologies not being able to research
   Balancing:
     - Rewrote Tree mining results. Should be a bit more balanced now
-  Compatibility:
+  Other Mods:
     - AAI-Industry wreckage now has DyWorld materials
     - Added in more automated compatibility patchers

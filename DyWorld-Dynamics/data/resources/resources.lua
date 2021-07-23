@@ -655,7 +655,6 @@ data:extend({
       order = "c",
       color = {0, 0, 0},
       map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0, 0.87},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
@@ -677,7 +676,6 @@ data:extend({
       order = "c",
       color = {0, 0, 0},
       map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0, 0.87},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff
@@ -699,7 +697,6 @@ data:extend({
       order = "c",
       color = {0, 0, 0},
       map_color = {0, 0, 0},
-      mining_visualisation_tint = {0, 0, 0, 0.87},
       mining_time = 1,
       walking_sound = ore_sound,
       mining_visualisation_tint = {r = 0.465, g = 0.465, b = 0.465, a = 1.000}, -- #767676ff

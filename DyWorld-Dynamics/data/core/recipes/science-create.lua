@@ -2,6 +2,7 @@
 
 
 data:extend({
+	-- Automation --
   {
     type = "recipe",
     name = "dysci-01-fluid",
@@ -42,6 +43,7 @@ data:extend({
 	  enabled = false,
     },
   },
+	-- Logistical --
   {
     type = "recipe",
     name = "dysci-03-fluid",
@@ -81,6 +83,7 @@ data:extend({
 	  enabled = false,
     },
   },
+	-- Chemical --
   {
     type = "recipe",
     name = "dysci-05-fluid",
@@ -89,8 +92,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 3},
-        --{type = "fluid", name = "dysci-05", amount = 10},
+        {type = "item", name = "magnesium-plate", amount = 3},
+        {type = "fluid", name = "light-oil", amount = 10},
+        {type = "fluid", name = "nitrogen", amount = 100},
       },
       results = 
       {
@@ -119,6 +123,7 @@ data:extend({
 	  enabled = false,
     },
   },
+	-- Military --
   {
     type = "recipe",
     name = "dysci-07-fluid",
@@ -127,8 +132,10 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "magnesium-plate", amount = 3},
-        --{type = "fluid", name = "dysci-07", amount = 10},
+        {type = "item", name = "zaydon-power-armor", amount = 1},
+        {type = "item", name = "advanced-762mm-turret", amount = 1},
+        {type = "item", name = "860mm-gun", amount = 1},
+        {type = "fluid", name = "water", amount = 1000},
       },
       results = 
       {
@@ -157,6 +164,7 @@ data:extend({
 	  enabled = false,
     },
   },
+	-- Production --
   {
     type = "recipe",
     name = "dysci-09-fluid",
@@ -166,7 +174,9 @@ data:extend({
       ingredients =
       {
         {type = "item", name = "refined-concrete", amount = 5},
-        --{type = "fluid", name = "dysci-09", amount = 10},
+        {type = "item", name = "rail-1", amount = 15},
+        {type = "item", name = "accumulator", amount = 2},
+        {type = "fluid", name = "oxygen", amount = 100},
       },
       results = 
       {
@@ -195,6 +205,7 @@ data:extend({
 	  enabled = false,
     },
   },
+	-- Utility --
   {
     type = "recipe",
     name = "dysci-11-fluid",
@@ -203,8 +214,10 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "titanium-plate", amount = 3},
-        --{type = "fluid", name = "dysci-11", amount = 10},
+        {type = "item", name = "control-board-4", amount = 1},
+        {type = "item", name = "lense-3", amount = 1},
+        {type = "item", name = "sulfur", amount = 50},
+        {type = "fluid", name = "water", amount = 10},
       },
       results = 
       {
@@ -233,6 +246,7 @@ data:extend({
 	  enabled = false,
     },
   },
+	-- Space --
   {
     type = "recipe",
     name = "dysci-13-fluid",
@@ -245,7 +259,6 @@ data:extend({
         {type = "item", name = "polyepoxide", amount = 10},
         {type = "item", name = "rocket-control-unit", amount = 1},
         {type = "item", name = "roboport-3", amount = 1},
-        --{type = "fluid", name = "dysci-13", amount = 10},
       },
       results = 
       {
@@ -274,6 +287,7 @@ data:extend({
 	  enabled = false,
     },
   },
+	-- Bio --
   {
     type = "recipe",
     name = "dysci-15-fluid",

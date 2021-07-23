@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global, duplicate-index, redundant-value
+
 
 --- List is ordered. Lower items every tier are more complex
 

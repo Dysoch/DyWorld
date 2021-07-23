@@ -4,6 +4,7 @@ Date: ??. 07. 2021
   Major Features:
     - 
   Minor Features:
+    - Added all remaining recipes for science packs
     - Added new GUI special for SMN (Space Mining Network)
     - Added in 12 Walls (WIP for the resistances, please provide feedback)
     - Added in 12 Gates (WIP for the resistances, please provide feedback)

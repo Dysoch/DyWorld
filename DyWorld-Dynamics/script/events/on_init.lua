@@ -39,7 +39,6 @@ function Event_on_init()
 					structures = 0,
 				},
 				dyson_1 = {},
-				rockets_launched = 0,
 				attack_warning_1 = false,
 				attack_warning_2 = false,
 				attack_warning_3 = false,

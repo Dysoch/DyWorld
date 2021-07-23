@@ -7,6 +7,8 @@ rewrite story act 2
 add story act 3 phase 1-10
 rewrite story scripts to work with main/side/tips
 add tips to each phase
+add recipes advanced satellites
+
 
 
 -- TO DO BEFORE PUBLIC RELEASE --
@@ -14,6 +16,12 @@ add tips to each phase
 Add phase 11-50 Act 3
 add story act 3 phase 11-50
 finalize enemies
+add tanks
+add spidertrons
+add cars
+add locomotives
+add more rails
+
 
 -- TO DO PHASE 3 DEVELOPMENT --
 

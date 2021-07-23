@@ -3,7 +3,6 @@
 DyDS_Add_Ammo_Shotgun({
 	name = "1853mm-bullet",
 	icon = DyDs_path_icon_base.."shotgun-shell.png",
-	order = "copper-cable",
 	stack_size = 250,
 	ammo_cat = "1853mm",
 	dmg_amount = 4.5,
@@ -11,14 +10,13 @@ DyDS_Add_Ammo_Shotgun({
 	repeat_count = 12,
 	dmg_type = "physical",
 	magazine_size = 1,
-    subgroup = DyDs.."ammo-bullet-basic",
-    order = "1853mm",
+	subgroup = DyDs.."ammo-bullet-basic",
+	order = "1853mm",
 })
 
 DyDS_Add_Ammo_Shotgun({
 	name = "1853mm-bullet-ap",
 	icon = DyDs_path_icon_base.."shotgun-shell.png",
-	order = "copper-cable",
 	stack_size = 250,
 	ammo_cat = "1853mm",
 	dmg_amount = 11,
@@ -27,8 +25,8 @@ DyDS_Add_Ammo_Shotgun({
 	piercing = true,
 	dmg_type = "physical",
 	magazine_size = 1,
-    subgroup = DyDs.."ammo-bullet-piercing",
-    order = "1853mm",
+	subgroup = DyDs.."ammo-bullet-piercing",
+	order = "1853mm",
 })
 
 data:extend({

@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- all intermediates here, tiered, and with real names
 -- Tier 1 and 2 are available from start or unlocked after first research
 

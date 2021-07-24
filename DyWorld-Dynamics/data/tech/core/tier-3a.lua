@@ -412,7 +412,7 @@ local Biological_Techs = {
 			"piscis",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack("fish-pike", 100),
+			Dy_Bio_Tech_Pack("soil", 500),
 		},
 		time = Dy_Tech_Time_Calc(30),
 		order = "3",
@@ -425,7 +425,7 @@ local Biological_Techs = {
 			"piscis",
 		},
 		ingredients = {
-			Dy_Bio_Tech_Pack("fish-salmon", 100),
+			Dy_Bio_Tech_Pack("soil", 750),
 		},
 		time = Dy_Tech_Time_Calc(30),
 		order = "3",

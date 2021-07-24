@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- TO DO BEFORE KoS Release --
 
 Add phase 1-10 Act 3

@@ -12,6 +12,8 @@ Date: ??. 07. 2021
     - Added recipe for Solar Cell
     - Updated some locales
     - Optimized Mining Network Script
+    - Change requirement of fish research
+    - 
   Story:
     - Story messages have been removed until revised and rewritten version comes out
     - Story messages script is now fully automated. This allows other mods to add story messages

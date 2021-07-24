@@ -12,7 +12,7 @@ local Recipes = {
 	["canister-oxygen"] = {"copper-processing", "iron-processing", "tin-processing"},
 	["titanium-ore"] = {"titanium-processing"},
 	["aluminium-ore"] = {"aluminium-processing"},
-	["aluminium-ore"] = {"magnesium-processing"},
+	["magnesium-ore"] = {"magnesium-processing"},
 	["melt-titanium"] = {"titanium-processing"},
 	["melt-aluminium"] = {"aluminium-processing"},
 	["melt-magnesium"] = {"magnesium-processing"},
@@ -283,7 +283,6 @@ local Recipes = {
 	
 	["rocket-control-unit"] = {"intermediates-5"},
 	["sulfur"] = {"intermediates-5"},
-	["quartz"] = {"intermediates-5"},
 	["sulfuric-acid"] = {"intermediates-5"},
 	["battery"] = {"intermediates-5"},
 	["obsidian"] = {"intermediates-5"},

@@ -23,6 +23,20 @@
         "dyworld_page_content",
         "mod_gui",
         "getDistance",
-        "tablelength"
+        "tablelength",
+        "debug_test",
+        "DyWorld_Fluid",
+        "make_laser_sounds",
+        "DyWorld_Projectile_1",
+        "DyWorld_Projectile_2",
+        "DyWorld_Item",
+        "DyWorld_Recipe",
+        "DyWorld_Item_Ore",
+        "DyWorld_Item_Plate",
+        "DyWorld_Recipe_Plate",
+        "icon",
+        "DyWorld_Add_To_Productivity_Module",
+        "DyWorld_Tiles",
+        "character_animations"
     ]
 }

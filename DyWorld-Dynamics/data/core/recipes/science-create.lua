@@ -174,7 +174,7 @@ data:extend({
       ingredients =
       {
         {type = "item", name = "refined-concrete", amount = 5},
-        {type = "item", name = "rail-1", amount = 15},
+        {type = "item", name = "rail", amount = 15},
         {type = "item", name = "accumulator", amount = 2},
         {type = "fluid", name = "oxygen", amount = 100},
       },

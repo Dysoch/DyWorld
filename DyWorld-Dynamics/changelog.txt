@@ -18,6 +18,8 @@ Date: ??. 07. 2021
     - Story messages script is now fully automated for Informatron as well, allowing other mods story additions to display there
   Survival:
     - 
+  Translations:
+    - German Translation added (made by Maxi_der_ZockerYT). Still WIP
   Other Mods:
     - 
 ---------------------------------------------------------------------------------------------------

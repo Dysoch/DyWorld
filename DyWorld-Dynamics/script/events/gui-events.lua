@@ -22,7 +22,7 @@ function Event_on_gui_click(event)
 			if global.dyworld.players[id].story_gui then
 				global.dyworld.players[id].story_gui = false
 				Close_Story_GUI(player, id)
-			else 
+			else
 				global.dyworld.players[id].story_gui = true
 				Story_GUI(player, id)
 			end
@@ -39,7 +39,7 @@ function Event_on_gui_click(event)
 		if global.dyworld.players[id].stats_gui then
 			global.dyworld.players[id].stats_gui = false
 			Close_Main_GUI(player, id)
-		else 
+		else
 			global.dyworld.players[id].stats_gui = true
 			Main_GUI(player, id)
 		end
@@ -55,10 +55,12 @@ function Event_on_gui_click(event)
 		if global.dyworld.players[id].smn_gui then
 			global.dyworld.players[id].smn_gui = false
 			Close_SMN_GUI(player, id)
-		else 
+		else
 			global.dyworld.players[id].smn_gui = true
 			SMN_GUI(player, id)
 		end
+	elseif gui.name == "dyworld_phase_forward" then
+		Phase_Forward()
 	end
 	
 end

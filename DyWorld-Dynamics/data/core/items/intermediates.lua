@@ -38,6 +38,7 @@ Intermediates = {
 	["refined-concrete-powder"] = {Stack = 5000, Chem = "Si-O2-Fe-C-"},
 	["ilmenite"] = {Stack = 1000, Chem = "C-Ti-Fe-"},
 	["biotite"] = {Stack = 1000, Chem = "C-Al-Ti-Cu-"},
+	["obsidian"] = {Stack = 1000},
 }
 
 local function Stack_Check(Stack)

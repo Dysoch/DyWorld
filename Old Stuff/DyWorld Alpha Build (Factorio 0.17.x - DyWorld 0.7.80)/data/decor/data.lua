@@ -1,2 +1,0 @@
-
-require("data.decor.tiles")

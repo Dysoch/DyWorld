@@ -14,6 +14,12 @@ function Dy_update_overhead_buttons(player)
 		button_flow["dyworld_smn"].destroy()
 	end
 	button_flow.add{type = "sprite-button", name = "dyworld_smn", sprite = "item/satellite", tooltip = {"looped-name.dyworld_smn_button"}}
+	if button_flow["dyworld_phase_forward"] then
+		button_flow["dyworld_phase_forward"].destroy()
+	end
+	if debugger then
+		button_flow.add{type = "sprite-button", name = "dyworld_phase_forward", sprite = "item/satellite", tooltip = {"looped-name.dyworld_smn_button"}}
+	end
 end
 
 function Event_on_raised_revive(event)

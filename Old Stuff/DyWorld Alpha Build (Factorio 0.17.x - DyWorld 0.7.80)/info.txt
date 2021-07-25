@@ -1,1 +1,0 @@
-This folder holds the old DyWorld 0.7.80, which is the DyWorld version before the rebuild of DyWorld and just after the port to factorio 0.17.x

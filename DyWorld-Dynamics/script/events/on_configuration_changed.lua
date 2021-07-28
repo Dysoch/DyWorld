@@ -4,19 +4,20 @@
 function Event_on_configuration_changed()
 	local Time = global.dyworld.game_stats.time_stamp
 	if (global.dyworld and global.dyworld.story and global.dyworld.story.act) then
-		global.dyworld.story = Story_Add(global.dyworld.story.act, global.dyworld.story.phase, false, 1, 1)
+		if global.dyworld.version == "0.7.99" then
+			Story_Migrate(nil, nil, true)
+			debug("Overriding Story")
+		else
+			Story_Migrate(global.dyworld.story.act, global.dyworld.story.phase)
+			debug("Overriding Story without overriding current phase")
+		end
 	end
 	PlayerPrint("Update for DyWorld-Dynamics detected. Updating Story. Objectives reset. Migrated from version: "..global.dyworld.version.." to version: "..Version_Build)
 	
 	if global.dyworld.version == "0.7.99" then
-		--for k,v in pairs(global.dyworld.players) do
-		--end
-		global.dyworld.game_stats.space_mining = {}
-		for k,v in pairs(Dy_Metals) do
-			global.dyworld.game_stats.space_mining[k] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900, tier = v.Tier}
-		end
+		global.dyworld.game_stats.story_pause = false
 	end
-		
+
 	global.dyworld.version = Version_Build
 	
 	if game.players and game.players[1] then
@@ -33,4 +34,5 @@ function Event_on_configuration_changed()
 	end
 	
 	Reunlock_Recipes()
+	Repopulate_Side_Objectives_Table()
 end

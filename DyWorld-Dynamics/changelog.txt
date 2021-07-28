@@ -2,22 +2,28 @@
 Version: 0.7.100
 Date: ??. 07. 2021
   Major Features:
-    - 
+    - Added in side objectives scripts for act 3,4 and 5
+    - Added in 270 tiered side objectives (random amounts are selected each different game)
   Minor Features:
     - Added all remaining recipes for science packs
     - Added new GUI special for SMN (Space Mining Network)
     - Added in 12 Walls (WIP for the resistances, please provide feedback)
     - Added in 12 Gates (WIP for the resistances, please provide feedback)
+  Bugfixes:
+    - Fixed crashing bug with dying of water or food
+    - Fixed a save corrupting bug with act 2 phase 4
   Changes:
     - Added recipe for Solar Cell
     - Updated some locales
     - Optimized Mining Network Script
     - Change requirement of fish research
-    - 
   Story:
     - Story messages have been removed until revised and rewritten version comes out
     - Story messages script is now fully automated. This allows other mods to add story messages
     - Story messages script is now fully automated for Informatron as well, allowing other mods story additions to display there
+    - Rewrote Story Migration script. It now migrates every phase to its new version, except the one you are on. No more lost progress (except this time, needed for rewrite tables)
+    - Rewrote Story scripts completely. This runs faster, allows more flexible things to happen
+    - Rewrote Story Startup script. It now works of a preset database, that allows edits from other mods
   Survival:
     - 
   Translations:

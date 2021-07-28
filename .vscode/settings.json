@@ -82,6 +82,8 @@
         "gui_2_toggleGui",
         "stats_frameflow3",
         "gui_1_openGui",
-        "gui_1_closeGUI"
+        "gui_1_closeGUI",
+        "frameflow3",
+        "serpent"
     ]
 }

@@ -10,7 +10,6 @@ end
 
 function SMN_GUI(player, id)
 if game.forces.player.technologies["advanced-asteroid-mining"].researched or debugger then
-if global.dyworld.game_stats.space_mining then
 	local force = player.force
 	local surface = game.players[id].surface.name
 	local tabbed_pane = player.gui.top.add{type = "tabbed-pane", name = "DyDs_SMN_GUI"}
@@ -22,6 +21,7 @@ if global.dyworld.game_stats.space_mining then
 	
 	frameflow1.add{type = "label", caption = {"gui-stats.space-mining-time"}}
 
+if global.dyworld.game_stats.space_mining then
 -------------------------------- Ore Tier 1 TAB -------------------------------------
 	local tab2 = tabbed_pane.add{type = "tab", caption = "Ores Tier 1"}
 	local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}

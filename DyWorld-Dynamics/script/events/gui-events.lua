@@ -52,12 +52,14 @@ function Event_on_gui_click(event)
 			global.dyworld.players[id].stats_gui = false
 			Close_Main_GUI(player, id)
 		end
-		if global.dyworld.players[id].smn_gui then
-			global.dyworld.players[id].smn_gui = false
-			Close_SMN_GUI(player, id)
-		else
-			global.dyworld.players[id].smn_gui = true
-			SMN_GUI(player, id)
+		if game.forces.player.technologies["advanced-asteroid-mining"].researched or debugger then
+			if global.dyworld.players[id].smn_gui then
+				global.dyworld.players[id].smn_gui = false
+				Close_SMN_GUI(player, id)
+			else
+				global.dyworld.players[id].smn_gui = true
+				SMN_GUI(player, id)
+			end
 		end
 	elseif gui.name == "dyworld_phase_forward" then
 		Phase_Forward()

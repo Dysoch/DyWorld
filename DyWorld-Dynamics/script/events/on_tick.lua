@@ -13,10 +13,17 @@ function Event_on_tick(event)
 		local seconds = (seconds_start-(minutes_start*60))
 		global.dyworld.game_stats.time_stamp = (hours..":"..minutes..":"..seconds)
 	end
-	if (event.tick%(60*60*3)==1 and global.dyworld.game_stats.difficulty < 10000) then
+	if (event.tick%(60*60*10)==1 and global.dyworld.game_stats.difficulty < 10000) then
 		if global.dyworld_story then
 			if not global.dyworld.game_stats.players then global.dyworld.game_stats.players = 1 end
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (0.1 * (global.dyworld.game_stats.players * global.dyworld.game_stats.players))
+			if Dy_Sett.Difficulty ~= "Easy" then
+				if Dy_Sett.Difficulty == "Normal" then
+					global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (0.1 * (global.dyworld.game_stats.players * global.dyworld.game_stats.players))
+				end
+				if Dy_Sett.Difficulty == "Hard" then
+					global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (0.5 * (global.dyworld.game_stats.players * global.dyworld.game_stats.players))
+				end
+			end
 			if global.dyworld.game_stats.difficulty > 10000 then
 				global.dyworld.game_stats.difficulty = 10000
 			end
@@ -59,8 +66,10 @@ function Event_on_tick(event)
 						v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
 					end
 				end
-				Food_Lose(v.id, 1)
-				Water_Lose(v.id, 1)
+				if Dy_Sett.Difficulty ~= "Easy" then
+					Food_Lose(v.id, 1)
+					Water_Lose(v.id, 1)
+				end
 				if v.story_gui and v.alive and not game.players[v.id].opened_self then
 					local player = game.players[v.id]
 					Close_Story_GUI(player, v.id)
@@ -77,12 +86,18 @@ function Event_on_tick(event)
 					local player = game.players[v.id]
 					Close_SMN_GUI(player, v.id)
 					SMN_GUI(player, v.id)
-					player.gui.top.DyDs_SMN_GUI.selected_tab_index = global.dyworld.players[v.id].smn_gui_index
+					if player.gui.top.DyDs_SMN_GUI then
+						player.gui.top.DyDs_SMN_GUI.selected_tab_index = global.dyworld.players[v.id].smn_gui_index
+					end
 				end
 				Bonuses(v.id)
-				if global.dyworld_story and v.alive then
-					if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].location_objective then
-						Story_Objectives("position", v.id, (game.players[v.id].position.x), (game.players[v.id].position.y))
+				if global.dyworld_story and v.alive and not global.dyworld.game_stats.story_pause then
+					for aaaa,Phase in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
+						if Phase.type_1 == "position" then
+							if not remote.call("space-exploration", "remote_view_is_active", {player = game.players[v.id]}) then
+								Story_Objectives("position", v.id, (game.players[v.id].position.x), (game.players[v.id].position.y))
+							end
+						end
 					end
 				end
 			end
@@ -100,23 +115,25 @@ function Event_on_tick(event)
 			PlayerPrint("You are playing WITHOUT the story added. If you want to play with it, start a new game with the mod scenario added by DyWorld. (NOT NORMAL FREEPLAY). If this is intentional, ignore this message")
 		end
 	end
-	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_attack and global.dyworld_story and settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful") then
+	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].attack and global.dyworld_story and settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful") then
 		if event.tick%(Pick_Attack_Time()) == (Pick_Attack_Time() - 1) then
-			if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
-			local Loc = Pick_Random_Attack_Location()
-			local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 10))
-			local Surface = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].enemy_surface
-			game.surfaces[Surface].build_enemy_base(Loc, Str)
-			
-			global.dyworld.game_stats.attack_loc_amount = Str
-			global.dyworld.game_stats.attack_loc_x = Loc.x
-			global.dyworld.game_stats.attack_loc_y = Loc.y
-			if global.dyworld.game_stats.attack_warning_3 then
-				AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
-			elseif global.dyworld.game_stats.attack_warning_2 then
-				AttackPrint({"DyDs-story.attack-2", Str})
-			elseif global.dyworld.game_stats.attack_warning_1 then
-				AttackPrint({"DyDs-story.attack-1"})
+			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].attack) do
+				if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
+				local Loc = Pick_Random_Attack_Location(v)
+				local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 10))
+				local Surface = v
+				game.surfaces[Surface].build_enemy_base(Loc, Str)
+				
+				global.dyworld.game_stats.attack_loc_amount = Str
+				global.dyworld.game_stats.attack_loc_x = Loc.x
+				global.dyworld.game_stats.attack_loc_y = Loc.y
+				if global.dyworld.game_stats.attack_warning_3 then
+					AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
+				elseif global.dyworld.game_stats.attack_warning_2 then
+					AttackPrint({"DyDs-story.attack-2", Str})
+				elseif global.dyworld.game_stats.attack_warning_1 then
+					AttackPrint({"DyDs-story.attack-1"})
+				end
 			end
 		end
 	end

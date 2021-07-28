@@ -38,7 +38,9 @@ function Event_on_player_mined_item(event)
 	
 	if global.dyworld_story then
 		----- Story Objective Check -----
-		Story_Objectives("mining-item", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("mining-item", event)
+		end
 	end
 end
 
@@ -51,7 +53,9 @@ function Event_on_pre_player_mined_item(event)
 	
 	if global.dyworld_story then
 		----- Story Objective Check -----
-		Story_Objectives("pre-mining-item", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("pre-mining-item", event)
+		end
 	end
 end
 
@@ -69,10 +73,11 @@ function Event_on_player_mined_entity(event)
 	
 	----- Building Placement -----
 	if Entity_Check(type) then
-		for k,v in pairs(global.dyworld.game_stats.building_locations) do
+		local surface = event.entity.surface.name
+		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
+		for k,v in pairs(global.dyworld.game_stats.building_locations[surface]) do
 			if (position.x == v.posx and position.y == v.posy) then
-				table.remove(global.dyworld.game_stats.building_locations, k)
-				--debug("removed building at: "..position.x..", "..position.y)
+				table.remove(global.dyworld.game_stats.building_locations[surface], k)
 				break
 			end
 		end
@@ -150,10 +155,11 @@ function Event_on_robot_mined_entity(event)
 	
 	----- Building Placement -----
 	if Entity_Check(type) then
-		for k,v in pairs(global.dyworld.game_stats.building_locations) do
+		local surface = event.entity.surface.name
+		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
+		for k,v in pairs(global.dyworld.game_stats.building_locations[surface]) do
 			if (position.x == v.posx and position.y == v.posy) then
-				table.remove(global.dyworld.game_stats.building_locations, k)
-				--debug("removed building at: "..position.x..", "..position.y)
+				table.remove(global.dyworld.game_stats.building_locations[surface], k)
 				break
 			end
 		end

@@ -61,13 +61,18 @@ function Event_on_built_entity(event)
 	----- Building Placement -----
 	if Entity_Check(type) then
 		local BuildingTable = {posx = position.x, posy = position.y}
-		table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
+		local surface = event.created_entity.surface.name
+		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
+		table.insert(global.dyworld.game_stats.building_locations[surface], BuildingTable)
 		--debug("build at: "..position.x..", "..position.y)
 	end
 	
 	if global.dyworld_story then
 		----- Story Objective Check -----
-		Story_Objectives("building-player", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("building-player", event)
+			Story_Side_Objectives("build", event, 1)
+		end
 		
 		
 		if (type == "radar") then
@@ -131,12 +136,46 @@ function Event_on_built_entity(event)
 	end
 end
 
+function Event_on_player_built_tile(event)
+	local player = game.players[event.player_index]
+	local force = player.force
+	local id = event.player_index
+	local name = event.tile.name
+	local Time = global.dyworld.game_stats.time_stamp
+	
+	----- Global counter -----
+	if not global.dyworld.game_stats.build_names[name] then
+		global.dyworld.game_stats.build_names[name] = 1
+	else
+		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
+	end
+	
+	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
+	if not global.dyworld.game_stats.build[name] then
+		global.dyworld.game_stats.build[name] = true
+	end
+	
+	----- Personal counter -----
+	global.dyworld.players[id].build = global.dyworld.players[id].build + 1
+	global.dyworld.game_stats.build_amount = global.dyworld.game_stats.build_amount + 1
+	
+	
+	if global.dyworld_story then
+		----- Story Objective Check -----
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("building-tile", event)
+			Story_Side_Objectives("build-tile", event, 1)
+		end
+	end
+end
+
 function Event_on_robot_built_entity(event)
 	--local player = game.players[event.player_index]
 	--local force = player.force
 	--local id = event.player_index
 	local name = event.created_entity.name
 	local position = event.created_entity.position
+	local surface = event.created_entity.surface.name
 	local type = event.created_entity.type
 	
 	----- Global counter -----
@@ -154,7 +193,9 @@ function Event_on_robot_built_entity(event)
 	----- Building Placement -----
 	if Entity_Check(type) then
 		local BuildingTable = {posx = position.x, posy = position.y}
-		table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
+		local surface = event.created_entity.surface.name
+		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
+		table.insert(global.dyworld.game_stats.building_locations[surface], BuildingTable)
 		--debug("build at: "..position.x..", "..position.y)
 	end
 	
@@ -202,7 +243,10 @@ function Event_on_robot_built_entity(event)
 		end
 		
 		----- Story Objective Check -----
-		Story_Objectives("building-robot", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("building-robot", event)
+			Story_Side_Objectives("build", event, 1)
+		end
 		
 		-- Increase Difficulty 
 		if (global.dyworld.game_stats.difficulty < 10000) then
@@ -226,14 +270,47 @@ function Event_on_robot_built_entity(event)
 	end
 end
 
+function Event_on_robot_built_tile(event)
+	local name = event.tile.name
+	
+	----- Global counter -----
+	if not global.dyworld.game_stats.build_names[name] then
+		global.dyworld.game_stats.build_names[name] = 1
+	else
+		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
+	end
+	
+	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
+	if not global.dyworld.game_stats.build[name] then
+		global.dyworld.game_stats.build[name] = true
+	end
+	
+	if global.dyworld_story then
+		----- Story Objective Check -----
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("building-tile", event)
+			Story_Side_Objectives("build-tile", event, 1)
+		end
+	end
+end
+
 function Event_script_raised_built(event)
 	script.on_event(remote.call("space-exploration", "get_on_player_respawned_event"), Event_on_player_respawned_script)
+	if global.dyworld_story and not global.dyworld.game_stats.story_pause then
+		Story_Objectives("scripted-build", event)
+		Story_Side_Objectives("build-2", event, 1)
+	end
+end
+
+function Event_built_test(event)
+	--[[if global.dyworld_story then
+		Story_Objectives("scripted-build", event)
+		Story_Side_Objectives("build-2", event, 1)
+	end]]
+	PlayerPrint(event.entity.name)
 end
 
 function Event_script_raised_revive(event)
-	--local player = game.players[event.player_index]
-	--local force = player.force
-	--local id = event.player_index
 	local name = event.entity.name
 	local position = event.entity.position
 	local type = event.entity.type
@@ -253,11 +330,19 @@ function Event_script_raised_revive(event)
 	----- Building Placement -----
 	if Entity_Check(type) then
 		local BuildingTable = {posx = position.x, posy = position.y}
-		table.insert(global.dyworld.game_stats.building_locations, BuildingTable)
-		--debug("build at: "..position.x..", "..position.y)
+		local surface = event.entity.surface.name
+		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
+		table.insert(global.dyworld.game_stats.building_locations[surface], BuildingTable)
 	end
 	
 	if global.dyworld_story then
+
+		----- Story Objective Check -----
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("scripted-build", event)
+			Story_Side_Objectives("build-2", event, 1)
+		end
+
 		-- Reenable Minimap
 		if (type == "radar") then
 			if (name == "burner-radar") then
@@ -299,9 +384,6 @@ function Event_script_raised_revive(event)
 				end
 			end
 		end
-		
-		----- Story Objective Check -----
-		Story_Objectives("scripted-build", event)
 		
 		-- Increase Difficulty 
 		if (global.dyworld.game_stats.difficulty < 10000) then

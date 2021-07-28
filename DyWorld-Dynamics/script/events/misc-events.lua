@@ -12,7 +12,9 @@ end
 
 function Event_on_chunk_generated(event)
 		----- Story Objective Check -----
-		Story_Objectives("chunk-gen", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("chunk-gen", event)
+		end
 	
 	----- Global counter -----
 	if not global.dyworld.game_stats.chunks then
@@ -136,7 +138,9 @@ function Event_on_research_finished(event)
 	local name = research.name
 	if global.dyworld_story then
 		----- Story Objective Check -----
-		Story_Objectives("research", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("research", event)
+		end
 	end
 	if not global.dyworld.research_done[event.research.name] then
 		table.insert(global.dyworld.research_done, event.research.name)
@@ -210,7 +214,9 @@ end
 function Event_on_character_corpse_expired(event)
 	if global.dyworld_story then
 		----- Story Objective Check -----
-		Story_Objectives("corpse-player", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("corpse-player", event)
+		end
 	end
 end
 
@@ -220,7 +226,13 @@ function Event_on_rocket_launched(event)
     local inventory = rocket.get_inventory(1)
     local contents = inventory.get_contents()
 		----- Story Objective Check -----
-		Story_Objectives("launch-rocket", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("launch-rocket", event)
+			Story_Side_Objectives("rocket", event, 1)
+			for k,v in pairs(contents) do
+				Story_Side_Objectives("satellite", event, v, k)
+			end
+		end
 	
 	----- Global counter -----
 	if not global.dyworld.game_stats.rockets_launch_items then global.dyworld.game_stats.rockets_launch_items = {} end
@@ -308,7 +320,10 @@ game.player.print(FIND())
 
 function Event_on_sector_scanned(event)
 		----- Story Objective Check -----
-		Story_Objectives("sector-scan", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("sector-scan", event)
+			Story_Side_Objectives("scanning", event, 1)
+		end
 	
 	----- Global counter -----
 	if not global.dyworld.game_stats.sector_scanned then

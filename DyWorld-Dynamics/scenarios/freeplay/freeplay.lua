@@ -40,6 +40,13 @@ local created_items = function()
     ["death-implant-3"] = 1,
     ["death-implant-4"] = 1,
     ["death-implant-5"] = 1,
+    ["ammo-nano-constructors"] = 1,
+    ["se-space-capsule"] = 1,
+    ["se-thruster-suit"] = 1,
+    ["se-rocket-launch-pad"] = 1,
+    ["rocket-silo-4"] = 1,
+    ["se-cargo-rocket-section"] = 100,
+    ["se-lifesupport-canister"] = 100,
   }
 end
 

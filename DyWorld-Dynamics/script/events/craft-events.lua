@@ -19,7 +19,7 @@ function Event_on_player_crafted_item(event)
 	global.dyworld.players[id].crafted = global.dyworld.players[id].crafted + count
 	global.dyworld.game_stats.crafted_amount = global.dyworld.game_stats.crafted_amount + count
 	
-	if global.dyworld_story then
+	if global.dyworld_story and not global.dyworld.game_stats.story_pause then
 		----- Story Objective Check -----
 		Story_Objectives("crafting", event)
 	end

@@ -2,7 +2,7 @@ require("data.prefix")
 require("data.prefix-data")
 
 debugger = Dy_Sett.Debug
-Version_Build = "0.7.99"
+Version_Build = "0.7.100"
 Food_Start = debugger and 250000 or 2500
 Water_Start = debugger and 500000 or 5000
 
@@ -18,6 +18,8 @@ require("script/database/food")
 require("script/database/implants")
 require("script/database/dyson")
 require("script/database/mining")
+require("script/database/objectives-side")
+require("script/database/story")
 require("script/lualib/inserter")
 
 -- GUI
@@ -55,11 +57,14 @@ script.on_init(Event_on_init)
 script.on_event(defines.events.on_tick, Event_on_tick)
 
 -- Build Events --
-script.on_event(defines.events.on_built_entity, Event_on_built_entity)
-script.on_event(defines.events.on_robot_built_entity, Event_on_robot_built_entity)
 script.on_event(defines.events.script_raised_built, Event_script_raised_built)
 script.on_event(defines.events.script_raised_revive, Event_script_raised_revive)
+script.on_event(defines.events.on_built_entity, Event_on_built_entity)
+script.on_event(defines.events.on_robot_built_entity, Event_on_robot_built_entity)
 script.on_event(defines.events.on_player_used_capsule, Event_on_player_used_capsule)
+script.on_event(defines.events.on_player_built_tile, Event_on_player_built_tile)
+script.on_event(defines.events.on_robot_built_tile, Event_on_robot_built_tile)
+--script.on_event(defines.events.on_trigger_created_entity, Event_built_test)
 
 -- Mine Events
 script.on_event(defines.events.on_player_mined_entity, Event_on_player_mined_entity)
@@ -85,7 +90,6 @@ script.on_event(defines.events.on_sector_scanned, Event_on_sector_scanned)
 script.on_event(defines.events.on_character_corpse_expired, Event_on_character_corpse_expired)
 
 -- Player Events
-script.on_event(defines.events.script_raised_revive, Event_on_raised_revive)
 script.on_event(defines.events.on_player_changed_force, Event_on_player_changed_force)
 script.on_event(defines.events.on_player_created, Event_on_player_created)
 script.on_event(defines.events.on_player_respawned, Event_on_player_respawned)
@@ -144,6 +148,19 @@ remote.add_interface("DyWorld",
 		nmb = nmb or 1
 		for i = 1,nmb do
 			Phase_Forward()
+		end
+	end,
+	
+	Reset_Side_Objectives = function(nmb)
+		Populate_Side_Objectives_Table_Startup(true)
+	end,
+	
+	Pause_Story = function(nmb)
+		if not global.dyworld.game_stats.story_pause then global.dyworld.game_stats.story_pause = false end
+		if global.dyworld.game_stats.story_pause then
+			global.dyworld.game_stats.story_pause = false
+		else
+			global.dyworld.game_stats.story_pause = true
 		end
 	end,
 	

@@ -1,26 +1,4 @@
-mod_gui = require("__core__/lualib/mod-gui")
 
-function Dy_update_overhead_buttons(player)
-	local button_flow = mod_gui.get_button_flow(player)
-	if button_flow["dyworld_story"] then
-		button_flow["dyworld_story"].destroy()
-	end
-	button_flow.add{type = "sprite-button", name = "dyworld_story", sprite = "virtual-signal/dyworld_story_button", tooltip = {"looped-name.dyworld_story_button"}}
-	if button_flow["dyworld_stats"] then
-		button_flow["dyworld_stats"].destroy()
-	end
-	button_flow.add{type = "sprite-button", name = "dyworld_stats", sprite = "virtual-signal/dyworld_stats_button", tooltip = {"looped-name.dyworld_stats_button"}}
-	if button_flow["dyworld_smn"] then
-		button_flow["dyworld_smn"].destroy()
-	end
-	button_flow.add{type = "sprite-button", name = "dyworld_smn", sprite = "item/satellite", tooltip = {"looped-name.dyworld_smn_button"}}
-	if button_flow["dyworld_phase_forward"] then
-		button_flow["dyworld_phase_forward"].destroy()
-	end
-	if debugger then
-		button_flow.add{type = "sprite-button", name = "dyworld_phase_forward", sprite = "item/satellite", tooltip = {"looped-name.dyworld_smn_button"}}
-	end
-end
 
 function Event_on_raised_revive(event)
 	--local id = event.player_index
@@ -107,7 +85,6 @@ function Event_on_player_died(event)
 	local id = event.player_index
 	
 	global.dyworld.players[id].alive = false
-	Dy_update_overhead_buttons(player)
 	
 end
 
@@ -200,7 +177,6 @@ function Event_on_player_joined_game(event)
 	
 	global.dyworld.players[id].playing = true
 	global.dyworld.players[id].alive = true
-	Dy_update_overhead_buttons(player)
 	
 end
 
@@ -234,7 +210,6 @@ function Event_on_player_respawned(event)
 	global.dyworld.players[id].distance = 0
 	global.dyworld.players[id].distance_car = 0
 	global.dyworld.players[id].distance_train = 0
-	Dy_update_overhead_buttons(player)
 end
 
 function Event_on_player_respawned_script(event)

@@ -105,6 +105,6 @@ end
 
 for k,v in pairs(data.raw.corpse) do
 	if v.time_before_removed then
-		v.time_before_removed = 60 * 60 * 60 * 2 -- 2 hours
+		v.time_before_removed = 60 * 60 * 60 * 1 -- 1 hours
 	end
 end

@@ -4,7 +4,7 @@
 function Event_on_entity_died(event)
 	local force = event.force  -- force that kill
 	local killer = event.cause -- cause of the kill
-	local type_killed = event.entity.type 
+	local type_killed = event.entity.type
 	local name = event.entity.name
 	local position = event.entity.position
 	if killer and killer.valid and killer.type == "character" then
@@ -30,10 +30,11 @@ function Event_on_entity_died(event)
 	
 	----- Building Placement -----
 	if Entity_Check(type_killed) then
-		for k,v in pairs(global.dyworld.game_stats.building_locations) do
+		local surface = event.entity.surface.name
+		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
+		for k,v in pairs(global.dyworld.game_stats.building_locations[surface]) do
 			if (position.x == v.posx and position.y == v.posy) then
-				table.remove(global.dyworld.game_stats.building_locations, k)
-				--debug("removed building at: "..position.x..", "..position.y)
+				table.remove(global.dyworld.game_stats.building_locations[surface], k)
 				break
 			end
 		end
@@ -41,7 +42,10 @@ function Event_on_entity_died(event)
 	
 	if global.dyworld_story then
 		----- Story Objective Check -----
-		Story_Objectives("died", event)
+		if not global.dyworld.game_stats.story_pause then
+			Story_Objectives("died", event)
+			Story_Side_Objectives("kill", event, 1)
+		end
 		
 		if (type_killed == "radar") then
 			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end

@@ -58,7 +58,7 @@ function Food_Lose(id, mult)
 	global.dyworld.players[id].food = Round((global.dyworld.players[id].food - (global.dyworld.players[id].food_rate * mult)), 2)
 	
 	if global.dyworld.players[id].food <= 0 and global.dyworld.players[id].alive then
-		local P_S = global.dyworld.players[id].surface.name
+		local P_S = global.dyworld.players[id].surface
 		local P_X = global.dyworld.players[id].posx
 		local P_Y = global.dyworld.players[id].posy
 		local P_Loc = game.surfaces[P_S].find_entity("character", {P_X,P_Y})
@@ -98,7 +98,7 @@ function Water_Lose(id, mult)
 	global.dyworld.players[id].water = Round((global.dyworld.players[id].water - (global.dyworld.players[id].water_rate * mult)), 2)
 	
 	if global.dyworld.players[id].water <= 0 and global.dyworld.players[id].alive then
-		local P_S = global.dyworld.players[id].surface.name
+		local P_S = global.dyworld.players[id].surface
 		local P_X = global.dyworld.players[id].posx
 		local P_Y = global.dyworld.players[id].posy
 		local P_Loc = game.surfaces[P_S].find_entity("character", {P_X,P_Y})

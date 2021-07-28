@@ -1,61 +1,28 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.5
-Date: ??. 07. 2021
-  Features:
-    - 
-  Changes:
-    - 
-  Compatibility:
-    - 
-  Required Mods:
-    - Space Exploration: required version: 0.5.72 > 0.5.76
----------------------------------------------------------------------------------------------------
-Version: 0.1.4
-Date: 20. 07. 2021
-  Features:
-    - Added in script for reading total entries in the data tables. Read factorio-current.log once the game has loaded and is on main menu (bottom of the log file)
-  Changes:
-    - Updated some scripts to work better
-    - Changed around several items from other mods to DyWorld item groups
-  Other Mods:
-    - Space Exploration: Fixed technology mishaps
-    - Space Exploration: required version: 0.5.58 > 0.5.72
-    - Robot Attrition: Fixed technology mishaps
-    - Nanobots: Fixed technology mishaps
-    - AAI-Industry: Fixed technology mishaps
-    - DyWorld-Dynamics: required version: 0.7.97 > 0.7.99
-    - Space Exploration Graphics Part 5: required version: 0.1.1 > 0.1.2
----------------------------------------------------------------------------------------------------
-Version: 0.1.3
-Date: 27. 06. 2021
-  Other Mods:
-    - Space Exploration: Removed science pack replacer from SE techs
-    - Added in more automated compatibility patchers
----------------------------------------------------------------------------------------------------
-Version: 0.1.2
-Date: 23. 06. 2021
-  Other Mods:
-    - Space Exploration: Fixed Meteor mining results
----------------------------------------------------------------------------------------------------
-Version: 0.1.1
-Date: 16. 06. 2021
-  Other Mods:
-    - Added in automated compatibility for Science Packs added by DyWorld
-    - Added in automated compatibility for technologies replaced by DyWorld. All technologies should transition to DyWorld technologies (Most SE techs are not touched)
----------------------------------------------------------------------------------------------------
 Version: 0.1.0
-Date: 10. 06. 2021
+Date: 28. 07. 2021
   Features:
     - First Release
+    - Added in script for reading total entries in the data tables. Read factorio-current.log once the game has loaded and is on main menu (bottom of the log file)
+    - Added in automated compatibility for Science Packs added by DyWorld-Dynamics
   Minor Features:
     - Rocks, Boulders, Trees and Wreckages now have a small chance (Extremely Small!) to give an Exotic Particle
+  Bugfixes:
+    - Fixed technologies not being able to research
   Changes:
     - Made Recipe adding to Technologies loaded as last (to prevent overrides)
     - Improved loottables of rocks and boulders to only do rocks and boulders (not wreckages, etc)
-  Bugfixes:
-    - Fixed technologies not being able to research
-  Balancing:
-    - Rewrote Tree mining results. Should be a bit more balanced now
-  Other Mods:
-    - AAI-Industry wreckage now has DyWorld materials
-    - Added in more automated compatibility patchers
+    - Changed around several items from other mods to DyWorld item groups
+  Compatibility:
+    - Added in automated compatibility for technologies replaced by DyWorld-Dynamics. All technologies should transition to DyWorld technologies (Most SE techs are not touched)
+    - Added in automated compatibility patchers
+    - Robot Attrition: Fixed technology mishaps
+    - Nanobots: Fixed technology mishaps
+    - AAI-Industry: Fixed technology mishaps
+    - AAI-Industry: wreckage now has DyWorld materials
+    - DyWorld-Dynamics: required version: 0.7.97 > 0.7.99
+    - Space Exploration: Fixed Meteor mining results
+    - Space Exploration: Fixed technology mishaps
+    - Space Exploration: Removed science pack replacer from SE techs
+    - Space Exploration: required version: 0.5.58 > 0.5.72
+    - Space Exploration Graphics Part 5: required version: 0.1.1 > 0.1.2

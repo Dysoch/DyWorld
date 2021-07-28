@@ -76,24 +76,12 @@ function Table_Empty(T)
     return true
 end
 
-function Story_tablelength(T)
-	local count = 0
-	for k,v in pairs(T) do 
-		if (v.type_1 == "label" and (v.name == "explore" or v.name == "wait")) then
-			-- do nothing, since its a dummy objective
-		else
-			count = count + 1 
-		end
-	end
-	return count
-end
-
-function Pick_Random_Attack_Location()
+function Pick_Random_Attack_Location(surface)
 	local Location = {x = 0, y = 0}
-	local Loc_table = global.dyworld.game_stats.building_locations
+	local Loc_table = global.dyworld.game_stats.building_locations[surface]
 	local randomized = math.random(#Loc_table)
 	Location = {x = Loc_table[randomized].posx, y = Loc_table[randomized].posy}
-	--debug("Random Attack Location: x = "..Location.x..", y = "..Location.y)
+	--debug("Random Attack Location on "..surface..": x = "..Location.x..", y = "..Location.y)
 	return Location
 end
 

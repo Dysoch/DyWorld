@@ -4,7 +4,7 @@ data:extend({
     type = "recipe",
     name = "cast-iron-2",
 	category = "bloomery",
-	main_product = "iron-plate",
+	main_product = "iron-ingot",
     normal =
     {
       ingredients =
@@ -15,12 +15,12 @@ data:extend({
       },
       results = 
       {
-        {type = "item", name = "iron-plate", amount = 35},
+        {type = "item", name = "iron-ingot", amount = 8},
         {type = "item", name = "canister-empty", amount = 2},
         {type = "item", name = "slag", amount_min = 10, amount_max = 20},
       },
 	  energy_required = 30,
-	  main_product = "iron-plate",
+	  main_product = "iron-ingot",
 	  enabled = false,
     },
   },

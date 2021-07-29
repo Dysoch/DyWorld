@@ -4,7 +4,7 @@ data:extend({
     type = "recipe",
     name = "cast-tin-2",
 	category = "bloomery",
-	main_product = "tin-plate",
+	main_product = "tin-ingot",
     normal =
     {
       ingredients =
@@ -15,12 +15,12 @@ data:extend({
       },
       results = 
       {
-        {type = "item", name = "tin-plate", amount = 35},
+        {type = "item", name = "tin-ingot", amount = 8},
         {type = "item", name = "canister-empty", amount = 2},
         {type = "item", name = "slag", amount_min = 10, amount_max = 20},
       },
 	  energy_required = 30,
-	  main_product = "tin-plate",
+	  main_product = "tin-ingot",
 	  enabled = false,
     },
   },

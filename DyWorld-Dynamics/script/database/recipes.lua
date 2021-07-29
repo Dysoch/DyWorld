@@ -90,8 +90,6 @@ Story_Recipes  = {
 	["9mm-mag-iron-del"] = {act = 1, phase = 10},
 	
 	----- Act 2, Phase 3 -----
-	["heal-station"] = {act = 2, phase = 3},
-	["dead-pill"] = {act = 2, phase = 3},
 	["lab-2"] = {act = 2, phase = 3},
 	
 	----- Act 2, Phase 5 -----

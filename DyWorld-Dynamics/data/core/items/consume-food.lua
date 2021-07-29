@@ -36,7 +36,7 @@ DyDS_Add_Food({
     --icons = {{icon = DyDs_path_icon.."wheat.png"}},
 	stack_size = 500,
 	subgroup = DyDs.."consume-food",
-	rate = 4,
+	rate = 2,
 	cat = "food",
 })
 
@@ -45,6 +45,6 @@ DyDS_Add_Food({
     icons = {{icon = DyDs_path_icon.."carrot.png"}},
 	stack_size = 500,
 	subgroup = DyDs.."consume-food",
-	rate = 4,
+	rate = 2,
 	cat = "food",
 })

@@ -112,7 +112,6 @@ end
 
 
 -- Nanobots --
-data.raw.ammo["ammo-nano-constructors"].ammo_type.action.action_delivery.target_effects[1].trigger_created_entity = true
 data.raw.ammo["ammo-nano-constructors"].magazine_size = 100000000000000000000000000000000
 data.raw.ammo["ammo-nano-constructors"].localised_name = {"DyDs-story.coica-1"}
 data.raw.ammo["ammo-nano-constructors"].localised_description = {"DyDs-story.coica-2"}

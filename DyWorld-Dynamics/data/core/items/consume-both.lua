@@ -9,7 +9,7 @@ DyDS_Add_Food({
 	order = "fish-cooked",
 	stack_size = 500,
 	subgroup = DyDs.."consume-both",
-	rate = 2,
+	rate = 1,
 	cat = "both",
 })
 
@@ -19,7 +19,7 @@ DyDS_Add_Food({
 	order = "fish-pike-cooked",
 	stack_size = 500,
 	subgroup = DyDs.."consume-both",
-	rate = 2,
+	rate = 0.75,
 	cat = "both",
 })
   
@@ -29,6 +29,6 @@ DyDS_Add_Food({
 	order = "fish-salmon-cooked",
 	stack_size = 500,
 	subgroup = DyDs.."consume-both",
-	rate = 2,
+	rate = 0.75,
 	cat = "both",
 })

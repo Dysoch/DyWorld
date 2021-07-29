@@ -24,6 +24,7 @@ Date: ??. 07. 2021
     - Rewrote Story Migration script. It now migrates every phase to its new version, except the one you are on. No more lost progress (except this time, needed for rewrite tables)
     - Rewrote Story scripts completely. This runs faster, allows more flexible things to happen
     - Rewrote Story Startup script. It now works of a preset database, that allows edits from other mods
+    - Fixed story removed after migration
   Survival:
     - 
   Translations:

@@ -4,13 +4,7 @@
 function Event_on_configuration_changed()
 	local Time = global.dyworld.game_stats.time_stamp
 	if (global.dyworld and global.dyworld.story and global.dyworld.story.act) then
-		if global.dyworld.version == "0.7.99" then
-			Story_Migrate(nil, nil, true)
-			debug("Overriding Story")
-		else
-			Story_Migrate(global.dyworld.story.act, global.dyworld.story.phase)
-			debug("Overriding Story without overriding current phase")
-		end
+		Story_Migrate(global.dyworld.story.act, global.dyworld.story.phase)
 	end
 	PlayerPrint("Update for DyWorld-Dynamics detected. Updating Story. Objectives reset. Migrated from version: "..global.dyworld.version.." to version: "..Version_Build)
 	

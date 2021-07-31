@@ -10,6 +10,16 @@ for k in pairs(Ruins) do
     table.insert(keysetRuins, k)
 end
 
+local function Check_Tile(Tile)
+	if Tile.name == "se-space" then return false
+	elseif Tile.name == "se-asteroid" then return false
+	elseif Tile.name == "se-regolith" then return false
+	elseif Tile.name == "se-spaceship-floor" then return false
+	elseif Tile.name == "out-of-map" then return false
+	else return true
+	end
+end
+
 function Event_on_chunk_generated(event)
 		----- Story Objective Check -----
 		if not global.dyworld.game_stats.story_pause then
@@ -40,62 +50,57 @@ function Event_on_chunk_generated(event)
 	-- Generate Enemies -- 
 	if not global.dyworld.game_stats.enemy_1_chunk then global.dyworld.game_stats.enemy_1_chunk = 1000 end
 	if not global.dyworld.game_stats.enemy_2_chunk then global.dyworld.game_stats.enemy_2_chunk = 2000 end
-	if not global.dyworld.game_stats.enemy_3_chunk then global.dyworld.game_stats.enemy_3_chunk = 3000 end
-	if not global.dyworld.game_stats.enemy_4_chunk then global.dyworld.game_stats.enemy_4_chunk = 4000 end
-	if not global.dyworld.game_stats.enemy_5_chunk then global.dyworld.game_stats.enemy_5_chunk = 5000 end
+	if not global.dyworld.game_stats.enemy_3_chunk then global.dyworld.game_stats.enemy_3_chunk = 4000 end
+	if not global.dyworld.game_stats.enemy_4_chunk then global.dyworld.game_stats.enemy_4_chunk = 6000 end
+	if not global.dyworld.game_stats.enemy_5_chunk then global.dyworld.game_stats.enemy_5_chunk = 10000 end
 	if surface_name ~= "starmap-1" then
-		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_1_chunk then
-			--BuildEntity = "dy-spawner-1"
-			BuildEntity = "biter-spawner"
+		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_1_chunk and not Dy_Find_Str(surface_name, "Orbit") then
+			BuildEntity = "dyworld-base-1"
 			PosX = event.area.left_top.x + math.random(-63,63)
 			PosY = event.area.left_top.y + math.random(-63,63)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
-				global.dyworld.game_stats.enemy_1_chunk = global.dyworld.game_stats.enemy_1_chunk + 50
+				global.dyworld.game_stats.enemy_1_chunk = global.dyworld.game_stats.enemy_1_chunk + 100
 				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 1)")
 			end
 		end
-		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_2_chunk then
-			--BuildEntity = "dy-spawner-2"
-			BuildEntity = "biter-spawner"
+		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_2_chunk and surface_name ~= "nauvis" and not Dy_Find_Str(surface_name, "Orbit") then
+			BuildEntity = "dyworld-base-2"
 			PosX = event.area.left_top.x + math.random(-63,63)
 			PosY = event.area.left_top.y + math.random(-63,63)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
-				global.dyworld.game_stats.enemy_2_chunk = global.dyworld.game_stats.enemy_2_chunk + 100
+				global.dyworld.game_stats.enemy_2_chunk = global.dyworld.game_stats.enemy_2_chunk + 200
 				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 2)")
 			end
 		end
-		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_3_chunk then
-			--BuildEntity = "dy-spawner-3"
-			BuildEntity = "biter-spawner"
+		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_3_chunk and surface_name ~= "nauvis" and not Dy_Find_Str(surface_name, "Orbit") then
+			BuildEntity = "dyworld-base-3"
 			PosX = event.area.left_top.x + math.random(-63,63)
 			PosY = event.area.left_top.y + math.random(-63,63)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
-				global.dyworld.game_stats.enemy_3_chunk = global.dyworld.game_stats.enemy_3_chunk + 150
+				global.dyworld.game_stats.enemy_3_chunk = global.dyworld.game_stats.enemy_3_chunk + 400
 				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 3)")
 			end
 		end
-		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_4_chunk then
-			--BuildEntity = "dy-spawner-4"
-			BuildEntity = "biter-spawner"
+		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_4_chunk and surface_name ~= "nauvis" and not Dy_Find_Str(surface_name, "Orbit") then
+			BuildEntity = "dyworld-base-4"
 			PosX = event.area.left_top.x + math.random(-63,63)
 			PosY = event.area.left_top.y + math.random(-63,63)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
-				global.dyworld.game_stats.enemy_4_chunk = global.dyworld.game_stats.enemy_4_chunk + 200
+				global.dyworld.game_stats.enemy_4_chunk = global.dyworld.game_stats.enemy_4_chunk + 800
 				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 4)")
 			end
 		end
-		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_5_chunk then
-			--BuildEntity = "dy-spawner-5"
-			BuildEntity = "biter-spawner"
+		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_5_chunk and surface_name ~= "nauvis" and not Dy_Find_Str(surface_name, "Orbit") then
+			BuildEntity = "dyworld-base-5"
 			PosX = event.area.left_top.x + math.random(-63,63)
 			PosY = event.area.left_top.y + math.random(-63,63)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
-				global.dyworld.game_stats.enemy_5_chunk = global.dyworld.game_stats.enemy_5_chunk + 150
+				global.dyworld.game_stats.enemy_5_chunk = global.dyworld.game_stats.enemy_5_chunk + 1600
 				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 5)")
 			end
 		end
@@ -110,7 +115,7 @@ function Event_on_chunk_generated(event)
 				BuildEntity = Ruins_Nauvis[keysetRuins_Nauvis[math.random(#keysetRuins_Nauvis)]]
 				PosX = event.area.left_top.x+math.random(-63,63)
 				PosY = event.area.left_top.y+math.random(-63,63)
-				if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
+				if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} and Check_Tile(game.surfaces[surface_name].get_tile(PosX, PosY)) then
 					game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.neutral}
 					--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Ruins Nauvis)")
 				end
@@ -122,7 +127,7 @@ function Event_on_chunk_generated(event)
 				BuildEntity = Ruins[keysetRuins[math.random(#keysetRuins)]]
 				PosX = event.area.left_top.x+math.random(-63,63)
 				PosY = event.area.left_top.y+math.random(-63,63)
-				if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
+				if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} and Check_Tile(game.surfaces[surface_name].get_tile(PosX, PosY)) then
 					game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.neutral}
 					--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Ruins)")
 				end

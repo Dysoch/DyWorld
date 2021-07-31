@@ -45,7 +45,7 @@ local created_items = function()
     ["se-thruster-suit"] = 1,
     ["se-rocket-launch-pad"] = 1,
     ["rocket-silo-4"] = 1,
-    ["se-cargo-rocket-section"] = 100,
+    ["infinity-chest"] = 10,
     ["se-lifesupport-canister"] = 100,
   }
 end
@@ -124,12 +124,13 @@ local on_player_created = function(event)
 
   if not global.skip_intro then
     if game.is_multiplayer() then
-      player.print({"msg-intro"})
-      player.print({"msg-intro-2"})
+      player.print({"message-act-1-phase-1-1"})
+      player.print({"message-act-1-phase-1-2"})
+      player.print({"message-act-1-phase-1-3"})
     else
-      game.show_message_dialog{text = {"msg-intro"}}
-      game.show_message_dialog{text = {"msg-intro-2"}}
-      --game.show_message_dialog{}
+      game.show_message_dialog{text = {"message-act-1-phase-1-1"}}
+      game.show_message_dialog{text = {"message-act-1-phase-1-2"}}
+      game.show_message_dialog{text = {"message-act-1-phase-1-3"}}
     end
   end
 
@@ -150,11 +151,13 @@ local on_cutscene_waypoint_reached = function(event)
 
   if not global.skip_intro then
     if game.is_multiplayer() then
-      player.print({"msg-intro"})
-      player.print({"msg-intro-2"})
+      player.print({"message-act-1-phase-1-1"})
+      player.print({"message-act-1-phase-1-2"})
+      player.print({"message-act-1-phase-1-3"})
     else
-      game.show_message_dialog{text = {"msg-intro"}}
-      game.show_message_dialog{text = {"msg-intro-2"}}
+      game.show_message_dialog{text = {"message-act-1-phase-1-1"}}
+      game.show_message_dialog{text = {"message-act-1-phase-1-2"}}
+      game.show_message_dialog{text = {"message-act-1-phase-1-3"}}
     end
   end
 end

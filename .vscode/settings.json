@@ -84,6 +84,13 @@
         "gui_1_openGui",
         "gui_1_closeGUI",
         "frameflow3",
-        "serpent"
+        "serpent",
+        "add_biter_die_animation",
+        "make_unit_melee_ammo_type",
+        "biterattackanimation",
+        "biterrunanimation"
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-field"
     ]
 }

@@ -8,10 +8,6 @@ function Event_on_configuration_changed()
 	end
 	PlayerPrint("Update for DyWorld-Dynamics detected. Updating Story. Objectives reset. Migrated from version: "..global.dyworld.version.." to version: "..Version_Build)
 	
-	if global.dyworld.version == "0.7.99" then
-		global.dyworld.game_stats.story_pause = false
-	end
-
 	global.dyworld.version = Version_Build
 	
 	if game.players and game.players[1] then

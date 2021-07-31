@@ -119,20 +119,44 @@ function Event_on_tick(event)
 		if event.tick%(Pick_Attack_Time()) == (Pick_Attack_Time() - 1) then
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].attack) do
 				if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
-				local Loc = Pick_Random_Attack_Location(v)
-				local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 10))
-				local Surface = v
-				game.surfaces[Surface].build_enemy_base(Loc, Str)
-				
-				global.dyworld.game_stats.attack_loc_amount = Str
-				global.dyworld.game_stats.attack_loc_x = Loc.x
-				global.dyworld.game_stats.attack_loc_y = Loc.y
-				if global.dyworld.game_stats.attack_warning_3 then
-					AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
-				elseif global.dyworld.game_stats.attack_warning_2 then
-					AttackPrint({"DyDs-story.attack-2", Str})
-				elseif global.dyworld.game_stats.attack_warning_1 then
-					AttackPrint({"DyDs-story.attack-1"})
+				if v == "player" then
+					for _,player in pairs(global.dyworld.players) do
+						if not Dy_Find_Str(player.surface, "starmap") and not Dy_Find_Str(player.surface, "Orbit") then
+							local Loc = {player.posx, player.posy}
+							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 100))
+							game.surfaces[player.surface].build_enemy_base(Loc, Str)
+							if global.dyworld.game_stats.attack_warning_2 then
+								game.players[player.id].print("Commander, [color=blue]"..Str.."[/color] Natives are coming to attack YOU soon")
+							end
+						end
+					end
+				elseif v == "player-ambush" then
+					for _,player in pairs(global.dyworld.players) do
+						if not Dy_Find_Str(player.surface, "starmap") then
+							local Location = {player.posx, player.posy, player.surface}
+							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 100))
+							Player_Ambush(Location, 50, Str)
+							if global.dyworld.game_stats.attack_warning_2 then
+								game.players[player.id].print("Commander, you are being ambushed!")
+							end
+						end
+					end
+				else
+					local Loc = Pick_Random_Attack_Location(v)
+					local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 20))
+					local Surface = v
+					game.surfaces[Surface].build_enemy_base(Loc, Str)
+					
+					global.dyworld.game_stats.attack_loc_amount = Str
+					global.dyworld.game_stats.attack_loc_x = Loc.x
+					global.dyworld.game_stats.attack_loc_y = Loc.y
+					if global.dyworld.game_stats.attack_warning_3 then
+						AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
+					elseif global.dyworld.game_stats.attack_warning_2 then
+						AttackPrint({"DyDs-story.attack-2", Str})
+					elseif global.dyworld.game_stats.attack_warning_1 then
+						AttackPrint({"DyDs-story.attack-1"})
+					end
 				end
 			end
 		end

@@ -95,15 +95,7 @@ data:extend(
           },
           {
             type = "damage",
-            damage = {amount = 25000, type = "nuclear"}
-          },
-          {
-            type = "damage",
-            damage = {amount = 5000, type = "explosion"}
-          },
-          {
-            type = "damage",
-            damage = {amount = 10000, type = "sonic"}
+            damage = {amount = 50000, type = "exotic-energy"}
           },
           {
             type = "create-entity",
@@ -193,7 +185,7 @@ data:extend(
       },
       {
         type = "area",
-        radius = 5,
+        radius = 10,
         action_delivery =
         {
           type = "instant",
@@ -201,15 +193,7 @@ data:extend(
 		  {
 			{
 		      type = "damage",
-			  damage = {amount = 100, type = "explosion"}
-			},
-			{
-		      type = "damage",
-			  damage = {amount = 100, type = "impact"}
-			},
-			{
-		      type = "damage",
-			  damage = {amount = 200, type = "sonic"}
+			  damage = {amount = 1000, type = "exotic-energy"}
 			},
 		  }
         }
@@ -255,7 +239,7 @@ data:extend(
       },
       {
         type = "area",
-        radius = 15,
+        radius = 25,
         action_delivery =
         {
           type = "instant",
@@ -263,20 +247,7 @@ data:extend(
 		  {
 			{
 		      type = "damage",
-			  damage = {amount = 500, type = "explosion"}
-			},
-			{
-		      type = "damage",
-			  damage = {amount = 500, type = "impact"}
-			},
-			{
-		      type = "damage",
-			  damage = {amount = 2000, type = "nuclear"}
-			},
-			{
-			  type = "destroy-cliffs",
-			  radius = 15,
-			  explosion = "explosion"
+			  damage = {amount = 5000, type = "exotic-energy"}
 			},
 		  }
         }

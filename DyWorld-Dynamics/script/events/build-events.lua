@@ -93,6 +93,7 @@ function Event_on_built_entity(event)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
 			end
 			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
+				global.dyworld.game_stats.attack_warning_2 = true
 				global.dyworld.game_stats.attack_warning_3 = true
 				game.forces.player.ghost_time_to_live = (60*60*60*240)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
@@ -219,6 +220,7 @@ function Event_on_robot_built_entity(event)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
 			end
 			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
+				global.dyworld.game_stats.attack_warning_2 = true
 				global.dyworld.game_stats.attack_warning_3 = true
 				game.forces.player.ghost_time_to_live = (60*60*60*240)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
@@ -362,6 +364,7 @@ function Event_script_raised_revive(event)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
 			end
 			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
+				global.dyworld.game_stats.attack_warning_2 = true
 				global.dyworld.game_stats.attack_warning_3 = true
 				game.forces.player.ghost_time_to_live = (60*60*60*240)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)

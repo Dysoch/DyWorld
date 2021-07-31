@@ -1,9 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.100
-Date: ??. 07. 2021
+Date: 30. 07. 2021
   Major Features:
     - Added in side objectives scripts for act 3,4 and 5
-    - Added in 270 tiered side objectives (random amounts are selected each different game)
+    - Added in 400 tiered side objectives (random amounts are selected each different game)
+    - Added in 10 new spawner
+    - Added in 50 new units
   Minor Features:
     - Added all remaining recipes for science packs
     - Added new GUI special for SMN (Space Mining Network)
@@ -17,6 +19,7 @@ Date: ??. 07. 2021
     - Updated some locales
     - Optimized Mining Network Script
     - Change requirement of fish research
+    - Changed spawning thresholds of enemies
   Story:
     - Story messages have been removed until revised and rewritten version comes out
     - Story messages script is now fully automated. This allows other mods to add story messages
@@ -25,12 +28,9 @@ Date: ??. 07. 2021
     - Rewrote Story scripts completely. This runs faster, allows more flexible things to happen
     - Rewrote Story Startup script. It now works of a preset database, that allows edits from other mods
     - Fixed story removed after migration
-  Survival:
-    - 
+    - Added first part of the story for Act 3
   Translations:
     - German Translation added (made by Maxi_der_ZockerYT). Still WIP
-  Other Mods:
-    - 
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.99
 Date: 20. 07. 2021

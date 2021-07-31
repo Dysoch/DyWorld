@@ -27,6 +27,12 @@ for k,v in pairs(data.raw.tree) do
 		{item = "exotic-partical", amount_min = 1, amount_max = 1, probability = 0.001},
 	}
 	v.localised_description = {"looped-name.tree"}
+	if v.resistances then
+		local insert = {type = "exotic-energy", decrease = 0, percent = 100,}
+		table.insert(v.resistances, insert)
+	else
+		v.resistances = {{type = "exotic-energy", decrease = 0, percent = 100,}}
+	end
 end
 
   -- wetland

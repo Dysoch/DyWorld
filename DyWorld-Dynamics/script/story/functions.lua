@@ -109,10 +109,14 @@ function Phase_Forward()
 					game.surfaces[v.Surface].request_to_generate_chunks({v.PosX, v.PosY}, 1)
 					game.surfaces[v.Surface].force_generate_chunk_requests()
 				end
-				local SAct = global.dyworld.story.act
-				local SPhase = global.dyworld.story.phase
-				local ObjTag = "Dy-Story-Tag-"..SAct.."-"..SPhase.."-"..k
-				v.Tag = ObjTag
+			end
+		end
+		if (v.type_1 == "position" and v.done == false) then
+			local SAct = global.dyworld.story.act
+			local SPhase = global.dyworld.story.phase
+			local ObjTag = "Dy-Story-Tag-"..SAct.."-"..SPhase.."-"..k
+			v.Tag = ObjTag
+			if game.surfaces[v.Surface] then
 				game.forces.player.add_chart_tag(v.Surface, {position = {v.PosX, v.PosY}, object_name = ObjTag, surface = v.Surface, text = "Story Objective"})
 			end
 		end
@@ -137,6 +141,7 @@ function Phase_Forward()
 		game.surfaces["nauvis"].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-500,500)),(math.random(-500,500))}, force = game.forces.enemy, speed = 2.5, target = {-250,250}}
 		global.dyworld.game_stats.difficulty = 1
 	end
+	--[[
 	if (global.dyworld.story.phase == 2 and global.dyworld.story.act == 2) then
 		local Loot = game.surfaces["nauvis"].find_entities_filtered{type = "item-entity", position = {0,0}, radius = 300}
 		for _, item in pairs(Loot) do
@@ -145,21 +150,21 @@ function Phase_Forward()
 				if item.destroy() then end
 			end
 		end
-	end
+	end ]]
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 3) then
 		global.dyworld.game_stats.difficulty = 1
 	end
-	if (global.dyworld.story.phase == 2 and global.dyworld.story.act == 3) then
+	if (global.dyworld.story.phase == 5 and global.dyworld.story.act == 3) then
 		global.dyworld.game_stats.story_pause = true
 	end
 
 	-- Message Feature --
 	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message then
 		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message == 1 then
-			DyLog("DyDs-story.message-act-"..global.dyworld.story.act.."-phase-"..global.dyworld.story.phase.."-1", true)
+			DyLog("DyDs-story.message-act-"..global.dyworld.story.act.."-phase-"..global.dyworld.story.phase.."-1", true, global.dyworld.story.act, global.dyworld.story.phase, true)
 		else
 			for i = 1,(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].message) do
-				DyLog("DyDs-story.message-act-"..global.dyworld.story.act.."-phase-"..global.dyworld.story.phase.."-"..i, true)
+				DyLog("DyDs-story.message-act-"..global.dyworld.story.act.."-phase-"..global.dyworld.story.phase.."-"..i, true, global.dyworld.story.act, global.dyworld.story.phase, true)
 			end
 		end
 	end
@@ -571,7 +576,7 @@ function Check_Side_Objective()
 end
 
 function Story_Side_Objectives(type_1, event, amount, E_Name)
-	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives_side then
+	if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives_side and global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] >= 1 then
 		if type_1 == "build" then
 			local name = event.created_entity.name
 			local type = event.created_entity.type

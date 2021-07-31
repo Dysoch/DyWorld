@@ -30,3 +30,5 @@ function Resist_Tier_1(Mult)
 	}
 	return p
 end
+
+

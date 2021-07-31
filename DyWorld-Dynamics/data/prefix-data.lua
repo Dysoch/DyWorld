@@ -133,17 +133,32 @@ Dy_Focals = {
 	},
 }
 
+local function Round(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	return math.floor(num * mult + 0.5) / mult
+end
+
+function DySetDiffAmmo(Var)
+	if Dy_Sett.Difficulty == "Easy" then
+		return Round((Var * 1.5), 2)
+	elseif Dy_Sett.Difficulty == "Normal" then
+		return Var
+	elseif Dy_Sett.Difficulty == "Hard" then
+		return Round((Var * 0.75), 2)
+	end
+end
+
 Dy_Ammo_Mods = {
-	{Name = "bronze", Mod = 0.35, Tier = 1},
-	{Name = "tin", Mod = 0.3, Tier = 1, Dmg_T = "acid", Dmg_A = 2.5},
-	{Name = "copper", Mod = 0.75, Tier = 1},
-	{Name = "iron", Mod = 1, Tier = 2, Dmg_T = "acid", Dmg_A = 5},
-	{Name = "steel", Mod = 1.5, Tier = 2},
-	{Name = "titanium", Mod = 1.75, Tier = 3},
-	{Name = "aluminium", Mod = 1.25, Tier = 2},
-	{Name = "lead", Mod = 0.25, Tier = 3, Dmg_T = "acid", Dmg_A = 15},
-	{Name = "gold", Mod = 1.65, Tier = 3},
-	{Name = "silver", Mod = 1.45, Tier = 3},
+	{Name = "bronze", Mod = DySetDiffAmmo(0.55), Tier = 1},
+	{Name = "tin", Mod = DySetDiffAmmo(0.5), Tier = 1, Dmg_T = "acid", Dmg_A = 2.5},
+	{Name = "copper", Mod = DySetDiffAmmo(0.95), Tier = 1},
+	{Name = "iron", Mod = DySetDiffAmmo(1.2), Tier = 2, Dmg_T = "acid", Dmg_A = 5},
+	{Name = "steel", Mod = DySetDiffAmmo(1.7), Tier = 2},
+	{Name = "titanium", Mod = DySetDiffAmmo(1.95), Tier = 3},
+	{Name = "aluminium", Mod = DySetDiffAmmo(1.45), Tier = 2},
+	{Name = "lead", Mod = DySetDiffAmmo(0.45), Tier = 3, Dmg_T = "acid", Dmg_A = 15},
+	{Name = "gold", Mod = DySetDiffAmmo(1.85), Tier = 3},
+	{Name = "silver", Mod = DySetDiffAmmo(1.65), Tier = 3},
 }
 
 Dy_Exclude_Recipes = {

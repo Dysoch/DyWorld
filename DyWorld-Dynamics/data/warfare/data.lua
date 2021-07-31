@@ -8,6 +8,9 @@ require(DyDs_data_warfare.. "ammo.beam")
 require(DyDs_data_warfare.. "armor.basic")
 require(DyDs_data_warfare.. "armor.advanced")
 
+-- Enemies --
+require(DyDs_data_warfare.. "enemies.setup")
+
 -- Gun --
 require(DyDs_data_warfare.. "gun.pistol")
 require(DyDs_data_warfare.. "gun.smg")

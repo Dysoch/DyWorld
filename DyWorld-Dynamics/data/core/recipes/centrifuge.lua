@@ -331,4 +331,26 @@ data:extend({
 	  enabled = false,
     },
   },
+  {
+    type = "recipe",
+    name = "cliff-explosives-1",
+	category = "centrifuging",
+	main_product = "cliff-explosives",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "charcoal", amount = 10},
+        {type = "item", name = "sulfur", amount = 1},
+        {type = "fluid", name = "light-oil", amount = 10},
+      },
+      results = 
+      {
+        {type = "item", name = "cliff-explosives", amount = 1},
+      },
+	  energy_required = 2.5,
+	  main_product = "cliff-explosives",
+	  enabled = false,
+    },
+  },
 })

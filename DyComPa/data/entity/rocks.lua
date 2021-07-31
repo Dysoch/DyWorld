@@ -79,6 +79,12 @@ for k,v in pairs(data.raw["simple-entity"]) do
 		if v.loot then
 			v.loot = Rock_Loot_Results
 		end
+		if v.resistances then
+			local insert = {type = "exotic-energy", decrease = 0, percent = 100,}
+			table.insert(v.resistances, insert)
+		else
+			v.resistances = {{type = "exotic-energy", decrease = 0, percent = 100,}}
+		end
 	end
 end
 
@@ -95,6 +101,12 @@ for k,v in pairs(data.raw["simple-entity"]) do
 		end
 		if v.loot then
 			v.loot = Meteor_Loot_Results
+		end
+		if v.resistances then
+			local insert = {type = "exotic-energy", decrease = 0, percent = 100,}
+			table.insert(v.resistances, insert)
+		else
+			v.resistances = {{type = "exotic-energy", decrease = 0, percent = 100,}}
 		end
 	end
 end

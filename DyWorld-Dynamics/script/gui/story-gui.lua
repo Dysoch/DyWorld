@@ -94,7 +94,7 @@ function Story_GUI(player, id)
 						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, Round(getDistance(game.players[id].position.x, game.players[id].position.y, v.PosX, v.PosY), 0)}}
 						frameflow2.add{type = "line", direction = "horizontal"}
 					else
-						frameflow2.add{type = "label", caption = "Location on different Surface"}
+						frameflow2.add{type = "label", caption = "Location on different Surface ("..v.Surface..")"}
 						frameflow2.add{type = "line", direction = "horizontal"}
 					end
 				elseif (v.done == false) then

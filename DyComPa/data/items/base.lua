@@ -25,7 +25,6 @@ data.raw.item["constant-combinator"].hidden = false
 data.raw.item["power-switch"].hidden = false
 data.raw.item["programmable-speaker"].hidden = false
 
-
 data.raw.item["red-wire"].subgroup = DyDs.."material-2"
 data.raw.item["green-wire"].subgroup = DyDs.."material-2"
 
@@ -94,7 +93,6 @@ data.raw.item["chemical-plant"].order = "3"
 data.raw.item["oil-refinery"].subgroup = DyDs.."oil-machines"
 data.raw.item["oil-refinery"].order = "2"
 
-
 data.raw.item["equipment-bot-chip-trees"].subgroup = DyDs.."equipment-qol"
 data.raw.item["equipment-bot-chip-nanointerface"].subgroup = DyDs.."equipment-qol"
 data.raw.item["equipment-bot-chip-launcher"].subgroup = DyDs.."equipment-defense"
@@ -103,13 +101,11 @@ data.raw.item["equipment-bot-chip-feeder"].subgroup = DyDs.."equipment-qol"
 data.raw.item["roboport-interface"].subgroup = DyDs.."equipment-qol"
 
 -- Capsules --
-
 data.raw.capsule["discharge-defense-remote"].subgroup = DyDs.."equipment-defense"
 data.raw.capsule["raw-fish"].subgroup = DyDs.."material-1"
 if data.raw.capsule["raw-fish"] and data.raw.capsule["raw-fish"].capsule_action and data.raw.capsule["raw-fish"].capsule_action.attack_parameters and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1] and data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1].damage.amount then
 	data.raw.capsule["raw-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1].damage.amount = 25
 end
-
 
 -- Nanobots --
 data.raw.ammo["ammo-nano-constructors"].magazine_size = 100000000000000000000000000000000

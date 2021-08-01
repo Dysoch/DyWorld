@@ -1,0 +1,80 @@
+
+custom:
+  - location: title
+    keywords:
+      - 'bug'
+      - 'error'
+      - 'crash'
+      - 'conflict'
+      - 'Bug'
+      - 'Error'
+      - 'Crash'
+      - 'Conflict'
+    labels:
+      - bug
+  - location: body
+    keywords:
+      - 'bug'
+      - 'error'
+      - 'crash'
+      - 'conflict'
+      - 'Bug'
+      - 'Error'
+      - 'Crash'
+      - 'Conflict'
+    labels:
+      - bug
+  - location: title
+    keywords:
+      - 'balance'
+      - 'Balance'
+    labels:
+      - balancing
+  - location: body
+    keywords:
+      - 'balance'
+      - 'Balance'
+    labels:
+      - balancing
+  - location: title
+    keywords:
+      - 'Graphics'
+      - 'graphics'
+    labels:
+      - graphics 
+  - location: body
+    keywords:
+      - 'Graphics'
+      - 'graphics'
+    labels:
+      - graphics 
+  - location: title
+    keywords:
+      - 'Compatibility '
+      - 'compatibility '
+    labels:
+      - compatibility 
+  - location: body
+    keywords:
+      - 'Compatibility '
+      - 'compatibility '
+    labels:
+      - compatibility 
+  - location: title
+    keywords:
+      - 'Add'
+      - 'add'
+    labels:
+      - "new feature"
+  - location: body
+    keywords:
+      - 'Add'
+      - 'add'
+    labels:
+      - "new feature"
+  - location: body
+    keywords:
+      - 'Intended'
+      - 'intended'
+    labels:
+      - wontfix/feature 

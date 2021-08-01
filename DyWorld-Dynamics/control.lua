@@ -3,13 +3,14 @@ require("data.prefix-data")
 
 debugger = Dy_Sett.Debug
 Version_Build = "0.7.100"
-Food_Start = debugger and 250000 or 2500
-Water_Start = debugger and 500000 or 5000
+Food_Start = debugger and 250000 or Dy_Sett.Difficulty == "Easy" and 25000 or Dy_Sett.Difficulty == "Normal" and 2500 or Dy_Sett.Difficulty == "Hard" and 1600 or 1000
+Water_Start = debugger and 500000 or Dy_Sett.Difficulty == "Easy" and 50000 or Dy_Sett.Difficulty == "Normal" and 5000 or Dy_Sett.Difficulty == "Hard" and 2500 or 2000
 
 -- LuaLib
 require "script/lualib/function"
 require "script/lualib/debug"
 require "script/lualib/player"
+require "script/lualib/player-ambush"
 require "script/lualib/gui"
 inspect = require("script/lualib/inspect")
 require("script/database/recipes")

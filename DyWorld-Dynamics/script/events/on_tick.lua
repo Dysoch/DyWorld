@@ -130,12 +130,22 @@ function Event_on_tick(event)
 							end
 						end
 					end
-				elseif v == "player-ambush" then
+				elseif Dy_Find_Str(v, "player-ambush") then
 					for _,player in pairs(global.dyworld.players) do
 						if not Dy_Find_Str(player.surface, "starmap") then
 							local Location = {player.posx, player.posy, player.surface}
 							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 100))
-							Player_Ambush(Location, 50, Str)
+							if Dy_Find_Str(v, "101") then
+								Player_Ambush(Location, 50, Str, 1)
+							elseif Dy_Find_Str(v, "102") then
+								Player_Ambush(Location, 50, Str, 2)
+							elseif Dy_Find_Str(v, "103") then
+								Player_Ambush(Location, 50, Str, 3)
+							elseif Dy_Find_Str(v, "104") then
+								Player_Ambush(Location, 50, Str, 4)
+							elseif Dy_Find_Str(v, "105") then
+								Player_Ambush(Location, 50, Str, 5)
+							end
 							if global.dyworld.game_stats.attack_warning_2 then
 								game.players[player.id].print("Commander, you are being ambushed!")
 							end

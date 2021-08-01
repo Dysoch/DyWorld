@@ -33,20 +33,6 @@ for k in pairs(Attack_Ambush) do
     table.insert(keysetAttack_Ambush, k)
 end
 
-function Player_Ambush(Location, Radius, Amount)
-	local X = Location[1]
-	local Y = Location[2]
-	local Surface = Location[3]
-	for i = 1, Amount do
-		local BuildEntity = Attack_Ambush[keysetAttack_Ambush[math.random(#keysetAttack_Ambush)]]
-		local PosX = X + math.random((0-Radius),Radius)
-		local PosY = Y + math.random((0-Radius),Radius)
-		if game.surfaces[Surface].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
-			game.surfaces[Surface].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
-		end
-	end
-end
-
 function DyLog(str, sta, Act, Phase, Story)
 local Time = global.dyworld.game_stats.time_stamp
 	if sta == true and Story then

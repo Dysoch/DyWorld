@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.0
+Date: ??. 08. 2021
+  Major Features:
+    - First Official Public Beta Release
+    - Check changelogs for Version 0.7.x for dev build changes and additions
+  Changes:
+    - Normal Inserter is no longer Stack variant
+    - Crafting recipes of inserters are no longer lost on demolishing inserters on certain thresholds, but You will lose them however when not a single inserter is in the world
+  Story:
+    - Player Ambushes now have tiers
+  Survival:
+    - Food and Water storage is now afflicted by Difficulty
+---------------------------------------------------------------------------------------------------
 Version: 0.7.100
 Date: 30. 07. 2021
   Major Features:

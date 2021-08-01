@@ -20,3 +20,4 @@ labelMappings:
   texture: graphics
   textures: graphics
   intended: wontfix/feature
+  restructure: rewrite

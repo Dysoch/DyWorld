@@ -1,5 +1,5 @@
 # DyWorld
-DyWorld, the successor of DyTech, a mod for Factorio. 
+DyWorld-Dynamics, the successor of DyTech and DyWorld, a mod for Factorio. 
 
 Please note that all changes here arent final yet, but all files here are ready to play, although it may break progression since things are unfinished. 
 # Please use at own risk!

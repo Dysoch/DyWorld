@@ -1,13 +1,10 @@
+on: push
 name: Create Zip DyWorld
-on:
-  push:
-    branches: [ master ]
-  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-     - name: Factorio Mod packaging
-       uses: Roang-zero1/factorio-mod-package@v1.2.2
-         with:
-           mod_base_dir: .DyWorld-Dynamics
+      - name: Factorio Mod packaging
+        uses: Roang-zero1/factorio-mod-package@v1.2.2
+        with:
+          mod_base_dir: .DyWorld-Dynamics

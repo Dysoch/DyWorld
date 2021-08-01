@@ -1,4 +1,4 @@
-name: Create Zip DyWorld
+name: Create Zip
 on:
   workflow_dispatch:
 jobs:
@@ -7,5 +7,3 @@ jobs:
     steps:
       - name: Factorio Mod packaging
         uses: Roang-zero1/factorio-mod-package@v1.2.2
-        with:
-          mod_base_dir: . 

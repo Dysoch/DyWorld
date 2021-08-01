@@ -15,8 +15,8 @@ data:extend({
     subgroup = DyDs.."armor",
     order = "basic-armor",
     stack_size = 50,
-    durability = 1000,
-    infinite = false,
+    durability = Dy_Sett.Difficulty == "Normal" and 3000 or Dy_Sett.Difficulty == "Hard" and 1000 or 5000,
+    infinite = Dy_Sett.Difficulty == "Easy" and true or false,
   },
   {
     type = "recipe",
@@ -54,8 +54,8 @@ data:extend({
     subgroup = DyDs.."armor",
     order = "basic-power-armor",
     stack_size = 1,
-    durability = 5000,
-    infinite = false,
+    durability = Dy_Sett.Difficulty == "Normal" and 15000 or Dy_Sett.Difficulty == "Hard" and 5000 or 5000,
+    infinite = Dy_Sett.Difficulty == "Easy" and true or false,
     equipment_grid = "equipment-grid-1",
   },
   {

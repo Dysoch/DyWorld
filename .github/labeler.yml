@@ -65,13 +65,13 @@ custom:
       - 'Add'
       - 'add'
     labels:
-      - "new feature"
+      - new feature
   - location: body
     keywords:
       - 'Add'
       - 'add'
     labels:
-      - "new feature"
+      - new feature
   - location: title
     keywords:
       - 'Rewrite'

@@ -99,6 +99,7 @@ Dy_Metals = {
 	["tungsten"] = {Ore_1 = "item", Ore_2 = "item", Ingot = "item", Plate = "item", Tier = 3, Ore_Tier = 5},
 }
 
+-- @todo Add uses for alloys
 Dy_Alloys = {
 	["purple-gold"] = {Ingre_1 = "gold", Rat_1 = 0.8, Ingre_2 = "aluminium", Rat_2 = 0.2, Tier = 1},
 	["magnox"] = {Ingre_1 = "aluminium", Rat_1 = 0.8, Ingre_2 = "magnesium", Rat_2 = 0.2, Tier = 1},
@@ -374,6 +375,7 @@ Dy_Exclude_Tech = {
 	["se-deep-space-science-pack-4"] = 1,
 }
 
+-- @todo Change Resistances Walls/Gates
 Dy_Walls = {
 	["stone-brick"] = {
 		Health = 250,

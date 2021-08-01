@@ -10,7 +10,8 @@ Date: ??. 08. 2021
   Story:
     - Player Ambushes now have tiers
   Survival:
-    - Food and Water storage is now afflicted by Difficulty
+    - Food and Water storage is now affected by Difficulty
+    - Food and Water usage is now affected by Difficulty
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.100
 Date: 30. 07. 2021

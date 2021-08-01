@@ -62,13 +62,16 @@ function Event_on_tick(event)
 				elseif (game.players[v.id].vehicle and Distance_Train_Check(game.players[v.id].vehicle.name)) then
 					v.distance_train = (v.distance_train + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
 				elseif game.players[v.id].vehicle == nil then
-					if game.players[v.id].character then
+					if game.players[v.id].character and not remote.call("space-exploration", "remote_view_is_active", {player = game.players[v.id]}) then
 						v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
 					end
 				end
-				if Dy_Sett.Difficulty ~= "Easy" then
+				if Dy_Sett.Difficulty == "Normal" then
 					Food_Lose(v.id, 1)
 					Water_Lose(v.id, 1)
+				elseif Dy_Sett.Difficulty == "Hard" then
+					Food_Lose(v.id, 1.5)
+					Water_Lose(v.id, 1.5)
 				end
 				if v.story_gui and v.alive and not game.players[v.id].opened_self then
 					local player = game.players[v.id]

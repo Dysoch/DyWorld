@@ -101,26 +101,27 @@ DyDS_Add_Food({
 	rate = 1,
 })
 
-	----- Auto Food Implants -----
-
-DyDS_Add_Food({
-	name = "food-implant-"..i,
-    icons = {{icon = DyDs_path_icon.."implant.png"}, {icon = DyDs_path_looped..i..".png"}, {icon = DyDs_path_looped.."constitution.png"}},
-	order = "food-implant-"..i,
-	stack_size = 1,
-	subgroup = DyDs.."consume-implant",
-	rate = 1,
-})
-
-	----- Auto Health Implants -----
-
-DyDS_Add_Food({
-	name = "health-implant-"..i,
-    icons = {{icon = DyDs_path_icon.."implant.png"}, {icon = DyDs_path_looped..i..".png"}, {icon = DyDs_path_looped.."constitution.png"}},
-	order = "health-implant-"..i,
-	stack_size = 1,
-	subgroup = DyDs.."consume-implant",
-	rate = 1,
-})
 
 end
+
+	----- Auto Food Implants -----
+
+	DyDS_Add_Food({
+		name = "food-implant",
+		icons = {{icon = DyDs_path_icon.."implant.png"}, {icon = DyDs_path_looped.."1.png"}, {icon = DyDs_path_looped.."constitution.png"}},
+		order = "food-implant",
+		stack_size = 1,
+		subgroup = DyDs.."consume-implant",
+		rate = 1,
+	})
+	
+		----- Auto Health Implants -----
+	
+	DyDS_Add_Food({
+		name = "health-implant",
+		icons = {{icon = DyDs_path_icon.."implant.png"}, {icon = DyDs_path_looped.."1.png"}, {icon = DyDs_path_looped.."constitution.png"}},
+		order = "health-implant",
+		stack_size = 1,
+		subgroup = DyDs.."consume-implant",
+		rate = 1,
+	})

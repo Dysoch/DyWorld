@@ -33,52 +33,20 @@ function Event_on_tick(event)
 		global.dyworld.game_stats.days = global.dyworld.game_stats.days + 1
 		--debug("Game Days: "..global.dyworld.game_stats.days)
 	end
-	if Dy_Sett.Difficulty ~= "Easy" then
+
+	-- Automated Functions --
+	-- @todo Rewrite Automated Healing/Feeding Script to improve performance
+	if event.tick%(60*10) == ((60*10) - 1) then
 		for _,Player in pairs(global.dyworld.players) do
 			if not global.dyworld.players[Player.id].implants then global.dyworld.players[Player.id].implants = {} end
-			if global.dyworld.players[Player.id].implants["food-implant-1"] and event.tick%(60*30) == ((60*30) - 1) then
-				if global.dyworld.players[Player.id].alive then
+			if global.dyworld.players[Player.id].implants["food-implant"] then
+				if global.dyworld.players[Player.id].alive and Dy_Sett.Difficulty ~= "Easy" then
 					Auto_Food_Intake(Player.id)
 				end
 			end
-			if global.dyworld.players[Player.id].implants["food-implant-2"] and event.tick%(60*30) == ((60*24) - 1) then
-				if global.dyworld.players[Player.id].alive then
-					Auto_Food_Intake(Player.id)
-				end
+			if global.dyworld.players[Player.id].implants["health-implant"] then
+				Auto_Medpack_Intake(Player.id)
 			end
-			if global.dyworld.players[Player.id].implants["food-implant-3"] and event.tick%(60*30) == ((60*18) - 1) then
-				if global.dyworld.players[Player.id].alive then
-					Auto_Food_Intake(Player.id)
-				end
-			end
-			if global.dyworld.players[Player.id].implants["food-implant-4"] and event.tick%(60*30) == ((60*12) - 1) then
-				if global.dyworld.players[Player.id].alive then
-					Auto_Food_Intake(Player.id)
-				end
-			end
-			if global.dyworld.players[Player.id].implants["food-implant-5"] and event.tick%(60*30) == ((60*6) - 1) then
-				if global.dyworld.players[Player.id].alive then
-					Auto_Food_Intake(Player.id)
-				end
-			end
-		end
-	end
-	for _,Player in pairs(global.dyworld.players) do
-		if not global.dyworld.players[Player.id].implants then global.dyworld.players[Player.id].implants = {} end
-		if global.dyworld.players[Player.id].implants["health-implant-1"] and event.tick%(60*30) == ((60*30) - 1) then
-			Auto_Medpack_Intake(Player.id)
-		end
-		if global.dyworld.players[Player.id].implants["health-implant-2"] and event.tick%(60*30) == ((60*24) - 1) then
-			Auto_Medpack_Intake(Player.id)
-		end
-		if global.dyworld.players[Player.id].implants["health-implant-3"] and event.tick%(60*30) == ((60*18) - 1) then
-			Auto_Medpack_Intake(Player.id)
-		end
-		if global.dyworld.players[Player.id].implants["health-implant-4"] and event.tick%(60*30) == ((60*12) - 1) then
-			Auto_Medpack_Intake(Player.id)
-		end
-		if global.dyworld.players[Player.id].implants["health-implant-5"] and event.tick%(60*30) == ((60*6) - 1) then
-			Auto_Medpack_Intake(Player.id)
 		end
 	end
 	if event.tick%(60*60)==1 then

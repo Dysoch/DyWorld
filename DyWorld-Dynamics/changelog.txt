@@ -5,7 +5,8 @@ Date: ??. 08. 2021
     - First Official Public Beta Release
     - Check changelogs for Version 0.7.x for dev build changes and additions
   Minor Features:
-    - Added Automatic Player Feeder Implants (5 Tiers)
+    - Added Automatic Player Feeder Implants (5 Tiers) (They use food/water items from inventory automatically)
+    - Added Automatic Player Healing Implants (5 Tiers) (They use medpacks from inventory automatically)
   Changes:
     - Normal Inserter is no longer Stack variant
     - Ammo Magazines Stacksize: 100 > 10 (should fix issue's with loading ammo in turrets)

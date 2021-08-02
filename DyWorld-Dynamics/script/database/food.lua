@@ -22,3 +22,12 @@ Food_Values  = {
 	["cooked-meat"] = {Food = 250, Water = -50},
 	
 }
+
+Medpack_Values  = {	
+	["basic-med-pack"] = 50,
+	["med-pack"] = 100,
+	["se-med-pack"] = 50,
+	["se-med-pack-2"] = 100,
+	["se-med-pack-3"] = 200,
+	["se-med-pack-4"] = 400,
+}

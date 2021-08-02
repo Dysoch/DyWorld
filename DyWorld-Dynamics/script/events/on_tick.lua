@@ -37,20 +37,48 @@ function Event_on_tick(event)
 		for _,Player in pairs(global.dyworld.players) do
 			if not global.dyworld.players[Player.id].implants then global.dyworld.players[Player.id].implants = {} end
 			if global.dyworld.players[Player.id].implants["food-implant-1"] and event.tick%(60*30) == ((60*30) - 1) then
-				Auto_Food_Intake(Player.id)
+				if global.dyworld.players[Player.id].alive then
+					Auto_Food_Intake(Player.id)
+				end
 			end
 			if global.dyworld.players[Player.id].implants["food-implant-2"] and event.tick%(60*30) == ((60*24) - 1) then
-				Auto_Food_Intake(Player.id)
+				if global.dyworld.players[Player.id].alive then
+					Auto_Food_Intake(Player.id)
+				end
 			end
 			if global.dyworld.players[Player.id].implants["food-implant-3"] and event.tick%(60*30) == ((60*18) - 1) then
-				Auto_Food_Intake(Player.id)
+				if global.dyworld.players[Player.id].alive then
+					Auto_Food_Intake(Player.id)
+				end
 			end
 			if global.dyworld.players[Player.id].implants["food-implant-4"] and event.tick%(60*30) == ((60*12) - 1) then
-				Auto_Food_Intake(Player.id)
+				if global.dyworld.players[Player.id].alive then
+					Auto_Food_Intake(Player.id)
+				end
 			end
 			if global.dyworld.players[Player.id].implants["food-implant-5"] and event.tick%(60*30) == ((60*6) - 1) then
-				Auto_Food_Intake(Player.id)
+				if global.dyworld.players[Player.id].alive then
+					Auto_Food_Intake(Player.id)
+				end
 			end
+		end
+	end
+	for _,Player in pairs(global.dyworld.players) do
+		if not global.dyworld.players[Player.id].implants then global.dyworld.players[Player.id].implants = {} end
+		if global.dyworld.players[Player.id].implants["health-implant-1"] and event.tick%(60*30) == ((60*30) - 1) then
+			Auto_Medpack_Intake(Player.id)
+		end
+		if global.dyworld.players[Player.id].implants["health-implant-2"] and event.tick%(60*30) == ((60*24) - 1) then
+			Auto_Medpack_Intake(Player.id)
+		end
+		if global.dyworld.players[Player.id].implants["health-implant-3"] and event.tick%(60*30) == ((60*18) - 1) then
+			Auto_Medpack_Intake(Player.id)
+		end
+		if global.dyworld.players[Player.id].implants["health-implant-4"] and event.tick%(60*30) == ((60*12) - 1) then
+			Auto_Medpack_Intake(Player.id)
+		end
+		if global.dyworld.players[Player.id].implants["health-implant-5"] and event.tick%(60*30) == ((60*6) - 1) then
+			Auto_Medpack_Intake(Player.id)
 		end
 	end
 	if event.tick%(60*60)==1 then

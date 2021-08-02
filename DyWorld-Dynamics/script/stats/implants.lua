@@ -54,6 +54,8 @@ function Implant_Add(id, implant)
 		global.dyworld.players[id].death_reduce = global.dyworld.players[id].death_reduce + Implants[implant].Amount
 	elseif Implants[implant].type == "auto-food" then
 		global.dyworld.players[id].implants[implant] = true
+	elseif Implants[implant].type == "auto-health" then
+		global.dyworld.players[id].implants[implant] = true
 	end
 end
 
@@ -87,5 +89,29 @@ function Implant_Remove(id, implant)
 		global.dyworld.players[id].death_reduce = global.dyworld.players[id].death_reduce - Implants[implant].Amount
 	elseif Implants[implant].type == "auto-food" then
 		global.dyworld.players[id].implants[implant] = false
+	elseif Implants[implant].type == "auto-health" then
+		global.dyworld.players[id].implants[implant] = false
+	end
+end
+
+function Auto_Medpack_Intake(ID)
+	if game.players[ID].get_main_inventory() then
+		local Inv = game.players[ID].get_main_inventory()
+		local Contents = Inv.get_contents()
+		for k,v in pairs(Contents) do
+			if Medpack_Values[k] then
+				local P_S = global.dyworld.players[ID].surface
+				local P_X = global.dyworld.players[ID].posx
+				local P_Y = global.dyworld.players[ID].posy
+				local P_Loc = game.surfaces[P_S].find_entity("character", {P_X,P_Y})
+				if P_Loc and global.dyworld.players[ID].alive then
+					if (((game.entity_prototypes["character"].max_health + game.players[ID].character_health_bonus) - (P_Loc.health + Medpack_Values[k])) >= 0) then
+						Inv.remove({name = k, count = 1})
+						P_Loc.health = P_Loc.health + Medpack_Values[k]
+						break
+					end
+				end
+			end
+		end
 	end
 end

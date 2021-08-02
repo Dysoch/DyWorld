@@ -2,6 +2,7 @@
 
 DyDS_Add_Ammo_Shotgun({
 	name = "1853mm-bullet",
+  loc_name = "18.53mm",
 	icon = DyDs_path_icon_base.."shotgun-shell.png",
 	stack_size = 250,
 	ammo_cat = "1853mm",
@@ -16,6 +17,7 @@ DyDS_Add_Ammo_Shotgun({
 
 DyDS_Add_Ammo_Shotgun({
 	name = "1853mm-bullet-ap",
+  loc_name = "18.53mm",
 	icon = DyDs_path_icon_base.."shotgun-shell.png",
 	stack_size = 250,
 	ammo_cat = "1853mm",

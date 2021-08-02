@@ -2,6 +2,7 @@
 
 DyDS_Add_Ammo({
 	name = "860mm-bullet",
+  loc_name = "8.60mm",
 	icon = DyDs_path_icon.."bullet-860mm.png",
 	stack_size = 250,
 	ammo_cat = "860mm",
@@ -17,6 +18,7 @@ DyDS_Add_Ammo({
 
 DyDS_Add_Ammo({
 	name = "860mm-bullet-ap",
+  loc_name = "8.60mm",
 	icon = DyDs_path_icon.."bullet-860mm.png",
 	stack_size = 250,
 	ammo_cat = "860mm",

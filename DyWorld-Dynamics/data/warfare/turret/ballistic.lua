@@ -4,17 +4,17 @@
 
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("ammo-turret", "gun-turret", "basic-9mm-turret", true)
 	DyWorld_Prototype_1.attack_parameters.cooldown = 6
-	DyWorld_Prototype_1.automated_ammo_count = 25
+	DyWorld_Prototype_1.automated_ammo_count = 100
 	DyWorld_Prototype_1.attack_parameters.range = 15
 	DyWorld_Prototype_1.attack_parameters.ammo_category = "9mm"
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("ammo-turret", "gun-turret", "basic-762mm-turret", true)
 	DyWorld_Prototype_2.attack_parameters.cooldown = (60/30)
-	DyWorld_Prototype_2.automated_ammo_count = 25
+	DyWorld_Prototype_2.automated_ammo_count = 100
 	DyWorld_Prototype_2.attack_parameters.range = 25
 	DyWorld_Prototype_2.attack_parameters.ammo_category = "762mm"
 local DyWorld_Prototype_3 = DyDs_CopyPrototype("ammo-turret", "gun-turret", "advanced-762mm-turret", true)
 	DyWorld_Prototype_3.attack_parameters.cooldown = (60/60)
-	DyWorld_Prototype_3.automated_ammo_count = 25
+	DyWorld_Prototype_3.automated_ammo_count = 100
 	DyWorld_Prototype_3.attack_parameters.range = 30
 	DyWorld_Prototype_3.attack_parameters.ammo_category = "762mm"
 

@@ -6,6 +6,8 @@ Date: ??. 08. 2021
     - Check changelogs for Version 0.7.x for dev build changes and additions
   Changes:
     - Normal Inserter is no longer Stack variant
+    - Ammo Magazines Stacksize: 100 > 10 (should fix issue's with loading ammo in turrets)
+    - Added Difficulty Check in armor. Easy disables durability, the rest has different values
     - Crafting recipes of inserters are no longer lost on demolishing inserters on certain thresholds, but You will lose them however when not a single inserter is in the world
   Story:
     - Player Ambushes now have tiers

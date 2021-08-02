@@ -519,7 +519,7 @@ data:extend(
   {
     type = "ammo",
     name = params.name.."-bullet-"..v.Name,
-	localised_name = {"looped-name.ammo-name-1", params.name, {"looped-name."..v.Name}},
+	localised_name = {"looped-name.ammo-name-1", params.loc_name, {"looped-name."..v.Name}},
     icon = params.icon,
     icon_size = 64, 
     ammo_type =
@@ -562,7 +562,7 @@ data:extend(
   {
     type = "ammo",
     name = params.name.."-mag-"..v.Name,
-	localised_name = {"looped-name.ammo-name-2", params.name, {"looped-name."..v.Name}},
+	localised_name = {"looped-name.ammo-name-2", params.loc_name, {"looped-name."..v.Name}},
 	icons = {
 	  {
 		icon = "__base__/graphics/icons/firearm-magazine.png",
@@ -609,7 +609,7 @@ data:extend(
     magazine_size = 250,
     subgroup = DyDs..params.name.."-mag",
     order = v.Tier,
-    stack_size = 100,
+    stack_size = 10,
   },
 })
 

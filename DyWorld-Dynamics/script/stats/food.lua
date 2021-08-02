@@ -127,3 +127,34 @@ function Water_Lose(id, mult)
 		end
 	end
 end
+
+function Auto_Food_Intake(ID)
+	if game.players[ID].get_main_inventory() then
+		local Inv = game.players[ID].get_main_inventory()
+		local Contents = Inv.get_contents()
+		for k,v in pairs(Contents) do
+			if Food_Values[k] then
+				if Food_Values[k].Water and Food_Values[k].Food then
+					if ((global.dyworld.players[ID].water_max - (global.dyworld.players[ID].water + Food_Values[k].Water)) >= 0) and ((global.dyworld.players[ID].food_max - (global.dyworld.players[ID].food + Food_Values[k].Food)) >= 0) then
+						Water_Add(ID, Food_Values[k].Water)
+						Food_Add(ID, Food_Values[k].Food)
+						Inv.remove({name = k, count = 1})
+						break
+					end
+				elseif Food_Values[k].Water and not Food_Values[k].Food then
+					if (global.dyworld.players[ID].water_max - (global.dyworld.players[ID].water + Food_Values[k].Water)) >= 0 then
+						Water_Add(ID, Food_Values[k].Water)
+						Inv.remove({name = k, count = 1})
+						break
+					end
+				elseif Food_Values[k].Food and not Food_Values[k].Water then
+					if (global.dyworld.players[ID].food_max - (global.dyworld.players[ID].food + Food_Values[k].Food)) >= 0 then
+						Food_Add(ID, Food_Values[k].Food)
+						Inv.remove({name = k, count = 1})
+						break
+					end
+				end
+			end
+		end
+	end
+end

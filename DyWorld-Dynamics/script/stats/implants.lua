@@ -52,6 +52,8 @@ function Implant_Add(id, implant)
 	elseif Implants[implant].type == "death-keep" then
 		global.dyworld.players[id].implants[implant] = true
 		global.dyworld.players[id].death_reduce = global.dyworld.players[id].death_reduce + Implants[implant].Amount
+	elseif Implants[implant].type == "auto-food" then
+		global.dyworld.players[id].implants[implant] = true
 	end
 end
 
@@ -83,5 +85,7 @@ function Implant_Remove(id, implant)
 	elseif Implants[implant].type == "death-keep" then
 		global.dyworld.players[id].implants[implant] = false
 		global.dyworld.players[id].death_reduce = global.dyworld.players[id].death_reduce - Implants[implant].Amount
+	elseif Implants[implant].type == "auto-food" then
+		global.dyworld.players[id].implants[implant] = false
 	end
 end

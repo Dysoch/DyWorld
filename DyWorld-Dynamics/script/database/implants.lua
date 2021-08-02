@@ -215,7 +215,7 @@ Implants  = {
 		Amount = 6,
 	},
 	
-	----- Player Speed Implants -----
+	----- Death Implants -----
 	["death-implant-1"] = {
 		type = "death-keep",
 		Amount = 0.2,
@@ -235,6 +235,40 @@ Implants  = {
 	["death-implant-5"] = {
 		type = "death-keep",
 		Amount = 0.2,
+	},
+	
+	----- Auto Food Implants -----
+	["food-implant-1"] = {
+		type = "auto-food",
+	},
+	["food-implant-2"] = {
+		type = "auto-food",
+	},
+	["food-implant-3"] = {
+		type = "auto-food",
+	},
+	["food-implant-4"] = {
+		type = "auto-food",
+	},
+	["food-implant-5"] = {
+		type = "auto-food",
+	},
+	
+	----- Auto Health Implants -----
+	["health-implant-1"] = {
+		type = "auto-health",
+	},
+	["health-implant-2"] = {
+		type = "auto-health",
+	},
+	["health-implant-3"] = {
+		type = "auto-health",
+	},
+	["health-implant-4"] = {
+		type = "auto-health",
+	},
+	["health-implant-5"] = {
+		type = "auto-health",
 	},
 	
 }

@@ -4,49 +4,7 @@ local crash_site = require("crash-site")
 local created_items = function()
   return
   {
-    ["762mm-gun"] = 1,
-    ["basic-762mm-turret"] = 50,
-    ["762mm-bullet-ap"] = 5000,
-    ["coal"] = 1000,
-    ["transport-belt-5"] = 1000,
-    ["underground-belt-5"] = 1000,
-    ["loader-5"] = 1000,
-    ["splitter-5"] = 1000,
-    ["aai-storehouse"] = 50,
-    ["aai-storehouse-passive-provider"] = 50,
-    ["aai-storehouse-requester"] = 50,
-    ["aai-storehouse-storage"] = 50,
-    ["aai-warehouse"] = 50,
-    ["aai-warehouse-passive-provider"] = 50,
-    ["aai-warehouse-requester"] = 50,
-    ["aai-warehouse-storage"] = 50,
-    ["basic-electric-drill"] = 50,
-    ["radar-4"] = 50,
-    ["roboport-3"] = 50,
-    ["construction-robot-3"] = 50,
-    ["logistic-robot-3"] = 50,
-    ["accumulator"] = 50,
-    ["substation"] = 50,
-    ["normal-inserter"] = 50,
-    ["basic-inserter"] = 50,
-    ["solar-panel"] = 50,
-    ["usage-reduction-1"] = 1,
-    ["usage-reduction-2"] = 1,
-    ["usage-reduction-3"] = 1,
-    ["usage-reduction-4"] = 1,
-    ["usage-reduction-5"] = 1,
-    ["death-implant-1"] = 1,
-    ["death-implant-2"] = 1,
-    ["death-implant-3"] = 1,
-    ["death-implant-4"] = 1,
-    ["death-implant-5"] = 1,
-    ["ammo-nano-constructors"] = 1,
-    ["se-space-capsule"] = 1,
-    ["se-thruster-suit"] = 1,
-    ["se-rocket-launch-pad"] = 1,
-    ["rocket-silo-4"] = 1,
     ["infinity-chest"] = 10,
-    ["se-lifesupport-canister"] = 100,
   }
 end
 
@@ -61,7 +19,7 @@ end
 local ship_items = function()
   return
   {
-    ["9mm-mag-bronze"] = math.random(100, 400),
+    ["9mm-mag-bronze"] = math.random(10, 40),
     ["copper-plate"] = math.random(15, 25),
     ["iron-plate"] = math.random(5, 10),
     ["9mm-pistol"] = 1,
@@ -78,7 +36,7 @@ local debris_items = function()
     ["copper-plate"] = math.random(5, 25),
     ["tin-plate"] = math.random(5, 15),
     ["bronze-plate"] = math.random(1, 10),
-    ["9mm-mag-bronze"] = math.random(25, 125),
+    ["9mm-mag-bronze"] = math.random(5, 12),
   }
 end
 

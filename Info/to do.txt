@@ -3,39 +3,3 @@
 
 
 
-@todo Add Capacitors
-
-@todo Pykrite
-
-@todo Modules: Speed
-@todo Modules: Productivity
-@todo Modules: Effectivity
-@todo Modules: Pollution Reduction
-@todo Modules: Pollution Increase
-@todo Modules: Master
-
-@todo Nanobots: Research
-@todo Nanobots: Item Retriever
-@todo Nanobots: Unit Launcher
-@todo Nanobots: Tree Cutter
-@todo Nanobots: Health Feeder
-@todo Nanobots: Logistical Logistic
-
-@todo Equipment Personal: Solar
-@todo Equipment Personal: Reactor
-@todo Equipment Personal: Generator
-@todo Equipment Personal: Battery
-@todo Equipment Personal: Turret
-@todo Equipment Personal: Exoskeleton
-@todo Equipment Personal: Shields
-@todo Equipment Personal: Roboports
-@todo Equipment Personal: Night Vision
-
-@todo Equipment Vehicle: Solar
-@todo Equipment Vehicle: Reactor
-@todo Equipment Vehicle: Battery
-@todo Equipment Vehicle: Shields
-@todo Equipment Vehicle: Roboports
-
-@todo Exotic: Labratory
-@todo Exotic: Tech Tree

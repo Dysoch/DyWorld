@@ -1,8 +1,17 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
-Date: ??. 07. 2021
+Date: 03. 08. 2021
   Features:
+    - Added in check for Lithium ("Li-")
+    - Added in check for Sodium ("Na-")
+    - Added in check for Chromium ("Cr-")
+    - Added in check for Cobalt ("Co-")
+    - Added in check for Zinc ("Zn-")
+    - Added in check for Tungsten ("W-")
+    - Added in check for Osmium ("Os-")
     - Added in German Translation (courtesy of Maxi_der_ZockerYT)
+    - Added in Dutch Translation (courtesy of myself, Dysoch)
+    - Added in Russian Translation (Done by google translate, needs checking)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 05. 07. 2021

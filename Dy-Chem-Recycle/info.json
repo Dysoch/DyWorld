@@ -1,15 +1,15 @@
 {
 	"name": "Dy-Chem-Recycle",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"factorio_version": "1.1",
 	"title": "DyWorld Chemical Recycling",
 	"author": "Dysoch",
-    "contact": "Via Discord!",
-	"homepage": "https://github.com/Dysoch/DyWorld/",
+    "contact": "Via Discord: https://discord.gg/yHJaZrq5Ww",
+	"homepage": "https://github.com/Dysoch/DyWorld",
 	"description": "DyWorld Chemical Recycling, which recycles ingredients into their components based on their chemical formula. Other mods can add recycling for this. Information can be found on the mod portal for this mod. This mod does NOT require DyWorld-Dynamics, but DyWorld-Dynamics is greatly enhanced by this mod (as is this mod)",
 	"dependencies": [  
 		"base >= 1.1.34",
-		"? DyWorld-Dynamics",
+		"? DyWorld-Dynamics >= 0.7.100",
 		"? DyComPa"
 	]
 }

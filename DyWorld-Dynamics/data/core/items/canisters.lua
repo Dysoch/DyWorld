@@ -1,5 +1,6 @@
 
 
+--@todo Add Chemical Formula Canisters
 
 DyDS_Add_Tool({
 	name = "canister-empty",

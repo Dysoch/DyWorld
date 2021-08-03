@@ -2,6 +2,7 @@
 
 
   
+--@todo Add Chemical Formula Food (both)
 
 DyDS_Add_Food({
 	name = "cooked-fish",

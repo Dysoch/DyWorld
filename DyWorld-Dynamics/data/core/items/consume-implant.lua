@@ -1,5 +1,6 @@
 
 
+--@todo Add Chemical Formula Implants
 
 for i = 1,5 do
 	----- Food Usage Implants -----

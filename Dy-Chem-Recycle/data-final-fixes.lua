@@ -41,6 +41,72 @@ data:extend(
     },
   },
 })
+			if string.find(v.Chemical_Formula, "Os-", 1, true) then
+				if data.raw.item["osmium-ore-impure"] or data.raw.tool["osmium-ore-impure"] then
+					local result = {type = "item", name = "osmium-ore-impure", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				elseif data.raw.item["osmium-ore"] or data.raw.tool["osmium-ore"] then
+					local result = {type = "item", name = "osmium-ore", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				end
+			end
+			if string.find(v.Chemical_Formula, "W-", 1, true) then
+				if data.raw.item["tungsten-ore-impure"] or data.raw.tool["tungsten-ore-impure"] then
+					local result = {type = "item", name = "tungsten-ore-impure", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				elseif data.raw.item["tungsten-ore"] or data.raw.tool["tungsten-ore"] then
+					local result = {type = "item", name = "tungsten-ore", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				end
+			end
+			if string.find(v.Chemical_Formula, "Zn-", 1, true) then
+				if data.raw.item["zinc-ore-impure"] or data.raw.tool["zinc-ore-impure"] then
+					local result = {type = "item", name = "zinc-ore-impure", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				elseif data.raw.item["zinc-ore"] or data.raw.tool["zinc-ore"] then
+					local result = {type = "item", name = "zinc-ore", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				end
+			end
+			if string.find(v.Chemical_Formula, "Cr-", 1, true) then
+				if data.raw.item["chromium-ore-impure"] or data.raw.tool["chromium-ore-impure"] then
+					local result = {type = "item", name = "chromium-ore-impure", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				elseif data.raw.item["chromium-ore"] or data.raw.tool["chromium-ore"] then
+					local result = {type = "item", name = "chromium-ore", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				end
+			end
+			if string.find(v.Chemical_Formula, "Co-", 1, true) then
+				if data.raw.item["cobalt-ore-impure"] or data.raw.tool["cobalt-ore-impure"] then
+					local result = {type = "item", name = "cobalt-ore-impure", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				elseif data.raw.item["cobalt-ore"] or data.raw.tool["cobalt-ore"] then
+					local result = {type = "item", name = "cobalt-ore", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				end
+			end
+			if string.find(v.Chemical_Formula, "Na-", 1, true) then
+				if data.raw.item["sodium-ore-impure"] or data.raw.tool["sodium-ore-impure"] then
+					local result = {type = "item", name = "sodium-ore-impure", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				elseif data.raw.item["sodium-ore"] or data.raw.tool["sodium-ore"] then
+					local result = {type = "item", name = "sodium-ore", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				elseif data.raw.item["sodium"] or data.raw.tool["sodium"] then
+					local result = {type = "item", name = "sodium", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				end
+			end
+			if string.find(v.Chemical_Formula, "Li-", 1, true) then
+				if data.raw.item["lithium-ore-impure"] or data.raw.tool["lithium-ore-impure"] then
+					local result = {type = "item", name = "lithium-ore-impure", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				elseif data.raw.item["lithium-ore"] or data.raw.tool["lithium-ore"] then
+					local result = {type = "item", name = "lithium-ore", amount_min = 0, amount_max = 3, probability = 0.1}
+					table.insert(data.raw.recipe["chem-recycle-"..v.name].normal.results, result)
+				end
+			end
 			if string.find(v.Chemical_Formula, "Ti-", 1, true) then
 				if data.raw.item["titanium-ore-impure"] or data.raw.tool["titanium-ore-impure"] then
 					local result = {type = "item", name = "titanium-ore-impure", amount_min = 0, amount_max = 3, probability = 0.1}

@@ -2,6 +2,7 @@
 
 
   
+--@todo Add Chemical Formula Bio Items
 
 DyDS_Add_Item({
 	name = "bio-waste",

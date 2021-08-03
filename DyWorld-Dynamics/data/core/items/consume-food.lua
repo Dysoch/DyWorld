@@ -2,6 +2,7 @@
 
 
   
+--@todo Add Chemical Formula Food
 
 DyDS_Add_Item({
 	name = "egg",

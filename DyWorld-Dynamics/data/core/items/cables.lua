@@ -1,6 +1,7 @@
 
 
 
+--@todo Add Chemical Formula Cables
   
 DyDS_Add_Item({
 	name = "copper-cable",

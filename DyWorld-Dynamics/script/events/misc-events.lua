@@ -194,7 +194,7 @@ function Event_on_research_finished(event)
 	if not global.dyworld.game_stats.space_mining then
 		global.dyworld.game_stats.space_mining = {}
 		for k,v in pairs(Dy_Metals) do
-			global.dyworld.game_stats.space_mining[k] = {efficiency = 1, pure_rate = 0, pure_mined = 0, pure_storage = 100, impure_rate = 0, impure_mined = 0, impure_storage = 900, tier = v.Tier}
+			global.dyworld.game_stats.space_mining[k] = {efficiency = 1, pure_rate = debugger and 5 or 0, pure_mined = 0, pure_storage = 100, impure_rate = debugger and 45 or 0, impure_mined = 0, impure_storage = 900, tier = v.Tier}
 		end
 	end
 	if Dy_Find_Str(name, "space-mining-storage-") then

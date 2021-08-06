@@ -9,20 +9,21 @@ Date: 03. 08. 2021
     - Added in check for Zinc ("Zn-")
     - Added in check for Tungsten ("W-")
     - Added in check for Osmium ("Os-")
-    - Added in German Translation (courtesy of Maxi_der_ZockerYT)
-    - Added in Dutch Translation (courtesy of myself, Dysoch)
-    - Added in Russian Translation (Done by google translate, needs checking)
+    - Added in German Translation (Done by Maxi_der_ZockerYT)
+    - Added in Dutch Translation (Done by Dysoch)
+    - Added in Russian Translation (Done by Anton and beansidhe)
+    - Added in French Translation (Done by bev)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 05. 07. 2021
   Features:
     - Added in check for Silicon ("Si-")
-    - Added in check for Aluminium and Impure Aluminium ("Al-")
-    - Added in check for Gold and Impure Gold ("Au-")
-    - Added in check for Tin and Impure Tin ("Sn-")
-    - Added in check for Lead and Impure Lead ("Pb-")
-    - Added in check for Nickel and Impure Nickel ("Ni-")
-    - Added in check for Titanium and Impure Titanium ("Ti-")
+    - Added in check for Aluminium ("Al-")
+    - Added in check for Gold ("Au-")
+    - Added in check for Tin ("Sn-")
+    - Added in check for Lead ("Pb-")
+    - Added in check for Nickel ("Ni-")
+    - Added in check for Titanium ("Ti-")
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 30. 06. 2021

@@ -14,4 +14,4 @@ for name, techtable in pairs(Recipes) do
 	end
 end]]--
 
-data.raw.technology["robot-attrition-explosion-safety"].prerequisites = {"dy-science-pack-11"}
+data.raw.technology["robot-attrition-explosion-safety"].prerequisites = {"utility-science-pack"}

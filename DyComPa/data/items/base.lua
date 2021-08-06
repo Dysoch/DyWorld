@@ -93,13 +93,6 @@ data.raw.item["chemical-plant"].order = "3"
 data.raw.item["oil-refinery"].subgroup = DyDs.."oil-machines"
 data.raw.item["oil-refinery"].order = "2"
 
-data.raw.item["equipment-bot-chip-trees"].subgroup = DyDs.."equipment-qol"
-data.raw.item["equipment-bot-chip-nanointerface"].subgroup = DyDs.."equipment-qol"
-data.raw.item["equipment-bot-chip-launcher"].subgroup = DyDs.."equipment-defense"
-data.raw.item["equipment-bot-chip-items"].subgroup = DyDs.."equipment-qol"
-data.raw.item["equipment-bot-chip-feeder"].subgroup = DyDs.."equipment-qol"
-data.raw.item["roboport-interface"].subgroup = DyDs.."equipment-qol"
-
 -- Capsules --
 data.raw.capsule["discharge-defense-remote"].subgroup = DyDs.."equipment-defense"
 data.raw.capsule["raw-fish"].subgroup = DyDs.."material-1"
@@ -114,3 +107,10 @@ data.raw.ammo["ammo-nano-constructors"].localised_description = {"DyDs-story.coi
 data.raw.ammo["ammo-nano-constructors"].subgroup = DyDs.."mod-nanobots"
 data.raw.ammo["ammo-nano-termites"].subgroup = DyDs.."mod-nanobots"
 data.raw.gun["gun-nano-emitter"].subgroup = DyDs.."mod-nanobots"
+
+data.raw.item["equipment-bot-chip-trees"].subgroup = DyDs.."equipment-qol"
+data.raw.item["equipment-bot-chip-nanointerface"].subgroup = DyDs.."equipment-qol"
+data.raw.item["equipment-bot-chip-launcher"].subgroup = DyDs.."equipment-defense"
+data.raw.item["equipment-bot-chip-items"].subgroup = DyDs.."equipment-qol"
+data.raw.item["equipment-bot-chip-feeder"].subgroup = DyDs.."equipment-qol"
+data.raw.item["roboport-interface"].subgroup = DyDs.."equipment-qol"

@@ -30,7 +30,7 @@ if global.dyworld.game_stats.space_mining then
 	for k,v in pairs(global.dyworld.game_stats.space_mining) do
 		if (Dy_Metals[k] and Dy_Metals[k].Ore_Tier == 1) then
 			frameflow2.add{type = "line", direction = "horizontal"}
-			frameflow2.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, Round((v.pure_mined + v.impure_mined), 2)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, Round(v.impure_mined, 2), v.impure_storage, Round(v.impure_rate, 2), Round(v.pure_mined, 2), v.pure_storage, Round(v.pure_rate, 2), Round((v.efficiency * 100), 2)}}
+			frameflow2.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, math.floor(v.pure_mined + v.impure_mined)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, math.floor(v.impure_mined), v.impure_storage, Round(v.impure_rate, 0), math.floor(v.pure_mined), v.pure_storage, Round(v.pure_rate, 0), Round((v.efficiency * 100), 2)}}
 			frameflow2.add{type = "progressbar", size = 26, value = (Round((v.pure_mined + v.impure_mined), 2)/Round((v.pure_storage + v.impure_storage), 2)), style = "dy-bar-1"}
 		end
 	end
@@ -43,7 +43,7 @@ if global.dyworld.game_stats.space_mining then
 	for k,v in pairs(global.dyworld.game_stats.space_mining) do
 		if (Dy_Metals[k] and Dy_Metals[k].Ore_Tier == 2) then
 			frameflow3.add{type = "line", direction = "horizontal"}
-			frameflow3.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, Round((v.pure_mined + v.impure_mined), 2)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, Round(v.impure_mined, 2), v.impure_storage, Round(v.impure_rate, 2), Round(v.pure_mined, 2), v.pure_storage, Round(v.pure_rate, 2), Round((v.efficiency * 100), 2)}}
+			frameflow3.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, math.floor(v.pure_mined + v.impure_mined)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, math.floor(v.impure_mined), v.impure_storage, Round(v.impure_rate, 0), math.floor(v.pure_mined), v.pure_storage, Round(v.pure_rate, 0), Round((v.efficiency * 100), 2)}}
 			frameflow3.add{type = "progressbar", size = 26, value = (Round((v.pure_mined + v.impure_mined), 2)/Round((v.pure_storage + v.impure_storage), 2)), style = "dy-bar-1"}
 		end
 	end
@@ -56,7 +56,7 @@ if global.dyworld.game_stats.space_mining then
 	for k,v in pairs(global.dyworld.game_stats.space_mining) do
 		if (Dy_Metals[k] and Dy_Metals[k].Ore_Tier == 3) then
 			frameflow4.add{type = "line", direction = "horizontal"}
-			frameflow4.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, Round((v.pure_mined + v.impure_mined), 2)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, Round(v.impure_mined, 2), v.impure_storage, Round(v.impure_rate, 2), Round(v.pure_mined, 2), v.pure_storage, Round(v.pure_rate, 2), Round((v.efficiency * 100), 2)}}
+			frameflow4.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, math.floor(v.pure_mined + v.impure_mined)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, math.floor(v.impure_mined), v.impure_storage, Round(v.impure_rate, 0), math.floor(v.pure_mined), v.pure_storage, Round(v.pure_rate, 0), Round((v.efficiency * 100), 2)}}
 			frameflow4.add{type = "progressbar", size = 26, value = (Round((v.pure_mined + v.impure_mined), 2)/Round((v.pure_storage + v.impure_storage), 2)), style = "dy-bar-1"}
 		end
 	end
@@ -69,7 +69,7 @@ if global.dyworld.game_stats.space_mining then
 	for k,v in pairs(global.dyworld.game_stats.space_mining) do
 		if (Dy_Metals[k] and Dy_Metals[k].Ore_Tier == 4) then
 			frameflow5.add{type = "line", direction = "horizontal"}
-			frameflow5.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, Round((v.pure_mined + v.impure_mined), 2)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, Round(v.impure_mined, 2), v.impure_storage, Round(v.impure_rate, 2), Round(v.pure_mined, 2), v.pure_storage, Round(v.pure_rate, 2), Round((v.efficiency * 100), 2)}}
+			frameflow5.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, math.floor(v.pure_mined + v.impure_mined)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, math.floor(v.impure_mined), v.impure_storage, Round(v.impure_rate, 0), math.floor(v.pure_mined), v.pure_storage, Round(v.pure_rate, 0), Round((v.efficiency * 100), 2)}}
 			frameflow5.add{type = "progressbar", size = 26, value = (Round((v.pure_mined + v.impure_mined), 2)/Round((v.pure_storage + v.impure_storage), 2)), style = "dy-bar-1"}
 		end
 	end
@@ -82,7 +82,7 @@ if global.dyworld.game_stats.space_mining then
 	for k,v in pairs(global.dyworld.game_stats.space_mining) do
 		if (Dy_Metals[k] and Dy_Metals[k].Ore_Tier == 5) then
 			frameflow6.add{type = "line", direction = "horizontal"}
-			frameflow6.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, Round((v.pure_mined + v.impure_mined), 2)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, Round(v.impure_mined, 2), v.impure_storage, Round(v.impure_rate, 2), Round(v.pure_mined, 2), v.pure_storage, Round(v.pure_rate, 2), Round((v.efficiency * 100), 2)}}
+			frameflow6.add{type = "label", caption = {"gui-stats.space-mining-caption", {"looped-name."..k}, math.floor(v.pure_mined + v.impure_mined)}, tooltip = {"gui-stats.space-mining-tooltip", {"looped-name."..k}, math.floor(v.impure_mined), v.impure_storage, Round(v.impure_rate, 0), math.floor(v.pure_mined), v.pure_storage, Round(v.pure_rate, 0), Round((v.efficiency * 100), 2)}}
 			frameflow6.add{type = "progressbar", size = 26, value = (Round((v.pure_mined + v.impure_mined), 2)/Round((v.pure_storage + v.impure_storage), 2)), style = "dy-bar-1"}
 		end
 	end

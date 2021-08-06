@@ -3,32 +3,20 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("lab", "lab", "lab-3", true)
 local lab_inputs =
 {
-  "dysci-01",
-  "dysci-02",
-  "dysci-03",
-  "dysci-04",
-  "dysci-05",
-  "dysci-06",
-  "dysci-07",
-  "dysci-08",
-  "dysci-09",
-  "dysci-10",
-  "dysci-11",
-  "dysci-12",
-  "dysci-13",
-  "dysci-14",
-  "dysci-15",
-  "dysci-16",
-  "dysci-17",
-  "dysci-18",
-  "dysci-19",
-  "dysci-20",
+  "automation-science-pack",
+  "logistic-science-pack",
+  "chemical-science-pack",
+  "military-science-pack",
+  "production-science-pack",
+  "utility-science-pack",
+  "biological-science-pack",
 }
 
 DyWorld_Prototype_1.inputs = lab_inputs
 DyWorld_Prototype_1.collision_box = {{-3.3, -3.3}, {3.3, 3.3}}
 DyWorld_Prototype_1.selection_box = {{-3.5, -3.5}, {3.5, 3.5}}
 DyWorld_Prototype_1.drawing_box = {{-3.5, -3.9}, {3.5, 3.5}}
+DyWorld_Prototype_1.fast_replaceable_group = "lab"
 DyWorld_Prototype_1.icon = "__space-exploration-graphics__/graphics/icons/mechanical-laboratory.png"
 DyWorld_Prototype_1.on_animation = {
       layers =

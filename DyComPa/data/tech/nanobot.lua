@@ -14,7 +14,7 @@ for name, techtable in pairs(Recipes) do
 	end
 end]]--
 
-data.raw.technology["nanobots"].prerequisites = {"dy-science-pack-1"}
-data.raw.technology["nanobots-cliff"].prerequisites = {"nanobots", "dy-science-pack-3"}
-data.raw.technology["nano-range-2"].prerequisites = {"nano-range-1", "dy-science-pack-3"}
-data.raw.technology["nano-speed-2"].prerequisites = {"nano-speed-1", "dy-science-pack-3"}
+data.raw.technology["nanobots"].prerequisites = {"automation-science-pack"}
+data.raw.technology["nanobots-cliff"].prerequisites = {"nanobots", "logistic-science-pack"}
+data.raw.technology["nano-range-2"].prerequisites = {"nano-range-1", "logistic-science-pack"}
+data.raw.technology["nano-speed-2"].prerequisites = {"nano-speed-1", "logistic-science-pack"}

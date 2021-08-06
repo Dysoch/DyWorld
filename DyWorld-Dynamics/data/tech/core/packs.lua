@@ -168,58 +168,58 @@ end
 
 function Dy_Main_Tech_Pack(STR, AMOUNT)
 	if STR == 1.1 then
-		local returner = {"dysci-01", StackSizeCheck(AMOUNT)}
+		local returner = {"automation-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 1.2 then
-		local returner = {"dysci-02", StackSizeCheck(AMOUNT)}
+		local returner = {"automation-science-pack-advanced", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 2.1 then
-		local returner = {"dysci-03", StackSizeCheck(AMOUNT)}
+		local returner = {"logistic-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 2.2 then
-		local returner = {"dysci-04", StackSizeCheck(AMOUNT)}
+		local returner = {"logistic-science-pack-advanced", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 3.1 then
-		local returner = {"dysci-05", StackSizeCheck(AMOUNT)}
+		local returner = {"chemical-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 3.2 then
-		local returner = {"dysci-06", StackSizeCheck(AMOUNT)}
+		local returner = {"chemical-science-pack-advanced", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == "mil-1" then
-		local returner = {"dysci-07", StackSizeCheck(AMOUNT)}
+		local returner = {"military-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == "mil-2" then
-		local returner = {"dysci-08", StackSizeCheck(AMOUNT)}
+		local returner = {"military-science-pack-advanced", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 5.1 then
-		local returner = {"dysci-09", StackSizeCheck(AMOUNT)}
+		local returner = {"production-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 5.2 then
-		local returner = {"dysci-10", StackSizeCheck(AMOUNT)}
+		local returner = {"production-science-pack-advanced", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 6.1 then
-		local returner = {"dysci-11", StackSizeCheck(AMOUNT)}
+		local returner = {"utility-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 6.2 then
-		local returner = {"dysci-12", StackSizeCheck(AMOUNT)}
+		local returner = {"utility-science-pack-advanced", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 7.1 then
-		local returner = {"dysci-13", StackSizeCheck(AMOUNT)}
+		local returner = {"space-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 7.2 then
-		local returner = {"dysci-14", StackSizeCheck(AMOUNT)}
+		local returner = {"space-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 4.1 then
-		local returner = {"dysci-15", StackSizeCheck(AMOUNT)}
+		local returner = {"biological-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == 4.2 then
-		local returner = {"dysci-16", StackSizeCheck(AMOUNT)}
+		local returner = {"biological-science-pack-advanced", StackSizeCheck(AMOUNT)}
 		return returner
 	elseif STR == nil then 
-		local returner = {"dysci-01", StackSizeCheck(AMOUNT)}
+		local returner = {"automation-science-pack", StackSizeCheck(AMOUNT)}
 		return returner
 	else
-		local returner = {"dysci-01", StackSizeCheck(50)}
+		local returner = {"automation-science-pack", StackSizeCheck(50)}
 		return returner
 	end
 end

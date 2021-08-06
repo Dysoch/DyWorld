@@ -59,7 +59,7 @@ data:extend({
 		type = "string-setting",
 		name = "DyWorld_Difficulty",
 		setting_type = "startup",
-		default_value = "Normal",
+		default_value = "Easy",
 		allowed_values = {"Easy", "Normal", "Hard"},
 	},
 	----- Map Settings -----

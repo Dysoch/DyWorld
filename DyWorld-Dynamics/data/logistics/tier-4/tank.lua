@@ -3,7 +3,7 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("storage-tank", "storage-tank", "storage-tank-3", true)
 DyWorld_Prototype_1.minable = {mining_time = 0.5, result = "storage-tank-3"}
 DyWorld_Prototype_1.flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"}
-DyWorld_Prototype_1.fast_replaceable_group = "storage-tank"
+DyWorld_Prototype_1.fast_replaceable_group = "pipe"
 DyWorld_Prototype_1.fluid_box.base_area = 25000
 DyWorld_Prototype_1.icon = nil
 DyWorld_Prototype_1.icons = 

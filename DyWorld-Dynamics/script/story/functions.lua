@@ -201,7 +201,7 @@ function Story_Objectives_Research(name)
 		if (v.type_1 == "research" and v.type_2 == "name") then
 			if (name == v.name and v.done == false) then
 				v.done = true
-				global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount_left - 1
+                global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
 			end
 		end
 	end

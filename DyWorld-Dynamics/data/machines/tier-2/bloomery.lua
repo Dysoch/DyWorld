@@ -11,13 +11,15 @@ DyWorld_Prototype_1.animation = data.raw.furnace["electric-furnace"].animation
 DyWorld_Prototype_1.working_visualisations = data.raw.furnace["electric-furnace"].working_visualisations
 DyWorld_Prototype_1.water_reflection = data.raw.furnace["electric-furnace"].water_reflection
 DyWorld_Prototype_1.allowed_effects = {"consumption", "speed", "pollution"}
+DyWorld_Prototype_1.fast_replaceable_group = "crafting"
+DyWorld_Prototype_1.next_upgrade = nil
 DyWorld_Prototype_1.module_specification = {
       module_slots = 3
     }
 DyWorld_Prototype_1.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 5,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 15 or Dy_Sett.Difficulty == "Hard" and 45 or 5,
     }
 
 

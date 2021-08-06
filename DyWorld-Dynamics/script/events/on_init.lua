@@ -29,6 +29,7 @@ function Event_on_init()
 				days = 0,
 				radars = 0,
 				inserters = 0,
+				ghosts = 0,
 				research = 0,
 				dyson = {
 					power_total = 0,

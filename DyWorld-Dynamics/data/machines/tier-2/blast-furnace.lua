@@ -20,7 +20,8 @@ data:extend(
     max_health = 1000,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    fast_replaceable_group = "blast-furnace",
+    fast_replaceable_group = "crafting",
+    next_upgrade = nil,
     crafting_categories = {"blast-furnace"},
     crafting_speed = 1,
     energy_source =
@@ -28,7 +29,7 @@ data:extend(
       type = "electric",
       usage_priority = "secondary-input",
       drain = "1kW",
-      emissions_per_minute = 25,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 20 or Dy_Sett.Difficulty == "Normal" and 60 or Dy_Sett.Difficulty == "Hard" and 180 or 5,
     },
     energy_usage = "500kW",
     ingredient_count = 25,

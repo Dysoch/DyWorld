@@ -46,7 +46,7 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 1000,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 1000 or Dy_Sett.Difficulty == "Normal" and 5000 or Dy_Sett.Difficulty == "Hard" and 25000 or 5,
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =

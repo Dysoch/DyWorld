@@ -20,6 +20,15 @@ Tier_Colors = {
 	[5] = {0, 0, 255},
 }
 
+Science_Colors = {
+	["automation"] = {200, 0, 0},
+	["logistic"] = {50, 200, 50},
+	["chemical"] = {0, 0, 200},
+	["military"] = {25, 25, 25},
+	["production"] = {200, 0, 200},
+	["utility"] = {200, 200, 0},
+	["biological"] = {0, 200, 0},
+}
 -- Automation --
 Sci_Tier_1 = {200, 0, 0}
 Sci_Tier_2 = {255, 0, 0}
@@ -170,8 +179,14 @@ Dy_Exclude_Recipes = {
 }
 
 Dy_Exclude_Tech = { 
+	-- Base ----
+	["logistic-science-pack"] = 1,
+	["chemical-science-pack"] = 1,
+	["utility-science-pack"] = 1,
+	["production-science-pack"] = 1,
+	["military-science-pack"] = 1,
 	-- AAI Signal ----
-	["aai-signal-transmission"] = 1, 
+	["aai-signal-transmission"] = 1,
 	-- Jetpack ----
 	["jetpack-1"] = 1, 
 	["jetpack-2"] = 1, 
@@ -188,7 +203,7 @@ Dy_Exclude_Tech = {
 	["se-antimatter-reactor"] = 1, 
 	["se-core-miner"] = 1, 
 	["se-cryogun"] = 1, 
-	["se-meteor-point-defence"] = 1, 
+	["se-meteor-point-defence"] = 1,
 	["se-meteor-defence"] = 1, 
 	["se-deep-catalogue-1"] = 1, 
 	["se-deep-catalogue-2"] = 1, 

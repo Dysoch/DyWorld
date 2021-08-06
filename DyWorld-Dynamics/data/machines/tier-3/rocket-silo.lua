@@ -6,6 +6,8 @@ local DyWorld_Prototype_2 = DyDs_CopyPrototype("rocket-silo-rocket", "rocket-sil
 DyWorld_Prototype_1.rocket_parts_required = 25
 DyWorld_Prototype_1.fixed_recipe = "rocket-part-2"
 DyWorld_Prototype_1.rocket_entity = "rocket-silo-rocket-2"
+DyWorld_Prototype_1.next_upgrade = "rocket-silo-3"
+DyWorld_Prototype_1.fast_replaceable_group = "rocket-silo"
 DyWorld_Prototype_1.fluid_boxes = {
       {
         production_type = "input",

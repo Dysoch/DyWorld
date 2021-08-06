@@ -29,7 +29,7 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 5,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 15 or Dy_Sett.Difficulty == "Hard" and 45 or 5,
     },
     energy_usage = "750kW",
     ingredient_count = 25,

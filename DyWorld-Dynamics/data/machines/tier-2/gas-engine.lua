@@ -5,7 +5,7 @@ DyWorld_Prototype_1.fluid_box.filter = "natural-gas"
 DyWorld_Prototype_1.fluid_box.minimum_temperature = 0
 DyWorld_Prototype_1.maximum_temperature = 50
 DyWorld_Prototype_1.max_power_output = "500kW"
-DyWorld_Prototype_1.energy_source.emissions_per_minute = 5
+DyWorld_Prototype_1.energy_source.emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 15 or Dy_Sett.Difficulty == "Hard" and 45 or 5
 DyWorld_Prototype_1.fluid_usage_per_tick = (5 / 60)
 DyWorld_Prototype_1.burns_fluid = true
 

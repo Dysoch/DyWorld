@@ -513,6 +513,8 @@ data:extend(
     name = params.name
   },
 })
+-- @todo Rewrite Combat Overhaul
+-- @body Make use of force_condition to allow walls to send projectiles over it
 	for k,v in pairs(Dy_Ammo_Mods) do
 data:extend(
 {

@@ -15,6 +15,8 @@ DyWorld_Prototype_1.hand_closed_picture.tint = Tier_1
 DyWorld_Prototype_1.hand_closed_picture.hr_version.tint = Tier_1
 DyWorld_Prototype_1.hand_open_picture.tint = Tier_1
 DyWorld_Prototype_1.hand_open_picture.hr_version.tint = Tier_1
+DyWorld_Prototype_1.fast_replaceable_group = "inserter"
+DyWorld_Prototype_1.next_upgrade = "normal-inserter"
 
 
 data:extend({
@@ -61,6 +63,7 @@ DyWorld_Prototype_2.pickup_position = DyDs_Inserter_Normal_Pickup
 DyWorld_Prototype_2.insert_position = DyDs_Inserter_Normal_Insert
 DyWorld_Prototype_2.filter_count = 2
 DyWorld_Prototype_2.stack = false
+DyWorld_Prototype_2.next_upgrade = "normal-inserter-filter"
 
 local DyWorld_Prototype_3 = DyDs_CopyPrototype("inserter", "basic-inserter", "basic-inserter-long", true)
 
@@ -69,6 +72,7 @@ DyWorld_Prototype_3.pickup_position = DyDs_Inserter_Long_Pickup
 DyWorld_Prototype_3.insert_position = DyDs_Inserter_Long_Insert
 DyWorld_Prototype_3.filter_count = 0
 DyWorld_Prototype_3.stack = false
+DyWorld_Prototype_3.next_upgrade = "normal-inserter-long"
 
 local DyWorld_Prototype_4 = DyDs_CopyPrototype("inserter", "basic-inserter", "basic-inserter-long-filter", true)
 
@@ -77,6 +81,7 @@ DyWorld_Prototype_4.pickup_position = DyDs_Inserter_Long_Pickup
 DyWorld_Prototype_4.insert_position = DyDs_Inserter_Long_Insert
 DyWorld_Prototype_4.filter_count = 2
 DyWorld_Prototype_4.stack = false
+DyWorld_Prototype_4.next_upgrade = "normal-inserter-long-filter"
 
 
 data:extend({

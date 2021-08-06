@@ -45,7 +45,7 @@ DyWorld_Prototype_1.fluid_boxes = {
 DyWorld_Prototype_1.energy_source = {
       type = "heat",
 	  default_temperature = 15,
-      emissions_per_minute = 10,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 15 or Dy_Sett.Difficulty == "Hard" and 45 or 5,
       max_temperature = 100000,
       min_working_temperature = 500,
       minimum_glow_temperature = 80,

@@ -5,6 +5,8 @@ DyWorld_Prototype_1.max_health = 15000
 DyWorld_Prototype_1.max_distance_of_sector_revealed = 112
 DyWorld_Prototype_1.max_distance_of_nearby_sector_revealed = 9
 DyWorld_Prototype_1.energy_usage = "5400kW"
+DyWorld_Prototype_1.next_upgrade = nil
+DyWorld_Prototype_1.fast_replaceable_group = "radar"
 
 
 data:extend({

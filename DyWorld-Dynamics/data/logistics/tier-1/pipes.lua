@@ -5,6 +5,9 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("pipe", "pipe", "bronze-pipe", true)
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("pipe-to-ground", "pipe-to-ground", "bronze-pipe-to-ground", true)
 
+DyWorld_Prototype_1.fast_replaceable_group = "pipe"
+DyWorld_Prototype_2.fast_replaceable_group = "pipe"
+
 data:extend({
   DyWorld_Prototype_1,
   DyWorld_Prototype_2,

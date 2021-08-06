@@ -28,7 +28,7 @@ local DyWorld_Prototype_1 = DyDs_CopyPrototype("electric-turret", "laser-turret"
               starting_speed = 2,
               direction_deviation = 0.2,
               range_deviation = 0.1,
-              max_range = math.floor((10 * v.Mod) + 5),
+              max_range = math.floor(math.min((10 + (v.Tier * v.Mod)), 40)),
             }
           }
         }
@@ -66,7 +66,7 @@ local DyWorld_Prototype_2 = DyDs_CopyPrototype("electric-turret", "laser-turret"
               starting_speed = 2.5,
               direction_deviation = 0.1,
               range_deviation = 0.2,
-              max_range = math.floor((10 * v.Mod) + 5),
+              max_range = math.floor(math.min((12 + (v.Tier * v.Mod)), 50)),
             }
           }
         }
@@ -93,6 +93,7 @@ data:extend({
     flags = {"not-on-map"},
     acceleration = 0.03,
     collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
+    force_condition = "not-friend",
     direction_only = true,
     action =
     {
@@ -131,6 +132,7 @@ data:extend({
     flags = {"not-on-map"},
     acceleration = 0.03,
     collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
+    force_condition = "not-friend",
     direction_only = true,
     action =
     {

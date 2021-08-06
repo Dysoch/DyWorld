@@ -20,6 +20,7 @@ DyWorld_Prototype_1.inputs = lab_inputs
 DyWorld_Prototype_1.collision_box = {{-3.3, -3.3}, {3.3, 3.3}}
 DyWorld_Prototype_1.selection_box = {{-3.5, -3.5}, {3.5, 3.5}}
 DyWorld_Prototype_1.drawing_box = {{-3.5, -3.9}, {3.5, 3.5}}
+DyWorld_Prototype_1.fast_replaceable_group = "lab"
 DyWorld_Prototype_1.icon = "__space-exploration-graphics__/graphics/icons/genetics-laboratory.png"
 DyWorld_Prototype_1.on_animation = {
       layers =

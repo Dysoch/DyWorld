@@ -44,7 +44,7 @@ data:extend(
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 12.5,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 15 or Dy_Sett.Difficulty == "Normal" and 45 or Dy_Sett.Difficulty == "Hard" and 135 or 5,
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
@@ -171,7 +171,7 @@ data:extend(
         }
       }
     },
-    fast_replaceable_group = "furnace"
+    fast_replaceable_group = "crafting",
   },
   {
     type = "item",

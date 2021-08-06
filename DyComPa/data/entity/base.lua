@@ -49,7 +49,14 @@ data.raw.unit["big-spitter"].hide_resistances = true
 data.raw.unit["behemoth-spitter"].hide_resistances = true
 
 data.raw["unit-spawner"]["biter-spawner"].hide_resistances = true
+data.raw["unit-spawner"]["biter-spawner"].max_count_of_owned_units = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 10 or Dy_Sett.Difficulty == "Hard" and 20 or 5
+data.raw["unit-spawner"]["biter-spawner"].max_friends_around_to_spawn = Dy_Sett.Difficulty == "Easy" and 3 or Dy_Sett.Difficulty == "Normal" and 8 or Dy_Sett.Difficulty == "Hard" and 18 or 5
+data.raw["unit-spawner"]["biter-spawner"].spawning_cooldown = Dy_Sett.Difficulty == "Easy" and {360, 180} or Dy_Sett.Difficulty == "Normal" and {180, 90} or Dy_Sett.Difficulty == "Hard" and {90, 45} or {360, 150}
+
 data.raw["unit-spawner"]["spitter-spawner"].hide_resistances = true
+data.raw["unit-spawner"]["spitter-spawner"].max_count_of_owned_units = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 10 or Dy_Sett.Difficulty == "Hard" and 20 or 5
+data.raw["unit-spawner"]["spitter-spawner"].max_friends_around_to_spawn = Dy_Sett.Difficulty == "Easy" and 3 or Dy_Sett.Difficulty == "Normal" and 8 or Dy_Sett.Difficulty == "Hard" and 18 or 5
+data.raw["unit-spawner"]["spitter-spawner"].spawning_cooldown = Dy_Sett.Difficulty == "Easy" and {360, 180} or Dy_Sett.Difficulty == "Normal" and {180, 90} or Dy_Sett.Difficulty == "Hard" and {90, 45} or {360, 150}
 
 	-- New Locales --
 data.raw.unit["small-biter"].localised_name = {"enemies-name.small-biter"}

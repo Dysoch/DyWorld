@@ -28,7 +28,7 @@ data:extend(
       {
         {type = v.type == "fluid" and "fluid" or "item", name = v.name, amount = v.type == "fluid" and 10 or 1},
       },
-      results = 
+      results =
       {
         {type = v.type == "fluid" and "fluid" or "item", name = v.name, amount = 0},
       },

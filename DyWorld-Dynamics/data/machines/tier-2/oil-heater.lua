@@ -23,33 +23,43 @@ DyWorld_Prototype_5.energy_usage = "1500kW"
 DyWorld_Prototype_1.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      drain = "0.4kW"
+      drain = "0.4kW",
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 1 or Dy_Sett.Difficulty == "Normal" and 3 or Dy_Sett.Difficulty == "Hard" and 9 or 5,
     }
 DyWorld_Prototype_2.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      drain = "0.4kW"
+      drain = "0.4kW",
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 2 or Dy_Sett.Difficulty == "Normal" and 6 or Dy_Sett.Difficulty == "Hard" and 18 or 5,
     }
 DyWorld_Prototype_3.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      drain = "0.4kW"
+      drain = "0.4kW",
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 4 or Dy_Sett.Difficulty == "Normal" and 12 or Dy_Sett.Difficulty == "Hard" and 36 or 5,
     }
 DyWorld_Prototype_4.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      drain = "0.4kW"
+      drain = "0.4kW",
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 8 or Dy_Sett.Difficulty == "Normal" and 24 or Dy_Sett.Difficulty == "Hard" and 72 or 5,
     }
 DyWorld_Prototype_5.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      drain = "0.4kW"
+      drain = "0.4kW",
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 16 or Dy_Sett.Difficulty == "Normal" and 48 or Dy_Sett.Difficulty == "Hard" and 144 or 5,
     }
 DyWorld_Prototype_1.target_temperature = 50
 DyWorld_Prototype_2.target_temperature = 120
 DyWorld_Prototype_3.target_temperature = 200
 DyWorld_Prototype_4.target_temperature = 260
 DyWorld_Prototype_5.target_temperature = 325
+DyWorld_Prototype_1.fast_replaceable_group = "boiler"
+DyWorld_Prototype_2.fast_replaceable_group = "boiler"
+DyWorld_Prototype_3.fast_replaceable_group = "boiler"
+DyWorld_Prototype_4.fast_replaceable_group = "boiler"
+DyWorld_Prototype_5.fast_replaceable_group = "boiler"
 
 data:extend({
   DyWorld_Prototype_1,

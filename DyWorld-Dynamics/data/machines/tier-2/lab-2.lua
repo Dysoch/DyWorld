@@ -7,6 +7,7 @@ local lab_inputs =
 }
 
 DyWorld_Prototype_1.inputs = lab_inputs
+DyWorld_Prototype_1.fast_replaceable_group = "lab"
 
 
 data:extend({
@@ -29,6 +30,7 @@ data:extend({
     {
       ingredients =
       {
+        -- @todo Rewrite recipe Lab 2
         {type = "item", name = "control-board-1", amount = 3},
         {type = "item", name = "iron-plate", amount = 8},
         {type = "item", name = "bronze-plate", amount = 2},

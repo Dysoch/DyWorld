@@ -1,211 +1,65 @@
+local Science_Table = {"automation", "logistic", "chemical", "military", "production", "utility", "biological"}
 
-
-local Science_Techs = {
-	{
-		name = "dy-science-pack-1",
-		flags = {Act_3 = true},
+for k,v in pairs(Science_Table) do
+    local Basic = {
+		name = v.."-science-pack",
+		flags = {Tech_Main = true},
 		prerequisites = {
-			"basic-asteroid-mining",
-		},
+            v == "automation" and "basic-asteroid-mining" or nil,
+            v == "logistic" and "automation-science-pack" or nil,
+            v == "military" and "automation-science-pack" or nil,
+            v == "chemical" and "logistic-science-pack" or nil,
+            v == "biological" and "automation-science-pack" or nil,
+            v == "biological" and "logistic-science-pack" or nil,
+            v == "production" and "chemical-science-pack" or nil,
+            v == "utility" and "production-science-pack" or nil,
+        },
 		ingredients = {
-			Dy_Metal_Tech_Pack("steel", 2500),
-		},
+            v == "automation" and Dy_Metal_Tech_Pack("steel", 2500) or nil,
+            v == "logistic" and Dy_Main_Tech_Pack(1.1, 2500) or nil,
+            v == "military" and Dy_Main_Tech_Pack(1.1, 2500) or nil,
+            v == "chemical" and Dy_Main_Tech_Pack(1.1, 2500) or nil,
+            v == "chemical" and Dy_Main_Tech_Pack(2.1, 2500) or nil,
+            v == "biological" and Dy_Main_Tech_Pack(1.1, 2500) or nil,
+            v == "biological" and Dy_Main_Tech_Pack(2.1, 2500) or nil,
+            v == "production" and Dy_Main_Tech_Pack(1.1, 2500) or nil,
+            v == "production" and Dy_Main_Tech_Pack(2.1, 2500) or nil,
+            v == "production" and Dy_Main_Tech_Pack(3.1, 2500) or nil,
+            v == "utility" and Dy_Main_Tech_Pack(1.1, 2500) or nil,
+            v == "utility" and Dy_Main_Tech_Pack(2.1, 2500) or nil,
+            v == "utility" and Dy_Main_Tech_Pack(3.1, 2500) or nil,
+            v == "utility" and Dy_Main_Tech_Pack(5.1, 2500) or nil,
+        },
 		time = Dy_Tech_Time_Calc(30),
 		order = "999",
-	},
-	{
-		name = "dy-science-pack-2",
-		flags = {Act_3 = true},
+	}
+    local Advanced = {
+		name = v.."-science-pack-advanced",
+		flags = {Tech_Main = true},
 		prerequisites = {
-			"dy-science-pack-1",
+			v.."-science-pack",
 		},
 		ingredients = {
-			Dy_Main_Tech_Pack(1.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
+            v == "automation" and Dy_Main_Tech_Pack(1.1, 2500) or nil,
+            v == "logistic" and Dy_Main_Tech_Pack(1.2, 2500) or nil,
+            v == "chemical" and Dy_Main_Tech_Pack(1.2, 2500) or nil,
+            v == "chemical" and Dy_Main_Tech_Pack(2.2, 2500) or nil,
+            v == "biological" and Dy_Main_Tech_Pack(1.2, 2500) or nil,
+            v == "biological" and Dy_Main_Tech_Pack(2.2, 2500) or nil,
+            v == "production" and Dy_Main_Tech_Pack(1.2, 2500) or nil,
+            v == "production" and Dy_Main_Tech_Pack(2.2, 2500) or nil,
+            v == "production" and Dy_Main_Tech_Pack(3.2, 2500) or nil,
+            v == "utility" and Dy_Main_Tech_Pack(1.2, 2500) or nil,
+            v == "utility" and Dy_Main_Tech_Pack(2.2, 2500) or nil,
+            v == "utility" and Dy_Main_Tech_Pack(3.2, 2500) or nil,
+            v == "utility" and Dy_Main_Tech_Pack(5.2, 2500) or nil,
+            v == "military" and Dy_Main_Tech_Pack(1.2, 2500) or nil,
+            v == "military" and Dy_Main_Tech_Pack(2.2, 2500) or nil,
+            v == "military" and Dy_Main_Tech_Pack("mil-1", 2500) or nil,
+        },
+		time = Dy_Tech_Time_Calc(300),
 		order = "999",
-	},
-	{
-		name = "dy-science-pack-3",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-1",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(1.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-4",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-3",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(2.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-5",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-3",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(1.1, 2500),
-			Dy_Main_Tech_Pack(2.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-6",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-5",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(3.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-7",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-1",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(1.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-8",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-7",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack("mil-2", 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-9",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-5",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(1.1, 2500),
-			Dy_Main_Tech_Pack(2.1, 2500),
-			Dy_Main_Tech_Pack(3.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-10",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-9",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(5.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-11",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-9",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(1.1, 2500),
-			Dy_Main_Tech_Pack(2.1, 2500),
-			Dy_Main_Tech_Pack(3.1, 2500),
-			Dy_Main_Tech_Pack(5.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-12",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-11",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(6.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-13",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-11",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(1.1, 2500),
-			Dy_Main_Tech_Pack(2.1, 2500),
-			Dy_Main_Tech_Pack(3.1, 2500),
-			Dy_Main_Tech_Pack(5.1, 2500),
-			Dy_Main_Tech_Pack(6.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-14",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-13",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(7.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-15",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-3",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(1.1, 2500),
-			Dy_Main_Tech_Pack(2.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-	{
-		name = "dy-science-pack-16",
-		flags = {Act_3 = true},
-		prerequisites = {
-			"dy-science-pack-15",
-		},
-		ingredients = {
-			Dy_Main_Tech_Pack(4.1, 2500),
-		},
-		time = Dy_Tech_Time_Calc(30),
-		order = "999",
-	},
-}
-
-for k,v in pairs(Science_Techs) do
-	DyWorld_Tech_Add(v)
+	}
+    DyWorld_Tech_Add(Basic)
+    DyWorld_Tech_Add(Advanced)
 end

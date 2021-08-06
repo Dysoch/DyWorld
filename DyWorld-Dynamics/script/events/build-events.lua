@@ -66,6 +66,42 @@ function Event_on_built_entity(event)
 		table.insert(global.dyworld.game_stats.building_locations[surface], BuildingTable)
 		--debug("build at: "..position.x..", "..position.y)
 	end
+
+	----- Ghost Building -----
+	if name == "entity-ghost" then
+		if not global.dyworld.game_stats.ghosts then global.dyworld.game_stats.ghosts = 0 end
+		global.dyworld.game_stats.ghosts = global.dyworld.game_stats.ghosts + 1
+	end
+
+	----- Mining Network Building -----
+	if Dy_Find_Str(name, "asteroid-network-interface") then
+		if not global.dyworld.game_stats.space_mining.interfaces then global.dyworld.game_stats.space_mining.interfaces = {} end
+        for Metal_Name,Metal_Table in pairs(Dy_Metals) do
+            if Dy_Find_Str(name, Metal_Name) then
+                if Dy_Find_Str(name, "-impure") then
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure then global.dyworld.game_stats.space_mining.interfaces.impure = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name] then global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name] = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs then global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts then global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts = 0 end
+                    global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts + 1
+                    debug("Built: "..Metal_Name.." interface (Impure)")
+                    local surface = event.created_entity.surface.name
+                    local BuildingTable = {PosX = position.x, PosY = position.y, Surface = surface}
+                    table.insert(global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs, BuildingTable)
+                elseif Dy_Find_Str(name, "-pure") then
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure then global.dyworld.game_stats.space_mining.interfaces.pure = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name] then global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name] = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs then global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts then global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts = 0 end
+                    global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts + 1
+                    debug("Built: "..Metal_Name.." interface (Pure)")
+                    local surface = event.created_entity.surface.name
+                    local BuildingTable = {PosX = position.x, PosY = position.y, Surface = surface}
+                    table.insert(global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs, BuildingTable)
+                end
+            end
+        end
+	end
 	
 	if global.dyworld_story then
 		----- Story Objective Check -----
@@ -77,7 +113,6 @@ function Event_on_built_entity(event)
 		
 		if (type == "radar") then
 			if (name == "burner-radar") then
-				game.forces.player.ghost_time_to_live = (60*60*60*24)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
 			end
 			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
@@ -89,13 +124,11 @@ function Event_on_built_entity(event)
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
-				game.forces.player.ghost_time_to_live = (60*60*60*48)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
 			end
 			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
 				global.dyworld.game_stats.attack_warning_2 = true
 				global.dyworld.game_stats.attack_warning_3 = true
-				game.forces.player.ghost_time_to_live = (60*60*60*240)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
 		end
@@ -110,7 +143,6 @@ function Event_on_built_entity(event)
 			for _,player in pairs(game.players) do
 				player.force.enable_research()
 				DyLog(Time..": Research Unlocked")
-				game.forces.player.ghost_time_to_live = (60*60*60*1)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*1)
 			end
 		end
@@ -184,6 +216,7 @@ function Event_on_robot_built_entity(event)
 		global.dyworld.game_stats.build_names[name] = 1
 	else
 		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
+		global.dyworld.game_stats.build_amount = global.dyworld.game_stats.build_amount + 1
 	end
 	
 	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
@@ -199,12 +232,39 @@ function Event_on_robot_built_entity(event)
 		table.insert(global.dyworld.game_stats.building_locations[surface], BuildingTable)
 		--debug("build at: "..position.x..", "..position.y)
 	end
+
+	----- Mining Network Building -----
+	if Dy_Find_Str(name, "asteroid-network-interface") then
+		if not global.dyworld.game_stats.space_mining.interfaces then global.dyworld.game_stats.space_mining.interfaces = {} end
+        for Metal_Name,Metal_Table in pairs(Dy_Metals) do
+            if Dy_Find_Str(name, Metal_Name) then
+                if Dy_Find_Str(name, "-impure") then
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure then global.dyworld.game_stats.space_mining.interfaces.impure = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name] then global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name] = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs then global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts then global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts = 0 end
+                    global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts + 1
+                    local surface = event.created_entity.surface.name
+                    local BuildingTable = {PosX = position.x, PosY = position.y, Surface = surface}
+                    table.insert(global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs, BuildingTable)
+                elseif Dy_Find_Str(name, "-pure") then
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure then global.dyworld.game_stats.space_mining.interfaces.pure = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name] then global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name] = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs then global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts then global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts = 0 end
+                    global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts + 1
+                    local surface = event.created_entity.surface.name
+                    local BuildingTable = {PosX = position.x, PosY = position.y, Surface = surface}
+                    table.insert(global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs, BuildingTable)
+                end
+            end
+        end
+	end
 	
 	if global.dyworld_story then
 		-- Reenable Minimap
 		if (type == "radar") then
 			if (name == "burner-radar") then
-				game.forces.player.ghost_time_to_live = (60*60*60*24)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
 			end
 			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
@@ -216,13 +276,11 @@ function Event_on_robot_built_entity(event)
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
-				game.forces.player.ghost_time_to_live = (60*60*60*48)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
 			end
 			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
 				global.dyworld.game_stats.attack_warning_2 = true
 				global.dyworld.game_stats.attack_warning_3 = true
-				game.forces.player.ghost_time_to_live = (60*60*60*240)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
 		end
@@ -238,7 +296,6 @@ function Event_on_robot_built_entity(event)
 				if player.force.research_enabled == false then
 					player.force.enable_research()
 					DyLog(Time..": Research Unlocked")
-					game.forces.player.ghost_time_to_live = (60*60*60*1)
 					game.forces.player.deconstruction_time_to_live = (60*60*60*1)
 				end
 			end
@@ -280,6 +337,7 @@ function Event_on_robot_built_tile(event)
 		global.dyworld.game_stats.build_names[name] = 1
 	else
 		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
+		global.dyworld.game_stats.build_amount = global.dyworld.game_stats.build_amount + 1
 	end
 	
 	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
@@ -322,6 +380,7 @@ function Event_script_raised_revive(event)
 		global.dyworld.game_stats.build_names[name] = 1
 	else
 		global.dyworld.game_stats.build_names[name] = global.dyworld.game_stats.build_names[name] + 1
+		global.dyworld.game_stats.build_amount = global.dyworld.game_stats.build_amount + 1
 	end
 	
 	if not global.dyworld.game_stats.build then global.dyworld.game_stats.build = {} end
@@ -336,6 +395,37 @@ function Event_script_raised_revive(event)
 		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
 		table.insert(global.dyworld.game_stats.building_locations[surface], BuildingTable)
 	end
+
+	----- Mining Network Building -----
+	if Dy_Find_Str(name, "asteroid-network-interface") then
+		if not global.dyworld.game_stats.space_mining.interfaces then global.dyworld.game_stats.space_mining.interfaces = {} end
+        for Metal_Name,Metal_Table in pairs(Dy_Metals) do
+            if Dy_Find_Str(name, Metal_Name) then
+                if Dy_Find_Str(name, "-impure") then
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure then global.dyworld.game_stats.space_mining.interfaces.impure = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name] then global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name] = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs then global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts then global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts = 0 end
+                    global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts + 1
+                    debug("Built: "..Metal_Name.." interface (Impure)")
+                    local surface = event.entity.surface.name
+                    local BuildingTable = {PosX = position.x, PosY = position.y, Surface = surface}
+                    table.insert(global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs, BuildingTable)
+                elseif Dy_Find_Str(name, "-pure") then
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure then global.dyworld.game_stats.space_mining.interfaces.pure = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name] then global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name] = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs then global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs = {} end
+                    if not global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts then global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts = 0 end
+                    global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts + 1
+                    debug("Built: "..Metal_Name.." interface (Pure)")
+                    local surface = event.entity.surface.name
+                    local BuildingTable = {PosX = position.x, PosY = position.y, Surface = surface}
+                    table.insert(global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs, BuildingTable)
+                end
+            end
+        end
+	end
+
 	
 	if global.dyworld_story then
 
@@ -348,7 +438,6 @@ function Event_script_raised_revive(event)
 		-- Reenable Minimap
 		if (type == "radar") then
 			if (name == "burner-radar") then
-				game.forces.player.ghost_time_to_live = (60*60*60*24)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
 			end
 			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
@@ -360,13 +449,11 @@ function Event_script_raised_revive(event)
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
-				game.forces.player.ghost_time_to_live = (60*60*60*48)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
 			end
 			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
 				global.dyworld.game_stats.attack_warning_2 = true
 				global.dyworld.game_stats.attack_warning_3 = true
-				game.forces.player.ghost_time_to_live = (60*60*60*240)
 				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
 		end
@@ -382,7 +469,6 @@ function Event_script_raised_revive(event)
 				if player.force.research_enabled == false then
 					player.force.enable_research()
 					DyLog(Time..": Research Unlocked")
-					game.forces.player.ghost_time_to_live = (60*60*60*1)
 					game.forces.player.deconstruction_time_to_live = (60*60*60*1)
 				end
 			end

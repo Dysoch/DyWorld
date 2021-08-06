@@ -58,16 +58,6 @@ local Tech_Act_3 = {
 	["space-science-pack"] = {Replace = "canister-empty", Ratio = 2.5},
 }
 
-local Tech_Main = {
-	["automation-science-pack"] = {Replace = "dysci-01"},
-	["logistic-science-pack"] = {Replace = "dysci-03"},
-	["chemical-science-pack"] = {Replace = "dysci-05"},
-	["military-science-pack"] = {Replace = "dysci-07"},
-	["production-science-pack"] = {Replace = "dysci-09"},
-	["utility-science-pack"] = {Replace = "dysci-11"},
-	["space-science-pack"] = {Replace = "dysci-13"},
-}
-
 local Tech_Base_Game = {
 	["physical-projectile-damage-1"] = {Replace = nil},
 	["physical-projectile-damage-2"] = {Replace = nil},
@@ -257,12 +247,12 @@ local Tech_Base_Game = {
 	["artillery"] = {Replace = nil},
 	["spidertron"] = {Replace = nil},
 	["circuit-network"] = {Replace = "intermediates-3"},
-	["logistic-science-pack"] = {Replace = "dy-science-pack-3"},
-	["chemical-science-pack"] = {Replace = "dy-science-pack-5"},
-	["military-science-pack"] = {Replace = "dy-science-pack-7"},
-	["production-science-pack"] = {Replace = "dy-science-pack-9"},
-	["utility-science-pack"] = {Replace = "dy-science-pack-11"},
-	["space-science-pack"] = {Replace = "dy-science-pack-13"},
+	--["logistic-science-pack"] = {Replace = "dy-science-pack-3"},
+	--["chemical-science-pack"] = {Replace = "dy-science-pack-5"},
+	--["military-science-pack"] = {Replace = "dy-science-pack-7"},
+	--["production-science-pack"] = {Replace = "dy-science-pack-9"},
+	--["utility-science-pack"] = {Replace = "dy-science-pack-11"},
+	["space-science-pack"] = {Replace = "utility-science-pack"},
 	["aai-strongbox-base"] = {Replace = "storage-1"},
 	["aai-strongbox-storage"] = {Replace = "storage-3"},
 	["aai-strongbox-logistic"] = {Replace = "storage-5"},
@@ -328,6 +318,7 @@ local Tech_Base_Game = {
 
 for _, tech in pairs (data.raw.technology) do
 	if not tech.DyWorld_Hider then
+			--[[
 		if tech.flag and tech.flag.Act_2 then
 			if tech.unit and tech.unit.ingredients then
 				for k,v in pairs(tech.unit.ingredients) do
@@ -351,20 +342,7 @@ for _, tech in pairs (data.raw.technology) do
 					end
 				end
 			end
-		end
-		if tech.unit and tech.unit.ingredients then
-			for k,v in pairs(tech.unit.ingredients) do
-				for Old,New in pairs(Tech_Main) do
-					if v and v[1] and v[1] == Old then
-						if CheckIngre(tech.name, New.Replace) == 0 then
-							v[1] = New.Replace
-						else
-							v = nil
-						end
-					end
-				end
-			end
-		end
+		end]]
 		if tech.prerequisites then
 			for k,v in pairs(tech.prerequisites) do
 				for Old,New in pairs(Tech_Base_Game) do
@@ -416,19 +394,6 @@ for _, tech in pairs (data.raw.technology) do
 end
 
 for _,tech in pairs(data.raw.technology) do
-	if tech.unit and tech.unit.ingredients then
-		for k,v in pairs(tech.unit.ingredients) do
-			for Old,New in pairs(Tech_Main) do
-				if v and v[1] and v[1] == Old then
-					if CheckIngre(tech.name, New.Replace) == 0 then
-						v[1] = New.Replace
-					else
-						v = nil
-					end
-				end
-			end
-		end
-	end
 	if tech.prerequisites then
 		for k,v in pairs(tech.prerequisites) do
 			for Old,New in pairs(Tech_Base_Game) do

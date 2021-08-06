@@ -14,7 +14,7 @@ for name, techtable in pairs(Recipes) do
 	end
 end]]--
 
-data.raw.technology["se-rocket-fuel-from-water"].prerequisites = {"oil-processing", "dy-science-pack-5"}
-data.raw.technology["se-fuel-refining"].prerequisites = {"oil-processing", "dy-science-pack-3"}
+data.raw.technology["se-rocket-fuel-from-water"].prerequisites = {"oil-processing", "chemical-science-pack"}
+data.raw.technology["se-fuel-refining"].prerequisites = {"oil-processing", "logistic-science-pack"}
 data.raw.technology["artillery-shell-range-2"].hidden = true
 data.raw.technology["artillery-shell-speed-2"].hidden = true

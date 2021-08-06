@@ -10,7 +10,8 @@ Date: 01. 08. 2021
   Changes:
     - 
   Compatibility:
-    - 
+    - Space Exploration: required version: 0.5.72 > 0.5.77
+    - Space Exploration Graphics Part 1: required version: 0.5.10 > 0.5.12
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 28. 07. 2021

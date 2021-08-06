@@ -25,4 +25,7 @@ function Event_on_configuration_changed()
 	
 	Reunlock_Recipes()
 	Repopulate_Side_Objectives_Table()
+    if global.dyworld.game_stats.inserters then
+        InserterCheck(global.dyworld.game_stats.inserters)
+    end
 end

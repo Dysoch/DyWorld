@@ -30,15 +30,15 @@ for i = 1, 10 do
     DyWorld_Prototype_Unit.sticker_box = {{(-0.6 * Unit_Table[Unit]), (-0.8 * Unit_Table[Unit])}, {(0.6 * Unit_Table[Unit]), 0}}
     DyWorld_Prototype_Unit.attack_parameters = {
       type = "projectile",
-      range = 2.5 * Unit_Table[Unit],
+      range = 1.5 * Unit_Table[Unit],
       cooldown = (10 + (i * Unit)),
       cooldown_deviation = 0.15,
-      ammo_type = make_unit_melee_ammo_type(math.floor((50 * (i * i)) * Unit)),
+      ammo_type = make_unit_melee_ammo_type(math.floor((25 * (i * i)) * Unit)),
       animation = biterattackanimation(Unit_Table[Unit], Tier_Tint[i][1], Tier_Tint[i][2]),
       range_mode = "bounding-box-to-bounding-box"
    }
     DyWorld_Prototype_Unit.vision_distance = 30 + (i * Unit)
-    DyWorld_Prototype_Unit.movement_speed = 0.5 + ((i * Unit) / 100)
+    DyWorld_Prototype_Unit.movement_speed = 0.15 + ((i * Unit) / 100)
     DyWorld_Prototype_Unit.run_animation = biterrunanimation(Unit_Table[Unit], Tier_Tint[i][1], Tier_Tint[i][2])
     DyWorld_Prototype_Unit.corpse = "dyworld-unit-corpse-"..i.."-"..Unit
     DyWorld_Prototype_Unit.localised_name = {"enemies-name.dyworld-unit-"..i.."-"..Unit}
@@ -65,8 +65,8 @@ data:extend({
 
   DyWorld_Prototype_Spawner.corpse = "dyworld-base-corpse-"..i
   DyWorld_Prototype_Spawner.max_health = math.floor(5000 * (i * i))
-  DyWorld_Prototype_Spawner.max_count_of_owned_units = 10 * i
-  DyWorld_Prototype_Spawner.max_friends_around_to_spawn = 8 * i
+  DyWorld_Prototype_Spawner.max_count_of_owned_units = Dy_Sett.Difficulty == "Easy" and (5 * i) or Dy_Sett.Difficulty == "Normal" and (10 * i) or Dy_Sett.Difficulty == "Hard" and (15 * i) or 5
+  DyWorld_Prototype_Spawner.max_friends_around_to_spawn = Dy_Sett.Difficulty == "Easy" and (4 * i) or Dy_Sett.Difficulty == "Normal" and (9 * i) or Dy_Sett.Difficulty == "Hard" and (14 * i) or 5
   DyWorld_Prototype_Spawner.spawning_cooldown = {(360 - (10 * i)), (150 - (10 * i))}
   DyWorld_Prototype_Spawner.spawning_radius = (10 + (i + i))
   DyWorld_Prototype_Spawner.autoplace = nil

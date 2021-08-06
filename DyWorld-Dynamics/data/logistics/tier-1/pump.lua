@@ -4,6 +4,8 @@
 
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("pump", "pump", "bronze-pump", true)
 
+DyWorld_Prototype_1.fast_replaceable_group = "pipe"
+
 data:extend({
   DyWorld_Prototype_1,
   {

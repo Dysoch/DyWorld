@@ -3,7 +3,9 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("boiler", "boiler", "basic-boiler", true)
 DyWorld_Prototype_1.energy_source.fuel_category = "carbon"
 DyWorld_Prototype_1.resistances = Resist_Tier_1(1)
+DyWorld_Prototype_1.fast_replaceable_group = "boiler"
 DyWorld_Prototype_1.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
+data.raw.boiler.boiler.fast_replaceable_group = "boiler"
 
 
 data:extend({

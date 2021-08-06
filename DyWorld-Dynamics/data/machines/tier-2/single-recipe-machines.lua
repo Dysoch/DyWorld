@@ -5,12 +5,14 @@ DyWorld_Prototype_3.crafting_categories = {"soil-miner"}
 DyWorld_Prototype_3.energy_usage = "500kW"
 DyWorld_Prototype_3.crafting_speed = 1
 DyWorld_Prototype_3.fixed_recipe = "soil-mining"
+DyWorld_Prototype_3.fast_replaceable_group = "crafting"
+DyWorld_Prototype_3.next_upgrade = nil
 DyWorld_Prototype_3.resistances = Resist_Tier_1(5)
 DyWorld_Prototype_3.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
 DyWorld_Prototype_3.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 10,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 15 or Dy_Sett.Difficulty == "Hard" and 45 or 5,
     }
 local DyWorld_Prototype_4 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "fish-farm", true)
 DyWorld_Prototype_4.icon = "__base__/graphics/icons/assembling-machine-3.png"
@@ -18,12 +20,14 @@ DyWorld_Prototype_4.crafting_categories = {"fish-miner"}
 DyWorld_Prototype_4.energy_usage = "500kW"
 DyWorld_Prototype_4.crafting_speed = 1
 DyWorld_Prototype_4.fixed_recipe = "fish-mining"
+DyWorld_Prototype_4.fast_replaceable_group = "crafting"
+DyWorld_Prototype_4.next_upgrade = nil
 DyWorld_Prototype_4.resistances = Resist_Tier_1(5)
 DyWorld_Prototype_4.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
 DyWorld_Prototype_4.energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 10,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 15 or Dy_Sett.Difficulty == "Hard" and 45 or 5,
     }
 
 

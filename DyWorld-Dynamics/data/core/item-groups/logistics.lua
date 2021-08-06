@@ -67,6 +67,11 @@ local Data_Table_Item_Group = {
 		Main = "logistics"
 	},
 	{
+		Name = "satellites-2a",
+		Type = "sub",
+		Main = "logistics"
+	},
+	{
 		Name = "chests-aai-2",
 		Type = "sub",
 		Main = "logistics"

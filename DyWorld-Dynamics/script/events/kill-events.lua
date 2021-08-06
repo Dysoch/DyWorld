@@ -39,6 +39,37 @@ function Event_on_entity_died(event)
 			end
 		end
 	end
+
+	----- Mining Network Building -----
+	if Dy_Find_Str(name, "asteroid-network-interface") then
+        for Metal_Name,Metal_Table in pairs(Dy_Metals) do
+            if Dy_Find_Str(name, Metal_Name) then
+                if Dy_Find_Str(name, "-impure") then
+                    if global.dyworld.game_stats.space_mining.interfaces and global.dyworld.game_stats.space_mining.interfaces.impure and global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name] and global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs then
+                        for k,v in pairs(global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs) do
+                            local surface = event.entity.surface.name
+                            if (position.x == v.PosX and position.y == v.PosY and surface == v.Surface) then
+                                table.remove(global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs, k)
+                                global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts - 1
+                                break
+                            end
+                        end
+                    end
+                elseif Dy_Find_Str(name, "-pure") then
+                    if global.dyworld.game_stats.space_mining.interfaces and global.dyworld.game_stats.space_mining.interfaces.pure and global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name] and global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs then
+                        for k,v in pairs(global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs) do
+                            local surface = event.entity.surface.name
+                            if (position.x == v.PosX and position.y == v.PosY and surface == v.Surface) then
+                                table.remove(global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs, k)
+                                global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts - 1
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+        end
+	end
 	
 	if global.dyworld_story then
 		----- Story Objective Check -----

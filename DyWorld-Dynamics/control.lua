@@ -12,6 +12,7 @@ require "script/lualib/debug"
 require "script/lualib/player"
 require "script/lualib/player-ambush"
 require "script/lualib/gui"
+require "script/lualib/space-mining"
 inspect = require("script/lualib/inspect")
 require("script/database/recipes")
 require("script/database/inserter")

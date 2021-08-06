@@ -191,6 +191,10 @@ function Bonuses(id)
 		if inserters >= 51 then
 			game.forces.player.stack_inserter_capacity_bonus  = math.floor((inserters - 50) / 25)
 		end
+		-- @todo Rewrite formula ghost timer to live
+		if global.dyworld.game_stats.ghosts and global.dyworld.game_stats.ghosts >= 1 then
+			game.forces.player.ghost_time_to_live = math.min(math.floor(global.dyworld.game_stats.ghosts * 6), 4000000000)
+		end
 		--[[
 			game.forces.player.following_robots_lifetime_modifier     
 		]]--

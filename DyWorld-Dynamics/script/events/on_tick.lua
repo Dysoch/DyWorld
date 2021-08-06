@@ -49,14 +49,43 @@ function Event_on_tick(event)
 			end
 		end
 	end
-	if event.tick%(60*60)==1 then
+    -- Space Mining Network effects. These happen over a minute, every 15 seconds another things to reduce total load
+	if event.tick%(60*60)==(60*1) then
 		if global.dyworld.game_stats.space_mining then
 			for k,v in pairs(global.dyworld.game_stats.space_mining) do
-				v.pure_mined = v.pure_mined + v.pure_rate
-				v.impure_mined = v.impure_mined + v.impure_rate
-				if v.pure_mined >= v.pure_storage then v.pure_mined = v.pure_storage end
-				if v.impure_mined >= v.impure_storage then v.impure_mined = v.impure_storage end
+                if v.impure_rate and v.impure_rate ~= 0 then
+                    v.impure_mined = v.impure_mined + v.impure_rate
+                    if v.impure_mined >= v.impure_storage then v.impure_mined = v.impure_storage end
+                end
 			end
+		end
+	end
+	if event.tick%(60*60)==(60*16) then
+		if global.dyworld.game_stats.space_mining then
+            if global.dyworld.game_stats.space_mining.interfaces then
+                if global.dyworld.game_stats.space_mining.interfaces.impure then
+                    SPM_Impure()
+                end
+            end
+		end
+	end
+	if event.tick%(60*60)==(60*31) then
+		if global.dyworld.game_stats.space_mining then
+			for k,v in pairs(global.dyworld.game_stats.space_mining) do
+                if v.pure_rate and v.pure_rate ~= 0 then
+                    v.pure_mined = v.pure_mined + v.pure_rate
+                    if v.pure_mined >= v.pure_storage then v.pure_mined = v.pure_storage end
+                end
+			end
+		end
+	end
+	if event.tick%(60*60)==(60*46) then
+		if global.dyworld.game_stats.space_mining then
+            if global.dyworld.game_stats.space_mining.interfaces then
+                if global.dyworld.game_stats.space_mining.interfaces.pure then
+                    SPM_Pure()
+                end
+            end
 		end
 	end
 	if event.tick%(60*1)==1 then

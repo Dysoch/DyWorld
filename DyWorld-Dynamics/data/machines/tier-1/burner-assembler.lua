@@ -3,13 +3,15 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "burner-assembler", true)
 DyWorld_Prototype_1.crafting_categories = {"assembling-tier-1"}
 DyWorld_Prototype_1.resistances = Resist_Tier_1(0.75)
+DyWorld_Prototype_1.fast_replaceable_group = "crafting"
+DyWorld_Prototype_1.next_upgrade = "basic-assembler"
 DyWorld_Prototype_1.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
 DyWorld_Prototype_1.energy_source = {
       type = "burner",
       fuel_category = "carbon",
       effectivity = 1,
       fuel_inventory_size = 1,
-      emissions_per_minute = 8,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 8 or Dy_Sett.Difficulty == "Normal" and 24 or Dy_Sett.Difficulty == "Hard" and 72 or 5,
       smoke =
       {
         {

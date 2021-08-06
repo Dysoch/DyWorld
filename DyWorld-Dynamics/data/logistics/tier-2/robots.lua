@@ -16,6 +16,7 @@ DyWorld_Prototype_3.logistics_radius = 30
 DyWorld_Prototype_3.construction_radius = 55
 DyWorld_Prototype_3.robot_slots_count = 2
 DyWorld_Prototype_3.material_slots_count = 5
+DyWorld_Prototype_3.fast_replaceable_group = "robot"
 
 data:extend({
   DyWorld_Prototype_1,

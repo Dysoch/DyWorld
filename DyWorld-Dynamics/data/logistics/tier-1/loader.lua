@@ -4,8 +4,8 @@ local DyWorld_Prototype_1 = DyDs_CopyPrototype("loader-1x1", "loader-1x1", "load
 DyWorld_Prototype_1.minable = {mining_time = 0.5, result = "loader-1"}
 DyWorld_Prototype_1.flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"}
 DyWorld_Prototype_1.speed = (15 / 480)
-DyWorld_Prototype_1.next_upgrade = "loader-2"
 DyWorld_Prototype_1.fast_replaceable_group = "transport-belt"
+DyWorld_Prototype_1.next_upgrade = "loader-2"
 DyWorld_Prototype_1.belt_animation_set = DyWorld_basic_belt_animation_set(Tier_1)
 DyWorld_Prototype_1.icon = nil
 DyWorld_Prototype_1.icons = {

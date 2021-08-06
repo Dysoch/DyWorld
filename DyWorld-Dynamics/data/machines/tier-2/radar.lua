@@ -2,6 +2,8 @@
 
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("radar", "radar", "radar-1", true)
 DyWorld_Prototype_1.max_health = 500
+DyWorld_Prototype_1.next_upgrade = "radar-2"
+DyWorld_Prototype_1.fast_replaceable_group = "radar"
 
 
 data:extend({

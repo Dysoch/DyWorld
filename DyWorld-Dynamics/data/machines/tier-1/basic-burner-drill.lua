@@ -43,7 +43,7 @@ data:extend({
       fuel_category = "carbon",
       effectivity = 1,
       fuel_inventory_size = 2,
-      emissions_per_minute = 5,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 15 or Dy_Sett.Difficulty == "Hard" and 45 or 5,
       smoke =
       {
         {
@@ -284,7 +284,7 @@ data:extend({
     monitor_visualization_tint = {r=78, g=173, b=255},
     resource_searching_radius = 0.99,
     vector_to_place_result = {-0.5, -1.3},
-    fast_replaceable_group = "mining-drill",
+    fast_replaceable_group = "mining",
   },
   {
     type = "item",

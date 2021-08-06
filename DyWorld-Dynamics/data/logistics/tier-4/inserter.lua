@@ -17,6 +17,8 @@ DyWorld_Prototype_1.hand_closed_picture.tint = Tier_4
 DyWorld_Prototype_1.hand_closed_picture.hr_version.tint = Tier_4
 DyWorld_Prototype_1.hand_open_picture.tint = Tier_4
 DyWorld_Prototype_1.hand_open_picture.hr_version.tint = Tier_4
+DyWorld_Prototype_1.fast_replaceable_group = "inserter"
+DyWorld_Prototype_1.next_upgrade = nil
 
 
 data:extend({
@@ -63,6 +65,8 @@ DyWorld_Prototype_2.pickup_position = DyDs_Inserter_Normal_Pickup
 DyWorld_Prototype_2.insert_position = DyDs_Inserter_Normal_Insert
 DyWorld_Prototype_2.filter_count = 5
 DyWorld_Prototype_2.stack = true
+DyWorld_Prototype_2.fast_replaceable_group = "inserter"
+DyWorld_Prototype_2.next_upgrade = nil
 
 local DyWorld_Prototype_3 = DyDs_CopyPrototype("inserter", "quantum-inserter", "quantum-inserter-long", true)
 
@@ -71,6 +75,8 @@ DyWorld_Prototype_3.pickup_position = DyDs_Inserter_Long_Pickup
 DyWorld_Prototype_3.insert_position = DyDs_Inserter_Long_Insert
 DyWorld_Prototype_3.filter_count = 0
 DyWorld_Prototype_3.stack = true
+DyWorld_Prototype_3.fast_replaceable_group = "inserter"
+DyWorld_Prototype_3.next_upgrade = nil
 
 local DyWorld_Prototype_4 = DyDs_CopyPrototype("inserter", "quantum-inserter", "quantum-inserter-long-filter", true)
 
@@ -79,6 +85,8 @@ DyWorld_Prototype_4.pickup_position = DyDs_Inserter_Long_Pickup
 DyWorld_Prototype_4.insert_position = DyDs_Inserter_Long_Insert
 DyWorld_Prototype_4.filter_count = 5
 DyWorld_Prototype_4.stack = true
+DyWorld_Prototype_4.fast_replaceable_group = "inserter"
+DyWorld_Prototype_4.next_upgrade = nil
 
 local DyWorld_Prototype_5 = DyDs_CopyPrototype("inserter", "quantum-inserter", "quantum-inserter-far", true)
 
@@ -87,6 +95,8 @@ DyWorld_Prototype_5.pickup_position = DyDs_Inserter_Extra_Long_Pickup
 DyWorld_Prototype_5.insert_position = DyDs_Inserter_Extra_Long_Insert
 DyWorld_Prototype_5.filter_count = 0
 DyWorld_Prototype_5.stack = true
+DyWorld_Prototype_5.fast_replaceable_group = "inserter"
+DyWorld_Prototype_5.next_upgrade = nil
 
 local DyWorld_Prototype_6 = DyDs_CopyPrototype("inserter", "quantum-inserter", "quantum-inserter-far-filter", true)
 
@@ -95,6 +105,8 @@ DyWorld_Prototype_6.pickup_position = DyDs_Inserter_Extra_Long_Pickup
 DyWorld_Prototype_6.insert_position = DyDs_Inserter_Extra_Long_Insert
 DyWorld_Prototype_6.filter_count = 5
 DyWorld_Prototype_6.stack = true
+DyWorld_Prototype_6.fast_replaceable_group = "inserter"
+DyWorld_Prototype_6.next_upgrade = nil
 
 
 data:extend({

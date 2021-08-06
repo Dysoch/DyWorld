@@ -5,7 +5,7 @@ local Main_Techs = {
 	{
 		name = "automatica-4",
 		icon = DyDs_path_tech_base.."automation-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-4",
 		},
@@ -18,7 +18,7 @@ local Main_Techs = {
 	{
 		name = "automatica-5",
 		icon = DyDs_path_tech_base.."automation-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"automatica-4",
 			"intermediates-5",
@@ -32,7 +32,7 @@ local Main_Techs = {
 	{
 		name = "automatica-6",
 		icon = DyDs_path_tech_base.."automation-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"automatica-5",
 			"intermediates-6",
@@ -46,7 +46,7 @@ local Main_Techs = {
 	{
 		name = "automatica-7",
 		icon = DyDs_path_tech_base.."automation-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"automatica-6",
 			"intermediates-7",
@@ -60,7 +60,7 @@ local Main_Techs = {
 	{
 		name = "automatica-8",
 		icon = DyDs_path_tech_base.."automation-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"automatica-7",
 			"intermediates-8",
@@ -74,7 +74,7 @@ local Main_Techs = {
 	{
 		name = "automatica-9",
 		icon = DyDs_path_tech_base.."automation-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"automatica-8",
 			"intermediates-9",
@@ -88,7 +88,7 @@ local Main_Techs = {
 	{
 		name = "automatica-10",
 		icon = DyDs_path_tech_base.."automation-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"automatica-9",
 			"intermediates-10",
@@ -102,7 +102,7 @@ local Main_Techs = {
 	{
 		name = "automatica-11",
 		icon = DyDs_path_tech_base.."automation-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"automatica-10",
 			"intermediates-11",
@@ -116,7 +116,7 @@ local Main_Techs = {
 	{
 		name = "automatica-12",
 		icon = DyDs_path_tech_base.."automation-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"automatica-11",
 			"intermediates-12",
@@ -131,9 +131,9 @@ local Main_Techs = {
 	{
 		name = "intermediates-4",
 		icon = DyDs_path_tech.."intermediates.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
-			"dy-science-pack-1",
+			"automation-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),
@@ -144,7 +144,7 @@ local Main_Techs = {
 	{
 		name = "intermediates-5",
 		icon = DyDs_path_tech.."intermediates.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-4",
 		},
@@ -158,7 +158,7 @@ local Main_Techs = {
 	{
 		name = "intermediates-6",
 		icon = DyDs_path_tech.."intermediates.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-5",
 		},
@@ -173,7 +173,7 @@ local Main_Techs = {
 	{
 		name = "intermediates-7",
 		icon = DyDs_path_tech.."intermediates.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-6",
 		},
@@ -189,7 +189,7 @@ local Main_Techs = {
 	{
 		name = "intermediates-8",
 		icon = DyDs_path_tech.."intermediates.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-7",
 		},
@@ -206,7 +206,7 @@ local Main_Techs = {
 	{
 		name = "intermediates-9",
 		icon = DyDs_path_tech.."intermediates.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-8",
 		},
@@ -223,7 +223,7 @@ local Main_Techs = {
 	{
 		name = "intermediates-10",
 		icon = DyDs_path_tech.."intermediates.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-9",
 		},
@@ -245,7 +245,7 @@ local Main_Techs = {
 	{
 		name = "intermediates-11",
 		icon = DyDs_path_tech.."intermediates.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-10",
 		},
@@ -260,7 +260,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(5.2, 250),
 			Dy_Main_Tech_Pack(6.1, 250),
 			Dy_Main_Tech_Pack(6.2, 250),
-			Dy_Main_Tech_Pack(7.1, 250),
 		},
 		time = Dy_Tech_Time_Calc(30),
 		order = "4",
@@ -268,7 +267,7 @@ local Main_Techs = {
 	{
 		name = "intermediates-12",
 		icon = DyDs_path_tech.."intermediates.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-11",
 		},
@@ -283,8 +282,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(5.2, 250),
 			Dy_Main_Tech_Pack(6.1, 250),
 			Dy_Main_Tech_Pack(6.2, 250),
-			Dy_Main_Tech_Pack(7.1, 250),
-			Dy_Main_Tech_Pack(7.2, 250),
 		},
 		time = Dy_Tech_Time_Calc(30),
 		order = "4",
@@ -293,7 +290,7 @@ local Main_Techs = {
 	{
 		name = "logistica-2",
 		icon = DyDs_path_tech_base.."logistics-1.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-4",
 			"automatica-4",
@@ -308,7 +305,7 @@ local Main_Techs = {
 	{
 		name = "logistica-3",
 		icon = DyDs_path_tech_base.."logistics-1.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"logistica-2",
 		},
@@ -323,7 +320,7 @@ local Main_Techs = {
 	{
 		name = "logistica-4",
 		icon = DyDs_path_tech_base.."logistics-1.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"logistica-3",
 		},
@@ -339,7 +336,7 @@ local Main_Techs = {
 	{
 		name = "logistica-5",
 		icon = DyDs_path_tech_base.."logistics-1.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"logistica-4",
 			"intermediates-5",
@@ -358,7 +355,7 @@ local Main_Techs = {
 	{
 		name = "logistica-6",
 		icon = DyDs_path_tech_base.."logistics-1.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"logistica-5",
 			"intermediates-6",
@@ -379,7 +376,7 @@ local Main_Techs = {
 	{
 		name = "logistica-7",
 		icon = DyDs_path_tech_base.."logistics-1.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"logistica-6",
 			"intermediates-7",
@@ -403,7 +400,7 @@ local Main_Techs = {
 	{
 		name = "logistica-8",
 		icon = DyDs_path_tech_base.."logistics-1.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"logistica-7",
 			"intermediates-8",
@@ -420,7 +417,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(5.2, 250),
 			Dy_Main_Tech_Pack(6.1, 250),
 			Dy_Main_Tech_Pack(6.2, 250),
-			Dy_Main_Tech_Pack(7.1, 250),
 		},
 		time = Dy_Tech_Time_Calc(30),
 		order = "4",
@@ -428,7 +424,7 @@ local Main_Techs = {
 	{
 		name = "logistica-9",
 		icon = DyDs_path_tech_base.."logistics-1.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"logistica-8",
 			"intermediates-9",
@@ -445,8 +441,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(5.2, 250),
 			Dy_Main_Tech_Pack(6.1, 250),
 			Dy_Main_Tech_Pack(6.2, 250),
-			Dy_Main_Tech_Pack(7.1, 250),
-			Dy_Main_Tech_Pack(7.2, 250),
 		},
 		time = Dy_Tech_Time_Calc(30),
 		order = "4",
@@ -455,7 +449,7 @@ local Main_Techs = {
 	{
 		name = "chemical-recycling-1",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-4",
 		},
@@ -468,7 +462,7 @@ local Main_Techs = {
 	{
 		name = "chemical-recycling-2",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"chemical-recycling-1",
 		},
@@ -482,7 +476,7 @@ local Main_Techs = {
 	{
 		name = "chemical-recycling-3",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"chemical-recycling-2",
 		},
@@ -497,7 +491,7 @@ local Main_Techs = {
 	{
 		name = "chemical-recycling-4",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"chemical-recycling-3",
 		},
@@ -513,7 +507,7 @@ local Main_Techs = {
 	{
 		name = "chemical-recycling-5",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"chemical-recycling-4",
 		},
@@ -530,7 +524,7 @@ local Main_Techs = {
 	{
 		name = "chemical-recycling-6",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"chemical-recycling-5",
 		},
@@ -540,7 +534,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.1, 250),
 			Dy_Main_Tech_Pack(5.1, 250),
 			Dy_Main_Tech_Pack(6.1, 250),
-			Dy_Main_Tech_Pack(7.1, 250),
 		},
 		time = Dy_Tech_Time_Calc(30),
 		order = "4",
@@ -548,7 +541,7 @@ local Main_Techs = {
 	{
 		name = "chemical-recycling-7",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"chemical-recycling-6",
 		},
@@ -558,7 +551,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.1, 1000),
 			Dy_Main_Tech_Pack(5.1, 1000),
 			Dy_Main_Tech_Pack(6.1, 1000),
-			Dy_Main_Tech_Pack(7.1, 1000),
 		},
 		time = Dy_Tech_Time_Calc(30),
 		order = "4",
@@ -567,12 +559,12 @@ local Main_Techs = {
 	{
 		name = "reactor-1",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"fluids-3",
 			"metallurgy-alloy-1",
 			"power-3",
-			"dy-science-pack-5",
+			"chemical-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -585,10 +577,10 @@ local Main_Techs = {
 	{
 		name = "reactor-2",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"reactor-1",
-			"dy-science-pack-9",
+			"production-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -602,12 +594,12 @@ local Main_Techs = {
 	{
 		name = "reactor-3",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"reactor-2",
 			"power-4",
 			"metallurgy-alloy-3",
-			"dy-science-pack-11",
+			"utility-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -622,10 +614,9 @@ local Main_Techs = {
 	{
 		name = "reactor-4",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"reactor-3",
-			"dy-science-pack-13",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -633,7 +624,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.1, 1000),
 			Dy_Main_Tech_Pack(5.1, 1000),
 			Dy_Main_Tech_Pack(6.1, 1000),
-			Dy_Main_Tech_Pack(7.1, 1000),
 		},
 		time = Dy_Tech_Time_Calc(200),
 		order = "4",
@@ -641,16 +631,15 @@ local Main_Techs = {
 	{
 		name = "reactor-5",
 		icon = DyDs_path_tech_base.."nuclear-power.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"reactor-4",
 			"power-7",
-			"dy-science-pack-2",
-			"dy-science-pack-4",
-			"dy-science-pack-6",
-			"dy-science-pack-10",
-			"dy-science-pack-12",
-			"dy-science-pack-14",
+			"automation-science-pack-advanced",
+			"logistic-science-pack-advanced",
+			"chemical-science-pack-advanced",
+			"production-science-pack-advanced",
+			"utility-science-pack-advanced",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.2, 1000),
@@ -658,7 +647,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.2, 1000),
 			Dy_Main_Tech_Pack(5.2, 1000),
 			Dy_Main_Tech_Pack(6.2, 1000),
-			Dy_Main_Tech_Pack(7.2, 1000),
 		},
 		time = Dy_Tech_Time_Calc(500),
 		order = "4",
@@ -667,10 +655,10 @@ local Main_Techs = {
 	{
 		name = "implants-1",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-4",
-			"dy-science-pack-3",
+			"logistic-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -682,10 +670,10 @@ local Main_Techs = {
 	{
 		name = "implants-2",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-1",
-			"dy-science-pack-5",
+			"chemical-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -698,10 +686,10 @@ local Main_Techs = {
 	{
 		name = "implants-3",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-2",
-			"dy-science-pack-9",
+			"production-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -715,10 +703,9 @@ local Main_Techs = {
 	{
 		name = "implants-4",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-3",
-			"dy-science-pack-13",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -726,7 +713,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.1, 1000),
 			Dy_Main_Tech_Pack(5.1, 1000),
 			Dy_Main_Tech_Pack(6.1, 1000),
-			Dy_Main_Tech_Pack(7.1, 1000),
 		},
 		time = Dy_Tech_Time_Calc(120),
 		order = "4",
@@ -734,15 +720,14 @@ local Main_Techs = {
 	{
 		name = "implants-5",
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-4",
-			"dy-science-pack-2",
-			"dy-science-pack-4",
-			"dy-science-pack-6",
-			"dy-science-pack-10",
-			"dy-science-pack-12",
-			"dy-science-pack-14",
+			"automation-science-pack-advanced",
+			"logistic-science-pack-advanced",
+			"chemical-science-pack-advanced",
+			"production-science-pack-advanced",
+			"utility-science-pack-advanced",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.2, 1000),
@@ -750,7 +735,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.2, 1000),
 			Dy_Main_Tech_Pack(5.2, 1000),
 			Dy_Main_Tech_Pack(6.2, 1000),
-			Dy_Main_Tech_Pack(7.2, 1000),
 		},
 		time = Dy_Tech_Time_Calc(300),
 		order = "4",
@@ -759,7 +743,7 @@ local Main_Techs = {
 	{
 		name = "power-4",
 		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"power-3",
 			"intermediates-4",
@@ -773,10 +757,10 @@ local Main_Techs = {
 	{
 		name = "power-5",
 		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"power-4",
-			"dy-science-pack-3",
+			"logistic-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -788,10 +772,10 @@ local Main_Techs = {
 	{
 		name = "power-6",
 		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"power-5",
-			"dy-science-pack-5",
+			"chemical-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -804,10 +788,10 @@ local Main_Techs = {
 	{
 		name = "power-7",
 		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"power-6",
-			"dy-science-pack-9",
+			"production-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -821,10 +805,10 @@ local Main_Techs = {
 	{
 		name = "power-8",
 		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"power-7",
-			"dy-science-pack-11",
+			"utility-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -839,10 +823,9 @@ local Main_Techs = {
 	{
 		name = "power-9",
 		icon = DyDs_path_tech_base.."electric-energy-distribution-2.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"power-8",
-			"dy-science-pack-13",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -850,7 +833,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.1, 1000),
 			Dy_Main_Tech_Pack(5.1, 1000),
 			Dy_Main_Tech_Pack(6.1, 1000),
-			Dy_Main_Tech_Pack(7.1, 1000),
 		},
 		time = Dy_Tech_Time_Calc(500),
 		order = "4",
@@ -859,9 +841,9 @@ local Main_Techs = {
 	{
 		name = "space-travel",
 		icon = DyDs_path_tech.."asteroid.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
-			"dy-science-pack-3",
+			"logistic-science-pack",
 			"intermediates-4",
 			"power-4",
 		},
@@ -875,10 +857,10 @@ local Main_Techs = {
 	{
 		name = "normal-asteroid-mining",
 		icon = DyDs_path_tech.."asteroid.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"basic-asteroid-mining",
-			"dy-science-pack-3",
+			"logistic-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -890,10 +872,10 @@ local Main_Techs = {
 	{
 		name = "advanced-asteroid-mining",
 		icon = DyDs_path_tech.."asteroid.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"normal-asteroid-mining",
-			"dy-science-pack-9",
+			"production-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -907,10 +889,9 @@ local Main_Techs = {
 	{
 		name = "quantum-asteroid-mining",
 		icon = DyDs_path_tech.."asteroid.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"advanced-asteroid-mining",
-			"dy-science-pack-13",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -918,7 +899,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.1, 1000),
 			Dy_Main_Tech_Pack(5.1, 1000),
 			Dy_Main_Tech_Pack(6.1, 1000),
-			Dy_Main_Tech_Pack(7.1, 1000),
 		},
 		time = Dy_Tech_Time_Calc(10, true),
 		order = "4",
@@ -926,13 +906,12 @@ local Main_Techs = {
 	{
 		name = "dyson-network-1",
 		icon = DyDs_path_tech.."asteroid.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
         effects = {
 			{type = "nothing", effect_description = {"dyson-network-1"}},
 		},
 		prerequisites = {
 			"advanced-asteroid-mining",
-			"dy-science-pack-13",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -940,7 +919,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.1, 1000),
 			Dy_Main_Tech_Pack(5.1, 1000),
 			Dy_Main_Tech_Pack(6.1, 1000),
-			Dy_Main_Tech_Pack(7.1, 1000),
 		},
 		time = Dy_Tech_Time_Calc(5, true),
 		order = "4",
@@ -948,7 +926,7 @@ local Main_Techs = {
 	{
 		name = "dyson-network-2",
 		icon = DyDs_path_tech.."asteroid.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
         effects = {
 			{type = "nothing", effect_description = {"dyson-network-2"}},
 		},
@@ -961,7 +939,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.1, 1000),
 			Dy_Main_Tech_Pack(5.1, 1000),
 			Dy_Main_Tech_Pack(6.1, 1000),
-			Dy_Main_Tech_Pack(7.1, 1000),
 		},
 		time = Dy_Tech_Time_Calc(10, true),
 		order = "4",
@@ -969,7 +946,7 @@ local Main_Techs = {
 	{
 		name = "dyson-network-3",
 		icon = DyDs_path_tech.."asteroid.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
         effects = {
 			{type = "nothing", effect_description = {"dyson-network-3"}},
 		},
@@ -982,7 +959,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.2, 1000),
 			Dy_Main_Tech_Pack(5.2, 1000),
 			Dy_Main_Tech_Pack(6.1, 1000),
-			Dy_Main_Tech_Pack(7.1, 1000),
 		},
 		time = Dy_Tech_Time_Calc(15, true),
 		order = "4",
@@ -990,7 +966,7 @@ local Main_Techs = {
 	{
 		name = "dyson-network-4",
 		icon = DyDs_path_tech.."asteroid.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
         effects = {
 			{type = "nothing", effect_description = {"dyson-network-4"}},
 		},
@@ -1003,7 +979,6 @@ local Main_Techs = {
 			Dy_Main_Tech_Pack(3.2, 1000),
 			Dy_Main_Tech_Pack(5.2, 1000),
 			Dy_Main_Tech_Pack(6.2, 1000),
-			Dy_Main_Tech_Pack(7.2, 1000),
 		},
 		time = Dy_Tech_Time_Calc(20, true),
 		order = "4",
@@ -1018,14 +993,14 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "warfare-"..(i+3),
 		icon = DyDs_path_tech_base.."military.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"warfare-"..(i+2),
-			i == 2 and "dy-science-pack-7" or nil,
-			i == 2 and "dy-science-pack-3" or nil,
-			i == 3 and "dy-science-pack-5" or nil,
-			i == 4 and "dy-science-pack-9" or nil,
-			i == 5 and "dy-science-pack-11" or nil,
+			i == 2 and "military-science-pack" or nil,
+			i == 2 and "logistic-science-pack" or nil,
+			i == 3 and "chemical-science-pack" or nil,
+			i == 4 and "production-science-pack" or nil,
+			i == 5 and "utility-science-pack" or nil,
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),
@@ -1041,15 +1016,15 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "warfare-"..(i+8),
 		icon = DyDs_path_tech_base.."military.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"warfare-"..(i+7),
-			i == 1 and "dy-science-pack-2" or nil,
-			i == 1 and "dy-science-pack-8" or nil,
-			i == 2 and "dy-science-pack-4" or nil,
-			i == 3 and "dy-science-pack-6" or nil,
-			i == 4 and "dy-science-pack-10" or nil,
-			i == 5 and "dy-science-pack-12" or nil,
+			i == 1 and "automation-science-pack-advanced" or nil,
+			i == 1 and "military-science-pack-advanced" or nil,
+			i == 2 and "logistic-science-pack-advanced" or nil,
+			i == 3 and "chemical-science-pack-advanced" or nil,
+			i == 4 and "production-science-pack-advanced" or nil,
+			i == 5 and "utility-science-pack-advanced" or nil,
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.2, 250),
@@ -1065,7 +1040,7 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "metallurgy-"..(i+3),
 		icon = DyDs_path_tech.."metallurgy.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"metallurgy-"..(i+2),
 		},
@@ -1075,7 +1050,6 @@ for i = 1,5 do
 			i >= 2 and Dy_Main_Tech_Pack(3.1, 250) or nil,
 			i >= 3 and Dy_Main_Tech_Pack(5.1, 250) or nil,
 			i >= 4 and Dy_Main_Tech_Pack(6.1, 250) or nil,
-			i >= 5 and Dy_Main_Tech_Pack(7.1, 250) or nil,
 		},
 		time = Dy_Tech_Time_Calc(300),
 		order = "4",
@@ -1083,7 +1057,7 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "metallurgy-alloy-"..i,
 		icon = DyDs_path_tech.."metallurgy.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"metallurgy-"..(i+3),
 			i >= 2 and "metallurgy-alloy-"..(i-1) or nil,
@@ -1094,7 +1068,6 @@ for i = 1,5 do
 			i >= 2 and Dy_Main_Tech_Pack(3.1, 250) or nil,
 			i >= 3 and Dy_Main_Tech_Pack(5.1, 250) or nil,
 			i >= 4 and Dy_Main_Tech_Pack(6.1, 250) or nil,
-			i >= 5 and Dy_Main_Tech_Pack(7.1, 250) or nil,
 		},
 		time = Dy_Tech_Time_Calc(300),
 		order = "4",
@@ -1102,11 +1075,11 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "implants-strength-"..i,
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-"..i,
 			i >= 2 and "implants-strength-"..(i-1) or nil,
-			i == 2 and "dy-science-pack-15" or nil,
+			i == 2 and "biological-science-pack" or nil,
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, (400 * i)),
@@ -1115,7 +1088,6 @@ for i = 1,5 do
 			i >= 2 and Dy_Main_Tech_Pack(4.1, (400 * i)) or nil,
 			i >= 3 and Dy_Main_Tech_Pack(5.1, (400 * i)) or nil,
 			i >= 4 and Dy_Main_Tech_Pack(6.1, (400 * i)) or nil,
-			i >= 5 and Dy_Main_Tech_Pack(7.1, (400 * i)) or nil,
 		},
 		time = Dy_Tech_Time_Calc(30*i),
 		order = "4",
@@ -1123,11 +1095,11 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "implants-constitution-"..i,
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-"..i,
 			i >= 2 and "implants-constitution-"..(i-1) or nil,
-			i == 2 and "dy-science-pack-15" or nil,
+			i == 2 and "biological-science-pack" or nil,
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, (400 * i)),
@@ -1136,7 +1108,6 @@ for i = 1,5 do
 			i >= 2 and Dy_Main_Tech_Pack(4.1, (400 * i)) or nil,
 			i >= 3 and Dy_Main_Tech_Pack(5.1, (400 * i)) or nil,
 			i >= 4 and Dy_Main_Tech_Pack(6.1, (400 * i)) or nil,
-			i >= 5 and Dy_Main_Tech_Pack(7.1, (400 * i)) or nil,
 		},
 		time = Dy_Tech_Time_Calc(30*i),
 		order = "4",
@@ -1144,11 +1115,11 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "implants-dexterity-"..i,
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-"..i,
 			i >= 2 and "implants-dexterity-"..(i-1) or nil,
-			i == 2 and "dy-science-pack-15" or nil,
+			i == 2 and "biological-science-pack" or nil,
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, (400 * i)),
@@ -1157,7 +1128,6 @@ for i = 1,5 do
 			i >= 2 and Dy_Main_Tech_Pack(4.1, (400 * i)) or nil,
 			i >= 3 and Dy_Main_Tech_Pack(5.1, (400 * i)) or nil,
 			i >= 4 and Dy_Main_Tech_Pack(6.1, (400 * i)) or nil,
-			i >= 5 and Dy_Main_Tech_Pack(7.1, (400 * i)) or nil,
 		},
 		time = Dy_Tech_Time_Calc(30*i),
 		order = "4",
@@ -1165,11 +1135,11 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "implants-intelligence-"..i,
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-"..i,
 			i >= 2 and "implants-intelligence-"..(i-1) or nil,
-			i == 2 and "dy-science-pack-15" or nil,
+			i == 2 and "biological-science-pack" or nil,
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, (400 * i)),
@@ -1178,7 +1148,6 @@ for i = 1,5 do
 			i >= 2 and Dy_Main_Tech_Pack(4.1, (400 * i)) or nil,
 			i >= 3 and Dy_Main_Tech_Pack(5.1, (400 * i)) or nil,
 			i >= 4 and Dy_Main_Tech_Pack(6.1, (400 * i)) or nil,
-			i >= 5 and Dy_Main_Tech_Pack(7.1, (400 * i)) or nil,
 		},
 		time = Dy_Tech_Time_Calc(30*i),
 		order = "4",
@@ -1186,11 +1155,11 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "implants-wisdom-"..i,
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-"..i,
 			i >= 2 and "implants-wisdom-"..(i-1) or nil,
-			i == 2 and "dy-science-pack-15" or nil,
+			i == 2 and "biological-science-pack" or nil,
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, (400 * i)),
@@ -1199,7 +1168,6 @@ for i = 1,5 do
 			i >= 2 and Dy_Main_Tech_Pack(4.1, (400 * i)) or nil,
 			i >= 3 and Dy_Main_Tech_Pack(5.1, (400 * i)) or nil,
 			i >= 4 and Dy_Main_Tech_Pack(6.1, (400 * i)) or nil,
-			i >= 5 and Dy_Main_Tech_Pack(7.1, (400 * i)) or nil,
 		},
 		time = Dy_Tech_Time_Calc(30*i),
 		order = "4",
@@ -1207,11 +1175,11 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "implants-charisma-"..i,
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-"..i,
 			i >= 2 and "implants-charisma-"..(i-1) or nil,
-			i == 2 and "dy-science-pack-15" or nil,
+			i == 2 and "biological-science-pack" or nil,
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, (400 * i)),
@@ -1220,7 +1188,6 @@ for i = 1,5 do
 			i >= 2 and Dy_Main_Tech_Pack(4.1, (400 * i)) or nil,
 			i >= 3 and Dy_Main_Tech_Pack(5.1, (400 * i)) or nil,
 			i >= 4 and Dy_Main_Tech_Pack(6.1, (400 * i)) or nil,
-			i >= 5 and Dy_Main_Tech_Pack(7.1, (400 * i)) or nil,
 		},
 		time = Dy_Tech_Time_Calc(30*i),
 		order = "4",
@@ -1228,17 +1195,16 @@ for i = 1,5 do
 	DyWorld_Tech_Add({
 		name = "implants-death-"..i,
 		icon = DyDs_path_tech_base.."radar.png",
-		flags = {Act_3 = true},
+		flags = {Tech_Main = true},
 		prerequisites = {
 			"implants-"..i,
 			i >= 2 and "implants-death-"..(i-1) or nil,
-			i == 1 and "dy-science-pack-2" or nil,
-			i == 1 and "dy-science-pack-4" or nil,
-			i == 2 and "dy-science-pack-6" or nil,
-			i == 2 and "dy-science-pack-16" or nil,
-			i == 3 and "dy-science-pack-10" or nil,
-			i == 4 and "dy-science-pack-12" or nil,
-			i == 5 and "dy-science-pack-14" or nil,
+			i == 1 and "automation-science-pack-advanced" or nil,
+			i == 1 and "logistic-science-pack-advanced" or nil,
+			i == 2 and "chemical-science-pack-advanced" or nil,
+			i == 2 and "biological-science-pack-advanced" or nil,
+			i == 3 and "production-science-pack-advanced" or nil,
+			i == 4 and "utility-science-pack-advanced" or nil,
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.2, (1000 * i)),
@@ -1247,7 +1213,6 @@ for i = 1,5 do
 			i >= 2 and Dy_Main_Tech_Pack(4.2, (1000 * i)) or nil,
 			i >= 3 and Dy_Main_Tech_Pack(5.2, (1000 * i)) or nil,
 			i >= 4 and Dy_Main_Tech_Pack(6.2, (1000 * i)) or nil,
-			i >= 5 and Dy_Main_Tech_Pack(7.2, (1000 * i)) or nil,
 		},
 		time = Dy_Tech_Time_Calc(120*i),
 		order = "4",

@@ -15,7 +15,8 @@ data:extend(
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    fast_replaceable_group = "air-filter",
+    fast_replaceable_group = "crafting",
+    next_upgrade = nil,
     crafting_categories = {"air-filter"},
     crafting_speed = 1,
     energy_source =

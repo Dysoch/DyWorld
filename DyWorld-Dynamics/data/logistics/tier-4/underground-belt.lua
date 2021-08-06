@@ -4,6 +4,7 @@ local DyWorld_Prototype_1 = DyDs_CopyPrototype("underground-belt", "express-unde
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("item", "express-underground-belt", "underground-belt-4", true)
 DyWorld_Prototype_1.speed = (120 / 480)
 DyWorld_Prototype_1.next_upgrade = "underground-belt-5"
+DyWorld_Prototype_1.fast_replaceable_group = "transport-belt"
 DyWorld_Prototype_1.belt_animation_set = DyWorld_basic_belt_animation_set(Tier_4)
 DyWorld_Prototype_1.max_distance = 35
 DyWorld_Prototype_1.icon = nil

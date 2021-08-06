@@ -58,6 +58,15 @@ local function Time_Surival_Check(id, VAR)
 	end
 end
 
+local function Time_Check(time)
+	local seconds_start = math.floor(time)
+	local minutes_start = math.floor(seconds_start/60)
+	local hours = math.floor(minutes_start/60)
+	local minutes = (minutes_start-(hours*60))
+	local seconds = (seconds_start-(minutes_start*60))
+	return (hours..":"..minutes..":"..seconds)
+end
+
 
 function Close_Main_GUI(player, id)
 	if player.gui.top.DyDs_Main_GUI then
@@ -83,14 +92,15 @@ function Main_GUI(player, id)
 		frameflow1.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
 		frameflow1.add{type = "line", direction = "horizontal"}
 	end
-			
-	if global.dyworld.game_stats.sector_scanned > 0 or debugger then
-		frameflow1.add{type = "label", caption = "Sectors Scanned: [color=blue]"..global.dyworld.game_stats.sector_scanned.."[/color]"}
-	end
-	if global.dyworld.game_stats.rockets_launched > 0 or debugger then
-		frameflow1.add{type = "label", caption = "Rockets Launched: [color=blue]"..global.dyworld.game_stats.rockets_launched.."[/color]"}
-	end
-	frameflow1.add{type = "label", caption = "Special Entities Built: [color=blue]"..((global.dyworld.game_stats.inserters or 0) + (global.dyworld.game_stats.radars or 0)).."[/color]", tooltip = "Inserters: [color=blue]"..(global.dyworld.game_stats.inserters or 0).."[/color]\nRadars: [color=blue]"..(global.dyworld.game_stats.radars or 0).."[/color]"}
+
+	local total = Round(((global.dyworld.game_stats.crafted_amount or 0) + (global.dyworld.game_stats.mined_amount or 0) + (global.dyworld.game_stats.build_amount or 0) + (global.dyworld.game_stats.killed_amount or 0) + (global.dyworld.game_stats.picked_amount or 0)), 0)
+	frameflow1.add{type = "label", caption = "Game Stats (1/3): [color=blue]"..total.."[/color]", tooltip = "Total Crafted: [color=blue]"..(global.dyworld.game_stats.crafted_amount or 0).."[/color]\nTotal Mined: [color=blue]"..(global.dyworld.game_stats.mined_amount or 0).."[/color]\nTotal Built: [color=blue]"..(global.dyworld.game_stats.build_amount or 0).."[/color]\nTotal Killed: [color=blue]"..(global.dyworld.game_stats.killed_amount or 0).."[/color]\nTotal Looted: [color=blue]"..(global.dyworld.game_stats.picked_amount or 0).."[/color]"}
+		
+	local total = Round(((global.dyworld.game_stats.sector_scanned or 0) + (global.dyworld.game_stats.rockets_launched or 0)), 0)
+	frameflow1.add{type = "label", caption = "Game Stats (2/3): [color=blue]"..total.."[/color]", tooltip = "Sectors Scanned: [color=blue]"..(global.dyworld.game_stats.sector_scanned or 0).."[/color]\nRockets Launched: [color=blue]"..(global.dyworld.game_stats.rockets_launched or 0).."[/color]\nGame Days: [color=blue]"..(global.dyworld.game_stats.days or 0).."[/color]"}
+	
+	local total = Round(((global.dyworld.game_stats.inserters or 0) + (global.dyworld.game_stats.radars or 0) + (global.dyworld.game_stats.ghosts or 0)), 0)
+	frameflow1.add{type = "label", caption = "Game Stats (3/3): [color=blue]"..total.."[/color]", tooltip = "Special Entities Built:\n\nInserters: [color=blue]"..(global.dyworld.game_stats.inserters or 0).."[/color]\nRadars: [color=blue]"..(global.dyworld.game_stats.radars or 0).."[/color]\nGhost Entities: [color=blue]"..(global.dyworld.game_stats.ghosts or 0).."[/color]"}
 	
 	if not global.dyworld.game_stats.dyson then
 		global.dyworld.game_stats.dyson = {
@@ -115,15 +125,15 @@ function Main_GUI(player, id)
 	if game.forces.player.technologies["dyson-network-1"].researched or debugger then
 		frameflow1.add{type = "label", caption = "Dyson Network Power: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_total), tooltip = "Universal Dyson Network:\nPower Total: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_total).."\nPower Available: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power).."\nPower Used: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_used).."\nNetwork Efficiency: [color=blue]"..Round(global.dyworld.game_stats.dyson.effect, 2).."[/color]%\nSatellites: [color=blue]"..global.dyworld.game_stats.dyson.sats.."[/color]\nStructures: [color=blue]"..global.dyworld.game_stats.dyson.structures.."[/color]\n\n"..surface.." Dyson Network: \n(Contribution to the Universal Network)\nPower Total Gained: "..Dyson_Power_Check(global.dyworld.game_stats.dyson_1[surface].power_total).."\nSolar Efficiency: [color=blue]"..Round((global.dyworld.game_stats.dyson_1[surface].effect * 100), 2).."[/color]%\nSatellites: [color=blue]"..global.dyworld.game_stats.dyson_1[surface].sats.."[/color]\nStructures: [color=blue]"..global.dyworld.game_stats.dyson_1[surface].structures.."[/color]"}
 	end
+	frameflow1.add{type = "line", direction = "horizontal"}
 		
 	if debugger then
+		frameflow1.add{type = "line", direction = "horizontal"}
 		frameflow1.add{type = "label", caption = "Chunks: [color=blue]"..global.dyworld.game_stats.chunks.."[/color]"}
 		frameflow1.add{type = "label", caption = "Difficulty of game: [color=blue]"..global.dyworld.game_stats.difficulty.."[/color]"}
+		frameflow1.add{type = "line", direction = "horizontal"}
 	end
 		
-	frameflow1.add{type = "label", caption = "Game Days: [color=blue]"..global.dyworld.game_stats.days.."[/color]"}
-	frameflow1.add{type = "label", caption = "Game Kills: [color=blue]"..global.dyworld.game_stats.killed_amount.."[/color]"}
-	frameflow1.add{type = "line", direction = "horizontal"}
 
 -------------------------------- Player stats TAB -------------------------------------
 	local tab2 = tabbed_pane.add{type="tab", caption="Player Stats"}
@@ -176,6 +186,9 @@ function Main_GUI(player, id)
 		frameflow3.add{type = "label", caption = "Stack Inserter Stack Bonus: [color=blue]"..(Round((game.forces.player.stack_inserter_capacity_bonus), 0)).."[/color]"}
 		frameflow3.add{type = "label", caption = "Laboratory Productivity: [color=blue]"..(Round((game.forces.player.laboratory_productivity_bonus), 2)).."[/color]"}
 		frameflow3.add{type = "label", caption = "Laboratory Speed: [color=blue]"..(Round((game.forces.player.laboratory_speed_modifier + 1), 2)).."[/color]"}
+		if game.forces.player.ghost_time_to_live >= 60 then
+			frameflow3.add{type = "label", caption = "Ghost Time To Live: [color=blue]"..Time_Check(Round((game.forces.player.ghost_time_to_live / 60), 0)).."[/color]", tooltip = "This is only for destroyed entities.\nThis does not effect hand placed ghosts\nIncrease time by building more ghosts (shift place)\nTime format: Hours:Minutes:Seconds"}
+		end
 	end
 
 -------------------------------- Implants TAB ------------------------------------

@@ -37,3 +37,7 @@ require("data.tech.aai-industry")
 require("data.tech.space-exploration")
 require("data.tech.nanobot")
 require("data.tech.robot-attri")
+
+-- Removal --
+require("data.removal.function")
+require("data.removal.base")

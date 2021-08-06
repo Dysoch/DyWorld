@@ -5,6 +5,8 @@ DyWorld_Prototype_1.crafting_categories = {"rain-collector"}
 DyWorld_Prototype_1.energy_usage = "1W"
 DyWorld_Prototype_1.crafting_speed = 1
 DyWorld_Prototype_1.fixed_recipe = "rain-collecting"
+DyWorld_Prototype_1.fast_replaceable_group = "crafting"
+DyWorld_Prototype_1.next_upgrade = nil
 DyWorld_Prototype_1.resistances = Resist_Tier_1(5)
 DyWorld_Prototype_1.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
 DyWorld_Prototype_1.energy_source = {type = "void"}

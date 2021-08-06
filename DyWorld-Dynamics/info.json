@@ -9,19 +9,21 @@
 	"description": "DyWorld-Dynamics, the successor of DyWorld, which is the successor of DyTech. Adds a massive story into the game. Use the mod scenario to start the story",
 	"dependencies": [  
 		"base >= 1.1.35",
-		"space-exploration-graphics >= 0.5.11",
+		"space-exploration-graphics >= 0.5.12",
 		"space-exploration-graphics-3 >= 0.1.1",
 		"space-exploration-graphics-2 >= 0.1.1",
 		"space-exploration-graphics-4 >= 0.1.1",
 		"space-exploration-graphics-5 >= 0.1.2",
-		"space-exploration >= 0.5.76",
+		"space-exploration >= 0.5.77",
 		"informatron >= 0.2.2",
 		"aai-containers >= 0.2.8",
 		"aai-industry >= 0.5.9",
 		"Nanobots >= 3.2.15",
 		"alien-biomes >= 0.6.5",
 		
-		"~ DyComPa >= 0.1.0",
+		"~ DyComPa >= 0.1.1",
+
+		"(?) Aircraft",
 		
 		"! angelsindustries",
 		"! angelspetrochem",

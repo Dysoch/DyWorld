@@ -39,7 +39,7 @@ function Phase_Forward()
 		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].done = true
 		global.dyworld.story.phase = global.dyworld.story.phase + 1
 		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].started = true
-		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives_side or debugger then
+		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives_side then
 			Check_Side_Objective()
 		end
 	else
@@ -47,7 +47,7 @@ function Phase_Forward()
 		global.dyworld.story.act = global.dyworld.story.act + 1
 		global.dyworld.story.phase = 1
 		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].started = true
-		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives_side or debugger then
+		if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives_side then
 			Check_Side_Objective()
 		end
 	end
@@ -141,19 +141,11 @@ function Phase_Forward()
 		game.surfaces["nauvis"].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-500,500)),(math.random(-500,500))}, force = game.forces.enemy, speed = 2.5, target = {-250,250}}
 		global.dyworld.game_stats.difficulty = 1
 	end
-	--[[
-	if (global.dyworld.story.phase == 2 and global.dyworld.story.act == 2) then
-		local Loot = game.surfaces["nauvis"].find_entities_filtered{type = "item-entity", position = {0,0}, radius = 300}
-		for _, item in pairs(Loot) do
-			local player = game.players[1]
-			if item.valid and item.stack.valid then
-				if item.destroy() then end
-			end
-		end
-	end ]]
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 3) then
 		global.dyworld.game_stats.difficulty = 1
 	end
+
+    -- Pause the story, till more is added in
 	if (global.dyworld.story.phase == 5 and global.dyworld.story.act == 3) then
 		global.dyworld.game_stats.story_pause = true
 	end
@@ -175,8 +167,6 @@ function Phase_Forward()
 	end
 	end
 end
-
---for _,player in pairs(game.players) do player.force.recipes["basic-med-pack"].enabled == true end
 
 function Reunlock_Recipes()
 	if global.dyworld_story then
@@ -416,7 +406,7 @@ function Story_Objectives(type, event, Posx, PosY)
 		elseif type == "died" then
 			local force = event.force  -- force that kill
 			local killer = event.cause -- cause of the kill
-			local type_killed = event.entity.type 
+			local type_killed = event.entity.type
 			local name = event.entity.name
 			local position = event.entity.position
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do

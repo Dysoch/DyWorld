@@ -111,26 +111,39 @@ function Event_on_tick(event)
 						v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
 					end
 				end
-				if Dy_Sett.Difficulty == "Normal" then
-					Food_Lose(v.id, 1)
-					Water_Lose(v.id, 1)
-				elseif Dy_Sett.Difficulty == "Hard" then
-					Food_Lose(v.id, 1.5)
-					Water_Lose(v.id, 1.5)
+				if settings.global["DyWorld_Food_Difficulty"].value ~= "Off" then
+                    if settings.global["DyWorld_Food_Difficulty"].value == "Easy" then
+                        Food_Lose(v.id, 0.5)
+                        Water_Lose(v.id, 0.5)
+                    elseif settings.global["DyWorld_Food_Difficulty"].value == "Normal" then
+                        Food_Lose(v.id, 1)
+                        Water_Lose(v.id, 1)
+                    elseif settings.global["DyWorld_Food_Difficulty"].value == "Hard" then
+                        Food_Lose(v.id, 2)
+                        Water_Lose(v.id, 2)
+                    elseif settings.global["DyWorld_Food_Difficulty"].value == "Insane" then
+                        Food_Lose(v.id, 5)
+                        Water_Lose(v.id, 5)
+                    end
 				end
-				if v.story_gui and v.alive and not game.players[v.id].opened_self then
+				if v.personal_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
+					local player = game.players[v.id]
+					Close_Personal_GUI(player, v.id)
+					Personal_GUI(player, v.id)
+				end
+				if v.story_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]
 					Close_Story_GUI(player, v.id)
 					Story_GUI(player, v.id)
 					player.gui.top.DyDs_Story_GUI.selected_tab_index = global.dyworld.players[v.id].story_gui_index
 				end
-				if v.stats_gui and v.alive and not game.players[v.id].opened_self then
+				if v.stats_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]
 					Close_Main_GUI(player, v.id)
 					Main_GUI(player, v.id)
 					player.gui.top.DyDs_Main_GUI.selected_tab_index = global.dyworld.players[v.id].stats_gui_index
 				end
-				if v.smn_gui and v.alive and not game.players[v.id].opened_self then
+				if v.smn_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]
 					Close_SMN_GUI(player, v.id)
 					SMN_GUI(player, v.id)

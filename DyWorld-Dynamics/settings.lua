@@ -76,6 +76,13 @@ data:extend({
 		default_value = "Easy",
 		allowed_values = {"Peaceful", "Easy", "Medium", "Hard", "Death"},
 	},
+	{
+		type = "string-setting",
+		name = "DyWorld_Food_Difficulty",
+        setting_type = "runtime-global",
+		default_value = "Normal",
+		allowed_values = {"Off", "Easy", "Normal", "Hard", "Insane"},
+	},
     --[[{
         type = "bool-setting",
         name = "DyWorld_Loot_Deconstruct_Message",

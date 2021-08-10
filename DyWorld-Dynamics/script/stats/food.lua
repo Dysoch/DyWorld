@@ -129,32 +129,44 @@ function Water_Lose(id, mult)
 end
 
 function Auto_Food_Intake(ID)
+    local VAR = game.forces.player.technologies["implants-auto-food-5"].researched == true and 10 or game.forces.player.technologies["implants-auto-food-4"].researched == true and 5 or game.forces.player.technologies["implants-auto-food-3"].researched == true and 4 or game.forces.player.technologies["implants-auto-food-2"].researched == true and 3 or game.forces.player.technologies["implants-auto-food-1"].researched == true and 2 or 1
 	if game.players[ID].get_main_inventory() then
-		local Inv = game.players[ID].get_main_inventory()
-		local Contents = Inv.get_contents()
-		for k,v in pairs(Contents) do
-			if Food_Values[k] then
-				if Food_Values[k].Water and Food_Values[k].Food then
-					if ((global.dyworld.players[ID].water_max - (global.dyworld.players[ID].water + Food_Values[k].Water)) >= 0) and ((global.dyworld.players[ID].food_max - (global.dyworld.players[ID].food + Food_Values[k].Food)) >= 0) then
-						Water_Add(ID, Food_Values[k].Water)
-						Food_Add(ID, Food_Values[k].Food)
-						Inv.remove({name = k, count = 1})
-						break
-					end
-				elseif Food_Values[k].Water and not Food_Values[k].Food then
-					if (global.dyworld.players[ID].water_max - (global.dyworld.players[ID].water + Food_Values[k].Water)) >= 0 then
-						Water_Add(ID, Food_Values[k].Water)
-						Inv.remove({name = k, count = 1})
-						break
-					end
-				elseif Food_Values[k].Food and not Food_Values[k].Water then
-					if (global.dyworld.players[ID].food_max - (global.dyworld.players[ID].food + Food_Values[k].Food)) >= 0 then
-						Food_Add(ID, Food_Values[k].Food)
-						Inv.remove({name = k, count = 1})
-						break
-					end
-				end
-			end
-		end
+        for i = 1, VAR do
+            local Inv = game.players[ID].get_main_inventory()
+            local Contents = Inv.get_contents()
+            for k,v in pairs(Contents) do
+                if Food_Values[k] then
+                    if Food_Values[k].Water and Food_Values[k].Food then
+                        if ((global.dyworld.players[ID].water_max - (global.dyworld.players[ID].water + Food_Values[k].Water)) >= 0) and ((global.dyworld.players[ID].food_max - (global.dyworld.players[ID].food + Food_Values[k].Food)) >= 0) then
+                            Water_Add(ID, Food_Values[k].Water)
+                            Food_Add(ID, Food_Values[k].Food)
+                            Inv.remove({name = k, count = 1})
+                            if game.forces.player.technologies["implants-2"].researched then
+                            else
+                                break
+                            end
+                        end
+                    elseif Food_Values[k].Water and not Food_Values[k].Food then
+                        if (global.dyworld.players[ID].water_max - (global.dyworld.players[ID].water + Food_Values[k].Water)) >= 0 then
+                            Water_Add(ID, Food_Values[k].Water)
+                            Inv.remove({name = k, count = 1})
+                            if game.forces.player.technologies["implants-2"].researched then
+                            else
+                                break
+                            end
+                        end
+                    elseif Food_Values[k].Food and not Food_Values[k].Water then
+                        if (global.dyworld.players[ID].food_max - (global.dyworld.players[ID].food + Food_Values[k].Food)) >= 0 then
+                            Food_Add(ID, Food_Values[k].Food)
+                            Inv.remove({name = k, count = 1})
+                            if game.forces.player.technologies["implants-2"].researched then
+                            else
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+        end
 	end
 end

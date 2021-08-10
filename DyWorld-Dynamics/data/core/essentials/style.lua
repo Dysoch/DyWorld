@@ -8,11 +8,15 @@ data.raw["gui-style"].default["dy-yellow-bar"] = {
 	type = "progressbar_style",
 	smooth_color = {r = 1, g = 1, b = 0}
 }]]
+
+local width = 20
+
 data.raw["gui-style"].default["dy-bar-1"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 0, g = 1, b = 0},
       other_colors = {},
       side_text_padding = 8,
@@ -34,9 +38,10 @@ data.raw["gui-style"].default["dy-bar-1"] = {
     }
 data.raw["gui-style"].default["dy-bar-2"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 0.25, g = 1, b = 0},
       other_colors = {},
       side_text_padding = 8,
@@ -58,9 +63,10 @@ data.raw["gui-style"].default["dy-bar-2"] = {
     }
 data.raw["gui-style"].default["dy-bar-3"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 0.5, g = 1, b = 0},
       other_colors = {},
       side_text_padding = 8,
@@ -82,9 +88,10 @@ data.raw["gui-style"].default["dy-bar-3"] = {
     }
 data.raw["gui-style"].default["dy-bar-4"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 0.75, g = 1, b = 0},
       other_colors = {},
       side_text_padding = 8,
@@ -106,9 +113,10 @@ data.raw["gui-style"].default["dy-bar-4"] = {
     }
 data.raw["gui-style"].default["dy-bar-5"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 0.9, g = 1, b = 0},
       other_colors = {},
       side_text_padding = 8,
@@ -130,9 +138,10 @@ data.raw["gui-style"].default["dy-bar-5"] = {
     }
 data.raw["gui-style"].default["dy-bar-6"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 1, g = 0.9, b = 0},
       other_colors = {},
       side_text_padding = 8,
@@ -154,9 +163,10 @@ data.raw["gui-style"].default["dy-bar-6"] = {
     }
 data.raw["gui-style"].default["dy-bar-7"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 1, g = 0.75, b = 0},
       other_colors = {},
       side_text_padding = 8,
@@ -178,9 +188,10 @@ data.raw["gui-style"].default["dy-bar-7"] = {
     }
 data.raw["gui-style"].default["dy-bar-8"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 1, g = 0.5, b = 0},
       other_colors = {},
       side_text_padding = 8,
@@ -202,9 +213,10 @@ data.raw["gui-style"].default["dy-bar-8"] = {
     }
 data.raw["gui-style"].default["dy-bar-9"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 1, g = 0.25, b = 0},
       other_colors = {},
       side_text_padding = 8,
@@ -226,9 +238,10 @@ data.raw["gui-style"].default["dy-bar-9"] = {
     }
 data.raw["gui-style"].default["dy-bar-10"] = {
       type = "progressbar_style",
-      minimal_width = 10,
-      natural_width = 200,
-      bar_width = 7, -- thickness of the bar, not horizontal size
+      minimal_width = 2,
+      natural_width = 100,
+      maximal_width = 200,
+      bar_width = width, -- thickness of the bar, not horizontal size
       color = {r = 1, g = 0, b = 0},
       other_colors = {},
       side_text_padding = 8,

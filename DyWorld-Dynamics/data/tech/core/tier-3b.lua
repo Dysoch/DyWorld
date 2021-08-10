@@ -671,6 +671,9 @@ local Main_Techs = {
 		name = "implants-2",
 		icon = DyDs_path_tech_base.."radar.png",
 		flags = {Tech_Main = true},
+        effects = {
+			{type = "nothing", effect_description = {"implants-2"}},
+		},
 		prerequisites = {
 			"implants-1",
 			"chemical-science-pack",
@@ -687,6 +690,9 @@ local Main_Techs = {
 		name = "implants-3",
 		icon = DyDs_path_tech_base.."radar.png",
 		flags = {Tech_Main = true},
+        effects = {
+			{type = "nothing", effect_description = {"implants-3"}},
+		},
 		prerequisites = {
 			"implants-2",
 			"production-science-pack",

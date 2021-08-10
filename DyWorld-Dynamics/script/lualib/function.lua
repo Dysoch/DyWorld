@@ -7,6 +7,29 @@ function Dy_Log(String)
 	end
 end
 
+function Dy_Check_GUI(GUI)
+    if GUI == 0 then return true
+    elseif GUI == 1 then return false
+    elseif GUI == 2 then return false
+    elseif GUI == 3 then return false
+    elseif GUI == 4 then return false
+    elseif GUI == 5 then return false
+    elseif GUI == 6 then return false
+    elseif GUI == 7 then return false
+    elseif GUI == 8 then return false
+    elseif GUI == 9 then return false
+    elseif GUI == 10 then return false
+    elseif GUI == 11 then return false
+    elseif GUI == 12 then return false
+    elseif GUI == 13 then return false
+    elseif GUI == 14 then return false
+    elseif GUI == 16 then return false
+    elseif GUI == 17 then return false
+    elseif GUI == 18 then return false
+    else return true
+    end
+end
+
 function Dy_Find_Str(Table, String)
 	return string.find(Table, String, 1, true)
 end

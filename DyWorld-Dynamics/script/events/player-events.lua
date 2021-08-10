@@ -67,6 +67,7 @@ function Event_on_player_created(event)
 		stats_gui_index = 1,
 		log_gui = false,
 		log_gui_index = 1,
+		personal_gui = false,
 	}
 	global.dyworld.game_stats.players = global.dyworld.game_stats.players + 1
 	if global.dyworld_story then

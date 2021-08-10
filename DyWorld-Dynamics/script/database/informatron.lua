@@ -60,7 +60,7 @@ function dyworld_menu(player_index)
 	for Act = 1,5 do
 		for Phase = 1,50 do
 			if global.dyworld.story.acts[Act] and global.dyworld.story.acts[Act][Phase] then
-				if global.dyworld.story.acts[Act][Phase].started then
+				if global.dyworld.story.acts[Act][Phase].started and global.dyworld.story.acts[Act][Phase].message then
 					Table.story["act_"..Act]["phase_"..Act.."_"..Phase] = 1
 				end
 			end

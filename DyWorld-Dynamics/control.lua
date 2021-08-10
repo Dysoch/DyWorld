@@ -3,8 +3,8 @@ require("data.prefix-data")
 
 debugger = Dy_Sett.Debug
 Version_Build = "0.7.100"
-Food_Start = debugger and 250000 or Dy_Sett.Difficulty == "Easy" and 25000 or Dy_Sett.Difficulty == "Normal" and 2500 or Dy_Sett.Difficulty == "Hard" and 1600 or 1000
-Water_Start = debugger and 500000 or Dy_Sett.Difficulty == "Easy" and 50000 or Dy_Sett.Difficulty == "Normal" and 5000 or Dy_Sett.Difficulty == "Hard" and 2500 or 2000
+Food_Start = debugger and 250000 or settings.global["DyWorld_Food_Difficulty"].value == "Easy" and 25000 or settings.global["DyWorld_Food_Difficulty"].value == "Normal" and 2500 or settings.global["DyWorld_Food_Difficulty"].value == "Hard" and 1600 or settings.global["DyWorld_Food_Difficulty"].value == "Insane" and 800 or 2500
+Water_Start = debugger and 500000 or settings.global["DyWorld_Food_Difficulty"].value == "Easy" and 50000 or settings.global["DyWorld_Food_Difficulty"].value == "Normal" and 5000 or settings.global["DyWorld_Food_Difficulty"].value == "Hard" and 2500 or settings.global["DyWorld_Food_Difficulty"].value == "Insane" and 1250 or 5000
 
 -- LuaLib
 require "script/lualib/function"
@@ -28,6 +28,7 @@ require("script/lualib/inserter")
 require "script/gui/main-gui"
 require "script/gui/story-gui"
 require "script/gui/smn-gui"
+require "script/gui/personal-gui"
 
 -- Stats
 require "script/stats/functions"

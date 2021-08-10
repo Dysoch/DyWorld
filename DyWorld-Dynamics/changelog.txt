@@ -8,11 +8,14 @@ Date: ??. 08. 2021
     - Added Automatic Player Feeder Implant (Uses food/water items from inventory automatically)
     - Added Automatic Player Healing Implant (Uses medpacks from inventory automatically)
     - Added new mechanic for ghost entities. For every ghost entity placed, the ghost timer (the one from destroyed entities) increases by 1 second
+    - Added seperate GUI for food/water and removed it from the rest
+    - Added seperate Difficulty (map setting) for food/water
   Changes:
     - Made Laser Turrets be able to fire over player made entities (walls, machines, etc)
     - Normal Inserter is no longer Stack variant
     - Fixed several fast replace groups. Base game entities can be replaced from old blueprints into DyWorld variants with upgrade planner
     - Fixed several next upgrade issues
+    - Fixed ghost entities being used in attack locations
     - On Startup Difficulty (mod setting) now affects pollution for each machine
     - Ammo Magazines Stacksize: 100 > 10 (should fix issue's with loading ammo in turrets)
     - Added Difficulty Check in armor. Easy disables durability, the rest has different values

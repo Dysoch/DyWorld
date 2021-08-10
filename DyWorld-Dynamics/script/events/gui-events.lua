@@ -61,6 +61,14 @@ function Event_on_gui_click(event)
 				SMN_GUI(player, id)
 			end
 		end
+	elseif gui.name == "dyworld_personal" then
+		if global.dyworld.players[id].personal_gui then
+			global.dyworld.players[id].personal_gui = false
+			Close_Personal_GUI(player, id)
+		else
+			global.dyworld.players[id].personal_gui = true
+			Personal_GUI(player, id)
+		end
 	elseif gui.name == "dyworld_phase_forward" then
 		Phase_Forward()
 	end

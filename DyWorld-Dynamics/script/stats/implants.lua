@@ -95,23 +95,29 @@ function Implant_Remove(id, implant)
 end
 
 function Auto_Medpack_Intake(ID)
+    local VAR = game.forces.player.technologies["implants-auto-health-5"].researched == true and 10 or game.forces.player.technologies["implants-auto-health-4"].researched == true and 5 or game.forces.player.technologies["implants-auto-health-3"].researched == true and 4 or game.forces.player.technologies["implants-auto-health-2"].researched == true and 3 or game.forces.player.technologies["implants-auto-health-1"].researched == true and 2 or 1
 	if game.players[ID].get_main_inventory() then
-		local Inv = game.players[ID].get_main_inventory()
-		local Contents = Inv.get_contents()
-		for k,v in pairs(Contents) do
-			if Medpack_Values[k] then
-				local P_S = global.dyworld.players[ID].surface
-				local P_X = global.dyworld.players[ID].posx
-				local P_Y = global.dyworld.players[ID].posy
-				local P_Loc = game.surfaces[P_S].find_entity("character", {P_X,P_Y})
-				if P_Loc and global.dyworld.players[ID].alive then
-					if (((game.entity_prototypes["character"].max_health + game.players[ID].character_health_bonus) - (P_Loc.health + Medpack_Values[k])) >= 0) then
-						Inv.remove({name = k, count = 1})
-						P_Loc.health = P_Loc.health + Medpack_Values[k]
-						break
-					end
-				end
-			end
-		end
+        for i = 1, VAR do
+            local Inv = game.players[ID].get_main_inventory()
+            local Contents = Inv.get_contents()
+            for k,v in pairs(Contents) do
+                if Medpack_Values[k] then
+                    local P_S = global.dyworld.players[ID].surface
+                    local P_X = global.dyworld.players[ID].posx
+                    local P_Y = global.dyworld.players[ID].posy
+                    local P_Loc = game.surfaces[P_S].find_entity("character", {P_X,P_Y})
+                    if P_Loc and global.dyworld.players[ID].alive then
+                        if (((game.entity_prototypes["character"].max_health + game.players[ID].character_health_bonus) - (P_Loc.health + Medpack_Values[k])) >= 0) then
+                            Inv.remove({name = k, count = 1})
+                            P_Loc.health = P_Loc.health + Medpack_Values[k]
+                            if game.forces.player.technologies["implants-3"].researched then
+                            else
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+        end
 	end
 end

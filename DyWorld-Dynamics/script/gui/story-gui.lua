@@ -1,44 +1,4 @@
 
-local function Progress_Surival_Style_Check(VAR)
-	local Percent = VAR * 100
-	if Percent >= 90 then return "dy-bar-1"
-	elseif Percent >= 80 then return "dy-bar-2"
-	elseif Percent >= 70 then return "dy-bar-3"
-	elseif Percent >= 60 then return "dy-bar-4"
-	elseif Percent >= 50 then return "dy-bar-5"
-	elseif Percent >= 40 then return "dy-bar-6"
-	elseif Percent >= 30 then return "dy-bar-7"
-	elseif Percent >= 20 then return "dy-bar-8"
-	elseif Percent >= 10 then return "dy-bar-9"
-	elseif Percent < 10 then return "dy-bar-10"
-	else return "dy-bar-10"
-	end
-end
-
-local function Time_Surival_Check(id, VAR)
-	if VAR == "food" then
-		local rate = global.dyworld.players[id].food_rate
-		local capacity = global.dyworld.players[id].food
-		local total = capacity / rate
-		local seconds_start = math.floor(total)
-		local minutes_start = math.floor(seconds_start/60)
-		local hours = math.floor(minutes_start/60)
-		local minutes = (minutes_start-(hours*60))
-		local seconds = (seconds_start-(minutes_start*60))
-		return (hours..":"..minutes..":"..seconds)
-	elseif VAR == "water" then
-		local rate = global.dyworld.players[id].water_rate
-		local capacity = global.dyworld.players[id].water
-		local total = capacity / rate
-		local seconds_start = math.floor(total)
-		local minutes_start = math.floor(seconds_start/60)
-		local hours = math.floor(minutes_start/60)
-		local minutes = (minutes_start-(hours*60))
-		local seconds = (seconds_start-(minutes_start*60))
-		return (hours..":"..minutes..":"..seconds)
-	end
-end
-
 function Close_Story_GUI(player, id)
 	if player.gui.top.DyDs_Story_GUI then
 		player.gui.top.DyDs_Story_GUI.destroy()
@@ -63,15 +23,6 @@ function Story_GUI(player, id)
 		local tab2 = tabbed_pane.add{type = "tab", name = "DyDs_story_objectives_tab", caption = "Objectives: [color=yellow]"..(Story.amount[1] + Story.amount[2]).."[/color]"}
 		local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 		tabbed_pane.add_tab(tab2, frameflow2)
-				
-		if Dy_Sett.Difficulty ~= "Easy" then
-			frameflow2.add{type = "label", caption = "Water:"}
-			frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].water_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max))}
-					
-			frameflow2.add{type = "label", caption = "Food:"}
-			frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
-			frameflow2.add{type = "line", direction = "horizontal"}
-		end
 				
 		if Story.objectives then
 			for k,v in pairs(Story.objectives) do
@@ -114,15 +65,6 @@ function Story_GUI(player, id)
 		local frameflow3 = tabbed_pane.add{type = "flow", name = "flow3", direction = "vertical"}
 		tabbed_pane.add_tab(tab3, frameflow3)
 				
-		if Dy_Sett.Difficulty ~= "Easy" then
-			frameflow3.add{type = "label", caption = "Water:"}
-			frameflow3.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].water_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max))}
-					
-			frameflow3.add{type = "label", caption = "Food:"}
-			frameflow3.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
-			frameflow3.add{type = "line", direction = "horizontal"}
-		end
-				
 		if Story.objectives_side or debugger then
 			for k,v in pairs(global.dyworld.story.side_objectives.unlocked) do
 				if v.done == false then
@@ -156,15 +98,6 @@ function Story_GUI(player, id)
 		local tab2 = tabbed_pane.add{type = "tab", name = "DyDs_story_objectives_tab", caption = "Objectives: [color=yellow]"..(Story.amount[1] + Story.amount[2]).."[/color]"}
 		local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 		tabbed_pane.add_tab(tab2, frameflow2)
-		
-		if Dy_Sett.Difficulty ~= "Easy" then
-			frameflow2.add{type = "label", caption = "Water:"}
-			frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].water_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max))}
-			
-			frameflow2.add{type = "label", caption = "Food:"}
-			frameflow2.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
-			frameflow2.add{type = "line", direction = "horizontal"}
-		end
 		
 		if Story.objectives then
 			for k,v in pairs(Story.objectives) do
@@ -214,15 +147,6 @@ function Story_GUI(player, id)
 	local tab1 = tabbed_pane.add{type = "tab", name = "DyDs_story_general_tab", caption = "Act: "..global.dyworld.story.act..", Phase: "..global.dyworld.story.phase}		
 	local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
 	tabbed_pane.add_tab(tab1, frameflow1)
-
-	--if Dy_Sett.Difficulty ~= "Easy" then
-		frameflow1.add{type = "label", caption = "Water:"}
-		frameflow1.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].water_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max))}
-		
-		frameflow1.add{type = "label", caption = "Food:"}
-		frameflow1.add{type = "progressbar", size = 26, value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..global.dyworld.players[id].food_rate.."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max))}
-		frameflow1.add{type = "line", direction = "horizontal"}
-	--end
 
 	frameflow1.add{type = "label", caption = "Time since crash: [color=blue]"..global.dyworld.game_stats.time_stamp.."[/color]", tooltip = "Total Ingame Nauvis Days: "..global.dyworld.game_stats.days}
 	frameflow1.add{type = "line", direction = "horizontal"}

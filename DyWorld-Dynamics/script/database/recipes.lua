@@ -65,6 +65,7 @@ Story_Recipes  = {
 	["cast-iron-1b"] = {act = 1, phase = 8},
 	["cast-copper-1"] = {act = 1, phase = 8},
 	["cast-copper-1b"] = {act = 1, phase = 8},
+	["small-storage-2"] = {act = 1, phase = 8},
 	["iron-gear"] = {act = 1, phase = 8},
 	["copper-cable"] = {act = 1, phase = 8},
 	["9mm-bullet-copper"] = {act = 1, phase = 8},
@@ -88,10 +89,13 @@ Story_Recipes  = {
 	["9mm-bullet-iron"] = {act = 1, phase = 10},
 	["9mm-mag-iron"] = {act = 1, phase = 10},
 	["9mm-mag-iron-del"] = {act = 1, phase = 10},
+	["car-1"] = {act = 1, phase = 10},
+	["boat-1"] = {act = 1, phase = 10},
 	
 	----- Act 2, Phase 3 -----
 	["lab-2"] = {act = 2, phase = 3},
 	["food-implant"] = {act = 2, phase = 3},
+	["small-storage-3"] = {act = 1, phase = 8},
 	
 	----- Act 2, Phase 5 -----
 	["lab-4"] = {act = 2, phase = 5},

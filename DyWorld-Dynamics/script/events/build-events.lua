@@ -59,7 +59,7 @@ function Event_on_built_entity(event)
 	global.dyworld.game_stats.build_amount = global.dyworld.game_stats.build_amount + 1
 	
 	----- Building Placement -----
-	if Entity_Check(type) and name ~= "entity-ghost" then
+	if Entity_Check(type) and name ~= "entity-ghost" and name ~= "landfill" then
 		local BuildingTable = {posx = position.x, posy = position.y}
 		local surface = event.created_entity.surface.name
 		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
@@ -225,7 +225,7 @@ function Event_on_robot_built_entity(event)
 	end
 	
 	----- Building Placement -----
-	if Entity_Check(type) and name ~= "entity-ghost" then
+	if Entity_Check(type) and name ~= "entity-ghost" and name ~= "landfill" then
 		local BuildingTable = {posx = position.x, posy = position.y}
 		local surface = event.created_entity.surface.name
 		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
@@ -389,7 +389,7 @@ function Event_script_raised_revive(event)
 	end
 	
 	----- Building Placement -----
-	if Entity_Check(type) and name ~= "entity-ghost" then
+	if Entity_Check(type) and name ~= "entity-ghost" and name ~= "landfill" then
 		local BuildingTable = {posx = position.x, posy = position.y}
 		local surface = event.entity.surface.name
 		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end

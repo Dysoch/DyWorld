@@ -48,6 +48,9 @@ local Change = {
 	{Old = "construction-robot", New = "construction-robot-1"},
 	{Old = "logistic-robot", New = "logistic-robot-1"},
 	{Old = "roboport", New = "roboport-1"},
+	{Old = "wooden-chest", New = "small-storage"},
+	{Old = "iron-chest", New = "small-storage-2"},
+	{Old = "steel-chest", New = "small-storage-3"},
 	--{Old = "raw", New = "raw"},
 	
 }

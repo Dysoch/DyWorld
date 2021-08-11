@@ -5,11 +5,12 @@ Date: ??. 08. 2021
     - First Official Public Beta Release
     - Check changelogs for Version 0.7.x for dev build changes and additions
   Minor Features:
-    - Added Automatic Player Feeder Implant (Uses food/water items from inventory automatically)
-    - Added Automatic Player Healing Implant (Uses medpacks from inventory automatically)
+    - Added Automatic Player Feeder Implant (Uses food/water items from inventory automatically). Use Technologies to upgrade the implant
+    - Added Automatic Player Healing Implant (Uses medpacks from inventory automatically). Use Technologies to upgrade the implant
     - Added new mechanic for ghost entities. For every ghost entity placed, the ghost timer (the one from destroyed entities) increases by 1 second
-    - Added seperate GUI for food/water and removed it from the rest
+    - Added seperate GUI for food/water and removed it from the rest. This GUI can always stay open
     - Added seperate Difficulty (map setting) for food/water
+    - Added 2 new storages
   Changes:
     - Made Laser Turrets be able to fire over player made entities (walls, machines, etc)
     - Normal Inserter is no longer Stack variant
@@ -18,18 +19,24 @@ Date: ??. 08. 2021
     - Fixed ghost entities being used in attack locations
     - On Startup Difficulty (mod setting) now affects pollution for each machine
     - Ammo Magazines Stacksize: 100 > 10 (should fix issue's with loading ammo in turrets)
-    - Added Difficulty Check in armor. Easy disables durability, the rest has different values
+    - Added Difficulty Check in for armors. Easy disables durability, the rest has different values
     - Crafting recipes of inserters are no longer lost on demolishing inserters on certain thresholds, but You will lose them however when not a single inserter is in the world
+    - Internal Changes to implants. You are required to add them again if you have implants added
   Bugfixes:
     - Fixed bug with drag-building transport belts and old underground belts being placed as ghosts
+    - Fixed bug player killing itself
+    - Fixed bug with custom GUI's open that removes focus from search bars. This will still work on quickbar filter though (working on it). Open your inventory and then change use the filter searchbar as workaround
+    - Fixed bug with placing ghosts or landfill and natives attacking that location
   Story:
     - Player Ambushes now have tiers
   Survival:
-    - Food and Water storage is now affected by Difficulty
-    - Food and Water usage is now affected by Difficulty
+    - Food and Water storage is now affected by Food Difficulty
+    - Food and Water usage is now affected by Food Difficulty
   Other Mods:
     - Space Exploration: required version: 0.5.76 > 0.5.77
     - Space Exploration Graphics Part 1: required version: 0.5.11 > 0.5.12
+  Translations:
+    - German Translation updated (made by Maxi_der_ZockerYT)
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.100
 Date: 30. 07. 2021

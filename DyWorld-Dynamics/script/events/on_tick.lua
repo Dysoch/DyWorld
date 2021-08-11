@@ -38,13 +38,18 @@ function Event_on_tick(event)
 	-- @todo Rewrite Automated Healing/Feeding Script to improve performance
 	if event.tick%(60*10) == ((60*10) - 1) then
 		for _,Player in pairs(global.dyworld.players) do
-			if not global.dyworld.players[Player.id].implants then global.dyworld.players[Player.id].implants = {} end
-			if global.dyworld.players[Player.id].implants["food-implant"] then
+            if not global.dyworld.players[Player.id].implants then
+                global.dyworld.players[Player.id].implants = {}
+                for k,v in pairs(Implants) do
+                    global.dyworld.players[Player.id].implants[k] = {enabled = false, amount = 0}
+                end
+            end
+			if global.dyworld.players[Player.id].implants["food-implant"].enabled then
 				if global.dyworld.players[Player.id].alive and Dy_Sett.Difficulty ~= "Easy" then
 					Auto_Food_Intake(Player.id)
 				end
 			end
-			if global.dyworld.players[Player.id].implants["health-implant"] then
+			if global.dyworld.players[Player.id].implants["health-implant"].enabled then
 				Auto_Medpack_Intake(Player.id)
 			end
 		end

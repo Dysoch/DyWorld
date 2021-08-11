@@ -8,11 +8,11 @@ function Event_on_entity_died(event)
 	local name = event.entity.name
 	local position = event.entity.position
 	if killer and killer.valid and killer.type == "character" then
-	--if killer.type == "character" then
-		local id = killer.player.index
-		
-		----- Personal counter -----
-		global.dyworld.players[id].killed = global.dyworld.players[id].killed + 1
+	    if killer.player and killer.player.index then
+            local id = killer.player.index
+            ----- Personal counter -----
+            global.dyworld.players[id].killed = global.dyworld.players[id].killed + 1
+        end
 	end
 	
 	----- Global counter -----

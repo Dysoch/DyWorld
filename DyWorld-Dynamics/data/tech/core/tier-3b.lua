@@ -1177,7 +1177,7 @@ for i = 1,5 do
 		},
 		time = Dy_Tech_Time_Calc(30*i),
 		order = "4",
-	}) 
+	})
 	DyWorld_Tech_Add({
 		name = "implants-charisma-"..i,
 		icon = DyDs_path_tech_base.."radar.png",
@@ -1197,7 +1197,7 @@ for i = 1,5 do
 		},
 		time = Dy_Tech_Time_Calc(30*i),
 		order = "4",
-	}) 
+	})
 	DyWorld_Tech_Add({
 		name = "implants-death-"..i,
 		icon = DyDs_path_tech_base.."radar.png",
@@ -1222,5 +1222,49 @@ for i = 1,5 do
 		},
 		time = Dy_Tech_Time_Calc(120*i),
 		order = "4",
-	}) 
+	})
+	DyWorld_Tech_Add({
+		name = "implants-auto-food-"..i,
+		icon = DyDs_path_tech_base.."radar.png",
+		flags = {Tech_Main = true},
+        effects = {
+			{type = "nothing", effect_description = {"implants-auto-food-"..i}},
+		},
+		prerequisites = {
+			"implants-2",
+			i >= 2 and "implants-auto-food-"..(i-1) or nil,
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, (1000 * i)),
+			Dy_Main_Tech_Pack(2.1, (1000 * i)),
+			Dy_Main_Tech_Pack(3.1, (1000 * i)),
+			i >= 2 and Dy_Main_Tech_Pack(4.1, (1000 * i)) or nil,
+			i >= 3 and Dy_Main_Tech_Pack(5.1, (1000 * i)) or nil,
+			i >= 4 and Dy_Main_Tech_Pack(6.1, (1000 * i)) or nil,
+		},
+		time = Dy_Tech_Time_Calc(60*i),
+		order = "4",
+	})
+	DyWorld_Tech_Add({
+		name = "implants-auto-health-"..i,
+		icon = DyDs_path_tech_base.."radar.png",
+		flags = {Tech_Main = true},
+        effects = {
+			{type = "nothing", effect_description = {"implants-auto-health-"..i}},
+		},
+		prerequisites = {
+			"implants-3",
+			i >= 2 and "implants-auto-health-"..(i-1) or nil,
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, (1000 * i)),
+			Dy_Main_Tech_Pack(2.1, (1000 * i)),
+			Dy_Main_Tech_Pack(3.1, (1000 * i)),
+			i >= 2 and Dy_Main_Tech_Pack(4.1, (1000 * i)) or nil,
+			Dy_Main_Tech_Pack(5.1, (1000 * i)),
+			i >= 4 and Dy_Main_Tech_Pack(6.1, (1000 * i)) or nil,
+		},
+		time = Dy_Tech_Time_Calc(60*i),
+		order = "4",
+	})
 end

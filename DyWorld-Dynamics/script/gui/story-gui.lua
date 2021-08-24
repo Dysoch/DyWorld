@@ -66,32 +66,36 @@ function Story_GUI(player, id)
 		tabbed_pane.add_tab(tab3, frameflow3)
 				
 		if Story.objectives_side or debugger then
-			for k,v in pairs(global.dyworld.story.side_objectives.unlocked) do
-				if v.done == false then
-					if v.objective_type == "build-type" then
-						frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"type-name."..v.name}, v.amount_done, v.amount_needed}}
-						frameflow3.add{type = "line", direction = "horizontal"}
-					elseif v.objective_type == "build-name" then
-						frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"entity-name."..v.name}, v.amount_done, v.amount_needed}}
-						frameflow3.add{type = "line", direction = "horizontal"}
-					elseif v.objective_type == "kill-type" then
-						frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"type-name."..v.name}, v.amount_done, v.amount_needed}}
-						frameflow3.add{type = "line", direction = "horizontal"}
-					elseif v.objective_type == "kill-name" then
-						frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"entity-name."..v.name}, v.amount_done, v.amount_needed}}
-						frameflow3.add{type = "line", direction = "horizontal"}
-					elseif v.objective_type == "scanning" then
-						frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, v.amount_done, v.amount_needed}}
-						frameflow3.add{type = "line", direction = "horizontal"}
-					elseif v.objective_type == "rockets" then
-						frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, v.amount_done, v.amount_needed}}
-						frameflow3.add{type = "line", direction = "horizontal"}
-					elseif v.objective_type == "satellite" then
-						frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"item-name."..v.name}, v.amount_done, v.amount_needed}}
-						frameflow3.add{type = "line", direction = "horizontal"}
-					end
-				end
-			end
+            if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] >= 1 then
+                for k,v in pairs(global.dyworld.story.side_objectives.unlocked) do
+                    if v.done == false then
+                        if v.objective_type == "build-type" then
+                            frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"type-name."..v.name}, v.amount_done, v.amount_needed}}
+                            frameflow3.add{type = "line", direction = "horizontal"}
+                        elseif v.objective_type == "build-name" then
+                            frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"entity-name."..v.name}, v.amount_done, v.amount_needed}}
+                            frameflow3.add{type = "line", direction = "horizontal"}
+                        elseif v.objective_type == "kill-type" then
+                            frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"type-name."..v.name}, v.amount_done, v.amount_needed}}
+                            frameflow3.add{type = "line", direction = "horizontal"}
+                        elseif v.objective_type == "kill-name" then
+                            frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"entity-name."..v.name}, v.amount_done, v.amount_needed}}
+                            frameflow3.add{type = "line", direction = "horizontal"}
+                        elseif v.objective_type == "scanning" then
+                            frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, v.amount_done, v.amount_needed}}
+                            frameflow3.add{type = "line", direction = "horizontal"}
+                        elseif v.objective_type == "rockets" then
+                            frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, v.amount_done, v.amount_needed}}
+                            frameflow3.add{type = "line", direction = "horizontal"}
+                        elseif v.objective_type == "satellite" then
+                            frameflow3.add{type = "label", caption = {"DyDs-side-story."..v.objective_type, {"item-name."..v.name}, v.amount_done, v.amount_needed}}
+                            frameflow3.add{type = "line", direction = "horizontal"}
+                        end
+                    end
+                end
+            else
+                frameflow2.add{type = "label", caption = "You completed all side objectives for this Phase\nFocus on your main objectives now!"}
+            end
 		end
 	elseif not global.dyworld.game_stats.story_pause then
 -------------------------------- Objectives TAB ----------------------------------------

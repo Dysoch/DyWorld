@@ -189,7 +189,7 @@ function Bonuses(id)
 			game.forces.player.laboratory_productivity_bonus = Round(((research - 50) * 0.025), 2)
 		end
 		if inserters >= 51 then
-			game.forces.player.stack_inserter_capacity_bonus  = math.floor((inserters - 50) / 25)
+			game.forces.player.stack_inserter_capacity_bonus  = math.min(math.floor((inserters - 50) / 50), 254)
 		end
 		-- @todo Rewrite formula ghost timer to live
 		if global.dyworld.game_stats.ghosts and global.dyworld.game_stats.ghosts >= 1 then

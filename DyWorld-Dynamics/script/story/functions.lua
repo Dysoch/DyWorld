@@ -65,6 +65,40 @@ function Phase_Forward()
 		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount = {Main_Amount, Side_Amount, Total_Amount}
 	end
 
+    -- Apply randomisation and difficulty changes to amount from objectives
+	for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
+        if v.type_1 and (v.type_1 == "build" or v.type_1 == "craft" or v.type_1 == "died" or v.type_1 == "launch") then
+            if v.amount_needed and not v.set_stone then
+                if settings.startup["DyWorld_Difficulty"].value == "Easy" then
+                    if v.random then
+                        local standard = math.floor(v.amount_needed * 0.5)
+                        local low_end = math.floor(standard * 0.5)
+                        local high_end = math.floor(standard * 1.5)
+                        v.amount_needed = math.floor(math.random(low_end, high_end))
+                    else
+                        v.amount_needed = math.floor(v.amount_needed * 0.5)
+                    end
+                elseif settings.startup["DyWorld_Difficulty"].value == "Normal" then
+                    if v.random then
+                        local standard = v.amount_needed
+                        local low_end = math.floor(standard * 0.5)
+                        local high_end = math.floor(standard * 1.5)
+                        v.amount_needed = math.floor(math.random(low_end, high_end))
+                    end
+                elseif settings.startup["DyWorld_Difficulty"].value == "Hard" then
+                    if v.random then
+                        local standard = math.floor(v.amount_needed * 1.75)
+                        local low_end = math.floor(standard * 0.5)
+                        local high_end = math.floor(standard * 1.5)
+                        v.amount_needed = math.floor(math.random(low_end, high_end))
+                    else
+                        v.amount_needed = math.floor(v.amount_needed * 1.75)
+                    end
+                end
+            end
+        end
+    end
+
 	-- Check if recipes require unlock --
 	for k,v in pairs(Story_Recipes) do
 		if (v.phase <= global.dyworld.story.phase and v.act <= global.dyworld.story.act) then

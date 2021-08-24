@@ -78,7 +78,7 @@ data:extend({
 	},
 	{
 		type = "string-setting",
-		name = "DyWorld_Food_Difficulty",
+		name = "DyWorld_Surival_Difficulty",
         setting_type = "runtime-global",
 		default_value = "Normal",
 		allowed_values = {"Off", "Easy", "Normal", "Hard", "Insane"},

@@ -118,6 +118,7 @@ function Main_GUI(player, id)
 -------------------------------- Player stats TAB -------------------------------------
 	local tab2 = tabbed_pane.add{type="tab", caption="Player Stats"}
 	local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
+	if not global.dyworld.players[id].implants then Implant_Check(id, nil, nil) end
     local GloPla = global.dyworld.players[id].implants
 	tabbed_pane.add_tab(tab2, frameflow2)
 		
@@ -125,8 +126,6 @@ function Main_GUI(player, id)
     frameflow2.add{type = "label", caption = "[color=yellow]Implants[/color]", tooltip = "Strength Implant: \n"..Check_Implant_State(id, "strength-implant").."\n\nConstitution Implant: \n"..Check_Implant_State(id, "constitution-implant").."\n\nDexterity Implant: \n"..Check_Implant_State(id, "dexterity-implant").."\n\nIntelligence Implant: \n"..Check_Implant_State(id, "intelligence-implant").."\n\nWisdom Implant: \n"..Check_Implant_State(id, "wisdom-implant").."\n\nCharisma Implant: \n"..Check_Implant_State(id, "charisma-implant")}
 		
 	frameflow2.add{type = "label", caption = "Total Stats: [color=blue]"..(global.dyworld.players[id].crafted + global.dyworld.players[id].mined + global.dyworld.players[id].picked + global.dyworld.players[id].build + global.dyworld.players[id].killed).."[/color]", tooltip = "Crafted: [color=blue]"..global.dyworld.players[id].crafted.."[/color]\nMined: [color=blue]"..global.dyworld.players[id].mined.."[/color]\nPicked Up: [color=blue]"..global.dyworld.players[id].picked.."[/color]\nBuilt: [color=blue]"..global.dyworld.players[id].build.."[/color]\nPersonal Killed: [color=blue]"..global.dyworld.players[id].killed.."[/color]\nCapsules Used: [color=blue]"..(global.dyworld.players[id].capsules or 0).."[/color]\nTimes Died: [color=blue]"..(global.dyworld.players[id].died or 0).."[/color]"}
-		
-	frameflow2.add{type = "label", caption = "Position: [color=blue]"..math.floor(global.dyworld.players[id].posx).."[/color] , [color=blue]"..math.floor(global.dyworld.players[id].posy).."[/color] on [color=blue]"..global.dyworld.players[id].surface.."[/color]"}
 		
 	frameflow2.add{type = "label", caption = "Distance Total: [color=blue]"..(Round(global.dyworld.players[id].distance, 2) + Round(global.dyworld.players[id].distance_car, 2) + Round(global.dyworld.players[id].distance_train, 2)).."[/color] Km", tooltip = "Walked: [color=blue]"..Round(global.dyworld.players[id].distance, 2).."[/color] Km\nDriven Vehicles: [color=blue]"..Round(global.dyworld.players[id].distance_car, 2).."[/color] Km\nDriven Trains: [color=blue]"..Round(global.dyworld.players[id].distance_train, 2).."[/color] Km"}
 

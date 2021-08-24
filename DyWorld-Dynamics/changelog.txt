@@ -9,11 +9,12 @@ Date: ??. 08. 2021
     - Added Automatic Player Healing Implant (Uses medpacks from inventory automatically). Use Technologies to upgrade the implant
     - Added new mechanic for ghost entities. For every ghost entity placed, the ghost timer (the one from destroyed entities) increases by 1 second
     - Added seperate GUI for food/water and removed it from the rest. This GUI can always stay open
-    - Added seperate Difficulty (map setting) for food/water
+    - Added seperate Difficulty (map setting) for Survival
     - Added 2 new storages
   Changes:
     - Made Laser Turrets be able to fire over player made entities (walls, machines, etc)
     - Normal Inserter is no longer Stack variant
+    - Fertile Soil now also gives carrots
     - Fixed several fast replace groups. Base game entities can be replaced from old blueprints into DyWorld variants with upgrade planner
     - Fixed several next upgrade issues
     - Fixed ghost entities being used in attack locations

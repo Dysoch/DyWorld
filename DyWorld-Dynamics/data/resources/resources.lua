@@ -851,5 +851,26 @@ data.raw.resource.treefarm.highlight = false
 data.raw.resource.treefarm.minimum = 600
 data.raw.resource.treefarm.normal = 600
 data.raw.resource.treefarm.infinite_depletion_amount = 1
-data.raw.resource.treefarm.minable.fluid_amount = 500
-data.raw.resource.treefarm.minable.required_fluid = "water"
+data.raw.resource.treefarm.minable =
+{
+  mining_time = 120,
+  required_fluid = "water",
+  fluid_amount = 500,
+  results =
+  {
+    {
+      type = "item",
+      name = "wood",
+      amount_min = 5,
+      amount_max = 30,
+      probability = 1
+    },
+    {
+      type = "item",
+      name = "carrot",
+      amount_min = 1,
+      amount_max = 5,
+      probability = 0.4
+    },
+  }
+}

@@ -10,6 +10,14 @@ function Reset_Implants()
 end
 
 function Implant_Check(id, implant, death)
+	if implant == nil then
+		if not global.dyworld.players[id].implants then
+            global.dyworld.players[id].implants = {}
+            for k,v in pairs(Implants) do
+                global.dyworld.players[id].implants[k] = {enabled = false, amount = 0}
+            end
+        end
+	end
 	if implant ~= nil then
 		if not Implants[implant].type then error("No Type found in implant "..implant) end
 		if not global.dyworld.players[id].implants then

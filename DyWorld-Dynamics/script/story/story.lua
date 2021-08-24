@@ -27,7 +27,6 @@ end
 
 function Story_Migrate(Act_On, Phase_On, Override)
 	for Acts, Tables in pairs(Story_Table_Base) do
-		log(serpent.block(Tables))
 		for Phases, Table in pairs(Tables) do
 			if global.dyworld.story.acts[Acts] and global.dyworld.story.acts[Acts][Phases] then
 				if Override then
@@ -38,7 +37,7 @@ function Story_Migrate(Act_On, Phase_On, Override)
 					if (Acts == Act_On and Phases == Phase_On) then
 					elseif global.dyworld.story.acts[Acts][Phases].started or global.dyworld.story.acts[Acts][Phases].done then
 					else
-							global.dyworld.story.acts[Acts][Phases] = Table
+						global.dyworld.story.acts[Acts][Phases] = Table
 					end
 				end
 			end

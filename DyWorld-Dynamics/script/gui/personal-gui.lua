@@ -79,15 +79,21 @@ end
 function Personal_GUI(player, id)
 	local force = player.force
 	local surface = game.players[id].surface.name
-	local frame = player.gui.left.add{type = "frame", name = "DyDs_Personal_GUI", caption = "Your Body"}
+	local frame = player.gui.left.add{type = "frame", name = "DyDs_Personal_GUI", caption = "Survival"}
 	local frameflow1 = frame.add{type = "flow", name = "flow1", direction = "vertical"}
+	if not global.dyworld.players[id].implants then Implant_Check(id, nil, nil) end
     local GloPla = global.dyworld.players[id].implants
+    local X = global.dyworld.players[id].posx
+    local Y = global.dyworld.players[id].posy
+    local Chunk_X = math.floor(X / 32)
+    local Chunk_Y = math.floor(Y / 32)
+    local Chunk = global.dyworld.game_stats.chunks_info[surface][Chunk_X..":"..Chunk_Y]
     --if not global.dyworld.players[id].personal_gui_loc then global.dyworld.players[id].personal_gui_loc = {X = 0, Y = 0} end
     --player.gui.screen.DyDs_Personal_GUI.location.x = global.dyworld.players[id].personal_gui_loc.X
     --player.gui.screen.DyDs_Personal_GUI.location.y = global.dyworld.players[id].personal_gui_loc.Y
 
-	if settings.global["DyWorld_Food_Difficulty"].value ~= "Off" then
-        local Mult = settings.global["DyWorld_Food_Difficulty"].value == "Easy" and 0.5 or settings.global["DyWorld_Food_Difficulty"].value == "Normal" and 1 or settings.global["DyWorld_Food_Difficulty"].value == "Hard" and 2 or settings.global["DyWorld_Food_Difficulty"].value == "Insane" and 5 or 1
+	if settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
+        local Mult = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 0.5 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 1 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 2 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 5 or 1
 
 		--frameflow1.add{type = "label", caption = "Water:"}
 		frameflow1.add{type = "progressbar", value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].water_rate * Mult), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water", Mult).."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max)), caption = GloPla["food-implant"].enabled and "   [color=red]Water (Auto)[/color]" or "         [color=red]Water[/color]"}
@@ -103,9 +109,35 @@ function Personal_GUI(player, id)
         frameflow1.add{type = "progressbar", value = (game.players[id].character.get_health_ratio()), style = Progress_Surival_Style_Check(game.players[id].character.get_health_ratio()), caption = GloPla["health-implant"].enabled and "   [color=red]Health (Auto)[/color]" or "         [color=red]Health[/color]"}
     end
 
-    -- Temperature and Radiation WIP
-    --frameflow1.add{type = "progressbar", value = (1), style = Progress_Surival_Style_Check(1), caption = "         [color=red]WIP[/color]"}
-    --frameflow1.add{type = "progressbar", value = (1), style = Progress_Surival_Style_Check(1), caption = "         [color=red]WIP[/color]"}
+    local Max_Pollution = Dy_Sett.Difficulty == "Easy" and 25000 or Dy_Sett.Difficulty == "Normal" and 12500 or Dy_Sett.Difficulty == "Hard" and 6000 or 6000
+    if Chunk.Pollution > 1000 then
+        frameflow1.add{type = "progressbar", value = (Chunk.Pollution / Max_Pollution), style = "dy-bar-1", tooltip = "[color=red]Warning!\nPollution getting high\nVacate the area[/color]\n\n[color=blue]WIP, no pollution based damage implemented yet[/color]", caption = "        [color=yellow]Pollution[/color]"}
+    end
+
     frameflow1.add{type = "label", caption = "[color=yellow]Implants[/color]", tooltip = "Food Reduction: \n"..Check_Implant_State(id, "usage-reduction").."\n\nSpeed Implant: \n"..Check_Implant_State(id, "speed-implant").."\n\nDeath Implant: \n"..Check_Implant_State(id, "death-implant")}
+
+    -- Temperature WIP
+    if Chunk.Temperature <= -5 then
+        frameflow1.add{type = "label", caption = "[color=blue]Temperature: "..Chunk.Temperature.."[/color]", tooltip = "WIP"}
+    elseif Chunk.Temperature <= 10 then
+        frameflow1.add{type = "label", caption = "[color=cyan]Temperature: "..Chunk.Temperature.."[/color]", tooltip = "WIP"}
+    elseif Chunk.Temperature >= 30 then
+        frameflow1.add{type = "label", caption = "[color=yellow]Temperature: "..Chunk.Temperature.."[/color]", tooltip = "WIP"}
+    elseif Chunk.Temperature >= 45 then
+        frameflow1.add{type = "label", caption = "[color=red]Temperature: "..Chunk.Temperature.."[/color]", tooltip = "WIP"}
+    else
+        frameflow1.add{type = "label", caption = "Temperature: [color=green]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
+    end
+
+    -- Radiation WIP
+    if Chunk.Radiation >= 0.075 then
+        frameflow1.add{type = "label", caption = "[color=green]Radiation: "..Chunk.Radiation.." Rad/s[/color]", tooltip = "WIP"}
+        -- send warning to player
+    end
+
+    frameflow1.add{type = "label", caption = "[color=blue]"..math.floor(global.dyworld.players[id].posx).."[/color] , [color=blue]"..math.floor(global.dyworld.players[id].posy).."[/color], [color=blue]"..global.dyworld.players[id].surface.."[/color]"}
+
+    if debugger then
+    end
 end
 

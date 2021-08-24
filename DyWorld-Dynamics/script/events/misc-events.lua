@@ -21,12 +21,33 @@ local function Check_Tile(Tile)
 end
 
 function Event_on_chunk_generated(event)
-		----- Story Objective Check -----
-		if not global.dyworld.game_stats.story_pause then
-			Story_Objectives("chunk-gen", event)
-		end
+    local Area_left_top = event.area.left_top
+    local Area_right_bottom = event.area.right_bottom
+	local surface = event.surface
+	local surface_name = surface.name
+    local Chunk_X = math.floor(event.position.x)
+    local Chunk_Y = math.floor(event.position.y)
+
+    -- Setup Chunk Properties
+    if not global.dyworld.game_stats.chunks_info then global.dyworld.game_stats.chunks_info = {} end
+    if not global.dyworld.game_stats.chunks_info[surface_name] then global.dyworld.game_stats.chunks_info[surface_name] = {} end
+    if not global.dyworld.game_stats.chunks_info[surface_name][Chunk_X..":"..Chunk_Y] then
+        local check = game.surfaces[surface_name].find_tiles_filtered{area = event.area}
+        global.dyworld.game_stats.chunks_info[surface_name][Chunk_X..":"..Chunk_Y] = {
+            Temperature_Standard = Dy_Check_Terrain_Temp_Chunk(check),
+            Temperature = 0,
+            Pollution = 0,
+            Radiation = Dy_Check_Terrain_Radiation_Chunk(check),
+        }
+        
+    end
+
+	-- Story Objective Check
+	if not global.dyworld.game_stats.story_pause then
+		Story_Objectives("chunk-gen", event)
+	end
 	
-	----- Global counter -----
+	-- Global counter
 	if not global.dyworld.game_stats.chunks then
 		global.dyworld.game_stats.chunks = 1
 	else
@@ -35,8 +56,6 @@ function Event_on_chunk_generated(event)
 	
 	-- Remove Resources
 	local Resources = {"stone"}
-	local surface = event.surface
-	local surface_name = surface.name
 	local size = 50
 
 	for _, e in pairs(surface.find_entities_filtered{area = event.area, type = "resource"}) do 
@@ -214,6 +233,10 @@ function Event_on_research_finished(event)
 			end
 		end
 	end
+
+    if global.dyworld.game_stats.inserters then
+        InserterCheck(global.dyworld.game_stats.inserters)
+    end
 end
 
 function Event_on_character_corpse_expired(event)

@@ -45,7 +45,7 @@ function Event_on_tick(event)
                 end
             end
 			if global.dyworld.players[Player.id].implants["food-implant"].enabled then
-				if global.dyworld.players[Player.id].alive and Dy_Sett.Difficulty ~= "Easy" then
+				if global.dyworld.players[Player.id].alive and settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
 					Auto_Food_Intake(Player.id)
 				end
 			end
@@ -102,11 +102,13 @@ function Event_on_tick(event)
 				if not v.distance_car then v.distance_car = 0 end
 				if not v.distance_train then v.distance_train = 0 end
 				if not v.surface then v.surface = "nauvis" end
+
 				v.posx2 = v.posx
 				v.posy2 = v.posy
 				v.posx = game.players[v.id].position.x
 				v.posy = game.players[v.id].position.y
 				v.surface = game.players[v.id].surface.name
+
 				if (game.players[v.id].vehicle and Distance_Car_Check(game.players[v.id].vehicle.name)) then
 					v.distance_car = (v.distance_car + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
 				elseif (game.players[v.id].vehicle and Distance_Train_Check(game.players[v.id].vehicle.name)) then
@@ -116,38 +118,58 @@ function Event_on_tick(event)
 						v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
 					end
 				end
-				if settings.global["DyWorld_Food_Difficulty"].value ~= "Off" then
-                    if settings.global["DyWorld_Food_Difficulty"].value == "Easy" then
+
+                if not global.dyworld.game_stats.chunks_info then global.dyworld.game_stats.chunks_info = {} end
+                if not global.dyworld.game_stats.chunks_info[v.surface] then global.dyworld.game_stats.chunks_info[v.surface] = {} end
+                local Chunk_X = math.floor(v.posx / 32)
+                local Chunk_Y = math.floor(v.posy / 32)
+                if not global.dyworld.game_stats.chunks_info[v.surface][Chunk_X..":"..Chunk_Y] then
+                    global.dyworld.game_stats.chunks_info[v.surface][Chunk_X..":"..Chunk_Y] = {
+                        Temperature_Standard = Round((Dy_Check_Terrain_Single(game.surfaces[v.surface].get_tile(v.posx, v.posy).name) + math.random()), 2),
+                        Temperature = 0,
+                        Pollution = Round(game.surfaces[v.surface].get_pollution({v.posx,v.posy}), 0),
+                        Radiation = Dy_Check_Terrain_Single_Rad(game.surfaces[v.surface].get_tile(v.posx, v.posy)),
+                    }
+                end
+                global.dyworld.game_stats.chunks_info[v.surface][Chunk_X..":"..Chunk_Y].Pollution = Round(game.surfaces[v.surface].get_pollution({v.posx,v.posy}), 0)
+                global.dyworld.game_stats.chunks_info[v.surface][Chunk_X..":"..Chunk_Y].Temperature = Round((global.dyworld.game_stats.chunks_info[v.surface][Chunk_X..":"..Chunk_Y].Temperature_Standard * (1 - game.surfaces[v.surface].darkness)), 2)
+                
+				if settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
+                    if settings.global["DyWorld_Surival_Difficulty"].value == "Easy" then
                         Food_Lose(v.id, 0.5)
                         Water_Lose(v.id, 0.5)
-                    elseif settings.global["DyWorld_Food_Difficulty"].value == "Normal" then
+                    elseif settings.global["DyWorld_Surival_Difficulty"].value == "Normal" then
                         Food_Lose(v.id, 1)
                         Water_Lose(v.id, 1)
-                    elseif settings.global["DyWorld_Food_Difficulty"].value == "Hard" then
+                    elseif settings.global["DyWorld_Surival_Difficulty"].value == "Hard" then
                         Food_Lose(v.id, 2)
                         Water_Lose(v.id, 2)
-                    elseif settings.global["DyWorld_Food_Difficulty"].value == "Insane" then
+                    elseif settings.global["DyWorld_Surival_Difficulty"].value == "Insane" then
                         Food_Lose(v.id, 5)
                         Water_Lose(v.id, 5)
                     end
 				end
+
 				if v.personal_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]
 					Close_Personal_GUI(player, v.id)
 					Personal_GUI(player, v.id)
 				end
+
 				if v.story_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]
 					Close_Story_GUI(player, v.id)
 					Story_GUI(player, v.id)
 					player.gui.top.DyDs_Story_GUI.selected_tab_index = global.dyworld.players[v.id].story_gui_index
 				end
+
 				if v.stats_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]
 					Close_Main_GUI(player, v.id)
 					Main_GUI(player, v.id)
 					player.gui.top.DyDs_Main_GUI.selected_tab_index = global.dyworld.players[v.id].stats_gui_index
 				end
+
 				if v.smn_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]
 					Close_SMN_GUI(player, v.id)
@@ -156,7 +178,9 @@ function Event_on_tick(event)
 						player.gui.top.DyDs_SMN_GUI.selected_tab_index = global.dyworld.players[v.id].smn_gui_index
 					end
 				end
+
 				Bonuses(v.id)
+
 				if global.dyworld_story and v.alive and not global.dyworld.game_stats.story_pause then
 					for aaaa,Phase in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 						if Phase.type_1 == "position" then

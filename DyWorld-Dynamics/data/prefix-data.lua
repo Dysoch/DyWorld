@@ -150,11 +150,11 @@ end
 
 function DySetDiffAmmo(Var)
 	if Dy_Sett.Difficulty == "Easy" then
-		return Round((Var * 1.5), 2)
+		return DyW.Math.Round((Var * 1.5), 2)
 	elseif Dy_Sett.Difficulty == "Normal" then
 		return Var
 	elseif Dy_Sett.Difficulty == "Hard" then
-		return Round((Var * 0.75), 2)
+		return DyW.Math.Round((Var * 0.75), 2)
 	end
 end
 
@@ -185,6 +185,7 @@ Dy_Exclude_Tech = {
 	["utility-science-pack"] = 1,
 	["production-science-pack"] = 1,
 	["military-science-pack"] = 1,
+	["rocket-fuel"] = 1,
 	-- AAI Signal ----
 	["aai-signal-transmission"] = 1,
 	-- Jetpack ----

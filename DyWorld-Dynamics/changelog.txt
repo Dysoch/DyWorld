@@ -33,11 +33,14 @@ Date: ??. 08. 2021
   Survival:
     - Food and Water storage is now affected by Food Difficulty
     - Food and Water usage is now affected by Food Difficulty
-  Other Mods:
-    - Space Exploration: required version: 0.5.76 > 0.5.77
+  Compatibility:
+    - Base: required version: 0.1.34 > 0.1.39
+    - DyComPa: required version: 0.1.1 > 0.1.2
+    - Space Exploration: required version: 0.5.76 > 0.5.80
     - Space Exploration Graphics Part 1: required version: 0.5.11 > 0.5.12
   Translations:
     - German Translation updated (made by Maxi_der_ZockerYT)
+    - Locales moved to DyCore
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.100
 Date: 30. 07. 2021
@@ -105,7 +108,7 @@ Date: 20. 07. 2021
     - Science lab unlocked at phase 9 act 2 instead phase 1 act 3
   Survival:
     - When you die, custom difficulity will lower
-  Other Mods:
+  Compatibility:
     - Updated required version DyComPa: 0.1.3 > 0.1.4
     - Updated required version Space Exploration: 0.5.58 > 0.5.76
     - Updated required version Space Exploration Graphics Part 1: 0.5.10 > 0.5.11

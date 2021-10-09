@@ -1,0 +1,13 @@
+
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: ??. ??. 2021
+  Features:
+    - First Release
+  Minor Features:
+    - Several functions for Items
+    - Several functions for Entities
+    - Several functions for Technologies
+    - Several functions for Modules
+    - Several functions for Tools
+    - Several functions for Recipes

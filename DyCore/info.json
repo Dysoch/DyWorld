@@ -1,0 +1,14 @@
+{
+	"name": "DyCore",
+	"version": "0.1.0",
+	"factorio_version": "1.1",
+	"title": "DyCore",
+	"author": "Dysoch",
+    "contact": "Via Discord: https://discord.gg/yHJaZrq5Ww",
+	"homepage": "https://github.com/Dysoch/DyWorld",
+	"description": "DyCore, the library mod used in most DyWorld mods. As such, it is needed for all DyWorld mods.",
+	"dependencies": [  
+		"base >= 1.1.39"
+	]
+}
+

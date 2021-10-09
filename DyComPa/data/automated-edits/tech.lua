@@ -185,7 +185,6 @@ local Tech_Base_Game = {
 	["power-armor-mk2"] = {Replace = nil},
 	["laser-turret"] = {Replace = nil},
 	["robotics"] = {Replace = "storage-2"},
-	["rocket-fuel"] = {Replace = "gasoline"},
 	["low-density-structure"] = {Replace = "intermediates-6"},
 	["rocket-control-unit"] = {Replace = "intermediates-6"},
 	["rocket-silo"] = {Replace = "space-mining"},

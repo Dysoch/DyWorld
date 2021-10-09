@@ -40,6 +40,12 @@ data:extend({
 		default_value = true,
 	},
 	{
+		type = "bool-setting",
+		name = "DyWorld_Realistic_Recipes",
+		setting_type = "startup",
+		default_value = true,
+	},
+	{
 		type = "int-setting",
 		name = "DyWorld_Expensive_Modifier",
 		setting_type = "startup",

@@ -122,5 +122,18 @@ data:extend({
 	  enabled = false,
 	  energy_required = 2,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "bronze-pipe", amount = 5},
+        {type = "item", name = "bronze-plate", amount = 80},
+        {type = "item", name = "wood", amount = 5},
+        {type = "item", name = "limestone", amount = 15},
+      },
+      result = "basic-treefarm",
+	  enabled = false,
+	  energy_required = 2,
+    },
   },
 })

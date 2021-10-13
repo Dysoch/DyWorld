@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.8.0
-Date: ??. 08. 2021
+Version: 0.1.0
+Date: 19. 10. 2021
   Major Features:
     - First Official Public Beta Release
-    - Check changelogs for Version 0.7.x for dev build changes and additions
+    - Check changelogs for Version 0.0.x for dev build changes and additions
   Minor Features:
     - Added Automatic Player Feeder Implant (Uses food/water items from inventory automatically). Use Technologies to upgrade the implant
     - Added Automatic Player Healing Implant (Uses medpacks from inventory automatically). Use Technologies to upgrade the implant
@@ -28,6 +28,7 @@ Date: ??. 08. 2021
     - Fixed bug player killing itself
     - Fixed bug with custom GUI's open that removes focus from search bars. This will still work on quickbar filter though (working on it). Open your inventory and then change use the filter searchbar as workaround
     - Fixed bug with placing ghosts or landfill and natives attacking that location
+    - Fixed latest Space Exploration bug with resources (in the most hacky way possible)
   Story:
     - Player Ambushes now have tiers
   Survival:
@@ -42,7 +43,7 @@ Date: ??. 08. 2021
     - German Translation updated (made by Maxi_der_ZockerYT)
     - Locales moved to DyCore
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.100
+Version: 0.0.100
 Date: 30. 07. 2021
   Major Features:
     - Added in side objectives scripts for act 3,4 and 5
@@ -75,7 +76,7 @@ Date: 30. 07. 2021
   Translations:
     - German Translation added (made by Maxi_der_ZockerYT). Still WIP
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.99
+Version: 0.0.99
 Date: 20. 07. 2021
   Major Features:
     - Added a technology path towards the space exploration content. Should be accessible now and completely working
@@ -114,7 +115,7 @@ Date: 20. 07. 2021
     - Updated required version Space Exploration Graphics Part 1: 0.5.10 > 0.5.11
     - Updated required version Space Exploration Graphics Part 5: 0.1.1 > 0.1.2
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.98
+Version: 0.0.98
 Date: 04. 07. 2021
   Major Features:
     - Added in implants. They are the same as food and water in regards to usage, but will give you boosts to your survival stats (water/food usage, running speed, attributes, etc). Use once to activate it, and use an new item to disable it (active implants can be seen in Implants GUI)
@@ -149,7 +150,7 @@ Date: 04. 07. 2021
     - When you die and respawn, food and water storage bonuses are applied again (bugfix)
     - Added 45 implants. Currently 40 are craftable
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.97
+Version: 0.0.97
 Date: 27. 06. 2021
   Major Features:
     - Complete new setup for Oil. More tuned to real life, but a bit simplyfied (WIP)
@@ -182,7 +183,7 @@ Date: 27. 06. 2021
     - Food and Water use rate now decreases as a bonus (Like mining speed bonus, based on stats)
     - Added new bonuses: Build Distance, Reach Distance, Research Speed, Research Productivity, Stack Inserter Stack Size, Loot Pickup Distance
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.96
+Version: 0.0.96
 Date: 23. 06. 2021
   Major Features:
     - Added in the first build of Survival. This means you need to eat and drink. The game will notify you when food or water is running low. Eat or drink with carrots, fish or water and the like. Use them like capsules to increase the value's. You can see your food and water bar in the personal gui from DyWorld-Dynamics. This feature will be mandatory for DyWorld-Dynamics, since it will interact with the story, and allow implants/extra bonuses, etc
@@ -193,7 +194,7 @@ Date: 23. 06. 2021
   Changes:
     - Rewrote bonuses script for mining. The exploit it had should be fixed now (somewhat)
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.95
+Version: 0.0.95
 Date: 16. 06. 2021
   Minor Features:
     - Added in 21 new inserters. Unlocked in a specific way (building inserters)(REQUIRES MORE BALANCING!). Removing inserters from the world can and will disable recipes (in backwards order) Most inserters are still not ready to be used though, so effective inserters is for now 10 (11 if you count burner inserter) (TEMP GRAPHICS)
@@ -216,7 +217,7 @@ Date: 16. 06. 2021
   Compatibility:
     - Removed wrecks from AAI-Industry. Their setting for crash no longer works
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.94
+Version: 0.0.94
 Date: 10. 06. 2021
   Features:
     - Added an Expensive technology modifier that works only on DyWorld-Dynamics Technologies
@@ -232,7 +233,7 @@ Date: 10. 06. 2021
   Compatibility:
     - Fixed Compatibility issue's with Space Exploration and SE Graphics
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.93
+Version: 0.0.93
 Date: 06. 06. 2021
   Major Features:
     - Difficulty setting for scripted attacks (Peaceful, Easy, Medium, Hard, Death)
@@ -255,7 +256,7 @@ Date: 06. 06. 2021
   Story:
     - Added 50 dummy phases for act 3
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.92
+Version: 0.0.92
 Date: 02. 06. 2021
   Major Features:
     - Space Exploration is now required to run DyWorld-Dynamics. Compatibility is ongoing, but it works and plays normally
@@ -264,7 +265,7 @@ Date: 02. 06. 2021
   Changes:
     - Massive change to the way resources are generated. All old resources are converted to the new ones (as done for compatibility with Space Exploration)
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.91
+Version: 0.0.91
 Date: 30. 05. 2021
   Features:
     - Added new information to Informatron (enemy statistics)
@@ -283,7 +284,7 @@ Date: 30. 05. 2021
   Story:
     - Reduced objectives Act 2 Phase 4
 ---------------------------------------------------------------------------------------------------
-Version: 0.7.90
+Version: 0.0.90
 Date: 10. 12. 2020
   Major Features:
     - Compatibility with Factorio 1.1

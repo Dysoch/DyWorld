@@ -10,7 +10,7 @@
 	"dependencies": [  
 		"base >= 1.1.39",
 		"DyCore >= 0.1.0",
-		"DyWorld-Dynamics >= 0.7.99",
+		"DyWorld-Dynamics >= 0.0.100",
 		"space-exploration-graphics >= 0.5.12",
 		"space-exploration-graphics-2 >= 0.1.1",
 		"space-exploration-graphics-3 >= 0.1.1",

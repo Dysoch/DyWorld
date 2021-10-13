@@ -25,5 +25,17 @@ data:extend({
 	  energy_required = 1,
 	  enabled = false,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "bronze-plate", amount = 16},
+        {type = "item", name = "bronze-gear", amount = 13},
+      },
+      result = "burner-inserter",
+	  result_count = 1,
+	  energy_required = 1,
+	  enabled = false,
+    },
   },
 })

@@ -54,9 +54,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "transport-belt-1", amount = 4},
-        {type = "item", name = "bronze-gear", amount = 1},
-        {type = "item", name = "bronze-plate", amount = 5},
+        {type = "item", name = "transport-belt-1", amount = 6},
+        {type = "item", name = "bronze-gear", amount = 8},
+        {type = "item", name = "bronze-plate", amount = 16},
       },
       result = "underground-belt-1",
 	  result_count = 1,

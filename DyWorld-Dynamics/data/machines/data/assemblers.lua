@@ -52,6 +52,11 @@ data:extend({
   },
 })
 
+DyW.Recipe.RL.Clear("burner-assembler")
+DyW.Recipe.RL.Add("burner-assembler", {type = "item", name = "control-board-1", amount = 6})
+DyW.Recipe.RL.Add("burner-assembler", {type = "item", name = "bronze-plate", amount = 60})
+DyW.Recipe.RL.Add("burner-assembler", {type = "item", name = "tin-plate", amount = 12})
+
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "basic-assembler", true)
 DyWorld_Prototype_1.icon = "__base__/graphics/icons/assembling-machine-2.png"
 DyWorld_Prototype_1.crafting_categories = {"assembling-tier-1", "assembling-tier-2"}
@@ -99,6 +104,12 @@ data:extend({
     },
   },
 })
+
+DyW.Recipe.RL.Clear("basic-assembler")
+DyW.Recipe.RL.Add("basic-assembler", {type = "item", name = "control-board-1", amount = 14})
+DyW.Recipe.RL.Add("basic-assembler", {type = "item", name = "iron-plate", amount = 80})
+DyW.Recipe.RL.Add("basic-assembler", {type = "item", name = "iron-ingot", amount = 10})
+DyW.Recipe.RL.Add("basic-assembler", {type = "item", name = "bronze-plate", amount = 12})
 
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "advanced-assembler", true)
 DyWorld_Prototype_2.icon = "__base__/graphics/icons/assembling-machine-3.png"

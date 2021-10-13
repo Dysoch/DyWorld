@@ -28,6 +28,7 @@ DyW.Recipe = {}
 require("data.recipe.add")
 require("data.recipe.change")
 require("data.recipe.remove")
+require("data.recipe.special.realistic")
 
 DyW.Tech = {}
 require("data.technology.add")

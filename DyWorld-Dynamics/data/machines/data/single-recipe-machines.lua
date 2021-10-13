@@ -37,6 +37,17 @@ data:extend({
 	  enabled = false,
 	  energy_required = 12.5,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "bronze-plate", amount = 45},
+        {type = "item", name = "bronze-pipe", amount = 8},
+      },
+      result = "rain-collector",
+	  enabled = false,
+	  energy_required = 12.5,
+    },
   },
   {
     type = "recipe",

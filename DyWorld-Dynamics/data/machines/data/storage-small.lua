@@ -85,6 +85,16 @@ data:extend({
 	  energy_required = 1,
 	  enabled = true,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {"wood", 16}
+      },
+      result = "small-storage",
+	  energy_required = 15,
+	  enabled = true,
+    },
   },
   {
     type = "container",
@@ -172,6 +182,17 @@ data:extend({
 	  energy_required = 1,
 	  enabled = false,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {"iron-plate", 6},
+        {"iron-ingot", 8},
+      },
+      result = "small-storage-2",
+	  energy_required = 1,
+	  enabled = false,
+    },
   },
   {
     type = "container",
@@ -252,6 +273,16 @@ data:extend({
       ingredients =
       {
         {"steel-plate", 5}
+      },
+      result = "small-storage-3",
+	  energy_required = 1,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {"steel-plate", 30}
       },
       result = "small-storage-3",
 	  energy_required = 1,

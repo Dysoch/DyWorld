@@ -290,7 +290,7 @@ data:extend({
 
   resource_ore(
     {
-      name = "iron-ore-1",
+      name = "iron-ore",
 	  minable = "iron-ore",
 	  minable_probability = 0.2,
       order = "c",
@@ -374,7 +374,7 @@ data:extend({
   
   resource_ore(
     {
-      name = "copper-ore-1",
+      name = "copper-ore",
 	  minable = "copper-ore",
 	  minable_probability = 0.2,
       order = "c",
@@ -542,7 +542,7 @@ data:extend({
   
   resource(
     {
-      name = "limestone",
+      name = "stone",
 	  minable = "limestone",
 	  minable_probability = 1,
       order = "b",
@@ -557,7 +557,7 @@ data:extend({
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,
-	  autoplace_control_name = "limestone",
+	  autoplace_control_name = "stone",
     }
   ),
   resource(
@@ -620,6 +620,26 @@ data:extend({
 	  autoplace_control_name = "sandstone",
     }
   ),
+  resource(
+    {
+      name = "uranium-ore",
+	  minable = "uranium-ore",
+	  minable_probability = 0.1,
+      order = "b",
+      map_color = {10, 250, 10},
+      mining_time = 12.5,
+      walking_sound = ore_sound,
+      mining_visualisation_tint = {r = 0.05, g = 0.9, b = 0.05, a = 1.000}, -- #fae1a4ff
+	  category = "resource-solid-tier-2",
+    },
+    {
+      has_starting_area_placement = false,
+      base_density = 1,
+      regular_rq_factor_multiplier = 1.0,
+      starting_rq_factor_multiplier = 1.1,
+	  autoplace_control_name = "uranium-ore",
+    }
+  ),
   
  ---------- TREES ----------
   
@@ -649,7 +669,7 @@ data:extend({
   
   resource_coal(
     {
-      name = "coal-1",
+      name = "coal",
 	  minable = "coal",
 	  minable_probability = 0.30,
       order = "c",

@@ -77,8 +77,8 @@ end
 
 -- Remove resources and autoplace--
 for NAME in pairs(data.raw.resource) do
-	if NAME == "stone" then
-		data.raw.resource[NAME].autoplace = nil
+	if NAME == "se-vulcanite" or NAME == "se-vitamelange" or NAME == "se-cryonite" or NAME == "se-methane-ice" or NAME == "se-water-ice" or NAME == "se-beryllium-ore" or NAME == "se-iridium-ore" or NAME == "se-holmium-ore" or NAME == "se-naquium-ore" then
+	
 	else
 		data.raw.resource[NAME] = nil
 	end

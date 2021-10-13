@@ -1,4 +1,9 @@
 
+local function Round(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	return math.floor(num * mult + 0.5) / mult
+end
+
 DyDs_Inserter_Normal_Pickup = {0, -1}
 DyDs_Inserter_Normal_Insert = {0, 1.2}
 DyDs_Inserter_Long_Pickup = {0, -2}
@@ -143,18 +148,13 @@ Dy_Focals = {
 	},
 }
 
-local function Round(num, numDecimalPlaces)
-	local mult = 10^(numDecimalPlaces or 0)
-	return math.floor(num * mult + 0.5) / mult
-end
-
 function DySetDiffAmmo(Var)
 	if Dy_Sett.Difficulty == "Easy" then
-		return DyW.Math.Round((Var * 1.5), 2)
+		return Round((Var * 1.5), 2)
 	elseif Dy_Sett.Difficulty == "Normal" then
 		return Var
 	elseif Dy_Sett.Difficulty == "Hard" then
-		return DyW.Math.Round((Var * 0.75), 2)
+		return Round((Var * 0.75), 2)
 	end
 end
 

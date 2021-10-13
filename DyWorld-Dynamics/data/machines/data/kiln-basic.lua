@@ -169,5 +169,16 @@ data:extend({
 	  energy_required = 1.5,
 	  enabled = true,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {"limestone", 150},
+        {"wood", 10},
+      },
+      result = "basic-kiln",
+	  energy_required = 15,
+	  enabled = true,
+    },
   },
 })

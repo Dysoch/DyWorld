@@ -135,6 +135,13 @@ function Event_on_player_mined_entity(event)
 			end
 			InserterCheck(global.dyworld.game_stats.inserters)
 		end
+		if (type == "lab") then
+			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
+			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs - 1
+			if global.dyworld.game_stats.labs <= 0 then
+				global.dyworld.game_stats.labs = 0 
+			end
+		end
 		----- Difficulty -----
 		if (name == "burner-radar") then
 			if global.dyworld.game_stats.difficulty > ((5 * global.dyworld.game_stats.players) + 1) then
@@ -239,6 +246,13 @@ function Event_on_robot_mined_entity(event)
 						game.players[v.id].minimap_enabled = false
 					end
 				end
+			end
+		end
+		if (type == "lab") then
+			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
+			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs - 1
+			if global.dyworld.game_stats.labs <= 0 then
+				global.dyworld.game_stats.labs = 0 
 			end
 		end
 		if (type == "inserter") then

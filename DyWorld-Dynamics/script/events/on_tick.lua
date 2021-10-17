@@ -95,7 +95,7 @@ function Event_on_tick(event)
 	end
 	if event.tick%(60*1)==1 then
 		for k,v in pairs(global.dyworld.players) do
-			if v.alive and v.playing then
+			if v.alive and game.players[v.id].connected then
 				if not v.posx2 then v.posx2 = 0 end
 				if not v.posy2 then v.posy2 = 0 end
 				if not v.distance then v.distance = 0 end
@@ -245,18 +245,41 @@ function Event_on_tick(event)
 					local Loc = Pick_Random_Attack_Location(v)
 					local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 20))
 					local Surface = v
-					game.surfaces[Surface].build_enemy_base(Loc, Str)
-					
-					global.dyworld.game_stats.attack_loc_amount = Str
-					global.dyworld.game_stats.attack_loc_x = Loc.x
-					global.dyworld.game_stats.attack_loc_y = Loc.y
-					if global.dyworld.game_stats.attack_warning_3 then
-						AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
-					elseif global.dyworld.game_stats.attack_warning_2 then
-						AttackPrint({"DyDs-story.attack-2", Str})
-					elseif global.dyworld.game_stats.attack_warning_1 then
-						AttackPrint({"DyDs-story.attack-1"})
+					if (global.dyworld.game_stats.wave_spawners[Surface] and global.dyworld.game_stats.wave_spawners[Surface].spawners_amount >= 1) then
+						for i = 1, Str do
+							local BuildEntity = Check_Wave_Tier(game.forces.enemy.evolution_factor)
+							local Spawn_Loc_table = global.dyworld.game_stats.wave_spawners[Surface].spawners_loc
+							local Spawn_randomized = math.random(#Spawn_Loc_table)
+							PosX = Spawn_Loc_table[Spawn_randomized].posx + math.random(-40,40)
+							PosY = Spawn_Loc_table[Spawn_randomized].posy + math.random(-40,40)
+							if game.surfaces[Surface].can_place_entity{name=(BuildEntity), position = {PosX, PosY}} then
+								game.surfaces[Surface].create_entity{name = (BuildEntity), position = {PosX, PosY}, force = game.forces.enemy}
+							end
+						end
+						for Spawner, Table in pairs(global.dyworld.game_stats.wave_spawners[Surface].spawners_loc) do
+							local X = Table.posx
+							local Y = Table.posy
+							local Area = game.surfaces[Surface].find_entities_filtered{position = {X, Y}, radius = 75, type = "unit"} 
+							for _,Unit in pairs(Area) do
+								Unit.set_command({
+										type = defines.command.attack_area,
+										destination = Loc,
+										radius = 5})
+							end
+						end
 					end
+					--game.surfaces[Surface].build_enemy_base(Loc, Str)
+					
+					--global.dyworld.game_stats.attack_loc_amount = Str
+					--global.dyworld.game_stats.attack_loc_x = Loc.x
+					--global.dyworld.game_stats.attack_loc_y = Loc.y
+					--if global.dyworld.game_stats.attack_warning_3 then
+						--AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
+					--elseif global.dyworld.game_stats.attack_warning_2 then
+						--AttackPrint({"DyDs-story.attack-2", Str})
+					--elseif global.dyworld.game_stats.attack_warning_1 then
+						--AttackPrint({"DyDs-story.attack-1"})
+					--endif game.surfaces[Surface].find_entity(BuildEntity, {PosX, PosY}) then
 				end
 			end
 		end

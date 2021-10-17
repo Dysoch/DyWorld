@@ -7,6 +7,24 @@ function dyworld_menu(player_index)
 		entities = {
 			trees = 1,
 		},
+		mechanics = {
+			survival = {
+				--food = 1, -- Done script wise
+				--water = 1, -- Done script wise
+				temperature = 1,
+				radiation = 1,
+				pollution = 1,
+				implants = 1,
+				health = 1,
+			},
+			bonus = {
+				global_stat = 1,
+				personal_stat = 1,
+				attribute = 1,
+				bonuses = 1,
+			},
+			script_attack = 1,
+		},
 		story = {
 			act_1 = {
 				phase_1_1 = 1,
@@ -67,22 +85,84 @@ function dyworld_menu(player_index)
 		end
 	end
 	
+	-- Survival --
+	if (settings.global["DyWorld_Surival_Difficulty"].value == "Easy" or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" or settings.global["DyWorld_Surival_Difficulty"].value == "Insane") then
+		Table.mechanics.survival.food = 1
+		Table.mechanics.survival.water = 1
+	end
+	
   return Table
 end
 
 function dyworld_page_content(page_name, player_index, element)
-  -- main page
-  if page_name == "dyworld" then
-    element.add{type="label", name="", caption={"DyDs-story.message-act-1-phase-1-2"}}
-  end
+	-- main page
+	if page_name == "dyworld" then
+		element.add{type="label", name="", caption={"DyDs-story.message-act-1-phase-1-2"}}
+	end
+	  
+	if page_name == "tips" then
+		element.add{type="label", name="", caption={"DyWorld.page_tips"}}
+	end
+	  
+	if page_name == "survival" then
+		element.add{type="label", name="", caption={"DyWorld.page_survival"}}
+	end
+	
+	if page_name == "food" then
+		element.add{type="label", name="", caption={"DyWorld.page_food"}}
+	end
+	
+	if page_name == "water" then
+		element.add{type="label", name="", caption={"DyWorld.page_water"}}
+	end
+	
+	if page_name == "temperature" then
+		element.add{type="label", name="", caption={"DyWorld.page_temperature"}}
+	end
+	
+	if page_name == "radiation" then
+		element.add{type="label", name="", caption={"DyWorld.page_radiation"}}
+	end
+	
+	if page_name == "pollution" then
+		element.add{type="label", name="", caption={"DyWorld.page_pollution"}}
+	end
+	
+	if page_name == "implants" then
+		element.add{type="label", name="", caption={"DyWorld.page_implants"}}
+	end
+	
+	if page_name == "health" then
+		element.add{type="label", name="", caption={"DyWorld.page_health"}}
+	end
   
-  if page_name == "tips" then
-    element.add{type="label", name="", caption={"DyWorld.page_tips"}}
-  end
+	if page_name == "bonus" then
+		element.add{type="label", name="", caption={"DyWorld.page_bonus"}}
+	end
   
-  if page_name == "info" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_info_text_1"}}
-  end
+	if page_name == "global_stat" then
+		element.add{type="label", name="", caption={"DyWorld.page_global_stat"}}
+	end
+  
+	if page_name == "personal_stat" then
+		element.add{type="label", name="", caption={"DyWorld.page_personal_stat"}}
+	end
+  
+	if page_name == "attribute" then
+		element.add{type="label", name="", caption={"DyWorld.page_attribute"}}
+	end
+  
+	if page_name == "bonuses" then
+		element.add{type="label", name="", caption={"DyWorld.page_bonuses"}}
+	end
+  
+	if page_name == "script_attack" then
+		element.add{type="label", name="", caption={"DyWorld.page_script_attack"}}
+	end
+  
+	if page_name == "info" then
+		element.add{type="label", name="text_1", caption={"DyWorld.page_info_text_1"}}
+	end
   
 	for Act = 1,5 do
 		for Phase = 1,50 do
@@ -100,64 +180,64 @@ function dyworld_page_content(page_name, player_index, element)
 		end
 	end
 
-  if page_name == "trees" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_trees_text_1"}}
-	if (global.dyworld.game_stats.mined["tree-wetland-a"] or global.dyworld.game_stats.mined["tree-wetland-b"] or global.dyworld.game_stats.mined["tree-wetland-c"] or global.dyworld.game_stats.mined["tree-wetland-d"] or global.dyworld.game_stats.mined["tree-wetland-e"] or global.dyworld.game_stats.mined["tree-wetland-f"] or global.dyworld.game_stats.mined["tree-wetland-g"] or global.dyworld.game_stats.mined["tree-wetland-h"] or global.dyworld.game_stats.mined["tree-wetland-i"] or global.dyworld.game_stats.mined["tree-wetland-j"] or global.dyworld.game_stats.mined["tree-wetland-k"] or global.dyworld.game_stats.mined["tree-wetland-l"] or global.dyworld.game_stats.mined["tree-wetland-m"] or global.dyworld.game_stats.mined["tree-wetland-n"] or global.dyworld.game_stats.mined["tree-wetland-o"]) then
-		element.add{type="label", name="text_2", caption={"DyWorld.page_trees_wetland"}}
+	if page_name == "trees" then
+		element.add{type="label", name="text_1", caption={"DyWorld.page_trees_text_1"}}
+		if (global.dyworld.game_stats.mined["tree-wetland-a"] or global.dyworld.game_stats.mined["tree-wetland-b"] or global.dyworld.game_stats.mined["tree-wetland-c"] or global.dyworld.game_stats.mined["tree-wetland-d"] or global.dyworld.game_stats.mined["tree-wetland-e"] or global.dyworld.game_stats.mined["tree-wetland-f"] or global.dyworld.game_stats.mined["tree-wetland-g"] or global.dyworld.game_stats.mined["tree-wetland-h"] or global.dyworld.game_stats.mined["tree-wetland-i"] or global.dyworld.game_stats.mined["tree-wetland-j"] or global.dyworld.game_stats.mined["tree-wetland-k"] or global.dyworld.game_stats.mined["tree-wetland-l"] or global.dyworld.game_stats.mined["tree-wetland-m"] or global.dyworld.game_stats.mined["tree-wetland-n"] or global.dyworld.game_stats.mined["tree-wetland-o"]) then
+			element.add{type="label", name="text_2", caption={"DyWorld.page_trees_wetland"}}
+		end
+		if (global.dyworld.game_stats.mined["tree-grassland-a"] or global.dyworld.game_stats.mined["tree-grassland-b"] or global.dyworld.game_stats.mined["tree-grassland-c"] or global.dyworld.game_stats.mined["tree-grassland-d"] or global.dyworld.game_stats.mined["tree-grassland-e"] or global.dyworld.game_stats.mined["tree-grassland-f"] or global.dyworld.game_stats.mined["tree-grassland-g"] or global.dyworld.game_stats.mined["tree-grassland-h"] or global.dyworld.game_stats.mined["tree-grassland-i"] or global.dyworld.game_stats.mined["tree-grassland-j"] or global.dyworld.game_stats.mined["tree-grassland-k"] or global.dyworld.game_stats.mined["tree-grassland-l"] or global.dyworld.game_stats.mined["tree-grassland-m"] or global.dyworld.game_stats.mined["tree-grassland-n"] or global.dyworld.game_stats.mined["tree-grassland-o"] or global.dyworld.game_stats.mined["tree-grassland-p"] or global.dyworld.game_stats.mined["tree-grassland-q"]) then
+			element.add{type="label", name="text_3", caption={"DyWorld.page_trees_grassland"}}
+		end
+		if (global.dyworld.game_stats.mined["tree-dryland-a"] or global.dyworld.game_stats.mined["tree-dryland-b"] or global.dyworld.game_stats.mined["tree-dryland-c"] or global.dyworld.game_stats.mined["tree-dryland-d"] or global.dyworld.game_stats.mined["tree-dryland-e"] or global.dyworld.game_stats.mined["tree-dryland-f"] or global.dyworld.game_stats.mined["tree-dryland-g"] or global.dyworld.game_stats.mined["tree-dryland-h"] or global.dyworld.game_stats.mined["tree-dryland-i"] or global.dyworld.game_stats.mined["tree-dryland-j"] or global.dyworld.game_stats.mined["tree-dryland-k"] or global.dyworld.game_stats.mined["tree-dryland-l"] or global.dyworld.game_stats.mined["tree-dryland-m"] or global.dyworld.game_stats.mined["tree-dryland-n"] or global.dyworld.game_stats.mined["tree-dryland-o"]) then
+			element.add{type="label", name="text_4", caption={"DyWorld.page_trees_dryland"}}
+		end
+		if (global.dyworld.game_stats.mined["tree-desert-a"] or global.dyworld.game_stats.mined["tree-desert-b"] or global.dyworld.game_stats.mined["tree-desert-c"] or global.dyworld.game_stats.mined["tree-desert-d"] or global.dyworld.game_stats.mined["tree-desert-e"] or global.dyworld.game_stats.mined["tree-desert-f"] or global.dyworld.game_stats.mined["tree-desert-g"] or global.dyworld.game_stats.mined["tree-desert-h"] or global.dyworld.game_stats.mined["tree-desert-i"] or global.dyworld.game_stats.mined["tree-desert-j"] or global.dyworld.game_stats.mined["tree-desert-k"] or global.dyworld.game_stats.mined["tree-desert-l"] or global.dyworld.game_stats.mined["tree-desert-m"] or global.dyworld.game_stats.mined["tree-desert-n"]) then
+			element.add{type="label", name="text_5", caption={"DyWorld.page_trees_desert"}}
+		end
+		if (global.dyworld.game_stats.mined["tree-palm-a"] or global.dyworld.game_stats.mined["tree-palm-b"]) then
+			element.add{type="label", name="text_6", caption={"DyWorld.page_trees_palm"}}
+		end
+		if (global.dyworld.game_stats.mined["tree-snow-a"]) then
+			element.add{type="label", name="text_7", caption={"DyWorld.page_trees_snow"}}
+		end
+		if (global.dyworld.game_stats.mined["tree-volcanic-a"]) then
+			element.add{type="label", name="text_8", caption={"DyWorld.page_trees_volcanic"}}
+		end
 	end
-	if (global.dyworld.game_stats.mined["tree-grassland-a"] or global.dyworld.game_stats.mined["tree-grassland-b"] or global.dyworld.game_stats.mined["tree-grassland-c"] or global.dyworld.game_stats.mined["tree-grassland-d"] or global.dyworld.game_stats.mined["tree-grassland-e"] or global.dyworld.game_stats.mined["tree-grassland-f"] or global.dyworld.game_stats.mined["tree-grassland-g"] or global.dyworld.game_stats.mined["tree-grassland-h"] or global.dyworld.game_stats.mined["tree-grassland-i"] or global.dyworld.game_stats.mined["tree-grassland-j"] or global.dyworld.game_stats.mined["tree-grassland-k"] or global.dyworld.game_stats.mined["tree-grassland-l"] or global.dyworld.game_stats.mined["tree-grassland-m"] or global.dyworld.game_stats.mined["tree-grassland-n"] or global.dyworld.game_stats.mined["tree-grassland-o"] or global.dyworld.game_stats.mined["tree-grassland-p"] or global.dyworld.game_stats.mined["tree-grassland-q"]) then
-		element.add{type="label", name="text_3", caption={"DyWorld.page_trees_grassland"}}
-	end
-	if (global.dyworld.game_stats.mined["tree-dryland-a"] or global.dyworld.game_stats.mined["tree-dryland-b"] or global.dyworld.game_stats.mined["tree-dryland-c"] or global.dyworld.game_stats.mined["tree-dryland-d"] or global.dyworld.game_stats.mined["tree-dryland-e"] or global.dyworld.game_stats.mined["tree-dryland-f"] or global.dyworld.game_stats.mined["tree-dryland-g"] or global.dyworld.game_stats.mined["tree-dryland-h"] or global.dyworld.game_stats.mined["tree-dryland-i"] or global.dyworld.game_stats.mined["tree-dryland-j"] or global.dyworld.game_stats.mined["tree-dryland-k"] or global.dyworld.game_stats.mined["tree-dryland-l"] or global.dyworld.game_stats.mined["tree-dryland-m"] or global.dyworld.game_stats.mined["tree-dryland-n"] or global.dyworld.game_stats.mined["tree-dryland-o"]) then
-		element.add{type="label", name="text_4", caption={"DyWorld.page_trees_dryland"}}
-	end
-	if (global.dyworld.game_stats.mined["tree-desert-a"] or global.dyworld.game_stats.mined["tree-desert-b"] or global.dyworld.game_stats.mined["tree-desert-c"] or global.dyworld.game_stats.mined["tree-desert-d"] or global.dyworld.game_stats.mined["tree-desert-e"] or global.dyworld.game_stats.mined["tree-desert-f"] or global.dyworld.game_stats.mined["tree-desert-g"] or global.dyworld.game_stats.mined["tree-desert-h"] or global.dyworld.game_stats.mined["tree-desert-i"] or global.dyworld.game_stats.mined["tree-desert-j"] or global.dyworld.game_stats.mined["tree-desert-k"] or global.dyworld.game_stats.mined["tree-desert-l"] or global.dyworld.game_stats.mined["tree-desert-m"] or global.dyworld.game_stats.mined["tree-desert-n"]) then
-		element.add{type="label", name="text_5", caption={"DyWorld.page_trees_desert"}}
-	end
-	if (global.dyworld.game_stats.mined["tree-palm-a"] or global.dyworld.game_stats.mined["tree-palm-b"]) then
-		element.add{type="label", name="text_6", caption={"DyWorld.page_trees_palm"}}
-	end
-	if (global.dyworld.game_stats.mined["tree-snow-a"]) then
-		element.add{type="label", name="text_7", caption={"DyWorld.page_trees_snow"}}
-	end
-	if (global.dyworld.game_stats.mined["tree-volcanic-a"]) then
-		element.add{type="label", name="text_8", caption={"DyWorld.page_trees_volcanic"}}
-	end
-  end
 
-  if page_name == "enemy" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_enemy_text_1"}}
-  end
+	if page_name == "enemy" then
+		element.add{type="label", name="text_1", caption={"DyWorld.page_enemy_text_1"}}
+	end
 
-  if page_name == "arthropod" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_arthropod_text_1"}}
-  end
+	if page_name == "arthropod" then
+		element.add{type="label", name="text_1", caption={"DyWorld.page_arthropod_text_1"}}
+	end
   
-  if page_name == "arachnid" then
-    element.add{type="label", name="text_1", caption={"DyWorld.page_arachnid_text_1"}}
-  end
-  if page_name == "small_arachnid" then
-    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
-    image_container.add{type="button", name="image_1", style="small_biter_1"}
-    element.add{type="label", name="", caption={"DyWorld.page_small_arachnid-1", global.dyworld.game_stats.killed_names["small-biter"]}}
-	if game.forces.player.technologies["arachnid-1"].researched then
-      element.add{type="label", name="", caption={"DyWorld.page_small_arachnid-2"}}
+	if page_name == "arachnid" then
+		element.add{type="label", name="text_1", caption={"DyWorld.page_arachnid_text_1"}}
 	end
-	if game.forces.player.technologies["arachnid-2"].researched then
-      element.add{type="label", name="", caption={"DyWorld.page_small_arachnid-3"}}
+	if page_name == "small_arachnid" then
+		local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+		image_container.add{type="button", name="image_1", style="small_biter_1"}
+		element.add{type="label", name="", caption={"DyWorld.page_small_arachnid-1", global.dyworld.game_stats.killed_names["small-biter"]}}
+		if game.forces.player.technologies["arachnid-1"].researched then
+			element.add{type="label", name="", caption={"DyWorld.page_small_arachnid-2"}}
+		end
+		if game.forces.player.technologies["arachnid-2"].researched then
+			element.add{type="label", name="", caption={"DyWorld.page_small_arachnid-3"}}
+		end
 	end
-  end
-  if page_name == "medium_arachnid" then
-    local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
-    image_container.add{type="button", name="image_1", style="medium_biter_1"}
-    element.add{type="label", name="", caption={"DyWorld.page_medium_arachnid-1", global.dyworld.game_stats.killed_names["medium-biter"]}}
-	if game.forces.player.technologies["arachnid-2"].researched then
-      element.add{type="label", name="", caption={"DyWorld.page_medium_arachnid-2"}}
+	if page_name == "medium_arachnid" then
+		local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
+		image_container.add{type="button", name="image_1", style="medium_biter_1"}
+		element.add{type="label", name="", caption={"DyWorld.page_medium_arachnid-1", global.dyworld.game_stats.killed_names["medium-biter"]}}
+		if game.forces.player.technologies["arachnid-2"].researched then
+			element.add{type="label", name="", caption={"DyWorld.page_medium_arachnid-2"}}
+		end
+		if game.forces.player.technologies["arachnid-3"].researched then
+			element.add{type="label", name="", caption={"DyWorld.page_medium_arachnid-3"}}
+		end
 	end
-	if game.forces.player.technologies["arachnid-3"].researched then
-      element.add{type="label", name="", caption={"DyWorld.page_medium_arachnid-3"}}
-	end
-  end
   if page_name == "big_arachnid" then
     local image_container = element.add{type="frame", name="image_1", style="informatron_image_container", direction="vertical"}
     image_container.add{type="button", name="image_1", style="big_biter_1"}

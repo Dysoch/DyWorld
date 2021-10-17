@@ -1,12 +1,6 @@
 
 function One_Time_Migration()
     if not global.dyworld.migrations then global.dyworld.migrations = {} end
-    -- Reset implants for dev builds
-    if not global.dyworld.migrations.Reset_Implants then
-	    remote.call("DyWorld", "Reset_Implants")
-        global.dyworld.migrations.Reset_Implants = true
-        debug("Migration: Implants Reset")
-    end
 end
 
 function Event_on_configuration_changed()

@@ -104,3 +104,6 @@ require(DyDs_data_core.. "recipes.science")
 require(DyDs_data_core.. "recipes.consume-implant")
 require(DyDs_data_core.. "recipes.plastic")
 
+-- Script prototypes --
+require(DyDs_data_core.. "script-prototypes.wave-spawner")
+

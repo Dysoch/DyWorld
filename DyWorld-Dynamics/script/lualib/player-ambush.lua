@@ -42,6 +42,20 @@ function Check_Ambush_Tier(Tier)
 	end
 end
 
+function Check_Wave_Tier(Tier)
+	if Tier >= 0.9 then
+		return Attack_Ambush_5[keysetAttack_Ambush_5[math.random(#keysetAttack_Ambush_5)]]
+	elseif (Tier >= 0.7 and Tier <= 0.9) then
+		return Attack_Ambush_4[keysetAttack_Ambush_4[math.random(#keysetAttack_Ambush_4)]]
+	elseif (Tier >= 0.5 and Tier <= 0.7) then
+		return Attack_Ambush_3[keysetAttack_Ambush_3[math.random(#keysetAttack_Ambush_3)]]
+	elseif (Tier >= 0.25 and Tier <= 0.5) then
+		return Attack_Ambush_2[keysetAttack_Ambush_2[math.random(#keysetAttack_Ambush_2)]]
+	elseif Tier <= 0.25 then
+		return Attack_Ambush_1[keysetAttack_Ambush_1[math.random(#keysetAttack_Ambush_1)]]
+	end
+end
+
 function Player_Ambush(Location, Radius, Amount, Tier)
 	local X = Location[1]
 	local Y = Location[2]

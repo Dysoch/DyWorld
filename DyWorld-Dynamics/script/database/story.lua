@@ -708,7 +708,7 @@ Story_Table_Base  = {
 		[5] = {
 			done = false,
 			started = false,
-			attack = {"nauvis", "player-ambush-101"},
+			attack = {"player-ambush-101"},
 			message = 3,
 			objectives_side = true,
 			objectives = {
@@ -733,7 +733,7 @@ Story_Table_Base  = {
 		[6] = {
 			done = false,
 			started = false,
-			attack = {"nauvis", "player-ambush-101"},
+			attack = {"player-ambush-101"},
 			message = 1,
 			objectives_side = true,
 			objectives = {
@@ -744,6 +744,13 @@ Story_Table_Base  = {
 					amount_needed = 999999999,
 					amount_done = 0,
 					done = false,
+				},
+				[2] = {
+					type_1 = "position",
+					done = false,
+					PosX = 0,
+					PosY = 0,
+					Surface = "nauvis",
 				},
 			},
 		},
@@ -763,6 +770,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[8] = {
 			done = false,
@@ -780,6 +788,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[9] = {
 			done = false,
@@ -797,50 +806,17 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[10] = {
 			done = false,
 			started = false,
-			attack = {"nauvis", "player-ambush-101"},
+			attack = {"player-ambush-101"},
 			message = 1,
 			objectives_side = true,
 			objectives = {
-				[1] = {
-					type_1 = "position",
-					done = false,
-					PosX = 0,
-					PosY = 0,
-					Surface = "Nikara",
-				},
-				[2] = {
-					type_1 = "position",
-					done = false,
-					PosX = 0,
-					PosY = 0,
-					Surface = "Rivos",
-				},
-				[3] = {
-					type_1 = "position",
-					done = false,
-					PosX = 0,
-					PosY = 0,
-					Surface = "Rose",
-				},
-				[4] = {
-					type_1 = "position",
-					done = false,
-					PosX = 0,
-					PosY = 0,
-					Surface = "Lothar",
-				},
-				[5] = {
-					type_1 = "position",
-					done = false,
-					PosX = 0,
-					PosY = 0,
-					Surface = "Umbra",
-				},
 			},
+			label = {"story-wip"},
 		},
 		[11] = {
 			done = false,
@@ -858,6 +834,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[12] = {
 			done = false,
@@ -875,6 +852,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[13] = {
 			done = false,
@@ -892,6 +870,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[14] = {
 			done = false,
@@ -909,6 +888,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[15] = {
 			done = false,
@@ -926,6 +906,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[16] = {
 			done = false,
@@ -943,6 +924,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[17] = {
 			done = false,
@@ -960,6 +942,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[18] = {
 			done = false,
@@ -977,6 +960,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[19] = {
 			done = false,
@@ -994,6 +978,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[20] = {
 			done = false,
@@ -1011,6 +996,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[21] = {
 			done = false,
@@ -1028,6 +1014,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[22] = {
 			done = false,
@@ -1045,6 +1032,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[23] = {
 			done = false,
@@ -1062,6 +1050,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[24] = {
 			done = false,
@@ -1071,14 +1060,42 @@ Story_Table_Base  = {
 			objectives_side = true,
 			objectives = {
 				[1] = {
-					type_1 = "died",
-					type_2 = "type",
-					name = "unit",
-					amount_needed = 999999999,
-					amount_done = 0,
+					type_1 = "position",
 					done = false,
+					PosX = 0,
+					PosY = 0,
+					Surface = "Shakok",
+				},
+				[2] = {
+					type_1 = "position",
+					done = false,
+					PosX = 0,
+					PosY = 0,
+					Surface = "Aine",
+				},
+				[3] = {
+					type_1 = "position",
+					done = false,
+					PosX = 0,
+					PosY = 0,
+					Surface = "Kothar",
+				},
+				[4] = {
+					type_1 = "position",
+					done = false,
+					PosX = 0,
+					PosY = 0,
+					Surface = "Enlil",
+				},
+				[5] = {
+					type_1 = "position",
+					done = false,
+					PosX = 0,
+					PosY = 0,
+					Surface = "Freyr",
 				},
 			},
+			label = {"story-wip"},
 		},
 		[25] = {
 			done = false,
@@ -1096,6 +1113,7 @@ Story_Table_Base  = {
 					done = false,
 				},
 			},
+			label = {"story-wip"},
 		},
 		[26] = {
 			done = false,

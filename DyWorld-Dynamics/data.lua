@@ -19,3 +19,5 @@ require(DyDs_data_machines.. "data")
 require(DyDs_data_warfare.. "data")
 require(DyDs_data_logistics.. "data")
 require(DyDs_data_equipment.. "data")
+
+--@todo Static Mines with larger buildings

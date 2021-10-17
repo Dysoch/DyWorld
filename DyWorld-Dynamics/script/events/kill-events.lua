@@ -39,6 +39,20 @@ function Event_on_entity_died(event)
 			end
 		end
 	end
+	
+	if name == "dy-wave-spawner" then
+		local surface = event.entity.surface.name
+		if not global.dyworld.game_stats.wave_spawners then global.dyworld.game_stats.wave_spawners = {} end
+		if not global.dyworld.game_stats.wave_spawners[surface_name] then global.dyworld.game_stats.wave_spawners[surface_name] = {spawners_amount = 0, spawners_loc = {}} end
+		if not global.dyworld.game_stats.wave_spawners.max_per_surface then global.dyworld.game_stats.wave_spawners.max_per_surface = 10 end
+		for k,v in pairs(global.dyworld.game_stats.wave_spawners[surface].spawners_loc) do
+			if (position.x == v.posx and position.y == v.posy) then
+				table.remove(global.dyworld.game_stats.wave_spawners[surface].spawners_loc, k)
+				global.dyworld.game_stats.wave_spawners[surface].spawners_amount = global.dyworld.game_stats.wave_spawners[surface].spawners_amount - 1
+				break
+			end
+		end
+	end
 
 	----- Mining Network Building -----
 	if Dy_Find_Str(name, "asteroid-network-interface") then
@@ -97,6 +111,13 @@ function Event_on_entity_died(event)
 				global.dyworld.game_stats.inserters = 0 
 			end
 			InserterCheck(global.dyworld.game_stats.inserters)
+		end
+		if (type_killed == "lab") then
+			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
+			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs - 1
+			if global.dyworld.game_stats.labs <= 0 then
+				global.dyworld.game_stats.labs = 0 
+			end
 		end
 		
 		----- Difficulty -----

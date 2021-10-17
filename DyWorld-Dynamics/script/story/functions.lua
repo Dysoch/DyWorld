@@ -178,9 +178,26 @@ function Phase_Forward()
 	if (global.dyworld.story.phase == 1 and global.dyworld.story.act == 3) then
 		global.dyworld.game_stats.difficulty = 1
 	end
+	
+	if (global.dyworld.story.phase == 10 and global.dyworld.story.act == 3) then
+		-- Cryonite moon
+		remote.call("space-exploration", "discover_zone", {force_name = game.players[1].force.name, surface = game.players[1].surface, zone_name = "Shakok"})
+		
+		-- Vulcanite Moon
+		remote.call("space-exploration", "discover_zone", {force_name = game.players[1].force.name, surface = game.players[1].surface, zone_name = "Aine"})
+		
+		-- Iridium Moon
+		remote.call("space-exploration", "discover_zone", {force_name = game.players[1].force.name, surface = game.players[1].surface, zone_name = "Kothar"})
+		
+		-- Holmium Moon
+		remote.call("space-exploration", "discover_zone", {force_name = game.players[1].force.name, surface = game.players[1].surface, zone_name = "Enlil"})
+		
+		-- Vitamilange Moon
+		remote.call("space-exploration", "discover_zone", {force_name = game.players[1].force.name, surface = game.players[1].surface, zone_name = "Freyr"})
+	end
 
     -- Pause the story, till more is added in
-	if (global.dyworld.story.phase == 5 and global.dyworld.story.act == 3) then
+	if (global.dyworld.story.phase == 6 and global.dyworld.story.act == 3) then
 		global.dyworld.game_stats.story_pause = true
 	end
 

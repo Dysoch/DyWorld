@@ -636,5 +636,3 @@ local Metal_Techs = {
 for k,v in pairs(Metal_Techs) do
 	DyWorld_Tech_Add(v)
 end
-
-data.raw.technology["basic-asteroid-mining"].effects = data.raw.technology["rocket-silo"].effects

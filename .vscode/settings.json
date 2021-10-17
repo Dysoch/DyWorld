@@ -88,7 +88,8 @@
         "add_biter_die_animation",
         "make_unit_melee_ammo_type",
         "biterattackanimation",
-        "biterrunanimation"
+        "biterrunanimation",
+        "DyW"
     ],
     "Lua.diagnostics.disable": [
         "undefined-field"

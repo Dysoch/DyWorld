@@ -23,12 +23,16 @@ Date: 19. 10. 2021
     - Added Difficulty Check in for armors. Easy disables durability, the rest has different values
     - Crafting recipes of inserters are no longer lost on demolishing inserters on certain thresholds, but You will lose them however when not a single inserter is in the world
     - Internal Changes to implants. You are required to add them again if you have implants added
+    - Labs can now be build only in basic assemblers
+    - Oil and Natural Gas look different now
   Bugfixes:
     - Fixed bug with drag-building transport belts and old underground belts being placed as ghosts
     - Fixed bug player killing itself
     - Fixed bug with custom GUI's open that removes focus from search bars. This will still work on quickbar filter though (working on it). Open your inventory and then change use the filter searchbar as workaround
     - Fixed bug with placing ghosts or landfill and natives attacking that location
     - Fixed latest Space Exploration bug with resources (in the most hacky way possible)
+    - Limestone removed from ground, added to other stone deposits (among other things)
+    - Research, once unlocked, will no longer lock again once a new player is created
   Story:
     - Player Ambushes now have tiers
   Survival:

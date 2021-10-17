@@ -546,6 +546,7 @@ data:extend({
 	  minable = "limestone",
 	  minable_probability = 1,
       order = "b",
+      color = {141, 91, 74},
       map_color = {141, 91, 74},
       mining_time = 1,
       walking_sound = ore_sound,
@@ -566,6 +567,7 @@ data:extend({
 	  minable = "quartzite",
 	  minable_probability = 1,
       order = "b",
+      color = {170, 170, 170},
       map_color = {170, 170, 170},
       mining_time = 2,
       walking_sound = ore_sound,
@@ -586,6 +588,7 @@ data:extend({
 	  minable = "granite",
 	  minable_probability = 1,
       order = "b",
+      color = {146, 135, 41},
       map_color = {146, 135, 41},
       mining_time = 5,
       walking_sound = ore_sound,
@@ -606,6 +609,7 @@ data:extend({
 	  minable = "sandstone",
 	  minable_probability = 1,
       order = "b",
+      color = {242, 244, 212},
       map_color = {242, 244, 212},
       mining_time = 2.5,
       walking_sound = ore_sound,
@@ -626,6 +630,7 @@ data:extend({
 	  minable = "uranium-ore",
 	  minable_probability = 0.1,
       order = "b",
+      color = {10, 250, 10},
       map_color = {10, 250, 10},
       mining_time = 12.5,
       walking_sound = ore_sound,
@@ -650,6 +655,7 @@ data:extend({
 	  minable_probability = 1,
 	  amount_max = 30,
       order = "c",
+      color = {0.690, 0.611, 0.427},
       map_color = {0.690, 0.611, 0.427},
       mining_time = 120,
       walking_sound = ore_sound,
@@ -795,7 +801,7 @@ data:extend(
         shift = util.by_pixel(0, -2),
       }
     },
-    map_color = {0.78, 0.2, 0.77},
+    map_color = {0.2, 0.2, 0.77},
     map_grid = false
 
   },
@@ -851,16 +857,27 @@ data:extend(
     {
       sheet =
       {
-        filename = DyDs_path_entity.."natural-gas.png",
+        filename = "__base__/graphics/entity/crude-oil/crude-oil.png",
         priority = "extra-high",
-        width = 51,
+        width = 74,
         height = 60,
-        frame_count = 1,
+        frame_count = 4,
         variation_count = 1,
         shift = util.by_pixel(0, -2),
+        hr_version =
+        {
+          filename = "__base__/graphics/entity/crude-oil/hr-crude-oil.png",
+          priority = "extra-high",
+          width = 148,
+          height = 120,
+          frame_count = 4,
+          variation_count = 1,
+          shift = util.by_pixel(0, -2),
+          scale = 0.5
+        }
       }
     },
-    map_color = {0.78, 0.2, 0.77},
+    map_color = {0.8, 0.8, 0.8},
     map_grid = false
 
   },
@@ -893,4 +910,22 @@ data.raw.resource.treefarm.minable =
       probability = 0.4
     },
   }
+}
+
+data.raw.resource.quartzite.minable.results = {
+    {name = "quartzite", amount_min = 1, amount_max = 2, probability = 1},
+    {name = "limestone", amount_min = 1, amount_max = 3, probability = 0.35},
+}
+
+data.raw.resource.granite.minable.results = {
+    {name = "granite", amount_min = 1, amount_max = 2, probability = 1},
+    {name = "limestone", amount_min = 1, amount_max = 6, probability = 0.25},
+    {name = "ilmenite", amount_min = 1, amount_max = 1, probability = 0.05},
+    {name = "biotite", amount_min = 1, amount_max = 1, probability = 0.05},
+}
+
+data.raw.resource.sandstone.minable.results = {
+    {name = "sandstone", amount_min = 1, amount_max = 2, probability = 1},
+    {name = "limestone", amount_min = 2, amount_max = 4, probability = 0.25},
+    {name = "sand", amount_min = 1, amount_max = 10, probability = 0.05},
 }

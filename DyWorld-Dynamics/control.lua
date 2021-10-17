@@ -2,7 +2,7 @@ require("data.prefix")
 require("data.prefix-data")
 
 debugger = Dy_Sett.Debug
-Version_Build = "0.7.100"
+Version_Build = "0.0.100"
 Food_Start = debugger and 250000 or settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 25000 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 2500 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 1600 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 800 or 2500
 Water_Start = debugger and 500000 or settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 50000 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 5000 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 2500 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 1250 or 5000 
 
@@ -100,8 +100,8 @@ script.on_event(defines.events.on_player_respawned, Event_on_player_respawned)
 --script.on_event(defines.events.on_player_respawned_event, Event_on_player_respawned_script)
 script.on_event(defines.events.on_player_died, Event_on_player_died)
 script.on_event(defines.events.on_pre_player_died, Event_on_pre_player_died)
-script.on_event(defines.events.on_player_joined_game, Event_on_player_joined_game)
-script.on_event(defines.events.on_player_left_game, Event_on_player_left_game)
+--script.on_event(defines.events.on_player_joined_game, Event_on_player_joined_game)
+--script.on_event(defines.events.on_player_left_game, Event_on_player_left_game)
 script.on_event(defines.events.on_pre_player_mined_item, Event_on_pre_player_mined_item)
 
 -- GUI Events

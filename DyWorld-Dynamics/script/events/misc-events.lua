@@ -72,7 +72,27 @@ function Event_on_chunk_generated(event)
 	if not global.dyworld.game_stats.enemy_3_chunk then global.dyworld.game_stats.enemy_3_chunk = 4000 end
 	if not global.dyworld.game_stats.enemy_4_chunk then global.dyworld.game_stats.enemy_4_chunk = 6000 end
 	if not global.dyworld.game_stats.enemy_5_chunk then global.dyworld.game_stats.enemy_5_chunk = 10000 end
+	if not global.dyworld.game_stats.wave_spawners then global.dyworld.game_stats.wave_spawners = {} end
+	if not global.dyworld.game_stats.wave_spawners[surface_name] then global.dyworld.game_stats.wave_spawners[surface_name] = {spawners_amount = 0, spawners_loc = {}} end
+	if not global.dyworld.game_stats.wave_spawners.max_per_surface then global.dyworld.game_stats.wave_spawners.max_per_surface = 10 end
+	
 	if surface_name ~= "starmap-1" then
+		if (surface_name == "nauvis" and global.dyworld.game_stats.chunks >= 200) then
+			BuildEntity = "dy-wave-spawner"
+			PosX = event.area.left_top.x + math.random(-159,159)
+			PosY = event.area.left_top.y + math.random(-159,159)
+			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
+				if math.random(1,400) == 50 then --0.25% chance
+					if global.dyworld.game_stats.wave_spawners[surface_name].spawners_amount < global.dyworld.game_stats.wave_spawners.max_per_surface then
+						game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
+						global.dyworld.game_stats.wave_spawners[surface_name].spawners_amount = global.dyworld.game_stats.wave_spawners[surface_name].spawners_amount + 1
+						local BuildingTable = {posx = PosX, posy = PosY}
+						table.insert(global.dyworld.game_stats.wave_spawners[surface_name].spawners_loc, BuildingTable)
+						PlayerPrint("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (dy-wave-spawner)")
+					end
+				end
+			end
+		end
 		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_1_chunk and not Dy_Find_Str(surface_name, "Orbit") then
 			BuildEntity = "dyworld-base-1"
 			PosX = event.area.left_top.x + math.random(-63,63)

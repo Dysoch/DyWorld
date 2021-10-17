@@ -155,7 +155,7 @@ DyDS_Add_Item({
 DyDS_Add_Item({
 	name = "lignite",
 	order = "lignite",
-    icons = {{icon = "__base__/graphics/icons/coal.png", tint = {r=141, g=91, b=74}}},
+    icons = {{icon = "__base__/graphics/icons/coal.png", tint = {r=116, g=66, b=49}}},
 	stack_size = 1000,
 	subgroup = DyDs.."material-1",
     fuel_value = "4MJ",
@@ -166,7 +166,7 @@ DyDS_Add_Item({
 DyDS_Add_Item({
 	name = "charcoal",
 	order = "charcoal",
-    icons = {{icon = "__base__/graphics/icons/coal.png", tint = {r=182, g=155, b=76}}},
+    icons = {{icon = "__base__/graphics/icons/coal.png", tint = {r=202, g=175, b=96}}},
 	stack_size = 1000,
 	subgroup = DyDs.."material-1",
     fuel_value = "5MJ",

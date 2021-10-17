@@ -139,11 +139,15 @@ function Event_on_built_entity(event)
 		end
 		
 		-- Reenable Research
-		if (type == "lab" and player.force.research_enabled == false) then
-			for _,player in pairs(game.players) do
-				player.force.enable_research()
-				DyLog(Time..": Research Unlocked")
-				game.forces.player.deconstruction_time_to_live = (60*60*60*1)
+		if (type == "lab") then
+			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
+			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs + 1
+			if player.force.research_enabled == false then
+				for _,player in pairs(game.players) do
+					player.force.enable_research()
+					DyLog(Time..": Research Unlocked")
+					game.forces.player.deconstruction_time_to_live = (60*60*60*1)
+				end
 			end
 		end
 		
@@ -292,6 +296,8 @@ function Event_on_robot_built_entity(event)
 		
 		-- Reenable Research
 		if (type == "lab") then
+			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
+			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs + 1
 			for _,player in pairs(game.players) do
 				if player.force.research_enabled == false then
 					player.force.enable_research()
@@ -355,7 +361,7 @@ function Event_on_robot_built_tile(event)
 end
 
 function Event_script_raised_built(event)
-	script.on_event(remote.call("space-exploration", "get_on_player_respawned_event"), Event_on_player_respawned_script)
+	--script.on_event(remote.call("space-exploration", "get_on_player_respawned_event"), Event_on_player_respawned_script)
 	if global.dyworld_story and not global.dyworld.game_stats.story_pause then
 		Story_Objectives("scripted-build", event)
 		Story_Side_Objectives("build-2", event, 1)
@@ -465,6 +471,8 @@ function Event_script_raised_revive(event)
 		
 		-- Reenable Research
 		if (type == "lab") then
+			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
+			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs + 1
 			for _,player in pairs(game.players) do
 				if player.force.research_enabled == false then
 					player.force.enable_research()

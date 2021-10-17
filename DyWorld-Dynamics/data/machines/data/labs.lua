@@ -40,7 +40,7 @@ data:extend({
   {
     type = "recipe",
     name = "lab-1",
-	category = "assembling-tier-1",
+	category = "assembling-tier-2",
     normal =
     {
       ingredients =

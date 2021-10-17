@@ -106,6 +106,7 @@ function Main_GUI(player, id)
 		frameflow1.add{type = "label", caption = "Dyson Network Power: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_total), tooltip = "Universal Dyson Network:\nPower Total: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_total).."\nPower Available: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power).."\nPower Used: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_used).."\nNetwork Efficiency: [color=blue]"..Round(global.dyworld.game_stats.dyson.effect, 2).."[/color]%\nSatellites: [color=blue]"..global.dyworld.game_stats.dyson.sats.."[/color]\nStructures: [color=blue]"..global.dyworld.game_stats.dyson.structures.."[/color]\n\n"..surface.." Dyson Network: \n(Contribution to the Universal Network)\nPower Total Gained: "..Dyson_Power_Check(global.dyworld.game_stats.dyson_1[surface].power_total).."\nSolar Efficiency: [color=blue]"..Round((global.dyworld.game_stats.dyson_1[surface].effect * 100), 2).."[/color]%\nSatellites: [color=blue]"..global.dyworld.game_stats.dyson_1[surface].sats.."[/color]\nStructures: [color=blue]"..global.dyworld.game_stats.dyson_1[surface].structures.."[/color]"}
 	end
 	frameflow1.add{type = "line", direction = "horizontal"}
+	frameflow1.add{type = "label", caption = "Evolution: [color=blue]"..game.forces.enemy.evolution_factor.."[/color]"}
 		
 	if debugger then
 		frameflow1.add{type = "line", direction = "horizontal"}

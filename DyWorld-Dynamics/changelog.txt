@@ -25,6 +25,7 @@ Date: 19. 10. 2021
     - Internal Changes to implants. You are required to add them again if you have implants added
     - Labs can now be build only in basic assemblers
     - Oil and Natural Gas look different now
+    - Fire will now spread a lot more (+100x more)
   Bugfixes:
     - Fixed bug with drag-building transport belts and old underground belts being placed as ghosts
     - Fixed bug player killing itself

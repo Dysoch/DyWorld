@@ -267,19 +267,20 @@ function Event_on_tick(event)
 										radius = 5})
 							end
 						end
+						if global.dyworld.game_stats.attack_warning_3 then
+							AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Surface, Str})
+						elseif global.dyworld.game_stats.attack_warning_2 then
+							AttackPrint({"DyDs-story.attack-2", Str})
+						elseif global.dyworld.game_stats.attack_warning_1 then
+							AttackPrint({"DyDs-story.attack-1"})
+						end
 					end
 					--game.surfaces[Surface].build_enemy_base(Loc, Str)
 					
 					--global.dyworld.game_stats.attack_loc_amount = Str
 					--global.dyworld.game_stats.attack_loc_x = Loc.x
 					--global.dyworld.game_stats.attack_loc_y = Loc.y
-					--if global.dyworld.game_stats.attack_warning_3 then
-						--AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Str})
-					--elseif global.dyworld.game_stats.attack_warning_2 then
-						--AttackPrint({"DyDs-story.attack-2", Str})
-					--elseif global.dyworld.game_stats.attack_warning_1 then
-						--AttackPrint({"DyDs-story.attack-1"})
-					--endif game.surfaces[Surface].find_entity(BuildEntity, {PosX, PosY}) then
+					--if game.surfaces[Surface].find_entity(BuildEntity, {PosX, PosY}) then
 				end
 			end
 		end

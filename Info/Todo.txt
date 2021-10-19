@@ -1,0 +1,8 @@
+@todo Add Damage Radius Equipment
+
+@todo Investigate Random Damage Output
+@body https://wiki.factorio.com/Types/DamageTriggerEffectItem
+
+@todo Add Temperature per chunk
+
+@todo Add Radiation per chunk

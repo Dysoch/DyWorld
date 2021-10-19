@@ -196,6 +196,7 @@ function Event_on_tick(event)
 	if game.tick == 800 then
 		if global.dyworld_story then
 			for k,v in pairs(global.dyworld.players) do
+				-- @todo fix minimap enabled in MP for later joined players
 				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 				if (global.dyworld.game_stats.radars <= 0) then
 					game.players[v.id].minimap_enabled = false
@@ -246,6 +247,7 @@ function Event_on_tick(event)
 					local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 20))
 					local Surface = v
 					if (global.dyworld.game_stats.wave_spawners[Surface] and global.dyworld.game_stats.wave_spawners[Surface].spawners_amount >= 1) then
+						local Spawned = 0
 						for i = 1, Str do
 							local BuildEntity = Check_Wave_Tier(game.forces.enemy.evolution_factor)
 							local Spawn_Loc_table = global.dyworld.game_stats.wave_spawners[Surface].spawners_loc
@@ -254,12 +256,18 @@ function Event_on_tick(event)
 							PosY = Spawn_Loc_table[Spawn_randomized].posy + math.random(-40,40)
 							if game.surfaces[Surface].can_place_entity{name=(BuildEntity), position = {PosX, PosY}} then
 								game.surfaces[Surface].create_entity{name = (BuildEntity), position = {PosX, PosY}, force = game.forces.enemy}
+								Spawned = Spawned + 1
 							end
 						end
 						for Spawner, Table in pairs(global.dyworld.game_stats.wave_spawners[Surface].spawners_loc) do
-							local X = Table.posx
-							local Y = Table.posy
-							local Area = game.surfaces[Surface].find_entities_filtered{position = {X, Y}, radius = 75, type = "unit"} 
+							--[[
+							local X_1 = Table.posx + math.random(-50,50)
+							local Y_1 = Table.posy + math.random(-50,50)
+							game.surfaces[Surface].create_unit_group({position = {X, Y}, force = "enemy"})
+							]]
+							local X_2 = Table.posx
+							local Y_2 = Table.posy
+							local Area = game.surfaces[Surface].find_entities_filtered{position = {X_2, Y_2}, radius = 75, type = "unit"} 
 							for _,Unit in pairs(Area) do
 								Unit.set_command({
 										type = defines.command.attack_area,
@@ -268,19 +276,13 @@ function Event_on_tick(event)
 							end
 						end
 						if global.dyworld.game_stats.attack_warning_3 then
-							AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Surface, Str})
+							AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Surface, Spawned})
 						elseif global.dyworld.game_stats.attack_warning_2 then
-							AttackPrint({"DyDs-story.attack-2", Str})
+							AttackPrint({"DyDs-story.attack-2", Spawned})
 						elseif global.dyworld.game_stats.attack_warning_1 then
 							AttackPrint({"DyDs-story.attack-1"})
 						end
 					end
-					--game.surfaces[Surface].build_enemy_base(Loc, Str)
-					
-					--global.dyworld.game_stats.attack_loc_amount = Str
-					--global.dyworld.game_stats.attack_loc_x = Loc.x
-					--global.dyworld.game_stats.attack_loc_y = Loc.y
-					--if game.surfaces[Surface].find_entity(BuildEntity, {PosX, PosY}) then
 				end
 			end
 		end

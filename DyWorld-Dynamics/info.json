@@ -1,6 +1,6 @@
 {
 	"name": "DyWorld-Dynamics",
-	"version": "0.0.100",
+	"version": "0.1.0",
 	"factorio_version": "1.1",
 	"title": "DyWorld-Dynamics",
 	"author": "Dysoch",
@@ -92,6 +92,7 @@
 		"! Unlimited-Resources",
 		"! UnlimitedProductivity",
 		"! vtk-deep-core-mining",
+		"! qol_research",
 		"! warptorio"
 	]
 }

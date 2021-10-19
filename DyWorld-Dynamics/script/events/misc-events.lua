@@ -88,7 +88,7 @@ function Event_on_chunk_generated(event)
 						global.dyworld.game_stats.wave_spawners[surface_name].spawners_amount = global.dyworld.game_stats.wave_spawners[surface_name].spawners_amount + 1
 						local BuildingTable = {posx = PosX, posy = PosY}
 						table.insert(global.dyworld.game_stats.wave_spawners[surface_name].spawners_loc, BuildingTable)
-						PlayerPrint("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (dy-wave-spawner)")
+						debug("Spawned "..BuildEntity.." at [gps="..PosX..","..PosY..","..surface_name.."] (dy-wave-spawner)")
 					end
 				end
 			end
@@ -100,7 +100,7 @@ function Event_on_chunk_generated(event)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
 				global.dyworld.game_stats.enemy_1_chunk = global.dyworld.game_stats.enemy_1_chunk + 100
-				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 1)")
+				debug("Spawned "..BuildEntity.." at [gps="..PosX..","..PosY..","..surface_name.."] (Spawner 1)")
 			end
 		end
 		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_2_chunk and surface_name ~= "nauvis" and not Dy_Find_Str(surface_name, "Orbit") then
@@ -110,7 +110,7 @@ function Event_on_chunk_generated(event)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
 				global.dyworld.game_stats.enemy_2_chunk = global.dyworld.game_stats.enemy_2_chunk + 200
-				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 2)")
+				debug("Spawned "..BuildEntity.." at [gps="..PosX..","..PosY..","..surface_name.."] (Spawner 2)")
 			end
 		end
 		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_3_chunk and surface_name ~= "nauvis" and not Dy_Find_Str(surface_name, "Orbit") then
@@ -120,7 +120,7 @@ function Event_on_chunk_generated(event)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
 				global.dyworld.game_stats.enemy_3_chunk = global.dyworld.game_stats.enemy_3_chunk + 400
-				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 3)")
+				debug("Spawned "..BuildEntity.." at [gps="..PosX..","..PosY..","..surface_name.."] (Spawner 3)")
 			end
 		end
 		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_4_chunk and surface_name ~= "nauvis" and not Dy_Find_Str(surface_name, "Orbit") then
@@ -130,7 +130,7 @@ function Event_on_chunk_generated(event)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
 				global.dyworld.game_stats.enemy_4_chunk = global.dyworld.game_stats.enemy_4_chunk + 800
-				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 4)")
+				debug("Spawned "..BuildEntity.." at [gps="..PosX..","..PosY..","..surface_name.."] (Spawner 4)")
 			end
 		end
 		if global.dyworld.game_stats.chunks >= global.dyworld.game_stats.enemy_5_chunk and surface_name ~= "nauvis" and not Dy_Find_Str(surface_name, "Orbit") then
@@ -140,7 +140,7 @@ function Event_on_chunk_generated(event)
 			if game.surfaces[surface_name].can_place_entity{name=(BuildEntity), position={PosX,PosY}} then
 				game.surfaces[surface_name].create_entity{name=(BuildEntity), position={PosX,PosY}, force=game.forces.enemy}
 				global.dyworld.game_stats.enemy_5_chunk = global.dyworld.game_stats.enemy_5_chunk + 1600
-				--debug("Spawned "..BuildEntity.." at "..PosX..", "..PosY.." on "..surface_name.." (Spawner 5)")
+				debug("Spawned "..BuildEntity.." at [gps="..PosX..","..PosY..","..surface_name.."] (Spawner 5)")
 			end
 		end
 	end

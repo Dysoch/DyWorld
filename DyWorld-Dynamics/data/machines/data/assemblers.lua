@@ -57,7 +57,7 @@ DyW.Recipe.RL.Add("burner-assembler", {type = "item", name = "control-board-1", 
 DyW.Recipe.RL.Add("burner-assembler", {type = "item", name = "bronze-plate", amount = 60})
 DyW.Recipe.RL.Add("burner-assembler", {type = "item", name = "tin-plate", amount = 12})
 
-local DyWorld_Prototype_1 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "basic-assembler", true)
+local DyWorld_Prototype_1 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-2", "basic-assembler", true)
 DyWorld_Prototype_1.icon = "__base__/graphics/icons/assembling-machine-2.png"
 DyWorld_Prototype_1.crafting_categories = {"assembling-tier-1", "assembling-tier-2"}
 DyWorld_Prototype_1.energy_usage = "500kW"
@@ -111,7 +111,7 @@ DyW.Recipe.RL.Add("basic-assembler", {type = "item", name = "iron-plate", amount
 DyW.Recipe.RL.Add("basic-assembler", {type = "item", name = "iron-ingot", amount = 10})
 DyW.Recipe.RL.Add("basic-assembler", {type = "item", name = "bronze-plate", amount = 12})
 
-local DyWorld_Prototype_2 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "advanced-assembler", true)
+local DyWorld_Prototype_2 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-3", "advanced-assembler", true)
 DyWorld_Prototype_2.icon = "__base__/graphics/icons/assembling-machine-3.png"
 DyWorld_Prototype_2.crafting_categories = {"assembling-tier-1", "assembling-tier-2", "assembling-tier-3"}
 DyWorld_Prototype_2.energy_usage = "2000kW"
@@ -157,7 +157,7 @@ data:extend({
   },
 })
 
-local DyWorld_Prototype_3 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "nano-assembler", true)
+local DyWorld_Prototype_3 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-3", "nano-assembler", true)
 DyWorld_Prototype_3.icon = "__base__/graphics/icons/assembling-machine-3.png"
 DyWorld_Prototype_3.crafting_categories = {"assembling-tier-1", "assembling-tier-2", "assembling-tier-3", "assembling-tier-4"}
 DyWorld_Prototype_3.energy_usage = "10000kW"
@@ -203,7 +203,7 @@ data:extend({
   },
 })
 
-local DyWorld_Prototype_4 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "quantum-assembler", true)
+local DyWorld_Prototype_4 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-3", "quantum-assembler", true)
 DyWorld_Prototype_4.icon = "__base__/graphics/icons/assembling-machine-3.png"
 DyWorld_Prototype_4.crafting_categories = {"assembling-tier-1", "assembling-tier-2", "assembling-tier-3", "assembling-tier-4", "assembling-tier-5"}
 DyWorld_Prototype_4.energy_usage = "50000kW"

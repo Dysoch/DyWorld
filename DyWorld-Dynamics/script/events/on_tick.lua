@@ -196,7 +196,7 @@ function Event_on_tick(event)
 	if game.tick == 800 then
 		if global.dyworld_story then
 			for k,v in pairs(global.dyworld.players) do
-				-- @todo fix minimap enabled in MP for later joined players
+				-- TODO fix minimap enabled in MP for later joined players
 				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 				if (global.dyworld.game_stats.radars <= 0) then
 					game.players[v.id].minimap_enabled = false

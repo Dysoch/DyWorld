@@ -19,9 +19,9 @@ local Tier_Tint = {
   [10] = {{r=1, g=0.10, b=0, a=1}, {r=0.45, g=0.76, b=0.25, a=1}},
 }
 
--- @todo Water Enemies
+-- TODO Water Enemies
 
--- @todo Flying Enemies
+-- TODO Flying Enemies
 
 for i = 1, 10 do
   for Unit = 1, 5 do

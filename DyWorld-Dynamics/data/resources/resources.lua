@@ -617,7 +617,7 @@ data:extend({
 	  category = "resource-solid-tier-1",
     },
     {
-      has_starting_area_placement = false,
+      has_starting_area_placement = true,
       base_density = 4,
       regular_rq_factor_multiplier = 1.0,
       starting_rq_factor_multiplier = 1.1,

@@ -1,37 +1,57 @@
-TODO Vehicle Equipment: Framework
 
-TODO Vehicle Equipment: Power
 
-TODO Vehicle Equipment: Shield
 
-TODO Vehicle Equipment: Batteries
+TODO Tanks
 
-TODO Vehicle Equipment: Turrets
+TODO Spidertrons
 
-TODO Vehicle Equipment: Roboports
+TODO Laser Turrets Revamp
 
-TODO Personal Equipment: Framework
+TODO Beam Turrets Revamp
 
-TODO Personal Equipment: Shields
+TODO Guns Update (modular)
 
-TODO Personal Equipment: Nanobots
+TODO Armor Update (modular)
 
-TODO Personal Equipment: Turrets
+TODO Revamp New Enemies
 
-TODO Personal Equipment: Exoskeletons
+TODO More new Enemies
 
-TODO Personal Equipment: Batteries
+TODO Revamped Tech tree, mostly SE’s side part 4
 
-TODO Personal Equipment: Power
+TODO Fixed custom attacks. Better pathfinding with special modifiers, enhanced spawning
 
-TODO Personal Equipment: Misc
 
-TODO Implants: General Information
+TODO Special Items for Realistic Recipes (only active with that on)
 
-TODO Implants: Warfare Related
+TODO New Fusion materials
 
-TODO Implants: Auto Feeder/Healer
+TODO New Fission Materials
 
-TODO Implants: Running speed. Unlocked earlier
+TODO New Ores
 
-TODO Revamped Tech tree, mostly SE’s side part 3
+TODO New Intermediates
+
+TODO Revamped Tech tree, mostly SE’s side part 5
+
+
+
+TODO Update that will completely revamp the current GUI’s into a much cleaner, nice look.
+
+TODO More Features added to the GUI
+
+TODO All localisations of the GUI’s moved to locale files (for translations)
+
+TODO New main menu theme
+
+TODO More survival features
+
+TODO Damage from pollution
+
+TODO Damage from radiation
+
+TODO Damage from extreme temperatures
+
+TODO Air contents
+
+TODO Oxygen

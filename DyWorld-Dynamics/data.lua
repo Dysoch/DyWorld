@@ -10,6 +10,7 @@ DyWorld_Automated_Tech_Add = {}
 -- Core Modules --
 require("data.prefix")
 require("data.prefix-data")
+require("data.mod-check")
 require("data.informatron")
 require(DyDs_data_base_edits.. "data")
 require(DyDs_data_core.. "data")

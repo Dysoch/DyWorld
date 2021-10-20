@@ -9,12 +9,13 @@ Date: ???
     - Realistic Recipes mod option now defaults to off
   Bugfixes:
     - Fixed bug with multiplayer where newly joined players had minimap enabled when it shouldnt have been enabled
+    - Fixed issue with cheat mode and handcrafting
   Story:
     - 
   Survival:
     - 
   Compatibility:
-    - 
+    - Incompatibilities moved to a new file. Seperate script that will check for each of the mods
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 19. 10. 2021

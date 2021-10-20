@@ -1,6 +1,0 @@
-@todo Check Robot-Attrition settings crash
-@body icon-size issue with logistic-robot-1-repair
-
-@todo easy, normal etc ,blue for the survival difficulty tooltip
-
-@todo check Fill4Me issue with ammo

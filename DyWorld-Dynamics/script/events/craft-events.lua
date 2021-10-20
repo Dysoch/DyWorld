@@ -2,6 +2,7 @@
 
 
 function Event_on_player_crafted_item(event)
+	-- TODO Add check to see if cheat-mode is active (crafting event)
 	local player = game.players[event.player_index]
 	local force = player.force
 	local id = event.player_index

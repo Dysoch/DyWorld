@@ -31,7 +31,14 @@ function Event_on_tick(event)
 	end
 	if event.tick%(25001)==25000 then
 		global.dyworld.game_stats.days = global.dyworld.game_stats.days + 1
-		--debug("Game Days: "..global.dyworld.game_stats.days)
+		if global.dyworld_story then
+			for k,v in pairs(global.dyworld.players) do
+				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+				if (global.dyworld.game_stats.radars <= 0) then
+					game.players[v.id].minimap_enabled = false
+				end
+			end
+		end
 	end
 
 	-- Automated Functions --
@@ -196,7 +203,6 @@ function Event_on_tick(event)
 	if game.tick == 800 then
 		if global.dyworld_story then
 			for k,v in pairs(global.dyworld.players) do
-				-- TODO fix minimap enabled in MP for later joined players
 				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 				if (global.dyworld.game_stats.radars <= 0) then
 					game.players[v.id].minimap_enabled = false

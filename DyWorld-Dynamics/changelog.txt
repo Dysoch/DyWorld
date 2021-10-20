@@ -8,7 +8,7 @@ Date: ???
   Changes:
     - Realistic Recipes mod option now defaults to off
   Bugfixes:
-    - 
+    - Fixed bug with multiplayer where newly joined players had minimap enabled when it shouldnt have been enabled
   Story:
     - 
   Survival:

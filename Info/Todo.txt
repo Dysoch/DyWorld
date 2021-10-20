@@ -1,7 +1,4 @@
 
 
 
-TODO See if possible to edit mining fluid required treefarm
-
-TODO Food/water overhaul
-BODY i would suggest to be able to eat the raw fish for the least amount of food (maybe 10 or 15 food and 5 water), cooked fish should be like 35 or 40 food, no water since you made the effort to cook it and should have a benefit. carrots should also have the same amount like raw fish in food and water. and then you have cooked carrot, same as fish (maybe a bit less since it has a easy to get recipe). then make a Survival Meal out of cooked fish and Raw Carrot for 80 food, no water. maybe add a "Kitchen" (since a Kiln acts like a stove), add water, raw fish and raw carrot to make a Fish Stew for 130 food and 30 water
+TODO Increase fish spawn

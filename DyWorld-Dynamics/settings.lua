@@ -43,7 +43,7 @@ data:extend({
 		type = "bool-setting",
 		name = "DyWorld_Realistic_Recipes",
 		setting_type = "startup",
-		default_value = true,
+		default_value = false,
 	},
 	{
 		type = "int-setting",

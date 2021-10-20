@@ -1,4 +1,23 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: ???
+  Major Features:
+    - 
+  Minor Features:
+    - 
+  Changes:
+    - Realistic Recipes mod option now defaults to off
+  Bugfixes:
+    - 
+  Story:
+    - 
+  Survival:
+    - 
+  Compatibility:
+    - 
+  Translations:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 19. 10. 2021
   Major Features:

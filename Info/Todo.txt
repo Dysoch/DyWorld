@@ -1,8 +1,6 @@
-@todo Add Damage Radius Equipment
+@todo Check Robot-Attrition settings crash
+@body icon-size issue with logistic-robot-1-repair
 
-@todo Investigate Random Damage Output
-@body https://wiki.factorio.com/Types/DamageTriggerEffectItem
+@todo easy, normal etc ,blue for the survival difficulty tooltip
 
-@todo Add Temperature per chunk
-
-@todo Add Radiation per chunk
+@todo check Fill4Me issue with ammo

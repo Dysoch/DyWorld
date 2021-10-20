@@ -54,7 +54,7 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "bronze-plate", amount = 22},
+        {type = "item", name = "bronze-plate", amount = 5},
         {type = "item", name = "bronze-gear", amount = 6},
       },
       result = "transport-belt-1",

@@ -21,6 +21,7 @@
 		"aai-industry >= 0.5.9",
 		"Nanobots >= 3.2.15",
 		"alien-biomes >= 0.6.5",
+		"Flow Control >= 3.0.8",
 		
 		"~ DyComPa >= 0.1.2",
 
@@ -94,6 +95,7 @@
 		"! vtk-deep-core-mining",
 		"! RPGsystem",
 		"! qol_research",
+		"! Warehousing",
 		"! warptorio"
 	]
 }

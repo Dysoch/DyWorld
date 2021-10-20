@@ -4,7 +4,7 @@ Date: ???
   Major Features:
     - 
   Minor Features:
-    - 
+    - Added a new required mod: Flow Control (for better use in pipes)
   Changes:
     - Realistic Recipes mod option now defaults to off
   Bugfixes:
@@ -15,7 +15,7 @@ Date: ???
   Survival:
     - 
   Compatibility:
-    - Incompatibilities moved to a new file. Seperate script that will check for each of the mods
+    - Incompatibilities moved to a new file. Seperate script that will check for each of the mods alongside the normal incompatibility of the base game.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 19. 10. 2021

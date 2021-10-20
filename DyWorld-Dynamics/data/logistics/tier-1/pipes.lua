@@ -36,6 +36,17 @@ data:extend({
 	  enabled = false,
 	  energy_required = 1,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "bronze-plate", amount = 7},
+      },
+      result = "bronze-pipe",
+      result_count = 2,
+	  enabled = false,
+	  energy_required = 2,
+    },
   },
   {
     type = "item",
@@ -62,6 +73,18 @@ data:extend({
       result_count = 2,
 	  enabled = false,
 	  energy_required = 1,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "bronze-pipe", amount = 10},
+        {type = "item", name = "bronze-plate", amount = 12},
+      },
+      result = "bronze-pipe-to-ground",
+      result_count = 2,
+	  enabled = false,
+	  energy_required = 5,
     },
   },
 })

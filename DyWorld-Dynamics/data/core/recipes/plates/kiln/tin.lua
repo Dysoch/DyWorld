@@ -14,6 +14,17 @@ data:extend({
 	  energy_required = 2.5,
 	  enabled = false,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "tin-ore-impure", amount = 11},
+      },
+      result = "tin-ingot",
+	  result_count = 1,
+	  energy_required = 12.5,
+	  enabled = false,
+    },
   },
   {
     type = "recipe",
@@ -28,6 +39,17 @@ data:extend({
       result = "tin-plate",
 	  result_count = 5,
 	  energy_required = 5,
+	  enabled = false,
+    },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "tin-ingot", amount = 1},
+      },
+      result = "tin-plate",
+	  result_count = 1,
+	  energy_required = 10,
 	  enabled = false,
     },
   },

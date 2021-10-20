@@ -4,7 +4,7 @@ Date: ???
   Features:
     - 
   Minor Features:
-    - 
+    - Added functions for equipment
   Changes:
     - Fixed Tooltip survival mod setting not showing correctly
 ---------------------------------------------------------------------------------------------------

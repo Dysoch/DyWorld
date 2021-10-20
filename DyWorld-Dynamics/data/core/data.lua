@@ -15,7 +15,7 @@ require(DyDs_data_core.. "essentials.categories")
 require(DyDs_data_core.. "essentials.keys")
 require(DyDs_data_core.. "essentials.style")
 require(DyDs_data_core.. "essentials.sounds")
-require(DyDs_data_core.. "essentials.equipment-grid")
+--require(DyDs_data_core.. "essentials.equipment-grid")
 
 -- Item Groups
 require("data.core.item-groups.power")

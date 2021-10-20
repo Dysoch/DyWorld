@@ -19,6 +19,12 @@ require("data.item.add")
 require("data.item.change")
 require("data.item.remove")
 
+DyW.Equip = {}
+require("data.equipment.add")
+require("data.equipment.base")
+require("data.equipment.change")
+require("data.equipment.remove")
+
 DyW.Module = {}
 require("data.module.add")
 require("data.module.change")

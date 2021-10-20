@@ -5,6 +5,7 @@ local DyWorld_Prototype_1 = DyDs_CopyPrototype("car", "car", "car-1", true)
 DyWorld_Prototype_1.max_health = 750
 DyWorld_Prototype_1.guns = {"vehicle-9mm-gun"}
 DyWorld_Prototype_1.burner.fuel_category = "carbon"
+DyWorld_Prototype_1.equipment_grid = DyW.Equip.Grid(6, 6, "vehicle")
 
 data:extend({
   DyWorld_Prototype_1,
@@ -45,6 +46,7 @@ DyWorld_Prototype_2.max_health = 500
 DyWorld_Prototype_2.guns = {"vehicle-9mm-gun"}
 DyWorld_Prototype_2.burner.fuel_category = "carbon"
 DyWorld_Prototype_2.collision_mask = {"ground-tile", "train-layer"}
+DyWorld_Prototype_2.equipment_grid = DyW.Equip.Grid(8, 4, "vehicle")
 
 data:extend({
     DyWorld_Prototype_2,

@@ -9,7 +9,7 @@
 	"description": "DyWorld-Dynamics, the successor of DyWorld, which is the successor of DyTech. Adds a massive story into the game. Use the mod scenario to start the story",
 	"dependencies": [  
 		"base >= 1.1.39",
-		"DyCore >= 0.1.0",
+		"DyCore >= 0.1.1",
 		"space-exploration-graphics >= 0.5.12",
 		"space-exploration-graphics-3 >= 0.1.1",
 		"space-exploration-graphics-2 >= 0.1.1",

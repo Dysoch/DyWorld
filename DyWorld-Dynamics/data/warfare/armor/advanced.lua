@@ -21,7 +21,7 @@ data:extend({
     stack_size = 1,
     durability = Dy_Sett.Difficulty == "Normal" and 25000 or Dy_Sett.Difficulty == "Hard" and 15000 or 5000,
     infinite = Dy_Sett.Difficulty == "Easy" and true or false,
-    equipment_grid = "equipment-grid-2",
+    equipment_grid = DyW.Equip.Grid(8, 6, "armor"),
   },
   {
     type = "recipe",

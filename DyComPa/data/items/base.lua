@@ -59,8 +59,6 @@ data.raw.item["fusion-reactor-equipment"].subgroup = DyDs.."equipment-energy"
 data.raw.item["battery-equipment"].subgroup = DyDs.."equipment-energy"
 data.raw.item["battery-mk2-equipment"].subgroup = DyDs.."equipment-energy"
 
-data.raw.item["energy-shield-equipment"].subgroup = DyDs.."equipment-defense"
-data.raw.item["energy-shield-mk2-equipment"].subgroup = DyDs.."equipment-defense"
 data.raw.item["personal-laser-defense-equipment"].subgroup = DyDs.."equipment-defense"
 data.raw.item["discharge-defense-equipment"].subgroup = DyDs.."equipment-defense"
 

@@ -5,6 +5,7 @@ Date: ???
     - 
   Minor Features:
     - Added a new required mod: Flow Control (for better use in pipes)
+    - Added recipes and changes for 6 Personal Shield Equipments
   Changes:
     - Realistic Recipes mod option now defaults to off
   Bugfixes:

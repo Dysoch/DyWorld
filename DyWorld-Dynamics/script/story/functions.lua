@@ -67,7 +67,7 @@ function Phase_Forward()
 
     -- Apply randomisation and difficulty changes to amount from objectives
 	for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
-        if v.type_1 and (v.type_1 == "build" or v.type_1 == "craft" or v.type_1 == "died" or v.type_1 == "launch") then
+        if v.type_1 and (v.type_1 == "build" or v.type_1 == "craft" or v.type_1 == "died" or v.type_1 == "launch") or (v.type_1 and v.type_1 == "world" and v.type_2 and v.type_2 == "radar-scan") then
             if v.amount_needed and not v.set_stone then
                 if settings.startup["DyWorld_Difficulty"].value == "Easy" then
                     if v.random then

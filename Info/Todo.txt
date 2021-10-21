@@ -1,4 +1,8 @@
 
 
 
-TODO Increase fish spawn
+TODO Add Carrot Cake
+
+TODO Fix mysterious building crash
+
+TODO Add Afriad of the Dark to incompatible list

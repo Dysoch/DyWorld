@@ -323,6 +323,7 @@ Story_Table_Base  = {
 					name = "lab-1",
 					amount_needed = 1,
 					amount_done = 0,
+					set_stone = true,
 					done = false,
 				},
 				[2] = {
@@ -331,6 +332,7 @@ Story_Table_Base  = {
 					name = "basic-boiler",
 					amount_needed = 10,
 					amount_done = 0,
+					set_stone = true,
 					done = false,
 				},
 				[3] = {
@@ -339,6 +341,7 @@ Story_Table_Base  = {
 					name = "basic-steam-engine",
 					amount_needed = 20,
 					amount_done = 0,
+					set_stone = true,
 					done = false,
 				},
 				[4] = {
@@ -439,6 +442,7 @@ Story_Table_Base  = {
 					done = false,
 					amount_needed = 500,
 					amount_done = 0,
+                    random = true,
 				},
 			},
 			label = {"rebuild", "buildup"},
@@ -461,16 +465,18 @@ Story_Table_Base  = {
 				[2] = {
 					type_1 = "world",
 					type_2 = "radar-scan",
-					done = false,
 					amount_needed = 1000,
 					amount_done = 0,
+                    random = true,
+					done = false,
 				},
 				[3] = {
 					type_1 = "world",
 					type_2 = "chunk",
-					done = false,
 					amount_needed = 250,
 					amount_done = 0,
+					set_stone = true,
+					done = false,
 				},
 			},
 			label = {"buildup"},

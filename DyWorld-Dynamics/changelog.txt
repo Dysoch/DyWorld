@@ -11,7 +11,8 @@ Date: ???
     - Fixed bug with multiplayer where newly joined players had minimap enabled when it shouldnt have been enabled
     - Fixed issue with cheat mode and handcrafting
   Story:
-    - 
+    - Fixed Labratory objective in act 1 phase 10 showing 0/0 on easy difficulity
+    - Radar scanning objective will now randomize based on difficulty
   Survival:
     - 
   Compatibility:

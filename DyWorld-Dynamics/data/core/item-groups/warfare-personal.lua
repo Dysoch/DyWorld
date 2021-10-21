@@ -42,6 +42,31 @@ local Data_Table_Item_Group = {
 		Main = "warfare-personal"
 	},
 	{
+		Name = "equipment-vehicle-energy",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "equipment-vehicle-defense",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "equipment-vehicle-attack",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "equipment-vehicle-shield",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
+		Name = "equipment-vehicle-qol",
+		Type = "sub",
+		Main = "warfare-personal"
+	},
+	{
 		Name = "ammo-basic",
 		Type = "sub",
 		Main = "warfare-personal"

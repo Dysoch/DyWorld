@@ -71,6 +71,7 @@ local Mods = {
 	"warptorio",
 	"RPGsystem",
 	"Warehousing",
+	"AfraidOfTheDark",
 }
 
 for k,v in pairs(Mods) do

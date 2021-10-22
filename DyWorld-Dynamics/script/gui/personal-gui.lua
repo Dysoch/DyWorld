@@ -109,22 +109,22 @@ function Personal_GUI(player, id)
         frameflow1.add{type = "progressbar", value = (game.players[id].character.get_health_ratio()), style = Progress_Surival_Style_Check(game.players[id].character.get_health_ratio()), caption = GloPla["health-implant"].enabled and "   [color=red]Health (Auto)[/color]" or "         [color=red]Health[/color]"}
     end
 
-    local Max_Pollution = Dy_Sett.Difficulty == "Easy" and 25000 or Dy_Sett.Difficulty == "Normal" and 12500 or Dy_Sett.Difficulty == "Hard" and 6000 or 6000
-    if Chunk.Pollution > 1000 then
-        frameflow1.add{type = "progressbar", value = (Chunk.Pollution / Max_Pollution), style = "dy-bar-1", tooltip = "[color=red]Warning!\nPollution getting high\nVacate the area[/color]\n\n[color=blue]WIP, no pollution based damage implemented yet[/color]", caption = "        [color=yellow]Pollution[/color]"}
+    if Chunk.Pollution > 500 then
+		frameflow1.add{type = "label", caption = "Pollution: [color=yellow]"..Chunk.Pollution.."[/color]", tooltip = "WIP"}
+        --frameflow1.add{type = "progressbar", value = (Chunk.Pollution / Max_Pollution), style = "dy-bar-1", tooltip = "[color=red]Warning!\nPollution getting high\nVacate the area[/color]\n\n[color=blue]WIP, no pollution based damage implemented yet[/color]", caption = "        [color=yellow]Pollution[/color]"}
     end
 
     frameflow1.add{type = "label", caption = "[color=yellow]Implants[/color]", tooltip = "Food Reduction: \n"..Check_Implant_State(id, "usage-reduction").."\n\nSpeed Implant: \n"..Check_Implant_State(id, "speed-implant").."\n\nDeath Implant: \n"..Check_Implant_State(id, "death-implant")}
 
     -- Temperature WIP
     if Chunk.Temperature <= -5 then
-        frameflow1.add{type = "label", caption = "[color=blue]Temperature: "..Chunk.Temperature.."[/color]", tooltip = "WIP"}
+        frameflow1.add{type = "label", caption = "Temperature: [color=blue]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
     elseif Chunk.Temperature <= 10 then
-        frameflow1.add{type = "label", caption = "[color=cyan]Temperature: "..Chunk.Temperature.."[/color]", tooltip = "WIP"}
+        frameflow1.add{type = "label", caption = "Temperature: [color=cyan]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
     elseif Chunk.Temperature >= 30 then
-        frameflow1.add{type = "label", caption = "[color=yellow]Temperature: "..Chunk.Temperature.."[/color]", tooltip = "WIP"}
+        frameflow1.add{type = "label", caption = "Temperature: [color=yellow]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
     elseif Chunk.Temperature >= 45 then
-        frameflow1.add{type = "label", caption = "[color=red]Temperature: "..Chunk.Temperature.."[/color]", tooltip = "WIP"}
+        frameflow1.add{type = "label", caption = "Temperature: [color=red]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
     else
         frameflow1.add{type = "label", caption = "Temperature: [color=green]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
     end

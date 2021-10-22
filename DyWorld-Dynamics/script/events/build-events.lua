@@ -112,9 +112,6 @@ function Event_on_built_entity(event)
 		
 		
 		if (type == "radar") then
-			if (name == "burner-radar") then
-				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
-			end
 			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars + 1
 			for k,v in pairs(global.dyworld.players) do
@@ -124,12 +121,10 @@ function Event_on_built_entity(event)
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
-				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
 			end
 			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
 				global.dyworld.game_stats.attack_warning_2 = true
 				global.dyworld.game_stats.attack_warning_3 = true
-				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
 		end
 		if (type == "inserter") then
@@ -146,30 +141,12 @@ function Event_on_built_entity(event)
 				for _,player in pairs(game.players) do
 					player.force.enable_research()
 					DyLog(Time..": Research Unlocked")
-					game.forces.player.deconstruction_time_to_live = (60*60*60*1)
 				end
 			end
 		end
 		
 		-- Increase Difficulty 
-		if (global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + 0.0001
-		end
-		if (name == "burner-radar" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (10 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-1" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (100 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-2" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (250 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-3" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (500 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-4" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (1000 * global.dyworld.game_stats.players)
-		end
+		DyWorld_Custom_Difficulty_Change("+", 0.5)
 	end
 end
 
@@ -203,6 +180,7 @@ function Event_on_player_built_tile(event)
 			Story_Objectives("building-tile", event)
 			Story_Side_Objectives("build-tile", event, 1)
 		end
+		DyWorld_Custom_Difficulty_Change("+", 0.025)
 	end
 end
 
@@ -268,9 +246,6 @@ function Event_on_robot_built_entity(event)
 	if global.dyworld_story then
 		-- Reenable Minimap
 		if (type == "radar") then
-			if (name == "burner-radar") then
-				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
-			end
 			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars + 1
 			for k,v in pairs(global.dyworld.players) do
@@ -280,12 +255,10 @@ function Event_on_robot_built_entity(event)
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
-				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
 			end
 			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
 				global.dyworld.game_stats.attack_warning_2 = true
 				global.dyworld.game_stats.attack_warning_3 = true
-				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
 		end
 		if (type == "inserter") then
@@ -302,7 +275,6 @@ function Event_on_robot_built_entity(event)
 				if player.force.research_enabled == false then
 					player.force.enable_research()
 					DyLog(Time..": Research Unlocked")
-					game.forces.player.deconstruction_time_to_live = (60*60*60*1)
 				end
 			end
 		end
@@ -314,24 +286,7 @@ function Event_on_robot_built_entity(event)
 		end
 		
 		-- Increase Difficulty 
-		if (global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + 0.00005
-		end
-		if (name == "burner-radar" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (5 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-1" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (50 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-2" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (125 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-3" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (250 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-4" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (500 * global.dyworld.game_stats.players)
-		end
+		DyWorld_Custom_Difficulty_Change("+", 0.35)
 	end
 end
 
@@ -357,6 +312,7 @@ function Event_on_robot_built_tile(event)
 			Story_Objectives("building-tile", event)
 			Story_Side_Objectives("build-tile", event, 1)
 		end
+		DyWorld_Custom_Difficulty_Change("+", 0.05)
 	end
 end
 
@@ -443,9 +399,6 @@ function Event_script_raised_revive(event)
 
 		-- Reenable Minimap
 		if (type == "radar") then
-			if (name == "burner-radar") then
-				game.forces.player.deconstruction_time_to_live = (60*60*60*24)
-			end
 			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars + 1
 			for k,v in pairs(global.dyworld.players) do
@@ -455,12 +408,10 @@ function Event_script_raised_revive(event)
 			end
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
-				game.forces.player.deconstruction_time_to_live = (60*60*60*48)
 			end
 			if (name == "radar-2" and not global.dyworld.game_stats.attack_warning_3) then
 				global.dyworld.game_stats.attack_warning_2 = true
 				global.dyworld.game_stats.attack_warning_3 = true
-				game.forces.player.deconstruction_time_to_live = (60*60*60*240)
 			end
 		end
 		if (type == "inserter") then
@@ -477,29 +428,11 @@ function Event_script_raised_revive(event)
 				if player.force.research_enabled == false then
 					player.force.enable_research()
 					DyLog(Time..": Research Unlocked")
-					game.forces.player.deconstruction_time_to_live = (60*60*60*1)
 				end
 			end
 		end
 		
 		-- Increase Difficulty 
-		if (global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + 0.0001
-		end
-		if (name == "burner-radar" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (10 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-1" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (100 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-2" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (250 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-3" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (500 * global.dyworld.game_stats.players)
-		end
-		if (name == "radar-4" and global.dyworld.game_stats.difficulty < 10000) then
-			global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (1000 * global.dyworld.game_stats.players)
-		end
+		DyWorld_Custom_Difficulty_Change("+", 0.5)
 	end
 end

@@ -102,10 +102,14 @@ end
 function Pick_Random_Attack_Location(surface)
 	local Location = {x = 0, y = 0}
 	local Loc_table = global.dyworld.game_stats.building_locations[surface]
-	local randomized = math.random(#Loc_table)
-	Location = {x = Loc_table[randomized].posx, y = Loc_table[randomized].posy}
-	--debug("Random Attack Location on "..surface..": x = "..Location.x..", y = "..Location.y)
-	return Location
+	if tablelength(Loc_table) >= 1 then
+		local randomized = math.random(#Loc_table)
+		Location = {x = Loc_table[randomized].posx, y = Loc_table[randomized].posy}
+		--debug("Random Attack Location on "..surface..": x = "..Location.x..", y = "..Location.y)
+		return Location
+	else
+		return Location
+	end
 end
 
 function Pick_Random_Attack_Strength(STRENGTH)

@@ -14,7 +14,7 @@ function Event_on_configuration_changed()
     -- Checks every Migration. These are single changes, done to ensure migrated scripts
     One_Time_Migration()
 
-	PlayerPrint("Update for DyWorld-Dynamics detected. Updating Story. Objectives reset. Migrated from version: "..global.dyworld.version.." to version: "..Version_Build)
+	PlayerPrint("[color=blue]DyWorld-Dynamics:[/color] [color=yellow]New mod configuration detected. Updating Story (to be safe). Migrated from version: [/color][color=blue]"..global.dyworld.version.."[/color][color=yellow] to version: [/color][color=blue]"..Version_Build.."[/color]")
 	global.dyworld.version = Version_Build
 	
     -- Checks every Migration. Done to ensure new buttons and changes will be done

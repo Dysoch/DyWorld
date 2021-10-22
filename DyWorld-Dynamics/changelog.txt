@@ -4,13 +4,20 @@ Date: ???
   Major Features:
     - 
   Minor Features:
-    - Added recipes and changes for 6 Personal Shield Equipments
-    - Added 12 Vehicle Shield Equipments
+    - Improved custom attack scripts
+    - Improved custom difficulty/evolution
+    - Added recipes and changes for 6 Personal Shield Equipments (Recipes WIP, updated in version 0.4.x)
+    - Added 12 Vehicle Shield Equipments (Recipes WIP, updated in version 0.4.x)
+    - Added 3 Exoskeleton Equipments (Recipes WIP, updated in version 0.4.x)
   Changes:
     - Realistic Recipes mod option now defaults to off
+    - Add few new realistic recipes
+    - Changed Charcoal recipe. Higher output, less input
   Bugfixes:
     - Fixed bug with multiplayer where newly joined players had minimap enabled when it shouldnt have been enabled
     - Fixed issue with cheat mode and handcrafting
+    - Fixed crash with attack location table being empty
+    - Fixed crash with mysterious building
   Story:
     - Fixed Labratory objective in act 1 phase 10 showing 0/0 on easy difficulity
     - Radar scanning objective will now randomize based on difficulty

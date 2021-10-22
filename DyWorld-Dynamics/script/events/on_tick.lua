@@ -13,19 +13,16 @@ function Event_on_tick(event)
 		local seconds = (seconds_start-(minutes_start*60))
 		global.dyworld.game_stats.time_stamp = (hours..":"..minutes..":"..seconds)
 	end
-	if (event.tick%(60*60*10)==1 and global.dyworld.game_stats.difficulty < 10000) then
+	if event.tick%(60*60*2) == 1 then
 		if global.dyworld_story then
 			if not global.dyworld.game_stats.players then global.dyworld.game_stats.players = 1 end
 			if Dy_Sett.Difficulty ~= "Easy" then
 				if Dy_Sett.Difficulty == "Normal" then
-					global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (0.1 * (global.dyworld.game_stats.players * global.dyworld.game_stats.players))
+					DyWorld_Custom_Difficulty_Change("+", 2.5)
 				end
 				if Dy_Sett.Difficulty == "Hard" then
-					global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty + (0.5 * (global.dyworld.game_stats.players * global.dyworld.game_stats.players))
+					DyWorld_Custom_Difficulty_Change("+", 5)
 				end
-			end
-			if global.dyworld.game_stats.difficulty > 10000 then
-				global.dyworld.game_stats.difficulty = 10000
 			end
 		end
 	end
@@ -37,6 +34,9 @@ function Event_on_tick(event)
 				if (global.dyworld.game_stats.radars <= 0) then
 					game.players[v.id].minimap_enabled = false
 				end
+			end
+			if (settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful" and global.dyworld.game_stats.difficulty >= 50000) then
+				DyWorld_Base_Attack("nauvis")
 			end
 		end
 	end
@@ -213,14 +213,14 @@ function Event_on_tick(event)
 		end
 	end
 	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].attack and global.dyworld_story and settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful") then
-		if event.tick%(Pick_Attack_Time()) == (Pick_Attack_Time() - 1) then
+		if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
+		if event.tick%(Pick_Attack_Time()) == (Pick_Attack_Time() - 1) and (global.dyworld.game_stats.difficulty >= 500) then
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].attack) do
-				if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
 				if v == "player" then
 					for _,player in pairs(global.dyworld.players) do
 						if not Dy_Find_Str(player.surface, "starmap") and not Dy_Find_Str(player.surface, "Orbit") then
 							local Loc = {player.posx, player.posy}
-							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 100))
+							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 500))
 							game.surfaces[player.surface].build_enemy_base(Loc, Str)
 							if global.dyworld.game_stats.attack_warning_2 then
 								game.players[player.id].print("Commander, [color=blue]"..Str.."[/color] Natives are coming to attack YOU soon")
@@ -231,7 +231,7 @@ function Event_on_tick(event)
 					for _,player in pairs(global.dyworld.players) do
 						if not Dy_Find_Str(player.surface, "starmap") then
 							local Location = {player.posx, player.posy, player.surface}
-							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 100))
+							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 500))
 							if Dy_Find_Str(v, "101") then
 								Player_Ambush(Location, 50, Str, 1)
 							elseif Dy_Find_Str(v, "102") then
@@ -249,46 +249,7 @@ function Event_on_tick(event)
 						end
 					end
 				else
-					local Loc = Pick_Random_Attack_Location(v)
-					local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 20))
-					local Surface = v
-					if (global.dyworld.game_stats.wave_spawners[Surface] and global.dyworld.game_stats.wave_spawners[Surface].spawners_amount >= 1) then
-						local Spawned = 0
-						for i = 1, Str do
-							local BuildEntity = Check_Wave_Tier(game.forces.enemy.evolution_factor)
-							local Spawn_Loc_table = global.dyworld.game_stats.wave_spawners[Surface].spawners_loc
-							local Spawn_randomized = math.random(#Spawn_Loc_table)
-							PosX = Spawn_Loc_table[Spawn_randomized].posx + math.random(-40,40)
-							PosY = Spawn_Loc_table[Spawn_randomized].posy + math.random(-40,40)
-							if game.surfaces[Surface].can_place_entity{name=(BuildEntity), position = {PosX, PosY}} then
-								game.surfaces[Surface].create_entity{name = (BuildEntity), position = {PosX, PosY}, force = game.forces.enemy}
-								Spawned = Spawned + 1
-							end
-						end
-						for Spawner, Table in pairs(global.dyworld.game_stats.wave_spawners[Surface].spawners_loc) do
-							--[[
-							local X_1 = Table.posx + math.random(-50,50)
-							local Y_1 = Table.posy + math.random(-50,50)
-							game.surfaces[Surface].create_unit_group({position = {X, Y}, force = "enemy"})
-							]]
-							local X_2 = Table.posx
-							local Y_2 = Table.posy
-							local Area = game.surfaces[Surface].find_entities_filtered{position = {X_2, Y_2}, radius = 75, type = "unit"} 
-							for _,Unit in pairs(Area) do
-								Unit.set_command({
-										type = defines.command.attack_area,
-										destination = Loc,
-										radius = 5})
-							end
-						end
-						if global.dyworld.game_stats.attack_warning_3 then
-							AttackPrint({"DyDs-story.attack-3", Loc.x, Loc.y, Surface, Spawned})
-						elseif global.dyworld.game_stats.attack_warning_2 then
-							AttackPrint({"DyDs-story.attack-2", Spawned})
-						elseif global.dyworld.game_stats.attack_warning_1 then
-							AttackPrint({"DyDs-story.attack-1"})
-						end
-					end
+					DyWorld_Base_Attack(v)
 				end
 			end
 		end

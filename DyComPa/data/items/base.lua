@@ -63,7 +63,6 @@ data.raw.item["personal-laser-defense-equipment"].subgroup = DyDs.."equipment-de
 data.raw.item["discharge-defense-equipment"].subgroup = DyDs.."equipment-defense"
 
 data.raw.item["belt-immunity-equipment"].subgroup = DyDs.."equipment-qol" --X
-data.raw.item["exoskeleton-equipment"].subgroup = DyDs.."equipment-qol" --X
 data.raw.item["personal-roboport-equipment"].subgroup = DyDs.."equipment-qol"
 data.raw.item["personal-roboport-mk2-equipment"].subgroup = DyDs.."equipment-qol"
 data.raw.item["night-vision-equipment"].subgroup = DyDs.."equipment-qol" --X

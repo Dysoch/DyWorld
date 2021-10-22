@@ -43,7 +43,7 @@ function Event_on_entity_died(event)
 	if name == "dy-wave-spawner" then
 		local surface = event.entity.surface.name
 		if not global.dyworld.game_stats.wave_spawners then global.dyworld.game_stats.wave_spawners = {} end
-		if not global.dyworld.game_stats.wave_spawners[surface_name] then global.dyworld.game_stats.wave_spawners[surface_name] = {spawners_amount = 0, spawners_loc = {}} end
+		if not global.dyworld.game_stats.wave_spawners[surface] then global.dyworld.game_stats.wave_spawners[surface] = {spawners_amount = 0, spawners_loc = {}} end
 		if not global.dyworld.game_stats.wave_spawners.max_per_surface then global.dyworld.game_stats.wave_spawners.max_per_surface = 10 end
 		for k,v in pairs(global.dyworld.game_stats.wave_spawners[surface].spawners_loc) do
 			if (position.x == v.posx and position.y == v.posy) then
@@ -121,40 +121,12 @@ function Event_on_entity_died(event)
 		end
 		
 		----- Difficulty -----
-		if (name == "burner-radar") then
-			if global.dyworld.game_stats.difficulty > ((10 * global.dyworld.game_stats.players) + 1) then
-				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (10 * global.dyworld.game_stats.players)
-			else
-				global.dyworld.game_stats.difficulty = 1
+		if type_killed == "unit" then
+			if CE_Unit_Killed[name] then
+				DyWorld_Custom_Difficulty_Change(CE_Unit_Killed[name][1], CE_Unit_Killed[name][2])
 			end
-		end
-		if (name == "radar-1") then
-			if global.dyworld.game_stats.difficulty > ((100 * global.dyworld.game_stats.players) + 1) then
-				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (100 * global.dyworld.game_stats.players)
-			else
-				global.dyworld.game_stats.difficulty = 1
-			end
-		end
-		if (name == "radar-2") then
-			if global.dyworld.game_stats.difficulty > ((250 * global.dyworld.game_stats.players) + 1) then
-				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (250 * global.dyworld.game_stats.players)
-			else
-				global.dyworld.game_stats.difficulty = 1
-			end
-		end
-		if (name == "radar-3") then
-			if global.dyworld.game_stats.difficulty > ((500 * global.dyworld.game_stats.players) + 1) then
-				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (500 * global.dyworld.game_stats.players)
-			else
-				global.dyworld.game_stats.difficulty = 1
-			end
-		end
-		if (name == "radar-4") then
-			if global.dyworld.game_stats.difficulty > ((1000 * global.dyworld.game_stats.players) + 1) then
-				global.dyworld.game_stats.difficulty = global.dyworld.game_stats.difficulty - (1000 * global.dyworld.game_stats.players)
-			else
-				global.dyworld.game_stats.difficulty = 1
-			end
+		elseif CE_Type_Killed[type_killed] then
+			DyWorld_Custom_Difficulty_Change(CE_Type_Killed[type_killed][1], CE_Type_Killed[type_killed][2])
 		end
 	end
 end

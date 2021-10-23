@@ -39,7 +39,7 @@ function Event_on_tick(event)
 	end
 	if event.tick%(75001)== 75000 then
 		if global.dyworld_story then
-			if (settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful" and global.dyworld.game_stats.difficulty >= 50000) then
+			if (settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful" and global.dyworld.game_stats.difficulty >= 100000) then
 				DyWorld_Base_Attack("nauvis")
 			end
 		end
@@ -218,13 +218,13 @@ function Event_on_tick(event)
 	end
 	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].attack and global.dyworld_story and settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful") then
 		if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
-		if event.tick%(Pick_Attack_Time()) == (Pick_Attack_Time() - 1) and (global.dyworld.game_stats.difficulty >= 500) then
+		if event.tick%(Pick_Attack_Time()) == (Pick_Attack_Time() - 1) and (global.dyworld.game_stats.difficulty >= 5000) then
 			for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].attack) do
 				if v == "player" then
 					for _,player in pairs(global.dyworld.players) do
 						if not Dy_Find_Str(player.surface, "starmap") and not Dy_Find_Str(player.surface, "Orbit") then
 							local Loc = {player.posx, player.posy}
-							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 500))
+							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 5000))
 							game.surfaces[player.surface].build_enemy_base(Loc, Str)
 							if global.dyworld.game_stats.attack_warning_2 then
 								game.players[player.id].print("Commander, [color=blue]"..Str.."[/color] Natives are coming to attack YOU soon")
@@ -235,7 +235,7 @@ function Event_on_tick(event)
 					for _,player in pairs(global.dyworld.players) do
 						if not Dy_Find_Str(player.surface, "starmap") then
 							local Location = {player.posx, player.posy, player.surface}
-							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 500))
+							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 5000))
 							if Dy_Find_Str(v, "101") then
 								Player_Ambush(Location, 50, Str, 1)
 							elseif Dy_Find_Str(v, "102") then

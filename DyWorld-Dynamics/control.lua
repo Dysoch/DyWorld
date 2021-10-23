@@ -56,6 +56,8 @@ require "script/events/on_configuration_changed"
 require "script/events/on_init"
 require "script/events/on_tick"
 
+require "script/events/remote"
+
 -- Config Events
 script.on_configuration_changed(Event_on_configuration_changed)
 script.on_init(Event_on_init)
@@ -122,74 +124,3 @@ script.on_event(defines.events.on_gui_selected_tab_changed, Event_on_gui_selecte
 --------------------------------- TEST AREA ------------------------------------------
 ------------------------------- END TEST AREA ----------------------------------------
 
---remote calls
-remote.add_interface("DyWorld",
-{  
-	Chart = function(AMOUNT)
-		game.forces.player.chart(game.player.surface, {lefttop = {x = -AMOUNT, y = -AMOUNT}, rightbottom = {x = AMOUNT, y = AMOUNT}})
-	end,
-	
-	Regenerate_Ore = function(NAME)
-		game.regenerate_entity(NAME)
-	end,
-	
-	Migrate = function()
-		Reunlock_Recipes()
-	end,
-	-- /c remote.call("DyWorld", "Migrate")
-	
-	Pick_Random_Attack_Location = function()
-		Pick_Random_Attack_Location()
-	end,
-	-- /c remote.call("DyWorld", "Pick_Random_Attack_Location")
-	
-	Story_Start = function()
-		global.dyworld_story = true
-	end,
-	-- /c remote.call("DyWorld", "Story_Start")
-	
-	Reset_Dyson_1 = function()
-		global.dyworld.game_stats.dyson_1 = {}
-	end,
-	-- /c remote.call("DyWorld", "Reset_Dyson_1")
-	
-	Reset_Implants = function()
-		Reset_Implants()
-	end,
-	-- /c remote.call("DyWorld", "Reset_Implants")
-
-	Skip_Phase = function(nmb)
-		nmb = nmb or 1
-		for i = 1,nmb do
-			Phase_Forward()
-		end
-	end,
-	-- /c remote.call("DyWorld", "Skip_Phase", 1)
-	
-	Reset_Side_Objectives = function()
-		Populate_Side_Objectives_Table_Startup(true)
-	end,
-	-- /c remote.call("DyWorld", "Reset_Side_Objectives")
-	
-	Pause_Story = function()
-		if not global.dyworld.game_stats.story_pause then global.dyworld.game_stats.story_pause = false end
-		if global.dyworld.game_stats.story_pause then
-			global.dyworld.game_stats.story_pause = false
-		else
-			global.dyworld.game_stats.story_pause = true
-		end
-	end,
-	-- /c remote.call("DyWorld", "Pause_Story")
-	
-	allow_aai_crash_sequence = function(data) return {allow = false, weight = 1} end,
-	
-	informatron_menu = function(data)
-		return dyworld_menu(data.player_index)
-	end,
-	
-	informatron_page_content = function(data)
-		return dyworld_page_content(data.page_name, data.player_index, data.element)
-	end
-})
-
---commands.add_command("dyworld-debug-items", "Debug time :) (only for player 1!)", Debug_Items())

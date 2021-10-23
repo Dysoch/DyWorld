@@ -35,6 +35,10 @@ function Event_on_tick(event)
 					game.players[v.id].minimap_enabled = false
 				end
 			end
+		end
+	end
+	if event.tick%(75001)== 75000 then
+		if global.dyworld_story then
 			if (settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful" and global.dyworld.game_stats.difficulty >= 50000) then
 				DyWorld_Base_Attack("nauvis")
 			end

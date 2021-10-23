@@ -13,11 +13,13 @@ Date: ???
     - Realistic Recipes mod option now defaults to off
     - Add few new realistic recipes
     - Changed Charcoal recipe. Higher output, less input
+    - Fish should spawn more now
   Bugfixes:
     - Fixed bug with multiplayer where newly joined players had minimap enabled when it shouldnt have been enabled
     - Fixed issue with cheat mode and handcrafting
     - Fixed crash with attack location table being empty
     - Fixed crash with mysterious building
+    - Fixed older version (pre release ones) bug with wave spawners
   Story:
     - Fixed Labratory objective in act 1 phase 10 showing 0/0 on easy difficulity
     - Radar scanning objective will now randomize based on difficulty

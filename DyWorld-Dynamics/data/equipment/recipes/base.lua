@@ -64,25 +64,4 @@ data:extend({
 	  enabled = false,
     },
   },
-  {
-    type = "recipe",
-    name = "exoskeleton-equipment",
-	category = "assembling-tier-2",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "steel-plate", amount = 5},
-        {type = "item", name = "aluminium-plate", amount = 2},
-        {type = "item", name = "control-board-2", amount = 1},
-      },
-      results = 
-      {
-        {type = "item", name = "exoskeleton-equipment", amount = 1},
-      },
-	  main_product = "exoskeleton-equipment",
-	  energy_required = 15,
-	  enabled = false,
-    },
-  },
 })

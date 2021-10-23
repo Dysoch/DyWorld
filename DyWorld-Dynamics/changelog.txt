@@ -9,6 +9,8 @@ Date: ???
     - Added recipes and changes for 6 Personal Shield Equipments (Recipes WIP, updated in version 0.4.x)
     - Added 12 Vehicle Shield Equipments (Recipes WIP, updated in version 0.4.x)
     - Added 3 Exoskeleton Equipments (Recipes WIP, updated in version 0.4.x)
+    - Added 5 Solar Panel Equipments (Recipes WIP, updated in version 0.4.x)
+    - Added 3 Reactor Equipments (Recipes WIP, updated in version 0.4.x). Uses FUEL!
   Changes:
     - Realistic Recipes mod option now defaults to off
     - Add few new realistic recipes

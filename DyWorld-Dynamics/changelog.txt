@@ -1,8 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
-Date: ???
-  Major Features:
-    - 
+Date: 23. 10. 2021
   Minor Features:
     - Improved custom attack scripts
     - Improved custom difficulty/evolution
@@ -25,8 +23,6 @@ Date: ???
   Story:
     - Fixed Labratory objective in act 1 phase 10 showing 0/0 on easy difficulity
     - Radar scanning objective will now randomize based on difficulty
-  Survival:
-    - 
   Compatibility:
     - Incompatibilities moved to a new file. Seperate script that will check for each of the mods alongside the normal incompatibility of the base game.
     - Added AfraidOfTheDark to incompatible list

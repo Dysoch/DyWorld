@@ -1,8 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
-Date: ???
-  Features:
-    - 
+Date: 23. 10. 2021
   Minor Features:
     - Added functions for equipment
   Changes:

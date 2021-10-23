@@ -1,2 +1,17 @@
 
 
+TODO Nanobts: Coica Better Renamed
+
+TODO Nanobots: Termite bots for use in Dyworld Grids
+
+TODO Nanobots: Nano Emitter Renamed
+
+TODO Nanobots: Tree Chopper for use in Dyworld Grids
+
+TODO Nanobots: Nano Interface for use in Dyworld Grids
+
+TODO Nanobots: Chip Launcher for use in Dyworld Grids
+
+TODO Nanobots: Item Deconstructor for use in Dyworld Grids
+
+TODO Nanobots: Feeder disabled

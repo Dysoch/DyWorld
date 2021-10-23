@@ -123,6 +123,7 @@ local Change = {
 	"gate",
 	"flamethrower-turret",
 	"artillery-turret",
+	"solar-panel-equipment",
 }
 
 for k,m in pairs(Change) do

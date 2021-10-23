@@ -35,6 +35,6 @@ data:extend(
         height = 32
       }
     },
-    autoplace = { influence = 0.035 }
+    autoplace = { influence = 0.055 }
   },
 })

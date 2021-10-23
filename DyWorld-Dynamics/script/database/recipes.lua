@@ -84,7 +84,7 @@ Story_Recipes  = {
 	["basic-electric-drill"] = {act = 1, phase = 10},
 	["basic-boiler"] = {act = 1, phase = 10},
 	["basic-steam-engine"] = {act = 1, phase = 10},
-	["solar-panel-equipment"] = {act = 1, phase = 10},
+	["solar-panel-equipment-1"] = {act = 1, phase = 10},
 	["belt-immunity-equipment"] = {act = 1, phase = 10},
 	["9mm-bullet-iron"] = {act = 1, phase = 10},
 	["9mm-mag-iron"] = {act = 1, phase = 10},

@@ -42,11 +42,6 @@ local Data_Table_Item_Group = {
 		Main = "warfare-personal"
 	},
 	{
-		Name = "equipment-vehicle-energy",
-		Type = "sub",
-		Main = "warfare-personal"
-	},
-	{
 		Name = "equipment-vehicle-defense",
 		Type = "sub",
 		Main = "warfare-personal"

@@ -105,9 +105,13 @@ data.raw.ammo["ammo-nano-constructors"].subgroup = DyDs.."mod-nanobots"
 data.raw.ammo["ammo-nano-termites"].subgroup = DyDs.."mod-nanobots"
 data.raw.gun["gun-nano-emitter"].subgroup = DyDs.."mod-nanobots"
 
+data.raw["active-defense-equipment"]["equipment-bot-chip-trees"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
+data.raw["active-defense-equipment"]["equipment-bot-chip-nanointerface"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
+data.raw["active-defense-equipment"]["equipment-bot-chip-launcher"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
+data.raw.["active-defense-equipment"]["equipment-bot-chip-items"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
+
 data.raw.item["equipment-bot-chip-trees"].subgroup = DyDs.."equipment-qol"
 data.raw.item["equipment-bot-chip-nanointerface"].subgroup = DyDs.."equipment-qol"
 data.raw.item["equipment-bot-chip-launcher"].subgroup = DyDs.."equipment-defense"
 data.raw.item["equipment-bot-chip-items"].subgroup = DyDs.."equipment-qol"
-data.raw.item["equipment-bot-chip-feeder"].subgroup = DyDs.."equipment-qol"
 data.raw.item["roboport-interface"].subgroup = DyDs.."equipment-qol"

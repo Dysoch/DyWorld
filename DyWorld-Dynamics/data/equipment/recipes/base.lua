@@ -1,27 +1,6 @@
 data:extend({
   {
     type = "recipe",
-    name = "solar-panel-equipment",
-	category = "assembling-tier-1",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "tin-plate", amount = 5},
-        {type = "item", name = "copper-cable", amount = 2},
-        {type = "item", name = "control-board-1", amount = 1},
-      },
-      results = 
-      {
-        {type = "item", name = "solar-panel-equipment", amount = 1},
-      },
-	  main_product = "solar-panel-equipment",
-	  energy_required = 5,
-	  enabled = false,
-    },
-  },
-  {
-    type = "recipe",
     name = "belt-immunity-equipment",
 	category = "assembling-tier-1",
     normal =
@@ -65,3 +44,6 @@ data:extend({
     },
   },
 })
+
+data.raw["belt-immunity-equipment"]["belt-immunity-equipment"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
+data.raw["night-vision-equipment"]["night-vision-equipment"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}

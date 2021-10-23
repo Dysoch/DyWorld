@@ -108,7 +108,7 @@ data.raw.gun["gun-nano-emitter"].subgroup = DyDs.."mod-nanobots"
 data.raw["active-defense-equipment"]["equipment-bot-chip-trees"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
 data.raw["active-defense-equipment"]["equipment-bot-chip-nanointerface"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
 data.raw["active-defense-equipment"]["equipment-bot-chip-launcher"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
-data.raw.["active-defense-equipment"]["equipment-bot-chip-items"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
+data.raw["active-defense-equipment"]["equipment-bot-chip-items"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
 
 data.raw.item["equipment-bot-chip-trees"].subgroup = DyDs.."equipment-qol"
 data.raw.item["equipment-bot-chip-nanointerface"].subgroup = DyDs.."equipment-qol"

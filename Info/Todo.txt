@@ -2,3 +2,21 @@
 
 LaureenLlama's Carrot Cake = obviously the cake
 JD's Flashlight = the flamethrower
+JD's Boomstick = shotgun
+
+/c remote.call("space-exploration", "begin_meteor_shower", {zone_name = "Nauvis", position = {x=0,y=0}, range = 1, meteors = 100})
+natives send meteors
+
+ /c remote.call("space-exploration", "begin_solar_flare", {zone_name = "Nauvis", targeting="basic"})
+ 
+TODO bug: sniper unlocked before ammo
+
+TODO bug: SMG is faster then its turret
+
+TODO bug: large power pole vanilla cant be upgraded to dyworld one
+
+TODO bug: loot pickup not going up quicker
+
+TODO bug: last sentence act 2 phase 4 color issue
+
+TODO bug: walls cant be automated?

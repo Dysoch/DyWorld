@@ -94,12 +94,12 @@ Story_Recipes  = {
 	
 	----- Act 2, Phase 3 -----
 	["lab-2"] = {act = 2, phase = 3},
+	["lab-4"] = {act = 2, phase = 3},
 	["food-implant"] = {act = 2, phase = 3},
-	["small-storage-3"] = {act = 1, phase = 8},
+	["small-storage-3"] = {act = 2, phase = 3},
 	
-	----- Act 2, Phase 5 -----
-	["lab-4"] = {act = 2, phase = 5},
-	["health-implant"] = {act = 2, phase = 3},
+	----- Act 2, Phase 4 -----
+	["health-implant"] = {act = 2, phase = 4},
 	
 	----- Act 2, Phase 9 -----
 	["asteroid-miner-titanium"] = {act = 2, phase = 9},

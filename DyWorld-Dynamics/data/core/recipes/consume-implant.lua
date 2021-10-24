@@ -331,3 +331,46 @@ data:extend({
 DyWorld_ATTA("death-implant-"..i, {"implants-death-"..i})
 
 end
+	----- Auto Food/Health Implants -----
+data:extend({
+  {
+    type = "recipe",
+    name = "food-implant",
+	category = "assembling-tier-2",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "control-board-1", amount = 5},
+		{type = "fluid", name = "natural-gas", amount = 200},
+		{type = "item", name = "iron-plate", amount = 4},
+      },
+      results = 
+      {
+        {type = "item", name = "food-implant", amount = 1},
+      },
+	  energy_required = 30,
+	  enabled = false,
+    },
+  },
+  {
+    type = "recipe",
+    name = "health-implant",
+	category = "assembling-tier-2",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "food-implant", amount = 2},
+		{type = "fluid", name = "hydrogen", amount = 180},
+		{type = "item", name = "steel-plate", amount = 4},
+      },
+      results = 
+      {
+        {type = "item", name = "health-implant", amount = 1},
+      },
+	  energy_required = 30,
+	  enabled = false,
+    },
+  },
+})

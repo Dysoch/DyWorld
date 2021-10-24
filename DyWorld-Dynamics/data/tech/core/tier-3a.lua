@@ -7,7 +7,7 @@ local Biological_Techs = {
 		icon = DyDs_path_tech.."bio.png",
 		flags = {Act_3 = true},
 		prerequisites = {
-			"basic-asteroid-mining",
+			"automatica-1",
 		},
 		ingredients = {
 			Dy_Bio_Tech_Pack("wood", 1500),

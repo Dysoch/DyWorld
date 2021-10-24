@@ -44,6 +44,7 @@ DyWorld_Prototype_1b.subgroup = DyDs.."equipment-energy"
 DyWorld_Prototype_1b.order = "solar-1"
 --DyWorld_Prototype_1c.normal.ingredients = {{type = "item", name = "solar-panel-equipment", amount = 10}}
 DyWorld_Prototype_1c.normal.energy_required = 60
+DyWorld_Prototype_1c.hidden = false
 
 DyWorld_Prototype_2a.categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
 DyWorld_Prototype_2a.power = "300kW"
@@ -51,6 +52,7 @@ DyWorld_Prototype_2b.subgroup = DyDs.."equipment-energy"
 DyWorld_Prototype_2b.order = "solar-2"
 DyWorld_Prototype_2c.normal.ingredients = {{type = "item", name = "solar-panel-equipment-1", amount = 5}}
 DyWorld_Prototype_2c.normal.energy_required = 120
+DyWorld_Prototype_2c.hidden = false
 
 DyWorld_Prototype_3a.categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
 DyWorld_Prototype_3a.power = "1.8MW"
@@ -58,6 +60,7 @@ DyWorld_Prototype_3b.subgroup = DyDs.."equipment-energy"
 DyWorld_Prototype_3b.order = "solar-3"
 DyWorld_Prototype_3c.normal.ingredients = {{type = "item", name = "solar-panel-equipment-2", amount = 5}}
 DyWorld_Prototype_3c.normal.energy_required = 180
+DyWorld_Prototype_3c.hidden = false
 
 DyWorld_Prototype_4a.categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
 DyWorld_Prototype_4a.power = "10.8MW"
@@ -65,6 +68,7 @@ DyWorld_Prototype_4b.subgroup = DyDs.."equipment-energy"
 DyWorld_Prototype_4b.order = "solar-4"
 DyWorld_Prototype_4c.normal.ingredients = {{type = "item", name = "solar-panel-equipment-3", amount = 5}}
 DyWorld_Prototype_4c.normal.energy_required = 250
+DyWorld_Prototype_4c.hidden = false
 
 DyWorld_Prototype_5a.categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
 DyWorld_Prototype_5a.power = "64.8MW"
@@ -72,6 +76,7 @@ DyWorld_Prototype_5b.subgroup = DyDs.."equipment-energy"
 DyWorld_Prototype_5b.order = "solar-5"
 DyWorld_Prototype_5c.normal.ingredients = {{type = "item", name = "solar-panel-equipment-4", amount = 5}}
 DyWorld_Prototype_5c.normal.energy_required = 500
+DyWorld_Prototype_5c.hidden = false
 
 
 data:extend({

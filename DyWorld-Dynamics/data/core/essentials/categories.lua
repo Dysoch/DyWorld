@@ -25,6 +25,7 @@ local Damage_Table = {
 }
 
 local Recipe_Categories = {
+	"unused",
 	"kiln-basic",
 	"kiln-normal",
 	"assembling-tier-0",

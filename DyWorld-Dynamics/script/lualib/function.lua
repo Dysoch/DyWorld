@@ -61,8 +61,9 @@ end
 
 function Distance_Car_Check(name)
 	if name == "car-1" then return true
+	elseif name == "boat-1" then return true
 	elseif name == "car" then return true
-	elseif name == "splitter" then return true
+	elseif name == "spidertron" then return true
 	else return false
 	end
 end

@@ -260,7 +260,6 @@ local Metal_Techs = {
 			"filters-1",
 			"storage-1",
 			"power-1",
-			"metallurgy-1",
 		},
 		ingredients = {
 			Dy_Metal_Tech_Pack("iron-3", 450),
@@ -276,8 +275,7 @@ local Metal_Techs = {
 		icon = DyDs_path_tech.."intermediates.png",
 		flags = {Act_2 = true},
 		prerequisites = {
-			"storage-2",
-			"power-2",
+			"oil-processing-2",
 			"steel-processing",
 		},
 		ingredients = {
@@ -488,7 +486,7 @@ local Metal_Techs = {
 		icon = DyDs_path_tech.."metallurgy.png",
 		flags = {Act_2 = true},
 		prerequisites = {
-			"automatica-1",
+			"automatica-2",
 		},
 		ingredients = {
 			Dy_Metal_Tech_Pack("iron-3", 100),
@@ -552,7 +550,7 @@ local Metal_Techs = {
 		flags = {Act_2 = true},
 		prerequisites = {
 			"storage-1",
-			"automatica-2",
+			"intermediates-3",
 		},
 		ingredients = {
 			Dy_Metal_Tech_Pack("iron-3", 350),

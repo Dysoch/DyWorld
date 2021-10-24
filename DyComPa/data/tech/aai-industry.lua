@@ -13,3 +13,5 @@ for name, techtable in pairs(Recipes) do
 		DyWorld_Add_To_Tech(tech, name)
 	end
 end
+
+DyW.Tech.Prereq.Override("fuel-processing", {"automation-science-pack"})

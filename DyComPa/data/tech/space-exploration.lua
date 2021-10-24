@@ -26,6 +26,7 @@ DyW.Tech.Prereq.Override("se-rocket-science-pack", {"se-space-science-lab", "int
 --DyW.Tech.Prereq.Override("se-adaptive-armour-4", {"se-", "se-", "se-", "se-", ""})
 --DyW.Tech.Prereq.Override("se-adaptive-armour-5", {"se-", "se-", "se-", "se-", ""})
 DyW.Tech.Prereq.Override("se-aeroframe-pole", {"se-processing-beryllium", "se-astronomic-science-pack-1"})
+DyW.Tech.Prereq.Override("se-medpack", {"automation-science-pack"})
 DyW.Tech.Prereq.Override("se-aeroframe-scaffold", {"se-aeroframe-pole", "se-astronomic-science-pack-2", "intermediates-6"})
 DyW.Tech.Prereq.Override("se-aeroframe-bulkhead", {"se-aeroframe-scaffold", "se-astronomic-science-pack-3"})
 DyW.Tech.Prereq.Override("se-antimatter-reactor", {"reactor-4", "se-antimatter-production"})

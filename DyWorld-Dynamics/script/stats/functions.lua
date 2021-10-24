@@ -124,11 +124,11 @@ function Bonuses(id)
 		local implant_6 = global.dyworld.players[id].implant_charisma
 		
 		----- Attributes -----
-		global.dyworld.players[id].strength = Round(((crafted + (mined) + (glokilled / 25) + (picked / 500)) / 1000), 2) + implant_1
+		global.dyworld.players[id].strength = Round((((crafted / 500) + (mined / 50) + (glokilled / 25) + (picked / 500)) / 2000), 2) + implant_1
 		global.dyworld.players[id].constitution = Round((((crafted / 2.5) + (mined * 1.23) + (build / 14.5) + (glokilled * 1.25) + (picked / 1.5) + (distance / 100)) / 2000), 2) + implant_2
-		global.dyworld.players[id].dexterity = Round((((glokilled / 5) + (killed * 50) + (glopicked * 2) + (picked * 4) + (sectors / 10)) / 25000), 2) + implant_3
+		global.dyworld.players[id].dexterity = Round((((glokilled / 5) + (killed * 5) + (glopicked / 2) + (picked / 4) + (sectors / 10)) / 25000), 2) + implant_3
 		global.dyworld.players[id].intelligence = Round((((research * 20) + sectors + (rockets * 10) + (build / 1000)) / 4500), 2) + implant_4
-		global.dyworld.players[id].wisdom = Round((((glokilled * ((killed / glokilled) * 1.25)) + sectors + (research * 25) + (crafted / 2)) / 1500), 2) + implant_5
+		global.dyworld.players[id].wisdom = Round((((glokilled * (((killed / glokilled) / 5) * 1.25)) + sectors + (research * 25) + (crafted / 2)) / 1500), 2) + implant_5
 		global.dyworld.players[id].charisma = Round(((global.dyworld.players[id].strength + global.dyworld.players[id].constitution + global.dyworld.players[id].dexterity + global.dyworld.players[id].intelligence + global.dyworld.players[id].wisdom) / 50), 2) + implant_6
 		
 	
@@ -141,11 +141,11 @@ function Bonuses(id)
 		
 		----- Bonuses -----
 		if mined >= 2 then
-			local form = Round((((((strength * 3.5) + (constitution * 2) + dexterity) / 35) + Water_Check(id) + Food_Check(id)) * ((playeramount >= 2 and (1-(mined/glomined)) or 1))), 2)
+			local form = Round((((((strength * 3.5) + (constitution * 2) + dexterity) / 25) + Water_Check(id) + Food_Check(id)) * ((playeramount >= 2 and (1-(mined/glomined)) or 1))), 2)
 			game.players[id].character_mining_speed_modifier = (form > 0 and form or 0)
 		end
 		if crafted >= 2 then
-			local form = Round((((((dexterity * 3.5) + (wisdom * 2) + intelligence) / 2.5) + Water_Check(id) + Food_Check(id)) * ((playeramount >= 2 and (1-(crafted/glocraft)) or 1))), 2)
+			local form = Round((((((wisdom * 2) + intelligence) / 2.5) + Water_Check(id) + Food_Check(id)) * ((playeramount >= 2 and (1-(crafted/glocraft)) or 1))), 2)
 			game.players[id].character_crafting_speed_modifier = (form > 0 and form or 0)
 		end
 		if glokilled >= 2 then

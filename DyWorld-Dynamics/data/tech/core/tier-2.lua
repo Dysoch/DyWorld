@@ -23,7 +23,6 @@ local Chemical_Techs = {
 		flags = {Act_2 = true},
 		prerequisites = {
 			"fluids-1",
-			"intermediates-2",
 		},
 		ingredients = {
 			Dy_Chemical_Tech_Pack("oxygen", 150),
@@ -38,7 +37,7 @@ local Chemical_Techs = {
 		flags = {Act_2 = true},
 		prerequisites = {
 			"fluids-2",
-			"intermediates-3",
+			"oil-processing",
 		},
 		ingredients = {
 			Dy_Chemical_Tech_Pack("oxygen", 300),
@@ -88,8 +87,7 @@ local Chemical_Techs = {
 		icon = DyDs_path_tech_base.."oil-gathering.png",
 		flags = {Act_2 = true},
 		prerequisites = {
-			"fluids-2",
-			"automatica-3",
+			"fluids-1",
 		},
 		ingredients = {
 			Dy_Chemical_Tech_Pack("water", 150),
@@ -120,6 +118,7 @@ local Chemical_Techs = {
 		flags = {Act_2 = true},
 		prerequisites = {
 			"oil-extraction",
+			"fluids-2",
 		},
 		ingredients = {
 			Dy_Chemical_Tech_Pack("water", 500),

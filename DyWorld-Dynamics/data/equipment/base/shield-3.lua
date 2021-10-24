@@ -114,3 +114,10 @@ data:extend({
   DyWorld_Prototype_5a, DyWorld_Prototype_5b, DyWorld_Prototype_5c,
   DyWorld_Prototype_6a, DyWorld_Prototype_6b, DyWorld_Prototype_6c,
 })
+
+DyWorld_ATTA("energy-shield-equipment-vehicle-2", {"warfare-3"})
+DyWorld_ATTA("energy-shield-mk2-equipment-vehicle-2", {"warfare-6"})
+DyWorld_ATTA("energy-shield-mk3-equipment-vehicle-2", {"warfare-9"})
+DyWorld_ATTA("energy-shield-mk4-equipment-vehicle-2", {"warfare-12"})
+DyWorld_ATTA("energy-shield-mk5-equipment-vehicle-2", {"warfare-15"})
+DyWorld_ATTA("energy-shield-mk6-equipment-vehicle-2", {"warfare-18"})

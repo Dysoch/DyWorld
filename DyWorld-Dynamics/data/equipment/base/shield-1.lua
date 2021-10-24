@@ -203,3 +203,6 @@ data.raw["energy-shield-equipment"]["energy-shield-mk6-equipment"].energy_source
       input_flow_limit = math.floor((10000 / 5) * 20).."kW",
       usage_priority = "primary-input"
     }
+
+DyWorld_ATTA("energy-shield-equipment", {"warfare-2"})
+DyWorld_ATTA("energy-shield-mk2-equipment", {"warfare-4"})

@@ -69,3 +69,7 @@ data:extend({
   DyWorld_Prototype_2a, DyWorld_Prototype_2b, DyWorld_Prototype_2c,
   DyWorld_Prototype_3a, DyWorld_Prototype_3b, DyWorld_Prototype_3c,
 })
+
+DyWorld_ATTA("fusion-reactor-equipment-1", {"reactor-1"})
+DyWorld_ATTA("fusion-reactor-equipment-2", {"reactor-3"})
+DyWorld_ATTA("fusion-reactor-equipment-3", {"reactor-5"})

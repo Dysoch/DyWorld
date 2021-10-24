@@ -68,3 +68,7 @@ data:extend({
   DyWorld_Prototype_1a, DyWorld_Prototype_1b, DyWorld_Prototype_1c,
   DyWorld_Prototype_2a, DyWorld_Prototype_2b, DyWorld_Prototype_2c,
 })
+
+DyWorld_ATTA("exoskeleton-equipment", {"logistica-1"})
+DyWorld_ATTA("exoskeleton-equipment-mk2", {"logistica-4"})
+DyWorld_ATTA("exoskeleton-equipment-mk3", {"logistica-7"})

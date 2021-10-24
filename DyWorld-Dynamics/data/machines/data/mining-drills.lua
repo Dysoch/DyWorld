@@ -53,7 +53,7 @@ data:extend({
           }
         }
       },
-      energy_usage = "150kW",
+      energy_usage = "100kW",
       animations =
       {
         north =
@@ -326,7 +326,7 @@ DyWorld_Prototype_1.energy_source = {
   emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 10 or Dy_Sett.Difficulty == "Normal" and 30 or Dy_Sett.Difficulty == "Hard" and 90 or 5,
   usage_priority = "secondary-input"
 }
-DyWorld_Prototype_1.energy_usage = "400kW"
+DyWorld_Prototype_1.energy_usage = "200kW"
 DyWorld_Prototype_1.resource_searching_radius = 2.49
 
 data:extend({

@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 24. 10. 2021
+  Minor Features:
+    - 
+  Changes:
+    - Several changes to bonuses and attributes calculations
+    - Power of burner mining drill: 150 kW > 100 kW
+    - Power of electric mining drill: 400 kW > 200 kW
+    - Biological Research is now available a lot earlier
+    - Researches have been changed in their order. Should make a bit more sense now
+  Bugfixes:
+    - 
+  Story:
+    - 
+  Compatibility:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 23. 10. 2021
   Minor Features:

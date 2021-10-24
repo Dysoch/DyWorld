@@ -39,8 +39,20 @@ function DyDs_CopyPrototype(type, name, newName, change_results)
         if p.normal and p.normal.result then
             p.normal.result = newName
         end
+        if p.normal and p.normal.results and p.normal.results[1] then
+            p.normal.results[1].name = newName
+        end
+        if p.normal and p.normal.main_product then
+            p.normal.main_product = newName
+        end
         if p.expensive and p.expensive.result then
             p.expensive.result = newName
+        end
+        if p.expensive and p.expensive.results and p.expensive.results[1] then
+            p.expensive.results[1].name = newName
+        end
+        if p.expensive and p.expensive.main_product then
+            p.expensive.main_product = newName
         end
     end
     return p

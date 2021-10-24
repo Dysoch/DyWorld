@@ -7,6 +7,8 @@ data.raw.item["burner-inserter"].subgroup = DyDs.."inserter-tier-1"
 data.raw.item["burner-inserter"].order = "1"
 
 data.raw.recipe["rocket-part"].hidden = false
+data.raw.recipe["iron-plate"].category = "unused"
+data.raw.recipe["copper-plate"].category = "unused"
 
 data:extend({
   {

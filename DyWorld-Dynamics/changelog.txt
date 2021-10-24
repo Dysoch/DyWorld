@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.2
+Version: 0.2.0
 Date: 24. 10. 2021
   Major Features:
     - Added Equipments. Only their first recipe is good however, the rest will be change in version 0.4.x
@@ -8,6 +8,7 @@ Date: 24. 10. 2021
     - Friendly Fire is now always on. Players (and enemies) can hurt each other
     - Shared maps are now disabled. You have to explore yourself
     - Added 4 Roboport Equipments (Recipes WIP, updated in version 0.4.x)
+    - Added 3 Battery Equipments (Recipes WIP, updated in version 0.4.x)
   Changes:
     - Several changes to bonuses and attributes calculations
     - Power of burner mining drill: 150 kW > 100 kW

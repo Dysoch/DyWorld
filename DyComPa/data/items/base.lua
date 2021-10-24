@@ -102,8 +102,8 @@ data.raw.ammo["ammo-nano-constructors"].magazine_size = 100000000000000000000000
 data.raw.ammo["ammo-nano-constructors"].localised_name = {"DyDs-story.coica-1"}
 data.raw.ammo["ammo-nano-constructors"].localised_description = {"DyDs-story.coica-2"}
 data.raw.ammo["ammo-nano-constructors"].subgroup = DyDs.."mod-nanobots"
-data.raw.ammo["ammo-nano-termites"].subgroup = DyDs.."mod-nanobots"
 data.raw.gun["gun-nano-emitter"].subgroup = DyDs.."mod-nanobots"
+data.raw.gun["gun-nano-emitter"].localised_name = {"DyDs-story.coica-gun-1"}
 
 data.raw["active-defense-equipment"]["equipment-bot-chip-trees"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
 data.raw["active-defense-equipment"]["equipment-bot-chip-nanointerface"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
@@ -117,3 +117,5 @@ data.raw.item["equipment-bot-chip-items"].subgroup = DyDs.."equipment-qol"
 data.raw.item["roboport-interface"].subgroup = DyDs.."equipment-qol"
 data.raw.recipe["equipment-bot-chip-feeder"].hidden = true
 data.raw.item["equipment-bot-chip-feeder"].subgroup = DyDs.."hidden-items"
+data.raw.ammo["ammo-nano-termites"].subgroup = DyDs.."hidden-items"
+data.raw.recipe["ammo-nano-termites"].hidden = true

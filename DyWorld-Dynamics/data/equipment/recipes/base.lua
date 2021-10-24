@@ -45,5 +45,6 @@ data:extend({
   },
 })
 
+DyWorld_ATTA("night-vision-equipment", {"intermediates-1"})
 data.raw["belt-immunity-equipment"]["belt-immunity-equipment"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}
 data.raw["night-vision-equipment"]["night-vision-equipment"].categories = {"dy-armor", "dy-vehicle-weak", "dy-vehicle-strong"}

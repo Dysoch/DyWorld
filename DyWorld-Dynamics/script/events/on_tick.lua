@@ -33,8 +33,12 @@ function Event_on_tick(event)
 				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 				if (global.dyworld.game_stats.radars <= 0) then
 					game.players[v.id].minimap_enabled = false
+					game.forces.player.zoom_to_world_enabled = false
 				end
 			end
+			if game.forces.player.share_chart then game.forces.player.share_chart = false end
+			if game.forces.player.friendly_fire then game.forces.player.friendly_fire = false end
+			if game.forces.enemy.friendly_fire then game.forces.enemy.friendly_fire = false end
 		end
 	end
 	if event.tick%(75001)== 75000 then
@@ -210,6 +214,7 @@ function Event_on_tick(event)
 				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 				if (global.dyworld.game_stats.radars <= 0) then
 					game.players[v.id].minimap_enabled = false
+					game.forces.player.zoom_to_world_enabled = false
 				end
 			end
 		else

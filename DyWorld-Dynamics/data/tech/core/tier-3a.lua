@@ -124,6 +124,41 @@ local Biological_Techs = {
 		time = Dy_Tech_Time_Calc(5),
 		order = "3",
 	},
+	-- Main Implantation -- 
+	{
+		name = "implants-1",
+		icon = DyDs_path_tech_base.."radar.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"genetics-1",
+		},
+		ingredients = {
+			Dy_Bio_Tech_Pack("exotic", 500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 1000),
+			Dy_Bio_Tech_Pack("dna-arachnid", 1000),
+		},
+		time = Dy_Tech_Time_Calc(30),
+		order = "4",
+	},
+	{
+		name = "implants-2",
+		icon = DyDs_path_tech_base.."radar.png",
+		flags = {Act_3 = true},
+        effects = {
+			{type = "nothing", effect_description = {"implants-2"}},
+		},
+		prerequisites = {
+			"implants-1",
+			"genetics-2",
+		},
+		ingredients = {
+			Dy_Bio_Tech_Pack("exotic", 2500),
+			Dy_Bio_Tech_Pack("dna-myriapod", 3000),
+			Dy_Bio_Tech_Pack("dna-arachnid", 3000),
+		},
+		time = Dy_Tech_Time_Calc(45),
+		order = "4",
+	},
 	----- Natives -----
 	{
 		name = "natives",

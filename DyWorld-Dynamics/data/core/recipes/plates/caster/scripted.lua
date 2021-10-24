@@ -19,6 +19,20 @@ data:extend({
 	  main_product = k.."-ingot",
 	  enabled = false,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-"..k, amount = 5},
+      },
+      results = 
+      {
+        {type = "item", name = k.."-ingot", amount = 1},
+      },
+	  energy_required = 1,
+	  main_product = k.."-ingot",
+	  enabled = false,
+    },
   },
   {
     type = "recipe",
@@ -26,6 +40,20 @@ data:extend({
 	category = "casting-furnace",
 	main_product = k.."-plate",
     normal =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-"..k, amount = 1},
+      },
+      results = 
+      {
+        {type = "item", name = k.."-plate", amount = 1},
+      },
+	  energy_required = 0.25,
+	  main_product = k.."-plate",
+	  enabled = false,
+    },
+    expensive =
     {
       ingredients =
       {

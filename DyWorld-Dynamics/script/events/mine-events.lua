@@ -120,6 +120,7 @@ function Event_on_player_mined_entity(event)
 			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars - 1
 			if global.dyworld.game_stats.radars <= 0 then
 				global.dyworld.game_stats.radars = 0 
+				game.forces.player.zoom_to_world_enabled = false
 				for k,v in pairs(global.dyworld.players) do
 					if game.players[v.id].minimap_enabled then
 						game.players[v.id].minimap_enabled = false
@@ -205,6 +206,7 @@ function Event_on_robot_mined_entity(event)
 			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars - 1
 			if global.dyworld.game_stats.radars <= 0 then
 				global.dyworld.game_stats.radars = 0 
+				game.forces.player.zoom_to_world_enabled = false
 				for k,v in pairs(global.dyworld.players) do
 					if game.players[v.id].minimap_enabled then
 						game.players[v.id].minimap_enabled = false

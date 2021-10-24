@@ -37,6 +37,22 @@ data:extend({
 	  main_product = "molten-"..k,
 	  enabled = false,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = k.."-ore", amount = 125},
+        {type = "fluid", name = Reagent_Check(v.Tier), amount = 150},
+      },
+      results = 
+      {
+        {type = "fluid", name = "molten-"..k, amount_min = 90, amount_max = 125},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 15},
+      },
+	  energy_required = 30,
+	  main_product = "molten-"..k,
+	  enabled = false,
+    },
   },
 })
 	end

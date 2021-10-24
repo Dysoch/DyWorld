@@ -19,5 +19,19 @@ data:extend({
 	  main_product = "steel-plate",
 	  enabled = false,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-steel", amount = 1},
+      },
+      results = 
+      {
+        {type = "item", name = "steel-plate", amount = 1},
+      },
+	  energy_required = 0.25,
+	  main_product = "steel-plate",
+	  enabled = false,
+    },
   },
 })

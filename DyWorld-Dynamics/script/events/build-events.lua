@@ -119,6 +119,7 @@ function Event_on_built_entity(event)
 					game.players[v.id].minimap_enabled = true
 				end
 			end
+			game.forces.player.zoom_to_world_enabled = true
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
 			end
@@ -253,6 +254,7 @@ function Event_on_robot_built_entity(event)
 					game.players[v.id].minimap_enabled = true
 				end
 			end
+			game.forces.player.zoom_to_world_enabled = true
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
 			end
@@ -406,6 +408,7 @@ function Event_script_raised_revive(event)
 					game.players[v.id].minimap_enabled = true
 				end
 			end
+			game.forces.player.zoom_to_world_enabled = true
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
 			end

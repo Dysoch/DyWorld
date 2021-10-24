@@ -19,5 +19,19 @@ data:extend({
 	  main_product = "bronze-plate",
 	  enabled = false,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "fluid", name = "molten-bronze", amount = 1},
+      },
+      results = 
+      {
+        {type = "item", name = "bronze-plate", amount = 1},
+      },
+	  energy_required = 0.25,
+	  main_product = "bronze-plate",
+	  enabled = false,
+    },
   },
 })

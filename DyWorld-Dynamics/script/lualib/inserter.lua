@@ -130,11 +130,13 @@ function InserterCheck(VAR)
                             if global.dyworld_story then
                                 if (global.dyworld.story.act > v.Story[1]) or (global.dyworld.story.act >= v.Story[1] and global.dyworld.story.phase >= v.Story[2]) then
                                     player.force.recipes[k].enabled = true
-                                    PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+                                    --PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+                                    PlayerPrint({"looped-name.gained-knowledge", k})
                                 end
                             else
                                 player.force.recipes[k].enabled = true
-                                PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+                                --PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+                                PlayerPrint({"looped-name.gained-knowledge", k})
                             end
                         elseif v.Extra == "Research" then
                             local amount_research = 0
@@ -146,13 +148,15 @@ function InserterCheck(VAR)
                                 end
                                 if amount_done >= amount_research then
                                     player.force.recipes[k].enabled = true
-                                    PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+                                    PlayerPrint({"looped-name.gained-knowledge", k})
+                                    --PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
                                 end
                             end
                         end
                     else
                         player.force.recipes[k].enabled = true
-                        PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+                        --PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+                        PlayerPrint({"looped-name.gained-knowledge", k})
                     end
 				end
 			end

@@ -22,5 +22,22 @@ data:extend({
 	  main_product = "molten-bronze",
 	  enabled = false,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "copper-ore", amount = 85},
+        {type = "item", name = "tin-ore", amount = 15},
+        {type = "fluid", name = "nitrogen", amount = 75},
+      },
+      results = 
+      {
+        {type = "fluid", name = "molten-bronze", amount_min = 90, amount_max = 125},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 15},
+      },
+	  energy_required = 30,
+	  main_product = "molten-bronze",
+	  enabled = false,
+    },
   },
 })

@@ -22,5 +22,22 @@ data:extend({
 	  main_product = "molten-steel",
 	  enabled = false,
     },
+    expensive =
+    {
+      ingredients =
+      {
+        {type = "item", name = "iron-ore", amount = 225},
+        {type = "item", name = "coal", amount = 4},
+        {type = "fluid", name = "oxygen", amount = 250},
+      },
+      results = 
+      {
+        {type = "fluid", name = "molten-steel", amount_min = 75, amount_max = 85},
+        {type = "item", name = "slag", amount_min = 1, amount_max = 15},
+      },
+	  energy_required = 30,
+	  main_product = "molten-steel",
+	  enabled = false,
+    },
   },
 })

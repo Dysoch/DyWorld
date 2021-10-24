@@ -106,11 +106,13 @@ function Phase_Forward()
 				if player.force.recipes[k] then
 					if not player.force.recipes[k].enabled then
 						player.force.recipes[k].enabled = true
-						if game.entity_prototypes[k] then
-							PlayerPrint({"looped-name.gained-knowledge", {"entity-name."..k}})
-						elseif game.item_prototypes[k] then
-							PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
-						end
+						--if game.entity_prototypes[k] then
+							--PlayerPrint({"looped-name.gained-knowledge", {"entity-name."..k}})
+							PlayerPrint({"looped-name.gained-knowledge", k})
+						--elseif game.item_prototypes[k] then
+							--PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+							--PlayerPrint({"looped-name.gained-knowledge", k})
+						--end
 					end
 				else 
 					debug("Recipe unlock failed! Does it exist? ("..k..")")

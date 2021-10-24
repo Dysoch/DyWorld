@@ -9,14 +9,8 @@ natives send meteors
 
  /c remote.call("space-exploration", "begin_solar_flare", {zone_name = "Nauvis", targeting="basic"})
  
-TODO bug: sniper unlocked before ammo
+TODO Add better slag reprocessing with lignite
 
-TODO bug: SMG is faster then its turret
+TODO Add petro and gasoline as fuel for a gas engine
 
-TODO bug: large power pole vanilla cant be upgraded to dyworld one
-
-TODO bug: loot pickup not going up quicker
-
-TODO bug: last sentence act 2 phase 4 color issue
-
-TODO bug: walls cant be automated?
+TODO make carbon recipe have carbon as main

@@ -115,3 +115,5 @@ data.raw.item["equipment-bot-chip-nanointerface"].subgroup = DyDs.."equipment-qo
 data.raw.item["equipment-bot-chip-launcher"].subgroup = DyDs.."equipment-defense"
 data.raw.item["equipment-bot-chip-items"].subgroup = DyDs.."equipment-qol"
 data.raw.item["roboport-interface"].subgroup = DyDs.."equipment-qol"
+data.raw.recipe["equipment-bot-chip-feeder"].hidden = true
+data.raw.item["equipment-bot-chip-feeder"].subgroup = DyDs.."hidden-items"

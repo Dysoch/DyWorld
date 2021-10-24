@@ -1,10 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 24. 10. 2021
+  Major Features:
+    - Added Equipments. Only their first recipe is good however, the rest will be change in version 0.4.x
   Minor Features:
     - Add few new realistic recipes
     - Friendly Fire is now always on. Players (and enemies) can hurt each other
     - Shared maps are now disabled. You have to explore yourself
+    - Added 4 Roboport Equipments (Recipes WIP, updated in version 0.4.x)
   Changes:
     - Several changes to bonuses and attributes calculations
     - Power of burner mining drill: 150 kW > 100 kW
@@ -12,6 +15,7 @@ Date: 24. 10. 2021
     - Biological Research is now available a lot earlier
     - Researches have been changed in their order. Should make a bit more sense now
     - Zooming to map now disabled when no radars present
+    - Water and Food now give a low amount of health back when used yourself (auto feeding does not give health!)
   Bugfixes:
     - 
   Story:

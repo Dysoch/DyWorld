@@ -39,6 +39,7 @@ DyDS_Add_Food({
 	subgroup = DyDs.."consume-food",
 	rate = 2,
 	cat = "food",
+	damage = -15,
 })
 
 DyDS_Add_Food({
@@ -48,4 +49,5 @@ DyDS_Add_Food({
 	subgroup = DyDs.."consume-food",
 	rate = 2,
 	cat = "food",
+	damage = -10,
 })

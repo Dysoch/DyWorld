@@ -12,6 +12,7 @@ DyDS_Add_Food({
 	subgroup = DyDs.."consume-water",
 	rate = 0.25,
 	cat = "water",
+	damage = -5,
 })
 
 DyDS_Add_Food({
@@ -22,6 +23,7 @@ DyDS_Add_Food({
 	subgroup = DyDs.."consume-water",
 	rate = 0.25,
 	cat = "water",
+	damage = -10,
 })
 
 DyDS_Add_Food({
@@ -32,4 +34,5 @@ DyDS_Add_Food({
 	subgroup = DyDs.."consume-water",
 	rate = 0.25,
 	cat = "water",
+	damage = -15,
 })

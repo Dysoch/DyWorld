@@ -9,8 +9,6 @@ natives send meteors
 
  /c remote.call("space-exploration", "begin_solar_flare", {zone_name = "Nauvis", targeting="basic"})
  
-TODO Add better slag reprocessing with lignite
+TODO bug: rocket silo at personal tab
 
-TODO Add petro and gasoline as fuel for a gas engine
-
-TODO make carbon recipe have carbon as main
+TODO change recipe of stack inserters

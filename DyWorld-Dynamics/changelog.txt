@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: ???
+  Major Features:
+    - 
+  Minor Features:
+    - 
+  Changes:
+    - 
+  Bugfixes:
+    - Fixed Stone Brick Walls and Gates not being able to be automated
+  Story:
+    - 
+  Compatibility:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 24. 10. 2021
   Major Features:

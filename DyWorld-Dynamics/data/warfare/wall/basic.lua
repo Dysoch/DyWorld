@@ -46,7 +46,7 @@ data:extend({
   {
     type = "recipe",
     name = k.."-wall",
-	category = "assembling-tier-"..v.Tier,
+	category = v.Tier == 0 and "assembling-tier-1" or "assembling-tier-"..v.Tier,
     normal =
     {
       ingredients =
@@ -62,7 +62,7 @@ data:extend({
   {
     type = "recipe",
     name = k.."-gate",
-	category = "assembling-tier-"..v.Tier,
+	category = v.Tier == 0 and "assembling-tier-1" or "assembling-tier-"..v.Tier,
     normal =
     {
       ingredients =

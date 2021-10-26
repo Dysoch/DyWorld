@@ -9,6 +9,4 @@ natives send meteors
 
  /c remote.call("space-exploration", "begin_solar_flare", {zone_name = "Nauvis", targeting="basic"})
  
-TODO bug: rocket silo at personal tab
-
-TODO change recipe of stack inserters
+TODO make metal lab bigger

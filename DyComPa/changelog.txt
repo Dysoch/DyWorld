@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.6
+Date: 30. 10. 2021
+  Compatibility:
+    - Fixed technology change script working weird. Technologies should properly go towards DyWorld technologies now
+---------------------------------------------------------------------------------------------------
 Version: 0.1.5
 Date: 24. 10. 2021
   Compatibility:

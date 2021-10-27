@@ -51,6 +51,7 @@ data.raw.item["stone-brick"].stack_size = 500
 data.raw.item["sand"].subgroup = DyDs.."intermediates-all"
 data.raw.item["glass"].subgroup = DyDs.."intermediates-all"
 data.raw.item["flying-robot-frame"].subgroup = DyDs.."intermediates-tier-2"
+data.raw.item["engine-unit"].subgroup = DyDs.."intermediates-tier-2"
 data.raw.item["stone-brick"].subgroup = DyDs.."intermediates-all"
 data.raw.item["stone-brick"].order = "stone-brick"
 

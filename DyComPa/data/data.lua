@@ -39,7 +39,3 @@ require("data.tech.space-exploration")
 require("data.tech.nanobot")
 require("data.tech.robot-attri")
 require("data.tech.last-fixes")
-
--- Removal --
-require("data.removal.function")
-require("data.removal.base")

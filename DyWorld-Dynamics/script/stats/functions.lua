@@ -157,7 +157,7 @@ function Bonuses(id)
 			game.players[id].character_build_distance_bonus = math.min((Round(((((dexterity + strength) * 2) + build) / 1000), 2)), (100 - game.entity_prototypes["character"].build_distance))
 		end
 		if picked >= 2 then
-			game.players[id].character_loot_pickup_distance_bonus = math.min((Round(((dexterity + strength) / 10), 2)), (100 - game.entity_prototypes["character"].loot_pickup_distance))
+			game.players[id].character_loot_pickup_distance_bonus = math.min((Round((((dexterity + strength) + picked) / 1000), 2)), (100 - game.entity_prototypes["character"].loot_pickup_distance))
 		end
 		if constitution >= 5 then
 			if not global.dyworld.players[id].survival then global.dyworld.players[id].survival = {} end

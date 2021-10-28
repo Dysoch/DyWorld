@@ -257,3 +257,7 @@ local Fix_Table = {
     ["se-spaceship-victory"] = {"", ""},
     ]]
 }
+
+for k,v in pairs(Fix_Table) do
+	DyComPa_Tech_Fix(k, v)
+end

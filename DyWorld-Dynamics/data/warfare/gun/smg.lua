@@ -3,7 +3,7 @@
  ----- 762mm Gun -----
 
 local DyWorld_Prototype = DyDs_CopyPrototype("gun", "pistol", "762mm-gun", true)
-	DyWorld_Prototype.attack_parameters.cooldown = (60/25)
+	DyWorld_Prototype.attack_parameters.cooldown = (60/20)
 	DyWorld_Prototype.attack_parameters.range = 21.5
 	DyWorld_Prototype.stack_size = 1
 	DyWorld_Prototype.subgroup = DyDs.."guns"

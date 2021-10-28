@@ -73,6 +73,9 @@ data:extend({
 
 local DyWorld_Prototype_2 = DyDs_CopyPrototype("electric-pole", "big-electric-pole", "basic-power-relay", true)
 DyWorld_Prototype_2.maximum_wire_distance = 32
+data.raw["electric-pole"]["big-electric-pole"].fast_replaceable_group = "power"
+DyWorld_Prototype_2.fast_replaceable_group = "power"
+DyWorld_Prototype_2.maximum_wire_distance = 32
 DyWorld_Prototype_2.supply_area_distance = 7
 
 data:extend({

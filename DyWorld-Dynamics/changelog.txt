@@ -4,12 +4,16 @@ Date: ???
   Major Features:
     - 
   Minor Features:
-    - 
+    - Petroleum and Gasoline are now burnable in the Gas Engine for power
   Changes:
-    - 
+    - Recipe to get carbon now shows carbon as its main product
+    - Big power pole from vanilla can be upgraded in planner to DyWorld one
+    - SMG gun shoots slightly slower (was to much the same as a turret)
+    - Loot pickup bonus should go quicker up now
   Bugfixes:
     - Fixed Stone Brick Walls and Gates not being able to be automated
     - Sulfuric Acid Recipe is now available again
+    - Rocket Silo wrong placement crafting menu fixed
   Story:
     - 
   Compatibility:

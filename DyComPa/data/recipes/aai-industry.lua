@@ -45,3 +45,6 @@ data.raw.recipe["electric-motor"].normal =
 	  energy_required = 2,
 	  enabled = false,
     }
+	
+data.raw.recipe["fuel-processor"].normal.hidden = nil
+data.raw.recipe["fuel-processing"].hidden = nil

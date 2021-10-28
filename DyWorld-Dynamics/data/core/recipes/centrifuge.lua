@@ -313,7 +313,7 @@ data:extend({
     type = "recipe",
     name = "charcoal-centrifuge",
 	category = "centrifuging",
-	main_product = "charcoal",
+	main_product = "carbon",
     normal =
     {
       ingredients =
@@ -327,7 +327,7 @@ data:extend({
         {type = "item", name = "carbon", amount_min = 10, amount_max = 35, probability = 0.95},
       },
 	  energy_required = 10,
-	  main_product = "charcoal",
+	  main_product = "carbon",
 	  enabled = false,
     },
   },

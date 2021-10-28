@@ -48,6 +48,7 @@ data:extend({
 	gas_temperature = 20,
 	emissions_multiplier = -1,
     heat_capacity = "5J",
+    fuel_value = "40MJ",
     base_color = {r=0, g=0.34, b=0.6},
     flow_color = {r=0.7, g=0.7, b=0.7},
     icon = DyDs_path_fluid.."gasoline.png",
@@ -170,3 +171,4 @@ data.raw.fluid["heavy-oil"].auto_canister = true
 data.raw.fluid["heavy-oil"].auto_canister_tier = 3
 data.raw.fluid["light-oil"].auto_canister = true
 data.raw.fluid["light-oil"].auto_canister_tier = 3
+data.raw.fluid["petroleum-gas"].fuel_value = "50MJ"

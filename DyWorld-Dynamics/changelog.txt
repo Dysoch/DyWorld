@@ -9,6 +9,7 @@ Date: ???
     - 
   Bugfixes:
     - Fixed Stone Brick Walls and Gates not being able to be automated
+    - Sulfuric Acid Recipe is now available again
   Story:
     - 
   Compatibility:

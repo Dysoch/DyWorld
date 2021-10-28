@@ -7,7 +7,7 @@ local Tech = {
 	["nano-range-2"] = {"nano-range-1", "logistic-science-pack"},
 	["nanobots-cliff"] = {"nanobots", "logistic-science-pack", "intermediates-5"},
 	["nanobots"] = {"automation-science-pack"},
-	["roboport-interface"] = {"intermediates-5", "storage-4", "logistica-4"},
+	["roboport-interface"] = {"intermediates-5", "storage-3", "logistica-4"},
 }
 
 

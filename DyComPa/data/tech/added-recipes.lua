@@ -425,6 +425,8 @@ local Recipes = {
 	["fish-miner"] = {"piscis-farm"},
 	["fish-mining"] = {"piscis-farm"},
 	["bio-waste-refining"] = {"bio-waste"},
+	
+	["chemical-recycler"] = {"chemical-recycling-1"},
 }
 
 

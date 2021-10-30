@@ -90,3 +90,52 @@ data:extend({
   DyWorld_Prototype_Spawner_Corpse,
 })
 end
+
+
+require(DyDs_data_warfare.. "enemies.base-01.edits-units")
+require(DyDs_data_warfare.. "enemies.base-01.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-01.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.base-02.edits-units")
+require(DyDs_data_warfare.. "enemies.base-02.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-02.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.base-03.edits-units")
+require(DyDs_data_warfare.. "enemies.base-03.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-03.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.base-04.edits-units")
+require(DyDs_data_warfare.. "enemies.base-04.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-04.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.base-05.edits-units")
+require(DyDs_data_warfare.. "enemies.base-05.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-05.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.base-06.edits-units")
+require(DyDs_data_warfare.. "enemies.base-06.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-06.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.base-07.edits-units")
+require(DyDs_data_warfare.. "enemies.base-07.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-07.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.base-08.edits-units")
+require(DyDs_data_warfare.. "enemies.base-08.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-08.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.base-09.edits-units")
+require(DyDs_data_warfare.. "enemies.base-09.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-09.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.base-10.edits-units")
+require(DyDs_data_warfare.. "enemies.base-10.edits-spawner")
+require(DyDs_data_warfare.. "enemies.base-10.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.vanilla-base-01.edits-units")
+require(DyDs_data_warfare.. "enemies.vanilla-base-01.edits-spawner")
+require(DyDs_data_warfare.. "enemies.vanilla-base-01.edits-worms")
+
+require(DyDs_data_warfare.. "enemies.vanilla-base-02.edits-units")
+require(DyDs_data_warfare.. "enemies.vanilla-base-02.edits-spawner")
+require(DyDs_data_warfare.. "enemies.vanilla-base-02.edits-worms")

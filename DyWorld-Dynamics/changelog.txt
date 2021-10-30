@@ -10,6 +10,7 @@ Date: 30. 10. 2021
     - Loot pickup bonus should go quicker up now
     - Sniper Rifle now unlocked a technology earlier
     - Changed recipes of the first 3 tiers of inserters
+    - Stone is now back (there are now 4 different stone resources on the ground). It does require sorting though
   Bugfixes:
     - Fixed Stone Brick Walls and Gates not being able to be automated
     - Sulfuric Acid Recipe is now available again

@@ -55,6 +55,7 @@ function Event_on_chunk_generated(event)
 	end
 	
 	-- Remove Resources
+	--[[
 	local Resources = {"stone"}
 	local size = 50
 
@@ -64,7 +65,7 @@ function Event_on_chunk_generated(event)
 				e.destroy() 
 			end
 		end
-	end
+	end]]
 	
 	-- Generate Enemies -- 
 	if not global.dyworld.game_stats.enemy_1_chunk then global.dyworld.game_stats.enemy_1_chunk = 1000 end

@@ -929,3 +929,13 @@ data.raw.resource.sandstone.minable.results = {
     {name = "limestone", amount_min = 2, amount_max = 4, probability = 0.25},
     {name = "sand", amount_min = 1, amount_max = 10, probability = 0.05},
 }
+
+data.raw.resource.stone.minable.results = {
+    {name = "limestone", amount_min = 1, amount_max = 9, probability = 1},
+    {name = "sandstone", amount_min = 0, amount_max = 4, probability = 0.25},
+    {name = "granite", amount_min = 0, amount_max = 4, probability = 0.1},
+    {name = "quartzite", amount_min = 0, amount_max = 4, probability = 0.15},
+    {name = "sand", amount_min = 0, amount_max = 10, probability = 0.005},
+    {name = "ilmenite", amount_min = 0, amount_max = 1, probability = 0.0015},
+    {name = "biotite", amount_min = 0, amount_max = 1, probability = 0.0015},
+}

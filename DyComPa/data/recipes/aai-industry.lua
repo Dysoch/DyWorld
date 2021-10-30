@@ -48,3 +48,5 @@ data.raw.recipe["electric-motor"].normal =
 	
 data.raw.recipe["fuel-processor"].normal.hidden = nil
 data.raw.recipe["fuel-processing"].hidden = nil
+data.raw.recipe["stone-tablet"].hidden = nil
+data.raw.recipe["stone-tablet"].enabled = false

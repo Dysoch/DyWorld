@@ -200,7 +200,7 @@ data:extend({
       {
         {type = "item", name = "steel-plate", amount = 2},
         {type = "item", name = "normal-inserter", amount = 1},
-        {type = "item", name = "control-board-2", amount = 1},
+        {type = "item", name = "control-board-1", amount = 4},
       },
       result = "normal-inserter-long",
 	  result_count = 1,
@@ -218,7 +218,7 @@ data:extend({
       {
         {type = "item", name = "steel-plate", amount = 6},
         {type = "item", name = "normal-inserter", amount = 1},
-        {type = "item", name = "control-board-2", amount = 3},
+        {type = "item", name = "control-board-1", amount = 4},
       },
       result = "normal-inserter-far",
 	  result_count = 1,
@@ -236,7 +236,7 @@ data:extend({
       {
         {type = "item", name = "steel-plate", amount = 2},
         {type = "item", name = "normal-inserter", amount = 1},
-        {type = "item", name = "control-board-2", amount = 1},
+        {type = "item", name = "control-board-1", amount = 4},
       },
       result = "normal-inserter-filter",
 	  result_count = 1,
@@ -254,7 +254,7 @@ data:extend({
       {
         {type = "item", name = "steel-plate", amount = 2},
         {type = "item", name = "normal-inserter-filter", amount = 1},
-        {type = "item", name = "control-board-2", amount = 1},
+        {type = "item", name = "control-board-1", amount = 4},
       },
       result = "normal-inserter-long-filter",
 	  result_count = 1,
@@ -272,7 +272,7 @@ data:extend({
       {
         {type = "item", name = "steel-plate", amount = 6},
         {type = "item", name = "normal-inserter-filter", amount = 1},
-        {type = "item", name = "control-board-2", amount = 3},
+        {type = "item", name = "control-board-1", amount = 4},
       },
       result = "normal-inserter-far-filter",
 	  result_count = 1,

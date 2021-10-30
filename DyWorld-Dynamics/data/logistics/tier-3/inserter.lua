@@ -46,9 +46,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "iron-plate", amount = 2},
+        {type = "item", name = "titanium-plate", amount = 2},
         {type = "item", name = "bronze-gear", amount = 1},
-        {type = "item", name = "control-board-3", amount = 1},
+        {type = "item", name = "control-board-2", amount = 1},
       },
       result = "advanced-inserter",
 	  result_count = 1,
@@ -198,9 +198,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 2},
+        {type = "item", name = "titanium-plate", amount = 2},
         {type = "item", name = "advanced-inserter", amount = 1},
-        {type = "item", name = "control-board-3", amount = 1},
+        {type = "item", name = "control-board-2", amount = 1},
       },
       result = "advanced-inserter-long",
 	  result_count = 1,
@@ -216,9 +216,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 6},
+        {type = "item", name = "titanium-plate", amount = 6},
         {type = "item", name = "advanced-inserter", amount = 1},
-        {type = "item", name = "control-board-3", amount = 3},
+        {type = "item", name = "control-board-2", amount = 3},
       },
       result = "advanced-inserter-far",
 	  result_count = 1,
@@ -234,9 +234,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 2},
+        {type = "item", name = "titanium-plate", amount = 2},
         {type = "item", name = "advanced-inserter", amount = 1},
-        {type = "item", name = "control-board-3", amount = 1},
+        {type = "item", name = "control-board-2", amount = 1},
       },
       result = "advanced-inserter-filter",
 	  result_count = 1,
@@ -252,9 +252,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 2},
+        {type = "item", name = "titanium-plate", amount = 2},
         {type = "item", name = "advanced-inserter-filter", amount = 1},
-        {type = "item", name = "control-board-3", amount = 1},
+        {type = "item", name = "control-board-2", amount = 1},
       },
       result = "advanced-inserter-long-filter",
 	  result_count = 1,
@@ -270,9 +270,9 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "steel-plate", amount = 6},
+        {type = "item", name = "titanium-plate", amount = 6},
         {type = "item", name = "advanced-inserter-filter", amount = 1},
-        {type = "item", name = "control-board-3", amount = 3},
+        {type = "item", name = "control-board-2", amount = 3},
       },
       result = "advanced-inserter-far-filter",
 	  result_count = 1,

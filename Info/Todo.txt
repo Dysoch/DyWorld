@@ -10,3 +10,5 @@ natives send meteors
  /c remote.call("space-exploration", "begin_solar_flare", {zone_name = "Nauvis", targeting="basic"})
  
 TODO make metal lab bigger
+
+TODO Investigate Auto-Deconstruct not working

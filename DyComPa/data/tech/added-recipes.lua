@@ -277,6 +277,7 @@ local Recipes = {
 	
 	["flying-robot-frame"] = {"intermediates-3"},
 	["control-board-2"] = {"intermediates-3"},
+	["stone-tablet"] = {"intermediates-3"},
 	
 	["electric-engine-unit"] = {"intermediates-4"},
 	["low-density-structure"] = {"intermediates-4"},
@@ -362,10 +363,10 @@ local Recipes = {
 	["762mm-gun"] = {"warfare-1"},
 	
 	["1853mm-gun"] = {"warfare-2"},
+	["860mm-gun"] = {"warfare-2"},
+	["advanced-762mm-turret"] = {"warfare-2"},
 	
 	["zaydon-power-armor"] = {"warfare-3"},
-	["advanced-762mm-turret"] = {"warfare-3"},
-	["860mm-gun"] = {"warfare-3"},
 	["radar-2"] = {"warfare-3"},
 	
 	["radar-3"] = {"warfare-5"},
@@ -429,18 +430,18 @@ local Recipes = {
 
 for name, techtable in pairs(Recipes) do
 	for _,tech in pairs(techtable) do
-		DyWorld_Add_To_Tech(tech, name)
+		DyW.Tech.Recipe.Add(tech, name)
 	end
 end
 
 for name, techtable in pairs(Dy_Ammo_Tech_Add) do
 	for _,tech in pairs(techtable) do
-		DyWorld_Add_To_Tech(tech, name)
+		DyW.Tech.Recipe.Add(tech, name)
 	end
 end
 
 for name, techtable in pairs(DyWorld_Automated_Tech_Add) do
 	for _,tech in pairs(techtable) do
-		DyWorld_Add_To_Tech(tech, name)
+		DyW.Tech.Recipe.Add(tech, name)
 	end
 end

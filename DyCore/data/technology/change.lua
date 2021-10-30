@@ -65,6 +65,29 @@ function DyW.Tech.Prereq.Remove(TECH, PREREQ)
 	end
 end
 
+	----- Recipe changes -----
+DyW.Tech.Recipe = {}
+
+function DyW.Tech.Recipe.Add(TECH, RECIPE)
+	if data.raw.technology[TECH] and data.raw.recipe[RECIPE] then
+		local result = {type = "unlock-recipe", recipe = RECIPE}
+		table.insert(data.raw.technology[TECH].effects, result)
+	end
+	if data.raw.recipe[RECIPE] then
+		if data.raw.recipe[RECIPE].enabled then
+			data.raw.recipe[RECIPE].enabled = false
+			data.raw.recipe[RECIPE].hidden = false
+		end
+		if data.raw.recipe[RECIPE].normal then
+			data.raw.recipe[RECIPE].normal.enabled = false
+			data.raw.recipe[RECIPE].normal.hidden = false
+		end
+		if data.raw.recipe[RECIPE].expensive then
+			data.raw.recipe[RECIPE].expensive.enabled = false
+			data.raw.recipe[RECIPE].expensive.hidden = false
+		end
+	end	
+end
 
 
 --[[function tablelength(T)

@@ -388,8 +388,8 @@ data:extend(
   },
 })
 end
-if not data.raw.technology["chemical-recycling-1"] then
-	data.raw.recipe["chemical-recycler"].normal.enabled = true
-else
+if data.raw.technology["chemical-recycling-1"] then
 	DyWorld_Add_To_Tech("chemical-recycling-1", "chemical-recycler")
+else
+	data.raw.recipe["chemical-recycler"].normal.enabled = true
 end

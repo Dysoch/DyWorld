@@ -45,6 +45,10 @@ function Event_on_entity_died(event)
 		if not global.dyworld.game_stats.wave_spawners then global.dyworld.game_stats.wave_spawners = {} end
 		if not global.dyworld.game_stats.wave_spawners[surface] then global.dyworld.game_stats.wave_spawners[surface] = {spawners_amount = 0, spawners_loc = {}} end
 		if not global.dyworld.game_stats.wave_spawners.max_per_surface then global.dyworld.game_stats.wave_spawners.max_per_surface = 10 end
+		
+		DyWorld_Base_Attack(surface)
+		game.surfaces[surface].create_entity{name = ("atomic-artillery-projectile"), position = {(math.random(-250,250)),(math.random(-250,250))}, force = game.forces.enemy, speed = 2.5, target = {position.x, position.y}}
+		
 		for k,v in pairs(global.dyworld.game_stats.wave_spawners[surface].spawners_loc) do
 			if (position.x == v.posx and position.y == v.posy) then
 				table.remove(global.dyworld.game_stats.wave_spawners[surface].spawners_loc, k)

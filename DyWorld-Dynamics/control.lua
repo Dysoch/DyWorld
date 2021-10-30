@@ -2,7 +2,7 @@ require("data.prefix")
 require("data.prefix-data")
 
 debugger = Dy_Sett.Debug
-Version_Build = "0.2.0"
+Version_Build = "0.2.1"
 Food_Start = debugger and 250000 or settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 25000 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 2500 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 1600 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 800 or 2500
 Water_Start = debugger and 500000 or settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 50000 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 5000 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 2500 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 1250 or 5000 
 

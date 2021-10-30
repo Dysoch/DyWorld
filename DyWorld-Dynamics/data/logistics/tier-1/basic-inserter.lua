@@ -143,7 +143,6 @@ data:extend({
       {
         {type = "item", name = "iron-plate", amount = 2},
         {type = "item", name = "basic-inserter", amount = 1},
-        {type = "item", name = "control-board-1", amount = 1},
       },
       result = "basic-inserter-long",
 	  result_count = 1,
@@ -161,7 +160,6 @@ data:extend({
       {
         {type = "item", name = "iron-plate", amount = 2},
         {type = "item", name = "basic-inserter", amount = 1},
-        {type = "item", name = "control-board-1", amount = 1},
       },
       result = "basic-inserter-filter",
 	  result_count = 1,
@@ -179,7 +177,6 @@ data:extend({
       {
         {type = "item", name = "iron-plate", amount = 2},
         {type = "item", name = "basic-inserter-filter", amount = 1},
-        {type = "item", name = "control-board-1", amount = 1},
       },
       result = "basic-inserter-long-filter",
 	  result_count = 1,

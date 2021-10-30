@@ -55,17 +55,49 @@ function Event_on_chunk_generated(event)
 	end
 	
 	-- Remove Resources
-	--[[
-	local Resources = {"stone"}
+	local Resources = {
+		["stone"] = {"everywhere"},
+		["quartzite"] = {"nauvis"},
+		["granite"] = {"nauvis"},
+		["sandstone"] = {"nauvis"},
+		["iron-ore"] = {"everywhere"},
+		["iron-ore-2"] = {"nauvis"},
+		["iron-ore-3"] = {"nauvis"},
+		["copper-ore"] = {"everywhere"},
+		["copper-ore-2"] = {"nauvis"},
+		["copper-ore-3"] = {"nauvis"},
+		["tin-ore-1"] = {"everywhere"},
+		["tin-ore-2"] = {"nauvis"},
+		["tin-ore-3"] = {"nauvis"},
+		["uranium-ore"] = {"nauvis"},
+		["treefarm"] = {"nauvis"},
+		["coal"] = {"everywhere"},
+		["coal-2"] = {"nauvis"},
+		["coal-3"] = {"nauvis"},
+		["natural-gas"] = {"nauvis"},
+		["crude-oil"] = {"nauvis"},
+	}
 	local size = 50
 
 	for _, e in pairs(surface.find_entities_filtered{area = event.area, type = "resource"}) do 
-		for _,resource in pairs(Resources) do
-			if e.name == resource then
+		if Resources[e.name] then
+			local amount = 0
+			for _, Surface_N in pairs(Resources[e.name]) do
+				if surface_name == Surface_N then
+					amount = amount + 1
+				end
+				if Surface_N == "everywhere" then
+					amount = amount + 1
+				end
+				if Surface_N == "nowhere" then
+					amount = amount - 100
+				end
+			end
+			if amount <= 0 then
 				e.destroy() 
 			end
 		end
-	end]]
+	end
 	
 	-- Generate Enemies -- 
 	if not global.dyworld.game_stats.enemy_1_chunk then global.dyworld.game_stats.enemy_1_chunk = 1000 end

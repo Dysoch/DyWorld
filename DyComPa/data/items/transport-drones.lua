@@ -8,7 +8,7 @@ local change_item_group = {
   	["transport-depot-writer"] = DyDs.."transport-drones",
 	["transport-depot-reader"] = DyDs.."transport-drones",
   	["transport-drone"] = DyDs.."transport-drones",
-  
+	["road"] = DyDs.."transport-drones",  
 }
 
 for k,v in pairs(change_item_group) do

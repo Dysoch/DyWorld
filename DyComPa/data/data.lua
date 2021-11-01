@@ -24,6 +24,7 @@ require("data.entity.aai-industry")
 require("data.items.base")
 require("data.items.aai")
 require("data.items.space-exploration")
+require("data.items.transport-drones")
 
 -- Recipes --
 require("data.recipes.base")

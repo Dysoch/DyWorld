@@ -57,7 +57,7 @@ local Data_Table_Item_Group = {
 		Main = "logistics"
 	},
 	{
-		Name = "transport-drones",
+		Name = "transport-drones2",
 		Type = "sub",
 		Main = "logistics"
 	},

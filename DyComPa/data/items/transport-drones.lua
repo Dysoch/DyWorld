@@ -5,9 +5,9 @@ if mods["Transport_Drones"] then
 		["fuel-depot"] = DyDs.."transport-drones",
 		["fluid-depot"] = DyDs.."transport-drones",
 		["buffer-depot"] = DyDs.."transport-drones",
-		["road-network-reader"] = DyDs.."transport-drones",
-		["transport-depot-writer"] = DyDs.."transport-drones",
-		["transport-depot-reader"] = DyDs.."transport-drones",
+		["road-network-reader"] = DyDs.."transport-drones-circuit",
+		["transport-depot-writer"] = DyDs.."transport-drones-circuit",
+		["transport-depot-reader"] = DyDs.."transport-drones-circuit",
 		["transport-drone"] = DyDs.."transport-drones",
 		["road"] = DyDs.."transport-drones",  
 	}

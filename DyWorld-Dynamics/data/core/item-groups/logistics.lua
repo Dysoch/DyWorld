@@ -57,11 +57,6 @@ local Data_Table_Item_Group = {
 		Main = "logistics"
 	},
 	{
-		Name = "transport-drones",
-		Type = "sub",
-		Main = "logistics"
-	},
-	{
 		Name = "chests",
 		Type = "sub",
 		Main = "logistics"
@@ -142,6 +137,16 @@ local Data_Table_Item_Group = {
 		Main = "logistics"
 	},
 }
+
+if mods["Transport_Drones"] then
+   table.insert(Data_Table_Item_Group, 
+	{
+		Name = "transport-drones",
+		Type = "sub",
+		Main = "logistics"
+	}
+   )
+end
 
 function DyWorld_Item_Main_Group(NAME, ICON)
   local result =

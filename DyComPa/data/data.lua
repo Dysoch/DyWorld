@@ -33,6 +33,7 @@ require("data.recipes.aai-industry")
 require("data.recipes.space-exploration")
 
 -- Tech --
+require("data.tech.transport-drones")
 require("data.tech.added-recipes")
 require("data.tech.base")
 require("data.tech.aai-industry")
@@ -40,4 +41,3 @@ require("data.tech.space-exploration")
 require("data.tech.nanobot")
 require("data.tech.robot-attri")
 require("data.tech.last-fixes")
-require("data.tech.transport-drones")

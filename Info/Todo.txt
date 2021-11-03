@@ -1,4 +1,6 @@
+@todo solar panels equipment become obsolete one
 
+@todo Production Science needs Advanced Asteroid Miner which is unlocked via Asteroid Mining (Advanced) which needs Production Science
 
 LaureenLlama's Carrot Cake = obviously the cake
 JD's Flashlight = the flamethrower
@@ -8,17 +10,3 @@ JD's Boomstick = shotgun
 natives send meteors
 
  /c remote.call("space-exploration", "begin_solar_flare", {zone_name = "Nauvis", targeting="basic"})
- 
-@todo make metal lab bigger
-
-@todo Investigate Auto-Deconstruct not working
-
-@todo Add worms
-
-@todo fix worms dying from blast
-
-@todo add unit 11-1/5
-
-@todo rework arachnid hive to hold base game 
-
-@todo lower spawning of myriapod hive

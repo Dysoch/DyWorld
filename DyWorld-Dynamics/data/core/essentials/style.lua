@@ -279,4 +279,12 @@ data:extend({
     subgroup = "virtual-signal-utility",
     order = "i[informatron]",
   },
+  {
+    type = "virtual-signal",
+    name = "dyworld_button",
+    icon = "__DyWorld-Dynamics__/graphics/signal/button.png",
+    icon_size = 64,
+    subgroup = "virtual-signal-utility",
+    order = "i[informatron]",
+  },
 })

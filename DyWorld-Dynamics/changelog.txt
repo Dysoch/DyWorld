@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: ???
+  Minor Features:
+    - Updated Side-Inserter Scripts (made by Gotlag)
+    - Updated Inserters graphics for icons to better show what it does
+    - Added an ore finding recipe
+  Changes:
+    - Added Health into tooltip of Walls and Gates
+    - Changed a few colors of Walls and Gates. Should be a bit easier to see what is what till i make permanent graphics
+  Bugfixes:
+    - 
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 30. 10. 2021
   Minor Features:

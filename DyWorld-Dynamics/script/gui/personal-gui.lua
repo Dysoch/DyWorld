@@ -79,7 +79,7 @@ end
 function Personal_GUI(player, id)
 	local force = player.force
 	local surface = game.players[id].surface.name
-	local frame = player.gui.left.add{type = "frame", name = "DyDs_Personal_GUI", caption = "Survival"}
+	local frame = player.gui.left.add{type = "frame", name = "DyDs_Personal_GUI", caption = "DyWorld-Dynamics"}
 	local frameflow1 = frame.add{type = "flow", name = "flow1", direction = "vertical"}
 	if not global.dyworld.players[id].implants then Implant_Check(id, nil, nil) end
     local GloPla = global.dyworld.players[id].implants
@@ -91,6 +91,13 @@ function Personal_GUI(player, id)
     --if not global.dyworld.players[id].personal_gui_loc then global.dyworld.players[id].personal_gui_loc = {X = 0, Y = 0} end
     --player.gui.screen.DyDs_Personal_GUI.location.x = global.dyworld.players[id].personal_gui_loc.X
     --player.gui.screen.DyDs_Personal_GUI.location.y = global.dyworld.players[id].personal_gui_loc.Y
+	
+	local table1 = frameflow1.add{type = "table", name = "table1", column_count = 4, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
+
+	table1.add{type = "sprite-button", name = "dyworld_story", sprite = "virtual-signal/dyworld_story_button", tooltip = {"looped-name.dyworld_story_button"}}
+	table1.add{type = "sprite-button", name = "dyworld_stats", sprite = "virtual-signal/dyworld_stats_button", tooltip = {"looped-name.dyworld_stats_button"}}
+	table1.add{type = "sprite-button", name = "dyworld_smn", sprite = "item/satellite", tooltip = {"looped-name.dyworld_smn_button"}}
+	table1.add{type = "sprite-button", name = "dyworld_dyson", sprite = "item/satellite", tooltip = {"looped-name.dyworld_dyson_button"}}
 
 	if settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
         local Mult = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 0.5 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 1 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 2 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 5 or 1
@@ -108,35 +115,31 @@ function Personal_GUI(player, id)
     if game.players[id].character then
         frameflow1.add{type = "progressbar", value = (game.players[id].character.get_health_ratio()), style = Progress_Surival_Style_Check(game.players[id].character.get_health_ratio()), caption = GloPla["health-implant"].enabled and "   [color=red]Health (Auto)[/color]" or "         [color=red]Health[/color]"}
     end
+	
+	local table2 = frameflow1.add{type = "table", name = "table2", column_count = 2, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
 
-    if Chunk.Pollution > 500 then
-		frameflow1.add{type = "label", caption = "Pollution: [color=yellow]"..Chunk.Pollution.."[/color]", tooltip = "WIP"}
-        --frameflow1.add{type = "progressbar", value = (Chunk.Pollution / Max_Pollution), style = "dy-bar-1", tooltip = "[color=red]Warning!\nPollution getting high\nVacate the area[/color]\n\n[color=blue]WIP, no pollution based damage implemented yet[/color]", caption = "        [color=yellow]Pollution[/color]"}
-    end
-
-    frameflow1.add{type = "label", caption = "[color=yellow]Implants[/color]", tooltip = "Food Reduction: \n"..Check_Implant_State(id, "usage-reduction").."\n\nSpeed Implant: \n"..Check_Implant_State(id, "speed-implant").."\n\nDeath Implant: \n"..Check_Implant_State(id, "death-implant")}
+	table2.add{type = "label", caption = "Pollution: ", tooltip = "WIP"}
+	table2.add{type = "label", caption = "[color=yellow]"..Chunk.Pollution.."[/color]"}
 
     -- Temperature WIP
-    if Chunk.Temperature <= -5 then
-        frameflow1.add{type = "label", caption = "Temperature: [color=blue]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
-    elseif Chunk.Temperature <= 10 then
-        frameflow1.add{type = "label", caption = "Temperature: [color=cyan]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
-    elseif Chunk.Temperature >= 30 then
-        frameflow1.add{type = "label", caption = "Temperature: [color=yellow]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
-    elseif Chunk.Temperature >= 45 then
-        frameflow1.add{type = "label", caption = "Temperature: [color=red]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
-    else
-        frameflow1.add{type = "label", caption = "Temperature: [color=green]"..Chunk.Temperature.."[/color]", tooltip = "WIP"}
-    end
+    table2.add{type = "label", caption = "Temperature: ", tooltip = "Temperature Threshold: [color=blue]"..Round(global.dyworld.players[id].temp.low.total, 0).."[/color]°C <-> [color=blue]"..Round(global.dyworld.players[id].temp.high.total, 0).."[/color]°C"}
+    table2.add{type = "label", caption = "[color=yellow]"..Chunk.Temperature.."[/color]°C"}
 
     -- Radiation WIP
-    if Chunk.Radiation >= 0.075 then
-        frameflow1.add{type = "label", caption = "[color=green]Radiation: "..Chunk.Radiation.." Rad/s[/color]", tooltip = "WIP"}
+	local Rads_Gained = ((global.dyworld.players[id].rads.native_loss + global.dyworld.players[id].rads.artifical_loss) + Chunk.Radiation)
+    table2.add{type = "label", caption = "Rads Gain: ", tooltip = "WIP"}
+    table2.add{type = "label", caption = "[color=green]"..Round(Rads_Gained, 2).." Rads/s[/color]"}
+    table2.add{type = "label", caption = "Rads: ", tooltip = "WIP"}
+    table2.add{type = "label", caption = "[color=green]"..Round(global.dyworld.players[id].rads.stored, 2).." Rads[/color]"}
         -- send warning to player
-    end
 
-    frameflow1.add{type = "label", caption = "[color=blue]"..math.floor(global.dyworld.players[id].posx).."[/color] , [color=blue]"..math.floor(global.dyworld.players[id].posy).."[/color], [color=blue]"..global.dyworld.players[id].surface.."[/color]"}
+    table2.add{type = "label", caption = "Position: "}
+    table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[id].surface.."[/color]"}
+    table2.add{type = "label", caption = "[color=blue]"..math.floor(global.dyworld.players[id].posx).."[/color]"}
+    table2.add{type = "label", caption = "[color=blue]"..math.floor(global.dyworld.players[id].posy).."[/color]"}
 
+    frameflow1.add{type = "label", caption = "[color=yellow]Implants[/color]", tooltip = "Food Reduction: \n"..Check_Implant_State(id, "usage-reduction").."\n\nSpeed Implant: \n"..Check_Implant_State(id, "speed-implant").."\n\nDeath Implant: \n"..Check_Implant_State(id, "death-implant")}
+	
     if debugger then
     end
 end

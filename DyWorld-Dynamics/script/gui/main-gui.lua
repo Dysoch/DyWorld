@@ -72,15 +72,16 @@ function Main_GUI(player, id)
 	local tab1 = tabbed_pane.add{type="tab", caption="Game Stats"}
 	local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
 	tabbed_pane.add_tab(tab1, frameflow1)
+	local table1 = frameflow1.add{type = "table", name = "table1", column_count = 2, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
 
 	local total = Round(((global.dyworld.game_stats.crafted_amount or 0) + (global.dyworld.game_stats.mined_amount or 0) + (global.dyworld.game_stats.build_amount or 0) + (global.dyworld.game_stats.killed_amount or 0) + (global.dyworld.game_stats.picked_amount or 0)), 0)
-	frameflow1.add{type = "label", caption = "Game Stats (1/3): [color=blue]"..total.."[/color]", tooltip = "Total Crafted: [color=blue]"..(global.dyworld.game_stats.crafted_amount or 0).."[/color]\nTotal Mined: [color=blue]"..(global.dyworld.game_stats.mined_amount or 0).."[/color]\nTotal Built: [color=blue]"..(global.dyworld.game_stats.build_amount or 0).."[/color]\nTotal Killed: [color=blue]"..(global.dyworld.game_stats.killed_amount or 0).."[/color]\nTotal Looted: [color=blue]"..(global.dyworld.game_stats.picked_amount or 0).."[/color]"}
+	--frameflow1.add{type = "label", caption = "Game Stats (1/3): [color=blue]"..total.."[/color]", tooltip = "Total Crafted: [color=blue]"..(global.dyworld.game_stats.crafted_amount or 0).."[/color]\nTotal Mined: [color=blue]"..(global.dyworld.game_stats.mined_amount or 0).."[/color]\nTotal Built: [color=blue]"..(global.dyworld.game_stats.build_amount or 0).."[/color]\nTotal Killed: [color=blue]"..(global.dyworld.game_stats.killed_amount or 0).."[/color]\nTotal Looted: [color=blue]"..(global.dyworld.game_stats.picked_amount or 0).."[/color]"}
 		
 	local total = Round(((global.dyworld.game_stats.sector_scanned or 0) + (global.dyworld.game_stats.rockets_launched or 0)), 0)
-	frameflow1.add{type = "label", caption = "Game Stats (2/3): [color=blue]"..total.."[/color]", tooltip = "Sectors Scanned: [color=blue]"..(global.dyworld.game_stats.sector_scanned or 0).."[/color]\nRockets Launched: [color=blue]"..(global.dyworld.game_stats.rockets_launched or 0).."[/color]\nGame Days: [color=blue]"..(global.dyworld.game_stats.days or 0).."[/color]"}
+	frameflow1.add{type = "label", caption = "Game Stats (1/2): [color=blue]"..total.."[/color]", tooltip = "Sectors Scanned: [color=blue]"..(global.dyworld.game_stats.sector_scanned or 0).."[/color]\nRockets Launched: [color=blue]"..(global.dyworld.game_stats.rockets_launched or 0).."[/color]\nGame Days: [color=blue]"..(global.dyworld.game_stats.days or 0).."[/color]"}
 	
 	local total = Round(((global.dyworld.game_stats.inserters or 0) + (global.dyworld.game_stats.radars or 0) + (global.dyworld.game_stats.ghosts or 0)), 0)
-	frameflow1.add{type = "label", caption = "Game Stats (3/3): [color=blue]"..total.."[/color]", tooltip = "Special Entities Built:\n\nInserters: [color=blue]"..(global.dyworld.game_stats.inserters or 0).."[/color]\nRadars: [color=blue]"..(global.dyworld.game_stats.radars or 0).."[/color]\nGhost Entities: [color=blue]"..(global.dyworld.game_stats.ghosts or 0).."[/color]"}
+	frameflow1.add{type = "label", caption = "Game Stats (2/2): [color=blue]"..total.."[/color]", tooltip = "Special Entities Built:\n\nInserters: [color=blue]"..(global.dyworld.game_stats.inserters or 0).."[/color]\nRadars: [color=blue]"..(global.dyworld.game_stats.radars or 0).."[/color]\nGhost Entities: [color=blue]"..(global.dyworld.game_stats.ghosts or 0).."[/color]"}
 	
 	if not global.dyworld.game_stats.dyson then
 		global.dyworld.game_stats.dyson = {
@@ -117,7 +118,7 @@ function Main_GUI(player, id)
 		
 
 -------------------------------- Player stats TAB -------------------------------------
-	local tab2 = tabbed_pane.add{type="tab", caption="Player Stats"}
+	local tab2 = tabbed_pane.add{type="tab", caption="Stats"}
 	local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 	if not global.dyworld.players[id].implants then Implant_Check(id, nil, nil) end
     local GloPla = global.dyworld.players[id].implants
@@ -125,38 +126,89 @@ function Main_GUI(player, id)
 		
 	frameflow2.add{type = "label", caption = "Total Attributes: [color=blue]"..(global.dyworld.players[id].strength + global.dyworld.players[id].constitution + global.dyworld.players[id].dexterity + global.dyworld.players[id].intelligence + global.dyworld.players[id].wisdom + global.dyworld.players[id].charisma).."[/color]", tooltip = "Strength: [color=blue]"..global.dyworld.players[id].strength.."[/color]\nConstitution: [color=blue]"..global.dyworld.players[id].constitution.."[/color]\nDexterity: [color=blue]"..global.dyworld.players[id].dexterity.."[/color]\nIntelligence: [color=blue]"..global.dyworld.players[id].intelligence.."[/color]\nWisdom: [color=blue]"..global.dyworld.players[id].wisdom.."[/color]\nCharisma: [color=blue]"..global.dyworld.players[id].charisma.."[/color]"}
     frameflow2.add{type = "label", caption = "[color=yellow]Implants[/color]", tooltip = "Strength Implant: \n"..Check_Implant_State(id, "strength-implant").."\n\nConstitution Implant: \n"..Check_Implant_State(id, "constitution-implant").."\n\nDexterity Implant: \n"..Check_Implant_State(id, "dexterity-implant").."\n\nIntelligence Implant: \n"..Check_Implant_State(id, "intelligence-implant").."\n\nWisdom Implant: \n"..Check_Implant_State(id, "wisdom-implant").."\n\nCharisma Implant: \n"..Check_Implant_State(id, "charisma-implant")}
-		
-	frameflow2.add{type = "label", caption = "Total Stats: [color=blue]"..(global.dyworld.players[id].crafted + global.dyworld.players[id].mined + global.dyworld.players[id].picked + global.dyworld.players[id].build + global.dyworld.players[id].killed).."[/color]", tooltip = "Crafted: [color=blue]"..global.dyworld.players[id].crafted.."[/color]\nMined: [color=blue]"..global.dyworld.players[id].mined.."[/color]\nPicked Up: [color=blue]"..global.dyworld.players[id].picked.."[/color]\nBuilt: [color=blue]"..global.dyworld.players[id].build.."[/color]\nPersonal Killed: [color=blue]"..global.dyworld.players[id].killed.."[/color]\nCapsules Used: [color=blue]"..(global.dyworld.players[id].capsules or 0).."[/color]\nTimes Died: [color=blue]"..(global.dyworld.players[id].died or 0).."[/color]"}
+	
+	frameflow2.add{type = "line", direction = "horizontal"}
+	
+	local table2 = frameflow2.add{type = "table", name = "table2", column_count = 3, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
+	
+	
+	table2.add{type = "label", caption = ""}
+	table2.add{type = "label", caption = "[color=yellow]Personal: [/color]"}
+	table2.add{type = "label", caption = "[color=yellow]Total: [/color]"}
+	
+	table2.add{type = "label", caption = "[color=yellow]Crafted: [/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[id].crafted.."[/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.crafted_amount or 0).."[/color]"}
+	
+	table2.add{type = "label", caption = "[color=yellow]Mined: [/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[id].mined.."[/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.mined_amount or 0).."[/color]"}
+	
+	table2.add{type = "label", caption = "[color=yellow]Built: [/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[id].build.."[/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.build_amount or 0).."[/color]"}
+	
+	table2.add{type = "label", caption = "[color=yellow]Picked: [/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[id].picked.."[/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.picked_amount or 0).."[/color]"}
+	
+	table2.add{type = "label", caption = "[color=yellow]Built: [/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[id].killed.."[/color]"}
+	table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.killed_amount or 0).."[/color]"}
+	
+	frameflow2.add{type = "line", direction = "horizontal"}
+	
+	frameflow2.add{type = "label", caption = "Total Stats:", tooltip = "Capsules Used: [color=blue]"..(global.dyworld.players[id].capsules or 0).."[/color]\nTimes Died: [color=blue]"..(global.dyworld.players[id].died or 0).."[/color]"}
 		
 	frameflow2.add{type = "label", caption = "Distance Total: [color=blue]"..(Round(global.dyworld.players[id].distance, 2) + Round(global.dyworld.players[id].distance_car, 2) + Round(global.dyworld.players[id].distance_train, 2)).."[/color] Km", tooltip = "Walked: [color=blue]"..Round(global.dyworld.players[id].distance, 2).."[/color] Km\nDriven Vehicles: [color=blue]"..Round(global.dyworld.players[id].distance_car, 2).."[/color] Km\nDriven Trains: [color=blue]"..Round(global.dyworld.players[id].distance_train, 2).."[/color] Km"}
-
--------------------------------- Game Bonuses TAB ------------------------------------
-	local tab3 = tabbed_pane.add{type="tab", caption = "Game Bonuses"}
-	local frameflow3 = tabbed_pane.add{type = "flow", name = "flow3", direction = "vertical"}
-	tabbed_pane.add_tab(tab3, frameflow3)
 		
-		----- Game Bonuses ----
-	frameflow3.add{type = "line", direction = "horizontal"}
-	frameflow3.add{type = "label", caption = "Stack Inserter Stack Bonus: [color=blue]"..(Round((game.forces.player.stack_inserter_capacity_bonus), 0)).."[/color]"}
-	frameflow3.add{type = "label", caption = "Laboratory Productivity: [color=blue]"..(Round((game.forces.player.laboratory_productivity_bonus), 2)).."[/color]"}
-	frameflow3.add{type = "label", caption = "Laboratory Speed: [color=blue]"..(Round((game.forces.player.laboratory_speed_modifier + 1), 2)).."[/color]"}
-	if game.forces.player.ghost_time_to_live >= 60 then
-		frameflow3.add{type = "label", caption = "Ghost Time To Live: [color=blue]"..Time_Check(Round((game.forces.player.ghost_time_to_live / 60), 0)).."[/color]", tooltip = "This is only for destroyed entities.\nThis does not effect hand placed ghosts\nIncrease time by building more ghosts (shift place)\nTime format: Hours:Minutes:Seconds"}
-	end
 
 -------------------------------- Player Bonuses TAB ------------------------------------
-	local tab4 = tabbed_pane.add{type="tab", caption = "Player Bonuses"}
+	local tab4 = tabbed_pane.add{type="tab", caption = "Bonuses"}
 	local frameflow4 = tabbed_pane.add{type = "flow", name = "flow4", direction = "vertical"}
 	tabbed_pane.add_tab(tab4, frameflow4)
+	local table4 = frameflow4.add{type = "table", name = "table4", column_count = 2, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
 		
 	if game.players[id].character then
 		----- Player Bonuses -----
-		frameflow4.add{type = "label", caption = "Build Distance: [color=blue]"..(Round((game.entity_prototypes["character"].build_distance + game.players[id].character_build_distance_bonus), 2)).."[/color]"}
-		frameflow4.add{type = "label", caption = "Reach Distance: [color=blue]"..(Round((game.entity_prototypes["character"].reach_distance + game.players[id].character_reach_distance_bonus), 2)).."[/color]"}
-		frameflow4.add{type = "label", caption = "Loot Pickup Distance: [color=blue]"..(Round((game.entity_prototypes["character"].loot_pickup_distance + game.players[id].character_loot_pickup_distance_bonus), 2)).."[/color]"}
-		frameflow4.add{type = "label", caption = "Crafting Speed: [color=blue]"..(Round(game.players[id].character_crafting_speed_modifier + 1, 2)).."[/color]"}
-		frameflow4.add{type = "label", caption = "Mining Speed: [color=blue]"..(Round(game.players[id].character_mining_speed_modifier + game.entity_prototypes["character"].mining_speed, 2)).."[/color]"}
-		frameflow4.add{type = "label", caption = "Inventory Slots: [color=blue]"..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus).."[/color]"}
-		frameflow4.add{type = "label", caption = "Health: [color=blue]"..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus).."[/color]"}
+		table4.add{type = "label", caption = "Build Distance: "}
+		table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].build_distance + game.players[id].character_build_distance_bonus), 2)).."[/color]"}
+		
+		table4.add{type = "label", caption = "Reach Distance: "}
+		table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].reach_distance + game.players[id].character_reach_distance_bonus), 2)).."[/color]"}
+		
+		table4.add{type = "label", caption = "Loot Pickup Distance: "}
+		table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].loot_pickup_distance + game.players[id].character_loot_pickup_distance_bonus), 2)).."[/color]"}
+		
+		table4.add{type = "label", caption = "Crafting Speed: "}
+		table4.add{type = "label", caption = "[color=blue]"..(Round(game.players[id].character_crafting_speed_modifier + 1, 2)).."[/color]"}
+		
+		table4.add{type = "label", caption = "Mining Speed: "}
+		table4.add{type = "label", caption = "[color=blue]"..(Round(game.players[id].character_mining_speed_modifier + game.entity_prototypes["character"].mining_speed, 2)).."[/color]"}
+		
+		table4.add{type = "label", caption = "Inventory Slots: "}
+		table4.add{type = "label", caption = "[color=blue]"..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus).."[/color]"}
+		
+		table4.add{type = "label", caption = "Health: "}
+		table4.add{type = "label", caption = "[color=blue]"..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus).."[/color]"}
+		
+	end
+	
+		----- Game Bonuses ----
+	table4.add{type = "line", direction = "horizontal"}
+	table4.add{type = "line", direction = "horizontal"}
+	
+	table4.add{type = "label", caption = "Stack Inserter Stack Bonus: "}
+	table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.stack_inserter_capacity_bonus), 0)).."[/color]"}
+	
+	table4.add{type = "label", caption = "Laboratory Productivity: "}
+	table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.laboratory_productivity_bonus), 2)).."[/color]"}
+	
+	table4.add{type = "label", caption = "Laboratory Speed: "}
+	table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.laboratory_speed_modifier + 1), 2)).."[/color]"}
+	
+	if game.forces.player.ghost_time_to_live >= 60 then
+		table4.add{type = "label", caption = "Ghost Time To Live: ", tooltip = "This is only for destroyed entities.\nThis does not effect hand placed ghosts\nIncrease time by building more ghosts (shift place)\nTime format: Hours:Minutes:Seconds"}
+		table4.add{type = "label", caption = "[color=blue]"..Time_Check(Round((game.forces.player.ghost_time_to_live / 60), 0)).."[/color]", tooltip = "This is only for destroyed entities.\nThis does not effect hand placed ghosts\nIncrease time by building more ghosts (shift place)\nTime format: Hours:Minutes:Seconds"}
 	end
 end

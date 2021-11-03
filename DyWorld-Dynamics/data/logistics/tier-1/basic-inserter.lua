@@ -26,11 +26,11 @@ data:extend({
     name = "basic-inserter",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_1,
 	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64, 
     subgroup = DyDs.."inserter-tier-1",
     order = "2",
     place_result = "basic-inserter",
@@ -93,11 +93,14 @@ data:extend({
     name = "basic-inserter-long",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_1,
 	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-long.png",
+	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-1",
     order = "3",
     place_result = "basic-inserter-long",
@@ -108,11 +111,14 @@ data:extend({
     name = "basic-inserter-filter",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_1,
 	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-filter.png",
+	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-1",
     order = "4",
     place_result = "basic-inserter-filter",
@@ -123,11 +129,17 @@ data:extend({
     name = "basic-inserter-long-filter",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_1,
 	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-filter.png",
+	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-long.png",
+	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-1",
     order = "5",
     place_result = "basic-inserter-long-filter",

@@ -28,11 +28,11 @@ data:extend({
     name = "advanced-inserter",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_3,
 	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-3",
     order = "1",
     place_result = "advanced-inserter",
@@ -120,11 +120,14 @@ data:extend({
     name = "advanced-inserter-long",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_3,
 	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-long.png",
+	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-3",
     order = "3",
     place_result = "advanced-inserter-long",
@@ -135,11 +138,14 @@ data:extend({
     name = "advanced-inserter-filter",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_3,
 	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-filter.png",
+	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-3",
     order = "4",
     place_result = "advanced-inserter-filter",
@@ -150,11 +156,17 @@ data:extend({
     name = "advanced-inserter-long-filter",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_3,
 	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-long.png",
+	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-filter.png",
+	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-3",
     order = "5",
     place_result = "advanced-inserter-long-filter",
@@ -165,11 +177,14 @@ data:extend({
     name = "advanced-inserter-far",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_3,
 	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-far.png",
+	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-3",
     order = "6",
     place_result = "advanced-inserter-far",
@@ -180,11 +195,17 @@ data:extend({
     name = "advanced-inserter-far-filter",
     icons = {
 	  {
-	    icon = "__base__/graphics/icons/inserter.png",
+	    icon = DyDs_path_icon_base.."inserter.png",
 	    tint = Tier_3,
 	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-far.png",
+	  },
+	  {
+	    icon = DyDs_path_looped.."inserter-filter.png",
+	  },
 	},
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-3",
     order = "7",
     place_result = "advanced-inserter-far-filter",

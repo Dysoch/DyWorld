@@ -1,68 +1,15 @@
 
-local function tech_remove_prerequisites (prototype_name, prerequisites)
-	local prototype = data.raw.technology[prototype_name]
-	if not prototype then return end
-	for _, new_prerequisite in pairs(prerequisites) do
-		if prototype.prerequisites then
-			for i = #prototype.prerequisites, 1, -1 do
-				if prototype.prerequisites[i] == new_prerequisite then
-					table.remove(prototype.prerequisites, i)
-				end
-			end
-		end
-	end
-end
-
-local function remove_prerequisite(tech, pack)
-	if data.raw.technology[tech] then
-		local Tech = data.raw.technology[tech]
-		local keep = {}
-		for _, prerequisite in pairs(Tech.prerequisites) do
-			if prerequisite and prerequisite ~= pack then
-				table.insert(keep, prerequisite)
-			end
-		end
-
-		Tech.prerequisites = keep
-	end
-end
-
-local function CheckIngre(Tech, Check)
-	local AMOUNT = 0
-	if data.raw.technology[Tech] and data.raw.technology[Tech].unit and data.raw.technology[Tech].unit.ingredients then
-		for k,v in pairs(data.raw.technology[Tech].unit.ingredients) do
-			if v[1] == Check then
-				AMOUNT = AMOUNT + 1
-			end
-		end
-	end
-	return AMOUNT
-end
-
-local function CheckPreReq(Tech, Check)
-	local AMOUNT = 0
-	if data.raw.technology[Tech] and data.raw.technology[Tech].prerequisites then
-		for k,v in pairs(data.raw.technology[Tech].prerequisites) do
-			if v == Check then
-				AMOUNT = AMOUNT + 1
-			end
-		end
-	end
-	return AMOUNT
-end
-
-
-local Tech_Act_2 = {
-	["automation-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
-	["logistic-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
-	["chemical-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
-	["military-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
-	["production-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
-	["utility-science-pack"] = {Replace = "iron-plate", Ratio = 2.5},
-	["space-science-pack"] = {Replace = "iron-plate", Ratio = 2.5}, 
+local Tech_Metal_Switch = {
+	["automation-science-pack"] = {Replace = "iron-ore-impure", Ratio = 10},
+	["logistic-science-pack"] = {Replace = "bronze-plate", Ratio = 4},
+	["chemical-science-pack"] = {Replace = "coal", Ratio = 2},
+	["military-science-pack"] = {Replace = "iron-ingot", Ratio = 2},
+	["production-science-pack"] = {Replace = "slag", Ratio = 15},
+	["utility-science-pack"] = {Replace = "granite", Ratio = 5},
+	["space-science-pack"] = {Replace = "steel-plate", Ratio = 7.5}, 
 }
 
-local Tech_Act_3 = {
+local Tech_Chemical_Switch = {
 	["automation-science-pack"] = {Replace = "canister-empty", Ratio = 2.5},
 	["logistic-science-pack"] = {Replace = "canister-empty", Ratio = 2.5},
 	["chemical-science-pack"] = {Replace = "canister-empty", Ratio = 2.5},
@@ -331,7 +278,7 @@ local Tech_Base_Game = {
 }
 
 for k,v in pairs(Tech_Base_Game) do
-	if data.raw.technology[k] then
+	if data.raw.technology[k] and not data.raw.technology[k].hidden then
 		data.raw.technology[k].hidden = true
 	end
 end

@@ -353,4 +353,44 @@ data:extend({
 	  enabled = false,
     },
   },
+  {
+    type = "recipe",
+    name = "water-to-ore",
+	category = "centrifuging",
+	main_product = "water",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "lignite", amount = 5},
+        {type = "item", name = "sand", amount = 50},
+        {type = "fluid", name = "steam", amount = 1000},
+      },
+      results = 
+      {
+        {type = "fluid", name = "water", amount = 10},
+        {type = "item", name = "iron-ore-impure", amount_min = 2, amount_max = 6, probability = 0.15},
+        {type = "item", name = "iron-ore", amount_min = 1, amount_max = 3, probability = 0.075},
+        {type = "item", name = "tin-ore-impure", amount_min = 2, amount_max = 6, probability = 0.15},
+        {type = "item", name = "tin-ore", amount_min = 1, amount_max = 3, probability = 0.075},
+        {type = "item", name = "copper-ore-impure", amount_min = 2, amount_max = 6, probability = 0.15},
+        {type = "item", name = "copper-ore", amount_min = 1, amount_max = 3, probability = 0.075},
+        {type = "item", name = "titanium-ore-impure", amount_min = 2, amount_max = 6, probability = 0.15},
+        {type = "item", name = "titanium-ore", amount_min = 1, amount_max = 3, probability = 0.075},
+        {type = "item", name = "magnesium-ore-impure", amount_min = 2, amount_max = 6, probability = 0.15},
+        {type = "item", name = "magnesium-ore", amount_min = 1, amount_max = 3, probability = 0.075},
+        {type = "item", name = "aluminium-ore-impure", amount_min = 2, amount_max = 6, probability = 0.15},
+        {type = "item", name = "aluminium-ore", amount_min = 1, amount_max = 3, probability = 0.075},
+        {type = "item", name = "coal", amount_min = 1, amount_max = 5, probability = 0.15},
+        {type = "item", name = "sand", amount_min = 1, amount_max = 10, probability = 0.25},
+        {type = "item", name = "limestone", amount_min = 1, amount_max = 10, probability = 0.05},
+        {type = "item", name = "granite", amount_min = 1, amount_max = 10, probability = 0.05},
+        {type = "item", name = "sandstone", amount_min = 1, amount_max = 10, probability = 0.05},
+        {type = "item", name = "quartzite", amount_min = 1, amount_max = 10, probability = 0.05},
+      },
+	  energy_required = 2.5,
+	  main_product = "water",
+	  enabled = false,
+    },
+  },
 })

@@ -114,14 +114,14 @@ data.raw.recipe["chemical-science-fluid"].normal.ingredients = {
 
 data.raw.recipe["production-science-fluid"].normal.ingredients = {
     {type = "item", name = "blast-furnace", amount = 1},
-    {type = "item", name = "advanced-asteroid-miner", amount = 2},
+    {type = "item", name = "lense-2", amount = 1},
     {type = "item", name = "refined-concrete", amount = 5},
     {type = "fluid", name = "methane", amount = 500},
 }
 
 data.raw.recipe["utility-science-fluid"].normal.ingredients = {
     {type = "item", name = "radar-3", amount = 1},
-    {type = "item", name = "lense-3", amount = 1},
+    {type = "item", name = "advanced-asteroid-miner", amount = 2},
     {type = "item", name = "rocket-silo-2", amount = 1},
     {type = "fluid", name = "natural-gas", amount = 5000},
 }

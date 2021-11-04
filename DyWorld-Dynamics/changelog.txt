@@ -12,6 +12,7 @@ Date: ???
     - Night Vision and Exoskeleton have a larger buffer energy size
   Bugfixes:
     - Production Science pack ingredients changed
+    - Equipment should give correct item back when taken out of armor
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 30. 10. 2021

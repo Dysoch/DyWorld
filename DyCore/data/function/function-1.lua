@@ -15,6 +15,7 @@ function DyW.Fx.DC(type, name, newName)
     if p.result then
         p.result = newName
     end
+	p.take_result = newName
     if p.take_result then
         p.take_result = newName
     end

@@ -8,6 +8,7 @@ Date: ???
   Changes:
     - Added Health into tooltip of Walls and Gates
     - Changed a few colors of Walls and Gates. Should be a bit easier to see what is what till i make permanent graphics
+    - Balanced burner mining drills to be worst. Should now want to upgrade to the next tier
   Bugfixes:
     - 
 ---------------------------------------------------------------------------------------------------

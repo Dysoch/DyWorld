@@ -15,7 +15,7 @@ data:extend({
       collision_box = {{ -0.7, -0.7}, {0.7, 0.7}},
       selection_box = {{ -1, -1}, {1, 1}},
       --damaged_trigger_effect = hit_effects.entity(),
-      mining_speed = 0.5,
+      mining_speed = 0.35,
       working_sound =
       {
         sound =
@@ -43,7 +43,7 @@ data:extend({
         fuel_category = "carbon",
         effectivity = 1,
         fuel_inventory_size = 2,
-        emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 15 or Dy_Sett.Difficulty == "Hard" and 45 or 5,
+        emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 7.5 or Dy_Sett.Difficulty == "Normal" and 22.5 or Dy_Sett.Difficulty == "Hard" and 67.5 or 5,
         smoke =
         {
           {
@@ -53,7 +53,7 @@ data:extend({
           }
         }
       },
-      energy_usage = "100kW",
+      energy_usage = "350kW",
       animations =
       {
         north =

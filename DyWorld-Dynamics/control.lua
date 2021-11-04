@@ -36,6 +36,7 @@ require "script/gui/personal-gui"
 require "script/stats/functions"
 require "script/stats/food"
 require "script/stats/implants"
+require "script/stats/vitals"
 
 -- Story
 require "script/story/story"

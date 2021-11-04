@@ -31,13 +31,18 @@ require("data.recipes.base")
 require("data.recipes.aai-containers")
 require("data.recipes.aai-industry")
 require("data.recipes.space-exploration")
+require("data.recipes.small-mods-1")
 
 -- Tech --
-require("data.tech.transport-drones")
-require("data.tech.added-recipes")
 require("data.tech.base")
 require("data.tech.aai-industry")
 require("data.tech.space-exploration")
 require("data.tech.nanobot")
 require("data.tech.robot-attri")
+require("data.tech.small-mods-1")
+require("data.tech.transport-drones")
+
+
+-- Leave these as last, add everything in the categories above
+require("data.tech.added-recipes")
 require("data.tech.last-fixes")

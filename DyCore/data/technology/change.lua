@@ -74,6 +74,9 @@ function DyW.Tech.Recipe.Add(TECH, RECIPE)
 		table.insert(data.raw.technology[TECH].effects, result)
 	end
 	if data.raw.recipe[RECIPE] then
+		if data.raw.recipe[RECIPE].DyWorld_Hider then
+			data.raw.recipe[RECIPE].DyWorld_Hider = false
+		end
 		if data.raw.recipe[RECIPE].enabled then
 			data.raw.recipe[RECIPE].enabled = false
 			data.raw.recipe[RECIPE].hidden = false

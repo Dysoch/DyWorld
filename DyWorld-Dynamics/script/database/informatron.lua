@@ -18,9 +18,7 @@ function dyworld_menu(player_index)
 				health = 1,
 			},
 			bonus = {
-				global_stat = 1,
-				personal_stat = 1,
-				attribute = 1,
+				stats = 1,
 				bonuses = 1,
 			},
 			script_attack = 1,
@@ -140,16 +138,42 @@ function dyworld_page_content(page_name, player_index, element)
 		element.add{type="label", name="", caption={"DyWorld.page_bonus"}}
 	end
   
-	if page_name == "global_stat" then
-		element.add{type="label", name="", caption={"DyWorld.page_global_stat"}}
-	end
-  
-	if page_name == "personal_stat" then
-		element.add{type="label", name="", caption={"DyWorld.page_personal_stat"}}
-	end
-  
-	if page_name == "attribute" then
-		element.add{type="label", name="", caption={"DyWorld.page_attribute"}}
+	if page_name == "stats" then
+		element.add{type="label", name="", caption={"DyWorld.page_stats_1"}}
+	
+		local table2 = element.add{type = "table", name = "table2", column_count = 3, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
+		
+		table2.add{type = "label", caption = ""}
+		table2.add{type = "label", caption = "[color=yellow]Personal: [/color]"}
+		table2.add{type = "label", caption = "[color=yellow]Total: [/color]"}
+	
+		table2.add{type = "label", caption = "[color=yellow]Crafted: [/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[player_index].crafted.."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.crafted_amount or 0).."[/color]"}
+		
+		table2.add{type = "label", caption = "[color=yellow]Mined: [/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[player_index].mined.."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.mined_amount or 0).."[/color]"}
+		
+		table2.add{type = "label", caption = "[color=yellow]Built: [/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[player_index].build.."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.build_amount or 0).."[/color]"}
+		
+		table2.add{type = "label", caption = "[color=yellow]Picked: [/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[player_index].picked.."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.picked_amount or 0).."[/color]"}
+		
+		table2.add{type = "label", caption = "[color=yellow]Built: [/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..global.dyworld.players[player_index].killed.."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..(global.dyworld.game_stats.killed_amount or 0).."[/color]"}
+		
+		element.add{type="label", name="", caption={"DyWorld.page_stats_2"}}
+		
+		element.add{type="label", name="", caption={"DyWorld.page_stats_3"}}
+		
+		element.add{type="label", name="", caption={"DyWorld.page_stats_4"}}
+		
+		element.add{type="label", name="", caption={"DyWorld.page_stats_5"}}
 	end
   
 	if page_name == "bonuses" then

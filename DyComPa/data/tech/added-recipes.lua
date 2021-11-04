@@ -244,6 +244,7 @@ local Recipes = {
 	["filter-nitrogen-1"] = {"filters-1"},
 	["filter-oxygen-1"] = {"filters-1"},
 	["filter-hydrogen-1"] = {"filters-1"},
+	["water-to-ore"] = {"filters-2"},
 	["filter-nitrogen-2"] = {"filters-3"},
 	["filter-oxygen-2"] = {"filters-3"},
 	["filter-hydrogen-2"] = {"filters-3"},

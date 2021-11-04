@@ -391,9 +391,10 @@ Dy_Exclude_Tech = {
 	["se-deep-space-science-pack-4"] = 1,
 }
 
--- @todo Change Resistances Walls/Gates
+-- TODO Change Resistances Walls/Gates
 Dy_Walls = {
 	["stone-brick"] = {
+		Color = {255, 255, 255},
 		Health = 250,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -412,6 +413,7 @@ Dy_Walls = {
 		Control_Tier = 1,
 	},
 	["brick"] = {
+		Color = {255, 123, 123},
 		Health = 450,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -430,6 +432,7 @@ Dy_Walls = {
 		Control_Tier = 1,
 	},
 	["concrete"] = {
+		Color = {255, 255, 0},
 		Health = 750,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -448,6 +451,7 @@ Dy_Walls = {
 		Control_Tier = 2,
 	},
 	["iron-ingot"] = {
+		Color = Dy_Metal_Colors["iron"],
 		Health = 1000,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -466,6 +470,7 @@ Dy_Walls = {
 		Control_Tier = 1,
 	},
 	["refined-concrete"] = {
+		Color = {255, 255, 0},
 		Health = 2500,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -484,6 +489,7 @@ Dy_Walls = {
 		Control_Tier = 2,
 	},
 	["steel-plate"] = {
+		Color = Dy_Metal_Colors["steel"],
 		Health = 3000,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -502,6 +508,7 @@ Dy_Walls = {
 		Control_Tier = 2,
 	},
 	["obsidian"] = {
+		Color = {255, 255, 255},
 		Health = 5000,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -520,6 +527,7 @@ Dy_Walls = {
 		Control_Tier = 2,
 	},
 	["lead-ingot"] = {
+		Color = Dy_Metal_Colors["lead"],
 		Health = 2500,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -538,6 +546,7 @@ Dy_Walls = {
 		Control_Tier = 3,
 	},
 	["magnox-plate"] = {
+		Color = Dy_Metal_Colors["copper"],
 		Health = 7500,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -556,6 +565,7 @@ Dy_Walls = {
 		Control_Tier = 3,
 	},
 	["chromium-ingot"] = {
+		Color = Dy_Metal_Colors["chromium"],
 		Health = 10000,
 		Resistances = {
 			["physical"] = {0, 10},
@@ -574,6 +584,7 @@ Dy_Walls = {
 		Control_Tier = 3,
 	},
 	["cobalt-ingot"] = {
+		Color = Dy_Metal_Colors["cobalt"],
 		Health = 15000,
 		Resistances = {
 			["physical"] = {0, 25},
@@ -592,6 +603,7 @@ Dy_Walls = {
 		Control_Tier = 4,
 	},
 	["tungsten-ingot"] = {
+		Color = Dy_Metal_Colors["tungsten"],
 		Health = 30000,
 		Resistances = {
 			["physical"] = {0, 50},

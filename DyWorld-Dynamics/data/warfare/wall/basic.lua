@@ -25,8 +25,14 @@ data:extend({
     type = "item",
     name = k.."-wall",
 	localised_name = {"looped-name.wall-1", {"looped-name."..k}},
-    icon = "__base__/graphics/icons/wall.png",
-    icon_size = 64, icon_mipmaps = 4,
+	localised_description = {"looped-name.wall-3", v.Health},
+	icons = {
+	  {	
+		icon = "__base__/graphics/icons/wall.png",
+		tint = v.Color,
+	  },
+	},
+    icon_size = 64,
     subgroup = DyDs.."wall",
     order = v.Tier.."-"..k,
     place_result = k.."-wall",
@@ -36,8 +42,14 @@ data:extend({
     type = "item",
     name = k.."-gate",
 	localised_name = {"looped-name.wall-2", {"looped-name."..k}},
-    icon = "__base__/graphics/icons/gate.png",
-    icon_size = 64, icon_mipmaps = 4,
+	localised_description = {"looped-name.wall-4", math.floor(v.Health * 0.8)},
+	icons = {
+	  {	
+		icon = "__base__/graphics/icons/gate.png",
+		tint = v.Color,
+	  },
+	},
+    icon_size = 64,
     subgroup = DyDs.."wall-gate",
     order = v.Tier.."-"..k,
     place_result = k.."-gate",

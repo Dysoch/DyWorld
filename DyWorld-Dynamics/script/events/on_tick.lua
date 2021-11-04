@@ -50,8 +50,7 @@ function Event_on_tick(event)
 	end
 
 	-- Automated Functions --
-	-- @todo Rewrite Automated Healing/Feeding Script to improve performance
-	if event.tick%(60*10) == ((60*10) - 1) then
+	if event.tick%(60*5) == ((60*5) - 1) then
 		for _,Player in pairs(global.dyworld.players) do
             if not global.dyworld.players[Player.id].implants then
                 global.dyworld.players[Player.id].implants = {}
@@ -164,7 +163,9 @@ function Event_on_tick(event)
                         Water_Lose(v.id, 5)
                     end
 				end
-
+				
+				Vitals_Check(v.id)
+				
 				if v.personal_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]
 					Close_Personal_GUI(player, v.id)

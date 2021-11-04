@@ -24,6 +24,7 @@ require("data.entity.aai-industry")
 require("data.items.base")
 require("data.items.aai")
 require("data.items.space-exploration")
+require("data.items.transport-drones")
 
 -- Recipes --
 require("data.recipes.base")
@@ -39,5 +40,9 @@ require("data.tech.space-exploration")
 require("data.tech.nanobot")
 require("data.tech.robot-attri")
 require("data.tech.small-mods-1")
+require("data.tech.transport-drones")
+
+
+-- Leave these as last, add everything in the categories above
 require("data.tech.added-recipes")
 require("data.tech.last-fixes")

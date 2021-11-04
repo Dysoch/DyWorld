@@ -33,6 +33,16 @@ local Data_Table_Item_Group = {
 	},
 }
 
+if mods["Transport_Drones"] then
+   table.insert(Data_Table_Item_Group, 
+	{
+		Name = "transport-drones-circuit",
+		Type = "sub",
+		Main = "decor"
+	}
+   )
+end
+
 function DyWorld_Item_Main_Group(NAME, ICON)
   local result =
   {

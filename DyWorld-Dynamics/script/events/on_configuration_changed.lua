@@ -5,11 +5,6 @@ end
 
 function Event_on_configuration_changed()
 	local Time = global.dyworld.game_stats.time_stamp
-    
-    -- Migrate the story to new version. Changes all above the current phase/act to its new database
-	if (global.dyworld and global.dyworld.story and global.dyworld.story.act) then
-		Story_Migrate(global.dyworld.story.act, global.dyworld.story.phase)
-	end
 
     -- Checks every Migration. These are single changes, done to ensure migrated scripts
     One_Time_Migration()
@@ -24,6 +19,11 @@ function Event_on_configuration_changed()
 			Dy_update_overhead_buttons(game.players[v.index])
 		end
 	end
+    
+    -- Migrate the story to new version. Changes all above the current phase/act to its new database
+	if (global.dyworld and global.dyworld.story and global.dyworld.story.act) then
+		Story_Migrate(global.dyworld.story.act, global.dyworld.story.phase)
+	end
 	
     -- Checks every Migration. Done to ensure new technologies are searched against story
 	for k,v in pairs(game.forces.player.technologies) do
@@ -36,6 +36,6 @@ function Event_on_configuration_changed()
 	Reunlock_Recipes()
 	Repopulate_Side_Objectives_Table()
     if global.dyworld.game_stats.inserters then
-        InserterCheck(global.dyworld.game_stats.inserters)
+        InserterCheck(global.dyworld.game_stats.inserters, true)
     end
 end

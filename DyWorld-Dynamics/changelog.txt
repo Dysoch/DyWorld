@@ -10,6 +10,7 @@ Date: ???
     - Changed a few colors of Walls and Gates. Should be a bit easier to see what is what till i make permanent graphics
     - Balanced burner mining drills to be worst. Should now want to upgrade to the next tier
     - Night Vision and Exoskeleton have a larger buffer energy size
+    - Rocket Silo's now use 1 recipe to build the rocket, and the recipes have been balanced
   Bugfixes:
     - Production Science pack ingredients changed
     - Equipment should give correct item back when taken out of armor

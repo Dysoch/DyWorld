@@ -120,29 +120,25 @@ script.on_event(defines.events.on_entity_settings_pasted, function(event)
 	end
 end)
 
-function InserterCheck(VAR)
+function InserterCheck(VAR, Bool)
 	for k,v in pairs(Inserters_Recipes) do
 		for index,player in pairs(game.players) do
 			if player.force.recipes[k] then
-                --[[
-				if VAR <= v.Disable and player.force.recipes[k].enabled then
-					player.force.recipes[k].enabled = false
-					PlayerPrint({"looped-name.lost-knowledge", {"item-name."..k}})
-				end
-                ]]
-				if VAR >= v.Enable and not player.force.recipes[k].enabled then
+				if (VAR >= v.Enable and player.force.recipes[k].enabled == false) then
                     if v.Extra then
                         if v.Extra == "Story" then
                             if global.dyworld_story then
                                 if (global.dyworld.story.act > v.Story[1]) or (global.dyworld.story.act >= v.Story[1] and global.dyworld.story.phase >= v.Story[2]) then
                                     player.force.recipes[k].enabled = true
-                                    --PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
-                                    PlayerPrint({"looped-name.gained-knowledge", k})
+									if not Bool then
+										PlayerPrint({"looped-name.gained-knowledge", k})
+									end
                                 end
                             else
                                 player.force.recipes[k].enabled = true
-                                --PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
-                                PlayerPrint({"looped-name.gained-knowledge", k})
+								if not Bool then
+									PlayerPrint({"looped-name.gained-knowledge", k})
+								end
                             end
                         elseif v.Extra == "Research" then
                             local amount_research = 0
@@ -154,15 +150,17 @@ function InserterCheck(VAR)
                                 end
                                 if amount_done >= amount_research then
                                     player.force.recipes[k].enabled = true
-                                    PlayerPrint({"looped-name.gained-knowledge", k})
-                                    --PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
+									if not Bool then
+										PlayerPrint({"looped-name.gained-knowledge", k})
+									end
                                 end
                             end
                         end
                     else
                         player.force.recipes[k].enabled = true
-                        --PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
-                        PlayerPrint({"looped-name.gained-knowledge", k})
+						if not Bool then
+							PlayerPrint({"looped-name.gained-knowledge", k})
+						end
                     end
 				end
 			end

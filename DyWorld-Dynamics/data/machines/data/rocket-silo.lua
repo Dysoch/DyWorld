@@ -2,7 +2,7 @@
 
 local DyWorld_Prototype_1a = DyDs_CopyPrototype("rocket-silo", "rocket-silo", "rocket-silo-1", true)
 local DyWorld_Prototype_1b = DyDs_CopyPrototype("rocket-silo-rocket", "rocket-silo-rocket", "rocket-silo-rocket-1", true)
-DyWorld_Prototype_1a.rocket_parts_required = 25
+DyWorld_Prototype_1a.rocket_parts_required = 1
 DyWorld_Prototype_1a.fixed_recipe = "rocket-part-1"
 DyWorld_Prototype_1a.rocket_entity = "rocket-silo-rocket-1"
 DyWorld_Prototype_1a.next_upgrade = "rocket-silo-2"
@@ -60,22 +60,22 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-2", amount = 2},
-        {type = "item", name = "steel-plate", amount = 5},
-        {type = "item", name = "titanium-plate", amount = 4},
-        {type = "item", name = "coal", amount = 1},
+        {type = "item", name = "control-board-2", amount = 40},
+        {type = "item", name = "steel-plate", amount = 85},
+        {type = "item", name = "titanium-plate", amount = 75},
+        {type = "item", name = "coal", amount = 15},
       },
       result = "rocket-part-1",
 	  enabled = false,
       hidden = true,
-	  energy_required = 5,
+	  energy_required = 60,
     },
   },
 })
 
 local DyWorld_Prototype_2a = DyDs_CopyPrototype("rocket-silo", "rocket-silo", "rocket-silo-2", true)
 local DyWorld_Prototype_2b = DyDs_CopyPrototype("rocket-silo-rocket", "rocket-silo-rocket", "rocket-silo-rocket-2", true)
-DyWorld_Prototype_2a.rocket_parts_required = 25
+DyWorld_Prototype_2a.rocket_parts_required = 1
 DyWorld_Prototype_2a.fixed_recipe = "rocket-part-2"
 DyWorld_Prototype_2a.rocket_entity = "rocket-silo-rocket-2"
 DyWorld_Prototype_2a.next_upgrade = "rocket-silo-3"
@@ -169,22 +169,22 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-3", amount = 1},
-        {type = "item", name = "polycarbonate", amount = 4},
-        {type = "item", name = "low-density-structure", amount = 1},
-        {type = "fluid", name = "natural-gas", amount = 5},
+        {type = "item", name = "control-board-3", amount = 18},
+        {type = "item", name = "polycarbonate", amount = 75},
+        {type = "item", name = "low-density-structure", amount = 20},
+        {type = "fluid", name = "natural-gas", amount = 250},
       },
       result = "rocket-part-2",
 	  enabled = false,
       hidden = true,
-	  energy_required = 5,
+	  energy_required = 60,
     },
   },
 })
 
 local DyWorld_Prototype_3a = DyDs_CopyPrototype("rocket-silo", "rocket-silo", "rocket-silo-3", true)
 local DyWorld_Prototype_3b = DyDs_CopyPrototype("rocket-silo-rocket", "rocket-silo-rocket", "rocket-silo-rocket-3", true)
-DyWorld_Prototype_3a.rocket_parts_required = 25
+DyWorld_Prototype_3a.rocket_parts_required = 1
 DyWorld_Prototype_3a.fixed_recipe = "rocket-part-3"
 DyWorld_Prototype_3a.rocket_entity = "rocket-silo-rocket-3"
 DyWorld_Prototype_3a.next_upgrade = "rocket-silo-4"
@@ -277,22 +277,22 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-4", amount = 1},
-        {type = "item", name = "duralumin-plate", amount = 5},
-        {type = "item", name = "magnox-plate", amount = 3},
-        {type = "fluid", name = "gasoline", amount = 5},
+        {type = "item", name = "control-board-4", amount = 20},
+        {type = "item", name = "duralumin-plate", amount = 100},
+        {type = "item", name = "magnox-plate", amount = 50},
+        {type = "fluid", name = "gasoline", amount = 250},
       },
       result = "rocket-part-3",
 	  enabled = false,
       hidden = true,
-	  energy_required = 5,
+	  energy_required = 60,
     },
   },
 })
 
 local DyWorld_Prototype_4a = DyDs_CopyPrototype("rocket-silo", "rocket-silo", "rocket-silo-4", true)
 local DyWorld_Prototype_4b = DyDs_CopyPrototype("rocket-silo-rocket", "rocket-silo-rocket", "rocket-silo-rocket-4", true)
-DyWorld_Prototype_4a.rocket_parts_required = 25
+DyWorld_Prototype_4a.rocket_parts_required = 1
 DyWorld_Prototype_4a.fixed_recipe = "rocket-part-4"
 DyWorld_Prototype_4a.rocket_entity = "rocket-silo-rocket-4"
 DyWorld_Prototype_4a.next_upgrade = nil
@@ -385,15 +385,15 @@ data:extend({
     {
       ingredients =
       {
-        {type = "item", name = "control-board-5", amount = 1},
-        {type = "item", name = "duralumin-plate", amount = 20},
-        {type = "item", name = "magnox-plate", amount = 15},
-        {type = "fluid", name = "gasoline", amount = 5},
+        {type = "item", name = "control-board-5", amount = 20},
+        {type = "item", name = "duralumin-plate", amount = 250},
+        {type = "item", name = "magnox-plate", amount = 350},
+        {type = "fluid", name = "gasoline", amount = 500},
       },
       result = "rocket-part-4",
 	  enabled = false,
       hidden = true,
-	  energy_required = 5,
+	  energy_required = 60,
     },
   },
 })

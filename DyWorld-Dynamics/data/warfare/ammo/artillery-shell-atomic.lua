@@ -83,6 +83,24 @@ data:extend(
             repeat_count = 4 * 4 * 15
           },
           {
+            type = "set-tile",
+            tile_name = "nuclear-ground",
+            radius = 60,
+            apply_projection = true,
+            tile_collision_mask = { "water-tile" }
+          },
+          {
+            type = "camera-effect",
+            effect = "screen-burn",
+            duration = 60,
+            ease_in_duration = 5,
+            ease_out_duration = 60,
+            delay = 0,
+            strength = 6,
+            full_strength_max_distance = 200,
+            max_distance = 800
+          },
+          {
             type = "play-sound",
             sound = 
 			{
@@ -176,10 +194,10 @@ data:extend(
           type = "instant",
           target_effects =
           {
-            {
-              type = "create-entity",
-              entity_name = "medium-explosion"
-            }
+			{
+			  type = "create-entity",
+              entity_name = "nuke-explosion"
+            },
           }
         }
       },
@@ -195,6 +213,12 @@ data:extend(
 		      type = "damage",
 			  damage = {amount = 1000, type = "exotic-energy"}
 			},
+            {
+              type = "create-entity",
+              entity_name = "huge-scorchmark",
+              offsets = {{ 0, -0.5 }},
+              check_buildability = true
+            },
 		  }
         }
       }
@@ -230,10 +254,16 @@ data:extend(
           type = "instant",
           target_effects =
           {
+			{
+			  type = "create-entity",
+              entity_name = "nuke-explosion"
+            },
             {
               type = "create-entity",
-              entity_name = "massive-explosion"
-            }
+              entity_name = "huge-scorchmark",
+              offsets = {{ 0, -0.5 }},
+              check_buildability = true
+            },
           }
         }
       },

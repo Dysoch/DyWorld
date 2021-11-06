@@ -107,8 +107,6 @@ function Main_GUI(player, id)
 		frameflow1.add{type = "label", caption = "Dyson Network Power: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_total), tooltip = "Universal Dyson Network:\nPower Total: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_total).."\nPower Available: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power).."\nPower Used: "..Dyson_Power_Check(global.dyworld.game_stats.dyson.power_used).."\nNetwork Efficiency: [color=blue]"..Round(global.dyworld.game_stats.dyson.effect, 2).."[/color]%\nSatellites: [color=blue]"..global.dyworld.game_stats.dyson.sats.."[/color]\nStructures: [color=blue]"..global.dyworld.game_stats.dyson.structures.."[/color]\n\n"..surface.." Dyson Network: \n(Contribution to the Universal Network)\nPower Total Gained: "..Dyson_Power_Check(global.dyworld.game_stats.dyson_1[surface].power_total).."\nSolar Efficiency: [color=blue]"..Round((global.dyworld.game_stats.dyson_1[surface].effect * 100), 2).."[/color]%\nSatellites: [color=blue]"..global.dyworld.game_stats.dyson_1[surface].sats.."[/color]\nStructures: [color=blue]"..global.dyworld.game_stats.dyson_1[surface].structures.."[/color]"}
 	end
 	frameflow1.add{type = "line", direction = "horizontal"}
-	frameflow1.add{type = "label", caption = "Evolution: [color=blue]"..Round(game.forces.enemy.evolution_factor, 2).."[/color]"}
-	frameflow1.add{type = "label", caption = "Custom Evolution: [color=blue]"..Round(global.dyworld.game_stats.difficulty, 0).."[/color]"}
 		
 	if debugger then
 		--frameflow1.add{type = "line", direction = "horizontal"}
@@ -123,8 +121,10 @@ function Main_GUI(player, id)
 	if not global.dyworld.players[id].implants then Implant_Check(id, nil, nil) end
     local GloPla = global.dyworld.players[id].implants
 	tabbed_pane.add_tab(tab2, frameflow2)
-		
-	frameflow2.add{type = "label", caption = "Total Attributes: [color=blue]"..(global.dyworld.players[id].strength + global.dyworld.players[id].constitution + global.dyworld.players[id].dexterity + global.dyworld.players[id].intelligence + global.dyworld.players[id].wisdom + global.dyworld.players[id].charisma).."[/color]", tooltip = "Strength: [color=blue]"..global.dyworld.players[id].strength.."[/color]\nConstitution: [color=blue]"..global.dyworld.players[id].constitution.."[/color]\nDexterity: [color=blue]"..global.dyworld.players[id].dexterity.."[/color]\nIntelligence: [color=blue]"..global.dyworld.players[id].intelligence.."[/color]\nWisdom: [color=blue]"..global.dyworld.players[id].wisdom.."[/color]\nCharisma: [color=blue]"..global.dyworld.players[id].charisma.."[/color]"}
+	
+	if debugger then
+		frameflow2.add{type = "label", caption = "Total Attributes: [color=blue]"..(global.dyworld.players[id].strength + global.dyworld.players[id].constitution + global.dyworld.players[id].dexterity + global.dyworld.players[id].intelligence + global.dyworld.players[id].wisdom + global.dyworld.players[id].charisma).."[/color]", tooltip = "Strength: [color=blue]"..global.dyworld.players[id].strength.."[/color]\nConstitution: [color=blue]"..global.dyworld.players[id].constitution.."[/color]\nDexterity: [color=blue]"..global.dyworld.players[id].dexterity.."[/color]\nIntelligence: [color=blue]"..global.dyworld.players[id].intelligence.."[/color]\nWisdom: [color=blue]"..global.dyworld.players[id].wisdom.."[/color]\nCharisma: [color=blue]"..global.dyworld.players[id].charisma.."[/color]"}
+	end
     frameflow2.add{type = "label", caption = "[color=yellow]Implants[/color]", tooltip = "Strength Implant: \n"..Check_Implant_State(id, "strength-implant").."\n\nConstitution Implant: \n"..Check_Implant_State(id, "constitution-implant").."\n\nDexterity Implant: \n"..Check_Implant_State(id, "dexterity-implant").."\n\nIntelligence Implant: \n"..Check_Implant_State(id, "intelligence-implant").."\n\nWisdom Implant: \n"..Check_Implant_State(id, "wisdom-implant").."\n\nCharisma Implant: \n"..Check_Implant_State(id, "charisma-implant")}
 	
 	frameflow2.add{type = "line", direction = "horizontal"}

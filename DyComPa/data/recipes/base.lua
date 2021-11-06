@@ -210,7 +210,7 @@ data:extend({
       {
         {type = "item", name = "aluminium-plate", amount = 15},
         {type = "item", name = "magnesium-plate", amount = 5},
-        {type = "item", name = "plastic-bar", amount = 10},
+        {type = "item", name = "polycarbonate", amount = 10},
         {type = "item", name = "engine-unit", amount = 2},
         {type = "fluid", name = "petroleum-gas", amount = 50},
         {type = "item", name = "solar-cell", amount = 8},

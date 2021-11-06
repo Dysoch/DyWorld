@@ -13,6 +13,7 @@ end
 
 local Fix_Prereq_Table = {
     ["rocket-fuel"] = {"logistic-science-pack", "oil-processing-2"},
+    ["se-heat-shielding"] = {"chemical-science-pack"},
 }
 
 for k,v in pairs(Fix_Prereq_Table) do

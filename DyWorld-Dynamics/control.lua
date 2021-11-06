@@ -18,7 +18,7 @@ require "script/lualib/space-mining"
 inspect = require("script/lualib/inspect")
 require("script/database/recipes")
 require("script/database/inserter")
-require("script/database/food")
+require("script/database/vitals")
 require("script/database/implants")
 require("script/database/dyson")
 require("script/database/mining")

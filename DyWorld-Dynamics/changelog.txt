@@ -1,6 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: ???
+  Features:
+    - Radiation will now damage you. Shields will take the effect though, but it will cause a constant drain. Certain amount of radiations will hurt you more
+    - Radiation will now increase when holding radioactive materials in your inventory. Make sure to not carry them!
   Minor Features:
     - Updated Side-Inserter Scripts (made by Gotlag)
     - Updated Inserters graphics for icons to better show what it does

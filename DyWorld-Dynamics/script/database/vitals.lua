@@ -31,3 +31,14 @@ Medpack_Values  = {
 	["se-med-pack-3"] = 200,
 	["se-med-pack-4"] = 400,
 }
+
+Radiation_Values  = {
+	["uranium-ore"] = 20,
+	["spend-uranium-ore"] = 2,
+	["uranium-235"] = 50,
+	["spend-uranium-235"] = 5,
+	["uranium-238"] = 75,
+	["spend-uranium-238"] = 7.5,
+	["argonium-fuel-cell"] = 15,
+	["spend-argonium-fuel-cell"] = 1.5,
+}

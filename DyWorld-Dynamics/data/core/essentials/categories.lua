@@ -21,7 +21,8 @@ local Damage_Table = {
 	"nuclear", "poison", "acid", "fire", "water", 
 	"plasma", "laser", "chemical", "physical", "explosion", 
 	"impact", "sonic", "ballistic", "teleport", "radiation",
-	"exotic-energy", "temperature", "pollution",
+	"exotic-energy", "temperature-high", "temperature-low",
+	"toxic",
 }
 
 local Recipe_Categories = {

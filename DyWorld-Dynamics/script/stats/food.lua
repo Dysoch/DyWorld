@@ -140,6 +140,9 @@ function Auto_Food_Intake(ID)
                         if ((global.dyworld.players[ID].water_max - (global.dyworld.players[ID].water + Food_Values[k].Water)) >= 0) and ((global.dyworld.players[ID].food_max - (global.dyworld.players[ID].food + Food_Values[k].Food)) >= 0) then
                             Water_Add(ID, Food_Values[k].Water)
                             Food_Add(ID, Food_Values[k].Food)
+							if Food_Values[k].Radiation then
+								Add_Radiation(ID, Food_Values[k].Radiation)
+							end
                             Inv.remove({name = k, count = 1})
                             if game.forces.player.technologies["implants-2"].researched then
                             else
@@ -149,6 +152,9 @@ function Auto_Food_Intake(ID)
                     elseif Food_Values[k].Water and not Food_Values[k].Food then
                         if (global.dyworld.players[ID].water_max - (global.dyworld.players[ID].water + Food_Values[k].Water)) >= 0 then
                             Water_Add(ID, Food_Values[k].Water)
+							if Food_Values[k].Radiation then
+								Add_Radiation(ID, Food_Values[k].Radiation)
+							end
                             Inv.remove({name = k, count = 1})
                             if game.forces.player.technologies["implants-2"].researched then
                             else
@@ -158,6 +164,9 @@ function Auto_Food_Intake(ID)
                     elseif Food_Values[k].Food and not Food_Values[k].Water then
                         if (global.dyworld.players[ID].food_max - (global.dyworld.players[ID].food + Food_Values[k].Food)) >= 0 then
                             Food_Add(ID, Food_Values[k].Food)
+							if Food_Values[k].Radiation then
+								Add_Radiation(ID, Food_Values[k].Radiation)
+							end
                             Inv.remove({name = k, count = 1})
                             if game.forces.player.technologies["implants-2"].researched then
                             else

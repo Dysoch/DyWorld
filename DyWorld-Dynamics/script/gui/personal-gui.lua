@@ -142,8 +142,6 @@ function Personal_GUI(player, id)
     table2.add{type = "label", caption = "[color=blue]"..Round(game.forces.enemy.evolution_factor, 2).."[/color]"}
     table2.add{type = "label", caption = "Custom Evo:"}
     table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.game_stats.difficulty, 0).."[/color]"}
-
-    frameflow1.add{type = "label", caption = "[color=yellow]Implants[/color]", tooltip = "Food Reduction: \n"..Check_Implant_State(id, "usage-reduction").."\n\nSpeed Implant: \n"..Check_Implant_State(id, "speed-implant").."\n\nDeath Implant: \n"..Check_Implant_State(id, "death-implant")}
 	
     if debugger then
     end

@@ -19,6 +19,9 @@ function Event_on_player_used_capsule(event)
 		if Food_Values[name].Food then
 			Food_Add(id, Food_Values[name].Food)
 		end
+		if Food_Values[name].Radiation then
+			Add_Radiation(id, Food_Values[k].Radiation)
+		end
 	end
 	
 	----- Personal counter -----

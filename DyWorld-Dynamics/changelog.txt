@@ -15,6 +15,7 @@ Date: ???
     - Night Vision and Exoskeleton have a larger buffer energy size
     - Rocket Silo's now use 1 recipe to build the rocket, and the recipes have been balanced
     - Few changes to the massive nuke. Is now more UPS friendly (drops to 19 UPS instead of 2)
+    - Locomotive 1 fuel slots: 3 > 1
   Bugfixes:
     - Production Science pack ingredients changed
     - Equipment should give correct item back when taken out of armor

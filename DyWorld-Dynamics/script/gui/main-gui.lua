@@ -47,6 +47,15 @@ local function Check_State(id, IMPLANT, Tier)
     end
 end
 
+local function Check_Implant_State_2(id, IMPLANT)	
+    local GloPla = global.dyworld.players[id].implants
+    if GloPla[IMPLANT].enabled == true then
+		return "[color=green]✔[/color]"
+	else
+		return "[color=red]✘[/color]"
+	end
+end
+
 local function Check_Implant_State(id, IMPLANT)
     local GloPla = global.dyworld.players[id].implants
     local GloPla_1 = Check_State(id, IMPLANT, 1)
@@ -69,13 +78,10 @@ function Main_GUI(player, id)
 	local tabbed_pane = player.gui.top.add{type = "tabbed-pane", name = "DyDs_Main_GUI"}
 
 -------------------------------- Game Stats TAB ----------------------------------------
-	local tab1 = tabbed_pane.add{type="tab", caption="Game Stats"}
+	local tab1 = tabbed_pane.add{type="tab", caption = {"dyworld-gui-main.tab-1-caption"}}
 	local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
 	tabbed_pane.add_tab(tab1, frameflow1)
 	local table1 = frameflow1.add{type = "table", name = "table1", column_count = 2, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
-
-	local total = Round(((global.dyworld.game_stats.crafted_amount or 0) + (global.dyworld.game_stats.mined_amount or 0) + (global.dyworld.game_stats.build_amount or 0) + (global.dyworld.game_stats.killed_amount or 0) + (global.dyworld.game_stats.picked_amount or 0)), 0)
-	--frameflow1.add{type = "label", caption = "Game Stats (1/3): [color=blue]"..total.."[/color]", tooltip = "Total Crafted: [color=blue]"..(global.dyworld.game_stats.crafted_amount or 0).."[/color]\nTotal Mined: [color=blue]"..(global.dyworld.game_stats.mined_amount or 0).."[/color]\nTotal Built: [color=blue]"..(global.dyworld.game_stats.build_amount or 0).."[/color]\nTotal Killed: [color=blue]"..(global.dyworld.game_stats.killed_amount or 0).."[/color]\nTotal Looted: [color=blue]"..(global.dyworld.game_stats.picked_amount or 0).."[/color]"}
 		
 	local total = Round(((global.dyworld.game_stats.sector_scanned or 0) + (global.dyworld.game_stats.rockets_launched or 0)), 0)
 	frameflow1.add{type = "label", caption = "Game Stats (1/2): [color=blue]"..total.."[/color]", tooltip = "Sectors Scanned: [color=blue]"..(global.dyworld.game_stats.sector_scanned or 0).."[/color]\nRockets Launched: [color=blue]"..(global.dyworld.game_stats.rockets_launched or 0).."[/color]\nGame Days: [color=blue]"..(global.dyworld.game_stats.days or 0).."[/color]"}
@@ -108,15 +114,9 @@ function Main_GUI(player, id)
 	end
 	frameflow1.add{type = "line", direction = "horizontal"}
 		
-	if debugger then
-		--frameflow1.add{type = "line", direction = "horizontal"}
-		--frameflow1.add{type = "label", caption = "Chunks: [color=blue]"..global.dyworld.game_stats.chunks.."[/color]"}
-		--frameflow1.add{type = "line", direction = "horizontal"}
-	end
-		
 
 -------------------------------- Player stats TAB -------------------------------------
-	local tab2 = tabbed_pane.add{type="tab", caption="Stats"}
+	local tab2 = tabbed_pane.add{type = "tab", caption = {"dyworld-gui-main.tab-2-caption"}}
 	local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 	if not global.dyworld.players[id].implants then Implant_Check(id, nil, nil) end
     local GloPla = global.dyworld.players[id].implants
@@ -125,9 +125,6 @@ function Main_GUI(player, id)
 	if debugger then
 		frameflow2.add{type = "label", caption = "Total Attributes: [color=blue]"..(global.dyworld.players[id].strength + global.dyworld.players[id].constitution + global.dyworld.players[id].dexterity + global.dyworld.players[id].intelligence + global.dyworld.players[id].wisdom + global.dyworld.players[id].charisma).."[/color]", tooltip = "Strength: [color=blue]"..global.dyworld.players[id].strength.."[/color]\nConstitution: [color=blue]"..global.dyworld.players[id].constitution.."[/color]\nDexterity: [color=blue]"..global.dyworld.players[id].dexterity.."[/color]\nIntelligence: [color=blue]"..global.dyworld.players[id].intelligence.."[/color]\nWisdom: [color=blue]"..global.dyworld.players[id].wisdom.."[/color]\nCharisma: [color=blue]"..global.dyworld.players[id].charisma.."[/color]"}
 	end
-    frameflow2.add{type = "label", caption = "[color=yellow]Implants[/color]", tooltip = "Strength Implant: \n"..Check_Implant_State(id, "strength-implant").."\n\nConstitution Implant: \n"..Check_Implant_State(id, "constitution-implant").."\n\nDexterity Implant: \n"..Check_Implant_State(id, "dexterity-implant").."\n\nIntelligence Implant: \n"..Check_Implant_State(id, "intelligence-implant").."\n\nWisdom Implant: \n"..Check_Implant_State(id, "wisdom-implant").."\n\nCharisma Implant: \n"..Check_Implant_State(id, "charisma-implant")}
-	
-	frameflow2.add{type = "line", direction = "horizontal"}
 	
 	local table2 = frameflow2.add{type = "table", name = "table2", column_count = 3, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
 	
@@ -164,51 +161,149 @@ function Main_GUI(player, id)
 		
 
 -------------------------------- Player Bonuses TAB ------------------------------------
-	local tab4 = tabbed_pane.add{type="tab", caption = "Bonuses"}
+	local tab4 = tabbed_pane.add{type="tab", caption = {"dyworld-gui-main.tab-3-caption"}}
 	local frameflow4 = tabbed_pane.add{type = "flow", name = "flow4", direction = "vertical"}
 	tabbed_pane.add_tab(tab4, frameflow4)
 	local table4 = frameflow4.add{type = "table", name = "table4", column_count = 2, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
 		
 	if game.players[id].character then
 		----- Player Bonuses -----
-		table4.add{type = "label", caption = "Build Distance: "}
-		table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].build_distance + game.players[id].character_build_distance_bonus), 2)).."[/color]"}
+		if (game.entity_prototypes["character"].build_distance + game.players[id].character_build_distance_bonus) > game.entity_prototypes["character"].build_distance then
+			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-1"}, tooltip = {"dyworld-gui-main.tooltip-3-1-1"}}
+			table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].build_distance + game.players[id].character_build_distance_bonus), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-1-2"}}
+		end
 		
-		table4.add{type = "label", caption = "Reach Distance: "}
-		table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].reach_distance + game.players[id].character_reach_distance_bonus), 2)).."[/color]"}
+		if (game.entity_prototypes["character"].reach_distance + game.players[id].character_reach_distance_bonus) > game.entity_prototypes["character"].reach_distance then
+			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-2"}, tooltip = {"dyworld-gui-main.tooltip-3-2-1"}}
+			table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].reach_distance + game.players[id].character_reach_distance_bonus), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-2-2"}}
+		end
 		
-		table4.add{type = "label", caption = "Loot Pickup Distance: "}
-		table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].loot_pickup_distance + game.players[id].character_loot_pickup_distance_bonus), 2)).."[/color]"}
+		if (game.entity_prototypes["character"].loot_pickup_distance + game.players[id].character_loot_pickup_distance_bonus) > game.entity_prototypes["character"].loot_pickup_distance then
+			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-3"}, tooltip = {"dyworld-gui-main.tooltip-3-3-1"}}
+			table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].loot_pickup_distance + game.players[id].character_loot_pickup_distance_bonus), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-3-2"}}
+		end
 		
-		table4.add{type = "label", caption = "Crafting Speed: "}
-		table4.add{type = "label", caption = "[color=blue]"..(Round(game.players[id].character_crafting_speed_modifier + 1, 2)).."[/color]"}
+		if (game.players[id].character_crafting_speed_modifier + 1) > 1 then
+			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-4"}, tooltip = {"dyworld-gui-main.tooltip-3-4-1"}}
+			table4.add{type = "label", caption = "[color=blue]"..(Round(game.players[id].character_crafting_speed_modifier + 1, 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-4-2"}}
+		end
 		
-		table4.add{type = "label", caption = "Mining Speed: "}
-		table4.add{type = "label", caption = "[color=blue]"..(Round(game.players[id].character_mining_speed_modifier + game.entity_prototypes["character"].mining_speed, 2)).."[/color]"}
+		if (game.players[id].character_mining_speed_modifier + game.entity_prototypes["character"].mining_speed) > game.entity_prototypes["character"].mining_speed then
+			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-5"}, tooltip = {"dyworld-gui-main.tooltip-3-5-1"}}
+			table4.add{type = "label", caption = "[color=blue]"..(Round(game.players[id].character_mining_speed_modifier + game.entity_prototypes["character"].mining_speed, 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-5-2"}}
+		end
 		
-		table4.add{type = "label", caption = "Inventory Slots: "}
-		table4.add{type = "label", caption = "[color=blue]"..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus).."[/color]"}
+		if (game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus) > game.entity_prototypes["character"].get_inventory_size(1) then
+			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-6"}, tooltip = {"dyworld-gui-main.tooltip-3-6-1"}}
+			table4.add{type = "label", caption = "[color=blue]"..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-6-2"}}
+		end
 		
-		table4.add{type = "label", caption = "Health: "}
-		table4.add{type = "label", caption = "[color=blue]"..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus).."[/color]"}
-		
+		if (game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus) > game.entity_prototypes["character"].max_health then
+			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-7"}, tooltip = {"dyworld-gui-main.tooltip-3-7-1"}}
+			table4.add{type = "label", caption = "[color=blue]"..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-7-2"}}
+		end
 	end
 	
 		----- Game Bonuses ----
 	table4.add{type = "line", direction = "horizontal"}
 	table4.add{type = "line", direction = "horizontal"}
 	
-	table4.add{type = "label", caption = "Stack Inserter Stack Bonus: "}
-	table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.stack_inserter_capacity_bonus), 0)).."[/color]"}
+	if game.forces.player.stack_inserter_capacity_bonus > 0 then
+		table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-8"}, tooltip = {"dyworld-gui-main.tooltip-3-8-1"}}
+		table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.stack_inserter_capacity_bonus), 0)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-8-2"}}
+	end
 	
-	table4.add{type = "label", caption = "Laboratory Productivity: "}
-	table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.laboratory_productivity_bonus), 2)).."[/color]"}
+	if game.forces.player.laboratory_productivity_bonus > 1 then
+		table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-9"}, tooltip = {"dyworld-gui-main.tooltip-3-9-1"}}
+		table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.laboratory_productivity_bonus), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-9-2"}}
+	end
 	
-	table4.add{type = "label", caption = "Laboratory Speed: "}
-	table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.laboratory_speed_modifier + 1), 2)).."[/color]"}
+	if (game.forces.player.laboratory_speed_modifier + 1) > 1 then
+		table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-10"}, tooltip = {"dyworld-gui-main.tooltip-3-10-1"}}
+		table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.laboratory_speed_modifier + 1), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-10-2"}}
+	end
 	
 	if game.forces.player.ghost_time_to_live >= 60 then
-		table4.add{type = "label", caption = "Ghost Time To Live: ", tooltip = "This is only for destroyed entities.\nThis does not effect hand placed ghosts\nIncrease time by building more ghosts (shift place)\nTime format: Hours:Minutes:Seconds"}
-		table4.add{type = "label", caption = "[color=blue]"..Time_Check(Round((game.forces.player.ghost_time_to_live / 60), 0)).."[/color]", tooltip = "This is only for destroyed entities.\nThis does not effect hand placed ghosts\nIncrease time by building more ghosts (shift place)\nTime format: Hours:Minutes:Seconds"}
+		table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-11"}, tooltip = {"dyworld-gui-main.tooltip-3-11-1"}}
+		table4.add{type = "label", caption = "[color=blue]"..Time_Check(Round((game.forces.player.ghost_time_to_live / 60), 0)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-11-2"}}
 	end
+		
+
+-------------------------------- Implants TAB ------------------------------------
+	local tab5 = tabbed_pane.add{type="tab", caption = {"dyworld-gui-main.tab-4-caption"}}
+	local frameflow5 = tabbed_pane.add{type = "flow", name = "flow5", direction = "vertical"}
+	tabbed_pane.add_tab(tab5, frameflow5)
+	
+	local table5 = frameflow5.add{type = "table", name = "table5", column_count = 6, draw_vertical_lines = true, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
+	
+	table5.add{type = "label", caption = ""}
+	table5.add{type = "label", caption = "Mk 1"}
+	table5.add{type = "label", caption = "Mk 2"}
+	table5.add{type = "label", caption = "Mk 3"}
+	table5.add{type = "label", caption = "Mk 4"}
+	table5.add{type = "label", caption = "MK 5"}
+	
+	table5.add{type = "label", caption = {"looped-name.strength"}, tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.strength"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "strength-implant-1"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.strength"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "strength-implant-2"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.strength"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "strength-implant-3"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.strength"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "strength-implant-4"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.strength"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "strength-implant-5"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.strength"}}}
+	
+	table5.add{type = "label", caption = {"looped-name.constitution"}, tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.constitution"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "constitution-implant-1"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.constitution"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "constitution-implant-2"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.constitution"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "constitution-implant-3"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.constitution"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "constitution-implant-4"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.constitution"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "constitution-implant-5"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.constitution"}}}
+	
+	table5.add{type = "label", caption = {"looped-name.dexterity"}, tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.dexterity"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "dexterity-implant-1"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.dexterity"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "dexterity-implant-2"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.dexterity"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "dexterity-implant-3"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.dexterity"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "dexterity-implant-4"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.dexterity"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "dexterity-implant-5"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.dexterity"}}}
+	
+	table5.add{type = "label", caption = {"looped-name.intelligence"}, tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.intelligence"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "intelligence-implant-1"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.intelligence"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "intelligence-implant-2"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.intelligence"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "intelligence-implant-3"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.intelligence"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "intelligence-implant-4"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.intelligence"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "intelligence-implant-5"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.intelligence"}}}
+	
+	table5.add{type = "label", caption = {"looped-name.wisdom"}, tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.wisdom"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "wisdom-implant-1"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.wisdom"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "wisdom-implant-2"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.wisdom"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "wisdom-implant-3"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.wisdom"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "wisdom-implant-4"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.wisdom"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "wisdom-implant-5"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.wisdom"}}}
+	
+	table5.add{type = "label", caption = {"looped-name.charisma"}, tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.charisma"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "charisma-implant-1"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.charisma"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "charisma-implant-2"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.charisma"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "charisma-implant-3"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.charisma"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "charisma-implant-4"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.charisma"}}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "charisma-implant-5"), tooltip = {"dyworld-gui-main.tooltip-4-1", {"looped-name.charisma"}}}
+	
+	table5.add{type = "label", caption = {"dyworld-gui-main.caption-4-1"}, tooltip = {"dyworld-gui-main.tooltip-4-2"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "usage-reduction-1"), tooltip = {"dyworld-gui-main.tooltip-4-2"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "usage-reduction-2"), tooltip = {"dyworld-gui-main.tooltip-4-2"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "usage-reduction-3"), tooltip = {"dyworld-gui-main.tooltip-4-2"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "usage-reduction-4"), tooltip = {"dyworld-gui-main.tooltip-4-2"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "usage-reduction-5"), tooltip = {"dyworld-gui-main.tooltip-4-2"}}
+	
+	table5.add{type = "label", caption = {"dyworld-gui-main.caption-4-2"}, tooltip = {"dyworld-gui-main.tooltip-4-3"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "speed-implant-1"), tooltip = {"dyworld-gui-main.tooltip-4-3"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "speed-implant-2"), tooltip = {"dyworld-gui-main.tooltip-4-3"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "speed-implant-3"), tooltip = {"dyworld-gui-main.tooltip-4-3"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "speed-implant-4"), tooltip = {"dyworld-gui-main.tooltip-4-3"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "speed-implant-5"), tooltip = {"dyworld-gui-main.tooltip-4-3"}}
+	
+	table5.add{type = "label", caption = {"dyworld-gui-main.caption-4-3"}, tooltip = {"dyworld-gui-main.tooltip-4-4"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "death-implant-1"), tooltip = {"dyworld-gui-main.tooltip-4-4"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "death-implant-2"), tooltip = {"dyworld-gui-main.tooltip-4-4"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "death-implant-3"), tooltip = {"dyworld-gui-main.tooltip-4-4"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "death-implant-4"), tooltip = {"dyworld-gui-main.tooltip-4-4"}}
+	table5.add{type = "label", caption = Check_Implant_State_2(id, "death-implant-5"), tooltip = {"dyworld-gui-main.tooltip-4-4"}}
+	
 end

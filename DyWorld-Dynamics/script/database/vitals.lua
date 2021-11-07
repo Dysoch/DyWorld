@@ -6,20 +6,20 @@ Food_Values  = {
 
 	---- Both -----
 	
-	["cooked-fish"] = {Food = 25, Water = 50},
-	["cooked-fish-pike-filet"] = {Food = 50, Water = 75},
-	["cooked-fish-salmon-filet"] = {Food = 65, Water = 60},
+	["cooked-fish"] = {Food = 25, Water = 50, Radiation = 0.025},
+	["cooked-fish-pike-filet"] = {Food = 50, Water = 75, Radiation = 0.005},
+	["cooked-fish-salmon-filet"] = {Food = 65, Water = 60, Radiation = 0.005},
 	
 	---- Water -----
 	
-	["bottle-dirty-water"] = {Water = 100},
-	["bottle-clean-water"] = {Water = 200},
-	["bottle-mineral-water"] = {Water = 350},
+	["bottle-dirty-water"] = {Water = 100, Radiation = 0.05},
+	["bottle-clean-water"] = {Water = 200, Radiation = 0},
+	["bottle-mineral-water"] = {Water = 350, Radiation = -0.5},
 	
 	---- Food -----
 	
-	["carrot"] = {Food = 80},
-	["cooked-meat"] = {Food = 250, Water = -50},
+	["carrot"] = {Food = 80, Radiation = 0.01},
+	["cooked-meat"] = {Food = 250, Water = -50, Radiation = 0.025},
 	
 }
 

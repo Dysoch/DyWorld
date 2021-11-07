@@ -3,6 +3,7 @@
 local DyWorld_Prototype_1 = DyDs_CopyPrototype("locomotive", "locomotive", "locomotive-1", true)
 DyWorld_Prototype_1.minable = {mining_time = 0.5, result = "locomotive-1"}
 DyWorld_Prototype_1.burner.fuel_category = "carbon"
+DyWorld_Prototype_1.burner.fuel_inventory_size = 1
 
 data:extend({
   DyWorld_Prototype_1,

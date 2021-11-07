@@ -1,5 +1,30 @@
 
 
+function Add_Radiation(id, Amount)
+	if not global.dyworld.players[id].rads then 
+		global.dyworld.players[id].rads = {
+			native_loss = -0.1,
+			artifical_loss = 0,
+			stored = 0,
+			thresholds = {
+				low_1 = 1000,
+				low_2 = 5000,
+				low_3 = 25000,
+				mid_1 = 125000,
+				mid_2 = 625000,
+				mid_3 = 3125000,
+				high_1 = 15625000,
+				high_2 = 78125000,
+				high_3 = 390625000,
+			},
+		}
+	end
+	global.dyworld.players[id].rads.stored = global.dyworld.players[id].rads.stored + Amount
+	if global.dyworld.players[id].rads.stored <= 0 then
+		global.dyworld.players[id].rads.stored = 0
+	end
+end
+
 
 function Vitals_Check(id)
 
@@ -16,21 +41,21 @@ function Vitals_Check(id)
 	
 	if not global.dyworld.players[id].rads then 
 		global.dyworld.players[id].rads = {
-			native_loss = -0.05,
+			native_loss = -0.1,
 			artifical_loss = 0,
+			bonus = 0,
 			stored = 0,
 			thresholds = {
-				low = 1000,
-				mid = 5000,
-				high = 25000,
+				low_1 = 1000,
+				low_2 = 5000,
+				low_3 = 25000,
+				mid_1 = 125000,
+				mid_2 = 625000,
+				mid_3 = 3125000,
+				high_1 = 15625000,
+				high_2 = 78125000,
+				high_3 = 390625000,
 			},
-		}
-	end
-	if not global.dyworld.players[id].rads.thresholds then
-		global.dyworld.players[id].rads.thresholds = {
-			low = 1000,
-			mid = 5000,
-			high = 25000,
 		}
 	end
 	
@@ -39,17 +64,32 @@ function Vitals_Check(id)
 			high = {
 				native = 45,
 				artificial = 0,
+				bonus = 0,
 				total = 0,
 			},
 			low = {
 				native = -25,
 				artificial = 0,
+				bonus = 0,
 				total = 0,
 			},
 		}
 	end
 	
-	local Rads_Gained = ((global.dyworld.players[id].rads.native_loss + global.dyworld.players[id].rads.artifical_loss) + Chunk.Radiation)
+	if not global.dyworld.players[id].pollution then 
+		global.dyworld.players[id].pollution = {
+			native = 1500,
+			artificial = 0,
+			bonus = 0,
+			total = 0,
+		}
+	end
+	
+	if not global.dyworld.players[id].rads.bonus then global.dyworld.players[id].rads.bonus = 0 end
+	if not global.dyworld.players[id].temp.high.bonus then global.dyworld.players[id].temp.high.bonus = 0 end
+	if not global.dyworld.players[id].temp.low.bonus then global.dyworld.players[id].temp.low.bonus = 0 end
+	
+	local Rads_Gained = ((global.dyworld.players[id].rads.native_loss + global.dyworld.players[id].rads.artifical_loss + global.dyworld.players[id].rads.bonus) + Chunk.Radiation)
 	local Food_Per = (global.dyworld.players[id].water/global.dyworld.players[id].water_max)
 	local Water_Per = (global.dyworld.players[id].water/global.dyworld.players[id].water_max)
 	
@@ -59,32 +99,49 @@ function Vitals_Check(id)
         local Contents = Inv.get_contents()
         for k,v in pairs(Contents) do
             if Radiation_Values[k] then
-				global.dyworld.players[id].rads.stored = global.dyworld.players[id].rads.stored + (Radiation_Values[k] * v)
+				Add_Radiation(id, (Radiation_Values[k] * v))
 			end
 		end
 	end
-	global.dyworld.players[id].rads.stored = global.dyworld.players[id].rads.stored + Rads_Gained
-	if global.dyworld.players[id].rads.stored <= 0 then
-		global.dyworld.players[id].rads.stored = 0
-	end
-	if global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high then
-		if P_Loc then
-			P_Loc.damage(250, "enemy", "radiation")
-		end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid then
-		if P_Loc then
-			P_Loc.damage(50, "enemy", "radiation")
-		end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low then
-		if P_Loc then
-			P_Loc.damage(10, "enemy", "radiation")
-		end
+	Add_Radiation(id, Rads_Gained)
+	if global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high_3 then
+		if P_Loc then P_Loc.damage(100000000, "enemy", "radiation") end
+	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high_2 then
+		if P_Loc then P_Loc.damage(10000000, "enemy", "radiation") end
+	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high_1 then
+		if P_Loc then P_Loc.damage(1000000, "enemy", "radiation") end
+	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid_3 then
+		if P_Loc then P_Loc.damage(1000000, "enemy", "radiation") end
+	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid_2 then
+		if P_Loc then P_Loc.damage(100000, "enemy", "radiation") end
+	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid_1 then
+		if P_Loc then P_Loc.damage(10000, "enemy", "radiation") end
+	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low_3 then
+		if P_Loc then P_Loc.damage(1000, "enemy", "radiation") end
+	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low_2 then
+		if P_Loc then P_Loc.damage(100, "enemy", "radiation") end
+	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low_1 then
+		if P_Loc then P_Loc.damage(10, "enemy", "radiation") end
 	end
 	
 	
 	-- Temperature --
-	global.dyworld.players[id].temp.high.total = (global.dyworld.players[id].temp.high.native + global.dyworld.players[id].temp.high.artificial) * ((Food_Per + Water_Per) / 2)
-	global.dyworld.players[id].temp.low.total = (global.dyworld.players[id].temp.low.native + global.dyworld.players[id].temp.low.artificial) * ((Food_Per + Water_Per) / 2)
+	global.dyworld.players[id].temp.high.total = (global.dyworld.players[id].temp.high.native + global.dyworld.players[id].temp.high.artificial + global.dyworld.players[id].temp.high.bonus) * ((Food_Per + Water_Per) / 2)
+	global.dyworld.players[id].temp.low.total = (global.dyworld.players[id].temp.low.native + global.dyworld.players[id].temp.low.artificial + global.dyworld.players[id].temp.low.bonus) * ((Food_Per + Water_Per) / 2)
+	
+	if Chunk.Temperature >= global.dyworld.players[id].temp.high.total then
+		if P_Loc then P_Loc.damage(50, "enemy", "temperature-high") end
+	end
+	
+	if Chunk.Temperature <= global.dyworld.players[id].temp.low.total then
+		if P_Loc then P_Loc.damage(75, "enemy", "temperature-low") end
+	end
 	
 	
+	-- Pollution --
+	global.dyworld.players[id].pollution.total = (global.dyworld.players[id].pollution.native + global.dyworld.players[id].pollution.artificial + global.dyworld.players[id].pollution.bonus) * ((Food_Per + Water_Per) / 2)
+	
+	if Chunk.Pollution >= global.dyworld.players[id].pollution.total then
+		if P_Loc then P_Loc.damage(50, "enemy", "toxic") end
+	end
 end

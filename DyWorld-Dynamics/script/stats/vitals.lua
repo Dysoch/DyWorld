@@ -130,7 +130,7 @@ function Vitals_Check(id)
 	global.dyworld.players[id].temp.low.total = (global.dyworld.players[id].temp.low.native + global.dyworld.players[id].temp.low.artificial + global.dyworld.players[id].temp.low.bonus) * ((Food_Per + Water_Per) / 2)
 	
 	if Chunk.Temperature >= global.dyworld.players[id].temp.high.total then
-		if P_Loc then P_Loc.damage(50, "enemy", "temperature-high") end
+		if P_Loc then P_Loc.damage(Chunk.Temperature, "enemy", "temperature-high") end
 	end
 	
 	if Chunk.Temperature <= global.dyworld.players[id].temp.low.total then
@@ -142,6 +142,6 @@ function Vitals_Check(id)
 	global.dyworld.players[id].pollution.total = (global.dyworld.players[id].pollution.native + global.dyworld.players[id].pollution.artificial + global.dyworld.players[id].pollution.bonus) * ((Food_Per + Water_Per) / 2)
 	
 	if Chunk.Pollution >= global.dyworld.players[id].pollution.total then
-		if P_Loc then P_Loc.damage(50, "enemy", "toxic") end
+		if P_Loc then P_Loc.damage((40 + (Chunk.Pollution / 100)), "enemy", "toxic") end
 	end
 end

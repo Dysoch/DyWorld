@@ -2,51 +2,13 @@
 
 
 local function Food_Check(id)
-	local food_per = Round(((global.dyworld.players[id].food/global.dyworld.players[id].food_max) * 100), 2)
-	if food_per >= 95 then return 0
-	elseif food_per >= 90 then return -0.05
-	elseif food_per >= 85 then return -0.1
-	elseif food_per >= 80 then return -0.2
-	elseif food_per >= 75 then return -0.3
-	elseif food_per >= 70 then return -0.45
-	elseif food_per >= 65 then return -0.6
-	elseif food_per >= 60 then return -0.8
-	elseif food_per >= 55 then return -1
-	elseif food_per >= 50 then return -1.4
-	elseif food_per >= 45 then return -1.8
-	elseif food_per >= 40 then return -2.6
-	elseif food_per >= 35 then return -3.4
-	elseif food_per >= 30 then return -4
-	elseif food_per >= 25 then return -5
-	elseif food_per >= 20 then return -6
-	elseif food_per >= 15 then return -7
-	elseif food_per >= 10 then return -8
-	elseif food_per >= 5 then return -10
-	else return -20 end
+	local food_per = Round((global.dyworld.players[id].food/global.dyworld.players[id].food_max), 2)
+	return food_per
 end
 
 local function Water_Check(id)
-	local water_per = Round(((global.dyworld.players[id].water/global.dyworld.players[id].water_max) * 100), 2)
-	if water_per >= 95 then return 0
-	elseif water_per >= 90 then return -0.05
-	elseif water_per >= 85 then return -0.1
-	elseif water_per >= 80 then return -0.2
-	elseif water_per >= 75 then return -0.3
-	elseif water_per >= 70 then return -0.45
-	elseif water_per >= 65 then return -0.6
-	elseif water_per >= 60 then return -0.8
-	elseif water_per >= 55 then return -1
-	elseif water_per >= 50 then return -1.4
-	elseif water_per >= 45 then return -1.8
-	elseif water_per >= 40 then return -2.6
-	elseif water_per >= 35 then return -3.4
-	elseif water_per >= 30 then return -4
-	elseif water_per >= 25 then return -5
-	elseif water_per >= 20 then return -6
-	elseif water_per >= 15 then return -7
-	elseif water_per >= 10 then return -8
-	elseif water_per >= 5 then return -10
-	else return -20 end
+	local water_per = Round((global.dyworld.players[id].water/global.dyworld.players[id].water_max), 2)
+	return water_per
 end
 
 function Bonuses(id)
@@ -125,7 +87,7 @@ function Bonuses(id)
 		
 		----- Attributes -----
 		global.dyworld.players[id].strength = Round((((crafted / 500) + (mined / 50) + (glokilled / 25) + (picked / 500)) / 2000), 2) + implant_1
-		global.dyworld.players[id].constitution = Round((((crafted / 2.5) + (mined * 1.23) + (build / 14.5) + (glokilled * 1.25) + (picked / 1.5) + (distance / 100)) / 2000), 2) + implant_2
+		global.dyworld.players[id].constitution = Round((((crafted / 2.5) + (mined * 1.23) + (build / 14.5) + (glokilled * 0.4) + (picked * 0.05) + (distance / 100)) / 2000), 2) + implant_2
 		global.dyworld.players[id].dexterity = Round((((glokilled / 5) + (killed * 5) + (glopicked / 2) + (picked / 4) + (sectors / 10)) / 25000), 2) + implant_3
 		global.dyworld.players[id].intelligence = Round((((research * 20) + sectors + (rockets * 10) + (build / 1000)) / 4500), 2) + implant_4
 		global.dyworld.players[id].wisdom = Round((((glokilled * (((killed / glokilled) / 5) * 1.25)) + sectors + (research * 25) + (crafted / 2)) / 1500), 2) + implant_5
@@ -138,26 +100,37 @@ function Bonuses(id)
 		local intelligence = global.dyworld.players[id].intelligence or 1
 		local wisdom = global.dyworld.players[id].wisdom or 1
 		local charisma = global.dyworld.players[id].charisma or 1
+		local attri_P = strength + constitution + dexterity
+		local attri_W = intelligence + wisdom + charisma
+		local attri_A = attri_W + attri_P
 		
 		----- Bonuses -----
 		if mined >= 2 then
-			local form = Round((((((strength * 3.5) + (constitution * 2) + dexterity) / 25) + Water_Check(id) + Food_Check(id)) * ((playeramount >= 2 and (1-(mined/glomined)) or 1))), 2)
-			game.players[id].character_mining_speed_modifier = (form > 0 and form or 0)
+			local form = Round(((mined + attri_P) / 7500), 2)
+			game.players[id].character_mining_speed_modifier = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
 		end
 		if crafted >= 2 then
-			local form = Round((((((wisdom * 2) + intelligence) / 2.5) + Water_Check(id) + Food_Check(id)) * ((playeramount >= 2 and (1-(crafted/glocraft)) or 1))), 2)
-			game.players[id].character_crafting_speed_modifier = (form > 0 and form or 0)
+			local form = Round(((crafted + attri_A) / 5000), 2)
+			game.players[id].character_crafting_speed_modifier = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
 		end
 		if glokilled >= 2 then
-			game.players[id].character_health_bonus = Round((constitution * 5), 0)
+			local form = Round(((glokilled + attri_A) / 500), 2)
+			game.players[id].character_health_bonus = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
+		end
+		if constitution >= 5 then
+			local form = math.min((Round((constitution / 5), 0)), 880)
+			game.players[id].character_inventory_slots_bonus = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) >= 1 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 0)
+		end
+		if (build >= 500 and mined >= 10000) then
+			local form = Round(((build + mined + attri_P) / 10500), 2)
+			game.players[id].character_reach_distance_bonus = math.min(Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2), (100 - game.entity_prototypes["character"].reach_distance))
 		end
 		if build >= 2 then
-			game.players[id].character_inventory_slots_bonus = math.min((Round((strength/5), 0)), 880)
-			game.players[id].character_reach_distance_bonus = math.min((Round(((((dexterity + strength) * 5) + build) / 500), 2)), (100 - game.entity_prototypes["character"].reach_distance))
 			game.players[id].character_build_distance_bonus = math.min((Round(((((dexterity + strength) * 2) + build) / 1000), 2)), (100 - game.entity_prototypes["character"].build_distance))
 		end
-		if picked >= 2 then
-			game.players[id].character_loot_pickup_distance_bonus = math.min((Round((((dexterity + strength) + picked) / 1000), 2)), (100 - game.entity_prototypes["character"].loot_pickup_distance))
+		if picked >= 50 then
+			local form = Round(((picked + attri_A) / 5000), 2)
+			game.players[id].character_loot_pickup_distance_bonus = math.min(Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2), (100 - game.entity_prototypes["character"].loot_pickup_distance))
 		end
 		if constitution >= 5 then
 			if not global.dyworld.players[id].survival then global.dyworld.players[id].survival = {} end

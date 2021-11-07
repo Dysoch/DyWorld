@@ -71,6 +71,7 @@ end
 function Distance_Train_Check(name)
 	if name == "locomotive" then return true
 	elseif name == "cargo-wagon-1" then return true
+	elseif name == "locomotive-1" then return true
 	else return false
 	end
 end

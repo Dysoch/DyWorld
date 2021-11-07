@@ -39,7 +39,6 @@ function Event_on_chunk_generated(event)
             Pollution = 0,
             Radiation = Dy_Check_Terrain_Radiation_Chunk(check),
         }
-        
     end
 
 	-- Story Objective Check
@@ -400,6 +399,10 @@ game.player.print(FIND())
 ]]
 
 function Event_on_sector_scanned(event)
+	local surface_name = event.radar.surface.name
+    local Chunk_X = math.floor(event.chunk_position.x)
+    local Chunk_Y = math.floor(event.chunk_position.y)
+	
 		----- Story Objective Check -----
 		if not global.dyworld.game_stats.story_pause then
 			Story_Objectives("sector-scan", event)
@@ -412,4 +415,25 @@ function Event_on_sector_scanned(event)
 	else
 		global.dyworld.game_stats.sector_scanned = global.dyworld.game_stats.sector_scanned + 1
 	end
+	
+    -- Setup Chunk Properties
+    if not global.dyworld.game_stats.chunks_info then global.dyworld.game_stats.chunks_info = {} end
+    if not global.dyworld.game_stats.chunks_info[surface_name] then global.dyworld.game_stats.chunks_info[surface_name] = {} end
+    if not global.dyworld.game_stats.chunks_info[surface_name][Chunk_X..":"..Chunk_Y] then
+        local check = game.surfaces[surface_name].find_tiles_filtered{area = event.area}
+        global.dyworld.game_stats.chunks_info[surface_name][Chunk_X..":"..Chunk_Y] = {
+            Temperature_Standard = Dy_Check_Terrain_Temp_Chunk(check),
+            Temperature = 0,
+            Pollution = 0,
+            Radiation = Dy_Check_Terrain_Radiation_Chunk(check),
+        }
+	else
+        local check = game.surfaces[surface_name].find_tiles_filtered{area = event.area}
+        global.dyworld.game_stats.chunks_info[surface_name][Chunk_X..":"..Chunk_Y] = {
+            Temperature_Standard = Dy_Check_Terrain_Temp_Chunk(check),
+            Temperature = 0,
+            Pollution = 0,
+            Radiation = Dy_Check_Terrain_Radiation_Chunk(check),
+        }
+    end
 end

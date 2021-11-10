@@ -18,6 +18,7 @@ Date: ???
     - Rocket Silo's now use 1 recipe to build the rocket, and the recipes have been balanced
     - Few changes to the massive nuke. Is now more UPS friendly (drops to 19 UPS instead of 2)
     - Locomotive 1 fuel slots: 3 > 1
+    - Far Reach is now an incompatible mod
   Bugfixes:
     - Production Science pack ingredients changed
     - Equipment should give correct item back when taken out of armor

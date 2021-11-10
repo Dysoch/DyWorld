@@ -1,7 +1,3 @@
-@todo solar panels equipment become obsolete one
-
-@todo Production Science needs Advanced Asteroid Miner which is unlocked via Asteroid Mining (Advanced) which needs Production Science
-
 LaureenLlama's Carrot Cake = obviously the cake
 JD's Flashlight = the flamethrower
 JD's Boomstick = shotgun
@@ -10,3 +6,9 @@ JD's Boomstick = shotgun
 natives send meteors
 
  /c remote.call("space-exploration", "begin_solar_flare", {zone_name = "Nauvis", targeting="basic"})
+
+@todo Change bonus calculation
+
+@todo Add calculation from bonuses to resistance of pollution/temperature/radiation
+
+@todo Change tile script for radiation and temperature to account tile change during playthrough

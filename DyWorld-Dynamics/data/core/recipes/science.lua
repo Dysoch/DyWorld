@@ -16,7 +16,7 @@ data:extend({
         v == "automation" and {type = "item", name = "iron-plate", amount = 2} or nil,
         v == "logistic" and {type = "item", name = "rubber", amount = 4} or nil,
         v == "chemical" and {type = "item", name = "glass", amount = 3} or nil,
-        v == "biological" and {type = "item", name = "brick", amount = 10} or nil,
+        v == "biological" and {type = "item", name = "stone-brick", amount = 10} or nil,
         v == "military" and {type = "item", name = "lead-plate", amount = 2} or nil,
         v == "production" and {type = "item", name = "polylactic-acid", amount = 3} or nil,
         v == "utility" and {type = "item", name = "tungsten-plate", amount = 2} or nil,

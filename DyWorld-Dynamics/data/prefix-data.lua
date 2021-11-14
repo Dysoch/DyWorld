@@ -25,44 +25,57 @@ Tier_Colors = {
 	[5] = {0, 0, 255},
 }
 
-Science_Colors = {
-	["automation"] = {200, 0, 0},
-	["logistic"] = {50, 200, 50},
-	["chemical"] = {0, 0, 200},
-	["military"] = {25, 25, 25},
-	["production"] = {200, 0, 200},
-	["utility"] = {200, 200, 0},
-	["biological"] = {0, 200, 0},
-}
 -- Automation --
-Sci_Tier_1 = {200, 0, 0}
-Sci_Tier_2 = {255, 0, 0}
+Sci_Tier_1 = {255, 0, 0}
+Sci_Tier_2 = {128, 0, 0}
 -- Logistical --
-Sci_Tier_3 = {50, 200, 50}
-Sci_Tier_4 = {50, 255, 50}
+Sci_Tier_3 = {255, 128, 0}
+Sci_Tier_4 = {128, 64, 0}
 -- Chemical --
-Sci_Tier_5 = {0, 0, 200}
-Sci_Tier_6 = {0, 0, 255}
+Sci_Tier_5 = {0, 255, 255}
+Sci_Tier_6 = {0, 128, 128}
 -- Military --
-Sci_Tier_7 = {25, 25, 25}
+Sci_Tier_7 = {64, 64, 64}
 Sci_Tier_8 = {0, 0, 0}
 -- Production --
-Sci_Tier_9 = {200, 0, 200}
-Sci_Tier_10 = {255, 0, 255}
+Sci_Tier_9 = {255, 0, 255}
+Sci_Tier_10 = {128, 0, 128}
 -- Utility --
-Sci_Tier_11 = {200, 200, 0}
-Sci_Tier_12 = {255, 255, 0}
+Sci_Tier_11 = {255, 255, 0}
+Sci_Tier_12 = {128, 128, 0}
 -- Space --
-Sci_Tier_13 = {128, 128, 128}
-Sci_Tier_14 = {170, 170, 170}
+Sci_Tier_13 = {170, 170, 170}
+Sci_Tier_14 = {128, 128, 128}
 -- Bio --
-Sci_Tier_15 = {0, 200, 0}
-Sci_Tier_16 = {0, 255, 0}
+Sci_Tier_15 = {50, 255, 50}
+Sci_Tier_16 = {50, 128, 50}
 -- Unused --
 Sci_Tier_17 = {255, 255, 255}
 Sci_Tier_18 = {255, 255, 255}
 Sci_Tier_19 = {255, 255, 255}
 Sci_Tier_20 = {255, 255, 255}
+
+Science_Colors = {
+	["automation"] = Sci_Tier_1,
+	["logistic"] = Sci_Tier_3,
+	["chemical"] = Sci_Tier_5,
+	["military"] = Sci_Tier_7,
+	["production"] = Sci_Tier_9,
+	["utility"] = Sci_Tier_11,
+    ["space"] = Sci_Tier_13,
+	["biological"] = Sci_Tier_15,
+}
+
+Science_Colors_Advanced = {
+	["automation"] = Sci_Tier_2,
+	["logistic"] = Sci_Tier_4,
+	["chemical"] = Sci_Tier_6,
+	["military"] = Sci_Tier_8,
+	["production"] = Sci_Tier_10,
+	["utility"] = Sci_Tier_12,
+    ["space"] = Sci_Tier_14,
+	["biological"] = Sci_Tier_16,
+}
 
 Iron_Color = {82, 174, 212}
 Copper_Color = {212, 119, 82}

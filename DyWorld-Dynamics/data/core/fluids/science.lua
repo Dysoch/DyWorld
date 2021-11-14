@@ -35,12 +35,12 @@ data:extend({
 	emissions_multiplier = 1,
     heat_capacity = "0J",
     fuel_value = "0MJ",
-    base_color = Science_Colors[v],
-    flow_color = Science_Colors[v],
+    base_color = Science_Colors_Advanced[v],
+    flow_color = Science_Colors_Advanced[v],
 	icons = {
 	  {
 		icon = DyDs_path_fluid.."metal.png",
-		tint = Science_Colors[v],
+		tint = Science_Colors_Advanced[v],
 	  },
 	},
     icon_size = 64, icon_mipmaps = 4,

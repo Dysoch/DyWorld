@@ -805,6 +805,21 @@ local Main_Techs = {
 	},
 	-- Seperate Technologies -- 
 	{
+		name = "oil-processing-3",
+		icon = DyDs_path_tech_base.."oil-processing.png",
+		flags = {Act_3 = true},
+		prerequisites = {
+			"oil-processing-2",
+		},
+		ingredients = {
+			Dy_Main_Tech_Pack(1.1, 250),
+			Dy_Main_Tech_Pack(2.1, 250),
+			Dy_Main_Tech_Pack(3.1, 250),
+		},
+		time = Dy_Tech_Time_Calc(30),
+		order = "2",    
+    },
+    {
 		name = "space-travel",
 		icon = DyDs_path_tech.."asteroid.png",
 		flags = {Tech_Main = true},

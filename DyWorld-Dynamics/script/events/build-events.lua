@@ -20,7 +20,7 @@ function Event_on_player_used_capsule(event)
 			Food_Add(id, Food_Values[name].Food)
 		end
 		if Food_Values[name].Radiation then
-			Add_Radiation(id, Food_Values[k].Radiation)
+			Add_Radiation(id, Food_Values[name].Radiation)
 		end
 	end
 	

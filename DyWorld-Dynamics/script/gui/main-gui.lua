@@ -168,37 +168,37 @@ function Main_GUI(player, id)
 		
 	if game.players[id].character then
 		----- Player Bonuses -----
-		if (game.entity_prototypes["character"].build_distance + game.players[id].character_build_distance_bonus) > game.entity_prototypes["character"].build_distance then
+		if global.dyworld.players[id].bonus_toggle.build then
 			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-1"}, tooltip = {"dyworld-gui-main.tooltip-3-1-1"}}
 			table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].build_distance + game.players[id].character_build_distance_bonus), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-1-2"}}
 		end
 		
-		if (game.entity_prototypes["character"].reach_distance + game.players[id].character_reach_distance_bonus) > game.entity_prototypes["character"].reach_distance then
+		if global.dyworld.players[id].bonus_toggle.reach_1 then
 			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-2"}, tooltip = {"dyworld-gui-main.tooltip-3-2-1"}}
 			table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].reach_distance + game.players[id].character_reach_distance_bonus), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-2-2"}}
 		end
 		
-		if (game.entity_prototypes["character"].loot_pickup_distance + game.players[id].character_loot_pickup_distance_bonus) > game.entity_prototypes["character"].loot_pickup_distance then
+		if global.dyworld.players[id].bonus_toggle.loot then
 			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-3"}, tooltip = {"dyworld-gui-main.tooltip-3-3-1"}}
 			table4.add{type = "label", caption = "[color=blue]"..(Round((game.entity_prototypes["character"].loot_pickup_distance + game.players[id].character_loot_pickup_distance_bonus), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-3-2"}}
 		end
 		
-		if (game.players[id].character_crafting_speed_modifier + 1) > 1 then
+		if global.dyworld.players[id].bonus_toggle.crafting then
 			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-4"}, tooltip = {"dyworld-gui-main.tooltip-3-4-1"}}
 			table4.add{type = "label", caption = "[color=blue]"..(Round(game.players[id].character_crafting_speed_modifier + 1, 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-4-2"}}
 		end
 		
-		if (game.players[id].character_mining_speed_modifier + game.entity_prototypes["character"].mining_speed) > game.entity_prototypes["character"].mining_speed then
+		if global.dyworld.players[id].bonus_toggle.mining then
 			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-5"}, tooltip = {"dyworld-gui-main.tooltip-3-5-1"}}
 			table4.add{type = "label", caption = "[color=blue]"..(Round(game.players[id].character_mining_speed_modifier + game.entity_prototypes["character"].mining_speed, 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-5-2"}}
 		end
 		
-		if (game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus) > game.entity_prototypes["character"].get_inventory_size(1) then
+		if global.dyworld.players[id].bonus_toggle.inventory then
 			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-6"}, tooltip = {"dyworld-gui-main.tooltip-3-6-1"}}
 			table4.add{type = "label", caption = "[color=blue]"..(game.entity_prototypes["character"].get_inventory_size(1) + game.players[id].character_inventory_slots_bonus).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-6-2"}}
 		end
 		
-		if (game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus) > game.entity_prototypes["character"].max_health then
+		if global.dyworld.players[id].bonus_toggle.health then
 			table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-7"}, tooltip = {"dyworld-gui-main.tooltip-3-7-1"}}
 			table4.add{type = "label", caption = "[color=blue]"..(game.entity_prototypes["character"].max_health + game.players[id].character_health_bonus).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-7-2"}}
 		end
@@ -208,22 +208,22 @@ function Main_GUI(player, id)
 	table4.add{type = "line", direction = "horizontal"}
 	table4.add{type = "line", direction = "horizontal"}
 	
-	if game.forces.player.stack_inserter_capacity_bonus > 0 then
+	if global.dyworld.players[id].bonus_toggle.inserter then
 		table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-8"}, tooltip = {"dyworld-gui-main.tooltip-3-8-1"}}
 		table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.stack_inserter_capacity_bonus), 0)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-8-2"}}
 	end
 	
-	if game.forces.player.laboratory_productivity_bonus > 1 then
+	if global.dyworld.players[id].bonus_toggle.lab_2 then
 		table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-9"}, tooltip = {"dyworld-gui-main.tooltip-3-9-1"}}
 		table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.laboratory_productivity_bonus), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-9-2"}}
 	end
 	
-	if (game.forces.player.laboratory_speed_modifier + 1) > 1 then
+	if global.dyworld.players[id].bonus_toggle.lab_1 then
 		table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-10"}, tooltip = {"dyworld-gui-main.tooltip-3-10-1"}}
 		table4.add{type = "label", caption = "[color=blue]"..(Round((game.forces.player.laboratory_speed_modifier + 1), 2)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-10-2"}}
 	end
 	
-	if game.forces.player.ghost_time_to_live >= 60 then
+	if global.dyworld.players[id].bonus_toggle.ghost_time then
 		table4.add{type = "label", caption = {"dyworld-gui-main.caption-3-11"}, tooltip = {"dyworld-gui-main.tooltip-3-11-1"}}
 		table4.add{type = "label", caption = "[color=blue]"..Time_Check(Round((game.forces.player.ghost_time_to_live / 60), 0)).."[/color]", tooltip = {"dyworld-gui-main.tooltip-3-11-2"}}
 	end

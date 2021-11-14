@@ -2,8 +2,8 @@
 
 function DyWorld_Base_Attack(Surface)
 	local Loc = Pick_Random_Attack_Location(Surface)
-	local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 5000))
-	if (global.dyworld.game_stats.wave_spawners and global.dyworld.game_stats.wave_spawners[Surface] and global.dyworld.game_stats.wave_spawners[Surface].spawners_amount >= 1) then
+	local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 2000))
+	if (global.dyworld.game_stats.wave_spawners and global.dyworld.game_stats.wave_spawners[Surface] and global.dyworld.game_stats.wave_spawners[Surface].spawners_amount >= 1 and Str >= 1) then
 		local Spawned = 0
 		for i = 1, Str do
 			local BuildEntity = Check_Wave_Tier(game.forces.enemy.evolution_factor)

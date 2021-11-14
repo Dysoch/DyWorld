@@ -45,6 +45,8 @@ function Bonuses(id)
 	
 	if not global.dyworld.players[id].death_reduce then global.dyworld.players[id].death_reduce = 0 end
 	
+	if not global.dyworld.players[id].bonus_toggle then global.dyworld.players[id].bonus_toggle = {} end
+	
 		----- Players -----
 	local playeramount = global.dyworld.game_stats.players
 	
@@ -106,29 +108,36 @@ function Bonuses(id)
 		
 		----- Bonuses -----
 		if mined >= 2 then
+			if not global.dyworld.players[id].bonus_toggle.mining then global.dyworld.players[id].bonus_toggle.mining = true end
 			local form = Round(((mined + attri_P) / 7500), 2)
 			game.players[id].character_mining_speed_modifier = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
 		end
 		if crafted >= 2 then
+			if not global.dyworld.players[id].bonus_toggle.crafting then global.dyworld.players[id].bonus_toggle.crafting = true end
 			local form = Round(((crafted + attri_A) / 5000), 2)
 			game.players[id].character_crafting_speed_modifier = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
 		end
 		if glokilled >= 2 then
+			if not global.dyworld.players[id].bonus_toggle.health then global.dyworld.players[id].bonus_toggle.health = true end
 			local form = Round(((glokilled + attri_A) / 500), 2)
 			game.players[id].character_health_bonus = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
 		end
-		if constitution >= 5 then
-			local form = math.min((Round((constitution / 5), 0)), 880)
+		if attri_P >= 5 then
+			if not global.dyworld.players[id].bonus_toggle.inventory then global.dyworld.players[id].bonus_toggle.inventory = true end
+			local form = math.min((Round((attri_P / 5), 0)), 880)
 			game.players[id].character_inventory_slots_bonus = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) >= 1 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 0)
 		end
 		if (build >= 500 and mined >= 10000) then
+			if not global.dyworld.players[id].bonus_toggle.reach_1 then global.dyworld.players[id].bonus_toggle.reach_1 = true end
 			local form = Round(((build + mined + attri_P) / 10500), 2)
 			game.players[id].character_reach_distance_bonus = math.min(Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2), (100 - game.entity_prototypes["character"].reach_distance))
 		end
 		if build >= 2 then
+			if not global.dyworld.players[id].bonus_toggle.build then global.dyworld.players[id].bonus_toggle.build = true end
 			game.players[id].character_build_distance_bonus = math.min((Round(((((dexterity + strength) * 2) + build) / 1000), 2)), (100 - game.entity_prototypes["character"].build_distance))
 		end
 		if picked >= 50 then
+			if not global.dyworld.players[id].bonus_toggle.loot then global.dyworld.players[id].bonus_toggle.loot = true end
 			local form = Round(((picked + attri_A) / 5000), 2)
 			game.players[id].character_loot_pickup_distance_bonus = math.min(Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2), (100 - game.entity_prototypes["character"].loot_pickup_distance))
 		end
@@ -156,16 +165,20 @@ function Bonuses(id)
 	end
 	if game.forces.player then
 		if research >= 2 then
-			game.forces.player.laboratory_speed_modifier = Round((research * 0.125), 2)
+			if not global.dyworld.players[id].bonus_toggle.lab_1 then global.dyworld.players[id].bonus_toggle.lab_1 = true end
+			game.forces.player.laboratory_speed_modifier = Round((research * 0.025), 2)
 		end
 		if research >= 51 then
-			game.forces.player.laboratory_productivity_bonus = Round(((research - 50) * 0.025), 2)
+			if not global.dyworld.players[id].bonus_toggle.lab_2 then global.dyworld.players[id].bonus_toggle.lab_2 = true end
+			game.forces.player.laboratory_productivity_bonus = math.max(Round(((research - 50) * 0.025), 2), 0)
 		end
 		if inserters >= 51 then
+			if not global.dyworld.players[id].bonus_toggle.inserter then global.dyworld.players[id].bonus_toggle.inserter = true end
 			game.forces.player.stack_inserter_capacity_bonus  = math.min(math.floor((inserters - 50) / 50), 254)
 		end
 		-- @todo Rewrite formula ghost timer to live
 		if global.dyworld.game_stats.ghosts and global.dyworld.game_stats.ghosts >= 1 then
+			if not global.dyworld.players[id].bonus_toggle.ghost_time then global.dyworld.players[id].bonus_toggle.ghost_time = true end
 			game.forces.player.ghost_time_to_live = math.min(math.floor(global.dyworld.game_stats.ghosts * 6), 4000000000)
 		end
 		--[[

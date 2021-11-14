@@ -45,4 +45,27 @@ data:extend({
 	  enabled = false,
     },
   },
+  {
+    type = "recipe",
+    name = "polylactic-acid",
+	category = "centrifuging",
+	main_product = "polylactic-acid",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "naphtha", amount = 50},
+        {type = "item", name = "carbon", amount = 10},
+        {type = "fluid", name = "lubricant", amount = 50},
+        {type = "fluid", name = "nitrogen", amount = 50},
+      },
+      results = 
+      {
+        {type = "item", name = "polylactic-acid", amount_min = 25, amount_max = 35, probability = 1},
+      },
+	  energy_required = 10,
+	  main_product = "polylactic-acid",
+	  enabled = false,
+    },
+  },
 })

@@ -13,6 +13,10 @@ end
 
 local Fix_Prereq_Table = {
     ["rocket-fuel"] = {"logistic-science-pack", "oil-processing-2"},
+    ["nano-range-3"] = {"intermediates-3", "nano-range-2"},
+    ["nano-speed-3"] = {"intermediates-3", "nano-speed-2"},
+    ["nano-range-4"] = {"storage-2", "nano-range-3"},
+    ["nano-speed-4"] = {"storage-2", "nano-speed-3"},    
     ["se-heat-shielding"] = {"chemical-science-pack"},
 }
 

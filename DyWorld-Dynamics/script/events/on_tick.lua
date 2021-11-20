@@ -164,7 +164,9 @@ function Event_on_tick(event)
                     end
 				end
 				
-				Vitals_Check(v.id)
+				if not remote.call("space-exploration", "remote_view_is_active", {player = game.players[v.id]}) then
+					Vitals_Check(v.id)
+				end
 				
 				if v.personal_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]

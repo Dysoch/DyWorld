@@ -126,6 +126,12 @@ function Bonuses(id)
 			if not global.dyworld.players[id].bonus_toggle.inventory then global.dyworld.players[id].bonus_toggle.inventory = true end
 			local form = math.min((Round((attri_P / 5), 0)), 880)
 			game.players[id].character_inventory_slots_bonus = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) >= 1 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 0)
+			if game.players[id].character_inventory_slots_bonus >= 30 then
+				if not game.forces.player.character_logistic_requests then
+					game.forces.player.character_logistic_requests = true
+				end
+				game.forces.player.character_trash_slot_count = 20
+			end
 		end
 		if (build >= 500 and mined >= 10000) then
 			if not global.dyworld.players[id].bonus_toggle.reach_1 then global.dyworld.players[id].bonus_toggle.reach_1 = true end
@@ -158,8 +164,7 @@ function Bonuses(id)
 		--[[
 			game.players[id].character_running_speed_modifier
 			game.players[id].character_item_drop_distance_bonus
-			game.players[id].character_item_pickup_distance_bonus  
-			game.players[id].character_loot_pickup_distance_bonus   
+			game.players[id].character_item_pickup_distance_bonus    
 			game.players[id].character_maximum_following_robot_count_bonus    
 		]]--
 	end

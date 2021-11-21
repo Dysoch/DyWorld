@@ -23,6 +23,9 @@ local Fix_Prereq_Table = {
     ["se-lifesupport-equipment-1"] = {"se-lifesupport-facility"},
     ["jetpack-1"] = {"fuel-processing"},
     ["se-thruster-suit"] = {"intermediates-1", "space-mining", "jetpack-1", "se-lifesupport-equipment-1"},
+    ["se-pulveriser"] = {"logistic-science-pack"},
+    ["aai-signal-transmission"] = {"chemical-science-pack"},
+    ["se-rtg-equipment"] = {"chemical-science-pack"},
 }
 
 for k,v in pairs(Fix_Prereq_Table) do
@@ -33,3 +36,9 @@ data.raw.technology["rocket-fuel"].unit.ingredients = {
 	{"automation-science-pack", 300},
 	{"logistic-science-pack", 300},
 }
+
+for k,v in pairs(data.raw.technology) do
+	if v.hidden == true then
+		v.effects = {}
+	end
+end

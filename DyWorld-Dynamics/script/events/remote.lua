@@ -52,6 +52,19 @@ remote.add_interface("DyWorld",
 	end,
 	-- /c remote.call("DyWorld", "Reset_Side_Objectives")
 	
+	Fix_Research = function()
+		if not global.Tech_Fixed then
+			for k,v in pairs(game.technology_prototypes) do
+				if v.hidden then
+					game.forces.player.technologies[v.name].researched = true
+					PlayerPrint("Researched: "..v.name)
+				end
+			end
+			global.Tech_Fixed = true
+		end
+	end,
+	-- /c remote.call("DyWorld", "Fix_Research")
+	
 	Pause_Story = function()
 		if not global.dyworld.game_stats.story_pause then global.dyworld.game_stats.story_pause = false end
 		if global.dyworld.game_stats.story_pause then

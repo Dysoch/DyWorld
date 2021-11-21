@@ -111,3 +111,6 @@ require(DyDs_data_core.. "recipes.plastic")
 -- Script prototypes --
 require(DyDs_data_core.. "script-prototypes.wave-spawner")
 
+-- achievements --
+require(DyDs_data_core.. "achievements.craft")
+

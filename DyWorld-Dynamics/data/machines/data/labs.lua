@@ -20,9 +20,67 @@ local lab_inputs =
 }
 
 DyWorld_Prototype_1.inputs = lab_inputs
-DyWorld_Prototype_1.fast_replaceable_group = "lab"
 DyWorld_Prototype_1.resistances = Resist_Tier_1(0.8)
 DyWorld_Prototype_1.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
+DyWorld_Prototype_1.collision_box = {{-3.3, -3.3}, {3.3, 3.3}}
+DyWorld_Prototype_1.selection_box = {{-3.5, -3.5}, {3.5, 3.5}}
+DyWorld_Prototype_1.drawing_box = {{-3.5, -3.9}, {3.5, 3.5}}
+DyWorld_Prototype_1.fast_replaceable_group = "lab"
+DyWorld_Prototype_1.icon = "__space-exploration-graphics__/graphics/icons/mechanical-laboratory.png"
+DyWorld_Prototype_1.on_animation = {
+      layers =
+      {
+        {
+          filename = "__space-exploration-graphics-5__/graphics/entity/mechanical-laboratory/sr/mechanical-laboratory.png",
+          priority = "high",
+          width = 1920/8,
+          height = 1792/8,
+          frame_count = 64,
+          line_length = 8,
+          shift = util.by_pixel(0, -16),
+          animation_speed = 0.5,
+        },
+        {
+          draw_as_shadow = true,
+          filename = "__space-exploration-graphics-5__/graphics/entity/mechanical-laboratory/sr/mechanical-laboratory-shadow.png",
+          priority = "high",
+          width = 347,
+          height = 200,
+          frame_count = 1,
+          line_length = 1,
+          repeat_count = 64,
+          shift = util.by_pixel(40, 8),
+          animation_speed = 0.5,
+        },
+      },
+    }
+DyWorld_Prototype_1.off_animation = {
+      layers =
+      {
+        {
+          filename = "__space-exploration-graphics-5__/graphics/entity/mechanical-laboratory/sr/mechanical-laboratory.png",
+          priority = "high",
+          width = 1920/8,
+          height = 1792/8,
+          frame_count = 64,
+          line_length = 8,
+          shift = util.by_pixel(0, -16),
+          animation_speed = 0.000001,
+        },
+        {
+          draw_as_shadow = true,
+          filename = "__space-exploration-graphics-5__/graphics/entity/mechanical-laboratory/sr/mechanical-laboratory-shadow.png",
+          priority = "high",
+          width = 347,
+          height = 200,
+          frame_count = 1,
+          line_length = 1,
+          repeat_count = 64,
+          shift = util.by_pixel(40, 8),
+          animation_speed = 0.000001,
+        },
+      },
+    }
 
 
 data:extend({
@@ -30,7 +88,7 @@ data:extend({
   {
     type = "item",
     name = "lab-1",
-    icon = "__base__/graphics/icons/lab.png",
+    icon = "__space-exploration-graphics__/graphics/icons/mechanical-laboratory.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."labs",
     order = "lab-1",
@@ -109,72 +167,13 @@ local lab_inputs =
 }
 
 DyWorld_Prototype_3.inputs = lab_inputs
-DyWorld_Prototype_3.collision_box = {{-3.3, -3.3}, {3.3, 3.3}}
-DyWorld_Prototype_3.selection_box = {{-3.5, -3.5}, {3.5, 3.5}}
-DyWorld_Prototype_3.drawing_box = {{-3.5, -3.9}, {3.5, 3.5}}
-DyWorld_Prototype_3.fast_replaceable_group = "lab"
-DyWorld_Prototype_3.icon = "__space-exploration-graphics__/graphics/icons/mechanical-laboratory.png"
-DyWorld_Prototype_3.on_animation = {
-      layers =
-      {
-        {
-          filename = "__space-exploration-graphics-5__/graphics/entity/mechanical-laboratory/sr/mechanical-laboratory.png",
-          priority = "high",
-          width = 1920/8,
-          height = 1792/8,
-          frame_count = 64,
-          line_length = 8,
-          shift = util.by_pixel(0, -16),
-          animation_speed = 0.5,
-        },
-        {
-          draw_as_shadow = true,
-          filename = "__space-exploration-graphics-5__/graphics/entity/mechanical-laboratory/sr/mechanical-laboratory-shadow.png",
-          priority = "high",
-          width = 347,
-          height = 200,
-          frame_count = 1,
-          line_length = 1,
-          repeat_count = 64,
-          shift = util.by_pixel(40, 8),
-          animation_speed = 0.5,
-        },
-      },
-    }
-DyWorld_Prototype_3.off_animation = {
-      layers =
-      {
-        {
-          filename = "__space-exploration-graphics-5__/graphics/entity/mechanical-laboratory/sr/mechanical-laboratory.png",
-          priority = "high",
-          width = 1920/8,
-          height = 1792/8,
-          frame_count = 64,
-          line_length = 8,
-          shift = util.by_pixel(0, -16),
-          animation_speed = 0.000001,
-        },
-        {
-          draw_as_shadow = true,
-          filename = "__space-exploration-graphics-5__/graphics/entity/mechanical-laboratory/sr/mechanical-laboratory-shadow.png",
-          priority = "high",
-          width = 347,
-          height = 200,
-          frame_count = 1,
-          line_length = 1,
-          repeat_count = 64,
-          shift = util.by_pixel(40, 8),
-          animation_speed = 0.000001,
-        },
-      },
-    }
 
 data:extend({
   DyWorld_Prototype_3,
   {
     type = "item",
     name = "lab-3",
-    icon = "__space-exploration-graphics__/graphics/icons/mechanical-laboratory.png",
+    icon = "__base__/graphics/icons/lab.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."labs",
     order = "lab-3",

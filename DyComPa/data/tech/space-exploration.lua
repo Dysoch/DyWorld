@@ -43,3 +43,12 @@ DyW.Tech.Prereq.Override("se-cryogun", {"se-aeroframe-pole", "se-processing-cryo
 DyW.Tech.Prereq.Override("se-meteor-point-defence", {"intermediates-2", "logistic-science-pack"})
 DyW.Tech.Prereq.Override("se-meteor-defence", {"chemical-science-pack", "se-meteor-point-defence", "intermediates-5"})
 
+data.raw.technology["mining-productivity-5"].hidden = true
+data.raw.technology["mining-productivity-6"].hidden = true
+data.raw.technology["mining-productivity-7"].hidden = true
+data.raw.technology["mining-productivity-8"].hidden = true
+data.raw.technology["mining-productivity-9"].hidden = true
+data.raw.technology["mining-productivity-10"].hidden = true
+data.raw.technology["mining-productivity-11"].hidden = true
+data.raw.technology["mining-productivity-12"].hidden = true
+data.raw.technology["mining-productivity-13"].hidden = true

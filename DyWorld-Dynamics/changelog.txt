@@ -2,13 +2,16 @@
 Version: 0.3.0
 Date: ???
   Features:
-    - 
+    - New fluids and gases added. Currently mostly unused
+    - Added in a few achievements, wont work in scenario for now
   Minor Features:
     - 
   Changes:
-    - 
+    - Damage from the enviroment will now happen based on survival difficulty setting
+    - Metal Labratory size: 3x3 > 5x5
+    - Advanced Labratory size: 5x5 > 3x3
   Bugfixes:
-    - 
+    - All hidden technologies will be research on a research completed to fix technologies issues
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 20. 11. 2021

@@ -32,26 +32,6 @@ local Data_Table_Item_Group = {
 		Main = "fluids"
 	},
 	{
-		Name = "f-molten-6",
-		Type = "sub",
-		Main = "fluids"
-	},
-	{
-		Name = "f-molten-7",
-		Type = "sub",
-		Main = "fluids"
-	},
-	{
-		Name = "f-molten-8",
-		Type = "sub",
-		Main = "fluids"
-	},
-	{
-		Name = "f-molten-9",
-		Type = "sub",
-		Main = "fluids"
-	},
-	{
 		Name = "f-acidic",
 		Type = "sub",
 		Main = "fluids"

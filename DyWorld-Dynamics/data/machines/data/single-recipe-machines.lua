@@ -128,18 +128,31 @@ data:extend({
 local DyWorld_Prototype_3 = DyDs_CopyPrototype("assembling-machine", "assembling-machine-1", "fish-farm", true)
 DyWorld_Prototype_3.icon = "__base__/graphics/icons/assembling-machine-3.png"
 DyWorld_Prototype_3.crafting_categories = {"fish-miner"}
-DyWorld_Prototype_3.energy_usage = "500kW"
 DyWorld_Prototype_3.crafting_speed = 1
 DyWorld_Prototype_3.fixed_recipe = "fish-mining"
 DyWorld_Prototype_3.fast_replaceable_group = "crafting"
 DyWorld_Prototype_3.next_upgrade = nil
 DyWorld_Prototype_3.resistances = Resist_Tier_1(5)
 DyWorld_Prototype_3.hide_resistances = settings.startup["DyWorld_Show_Resistances"].value
+DyWorld_Prototype_3.animation = {
+      layers =
+      {
+	    {
+		  filename = DyDs_path_entity.."fish-farm.png",
+		  priority = "extra-high",
+		  width = 500,
+		  height = 500,
+		}
+	  }
+	}
+DyWorld_Prototype_3.working_sound = nil
 DyWorld_Prototype_3.energy_source = {
-      type = "electric",
-      usage_priority = "secondary-input",
-      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 5 or Dy_Sett.Difficulty == "Normal" and 15 or Dy_Sett.Difficulty == "Hard" and 45 or 5,
+      type = "void",
     }
+DyWorld_Prototype_3.collision_box = {{-7, -7}, {7, 7}}
+DyWorld_Prototype_3.selection_box = {{-7, -7}, {7, 7}}
+DyWorld_Prototype_3.emissions_per_second = -0.1
+    
 data:extend({
   DyWorld_Prototype_3,
   {
@@ -210,7 +223,7 @@ data:extend({
       {
         {type = "item", name = "bio-waste", amount_min = 1, amount_max = 100, probability = 0.02},
         {type = "item", name = "raw-fish-pike", amount_min = 1, amount_max = 10, probability = 0.75},
-        {type = "item", name = "raw-fish-salmon", amount_min = 1, amount_max = 10, probability = 0.75},
+        {type = "item", name = "raw-fish-salmon", amount_min = 1, amount_max = 10, probability = 0.5},
       },
 	  energy_required = 30,
 	  main_product = "raw-fish-pike",
@@ -220,3 +233,6 @@ data:extend({
     },
   },
 })
+
+DyWorld_ATTA("fish-mining", {"piscis-farm"})
+DyWorld_ATTA("fish-farm", {"piscis-farm"})

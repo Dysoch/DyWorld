@@ -218,6 +218,7 @@ function Event_on_research_finished(event)
 			Story_Objectives("research", event)
 		end
 	end
+	remote.call("DyWorld", "Fix_Research")
 	if not global.dyworld.research_done[event.research.name] then
 		table.insert(global.dyworld.research_done, event.research.name)
 		--debug("Researched: "..event.research.name)

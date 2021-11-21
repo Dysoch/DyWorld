@@ -56,8 +56,9 @@ remote.add_interface("DyWorld",
 		if not global.Tech_Fixed then
 			for k,v in pairs(game.technology_prototypes) do
 				if v.hidden then
-					game.forces.player.technologies[v.name].researched = true
-					PlayerPrint("Researched: "..v.name)
+					if not game.forces.player.technologies[v.name].researched then
+						game.forces.player.technologies[v.name].researched = true
+					end
 				end
 			end
 			global.Tech_Fixed = true

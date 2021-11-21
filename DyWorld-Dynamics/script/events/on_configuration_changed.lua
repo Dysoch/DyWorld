@@ -7,7 +7,9 @@ function Event_on_configuration_changed()
 	local Time = global.dyworld.game_stats.time_stamp
 
     -- Checks every Migration. These are single changes, done to ensure migrated scripts
-    One_Time_Migration()
+	if Version_Build ~= global.dyworld.version then
+		One_Time_Migration()
+	end
 
 	PlayerPrint("[color=blue]DyWorld-Dynamics:[/color] [color=yellow]New mod configuration detected. Updating Story (to be safe). Migrated from version: [/color][color=blue]"..global.dyworld.version.."[/color][color=yellow] to version: [/color][color=blue]"..Version_Build.."[/color]")
 	global.dyworld.version = Version_Build
@@ -35,6 +37,7 @@ function Event_on_configuration_changed()
     -- Checks every Migration. Done to ensure new recipes and changes will be unlocked
 	Reunlock_Recipes()
 	Repopulate_Side_Objectives_Table()
+	remote.call("DyWorld", "Fix_Research")
     if global.dyworld.game_stats.inserters then
         InserterCheck(global.dyworld.game_stats.inserters, true)
     end

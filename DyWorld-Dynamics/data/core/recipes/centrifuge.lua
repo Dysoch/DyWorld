@@ -258,7 +258,31 @@ data:extend({
 	  enabled = false,
     },
   },
-  -- To add to tech
+  {
+    type = "recipe",
+    name = "wood-sulfur-refining",
+	category = "centrifuging",
+	main_product = "sulfur",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "wood-sulfur", amount = 50},
+        {type = "fluid", name = "water", amount = 100},
+      },
+      results = 
+      {
+        {type = "item", name = "bio-waste", amount_min = 1, amount_max = 10, probability = 0.02},
+        {type = "item", name = "acidic-residue", amount_min = 1, amount_max = 10, probability = 0.1},
+        {type = "fluid", name = "sulfuric-acid", amount_min = 1, amount_max = 50, probability = 0.1},
+        {type = "item", name = "wood-sulfur-sapling", amount_min = 1, amount_max = 10, probability = 0.1},
+        {type = "item", name = "sulfur", amount_min = 25, amount_max = 50, probability = 0.98},
+      },
+	  energy_required = 10,
+	  main_product = "sulfur",
+	  enabled = false,
+    },
+  },
   {
     type = "recipe",
     name = "petroleum-centrifuge",
@@ -394,3 +418,5 @@ data:extend({
     },
   },
 })
+
+DyWorld_ATTA("wood-sulfur-refining", {"agroforestry-sulfur"})

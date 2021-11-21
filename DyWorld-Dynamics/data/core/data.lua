@@ -52,8 +52,11 @@ require(DyDs_data_core.. "items.satellites-2")
 require(DyDs_data_core.. "items.satellites-dyson")
 
 -- Fluids --
+require(DyDs_data_core.. "fluids.acidic")
 require(DyDs_data_core.. "fluids.basics")
+require(DyDs_data_core.. "fluids.gases")
 require(DyDs_data_core.. "fluids.metals")
+require(DyDs_data_core.. "fluids.oil")
 require(DyDs_data_core.. "fluids.science")
 
 -- Recipes --

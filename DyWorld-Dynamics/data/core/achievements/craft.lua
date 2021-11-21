@@ -1,3 +1,5 @@
+-- /c game.players[1].unlock_achievement("dy-craft-water-1a")
+
 data:extend(
 {
   {

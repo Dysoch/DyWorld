@@ -1,4 +1,18 @@
 
+local function Survival_Diff_Damage(Amount)
+	if settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
+		if settings.global["DyWorld_Surival_Difficulty"].value == "Easy" then
+			return Round((Amount * 1), 2)
+		elseif settings.global["DyWorld_Surival_Difficulty"].value == "Normal" then
+			return Round((Amount * 2), 2)
+		elseif settings.global["DyWorld_Surival_Difficulty"].value == "Hard" then
+			return Round((Amount * 3), 2)
+		elseif settings.global["DyWorld_Surival_Difficulty"].value == "Insane" then
+			return Round((Amount * 5), 2)
+		end
+	end
+end
+
 
 function Add_Radiation(id, Amount)
 	if not global.dyworld.players[id].rads then 
@@ -104,24 +118,26 @@ function Vitals_Check(id)
 		end
 	end
 	Add_Radiation(id, Rads_Gained)
-	if global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high_3 then
-		if P_Loc then P_Loc.damage(100000000, "enemy", "radiation") end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high_2 then
-		if P_Loc then P_Loc.damage(10000000, "enemy", "radiation") end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high_1 then
-		if P_Loc then P_Loc.damage(1000000, "enemy", "radiation") end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid_3 then
-		if P_Loc then P_Loc.damage(1000000, "enemy", "radiation") end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid_2 then
-		if P_Loc then P_Loc.damage(100000, "enemy", "radiation") end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid_1 then
-		if P_Loc then P_Loc.damage(10000, "enemy", "radiation") end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low_3 then
-		if P_Loc then P_Loc.damage(1000, "enemy", "radiation") end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low_2 then
-		if P_Loc then P_Loc.damage(100, "enemy", "radiation") end
-	elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low_1 then
-		if P_Loc then P_Loc.damage(10, "enemy", "radiation") end
+	if settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
+		if global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high_3 then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(100000000), "enemy", "radiation") end
+		elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high_2 then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(10000000), "enemy", "radiation") end
+		elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.high_1 then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(1000000), "enemy", "radiation") end
+		elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid_3 then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(1000000), "enemy", "radiation") end
+		elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid_2 then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(100000), "enemy", "radiation") end
+		elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.mid_1 then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(10000), "enemy", "radiation") end
+		elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low_3 then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(1000), "enemy", "radiation") end
+		elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low_2 then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(100), "enemy", "radiation") end
+		elseif global.dyworld.players[id].rads.stored >= global.dyworld.players[id].rads.thresholds.low_1 then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(10), "enemy", "radiation") end
+		end
 	end
 	
 	
@@ -129,19 +145,22 @@ function Vitals_Check(id)
 	global.dyworld.players[id].temp.high.total = (global.dyworld.players[id].temp.high.native + global.dyworld.players[id].temp.high.artificial + global.dyworld.players[id].temp.high.bonus) * ((Food_Per + Water_Per) / 2)
 	global.dyworld.players[id].temp.low.total = (global.dyworld.players[id].temp.low.native + global.dyworld.players[id].temp.low.artificial + global.dyworld.players[id].temp.low.bonus) * ((Food_Per + Water_Per) / 2)
 	
-	if Chunk.Temperature >= global.dyworld.players[id].temp.high.total then
-		if P_Loc then P_Loc.damage(Chunk.Temperature, "enemy", "temperature-high") end
-	end
-	
-	if Chunk.Temperature <= global.dyworld.players[id].temp.low.total then
-		if P_Loc then P_Loc.damage(75, "enemy", "temperature-low") end
+	if settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
+		if Chunk.Temperature >= global.dyworld.players[id].temp.high.total then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(Chunk.Temperature), "enemy", "temperature-high") end
+		end
+		if Chunk.Temperature <= global.dyworld.players[id].temp.low.total then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage(75), "enemy", "temperature-low") end
+		end
 	end
 	
 	
 	-- Pollution --
 	global.dyworld.players[id].pollution.total = (global.dyworld.players[id].pollution.native + global.dyworld.players[id].pollution.artificial + global.dyworld.players[id].pollution.bonus) * ((Food_Per + Water_Per) / 2)
 	
-	if Chunk.Pollution >= global.dyworld.players[id].pollution.total then
-		if P_Loc then P_Loc.damage((40 + (Chunk.Pollution / 100)), "enemy", "toxic") end
+	if settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
+		if Chunk.Pollution >= global.dyworld.players[id].pollution.total then
+			if P_Loc then P_Loc.damage(Survival_Diff_Damage((40 + (Chunk.Pollution / 100))), "enemy", "toxic") end
+		end
 	end
 end

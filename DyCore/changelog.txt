@@ -1,8 +1,15 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.4
-Date: ????
+Version: 0.1.5
+Date: ???
   Minor Features:
+    - Added functions for fluids
+  Bugfixes:
     - 
+  Translations:
+    - 
+---------------------------------------------------------------------------------------------------
+Version: 0.1.4
+Date: 20. 11. 2021
   Bugfixes:
     - Fixed recipes being hidden when they shouldn't
   Translations:
@@ -12,12 +19,12 @@ Date: ????
 Version: 0.1.3
 Date: 30. 10. 2021
   Minor Features:
-    - Locales updated (by Max)
+    - German locales updated (by Max)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 24. 10. 2021
   Minor Features:
-    - Locales updated
+    - English locales updated
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 23. 10. 2021

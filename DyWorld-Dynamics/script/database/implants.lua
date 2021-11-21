@@ -1,34 +1,45 @@
 
-
-
+local function Check_Diff(Amount)
+	if settings.global["DyWorld_Surival_Difficulty"].value == "Easy" then
+		return Round((Amount * 1), 2)
+	elseif settings.global["DyWorld_Surival_Difficulty"].value == "Normal" then
+		return Round((Amount * 2), 2)
+	elseif settings.global["DyWorld_Surival_Difficulty"].value == "Hard" then
+		return Round((Amount * 3), 2)
+	elseif settings.global["DyWorld_Surival_Difficulty"].value == "Insane" then
+		return Round((Amount * 5), 2)
+	else
+		return Round((Amount * 1), 2)
+	end
+end
 
 Implants  = {
 
 	----- Usage Rates -----
 	["usage-reduction-1"] = {
 		type = "use-rate",
-		Water_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and -0.05 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and -0.1 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and -0.2 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and -0.5 or 0,
-		Food_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 0.085 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 0.17 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 0.34 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 0.85 or 0,
+		Water_Usage = Check_Diff(-0.05),
+		Food_Usage = Check_Diff(0.085),
 	},
 	["usage-reduction-2"] = {
 		type = "use-rate",
-		Water_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and -0.075 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and -0.15 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and -0.3 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and -0.75 or 0,
-		Food_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and -0.0625 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and -0.125 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and -0.25 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and -0.625 or 0,
+		Water_Usage = Check_Diff(-0.075),
+		Food_Usage = Check_Diff(-0.125),
 	},
 	["usage-reduction-3"] = {
 		type = "use-rate",
-		Water_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and -0.1 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and -0.2 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and -0.4 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and -1 or 0,
-		Food_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 0.025 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 0.05 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 0.1 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 0.25 or 0,
+		Water_Usage = Check_Diff(-0.1),
+		Food_Usage = Check_Diff(0.025),
 	},
 	["usage-reduction-4"] = {
 		type = "use-rate",
-		Water_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and -0.125 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and -0.25 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and -0.5 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and -1.25 or 0,
-		Food_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and -0.06 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and -0.12 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and -0.24 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and -0.6 or 0,
+		Water_Usage = Check_Diff(-0.125),
+		Food_Usage = Check_Diff(-0.06),
 	},
 	["usage-reduction-5"] = {
 		type = "use-rate",
-		Water_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and -0.15 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and -0.3 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and -0.6 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and -1.5 or 0,
-		Food_Usage = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and -0.08 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and -0.16 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and -0.32 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and -0.8 or 0,
+		Water_Usage = Check_Diff(-0.15),
+		Food_Usage = Check_Diff(-0.08),
 	},
 	
 	----- Strength Implants -----

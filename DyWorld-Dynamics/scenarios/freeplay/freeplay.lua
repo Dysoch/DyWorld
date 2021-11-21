@@ -223,7 +223,12 @@ freeplay.on_init = function()
   global.respawn_items = respawn_items()
   global.crashed_ship_items = ship_items()
   global.crashed_debris_items = debris_items()
-  remote.call("DyWorld", "Story_Start")
+  if remote.interfaces["DyWorld"] then
+    remote.call("DyWorld", "Story_Start")
+  else
+    error("\n\nYou installed a mod that is incompatible, or have a required mod from DyWorld-Dynamics or Space Exploration missing.\n\nThis causes DyWorld-Dynamics and DyComPa to not be loaded.\n\nCheck DyWorld-Dynamics in the mod menu to see its incompatible mods or check other required mods\n\n")
+  end
+  
 
   if is_debug() then
     global.skip_intro = true

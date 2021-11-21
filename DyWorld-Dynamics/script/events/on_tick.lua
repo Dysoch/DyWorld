@@ -165,6 +165,7 @@ function Event_on_tick(event)
 				end
 				
 				if not remote.call("space-exploration", "remote_view_is_active", {player = game.players[v.id]}) then
+					Bonuses(v.id)
 					Vitals_Check(v.id)
 				end
 				
@@ -196,8 +197,6 @@ function Event_on_tick(event)
 						player.gui.top.DyDs_SMN_GUI.selected_tab_index = global.dyworld.players[v.id].smn_gui_index
 					end
 				end
-
-				Bonuses(v.id)
 
 				if global.dyworld_story and v.alive and not global.dyworld.game_stats.story_pause then
 					for aaaa,Phase in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do

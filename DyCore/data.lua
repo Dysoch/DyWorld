@@ -19,6 +19,11 @@ require("data.item.add")
 require("data.item.change")
 require("data.item.remove")
 
+DyW.Fluid = {}
+require("data.fluid.add")
+require("data.fluid.change")
+require("data.fluid.remove")
+
 DyW.Equip = {}
 require("data.equipment.add")
 require("data.equipment.base")

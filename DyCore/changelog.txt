@@ -3,10 +3,13 @@ Version: 0.1.5
 Date: ???
   Minor Features:
     - Added functions for fluids
+    -
   Bugfixes:
-    - 
+    - Fixed a duplicate string in the German locales, that caused a crash
+    -
   Translations:
-    - 
+    - German locales updated (by Max)
+    -
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 20. 11. 2021

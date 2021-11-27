@@ -6,7 +6,8 @@ Date: ???
     -
   Bugfixes:
     - Fixed a duplicate string in the German locales, that caused a crash
-    -
+    - Fixed a duplicate string in the French locales, that caused a crash
+    - 
   Translations:
     - German locales updated (by Max)
     -

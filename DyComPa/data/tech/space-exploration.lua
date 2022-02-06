@@ -38,7 +38,7 @@ DyW.Tech.Prereq.Override("se-biological-science-pack-1", {"se-processing-vitamel
 DyW.Tech.Prereq.Override("se-biological-science-pack-2", {"se-space-catalogue-biological-2", "se-bioscrubber"})
 DyW.Tech.Prereq.Override("se-biological-science-pack-3", {"se-space-catalogue-biological-3"})
 DyW.Tech.Prereq.Override("se-biological-science-pack-4", {"se-space-catalogue-biological-4"})
-DyW.Tech.Prereq.Override("se-core-miner", {"se-pulveriser", "oil-processing-2", "logistic-science-pack-advanced"})
+DyW.Tech.Prereq.Override("se-core-miner", {"se-pulveriser", "oil-processing-2", "logistic-science-pack"})
 DyW.Tech.Prereq.Override("se-cryogun", {"se-aeroframe-pole", "se-processing-cryonite", "se-space-thermodynamics-laboratory", "warfare-10"})
 DyW.Tech.Prereq.Override("se-meteor-point-defence", {"intermediates-2", "logistic-science-pack"})
 DyW.Tech.Prereq.Override("se-meteor-defence", {"chemical-science-pack", "se-meteor-point-defence", "intermediates-5"})

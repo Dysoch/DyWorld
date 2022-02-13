@@ -33,3 +33,11 @@ data.raw.recipe["landfill-copper-ore"].icons[2] = {
 	scale = 32/64
 }
 end
+if data.raw.recipe["se-cargo-rocket-cargo-pod"] then
+	data.raw.recipe["se-cargo-rocket-cargo-pod"].ingredients = {
+		{ "steel-plate", 6 },
+		{ "control-board-2", 4 },
+		{ "small-storage-2", 4 },
+		{ "normal-inserter", 2 }
+	}
+end

@@ -18,7 +18,7 @@
 		"space-exploration >= 0.5.92",
 		"informatron >= 0.2.2",
 		"aai-containers >= 0.2.9",
-		"aai-industry >= 0.5.9",
+		"aai-industry = 0.5.9",
 		"Nanobots >= 3.2.16",
 		"alien-biomes >= 0.6.5",
 		

@@ -134,9 +134,22 @@ function Auto_Medpack_Intake(ID)
                     local P_Y = global.dyworld.players[ID].posy
                     local P_Loc = game.surfaces[P_S].find_entity("character", {P_X,P_Y})
                     if P_Loc and global.dyworld.players[ID].alive then
-                        if (((game.entity_prototypes["character"].max_health + game.players[ID].character_health_bonus) - (P_Loc.health + Medpack_Values[k])) >= 0) then
+                        if (
+							(
+								(
+									game.entity_prototypes["character"].max_health + 
+									game.players[ID].character_health_bonus
+								) - 
+								(P_Loc.health + Medpack_Values[k])
+							) >= 0
+							or
+							(
+								global.dyworld.players[ID].rads.stored > 0
+							)
+						) then
                             Inv.remove({name = k, count = 1})
                             P_Loc.health = P_Loc.health + Medpack_Values[k]
+							Add_Radiation(ID, -1 * Medpack_Values[k])
                             if game.forces.player.technologies["implants-3"].researched then
                             else
                                 break

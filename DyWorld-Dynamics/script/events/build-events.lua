@@ -24,6 +24,12 @@ function Event_on_player_used_capsule(event)
 		end
 	end
 	
+	if Medpack_Values[name] then
+		if global.dyworld.players[id].rads.stored > 0 then
+			Add_Radiation(id, -1 * Medpack_Values[name])
+		end
+	end
+
 	----- Personal counter -----
 	if not global.dyworld.players[id].capsules then global.dyworld.players[id].capsules = 0 end
 	global.dyworld.players[id].capsules = global.dyworld.players[id].capsules + 1

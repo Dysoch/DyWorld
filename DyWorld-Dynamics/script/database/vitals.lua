@@ -33,12 +33,12 @@ Medpack_Values  = {
 }
 
 Radiation_Values  = {
-	["uranium-ore"] = 20,
-	["spend-uranium-ore"] = 2,
-	["uranium-235"] = 50,
-	["spend-uranium-235"] = 5,
-	["uranium-238"] = 75,
-	["spend-uranium-238"] = 7.5,
-	["argonium-fuel-cell"] = 15,
-	["spend-argonium-fuel-cell"] = 1.5,
+	["uranium-ore"] = 2,
+	["spend-uranium-ore"] = 0.2,
+	["uranium-235"] = 5,
+	["spend-uranium-235"] = 0.5,
+	["uranium-238"] = 7.5,
+	["spend-uranium-238"] = 0.75,
+	["argonium-fuel-cell"] = 1.5,
+	["spend-argonium-fuel-cell"] = 0.15,
 }

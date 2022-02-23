@@ -220,13 +220,13 @@ local Tile_List = {
     ["frozen-snow-8"] = {-3, 0.097},
     ["frozen-snow-9"] = {-9.5, 0.014},
 
-    ["se-space"] = {-250, 2},
+    ["se-space"] = {-250, 0.2},
 
-    ["se-asteroid"] = {-175, 1.25},
+    ["se-asteroid"] = {-175, 0.125},
     ["se-regolith"] = {-25, 0.04},
-    ["se-space-platform-scaffold"] = {-160, 0.6},
-    ["se-space-platform-plating"] = {-150, 1},
-    ["se-spaceship-floor"] = {10, 0.8},
+    ["se-space-platform-scaffold"] = {-160, 0.06},
+    ["se-space-platform-plating"] = {-150, 0.1},
+    ["se-spaceship-floor"] = {10, 0.08},
 }
 
 function Dy_Check_Terrain_Single(Tile)

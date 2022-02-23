@@ -306,7 +306,7 @@ for _, tech in pairs (data.raw.technology) do
 	if tech.prerequisites then
 		for k,v in pairs(tech.prerequisites) do
 			if Tech_Base_Game[k] then
-				if data.raw.technology[Replace] then
+				if data.raw.technology[Tech_Base_Game[k].Replace] then
 					tech.prerequisites[k] = Tech_Base_Game[k].Replace
 				end
 			end

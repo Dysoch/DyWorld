@@ -89,12 +89,15 @@
         "make_unit_melee_ammo_type",
         "biterattackanimation",
         "biterrunanimation",
-        "DyW"
+        "DyW",
+        "mods"
     ],
     "Lua.diagnostics.disable": [
         "undefined-field",
         "undefined-global",
         "lowercase-global",
         "deprecated"
-    ]
+    ],
+    "files.eol": "\n",
+    "files.insertFinalNewline": false
 }

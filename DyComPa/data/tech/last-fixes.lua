@@ -58,5 +58,5 @@ end
 for k,v in pairs(data.raw.technology) do
 	if v.hidden == true then
 		v.effects = {}
-	end
+    end
 end

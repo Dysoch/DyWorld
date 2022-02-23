@@ -40,5 +40,5 @@ data.raw.technology["rocket-fuel"].unit.ingredients = {
 for k,v in pairs(data.raw.technology) do
 	if v.hidden == true then
 		v.effects = {}
-	end
+    end
 end

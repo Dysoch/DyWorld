@@ -102,7 +102,8 @@ function Event_on_pre_player_died(event)
 	if not global.dyworld.players[id].survival then global.dyworld.players[id].survival = {} end
 	if not global.dyworld.players[id].survival["constitution"] then global.dyworld.players[id].survival["constitution"] = 0 end
 	if not global.dyworld.players[id].death_reduce then global.dyworld.players[id].death_reduce = 0 end
-	global.dyworld.players[id].died = global.dyworld.players[id].died + 1global.dyworld.players[id].rads.stored = 0
+	global.dyworld.players[id].died = global.dyworld.players[id].died + 1
+	global.dyworld.players[id].rads.stored = 0
 	
 	Difficulty_Change("-", 250)
 	

@@ -11,17 +11,17 @@ DIRECTION_VECTOR = {
 	[7] = {-1, -1} -- northwest
 }
 
-function getPickupDirection(inserter)
+function GetPickupDirection(inserter)
 	return math.floor((math.atan2(inserter.position.x - inserter.pickup_position.x, inserter.pickup_position.y - inserter.position.y) / math.pi + 1) * 4 + 0.5) % 8
 end
 
-function getPickupDistance(inserter)
+function GetPickupDistance(inserter)
 	local vector = math2d.position.subtract(inserter.pickup_position, inserter.position)
 	return math.floor(math.max(math.abs(vector.x), math.abs(vector.y)) + 0.5)
 end
 
 function RotatePickup(player, inserter, increment)
-	local pickup_direction = getPickupDirection(inserter)
+	local pickup_direction = GetPickupDirection(inserter)
 	--[[if not settings.global["side-inserters-45"].value then
 		if pickup_direction % 2 ~= 0 then
 			pickup_direction = pickup_direction - increment
@@ -32,12 +32,12 @@ function RotatePickup(player, inserter, increment)
 	if pickup_direction == (inserter.direction + 4) % 8 then
 		pickup_direction = (pickup_direction + increment) % 8
 	end
-	local pickup_vector = math2d.position.multiply_scalar(DIRECTION_VECTOR[pickup_direction], getPickupDistance(inserter))
+	local pickup_vector = math2d.position.multiply_scalar(DIRECTION_VECTOR[pickup_direction], GetPickupDistance(inserter))
 	inserter.pickup_position = math2d.position.add(inserter.position, pickup_vector)
 	inserter.direction = inserter.direction
 end
 
-function ToggleDropDistance(entity)
+function ToggleDropDistance(entity, event)
 	local OFFSET = 0.3125
 	local dx = entity.drop_position.x - entity.position.x
 	local dy = entity.drop_position.y - entity.position.y
@@ -102,7 +102,7 @@ script.on_event(defines.events.on_entity_settings_pasted, function(event)
 		else
 			prototype = destination.prototype
 		end
-		local pickup_distance = getPickupDistance(destination)
+		local pickup_distance = GetPickupDistance(destination)
 		local prototype_pickup_distance = math.max(math.abs(prototype.inserter_pickup_position[1]), math.abs(prototype.inserter_pickup_position[2]))
 		if pickup_distance ~= prototype_pickup_distance then
 			local pickup_vector = math2d.position.subtract(destination.pickup_position, destination.position)

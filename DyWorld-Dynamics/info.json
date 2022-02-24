@@ -24,7 +24,12 @@
 		
 		"~ DyComPa >= 0.1.7",
 
-		"(?) Aircraft",
+		"? Aircraft",
+		"? crafting_combinator",
+		"? Noxys_Waterfill",
+		"? visual-signals",
+		"? WaterWell",
+		
 		
 		"! angelsindustries",
 		"! angelspetrochem",

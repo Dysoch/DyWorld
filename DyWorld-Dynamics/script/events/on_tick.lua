@@ -240,7 +240,7 @@ function Event_on_tick(event)
 					end
 				elseif Dy_Find_Str(v, "player-ambush") then
 					for _,player in pairs(global.dyworld.players) do
-						if not Dy_Find_Str(player.surface, "starmap") then
+						if not Dy_Find_Str(player.surface, "starmap") and not remote.call("space-exploration", "remote_view_is_active", {player = game.players[player.id]}) then
 							local Location = {player.posx, player.posy, player.surface}
 							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 2000))
 							if Dy_Find_Str(v, "101") then

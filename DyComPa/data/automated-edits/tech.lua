@@ -120,6 +120,7 @@ local Tech_Base_Game = {
 	["toolbelt-2"] = {Replace = nil},
 	["toolbelt-3"] = {Replace = nil},
 	["toolbelt-4"] = {Replace = nil},
+	["toolbelt-5"] = {Replace = nil},
 	["toolbelt-6"] = {Replace = nil},
 	["toolbelt-7"] = {Replace = nil},
 	["stone-wall"] = {Replace = nil},

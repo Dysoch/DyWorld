@@ -147,6 +147,7 @@ local Main_Techs = {
 		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-4",
+			"logistic-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),
@@ -161,6 +162,7 @@ local Main_Techs = {
 		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-5",
+			"chemical-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),
@@ -176,6 +178,7 @@ local Main_Techs = {
 		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-6",
+			"production-science-pack"
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),
@@ -192,6 +195,7 @@ local Main_Techs = {
 		flags = {Tech_Main = true},
 		prerequisites = {
 			"intermediates-7",
+			"utility-science-pack"
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),
@@ -294,6 +298,7 @@ local Main_Techs = {
 		prerequisites = {
 			"intermediates-4",
 			"automatica-4",
+			"logistic-science-pack",
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),
@@ -308,6 +313,7 @@ local Main_Techs = {
 		flags = {Tech_Main = true},
 		prerequisites = {
 			"logistica-2",
+			"chemical-science-pack"
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),
@@ -323,6 +329,7 @@ local Main_Techs = {
 		flags = {Tech_Main = true},
 		prerequisites = {
 			"logistica-3",
+			"production-science-pack"
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),
@@ -857,6 +864,7 @@ local Main_Techs = {
 		prerequisites = {
 			"normal-asteroid-mining",
 			"production-science-pack",
+			"intermediates-7"
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 1000),
@@ -1024,6 +1032,10 @@ for i = 1,5 do
 		flags = {Tech_Main = true},
 		prerequisites = {
 			"metallurgy-"..(i+2),
+			i == 1 and "logistic-science-pack" or nil,
+			i == 2 and "chemical-science-pack" or nil,
+			i == 3 and "production-science-pack" or nil,
+			i == 4 and "utility-science-pack" or nil
 		},
 		ingredients = {
 			Dy_Main_Tech_Pack(1.1, 250),

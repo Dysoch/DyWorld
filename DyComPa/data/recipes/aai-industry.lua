@@ -51,8 +51,9 @@ data.raw.recipe["fuel-processing"].hidden = nil
 data.raw.recipe["stone-tablet"].hidden = nil
 data.raw.recipe["stone-tablet"].enabled = false
 
+    -- Fixes AAI Science Pack alteration --
 for _, recipe in pairs(data.raw.recipe) do
-  if string.find(recipe.name, "science-pack", 1, true) then
-    recipe.category = "assembling-tier-2"
-  end
+    if string.find(recipe.name, "science-pack", 1, true) then
+        recipe.category = "assembling-tier-2"
+    end
 end

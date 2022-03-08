@@ -4,7 +4,7 @@ Date: ???
   Bugfixes:
     - Fixed Science Packs not being craftable due to AAI-Industry update
   Compatibility:
-    - 
+    - Added support for: WaterWell, Noxys_Waterfill, crafting_combinator, visual-signals
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.7
 Date: 20. 11. 2021

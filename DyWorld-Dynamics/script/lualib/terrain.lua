@@ -33,7 +33,7 @@ local Tile_List = {
     ["water-shallow"] = {17, 0.04},
     ["water-mud"] = {16.5, 0.09},
 
-    ["nuclear-ground"] = {2000, 20},
+    ["nuclear-ground"] = {200, 2},
 
     ["landfill"] = {17.5, 0.04},
 

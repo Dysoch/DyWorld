@@ -122,16 +122,17 @@ function Event_on_tick(event)
 				v.posx = game.players[v.id].position.x
 				v.posy = game.players[v.id].position.y
 				v.surface = game.players[v.id].surface.name
-
-				if (game.players[v.id].vehicle and Distance_Car_Check(game.players[v.id].vehicle.name)) then
-					v.distance_car = (v.distance_car + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
-				elseif (game.players[v.id].vehicle and Distance_Train_Check(game.players[v.id].vehicle.name)) then
-					v.distance_train = (v.distance_train + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
-				elseif game.players[v.id].vehicle == nil then
-					if game.players[v.id].character and not remote.call("space-exploration", "remote_view_is_active", {player = game.players[v.id]}) then
-						v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
-					end
-				end
+                if not remote.call("space-exploration", "remote_view_is_active", {player = game.players[v.id]}) then
+                    if (game.players[v.id].vehicle and Distance_Car_Check(game.players[v.id].vehicle.name)) then
+                        v.distance_car = (v.distance_car + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
+                    elseif (game.players[v.id].vehicle and Distance_Train_Check(game.players[v.id].vehicle.name)) then
+                        v.distance_train = (v.distance_train + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
+                    elseif game.players[v.id].vehicle == nil then
+                        if game.players[v.id].character then
+                            v.distance = (v.distance + (getDistance(v.posx, v.posy, v.posx2, v.posy2) / 1000))
+                        end
+                    end
+                end
 
                 if not global.dyworld.game_stats.chunks_info then global.dyworld.game_stats.chunks_info = {} end
                 if not global.dyworld.game_stats.chunks_info[v.surface] then global.dyworld.game_stats.chunks_info[v.surface] = {} end
@@ -240,7 +241,7 @@ function Event_on_tick(event)
 					end
 				elseif Dy_Find_Str(v, "player-ambush") then
 					for _,player in pairs(global.dyworld.players) do
-						if not Dy_Find_Str(player.surface, "starmap") then
+						if not Dy_Find_Str(player.surface, "starmap") and not remote.call("space-exploration", "remote_view_is_active", {player = game.players[player.id]}) then
 							local Location = {player.posx, player.posy, player.surface}
 							local Str = Pick_Random_Attack_Strength(math.ceil(global.dyworld.game_stats.difficulty / 2000))
 							if Dy_Find_Str(v, "101") then

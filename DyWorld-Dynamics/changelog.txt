@@ -10,6 +10,11 @@ Date: ???
     - Damage from the enviroment will now happen based on survival difficulty setting
     - Metal Labratory size: 3x3 > 5x5
     - Advanced Labratory size: 5x5 > 3x3
+    - Survival Difficulty has lower values multipliers that damage you
+    - Odometer now checks always if remote view from SE is active
+    - Pollution and Temperature ranges are now affected by 4 personal stats (Food value, Water value, Oxygen Value (WIP) and State of Mind(WIP)). This should make sure that the chance of getting damaged by the enviroment at 50% water is now dropped to about 15% water
+    - Massively reduced the amount damage you get from radiation and pollution
+    - Certain radiation and temperature values for certain tiles have been reduced, making it easier to survive. Space is still harsh though, prepare well for that
   Bugfixes:
     - All hidden technologies will be research on a research completed to fix technologies issues
 ---------------------------------------------------------------------------------------------------

@@ -93,7 +93,10 @@
         "mods"
     ],
     "Lua.diagnostics.disable": [
-        "undefined-field"
+        "undefined-field",
+        "undefined-global",
+        "lowercase-global",
+        "deprecated"
     ],
     "files.eol": "\n",
     "files.insertFinalNewline": false

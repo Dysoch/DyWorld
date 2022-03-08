@@ -178,6 +178,16 @@ Dy_Exclude_Recipes = {
 	["satellite"] = 1, 
 }
 
+Dy_Realistic_Recipes_Intermediates = {
+	-- Intermediates --
+	"thin-copper-cable", "copper-cable", "dense-copper-cable",
+	"thin-copper-cable-insulated", "copper-cable-insulated", "dense-copper-cable-insulated",
+	"screw-1", "screw-2", "screw-3", "screw-4", "screw-5",
+	"bolt-1", "bolt-2", "bolt-3", "bolt-4", "bolt-5",
+	"nut-1", "nut-2", "nut-3", "nut-4", "nut-5",
+	"ring-1", "ring-2", "ring-3", "ring-4", "ring-5",
+}
+
 Dy_Exclude_Tech = { 
 	-- Base ----
 	["logistic-science-pack"] = 1,

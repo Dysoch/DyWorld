@@ -19,7 +19,7 @@ Food_Values  = {
 	---- Food -----
 	
 	["carrot"] = {Food = 80, Radiation = 0.01},
-	["cooked-meat"] = {Food = 250, Water = -50, Radiation = 0.025},
+	["cooked-meat"] = {Food = 250, Water = -50, Radiation = 0.0025},
 	
 }
 
@@ -33,12 +33,12 @@ Medpack_Values  = {
 }
 
 Radiation_Values  = {
-	["uranium-ore"] = 20,
-	["spend-uranium-ore"] = 2,
-	["uranium-235"] = 50,
-	["spend-uranium-235"] = 5,
-	["uranium-238"] = 75,
-	["spend-uranium-238"] = 7.5,
-	["argonium-fuel-cell"] = 15,
-	["spend-argonium-fuel-cell"] = 1.5,
+	["uranium-ore"] = 0.5,
+	["spend-uranium-ore"] = 0.025,
+	["uranium-235"] = 1,
+	["spend-uranium-235"] = 0.05,
+	["uranium-238"] = 2,
+	["spend-uranium-238"] = 0.075,
+	["argonium-fuel-cell"] = 0.01,
+	["spend-argonium-fuel-cell"] = 0.0005,
 }

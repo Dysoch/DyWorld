@@ -2,6 +2,7 @@
 Version: 0.1.5
 Date: ???
   Minor Features:
+    - Moved item-groups creation to this mod from DyWorld-Dynamics
     - Added functions for fluids
     -
   Bugfixes:

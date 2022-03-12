@@ -50,3 +50,5 @@ DyW.Tool = {}
 require("data.tool.add")
 require("data.tool.change")
 require("data.tool.remove")
+
+require("data.additions.item-groups")

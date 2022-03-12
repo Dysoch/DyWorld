@@ -7,6 +7,7 @@ Date: ???
   Minor Features:
     - 
   Changes:
+    - Moved item-groups creation to DyCore
     - Damage from the enviroment will now happen based on survival difficulty setting
     - Metal Labratory size: 3x3 > 5x5
     - Advanced Labratory size: 5x5 > 3x3

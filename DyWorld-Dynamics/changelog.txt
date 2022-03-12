@@ -5,7 +5,7 @@ Date: ???
     - New fluids and gases added. Currently mostly unused
     - Added in a few achievements, wont work in scenario for now
   Minor Features:
-    - 
+    - Players now have 20 inventory slots to start with (down from 120), but they increase much faster
   Changes:
     - Moved item-groups creation to DyCore
     - Damage from the enviroment will now happen based on survival difficulty setting

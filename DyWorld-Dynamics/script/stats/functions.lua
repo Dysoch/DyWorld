@@ -124,7 +124,7 @@ function Bonuses(id)
 		end
 		if attri_P >= 5 then
 			if not global.dyworld.players[id].bonus_toggle.inventory then global.dyworld.players[id].bonus_toggle.inventory = true end
-			local form = math.min((Round((attri_P / 5), 0)), 880)
+			local form = math.min((Round((attri_P / 2.5), 0)), 980)
 			game.players[id].character_inventory_slots_bonus = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) >= 1 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 0)
 			if game.players[id].character_inventory_slots_bonus >= 30 then
 				if not game.forces.player.character_logistic_requests then

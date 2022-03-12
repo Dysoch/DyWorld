@@ -113,7 +113,7 @@ data:extend(
           },
           {
             type = "damage",
-            damage = {amount = 50000, type = "exotic-energy"}
+            damage = {amount = 500000, type = "exotic-energy"}
           },
           {
             type = "create-entity",
@@ -195,7 +195,7 @@ data:extend(
 		  {
 			{
 		      type = "damage",
-			  damage = {amount = 1000, type = "exotic-energy"}
+			  damage = {amount = 500, type = "exotic-energy"}
 			},
 		  }
         }
@@ -249,7 +249,7 @@ data:extend(
 		  {
 			{
 		      type = "damage",
-			  damage = {amount = 5000, type = "exotic-energy"}
+			  damage = {amount = 250, type = "exotic-energy"}
 			},
 		  }
         }

@@ -85,7 +85,7 @@ data:extend(
           {
             type = "set-tile",
             tile_name = "nuclear-ground",
-            radius = 60,
+            radius = 120,
             apply_projection = true,
             tile_collision_mask = { "water-tile" }
           },
@@ -162,22 +162,6 @@ data:extend(
         }
       }
     },
-    final_action =
-    {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        target_effects =
-        {
-          {
-            type = "create-entity",
-            entity_name = "small-scorchmark",
-            check_buildability = true
-          }
-        }
-      }
-    },
     height_from_ground = 280 / 64
   },
   {
@@ -213,12 +197,6 @@ data:extend(
 		      type = "damage",
 			  damage = {amount = 1000, type = "exotic-energy"}
 			},
-            {
-              type = "create-entity",
-              entity_name = "huge-scorchmark",
-              offsets = {{ 0, -0.5 }},
-              check_buildability = true
-            },
 		  }
         }
       }
@@ -257,12 +235,6 @@ data:extend(
 			{
 			  type = "create-entity",
               entity_name = "nuke-explosion"
-            },
-            {
-              type = "create-entity",
-              entity_name = "huge-scorchmark",
-              offsets = {{ 0, -0.5 }},
-              check_buildability = true
             },
           }
         }

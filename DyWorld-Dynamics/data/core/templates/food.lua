@@ -1,4 +1,4 @@
-require("script/database/vitals")
+require("script.database.vitals")
 
 
 
@@ -10,7 +10,7 @@ data:extend(
     type = "capsule",
     name = params.name,
 	localised_name = params.localised_name or nil,
-	localised_description = params.localised_description or nil,
+	localised_description = params.localised_description or {"item-description." .. params.name},
     icon = DyDs_icon_temp,
     icon_size = 32, 
     subgroup = params.subgroup or "other",

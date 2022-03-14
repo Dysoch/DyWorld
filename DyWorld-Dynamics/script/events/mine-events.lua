@@ -59,177 +59,34 @@ function Event_on_pre_player_mined_item(event)
 	end
 end
 
-function Event_on_player_mined_entity(event)
-	local player = game.players[event.player_index]
-	local force = player.force
-	local position = event.entity.position
-	local type = event.entity.type
-	local name = event.entity.name
-	
-	if not global.dyworld.game_stats.mined then global.dyworld.game_stats.mined = {} end
-	if not global.dyworld.game_stats.mined[name] then
-		global.dyworld.game_stats.mined[name] = true
-	end
-	
-	----- Building Placement -----
-	if Entity_Check(type) then
-		local surface = event.entity.surface.name
-		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
-		for k,v in pairs(global.dyworld.game_stats.building_locations[surface]) do
-			if (position.x == v.posx and position.y == v.posy) then
-				table.remove(global.dyworld.game_stats.building_locations[surface], k)
-				break
-			end
-		end
-	end
+function _Event_on_force_mined_entity(event, force, entity)
+	local name = entity.name
 
-	----- Mining Network Building -----
-	if Dy_Find_Str(name, "asteroid-network-interface") then
-        for Metal_Name,Metal_Table in pairs(Dy_Metals) do
-            if Dy_Find_Str(name, Metal_Name) then
-                if Dy_Find_Str(name, "-impure") then
-                    if global.dyworld.game_stats.space_mining.interfaces and global.dyworld.game_stats.space_mining.interfaces.impure and global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name] and global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs then
-                        for k,v in pairs(global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs) do
-                            local surface = event.entity.surface.name
-                            if (position.x == v.PosX and position.y == v.PosY and surface == v.Surface) then
-                                table.remove(global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs, k)
-                                global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts - 1
-                                break
-                            end
-                        end
-                    end
-                elseif Dy_Find_Str(name, "-pure") then
-                    if global.dyworld.game_stats.space_mining.interfaces and global.dyworld.game_stats.space_mining.interfaces.pure and global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name] and global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs then
-                        for k,v in pairs(global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs) do
-                            local surface = event.entity.surface.name
-                            if (position.x == v.PosX and position.y == v.PosY and surface == v.Surface) then
-                                table.remove(global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs, k)
-                                global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts - 1
-                                break
-                            end
-                        end
-                    end
-                end
-            end
-        end
-	end
-	
-	if global.dyworld_story then
-		if (type == "radar") then
-			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
-			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars - 1
-			if global.dyworld.game_stats.radars <= 0 then
-				global.dyworld.game_stats.radars = 0 
-				game.forces.player.zoom_to_world_enabled = false
-				for k,v in pairs(global.dyworld.players) do
-					if game.players[v.id].minimap_enabled then
-						game.players[v.id].minimap_enabled = false
-					end
-				end
-			end
-		end
-		if (type == "inserter") then
-			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
-			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters - 1
-			if global.dyworld.game_stats.inserters <= 0 then
-				global.dyworld.game_stats.inserters = 0 
-			end
-			InserterCheck(global.dyworld.game_stats.inserters)
-		end
-		if (type == "lab") then
-			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
-			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs - 1
-			if global.dyworld.game_stats.labs <= 0 then
-				global.dyworld.game_stats.labs = 0 
-			end
-		end
-	end
-end
+	----- Global Stats -----
 
-function Event_on_robot_mined_entity(event)
-	local position = event.entity.position
-	local type = event.entity.type
-	local name = event.entity.name
-	
 	global.dyworld.game_stats.mined_amount = global.dyworld.game_stats.mined_amount + 1
 	if not global.dyworld.game_stats.mined then global.dyworld.game_stats.mined = {} end
 	if not global.dyworld.game_stats.mined[name] then
 		global.dyworld.game_stats.mined[name] = true
 	end
-	
-	----- Building Placement -----
-	if Entity_Check(type) then
-		local surface = event.entity.surface.name
-		if not global.dyworld.game_stats.building_locations[surface] then global.dyworld.game_stats.building_locations[surface] = {} end
-		for k,v in pairs(global.dyworld.game_stats.building_locations[surface]) do
-			if (position.x == v.posx and position.y == v.posy) then
-				table.remove(global.dyworld.game_stats.building_locations[surface], k)
-				break
-			end
-		end
-	end
 
-	----- Mining Network Building -----
-	if Dy_Find_Str(name, "asteroid-network-interface") then
-        for Metal_Name,Metal_Table in pairs(Dy_Metals) do
-            if Dy_Find_Str(name, Metal_Name) then
-                if Dy_Find_Str(name, "-impure") then
-                    if global.dyworld.game_stats.space_mining.interfaces and global.dyworld.game_stats.space_mining.interfaces.impure and global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name] and global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs then
-                        for k,v in pairs(global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs) do
-                            local surface = event.entity.surface.name
-                            if (position.x == v.PosX and position.y == v.PosY and surface == v.Surface) then
-                                table.remove(global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].locs, k)
-                                global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.impure[Metal_Name].amounts - 1
-                                break
-                            end
-                        end
-                    end
-                elseif Dy_Find_Str(name, "-pure") then
-                    if global.dyworld.game_stats.space_mining.interfaces and global.dyworld.game_stats.space_mining.interfaces.pure and global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name] and global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs then
-                        for k,v in pairs(global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs) do
-                            local surface = event.entity.surface.name
-                            if (position.x == v.PosX and position.y == v.PosY and surface == v.Surface) then
-                                table.remove(global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].locs, k)
-                                global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts = global.dyworld.game_stats.space_mining.interfaces.pure[Metal_Name].amounts - 1
-                                break
-                            end
-                        end
-                    end
-                end
-            end
-        end
-	end
+	_Event_on_force_removed_entity(event, force, entity)
+end
+
+function Event_on_player_mined_entity(event)
+	local player = game.players[event.player_index]
+	local force = player.force
+	local entity = event.entity
 	
-	if global.dyworld_story then
-		if (type == "radar") then
-			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
-			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars - 1
-			if global.dyworld.game_stats.radars <= 0 then
-				global.dyworld.game_stats.radars = 0 
-				game.forces.player.zoom_to_world_enabled = false
-				for k,v in pairs(global.dyworld.players) do
-					if game.players[v.id].minimap_enabled then
-						game.players[v.id].minimap_enabled = false
-					end
-				end
-			end
-		end
-		if (type == "lab") then
-			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
-			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs - 1
-			if global.dyworld.game_stats.labs <= 0 then
-				global.dyworld.game_stats.labs = 0 
-			end
-		end
-		if (type == "inserter") then
-			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
-			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters - 1
-			if global.dyworld.game_stats.inserters <= 0 then
-				global.dyworld.game_stats.inserters = 0 
-			end
-			InserterCheck(global.dyworld.game_stats.inserters)
-		end
-	end
+	_Event_on_force_mined_entity(event, force, entity)
+end
+
+function Event_on_robot_mined_entity(event, entity)
+	local robot = event.robot
+	local force = robot.force
+	local entity = event.entity
+	
+	_Event_on_force_mined_entity(event, force, entity)
 end
 
 function Event_on_robot_mined(event)

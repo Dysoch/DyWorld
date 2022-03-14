@@ -25,12 +25,12 @@ data:extend({
     type = "item",
     name = "basic-inserter",
     icons = {
-	  {
-	    icon = DyDs_path_icon_base.."inserter.png",
-	    tint = Tier_1,
-	  },
-	},
-    icon_size = 64, 
+      {
+        icon = DyDs_path_icon_base.."inserter.png",
+        tint = Tier_1,
+      },
+    },
+    icon_size = 64,
     subgroup = DyDs.."inserter-tier-1",
     order = "2",
     place_result = "basic-inserter",
@@ -39,7 +39,7 @@ data:extend({
   {
     type = "recipe",
     name = "basic-inserter",
-	category = "assembling-tier-1",
+	  category = "assembling-tier-1",
     normal =
     {
       ingredients =
@@ -49,9 +49,9 @@ data:extend({
         {type = "item", name = "control-board-1", amount = 1},
       },
       result = "basic-inserter",
-	  result_count = 1,
-	  energy_required = 1,
-	  enabled = false,
+      result_count = 1,
+      energy_required = 1,
+      enabled = false,
     },
   },
 })
@@ -92,14 +92,14 @@ data:extend({
     type = "item",
     name = "basic-inserter-long",
     icons = {
-	  {
-	    icon = DyDs_path_icon_base.."inserter.png",
-	    tint = Tier_1,
-	  },
-	  {
-	    icon = DyDs_path_looped.."inserter-long.png",
-	  },
-	},
+      {
+        icon = DyDs_path_icon_base.."inserter.png",
+        tint = Tier_1,
+      },
+      {
+        icon = DyDs_path_looped.."inserter-long.png",
+      },
+    },
     icon_size = 64,
     subgroup = DyDs.."inserter-tier-1",
     order = "3",
@@ -110,14 +110,14 @@ data:extend({
     type = "item",
     name = "basic-inserter-filter",
     icons = {
-	  {
-	    icon = DyDs_path_icon_base.."inserter.png",
-	    tint = Tier_1,
-	  },
-	  {
-	    icon = DyDs_path_looped.."inserter-filter.png",
-	  },
-	},
+      {
+        icon = DyDs_path_icon_base.."inserter.png",
+        tint = Tier_1,
+      },
+      {
+        icon = DyDs_path_looped.."inserter-filter.png",
+      },
+    },
     icon_size = 64,
     subgroup = DyDs.."inserter-tier-1",
     order = "4",

@@ -99,5 +99,6 @@
         "deprecated"
     ],
     "files.eol": "\n",
+    "editor.insertSpaces": false
     "files.insertFinalNewline": false
 }

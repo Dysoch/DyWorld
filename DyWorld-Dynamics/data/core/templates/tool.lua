@@ -10,9 +10,9 @@ function DyDS_Add_Tool(params)
       type = "tool",
       name = params.name,
       localised_name = params.localised_name or nil,
-      localised_description = params.localised_description or nil,
+      localised_description = params.localised_description or {"item-description." .. params.name},
       icon = DyDs_icon_temp,
-      icon_size = 64, 
+      icon_size = params.icon_size or 64,
       icon_mipmaps = 4,
       subgroup = params.subgroup or "other",
       order = params.order or params.name,
@@ -40,9 +40,9 @@ function DyDS_Add_Tool(params)
 	if params.icons then
 		data.raw.tool[params.name].icon = nil
 		data.raw.tool[params.name].icons = params.icons
-		data.raw.tool[params.name].icon_size = 64
+		data.raw.tool[params.name].icon_size = params.icon_size or 64
 	elseif params.icon then
 		data.raw.tool[params.name].icon = params.icon
-		data.raw.tool[params.name].icon_size = 64
+		data.raw.tool[params.name].icon_size = params.icon_size or 64
 	end
 end

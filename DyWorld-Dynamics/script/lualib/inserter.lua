@@ -120,48 +120,36 @@ script.on_event(defines.events.on_entity_settings_pasted, function(event)
 	end
 end)
 
-function InserterCheck(VAR, Bool)
+function InserterCheck(num_built, hide_gained)
 	for k,v in pairs(Inserters_Recipes) do
 		for index,player in pairs(game.players) do
 			if player.force.recipes[k] then
-				if (VAR >= v.Enable and player.force.recipes[k].enabled == false) then
-                    if v.Extra then
-                        if v.Extra == "Story" then
-                            if global.dyworld_story then
-                                if (global.dyworld.story.act > v.Story[1]) or (global.dyworld.story.act >= v.Story[1] and global.dyworld.story.phase >= v.Story[2]) then
-                                    player.force.recipes[k].enabled = true
-									if not Bool then
-										PlayerPrint({"looped-name.gained-knowledge", k})
-									end
-                                end
-                            else
-                                player.force.recipes[k].enabled = true
-								if not Bool then
-									PlayerPrint({"looped-name.gained-knowledge", k})
+				if (num_built >= v.Enable and player.force.recipes[k].enabled == false) then
+					if v.Extra then
+						if v.Extra == "Story" then
+							if global.dyworld_story then
+								if (global.dyworld.story.act > v.Story[1]) or (global.dyworld.story.act == v.Story[1] and global.dyworld.story.phase > v.Story[2]) then
+									UnlockStoryTechnology("story_tech_" .. k .. "_", hide_gained)
 								end
-                            end
-                        elseif v.Extra == "Research" then
-                            local amount_research = 0
-                            local amount_done = 0
-                            for Amount,Research in pairs(v.Research) do
-                                amount_research = amount_research + 1
-                                if game.forces.player.technologies[Research].researched then
-                                    amount_done = amount_done + 1
-                                end
-                                if amount_done >= amount_research then
-                                    player.force.recipes[k].enabled = true
-									if not Bool then
-										PlayerPrint({"looped-name.gained-knowledge", k})
-									end
-                                end
-                            end
-                        end
-                    else
-                        player.force.recipes[k].enabled = true
-						if not Bool then
-							PlayerPrint({"looped-name.gained-knowledge", k})
+							else
+								UnlockStoryTechnology("story_tech_" .. k .. "_", hide_gained)
+							end
+						elseif v.Extra == "Research" then
+							local amount_research = 0
+							local amount_done = 0
+							for Amount,Research in pairs(v.Research) do
+								amount_research = amount_research + 1
+								if game.forces.player.technologies[Research].researched then
+									amount_done = amount_done + 1
+								end
+								if amount_done >= amount_research then
+									UnlockStoryTechnology("story_tech_" .. k .. "_", hide_gained)
+								end
+							end
 						end
-                    end
+					else
+						UnlockStoryTechnology("story_tech_" .. k .. "_", hide_gained)
+					end
 				end
 			end
 		end

@@ -15,7 +15,7 @@ remote.add_interface("DyWorld",
 	end,
 	
 	Migrate = function()
-		Reunlock_Recipes()
+		FixupUnlockedStoryTechnologies()
 	end,
 	-- /c remote.call("DyWorld", "Migrate")
 	

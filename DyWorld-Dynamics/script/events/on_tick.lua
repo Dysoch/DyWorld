@@ -4,7 +4,8 @@
 function Event_on_tick(event)
 
 	--script.on_event(remote.call("space-exploration", "get_on_player_respawned_event"), Event_on_player_respawned_script)
-	
+
+	-- every 1 seconds
 	if event.tick%(60*1)==1 then
 		local seconds_start = math.floor(game.tick/60)
 		local minutes_start = math.floor(seconds_start/60)
@@ -13,25 +14,28 @@ function Event_on_tick(event)
 		local seconds = (seconds_start-(minutes_start*60))
 		global.dyworld.game_stats.time_stamp = (hours..":"..minutes..":"..seconds)
 	end
+	-- every 2 minutes
 	if event.tick%(60*60*2) == 1 then
 		if global.dyworld_story then
 			if not global.dyworld.game_stats.players then global.dyworld.game_stats.players = 1 end
 			if Dy_Sett.Difficulty ~= "Easy" then
 				if Dy_Sett.Difficulty == "Normal" then
-					DyWorld_Custom_Difficulty_Change("+", 2.5)
+					DyWorld_Custom_Difficulty_Change(2.5)
 				end
 				if Dy_Sett.Difficulty == "Hard" then
-					DyWorld_Custom_Difficulty_Change("+", 5)
+					DyWorld_Custom_Difficulty_Change(5)
 				end
 			end
 		end
 	end
+	-- every ~7 minutes
 	if event.tick%(25001)==25000 then
 		global.dyworld.game_stats.days = global.dyworld.game_stats.days + 1
 		if global.dyworld_story then
-			for k,v in pairs(global.dyworld.players) do
+			for _,v in pairs(global.dyworld.players) do
 				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 				if (global.dyworld.game_stats.radars <= 0) then
+					LockStoryTechnology("story_tech_minimap", false)
 					game.players[v.id].minimap_enabled = false
 					game.forces.player.zoom_to_world_enabled = false
 				end
@@ -41,6 +45,7 @@ function Event_on_tick(event)
 			if game.forces.enemy.friendly_fire then game.forces.enemy.friendly_fire = false end
 		end
 	end
+	-- every ~21 minutes
 	if event.tick%(75001)== 75000 then
 		if global.dyworld_story then
 			if (settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful" and global.dyworld.game_stats.difficulty >= 100000) then
@@ -50,6 +55,7 @@ function Event_on_tick(event)
 	end
 
 	-- Automated Functions --
+	-- every 5 seconds
 	if event.tick%(60*5) == ((60*5) - 1) then
 		for _,Player in pairs(global.dyworld.players) do
             if not global.dyworld.players[Player.id].implants then
@@ -69,6 +75,7 @@ function Event_on_tick(event)
 		end
 	end
     -- Space Mining Network effects. These happen over a minute, every 15 seconds another things to reduce total load
+	-- every 1 seconds
 	if event.tick%(60*60)==(60*1) then
 		if global.dyworld.game_stats.space_mining then
 			for k,v in pairs(global.dyworld.game_stats.space_mining) do
@@ -79,6 +86,7 @@ function Event_on_tick(event)
 			end
 		end
 	end
+	-- every 16 seconds
 	if event.tick%(60*60)==(60*16) then
 		if global.dyworld.game_stats.space_mining then
             if global.dyworld.game_stats.space_mining.interfaces then
@@ -88,6 +96,7 @@ function Event_on_tick(event)
             end
 		end
 	end
+	-- every 31 seconds
 	if event.tick%(60*60)==(60*31) then
 		if global.dyworld.game_stats.space_mining then
 			for k,v in pairs(global.dyworld.game_stats.space_mining) do
@@ -98,6 +107,7 @@ function Event_on_tick(event)
 			end
 		end
 	end
+	-- every 46 seconds
 	if event.tick%(60*60)==(60*46) then
 		if global.dyworld.game_stats.space_mining then
             if global.dyworld.game_stats.space_mining.interfaces then
@@ -107,6 +117,7 @@ function Event_on_tick(event)
             end
 		end
 	end
+	-- every second
 	if event.tick%(60*1)==1 then
 		for k,v in pairs(global.dyworld.players) do
 			if v.alive and game.players[v.id].connected then
@@ -200,7 +211,7 @@ function Event_on_tick(event)
 				end
 
 				if global.dyworld_story and v.alive and not global.dyworld.game_stats.story_pause then
-					for aaaa,Phase in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
+					for _,Phase in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 						if Phase.type_1 == "position" then
 							if not remote.call("space-exploration", "remote_view_is_active", {player = game.players[v.id]}) then
 								Story_Objectives("position", v.id, (game.players[v.id].position.x), (game.players[v.id].position.y))
@@ -211,19 +222,22 @@ function Event_on_tick(event)
 			end
 		end
 	end
+	-- after about ~13 minutes
 	if game.tick == 800 then
 		if global.dyworld_story then
-			for k,v in pairs(global.dyworld.players) do
+			for _,v in pairs(global.dyworld.players) do
 				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 				if (global.dyworld.game_stats.radars <= 0) then
+					LockStoryTechnology("story_tech_minimap", false)
 					game.players[v.id].minimap_enabled = false
 					game.forces.player.zoom_to_world_enabled = false
 				end
 			end
 		else
-			PlayerPrint("You are playing WITHOUT the story added. If you want to play with it, start a new game with the mod scenario added by DyWorld. (NOT NORMAL FREEPLAY). If this is intentional, ignore this message")
+			AllPlayersPrint("You are playing WITHOUT the story added. If you want to play with it, start a new game with the mod scenario added by DyWorld. (NOT NORMAL FREEPLAY). If this is intentional, ignore this message")
 		end
 	end
+	-- every so often based on difficulty setting
 	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].attack and global.dyworld_story and settings.global["DyWorld_Attack_Difficulty"].value ~= "Peaceful") then
 		if not global.dyworld.game_stats.difficulty then global.dyworld.game_stats.difficulty = 1 end
 		if event.tick%(Pick_Attack_Time()) == (Pick_Attack_Time() - 1) and (global.dyworld.game_stats.difficulty >= 2000) then

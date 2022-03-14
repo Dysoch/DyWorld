@@ -1,4 +1,6 @@
 
+-- [tile name] = {temperature (C), radiation (rads)}
+
 local Tile_List = {
     ["grass-1"] = {18, 0.018},
     ["grass-2"] = {17.5, 0.0175},

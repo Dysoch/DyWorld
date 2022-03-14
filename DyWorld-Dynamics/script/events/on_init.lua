@@ -54,7 +54,7 @@ function Event_on_init()
 			story = Story_Init(),
 		}
 	end
-	Reunlock_Recipes()
+	FixupUnlockedStoryTechnologies()
 	Populate_Side_Objectives_Table_Startup()
 	if remote.interfaces["silo_script"] then
 		remote.call("silo_script", "set_no_victory", true)

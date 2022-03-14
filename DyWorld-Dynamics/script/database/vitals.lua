@@ -26,10 +26,10 @@ Food_Values  = {
 Medpack_Values  = {	
 	["basic-med-pack"] = 50,
 	["med-pack"] = 100,
-	["se-med-pack"] = 50,
-	["se-med-pack-2"] = 100,
-	["se-med-pack-3"] = 200,
-	["se-med-pack-4"] = 400,
+	["se-medpack"] = 50,
+	["se-medpack-2"] = 100,
+	["se-medpack-3"] = 200,
+	["se-medpack-4"] = 400,
 }
 
 Radiation_Values  = {

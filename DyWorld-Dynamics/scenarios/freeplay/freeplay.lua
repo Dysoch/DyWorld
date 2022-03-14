@@ -11,21 +11,21 @@ end
 local respawn_items = function()
   return
   {
-    ["pistol"] = 1,
-    ["firearm-magazine"] = 10
+    -- DyWorld gives player items in the spaceship never on respawn
+    -- ["pistol"] = 1,
+    -- ["firearm-magazine"] = 10
   }
 end
 
 local ship_items = function()
   return
   {
-    ["9mm-mag-bronze"] = math.random(10, 40),
+    ["9mm-mag-bronze"] = 1,
     ["copper-plate"] = math.random(15, 25),
     ["iron-plate"] = math.random(5, 10),
     ["9mm-pistol"] = 1,
-    ["car-1"] = 1,
     ["gun-nano-emitter"] = 1,
-    ["medpack-2"] = math.random(2, 5),
+    ["med-pack"] = 10,
   }
 end
 
@@ -35,7 +35,6 @@ local debris_items = function()
     ["iron-plate"] = math.random(5, 25),
     ["copper-plate"] = math.random(5, 25),
     ["tin-plate"] = math.random(5, 15),
-    ["bronze-plate"] = math.random(1, 10),
     ["9mm-mag-bronze"] = math.random(5, 12),
   }
 end
@@ -96,8 +95,7 @@ end
 
 local on_player_respawned = function(event)
   local player = game.players[event.player_index]
-  --util.insert_safe(player, global.respawn_items)
-  -- DyWorld gives player items in the spaceship never on respawn
+  util.insert_safe(player, global.respawn_items)
 end
 
 local on_cutscene_waypoint_reached = function(event)
@@ -158,6 +156,22 @@ local freeplay_interface =
     return global.respawn_items
   end,
   set_respawn_items = function(map)
+    -- additive (intended for mods that don't know about DyWorld)
+    if not map then error("Remote call parameter to freeplay set respawn items can't be nil.") end
+    if not global.respawn_items then global.respawn_items = {} end
+
+    for k,v in pairs(map) do
+      if not string.find(k, "se-") then
+        if global.respawn_items[k] then
+          global.respawn_items[k] = global.respawn_items[k] + v
+        else
+          global.respawn_items[k] = v
+        end
+      end
+    end
+  end,
+  override_respawn_items = function(map)
+    -- explicit list for ship items (intended for mods built ON TOP of DyWorld)
     global.respawn_items = map or error("Remote call parameter to freeplay set respawn items can't be nil.")
   end,
   set_skip_intro = function(bool)
@@ -169,10 +183,27 @@ local freeplay_interface =
   set_disable_crashsite = function(bool)
     global.disable_crashsite = bool
   end,
+  get_init_ran = function()
+    return global.init_ran
+  end,
   get_ship_items = function()
     return global.crashed_ship_items
   end,
   set_ship_items = function(map)
+    -- additive (intended for mods that don't know about DyWorld)
+    if not map then error("Remote call parameter to freeplay set created items can't be nil.") end
+    if not global.crashed_ship_items then global.crashed_ship_items = {} end
+    
+    for k,v in pairs(map) do
+      if global.crashed_ship_items[k] then
+        global.crashed_ship_items[k] = math.max(global.crashed_ship_items[k], v)
+      else
+        global.crashed_ship_items[k] = v
+      end
+    end
+  end,
+  override_ship_items = function(map)
+    -- explicit list for ship items (intended for mods built ON TOP of DyWorld)
     global.crashed_ship_items = map or error("Remote call parameter to freeplay set created items can't be nil.")
   end,
   get_debris_items = function()

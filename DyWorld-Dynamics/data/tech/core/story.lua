@@ -11,11 +11,13 @@ local INSERTER_SUFFIXES = {
 	["-filter"] = DyDs_path_looped.."inserter-filter.png",
 }
 
+-- setup initial unlocks for "story 0" (from DyWorld-Dynamics/script/database/story.lua)
 local story_0_effects = {}
 for recipe_k,recipe_v in pairs(Story_0_Data.unlocks_recipes) do
 	table.insert(story_0_effects, {type = "unlock-recipe", recipe = recipe_v})
 end
 
+-- non-auto-generated story unlock techs
 local Techs_Story = {
 	{
 		name = "story_tech_minimap",
@@ -75,6 +77,7 @@ local Techs_Story = {
 	}
 }
 
+-- auto-generated story act/phase techs (from DyWorld-Dynamics/script/database/story.lua)
 previous_name = "story_tech_act0"
 for act_k,act_v in pairs(Story_Table_Base) do
 	for phase_k,phase_v in pairs(act_v) do
@@ -125,6 +128,7 @@ for act_k,act_v in pairs(Story_Table_Base) do
 	end
 end
 
+-- auto-generated inserter tiers unlock techs (from DyWorld-Dynamics/script/database/inserter.lua)
 previous_name = ""
 for inserter_name,inserter_data in pairs(Inserters_Recipes) do
 	new_name = "story_tech_" .. inserter_name .. "_"  -- trailing underscore to prevent numbered item errors

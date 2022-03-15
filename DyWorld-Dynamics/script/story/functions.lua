@@ -161,9 +161,9 @@ function _Event_on_force_added_entity(event, force, entity, custom_difficulty_ch
 				if not game.players[v.id].minimap_enabled then
 					UnlockStoryTechnology("story_tech_minimap")
 					game.players[v.id].minimap_enabled = true
+					game.forces.player.zoom_to_world_enabled = true
 				end
 			end
-			game.forces.player.zoom_to_world_enabled = true
 			if (name == "radar-1" and not global.dyworld.game_stats.attack_warning_2) then
 				global.dyworld.game_stats.attack_warning_2 = true
 			end
@@ -251,6 +251,7 @@ function _Event_on_force_removed_entity(event, force, entity, custom_difficulty_
 					if game.players[v.id].minimap_enabled then
 						LockStoryTechnology("story_tech_minimap", false)
 						game.players[v.id].minimap_enabled = false
+						game.forces.player.zoom_to_world_enabled = false
 					end
 				end
 			end
@@ -581,6 +582,35 @@ function FixupUnlockedStoryTechnologies()
 			end
 		end
 	end
+
+	if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
+	if global.dyworld.game_stats.radars > 0 then
+		for _,v in pairs(global.dyworld.players) do
+			if not game.players[v.id].minimap_enabled then
+				UnlockStoryTechnology("story_tech_minimap")
+				game.players[v.id].minimap_enabled = true
+				game.forces.player.zoom_to_world_enabled = true
+			end
+		end
+		if global.dyworld.game_stats.build_names then
+			if (
+				global.dyworld.game_stats.build_names["radar-1"] and
+				global.dyworld.game_stats.build_names["radar-1"] > 0 and
+				not global.dyworld.game_stats.attack_warning_2
+			) then
+				global.dyworld.game_stats.attack_warning_2 = true
+			end
+			if (
+				global.dyworld.game_stats.build_names["radar-2"] and
+				global.dyworld.game_stats.build_names["radar-2"] > 0 and
+				not global.dyworld.game_stats.attack_warning_3
+			) then
+				global.dyworld.game_stats.attack_warning_2 = true
+				global.dyworld.game_stats.attack_warning_3 = true
+			end
+		end
+	end
+
 	if global.dyworld.game_stats.inserters then
         InserterCheck(global.dyworld.game_stats.inserters, true)
     end

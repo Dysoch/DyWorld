@@ -58,8 +58,6 @@ function Story_Migrate(Act_On, Phase_On, Override)
 						local main_objectives_completed_count = 0
 						local side_objectives_completed_count = 0
 
-						AllPlayersPrint("updating current phase's objectives")
-
 						-- update objectives (also automatically drops off old objectives that have been removed)
 						for objective_index,objective in pairs(updated_phasetable.objectives) do
 							local found = false

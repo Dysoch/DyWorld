@@ -63,7 +63,7 @@ require("script.events.remote")
 -- Config Events
 script.on_configuration_changed(Event_on_configuration_changed)
 script.on_init(Event_on_init)
--- script.on_event(defines.events.on_tick, Event_on_tick)
+script.on_event(defines.events.on_tick, Event_on_tick)
 
 -- Build Events --
 script.on_event(defines.events.script_raised_built, Event_script_raised_built)

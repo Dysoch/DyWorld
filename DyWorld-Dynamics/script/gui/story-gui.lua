@@ -159,7 +159,7 @@ function Story_GUI(player, id)
 	end
 
 	-------------------------------- General TAB ----------------------------------------	
-	local tab1 = tabbed_pane.add{type = "tab", name = "DyDs_story_general_tab", caption = "Act: "..global.dyworld.story.act..", Phase: "..global.dyworld.story.phase}		
+	local tab1 = tabbed_pane.add{type = "tab", name = "DyDs_story_general_tab", caption = "Act: "..global.dyworld.story.act..", Phase: "..global.dyworld.story.phase}
 	local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
 	tabbed_pane.add_tab(tab1, frameflow1)
 

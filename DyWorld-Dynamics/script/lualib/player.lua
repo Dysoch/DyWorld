@@ -37,7 +37,7 @@ for k in pairs(Attack_Ambush) do
 end
 
 function DyLog(str, sta, Act, Phase, Story)
-local Time = global.dyworld.game_stats.time_stamp
+	local Time = global.dyworld.game_stats.time_stamp
 	if sta == true and Story then
 		for _,player in pairs(game.players) do
 			if game.is_multiplayer() then

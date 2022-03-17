@@ -33,8 +33,10 @@ function Event_on_tick(event)
 		global.dyworld.game_stats.days = global.dyworld.game_stats.days + 1
 		if global.dyworld_story then
 			for _,v in pairs(global.dyworld.players) do
-				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
-				if (global.dyworld.game_stats.radars <= 0) then
+				if (
+					global.dyworld.game_stats.radars <= 0 and
+					global.dyworld.game_stats.rockets_launched < 5
+				) then
 					LockStoryTechnology("story_tech_minimap", false)
 					game.players[v.id].minimap_enabled = false
 					game.forces.player.zoom_to_world_enabled = false
@@ -226,8 +228,10 @@ function Event_on_tick(event)
 	if game.tick == 800 then
 		if global.dyworld_story then
 			for _,v in pairs(global.dyworld.players) do
-				if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
-				if (global.dyworld.game_stats.radars <= 0) then
+				if (
+					global.dyworld.game_stats.radars <= 0 and
+					global.dyworld.game_stats.rockets_launched < 5
+				) then
 					LockStoryTechnology("story_tech_minimap", false)
 					game.players[v.id].minimap_enabled = false
 					game.forces.player.zoom_to_world_enabled = false

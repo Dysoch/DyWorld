@@ -329,6 +329,25 @@ function Event_on_rocket_launched(event)
 		global.dyworld.game_stats.rockets_launched = global.dyworld.game_stats.rockets_launched + 1
 	end
 	
+	-- Minimap --
+	if (
+		global.dyworld.game_stats.rockets_launched >= 5
+	) then
+		for _,v in pairs(global.dyworld.players) do
+			if not game.players[v.id].minimap_enabled then
+				UnlockStoryTechnology("story_tech_minimap")
+				game.players[v.id].minimap_enabled = true
+				game.forces.player.zoom_to_world_enabled = true
+			end
+		end
+		if not global.dyworld.game_stats.attack_warning_2 then
+			global.dyworld.game_stats.attack_warning_2 = true
+		end
+		if not global.dyworld.game_stats.attack_warning_3 then
+			global.dyworld.game_stats.attack_warning_3 = true
+		end
+	end
+	
 	-- Dyson Network (All) --
 	if not global.dyworld.game_stats.dyson then
 		global.dyworld.game_stats.dyson = {

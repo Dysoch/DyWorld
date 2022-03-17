@@ -134,7 +134,10 @@ function Story_GUI(player, id)
 							frameflow2.add{type = "label", caption = "Location on different Surface"}
 							frameflow2.add{type = "line", direction = "horizontal"}
 						end
-					elseif (v.type_1 == "died") then
+					elseif (
+						v.type_1 == "died" or
+						v.type_1 == "corpse"
+					) then
 						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_2.."."..v.name}, v.amount_done, v.amount_needed}}
 						frameflow2.add{type = "line", direction = "horizontal"}
 					else

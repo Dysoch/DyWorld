@@ -26,6 +26,7 @@ function Story_Init()
 end
 
 function Story_Migrate(Act_On, Phase_On, Override)
+	-- AllPlayersPrint("Story_Migrate - " .. inspect.inspect(global.dyworld.story.acts[Act_On][Phase_On]))
 	for Act, ActTable in pairs(Story_Table_Base) do
 		for Phase, PhaseTable in pairs(ActTable) do
 			if global.dyworld.story.acts[Act] and global.dyworld.story.acts[Act][Phase] then
@@ -40,13 +41,7 @@ function Story_Migrate(Act_On, Phase_On, Override)
 
 					if (
 						-- current act's current phase only
-						(Act == Act_On and Phase == Phase_On) and
-						(
-							-- this should always be true?
-							global.dyworld.story.acts[Act][Phase].started or
-							-- this can only be true if player completed the chapter, but we did not Phase_Forward (truncated Story_Table_Base)
-							global.dyworld.story.acts[Act][Phase].done
-						)
+						(Act == Act_On and Phase == Phase_On)
 						-- don't update objectives if player is on last Act's last phase and they completed it
 						and not
 						(
@@ -57,6 +52,8 @@ function Story_Migrate(Act_On, Phase_On, Override)
 				 	) then
 						local main_objectives_completed_count = 0
 						local side_objectives_completed_count = 0
+
+						updated_phasetable.started = true
 
 						-- update objectives (also automatically drops off old objectives that have been removed)
 						for objective_index,objective in pairs(updated_phasetable.objectives) do
@@ -124,6 +121,15 @@ function Story_Migrate(Act_On, Phase_On, Override)
 						if (Main_Amount == 0 and Side_Amount == 0) then
 							updated_phasetable.done = true
 						end
+					end
+
+					-- if the player has passed the chapter, mark it started & done
+					if (
+						(Act < Act_On) or
+						(Act == Act_On and Phase < Phase_On)
+				 	) then
+						updated_phasetable.started = true
+						updated_phasetable.done = true
 					end
 
 					global.dyworld.story.acts[Act][Phase] = updated_phasetable

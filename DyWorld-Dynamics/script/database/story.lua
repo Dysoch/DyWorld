@@ -12,12 +12,21 @@ Story_0_Data = {
 	}
 }
 
+Story_ExtraTechs_Table_Base = {
+	["story_tech_minimap"] = {
+		effects = {
+			{
+				effect_description = {"technology-description.story_tech_minimap_extra"},
+			},
+		},
+	},
+}
+
 -- STB[act][phase]
 -- 		.amount
 -- 			[1] = main objective count
 --			[2] = side objective count
 -- 			[3] = total objective
-
 Story_Table_Base  = {
 	[1] = {
 		[1] = {

@@ -1,3 +1,5 @@
+if script.active_mods["gvv"] then require("__gvv__.gvv")() end
+
 require("data.prefix")
 require("data.prefix-data")
 
@@ -61,8 +63,8 @@ require("script.events.on_tick")
 require("script.events.remote")
 
 -- Config Events
-script.on_configuration_changed(Event_on_configuration_changed)
 script.on_init(Event_on_init)
+script.on_configuration_changed(Event_on_configuration_changed)
 script.on_event(defines.events.on_tick, Event_on_tick)
 
 -- Build Events --

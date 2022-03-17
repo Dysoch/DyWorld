@@ -46,9 +46,8 @@ local Techs_Story = {
 			{
 				type="nothing",
 				effect_description={"technology-description.story_tech_minimap_extra"},
-				effect_description_short={"technology-description.story_tech_minimap_extra_short"}
 			}
-		}
+		},
 	},
 	{
 		name = "story_tech_act0",

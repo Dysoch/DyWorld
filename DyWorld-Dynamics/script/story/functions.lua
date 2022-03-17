@@ -1,5 +1,3 @@
-
-
 TICKS_PER_SECOND = 60
 SECONDS_PER_MINUTE = 60
 TICKS_PER_MINUTE = TICKS_PER_SECOND * SECONDS_PER_MINUTE
@@ -155,7 +153,6 @@ function _Event_on_force_added_entity(event, force, entity, custom_difficulty_ch
 		
 		----- Minimap -----
 		if (type == "radar") then
-			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars + 1
 			for _,v in pairs(global.dyworld.players) do
 				if not game.players[v.id].minimap_enabled then
@@ -174,7 +171,6 @@ function _Event_on_force_added_entity(event, force, entity, custom_difficulty_ch
 		end
 		----- Inserter Tiers -----
 		if (type == "inserter") then
-			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
 			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters + 1
 			InserterCheck(global.dyworld.game_stats.inserters)
 		end
@@ -242,11 +238,12 @@ function _Event_on_force_removed_entity(event, force, entity, custom_difficulty_
 	if global.dyworld_story then
 		----- Minimap -----
 		if (type == "radar") then
-			if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
 			global.dyworld.game_stats.radars = global.dyworld.game_stats.radars - 1
-			if global.dyworld.game_stats.radars <= 0 then
-				global.dyworld.game_stats.radars = 0
-				game.forces.player.zoom_to_world_enabled = false
+			if global.dyworld.game_stats.radars < 0 then global.dyworld.game_stats.radars = 0 end
+			if (
+				global.dyworld.game_stats.radars <= 0 and
+				global.dyworld.game_stats.rockets_launched < 5
+			) then
 				for k,v in pairs(global.dyworld.players) do
 					if game.players[v.id].minimap_enabled then
 						LockStoryTechnology("story_tech_minimap", false)
@@ -258,20 +255,15 @@ function _Event_on_force_removed_entity(event, force, entity, custom_difficulty_
 		end
 		----- Inserter Tiers -----
 		if (type == "inserter") then
-			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
 			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters - 1
-			if global.dyworld.game_stats.inserters <= 0 then
-				global.dyworld.game_stats.inserters = 0
-			end
+			if global.dyworld.game_stats.inserters < 0 then global.dyworld.game_stats.inserters = 0 end
 			InserterCheck(global.dyworld.game_stats.inserters)
 		end
 		----- Research -----
 		if (type == "lab") then
-			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
 			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs - 1
-			if global.dyworld.game_stats.labs <= 0 then
-				global.dyworld.game_stats.labs = 0
-			end
+			if global.dyworld.game_stats.labs < 0 then global.dyworld.game_stats.labs = 0 end
+			-- do something?
 		end
 
 		----- Update Difficulty -----
@@ -523,13 +515,22 @@ function UnlockStoryTechnology(name, hide_gain)
 		end
 	end
 	if not hide_gain and needs_gain_printed then
-		for _,effect_v in pairs(game.technology_prototypes[name].effects) do
+		for effect_i,effect_v in pairs(game.technology_prototypes[name].effects) do
 			if effect_v.type == "unlock-recipe" then
 				AllPlayersPrint({"looped-name.gained-knowledge", effect_v.recipe})
 			elseif effect_v.type == "give-item" then
 				AllPlayersPrint({"looped-name.gained-item", effect_v.count, effect_v.item})
 			elseif effect_v.type == "nothing" then
-				AllPlayersPrint({"looped-name.gained-ability", effect_v.effect_description_short})
+				if (
+					Story_ExtraTechs_Table_Base[name] and
+					Story_ExtraTechs_Table_Base[name].effects and
+					Story_ExtraTechs_Table_Base[name].effects[effect_i] and
+					Story_ExtraTechs_Table_Base[name].effects[effect_i].effect_description
+				) then
+					AllPlayersPrint({"looped-name.gained-ability", Story_ExtraTechs_Table_Base[name].effects[effect_i].effect_description})
+				else
+					AllPlayersPrint({"looped-name.gained-ability", game.technology_prototypes[name].localised_name})
+				end
 			end
 		end
 	end
@@ -548,11 +549,20 @@ function LockStoryTechnology(name, hide_loss)
 		end
 	end
 	if not hide_loss and needs_loss_printed then
-		for _,effect_v in pairs(game.technology_prototypes[name].effects) do
+		for effect_i,effect_v in pairs(game.technology_prototypes[name].effects) do
 			if effect_v.type == "unlock-recipe" then
 				AllPlayersPrint({"looped-name.lost-knowledge", effect_v.recipe})
 			elseif effect_v.type == "nothing" then
-				AllPlayersPrint({"looped-name.lost-ability", effect_v.effect_description_short})
+				if (
+					Story_ExtraTechs_Table_Base[name] and
+					Story_ExtraTechs_Table_Base[name].effects and
+					Story_ExtraTechs_Table_Base[name].effects[effect_i] and
+					Story_ExtraTechs_Table_Base[name].effects[effect_i].effect_description
+				) then
+						AllPlayersPrint({"looped-name.lost-ability", Story_ExtraTechs_Table_Base[name].effects[effect_i].effect_description})
+				else
+					AllPlayersPrint({"looped-name.lost-ability", game.technology_prototypes[name].localised_name})
+				end
 			end
 		end
 	end
@@ -583,8 +593,11 @@ function FixupUnlockedStoryTechnologies()
 		end
 	end
 
-	if not global.dyworld.game_stats.radars then global.dyworld.game_stats.radars = 0 end
-	if global.dyworld.game_stats.radars > 0 then
+	if global.dyworld.game_stats.radars < 0 then global.dyworld.game_stats.radars = 0 end
+	if (
+		global.dyworld.game_stats.radars > 0 or
+		global.dyworld.game_stats.rockets_launched >= 5
+	) then
 		for _,v in pairs(global.dyworld.players) do
 			if not game.players[v.id].minimap_enabled then
 				UnlockStoryTechnology("story_tech_minimap")
@@ -592,28 +605,44 @@ function FixupUnlockedStoryTechnologies()
 				game.forces.player.zoom_to_world_enabled = true
 			end
 		end
-		if global.dyworld.game_stats.build_names then
-			if (
+	end
+	if (
+		(
+			(
+				global.dyworld.game_stats.radars > 0 and
 				global.dyworld.game_stats.build_names["radar-1"] and
-				global.dyworld.game_stats.build_names["radar-1"] > 0 and
-				not global.dyworld.game_stats.attack_warning_2
-			) then
-				global.dyworld.game_stats.attack_warning_2 = true
-			end
-			if (
+				global.dyworld.game_stats.build_names["radar-1"] > 0
+			)
+			-- or
+			-- (
+			-- 	global.dyworld.game_stats.rockets_launched >= 5
+			-- )
+		) 
+		and
+		not global.dyworld.game_stats.attack_warning_2
+	) then
+		global.dyworld.game_stats.attack_warning_2 = true
+	end
+	if (
+		(
+			(
+				global.dyworld.game_stats.radars > 0 and
 				global.dyworld.game_stats.build_names["radar-2"] and
-				global.dyworld.game_stats.build_names["radar-2"] > 0 and
-				not global.dyworld.game_stats.attack_warning_3
-			) then
-				global.dyworld.game_stats.attack_warning_2 = true
-				global.dyworld.game_stats.attack_warning_3 = true
-			end
-		end
+				global.dyworld.game_stats.build_names["radar-2"] > 0
+			)
+			or
+			(
+				global.dyworld.game_stats.rockets_launched >= 5
+			)
+		) 
+		and
+		not global.dyworld.game_stats.attack_warning_3
+	) then
+		global.dyworld.game_stats.attack_warning_2 = true
+		global.dyworld.game_stats.attack_warning_3 = true
 	end
 
-	if global.dyworld.game_stats.inserters then
-        InserterCheck(global.dyworld.game_stats.inserters, true)
-    end
+	InserterCheck(global.dyworld.game_stats.inserters, true)
 end
 
 function Story_Objectives_Research(name)

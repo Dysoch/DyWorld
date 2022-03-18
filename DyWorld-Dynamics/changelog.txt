@@ -85,11 +85,11 @@ Date: 24. 10. 2021
     - Zooming to map now disabled when no radars present
     - Water and Food now give a low amount of health back when used yourself (auto feeding does not give health!)
   Bugfixes:
-    - 
+    - N/A
   Story:
     - Improved unlocked recipe script. It will now show the recipe
   Compatibility:
-    - 
+    - N/A
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 23. 10. 2021

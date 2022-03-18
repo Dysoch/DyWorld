@@ -1,4 +1,7 @@
 
+-- Story / Event --
+require(DyDs_data_tech.. "core.story") -- Story/Event Progresion
+
 -- Tier 1 --
 require(DyDs_data_tech.. "core.packs") -- Pack Function
 require(DyDs_data_tech.. "core.science") -- Main Research for science packs

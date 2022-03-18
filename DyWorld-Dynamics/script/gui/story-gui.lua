@@ -26,31 +26,36 @@ function Story_GUI(player, id)
 				
 		if Story.objectives then
 			for k,v in pairs(Story.objectives) do
-				if (v.done == false and v.type_1 == "research") then
-					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"technology-name."..v.name}}}
-					frameflow2.add{type = "line", direction = "horizontal"}
-				elseif (v.done == false and v.type_1 == "launch" and v.type_2 == "rocket") then
-					frameflow2.add{type = "label", caption = {"DyDs-story.launch-rocket", v.amount_done, v.amount_needed}}
-					frameflow2.add{type = "line", direction = "horizontal"}
-				elseif (v.done == false and v.type_1 == "world") then
-					if v.type_2 == "radar-scan" then
-						frameflow2.add{type = "label", caption = "Sectors Scanned: "..v.amount_done.."/"..v.amount_needed}
+				if (v.done == false) then
+					if (v.type_1 == "research") then
+						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"technology-name."..v.name}}}
 						frameflow2.add{type = "line", direction = "horizontal"}
-					elseif v.type_2 == "chunk" then
-						frameflow2.add{type = "label", caption = "Chunks Generated: "..v.amount_done.."/"..v.amount_needed}
+					elseif (v.type_1 == "launch" and v.type_2 == "rocket") then
+						frameflow2.add{type = "label", caption = {"DyDs-story.launch-rocket", v.amount_done, v.amount_needed}}
 						frameflow2.add{type = "line", direction = "horizontal"}
-					end
-				elseif (v.done == false and v.type_1 == "position") then
-					if game.players[id].surface.name == v.Surface then
-						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, Round(getDistance(game.players[id].position.x, game.players[id].position.y, v.PosX, v.PosY), 0)}}
+					elseif (v.type_1 == "world") then
+						if v.type_2 == "radar-scan" then
+							frameflow2.add{type = "label", caption = "Sectors Scanned: "..v.amount_done.."/"..v.amount_needed}
+							frameflow2.add{type = "line", direction = "horizontal"}
+						elseif v.type_2 == "chunk" then
+							frameflow2.add{type = "label", caption = "Chunks Generated: "..v.amount_done.."/"..v.amount_needed}
+							frameflow2.add{type = "line", direction = "horizontal"}
+						end
+					elseif (v.type_1 == "position") then
+						if game.players[id].surface.name == v.Surface then
+							frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, Round(getDistance(game.players[id].position.x, game.players[id].position.y, v.PosX, v.PosY), 0)}}
+							frameflow2.add{type = "line", direction = "horizontal"}
+						else
+							frameflow2.add{type = "label", caption = "Location on different Surface ("..v.Surface..")"}
+							frameflow2.add{type = "line", direction = "horizontal"}
+						end
+					elseif (v.type_1 == "died") then
+						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_2.."."..v.name}, v.amount_done, v.amount_needed}}
 						frameflow2.add{type = "line", direction = "horizontal"}
 					else
-						frameflow2.add{type = "label", caption = "Location on different Surface ("..v.Surface..")"}
+						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, game.item_prototypes[v.name].localised_name, v.amount_done, v.amount_needed}}
 						frameflow2.add{type = "line", direction = "horizontal"}
 					end
-				elseif (v.done == false) then
-					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_2.."."..v.name}, v.amount_done, v.amount_needed}}
-					frameflow2.add{type = "line", direction = "horizontal"}
 				end
 			end
 		end
@@ -105,32 +110,40 @@ function Story_GUI(player, id)
 		
 		if Story.objectives then
 			for k,v in pairs(Story.objectives) do
-				if (v.done == false and v.type_1 == "research") then
-					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"technology-name."..v.name}}}
-					frameflow2.add{type = "line", direction = "horizontal"}
-				elseif (v.done == false and v.type_1 == "launch" and v.type_2 == "rocket") then
-					frameflow2.add{type = "label", caption = {"DyDs-story.launch-rocket", v.amount_done, v.amount_needed}}
-					frameflow2.add{type = "line", direction = "horizontal"}
-				elseif (v.done == false and v.type_1 == "world") then
-					if v.type_2 == "radar-scan" then
-						frameflow2.add{type = "label", caption = "Sectors Scanned: "..v.amount_done.."/"..v.amount_needed}
+				if (v.done == false) then
+					if (v.type_1 == "research") then
+						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"technology-name."..v.name}}}
 						frameflow2.add{type = "line", direction = "horizontal"}
-					elseif v.type_2 == "chunk" then
-						frameflow2.add{type = "label", caption = "Chunks Generated: "..v.amount_done.."/"..v.amount_needed}
+					elseif (v.type_1 == "launch" and v.type_2 == "rocket") then
+						frameflow2.add{type = "label", caption = {"DyDs-story.launch-rocket", v.amount_done, v.amount_needed}}
 						frameflow2.add{type = "line", direction = "horizontal"}
-					end
-				elseif (v.done == false and v.type_1 == "position") then
-					if game.players[id].surface.name == v.Surface then
-						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, Round(getDistance(game.players[id].position.x, game.players[id].position.y, v.PosX, v.PosY), 0)}}
-						--frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, v.PosX, v.PosY, v.Surface}}
+					elseif (v.type_1 == "world") then
+						if v.type_2 == "radar-scan" then
+							frameflow2.add{type = "label", caption = "Sectors Scanned: "..v.amount_done.."/"..v.amount_needed}
+							frameflow2.add{type = "line", direction = "horizontal"}
+						elseif v.type_2 == "chunk" then
+							frameflow2.add{type = "label", caption = "Chunks Generated: "..v.amount_done.."/"..v.amount_needed}
+							frameflow2.add{type = "line", direction = "horizontal"}
+						end
+					elseif (v.type_1 == "position") then
+						if game.players[id].surface.name == v.Surface then
+							frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, Round(getDistance(game.players[id].position.x, game.players[id].position.y, v.PosX, v.PosY), 0)}}
+							--frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, v.PosX, v.PosY, v.Surface}}
+							frameflow2.add{type = "line", direction = "horizontal"}
+						else
+							frameflow2.add{type = "label", caption = "Location on different Surface"}
+							frameflow2.add{type = "line", direction = "horizontal"}
+						end
+					elseif (
+						v.type_1 == "died" or
+						v.type_1 == "corpse"
+					) then
+						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_2.."."..v.name}, v.amount_done, v.amount_needed}}
 						frameflow2.add{type = "line", direction = "horizontal"}
 					else
-						frameflow2.add{type = "label", caption = "Location on different Surface"}
+						frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, game.item_prototypes[v.name].localised_name, v.amount_done, v.amount_needed}}
 						frameflow2.add{type = "line", direction = "horizontal"}
 					end
-				elseif (v.done == false) then
-					frameflow2.add{type = "label", caption = {"DyDs-story."..v.type_1, {"gui-object-"..v.type_2.."."..v.name}, v.amount_done, v.amount_needed}}
-					frameflow2.add{type = "line", direction = "horizontal"}
 				end
 			end
 		end
@@ -149,7 +162,7 @@ function Story_GUI(player, id)
 	end
 
 	-------------------------------- General TAB ----------------------------------------	
-	local tab1 = tabbed_pane.add{type = "tab", name = "DyDs_story_general_tab", caption = "Act: "..global.dyworld.story.act..", Phase: "..global.dyworld.story.phase}		
+	local tab1 = tabbed_pane.add{type = "tab", name = "DyDs_story_general_tab", caption = "Act: "..global.dyworld.story.act..", Phase: "..global.dyworld.story.phase}
 	local frameflow1 = tabbed_pane.add{type = "flow", name = "flow1", direction = "vertical"}
 	tabbed_pane.add_tab(tab1, frameflow1)
 
@@ -175,4 +188,3 @@ function Story_GUI(player, id)
 	]]
 	frameflow1.add{type = "label", caption = "[color=red]Attack Messages disabled until rewrite[/color]"}
 end
-

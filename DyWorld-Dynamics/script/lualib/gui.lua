@@ -1,4 +1,4 @@
-mod_gui = require("__core__/lualib/mod-gui")
+mod_gui = require("__core__.lualib.mod-gui")
 
 
 function DyDs_GUI_Toggle(player, id)

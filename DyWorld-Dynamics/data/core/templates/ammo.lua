@@ -9,7 +9,7 @@ data:extend(
     type = "ammo",
     name = params.name,
 	localised_name = params.localised_name or nil,
-	localised_description = params.localised_description or nil,
+	localised_description = params.localised_description or {"item-description." .. params.name},
     icon = DyDs_icon_temp,
     icon_size = 64, 
 	icon_mipmaps = 4,
@@ -58,7 +58,7 @@ data:extend(
     type = "ammo",
     name = params.name.."-mag",
 	localised_name = params.localised_name or nil,
-	localised_description = params.localised_description or nil,
+	localised_description = params.localised_description or {"item-description." .. params.name},
 	icons = {
 	  {
 		icon = "__base__/graphics/icons/firearm-magazine.png",
@@ -279,7 +279,7 @@ data:extend(
     type = "ammo",
     name = params.name,
 	localised_name = params.localised_name or nil,
-	localised_description = params.localised_description or nil,
+	localised_description = params.localised_description or {"item-description." .. params.name},
     icon = DyDs_icon_temp,
     icon_size = 64, 
 	icon_mipmaps = 4,
@@ -329,7 +329,7 @@ data:extend(
     type = "ammo",
     name = params.name.."-mag",
 	localised_name = params.localised_name or nil,
-	localised_description = params.localised_description or nil,
+	localised_description = params.localised_description or {"item-description." .. params.name},
 	icons = {
 	  {
 		icon = "__base__/graphics/icons/firearm-magazine.png",

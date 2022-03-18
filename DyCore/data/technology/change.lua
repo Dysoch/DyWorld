@@ -68,28 +68,32 @@ end
 	----- Recipe changes -----
 DyW.Tech.Recipe = {}
 
-function DyW.Tech.Recipe.Add(TECH, RECIPE)
+function DyW.Tech.Recipe.Add(TECH, RECIPE, HIDDEN)
+	HIDDEN = HIDDEN or false
 	if data.raw.technology[TECH] and data.raw.recipe[RECIPE] then
 		local result = {type = "unlock-recipe", recipe = RECIPE}
 		table.insert(data.raw.technology[TECH].effects, result)
 	end
 	if data.raw.recipe[RECIPE] then
+		if HIDDEN then
+			data.raw.recipe[RECIPE].DyWorld_Hider = true
+		end
 		if data.raw.recipe[RECIPE].DyWorld_Hider then
 			data.raw.recipe[RECIPE].DyWorld_Hider = false
 		end
 		if data.raw.recipe[RECIPE].enabled then
 			data.raw.recipe[RECIPE].enabled = false
-			data.raw.recipe[RECIPE].hidden = false
+			data.raw.recipe[RECIPE].hidden = HIDDEN
 		end
 		if data.raw.recipe[RECIPE].normal then
 			data.raw.recipe[RECIPE].normal.enabled = false
-			data.raw.recipe[RECIPE].normal.hidden = false
+			data.raw.recipe[RECIPE].normal.hidden = HIDDEN
 		end
 		if data.raw.recipe[RECIPE].expensive then
 			data.raw.recipe[RECIPE].expensive.enabled = false
-			data.raw.recipe[RECIPE].expensive.hidden = false
+			data.raw.recipe[RECIPE].expensive.hidden = HIDDEN
 		end
-	end	
+	end
 end
 
 

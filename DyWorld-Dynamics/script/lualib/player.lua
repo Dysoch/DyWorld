@@ -1,18 +1,21 @@
 
 
 
-function PlayerPrint(message)
-local DyWorld = "DyWorld-Dynamics: "
+function OnePlayerPrint(player, message)
+	local DyWorld = "DyWorld-Dynamics: "
+	player.print(message)
+end
+
+function AllPlayersPrint(message)
 	for _,player in pairs(game.players) do
-		player.print(message)
+		OnePlayerPrint(player, message)
 	end
 end
 
 function AttackPrint(message)
-local DyWorld = "DyWorld-Dynamics: "
 	for index,player in pairs(game.players) do
 		if settings.get_player_settings(index)["DyWorld_Attack_Messages"].value then
-			player.print(message)
+			OnePlayerPrint(player, message)
 		end
 	end
 end
@@ -34,7 +37,7 @@ for k in pairs(Attack_Ambush) do
 end
 
 function DyLog(str, sta, Act, Phase, Story)
-local Time = global.dyworld.game_stats.time_stamp
+	local Time = global.dyworld.game_stats.time_stamp
 	if sta == true and Story then
 		for _,player in pairs(game.players) do
 			if game.is_multiplayer() then
@@ -46,7 +49,7 @@ local Time = global.dyworld.game_stats.time_stamp
 	elseif sta == true then
 		for _,player in pairs(game.players) do
 			if game.is_multiplayer() then
-				PlayerPrint({str})
+				AllPlayersPrint({str})
 			else
 				game.show_message_dialog{text = {str}}
 			end
@@ -54,7 +57,7 @@ local Time = global.dyworld.game_stats.time_stamp
 	elseif sta == "days" then
 		for _,player in pairs(game.players) do
 			if game.is_multiplayer() then
-				PlayerPrint({str, global.dyworld.game_stats.days})
+				AllPlayersPrint({str, global.dyworld.game_stats.days})
 			else
 				game.show_message_dialog{text = {str, Time}}
 			end
@@ -62,7 +65,7 @@ local Time = global.dyworld.game_stats.time_stamp
 	else
 		for _,player in pairs(game.players) do
 			if game.is_multiplayer() then
-				PlayerPrint(str)
+				AllPlayersPrint(str)
 			else
 				game.show_message_dialog{text = str}
 			end

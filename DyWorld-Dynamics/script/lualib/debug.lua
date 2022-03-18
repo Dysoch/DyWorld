@@ -7,6 +7,6 @@ local DyWorld = "DyWorld-Dynamics: "
 	if not global.debug then global.debug = {} end
 	table.insert(global.debug, (Time.." = "..str))
 	if debugger then
-		PlayerPrint(Time.." = "..str)
+		AllPlayersPrint(Time.." = "..str)
 	end
 end

@@ -39,6 +39,15 @@ Intermediates = {
 	["ilmenite"] = {Stack = 1000, Chem = "C-Ti-Fe-"},
 	["biotite"] = {Stack = 1000, Chem = "C-Al-Ti-Cu-"},
 	["obsidian"] = {Stack = 1000},
+	["mold-empty"] = {Stack = 10, Rec = true},
+	["mold-ingot"] = {Stack = 1, Rec = true},
+	["mold-plate"] = {Stack = 1, Rec = true},
+	["mold-cable"] = {Stack = 1, Rec = true},
+	["mold-gear"] = {Stack = 1, Rec = true},
+	["mold-rod"] = {Stack = 1, Rec = true},
+	["mold-lense"] = {Stack = 1, Rec = true},
+	["mold-board"] = {Stack = 1, Rec = true},
+	["mold-brick"] = {Stack = 1, Rec = true},
 }
 
 local function Stack_Check(Stack)

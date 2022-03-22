@@ -10,10 +10,12 @@ data:extend({
       ingredients =
       {
         {type = "fluid", name = "molten-"..k, amount = 5},
+        {type = "item", name = "mold-ingot", amount = 1},
       },
-      results = 
+      results =
       {
         {type = "item", name = k.."-ingot", amount = 1},
+        {type = "item", name = "mold-ingot", amount = 1, probability = 0.995},
       },
 	  energy_required = 1,
 	  main_product = k.."-ingot",
@@ -24,10 +26,12 @@ data:extend({
       ingredients =
       {
         {type = "fluid", name = "molten-"..k, amount = 5},
+        {type = "item", name = "mold-ingot", amount = 1},
       },
-      results = 
+      results =
       {
         {type = "item", name = k.."-ingot", amount = 1},
+        {type = "item", name = "mold-ingot", amount = 1, probability = 0.995},
       },
 	  energy_required = 1,
 	  main_product = k.."-ingot",
@@ -44,10 +48,12 @@ data:extend({
       ingredients =
       {
         {type = "fluid", name = "molten-"..k, amount = 1},
+        {type = "item", name = "mold-plate", amount = 1},
       },
-      results = 
+      results =
       {
         {type = "item", name = k.."-plate", amount = 1},
+        {type = "item", name = "mold-plate", amount = 1, probability = 0.995},
       },
 	  energy_required = 0.25,
 	  main_product = k.."-plate",
@@ -58,10 +64,12 @@ data:extend({
       ingredients =
       {
         {type = "fluid", name = "molten-"..k, amount = 1},
+        {type = "item", name = "mold-plate", amount = 1},
       },
-      results = 
+      results =
       {
         {type = "item", name = k.."-plate", amount = 1},
+        {type = "item", name = "mold-plate", amount = 1, probability = 0.995},
       },
 	  energy_required = 0.25,
 	  main_product = k.."-plate",

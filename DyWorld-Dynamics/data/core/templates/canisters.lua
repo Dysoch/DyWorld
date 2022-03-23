@@ -40,7 +40,27 @@ data:extend({
 	  enabled = false,
     },
   },
+  {
+    type = "recipe",
+    name = "empty-canister-"..v.name,
+	category = "centrifuging",
+    normal =
+    {
+      ingredients =
+      {
+        {type = "item", name = "canister-"..v.name, amount = 1},
+      },
+      results =
+      {
+        {type = "item", name = "canister-empty", amount = 1, probability = 0.99},
+        {type = "fluid", name = v.name, amount = 400},
+      },
+	  energy_required = 2.5,
+	  enabled = false,
+    },
+  },
 })
 	DyWorld_Add_To_Tech("fluids-"..v.auto_canister_tier, "canister-"..v.name)
+	DyWorld_Add_To_Tech("fluids-"..v.auto_canister_tier, "empty-canister-"..v.name)
 	end
 end

@@ -6,9 +6,10 @@ Date: ???
     - Added in a few achievements, wont work in scenario for now
   Minor Features:
     - Players now have 20 inventory slots to start with (down from 120), but they increase much faster
+    - Canisters can now be emptied. There is a small chance that the canister is destroyed
   Changes:
     - Reduced amount of scorchmarks from "the" nuke (#526)
-    - Made the initial nuke much more powerful, but the explosions outward less powerfull
+    - Made the initial nuke much more powerful, but the explosions outward less powerful
     - Moved item-groups creation to DyCore
     - Damage from the enviroment will now happen based on survival difficulty setting
     - Metal Labratory size: 3x3 > 5x5

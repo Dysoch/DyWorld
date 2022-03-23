@@ -71,10 +71,7 @@ function Event_on_player_created(event)
 	}
 	global.dyworld.game_stats.players = global.dyworld.game_stats.players + 1
 	if global.dyworld_story then
-		if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
-		if global.dyworld.game_stats.labs == 0 then
-			game.players[id].force.disable_research()
-		end
+        
 	else
 		Reunlock_Recipes()
 	end

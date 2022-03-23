@@ -132,7 +132,7 @@ function Event_on_player_mined_entity(event)
 			if not global.dyworld.game_stats.inserters then global.dyworld.game_stats.inserters = 0 end
 			global.dyworld.game_stats.inserters = global.dyworld.game_stats.inserters - 1
 			if global.dyworld.game_stats.inserters <= 0 then
-				global.dyworld.game_stats.inserters = 0 
+				global.dyworld.game_stats.inserters = 0
 			end
 			InserterCheck(global.dyworld.game_stats.inserters)
 		end
@@ -140,7 +140,7 @@ function Event_on_player_mined_entity(event)
 			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
 			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs - 1
 			if global.dyworld.game_stats.labs <= 0 then
-				global.dyworld.game_stats.labs = 0 
+				global.dyworld.game_stats.labs = 0
 			end
 		end
 	end

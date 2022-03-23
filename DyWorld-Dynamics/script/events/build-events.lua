@@ -137,7 +137,7 @@ function Event_on_built_entity(event)
 			InserterCheck(global.dyworld.game_stats.inserters)
 		end
 		
-		-- Reenable Research
+		-- Reenable Research (legacy, will be deleted after 5 updates)
 		if (type == "lab") then
 			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
 			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs + 1
@@ -272,7 +272,7 @@ function Event_on_robot_built_entity(event)
 			InserterCheck(global.dyworld.game_stats.inserters)
 		end
 		
-		-- Reenable Research
+		-- Reenable Research (legacy, will be deleted after 5 updates)
 		if (type == "lab") then
 			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
 			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs + 1
@@ -426,7 +426,7 @@ function Event_script_raised_revive(event)
 			InserterCheck(global.dyworld.game_stats.inserters)
 		end
 		
-		-- Reenable Research
+		-- Reenable Research (legacy, will be deleted after 5 updates)
 		if (type == "lab") then
 			if not global.dyworld.game_stats.labs then global.dyworld.game_stats.labs = 0 end
 			global.dyworld.game_stats.labs = global.dyworld.game_stats.labs + 1

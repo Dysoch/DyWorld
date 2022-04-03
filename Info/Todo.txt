@@ -7,8 +7,16 @@ natives send meteors
 
  /c remote.call("space-exploration", "begin_solar_flare", {zone_name = "Nauvis", targeting="basic"})
 
-@todo Change bonus calculation
+@todo Update guis only when they require Update
 
-@todo Add calculation from bonuses to resistance of pollution/temperature/radiation
+@todo add gui update script (seperate for each one)
 
-@todo Change tile script for radiation and temperature to account tile change during playthrough
+@todo add story mode technologies based on pull request from Maximus
+@body requires some alteration to fit nicely into DyWorld and the vision i have for this feature
+
+@todo add advanced science sprites from old archive to make them different
+
+@todo add NG+ script
+
+@todo add NG+ take stats from current game
+@body will probably require manual adding of a file into the dyworld script to take affect, but will do some research if there is any other way

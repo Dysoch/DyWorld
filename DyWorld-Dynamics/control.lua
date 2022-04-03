@@ -7,57 +7,58 @@ Food_Start = debugger and 250000 or settings.global["DyWorld_Surival_Difficulty"
 Water_Start = debugger and 500000 or settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 50000 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 5000 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 2500 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 1250 or 5000 
 
 -- LuaLib
-require "script/lualib/function"
-require "script/lualib/debug"
-require "script/lualib/player"
-require "script/lualib/player-ambush"
-require "script/lualib/custom-attack"
-require "script/lualib/gui"
-require "script/lualib/terrain"
-require "script/lualib/space-mining"
-inspect = require("script/lualib/inspect")
-require("script/database/recipes")
-require("script/database/inserter")
-require("script/database/vitals")
-require("script/database/implants")
-require("script/database/dyson")
-require("script/database/mining")
-require("script/database/objectives-side")
-require("script/database/story")
-require("script/lualib/inserter")
+require("script.lualib.function")
+require("script.lualib.debug")
+require("script.lualib.player")
+require("script.lualib.player-ambush")
+require("script.lualib.custom-attack")
+require("script.lualib.gui")
+require("script.lualib.terrain")
+require("script.lualib.space-mining")
+inspect = require("script.lualib.inspect")
+require("script.database.recipes")
+require("script.database.inserter")
+require("script.database.vitals")
+require("script.database.implants")
+require("script.database.dyson")
+require("script.database.mining")
+require("script.database.objectives-side")
+require("script.database.story")
+require("script.lualib.inserter")
 
 -- GUI
-require "script/gui/main-gui"
-require "script/gui/story-gui"
-require "script/gui/smn-gui"
-require "script/gui/personal-gui"
+require("script.gui.main-gui")
+require("script.gui.story-gui")
+require("script.gui.smn-gui")
+require("script.gui.personal-gui")
 
 -- Stats
-require "script/stats/functions"
-require "script/stats/food"
-require "script/stats/implants"
-require "script/stats/vitals"
+require("script.stats.functions")
+require("script.stats.food")
+require("script.stats.implants")
+require("script.stats.vitals")
 
 -- Story
-require "script/story/story"
-require "script/story/functions"
-require "script/database/informatron"
+require("script.story.story")
+require("script.story.functions")
+require("script.database.informatron")
 
 -- Event Handlers --
-require "script/events/keys"
-require "script/events/build-events"
-require "script/events/craft-events"
-require "script/events/mine-events"
-require "script/events/gui-events"
-require "script/events/kill-events"
-require "script/events/misc-events"
-require "script/events/player-events"
+require("script.events.keys")
+require("script.events.build-events")
+require("script.events.craft-events")
+require("script.events.inventory-events")
+require("script.events.mine-events")
+require("script.events.gui-events")
+require("script.events.kill-events")
+require("script.events.misc-events")
+require("script.events.player-events")
 
-require "script/events/on_configuration_changed"
-require "script/events/on_init"
-require "script/events/on_tick"
+require("script.events.on_configuration_changed")
+require("script.events.on_init")
+require("script.events.on_tick")
 
-require "script/events/remote"
+require("script.events.remote")
 
 -- Config Events
 script.on_configuration_changed(Event_on_configuration_changed)
@@ -107,6 +108,13 @@ script.on_event(defines.events.on_pre_player_died, Event_on_pre_player_died)
 --script.on_event(defines.events.on_player_joined_game, Event_on_player_joined_game)
 --script.on_event(defines.events.on_player_left_game, Event_on_player_left_game)
 script.on_event(defines.events.on_pre_player_mined_item, Event_on_pre_player_mined_item)
+
+-- Player Inventory Events
+script.on_event(defines.events.on_player_ammo_inventory_changed, Event_on_player_inventory_changed_ammo)
+script.on_event(defines.events.on_player_armor_inventory_changed, Event_on_player_inventory_changed_armor)
+script.on_event(defines.events.on_player_gun_inventory_changed, Event_on_player_inventory_changed_gun)
+script.on_event(defines.events.on_player_main_inventory_changed, Event_on_player_inventory_changed_main)
+script.on_event(defines.events.on_player_trash_inventory_changed, Event_on_player_inventory_changed_trash)
 
 -- GUI Events
 script.on_event(defines.events.on_gui_click, Event_on_gui_click)

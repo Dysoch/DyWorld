@@ -9,7 +9,7 @@ data:extend(
     type = "ammo",
     name = params.name,
 	localised_name = params.localised_name or nil,
-	localised_description = params.localised_description or nil,
+	localised_description = params.localised_description or {"item-description." .. params.name},
     icon = DyDs_icon_temp,
     icon_size = 64, 
 	icon_mipmaps = 4,

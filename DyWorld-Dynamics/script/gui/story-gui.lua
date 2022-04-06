@@ -1,4 +1,14 @@
 
+function Refresh_Story_GUI(player, id)
+	if global.dyworld.players[id].smn_gui then
+		Close_Story_GUI(player, id)
+		Story_GUI(player, id)
+		if player.gui.top.DyDs_Story_GUI then
+			player.gui.top.DyDs_Story_GUI.selected_tab_index = global.dyworld.players[id].story_gui_index
+		end
+	end
+end
+
 function Close_Story_GUI(player, id)
 	if player.gui.top.DyDs_Story_GUI then
 		player.gui.top.DyDs_Story_GUI.destroy()
@@ -145,7 +155,7 @@ function Story_GUI(player, id)
 		local frameflow2 = tabbed_pane.add{type = "flow", name = "flow2", direction = "vertical"}
 		tabbed_pane.add_tab(tab2, frameflow2)
 
-		frameflow2.add{type = "label", caption = "Story is paused.\nYou progressed until the point where the current story ends.\nPlease be patient, the next part will come soon.\nYou can keep playing."}
+		frameflow2.add{type = "label", caption = "Story is paused.\nYou progressed until the point where the current story ends.\nPlease be patient, the next part will come soon.\nYou can keep playing if you so wish."}
 	end
 
 	-------------------------------- General TAB ----------------------------------------	

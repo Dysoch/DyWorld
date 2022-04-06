@@ -170,7 +170,7 @@ function Event_on_tick(event)
 					Vitals_Check(v.id)
 				end
 				
-				if v.personal_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
+				--[[if v.personal_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
 					local player = game.players[v.id]
 					Close_Personal_GUI(player, v.id)
 					Personal_GUI(player, v.id)
@@ -197,7 +197,7 @@ function Event_on_tick(event)
 					if player.gui.top.DyDs_SMN_GUI then
 						player.gui.top.DyDs_SMN_GUI.selected_tab_index = global.dyworld.players[v.id].smn_gui_index
 					end
-				end
+				end]]--
 
 				if global.dyworld_story and v.alive and not global.dyworld.game_stats.story_pause then
 					for aaaa,Phase in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do

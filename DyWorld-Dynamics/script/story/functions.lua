@@ -245,6 +245,10 @@ function Story_Objectives_Research(name)
 			if (name == v.name and v.done == false) then
 				v.done = true
                 global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
+				for _,z in pairs(global.dyworld.players) do
+					local player = game.players[z.id]
+					Refresh_Story_GUI(player, z.id)
+				end
 			end
 		end
 	end
@@ -268,6 +272,10 @@ function Story_Objectives(type, event, Posx, PosY)
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
 						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				end
 			end
@@ -288,6 +296,10 @@ function Story_Objectives(type, event, Posx, PosY)
 								for k,v in pairs(TAG) do
 									v.destroy()
 								end
+								for _,z in pairs(global.dyworld.players) do
+									local player = game.players[z.id]
+									Refresh_Story_GUI(player, z.id)
+								end
 							end
 						else
 							if getDistance(Posx, PosY, v.PosX, v.PosY) <= 10 then
@@ -296,6 +308,10 @@ function Story_Objectives(type, event, Posx, PosY)
 								local TAG = game.forces.player.find_chart_tags(v.Surface, {{(Posx-15), (PosY-15)},{(Posx+15), (PosY+15)}})
 								for k,v in pairs(TAG) do
 									v.destroy()
+								end
+								for _,z in pairs(global.dyworld.players) do
+									local player = game.players[z.id]
+									Refresh_Story_GUI(player, z.id)
 								end
 							end
 						end
@@ -313,6 +329,10 @@ function Story_Objectives(type, event, Posx, PosY)
 					if (name == "character-corpse" and type == "character-corpse" and v.done == false) then
 						v.done = true
 						global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				end
 			end
@@ -333,6 +353,10 @@ function Story_Objectives(type, event, Posx, PosY)
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
 						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				end
 			end
@@ -347,6 +371,10 @@ function Story_Objectives(type, event, Posx, PosY)
 						if v.amount_done >= v.amount_needed then
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
+						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
 						end
 					end
 				end
@@ -365,6 +393,10 @@ function Story_Objectives(type, event, Posx, PosY)
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
 						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				end
 			end
@@ -381,6 +413,10 @@ function Story_Objectives(type, event, Posx, PosY)
 						if v.amount_done >= v.amount_needed then
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
+						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
 						end
 					end
 				end
@@ -401,6 +437,10 @@ function Story_Objectives(type, event, Posx, PosY)
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
 						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				end
 			end
@@ -411,6 +451,10 @@ function Story_Objectives(type, event, Posx, PosY)
 					if (name == v.name and v.done == false) then
 						v.done = true
 						global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				end
 			end
@@ -424,6 +468,10 @@ function Story_Objectives(type, event, Posx, PosY)
 						if v.amount_done >= v.amount_needed then
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
+						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
 						end
 					end
 				end
@@ -439,6 +487,10 @@ function Story_Objectives(type, event, Posx, PosY)
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
 						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				end
 			end
@@ -452,6 +504,10 @@ function Story_Objectives(type, event, Posx, PosY)
 						if v.amount_done >= v.amount_needed then
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
+						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
 						end
 					end
 				end
@@ -472,6 +528,10 @@ function Story_Objectives(type, event, Posx, PosY)
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
 						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				end
 				if (v.type_1 == "died" and v.type_2 == "type") then
@@ -483,12 +543,20 @@ function Story_Objectives(type, event, Posx, PosY)
 							v.done = true
 							global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] - 1
 						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				end
 			end
 		end
 		if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] + global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2]) <= 0 then
 			Phase_Forward()
+			for _,z in pairs(global.dyworld.players) do
+				local player = game.players[z.id]
+				Refresh_Story_GUI(player, z.id)
+			end
 		end
 	end
 end
@@ -634,6 +702,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 								Check_Side_Objective()
 							end
 						end
+						for _,z in pairs(global.dyworld.players) do
+							local player = game.players[z.id]
+							Refresh_Story_GUI(player, z.id)
+						end
 					end
 				elseif (v.objective_type == "build-name") then
 					if (name == v.name and v.done == false) then
@@ -643,6 +715,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] >= 1 then
 								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] - 1
 								Check_Side_Objective()
+							end
+							for _,z in pairs(global.dyworld.players) do
+								local player = game.players[z.id]
+								Refresh_Story_GUI(player, z.id)
 							end
 						end
 					end
@@ -659,6 +735,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] >= 1 then
 								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] - 1
 								Check_Side_Objective()
+							end
+							for _,z in pairs(global.dyworld.players) do
+								local player = game.players[z.id]
+								Refresh_Story_GUI(player, z.id)
 							end
 						end
 					end
@@ -677,6 +757,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] - 1
 								Check_Side_Objective()
 							end
+							for _,z in pairs(global.dyworld.players) do
+								local player = game.players[z.id]
+								Refresh_Story_GUI(player, z.id)
+							end
 						end
 					end
 				elseif (v.objective_type == "build-name") then
@@ -687,6 +771,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] >= 1 then
 								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] - 1
 								Check_Side_Objective()
+							end
+							for _,z in pairs(global.dyworld.players) do
+								local player = game.players[z.id]
+								Refresh_Story_GUI(player, z.id)
 							end
 						end
 					end
@@ -705,6 +793,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] - 1
 								Check_Side_Objective()
 							end
+							for _,z in pairs(global.dyworld.players) do
+								local player = game.players[z.id]
+								Refresh_Story_GUI(player, z.id)
+							end
 						end
 					end
 				elseif (v.objective_type == "kill-name") then
@@ -715,6 +807,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] >= 1 then
 								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] - 1
 								Check_Side_Objective()
+							end
+							for _,z in pairs(global.dyworld.players) do
+								local player = game.players[z.id]
+								Refresh_Story_GUI(player, z.id)
 							end
 						end
 					end
@@ -731,6 +827,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] - 1
 								Check_Side_Objective()
 							end
+							for _,z in pairs(global.dyworld.players) do
+								local player = game.players[z.id]
+								Refresh_Story_GUI(player, z.id)
+							end
 						end
 					end
 				end
@@ -745,6 +845,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 							if global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] >= 1 then
 								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] - 1
 								Check_Side_Objective()
+							end
+							for _,z in pairs(global.dyworld.players) do
+								local player = game.players[z.id]
+								Refresh_Story_GUI(player, z.id)
 							end
 						end
 					end
@@ -761,6 +865,10 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 								global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] = global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2] - 1
 								Check_Side_Objective()
 							end
+							for _,z in pairs(global.dyworld.players) do
+								local player = game.players[z.id]
+								Refresh_Story_GUI(player, z.id)
+							end
 						end
 					end
 				end
@@ -769,5 +877,9 @@ function Story_Side_Objectives(type_1, event, amount, E_Name)
 	end
 	if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] + global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2]) <= 0 then
 		Phase_Forward()
+		for _,z in pairs(global.dyworld.players) do
+			local player = game.players[z.id]
+			Refresh_Story_GUI(player, z.id)
+		end
 	end
 end

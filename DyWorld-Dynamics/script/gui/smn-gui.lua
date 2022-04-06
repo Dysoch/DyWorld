@@ -2,6 +2,16 @@
 
 
 
+function Refresh_SMN_GUI(player, id)
+	if global.dyworld.players[id].smn_gui then
+		Close_SMN_GUI(player, id)
+		SMN_GUI(player, id)
+		if player.gui.top.DyDs_SMN_GUI then
+			player.gui.top.DyDs_SMN_GUI.selected_tab_index = global.dyworld.players[id].smn_gui_index
+		end
+	end
+end
+
 function Close_SMN_GUI(player, id)
 	if player.gui.top.DyDs_SMN_GUI then
 		player.gui.top.DyDs_SMN_GUI.destroy()

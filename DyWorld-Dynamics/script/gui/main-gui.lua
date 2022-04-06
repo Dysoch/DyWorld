@@ -27,26 +27,6 @@ local function Time_Check(time)
 	return (hours..":"..minutes..":"..seconds)
 end
 
-local function Check_State(id, IMPLANT, Tier)
-    local GloPla = global.dyworld.players[id].implants
-    GloImplant = IMPLANT.."-"..Tier
-    if GloPla[GloImplant].enabled == true then
-        if Tier == 1 then return "[color=green]Mk I[/color]"
-        elseif Tier == 2 then return "[color=green]Mk II[/color]"
-        elseif Tier == 3 then return "[color=green]Mk III[/color]"
-        elseif Tier == 4 then return "[color=green]Mk IV[/color]"
-        elseif Tier == 5 then return "[color=green]Mk V[/color]"
-        end
-    else
-        if Tier == 1 then return "[color=red]Mk I[/color]"
-        elseif Tier == 2 then return "[color=red]Mk II[/color]"
-        elseif Tier == 3 then return "[color=red]Mk III[/color]"
-        elseif Tier == 4 then return "[color=red]Mk IV[/color]"
-        elseif Tier == 5 then return "[color=red]Mk V[/color]"
-        end
-    end
-end
-
 local function Check_Implant_State_2(id, IMPLANT)	
     local GloPla = global.dyworld.players[id].implants
     if GloPla[IMPLANT].enabled == true then
@@ -56,14 +36,14 @@ local function Check_Implant_State_2(id, IMPLANT)
 	end
 end
 
-local function Check_Implant_State(id, IMPLANT)
-    local GloPla = global.dyworld.players[id].implants
-    local GloPla_1 = Check_State(id, IMPLANT, 1)
-    local GloPla_2 = Check_State(id, IMPLANT, 2)
-    local GloPla_3 = Check_State(id, IMPLANT, 3)
-    local GloPla_4 = Check_State(id, IMPLANT, 4)
-    local GloPla_5 = Check_State(id, IMPLANT, 5)
-    return GloPla_1..", "..GloPla_2..", "..GloPla_3..", "..GloPla_4..", "..GloPla_5
+function Refresh_Main_GUI(player, id)
+	if global.dyworld.players[id].stats_gui then
+		Close_Main_GUI(player, id)
+		Main_GUI(player, id)
+		if player.gui.top.DyDs_Main_GUI then
+			player.gui.top.DyDs_Main_GUI.selected_tab_index = global.dyworld.players[id].stats_gui_index
+		end
+	end
 end
 
 function Close_Main_GUI(player, id)

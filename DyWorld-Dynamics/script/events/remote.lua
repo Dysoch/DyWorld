@@ -66,6 +66,36 @@ remote.add_interface("DyWorld",
 	end,
 	-- /c remote.call("DyWorld", "Fix_Research")
 	
+	NGPlus = function(ARG)
+		if not global.dyworld.players[player.index] then error("Player not found, are you sure you exist?")
+		else
+			global.dyworld.players[id].water_max = Water_Start
+			global.dyworld.players[id].food_max = Food_Start
+			global.dyworld.players[id].water_rate = 1.25
+			global.dyworld.players[id].food_rate = 0.33
+			global.dyworld.players[id].water = global.dyworld.players[id].water_max
+			global.dyworld.players[id].food = global.dyworld.players[id].food_max
+			global.dyworld.players[id].food_mess_1 = false
+			global.dyworld.players[id].food_mess_2 = false
+			global.dyworld.players[id].food_mess_3 = false
+			global.dyworld.players[id].food_mess_4 = false
+			global.dyworld.players[id].water_mess_1 = false
+			global.dyworld.players[id].water_mess_2 = false
+			global.dyworld.players[id].water_mess_3 = false
+			global.dyworld.players[id].water_mess_4 = false
+			global.dyworld.players[id].crafted = 0
+			global.dyworld.players[id].mined = 0
+			global.dyworld.players[id].build = 0
+			global.dyworld.players[id].killed = 0
+			global.dyworld.players[id].picked = 0
+			global.dyworld.players[id].distance = 0
+			global.dyworld.players[id].distance_car = 0
+			global.dyworld.players[id].distance_train = 0
+			global.dyworld.players[id].survival["constitution"] = 0
+		end
+	end,
+	-- /c remote.call("DyWorld", "NGPlus", ARG)
+
 	Pause_Story = function()
 		if not global.dyworld.game_stats.story_pause then global.dyworld.game_stats.story_pause = false end
 		if global.dyworld.game_stats.story_pause then

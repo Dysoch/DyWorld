@@ -9,6 +9,7 @@ Date: ???
   Minor Features:
     - Players now have 20 inventory slots to start with (down from 120), but they increase much faster
     - Canisters can now be emptied. There is a small chance that the canister is destroyed
+    - New graphics (Still temporary and WIP though) for science packs (both normal and advanced variant)
     - N/A
   Changes:
     - Reduced amount of scorchmarks from "the" nuke (#526)

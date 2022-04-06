@@ -5,14 +5,18 @@ local Science_Table = {"automation", "logistic", "chemical", "military", "produc
 for k,v in pairs(Science_Table) do
     DyDS_Add_Tool({
         name = v.."-science-pack",
-        icons = {{icon = "__base__/graphics/icons/space-science-pack.png", tint = Science_Colors[v]}},
+        icon = DyDs_path_icon.."science-1/"..v..".png",
+        icon_size = 32,
+       -- icons = {{icon = "__base__/graphics/icons/space-science-pack.png", tint = Science_Colors[v]}},
         stack_size = 200,
         durability = 1,
         subgroup = DyDs.."science-packs",
     })
     DyDS_Add_Tool({
         name = v.."-science-pack-advanced",
-        icons = {{icon = "__base__/graphics/icons/space-science-pack.png", tint = Science_Colors[v]}},
+        icon = DyDs_path_icon.."science-2/"..v..".png",
+        icon_size = 32,
+        --icons = {{icon = "__base__/graphics/icons/space-science-pack.png", tint = Science_Colors[v]}},
         stack_size = 100,
         durability = 1,
         subgroup = DyDs.."science-packs",

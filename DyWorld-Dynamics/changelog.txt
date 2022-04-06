@@ -9,7 +9,7 @@ Date: ???
   Minor Features:
     - Players now have 20 inventory slots to start with (down from 120), but they increase much faster
     - Canisters can now be emptied. There is a small chance that the canister is destroyed
-    - New graphics (Still temporary and WIP though) for science packs (both normal and advanced variant)
+    - New graphics (Still temporary and WIP though) for science packs (both normal and advanced variant) (#543)
     - N/A
   Changes:
     - Reduced amount of scorchmarks from "the" nuke (#526)
@@ -25,7 +25,7 @@ Date: ???
     - Certain radiation and temperature values for certain tiles have been reduced, making it easier to survive. Space is still harsh though, prepare well for that
     - N/A
   Bugfixes:
-    - All hidden technologies will be research on a research completed to fix technologies issues
+    - All hidden technologies will be research on a research completed to fix technologies issues (this can cause issues with technologies being available when they shouldnt. permanent fix is in the works)
     - Fixed rare instance of crash with mysterious building when destroyed and no other was spawned yet (#527)
     - Space Exploration medpacks now work with the auto healthpack implant as they should have
     - N/A

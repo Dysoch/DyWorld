@@ -23,3 +23,21 @@ for k,v in pairs(Science_Table) do
     })
 end
 
+for i = 1,10 do
+    DyDS_Add_Tool({
+        name = "dyworld-story-objectives-main-"..i,
+        icon = DyDs_tech_temp,
+        icon_size = 256,
+        stack_size = 1,
+        durability = 1,
+        subgroup = DyDs.."science-packs",
+    })
+    DyDS_Add_Tool({
+        name = "dyworld-story-objectives-side-"..i,
+        icon = DyDs_tech_temp,
+        icon_size = 256,
+        stack_size = 1,
+        durability = 1,
+        subgroup = DyDs.."science-packs",
+    })
+end

@@ -2,6 +2,7 @@
 -- Tier 1 --
 require(DyDs_data_tech.. "core.packs") -- Pack Function
 require(DyDs_data_tech.. "core.science") -- Main Research for science packs
+require(DyDs_data_tech.. "core.story") -- Main Research for the story
 
 -- Tier 1 --
 require(DyDs_data_tech.. "core.tier-1") -- Metal Research

@@ -1,8 +1,5 @@
 
-
-
-
-Food_Values  = {
+Food_Values = {
 
 	---- Both -----
 	
@@ -23,7 +20,7 @@ Food_Values  = {
 	
 }
 
-Medpack_Values  = {	
+Medpack_Values = {	
 	["basic-med-pack"] = 50,
 	["med-pack"] = 100,
 	["se-medpack"] = 50,
@@ -32,7 +29,7 @@ Medpack_Values  = {
 	["se-medpack-4"] = 400,
 }
 
-Radiation_Values  = {
+Radiation_Values = {
 	["uranium-ore"] = 0.5,
 	["spend-uranium-ore"] = 0.025,
 	["uranium-235"] = 1,

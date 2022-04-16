@@ -40,15 +40,12 @@ for Act_k,Act_v in pairs(Story_Table_Base) do
         if Phase_v.objectives_side then
             local Main_Amount = Story_tablelength(Phase_v.objectives)
             local Side_Amount = 10 - Main_Amount
-            local Total_Amount = Main_Amount + Side_Amount
             local Side_Ingredient = {"dyworld-story-objectives-side-"..Side_Amount, 1}
             local Main_Ingredient = {"dyworld-story-objectives-main-"..Main_Amount, 1}
             table.insert(data.raw.technology["dyworld-story-"..Act_v.."-"..Phase_v].ingredients, Side_Ingredient)
             table.insert(data.raw.technology["dyworld-story-"..Act_v.."-"..Phase_v].ingredients, Main_Ingredient)
         else
             local Main_Amount = Story_tablelength(Phase_v.objectives)
-            local Side_Amount = 0
-            local Total_Amount = Main_Amount + Side_Amount
             local Main_Ingredient = {"dyworld-story-objectives-main-"..Main_Amount, 1}
             table.insert(data.raw.technology["dyworld-story-"..Act_v.."-"..Phase_v].ingredients, Main_Ingredient)
         end

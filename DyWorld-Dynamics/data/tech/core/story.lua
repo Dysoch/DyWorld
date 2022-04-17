@@ -14,8 +14,10 @@ for Act_k,Act_v in pairs(Story_Table_Base) do
         DyWorld_Tech_Add({
             name = "dyworld-story-"..Act_k.."-"..Phase_k,
             icons = {
-				icon = DyDs_path_icon_base.."blueprint-book.png",
-				icon_size = 64,
+                {
+                    icon = DyDs_path_icon_base.."blueprint-book.png",
+                    icon_size = 64,
+                },
 			},
             flags = {Story = true},
             prerequisites = {},
@@ -28,17 +30,16 @@ for Act_k,Act_v in pairs(Story_Table_Base) do
         })
         if Story_Table_Base[Act_k][(Phase_k - 1)] then
             data.raw.technology["dyworld-story-"..Act_k.."-"..Phase_k].prerequisites = {"dyworld-story-"..Act_k.."-"..(Phase_k - 1)}
-        elseif Act_v == 1 and Phase_k == 1 then
+        elseif Act_k == 1 and Phase_k == 1 then
 
-        elseif Act_v == 2 and Phase_k == 1 then
+        elseif Act_k == 2 and Phase_k == 1 then
             data.raw.technology["dyworld-story-"..Act_k.."-"..Phase_k].prerequisites = {"dyworld-story-"..(1).."-"..(11)}
-        elseif Act_v == 3 and Phase_k == 1 then
+        elseif Act_k == 3 and Phase_k == 1 then
             data.raw.technology["dyworld-story-"..Act_k.."-"..Phase_k].prerequisites = {"dyworld-story-"..(2).."-"..(10)}
-        elseif Act_v == 4 and Phase_k == 1 then
+        elseif Act_k == 4 and Phase_k == 1 then
             data.raw.technology["dyworld-story-"..Act_k.."-"..Phase_k].prerequisites = {"dyworld-story-"..(3).."-"..(50)}
-        elseif Act_v == 5 and Phase_k == 1 then
+        elseif Act_k == 5 and Phase_k == 1 then
             data.raw.technology["dyworld-story-"..Act_k.."-"..Phase_k].prerequisites = {"dyworld-story-"..(4).."-"..(1)}
-
         end
         if Phase_v.objectives_side then
             local Main_Amount = Story_tablelength(Phase_v.objectives)

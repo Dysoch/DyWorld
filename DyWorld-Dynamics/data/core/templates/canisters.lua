@@ -57,6 +57,7 @@ data:extend({
       },
 	  energy_required = 2.5,
 	  enabled = false,
+	  main_product = v.name,
     },
   },
 })

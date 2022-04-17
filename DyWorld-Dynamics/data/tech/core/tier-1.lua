@@ -5,6 +5,9 @@ local Metal_Techs = {
 		name = "copper-processing",
 		icon = DyDs_path_tech.."copper.png",
 		flags = {Act_2 = true},
+		prerequisites = {
+			"dyworld-story-2-1",
+		},
 		ingredients = {
 			Dy_Metal_Tech_Pack("copper-1", 375),
 			Dy_Metal_Tech_Pack("copper-3", 15),
@@ -16,6 +19,9 @@ local Metal_Techs = {
 		name = "iron-processing",
 		icon = DyDs_path_tech.."iron.png",
 		flags = {Act_2 = true},
+		prerequisites = {
+			"dyworld-story-2-1",
+		},
 		ingredients = {
 			Dy_Metal_Tech_Pack("iron-1", 450),
 			Dy_Metal_Tech_Pack("iron-3", 25),
@@ -27,6 +33,9 @@ local Metal_Techs = {
 		name = "tin-processing",
 		icon = DyDs_path_tech.."tin.png",
 		flags = {Act_2 = true},
+		prerequisites = {
+			"dyworld-story-2-1",
+		},
 		ingredients = {
 			Dy_Metal_Tech_Pack("tin-1", 300),
 			Dy_Metal_Tech_Pack("tin-3", 10),

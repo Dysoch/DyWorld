@@ -8,6 +8,15 @@ Story_Table_Base  = {
 			started = true,
 			amount = {4, 0, 4},
 			message = 3,
+			unlocks = {
+				"charcoal-basic",
+				"stone-brick-basic-1",
+				"stone-brick-basic-2",
+				"stone-brick-basic-3",
+				"stone-brick-basic-4",
+				"basic-kiln",
+				"small-storage",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "build",
@@ -47,6 +56,14 @@ Story_Table_Base  = {
 			done = false,
 			started = false,
 			message = 3,
+			unlocks = {
+				"basic-med-pack",
+				"9mm-bullet-bronze",
+				"9mm-mag-bronze",
+				"9mm-mag-bronze-del",
+				"9mm-pistol",
+				"basic-burner-drill",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "position",
@@ -74,6 +91,12 @@ Story_Table_Base  = {
 			done = false,
 			started = false,
 			message = 2,
+			unlocks = {
+				"bronze-basic",
+				"stone-brick-wall",
+				"basic-9mm-turret",
+				"basic-armor",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "craft",
@@ -107,6 +130,17 @@ Story_Table_Base  = {
 			done = false,
 			started = false,
 			message = 2,
+			unlocks = {
+				"basic-treefarm",
+				"rain-collecting",
+				"rain-collector",
+				"offshore-pump",
+				"burner-turbine",
+				"basic-power-pole",
+				"bronze-pipe",
+				"bronze-pipe-to-ground",
+				"basic-repair-pack",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "craft",
@@ -141,6 +175,13 @@ Story_Table_Base  = {
 			done = false,
 			started = false,
 			message = 2,
+			unlocks = {
+				"transport-belt-1",
+				"underground-belt-1",
+				"splitter-1",
+				"burner-inserter",
+				"bronze-gear",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "craft",
@@ -183,6 +224,17 @@ Story_Table_Base  = {
 			started = false,
 			attack = {"nauvis"},
 			message = 2,
+			unlocks = {
+				"burner-assembler",
+				"loader-1",
+				"control-board-1",
+				"stone-brick-gate",
+				"tin-basic",
+				"tin-basic-2",
+				"9mm-bullet-tin",
+				"9mm-mag-tin",
+				"9mm-mag-tin-del",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "died",
@@ -227,6 +279,11 @@ Story_Table_Base  = {
 			started = false,
 			attack = {"nauvis"},
 			message = 2,
+			unlocks = {
+				"green-wire",
+				"red-wire",
+				"med-pack",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "died",
@@ -254,6 +311,18 @@ Story_Table_Base  = {
 			started = false,
 			attack = {"nauvis"},
 			message = 2,
+			unlocks = {
+				"cast-iron-1",
+				"cast-iron-1b",
+				"cast-copper-1",
+				"cast-copper-1b",
+				"small-storage-2",
+				"iron-gear",
+				"copper-cable",
+				"9mm-bullet-copper",
+				"9mm-mag-copper",
+				"9mm-mag-copper-del",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "died",
@@ -290,6 +359,11 @@ Story_Table_Base  = {
 			done = false,
 			started = false,
 			message = 2,
+			unlocks = {
+				"basic-power-armor",
+				"ammo-nano-constructors",
+				"gun-nano-emitter",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "craft",
@@ -316,6 +390,21 @@ Story_Table_Base  = {
 			started = false,
 			attack = {"nauvis"},
 			message = 5,
+			unlocks = {
+				"basic-assembler",
+				"burner-radar",
+				"lab-1",
+				"basic-electric-drill",
+				"basic-boiler",
+				"basic-steam-engine",
+				"solar-panel-equipment-1",
+				"belt-immunity-equipment",
+				"9mm-bullet-iron",
+				"9mm-mag-iron",
+				"9mm-mag-iron-del",
+				"car-1",
+				"boat-1",
+			},
 			objectives = {
 				[1] = {
 					type_1 = "build",

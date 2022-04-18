@@ -54,5 +54,12 @@ for Act_k,Act_v in pairs(Story_Table_Base) do
                 {"dyworld-story-objectives-main-"..Main_Amount, 1},
             }
         end
+        if Phase_v.unlocks then
+            data.raw.technology["dyworld-story-"..Act_k.."-"..Phase_k].effects = {}
+            for k,v in pairs(Phase_v.unlocks) do
+                local Recipe = {type = "unlock-recipe", recipe = v}
+                table.insert(data.raw.technology["dyworld-story-"..Act_k.."-"..Phase_k].effects, result)
+            end
+        end
     end
 end

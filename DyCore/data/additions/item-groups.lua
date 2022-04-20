@@ -23,6 +23,12 @@ local Table = {
         ["f-oil"] = "a2",
     },
     ["inserters"] = {
+        ["inserter-normal"] = "a1",
+        ["inserter-filter"] = "a4",
+        ["inserter-long"] = "a2",
+        ["inserter-long-filter"] = "a5",
+        ["inserter-far"] = "a3",
+        ["inserter-far-filter"] = "a6",
         ["inserter-tier-1"] = "a1",
         ["inserter-tier-2"] = "a2",
         ["inserter-tier-3"] = "a3",

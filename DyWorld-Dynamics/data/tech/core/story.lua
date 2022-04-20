@@ -9,6 +9,13 @@ local function Story_tablelength(T)
 	return count
 end
 
+local Acts = Story_tablelength(Story_Table_Base)
+local Act_1 = Story_tablelength(Story_Table_Base[1])
+local Act_2 = Story_tablelength(Story_Table_Base[2])
+local Act_3 = Story_tablelength(Story_Table_Base[3])
+local Act_4 = Story_tablelength(Story_Table_Base[4])
+local Act_5 = Story_tablelength(Story_Table_Base[5])
+
 for Act_k,Act_v in pairs(Story_Table_Base) do
     for Phase_k, Phase_v in pairs(Act_v) do
         DyWorld_Tech_Add({

@@ -2,7 +2,7 @@
 
 data.raw.inserter["burner-inserter"].energy_source.fuel_category = "carbon"
 data.raw.item["burner-inserter"].stack_size = 200
-data.raw.item["burner-inserter"].subgroup = DyDs.."inserter-tier-1"
+data.raw.item["burner-inserter"].subgroup = DyDs.."inserter-burner"
 data.raw.item["burner-inserter"].order = "1"
 data.raw.item["burner-inserter"].fast_replaceable_group = "inserter"
 data.raw.item["burner-inserter"].next_upgrade = "basic-inserter"

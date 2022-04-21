@@ -7,17 +7,16 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner",
-	icons = {
-	  {
-		icon = "__base__/graphics/icons/satellite.png",
+	  icons = {
+	    {
+		    icon = "__base__/graphics/icons/satellite.png",
+	    },
 	  },
-	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."satellites-1",
     order = "0",
     stack_size = 1,
-    rocket_launch_products = 
-	{
+    rocket_launch_products = {
       {type = "item", name = "titanium-ore-impure", amount_min = 1, amount_max = 1000, probability = 0.05},
       {type = "item", name = "iron-ore-impure", amount_min = 1, amount_max = 1000, probability = 0.125},
       {type = "item", name = "copper-ore-impure", amount_min = 1, amount_max = 1000, probability = 0.135},
@@ -38,126 +37,65 @@ data:extend({
       {type = "item", name = "ilmenite", amount_min = 1, amount_max = 1000, probability = 0.085},
       {type = "item", name = "biotite", amount_min = 1, amount_max = 1000, probability = 0.06},
       {type = "item", name = "sand", amount_min = 1, amount_max = 5000, probability = 0.09},
-	},
+	  },
   },
 	----- uranium Ores -----
   {
     type = "item",
     name = "asteroid-miner-uranium",
-	icons = {
-	  {
-		icon = "__base__/graphics/icons/satellite.png",
-	  },
-	  {
-		icon = data.raw.item["uranium-ore"].icon,
-		scale = 0.25,
-		shift = {-8, 9},
-	  },
-	},
+    icons = {
+      {
+        icon = "__base__/graphics/icons/satellite.png",
+      },
+      {
+        icon = data.raw.item["uranium-ore"].icon,
+        scale = 0.25,
+        shift = {-8, 9},
+      },
+    },
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."satellites-1",
     order = "1",
     stack_size = 1,
-    rocket_launch_products = 
-	{
-      {type = "item", name = "uranium-ore", amount_min = 1, amount_max = 1000},
-	},
   },
 	----- Stones -----
   {
     type = "item",
     name = "asteroid-miner-stone",
-	icons = {
-	  {
-		icon = "__base__/graphics/icons/satellite.png",
+    icons = {
+      {
+        icon = "__base__/graphics/icons/satellite.png",
+      },
+      {
+        icon = data.raw.tool["limestone"].icons[1].icon,
+        tint = data.raw.tool["limestone"].icons[1].tint,
+        scale = 0.25,
+        shift = {-8, 9},
+      },
 	  },
-	  {
-		icon = data.raw.tool["limestone"].icons[1].icon,
-		tint = data.raw.tool["limestone"].icons[1].tint,
-		scale = 0.25,
-		shift = {-8, 9},
-	  },
-	},
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."satellites-1",
     order = "1",
     stack_size = 1,
-    rocket_launch_products = 
-	{
-      {type = "item", name = "limestone", amount_min = 500, amount_max = 2000, probability = 0.75},
-      {type = "item", name = "quartzite", amount_min = 50, amount_max = 1000, probability = 0.75},
-      {type = "item", name = "granite", amount_min = 25, amount_max = 1000, probability = 0.75},
-      {type = "item", name = "sandstone", amount_min = 100, amount_max = 1000, probability = 0.75},
-	},
   },
 	----- Coals -----
   {
     type = "item",
-    name = "asteroid-miner-coal-1",
-	icons = {
-	  {
-		icon = "__base__/graphics/icons/satellite.png",
-	  },
-	  {
-		icon = data.raw.tool["coal"].icon,
-		scale = 0.25,
-		shift = {-8, 9},
-	  },
-	},
+    name = "asteroid-miner-coal",
+	  icons = {
+      {
+        icon = "__base__/graphics/icons/satellite.png",
+      },
+      {
+        icon = data.raw.tool["coal"].icon,
+        scale = 0.25,
+        shift = {-8, 9},
+      },
+    },
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."satellites-1",
     order = "1",
     stack_size = 1,
-    rocket_launch_products = 
-	{
-      {type = "item", name = "lignite", amount_min = 250, amount_max = 1000},
-      {type = "item", name = "coal", amount_min = 50, amount_max = 1000},
-	},
-  },
-  {
-    type = "item",
-    name = "asteroid-miner-coal-2",
-	icons = {
-	  {
-		icon = "__base__/graphics/icons/satellite.png",
-	  },
-	  {
-		icon = data.raw.item["lignite"].icons[1].icon,
-		tint = data.raw.item["lignite"].icons[1].tint,
-		scale = 0.25,
-		shift = {-8, 9},
-	  },
-	},
-    icon_size = 64, icon_mipmaps = 4,
-    subgroup = DyDs.."satellites-1",
-    order = "1",
-    stack_size = 1,
-    rocket_launch_products = 
-	{
-      {type = "item", name = "lignite", amount_min = 250, amount_max = 1000},
-	},
-  },
-  {
-    type = "item",
-    name = "asteroid-miner-coal-3",
-	icons = {
-	  {
-		icon = "__base__/graphics/icons/satellite.png",
-	  },
-	  {
-		icon = data.raw.tool["coal"].icon,
-		scale = 0.25,
-		shift = {-8, 9},
-	  },
-	},
-    icon_size = 64, icon_mipmaps = 4,
-    subgroup = DyDs.."satellites-1",
-    order = "1",
-    stack_size = 1,
-    rocket_launch_products = 
-	{
-      {type = "item", name = "coal", amount_min = 50, amount_max = 1000},
-	},
   },
 })
 
@@ -166,27 +104,22 @@ data:extend({
   {
     type = "item",
     name = "asteroid-miner-"..k,
-	localised_name = {"looped-name.asteroid-miner-1", {"looped-name."..k}},
-	icons = {
-	  {
-		icon = "__base__/graphics/icons/satellite.png",
-	  },
-	  {
-		icon = DyDs_path_icon.."ores/pure-ore.png",
-		tint = Dy_Metal_Colors[k],
-		scale = 0.25,
-		shift = {-8, 9},
-	  },
-	},
+  	localised_name = {"looped-name.asteroid-miner-1", {"looped-name."..k}},
+	  icons = {
+      {
+        icon = "__base__/graphics/icons/satellite.png",
+      },
+      {
+        icon = DyDs_path_icon.."ores/pure-ore.png",
+        tint = Dy_Metal_Colors[k],
+        scale = 0.25,
+        shift = {-8, 9},
+      },
+    },
     icon_size = 64, icon_mipmaps = 4,
     subgroup = DyDs.."satellites-1",
     order = "1",
     stack_size = 1,
-    rocket_launch_products = 
-	{
-      {type = "item", name = k.."-ore-impure", amount_min = 1, amount_max = 1000, probability = 0.99},
-      {type = "item", name = k.."-ore", amount_min = 1, amount_max = 1000, probability = 0.99},
-	},
   },
 })
 end

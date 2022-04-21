@@ -264,8 +264,8 @@ function Event_on_research_finished(event)
 	end
 	if not global.dyworld.game_stats.space_mining then
 		global.dyworld.game_stats.space_mining = {}
-		for k,v in pairs(Dy_Metals) do
-			global.dyworld.game_stats.space_mining[k] = {efficiency = 1, pure_rate = debugger and 5 or 0, pure_mined = 0, pure_storage = 100, impure_rate = debugger and 45 or 0, impure_mined = 0, impure_storage = 900, tier = v.Tier}
+		for k,v in pairs(Space_Mining) do
+			global.dyworld.game_stats.space_mining[v.Ore] = {efficiency = 1, pure_rate = debugger and 5 or 0, pure_mined = 0, pure_storage = 100, impure_rate = debugger and 45 or 0, impure_mined = 0, impure_storage = 900, tier = v.Tier}
 		end
 	end
 	if Dy_Find_Str(name, "space-mining-storage-") then
@@ -376,11 +376,11 @@ function Event_on_rocket_launched(event)
 	
 	-- Mining Network --
 	for k,v in pairs(contents) do
-		if Dy_Find_Str(k, "advanced-asteroid-miner-") then
-			for Name,Table in pairs(Dy_Metals) do
-				if Dy_Find_Str(k, Name) then
-					global.dyworld.game_stats.space_mining[Name].pure_rate = global.dyworld.game_stats.space_mining[Name].pure_rate + (0.05 * v)
-					global.dyworld.game_stats.space_mining[Name].impure_rate = global.dyworld.game_stats.space_mining[Name].impure_rate + (0.45 * v)
+		if Dy_Find_Str(k, "asteroid-miner-") then
+			for Name,Table in pairs(Space_Mining) do
+				if Dy_Find_Str(k, Table.Ore) then
+					global.dyworld.game_stats.space_mining[Table.Ore].pure_rate = global.dyworld.game_stats.space_mining[Table.Ore].pure_rate + ((Table.Amount * 0.1) * v)
+					global.dyworld.game_stats.space_mining[Table.Ore].impure_rate = global.dyworld.game_stats.space_mining[Table.Ore].impure_rate + ((Table.Amount * 0.9) * v)
 				end
 			end
 		end

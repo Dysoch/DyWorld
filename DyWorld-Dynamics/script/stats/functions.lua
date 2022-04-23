@@ -57,6 +57,11 @@ function Bonuses(id)
 				achievements = 0,
 				total = 0,
 			}
+			if v == "mining" then
+				global.dyworld.players[id].bonuses[v].native = -0.5
+			elseif v == "crafting" then
+				global.dyworld.players[id].bonuses[v].native = -0.25
+			end
 		end
 	end
 
@@ -118,6 +123,12 @@ function Bonuses(id)
 		local attri_P = strength + constitution + dexterity
 		local attri_W = intelligence + wisdom + charisma
 		local attri_A = attri_W + attri_P
+
+		for k,v in pairs(global.dyworld.players[id].bonuses) do
+			local count = 0
+			count = v.native + v.research + v.stats + v.implants + v.achievements
+			v.total = count
+		end
 		
 		----- Bonuses -----
 		if mined >= 2 then

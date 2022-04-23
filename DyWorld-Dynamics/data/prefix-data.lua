@@ -18,11 +18,11 @@ Tier_4 = {0, 255, 255}
 Tier_5 = {0, 0, 255}
 
 Tier_Colors = {
-	[1] = {255, 255, 0},
-	[2] = {255, 165, 0},
-	[3] = {255, 0, 0},
-	[4] = {0, 255, 255},
-	[5] = {0, 0, 255},
+	[1] = Tier_1,
+	[2] = Tier_2,
+	[3] = Tier_3,
+	[4] = Tier_4,
+	[5] = Tier_5,
 }
 
 Science_Colors = {
@@ -631,4 +631,26 @@ Dy_Walls = {
 		Tier = 8,
 		Control_Tier = 5,
 	},
+}
+
+Dy_Bonuses_Player = {
+	"mining",
+	"crafting",
+	"health",
+	"inventory",
+	"reach_distance",
+	"build-distance",
+	"loot-distance",
+	"run-speed",
+	"item-drop-distance",
+	"item-pickup-distance",
+	"max-robot-count",
+}
+
+Dy_Bonuses_Game = {
+	"lab-speed",
+	"lab-productivity",
+	"inserter-bonus",
+	"ghost-timer",
+	"robot-timer",
 }

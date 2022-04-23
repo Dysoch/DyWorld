@@ -47,6 +47,19 @@ function Bonuses(id)
 	
 	if not global.dyworld.players[id].bonus_toggle then global.dyworld.players[id].bonus_toggle = {} end
 	
+	for k,v in pairs(Dy_Bonuses_Player) do
+		if not global.dyworld.players[id].bonuses[v] then
+			global.dyworld.players[id].bonuses[v] = {
+				native = 0,
+				stats = 0,
+				implants = 0,
+				research = 0,
+				achievements = 0,
+				total = 0,
+			}
+		end
+	end
+
 		----- Players -----
 	local playeramount = global.dyworld.game_stats.players
 	

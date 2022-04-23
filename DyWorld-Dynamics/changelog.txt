@@ -3,7 +3,7 @@ Version: 0.3.0
 Date: ???
   Features:
     - New fluids and gases added. Currently mostly unused
-    - Added in a few achievements, wont work in scenario for now
+    - Added in a few achievements, wont work in scenario for now (working on making story work without scenario as well)
     - Story GUI now only updates when it is worth updating (when an objective is progressing or is completed)
     - N/A
   Minor Features:

@@ -12,6 +12,7 @@ function Event_on_entity_died(event)
             local id = killer.player.index
             ----- Personal counter -----
             global.dyworld.players[id].killed = global.dyworld.players[id].killed + 1
+			global.dyworld.players[id].xp = global.dyworld.players[id].xp + 1
         end
 	end
 	

@@ -59,6 +59,7 @@ function Event_on_built_entity(event)
 	
 	----- Personal counter -----
 	global.dyworld.players[id].build = global.dyworld.players[id].build + 1
+	global.dyworld.players[id].xp = global.dyworld.players[id].xp + 0.2
 	global.dyworld.game_stats.build_amount = global.dyworld.game_stats.build_amount + 1
 	
 	----- Building Placement -----

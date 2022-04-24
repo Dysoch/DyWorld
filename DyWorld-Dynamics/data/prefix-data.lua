@@ -634,23 +634,23 @@ Dy_Walls = {
 }
 
 Dy_Bonuses_Player = {
-	["mining"] = 0.5,
-	["crafting"] = 0.75,
-	["health"] = 25,
-	["inventory"] = 2,
-	["reach_distance"] = 0.5,
-	["build-distance"] = 0.5,
-	["loot-distance"] = 0.5,
-	["run-speed"] = 0.1,
-	["item-drop-distance"] = 0.5,
-	["item-pickup-distance"] = 0.3,
-	["max-robot-count"] = 3,
+	["mining"] = {death = 0.5, level = 2.5},
+	["crafting"] = {death = 0.75, level = 5},
+	["health"] = {death = 25, level = 500},
+	["inventory"] = {death = 2, level = 10},
+	["reach-distance"] = {death = 0.5, level = 2},
+	["build-distance"] = {death = 0.5, level = 2},
+	["loot-distance"] = {death = 0.5, level = 1},
+	["run-speed"] = {death = 0.1, level = 0.25},
+	["item-drop-distance"] = {death = 0.5, level = 2},
+	["item-pickup-distance"] = {death = 0.3, level = 2},
+	["max-robot-count"] = {death = 3, level = 40},
 }
 
 Dy_Bonuses_Game = {
-	["lab-speed"] = 1,
-	["lab-productivity"] = 1,
-	["inserter-bonus"] = 2.5,
-	["ghost-timer"] = 50,
-	["robot-timer"] = 25,
+	["lab-speed"] = {death = 1, level = 1},
+	["lab-productivity"] = {death = 1, level = 5},
+	["inserter-bonus"] = {death = 2.5, level = 2},
+	["ghost-timer"] = {death = 50, level = 500},
+	["robot-timer"] = {death = 25, level = 5},
 }

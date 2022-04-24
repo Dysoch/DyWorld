@@ -67,6 +67,16 @@ function Bonuses(id)
 		end
 	end
 
+		----- Level check -----
+	local XP = global.dyworld.players[id].xp or 1
+	local XP_Needed = global.dyworld.players[id].xp_levelup or 1
+	if XP >= XP_Needed then
+		global.dyworld.players[id].level = global.dyworld.players[id].level + 1
+		global.dyworld.players[id].xp = global.dyworld.players[id].xp - global.dyworld.players[id].xp_levelup
+		global.dyworld.players[id].xp_levelup = global.dyworld.players[id].xp_levelup * (1.25 + (math.random()))
+	end
+	local Level = global.dyworld.players[id].level or 1 --Level
+
 		----- Players -----
 	local playeramount = global.dyworld.game_stats.players
 	
@@ -129,7 +139,7 @@ function Bonuses(id)
 		
 		for k,v in pairs(Dy_Bonuses_Player) do
 			if death_player >= 1 then
-				global.dyworld.players[id].bonuses_player[k].death = death_player * v
+				global.dyworld.players[id].bonuses_player[k].death = death_player * v.death
 			end
 		end
 
@@ -140,6 +150,39 @@ function Bonuses(id)
 		end
 		
 		----- Bonuses -----
+		if global.dyworld.players[id].bonuses_player["mining"].enabled then
+			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["mining"].total, 2)
+		end
+		if global.dyworld.players[id].bonuses_player["crafting"].enabled then
+
+		end
+		if global.dyworld.players[id].bonuses_player["health"].enabled then
+
+		end
+		if global.dyworld.players[id].bonuses_player["inventory"].enabled then
+
+		end
+		if global.dyworld.players[id].bonuses_player["reach-distance"].enabled then
+
+		end
+		if global.dyworld.players[id].bonuses_player["build-distance"].enabled then
+
+		end
+		if global.dyworld.players[id].bonuses_player["loot-distance"].enabled then
+
+		end
+		if global.dyworld.players[id].bonuses_player["run-speed"].enabled then
+
+		end
+		if global.dyworld.players[id].bonuses_player["item-drop-distance"].enabled then
+
+		end
+		if global.dyworld.players[id].bonuses_player["item-pickup-distance"].enabled then
+
+		end
+		if global.dyworld.players[id].bonuses_player["max-robot-count"].enabled then
+
+		end
 		if mined >= 2 then
 			if not global.dyworld.players[id].bonus_toggle.mining then global.dyworld.players[id].bonus_toggle.mining = true end
 			local form = Round(((mined + attri_P) / 7500), 2)

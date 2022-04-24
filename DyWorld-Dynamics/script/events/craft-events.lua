@@ -18,6 +18,7 @@ function Event_on_player_crafted_item(event)
 		
 		----- Personal counter -----
 		global.dyworld.players[id].crafted = global.dyworld.players[id].crafted + count
+		global.dyworld.players[id].xp = global.dyworld.players[id].xp + (count * 0.1)
 		global.dyworld.game_stats.crafted_amount = global.dyworld.game_stats.crafted_amount + count
 		
 		if global.dyworld_story and not global.dyworld.game_stats.story_pause then

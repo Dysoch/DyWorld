@@ -634,23 +634,23 @@ Dy_Walls = {
 }
 
 Dy_Bonuses_Player = {
-	"mining",
-	"crafting",
-	"health",
-	"inventory",
-	"reach_distance",
-	"build-distance",
-	"loot-distance",
-	"run-speed",
-	"item-drop-distance",
-	"item-pickup-distance",
-	"max-robot-count",
+	["mining"] = 0.5,
+	["crafting"] = 0.75,
+	["health"] = 25,
+	["inventory"] = 2,
+	["reach_distance"] = 0.5,
+	["build-distance"] = 0.5,
+	["loot-distance"] = 0.5,
+	["run-speed"] = 0.1,
+	["item-drop-distance"] = 0.5,
+	["item-pickup-distance"] = 0.3,
+	["max-robot-count"] = 3,
 }
 
 Dy_Bonuses_Game = {
-	"lab-speed",
-	"lab-productivity",
-	"inserter-bonus",
-	"ghost-timer",
-	"robot-timer",
+	["lab-speed"] = 1,
+	["lab-productivity"] = 1,
+	["inserter-bonus"] = 2.5,
+	["ghost-timer"] = 50,
+	["robot-timer"] = 25,
 }

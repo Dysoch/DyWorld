@@ -48,19 +48,21 @@ function Bonuses(id)
 	if not global.dyworld.players[id].bonus_toggle then global.dyworld.players[id].bonus_toggle = {} end
 	
 	for k,v in pairs(Dy_Bonuses_Player) do
-		if not global.dyworld.players[id].bonuses[v] then
-			global.dyworld.players[id].bonuses[v] = {
+		if not global.dyworld.players[id].bonuses_player[k] then
+			global.dyworld.players[id].bonuses_player[k] = {
 				native = 0,
 				stats = 0,
 				implants = 0,
 				research = 0,
 				achievements = 0,
+				death = 0,
+				enabled = false,
 				total = 0,
 			}
-			if v == "mining" then
-				global.dyworld.players[id].bonuses[v].native = -0.5
-			elseif v == "crafting" then
-				global.dyworld.players[id].bonuses[v].native = -0.25
+			if k == "mining" then
+				global.dyworld.players[id].bonuses_player[v].native = -0.5
+			elseif k == "crafting" then
+				global.dyworld.players[id].bonuses_player[v].native = -0.25
 			end
 		end
 	end
@@ -78,6 +80,7 @@ function Bonuses(id)
 	local distance = global.dyworld.players[id].distance or 1 -- Distance
 	local distance_car = global.dyworld.players[id].distance_car or 1 -- Distance
 	local distance_train = global.dyworld.players[id].distance_train or 1 -- Distance
+	local death_player = global.dyworld.players[id].died or 1 --Death counter
 	
 		----- Food Stats -----
 	local food_per = Round(((global.dyworld.players[id].food/global.dyworld.players[id].food_max) * 100), 2)
@@ -123,10 +126,16 @@ function Bonuses(id)
 		local attri_P = strength + constitution + dexterity
 		local attri_W = intelligence + wisdom + charisma
 		local attri_A = attri_W + attri_P
+		
+		for k,v in pairs(Dy_Bonuses_Player) do
+			if death_player >= 1 then
+				global.dyworld.players[id].bonuses_player[k].death = death_player * v
+			end
+		end
 
-		for k,v in pairs(global.dyworld.players[id].bonuses) do
+		for k,v in pairs(global.dyworld.players[id].bonuses_player) do
 			local count = 0
-			count = v.native + v.research + v.stats + v.implants + v.achievements
+			count = v.native + v.research + v.stats + v.implants + v.achievements + v.death
 			v.total = count
 		end
 		

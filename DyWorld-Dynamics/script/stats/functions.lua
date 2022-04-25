@@ -137,68 +137,26 @@ function Bonuses(id)
 		local attri_W = intelligence + wisdom + charisma
 		local attri_A = attri_W + attri_P
 		
-		for k,v in pairs(Dy_Bonuses_Player) do
-			if death_player >= 1 then
-				global.dyworld.players[id].bonuses_player[k].death = death_player * v.death
-			end
-		end
-
-		for k,v in pairs(global.dyworld.players[id].bonuses_player) do
-			local count = 0
-			count = v.native + v.research + v.stats + v.implants + v.achievements + v.death
-			v.total = count
-		end
-		
-		----- Bonuses -----
-		if global.dyworld.players[id].bonuses_player["mining"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["mining"].total, 2)
-		end
-		if global.dyworld.players[id].bonuses_player["crafting"].enabled then
-			game.players[id].character_crafting_speed_modifier = Round(global.dyworld.players[id].bonuses_player["crafting"].total, 2)
-		end
-		if global.dyworld.players[id].bonuses_player["health"].enabled then
-			game.players[id].character_health_bonus = Round(global.dyworld.players[id].bonuses_player["health"].total, 0)
-		end
-		if global.dyworld.players[id].bonuses_player["inventory"].enabled then
-			game.players[id].character_inventory_slots_bonus = math.min(Round(global.dyworld.players[id].bonuses_player["inventory"].total, 0), 980)
-		end
-		if global.dyworld.players[id].bonuses_player["reach-distance"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["reach-distance"].total, 2)
-		end
-		if global.dyworld.players[id].bonuses_player["build-distance"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["build-distance"].total, 2)
-		end
-		if global.dyworld.players[id].bonuses_player["loot-distance"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["loot-distance"].total, 2)
-		end
-		if global.dyworld.players[id].bonuses_player["run-speed"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["run-speed"].total, 2)
-		end
-		if global.dyworld.players[id].bonuses_player["item-drop-distance"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["item-drop-distance"].total, 2)
-		end
-		if global.dyworld.players[id].bonuses_player["item-pickup-distance"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["item-pickup-distance"].total, 2)
-		end
-		if global.dyworld.players[id].bonuses_player["max-robot-count"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["max-robot-count"].total, 2)
-		end
-
+		----- Bonuses Calculation -----
+		-- Mining --
 		if mined >= 2 then
 			if not global.dyworld.players[id].bonus_toggle.mining then global.dyworld.players[id].bonus_toggle.mining = true end
 			local form = Round(((mined + attri_P) / 7500), 2)
 			game.players[id].character_mining_speed_modifier = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
 		end
+		-- Crafting --
 		if crafted >= 2 then
 			if not global.dyworld.players[id].bonus_toggle.crafting then global.dyworld.players[id].bonus_toggle.crafting = true end
 			local form = Round(((crafted + attri_A) / 5000), 2)
 			game.players[id].character_crafting_speed_modifier = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
 		end
+		-- Health --
 		if glokilled >= 2 then
 			if not global.dyworld.players[id].bonus_toggle.health then global.dyworld.players[id].bonus_toggle.health = true end
 			local form = Round(((glokilled + attri_A) / 500), 2)
 			game.players[id].character_health_bonus = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
 		end
+		-- Inventory --
 		if attri_P >= 5 then
 			if not global.dyworld.players[id].bonus_toggle.inventory then global.dyworld.players[id].bonus_toggle.inventory = true end
 			local form = math.min((Round((attri_P / 2.5), 0)), 980)
@@ -224,6 +182,7 @@ function Bonuses(id)
 			local form = Round(((picked + attri_A) / 5000), 2)
 			game.players[id].character_loot_pickup_distance_bonus = math.min(Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2), (100 - game.entity_prototypes["character"].loot_pickup_distance))
 		end
+		-- Food/Water --
 		if constitution >= 5 then
 			if not global.dyworld.players[id].survival then global.dyworld.players[id].survival = {} end
 			local Survival = global.dyworld.players[id].survival
@@ -238,6 +197,54 @@ function Bonuses(id)
 				Survival["constitution"] = Survival["constitution"] + 5
 			end	
 		end
+		----- Bonuses Final Calculation -----
+		for k,v in pairs(Dy_Bonuses_Player) do
+			if death_player >= 1 then
+				global.dyworld.players[id].bonuses_player[k].death = death_player * v.death
+			end
+		end
+
+		for k,v in pairs(global.dyworld.players[id].bonuses_player) do
+			local count = 0
+			count = v.native + v.research + v.stats + v.implants + v.achievements + v.death
+			v.total = count
+		end
+
+		----- Bonuses Additions If Unlocked-----
+		if global.dyworld.players[id].bonuses_player["mining"].enabled then
+			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["mining"].total, 2)
+		end
+		if global.dyworld.players[id].bonuses_player["crafting"].enabled then
+			game.players[id].character_crafting_speed_modifier = Round(global.dyworld.players[id].bonuses_player["crafting"].total, 2)
+		end
+		if global.dyworld.players[id].bonuses_player["health"].enabled then
+			game.players[id].character_health_bonus = Round(global.dyworld.players[id].bonuses_player["health"].total, 0)
+		end
+		if global.dyworld.players[id].bonuses_player["inventory"].enabled then
+			game.players[id].character_inventory_slots_bonus = math.min(Round(global.dyworld.players[id].bonuses_player["inventory"].total, 0), 980)
+		end
+		if global.dyworld.players[id].bonuses_player["reach-distance"].enabled then
+			game.players[id].character_reach_distance_bonus = math.min(Round(global.dyworld.players[id].bonuses_player["reach-distance"].total, 2), (100 - game.entity_prototypes["character"].reach_distance))
+		end
+		if global.dyworld.players[id].bonuses_player["build-distance"].enabled then
+			game.players[id].character_build_distance_bonus = math.min(Round(global.dyworld.players[id].bonuses_player["build-distance"].total, 2), (100 - game.entity_prototypes["character"].build_distance))
+		end
+		if global.dyworld.players[id].bonuses_player["loot-distance"].enabled then
+			game.players[id].character_loot_pickup_distance_bonus = math.min(Round(global.dyworld.players[id].bonuses_player["loot-distance"].total, 2), (100 - game.entity_prototypes["character"].loot_pickup_distance))
+		end
+		if global.dyworld.players[id].bonuses_player["run-speed"].enabled then
+			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["run-speed"].total, 2)
+		end
+		if global.dyworld.players[id].bonuses_player["item-drop-distance"].enabled then
+			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["item-drop-distance"].total, 2)
+		end
+		if global.dyworld.players[id].bonuses_player["item-pickup-distance"].enabled then
+			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["item-pickup-distance"].total, 2)
+		end
+		if global.dyworld.players[id].bonuses_player["max-robot-count"].enabled then
+			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["max-robot-count"].total, 2)
+		end
+
 		--[[
 			game.players[id].character_running_speed_modifier
 			game.players[id].character_item_drop_distance_bonus

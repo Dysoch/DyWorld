@@ -76,6 +76,7 @@ function Bonuses(id)
 		global.dyworld.players[id].xp_levelup = global.dyworld.players[id].xp_levelup * (1.25 + (math.random()))
 	end
 	local Level = global.dyworld.players[id].level or 1 --Level
+	local glolevel = global.dyworld.players[id].level or 1 -- global level, to add in
 
 		----- Players -----
 	local playeramount = global.dyworld.game_stats.players

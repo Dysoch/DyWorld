@@ -260,5 +260,52 @@ Implants  = {
 
 
 DyWorld_Implants = {
-	
+	["bonus-player"] = {
+		["mining"] = 1,
+		["crafting"] = 1,
+		["health"] = 1,
+		["inventory"] = 1,
+		["reach-distance"] = 1,
+		["build-distance"] = 1,
+		["loot-distance"] = 1,
+		["run-speed"] = 1,
+		["item-drop-distance"] = 1,
+		["item-pickup-distance"] = 1,
+		["max-robot-count"] = 1,
+	},
+	["bonus-game"] = {
+		["lab-speed"] = 1,
+		["lab-productivity"] = 1,
+		["inserter-bonus"] = 1,
+		["ghost-timer"] = 1,
+		["robot-timer"] = 1,
+	},
+	["mining-bonus"] ={
+		[1] = 0.2,
+		[2] = 0.5,
+		[3] = 1,
+		[4] = 2,
+		[5] = 5,
+	},
+	["crafting-bonus"] ={
+		[1] = 0.1,
+		[2] = 0.25,
+		[3] = 0.5,
+		[4] = 1,
+		[5] = 2.5,
+	},
+	["health-bonus"] ={
+		[1] = 15,
+		[2] = 75,
+		[3] = 400,
+		[4] = 1800,
+		[5] = 5000,
+	},
+	["inventory-bonus"] ={
+		[1] = 1,
+		[2] = 1.75,
+		[3] = 3,
+		[4] = 5,
+		[5] = 10,
+	},
 }

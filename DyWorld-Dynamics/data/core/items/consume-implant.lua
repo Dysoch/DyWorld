@@ -126,3 +126,17 @@ end
 		subgroup = DyDs.."consume-implant",
 		rate = 1,
 	})
+
+	----- Much more improved implants -----
+for k1,v1 in pairs(DyWorld_Implants) do
+	for k2,v2 in pairs(v1) do
+		DyDS_Add_Food({
+			name = "implant-"..k1.."-"..k2,
+			icons = {{icon = DyDs_path_icon.."implant.png"}},
+			order = "implant-"..k1.."-"..k2,
+			stack_size = 1,
+			subgroup = DyDs.."consume-implant",
+			rate = 1,
+		})
+	end
+end

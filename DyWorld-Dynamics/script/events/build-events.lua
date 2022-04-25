@@ -30,9 +30,11 @@ function Event_on_player_used_capsule(event)
 	
 	if not global.dyworld.players[id].implants then global.dyworld.players[id].implants = {} end
 	if not global.dyworld.players[id].implants_used then global.dyworld.players[id].implants_used = 0 end
-	if Implants[name] then
-		global.dyworld.players[id].implants_used = global.dyworld.players[id].implants_used + 1
-		Implant_Check(id, name)
+	for k,v in pairs(DyWorld_Implants) do
+		if Dy_Find_Str(name, k) then
+			global.dyworld.players[id].implants_used = global.dyworld.players[id].implants_used + 1
+			Implant_Check(id, name)
+		end
 	end
 end
 

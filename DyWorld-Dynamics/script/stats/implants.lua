@@ -9,115 +9,33 @@ function Reset_Implants()
     end
 end
 
-function Implant_Check(id, implant, death)
-	if implant == nil then
-		if not global.dyworld.players[id].implants then
-            global.dyworld.players[id].implants = {}
-            for k,v in pairs(Implants) do
-                global.dyworld.players[id].implants[k] = {enabled = false, amount = 0}
-            end
-        end
-	end
-	if implant ~= nil then
-		if not Implants[implant].type then error("No Type found in implant "..implant) end
-		if not global.dyworld.players[id].implants then
-            global.dyworld.players[id].implants = {}
-            for k,v in pairs(Implants) do
-                global.dyworld.players[id].implants[k] = {enabled = false, amount = 0}
-            end
-        end
-		if not global.dyworld.players[id].implants[implant] then global.dyworld.players[id].implants[implant] = {enabled = false, amount = 0} end
-		if global.dyworld.players[id].implants[implant].enabled == false then
-			Implant_Add(id, implant)
-        elseif global.dyworld.players[id].implants[implant].enabled == true then
-			Implant_Remove(id, implant)
-		end
-        global.dyworld.players[id].implants[implant].amount = global.dyworld.players[id].implants[implant].amount + 1
-	end
-	if death then
-		if not global.dyworld.players[id].implants then
-            global.dyworld.players[id].implants = {}
-            for k,v in pairs(Implants) do
-                global.dyworld.players[id].implants[k] = {enabled = false, amount = 0}
-            end
-        end
-		--if not Table_Empty(global.dyworld.players[id].implants) then
-			for k,v in pairs(global.dyworld.players[id].implants) do
-				if v.enabled == true then
-					Implant_Remove(id, k)
+function Implant_Check(id, implant)
+	if Dy_Find_Str(implant, "bonus-player") then
+		for k,v in pairs(DyWorld_Implants["bonus-player"]) do
+			if Dy_Find_Str(implant, k) then
+				if global.dyworld.players[id].bonuses_player[k].enabled then
+					global.dyworld.players[id].bonuses_player[k].enabled = false
+				else
+					global.dyworld.players[id].bonuses_player[k].enabled = true
 				end
 			end
-		--end
-	end
-end
-
-function Implant_Add(id, implant)
-	if Implants[implant].type == "use-rate" then
-		global.dyworld.players[id].implants[implant].enabled = true
-		global.dyworld.players[id].water_rate = global.dyworld.players[id].water_rate + Implants[implant].Water_Usage
-		global.dyworld.players[id].food_rate = global.dyworld.players[id].food_rate + Implants[implant].Food_Usage
-	elseif Implants[implant].type == "attribute" then
-		global.dyworld.players[id].implants[implant].enabled = true
-		if Implants[implant].Name == "strength" then
-			global.dyworld.players[id].implant_strength = global.dyworld.players[id].implant_strength + Implants[implant].Amount
-		elseif Implants[implant].Name == "constitution" then
-			global.dyworld.players[id].implant_constitution = global.dyworld.players[id].implant_constitution + Implants[implant].Amount
-		elseif Implants[implant].Name == "dexterity" then
-			global.dyworld.players[id].implant_dexterity = global.dyworld.players[id].implant_dexterity + Implants[implant].Amount
-		elseif Implants[implant].Name == "intelligence" then
-			global.dyworld.players[id].implant_intelligence = global.dyworld.players[id].implant_intelligence + Implants[implant].Amount
-		elseif Implants[implant].Name == "wisdom" then
-			global.dyworld.players[id].implant_wisdom = global.dyworld.players[id].implant_wisdom + Implants[implant].Amount
-		elseif Implants[implant].Name == "charisma" then
-			global.dyworld.players[id].implant_charisma = global.dyworld.players[id].implant_charisma + Implants[implant].Amount
 		end
-	elseif Implants[implant].type == "running-speed" then
-		global.dyworld.players[id].implants[implant].enabled = true
-		if game.players[id].character then
-			game.players[id].character_running_speed_modifier = game.players[id].character_running_speed_modifier + Implants[implant].Amount
+	elseif Dy_Find_Str(implant, "bonus-game") then
+		for k,v in pairs(DyWorld_Implants["bonus-game"]) do
+			if Dy_Find_Str(implant, k) then
+				
+			end
 		end
-	elseif Implants[implant].type == "death-keep" then
-		global.dyworld.players[id].implants[implant].enabled = true
-		global.dyworld.players[id].death_reduce = global.dyworld.players[id].death_reduce + Implants[implant].Amount
-	elseif Implants[implant].type == "auto-food" then
-		global.dyworld.players[id].implants[implant].enabled = true
-	elseif Implants[implant].type == "auto-health" then
-		global.dyworld.players[id].implants[implant].enabled = true
-	end
-end
-
-function Implant_Remove(id, implant)
-	if Implants[implant].type == "use-rate" then
-		global.dyworld.players[id].implants[implant].enabled = false
-		global.dyworld.players[id].water_rate = global.dyworld.players[id].water_rate - Implants[implant].Water_Usage
-		global.dyworld.players[id].food_rate = global.dyworld.players[id].food_rate - Implants[implant].Food_Usage
-	elseif Implants[implant].type == "attribute" then
-		global.dyworld.players[id].implants[implant].enabled = false
-		if Implants[implant].name == "strength" then
-			global.dyworld.players[id].implant_strength = global.dyworld.players[id].implant_strength - Implants[implant].Amount
-		elseif Implants[implant].name == "constitution" then
-			global.dyworld.players[id].implant_constitution = global.dyworld.players[id].implant_constitution - Implants[implant].Amount
-		elseif Implants[implant].name == "dexterity" then
-			global.dyworld.players[id].implant_dexterity = global.dyworld.players[id].implant_dexterity - Implants[implant].Amount
-		elseif Implants[implant].name == "intelligence" then
-			global.dyworld.players[id].implant_intelligence = global.dyworld.players[id].implant_intelligence - Implants[implant].Amount
-		elseif Implants[implant].name == "wisdom" then
-			global.dyworld.players[id].implant_wisdom = global.dyworld.players[id].implant_wisdom - Implants[implant].Amount
-		elseif Implants[implant].name == "charisma" then
-			global.dyworld.players[id].implant_charisma = global.dyworld.players[id].implant_charisma - Implants[implant].Amount
+	else
+		for k1,v1 in pairs(DyWorld_Implants) do
+			if Dy_Find_Str(implant, k1) then
+				for k2,v2 in pairs(v1) do
+					if Dy_Find_Str(implant, k2) then
+						global.dyworld.players[id].bonuses_player[k1].implants = global.dyworld.players[id].bonuses_player[k1].implants + v2
+					end
+				end
+			end
 		end
-	elseif Implants[implant].type == "running-speed" then
-		global.dyworld.players[id].implants[implant].enabled = false
-		if game.players[id].character then
-			game.players[id].character_running_speed_modifier = game.players[id].character_running_speed_modifier - Implants[implant].Amount
-		end
-	elseif Implants[implant].type == "death-keep" then
-		global.dyworld.players[id].implants[implant].enabled = false
-		global.dyworld.players[id].death_reduce = global.dyworld.players[id].death_reduce - Implants[implant].Amount
-	elseif Implants[implant].type == "auto-food" then
-		global.dyworld.players[id].implants[implant].enabled = false
-	elseif Implants[implant].type == "auto-health" then
-		global.dyworld.players[id].implants[implant].enabled = false
 	end
 end
 

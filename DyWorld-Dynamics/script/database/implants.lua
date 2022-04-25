@@ -280,28 +280,28 @@ DyWorld_Implants = {
 		["ghost-timer"] = 1,
 		["robot-timer"] = 1,
 	},
-	["mining-bonus"] ={
+	["mining"] ={
 		[1] = 0.2,
 		[2] = 0.5,
 		[3] = 1,
 		[4] = 2,
 		[5] = 5,
 	},
-	["crafting-bonus"] ={
+	["crafting"] ={
 		[1] = 0.1,
 		[2] = 0.25,
 		[3] = 0.5,
 		[4] = 1,
 		[5] = 2.5,
 	},
-	["health-bonus"] ={
+	["health"] ={
 		[1] = 15,
 		[2] = 75,
 		[3] = 400,
 		[4] = 1800,
 		[5] = 5000,
 	},
-	["inventory-bonus"] ={
+	["inventory"] ={
 		[1] = 1,
 		[2] = 1.75,
 		[3] = 3,

@@ -102,6 +102,12 @@ function Bonuses(id)
 	local globuilt = global.dyworld.game_stats.build_amount or 1 -- Global Built
 	local glokilled = global.dyworld.game_stats.killed_amount or 1 -- Global Killed
 	local glopicked = global.dyworld.game_stats.picked_amount or 1 -- Global Picked Up
+		----- Global Stats Average -----
+	local A_glocraft = Round((global.dyworld.game_stats.crafted_amount / playeramount), 0) or 1 -- Global Crafted (Average)
+	local A_glomined = Round((global.dyworld.game_stats.mined_amount / playeramount), 0) or 1 -- Global Mined (Average)
+	local A_globuilt = Round((global.dyworld.game_stats.build_amount / playeramount), 0) or 1 -- Global Built (Average)
+	local A_glokilled = Round((global.dyworld.game_stats.killed_amount / playeramount), 0) or 1 -- Global Killed (Average)
+	local A_glopicked = Round((global.dyworld.game_stats.picked_amount / playeramount), 0) or 1 -- Global Picked Up (Average)
 	
 		----- Misc Stats -----
 	local chunks = global.dyworld.game_stats.chunks or 1 -- Chunks
@@ -139,28 +145,24 @@ function Bonuses(id)
 		
 		----- Bonuses Calculation -----
 		-- Mining --
-		if mined >= 2 then
-			if not global.dyworld.players[id].bonus_toggle.mining then global.dyworld.players[id].bonus_toggle.mining = true end
-			local form = Round(((mined + attri_P) / 7500), 2)
-			game.players[id].character_mining_speed_modifier = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
+		if global.dyworld.players[id].bonuses_player["mining"].enabled then
+			local form = Round(((mined + attri_P) / 75000), 2)
+			global.dyworld.players[id].bonuses_player["mining"].stats = math.min(Round(form, 2), (Dy_Bonuses_Player["mining"].level * Level))
 		end
 		-- Crafting --
-		if crafted >= 2 then
-			if not global.dyworld.players[id].bonus_toggle.crafting then global.dyworld.players[id].bonus_toggle.crafting = true end
-			local form = Round(((crafted + attri_A) / 5000), 2)
-			game.players[id].character_crafting_speed_modifier = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
+		if global.dyworld.players[id].bonuses_player["crafting"].enabled then
+			local form = Round(((crafted + attri_A) / 50000), 2)
+			global.dyworld.players[id].bonuses_player["crafting"].stats = math.min(Round(form, 2), (Dy_Bonuses_Player["mining"].level * Level))
 		end
 		-- Health --
-		if glokilled >= 2 then
-			if not global.dyworld.players[id].bonus_toggle.health then global.dyworld.players[id].bonus_toggle.health = true end
-			local form = Round(((glokilled + attri_A) / 500), 2)
-			game.players[id].character_health_bonus = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2)
+		if global.dyworld.players[id].bonuses_player["health"].enabled then
+			local form = Round(((glokilled + attri_A) / 5000), 2)
+			global.dyworld.players[id].bonuses_player["health"].stats = math.min(Round(form, 0), (Dy_Bonuses_Player["health"].level * Level))
 		end
 		-- Inventory --
-		if attri_P >= 5 then
-			if not global.dyworld.players[id].bonus_toggle.inventory then global.dyworld.players[id].bonus_toggle.inventory = true end
-			local form = math.min((Round((attri_P / 2.5), 0)), 980)
-			game.players[id].character_inventory_slots_bonus = Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) >= 1 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 0)
+		if global.dyworld.players[id].bonuses_player["inventory"].enabled then
+			local form = math.min((Round((attri_P / 5), 0)), 980)
+			global.dyworld.players[id].bonuses_player["inventory"].stats = math.min(Round(form, 0), (Dy_Bonuses_Player["inventory"].level * Level))
 			if game.players[id].character_inventory_slots_bonus >= 30 then
 				if not game.forces.player.character_logistic_requests then
 					game.forces.player.character_logistic_requests = true
@@ -168,19 +170,20 @@ function Bonuses(id)
 				game.forces.player.character_trash_slot_count = 20
 			end
 		end
-		if (build >= 500 and mined >= 10000) then
-			if not global.dyworld.players[id].bonus_toggle.reach_1 then global.dyworld.players[id].bonus_toggle.reach_1 = true end
-			local form = Round(((build + mined + attri_P) / 10500), 2)
-			game.players[id].character_reach_distance_bonus = math.min(Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2), (100 - game.entity_prototypes["character"].reach_distance))
+		-- Reach Distance --
+		if global.dyworld.players[id].bonuses_player["reach-distance"].enabled then
+			local form = Round(((build + mined + attri_P) / 100500), 2)
+			global.dyworld.players[id].bonuses_player["reach-distance"].stats = math.min(Round(form, 2), (Dy_Bonuses_Player["reach-distance"].level * Level))
 		end
-		if build >= 2 then
-			if not global.dyworld.players[id].bonus_toggle.build then global.dyworld.players[id].bonus_toggle.build = true end
-			game.players[id].character_build_distance_bonus = math.min((Round(((((dexterity + strength) * 2) + build) / 1000), 2)), (100 - game.entity_prototypes["character"].build_distance))
+		-- Build Distance --
+		if global.dyworld.players[id].bonuses_player["build-distance"].enabled then
+			local form = Round(((((dexterity + strength) * 2) + build) / 1000), 2)
+			global.dyworld.players[id].bonuses_player["build-distance"].stats = math.min(Round(form, 2), (Dy_Bonuses_Player["build-distance"].level * Level))
 		end
-		if picked >= 50 then
-			if not global.dyworld.players[id].bonus_toggle.loot then global.dyworld.players[id].bonus_toggle.loot = true end
-			local form = Round(((picked + attri_A) / 5000), 2)
-			game.players[id].character_loot_pickup_distance_bonus = math.min(Round(((form * ((Water_Check(id) + Food_Check(id)) / 2)) > 0 and (form * ((Water_Check(id) + Food_Check(id)) / 2)) or 0), 2), (100 - game.entity_prototypes["character"].loot_pickup_distance))
+		-- Loot Distance --
+		if global.dyworld.players[id].bonuses_player["loot-distance"].enabled then
+			local form = Round(((picked + attri_A) / 50000), 2)
+			global.dyworld.players[id].bonuses_player["loot-distance"].stats = math.min(Round(form, 2), (Dy_Bonuses_Player["loot-distance"].level * Level))
 		end
 		-- Food/Water --
 		if constitution >= 5 then

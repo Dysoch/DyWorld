@@ -236,24 +236,19 @@ function Bonuses(id)
 		if global.dyworld.players[id].bonuses_player["loot-distance"].enabled then
 			game.players[id].character_loot_pickup_distance_bonus = math.min(Round(global.dyworld.players[id].bonuses_player["loot-distance"].total, 2), (100 - game.entity_prototypes["character"].loot_pickup_distance))
 		end
+		--[[
 		if global.dyworld.players[id].bonuses_player["run-speed"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["run-speed"].total, 2)
+			game.players[id].character_running_speed_modifier = Round(global.dyworld.players[id].bonuses_player["run-speed"].total, 2)
 		end
 		if global.dyworld.players[id].bonuses_player["item-drop-distance"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["item-drop-distance"].total, 2)
+			game.players[id].character_item_drop_distance_bonus = Round(global.dyworld.players[id].bonuses_player["item-drop-distance"].total, 2)
 		end
 		if global.dyworld.players[id].bonuses_player["item-pickup-distance"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["item-pickup-distance"].total, 2)
+			game.players[id].character_item_pickup_distance_bonus = Round(global.dyworld.players[id].bonuses_player["item-pickup-distance"].total, 2)
 		end
 		if global.dyworld.players[id].bonuses_player["max-robot-count"].enabled then
-			game.players[id].character_mining_speed_modifier = Round(global.dyworld.players[id].bonuses_player["max-robot-count"].total, 2)
+			game.players[id].character_maximum_following_robot_count_bonus = Round(global.dyworld.players[id].bonuses_player["max-robot-count"].total, 2)
 		end
-
-		--[[
-			game.players[id].character_running_speed_modifier
-			game.players[id].character_item_drop_distance_bonus
-			game.players[id].character_item_pickup_distance_bonus    
-			game.players[id].character_maximum_following_robot_count_bonus    
 		]]--
 	end
 	if game.forces.player then

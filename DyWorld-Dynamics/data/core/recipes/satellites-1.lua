@@ -213,7 +213,7 @@ data:extend({
 	----- Coals -----
   {
     type = "recipe",
-    name = "asteroid-miner-coal-1",
+    name = "asteroid-miner-coal",
 	category = "assembling-tier-2",
     normal =
     {
@@ -222,39 +222,7 @@ data:extend({
         {type = "item", name = "coal", amount = 5},
         {type = "item", name = "asteroid-miner", amount = 1},
       },
-      result = "asteroid-miner-coal-1",
-	  enabled = false,
-	  energy_required = 25,
-    },
-  },
-  {
-    type = "recipe",
-    name = "asteroid-miner-coal-2",
-	category = "assembling-tier-2",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "coal", amount = 5},
-        {type = "item", name = "asteroid-miner", amount = 1},
-      },
-      result = "asteroid-miner-coal-2",
-	  enabled = false,
-	  energy_required = 25,
-    },
-  },
-  {
-    type = "recipe",
-    name = "asteroid-miner-coal-3",
-	category = "assembling-tier-2",
-    normal =
-    {
-      ingredients =
-      {
-        {type = "item", name = "coal", amount = 5},
-        {type = "item", name = "asteroid-miner", amount = 1},
-      },
-      result = "asteroid-miner-coal-3",
+      result = "asteroid-miner-coal",
 	  enabled = false,
 	  energy_required = 25,
     },

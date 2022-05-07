@@ -21,6 +21,16 @@ function dyworld_menu(player_index)
 				stats = 1,
 				bonuses = 1,
 			},
+			smn_0 = {
+				smn_1 = 1,
+				smn_2 = 1,
+				smn_3 = 1,
+				smn_4 = 1,
+				smn_5 = 1,
+			},
+			dyson = {
+				sphere = 1,
+			},
 			script_attack = 1,
 		},
 		story = {
@@ -177,7 +187,32 @@ function dyworld_page_content(page_name, player_index, element)
 	end
   
 	if page_name == "bonuses" then
-		element.add{type="label", name="", caption={"DyWorld.page_bonuses"}}
+		element.add{type="label", name="", caption={"DyWorld.page_bonuses"}}local table2 = element.add{type = "table", name = "", column_count = 9, draw_vertical_lines = true, draw_horizontal_lines = true, vertical_centering = true, horizontal_centering = true, draw_horizontal_line_after_headers = false}
+		
+		table2.add{type = "label", caption = ""}
+		table2.add{type = "label", caption = "[color=yellow]Native: [/color]"}
+		table2.add{type = "label", caption = "[color=yellow]Stats: [/color]"}
+		table2.add{type = "label", caption = "[color=yellow]Implants: [/color]"}
+		table2.add{type = "label", caption = "[color=yellow]Research: [/color]"}
+		table2.add{type = "label", caption = "[color=yellow]Achievements: [/color]"}
+		table2.add{type = "label", caption = "[color=yellow]Deaths: [/color]"}
+		table2.add{type = "label", caption = "[color=yellow]Total: [/color]"}
+		table2.add{type = "label", caption = "[color=yellow]Enabled: [/color]"}
+        for k,v in pairs(global.dyworld.players[player_index].bonuses_player) do
+		    table2.add{type = "label", caption = "[color=yellow]"..k..":[/color]"}
+		    table2.add{type = "label", caption = "[color=blue]"..v.native.."[/color]"}
+		    table2.add{type = "label", caption = "[color=blue]"..v.stats.."[/color]"}
+		    table2.add{type = "label", caption = "[color=blue]"..v.implants.."[/color]"}
+		    table2.add{type = "label", caption = "[color=blue]"..v.research.."[/color]"}
+		    table2.add{type = "label", caption = "[color=blue]"..v.achievements.."[/color]"}
+		    table2.add{type = "label", caption = "[color=red]-"..v.death.."[/color]", tooltip = "will be reduced from the total of all previous values"}
+		    table2.add{type = "label", caption = "[color=blue]"..v.total.."[/color]", tooltip = "If value is below 0, this will always show 0.\nIncrease your implants or research to get it above 0 again for the bonus to actually count"}
+            if v.enabled then
+                table2.add{type = "label", caption = "[color=green]✔[/color]"}
+            else
+                table2.add{type = "label", caption = "[color=red]✘[/color]"}
+            end
+        end
 	end
   
 	if page_name == "script_attack" then

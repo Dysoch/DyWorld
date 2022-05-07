@@ -65,6 +65,11 @@ function Phase_Forward()
 		global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount = {Main_Amount, Side_Amount, Total_Amount}
 	end
 
+    for _,z in pairs(global.dyworld.players) do
+        local player = game.players[z.id]
+        Refresh_Story_GUI(player, z.id)
+    end
+
     -- Apply randomisation and difficulty changes to amount from objectives
 	for k,v in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
         if v.type_1 and (v.type_1 == "build" or v.type_1 == "craft" or v.type_1 == "died" or v.type_1 == "launch") or (v.type_1 and v.type_1 == "world" and v.type_2 and v.type_2 == "radar-scan") then
@@ -98,28 +103,6 @@ function Phase_Forward()
             end
         end
     end
-
-	-- Check if recipes require unlock --
-	for k,v in pairs(Story_Recipes) do
-		if (v.phase <= global.dyworld.story.phase and v.act <= global.dyworld.story.act) then
-			for index,player in pairs(game.players) do
-				if player.force.recipes[k] then
-					if not player.force.recipes[k].enabled then
-						player.force.recipes[k].enabled = true
-						--if game.entity_prototypes[k] then
-							--PlayerPrint({"looped-name.gained-knowledge", {"entity-name."..k}})
-							PlayerPrint({"looped-name.gained-knowledge", k})
-						--elseif game.item_prototypes[k] then
-							--PlayerPrint({"looped-name.gained-knowledge", {"item-name."..k}})
-							--PlayerPrint({"looped-name.gained-knowledge", k})
-						--end
-					end
-				else 
-					debug("Recipe unlock failed! Does it exist? ("..k..")")
-				end
-			end
-		end
-	end
 
 	-- Check technologies already researched against objectives --
 	for k,v in pairs(game.forces.player.technologies) do
@@ -218,6 +201,7 @@ function Phase_Forward()
 	if settings.global["DyWorld_Autosave_Story"].value then
 		game.auto_save("DyWorld-Dynamics Act "..global.dyworld.story.act.." Phase "..global.dyworld.story.phase)
 	end
+    
 	end
 end
 
@@ -553,10 +537,6 @@ function Story_Objectives(type, event, Posx, PosY)
 		end
 		if (global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[1] + global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].amount[2]) <= 0 then
 			Phase_Forward()
-			for _,z in pairs(global.dyworld.players) do
-				local player = game.players[z.id]
-				Refresh_Story_GUI(player, z.id)
-			end
 		end
 	end
 end

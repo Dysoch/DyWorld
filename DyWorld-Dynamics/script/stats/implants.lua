@@ -15,8 +15,10 @@ function Implant_Check(id, implant)
 			if Dy_Find_Str(implant, k) then
 				if global.dyworld.players[id].bonuses_player[k].enabled then
 					global.dyworld.players[id].bonuses_player[k].enabled = false
+                    --debug(implant.." bonus is disabled")
 				else
 					global.dyworld.players[id].bonuses_player[k].enabled = true
+                    --debug(implant.." bonus is enabled")
 				end
 			end
 		end
@@ -32,6 +34,12 @@ function Implant_Check(id, implant)
 				for k2,v2 in pairs(v1) do
 					if Dy_Find_Str(implant, k2) then
 						global.dyworld.players[id].bonuses_player[k1].implants = global.dyworld.players[id].bonuses_player[k1].implants + v2
+                        debug("used "..implant)
+                        if not remote.call("space-exploration", "remote_view_is_active", {player = game.players[id]}) then
+                            Bonuses(id)
+                            Vitals_Check(id)
+                            --debug("bonuses done")
+                        end
 					end
 				end
 			end

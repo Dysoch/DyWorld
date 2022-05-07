@@ -1,12 +1,16 @@
 
 function Refresh_Story_GUI(player, id)
-	if global.dyworld.players[id].smn_gui then
+	if global.dyworld.players[id].story_gui then
 		Close_Story_GUI(player, id)
 		Story_GUI(player, id)
 		if player.gui.top.DyDs_Story_GUI then
 			player.gui.top.DyDs_Story_GUI.selected_tab_index = global.dyworld.players[id].story_gui_index
 		end
 	end
+    -- research the current story research
+    if not game.forces.player.technologies["dyworld-story-"..global.dyworld.story.act.."-"..global.dyworld.story.phase].researched then
+        game.forces.player.technologies["dyworld-story-"..global.dyworld.story.act.."-"..global.dyworld.story.phase].researched = true
+    end
 end
 
 function Close_Story_GUI(player, id)

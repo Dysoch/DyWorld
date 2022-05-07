@@ -1,4 +1,4 @@
-
+require("script.database.implants")
 
 --@todo Add Chemical Formula Implants
 

@@ -34,6 +34,7 @@ function Event_on_player_used_capsule(event)
 		if Dy_Find_Str(name, k) then
 			global.dyworld.players[id].implants_used = global.dyworld.players[id].implants_used + 1
 			Implant_Check(id, name)
+            break
 		end
 	end
 end

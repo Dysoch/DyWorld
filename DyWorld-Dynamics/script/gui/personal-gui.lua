@@ -58,8 +58,6 @@ function Personal_GUI(player, id)
 	local surface = game.players[id].surface.name
 	local frame = player.gui.left.add{type = "frame", name = "DyDs_Personal_GUI", caption = "DyWorld-Dynamics"}
 	local frameflow1 = frame.add{type = "flow", name = "flow1", direction = "vertical"}
-	if not global.dyworld.players[id].implants then Implant_Check(id, nil, nil) end
-    local GloPla = global.dyworld.players[id].implants
     local X = global.dyworld.players[id].posx
     local Y = global.dyworld.players[id].posy
     local Chunk_X = math.floor(X / 32)
@@ -68,29 +66,34 @@ function Personal_GUI(player, id)
     --if not global.dyworld.players[id].personal_gui_loc then global.dyworld.players[id].personal_gui_loc = {X = 0, Y = 0} end
     --player.gui.screen.DyDs_Personal_GUI.location.x = global.dyworld.players[id].personal_gui_loc.X
     --player.gui.screen.DyDs_Personal_GUI.location.y = global.dyworld.players[id].personal_gui_loc.Y
+    
+    Vitals_Check(id)
 	
 	local table1 = frameflow1.add{type = "table", name = "table1", column_count = 4, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
 
 	table1.add{type = "sprite-button", name = "dyworld_story", sprite = "virtual-signal/dyworld_story_button", tooltip = {"looped-name.dyworld_story_button"}}
 	table1.add{type = "sprite-button", name = "dyworld_stats", sprite = "virtual-signal/dyworld_stats_button", tooltip = {"looped-name.dyworld_stats_button"}}
-	table1.add{type = "sprite-button", name = "dyworld_smn", sprite = "item/satellite", tooltip = {"looped-name.dyworld_smn_button"}}
-	table1.add{type = "sprite-button", name = "dyworld_dyson", sprite = "item/satellite", tooltip = {"looped-name.dyworld_dyson_button"}}
+	table1.add{type = "sprite-button", name = "dyworld_bonuses", sprite = "virtual-signal/dyworld_stats_button", tooltip = {"looped-name.dyworld_stats_button"}}
+    if global.dyworld.game_stats.space_mining then
+	    table1.add{type = "sprite-button", name = "dyworld_smn", sprite = "item/satellite", tooltip = {"looped-name.dyworld_smn_button"}}
+    end
+	--table1.add{type = "sprite-button", name = "dyworld_dyson", sprite = "item/satellite", tooltip = {"looped-name.dyworld_dyson_button"}}
 
 	if settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
         local Mult = settings.global["DyWorld_Surival_Difficulty"].value == "Easy" and 0.5 or settings.global["DyWorld_Surival_Difficulty"].value == "Normal" and 1 or settings.global["DyWorld_Surival_Difficulty"].value == "Hard" and 2 or settings.global["DyWorld_Surival_Difficulty"].value == "Insane" and 5 or 1
 
 		--frameflow1.add{type = "label", caption = "Water:"}
-		frameflow1.add{type = "progressbar", value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].water_rate * Mult), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water", Mult).."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max)), caption = GloPla["food-implant"].enabled and "   [color=red]Water (Auto)[/color]" or "         [color=red]Water[/color]"}
+		frameflow1.add{type = "progressbar", value = (global.dyworld.players[id].water/global.dyworld.players[id].water_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].water, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].water_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].water_rate * Mult), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water", Mult).."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].water/global.dyworld.players[id].water_max)), caption = "         [color=red]Water[/color]"}
 
 		--frameflow1.add{type = "label", caption = "Food:"}
-		frameflow1.add{type = "progressbar", value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].food_rate * Mult), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food", Mult).."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max)), caption = GloPla["food-implant"].enabled and "   [color=red]Food (Auto)[/color]" or "         [color=red]Food[/color]"}
+		frameflow1.add{type = "progressbar", value = (global.dyworld.players[id].food/global.dyworld.players[id].food_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].food, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].food_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].food_rate * Mult), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food", Mult).."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].food/global.dyworld.players[id].food_max)), caption = "         [color=red]Food[/color]"}
         
     else
         frameflow1.add{type = "label", caption = "Food and Water Disabled"}
 	end
     
     if game.players[id].character then
-        frameflow1.add{type = "progressbar", value = (game.players[id].character.get_health_ratio()), style = Progress_Surival_Style_Check(game.players[id].character.get_health_ratio()), caption = GloPla["health-implant"].enabled and "   [color=red]Health (Auto)[/color]" or "         [color=red]Health[/color]"}
+        frameflow1.add{type = "progressbar", value = (game.players[id].character.get_health_ratio()), style = Progress_Surival_Style_Check(game.players[id].character.get_health_ratio()), caption = "         [color=red]Health[/color]"}
     end
 	
 	local table2 = frameflow1.add{type = "table", name = "table2", column_count = 2, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}

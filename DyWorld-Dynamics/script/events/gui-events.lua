@@ -9,16 +9,6 @@ function Event_on_gui_click(event)
 	
 	if gui.name == "dyworld_story" then
 		if global.dyworld_story then
-			--debug("Player "..id..": pressed DyWorld_Story")
-			--Story_GUI(player, id)
-			if global.dyworld.players[id].stats_gui then
-				global.dyworld.players[id].stats_gui = false
-				Close_Main_GUI(player, id)
-			end
-			if global.dyworld.players[id].smn_gui then
-				global.dyworld.players[id].smn_gui = false
-				Close_SMN_GUI(player, id)
-			end
 			if global.dyworld.players[id].story_gui then
 				global.dyworld.players[id].story_gui = false
 				Close_Story_GUI(player, id)
@@ -28,55 +18,17 @@ function Event_on_gui_click(event)
 			end
 		end
 	elseif gui.name == "dyworld_stats" then
-		if global.dyworld.players[id].story_gui then
-			global.dyworld.players[id].story_gui = false
-			Close_Story_GUI(player, id)
-		end
-		if global.dyworld.players[id].smn_gui then
-			global.dyworld.players[id].smn_gui = false
-			Close_SMN_GUI(player, id)
-		end
-		if global.dyworld.players[id].stats_gui then
-			global.dyworld.players[id].stats_gui = false
-			Close_Main_GUI(player, id)
-		else
-			global.dyworld.players[id].stats_gui = true
-			Main_GUI(player, id)
-		end
+        remote.call("informatron", "informatron_open_to_page", {player_index = id, page_name = "stats", interface = "DyWorld"})
+	elseif gui.name == "dyworld_bonuses" then
+        remote.call("informatron", "informatron_open_to_page", {player_index = id, page_name = "bonuses", interface = "DyWorld"})
 	elseif gui.name == "dyworld_smn" then
-		if global.dyworld.players[id].story_gui then
-			global.dyworld.players[id].story_gui = false
-			Close_Story_GUI(player, id)
-		end
-		if global.dyworld.players[id].stats_gui then
-			global.dyworld.players[id].stats_gui = false
-			Close_Main_GUI(player, id)
-		end
-		if game.forces.player.technologies["advanced-asteroid-mining"].researched or debugger then
-			if global.dyworld.players[id].smn_gui then
-				global.dyworld.players[id].smn_gui = false
-				Close_SMN_GUI(player, id)
-			else
-				global.dyworld.players[id].smn_gui = true
-				SMN_GUI(player, id)
-			end
-		end
+        remote.call("informatron", "informatron_open_to_page", {player_index = id, page_name = "smn_0", interface = "DyWorld"})
+	elseif gui.name == "dyworld_dyson" then
+        remote.call("informatron", "informatron_open_to_page", {player_index = id, page_name = "dyson", interface = "DyWorld"})
 	elseif gui.name == "dyworld_personal" then
 		if global.dyworld.players[id].personal_gui then
 			global.dyworld.players[id].personal_gui = false
 			Close_Personal_GUI(player, id)
-			if global.dyworld.players[id].story_gui then
-				global.dyworld.players[id].story_gui = false
-				Close_Story_GUI(player, id)
-			end
-			if global.dyworld.players[id].smn_gui then
-				global.dyworld.players[id].smn_gui = false
-				Close_SMN_GUI(player, id)
-			end
-			if global.dyworld.players[id].stats_gui then
-				global.dyworld.players[id].stats_gui = false
-				Close_Main_GUI(player, id)
-			end
 		else
 			global.dyworld.players[id].personal_gui = true
 			Personal_GUI(player, id)
@@ -109,11 +61,5 @@ function Event_on_gui_selected_tab_changed(event)
 	
 	if gui_name == "DyDs_Story_GUI" then
 		global.dyworld.players[event.player_index].story_gui_index = gui_index
-	end
-	if gui_name == "DyDs_Main_GUI" then
-		global.dyworld.players[event.player_index].stats_gui_index = gui_index
-	end
-	if gui_name == "DyDs_SMN_GUI" then
-		global.dyworld.players[event.player_index].smn_gui_index = gui_index
 	end
 end

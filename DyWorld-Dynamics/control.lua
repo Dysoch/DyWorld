@@ -27,9 +27,7 @@ require("script.database.story")
 require("script.lualib.inserter")
 
 -- GUI
-require("script.gui.main-gui")
 require("script.gui.story-gui")
-require("script.gui.smn-gui")
 require("script.gui.personal-gui")
 
 -- Stats

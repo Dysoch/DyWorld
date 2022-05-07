@@ -51,21 +51,25 @@ function Event_on_tick(event)
 
 	-- Automated Functions --
 	if event.tick%(60*5) == ((60*5) - 1) then
-		for _,Player in pairs(global.dyworld.players) do
-            if not global.dyworld.players[Player.id].implants then
-                global.dyworld.players[Player.id].implants = {}
+		for k,v in pairs(global.dyworld.players) do
+            if not global.dyworld.players[v.id].implants then
+                global.dyworld.players[v.id].implants = {}
                 for k,v in pairs(Implants) do
-                    global.dyworld.players[Player.id].implants[k] = {enabled = false, amount = 0}
+                    global.dyworld.players[v.id].implants[k] = {enabled = false, amount = 0}
                 end
             end
-			if global.dyworld.players[Player.id].implants["food-implant"].enabled then
-				if global.dyworld.players[Player.id].alive and settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
-					Auto_Food_Intake(Player.id)
+			if global.dyworld.players[v.id].implants["food-implant"].enabled then
+				if global.dyworld.players[v.id].alive and settings.global["DyWorld_Surival_Difficulty"].value ~= "Off" then
+					Auto_Food_Intake(v.id)
 				end
 			end
-			if global.dyworld.players[Player.id].implants["health-implant"].enabled then
-				Auto_Medpack_Intake(Player.id)
+			if global.dyworld.players[v.id].implants["health-implant"].enabled then
+				Auto_Medpack_Intake(v.id)
 			end
+            if v.personal_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
+                local player = game.players[v.id]
+                Refresh_Personal_GUI(player, v.id)
+            end
 		end
 	end
     -- Space Mining Network effects. These happen over a minute, every 15 seconds another things to reduce total load
@@ -87,6 +91,15 @@ function Event_on_tick(event)
                 end
             end
 		end
+		for k,v in pairs(global.dyworld.players) do
+			if v.alive and game.players[v.id].connected then
+                if not remote.call("space-exploration", "remote_view_is_active", {player = game.players[v.id]}) then
+                    Bonuses(v.id)
+                    Vitals_Check(v.id)
+                    --debug("bonuses done")
+                end
+            end
+        end
 	end
 	if event.tick%(60*60)==(60*31) then
 		if global.dyworld.game_stats.space_mining then
@@ -116,7 +129,6 @@ function Event_on_tick(event)
 				if not v.distance_car then v.distance_car = 0 end
 				if not v.distance_train then v.distance_train = 0 end
 				if not v.surface then v.surface = "nauvis" end
-
 				v.posx2 = v.posx
 				v.posy2 = v.posy
 				v.posx = game.players[v.id].position.x
@@ -133,7 +145,6 @@ function Event_on_tick(event)
                         end
                     end
                 end
-
                 if not global.dyworld.game_stats.chunks_info then global.dyworld.game_stats.chunks_info = {} end
                 if not global.dyworld.game_stats.chunks_info[v.surface] then global.dyworld.game_stats.chunks_info[v.surface] = {} end
                 local Chunk_X = math.floor(v.posx / 32)
@@ -164,41 +175,6 @@ function Event_on_tick(event)
                         Water_Lose(v.id, 5)
                     end
 				end
-				
-				if not remote.call("space-exploration", "remote_view_is_active", {player = game.players[v.id]}) then
-					Bonuses(v.id)
-					Vitals_Check(v.id)
-				end
-				
-				--[[if v.personal_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
-					local player = game.players[v.id]
-					Close_Personal_GUI(player, v.id)
-					Personal_GUI(player, v.id)
-				end
-
-				if v.story_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
-					local player = game.players[v.id]
-					Close_Story_GUI(player, v.id)
-					Story_GUI(player, v.id)
-					player.gui.top.DyDs_Story_GUI.selected_tab_index = global.dyworld.players[v.id].story_gui_index
-				end
-
-				if v.stats_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
-					local player = game.players[v.id]
-					Close_Main_GUI(player, v.id)
-					Main_GUI(player, v.id)
-					player.gui.top.DyDs_Main_GUI.selected_tab_index = global.dyworld.players[v.id].stats_gui_index
-				end
-
-				if v.smn_gui and v.alive and Dy_Check_GUI(game.players[v.id].opened_gui_type) then
-					local player = game.players[v.id]
-					Close_SMN_GUI(player, v.id)
-					SMN_GUI(player, v.id)
-					if player.gui.top.DyDs_SMN_GUI then
-						player.gui.top.DyDs_SMN_GUI.selected_tab_index = global.dyworld.players[v.id].smn_gui_index
-					end
-				end]]--
-
 				if global.dyworld_story and v.alive and not global.dyworld.game_stats.story_pause then
 					for aaaa,Phase in pairs(global.dyworld.story.acts[global.dyworld.story.act][global.dyworld.story.phase].objectives) do
 						if Phase.type_1 == "position" then

@@ -1,47 +1,6 @@
 
-local function Check_Diff(Amount)
-	if settings.global["DyWorld_Surival_Difficulty"].value == "Easy" then
-		return Round((Amount * 1), 2)
-	elseif settings.global["DyWorld_Surival_Difficulty"].value == "Normal" then
-		return Round((Amount * 2), 2)
-	elseif settings.global["DyWorld_Surival_Difficulty"].value == "Hard" then
-		return Round((Amount * 3), 2)
-	elseif settings.global["DyWorld_Surival_Difficulty"].value == "Insane" then
-		return Round((Amount * 5), 2)
-	else
-		return Round((Amount * 1), 2)
-	end
-end
 
 Implants  = {
-
-	----- Usage Rates -----
-	["usage-reduction-1"] = {
-		type = "use-rate",
-		Water_Usage = Check_Diff(-0.05),
-		Food_Usage = Check_Diff(0.085),
-	},
-	["usage-reduction-2"] = {
-		type = "use-rate",
-		Water_Usage = Check_Diff(-0.075),
-		Food_Usage = Check_Diff(-0.125),
-	},
-	["usage-reduction-3"] = {
-		type = "use-rate",
-		Water_Usage = Check_Diff(-0.1),
-		Food_Usage = Check_Diff(0.025),
-	},
-	["usage-reduction-4"] = {
-		type = "use-rate",
-		Water_Usage = Check_Diff(-0.125),
-		Food_Usage = Check_Diff(-0.06),
-	},
-	["usage-reduction-5"] = {
-		type = "use-rate",
-		Water_Usage = Check_Diff(-0.15),
-		Food_Usage = Check_Diff(-0.08),
-	},
-	
 	----- Strength Implants -----
 	["strength-implant-1"] = {
 		type = "attribute",

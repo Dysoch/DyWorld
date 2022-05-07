@@ -48,7 +48,7 @@ for Act_k,Act_v in pairs(Story_Table_Base) do
         if Phase_v.unlocks then
             data.raw.technology["dyworld-story-"..Act_k.."-"..Phase_k].effects = {}
             for k,v in pairs(Phase_v.unlocks) do
-                DyWorld_ATTA(v, "dyworld-story-"..Act_k.."-"..Phase_k)
+                DyWorld_ATTA(v, {"dyworld-story-"..Act_k.."-"..Phase_k})
             end
         end
     end

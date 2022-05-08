@@ -199,18 +199,18 @@ function dyworld_page_content(page_name, player_index, element)
 		table2.add{type = "label", caption = "[color=yellow]Total: [/color]"}
 		table2.add{type = "label", caption = "[color=yellow]Enabled: [/color]"}
         for k,v in pairs(global.dyworld.players[player_index].bonuses_player) do
-		    table2.add{type = "label", caption = "[color=yellow]"..k..":[/color]"}
-		    table2.add{type = "label", caption = "[color=blue]"..v.native.."[/color]"}
-		    table2.add{type = "label", caption = "[color=blue]"..v.stats.."[/color]"}
-		    table2.add{type = "label", caption = "[color=blue]"..v.implants.."[/color]"}
-		    table2.add{type = "label", caption = "[color=blue]"..v.research.."[/color]"}
-		    table2.add{type = "label", caption = "[color=blue]"..v.achievements.."[/color]"}
+		    table2.add{type = "label", caption = "[color=white]"..k..": [/color]"}
+		    table2.add{type = "label", caption = "[color=cyan] "..v.native.."[/color]"}
+		    table2.add{type = "label", caption = "[color=cyan] "..v.stats.."[/color]"}
+		    table2.add{type = "label", caption = "[color=cyan] "..v.implants.."[/color]"}
+		    table2.add{type = "label", caption = "[color=cyan] "..v.research.."[/color]"}
+		    table2.add{type = "label", caption = "[color=cyan] "..v.achievements.."[/color]"}
 		    table2.add{type = "label", caption = "[color=red]-"..v.death.."[/color]", tooltip = "will be reduced from the total of all previous values"}
-		    table2.add{type = "label", caption = "[color=blue]"..v.total.."[/color]", tooltip = "If value is below 0, this will always show 0.\nIncrease your implants or research to get it above 0 again for the bonus to actually count"}
+		    table2.add{type = "label", caption = "[color=blue] "..v.total.."[/color]", tooltip = "If value is below 0, this will always show 0.\nIncrease your implants or research to get it above 0 again for the bonus to actually count"}
             if v.enabled then
-                table2.add{type = "label", caption = "[color=green]✔[/color]"}
+                table2.add{type = "label", caption = "[color=lime] ✔[/color]"}
             else
-                table2.add{type = "label", caption = "[color=red]✘[/color]"}
+                table2.add{type = "label", caption = "[color=red] ✘[/color]"}
             end
         end
 	end

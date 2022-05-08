@@ -208,7 +208,7 @@ function dyworld_page_content(page_name, player_index, element)
 		    table2.add{type = "label", caption = "[color=red]-"..v.death.."[/color]", tooltip = "will be reduced from the total of all previous values"}
 		    table2.add{type = "label", caption = "[color=blue] "..v.total.."[/color]", tooltip = "If value is below 0, this will always show 0.\nIncrease your implants or research to get it above 0 again for the bonus to actually count"}
             if v.enabled then
-                table2.add{type = "label", caption = "[color=lime] ✔[/color]"}
+                table2.add{type = "label", caption = "[color=green] ✔[/color]"}
             else
                 table2.add{type = "label", caption = "[color=red] ✘[/color]"}
             end

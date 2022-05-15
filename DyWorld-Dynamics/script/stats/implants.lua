@@ -28,6 +28,18 @@ function Implant_Check(id, implant)
 				
 			end
 		end
+	elseif Dy_Find_Str(implant, "special") then
+		for k,v in pairs(DyWorld_Implants["special"]) do
+			if Dy_Find_Str(implant, k) then
+				if k == "auto-health" then
+                    
+                elseif k == "auto-food" then
+
+                elseif k == "auto-water" then
+                    
+                end
+			end
+		end
 	else
 		for k1,v1 in pairs(DyWorld_Implants) do
 			if Dy_Find_Str(implant, k1) then

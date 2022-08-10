@@ -4,6 +4,7 @@ Date: ???
   Minor Features:
     - Moved item-groups creation to this mod from DyWorld-Dynamics
     - Added functions for fluids
+    - Added Settings to change Enemies and Stacksizes
     -
   Bugfixes:
     - Fixed a duplicate string in the German locales, that caused a crash

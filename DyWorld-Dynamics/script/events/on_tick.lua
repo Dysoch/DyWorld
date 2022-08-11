@@ -54,8 +54,8 @@ function Event_on_tick(event)
 		for k,v in pairs(global.dyworld.players) do
             if not global.dyworld.players[v.id].implants then
                 global.dyworld.players[v.id].implants = {}
-                for k,v in pairs(Implants) do
-                    global.dyworld.players[v.id].implants[k] = {enabled = false, amount = 0}
+                for k2,v2 in pairs(Implants) do
+                    global.dyworld.players[v.id].implants[k2] = {enabled = false, amount = 0}
                 end
             end
 			if global.dyworld.players[v.id].implants["food-implant"].enabled then

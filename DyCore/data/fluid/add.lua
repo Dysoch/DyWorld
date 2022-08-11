@@ -23,6 +23,7 @@ data:extend({
 	auto_canister_tier = params[10],
   },
 })
+    DyW.Fx.Edited("fluid", name)
 	if params[7] then
 		data.raw.fluid[name].icon = "__DyWorld-Dynamics__/graphics/fluids/"..name..".png"
 	end

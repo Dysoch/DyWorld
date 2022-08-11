@@ -22,6 +22,7 @@ function DyW.Recipe.RL.Clear(RECIPE, RETURN, INGREDIENT)
 				end
 			end
 		end
+        DyW.Fx.Edited("recipe", RECIPE)
 	end
 end
 
@@ -37,5 +38,6 @@ function DyW.Recipe.RL.Add(RECIPE, INGREDIENT)
 		else
 			DyW.Recipe.RL.Clear(RECIPE, true, INGREDIENT)
 		end
+        DyW.Fx.Edited("recipe", RECIPE)
 	end
 end

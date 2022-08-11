@@ -46,3 +46,4 @@ require("data.tech.transport-drones")
 -- Leave these as last, add everything in the categories above
 require("data.tech.added-recipes")
 require("data.tech.last-fixes")
+require("data.automated-edits.disabler")

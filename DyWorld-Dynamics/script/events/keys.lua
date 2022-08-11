@@ -62,7 +62,7 @@ end)
 script.on_event("DyWorld_inserter_drop_distance_toggle", function(event)
 	local selection = game.players[event.player_index].selected
 	if selection and (selection.type == "inserter" or (selection.type == "entity-ghost" and selection.ghost_type == "inserter")) then
-		ToggleDropDistance(selection, event)
+		ToggleDropDistance(selection)
 	end
 end)
 

@@ -2,12 +2,14 @@
 function DyComPa_Prereq_Tech_Fix(TECH, ARG)
     if data.raw.technology[TECH] then
         data.raw.technology[TECH].prerequisites = ARG
+        DyW.Fx.Edited("technology", TECH)
     end
 end
 function DyComPa_Ingre_Tech_Fix(TECH, ARG)
     if data.raw.technology[TECH] then
         data.raw.technology[TECH].unit.count = 1
         data.raw.technology[TECH].unit.ingredients = ARG
+        DyW.Fx.Edited("technology", TECH)
     end
 end
 
@@ -37,6 +39,7 @@ data.raw.technology["rocket-fuel"].unit.ingredients = {
 	{"automation-science-pack", 300},
 	{"logistic-science-pack", 300},
 }
+DyW.Fx.Edited("technology", "rocket-fuel")
 
 FORCE_ALLOW_ITEM_RECIPES = {
     ["water-well-pump"] = {subgroup = DyDs.."oil-pumps"}, -- from WaterWell
@@ -49,14 +52,9 @@ FORCE_ALLOW_ITEM_RECIPES = {
 for k,v in pairs(FORCE_ALLOW_ITEM_RECIPES) do
     if data.raw.item[k] and v["subgroup"] then
         data.raw.item[k].subgroup = v.subgroup
+        DyW.Fx.Edited(item, k)
         data.raw.recipe[k].enabled = true
         data.raw.recipe[k].hidden = false
         data.raw.recipe[k].DyWorld_Hider = false
     end
-end
-
-for k,v in pairs(data.raw.technology) do
-	if v.hidden == true then
-		v.effects = {}
-	end
 end

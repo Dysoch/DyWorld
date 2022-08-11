@@ -1,11 +1,20 @@
 
 
 
+function DyW.Fx.Edited(type, name)
+    if data.raw[type][name].DyWorld_Edited then
+        data.raw[type][name].DyWorld_Edited = data.raw[type][name].DyWorld_Edited + 1
+    else
+        data.raw[type][name].DyWorld_Edited = 1
+    end
+end
+
 
 function DyW.Fx.DC(type, name, newName)
     if not data.raw[type][name] then error("type "..type.." "..name.." doesn't exist") end
     local p = table.deepcopy(data.raw[type][name])
     p.name = newName
+    p.DyWorld_Edited = 1
     if p.minable and p.minable.result then
         p.minable.result = newName
     end

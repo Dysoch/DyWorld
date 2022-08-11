@@ -5,6 +5,7 @@
 function DyW.Equip.Grid(Width, Height, Cat)
 	local Base = "DyWorld-equipment-grid-"
 	if data.raw["equipment-grid"][Base..Width.."-"..Height.."-"..Cat] then
+        DyW.Fx.Edited("equipment-grid", Base..Width.."-"..Height.."-"..Cat)
 		return Base..Width.."-"..Height.."-"..Cat
 	else
 		data:extend(
@@ -27,6 +28,7 @@ function DyW.Equip.Grid(Width, Height, Cat)
 			})
 		end
 		data.raw["equipment-grid"][Base..Width.."-"..Height.."-"..Cat].equipment_categories = {Cat}
+        DyW.Fx.Edited("equipment-grid", Base..Width.."-"..Height.."-"..Cat)
 		return Base..Width.."-"..Height.."-"..Cat
 	end
 end

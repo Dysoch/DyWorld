@@ -215,6 +215,7 @@ for k,m in pairs(Change) do
 		end
 	end
 	if data.raw.recipe[m] then
+        DyW.Fx.Edited("recipe", m)
 		if data.raw.recipe[m].expensive then
 			data.raw.recipe[m].expensive.hidden = true
 		end

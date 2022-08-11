@@ -14,6 +14,7 @@ function DyW.Tech.Prereq.Override(TECH, PREREQ)
 		if T.hidden then
 			T.hidden = false
 		end
+        DyW.Fx.Edited("technology", TECH)
 	end
 end
 
@@ -30,6 +31,7 @@ function DyW.Tech.Prereq.Add_1(TECH, PREREQ)
 		if T.hidden then
 			T.hidden = false
 		end	
+        DyW.Fx.Edited("technology", TECH)
 	end
 end
 
@@ -47,7 +49,8 @@ function DyW.Tech.Prereq.Add_2(TECH, PREREQS)
 		end	
 		if T.hidden then
 			T.hidden = false
-		end	
+		end
+        DyW.Fx.Edited("technology", TECH)
 	end
 end
 
@@ -61,7 +64,8 @@ function DyW.Tech.Prereq.Remove(TECH, PREREQ)
 		end	
 		if T.hidden then
 			T.hidden = false
-		end	
+		end
+        DyW.Fx.Edited("technology", TECH)
 	end
 end
 
@@ -72,6 +76,8 @@ function DyW.Tech.Recipe.Add(TECH, RECIPE)
 	if data.raw.technology[TECH] and data.raw.recipe[RECIPE] then
 		local result = {type = "unlock-recipe", recipe = RECIPE}
 		table.insert(data.raw.technology[TECH].effects, result)
+        DyW.Fx.Edited("recipe", RECIPE)
+        DyW.Fx.Edited("technology", TECH)
 	end
 	if data.raw.recipe[RECIPE] then
 		if data.raw.recipe[RECIPE].DyWorld_Hider then
@@ -89,7 +95,8 @@ function DyW.Tech.Recipe.Add(TECH, RECIPE)
 			data.raw.recipe[RECIPE].expensive.enabled = false
 			data.raw.recipe[RECIPE].expensive.hidden = false
 		end
-	end	
+        DyW.Fx.Edited("recipe", RECIPE)
+	end
 end
 
 

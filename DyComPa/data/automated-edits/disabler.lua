@@ -9,6 +9,7 @@ for k,v in pairs(Table_Types) do
             --nothing
         else
             data.raw[v][NAME.name].hidden = true
+            data.raw[v][NAME.name].localised_description = {"looped-name.disabled", NAME.name, v}
             if NAME.prerequisites then
                 data.raw[v][NAME.name].prerequisites = {}
             end

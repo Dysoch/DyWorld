@@ -145,7 +145,11 @@ data:extend(
     },
   },
 })
-	Mag_Check_Ingredients(params)
+    DyW.Fx.Edited("ammo", params.name)
+    DyW.Fx.Edited("ammo", params.name.."-mag")
+    DyW.Fx.Edited("recipe", params.name.."-mag")
+    DyW.Fx.Edited("recipe", params.name.."-mag-del")
+    Mag_Check_Ingredients(params)
 	if params.icon then
 		data.raw.ammo[params.name].icon = params.icon
 		data.raw.ammo[params.name.."-mag"].icons[2].icon = params.icon
@@ -266,6 +270,7 @@ data:extend({
     },
   },
 })
+    DyW.Fx.Edited("projectile", params.name.."-projectile")
 		if params.piercing then
 			data.raw.projectile[params.name.."-projectile"].piercing_damage = params.dmg_amount * 2
 		end
@@ -401,6 +406,9 @@ data:extend(
     },
   },
 })
+    DyW.Fx.Edited("ammo", params.name)
+    DyW.Fx.Edited("ammo", params.name.."-mag")
+    DyW.Fx.Edited("recipe", params.name.."-mag")
 	Mag_Check_Ingredients(params)
 	if params.icon then
 		data.raw.ammo[params.name].icon = params.icon
@@ -449,6 +457,7 @@ data:extend({
     },
   },
 })
+    DyW.Fx.Edited("projectile", params.name.."-projectile")
 		if params.piercing then
 			data.raw.projectile[params.name.."-projectile"].piercing_damage = params.dmg_amount * 2
 		end
@@ -673,6 +682,11 @@ data:extend(
     },
   },
 })
+    DyW.Fx.Edited("ammo", params.name.."-bullet-"..v.Name)
+    DyW.Fx.Edited("ammo", params.name.."-mag-"..v.Name)
+    DyW.Fx.Edited("recipe", params.name.."-bullet-"..v.Name)
+    DyW.Fx.Edited("recipe", params.name.."-mag-"..v.Name)
+    DyW.Fx.Edited("recipe", params.name.."-mag-"..v.Name.."-del")
 	for Dmg_Type, Dmg in pairs(params.dmg_types) do
 		local result = {
                   type = "damage",

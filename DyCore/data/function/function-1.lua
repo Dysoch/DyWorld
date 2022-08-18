@@ -1,11 +1,19 @@
 
 
 
-function DyW.Fx.Edited(type, name)
+function DyW.Fx.Edited(type, name, edit)
     if data.raw[type][name].DyWorld_Edited then
         data.raw[type][name].DyWorld_Edited = data.raw[type][name].DyWorld_Edited + 1
     else
         data.raw[type][name].DyWorld_Edited = 1
+    end
+    if not data.raw[type][name].DyWorld_Edit_History then data.raw[type][name].DyWorld_Edit_History = {} end
+    if edit then
+        if data.raw[type][name].DyWorld_Edit_History[edit] then
+            data.raw[type][name].DyWorld_Edit_History[edit] = data.raw[type][name].DyWorld_Edit_History[edit] + 1
+        else
+            data.raw[type][name].DyWorld_Edit_History[edit] = 1
+        end
     end
 end
 

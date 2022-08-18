@@ -28,7 +28,7 @@ function DyW.Equip.Grid(Width, Height, Cat)
 			})
 		end
 		data.raw["equipment-grid"][Base..Width.."-"..Height.."-"..Cat].equipment_categories = {Cat}
-        DyW.Fx.Edited("equipment-grid", Base..Width.."-"..Height.."-"..Cat)
+        DyW.Fx.Edited("equipment-grid", Base..Width.."-"..Height.."-"..Cat, "Equipment_Grid_Add")
 		return Base..Width.."-"..Height.."-"..Cat
 	end
 end

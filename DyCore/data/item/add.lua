@@ -38,5 +38,5 @@ data:extend(
 		data.raw.item[params.name].icon = params.icon
 		data.raw.item[params.name].icon_size = 64
 	end
-    DyW.Fx.Edited("item", params.name)
+    DyW.Fx.Edited("item", params.name, "Item_Add_1")
 end

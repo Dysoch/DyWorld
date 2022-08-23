@@ -6,6 +6,8 @@ function DyWorld_Add_To_Tech(TECH, RECIPE)
 	if data.raw.technology[TECH] and data.raw.recipe[RECIPE] then
 		local result = {type = "unlock-recipe", recipe = RECIPE}
 		table.insert(data.raw.technology[TECH].effects, result)
+        DyW.Fx.Edited("recipe", RECIPE, "Tech_Recipe_Add")
+        DyW.Fx.Edited("technology", TECH, "Tech_Recipe_Add")
 	end
 	if data.raw.recipe[RECIPE] then
 		if data.raw.recipe[RECIPE].enabled then
@@ -17,6 +19,7 @@ function DyWorld_Add_To_Tech(TECH, RECIPE)
 		if data.raw.recipe[RECIPE].expensive then
 			data.raw.recipe[RECIPE].expensive.enabled = false
 		end
+        DyW.Fx.Edited("recipe", RECIPE, "Tech_Recipe_Add")
 	end	
 end
 
@@ -52,4 +55,5 @@ data:extend(
 		data.raw.technology[params.name].icons = params.icons
 		data.raw.technology[params.name].icon = nil
 	end
+    DyW.Fx.Edited("technology", params.name, "Tech_Add")
 end

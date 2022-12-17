@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: ???
+  Features:
+    - A rewrite of DyWorld-Dynamics, into a version that does not rely on Space Exploration (which make it easier to update and code). All features will eventually be back into the mod, better then before, with less bugs. Space Exploration sub-mod will eventually come, once the orginal mod is done and ready
+    - N/A
+  Minor Features:
+    - N/A
+  Changes:
+    - N/A
+  Bugfixes:
+    - N/A

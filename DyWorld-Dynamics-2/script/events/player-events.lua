@@ -12,56 +12,324 @@ function Event_script_raised_destroy(event)
 	
 end
 
-function Event_on_player_changed_force(event)
-	local player = game.players[event.player_index]
-	local force = player.force
-	
-end
-
 function Event_on_player_created(event)
-	local player = game.players[event.player_index]
 	local id = event.player_index
+	local player = game.players[id]
 	local force = player.force.name
 	local name = player.name
-    
+
+    Dy_Player_init(event)
 end
 
 function Event_on_player_died(event)
-	local player = game.players[event.player_index]
-	local force = player.force
 	local id = event.player_index
+	local player = game.players[id]
+	local force = player.force
+
+    Dy_Player_init(event)
 	
 end
 
 function Event_on_pre_player_died(event)
-	local player = game.players[event.player_index]
-	local force = player.force
 	local id = event.player_index
-    
-end
+	local player = game.players[id]
+	local force = player.force
 
-function Event_on_player_joined_game(event)
-	local player = game.players[event.player_index]
-	local force = player.force
-	local id = event.player_index
-    
-end
-
-function Event_on_player_left_game(event)
-	local player = game.players[event.player_index]
-	local force = player.force
-	local id = event.player_index
+    Dy_Player_init(event)
     
 end
 
 function Event_on_player_respawned(event)
-	local player = game.players[event.player_index]
-	local force = player.force
 	local id = event.player_index
+	local player = game.players[id]
+	local force = player.force
+
+    Dy_Player_init(event)
     
+end
+
+function Event_on_player_joined_game(event)
+	local id = event.player_index
+	local player = game.players[id]
+	local force = player.force
+
+    Dy_Player_init(event)
+    
+end
+
+function Event_on_player_left_game(event)
+	local id = event.player_index
+	local player = game.players[id]
+	local force = player.force
+
+    Dy_Player_init(event)
+    
+end
+
+function Event_on_player_changed_force(event)
+	local id = event.player_index
+	local player = game.players[id]
+	local force = player.force
+
+    Dy_Player_init(event)
+	
 end
 
 function Event_on_player_respawned_script(event)
 	local id = event.player_index
+	local player = game.players[id]
+	local force = player.force
+
+    Dy_Player_init(event)
     
+end
+
+function Dy_Player_init(event)
+	local id = event.player_index
+	local player = game.players[id]
+	local force = player.force
+    local name = player.name
+
+    if not global.dyworld.players then global.dyworld.players = {} end
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+    
+    if not global.dyworld.players[id] then
+        global.dyworld.players[id] = {
+            name = name,
+            alive = true,
+            joined = true,
+            banned = false,
+            force = force,
+            coords = {x = 0, y = 0, surface = "nauvis"},
+            survival = {
+                food = {
+                    storage = 1000,
+                    storage_max = 1000,
+                    rate = 0.33,
+                },
+                water = {
+                    storage = 1000,
+                    storage_max = 1000,
+                    rate = 1.25,
+                },
+                pollution = {
+                    native_loss = -0.1,
+                    artifical_loss = 0,
+                    native_gain = 0,
+                    artifical_gain = 0,
+                    stored = 0,
+                    threshold = {
+                        native = 15000,
+                        implant = 0,
+                        bonus = 0,
+                        tech = 0,
+                        total = 15000,
+                    },
+                },
+                radiation = {
+                    native_loss = -0.1,
+                    artifical_loss = 0,
+                    native_gain = 0,
+                    artifical_gain = 0,
+                    stored = 0,
+                    threshold = {
+                        native = 5000,
+                        implant = 0,
+                        bonus = 0,
+                        tech = 0,
+                        total = 5000,
+                    },
+                },
+                oxygen = {
+
+                },
+            },
+            attributes = {
+                strength = {
+                    native = 1,
+                    implant = 0,
+                    bonus = 0,
+                    tech = 0,
+                    total = 1,
+                },
+                constitution = {
+                    native = 1,
+                    implant = 0,
+                    bonus = 0,
+                    tech = 0,
+                    total = 1,
+                },
+                dexterity = {
+                    native = 1,
+                    implant = 0,
+                    bonus = 0,
+                    tech = 0,
+                    total = 1,
+                },
+                intelligence = {
+                    native = 1,
+                    implant = 0,
+                    bonus = 0,
+                    tech = 0,
+                    total = 1,
+                },
+                wisdom = {
+                    native = 1,
+                    implant = 0,
+                    bonus = 0,
+                    tech = 0,
+                    total = 1,
+                },
+                charisma = {
+                    native = 1,
+                    implant = 0,
+                    bonus = 0,
+                    tech = 0,
+                    total = 1,
+                },
+            },
+            stats = {
+                crafted = 0,
+                mined= 0,
+                build = 0,
+                killed = 0,
+                picked = 0,
+                capsules = 0,
+                distance = {
+                    personal = 0,
+                    vehicle = 0,
+                    train = 0,
+                },
+                deaths = 0,
+            },
+            bonus_calc = {
+                total = 0,
+                threshold = 5000,
+            },
+            bonus = {
+                ["mining"] = {
+                    native = -0.5,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["crafting"] = {
+                    native = -0.25,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["health"] = {
+                    native = 0,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["inventory"] = {
+                    native = 0,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["reach-distance"] = {
+                    native = 0,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["build-distance"] = {
+                    native = 0,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["loot-distance"] = {
+                    native = 0,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["run-speed"] = {
+                    native = 0,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["item-drop-distance"] = {
+                    native = 0,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["item-pickup-distance"] = {
+                    native = 0,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+                ["max-robot-count"] = {
+                    native = 0,
+                    stats = 0,
+                    implants = 0,
+                    research = 0,
+                    achievements = 0,
+                    death = 0,
+                    enabled = false,
+                    toggled = false,
+                    total = 0,
+                },
+            },
+        }
+    end
 end

@@ -1,24 +1,6 @@
 
-Ruins_Nauvis = {"crash-site-spaceship-wreck-small-6", "crash-site-spaceship-wreck-small-5", "crash-site-spaceship-wreck-small-4", "crash-site-spaceship-wreck-small-3", "crash-site-spaceship-wreck-small-2", "crash-site-spaceship-wreck-small-1", "crash-site-spaceship-wreck-medium-3", "crash-site-spaceship-wreck-medium-2", "crash-site-spaceship-wreck-medium-1", "crash-site-spaceship-wreck-big-2", "sand-rock-big", "rock-big", "rock-huge", "small-scorchmark", "medium-scorchmark", "big-scorchmark", "huge-scorchmark"}
-Ruins = {"iron-chest-remnants", "big-remnants", "medium-remnants", "medium-small-remnants", "small-remnants", "1x2-remnants", "wooden-chest-remnants", "iron-chest-remnants", "assembling-machine-1-remnants", "assembling-machine-2-remnants", "burner-inserter-remnants", "inserter-remnants", "long-handed-inserter-remnants", "fast-inserter-remnants", "filter-inserter-remnants", "transport-belt-remnants", "splitter-remnants", "underground-belt-remnants", "wall-remnants", "gate-remnants", "lamp-remnants", "small-electric-pole-remnants", "medium-electric-pole-remnants", "big-electric-pole-remnants", "pipe-remnants", "pipe-to-ground-remnants", "stone-furnace-remnants", "steel-furnace-remnants", "electric-furnace-remnants", "burner-mining-drill-remnants", "electric-mining-drill-remnants", "gun-turret-remnants", "radar-remnants", "steam-engine-remnants", "lab-remnants", "boiler-remnants", "car-remnants", "straight-rail-remnants", "curved-rail-remnants", "rail-ending-remnants", "rail-chain-signal-remnants", "steel-chest-remnants", "rail-signal-remnants", "laser-turret-remnants", "train-stop-remnants", "solar-panel-remnants", "locomotive-remnants", "cargo-wagon-remnants", "accumulator-remnants", "rocket-silo-remnants", "land-mine-remnants", "substation-remnants", "storage-tank-remnants", "oil-refinery-remnants", "pumpjack-remnants", "centrifuge-remnants", "flamethrower-turret-remnants", "artillery-turret-remnants", "roboport-remnants", "steam-turbine-remnants", "pump-remnants", "beacon-remnants", "heat-exchanger-remnants", "heat-pipe-remnants", "nuclear-reactor-remnants", "chemical-plant-remnants", "tank-remnants", "assembling-machine-3-remnants", "spidertron-remnants", "medium-scorchmark", "small-scorchmark", "big-scorchmark", "huge-scorchmark"}
-local keysetRuins_Nauvis = {}
-for k in pairs(Ruins_Nauvis) do
-    table.insert(keysetRuins_Nauvis, k)
-end
-local keysetRuins = {}
-for k in pairs(Ruins) do
-    table.insert(keysetRuins, k)
-end
 
-local function Check_Tile(Tile)
-	if Tile.name == "se-space" then return false
-	elseif Tile.name == "se-asteroid" then return false
-	elseif Tile.name == "se-regolith" then return false
-	elseif Tile.name == "se-spaceship-floor" then return false
-	elseif Tile.name == "out-of-map" then return false
-	else return true
-	end
-end
+
 
 function Event_on_chunk_generated(event)
     local Area_left_top = event.area.left_top
@@ -28,17 +10,42 @@ function Event_on_chunk_generated(event)
     local Chunk_X = math.floor(event.position.x)
     local Chunk_Y = math.floor(event.position.y)
     
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+
+    if not global.dyworld.game.counters.chunks then
+        global.dyworld.game.counters.chunks = 1
+    else
+        global.dyworld.game.counters.chunks = global.dyworld.game.counters.chunks +1
+    end
 end
 
 function Event_on_research_finished(event)
-	local Time = global.dyworld.game_stats.time_stamp
 	local research = event.research
 	local name = research.name
     
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+    if not global.dyworld.game.stats.research then global.dyworld.game.stats.research = {} end
+
+    if not global.dyworld.game.counters.research then
+        global.dyworld.game.counters.research = 1
+    else
+        global.dyworld.game.counters.research = global.dyworld.game.counters.research + 1
+    end
+
+    if not global.dyworld.game.stats.research[name] then
+        global.dyworld.game.stats.research[name] = {
+            finished = true,
+            time_finished = global.dyworld.time.log
+        }
+    end
 end
 
 function Event_on_character_corpse_expired(event)
     
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
 end
 
 function Event_on_rocket_launched(event)
@@ -47,6 +54,14 @@ function Event_on_rocket_launched(event)
     local inventory = rocket.get_inventory(1)
     local contents = inventory.get_contents()
     
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+
+    if not global.dyworld.game.counters.rocket then
+        global.dyworld.game.counters.rocket = 1
+    else
+        global.dyworld.game.counters.rocket = global.dyworld.game.counters.rocket + 1
+    end
 end
 
 function Event_on_sector_scanned(event)
@@ -54,4 +69,12 @@ function Event_on_sector_scanned(event)
     local Chunk_X = math.floor(event.chunk_position.x)
     local Chunk_Y = math.floor(event.chunk_position.y)
     
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+
+    if not global.dyworld.game.counters.scanned then
+        global.dyworld.game.counters.scanned = 1
+    else
+        global.dyworld.game.counters.scanned = global.dyworld.game.counters.scanned + 1
+    end
 end

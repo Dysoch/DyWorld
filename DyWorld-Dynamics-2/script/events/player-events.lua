@@ -1,4 +1,9 @@
-
+local local_debug = true
+local function debug(str)
+    if local_debug then
+        DyWorld_debug(str)
+    end
+end
 
 function Event_on_raised_revive(event)
 	--local id = event.player_index
@@ -93,6 +98,8 @@ function Dy_Player_init(event)
     if not global.dyworld.players then global.dyworld.players = {} end
     if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
     if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+
+    debug("player_event: created player "..id.." with the name: "..name.." for force: "..force)
     
     if not global.dyworld.players[id] then
         global.dyworld.players[id] = {

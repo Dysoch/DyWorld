@@ -1,6 +1,9 @@
 debugger = settings.startup["DyWorld_Debug"].value or nil
 Version_Build = "0.0.1"
 
+-- LuaLib
+require("script.lualib.debug")
+
 -- Event Handlers --
 require("script.events.keys")
 require("script.events.build-events")

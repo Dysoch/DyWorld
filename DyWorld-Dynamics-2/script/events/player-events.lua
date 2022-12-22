@@ -190,12 +190,22 @@ function Dy_Player_init(event)
                 },
             },
             stats = {
-                crafted = 0,
-                mined= 0,
-                build = 0,
-                killed = 0,
-                picked = 0,
-                capsules = 0,
+                total = {
+                    crafted = 0,
+                    mined= 0,
+                    build = 0,
+                    killed = 0,
+                    picked = 0,
+                    capsules = 0,
+                },
+                specific = {
+                    crafted = {},
+                    mined= {},
+                    build = {},
+                    killed = {},
+                    picked = {},
+                    capsules = {},
+                },
                 distance = {
                     personal = 0,
                     vehicle = 0,

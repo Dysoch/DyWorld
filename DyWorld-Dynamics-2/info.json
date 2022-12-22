@@ -15,7 +15,7 @@
 		"Nanobots >= 3.2.16",
 		"alien-biomes >= 0.6.5",
 		
-		"~ DyComPa >= 0.1.7",
+		"! DyComPa >= 0.1.7",
 
 		"? Aircraft",
 		"? crafting_combinator",

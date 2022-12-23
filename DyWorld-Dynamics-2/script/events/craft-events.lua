@@ -1,4 +1,4 @@
-local local_debug = false
+local local_debug = true
 local function debug(str)
     if local_debug then
         DyWorld_debug(str)
@@ -26,6 +26,18 @@ function Event_on_player_crafted_item(event)
         -- personal --
         if global.dyworld.players[id] then
             global.dyworld.players[id].stats.total.crafted = global.dyworld.players[id].stats.total.crafted + count
+
+            -- xp --
+            global.dyworld.players[id].stats.xp = global.dyworld.players[id].stats.xp + (count * 0.1)
+            debug("craft_event: added "..(count * 0.1).." xp, xp now: "..global.dyworld.players[id].stats.xp)
+            if global.dyworld.players[id].stats.xp >= global.dyworld.players[id].stats.xp_to_level then
+                global.dyworld.players[id].stats.xp = 0
+                global.dyworld.players[id].stats.xp_to_level = global.dyworld.players[id].stats.xp_to_level * (1 + math.random())
+                global.dyworld.players[id].stats.level = global.dyworld.players[id].stats.level + 1
+                global.dyworld.players[id].bonus_calc.threshold = 250 * global.dyworld.players[id].stats.level
+                debug("craft_event: gained a level, level is now "..global.dyworld.players[id].stats.level..", xp needed to next level is now: "..global.dyworld.players[id].stats.xp_to_level..". Threshold for bonuscalc is now "..global.dyworld.players[id].bonus_calc.threshold)
+            end
+
             global.dyworld.players[id].bonus_calc.total = global.dyworld.players[id].bonus_calc.total + 1
             if global.dyworld.players[id].bonus_calc.total >= global.dyworld.players[id].bonus_calc.threshold then
                 -- run bonus calc

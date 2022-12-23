@@ -219,10 +219,13 @@ function Dy_Player_init(event)
                     train = 0,
                 },
                 deaths = 0,
+                xp = 0,
+                xp_to_level = 100,
+                level = 1,
             },
             bonus_calc = {
                 total = 0,
-                threshold = 5000,
+                threshold = 250,
             },
             bonus = {
                 ["mining"] = {

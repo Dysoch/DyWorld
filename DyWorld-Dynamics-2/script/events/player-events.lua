@@ -1,7 +1,13 @@
-local local_debug = true
+local local_debug = false
 local function debug(str)
-    if local_debug then
-        DyWorld_debug(str)
+    local Time = "[color=red]["..global.dyworld.time.log.."][/color]"
+    local DyWorld = Time.." - [color=red]DyWorld-Dynamics-2:[/color] "
+    if not global.debug then global.debug = {} end
+    table.insert(global.debug, (Time.." = "..str))
+    if debugger and local_debug then
+        for k,v in pairs(game.players) do
+            v.print(DyWorld..str)
+        end
     end
 end
 
@@ -99,7 +105,7 @@ function Dy_Player_init(event)
     if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
     if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
 
-    debug("player_event: created player "..id.." with the name: "..name.." for force: "..force)
+    debug("("..id..") player_event: created player "..id.." with the name: "..name.." for force: "..force.name)
     
     if not global.dyworld.players[id] then
         global.dyworld.players[id] = {
@@ -107,7 +113,7 @@ function Dy_Player_init(event)
             alive = true,
             joined = true,
             banned = false,
-            force = force,
+            force = force.name,
             coords = {x = 0, y = 0, surface = "nauvis"},
             survival = {
                 food = {

@@ -14,11 +14,11 @@ remote.add_interface("DyWorld",
 		game.regenerate_entity(NAME)
 	end,
 	
-	--[[informatron_menu = function(data)
+	informatron_menu = function(data)
 		return dyworld_menu(data.player_index)
 	end,
 	
 	informatron_page_content = function(data)
 		return dyworld_page_content(data.page_name, data.player_index, data.element)
-	end]]--
+	end
 })

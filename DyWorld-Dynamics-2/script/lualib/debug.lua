@@ -7,6 +7,8 @@ local DyWorld = Time.." - [color=red]DyWorld-Dynamics-2:[/color] "
 	if not global.debug then global.debug = {} end
 	table.insert(global.debug, (Time.." = "..str))
 	if debugger then
-		game.players[1].print(DyWorld..str)
+        for k,v in pairs(game.players) do
+            v.print(DyWorld..str)
+        end
 	end
 end

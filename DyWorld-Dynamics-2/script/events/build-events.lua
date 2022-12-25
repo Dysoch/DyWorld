@@ -1,6 +1,16 @@
-
-
-
+local local_debug = false
+local local_log = false
+local function debug(str)
+    local Time = "[color=red]["..global.dyworld.time.log.."][/color]"
+    local DyWorld = Time.." - [color=red]DyWorld-Dynamics-2:[/color] "
+    if not global.debug then global.debug = {} end
+    if local_log then table.insert(global.debug, (Time.." = "..str)) end
+    if debugger and local_debug then
+        for k,v in pairs(game.players) do
+            v.print(DyWorld..str)
+        end
+    end
+end
 
 function Event_on_player_used_capsule(event)
 	local player = game.players[event.player_index]
@@ -17,6 +27,33 @@ function Event_on_built_entity(event)
 	local name = event.created_entity.name
 	local position = event.created_entity.position
 	local type = event.created_entity.type
+    
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+
+    -- global --
+    if not global.dyworld.game.counters.build then
+        global.dyworld.game.counters.build = 1
+    else
+        global.dyworld.game.counters.build = global.dyworld.game.counters.build + 1
+    end
+
+    -- personal --
+    if global.dyworld.players[id] then
+        global.dyworld.players[id].stats.total.build = global.dyworld.players[id].stats.total.build + 1
+
+        -- xp --
+        XP_Calc(id, (1 * 0.25))
+        Bonus_Threshold(id)
+        
+        if not global.dyworld.players[id].stats.specific.build[name] then
+            global.dyworld.players[id].stats.specific.build[name] = 1
+            debug("("..id..") Event_on_built_entity: Created specific mining table for "..name.." with 1")
+        else
+            global.dyworld.players[id].stats.specific.build[name] = global.dyworld.players[id].stats.specific.build[name] + 1
+            debug("("..id..") Event_on_built_entity: increased specific mining table for "..name.." with 1 to "..global.dyworld.players[id].stats.specific.build[name])
+        end
+    end
 
 end
 

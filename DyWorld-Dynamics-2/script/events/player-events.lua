@@ -1,9 +1,10 @@
 local local_debug = false
+local local_log = false
 local function debug(str)
     local Time = "[color=red]["..global.dyworld.time.log.."][/color]"
     local DyWorld = Time.." - [color=red]DyWorld-Dynamics-2:[/color] "
     if not global.debug then global.debug = {} end
-    table.insert(global.debug, (Time.." = "..str))
+    if local_log then table.insert(global.debug, (Time.." = "..str)) end
     if debugger and local_debug then
         for k,v in pairs(game.players) do
             v.print(DyWorld..str)
@@ -105,7 +106,7 @@ function Dy_Player_init(event)
     if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
     if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
 
-    debug("("..id..") player_event: created player "..id.." with the name: "..name.." for force: "..force.name)
+    debug("("..id..") Dy_Player_init: created player "..id.." with the name: "..name.." for force: "..force.name)
     
     if not global.dyworld.players[id] then
         global.dyworld.players[id] = {
@@ -159,47 +160,153 @@ function Dy_Player_init(event)
                 },
             },
             attributes = {
-                strength = {
-                    native = 1,
-                    implant = 0,
-                    bonus = 0,
-                    tech = 0,
-                    total = 1,
+                primary = {
+                    strength = {
+                        native = 1,
+                        implant = 0,
+                        bonus = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                    },
+                    constitution = {
+                        native = 1,
+                        implant = 0,
+                        bonus = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                    },
+                    dexterity = {
+                        native = 1,
+                        implant = 0,
+                        bonus = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                    },
+                    intelligence = {
+                        native = 1,
+                        implant = 0,
+                        bonus = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                    },
+                    wisdom = {
+                        native = 1,
+                        implant = 0,
+                        bonus = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                    },
+                    charisma = {
+                        native = 1,
+                        implant = 0,
+                        bonus = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                    },
                 },
-                constitution = {
-                    native = 1,
-                    implant = 0,
-                    bonus = 0,
-                    tech = 0,
-                    total = 1,
-                },
-                dexterity = {
-                    native = 1,
-                    implant = 0,
-                    bonus = 0,
-                    tech = 0,
-                    total = 1,
-                },
-                intelligence = {
-                    native = 1,
-                    implant = 0,
-                    bonus = 0,
-                    tech = 0,
-                    total = 1,
-                },
-                wisdom = {
-                    native = 1,
-                    implant = 0,
-                    bonus = 0,
-                    tech = 0,
-                    total = 1,
-                },
-                charisma = {
-                    native = 1,
-                    implant = 0,
-                    bonus = 0,
-                    tech = 0,
-                    total = 1,
+                secondary = {
+                    dodge = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "dexterity",
+                    },
+                    speed = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "constitution",
+                    },
+                    luck = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "wisdom",
+                    },
+                    leadership = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "charisma",
+                    },
+                    iq = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "intelligence",
+                    },
+                    will = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "intelligence",
+                    },
+                    power = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "strength",
+                    },
+                    fortitude = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "constitution",
+                    },
+                    reflex = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "dexterity",
+                    },
+                    might = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "strength",
+                    },
+                    perception = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "wisdom",
+                    },
+                    resolve = {
+                        native = 1,
+                        implant = 0,
+                        tech = 0,
+                        stats = 0,
+                        total = 1,
+                        main = "charisma",
+                    },
                 },
             },
             stats = {

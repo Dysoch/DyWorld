@@ -45,7 +45,7 @@ function dyworld_page_content(page_name, player_index, element)
             for id,I in pairs(global.dyworld.players) do
                 element.add{type = "label", name = "", caption = "Player "..tostring(id).." \n"}
                 for k,v in pairs(I.stats.specific.crafted) do
-                    element.add{type = "label", name = "", caption = k.." = "..v}
+                    element.add{type = "label", name = "", caption = "[color=red]"..k.."[/color] = [color=blue]"..v.."[/color]"}
                 end
                 element.add{type = "label", name = "", caption = "\n\n\n\n\n"}
             end
@@ -54,7 +54,7 @@ function dyworld_page_content(page_name, player_index, element)
             for id,I in pairs(global.dyworld.players) do
                 element.add{type = "label", name = "", caption = "Player "..tostring(id).." \n"}
                 for k,v in pairs(I.stats.specific.mined) do
-                    element.add{type = "label", name = "", caption = k.." = "..v}
+                    element.add{type = "label", name = "", caption = "[color=red]"..k.."[/color] = [color=blue]"..v.."[/color]"}
                 end
                 element.add{type = "label", name = "", caption = "\n\n\n\n\n"}
             end
@@ -62,9 +62,9 @@ function dyworld_page_content(page_name, player_index, element)
         if page_name == "d_build" then
             for id,I in pairs(global.dyworld.players) do
                 element.add{type = "label", name = "", caption = "Player "..tostring(id).." \n"}
-                --[[for k,v in pairs(I.stats.specific.mined) do
-                    element.add{type = "label", name = "", caption = k.." = "..v.}
-                end]]--
+                for k,v in pairs(I.stats.specific.build) do
+                    element.add{type = "label", name = "", caption = "[color=red]"..k.."[/color] = [color=blue]"..v.."[/color]"}
+                end
                 element.add{type = "label", name = "", caption = "\n\n\n\n\n"}
             end
         end

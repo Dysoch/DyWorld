@@ -5,7 +5,11 @@ Version_Build = "0.0.1"
 require("script.database.informatron")
 
 -- LuaLib --
+require("script.lualib.bonus")
 require("script.lualib.debug")
+require("script.lualib.research")
+require("script.lualib.stats")
+require("script.lualib.vitals")
 
 -- Event Handlers --
 require("script.events.keys")

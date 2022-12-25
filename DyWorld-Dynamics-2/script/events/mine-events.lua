@@ -1,9 +1,10 @@
 local local_debug = false
+local local_log = false
 local function debug(str)
     local Time = "[color=red]["..global.dyworld.time.log.."][/color]"
     local DyWorld = Time.." - [color=red]DyWorld-Dynamics-2:[/color] "
     if not global.debug then global.debug = {} end
-    table.insert(global.debug, (Time.." = "..str))
+    if local_log then table.insert(global.debug, (Time.." = "..str)) end
     if debugger and local_debug then
         for k,v in pairs(game.players) do
             v.print(DyWorld..str)
@@ -41,32 +42,17 @@ function Event_on_player_mined_item(event)
         global.dyworld.players[id].stats.total.mined = global.dyworld.players[id].stats.total.mined + count
 
         -- xp --
-        global.dyworld.players[id].stats.xp = global.dyworld.players[id].stats.xp + (count * 0.05)
-        debug("("..id..") mine_event: added "..(count * 0.05).." xp, xp now: "..global.dyworld.players[id].stats.xp)
-        if global.dyworld.players[id].stats.xp >= global.dyworld.players[id].stats.xp_to_level then
-            global.dyworld.players[id].stats.xp = 0
-            global.dyworld.players[id].stats.xp_to_level = global.dyworld.players[id].stats.xp_to_level * (1 + math.random())
-            global.dyworld.players[id].stats.level = global.dyworld.players[id].stats.level + 1
-            global.dyworld.players[id].bonus_calc.threshold = 250 * global.dyworld.players[id].stats.level
-            debug("("..id..") mine_event: gained a level, level is now "..global.dyworld.players[id].stats.level..", xp needed to next level is now: "..global.dyworld.players[id].stats.xp_to_level..". Threshold for bonuscalc is now "..global.dyworld.players[id].bonus_calc.threshold)
-        end
-
-        global.dyworld.players[id].bonus_calc.total = global.dyworld.players[id].bonus_calc.total + 1
-        if global.dyworld.players[id].bonus_calc.total >= global.dyworld.players[id].bonus_calc.threshold then
-            -- run bonus calc
-            global.dyworld.players[id].bonus_calc.total = 0
-            debug("("..id..") mine_event: Bonus threshold reached, started bonus calculation")
-        end
+        XP_Calc(id, (count * 0.05))
+        Bonus_Threshold(id)
+        
         if not global.dyworld.players[id].stats.specific.mined[name] then
             global.dyworld.players[id].stats.specific.mined[name] = count
-            debug("("..id..") mine_event: Created specific mining table for "..name.." with "..count)
+            debug("("..id..") Event_on_player_mined_item: Created specific mining table for "..name.." with "..count)
         else
             global.dyworld.players[id].stats.specific.mined[name] = global.dyworld.players[id].stats.specific.mined[name] + count
-            debug("("..id..") mine_event: increased specific mining table for "..name.." with "..count.." to "..global.dyworld.players[id].stats.specific.mined[name])
+            debug("("..id..") Event_on_player_mined_item: increased specific mining table for "..name.." with "..count.." to "..global.dyworld.players[id].stats.specific.mined[name])
         end
     end
-
-    
 end
 
 function Event_on_pre_player_mined_item(event)

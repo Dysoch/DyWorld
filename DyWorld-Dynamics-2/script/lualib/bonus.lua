@@ -1,5 +1,5 @@
 local local_debug = false
-local local_log = true
+local local_log = false
 local function debug(str)
     local Time = "[color=red]["..global.dyworld.time.log.."][/color]"
     local DyWorld = Time.." - [color=red]DyWorld-Dynamics-2:[/color] "
@@ -10,6 +10,17 @@ local function debug(str)
             v.print(DyWorld..str)
         end
     end
+end
+local function LOG(str)
+    local Time = "[color=red]["..global.dyworld.time.log.."][/color]"
+    if not global.debug then global.debug = {} end
+    table.insert(global.debug, (Time.." = "..str))
+    debug(str)
+end
+
+local function Round(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	return math.floor(num * mult + 0.5) / mult
 end
 
 function Bonus_Threshold(id)
@@ -32,33 +43,33 @@ function Attribute_Calc(id)
     ----- Secondary Attributes -----
     debug("("..id..") Attribute_Calc: Start Secondary Attribute Calculation")
     -- strength secondaries --
-    local power = 0
-    local might = 0
+    local power = (level * 0.05) + (0)
+    local might = (level * 0.05) + (0)
     global.dyworld.players[id].attributes.secondary.power.stats = power
     global.dyworld.players[id].attributes.secondary.might.stats = might
     -- constitution secondaries --
-    local fortitude = 0
-    local speed = 0
+    local fortitude = (level * 0.05) + (0)
+    local speed = (level * 0.05) + (0)
     global.dyworld.players[id].attributes.secondary.fortitude.stats = fortitude
     global.dyworld.players[id].attributes.secondary.speed.stats = speed
     -- dexterity secondaries --
-    local dodge = 0
-    local reflex = 0
+    local dodge = (level * 0.05) + (0)
+    local reflex = (level * 0.05) + (0)
     global.dyworld.players[id].attributes.secondary.dodge.stats = dodge
     global.dyworld.players[id].attributes.secondary.reflex.stats = reflex
     -- intelligence secondaries --
-    local iq = 0
-    local will = 0
+    local iq = (level * 0.05) + (0)
+    local will = (level * 0.05) + (0)
     global.dyworld.players[id].attributes.secondary.iq.stats = iq
     global.dyworld.players[id].attributes.secondary.will.stats = will
     -- wisdom secondaries --
-    local luck = 0
-    local perception = 0
+    local luck = (level * 0.05) + (0)
+    local perception = (level * 0.05) + (0)
     global.dyworld.players[id].attributes.secondary.luck.stats = luck
     global.dyworld.players[id].attributes.secondary.perception.stats = perception
     -- charisma secondaries --
-    local leadership = 0
-    local resolve = 0
+    local leadership = (level * 0.05) + (0)
+    local resolve = (level * 0.05) + (0)
     global.dyworld.players[id].attributes.secondary.leadership.stats = leadership
     global.dyworld.players[id].attributes.secondary.resolve.stats = resolve
     for k,v in pairs(global.dyworld.players[id].attributes.secondary) do
@@ -121,5 +132,93 @@ end
 
 function Bonus_Calc(id)
     debug("("..id..") Bonus_Calc: Start bonus calculation")
+    -- main callbacks -- 
+    local level = global.dyworld.players[id].stats.level or 1
+    local deaths = global.dyworld.players[id].stats.deaths or 0
+    local player = global.dyworld.players[id].attributes
+    -- primary attributes callbacks -- 
+    local strength = player.primary.strength.total or 1
+    local constitution = player.primary.constitution.total or 1
+    local dexterity = player.primary.dexterity.total or 1
+    local intelligence = player.primary.intelligence.total or 1
+    local wisdom = player.primary.wisdom.total or 1
+    local charisma = player.primary.charisma.total or 1
+    -- secondary attributes callbacks -- 
+    local power = player.secondary.power.total or 1
+    local might = player.secondary.might.total or 1
+    local fortitude = player.secondary.fortitude.total or 1
+    local speed = player.secondary.speed.total or 1
+    local dodge = player.secondary.dodge.total or 1
+    local reflex = player.secondary.reflex.total or 1
+    local iq = player.secondary.iq.total or 1
+    local will = player.secondary.will.total or 1
+    local luck = player.secondary.luck.total or 1
+    local perception = player.secondary.perception.total or 1
+    local leadership = player.secondary.leadership.total or 1
+    local resolve = player.secondary.resolve.total or 1
+
+    -- main calculations --
+    -- mining --
+    local formula = ((strength + (constitution / 100) + (intelligence / 50) + (power / 5) + (might / 25) + (speed * 1.2) + luck + (reflex / 5)) / 2)
+    global.dyworld.players[id].bonus["mining"].stats = formula
+    
+    -- crafting --
+    local formula = (((wisdom / 2) + (intelligence / 3.5) + (dexterity / 1.5) + ((iq + will + luck) / 15) + fortitude + (speed * 2.5) + (perception / 50)) / 5)
+    global.dyworld.players[id].bonus["crafting"].stats = formula
+    
+    -- health --
+    local formula = 0
+    global.dyworld.players[id].bonus["health"].stats = formula
+    
+    -- inventory --
+    local formula = 0
+    global.dyworld.players[id].bonus["inventory"].stats = formula
+    
+    -- reach-distance --
+    local formula = 0
+    global.dyworld.players[id].bonus["reach-distance"].stats = formula
+    
+    -- build-distance --
+    local formula = 0
+    global.dyworld.players[id].bonus["build-distance"].stats = formula
+    
+    -- loot-distance --
+    local formula = 0
+    global.dyworld.players[id].bonus["loot-distance"].stats = formula
+    
+    -- run-speed --
+    local formula = 0
+    global.dyworld.players[id].bonus["run-speed"].stats = formula
+    
+    -- item-drop-distance --
+    local formula = 0
+    global.dyworld.players[id].bonus["item-drop-distance"].stats = formula
+    
+    -- item-pickup-distance --
+    local formula = 0
+    global.dyworld.players[id].bonus["item-pickup-distance"].stats = formula
+    
+    -- max-robot-count --
+    local formula = 0
+    global.dyworld.players[id].bonus["max-robot-count"].stats = formula
+
+    for k,v in pairs(global.dyworld.players[id].bonus) do
+        v.deaths = (v.min_max.deaths * deaths)
+        v.total = ((v.native + v.stats + v.implants + v.research + v.achievements) - v.death)
+        debug("("..id..") Bonus_Calc: "..k.." is now "..v.total)
+        if level >= v.min_max.min_level then
+            v.enabled = true
+            debug("("..id..") Bonus_Calc: enabled "..k)
+        else
+            v.enabled = false
+            debug("("..id..") Bonus_Calc: disabled "..k)
+        end
+        if v.total >= v.min_max.min then
+            if v.enabled and v.toggled then
+                game.players[id][v.callback] = math.min(Round(v.total, v.min_max.rounded), v.min_max.max)
+                LOG("("..id..") Bonus_Calc: enabled and toggled "..k..", it is now "..math.min(Round(v.total, v.min_max.rounded), v.min_max.max))
+            end
+        end
+    end
     debug("("..id..") Bonus_Calc: Done bonus calculation")
 end

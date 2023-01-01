@@ -1,15 +1,17 @@
 debugger = settings.startup["DyWorld_Debug"].value or nil
 Version_Build = "0.0.1"
 
--- Database --
-require("script.database.informatron")
-
 -- LuaLib --
+require("script.lualib.functions")
 require("script.lualib.bonus")
 require("script.lualib.debug")
 require("script.lualib.research")
 require("script.lualib.stats")
 require("script.lualib.vitals")
+
+-- Database --
+require("database.main")
+require("script.database.informatron")
 
 -- Event Handlers --
 require("script.events.keys")

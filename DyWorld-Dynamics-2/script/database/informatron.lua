@@ -74,4 +74,68 @@ function dyworld_page_content(page_name, player_index, element)
             end
         end
     end
+    if page_name == "stats" then
+		element.add{type="label", name="", caption={"DyWorld.page_stats"}}
+	
+		local table2 = element.add{type = "table", name = "table2", column_count = 3, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
+		
+		table2.add{type = "label", caption = ""}
+		table2.add{type = "label", caption = {"DyWorld_2.personal"}, tooltip = {"DyWorld_2.personal_tp"}}
+		table2.add{type = "label", caption = {"DyWorld_2.total"}, tooltip = {"DyWorld_2.total_tp"}}
+	
+		table2.add{type = "label", caption = {"DyWorld_2.crafted"}, tooltip = {"DyWorld_2.crafted_tp"}}
+		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.crafted, 2).."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.crafted or 0), 2).."[/color]"}
+		
+		table2.add{type = "label", caption = {"DyWorld_2.mined"}, tooltip = {"DyWorld_2.mined_tp"}}
+		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.mined, 2).."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.mined or 0), 2).."[/color]"}
+		
+		table2.add{type = "label", caption = {"DyWorld_2.built"}, tooltip = {"DyWorld_2.built_tp"}}
+		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.build, 2).."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.build or 0), 2).."[/color]"}
+		
+		table2.add{type = "label", caption = {"DyWorld_2.picked"}, tooltip = {"DyWorld_2.picked_tp"}}
+		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.picked, 2).."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.picked or 0), 2).."[/color]"}
+		
+		table2.add{type = "label", caption = {"DyWorld_2.killed"}, tooltip = {"DyWorld_2.killed_tp"}}
+		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.killed, 2).."[/color]"}
+		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.killed or 0), 2).."[/color]"}
+	end
+
+    if page_name == "bonuses" then
+		element.add{type = "label", name = "", caption = {"DyWorld.page_bonuses"}}local table2 = element.add{type = "table", name = "", column_count = 10, draw_vertical_lines = true, draw_horizontal_lines = true, vertical_centering = true, horizontal_centering = true, draw_horizontal_line_after_headers = false}
+		
+		table2.add{type = "label", caption = ""}
+		table2.add{type = "label", caption = {"DyWorld_2.native"}}
+		table2.add{type = "label", caption = {"DyWorld_2.stats"}}
+		table2.add{type = "label", caption = {"DyWorld_2.implants"}}
+		table2.add{type = "label", caption = {"DyWorld_2.research"}}
+		table2.add{type = "label", caption = {"DyWorld_2.achievements"}}
+		table2.add{type = "label", caption = {"DyWorld_2.deaths"}}
+		table2.add{type = "label", caption = {"DyWorld_2.total"}}
+		table2.add{type = "label", caption = {"DyWorld_2.enabled"}}
+		table2.add{type = "label", caption = {"DyWorld_2.toggled"}}
+        for k,v in pairs(global.dyworld.players[player_index].bonus) do
+		    table2.add{type = "label", caption = "[color=white]"..k..": [/color]"}
+		    table2.add{type = "label", caption = "[color=cyan]"..Round(v.native, 2).."[/color]"}
+		    table2.add{type = "label", caption = "[color=cyan]"..Round(v.stats, 2).."[/color]"}
+		    table2.add{type = "label", caption = "[color=cyan]"..Round(v.implants, 2).."[/color]"}
+		    table2.add{type = "label", caption = "[color=cyan]"..Round(v.research, 2).."[/color]"}
+		    table2.add{type = "label", caption = "[color=cyan]"..Round(v.achievements, 2).."[/color]"}
+		    table2.add{type = "label", caption = "[color=red]"..Round(v.death, 2).."[/color]", tooltip = {"DyWorld_2.deaths_tp_2"}}
+		    table2.add{type = "label", caption = "[color=blue]"..Round(v.total, 2).."[/color]", tooltip = {"DyWorld_2.total_tp_2"}}
+            if v.enabled then
+                table2.add{type = "label", caption = "[color=green] ✔[/color]"}
+            else
+                table2.add{type = "label", caption = "[color=red] ✘[/color]"}
+            end
+            if v.toggled then
+                table2.add{type = "label", caption = "[color=green] ✔[/color]"}
+            else
+                table2.add{type = "label", caption = "[color=red] ✘[/color]"}
+            end
+        end
+	end
 end

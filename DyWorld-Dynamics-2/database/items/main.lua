@@ -5,10 +5,10 @@ DyWorld_2_Main_Items = {
     --[""] = {},
 
     ----- Trees & Wood -----
-    ["log-normal"] = {
+    ["log"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon.."log.png",
             },
         },
         subgroup = Dy.."wood",
@@ -18,7 +18,7 @@ DyWorld_2_Main_Items = {
     ["log-sulfur"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon.."log-sulfur.png",
             },
         },
         subgroup = Dy.."wood",
@@ -28,17 +28,17 @@ DyWorld_2_Main_Items = {
     ["log-dead"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon.."log-dead.png",
             },
         },
         subgroup = Dy.."wood",
         order = "1-3",
         stack_size = 50,
     },
-    ["wood-normal"] = {
+    ["wood"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon.."wood.png",
             },
         },
         subgroup = Dy.."wood",
@@ -48,7 +48,7 @@ DyWorld_2_Main_Items = {
     ["wood-sulfur"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon.."wood-sulfur.png",
             },
         },
         subgroup = Dy.."wood",
@@ -58,31 +58,41 @@ DyWorld_2_Main_Items = {
     ["bark"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon.."bark.png",
             },
         },
         subgroup = Dy.."wood",
         order = "4-1",
         stack_size = 500,
     },
-    ["sap-normal"] = {
+    ["sap"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon.."sap.png",
             },
         },
         subgroup = Dy.."wood",
         order = "3-1",
         stack_size = 500,
     },
-    ["sap-sulfur"] = {
+    ["sapling-normal"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon.."sapling-oak.png",
             },
         },
         subgroup = Dy.."wood",
-        order = "3-2",
+        order = "0-1",
+        stack_size = 500,
+    },
+    ["sapling-sulfur"] = {
+        icons = {
+            {
+                icon = Dy_icon.."sapling-sulfur.png",
+            },
+        },
+        subgroup = Dy.."wood",
+        order = "0-1",
         stack_size = 500,
     },
 

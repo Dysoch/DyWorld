@@ -353,7 +353,7 @@ DyWorld_2_Main_Items = {
     ["copper-plate"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."base-plate-1.png",
+                icon = Dy_icon_ore.."base-plate-2.png",
                 tint = Dy_Metal_Colors["copper"],
             },
         },
@@ -409,7 +409,7 @@ DyWorld_2_Main_Items = {
     ["aluminium-plate"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."base-plate-1.png",
+                icon = Dy_icon_ore.."base-plate-2.png",
                 tint = Dy_Metal_Colors["aluminium"],
             },
         },
@@ -465,7 +465,7 @@ DyWorld_2_Main_Items = {
     ["zinc-plate"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."base-plate-1.png",
+                icon = Dy_icon_ore.."base-plate-2.png",
                 tint = Dy_Metal_Colors["zinc"],
             },
         },
@@ -577,7 +577,7 @@ DyWorld_2_Main_Items = {
     ["tin-plate"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."base-plate-1.png",
+                icon = Dy_icon_ore.."base-plate-2.png",
                 tint = Dy_Metal_Colors["tin"],
             },
         },
@@ -633,7 +633,7 @@ DyWorld_2_Main_Items = {
     ["silver-plate"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."base-plate-1.png",
+                icon = Dy_icon_ore.."base-plate-2.png",
                 tint = Dy_Metal_Colors["silver"],
             },
         },
@@ -689,7 +689,7 @@ DyWorld_2_Main_Items = {
     ["gold-plate"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."base-plate-1.png",
+                icon = Dy_icon_ore.."base-plate-2.png",
                 tint = Dy_Metal_Colors["gold"],
             },
         },
@@ -745,7 +745,7 @@ DyWorld_2_Main_Items = {
     ["magnesium-plate"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."base-plate-1.png",
+                icon = Dy_icon_ore.."base-plate-2.png",
                 tint = Dy_Metal_Colors["magnesium"],
             },
         },
@@ -801,7 +801,7 @@ DyWorld_2_Main_Items = {
     ["manganese-plate"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."base-plate-1.png",
+                icon = Dy_icon_ore.."base-plate-3.png",
                 tint = Dy_Metal_Colors["manganese"],
             },
         },

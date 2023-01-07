@@ -100,7 +100,7 @@ DyWorld_2_Main_Items = {
     ["hematite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."hematite.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -110,7 +110,7 @@ DyWorld_2_Main_Items = {
     ["chalcopyrite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."chalcopyrite.png",
             },
         },
         subgroup = Dy.."ore-main",

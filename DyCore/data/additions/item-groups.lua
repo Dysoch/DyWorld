@@ -1,5 +1,5 @@
 
-local DyDs = "dyworld-"
+DyDs = "dyworld-"
 local Table = {
     ["decor"] = {
         ["flooring-1"] = "b1",
@@ -57,11 +57,6 @@ local Table = {
         ["satellites-2"] = "1",
         ["satellites-3"] = "1",
         ["satellites-4"] = "1",
-        ["0-resource-1"] = "1",
-        ["0-resource-2"] = "1",
-        ["0-resource-3"] = "1",
-        ["0-resource-4"] = "1",
-        ["0-resource-5"] = "1",
         ["material-1"] = "1",
         ["material-2"] = "1",
         ["material-3"] = "1",
@@ -88,6 +83,21 @@ local Table = {
         ["fluids-8"] = "1",
         ["fluids-9"] = "1",
         ["slags"] = "1",
+    },
+    ["resources"] = {
+        ["wood"] = "1",
+        ["stone"] = "2",
+        ["ore-main"] = "3-1",
+        ["ore-iron"] = "4-iron",
+        ["ore-copper"] = "4-copper",
+        ["ore-aluminium"] = "4-aluminium",
+        ["ore-zinc"] = "4-zinc",
+        ["ore-lead"] = "4-lead",
+        ["ore-tin"] = "4-tin",
+        ["ore-silver"] = "4-silver",
+        ["ore-gold"] = "4-gold",
+        ["ore-magnesium"] = "4-magnesium",
+        ["ore-manganese"] = "4-manganese",
     },
     ["logistics"] = {
         ["transport-belt"] = "1",

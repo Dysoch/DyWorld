@@ -1,4 +1,4 @@
-
+local DyDs_icon_temp = "__DyCore__/graphics/questionmark.png"
 
 DyW.Item.Add = {}
 
@@ -11,8 +11,7 @@ data:extend(
 	localised_name = params.localised_name or nil,
 	localised_description = params.localised_description or {"item-description." .. params.name},
     icon = DyDs_icon_temp,
-    icon_size = 32, 
-	--icon_mipmaps = 4,
+    icon_size = 64,
     subgroup = params.subgroup or "other",
     order = params.order or params.name,
     rocket_launch_product = params.rocket_launch_product or nil,

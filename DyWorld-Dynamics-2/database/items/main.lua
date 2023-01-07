@@ -230,7 +230,7 @@ DyWorld_2_Main_Items = {
     ["phosphorite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."phosphorite.png",
             },
         },
         subgroup = Dy.."ore-main",

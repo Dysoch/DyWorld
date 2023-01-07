@@ -1,22 +1,97 @@
 
 
 DyWorld_2_Ore_Table_Main = {
-    ["hematite"] = "Fe2-O3", -- Iron Main --
-    ["chalcopyrite"] = "Cu-Fe-S2", -- Copper Main --
-    ["bauxite"] = "Al2-O3-H2-0", -- Aluminium Main --
-    ["sphalerite"] = "Zn-S", -- Zinc Main --
-    ["galena"] = "Pb-S", --Lead Main --
-    ["tin-pyrite"] = "Cu2-Fe-Sn-S4", -- Tin Main --
-    ["argentite"] = "Ag2-S", -- Silver Main --
-    ["calaverite"] = "Au-Te2", -- Gold Main --
-    ["rock-salt"] = "Na-Cl", -- Sodium Main --
-    ["carnalite"] = "KCI-Mg-CI-H2-0", -- Potassium Main --
-    ["cinnabar"] = "Hg-S", -- Mercury Main --
-    ["dolomite"] = "Ca-Mg-C-O3", -- Magnesium Main --
-    ["limestone"] = "Ca-C-O3", -- Calcium Main --
-    ["phosphorite"] = "Ca5-P-O4-F", -- Phosphorous Main --
-    ["pyrolusite"] = "Mn-O2", -- Manganese Main --
-    ["carbon"] = "C-O2", -- Carbon Main --
+    ["hematite"] = { -- Iron Main --
+        chem = "Fe2-O3",
+        ore = "iron-ore",
+        ratio_ore = 1,
+        ratio_main = 3,
+    },
+    ["chalcopyrite"] = { -- Copper Main --
+        chem = "Cu-Fe-S2",
+        ore = "copper-ore",
+        ratio_ore = 1,
+        ratio_main = 2,
+    },
+    ["bauxite"] = { -- Aluminium Main --
+        chem = "Al2-O3-H2-0",
+        ore = "aluminium-ore",
+        ratio_ore = 1,
+        ratio_main = 4,
+    },
+    ["sphalerite"] = { -- Zinc Main --
+        chem = "Zn-S",
+        ore = "zinc-ore",
+        ratio_ore = 1,
+        ratio_main = 2,
+    },
+    ["galena"] = { -- Lead Main --
+        chem = "Pb-S",
+        ore = "lead-ore",
+        ratio_ore = 1,
+        ratio_main = 3,
+    },
+    ["tin-pyrite"] = { -- Tin Main --
+        chem = "Cu2-Fe-Sn-S4",
+        ore = "tin-ore",
+        ratio_ore = 1,
+        ratio_main = 2,
+    },
+    ["argentite"] = { -- Silver Main --
+        chem = "Ag2-S",
+        ore = "silver-ore",
+        ratio_ore = 1,
+        ratio_main = 6,
+    },
+    ["calaverite"] = { -- Gold Main --
+        chem = "Au-Te2",
+        ore = "gold-ore",
+        ratio_ore = 1,
+        ratio_main = 6,
+    },
+    ["rock-salt"] = { -- Sodium Main --
+        chem = "Na-Cl",
+        --ore = "s-ore",
+        --ratio_ore = 3,
+    },
+    ["carnalite"] = { -- Potassium Main --
+        chem = "KCI-Mg-CI-H2-0",
+        --ore = "iron-ore",
+        --ratio_ore = 3,
+    },
+    ["cinnabar"] = { -- Mercury Main --
+        chem = "Hg-S",
+        --ore = "iron-ore",
+        --ratio_ore = 3,
+    },
+    ["dolomite"] = { -- Magnesium Main --
+        chem = "Ca-Mg-C-O3",
+        ore = "magnesium-ore",
+        ratio_ore = 1,
+        ratio_main = 4,
+    },
+    ["limestone"] = { -- Calcium Main --
+        chem = "Ca-C-O3",
+        --ore = "iron-ore",
+        --ratio_ore = 3,
+    },
+    ["phosphorite"] = { -- Phosphorous Main --
+        chem = "Ca5-P-O4-F",
+        --ore = "iron-ore",
+        --ratio_ore = 3,
+    },
+    ["pyrolusite"] = { -- Manganese Main --
+        chem = "Mn-O2",
+        ore = "manganese-ore",
+        ratio_ore = 1,
+        ratio_main = 7,
+    },
+    ["carbon"] = { -- Coal Main --
+        chem = "C-O2",
+        ore = "coal",
+        ratio_ore = 3,
+        ratio_main = 1,
+    },
 }
 
 DyWorld_2_Ore_Table = {

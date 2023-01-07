@@ -2,18 +2,19 @@ local DyDs_icon_temp = "__DyCore__/graphics/questionmark.png"
 
 DyW.Item.Add = {}
 
-function DyW.Item.Add.Add_1(params)
+function DyW.Item.Add.Add_1(params, name_1)
+    local name = name_1 or params.name
 data:extend(
 {
   {
     type = "item",
-    name = params.name,
+    name = name,
 	localised_name = params.localised_name or nil,
-	localised_description = params.localised_description or {"item-description." .. params.name},
+	localised_description = params.localised_description or nil,
     icon = DyDs_icon_temp,
     icon_size = 64,
     subgroup = params.subgroup or "other",
-    order = params.order or params.name,
+    order = params.order or "1",
     rocket_launch_product = params.rocket_launch_product or nil,
     place_result = params.place_result or nil,
     place_as_tile = params.place_as_tile or nil,
@@ -30,12 +31,12 @@ data:extend(
   }
 })
 	if params.icons then
-		data.raw.item[params.name].icon = nil
-		data.raw.item[params.name].icons = params.icons
-		data.raw.item[params.name].icon_size = 64
+		data.raw.item[name].icon = nil
+		data.raw.item[name].icons = params.icons
+		data.raw.item[name].icon_size = 64
 	elseif params.icon then
-		data.raw.item[params.name].icon = params.icon
-		data.raw.item[params.name].icon_size = 64
+		data.raw.item[name].icon = params.icon
+		data.raw.item[name].icon_size = 64
 	end
-    DyW.Fx.Edited("item", params.name, "Item_Add_1")
+    DyW.Fx.Edited("item", name, "Item_Add_1")
 end

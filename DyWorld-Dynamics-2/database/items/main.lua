@@ -220,7 +220,7 @@ DyWorld_2_Main_Items = {
     ["limestone"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."limestone.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -250,7 +250,7 @@ DyWorld_2_Main_Items = {
     ["carbon"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."carbon.png",
             },
         },
         subgroup = Dy.."ore-main",

@@ -120,7 +120,7 @@ DyWorld_2_Main_Items = {
     ["bauxite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."bauxite.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -130,7 +130,7 @@ DyWorld_2_Main_Items = {
     ["sphalerite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."sphalerite.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -140,7 +140,7 @@ DyWorld_2_Main_Items = {
     ["galena"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."galena.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -150,7 +150,7 @@ DyWorld_2_Main_Items = {
     ["tin-pyrite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."tin-pyrite.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -160,7 +160,7 @@ DyWorld_2_Main_Items = {
     ["argentite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."argentite.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -170,7 +170,7 @@ DyWorld_2_Main_Items = {
     ["calaverite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."calaverite.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -180,7 +180,7 @@ DyWorld_2_Main_Items = {
     ["rock-salt"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."rock-salt.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -190,7 +190,7 @@ DyWorld_2_Main_Items = {
     ["carnalite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."carnalite.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -200,7 +200,7 @@ DyWorld_2_Main_Items = {
     ["cinnabar"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."cinnabar.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -210,7 +210,7 @@ DyWorld_2_Main_Items = {
     ["dolomite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."dolomite.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -240,7 +240,7 @@ DyWorld_2_Main_Items = {
     ["pyrolusite"] = {
         icons = {
             {
-                icon = Dy_icon_temp,
+                icon = Dy_icon_ore.."pyrolusite.png",
             },
         },
         subgroup = Dy.."ore-main",

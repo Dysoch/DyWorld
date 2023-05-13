@@ -37,3 +37,22 @@ for _, type in pairs(data.raw) do
         end
     end
 end
+
+
+-- Logging Events --
+
+local Stats_Table = {}
+local Stats_Table_Total = 0
+for Type,Table in pairs(data.raw) do
+	Stats_Table[Type] = 0
+	for k,v in pairs(data.raw[Type]) do
+		Stats_Table[Type] = Stats_Table[Type] + 1
+		Stats_Table_Total = Stats_Table_Total + 1
+	end
+end
+
+log("DyCore: checksum complete, no errors. Statistics following:")
+log("DyCore: data.raw. holds a total of "..Stats_Table_Total.." entries")
+for k,v in pairs(Stats_Table) do
+	log("DyCore: data.raw."..k.." holds "..v.." entries")
+end

@@ -15,3 +15,12 @@ require(db.."resources.ores")
 
 -- Items --
 require(db.."items.main")
+
+-- Tech --
+require(db.."tech.main")
+require(db.."tech.biological")
+require(db.."tech.combat")
+require(db.."tech.infrastructure")
+require(db.."tech.intermediates")
+require(db.."tech.metallurgy")
+require(db.."tech.space")

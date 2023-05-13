@@ -2,12 +2,12 @@
 
 
 DyWorld_2_Combat_Tech = {
-    --[""] = {},
+    --[""] = {"combat"},
 
-    ["metallurgy"] = {},
-    ["combat"] = {},
-    ["intermediates"] = {},
-    ["biological"] = {},
-    ["infrastructure"] = {},
-    ["space-technology"] = {"metallurgy", "combat", "intermediates", "biological", "infrastructure"},
+    ["equipment-1"] = {"combat"},
+    ["military"] = {"combat"},
+    ["military-2"] = {"military"},
+    ["military-3"] = {"military-2"},
+    ["military-4"] = {"military-3"},
+    ["military-5"] = {"military-4"},
 }

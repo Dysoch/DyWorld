@@ -5,101 +5,106 @@ DyWorld_2_Metallurgy_Tech = {
     --[""] = {},
 
     -- Main Categories --
-    ["basic-ore-processing"] = {"metallurgy"},
-    ["basic-alloying"] = {"basic-ore-processing"},
-    ["basic-metal-processing"] = {"basic-alloying"},
+    ["ore-processing-1"] = {"metallurgy"},
+    ["alloying-1"] = {"ore-processing-1"},
+    ["metal-processing-1"] = {"alloying-1"},
     
-    ["ore-processing"] = {"basic-metal-processing"},
-    ["alloying"] = {"ore-processing"},
-    ["metal-processing"] = {"alloying"},
-
-    ["advanced-ore-processing"] = {"metal-processing"},
-    ["advanced-alloying"] = {"advanced-ore-processing"},
-    ["advanced-metal-processing"] = {"advanced-alloying"},
-
-    ["highly-advanced-ore-processing"] = {"advanced-metal-processing"},
-    ["highly-advanced-alloying"] = {"highly-advanced-ore-processing"},
-    ["highly-advanced-metal-processing"] = {"highly-advanced-alloying"},
-
-    ["quantum-ore-processing"] = {"highly-advanced-metal-processing"},
-    ["quantum-alloying"] = {"quantum-ore-processing"},
-    ["quantum-metal-processing"] = {"quantum-alloying"},
+    ["ore-processing-2"] = {"metal-processing-1"},
+    ["alloying-2"] = {"ore-processing-1"},
+    ["metal-processing-2"] = {"alloying-1"},
+    
+    ["ore-processing-3"] = {"metal-processing-2"},
+    ["alloying-3"] = {"ore-processing-2"},
+    ["metal-processing-3"] = {"alloying-2"},
+    
+    ["ore-processing-4"] = {"metal-processing-3"},
+    ["alloying-4"] = {"ore-processing-3"},
+    ["metal-processing-4"] = {"alloying-3"},
+    
+    ["ore-processing-5"] = {"metal-processing-4"},
+    ["alloying-5"] = {"ore-processing-4"},
+    ["metal-processing-5"] = {"alloying-4"},
 
     -- Sub-Categories --
-    --- Basic Ore Processing ---
-    ["basic-iron-processing"] = {"basic-ore-processing"},
-    ["basic-copper-processing"] = {"basic-ore-processing"},
-    ["basic-tin-processing"] = {"basic-ore-processing"},
+    --- Ore Processing 1 ---
+    ["iron-processing-1"] = {"ore-processing-1"},
+    ["copper-processing-1"] = {"ore-processing-1"},
+    ["tin-processing-1"] = {"ore-processing-1"},
     
-    --- Basic Alloying ---
-    ["basic-bronze-alloying"] = {"basic-alloying", "basic-copper-processing", "basic-tin-processing"},
-    ["basic-brass-alloying"] = {"basic-alloying",  "basic-copper-processing", "basic-tin-processing"},
-    ["basic-steel-alloying"] = {"basic-alloying", "basic-iron-processing"},
+    --- Alloying 1 ---
+    ["bronze-alloying-1"] = {"alloying-1", "copper-processing-1", "tin-processing-1"},
+    ["brass-alloying-1"] = {"alloying-1",  "copper-processing-1", "tin-processing-1"},
+    ["steel-alloying-1"] = {"alloying-1", "iron-processing-1"},
 
-    --- Basic Metal Processing ---
-    ["basic-iron-intermediates"] = {"basic-metal-processing"},
-    ["basic-copper-intermediates"] = {"basic-metal-processing"},
-    ["basic-tin-intermediates"] = {"basic-metal-processing"},
-    ["basic-steel-intermediates"] = {"basic-metal-processing"},
+    --- Metal Processing 1 ---
+    ["steel-processing"] = {"metal-processing-1"},
+    ["brass-bronze-processing-1"] = {"metal-processing-1"},
 
-    --- Ore Processing ---
-    ["iron-processing"] = {"ore-processing"},
-    ["copper-processing"] = {"ore-processing"},
-    ["tin-processing"] = {"ore-processing"},
+    --- Ore Processing 2 ---
+    ["iron-processing-2"] = {"ore-processing-2"},
+    ["copper-processing-2"] = {"ore-processing-2"},
+    ["tin-processing-2"] = {"ore-processing-2"},
     
-    --- Alloying ---
-    ["bronze-alloying"] = {"alloying", "copper-processing", "tin-processing"},
-    ["brass-alloying"] = {"alloying",  "copper-processing", "tin-processing"},
-    ["steel-alloying"] = {"alloying", "iron-processing"},
-    ["stainless-steel-alloying"] = {"steel-alloying"},
+    --- Alloying 2 ---
+    ["bronze-alloying-2"] = {"alloying-2", "copper-processing-2", "tin-processing-2"},
+    ["brass-alloying-2"] = {"alloying-2",  "copper-processing-2", "tin-processing-2"},
+    ["steel-alloying-2"] = {"alloying-2", "iron-processing-1"},
+    ["stainless-steel-alloying-1"] = {"steel-alloying-2"},
 
-    --- Metal Processing ---
-    ["iron-intermediates"] = {"metal-processing"},
-    ["copper-intermediates"] = {"metal-processing"},
-    ["bronze-brass-intermediates"] = {"metal-processing"},
-    ["steel-intermediates"] = {"metal-processing"},
-    ["stainless-steel-intermediates"] = {"steel-intermediates"},
+    --- Metal Processing 2 ---
+    ["steel-processing-2"] = {"metal-processing-2"},
+    ["brass-bronze-processing-2"] = {"metal-processing-2"},
+    ["stainless-steel-processing"] = {"steel-processing-2"},
 
-    --- Advanced Ore Processing ---
-    ["advanced-iron-processing"] = {"advanced-ore-processing"},
-    ["advanced-copper-processing"] = {"advanced-ore-processing"},
-    ["advanced-tin-processing"] = {"advanced-ore-processing"},
-    ["silver-processing"] = {"advanced-ore-processing"},
-    ["gold-processing"] = {"advanced-ore-processing"},
-    ["titanium-processing"] = {"advanced-ore-processing"},
+    --- Ore Processing 3 ---
+    ["iron-processing-3"] = {"ore-processing-3"},
+    ["copper-processing-3"] = {"ore-processing-3"},
+    ["tin-processing-3"] = {"ore-processing-3"},
+    ["silver-processing-1"] = {"ore-processing-3"},
+    ["gold-processing-1"] = {"ore-processing-3"},
+    ["titanium-processing-1"] = {"ore-processing-3"},
     
-    --- Advanced Alloying ---
+    --- Alloying 3 ---
 
-    --- Advanced Metal Processing ---
+    --- Metal Processing 3 ---
 
-    --- Highly Advanced Ore Processing ---
-    ["advanced-silver-processing"] = {"highly-advanced-ore-processing"},
-    ["advanced-gold-processing"] = {"highly-advanced-ore-processing"},
-    ["advanced-titanium-processing"] = {"highly-advanced-ore-processing"},
+    --- Ore Processing 4 ---
+    ["silver-processing-2"] = {"ore-processing-4"},
+    ["gold-processing-2"] = {"ore-processing-4"},
+    ["titanium-processing-2"] = {"ore-processing-4"},
     
-    --- Highly Advanced Alloying ---
+    --- Alloying 4 ---
 
-    --- Highly Advanced Metal Processing ---
+    --- Metal Processing 4 ---
 
-    --- Quantum Ore Processing ---
-    ["quantum-iron-processing"] = {"quantum-ore-processing"},
-    ["quantum-copper-processing"] = {"quantum-ore-processing"},
-    ["quantum-tin-processing"] = {"quantum-ore-processing"},
-    ["quantum-tungsten-processing"] = {"quantum-ore-processing"},
-    ["quantum-silver-processing"] = {"quantum-ore-processing"},
-    ["quantum-gold-processing"] = {"quantum-ore-processing"},
-    ["quantum-titanium-processing"] = {"quantum-ore-processing"},
+    --- Ore Processing 5 ---
+    ["iron-processing-4"] = {"ore-processing-5"},
+    ["copper-processing-4"] = {"ore-processing-5"},
+    ["tin-processing-4"] = {"ore-processing-5"},
+    ["tungsten-processing-1"] = {"ore-processing-5"},
+    ["silver-processing-3"] = {"ore-processing-5"},
+    ["gold-processing-3"] = {"ore-processing-5"},
+    ["titanium-processing-3"] = {"ore-processing-5"},
     
-    --- Quantum Alloying ---
+    --- Alloying 5 ---
 
-    --- Quantum Metal Processing ---
-    ["quantum-iron-intermediates"] = {"quantum-metal-processing"},
-    ["quantum-copper-intermediates"] = {"quantum-metal-processing"},
-    ["quantum-tin-intermediates"] = {"quantum-metal-processing"},
-    ["quantum-tungsten-intermediates"] = {"quantum-metal-processing"},
-    ["quantum-silver-intermediates"] = {"quantum-metal-processing"},
-    ["quantum-gold-intermediates"] = {"quantum-metal-processing"},
-    ["quantum-titanium-intermediates"] = {"quantum-metal-processing"},
+    --- Main Ore Processing ---
+    ["hematite-processing-1"] = {"ore-processing-1"},
+    ["hematite-processing-2"] = {"ore-processing-2"},
+    ["hematite-processing-3"] = {"ore-processing-3"},
+    ["hematite-processing-4"] = {"ore-processing-4"},
+    ["hematite-processing-5"] = {"ore-processing-5"},
+    
+    ["chalcopyrite-processing-1"] = {"ore-processing-1"},
+    ["chalcopyrite-processing-2"] = {"ore-processing-2"},
+    ["chalcopyrite-processing-3"] = {"ore-processing-3"},
+    ["chalcopyrite-processing-4"] = {"ore-processing-4"},
+    ["chalcopyrite-processing-5"] = {"ore-processing-5"},
 
+    ["carbon-processing-1"] = {"ore-processing-1"},
+    ["carbon-processing-2"] = {"ore-processing-2"},
+    ["carbon-processing-3"] = {"ore-processing-3"},
+    ["carbon-processing-4"] = {"ore-processing-4"},
+    ["carbon-processing-5"] = {"ore-processing-5"},
 
 }

@@ -9,5 +9,6 @@ DyWorld_2_Main_Tech = {
     ["intermediates"] = {},
     ["biological"] = {},
     ["infrastructure"] = {},
+    ["automation"] = {},
     ["space-technology"] = {"metallurgy", "combat", "intermediates", "biological", "infrastructure"},
 }

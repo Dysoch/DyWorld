@@ -1,4 +1,4 @@
-
+local DyDs_icon_temp = "__DyCore__/graphics/questionmark.png"
 
 
 function DyW.Fluid.Add(name, params)
@@ -6,25 +6,25 @@ data:extend({
   {
     type = "fluid",
     name = name,
-    default_temperature = params[1],
-    max_temperature = params[2],
-	gas_temperature = params[3],
-	emissions_multiplier = params[4],
-    heat_capacity = params[5],
-    fuel_value = params[6],
-    base_color = params[11],
-    flow_color = params[11],
-    icon = "__DyWorld-Dynamics__/graphics/questionmark.png",
-    icon_size = 64, 
+    default_temperature = params.temp_def or 15,
+    max_temperature = params.temp_max or 100,
+	gas_temperature = params.temp_gas or 100,
+	emissions_multiplier = params.emission or 1,
+    heat_capacity = params.heat or "1KJ",
+    fuel_value = params.fuel or "0J",
+    base_color = params.color or {},
+    flow_color = params.color or {},
+    icon = DyDs_icon_temp,
+    icon_size = 64,
     order = name,
-    subgroup = DyDs.."f-"..params[8],
+    subgroup = (params.group and DyDs..params.group) or "fluid",
 	auto_barrel = false,
-	auto_canister = params[9],
-	auto_canister_tier = params[10],
+	auto_canister = params.canister and true or false,
+	auto_canister_tier = params.canister or nil,
   },
 })
     DyW.Fx.Edited("fluid", name, "Fluid_Add")
-	if params[7] then
+	if params.icon then
 		data.raw.fluid[name].icon = "__DyWorld-Dynamics__/graphics/fluids/"..name..".png"
 	end
 end

@@ -14,6 +14,8 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."wood",
         order = "1-1",
         stack_size = 50,
+        fuel_value = "2MJ",
+        fuel_category = "chemical",
     },
     ["log-sulfur"] = {
         icons = {
@@ -24,6 +26,8 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."wood",
         order = "1-2",
         stack_size = 50,
+        fuel_value = "0.5MJ",
+        fuel_category = "chemical",
     },
     ["log-dead"] = {
         icons = {
@@ -34,6 +38,8 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."wood",
         order = "1-3",
         stack_size = 50,
+        fuel_value = "0.2MJ",
+        fuel_category = "chemical",
     },
     ["wood"] = {
         icons = {
@@ -44,6 +50,8 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."wood",
         order = "2-1",
         stack_size = 200,
+        fuel_value = "2MJ",
+        fuel_category = "chemical",
     },
     ["wood-sulfur"] = {
         icons = {
@@ -54,6 +62,8 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."wood",
         order = "2-2",
         stack_size = 200,
+        fuel_value = "0.5MJ",
+        fuel_category = "chemical",
     },
     ["bark"] = {
         icons = {
@@ -64,6 +74,8 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."wood",
         order = "4-1",
         stack_size = 500,
+        fuel_value = "0.02MJ",
+        fuel_category = "chemical",
     },
     ["sap"] = {
         icons = {
@@ -84,6 +96,8 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."wood",
         order = "0-1",
         stack_size = 500,
+        fuel_value = "0.2MJ",
+        fuel_category = "chemical",
     },
     ["sapling-sulfur"] = {
         icons = {
@@ -94,6 +108,8 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."wood",
         order = "0-1",
         stack_size = 500,
+        fuel_value = "0.2MJ",
+        fuel_category = "chemical",
     },
 
     ----- Main Ores -----
@@ -256,6 +272,170 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."ore-main",
         order = "1",
         stack_size = 200,
+        fuel_value = "4MJ",
+        fuel_category = "chemical",
+    },
+    ["hematite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."hematite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["chalcopyrite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."chalcopyrite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["bauxite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."bauxite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["sphalerite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."sphalerite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["galena-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."galena.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["tin-pyrite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."tin-pyrite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["argentite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."argentite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["calaverite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."calaverite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["rock-salt-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."rock-salt.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["carnalite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."carnalite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["cinnabar-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."cinnabar.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["dolomite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."dolomite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["limestone-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."limestone.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["phosphorite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."phosphorite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["pyrolusite-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."pyrolusite.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["carbon-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."carbon.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+        fuel_value = "0.4MJ",
+        fuel_category = "chemical",
     },
 
     ----- Ores & Plates -----

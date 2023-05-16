@@ -16,6 +16,9 @@ require(db.."resources.ores")
 -- Items --
 require(db.."items.main")
 
+-- Fluids --
+require(db.."fluids.main")
+
 -- Tech --
 require(db.."tech.main")
 require(db.."tech.biological")

@@ -38,6 +38,12 @@ for _, type in pairs(data.raw) do
     end
 end
 
+for k,v in pairs(data.raw.recipe) do
+    if v.Add_To_Tech then
+        DyW.Tech.Recipe.Add(v.Add_To_Tech, v.name)
+    end
+end
+
 
 -- Logging Events --
 

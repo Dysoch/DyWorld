@@ -27,3 +27,30 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
         })
     end
 end
+
+for k,v in pairs(DyWorld_2_Ore_Table) do
+    if v.properties and v.properties.chunk then
+        data:extend({
+            {
+              type = "recipe",
+              name = k.."-0-chunk",
+              --category = "air-filter",
+              main_product = k.."-ore",
+              normal =
+              {
+                ingredients =
+                {
+                    {type = "item", name = k.."-chunk", amount = 100},
+                },
+                results =
+                {
+                  {type = "item", name = k.."-ore", amount_min = 6, amount_max = 10},
+                },
+                main_product = k.."-ore",
+                energy_required = 2.5,
+                enabled = true,
+              },
+            },
+        })
+    end
+end

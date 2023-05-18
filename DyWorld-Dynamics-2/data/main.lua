@@ -7,7 +7,9 @@ local core = "data.core."
 require(core.."items") -- Items
 require(core.."fluids") -- Fluids
 require(core.."tech") -- Technology
+
+-- Recipes --
 require(core.."recipes") -- Recipes
 
--- Core Recipes --
 require(core.."recipes.hematite")
+require(core.."recipes.wood-basic")

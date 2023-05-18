@@ -335,6 +335,8 @@ function Dy_Player_init(event)
                 xp = 0,
                 xp_to_level = 100,
                 level = 1,
+                coica_level = 0,
+                changes = {},
             },
             bonus_calc = {
                 total = 0,

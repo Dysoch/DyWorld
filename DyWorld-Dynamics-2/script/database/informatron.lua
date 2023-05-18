@@ -74,7 +74,7 @@ function dyworld_page_content(page_name, player_index, element)
             end
         end
     end
-    if page_name == "stats" then
+    if page_name == "stats" and (global.dyworld.players[player_index].stats.coica_level >= 1) then
 		element.add{type="label", name="", caption={"DyWorld.page_stats"}}
 	
 		local table2 = element.add{type = "table", name = "table2", column_count = 3, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
@@ -104,7 +104,7 @@ function dyworld_page_content(page_name, player_index, element)
 		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.killed or 0), 2).."[/color]"}
 	end
 
-    if page_name == "bonuses" then
+    if page_name == "bonuses" and (global.dyworld.players[player_index].stats.coica_level >= 1) then
 		element.add{type = "label", name = "", caption = {"DyWorld.page_bonuses"}}local table2 = element.add{type = "table", name = "", column_count = 10, draw_vertical_lines = true, draw_horizontal_lines = true, vertical_centering = true, horizontal_centering = true, draw_horizontal_line_after_headers = false}
 		
 		table2.add{type = "label", caption = ""}

@@ -12,6 +12,12 @@ function Event_on_gui_click(event)
 		if player.gui.screen.DyDs_PG_outer_frame then
             player.gui.screen.DyDs_PG_outer_frame.destroy()
         end
+    elseif gui.name == "DyDs_PG_debug_button" then
+		if not global.dydebugbutton then
+            global.dydebugbutton = true
+        else
+            global.dydebugbutton = false
+        end
     end
 end
 

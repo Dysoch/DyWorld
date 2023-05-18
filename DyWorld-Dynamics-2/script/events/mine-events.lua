@@ -71,8 +71,33 @@ function Event_on_player_mined_entity(event)
 	local type = event.entity.type
 	local name = event.entity.name
     
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+    if not global.dyworld.game.world then global.dyworld.game.world = {} end
+    if not global.dyworld.game.world.built then global.dyworld.game.world.built = {} end
+
+    if not global.dyworld.game.world.built[name] then
+        global.dyworld.game.world.built[name] = 0
+    else
+        global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] - 1
+        if global.dyworld.game.world.built[name] <=0 then global.dyworld.game.world.built[name] = 0 end
+    end
 end
 
-function Event_on_robot_mined(event)
+function Event_on_robot_mined_entity(event)
+	local position = event.entity.position
+	local type = event.entity.type
+	local name = event.entity.name
+    
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+    if not global.dyworld.game.world then global.dyworld.game.world = {} end
+    if not global.dyworld.game.world.built then global.dyworld.game.world.built = {} end
 
+    if not global.dyworld.game.world.built[name] then
+        global.dyworld.game.world.built[name] = 0
+    else
+        global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] - 1
+        if global.dyworld.game.world.built[name] <=0 then global.dyworld.game.world.built[name] = 0 end
+    end
 end

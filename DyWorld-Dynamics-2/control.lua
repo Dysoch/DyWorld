@@ -51,7 +51,7 @@ script.on_event(defines.events.on_robot_built_tile, Event_on_robot_built_tile)
 -- Mine Events
 script.on_event(defines.events.on_player_mined_entity, Event_on_player_mined_entity)
 script.on_event(defines.events.on_player_mined_item, Event_on_player_mined_item)
-script.on_event(defines.events.on_robot_mined, Event_on_robot_mined)
+--script.on_event(defines.events.on_robot_mined, Event_on_robot_mined)
 script.on_event(defines.events.on_robot_mined_entity, Event_on_robot_mined_entity)
 
 -- Craft Events

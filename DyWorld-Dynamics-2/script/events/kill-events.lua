@@ -21,12 +21,20 @@ function Event_on_entity_died(event)
     
     if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
     if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+    if not global.dyworld.game.world then global.dyworld.game.world = {} end
+    if not global.dyworld.game.world.built then global.dyworld.game.world.built = {} end
 
     -- global --
     if not global.dyworld.game.counters.killed then
         global.dyworld.game.counters.killed = 1
     else
         global.dyworld.game.counters.killed = global.dyworld.game.counters.killed + 1
+    end
+    if not global.dyworld.game.world.built[name] then
+        global.dyworld.game.world.built[name] = 0
+    else
+        global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] - 1
+        if global.dyworld.game.world.built[name] <=0 then global.dyworld.game.world.built[name] = 0 end
     end
 
     -- personal --

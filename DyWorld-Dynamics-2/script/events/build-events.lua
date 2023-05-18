@@ -30,12 +30,19 @@ function Event_on_built_entity(event)
     
     if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
     if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+    if not global.dyworld.game.world then global.dyworld.game.world = {} end
+    if not global.dyworld.game.world.built then global.dyworld.game.world.built = {} end
 
     -- global --
     if not global.dyworld.game.counters.build then
         global.dyworld.game.counters.build = 1
     else
         global.dyworld.game.counters.build = global.dyworld.game.counters.build + 1
+    end
+    if not global.dyworld.game.world.built[name] then
+        global.dyworld.game.world.built[name] = 1
+    else
+        global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] + 1
     end
 
     -- personal --

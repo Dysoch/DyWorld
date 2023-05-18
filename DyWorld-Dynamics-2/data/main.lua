@@ -4,7 +4,8 @@ local core = "data.core."
 
 
 -- Core --
-require(core.."keys") -- Items
+require(core.."keys")
+require(core.."style")
 require(core.."items") -- Items
 require(core.."fluids") -- Fluids
 require(core.."tech") -- Technology

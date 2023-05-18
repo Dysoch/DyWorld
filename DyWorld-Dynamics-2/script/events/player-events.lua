@@ -116,6 +116,7 @@ function Dy_Player_init(event)
             banned = false,
             force = force.name,
             coords = {x = 0, y = 0, surface = "nauvis"},
+            messages = {},
             survival = {
                 food = {
                     storage = 1000,
@@ -335,7 +336,7 @@ function Dy_Player_init(event)
                 xp = 0,
                 xp_to_level = 100,
                 level = 1,
-                coica_level = 0,
+                codai_level = 0,
                 changes = {},
             },
             bonus_calc = {

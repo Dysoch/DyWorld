@@ -48,16 +48,58 @@ function Personal_GUI_Inner(player, id)
     
     -- Water --
     if global.dyworld.players[id].stats.codai_level >= 4 then
-        display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max), tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].survival.water.storage, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].survival.water.storage_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].survival.water.rate), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)), caption = "         [color=red]Water[/color]"}
+        display_scroll.add{
+            type = "progressbar",
+            value = (global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max),
+            tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].survival.water.storage, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].survival.water.storage_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].survival.water.rate), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]",
+            style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)),
+            caption = "         [color=red]Water[/color]"
+        }
     elseif global.dyworld.players[id].stats.codai_level >= 3 then
-        display_scroll.add{type = "label", name = "", caption = "Water: "..((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)*100).."%"}
+        display_scroll.add{
+            type = "label",
+            name = "",
+            caption = "[color=red]Water:[/color] [color=blue]"..((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)*100).."%[/color]"
+        }
     end
     
     -- Food --
     if global.dyworld.players[id].stats.codai_level >= 4 then
-        display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max), tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].survival.food.storage, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].survival.food.storage_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].survival.food.rate), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]", style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)), caption = "         [color=red]Food[/color]"}
+        display_scroll.add{
+            type = "progressbar",
+            value = (global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max),
+            tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].survival.food.storage, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].survival.food.storage_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].survival.food.rate), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]",
+            style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)),
+            caption = "         [color=red]Food[/color]"
+        }
     elseif global.dyworld.players[id].stats.codai_level >= 3 then
-        display_scroll.add{type = "label", name = "", caption = "Food: "..((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)*100).."%"}
+        display_scroll.add{
+            type = "label",
+            name = "",
+            caption = "[color=red]Food:[/color] [color=blue]"..((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)*100).."%[/color]"
+        }
+    end
+
+    -- Pollution --
+    if global.dyworld.players[id].stats.codai_level >= 4 then
+        display_scroll.add{
+            type = "progressbar",
+            value = (global.dyworld.players[id].survival.pollution.stored/global.dyworld.players[id].survival.pollution.threshold.total),
+            tooltip = "Pollution",
+            style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.pollution.stored/global.dyworld.players[id].survival.pollution.threshold.total)),
+            caption = "         [color=red]Pollution[/color]"
+        }
+    end
+
+    -- Radiation --
+    if global.dyworld.players[id].stats.codai_level >= 4 then
+        display_scroll.add{
+            type = "progressbar",
+            value = (global.dyworld.players[id].survival.radiation.stored/global.dyworld.players[id].survival.radiation.threshold.total),
+            tooltip = "Radiation",
+            style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.radiation.stored/global.dyworld.players[id].survival.radiation.threshold.total)),
+            caption = "         [color=red]Radiation[/color]"
+        }
     end
 
     if global.dydebugbutton then

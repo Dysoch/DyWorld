@@ -7,7 +7,12 @@ function Event_on_gui_click(event)
 	local player = game.players[id]
 	local force = player.force
 	local gui = event.element
-
+    
+    if gui.name == "DyDs_PG_close_button" then
+		if player.gui.screen.DyDs_PG_outer_frame then
+            player.gui.screen.DyDs_PG_outer_frame.destroy()
+        end
+    end
 end
 
 function Event_on_gui_closed(event)

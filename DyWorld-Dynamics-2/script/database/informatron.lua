@@ -21,6 +21,7 @@ function dyworld_menu(player_index)
 				stats = 1,
 				bonuses = 1,
 			},
+            codai = 1,
 		},
 	}
 	-- Main Pages --
@@ -74,6 +75,42 @@ function dyworld_page_content(page_name, player_index, element)
             end
         end
     end
+    if page_name == "codai" then
+        element.add{type = "label", name = "", caption = {"DyWorld.page_codai_0"}}
+        if global.dyworld.players[player_index].stats.coica_level >= 0 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_1"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 1 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_2"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 2 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_3"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 3 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_4"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 4 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_5"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 5 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_6"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 6 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_7"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 7 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_8"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 8 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_9"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 9 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_10"}}
+        end
+        if global.dyworld.players[player_index].stats.coica_level >= 10 then
+            element.add{type = "label", name = "", caption = {"DyWorld.page_codai_11"}}
+        end
+    end
     if page_name == "stats" and (global.dyworld.players[player_index].stats.coica_level >= 1) then
 		element.add{type="label", name="", caption={"DyWorld.page_stats"}}
 	
@@ -105,7 +142,8 @@ function dyworld_page_content(page_name, player_index, element)
 	end
 
     if page_name == "bonuses" and (global.dyworld.players[player_index].stats.coica_level >= 1) then
-		element.add{type = "label", name = "", caption = {"DyWorld.page_bonuses"}}local table2 = element.add{type = "table", name = "", column_count = 10, draw_vertical_lines = true, draw_horizontal_lines = true, vertical_centering = true, horizontal_centering = true, draw_horizontal_line_after_headers = false}
+		element.add{type = "label", name = "", caption = {"DyWorld.page_bonuses"}}
+        local table2 = element.add{type = "table", name = "", column_count = 10, draw_vertical_lines = true, draw_horizontal_lines = true, vertical_centering = true, horizontal_centering = true, draw_horizontal_line_after_headers = false}
 		
 		table2.add{type = "label", caption = ""}
 		table2.add{type = "label", caption = {"DyWorld_2.native"}}

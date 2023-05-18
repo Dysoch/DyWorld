@@ -9,6 +9,9 @@ require("script.lualib.research")
 require("script.lualib.stats")
 require("script.lualib.vitals")
 
+-- GUI's --
+require("script.gui.personal-gui")
+
 -- Database --
 require("database.main")
 require("script.database.informatron")

@@ -22,5 +22,11 @@ function Event_on_tick(event)
             global.dyworld.time.actual.year = global.dyworld.time.actual.year + 1
         end
         global.dyworld.time.log = global.dyworld.time.actual.year..":"..global.dyworld.time.actual.day..":"..global.dyworld.time.actual.hour..":"..global.dyworld.time.actual.minute..":"..global.dyworld.time.actual.second
+        for k,v in pairs(game.players) do
+            local player = v
+            local id = k
+            Refresh_Personal_GUI(player, id)
+        end
     end
+    
 end

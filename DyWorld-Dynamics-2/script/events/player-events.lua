@@ -115,8 +115,11 @@ function Dy_Player_init(event)
             joined = true,
             banned = false,
             force = force.name,
-            coords = {x = 0, y = 0, surface = "nauvis"},
+            coords = {x = 0, y = 0, surface = "nauvis", x2 = 0, y2 = 0, Cx = 0, Cy = 0},
             messages = {},
+            toggles = {
+                objectives_gui = false,
+            },
             survival = {
                 food = {
                     storage = 1000,
@@ -133,6 +136,7 @@ function Dy_Player_init(event)
                     artifical_loss = 0,
                     native_gain = 0,
                     artifical_gain = 0,
+                    rate = 0,
                     stored = 0,
                     threshold = {
                         native = 15000,
@@ -145,8 +149,9 @@ function Dy_Player_init(event)
                 radiation = {
                     native_loss = -0.1,
                     artifical_loss = 0,
-                    native_gain = 0,
+                    native_gain = 0.1,
                     artifical_gain = 0,
+                    rate = 0,
                     stored = 0,
                     threshold = {
                         native = 5000,
@@ -341,7 +346,7 @@ function Dy_Player_init(event)
             },
             bonus_calc = {
                 total = 0,
-                threshold = 250,
+                threshold = 5,
             },
             bonus = {
                 ["mining"] = {

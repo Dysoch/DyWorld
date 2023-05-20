@@ -437,6 +437,18 @@ DyWorld_2_Main_Items = {
         fuel_value = "0.4MJ",
         fuel_category = "chemical",
     },
+    ["coal"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."carbon.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+        fuel_value = "4MJ",
+        fuel_category = "chemical",
+    },
 
     ----- Ores & Plates -----
     -- Iron --

@@ -51,15 +51,15 @@ function Personal_GUI_Inner(player, id)
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max),
-            tooltip = "Water: [color=blue]"..Round(global.dyworld.players[id].survival.water.storage, 2).."[/color]\nMax Water: [color=blue]"..global.dyworld.players[id].survival.water.storage_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].survival.water.rate), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "water").."[/color]",
+            tooltip = {"dyworld-gui-main.water-1", Round(global.dyworld.players[id].survival.water.storage, 2), global.dyworld.players[id].survival.water.storage_max, Round((global.dyworld.players[id].survival.water.rate), 2), Time_Surival_Check(id, "water")},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)),
-            caption = "         [color=red]Water[/color]"
+            caption = {"dyworld-gui-main.water-2"}
         }
     elseif global.dyworld.players[id].stats.codai_level >= 3 then
         display_scroll.add{
             type = "label",
             name = "",
-            caption = "[color=red]Water:[/color] [color=blue]"..((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)*100).."%[/color]"
+            caption = {"dyworld-gui-main.water-3", ((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)*100)}
         }
     end
     
@@ -68,15 +68,15 @@ function Personal_GUI_Inner(player, id)
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max),
-            tooltip = "Food: [color=blue]"..Round(global.dyworld.players[id].survival.food.storage, 2).."[/color]\nMax Food: [color=blue]"..global.dyworld.players[id].survival.food.storage_max.."[/color]\nUse Rate: [color=blue]"..Round((global.dyworld.players[id].survival.food.rate), 2).."[/color] per second\nTime Left: [color=blue]"..Time_Surival_Check(id, "food").."[/color]",
+            tooltip = {"dyworld-gui-main.food-1", Round(global.dyworld.players[id].survival.food.storage, 2), global.dyworld.players[id].survival.food.storage_max, Round((global.dyworld.players[id].survival.food.rate), 2), Time_Surival_Check(id, "food")},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)),
-            caption = "         [color=red]Food[/color]"
+            caption = {"dyworld-gui-main.food-2"}
         }
     elseif global.dyworld.players[id].stats.codai_level >= 3 then
         display_scroll.add{
             type = "label",
             name = "",
-            caption = "[color=red]Food:[/color] [color=blue]"..((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)*100).."%[/color]"
+            caption = {"dyworld-gui-main.water-3", ((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)*100)}
         }
     end
 
@@ -85,9 +85,9 @@ function Personal_GUI_Inner(player, id)
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.pollution.stored/global.dyworld.players[id].survival.pollution.threshold.total),
-            tooltip = "Pollution",
+            tooltip = {"dyworld-gui-main.pollution-2", global.dyworld.players[id].survival.pollution.threshold.total, Round(global.dyworld.players[id].survival.pollution.stored, 2), Round(global.dyworld.players[id].survival.pollution.rate, 2)},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.pollution.stored/global.dyworld.players[id].survival.pollution.threshold.total)),
-            caption = "         [color=red]Pollution[/color]"
+            caption = {"dyworld-gui-main.pollution-1"}
         }
     end
 
@@ -96,9 +96,9 @@ function Personal_GUI_Inner(player, id)
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.radiation.stored/global.dyworld.players[id].survival.radiation.threshold.total),
-            tooltip = "Radiation",
+            tooltip = {"dyworld-gui-main.radiation-2", global.dyworld.players[id].survival.radiation.threshold.total, Round(global.dyworld.players[id].survival.radiation.stored, 2), Round(global.dyworld.players[id].survival.radiation.rate, 2)},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.radiation.stored/global.dyworld.players[id].survival.radiation.threshold.total)),
-            caption = "         [color=red]Radiation[/color]"
+            caption = {"dyworld-gui-main.radiation-1"}
         }
     end
 
@@ -129,6 +129,10 @@ function Personal_GUI_Inner(player, id)
 		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.killed, 2).."[/color]"}
 		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.killed or 0), 2).."[/color]"}
     end
+
+    if global.dyworld.players[id].toggles.objectives_gui then
+        display_scroll.add{type = "line", direction = "horizontal"}
+    end
 end
 
 function Personal_GUI_Main(player, id)
@@ -142,11 +146,11 @@ function Personal_GUI_Main(player, id)
     local outer_frame = screen_element.add{type = "frame", name = "DyDs_PG_outer_frame", style = "outer_frame", visible = true}
     local main_frame = outer_frame.add{type = "frame", name = "DyDs_PG_main_frame", direction = "vertical", visible = true}
     local titlebar = main_frame.add{type = "flow", name = "", style = "flib_titlebar_flow", direction = "horizontal"}
-    titlebar.add{type = "label", name = "", style = "frame_title", caption = "C.O.D.A.I.", ignored_by_interaction = true}
+    titlebar.add{type = "label", name = "", style = "frame_title", caption = {"dyworld-gui-main.title"}, ignored_by_interaction = true}
     titlebar.add{type = "empty-widget", style = "flib_titlebar_drag_handle", ignored_by_interaction = true}
-    if debugger then titlebar.add{type = "sprite-button", name = "DyDs_PG_debug_button", style = "frame_action_button", mouse_button_filter = {"left"}, sprite = "utility/close_white", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black", tooltip = "Debug"} end
-    titlebar.add{type = "sprite-button", name = "DyDs_PG_story_button", style = "frame_action_button", mouse_button_filter = {"left"}, sprite = "utility/close_white", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black", tooltip = "Story"}
-    titlebar.add{type = "sprite-button", name = "DyDs_PG_close_button", style = "frame_action_button", mouse_button_filter = {"left"}, sprite = "utility/close_white", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black", tooltip = "Close"}
+    if debugger then titlebar.add{type = "sprite-button", name = "DyDs_PG_debug_button", style = "frame_action_button", mouse_button_filter = {"left"}, sprite = "utility/close_white", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black", tooltip = {"dyworld-gui-main.button-1"}} end
+    titlebar.add{type = "sprite-button", name = "DyDs_PG_story_button", style = "frame_action_button", mouse_button_filter = {"left"}, sprite = "utility/close_white", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black", tooltip = {"dyworld-gui-main.button-2"}}
+    titlebar.add{type = "sprite-button", name = "DyDs_PG_close_button", style = "frame_action_button", mouse_button_filter = {"left"}, sprite = "utility/close_white", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black", tooltip = {"dyworld-gui-main.button-3"}}
     titlebar.drag_target = outer_frame
     main_frame.add{type = "frame", name = "DyDs_PG_inner_frame", direction = "vertical", visible = true, style="inside_shallow_frame"}
     

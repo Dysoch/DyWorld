@@ -19,7 +19,7 @@ function XP_Calc(id, amount)
         global.dyworld.players[id].stats.xp = 0
         global.dyworld.players[id].stats.xp_to_level = global.dyworld.players[id].stats.xp_to_level * (1 + math.random())
         global.dyworld.players[id].stats.level = global.dyworld.players[id].stats.level + 1
-        global.dyworld.players[id].bonus_calc.threshold = 250
+        global.dyworld.players[id].bonus_calc.threshold = (global.dyworld.players[id].stats.level * 5)
         debug("("..id..") XP_Calc: gained a level, level is now "..global.dyworld.players[id].stats.level..", xp needed to next level is now: "..global.dyworld.players[id].stats.xp_to_level..". Threshold for bonuscalc is now "..global.dyworld.players[id].bonus_calc.threshold)
     end
 end

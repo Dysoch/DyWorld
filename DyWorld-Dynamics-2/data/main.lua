@@ -10,6 +10,9 @@ require(core.."items") -- Items
 require(core.."fluids") -- Fluids
 require(core.."tech") -- Technology
 
+-- Logistics --
+require("data.logistics.data")
+
 -- Recipes --
 require(core.."recipes") -- Recipes
 

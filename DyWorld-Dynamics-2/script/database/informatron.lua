@@ -61,12 +61,25 @@ function dyworld_page_content(page_name, player_index, element)
             end
         end
         if page_name == "d_build" then
-            for id,I in pairs(global.dyworld.players) do
-                element.add{type = "label", name = "", caption = "Player "..tostring(id).." \n"}
-                for k,v in pairs(I.stats.specific.build) do
-                    element.add{type = "label", name = "", caption = "[color=red]"..k.."[/color] = [color=blue]"..v.."[/color]"}
+            local table2 = element.add{type = "table", name = "", column_count = 2, draw_vertical_lines = true, draw_horizontal_lines = true, vertical_centering = true, horizontal_centering = true, draw_horizontal_line_after_headers = false}
+            table2.add{type = "label", name = "", caption = "Name"}
+            table2.add{type = "label", name = "", caption = "Count"}
+            for k,v in pairs(global.dyworld.game.world.built) do
+                if v >= 1 then
+                    table2.add{type = "label", name = "", caption = "[color=red]"..k.."[/color]"}
+                    table2.add{type = "label", name = "", caption = "    [color=blue]"..v.."[/color]"}
                 end
-                element.add{type = "label", name = "", caption = "\n\n\n\n\n"}
+            end
+            for id,I in pairs(global.dyworld.players) do
+                element.add{type = "label", name = "", caption = "\n"}
+                element.add{type = "label", name = "", caption = "Player "..tostring(id)}
+                local table3 = element.add{type = "table", name = "", column_count = 2, draw_vertical_lines = true, draw_horizontal_lines = true, vertical_centering = true, horizontal_centering = true, draw_horizontal_line_after_headers = false}
+                table3.add{type = "label", name = "", caption = "Name"}
+                table3.add{type = "label", name = "", caption = "Count"}
+                for k,v in pairs(I.stats.specific.build) do
+                    table3.add{type = "label", name = "", caption = "[color=red]"..k.."[/color]"}
+                    table3.add{type = "label", name = "", caption = "    [color=blue]"..v.."[/color]"}
+                end
             end
         end
         if page_name == "d_log" then

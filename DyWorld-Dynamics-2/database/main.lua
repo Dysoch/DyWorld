@@ -9,6 +9,7 @@ Dy_icon = "__DyWorld-Dynamics-2__/graphics/icons/"
 Dy_icon_ore = "__DyWorld-Dynamics-2__/graphics/icons/ores/"
 
 require(db.."colors")
+require(db.."tables")
 
 -- Resources --
 require(db.."resources.ores")

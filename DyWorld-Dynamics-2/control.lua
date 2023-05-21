@@ -46,6 +46,7 @@ script.on_event(defines.events.on_robot_built_entity, Event_on_robot_built_entit
 script.on_event(defines.events.on_player_used_capsule, Event_on_player_used_capsule)
 script.on_event(defines.events.on_player_built_tile, Event_on_player_built_tile)
 script.on_event(defines.events.on_robot_built_tile, Event_on_robot_built_tile)
+script.on_event(defines.events.on_pre_ghost_upgraded, Event_on_pre_ghost_upgraded)
 --script.on_event(defines.events.on_trigger_created_entity, Event_built_test)
 
 -- Mine Events

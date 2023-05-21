@@ -15,9 +15,36 @@ end
 function Event_on_picked_up_item(event)
 	local player = game.players[event.player_index]
 	local force = player.force
+	local id = event.player_index
 	local name = event.item_stack.name
 	local count = event.item_stack.count
+    
+    if not global.dyworld.game.stats then global.dyworld.game.stats = {} end
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
 
+    -- global --
+    if not global.dyworld.game.counters.picked then
+        global.dyworld.game.counters.picked = count
+    else
+        global.dyworld.game.counters.picked = global.dyworld.game.counters.picked + count
+    end
+
+    -- personal --
+    if global.dyworld.players[id] then
+        global.dyworld.players[id].stats.total.picked = global.dyworld.players[id].stats.total.picked + count
+
+        -- xp --
+        XP_Calc(id, (count * 0.05))
+        Bonus_Threshold(id)
+        
+        if not global.dyworld.players[id].stats.specific.picked[name] then
+            global.dyworld.players[id].stats.specific.picked[name] = count
+            debug("("..id..") Event_on_picked_up_item: Created specific mining table for "..name.." with "..count)
+        else
+            global.dyworld.players[id].stats.specific.picked[name] = global.dyworld.players[id].stats.specific.picked[name] + count
+            debug("("..id..") Event_on_picked_up_item: increased specific mining table for "..name.." with "..count.." to "..global.dyworld.players[id].stats.specific.picked[name])
+        end
+    end
 end
 
 function Event_on_player_mined_item(event)
@@ -76,11 +103,14 @@ function Event_on_player_mined_entity(event)
     if not global.dyworld.game.world then global.dyworld.game.world = {} end
     if not global.dyworld.game.world.built then global.dyworld.game.world.built = {} end
 
-    if not global.dyworld.game.world.built[name] then
-        global.dyworld.game.world.built[name] = 0
-    else
-        global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] - 1
-        if global.dyworld.game.world.built[name] <=0 then global.dyworld.game.world.built[name] = 0 end
+    -- global --
+    if name ~= "entity-ghost" then
+        if not global.dyworld.game.world.built[name] then
+            global.dyworld.game.world.built[name] = 0
+        else
+            global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] - 1
+            if global.dyworld.game.world.built[name] <=0 then global.dyworld.game.world.built[name] = 0 end
+        end
     end
 end
 
@@ -94,10 +124,19 @@ function Event_on_robot_mined_entity(event)
     if not global.dyworld.game.world then global.dyworld.game.world = {} end
     if not global.dyworld.game.world.built then global.dyworld.game.world.built = {} end
 
-    if not global.dyworld.game.world.built[name] then
-        global.dyworld.game.world.built[name] = 0
+    -- global --
+    if not global.dyworld.game.counters.mined then
+        global.dyworld.game.counters.mined = 1
     else
-        global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] - 1
-        if global.dyworld.game.world.built[name] <=0 then global.dyworld.game.world.built[name] = 0 end
+        global.dyworld.game.counters.mined = global.dyworld.game.counters.mined + 1
+    end
+
+    if name ~= "entity-ghost" then
+        if not global.dyworld.game.world.built[name] then
+            global.dyworld.game.world.built[name] = 0
+        else
+            global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] - 1
+            if global.dyworld.game.world.built[name] <=0 then global.dyworld.game.world.built[name] = 0 end
+        end
     end
 end

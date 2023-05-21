@@ -39,10 +39,12 @@ function Event_on_built_entity(event)
     else
         global.dyworld.game.counters.build = global.dyworld.game.counters.build + 1
     end
-    if not global.dyworld.game.world.built[name] then
-        global.dyworld.game.world.built[name] = 1
-    else
-        global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] + 1
+    if name ~= "entity-ghost" then
+        if not global.dyworld.game.world.built[name] then
+            global.dyworld.game.world.built[name] = 1
+        else
+            global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] + 1
+        end
     end
 
     -- personal --
@@ -81,6 +83,19 @@ function Event_on_robot_built_entity(event)
 	local surface = event.created_entity.surface.name
 	local type = event.created_entity.type
 
+    -- global --
+    if not global.dyworld.game.counters.build then
+        global.dyworld.game.counters.build = 1
+    else
+        global.dyworld.game.counters.build = global.dyworld.game.counters.build + 1
+    end
+    if name ~= "entity-ghost" then
+        if not global.dyworld.game.world.built[name] then
+            global.dyworld.game.world.built[name] = 1
+        else
+            global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] + 1
+        end
+    end
 end
 
 function Event_on_robot_built_tile(event)
@@ -89,7 +104,23 @@ function Event_on_robot_built_tile(event)
 end
 
 function Event_script_raised_built(event)
-
+	local name = event.entity.name
+	local position = event.entity.position
+	local type = event.entity.type
+    
+    -- global --
+    if not global.dyworld.game.counters.build then
+        global.dyworld.game.counters.build = 1
+    else
+        global.dyworld.game.counters.build = global.dyworld.game.counters.build + 1
+    end
+    if name ~= "entity-ghost" then
+        if not global.dyworld.game.world.built[name] then
+            global.dyworld.game.world.built[name] = 1
+        else
+            global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] + 1
+        end
+    end
 end
 
 function Event_built_test(event)
@@ -100,5 +131,40 @@ function Event_script_raised_revive(event)
 	local name = event.entity.name
 	local position = event.entity.position
 	local type = event.entity.type
+    
+    -- global --
+    if not global.dyworld.game.counters.build then
+        global.dyworld.game.counters.build = 1
+    else
+        global.dyworld.game.counters.build = global.dyworld.game.counters.build + 1
+    end
+    if name ~= "entity-ghost" then
+        if not global.dyworld.game.world.built[name] then
+            global.dyworld.game.world.built[name] = 1
+        else
+            global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] + 1
+        end
+    end
+
+end
+
+function Event_on_pre_ghost_upgraded(event)
+	local name = event.target.name
+	local position = event.target.position
+	local type = event.target.type
+
+    -- global --
+    if not global.dyworld.game.counters.build then
+        global.dyworld.game.counters.build = 1
+    else
+        global.dyworld.game.counters.build = global.dyworld.game.counters.build + 1
+    end
+    if name ~= "entity-ghost" then
+        if not global.dyworld.game.world.built[name] then
+            global.dyworld.game.world.built[name] = 1
+        else
+            global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] + 1
+        end
+    end
 
 end

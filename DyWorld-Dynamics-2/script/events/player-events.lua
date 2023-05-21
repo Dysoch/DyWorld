@@ -341,7 +341,11 @@ function Dy_Player_init(event)
                 xp = 0,
                 xp_to_level = 100,
                 level = 1,
-                codai_level = 0,
+                codai_level = {
+                    armor = 0,
+                    xp = 0,
+                    total = 0,
+                },
                 changes = {},
             },
             bonus_calc = {

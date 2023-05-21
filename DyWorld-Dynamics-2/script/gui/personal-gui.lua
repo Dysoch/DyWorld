@@ -41,13 +41,24 @@ end
 function Personal_GUI_Inner(player, id)
     local inner_frame = player.gui.screen.DyDs_PG_outer_frame.DyDs_PG_main_frame.DyDs_PG_inner_frame
     local display_scroll = inner_frame.add{type = "scroll-pane", name = "", style = "flib_naked_scroll_pane"}
-
-    if debugger then display_scroll.add{type = "label", name = "", caption = "Coords: "..Round(global.dyworld.players[id].coords.x,0).." / "..Round(global.dyworld.players[id].coords.y,0).." / "..global.dyworld.players[id].coords.surface} end
-    if debugger then display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].stats.xp/global.dyworld.players[id].stats.xp_to_level), tooltip = "XP: "..global.dyworld.players[id].stats.xp.."\nXP to Next Level: "..global.dyworld.players[id].stats.xp_to_level} end
-    if debugger then display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].bonus_calc.total/global.dyworld.players[id].bonus_calc.threshold), tooltip = "Bonus Calculation Starter: "..global.dyworld.players[id].bonus_calc.total.."\nThreshold: "..global.dyworld.players[id].bonus_calc.threshold} end
     
-    -- Water --
-    if global.dyworld.players[id].stats.codai_level >= 4 then
+    -- Water & Food --
+    if global.dyworld.players[id].stats.codai_level.total >= 7 then
+        display_scroll.add{
+            type = "progressbar",
+            value = (global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max),
+            tooltip = {"dyworld-gui-main.water-1", Round(global.dyworld.players[id].survival.water.storage, 2), global.dyworld.players[id].survival.water.storage_max, Round((global.dyworld.players[id].survival.water.rate), 2), Time_Surival_Check(id, "water")},
+            style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)),
+            caption = {"dyworld-gui-main.water-3"}
+        }
+        display_scroll.add{
+            type = "progressbar",
+            value = (global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max),
+            tooltip = {"dyworld-gui-main.food-1", Round(global.dyworld.players[id].survival.food.storage, 2), global.dyworld.players[id].survival.food.storage_max, Round((global.dyworld.players[id].survival.food.rate), 2), Time_Surival_Check(id, "food")},
+            style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)),
+            caption = {"dyworld-gui-main.food-3"}
+        }
+    elseif global.dyworld.players[id].stats.codai_level.total >= 3 then
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max),
@@ -55,16 +66,6 @@ function Personal_GUI_Inner(player, id)
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)),
             caption = {"dyworld-gui-main.water-2"}
         }
-    elseif global.dyworld.players[id].stats.codai_level >= 3 then
-        display_scroll.add{
-            type = "label",
-            name = "",
-            caption = {"dyworld-gui-main.water-3", ((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)*100)}
-        }
-    end
-    
-    -- Food --
-    if global.dyworld.players[id].stats.codai_level >= 4 then
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max),
@@ -72,16 +73,16 @@ function Personal_GUI_Inner(player, id)
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)),
             caption = {"dyworld-gui-main.food-2"}
         }
-    elseif global.dyworld.players[id].stats.codai_level >= 3 then
+    elseif global.dyworld.players[id].stats.codai_level.total >= 1 then
         display_scroll.add{
             type = "label",
             name = "",
-            caption = {"dyworld-gui-main.water-3", ((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)*100)}
+            caption = {"dyworld-gui-main.water-food", Round(((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)*100), 0), Round(((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)*100), 0)}
         }
     end
 
     -- Pollution --
-    if global.dyworld.players[id].stats.codai_level >= 4 then
+    if global.dyworld.players[id].stats.codai_level.total >= 4 then
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.pollution.stored/global.dyworld.players[id].survival.pollution.threshold.total),
@@ -92,7 +93,7 @@ function Personal_GUI_Inner(player, id)
     end
 
     -- Radiation --
-    if global.dyworld.players[id].stats.codai_level >= 4 then
+    if global.dyworld.players[id].stats.codai_level.total >= 4 then
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.radiation.stored/global.dyworld.players[id].survival.radiation.threshold.total),
@@ -102,7 +103,17 @@ function Personal_GUI_Inner(player, id)
         }
     end
 
+    if global.dyworld.players[id].toggles.objectives_gui then
+        display_scroll.add{type = "line", direction = "horizontal"}
+    end
+
     if global.dydebugbutton then
+        display_scroll.add{type = "line", direction = "horizontal"}
+        display_scroll.add{type = "label", name = "", caption = "Coords: "..Round(global.dyworld.players[id].coords.x,0).." / "..Round(global.dyworld.players[id].coords.y,0).." / "..global.dyworld.players[id].coords.surface}
+        display_scroll.add{type = "label", name = "", caption = "Level XP: "..global.dyworld.players[id].stats.level..", Level Codai: "..global.dyworld.players[id].stats.codai_level.total}
+        display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].stats.xp/global.dyworld.players[id].stats.xp_to_level), tooltip = "XP: "..global.dyworld.players[id].stats.xp.."\nXP to Next Level: "..global.dyworld.players[id].stats.xp_to_level}
+        display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].bonus_calc.total/global.dyworld.players[id].bonus_calc.threshold), tooltip = "Bonus Calculation Starter: "..global.dyworld.players[id].bonus_calc.total.."\nThreshold: "..global.dyworld.players[id].bonus_calc.threshold}
+        display_scroll.add{type = "line", direction = "horizontal"}
         local table2 = display_scroll.add{type = "table", name = "table2", column_count = 3, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
 		
 		table2.add{type = "label", caption = ""}
@@ -110,28 +121,84 @@ function Personal_GUI_Inner(player, id)
 		table2.add{type = "label", caption = {"DyWorld_2.total"}, tooltip = {"DyWorld_2.total_tp"}}
 	
 		table2.add{type = "label", caption = {"DyWorld_2.crafted"}, tooltip = {"DyWorld_2.crafted_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.crafted, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.crafted or 0), 2).."[/color]"}
+        if global.dyworld.players[id].stats.total.crafted >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.crafted / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[id].stats.total.crafted >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.crafted / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.crafted, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.crafted or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.crafted or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.crafted or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.crafted or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.crafted or 0), 2).."[/color]"}
+        end
 		
 		table2.add{type = "label", caption = {"DyWorld_2.mined"}, tooltip = {"DyWorld_2.mined_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.mined, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.mined or 0), 2).."[/color]"}
+        if global.dyworld.players[id].stats.total.mined >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.mined / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[id].stats.total.mined >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.mined / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.mined, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.mined or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.mined or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.mined or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.mined or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.mined or 0), 2).."[/color]"}
+        end
 		
 		table2.add{type = "label", caption = {"DyWorld_2.built"}, tooltip = {"DyWorld_2.built_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.build, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.build or 0), 2).."[/color]"}
+        if global.dyworld.players[id].stats.total.build >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.build / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[id].stats.total.build >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.build / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.build, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.build or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.build or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.build or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.build or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.build or 0), 2).."[/color]"}
+        end
 		
 		table2.add{type = "label", caption = {"DyWorld_2.picked"}, tooltip = {"DyWorld_2.picked_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.picked, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.picked or 0), 2).."[/color]"}
+        if global.dyworld.players[id].stats.total.picked >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.picked / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[id].stats.total.picked >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.picked / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.picked, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.picked or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.picked or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.picked or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.picked or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.picked or 0), 2).."[/color]"}
+        end
 		
 		table2.add{type = "label", caption = {"DyWorld_2.killed"}, tooltip = {"DyWorld_2.killed_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.killed, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.killed or 0), 2).."[/color]"}
-    end
-
-    if global.dyworld.players[id].toggles.objectives_gui then
-        display_scroll.add{type = "line", direction = "horizontal"}
+        if global.dyworld.players[id].stats.total.killed >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.killed / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[id].stats.total.killed >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[id].stats.total.killed / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[id].stats.total.killed, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.killed or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.killed or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.killed or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.killed or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.killed or 0), 2).."[/color]"}
+        end
     end
 end
 

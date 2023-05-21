@@ -90,41 +90,41 @@ function dyworld_page_content(page_name, player_index, element)
     end
     if page_name == "codai" then
         element.add{type = "label", name = "", caption = {"DyWorld.page_codai_0"}}
-        if global.dyworld.players[player_index].stats.codai_level >= 0 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 0 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_1"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 1 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 1 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_2"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 2 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 2 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_3"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 3 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 3 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_4"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 4 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 4 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_5"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 5 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 5 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_6"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 6 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 6 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_7"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 7 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 7 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_8"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 8 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 8 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_9"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 9 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 9 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_10"}}
         end
-        if global.dyworld.players[player_index].stats.codai_level >= 10 then
+        if global.dyworld.players[player_index].stats.codai_level.total >= 10 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_11"}}
         end
     end
-    if page_name == "stats" and (global.dyworld.players[player_index].stats.codai_level >= 1) then
+    if page_name == "stats" and (global.dyworld.players[player_index].stats.codai_level.total >= 1) then
 		element.add{type="label", name="", caption={"DyWorld.page_stats"}}
 	
 		local table2 = element.add{type = "table", name = "table2", column_count = 3, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
@@ -134,27 +134,87 @@ function dyworld_page_content(page_name, player_index, element)
 		table2.add{type = "label", caption = {"DyWorld_2.total"}, tooltip = {"DyWorld_2.total_tp"}}
 	
 		table2.add{type = "label", caption = {"DyWorld_2.crafted"}, tooltip = {"DyWorld_2.crafted_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.crafted, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.crafted or 0), 2).."[/color]"}
+        if global.dyworld.players[player_index].stats.total.crafted >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.crafted / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[player_index].stats.total.crafted >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.crafted / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.crafted, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.crafted or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.crafted or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.crafted or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.crafted or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.crafted or 0), 2).."[/color]"}
+        end
 		
 		table2.add{type = "label", caption = {"DyWorld_2.mined"}, tooltip = {"DyWorld_2.mined_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.mined, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.mined or 0), 2).."[/color]"}
+        if global.dyworld.players[player_index].stats.total.mined >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.mined / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[player_index].stats.total.mined >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.mined / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.mined, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.mined or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.mined or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.mined or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.mined or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.mined or 0), 2).."[/color]"}
+        end
 		
 		table2.add{type = "label", caption = {"DyWorld_2.built"}, tooltip = {"DyWorld_2.built_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.build, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.build or 0), 2).."[/color]"}
+        if global.dyworld.players[player_index].stats.total.build >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.build / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[player_index].stats.total.build >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.build / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.build, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.build or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.build or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.build or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.build or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.build or 0), 2).."[/color]"}
+        end
 		
 		table2.add{type = "label", caption = {"DyWorld_2.picked"}, tooltip = {"DyWorld_2.picked_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.picked, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.picked or 0), 2).."[/color]"}
+        if global.dyworld.players[player_index].stats.total.picked >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.picked / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[player_index].stats.total.picked >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.picked / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.picked, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.picked or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.picked or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.picked or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.picked or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.picked or 0), 2).."[/color]"}
+        end
 		
 		table2.add{type = "label", caption = {"DyWorld_2.killed"}, tooltip = {"DyWorld_2.killed_tp"}}
-		table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.killed, 2).."[/color]"}
-		table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.killed or 0), 2).."[/color]"}
+        if global.dyworld.players[player_index].stats.total.killed >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.killed / 1000000), 2).."m[/color]"}
+        elseif global.dyworld.players[player_index].stats.total.killed >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.players[player_index].stats.total.killed / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round(global.dyworld.players[player_index].stats.total.killed, 2).."[/color]"}
+        end
+        if (global.dyworld.game.counters.killed or 0) >= 1000000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.killed or 0) / 1000000), 2).."m[/color]"}
+        elseif (global.dyworld.game.counters.killed or 0) >= 1000 then
+            table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.killed or 0) / 1000), 2).."k[/color]"}
+        else
+            table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.killed or 0), 2).."[/color]"}
+        end
 	end
 
-    if page_name == "bonuses" and (global.dyworld.players[player_index].stats.codai_level >= 1) then
+    if page_name == "bonuses" and (global.dyworld.players[player_index].stats.codai_level.total >= 1) then
 		element.add{type = "label", name = "", caption = {"DyWorld.page_bonuses"}}
         local table2 = element.add{type = "table", name = "", column_count = 10, draw_vertical_lines = true, draw_horizontal_lines = true, vertical_centering = true, horizontal_centering = true, draw_horizontal_line_after_headers = false}
 		

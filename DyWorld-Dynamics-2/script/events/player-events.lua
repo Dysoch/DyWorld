@@ -39,7 +39,8 @@ function Event_on_player_died(event)
 	local force = player.force
 
     Dy_Player_init(event)
-	
+	global.dyworld.players[id].alive = false
+	global.dyworld.players[id].stats.deaths = global.dyworld.players[id].stats.deaths + 1
 end
 
 function Event_on_pre_player_died(event)
@@ -57,6 +58,11 @@ function Event_on_player_respawned(event)
 	local force = player.force
 
     Dy_Player_init(event)
+	global.dyworld.players[id].alive = true
+	global.dyworld.players[id].survival.food.storage = global.dyworld.players[id].survival.food.storage_max
+	global.dyworld.players[id].survival.water.storage = global.dyworld.players[id].survival.water.storage_max
+	global.dyworld.players[id].survival.pollution.stored = 0
+	global.dyworld.players[id].survival.radiation.stored = 0
     
 end
 
@@ -93,6 +99,11 @@ function Event_on_player_respawned_script(event)
 	local force = player.force
 
     Dy_Player_init(event)
+	global.dyworld.players[id].alive = true
+	global.dyworld.players[id].survival.food.storage = global.dyworld.players[id].survival.food.storage_max
+	global.dyworld.players[id].survival.water.storage = global.dyworld.players[id].survival.water.storage_max
+	global.dyworld.players[id].survival.pollution.stored = 0
+	global.dyworld.players[id].survival.radiation.stored = 0
     
 end
 

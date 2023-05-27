@@ -28,8 +28,10 @@ function Event_on_tick(event)
         for k,v in pairs(game.players) do
             local player = v
             local id = k
-            Vitals_Change(k, v)
-            Refresh_Personal_GUI(player, id)
+            if global.dyworld.players[id].alive then
+                Vitals_Change(k, v)
+                Refresh_Personal_GUI(player, id)
+            end
         end
     end
 end

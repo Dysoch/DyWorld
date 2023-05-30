@@ -24,6 +24,37 @@ local function Round(num, numDecimalPlaces)
 	return math.floor(num * mult + 0.5) / mult
 end
 
+function Achievement_Calc(id)
+    -- reset all achievements for bonuses to calculate them below --
+    for k,v in pairs(global.dyworld.players[id].bonus) do
+        v.achievements = 1
+    end
+
+    local achieve = global.dyworld.players[id].achievements
+    for k1,v1 in pairs(achieve) do
+        for k2,v2 in pairs(v1) do
+            if v2.achieved then
+                global.dyworld.players[id].bonus[v2.bonus].achievements = global.dyworld.players[id].bonus[v2.bonus].achievements + v2.bonus_amount
+            end
+        end
+    end
+end
+
+function Achievement_Threshold(id)
+    local achieve = global.dyworld.players[id].achievements
+    for k1,v1 in pairs(achieve) do
+        for k2,v2 in pairs(v1) do
+            if not v2.achieved then
+                if global.dyworld.players[id].stats.total[k1] >= v2.threshold then
+                    v2.achieved = true
+                    game.players[id].print("You have achieved "..k1.."-"..k2.."\nYour achievement bonus will increase with: "..(v2.bonus_amount * 100).."%")
+                end
+            end
+        end
+    end
+    Achievement_Calc(id)
+end
+
 function Bonus_Threshold(id)
     global.dyworld.players[id].bonus_calc.total = global.dyworld.players[id].bonus_calc.total + 1
     if global.dyworld.players[id].bonus_calc.total >= global.dyworld.players[id].bonus_calc.threshold then
@@ -234,6 +265,8 @@ function Bonus_Calc(id)
     local formula = 0
     global.dyworld.players[id].bonus["max-robot-count"].stats = formula
     global.dyworld.players[id].bonus["max-robot-count"].death = (global.dyworld.players[id].stats.deaths * global.dyworld.players[id].bonus["max-robot-count"].min_max.deaths)
+
+    Achievement_Threshold(id)
 
     for k,v in pairs(global.dyworld.players[id].bonus) do
         v.total = ((v.native + v.stats + v.implants + v.research + v.death) * v.achievements)

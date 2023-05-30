@@ -260,12 +260,12 @@ function dyworld_page_content(page_name, player_index, element)
 		table2.add{type = "label", caption = {"DyWorld_2.toggled"}}
         for k,v in pairs(global.dyworld.players[player_index].bonus) do
             table2.add{type = "label", caption = {"DyWorld_2."..k}}
-            table2.add{type = "label", caption = "[color=cyan]"..Round(v.native, v.min_max.rounded).."[/color]"}
-            table2.add{type = "label", caption = "[color=cyan]"..Round(v.stats, v.min_max.rounded).."[/color]"}
-            table2.add{type = "label", caption = "[color=cyan]"..Round(v.implants, v.min_max.rounded).."[/color]"}
-            table2.add{type = "label", caption = "[color=cyan]"..Round(v.research, v.min_max.rounded).."[/color]"}
+            table2.add{type = "label", caption = "[color=cyan]"..Round(v.native, v.min_max.rounded).."[/color]", tooltip = v.native}
+            table2.add{type = "label", caption = "[color=cyan]"..Round(v.stats, v.min_max.rounded).."[/color]", tooltip = v.stats}
+            table2.add{type = "label", caption = "[color=cyan]"..Round(v.implants, v.min_max.rounded).."[/color]", tooltip = v.implants}
+            table2.add{type = "label", caption = "[color=cyan]"..Round(v.research, v.min_max.rounded).."[/color]", tooltip = v.research}
             table2.add{type = "label", caption = "[color=red]"..Round(v.death, v.min_max.rounded).."[/color]", tooltip = {"DyWorld_2.deaths_tp_2"}}
-            table2.add{type = "label", caption = "[color=cyan]"..Round((v.achievements * 100), 0).."%[/color]", tooltip = {"DyWorld_2.achievements_tp_2"}}
+            table2.add{type = "label", caption = "[color=cyan]"..Round((v.achievements * 100), 2).."%[/color]", tooltip = {"DyWorld_2.achievements_tp_2"}}
             table2.add{type = "label", caption = "[color=blue]"..Round(v.total, v.min_max.rounded).."[/color]", tooltip = {"DyWorld_2.total_tp_2"}}
             if v.enabled then
                 table2.add{type = "label", caption = "[color=green] ✔[/color]"}

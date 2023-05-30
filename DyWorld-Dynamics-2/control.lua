@@ -15,6 +15,7 @@ require("script.gui.personal-gui")
 
 -- Database --
 require("database.main")
+require("script.database.achievements")
 require("script.database.informatron")
 
 -- Event Handlers --

@@ -365,6 +365,7 @@ function Dy_Player_init(event)
                 total = 0,
                 threshold = 5,
             },
+            achievements = DyWorld_2_Achievements_Bonuses,
             bonus = {
                 ["mining"] = {
                     native = -0.5,

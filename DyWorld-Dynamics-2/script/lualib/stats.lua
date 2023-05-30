@@ -17,7 +17,9 @@ function XP_Calc(id, amount)
     debug("("..id..") XP_Calc: added "..(amount).." xp, xp now: "..global.dyworld.players[id].stats.xp)
     if global.dyworld.players[id].stats.xp >= global.dyworld.players[id].stats.xp_to_level then
         global.dyworld.players[id].stats.xp = 0
-        global.dyworld.players[id].stats.xp_to_level = global.dyworld.players[id].stats.xp_to_level * (1 + math.random(0.01, 0.3))
+        local increase = (0.95 + math.random())
+        if increase >= 1.5 then increase = 1.5 end
+        global.dyworld.players[id].stats.xp_to_level = global.dyworld.players[id].stats.xp_to_level * increase
         global.dyworld.players[id].stats.level = global.dyworld.players[id].stats.level + 1
         global.dyworld.players[id].bonus_calc.threshold = (global.dyworld.players[id].stats.level * 5)
         Codia_Calc(id)

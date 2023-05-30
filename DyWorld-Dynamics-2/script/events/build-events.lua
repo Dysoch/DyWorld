@@ -18,6 +18,17 @@ function Event_on_player_used_capsule(event)
 	local id = event.player_index
 	local name = event.item.name
 
+    -- global --
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+    if not global.dyworld.game.counters.water_used then global.dyworld.game.counters.water_used = 0 end
+    if not global.dyworld.game.counters.capsules then global.dyworld.game.counters.capsules = 0 end
+    if not global.dyworld.game.counters.food_used then global.dyworld.game.counters.food_used = 0 end
+    global.dyworld.game.counters.capsules = global.dyworld.game.counters.capsules + 1
+
+    -- personal --
+    if global.dyworld.players[id] then
+        global.dyworld.players[id].stats.total.capsules = global.dyworld.players[id].stats.total.capsules + 1
+    end
 end
 
 function Event_on_built_entity(event)

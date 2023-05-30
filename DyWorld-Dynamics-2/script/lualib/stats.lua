@@ -17,7 +17,7 @@ function XP_Calc(id, amount)
     debug("("..id..") XP_Calc: added "..(amount).." xp, xp now: "..global.dyworld.players[id].stats.xp)
     if global.dyworld.players[id].stats.xp >= global.dyworld.players[id].stats.xp_to_level then
         global.dyworld.players[id].stats.xp = 0
-        global.dyworld.players[id].stats.xp_to_level = global.dyworld.players[id].stats.xp_to_level * (1 + math.random())
+        global.dyworld.players[id].stats.xp_to_level = global.dyworld.players[id].stats.xp_to_level * (1 + math.random(0.01, 0.3))
         global.dyworld.players[id].stats.level = global.dyworld.players[id].stats.level + 1
         global.dyworld.players[id].bonus_calc.threshold = (global.dyworld.players[id].stats.level * 5)
         Codia_Calc(id)
@@ -31,9 +31,51 @@ function Codia_Calc(id, armor, lvl)
     end
     global.dyworld.players[id].stats.codai_level.xp = (global.dyworld.players[id].stats.level / 2)
     global.dyworld.players[id].stats.codai_level.total = math.floor(global.dyworld.players[id].stats.codai_level.armor + global.dyworld.players[id].stats.codai_level.xp)
+    game.players[id].print("[[color=blue]C.O.D.A.I.[/color]] I have been upgraded to firmware version: [color=red]"..global.dyworld.players[id].stats.codai_level.total.."[/color]")
+end
 
-    --if not global.dyworld.players[ID].messages.codai then global.dyworld.players[ID].messages.codai = {} end
+function Distance_Calc(id)
+    local objA_X = global.dyworld.players[id].coords.x
+    local objA_Y = global.dyworld.players[id].coords.y
+    local objB_X = global.dyworld.players[id].coords.x2
+    local objB_Y = global.dyworld.players[id].coords.y2
+    -- Get the length for each of the components x and y
+    local xDist = objB_X - objA_X
+    local yDist = objB_Y - objA_Y
+	local distance = math.sqrt((xDist^2)+(yDist^2))
 
-    --if not global.dyworld.players[ID].messages.codai["10"] then global.dyworld.players[ID].messages.codai["10"] = true end
-    game.players[id].print("[[color=blue]C.O.D.A.I.[/color]] I have been upgraded to firmware (version: "..global.dyworld.players[id].stats.codai_level.total..")")
+    -- global --
+    if not global.dyworld.game.counters then global.dyworld.game.counters = {} end
+    if not global.dyworld.game.counters.odometer_walk then global.dyworld.game.counters.odometer_walk = 0 end
+    if not global.dyworld.game.counters.odometer_car then global.dyworld.game.counters.odometer_car = 0 end
+    if not global.dyworld.game.counters.odometer_train then global.dyworld.game.counters.odometer_train = 0 end
+
+    if game.players[id].vehicle then
+        local name = game.players[id].vehicle.name
+        if name == "car-1" then
+            global.dyworld.players[id].stats.total.odometer_car = global.dyworld.players[id].stats.total.odometer_car + distance
+            global.dyworld.game.counters.odometer_car = global.dyworld.game.counters.odometer_car + distance
+        elseif name == "boat-1" then
+            global.dyworld.players[id].stats.total.odometer_car = global.dyworld.players[id].stats.total.odometer_car + distance
+            global.dyworld.game.counters.odometer_car = global.dyworld.game.counters.odometer_car + distance
+        elseif name == "car" then
+            global.dyworld.players[id].stats.total.odometer_car = global.dyworld.players[id].stats.total.odometer_car + distance
+            global.dyworld.game.counters.odometer_car = global.dyworld.game.counters.odometer_car + distance
+        elseif name == "spidertron" then
+            global.dyworld.players[id].stats.total.odometer_car = global.dyworld.players[id].stats.total.odometer_car + distance
+            global.dyworld.game.counters.odometer_car = global.dyworld.game.counters.odometer_car + distance
+        elseif name == "locomotive" then
+            global.dyworld.players[id].stats.total.odometer_train = global.dyworld.players[id].stats.total.odometer_train + distance
+            global.dyworld.game.counters.odometer_train = global.dyworld.game.counters.odometer_train + distance
+        elseif name == "cargo-wagon-1" then
+            global.dyworld.players[id].stats.total.odometer_train = global.dyworld.players[id].stats.total.odometer_train + distance
+            global.dyworld.game.counters.odometer_train = global.dyworld.game.counters.odometer_train + distance
+        elseif name == "locomotive-1" then
+            global.dyworld.players[id].stats.total.odometer_train = global.dyworld.players[id].stats.total.odometer_train + distance
+            global.dyworld.game.counters.odometer_train = global.dyworld.game.counters.odometer_train + distance
+        end
+    else
+        global.dyworld.players[id].stats.total.odometer_walk = global.dyworld.players[id].stats.total.odometer_walk + distance
+        global.dyworld.game.counters.odometer_walk = global.dyworld.game.counters.odometer_walk + distance
+    end
 end

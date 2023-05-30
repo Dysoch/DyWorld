@@ -51,4 +51,6 @@ function Vitals_Change(ID, Player)
     global.dyworld.players[ID].survival.radiation.threshold.total = (Rad.threshold.native + Rad.threshold.implant + Rad.threshold.bonus + Rad.threshold.tech)
     --- Check stored ---
     if Rad.stored <= 0 then global.dyworld.players[ID].survival.radiation.stored = 0 end
+
+    -- Damage parts --
 end

@@ -13,6 +13,12 @@ data:extend({
 	},
 	
 	----- Content Altering Settings -----
+	{
+		type = "bool-setting",
+		name = "DyWorld_Story",
+		setting_type = "startup",
+		default_value = true,
+	},
 	
 	----- Game Altering Settings -----
 	--[[{

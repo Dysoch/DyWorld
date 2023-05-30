@@ -2,6 +2,7 @@ debugger = settings.startup["DyWorld_Debug"].value or nil
 Version_Build = "0.0.1"
 
 -- LuaLib --
+serpent = require("script.lualib.serpent")
 require("script.lualib.functions")
 require("script.lualib.bonus")
 require("script.lualib.debug")
@@ -96,7 +97,7 @@ script.on_event(defines.events.on_gui_closed, Event_on_gui_closed)
 script.on_event(defines.events.on_gui_elem_changed, Event_on_gui_elem_changed)
 script.on_event(defines.events.on_gui_location_changed, Event_on_gui_location_changed)
 script.on_event(defines.events.on_gui_opened, Event_on_gui_opened)
---script.on_event(defines.events.on_gui_selection_state_changed, Event_on_gui_closed)
+script.on_event(defines.events.on_gui_selection_state_changed, Event_on_gui_checked_state_changed)
 --script.on_event(defines.events.on_gui_switch_state_changed, Event_on_gui_closed)
 --script.on_event(defines.events.on_gui_text_changed, Event_on_gui_closed)
 --script.on_event(defines.events.on_gui_value_changed, Event_on_gui_closed)

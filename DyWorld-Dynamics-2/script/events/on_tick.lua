@@ -30,6 +30,7 @@ function Event_on_tick(event)
             local id = k
             if global.dyworld.players[id].alive then
                 Vitals_Change(k, v)
+                Distance_Calc(id)
                 Refresh_Personal_GUI(player, id)
             end
         end

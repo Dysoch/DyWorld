@@ -7,6 +7,9 @@ function Event_on_gui_click(event)
 	local player = game.players[id]
 	local force = player.force
 	local gui = event.element
+    if gui.type == "checkbox" then
+        game.players[id].print("toggled: "..gui.name.." to "..tostring(gui.state))
+    end
     
     if gui.name == "DyDs_PG_close_button" then
 		if player.gui.screen.DyDs_PG_outer_frame then
@@ -25,6 +28,10 @@ function Event_on_gui_click(event)
             global.dydebugbutton = false
         end
     end
+    
+    if gui.type == "checkbox" then
+
+    end
 end
 
 function Event_on_gui_closed(event)
@@ -40,6 +47,15 @@ function Event_on_gui_location_changed(event)
 end
 
 function Event_on_gui_opened(event)
+
+end
+
+function Event_on_gui_checked_state_changed(event)
+	local id = event.player_index
+	local player = game.players[id]
+	local force = player.force
+	local gui = event.element
+    game.players[id].print("toggled: "..gui.name.." to "..gui.state)
 
 end
 

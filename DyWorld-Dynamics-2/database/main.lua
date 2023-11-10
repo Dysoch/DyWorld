@@ -16,6 +16,7 @@ require(db.."resources.ores")
 
 -- Items --
 require(db.."items.main")
+require(db.."items.intermediates")
 
 -- Fluids --
 require(db.."fluids.main")

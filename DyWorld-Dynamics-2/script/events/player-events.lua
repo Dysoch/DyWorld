@@ -511,6 +511,24 @@ function Dy_Player_init(event)
                     min_max = {min_level = 30, max = 0, rounded = 2, deaths = -0.1, min = 0},
                 },
             },
+            dis = {
+                items = {},
+                settings = {
+                    enabled = false,
+                    auto_refill = false,
+                    settings_refill = {},
+                    auto_trash = false,
+                    settings_trash = {},
+                    auto_survival = false,
+                    upgrade = true,
+                    settings_survival = {heal_threshold = 50, food_threshold = 50, water_threshold = 50,},
+                    type = "personal",
+                },
+                stats = {
+                    item = {max = 500, amount = 0, max2 = 500},
+                    total = {max = 500, amount = 0},
+                },
+            },
         }
     end
 end

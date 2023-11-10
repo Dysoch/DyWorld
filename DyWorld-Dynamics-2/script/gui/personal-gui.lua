@@ -39,11 +39,12 @@ local function Time_Surival_Check(id, VAR)
 end
 
 function Personal_GUI_Inner(player, id)
+    DIS_Init(id) -- temp
     local inner_frame = player.gui.screen.DyDs_PG_outer_frame.DyDs_PG_main_frame.DyDs_PG_inner_frame
     local display_scroll = inner_frame.add{type = "scroll-pane", name = "", style = "flib_naked_scroll_pane"}
     
     -- Water & Food --
-    if global.dyworld.players[id].stats.codai_level.total >= 7 then
+    if global.dyworld.players[id].stats.codai_level.total >= 7 or global.dydebugbutton then
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max),
@@ -58,7 +59,17 @@ function Personal_GUI_Inner(player, id)
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)),
             caption = {"dyworld-gui-main.food-3"}
         }
-    elseif global.dyworld.players[id].stats.codai_level.total >= 3 then
+        display_scroll.add{
+            type = "label",
+            name = "",
+            caption = "DIS Items (Personal): "..Round(global.dyworld.players[id].dis.stats.total.amount,0).." / "..Round(global.dyworld.players[id].dis.stats.total.max,0)
+        }
+        display_scroll.add{
+            type = "label",
+            name = "",
+            caption = "DIS Items (Global): "..Round(global.dyworld.dis.stats.total,0)
+        }
+    elseif global.dyworld.players[id].stats.codai_level.total >= 3 or global.dydebugbutton then
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max),
@@ -73,7 +84,17 @@ function Personal_GUI_Inner(player, id)
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)),
             caption = {"dyworld-gui-main.food-2"}
         }
-    elseif global.dyworld.players[id].stats.codai_level.total >= 1 then
+        display_scroll.add{
+            type = "label",
+            name = "",
+            caption = "DIS Items: "..Round(global.dyworld.players[id].dis.stats.total.amount,0).." / "..Round(global.dyworld.players[id].dis.stats.total.max,0)
+        }
+        display_scroll.add{
+            type = "label",
+            name = "",
+            caption = "DIS Items (Global): "..Round(global.dyworld.dis.stats.total,0)
+        }
+    elseif global.dyworld.players[id].stats.codai_level.total >= 1 or global.dydebugbutton then
         display_scroll.add{
             type = "label",
             name = "",
@@ -82,7 +103,7 @@ function Personal_GUI_Inner(player, id)
     end
 
     -- Pollution --
-    if global.dyworld.players[id].stats.codai_level.total >= 4 then
+    if global.dyworld.players[id].stats.codai_level.total >= 4 or global.dydebugbutton then
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.pollution.stored/global.dyworld.players[id].survival.pollution.threshold.total),
@@ -93,7 +114,7 @@ function Personal_GUI_Inner(player, id)
     end
 
     -- Radiation --
-    if global.dyworld.players[id].stats.codai_level.total >= 4 then
+    if global.dyworld.players[id].stats.codai_level.total >= 4 or global.dydebugbutton then
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.radiation.stored/global.dyworld.players[id].survival.radiation.threshold.total),

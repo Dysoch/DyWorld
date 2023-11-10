@@ -47,5 +47,8 @@ function Event_on_player_crafted_item(event)
             end
         end
 
+        if name == "dynamic-interface-system" then
+            DIS_Personal_Crafted(id)
+        end
 	end
 end

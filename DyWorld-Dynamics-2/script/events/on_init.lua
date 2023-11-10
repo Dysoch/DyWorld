@@ -73,6 +73,7 @@ end
 function Event_on_init()
     if not global.dyworld then
         global.dyworld = {
+            version = Version_Build,
             players = {},
             game = {},
             surfaces = {},
@@ -86,6 +87,24 @@ function Event_on_init()
                     year = 0,
                 },
                 log = "0:0:0:0:0",
+            },
+            dis = {
+                items = {},
+                settings = {
+                    enabled = false,
+                    auto_refill = false,
+                    settings_refill = {},
+                    auto_trash = false,
+                    settings_trash = {},
+                    auto_survival = false,
+                    upgrade = true,
+                    settings_survival = {heal_threshold = 50, food_threshold = 50, water_threshold = 50,},
+                    type = "global",
+                },
+                stats = {
+                    item = 0,
+                    total = 0,
+                },
             },
             story = settings.startup["DyWorld_Story"].value,
         }

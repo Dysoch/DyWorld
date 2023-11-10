@@ -5,6 +5,7 @@ Version_Build = "0.0.1"
 serpent = require("script.lualib.serpent")
 require("script.lualib.functions")
 require("script.lualib.bonus")
+require("script.lualib.d-i-s")
 require("script.lualib.debug")
 require("script.lualib.research")
 require("script.lualib.stats")

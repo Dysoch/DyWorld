@@ -52,5 +52,7 @@ function Vitals_Change(ID, Player)
     --- Check stored ---
     if Rad.stored <= 0 then global.dyworld.players[ID].survival.radiation.stored = 0 end
 
+    -- Weight -- (todo for DLC)
+
     -- Damage parts --
 end

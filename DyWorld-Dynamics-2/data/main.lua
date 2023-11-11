@@ -19,3 +19,7 @@ require(core.."recipes") -- Recipes
 require(core.."recipes.hematite")
 require(core.."recipes.wood-basic")
 require(core.."recipes.stone-basic")
+require(core.."recipes.circuits")
+require(core.."recipes.metal-cable")
+require(core.."recipes.metal-gear")
+require(core.."recipes.metal-stick")

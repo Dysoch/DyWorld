@@ -88,16 +88,37 @@ function DIS_Personal(id)
     -- Checking the Digital inventory for items, and removing them for a bonus --
     if (global.dyworld.players[id].dis.settings.upgrade and global.dyworld.players[id].dis.settings.enabled) or (debugger or local_debug) then
         for k,v in pairs(global.dyworld.players[id].dis.items) do
-            if k == "log" then
+            if k == "basic-circuit" then
+                if v >= 1 then
+                    global.dyworld.players[id].dis.stats.item.max2 = global.dyworld.players[id].dis.stats.item.max2 + (0.05 * v)
+                    global.dyworld.players[id].dis.items[k] = global.dyworld.players[id].dis.items[k] - v
+                    global.dyworld.players[id].dis.stats.item.amount = global.dyworld.players[id].dis.stats.item.amount - v
+                end
+            end
+            if k == "electronic-circuit" then
                 if v >= 1 then
                     global.dyworld.players[id].dis.stats.item.max2 = global.dyworld.players[id].dis.stats.item.max2 + (0.1 * v)
                     global.dyworld.players[id].dis.items[k] = global.dyworld.players[id].dis.items[k] - v
                     global.dyworld.players[id].dis.stats.item.amount = global.dyworld.players[id].dis.stats.item.amount - v
                 end
             end
-            if k == "iron-plate" then
+            if k == "advanced-circuit" then
                 if v >= 1 then
-                    global.dyworld.players[id].dis.stats.item.max2 = global.dyworld.players[id].dis.stats.item.max2 + (0.05 * v)
+                    global.dyworld.players[id].dis.stats.item.max2 = global.dyworld.players[id].dis.stats.item.max2 + (0.2 * v)
+                    global.dyworld.players[id].dis.items[k] = global.dyworld.players[id].dis.items[k] - v
+                    global.dyworld.players[id].dis.stats.item.amount = global.dyworld.players[id].dis.stats.item.amount - v
+                end
+            end
+            if k == "processing-unit" then
+                if v >= 1 then
+                    global.dyworld.players[id].dis.stats.item.max2 = global.dyworld.players[id].dis.stats.item.max2 + (0.4 * v)
+                    global.dyworld.players[id].dis.items[k] = global.dyworld.players[id].dis.items[k] - v
+                    global.dyworld.players[id].dis.stats.item.amount = global.dyworld.players[id].dis.stats.item.amount - v
+                end
+            end
+            if k == "advanced-processing-unit" then
+                if v >= 1 then
+                    global.dyworld.players[id].dis.stats.item.max2 = global.dyworld.players[id].dis.stats.item.max2 + (0.8 * v)
                     global.dyworld.players[id].dis.items[k] = global.dyworld.players[id].dis.items[k] - v
                     global.dyworld.players[id].dis.stats.item.amount = global.dyworld.players[id].dis.stats.item.amount - v
                 end

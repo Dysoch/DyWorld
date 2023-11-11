@@ -6,7 +6,7 @@ if data.raw.resource["iron-ore"] then
     v.minable =
     {
       --mining_particle = resource_parameters.name .. "-particle",
-      mining_time = 1,
+      mining_time = 1.5,
       results = {
         {type = "item", name = "hematite", amount_min = 1, amount_max = 1},
         {type = "item", name = "iron-chunk", amount_min = 1, amount_max = 5, probability = 0.5},
@@ -22,7 +22,7 @@ if data.raw.resource["copper-ore"] then
     v.minable =
     {
       --mining_particle = resource_parameters.name .. "-particle",
-      mining_time = 1,
+      mining_time = 0.5,
       results = {
         {type = "item", name = "chalcopyrite", amount_min = 1, amount_max = 1},
         {type = "item", name = "copper-chunk", amount_min = 1, amount_max = 5, probability = 0.5},
@@ -52,7 +52,7 @@ if data.raw.resource["coal"] then
     v.minable =
     {
       --mining_particle = resource_parameters.name .. "-particle",
-      mining_time = 1,
+      mining_time = 2,
       results = {
         {type = "item", name = "carbon", amount_min = 1, amount_max = 1},
         {type = "item", name = "coal", amount_min = 1, amount_max = 5, probability = 0.25},

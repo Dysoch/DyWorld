@@ -65,7 +65,8 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
                 },
                 results =
                 {
-                  {type = "item", name = v.ore, amount_min = 6, amount_max = 10},
+                  {type = "item", name = v.ore, amount_min = 1, amount_max = 1},
+                  {type = "item", name = v.ore, amount_min = 1, amount_max = 10, probability = 0.0001},
                 },
                 main_product = v.ore,
                 energy_required = 2.5,

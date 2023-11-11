@@ -1,5 +1,5 @@
 
-local local_debug = true
+local local_debug = false
 local local_log = false
 local function debug(str)
     local Time = "[color=red]["..global.dyworld.time.log.."][/color]"

@@ -73,7 +73,12 @@ end
 function Event_on_init()
     if not global.dyworld then
         global.dyworld = {
-            version = Version_Build,
+            version = {
+                major = Version_Build_Major,
+                minor = Version_Build_Minor,
+                hotfix = Version_Build_Hotfix,
+                version = Version_Build,
+            },
             players = {},
             game = {},
             surfaces = {},

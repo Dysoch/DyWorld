@@ -1,5 +1,8 @@
 debugger = settings.startup["DyWorld_Debug"].value or nil
-Version_Build = "0.0.1"
+Version_Build_Major = 0
+Version_Build_Minor = 0
+Version_Build_Hotfix = 1
+Version_Build = Version_Build_Major.."."..Version_Build_Minor.."."..Version_Build_Hotfix
 
 -- LuaLib --
 serpent = require("script.lualib.serpent")

@@ -1,12 +1,33 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
-Date: ???
+Date: November 19th 2023
   Features:
-    - A rewrite of DyWorld-Dynamics, into a version that does not rely on Space Exploration (which make it easier to update and code). All features will eventually be back into the mod, better then before, with less bugs. Space Exploration sub-mod will eventually come, once the orginal mod is done and ready
+    - A rewrite of DyWorld-Dynamics, into a version that does not rely on Space Exploration (which make it easier to update and code). All features will eventually be back into the mod, better then before, with less bugs. 
+  Resources:
+    - Done: 15%
+    - The first resources have been altered/added: Hematite, Chalcopyrite, Carbon and Limestone
+  Entities:
+    - Done: 1%
     - N/A
-  Minor Features:
+  Items:
+    - Done: 3%
+    - First couple of intermediates and metal plates
+  Recipes:
+    - Done: 1%
+    - First few changes to certain recipes
+    - First few new recipes added
+  Technologies:
+    - Done: 0.1%
+    - First set of early access Technologies added. VERY WIP
+  Enemies:
+    - Done: 0%
     - N/A
-  Changes:
+  Survival:
+    - Done: 5%
+    - Framework added for survival. Mostly visual and startup scripts
+  Story:
+    - Done: 0%
     - N/A
-  Bugfixes:
-    - N/A
+  GUI:
+    - Done: 10%
+    - First pass of the new GUI

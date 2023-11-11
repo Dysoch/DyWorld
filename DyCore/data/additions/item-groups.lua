@@ -83,6 +83,17 @@ local Table = {
         ["fluids-8"] = "1",
         ["fluids-9"] = "1",
         ["slags"] = "1",
+
+        ["intermediates-iron"] = "1-2",
+        ["intermediates-copper"] = "1-1",
+        ["intermediates-tin"] = "1-3",
+        ["intermediates-lead"] = "2-1",
+        ["intermediates-zinc"] = "2-2",
+        ["intermediates-aluminium"] = "2-3",
+        ["intermediates-silver"] = "3-1",
+        ["intermediates-gold"] = "3-1",
+        ["intermediates-circuit"] = "1-0",
+        --["slags"] = "1",
     },
     ["resources"] = {
         ["wood"] = "1",

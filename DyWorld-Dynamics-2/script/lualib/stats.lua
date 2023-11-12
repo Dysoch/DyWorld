@@ -31,9 +31,14 @@ function Codia_Calc(id, armor, lvl)
     if armor then
         global.dyworld.players[id].stats.codai_level.armor = lvl
     end
+    if global.dyworld.players[id].dis.stats.codai.xp >= global.dyworld.players[id].dis.stats.codai.xp_to_level then
+        global.dyworld.players[id].dis.stats.codai.level = global.dyworld.players[id].dis.stats.codai.level + 1
+        global.dyworld.players[id].dis.stats.codai.xp_to_level = Round((global.dyworld.players[id].dis.stats.codai.xp_to_level * 1.6), 0)
+    end
+    global.dyworld.players[id].stats.codai_level.dis = global.dyworld.players[id].dis.stats.codai.level
     global.dyworld.players[id].stats.codai_level.xp = (global.dyworld.players[id].stats.level / 2)
-    global.dyworld.players[id].stats.codai_level.total = math.floor(global.dyworld.players[id].stats.codai_level.armor + global.dyworld.players[id].stats.codai_level.xp)
-    game.players[id].print("[[color=blue]C.O.D.A.I.[/color]] I have been upgraded to firmware version: [color=red]"..global.dyworld.players[id].stats.codai_level.total.."[/color]")
+    global.dyworld.players[id].stats.codai_level.total = math.floor(global.dyworld.players[id].stats.codai_level.armor + global.dyworld.players[id].stats.codai_level.xp + global.dyworld.players[id].stats.codai_level.dis)
+    game.players[id].print("[color=blue]C.O.D.A.I.[/color] has been upgraded to firmware version: [color=red]"..global.dyworld.players[id].stats.codai_level.total.."[/color]")
 end
 
 function Distance_Calc(id)

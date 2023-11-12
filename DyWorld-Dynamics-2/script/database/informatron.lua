@@ -41,7 +41,9 @@ function dyworld_menu(player_index)
 				stats = 1,
 				bonuses = 1,
 			},
-            codai = 1,
+            codai = {
+                dis = 1,
+            },
 		},
 	}
 	-- Main Pages --
@@ -142,6 +144,46 @@ function dyworld_page_content(page_name, player_index, element)
         end
         if global.dyworld.players[player_index].stats.codai_level.total >= 10 then
             element.add{type = "label", name = "", caption = {"DyWorld.page_codai_11"}}
+        end
+    end
+    if page_name == "dis" then
+        element.add{type = "label", name = "", caption = "DIS Inventory List\n"}
+        element.add{
+            type = "label",
+            name = "",
+            caption = "DIS Items: "..Round(global.dyworld.players[player_index].dis.stats.total.amount,0).." / "..Round(global.dyworld.players[player_index].dis.stats.total.max,0)
+        }
+        element.add{
+            type = "label",
+            name = "",
+            caption = "DIS Items (Global): "..Round(global.dyworld.dis.stats.total,0)
+        }
+        element.add{type = "label", name = "", caption = "\n\n"}
+        element.add{type = "label", name = "", caption = "DIS Items Personal"}
+        local table2 = element.add{type = "table", name = "table2", column_count = 12, draw_vertical_lines = false, draw_horizontal_lines = true, vertical_centering = true, draw_horizontal_line_after_headers = true}
+
+        for i = 1,6 do
+            table2.add{type = "label", caption = "Item: "}
+            table2.add{type = "label", caption = "Amount: "}
+        end
+
+        for k,v in pairs(global.dyworld.players[player_index].dis.items) do
+            table2.add{type = "choose-elem-button", name = k, elem_type = "item", elem_value = v, locked = true, item = k}
+            table2.add{type = "label", caption = v.."x"}
+        end
+
+        element.add{type = "label", name = "", caption = "\n\n"}
+        element.add{type = "label", name = "", caption = "DIS Items global"}
+        local table3 = element.add{type = "table", name = "table3", column_count = 12, draw_vertical_lines = false, draw_horizontal_lines = true, vertical_centering = true, draw_horizontal_line_after_headers = true}
+
+        for i = 1,6 do
+            table3.add{type = "label", caption = "Item: "}
+            table3.add{type = "label", caption = "Amount: "}
+        end
+
+        for k,v in pairs(global.dyworld.dis.items) do
+            table3.add{type = "choose-elem-button", name = k, elem_type = "item", elem_value = v, locked = true, item = k}
+            table3.add{type = "label", caption = v.."x"}
         end
     end
     if page_name == "stats" then

@@ -357,6 +357,7 @@ function Dy_Player_init(event)
                 codai_level = {
                     armor = 0,
                     xp = 0,
+                    dis = 0,
                     total = 0,
                 },
                 changes = {},
@@ -527,6 +528,13 @@ function Dy_Player_init(event)
                 stats = {
                     item = {max = 500, amount = 0, max2 = 500},
                     total = {max = 500, amount = 0},
+                    item_used = {},
+                    item_used_total = 0,
+                    codai = {
+                        level = 0,
+                        xp = 0,
+                        xp_to_level = 250,
+                    },
                 },
             },
         }

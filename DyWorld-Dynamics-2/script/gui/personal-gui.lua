@@ -39,7 +39,6 @@ local function Time_Surival_Check(id, VAR)
 end
 
 function Personal_GUI_Inner(player, id)
-    DIS_Init(id) -- temp
     local inner_frame = player.gui.screen.DyDs_PG_outer_frame.DyDs_PG_main_frame.DyDs_PG_inner_frame
     local display_scroll = inner_frame.add{type = "scroll-pane", name = "", style = "flib_naked_scroll_pane"}
     
@@ -94,7 +93,7 @@ function Personal_GUI_Inner(player, id)
             name = "",
             caption = "DIS Items (Global): "..Round(global.dyworld.dis.stats.total,0)
         }
-    elseif global.dyworld.players[id].stats.codai_level.total >= 1 or global.dydebugbutton then
+    else
         display_scroll.add{
             type = "label",
             name = "",
@@ -131,11 +130,11 @@ function Personal_GUI_Inner(player, id)
     if global.dydebugbutton then
         display_scroll.add{type = "line", direction = "horizontal"}
         display_scroll.add{type = "label", name = "", caption = "Coords: "..Round(global.dyworld.players[id].coords.x,0).." / "..Round(global.dyworld.players[id].coords.y,0).." / "..global.dyworld.players[id].coords.surface}
-        display_scroll.add{type = "label", name = "", caption = "Level XP: "..global.dyworld.players[id].stats.level..", Level Codai: "..global.dyworld.players[id].stats.codai_level.total}
-        display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].stats.xp/global.dyworld.players[id].stats.xp_to_level), tooltip = "XP: "..global.dyworld.players[id].stats.xp.."\nXP to Next Level: "..global.dyworld.players[id].stats.xp_to_level}
-        display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].bonus_calc.total/global.dyworld.players[id].bonus_calc.threshold), tooltip = "Bonus Calculation Starter: "..global.dyworld.players[id].bonus_calc.total.."\nThreshold: "..global.dyworld.players[id].bonus_calc.threshold}
+        --display_scroll.add{type = "label", name = "", caption = "Level XP: "..global.dyworld.players[id].stats.level..", Level Codai: "..global.dyworld.players[id].stats.codai_level.total}
+        --display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].stats.xp/global.dyworld.players[id].stats.xp_to_level), tooltip = "XP: "..global.dyworld.players[id].stats.xp.."\nXP to Next Level: "..global.dyworld.players[id].stats.xp_to_level}
+        --display_scroll.add{type = "progressbar", value = (global.dyworld.players[id].bonus_calc.total/global.dyworld.players[id].bonus_calc.threshold), tooltip = "Bonus Calculation Starter: "..global.dyworld.players[id].bonus_calc.total.."\nThreshold: "..global.dyworld.players[id].bonus_calc.threshold}
         display_scroll.add{type = "line", direction = "horizontal"}
-        local table2 = display_scroll.add{type = "table", name = "table2", column_count = 3, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
+        --[[local table2 = display_scroll.add{type = "table", name = "table2", column_count = 3, draw_vertical_lines = false, draw_horizontal_lines = false, vertical_centering = true, draw_horizontal_line_after_headers = false}
 		
 		table2.add{type = "label", caption = ""}
 		table2.add{type = "label", caption = {"DyWorld_2.personal"}, tooltip = {"DyWorld_2.personal_tp"}}
@@ -219,7 +218,7 @@ function Personal_GUI_Inner(player, id)
             table2.add{type = "label", caption = "[color=blue]"..Round(((global.dyworld.game.counters.killed or 0) / 1000), 2).."k[/color]"}
         else
             table2.add{type = "label", caption = "[color=blue]"..Round((global.dyworld.game.counters.killed or 0), 2).."[/color]"}
-        end
+        end]]
     end
 end
 
@@ -234,7 +233,7 @@ function Personal_GUI_Main(player, id)
     local outer_frame = screen_element.add{type = "frame", name = "DyDs_PG_outer_frame", style = "outer_frame", visible = true}
     local main_frame = outer_frame.add{type = "frame", name = "DyDs_PG_main_frame", direction = "vertical", visible = true}
     local titlebar = main_frame.add{type = "flow", name = "", style = "flib_titlebar_flow", direction = "horizontal"}
-    titlebar.add{type = "label", name = "", style = "frame_title", caption = {"dyworld-gui-main.title"}, ignored_by_interaction = true}
+    titlebar.add{type = "label", name = "", style = "frame_title", caption = {"dyworld-gui-main.title", global.dyworld.players[id].stats.codai_level.total}, ignored_by_interaction = true}
     titlebar.add{type = "empty-widget", style = "flib_titlebar_drag_handle", ignored_by_interaction = true}
     if debugger then titlebar.add{type = "sprite-button", name = "DyDs_PG_debug_button", style = "frame_action_button", mouse_button_filter = {"left"}, sprite = "utility/close_white", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black", tooltip = {"dyworld-gui-main.button-1"}} end
     titlebar.add{type = "sprite-button", name = "DyDs_PG_story_button", style = "frame_action_button", mouse_button_filter = {"left"}, sprite = "utility/close_white", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black", tooltip = {"dyworld-gui-main.button-2"}}

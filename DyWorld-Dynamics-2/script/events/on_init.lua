@@ -3,7 +3,8 @@ local created_items = function()
         return
         {
             ["iron-plate"] = 80,
-            ["wood"] = 10,
+            ["copper-plate"] = 80,
+            ["log"] = 10,
             ["pistol"] = 1,
             ["firearm-magazine"] = 100,
             ["burner-mining-drill"] = 10,
@@ -13,7 +14,8 @@ local created_items = function()
         return
         {
             ["iron-plate"] = 8,
-            ["wood"] = 1,
+            ["copper-plate"] = 8,
+            ["log"] = 2,
             ["pistol"] = 1,
             ["firearm-magazine"] = 10,
             ["burner-mining-drill"] = 1,
@@ -59,11 +61,13 @@ end
         return
         {
             ["iron-plate"] = 80,
+            ["copper-plate"] = 80,
         }
     else
         return
         {
             ["iron-plate"] = 8,
+            ["copper-plate"] = 8,
         }
     end
 end
@@ -109,6 +113,8 @@ function Event_on_init()
                 stats = {
                     item = 0,
                     total = 0,
+                    item_used = {},
+                    item_used_total = 0,
                 },
             },
             story = settings.startup["DyWorld_Story"].value,

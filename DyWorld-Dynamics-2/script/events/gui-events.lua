@@ -12,9 +12,7 @@ function Event_on_gui_click(event)
     end
     
     if gui.name == "DyDs_PG_close_button" then
-		if player.gui.screen.DyDs_PG_outer_frame then
-            player.gui.screen.DyDs_PG_outer_frame.destroy()
-        end
+		Toggle_Personal_GUI(player, id)
     elseif gui.name == "DyDs_PG_story_button" then
 		if not global.dyworld.players[id].toggles.objectives_gui then
             global.dyworld.players[id].toggles.objectives_gui = true
@@ -27,10 +25,6 @@ function Event_on_gui_click(event)
         else
             global.dydebugbutton = false
         end
-    end
-    
-    if gui.type == "checkbox" then
-
     end
 end
 

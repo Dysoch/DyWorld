@@ -45,11 +45,6 @@ function DIS_Init(id)
                 total = {max = 500, amount = 0},
                 item_used = {},
                 item_used_total = 0,
-                codai = {
-                    level = 0,
-                    xp = 0,
-                    xp_to_level = 250,
-                },
             },
         }
     end
@@ -96,11 +91,7 @@ end
 function DIS_Personal(id, override)
     if not global.dyworld.players[id].dis.stats.item_used then global.dyworld.players[id].dis.stats.item_used = {} end
     if not global.dyworld.players[id].dis.stats.item_used_total then global.dyworld.players[id].dis.stats.item_used_total = 0 end
-    if not global.dyworld.players[id].dis.stats.codai then global.dyworld.players[id].dis.stats.codai = {
-        level = 0,
-        xp = 0,
-        xp_to_level = 250,
-    } end
+    if not global.dyworld.players[id].stats.codai_level.dis then global.dyworld.players[id].stats.codai_level.dis = 0 end
     -- Checking the Digital inventory for items, and removing them for a bonus --
     if (global.dyworld.players[id].dis.settings.upgrade and global.dyworld.players[id].dis.settings.enabled) or (debugger or local_debug or override) then
         for k,v in pairs(global.dyworld.players[id].dis.items) do
@@ -115,7 +106,7 @@ function DIS_Personal(id, override)
                         global.dyworld.players[id].dis.stats.item_used[k] = global.dyworld.players[id].dis.stats.item_used[k] + v
                     end
                     global.dyworld.players[id].dis.stats.item_used_total = global.dyworld.players[id].dis.stats.item_used_total + v
-                    global.dyworld.players[id].dis.stats.codai.xp = global.dyworld.players[id].dis.stats.codai.xp + v
+                    global.dyworld.players[id].stats.codai_level.dis = global.dyworld.players[id].stats.codai_level.dis + (v * 0.01)
                 end
             end
             if k == "electronic-circuit" then
@@ -129,7 +120,7 @@ function DIS_Personal(id, override)
                         global.dyworld.players[id].dis.stats.item_used[k] = global.dyworld.players[id].dis.stats.item_used[k] + v
                     end
                     global.dyworld.players[id].dis.stats.item_used_total = global.dyworld.players[id].dis.stats.item_used_total + v
-                    global.dyworld.players[id].dis.stats.codai.xp = global.dyworld.players[id].dis.stats.codai.xp + v
+                    global.dyworld.players[id].stats.codai_level.dis = global.dyworld.players[id].stats.codai_level.dis + (v * 0.03)
                 end
             end
             if k == "advanced-circuit" then
@@ -143,7 +134,7 @@ function DIS_Personal(id, override)
                         global.dyworld.players[id].dis.stats.item_used[k] = global.dyworld.players[id].dis.stats.item_used[k] + v
                     end
                     global.dyworld.players[id].dis.stats.item_used_total = global.dyworld.players[id].dis.stats.item_used_total + v
-                    global.dyworld.players[id].dis.stats.codai.xp = global.dyworld.players[id].dis.stats.codai.xp + v
+                    global.dyworld.players[id].stats.codai_level.dis = global.dyworld.players[id].stats.codai_level.dis + (v * 0.05)
                 end
             end
             if k == "processing-unit" then
@@ -157,7 +148,7 @@ function DIS_Personal(id, override)
                         global.dyworld.players[id].dis.stats.item_used[k] = global.dyworld.players[id].dis.stats.item_used[k] + v
                     end
                     global.dyworld.players[id].dis.stats.item_used_total = global.dyworld.players[id].dis.stats.item_used_total + v
-                    global.dyworld.players[id].dis.stats.codai.xp = global.dyworld.players[id].dis.stats.codai.xp + v
+                    global.dyworld.players[id].stats.codai_level.dis = global.dyworld.players[id].stats.codai_level.dis + (v * 0.07)
                 end
             end
             if k == "advanced-processing-unit" then
@@ -171,7 +162,7 @@ function DIS_Personal(id, override)
                         global.dyworld.players[id].dis.stats.item_used[k] = global.dyworld.players[id].dis.stats.item_used[k] + v
                     end
                     global.dyworld.players[id].dis.stats.item_used_total = global.dyworld.players[id].dis.stats.item_used_total + v
-                    global.dyworld.players[id].dis.stats.codai.xp = global.dyworld.players[id].dis.stats.codai.xp + v
+                    global.dyworld.players[id].stats.codai_level.dis = global.dyworld.players[id].stats.codai_level.dis + (v * 0.1)
                 end
             end
         end

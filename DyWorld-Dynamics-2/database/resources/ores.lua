@@ -9,6 +9,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_ore = 1,
         ratio_main = 3,
         ratio_plate = 3,
+        type = "iron",
     },
     ["chalcopyrite"] = { -- Copper Main --
         chem = "Cu-Fe-S2",
@@ -18,6 +19,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_ore = 1,
         ratio_main = 2,
         ratio_plate = 3,
+        type = "copper",
     },
     ["bauxite"] = { -- Aluminium Main --
         chem = "Al2-O3-H2-0",
@@ -28,6 +30,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_main = 4,
         ratio_plate = 3,
         Tech = "aluminium-processing-1",
+        type = "aluminium",
     },
     ["sphalerite"] = { -- Zinc Main --
         chem = "Zn-S",
@@ -38,6 +41,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_main = 2,
         ratio_plate = 3,
         Tech = "zinc-processing-1",
+        type = "zinc",
     },
     ["galena"] = { -- Lead Main --
         chem = "Pb-S",
@@ -48,6 +52,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_main = 3,
         ratio_plate = 3,
         Tech = "lead-processing-1",
+        type = "lead",
     },
     ["tin-pyrite"] = { -- Tin Main --
         chem = "Cu2-Fe-Sn-S4",
@@ -58,6 +63,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_main = 2,
         ratio_plate = 3,
         Tech = "tin-processing-1",
+        type = "tin",
     },
     ["argentite"] = { -- Silver Main --
         chem = "Ag2-S",
@@ -68,6 +74,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_main = 6,
         ratio_plate = 3,
         Tech = "silver-processing-1",
+        type = "silver",
     },
     ["calaverite"] = { -- Gold Main --
         chem = "Au-Te2",
@@ -78,6 +85,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_main = 6,
         ratio_plate = 3,
         Tech = "gold-processing-1",
+        type = "gold",
     },
     ["rock-salt"] = { -- Sodium Main --
         chem = "Na-Cl",

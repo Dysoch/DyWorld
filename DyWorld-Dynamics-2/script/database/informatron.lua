@@ -42,7 +42,10 @@ function dyworld_menu(player_index)
 				bonuses = 1,
 			},
             codai = {
-                dis = 1,
+                dis = {
+                    dis_personal = 1,
+                    dis_global = 1,
+                },
             },
 		},
 	}
@@ -147,19 +150,35 @@ function dyworld_page_content(page_name, player_index, element)
         end
     end
     if page_name == "dis" then
+        local table2 = element.add{type = "table", name = "table2", column_count = 2, draw_vertical_lines = false, draw_horizontal_lines = true, vertical_centering = true, draw_horizontal_line_after_headers = true}
+        table2.add{type = "label", caption = "Item: "}
+        table2.add{type = "label", caption = "Usage: "}
+
+        table2.add{type = "choose-elem-button", name = "basic-circuit", elem_type = "item", elem_value = 0, locked = true, item = "basic-circuit"}
+        table2.add{type = "label", caption = "Used to upgrade total storage and CODAI to an higher firmware"}
+
+        table2.add{type = "choose-elem-button", name = "electronic-circuit", elem_type = "item", elem_value = 0, locked = true, item = "electronic-circuit"}
+        table2.add{type = "label", caption = "Used to upgrade total storage and CODAI to an higher firmware"}
+
+        table2.add{type = "choose-elem-button", name = "advanced-circuit", elem_type = "item", elem_value = 0, locked = true, item = "advanced-circuit"}
+        table2.add{type = "label", caption = "Used to upgrade total storage and CODAI to an higher firmware"}
+
+        table2.add{type = "choose-elem-button", name = "processing-unit", elem_type = "item", elem_value = 0, locked = true, item = "processing-unit"}
+        table2.add{type = "label", caption = "Used to upgrade total storage and CODAI to an higher firmware"}
+
+        table2.add{type = "choose-elem-button", name = "advanced-processing-unit", elem_type = "item", elem_value = 0, locked = true, item = "advanced-processing-unit"}
+        table2.add{type = "label", caption = "Used to upgrade total storage and CODAI to an higher firmware"}
+    end
+    if page_name == "dis_personal" then
         element.add{type = "label", name = "", caption = "DIS Inventory List\n"}
         element.add{
             type = "label",
             name = "",
             caption = "DIS Items: "..Round(global.dyworld.players[player_index].dis.stats.total.amount,0).." / "..Round(global.dyworld.players[player_index].dis.stats.total.max,0)
         }
-        element.add{
-            type = "label",
-            name = "",
-            caption = "DIS Items (Global): "..Round(global.dyworld.dis.stats.total,0)
-        }
         element.add{type = "label", name = "", caption = "\n\n"}
         element.add{type = "label", name = "", caption = "DIS Items Personal"}
+        element.add{type = "label", name = "", caption = "\n\n"}
         local table2 = element.add{type = "table", name = "table2", column_count = 12, draw_vertical_lines = false, draw_horizontal_lines = true, vertical_centering = true, draw_horizontal_line_after_headers = true}
 
         for i = 1,6 do
@@ -172,8 +191,15 @@ function dyworld_page_content(page_name, player_index, element)
             table2.add{type = "label", caption = v.."x"}
         end
 
-        element.add{type = "label", name = "", caption = "\n\n"}
+    end    
+    if page_name == "dis_global" then
         element.add{type = "label", name = "", caption = "DIS Items global"}
+        element.add{
+            type = "label",
+            name = "",
+            caption = "DIS Items (Global): "..Round(global.dyworld.dis.stats.total,0)
+        }
+        element.add{type = "label", name = "", caption = "\n\n"}
         local table3 = element.add{type = "table", name = "table3", column_count = 12, draw_vertical_lines = false, draw_horizontal_lines = true, vertical_centering = true, draw_horizontal_line_after_headers = true}
 
         for i = 1,6 do

@@ -99,6 +99,27 @@ function DyW.Tech.Recipe.Add(TECH, RECIPE)
 	end
 end
 
+----- Icon changes -----
+DyW.Tech.Icon = {}
+
+function DyW.Tech.Icon.Change(TECH, ICONS, SIZE)
+	if data.raw.technology[TECH] and data.raw.technology[TECH].icon then
+        if data.raw.technology[TECH].icon == "__DyCore__/graphics/questionmark.png" then
+            data.raw.technology[TECH].icon = nil
+            data.raw.technology[TECH].icons = ICONS
+            data.raw.technology[TECH].icon_size = SIZE or 64
+        else
+        end
+        DyW.Fx.Edited("technology", TECH, "Tech_Icon_Change_Icon")
+    elseif data.raw.technology[TECH] and data.raw.technology[TECH].icons then
+        data.raw.technology[TECH].icon = nil
+        data.raw.technology[TECH].icons = ICONS
+        data.raw.technology[TECH].icon_size = SIZE or 64
+        DyW.Fx.Edited("technology", TECH, "Tech_Icon_Change_Icons")
+	end
+    
+end
+
 
 --[[function tablelength(T)
 	local count = 0

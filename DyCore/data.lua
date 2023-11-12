@@ -52,3 +52,4 @@ require("data.tool.change")
 require("data.tool.remove")
 
 require("data.additions.item-groups")
+require("data.additions.crafting-groups")

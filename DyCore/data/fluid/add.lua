@@ -16,7 +16,7 @@ data:extend({
     flow_color = params.color or {},
     icon = DyDs_icon_temp,
     icon_size = 64,
-    order = name,
+    order = v.order or name,
     subgroup = (params.group and DyDs..params.group) or "fluid",
 	auto_barrel = false,
 	auto_canister = params.canister and true or false,

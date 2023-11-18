@@ -56,6 +56,8 @@ function dyworld_menu(player_index)
             d_mined = 1,
             d_build = 1,
             d_log = 1,
+            d_dyworld = 1,
+            d_players = 1,
         }
     end
     return Table
@@ -105,6 +107,30 @@ function dyworld_page_content(page_name, player_index, element)
                     table3.add{type = "label", name = "", caption = "[color=red]"..k.."[/color]"}
                     table3.add{type = "label", name = "", caption = "    [color=blue]"..v.."[/color]"}
                 end
+            end
+        end
+        if page_name == "d_dyworld" then
+            element.add{type = "label", name = "", caption = "Version"}
+            element.add{type = "label", name = "", caption = serpent.block(global.dyworld.version)}
+            element.add{type = "label", name = "", caption = "\n\n\n\n\n"}
+            element.add{type = "label", name = "", caption = "Game"}
+            element.add{type = "label", name = "", caption = serpent.block(global.dyworld.game)}
+            element.add{type = "label", name = "", caption = "\n\n\n\n\n"}
+            element.add{type = "label", name = "", caption = "Surfaces"}
+            element.add{type = "label", name = "", caption = serpent.block(global.dyworld.surfaces)}
+            element.add{type = "label", name = "", caption = "\n\n\n\n\n"}
+            element.add{type = "label", name = "", caption = "Time"}
+            element.add{type = "label", name = "", caption = serpent.block(global.dyworld.time)}
+            element.add{type = "label", name = "", caption = "\n\n\n\n\n"}
+            element.add{type = "label", name = "", caption = "Dis"}
+            element.add{type = "label", name = "", caption = serpent.block(global.dyworld.dis)}
+        end
+        if page_name == "d_players" then
+            for k,v in pairs(global.dyworld.players) do
+                element.add{type = "label", name = "", caption = "Player: "..v.name}
+                element.add{type = "label", name = "", caption = "\n"}
+                element.add{type = "label", name = "", caption = serpent.block(global.dyworld.players[k])}
+                element.add{type = "label", name = "", caption = "\n\n\n\n\n"}
             end
         end
         if page_name == "d_log" then

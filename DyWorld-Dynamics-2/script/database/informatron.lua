@@ -214,7 +214,7 @@ function dyworld_page_content(page_name, player_index, element)
 
         for k,v in pairs(global.dyworld.players[player_index].dis.items) do
             table2.add{type = "choose-elem-button", name = k, elem_type = "item", elem_value = v, locked = true, item = k}
-            table2.add{type = "label", caption = v.."x"}
+            table2.add{type = "label", caption = number_abre(v).."x"}
         end
 
     end    
@@ -235,7 +235,7 @@ function dyworld_page_content(page_name, player_index, element)
 
         for k,v in pairs(global.dyworld.dis.items) do
             table3.add{type = "choose-elem-button", name = k, elem_type = "item", elem_value = v, locked = true, item = k}
-            table3.add{type = "label", caption = v.."x"}
+            table3.add{type = "label", caption = number_abre(v).."x"}
         end
     end
     if page_name == "stats" then

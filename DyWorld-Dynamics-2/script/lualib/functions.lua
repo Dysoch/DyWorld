@@ -35,3 +35,23 @@ function Table_Empty(T)
     end
     return true
 end
+
+function number_abre(number, km)
+    if km then
+        if number >= 1000000 then
+            return "[color=blue]"..Round((number / 1000000), 2).."Mm[/color]"
+        elseif number >= 1000 then
+            return "[color=blue]"..Round((number / 1000), 2).."Km[/color]"
+        else
+            return "[color=blue]"..Round((number), 2).."m[/color]"
+        end
+    else
+        if number >= 1000000 then
+            return "[color=blue]"..Round((number / 1000000), 2).."m[/color]"
+        elseif number >= 1000 then
+            return "[color=blue]"..Round((number / 1000), 2).."k[/color]"
+        else
+            return "[color=blue]"..Round((number), 2).."[/color]"
+        end
+    end
+end

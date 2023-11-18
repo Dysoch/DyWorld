@@ -17,6 +17,7 @@ function Event_on_configuration_changed()
     end
 
     -- Always check this. Will change things every update --
+    --game.player.force.reset_technology_effects()
     if global.dyworld and global.dyworld.version and global.dyworld.version.version ~= Version_Build then
         global.dyworld.version.major = Version_Build_Major
         global.dyworld.version.minor = Version_Build_Minor

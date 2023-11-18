@@ -146,10 +146,20 @@ DyWorld_2_Fluids = {
     ["steam"] = {
         icons = {{icon = fluid_path.."steam.png"}},
         subgroup = DyDs.."f-basic",
+        fuel = "0J",
+        heat = "0.2KJ",
+        temp_max = 1000,
+        temp_def = 100,
+        temp_gas = 15,
     },
     ["steam-dirty"] = {
         icons = {{icon = fluid_path.."steam.png", tint = Dy_Metal_Colors["tungsten"]}},
         subgroup = DyDs.."f-basic",
+        fuel = "0J",
+        heat = "0.02KJ",
+        temp_max = 1000,
+        temp_def = 100,
+        temp_gas = 15,
     },
     ["water"] = {
         icons = {{icon = fluid_path.."water.png"}},

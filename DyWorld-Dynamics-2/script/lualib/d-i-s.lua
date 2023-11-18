@@ -200,6 +200,39 @@ function DIS_Personal_Crafted(id)
     DIS_Personal(id, true)
 end
 
+function DIS_Personal_Trash(id)
+    if game.players[id].get_inventory(defines.inventory.character_trash) then
+        debug("[DIS]: Checking Inventory")
+        local Inv = game.players[id].get_inventory(defines.inventory.character_trash)
+        local Contents = Inv.get_contents()
+        for k,v in pairs(Contents) do
+            if k == "dynamic-interface-system" then
+                Inv.remove({name = k, count = v})
+            end
+            for i = 1, v do
+                if global.dyworld.players[id].dis.stats.item.amount < global.dyworld.players[id].dis.stats.item.max then
+                    if (global.dyworld.players[id].dis.stats.item.max - global.dyworld.players[id].dis.stats.item.amount) > 1 then
+                        if not global.dyworld.players[id].dis.items[k] then
+                            global.dyworld.players[id].dis.items[k] = 1
+                            debug("[DIS]: New table made: "..k.." removed: "..1)
+                        else
+                            global.dyworld.players[id].dis.items[k] = global.dyworld.players[id].dis.items[k] + 1
+                            debug("[DIS]: Added to old table: "..k.." removed: "..1)
+                        end
+                        Inv.remove({name = k, count = 1})
+                        debug("[DIS]: Removed Item: "..k)
+                        global.dyworld.players[id].dis.stats.item.amount = global.dyworld.players[id].dis.stats.item.amount + 1
+                        debug("[DIS]: Changed used amount")
+                    else
+                        debug("[DIS]: Not enough storage")
+                    end
+                end
+            end
+        end
+    end
+    DIS_Personal(id, true)
+end
+
 function DIS_Chest_Check(id)
     if game.players[id].get_main_inventory() then
         debug("[DIS]: Checking Inventory")

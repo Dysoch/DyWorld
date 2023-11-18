@@ -83,7 +83,7 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
             {
               type = "recipe",
               name = k.."-to-ground",
-              --category = "smelting",
+              category = DyDs.."grinding",
               main_product = k.."-ground",
               Add_To_Tech = k.."-processing-1",
               normal =
@@ -162,7 +162,7 @@ for k,v in pairs(DyWorld_2_Ore_Table) do
                 results =
                 {
                     {type = "item", name = k.."-ore-clean", amount_min = 10, amount_max = 12},
-                    {type = "fluid", name = "water", amount = 5},
+                    {type = "fluid", name = "water-dirty", amount = 5},
                 },
                 main_product = k.."-ore-clean",
                 energy_required = 2.5,

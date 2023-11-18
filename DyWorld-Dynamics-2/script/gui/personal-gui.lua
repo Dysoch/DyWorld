@@ -47,51 +47,51 @@ function Personal_GUI_Inner(player, id)
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max),
-            tooltip = {"dyworld-gui-main.water-1", Round(global.dyworld.players[id].survival.water.storage, 2), global.dyworld.players[id].survival.water.storage_max, Round((global.dyworld.players[id].survival.water.rate), 2), Time_Surival_Check(id, "water")},
+            tooltip = {"dyworld-gui-main.water-1", number_abre(Round(global.dyworld.players[id].survival.water.storage, 2)), number_abre(global.dyworld.players[id].survival.water.storage_max), number_abre(Round((global.dyworld.players[id].survival.water.rate), 2)), Time_Surival_Check(id, "water")},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)),
             caption = {"dyworld-gui-main.water-3"}
         }
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max),
-            tooltip = {"dyworld-gui-main.food-1", Round(global.dyworld.players[id].survival.food.storage, 2), global.dyworld.players[id].survival.food.storage_max, Round((global.dyworld.players[id].survival.food.rate), 2), Time_Surival_Check(id, "food")},
+            tooltip = {"dyworld-gui-main.food-1", number_abre(Round(global.dyworld.players[id].survival.food.storage, 2)), number_abre(global.dyworld.players[id].survival.food.storage_max), number_abre(Round((global.dyworld.players[id].survival.food.rate), 2)), Time_Surival_Check(id, "food")},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)),
             caption = {"dyworld-gui-main.food-3"}
         }
         display_scroll.add{
             type = "label",
             name = "",
-            caption = "DIS Items (Personal): "..Round(global.dyworld.players[id].dis.stats.total.amount,0).." / "..Round(global.dyworld.players[id].dis.stats.total.max,0)
+            caption = "DIS Items (Personal): "..number_abre(Round(global.dyworld.players[id].dis.stats.total.amount,0)).." / "..number_abre(Round(global.dyworld.players[id].dis.stats.total.max,0))
         }
         display_scroll.add{
             type = "label",
             name = "",
-            caption = "DIS Items (Global): "..Round(global.dyworld.dis.stats.total,0)
+            caption = "DIS Items (Global): "..number_abre(Round(global.dyworld.dis.stats.total,0))
         }
     elseif global.dyworld.players[id].stats.codai_level.total >= 3 or global.dydebugbutton then
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max),
-            tooltip = {"dyworld-gui-main.water-1", Round(global.dyworld.players[id].survival.water.storage, 2), global.dyworld.players[id].survival.water.storage_max, Round((global.dyworld.players[id].survival.water.rate), 2), Time_Surival_Check(id, "water")},
+            tooltip = {"dyworld-gui-main.water-1", number_abre(Round(global.dyworld.players[id].survival.water.storage, 2)), number_abre(global.dyworld.players[id].survival.water.storage_max), Round((global.dyworld.players[id].survival.water.rate), 2), Time_Surival_Check(id, "water")},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.water.storage/global.dyworld.players[id].survival.water.storage_max)),
             caption = {"dyworld-gui-main.water-2"}
         }
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max),
-            tooltip = {"dyworld-gui-main.food-1", Round(global.dyworld.players[id].survival.food.storage, 2), global.dyworld.players[id].survival.food.storage_max, Round((global.dyworld.players[id].survival.food.rate), 2), Time_Surival_Check(id, "food")},
+            tooltip = {"dyworld-gui-main.food-1", number_abre(Round(global.dyworld.players[id].survival.food.storage, 2)), number_abre(global.dyworld.players[id].survival.food.storage_max), number_abre(Round((global.dyworld.players[id].survival.food.rate), 2)), Time_Surival_Check(id, "food")},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.food.storage/global.dyworld.players[id].survival.food.storage_max)),
             caption = {"dyworld-gui-main.food-2"}
         }
         display_scroll.add{
             type = "label",
             name = "",
-            caption = "DIS Items: "..Round(global.dyworld.players[id].dis.stats.total.amount,0).." / "..Round(global.dyworld.players[id].dis.stats.total.max,0)
+            caption = "DIS Items (Personal): "..number_abre(Round(global.dyworld.players[id].dis.stats.total.amount,0)).." / "..number_abre(Round(global.dyworld.players[id].dis.stats.total.max,0))
         }
         display_scroll.add{
             type = "label",
             name = "",
-            caption = "DIS Items (Global): "..Round(global.dyworld.dis.stats.total,0)
+            caption = "DIS Items (Global): "..number_abre(Round(global.dyworld.dis.stats.total,0))
         }
     else
         display_scroll.add{
@@ -106,7 +106,7 @@ function Personal_GUI_Inner(player, id)
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.pollution.stored/global.dyworld.players[id].survival.pollution.threshold.total),
-            tooltip = {"dyworld-gui-main.pollution-2", global.dyworld.players[id].survival.pollution.threshold.total, Round(global.dyworld.players[id].survival.pollution.stored, 2), Round(global.dyworld.players[id].survival.pollution.rate, 2)},
+            tooltip = {"dyworld-gui-main.pollution-2", number_abre(global.dyworld.players[id].survival.pollution.threshold.total), number_abre(Round(global.dyworld.players[id].survival.pollution.stored, 2)), number_abre(Round(global.dyworld.players[id].survival.pollution.rate, 2))},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.pollution.stored/global.dyworld.players[id].survival.pollution.threshold.total)),
             caption = {"dyworld-gui-main.pollution-1"}
         }
@@ -117,7 +117,7 @@ function Personal_GUI_Inner(player, id)
         display_scroll.add{
             type = "progressbar",
             value = (global.dyworld.players[id].survival.radiation.stored/global.dyworld.players[id].survival.radiation.threshold.total),
-            tooltip = {"dyworld-gui-main.radiation-2", global.dyworld.players[id].survival.radiation.threshold.total, Round(global.dyworld.players[id].survival.radiation.stored, 2), Round(global.dyworld.players[id].survival.radiation.rate, 2)},
+            tooltip = {"dyworld-gui-main.radiation-2", number_abre(global.dyworld.players[id].survival.radiation.threshold.total), number_abre(Round(global.dyworld.players[id].survival.radiation.stored, 2)), number_abre(Round(global.dyworld.players[id].survival.radiation.rate, 2))},
             style = Progress_Surival_Style_Check((global.dyworld.players[id].survival.radiation.stored/global.dyworld.players[id].survival.radiation.threshold.total)),
             caption = {"dyworld-gui-main.radiation-1"}
         }

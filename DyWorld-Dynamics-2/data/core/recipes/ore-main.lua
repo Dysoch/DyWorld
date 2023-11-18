@@ -1,4 +1,4 @@
-
+--[[
 for k,v in pairs(DyWorld_2_Ore_Table_Main) do
     if Dy_Metal_Table[v.type] then
         data:extend({
@@ -25,3 +25,4 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
         })
     end
 end
+]]

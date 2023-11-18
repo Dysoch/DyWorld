@@ -7,6 +7,7 @@ DyWorld_2_Ore_Table_Main = {
         plate = "iron-plate",
         chunk = "iron-chunk",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 3,
         ratio_plate = 3,
@@ -18,6 +19,7 @@ DyWorld_2_Ore_Table_Main = {
         plate = "copper-plate",
         chunk = "copper-chunk",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 2,
         ratio_plate = 3,
@@ -29,6 +31,7 @@ DyWorld_2_Ore_Table_Main = {
         plate = "aluminium-plate",
         chunk = "aluminium-chunk",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 4,
         ratio_plate = 3,
@@ -41,6 +44,7 @@ DyWorld_2_Ore_Table_Main = {
         plate = "zinc-plate",
         chunk = "zinc-chunk",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 2,
         ratio_plate = 3,
@@ -53,6 +57,7 @@ DyWorld_2_Ore_Table_Main = {
         plate = "lead-plate",
         chunk = "lead-chunk",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 3,
         ratio_plate = 3,
@@ -65,6 +70,7 @@ DyWorld_2_Ore_Table_Main = {
         plate = "tin-plate",
         chunk = "tin-chunk",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 2,
         ratio_plate = 3,
@@ -77,6 +83,7 @@ DyWorld_2_Ore_Table_Main = {
         plate = "silver-plate",
         chunk = "silver-chunk",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 6,
         ratio_plate = 3,
@@ -89,6 +96,7 @@ DyWorld_2_Ore_Table_Main = {
         plate = "gold-plate",
         chunk = "gold-chunk",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 6,
         ratio_plate = 3,
@@ -98,18 +106,21 @@ DyWorld_2_Ore_Table_Main = {
     ["rock-salt"] = { -- Sodium Main --
         chem = "Na-Cl",
         ground = true,
+        slurry = true,
         --ore = "s-ore",
         --ratio_ore = 3,
     },
     ["carnalite"] = { -- Potassium Main --
         chem = "KCI-Mg-CI-H2-0",
         ground = true,
+        slurry = true,
         --ore = "iron-ore",
         --ratio_ore = 3,
     },
     ["cinnabar"] = { -- Mercury Main --
         chem = "Hg-S",
         ground = true,
+        slurry = true,
         --ore = "iron-ore",
         --ratio_ore = 3,
     },
@@ -117,6 +128,7 @@ DyWorld_2_Ore_Table_Main = {
         chem = "Ca-Mg-C-O3",
         ore = "magnesium-ore",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 4,
         ratio_plate = 3,
@@ -124,12 +136,14 @@ DyWorld_2_Ore_Table_Main = {
     ["limestone"] = { -- Calcium Main --
         chem = "Ca-C-O3",
         ground = true,
+        slurry = true,
         --ore = "iron-ore",
         --ratio_ore = 3,
     },
     ["phosphorite"] = { -- Phosphorous Main --
         chem = "Ca5-P-O4-F",
         ground = true,
+        slurry = true,
         --ore = "iron-ore",
         --ratio_ore = 3,
     },
@@ -137,12 +151,14 @@ DyWorld_2_Ore_Table_Main = {
         chem = "Mn-O2",
         ore = "manganese-ore",
         ground = true,
+        slurry = true,
         ratio_ore = 1,
         ratio_main = 7,
     },
     ["carbon"] = { -- Coal Main --
         chem = "C-O2",
         ore = "coal",
+        slurry = true,
         ground = true,
         ratio_ore = 3,
         ratio_main = 1,
@@ -151,83 +167,115 @@ DyWorld_2_Ore_Table_Main = {
 
 DyWorld_2_Ore_Table = {
     ["stone"] = {
-        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, special = true},
+        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, tech = false, slurry = true},
         mine = {main = "limestone", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = false, amount = 1, usage = 1},
+        basic = true,
     },
     ["coal"] = {
-        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = true, stone = false, special = true},
+        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = true, stone = false, tech = false, slurry = true},
         mine = {main = "carbon", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = false, amount = 1, usage = 1},
+        basic = true,
     },
     ["iron"] = {
-        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, special = true},
+        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true, ground = true},
         mine = {main = "hematite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = true,
     },
     ["copper"] = {
-        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, special = true},
+        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true, ground = true},
         mine = {main = "chalcopyrite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
-    },
-    ["aluminium"] = {
-        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, special = false},
-        mine = {main = "bauxite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
-    },
-    ["zinc"] = {
-        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, special = false},
-        mine = {main = "sphalerite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
-    },
-    ["lead"] = {
-        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, special = false},
-        mine = {main = "galena", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = true,
     },
     ["tin"] = {
-        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, special = false},
+        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
         mine = {main = "tin-pyrite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = true,
+    },
+    ["aluminium"] = {
+        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
+        mine = {main = "bauxite", min = 1, max = 5, prob = 0.98},
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = false,
+    },
+    ["zinc"] = {
+        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
+        mine = {main = "sphalerite", min = 1, max = 5, prob = 0.98},
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = false,
+    },
+    ["lead"] = {
+        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
+        mine = {main = "galena", min = 1, max = 5, prob = 0.98},
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = false,
     },
     ["silver"] = {
-        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, special = false},
+        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
         mine = {main = "argentite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = false,
     },
     ["gold"] = {
-        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, special = false},
+        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
         mine = {main = "calaverite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = false,
     },
     ["sodium"] = {
-        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, special = false},
+        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, tech = false, slurry = false},
         mine = {main = "rock-salt", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = false, amount = 1, usage = 1},
+        basic = false,
     },
     ["potassium"] = {
-        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, special = false},
+        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, tech = false, slurry = false},
         mine = {main = "carnalite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = false, amount = 1, usage = 1},
+        basic = false,
     },
     ["mercury"] = {
-        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, special = false},
+        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, tech = false, slurry = false},
         mine = {main = "cinnabar", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = false, amount = 1, usage = 1},
+        basic = false,
     },
     ["magnesium"] = {
-        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, special = false},
+        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, tech = true, slurry = true},
         mine = {main = "dolomite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = false,
     },
     ["phosphorous"] = {
-        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, special = false},
+        properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, tech = false, slurry = false},
         mine = {main = "phosphorite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = false, amount = 1, usage = 1},
+        basic = false,
     },
     ["manganese"] = {
-        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, special = false},
+        properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
         mine = {main = "pyrolusite", min = 1, max = 5, prob = 0.98},
-        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1}
+        loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
+        molten = {enabled = true, amount = 1, usage = 1},
+        basic = false,
     },
 }

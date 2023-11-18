@@ -105,3 +105,184 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
         })
     end
 end
+
+-- Ore to Ore --
+for k,v in pairs(DyWorld_2_Ore_Table) do
+    -- multiple checks to ensure no loading errors --
+    if (v.properties.plate and data.raw.item[k.."-plate"]) and (v.properties.chunk and data.raw.item[k.."-chunk"]) then
+        -- chunk to plate --
+        --maybe add it????
+    end
+    if (v.properties.plate and data.raw.item[k.."-plate"]) and (v.properties.ore and data.raw.item[k.."-ore"]) then
+        -- ore to plate --
+        data:extend({
+            {
+              type = "recipe",
+              name = k.."-plate-from-"..k.."-ore",
+              category = "smelting",
+              Add_To_Tech = (v.properties.tech and k.."-processing-1" and not v.basic) or nil,
+              main_product = k.."-plate",
+              normal =
+              {
+                ingredients =
+                {
+                    {type = "item", name = k.."-ore", amount = 1},
+                },
+                results =
+                {
+                    {type = "item", name = k.."-plate", amount_min = 1, amount_max = 1},
+                },
+                main_product = k.."-plate",
+                energy_required = 2.5,
+                enabled = true,
+              },
+            },
+        })
+        
+    end
+    if (v.properties.plate and data.raw.item[k.."-plate"]) and (v.properties.clean and data.raw.item[k.."-ore-clean"]) then
+        -- clean ore to plate --
+        
+    end
+    if (v.properties.slurry and data.raw.fluid["slurry-"..k]) and (v.properties.clean and data.raw.item[k.."-ore-clean"]) then
+        -- slurry to clean ore --
+        data:extend({
+            {
+              type = "recipe",
+              name = k.."-ore-clean-from-slurry-"..k,
+              category = DyDs.."grinding",
+              main_product = k.."-ore-clean",
+              Add_To_Tech = (v.properties.tech and k.."-processing-1") or nil,
+              normal =
+              {
+                ingredients =
+                {
+                    {type = "fluid", name = "slurry-"..k, amount = 10},
+                },
+                results =
+                {
+                    {type = "item", name = k.."-ore-clean", amount_min = 10, amount_max = 12},
+                    {type = "fluid", name = "water", amount = 5},
+                },
+                main_product = k.."-ore-clean",
+                energy_required = 2.5,
+                enabled = true,
+              },
+            },
+        })
+        
+    end
+    if (v.properties.slurry and data.raw.fluid["slurry-"..k]) then
+        if (v.properties.ore and data.raw.item[k.."-ore"]) then
+            -- ore to slurry --
+            data:extend({
+                {
+                type = "recipe",
+                name = k.."-ore-to-slurry-"..k,
+                category = DyDs.."grinding",
+                main_product = "slurry-"..k,
+                Add_To_Tech = (v.properties.tech and k.."-processing-1") or nil,
+                normal =
+                {
+                    ingredients =
+                    {
+                        {type = "item", name = k.."-ore", amount = 10},
+                        {type = "fluid", name = "water", amount = 10},
+                    },
+                    results =
+                    {
+                        {type = "fluid", name = "slurry-"..k, amount_min = 10, amount_max = 12},
+                    },
+                    main_product = "slurry-"..k,
+                    energy_required = 2.5,
+                    enabled = true,
+                },
+                },
+            })
+        elseif data.raw.item[k] then
+            -- to slurry --
+            data:extend({
+                {
+                type = "recipe",
+                name = k.."-to-slurry-"..k,
+                category = DyDs.."grinding",
+                main_product = "slurry-"..k,
+                Add_To_Tech = (v.properties.tech and k.."-processing-1") or nil,
+                normal =
+                {
+                    ingredients =
+                    {
+                        {type = "item", name = k, amount = 10},
+                        {type = "fluid", name = "water", amount = 10},
+                    },
+                    results =
+                    {
+                        {type = "fluid", name = "slurry-"..k, amount_min = 10, amount_max = 12},
+                    },
+                    main_product = "slurry-"..k,
+                    energy_required = 2.5,
+                    enabled = true,
+                },
+                },
+            })
+            
+        end
+    end
+    if (v.molten.enabled and data.raw.fluid["molten-"..k]) and (v.properties.plate and data.raw.item[k.."-plate"]) then
+        -- molten to plate --
+        data:extend({
+            {
+              type = "recipe",
+              name = k.."-plate-from-molten-"..k,
+              category = DyDs.."casting",
+              main_product = k.."-plate",
+              Add_To_Tech = (v.properties.tech and k.."-processing-1") or nil,
+              normal =
+              {
+                ingredients =
+                {
+                    {type = "fluid", name = "molten-"..k, amount = 1},
+                },
+                results =
+                {
+                    {type = "item", name = k.."-plate", amount_min = 1, amount_max = 1},
+                },
+                main_product = k.."-plate",
+                energy_required = 0.5,
+                enabled = true,
+              },
+            },
+        })
+        --[[
+        if v.properties.tech and not (k == "iron" or k == "copper" or k == "tin") then
+            data.raw.recipe[k.."-plate-from-"..k.."-molten"].Add_To_Tech = k.."-processing-1"
+        end
+        ]]
+    end
+    if (v.molten.enabled and data.raw.fluid["molten-"..k]) and (v.properties.clean and data.raw.item[k.."-ore-clean"]) then
+        -- ore clean to molten --
+        data:extend({
+            {
+              type = "recipe",
+              name = "molten-"..k.."-from-"..k.."-ore-clean",
+              category = DyDs.."blast-furnace",
+              main_product = "molten-"..k,
+              Add_To_Tech = (v.properties.tech and k.."-processing-1") or nil,
+              normal =
+              {
+                ingredients =
+                {
+                    {type = "item", name = k.."-ore-clean", amount = 10},
+                },
+                results =
+                {
+                    {type = "fluid", name = "molten-"..k, amount_min = 12, amount_max = 15},
+                },
+                main_product = "molten-"..k,
+                energy_required = 7.5,
+                enabled = true,
+              },
+            },
+        })
+    end
+end

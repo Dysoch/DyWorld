@@ -48,49 +48,49 @@ data:extend(
         base_area = 10,
         base_level = 1,
         pipe_connections = {{ type="output", position = {-3, 1} }}
-      }, 
+      },
 	  {
         production_type = "output",
         --pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
         pipe_connections = {{ type="output", position = {-3, -1} }}
-      }, 
+      },
       {
         production_type = "output",
         --pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
         pipe_connections = {{ type="output", position = {3,1} }}
-      }, 
+      },
 	  {
         production_type = "output",
         --pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
         pipe_connections = {{ type="output", position = {3,-1} }}
-      }, 
+      },
       {
         production_type = "input",
         --pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
         pipe_connections = {{ type="input", position = {1, -3} }}
-      }, 
+      },
 	  {
         production_type = "input",
         --pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
         pipe_connections = {{ type="input", position = {-1, -3} }}
-      }, 
+      },
       {
         production_type = "input",
         --pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
         pipe_connections = {{ type="input", position = {1,3} }}
-      }, 
+      },
 	  {
         production_type = "input",
         --pipe_covers = pipecoverspictures(),

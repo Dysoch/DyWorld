@@ -4,6 +4,7 @@ local db = "database."
 
 -- Prefixs and Calls --
 Dy = "dyworld-"
+DyDs = "dyworld-"
 Dy_icon_temp = "__DyCore__/graphics/questionmark.png"
 Dy_looped = "__DyWorld-Dynamics-2__/graphics/looped/"
 Dy_tech = "__DyWorld-Dynamics-2__/graphics/technology/"

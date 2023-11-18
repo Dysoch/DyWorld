@@ -20,13 +20,19 @@ data:extend(
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fluid_boxes =
     {
+	  {
+        production_type = "output",
+        --pipe_covers = pipecoverspictures(),
+        base_area = 10,
+        base_level = 1,
+        pipe_connections = {{ type = "output", position = {0, 2} }}
+      },
       {
         production_type = "input",
-        pipe_picture = assembler3pipepictures(),
-        pipe_covers = pipecoverspictures(),
+        --pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {0, -2} }}
+        pipe_connections = {{ type = "input", position = {0, -2} }}
       },
     },
     module_specification =

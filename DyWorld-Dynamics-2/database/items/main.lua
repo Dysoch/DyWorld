@@ -434,7 +434,7 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."ore-main",
         order = "1",
         stack_size = 200,
-        fuel_value = "0.4MJ",
+        fuel_value = "0.8MJ",
         fuel_category = "chemical",
     },
     ["coal"] = {
@@ -446,8 +446,28 @@ DyWorld_2_Main_Items = {
         subgroup = Dy.."ore-main",
         order = "1",
         stack_size = 200,
-        fuel_value = "4MJ",
+        fuel_value = "8MJ",
         fuel_category = "chemical",
+    },
+    ["stone-ground"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."carbon.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
+    },
+    ["stone"] = {
+        icons = {
+            {
+                icon = Dy_icon_ore.."carbon.png",
+            },
+        },
+        subgroup = Dy.."ore-main",
+        order = "1",
+        stack_size = 200,
     },
 
     ----- Ores & Plates -----

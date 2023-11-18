@@ -24,7 +24,12 @@ data:extend({
   },
 })
     DyW.Fx.Edited("fluid", name, "Fluid_Add")
+	if params.icons then
+        data.raw.fluid[name].icon = nil
+		data.raw.fluid[name].icons = params.icons
+	end
 	if params.icon then
-		data.raw.fluid[name].icon = "__DyWorld-Dynamics__/graphics/fluids/"..name..".png"
+        data.raw.fluid[name].icons = nil
+		data.raw.fluid[name].icon = params.icon
 	end
 end

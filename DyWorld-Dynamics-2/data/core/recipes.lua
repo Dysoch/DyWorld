@@ -9,6 +9,7 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
               name = v.plate.."-0a",
               category = "smelting",
               main_product = v.plate,
+              Add_To_Tech = v.Tech and v.Tech or nil,
               normal =
               {
                 ingredients =
@@ -33,6 +34,7 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
               name = v.plate.."-0b",
               category = "smelting",
               main_product = v.plate,
+              Add_To_Tech = v.Tech and v.Tech or nil,
               normal =
               {
                 ingredients =
@@ -57,6 +59,7 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
               name = v.ore.."-0a",
               --category = "smelting",
               main_product = v.ore,
+              Add_To_Tech = v.Tech and v.Tech or nil,
               normal =
               {
                 ingredients =
@@ -75,9 +78,30 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
             },
         })
     end
-    if v.Tech then
-        data.raw.recipe[v.plate.."-0a"].Add_To_Tech = v.Tech
-        data.raw.recipe[v.plate.."-0b"].Add_To_Tech = v.Tech
-        data.raw.recipe[v.ore.."-0a"].Add_To_Tech = v.Tech
+    if v.ground and data.raw.item[k.."-ground"] and data.raw.item[k] then
+        data:extend({
+            {
+              type = "recipe",
+              name = k.."-to-ground",
+              --category = "smelting",
+              main_product = k.."-ground",
+              Add_To_Tech = k.."-processing-1",
+              normal =
+              {
+                ingredients =
+                {
+                    {type = "item", name = k, amount = 100},
+                },
+                results =
+                {
+                  {type = "item", name = k.."-ground", amount_min = 100, amount_max = 110},
+                  {type = "item", name = k.."-ground", amount_min = 100, amount_max = 200, probability = 0.01},
+                },
+                main_product = k.."-ground",
+                energy_required = 2.5,
+                enabled = false,
+              },
+            },
+        })
     end
 end

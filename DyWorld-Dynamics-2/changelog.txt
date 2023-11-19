@@ -1,4 +1,30 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: ??. ??. 2023
+  Resources:
+    - Done: 15%
+    - The first resources have been altered/added: Hematite, Chalcopyrite, Carbon and Limestone
+  Core:
+    - Done: 1%
+    - Added icon for stone
+  Metallurgy:
+    - Done: 3%
+  Logistics:
+    - Done: 5%
+  Machines:
+    - Done: 0.1%
+  Warfare:
+    - Done: 0%
+  Survival:
+    - Done: 5%
+  Story:
+    - Done: 0%
+  GUI:
+    - Done: 10%
+  Bugfixes:
+    - Fixed missing mod dependency of Factorio Library which caused
+    - Fixed Crash to Desktop caused by Big Defense main menu Simulation
+---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 19. 11. 2023
   Features:

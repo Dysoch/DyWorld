@@ -1,18 +1,31 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.5
-Date: ???
-  Minor Features:
-    - Moved item-groups creation to this mod from DyWorld-Dynamics
-    - Added functions for fluids
-    - Added Settings to change Enemies and Stacksizes
-    -
-  Bugfixes:
-    - Fixed a duplicate string in the German locales, that caused a crash
-    - Fixed a duplicate string in the French locales, that caused a crash
-    - 
-  Translations:
-    - German locales updated (by Max)
-    -
+Version: 0.2.0
+Date: 19. 11. 2023
+  Features:
+    - New changelog layout
+    - Preparation for DyWorld-Dynamics-2
+  Additions:
+    - No Changes
+  Entity:
+    - No Changes
+  Equipment:
+    - No Changes
+  Fluid:
+    - No Changes
+  Function:
+    - No Changes
+  Item:
+    - No Changes
+  Module:
+    - No Changes
+  Recipe:
+    - No Changes
+  Technology:
+    - No Changes
+  Tool:
+    - No Changes
+  Locale:
+    - No Changes
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 20. 11. 2021

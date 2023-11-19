@@ -40,7 +40,9 @@ function Event_on_tick(event)
             local id = k
             if global.dyworld.players[id].alive then
                 DIS_Init(id)
-                DIS_Personal_Trash(id)
+                if settings.get_player_settings(id)["DyWorld_DIS_Trash"].value then
+                    DIS_Personal_Trash(id)
+                end
             end
         end
     end

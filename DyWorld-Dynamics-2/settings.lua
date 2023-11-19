@@ -111,13 +111,13 @@ data:extend({
         minimum_value = 5,
 	},]]--
 	----- Per Player Settings -----
-   --[[{
+   {
         type = "bool-setting",
-        name = "DyWorld_Phase_Messages",
+        name = "DyWorld_DIS_Trash",
 		order = "a",
         setting_type = "runtime-per-user",
         default_value = true
-    },]]--
+    },
    --[[{
         type = "bool-setting",
         name = "DyWorld_Attack_Messages",

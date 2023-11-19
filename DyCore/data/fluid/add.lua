@@ -17,7 +17,7 @@ data:extend({
     icon = DyDs_icon_temp,
     icon_size = 64,
     order = params.order or name,
-    subgroup = (params.group and DyDs..params.group) or "fluid",
+    subgroup = (params.group and params.group) or "fluid",
 	auto_barrel = false,
 	auto_canister = params.canister and true or false,
 	auto_canister_tier = params.canister or nil,

@@ -1,25 +1,24 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
-Date: November 19th 2023
+Date: 19. 11. 2023
   Features:
     - A rewrite of DyWorld-Dynamics, into a version that does not rely on Space Exploration (which make it easier to update and code). All features will eventually be back into the mod, better then before, with less bugs. 
   Resources:
     - Done: 15%
     - The first resources have been altered/added: Hematite, Chalcopyrite, Carbon and Limestone
-  Entities:
+  Core:
     - Done: 1%
-    - N/A
-  Items:
+    - Added a few recipes and base game changes
+  Metallurgy:
     - Done: 3%
-    - First couple of intermediates and metal plates
-  Recipes:
-    - Done: 1%
-    - First few changes to certain recipes
-    - First few new recipes added
-  Technologies:
+    - Very early prototype of metallurgy. Will most likely change drasticly.
+  Logistics:
+    - Done: 5%
+    - Added the first belts, splitters and loaders.
+  Machines:
     - Done: 0.1%
-    - First set of early access Technologies added. VERY WIP
-  Enemies:
+    - Added Metallurgy machines. Recipes are temporary
+  Warfare:
     - Done: 0%
     - N/A
   Survival:

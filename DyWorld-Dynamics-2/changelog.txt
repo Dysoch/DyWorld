@@ -15,7 +15,7 @@ Date: ??. ??. 2023
     - Done: 0.1%
   Warfare:
     - Done: 0%
-  Survival:
+  Survival/RPG:
     - Done: 5%
   Story:
     - Done: 0%
@@ -24,6 +24,7 @@ Date: ??. ??. 2023
   Bugfixes:
     - Fixed missing mod dependency of Factorio Library which caused
     - Fixed Crash to Desktop caused by Big Defense main menu Simulation
+    - Fixed error when using upgrade planner
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 19. 11. 2023
@@ -47,7 +48,7 @@ Date: 19. 11. 2023
   Warfare:
     - Done: 0%
     - N/A
-  Survival:
+  Survival/RPG:
     - Done: 5%
     - Framework added for survival. Mostly visual and startup scripts
   Story:

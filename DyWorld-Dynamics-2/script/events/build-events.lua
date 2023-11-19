@@ -161,9 +161,7 @@ end
 
 function Event_on_pre_ghost_upgraded(event)
 	local name = event.target.name
-	local position = event.target.position
-	local type = event.target.type
-
+    
     -- global --
     if not global.dyworld.game.counters.build then
         global.dyworld.game.counters.build = 1

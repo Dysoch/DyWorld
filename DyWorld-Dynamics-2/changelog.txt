@@ -9,6 +9,7 @@ Date: ??. ??. 2023
     - Added original/vanilla icon for coal
   Metallurgy:
     - Done: 3%
+    - Adding in the Material System from DyWorld (the one before the first Dynamics). Will be used differently, only for (mostly) warfare related content
   Logistics:
     - Done: 5%
   Machines:

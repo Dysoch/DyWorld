@@ -15,6 +15,7 @@ Dy_entity = "__DyWorld-Dynamics-2__/graphics/entity/"
 
 require(db.."colors")
 require(db.."tables")
+require(db.."material-system")
 
 -- Resources --
 require(db.."resources.ores")

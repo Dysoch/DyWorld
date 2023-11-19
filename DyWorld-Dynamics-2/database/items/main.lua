@@ -440,7 +440,7 @@ DyWorld_2_Main_Items = {
     ["coal"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."carbon.png",
+                icon = Dy_icon_base.."coal.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -452,7 +452,7 @@ DyWorld_2_Main_Items = {
     ["stone-ground"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."carbon.png",
+                icon = Dy_icon_base.."stone.png",
             },
         },
         subgroup = Dy.."ore-main",
@@ -462,7 +462,7 @@ DyWorld_2_Main_Items = {
     ["stone"] = {
         icons = {
             {
-                icon = Dy_icon_ore.."carbon.png",
+                icon = Dy_icon_base.."stone.png",
             },
         },
         subgroup = Dy.."ore-main",

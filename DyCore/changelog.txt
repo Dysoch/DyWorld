@@ -21,7 +21,7 @@ Date: 19. 11. 2023
   Recipe:
     - No Changes
   Technology:
-    - No Changes
+    - Added script to change science packs, time and count: DyW.Tech.Ingr.Change(TECH, TABLE, AMOUNT, TIME). Tech is required (still searches for tech, and will skip if can not find it), the rest is optional
   Tool:
     - No Changes
   Locale:

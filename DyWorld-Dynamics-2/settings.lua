@@ -19,6 +19,14 @@ data:extend({
 		setting_type = "startup",
 		default_value = true,
 	},
+	{
+		type = "int-setting",
+		name = "DyWorld_Fire_Setting",
+		setting_type = "startup",
+		default_value = 60000,
+        maximum_value = 60000,
+        minimum_value = 100,
+	},
 	
 	----- Game Altering Settings -----
 	--[[{

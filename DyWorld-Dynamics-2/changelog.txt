@@ -1,12 +1,19 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
-Date: ??. ??. 2023
+Date: 19. 11. 2023
   Resources:
     - Done: 15%
   Core:
     - Done: 1%
     - Added original/vanilla icon for stone
     - Added original/vanilla icon for coal
+    - Changed update policy of the mod. No longer will it crash on higher versions. (causes bugfix updates to work properly)
+    - Fire now spreads often and takes long to burn out. Amount of entities burned can be changed in settings to lower value's if PC is older
+    - Crash site gives resources, and can hold more stuff
+    - Player no longer regenerate health
+    - Player has smaller inventory size (60 > 30)
+    - Player has more health: 250 > 1000
+    - Changed a few technologies and their science pack requirements
   Metallurgy:
     - Done: 3%
     - Adding in the Material System from DyWorld (the one before the first Dynamics). Will be used differently, only for (mostly) warfare related content

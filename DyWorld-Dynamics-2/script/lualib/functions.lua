@@ -58,6 +58,41 @@ end
 
 function Player_Check(id)
     local player = global.dyworld.players[id]
+    if game.players[id] then
+        if game.players[id].character then
+            global.dyworld.players[id].alive = true
+        else
+            global.dyworld.players[id].alive = false
+        end
+        if game.players[id].connected then
+            global.dyworld.players[id].joined = true
+        else
+            global.dyworld.players[id].joined = false
+        end
+        --game.players[id].print(game.players[id].controller_type)
+        if game.players[id].controller_type == 1 then
+            -- character enabled --
+            global.dyworld.players[id].alive = true
+            global.dyworld.players[id].sandbox = false
+            global.dyworld.players[id].editor = false
+        --elseif game.players[id].controller_type(defines.controllers.god) then
+            -- sandbox enabled --
+            --global.dyworld.players[id].alive = true
+            --global.dyworld.players[id].sandbox = true
+            --global.dyworld.players[id].editor = false
+        elseif game.players[id].controller_type == 4 then
+            -- editor enabled --
+            global.dyworld.players[id].alive = true
+            global.dyworld.players[id].sandbox = false
+            global.dyworld.players[id].editor = true
+        else
+            -- safety feature, if dont know, then just disable everything --
+            global.dyworld.players[id].alive = false
+            global.dyworld.players[id].sandbox = false
+            global.dyworld.players[id].editor = false
+        end
+    end
+    -- Return the check --
     if player.alive and player.joined and not player.editor and not player.sandbox then
         return true
     else

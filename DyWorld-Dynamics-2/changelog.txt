@@ -28,7 +28,7 @@ Date: 25. 11. 2023
     - Done: 0%
   Survival/RPG:
     - Done: 5%
-    - Added in a stronger player check. This should check for online, alive players and if sandbox or editor is activated
+    - Added in a stronger player check. Bascially 4 factors: Alive, Joined, Not in Editor, Not in Sandbox before any player related script works
   Story:
     - Done: 0%
   GUI:

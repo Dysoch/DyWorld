@@ -7,31 +7,43 @@ function Dy_Diff(NMB, NB, TYPE)
             local form = Round((NMB * 5), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Easy" then
             local form = Round((NMB * 2.5), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Normal" then
             local form = Round((NMB), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Hard" then
             local form = Round((NMB * 0.5), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Insane" then
             local form = Round((NMB * 0.25), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Death" then
             local form = Round((NMB * 0.125), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         end
     elseif TYPE == "crafting" then
@@ -39,31 +51,43 @@ function Dy_Diff(NMB, NB, TYPE)
             local form = Round((NMB * 10), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Easy" then
             local form = Round((NMB * 5), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Normal" then
             local form = Round((NMB), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Hard" then
             local form = Round((NMB * 0.5), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Insane" then
             local form = Round((NMB * 0.25), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         elseif VAR == "Death" then
             local form = Round((NMB * 0.125), NB)
             if form <= 1 then
                 return 1
+            else
+                return form
             end
         end
     else

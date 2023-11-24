@@ -8,7 +8,7 @@
 	"homepage": "https://github.com/Dysoch/DyWorld",
 	"description": "DyWorld-Dynamics 2, the successor of DyWorld-Dynamics. Designed to be completely rebuild from the ground up, without Space Exploration has a hard requirement for better compatibility. ",
 	"dependencies": [  
-		"base >= 1.1.97",
+		"base >= 1.1.94",
 		"DyCore >= 0.2.0",
 		"informatron >= 0.3.4",
 		"aai-containers >= 0.2.11",

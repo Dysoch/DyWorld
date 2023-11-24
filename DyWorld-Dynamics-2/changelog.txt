@@ -1,10 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
-Date: 19. 11. 2023
+Date: 25. 11. 2023
   Resources:
     - Done: 15%
   Core:
     - Done: 1%
+    - Changed Factorio version required: 1.1.97 > 1.1.94
     - Added original/vanilla icon for stone
     - Added original/vanilla icon for coal
     - Changed update policy of the mod. No longer will it crash on higher versions. (causes bugfix updates to work properly)
@@ -16,15 +17,18 @@ Date: 19. 11. 2023
     - Changed a few technologies and their science pack requirements
   Metallurgy:
     - Done: 3%
-    - Adding in the Material System from DyWorld (the one before the first Dynamics). Will be used differently, only for (mostly) warfare related content
+    - Adding in the Material System from DyWorld (the one before the first Dynamics). Will be used differently, only for (mostly) warfare related content and metallurgy
   Logistics:
     - Done: 5%
   Machines:
     - Done: 0.1%
+  Power:
+    - Done: 0%
   Warfare:
     - Done: 0%
   Survival/RPG:
     - Done: 5%
+    - Added in a stronger player check. This should check for online, alive players and if sandbox or editor is activated
   Story:
     - Done: 0%
   GUI:

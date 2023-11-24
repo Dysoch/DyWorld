@@ -4,6 +4,7 @@ function Round(num, numDecimalPlaces)
 	return math.floor(num * mult + 0.5) / mult
 end
 
+
 -- Database 
 -- This is always loaded first! This holds important databases and tables for all other files
 require("database.main")

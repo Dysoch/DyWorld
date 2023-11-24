@@ -1,56 +1,52 @@
-
-
-
-
 data:extend(
 {
   {
-    type = "assembling-machine",
-    name = "grinder",
+    type = "furnace",
+    name = "recycler",
     icon = "__base__/graphics/icons/electric-furnace.png",
     icon_size = 64,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = "grinder"},
-    max_health = 500,
+    minable = {mining_time = 1, result = "recycler"},
+    max_health = 2000,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-	--resistances = Resist_Tier_1(1.4),
-	--hide_resistances = settings.startup["DyWorld_Show_Resistances"].value,
+    light = {intensity = 1, size = 10},
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 80
+      }
+    },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fluid_boxes =
     {
-	  {
-        production_type = "output",
-        --pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type = "output", position = {0, 2} }}
-      },
       {
         production_type = "input",
-        --pipe_covers = pipecoverspictures(),
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type = "input", position = {0, -2} }}
+        pipe_connections = {{ type="input", position = {0, -2} }}
       },
     },
     module_specification =
     {
-      module_slots = 3,
+      module_slots = 0,
       module_info_icon_shift = {0, 0.8}
     },
-    allowed_effects = {"consumption", "speed", "pollution"},
-    crafting_categories = {DyDs.."grinding"},
+    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
+    crafting_categories = {"dy-recycling"},
     result_inventory_size = 1,
-    crafting_speed = Dy_Diff(1, 1, "crafting"),
-    energy_usage = "150kW",
-    ingredient_count = 25,
+    crafting_speed = 1,
+    energy_usage = "100kW",
+    source_inventory_size = 1,
     energy_source =
     {
       type = "electric",
       usage_priority = "secondary-input",
-      --emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 15 or Dy_Sett.Difficulty == "Normal" and 45 or Dy_Sett.Difficulty == "Hard" and 135 or 5,
+      emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 1000 or Dy_Sett.Difficulty == "Normal" and 5000 or Dy_Sett.Difficulty == "Hard" and 25000 or 5,
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
@@ -72,14 +68,12 @@ data:extend(
         height = 100,
         frame_count = 1,
         shift = {0.421875, 0},
-		--tint = Color_Tier[9],
         hr_version = {
           filename = "__base__/graphics/entity/electric-furnace/hr-electric-furnace.png",
           priority = "high",
           width = 239,
           height = 219,
           frame_count = 1,
-		  --tint = Color_Tier[9],
           shift = util.by_pixel(0.75, 5.75),
           scale = 0.5
         }
@@ -139,7 +133,6 @@ data:extend(
           height = 13,
           frame_count = 4,
           animation_speed = 0.5,
-		  --tint = Color_Tier[9],
           shift = {-0.671875, -0.640625},
           hr_version = {
             filename = "__base__/graphics/entity/electric-furnace/hr-electric-furnace-propeller-1.png",
@@ -148,7 +141,6 @@ data:extend(
             height = 25,
             frame_count = 4,
             animation_speed = 0.5,
-		    --tint = Color_Tier[9],
             shift = util.by_pixel(-20.5, -18.5),
             scale = 0.5
           }
@@ -177,37 +169,35 @@ data:extend(
         }
       }
     },
-    fast_replaceable_group = "crafting",
+    fast_replaceable_group = "furnace"
   },
   {
     type = "item",
-    name = "grinder",
+    name = "recycler",
     icon = "__base__/graphics/icons/electric-furnace.png",
 	flags = {},
     icon_size = 64,
     subgroup = DyDs.."assemblers",
-    order = "grinder",
-    place_result = "grinder",
+    order = "recycler",
+    place_result = "recycler",
     stack_size = 50
   },
   {
     type = "recipe",
-    name = "grinder",
-	--category = "assembling-tier-2",
+    name = "recycler",
+	category = "assembling-tier-2",
     normal =
     {
       ingredients =
       {
-        {type = "item", name = "basic-circuit", amount = 1},
-        --{type = "item", name = "bronze-plate", amount = 4},
+        {type = "item", name = "control-board-1", amount = 1},
+        {type = "item", name = "bronze-plate", amount = 4},
         {type = "item", name = "iron-plate", amount = 1},
-        {type = "item", name = "iron-gear-wheel", amount = 4},
+        {type = "item", name = "iron-gear", amount = 4},
       },
-      result = "grinder",
+      result = "recycler",
 	  enabled = false,
 	  energy_required = 2,
     },
   },
 })
-
-DyW.Tech.Recipe.Add("metallurgy", "grinder")

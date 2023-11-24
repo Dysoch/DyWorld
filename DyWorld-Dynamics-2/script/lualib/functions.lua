@@ -55,3 +55,12 @@ function number_abre(number, km)
         end
     end
 end
+
+function Player_Check(id)
+    local player = global.dyworld.players[id]
+    if player.alive and player.joined and not player.editor and not player.sandbox then
+        return true
+    else
+        return false
+    end
+end

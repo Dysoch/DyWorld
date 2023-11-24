@@ -24,7 +24,7 @@ data:extend(
     dying_explosion = "medium-explosion",
     fast_replaceable_group = "caster",
     crafting_categories = {DyDs.."casting"},
-    crafting_speed = 1,
+    crafting_speed = Dy_Diff(1, 1, "crafting"),
     energy_source =
     {
       type = "electric",

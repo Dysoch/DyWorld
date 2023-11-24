@@ -23,7 +23,7 @@ data:extend(
     fast_replaceable_group = "crafting",
     next_upgrade = nil,
     crafting_categories = {DyDs.."blast-furnace"},
-    crafting_speed = 1,
+    crafting_speed = Dy_Diff(1, 1, "crafting"),
     energy_source =
     {
       type = "electric",

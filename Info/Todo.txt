@@ -2,9 +2,3 @@ LaureenLlama's Carrot Cake = obviously the cake
 JD's Flashlight = the flamethrower
 JD's Boomstick = shotgun
 
-TODO Update guis only when they require Update
-
-TODO add NG+ script
-
-TODO add NG+ take stats from current game
-will probably require manual adding of a file into the dyworld script to take affect, but will do some research if there is any other way

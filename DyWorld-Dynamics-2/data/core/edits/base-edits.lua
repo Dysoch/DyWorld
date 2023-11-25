@@ -1,10 +1,24 @@
 
 if data.raw["mining-drill"]["burner-mining-drill"] then
     data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_inventory_size = 2
+    data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_categories = {DyDs.."carbon"}
 end
 
-if data.raw["assembling-machine"]["stone-furnace"] then
-    data.raw["assembling-machine"]["stone-furnace"].energy_source.fuel_inventory_size = 2
+if data.raw["furnace"]["stone-furnace"] then
+    data.raw["furnace"]["stone-furnace"].energy_source.fuel_inventory_size = 2
+    data.raw["furnace"]["stone-furnace"].energy_source.fuel_categories = {DyDs.."carbon"}
+end
+
+if data.raw["assembling-machine"]["assembling-machine-1"] then
+    data.raw["assembling-machine"]["assembling-machine-1"].crafting_categories = {"crafting", "basic-crafting", "advanced-crafting", DyDs.."assembling-1", DyDs.."assembling-2"}
+end
+
+if data.raw["assembling-machine"]["assembling-machine-2"] then
+    data.raw["assembling-machine"]["assembling-machine-2"].crafting_categories = {"crafting", "basic-crafting", "advanced-crafting", DyDs.."assembling-1", DyDs.."assembling-2", "crafting-with-fluid"}
+end
+
+if data.raw["assembling-machine"]["assembling-machine-3"] then
+    data.raw["assembling-machine"]["assembling-machine-3"].crafting_categories = {"crafting", "basic-crafting", "advanced-crafting", DyDs.."assembling-1", DyDs.."assembling-2", "crafting-with-fluid", DyDs.."assembling-3", DyDs.."assembling-4"}
 end
 
 if data.raw.recipe["gun-turret"] then
@@ -19,16 +33,4 @@ end
 if data.raw.recipe["copper-plate"] then
     data.raw.recipe["copper-plate"].hidden = true
     data.raw.recipe["copper-plate"].category = DyDs.."hidden"
-end
-
-if data.raw.boiler.boiler then
-    data.raw.boiler.boiler.fluid_box.filter = nil
-    data.raw.boiler.boiler.target_temperature = 250
-    data.raw.boiler.boiler.energy_source.effectivity = 8
-end
-
-if data.raw.generator["steam-engine"] then
-    data.raw.generator["steam-engine"].fluid_box.filter = nil
-    data.raw.generator["steam-engine"].maximum_temperature = 250
-    data.raw.generator["steam-engine"].max_power_output = "1.5MJ"
 end

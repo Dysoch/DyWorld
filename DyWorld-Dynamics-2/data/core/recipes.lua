@@ -2,7 +2,7 @@
 
 -- Main Ore to Ore --
 for k,v in pairs(DyWorld_2_Ore_Table_Main) do 
-    if v.plate and data.raw.item[v.plate] and data.raw.item[k] then
+    if v.plate and data.raw.item[v.plate] and data.raw.item[k] and not data.raw.recipe[v.plate.."-0a"] then
         data:extend({
             {
               type = "recipe",
@@ -27,7 +27,7 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
             },
         })
     end
-    if v.ore and v.plate and data.raw.item[v.plate] and data.raw.item[v.ore.."-clean"] then
+    if v.ore and v.plate and data.raw.item[v.plate] and data.raw.item[v.ore.."-clean"] and not data.raw.recipe[v.plate.."-0b"] then
         data:extend({
             {
               type = "recipe",
@@ -52,12 +52,12 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
             },
         })
     end
-    if v.chunk and v.ore and data.raw.item[v.chunk] and data.raw.item[v.ore] then
+    if v.chunk and v.ore and data.raw.item[v.chunk] and data.raw.item[v.ore] and not data.raw.recipe[v.ore.."-0a"] then
         data:extend({
             {
               type = "recipe",
               name = v.ore.."-0a",
-              --category = "smelting",
+              category = DyDs.."assembling-1",
               main_product = v.ore,
               Add_To_Tech = v.Tech and v.Tech or nil,
               normal =
@@ -78,7 +78,7 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
             },
         })
     end
-    if v.ground and data.raw.item[k.."-ground"] and data.raw.item[k] then
+    if v.ground and data.raw.item[k.."-ground"] and data.raw.item[k] and not data.raw.recipe[k.."-to-ground-1"] and not data.raw.recipe[k.."-to-ground-2"] and not data.raw.recipe[k.."-to-ground-3"] then
         data:extend({
             {
               type = "recipe",
@@ -157,7 +157,7 @@ for k,v in pairs(DyWorld_2_Ore_Table) do
         -- chunk to plate --
         --maybe add it????
     end
-    if (v.properties.plate and data.raw.item[k.."-plate"]) and (v.properties.ore and data.raw.item[k.."-ore"]) then
+    if (v.properties.plate and data.raw.item[k.."-plate"]) and (v.properties.ore and data.raw.item[k.."-ore"]) and not data.raw.recipe[k.."-plate-from-"..k.."-ore"] then
         -- ore to plate --
         data:extend({
             {
@@ -188,7 +188,7 @@ for k,v in pairs(DyWorld_2_Ore_Table) do
         -- clean ore to plate --
         
     end
-    if (v.properties.slurry and data.raw.fluid["slurry-"..k]) and (v.properties.clean and data.raw.item[k.."-ore-clean"]) then
+    if (v.properties.slurry and data.raw.fluid["slurry-"..k]) and (v.properties.clean and data.raw.item[k.."-ore-clean"]) and not data.raw.recipe[k.."-ore-clean-from-slurry-"..k] then
         -- slurry to clean ore --
         data:extend({
             {
@@ -217,7 +217,7 @@ for k,v in pairs(DyWorld_2_Ore_Table) do
         
     end
     if (v.properties.slurry and data.raw.fluid["slurry-"..k]) then
-        if (v.properties.ore and data.raw.item[k.."-ore"]) then
+        if (v.properties.ore and data.raw.item[k.."-ore"]) and not data.raw.recipe[k.."-ore-to-slurry-"..k] then
             -- ore to slurry --
             data:extend({
                 {
@@ -243,7 +243,7 @@ for k,v in pairs(DyWorld_2_Ore_Table) do
                 },
                 },
             })
-        elseif data.raw.item[k] then
+        elseif data.raw.item[k] and not data.raw.recipe[k.."-to-slurry-"..k] then
             -- to slurry --
             data:extend({
                 {
@@ -272,7 +272,7 @@ for k,v in pairs(DyWorld_2_Ore_Table) do
             
         end
     end
-    if (v.molten.enabled and data.raw.fluid["molten-"..k]) and (v.properties.plate and data.raw.item[k.."-plate"]) then
+    if (v.molten.enabled and data.raw.fluid["molten-"..k]) and (v.properties.plate and data.raw.item[k.."-plate"]) and not data.raw.recipe[k.."-plate-from-molten-"..k] then
         -- molten to plate --
         data:extend({
             {
@@ -303,7 +303,7 @@ for k,v in pairs(DyWorld_2_Ore_Table) do
         end
         ]]
     end
-    if (v.molten.enabled and data.raw.fluid["molten-"..k]) and (v.properties.clean and data.raw.item[k.."-ore-clean"]) then
+    if (v.molten.enabled and data.raw.fluid["molten-"..k]) and (v.properties.clean and data.raw.item[k.."-ore-clean"]) and not data.raw.recipe["molten-"..k.."-from-"..k.."-ore-clean"] then
         -- ore clean to molten --
         data:extend({
             {

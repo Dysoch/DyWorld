@@ -1,4 +1,30 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 19. 11. 2023
+  Additions:
+    - Added fuel categories
+    - Added crafting categories
+  Entity:
+    - No Changes
+  Equipment:
+    - No Changes
+  Fluid:
+    - No Changes
+  Function:
+    - No Changes
+  Item:
+    - No Changes
+  Module:
+    - No Changes
+  Recipe:
+    - No Changes
+  Technology:
+    - No Changes
+  Tool:
+    - No Changes
+  Locale:
+    - No Changes
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 19. 11. 2023
   Features:

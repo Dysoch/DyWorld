@@ -1,4 +1,37 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 25. 11. 2023
+  Resources:
+    - Done: 15%
+  Core:
+    - Done: 1%
+    - Added check for scripted recipes to check if they exist. Used when creating handmade recipes
+    - Added crafting categories. Old categories are still used in machines as well, to provide compatibility
+    - Added fuel categories. Old categories are still used in machines as well, to provide compatibility. DyWorld items have the correct fuel category now if they should have one
+  Metallurgy:
+    - Done: 3%
+  Logistics:
+    - Done: 5%
+  Machines:
+    - Done: 0.1%
+  Power:
+    - Done: 2%
+    - Added 2 more Boilers
+    - Added 2 more Steam Engines
+    - Steam Engines use less fluid: 30/s > 1/s (tier 2: 2/s, tier 3: 4/s)
+  Warfare:
+    - Done: 0%
+  Survival/RPG:
+    - Done: 5%
+  Story:
+    - Done: 0%
+  GUI:
+    - Done: 10%
+  Bugfixes:
+    - NA
+  Known Issues:
+    - Nanobots related building things dont count for the player (WIP)
+---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 25. 11. 2023
   Resources:

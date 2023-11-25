@@ -59,6 +59,6 @@ data.raw["assembling-machine"]["centrifuge"].fluid_boxes = {
         pipe_connections = {{ type="output", position = {0, -2} }},
         secondary_draw_orders = { north = -1 }
       },
-      off_when_no_fluid_recipe = true
+      off_when_no_fluid_recipe = true,
     }
 data.raw.item.centrifuge.subgroup = DyDs.."centrifuge"

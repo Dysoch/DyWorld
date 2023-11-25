@@ -1,7 +1,7 @@
 debugger = settings.startup["DyWorld_Debug"].value or nil
 Version_Build_Major = 0
 Version_Build_Minor = 0
-Version_Build_Hotfix = 1
+Version_Build_Hotfix = 2
 Version_Build = Version_Build_Major.."."..Version_Build_Minor.."."..Version_Build_Hotfix
 
 -- LuaLib --
@@ -47,6 +47,7 @@ script.on_event(defines.events.on_tick, Event_on_tick)
 -- Build Events --
 script.on_event(defines.events.script_raised_built, Event_script_raised_built)
 script.on_event(defines.events.script_raised_revive, Event_script_raised_revive)
+script.on_event(defines.events.on_pre_build, Event_on_pre_build)
 script.on_event(defines.events.on_built_entity, Event_on_built_entity)
 script.on_event(defines.events.on_robot_built_entity, Event_on_robot_built_entity)
 script.on_event(defines.events.on_player_used_capsule, Event_on_player_used_capsule)

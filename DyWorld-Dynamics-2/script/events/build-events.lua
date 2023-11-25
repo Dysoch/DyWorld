@@ -26,7 +26,7 @@ function Event_on_player_used_capsule(event)
     global.dyworld.game.counters.capsules = global.dyworld.game.counters.capsules + 1
 
     -- personal --
-    if global.dyworld.players[id] then
+    if global.dyworld.players[id] and Player_Check(id) then
         global.dyworld.players[id].stats.total.capsules = global.dyworld.players[id].stats.total.capsules + 1
     end
 end
@@ -59,7 +59,7 @@ function Event_on_built_entity(event)
     end
 
     -- personal --
-    if global.dyworld.players[id] then
+    if global.dyworld.players[id] and Player_Check(id) then
         global.dyworld.players[id].stats.total.build = global.dyworld.players[id].stats.total.build + 1
 
         -- xp --
@@ -114,6 +114,11 @@ function Event_on_robot_built_tile(event)
 
 end
 
+function Event_on_pre_build(event)
+	local id = event.player_index
+
+end
+
 function Event_script_raised_built(event)
 	local name = event.entity.name
 	local position = event.entity.position
@@ -156,7 +161,6 @@ function Event_script_raised_revive(event)
             global.dyworld.game.world.built[name] = global.dyworld.game.world.built[name] + 1
         end
     end
-
 end
 
 function Event_on_pre_ghost_upgraded(event)

@@ -25,6 +25,18 @@ DyWorld_2_Ore_Table_Main = {
         ratio_plate = 3,
         type = "copper",
     },
+    ["tin-pyrite"] = { -- Tin Main --
+        chem = "Cu2-Fe-Sn-S4",
+        ore = "tin-ore",
+        plate = "tin-plate",
+        chunk = "tin-chunk",
+        ground = true,
+        slurry = true,
+        ratio_ore = 1,
+        ratio_main = 2,
+        ratio_plate = 3,
+        type = "tin",
+    },
     ["bauxite"] = { -- Aluminium Main --
         chem = "Al2-O3-H2-0",
         ore = "aluminium-ore",
@@ -35,7 +47,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_ore = 1,
         ratio_main = 4,
         ratio_plate = 3,
-        Tech = "aluminium-processing-1",
+        Tech = "ore-processing-1",
         type = "aluminium",
     },
     ["sphalerite"] = { -- Zinc Main --
@@ -48,7 +60,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_ore = 1,
         ratio_main = 2,
         ratio_plate = 3,
-        Tech = "zinc-processing-1",
+        Tech = "ore-processing-1",
         type = "zinc",
     },
     ["galena"] = { -- Lead Main --
@@ -61,21 +73,8 @@ DyWorld_2_Ore_Table_Main = {
         ratio_ore = 1,
         ratio_main = 3,
         ratio_plate = 3,
-        Tech = "lead-processing-1",
+        Tech = "ore-processing-1",
         type = "lead",
-    },
-    ["tin-pyrite"] = { -- Tin Main --
-        chem = "Cu2-Fe-Sn-S4",
-        ore = "tin-ore",
-        plate = "tin-plate",
-        chunk = "tin-chunk",
-        ground = true,
-        slurry = true,
-        ratio_ore = 1,
-        ratio_main = 2,
-        ratio_plate = 3,
-        Tech = "tin-processing-1",
-        type = "tin",
     },
     ["argentite"] = { -- Silver Main --
         chem = "Ag2-S",
@@ -87,7 +86,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_ore = 1,
         ratio_main = 6,
         ratio_plate = 3,
-        Tech = "silver-processing-1",
+        Tech = "ore-processing-2",
         type = "silver",
     },
     ["calaverite"] = { -- Gold Main --
@@ -100,7 +99,7 @@ DyWorld_2_Ore_Table_Main = {
         ratio_ore = 1,
         ratio_main = 6,
         ratio_plate = 3,
-        Tech = "gold-processing-1",
+        Tech = "ore-processing-2",
         type = "gold",
     },
     ["rock-salt"] = { -- Sodium Main --
@@ -172,6 +171,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = false, amount = 1, usage = 1},
         basic = true,
+        tier = 1,
     },
     ["coal"] = {
         properties = {chunk = false, ore = false, clean = false, plate = false, fuel = true, stone = false, tech = false, slurry = true},
@@ -179,6 +179,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = false, amount = 1, usage = 1},
         basic = true,
+        tier = 1,
     },
     ["iron"] = {
         properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true, ground = true},
@@ -186,6 +187,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = true, amount = 1, usage = 1},
         basic = true,
+        tier = 1,
     },
     ["copper"] = {
         properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true, ground = true},
@@ -193,6 +195,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = true, amount = 1, usage = 1},
         basic = true,
+        tier = 1,
     },
     ["tin"] = {
         properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
@@ -200,6 +203,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = true, amount = 1, usage = 1},
         basic = true,
+        tier = 1,
     },
     ["aluminium"] = {
         properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
@@ -207,6 +211,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = true, amount = 1, usage = 1},
         basic = false,
+        tier = 2,
     },
     ["zinc"] = {
         properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
@@ -214,6 +219,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = true, amount = 1, usage = 1},
         basic = false,
+        tier = 2,
     },
     ["lead"] = {
         properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
@@ -221,6 +227,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = true, amount = 1, usage = 1},
         basic = false,
+        tier = 2,
     },
     ["silver"] = {
         properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
@@ -228,6 +235,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = true, amount = 1, usage = 1},
         basic = false,
+        tier = 3,
     },
     ["gold"] = {
         properties = {chunk = true, ore = true, clean = true, plate = true, fuel = false, stone = false, tech = true, slurry = true},
@@ -235,6 +243,7 @@ DyWorld_2_Ore_Table = {
         loot = {enabled = false, type = "enemy", min = 1, max = 2, prob = 0.1},
         molten = {enabled = true, amount = 1, usage = 1},
         basic = false,
+        tier = 3,
     },
     ["sodium"] = {
         properties = {chunk = false, ore = false, clean = false, plate = false, fuel = false, stone = true, tech = false, slurry = false},

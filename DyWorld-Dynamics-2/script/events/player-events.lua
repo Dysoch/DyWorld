@@ -12,18 +12,6 @@ local function debug(str)
     end
 end
 
-function Event_on_raised_revive(event)
-	--local id = event.player_index
-	--local entity = event.entity
-	
-end
-
-function Event_script_raised_destroy(event)
-	--local id = event.player_index
-	--local entity = event.entity
-	
-end
-
 function Event_on_player_created(event)
 	local id = event.player_index
 	local player = game.players[id]
@@ -73,6 +61,7 @@ function Event_on_player_joined_game(event)
 	local force = player.force
 
     Dy_Player_init(event)
+	global.dyworld.players[id].joined = true
     
 end
 
@@ -82,6 +71,7 @@ function Event_on_player_left_game(event)
 	local force = player.force
 
     Dy_Player_init(event)
+	global.dyworld.players[id].joined = false
     
 end
 
@@ -91,6 +81,7 @@ function Event_on_player_changed_force(event)
 	local force = player.force
 
     Dy_Player_init(event)
+	global.dyworld.players[id].force = force.name
 end
 
 function Event_on_player_respawned_script(event)

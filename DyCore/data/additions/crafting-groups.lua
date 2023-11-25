@@ -6,6 +6,7 @@ local Table = {
     "bloomery",
     "casting",
     "grinding",
+    "farming",
     "blast-furnace",
 }
 

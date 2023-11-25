@@ -30,7 +30,7 @@ function Event_on_picked_up_item(event)
     end
 
     -- personal --
-    if global.dyworld.players[id] then
+    if global.dyworld.players[id] and Player_Check(id) then
         global.dyworld.players[id].stats.total.picked = global.dyworld.players[id].stats.total.picked + count
 
         -- xp --
@@ -65,7 +65,7 @@ function Event_on_player_mined_item(event)
     end
 
     -- personal --
-    if global.dyworld.players[id] then
+    if global.dyworld.players[id] and Player_Check(id) then
         global.dyworld.players[id].stats.total.mined = global.dyworld.players[id].stats.total.mined + count
 
         -- xp --

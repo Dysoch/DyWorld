@@ -17,21 +17,21 @@ data:extend(
     minable = {mining_time = 0.5, result = "blast-furnace"},
 	collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-    max_health = 1000,
+    max_health = Dy_Diff(1000, 0, nil),
+    crafting_speed = Dy_Diff(1, 1, "crafting"),
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     fast_replaceable_group = "crafting",
     next_upgrade = nil,
     crafting_categories = {DyDs.."blast-furnace"},
-    crafting_speed = 1,
     energy_source =
     {
       type = "electric",
       usage_priority = "secondary-input",
-      drain = "1kW",
+      drain = Dy_Diff(1000, 0, nil).."W",
       --emissions_per_minute = Dy_Sett.Difficulty == "Easy" and 20 or Dy_Sett.Difficulty == "Normal" and 60 or Dy_Sett.Difficulty == "Hard" and 180 or 5,
     },
-    energy_usage = "500kW",
+    energy_usage = Dy_Diff(500, 0, nil).."kW",
     ingredient_count = 25,
     resistances =
     {
@@ -98,6 +98,7 @@ data:extend(
         base_level = -1,
         pipe_connections = {{ type="input", position = {-1,3} }}
       },
+      off_when_no_fluid_recipe = true,
 	},
     module_specification =
     {
@@ -153,6 +154,7 @@ data:extend(
     type = "recipe",
     name = "blast-furnace",
 	--category = "assembling-tier-2",
+    Add_To_Tech = "metallurgy",
     normal =
     {
       ingredients =

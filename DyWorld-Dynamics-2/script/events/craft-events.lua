@@ -31,7 +31,7 @@ function Event_on_player_crafted_item(event)
         end
 
         -- personal --
-        if global.dyworld.players[id] then
+        if global.dyworld.players[id] and Player_Check(id) then
             global.dyworld.players[id].stats.total.crafted = global.dyworld.players[id].stats.total.crafted + count
 
             -- xp --

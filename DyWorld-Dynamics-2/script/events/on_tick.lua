@@ -23,11 +23,9 @@ function Event_on_tick(event)
         end
         global.dyworld.time.log = global.dyworld.time.actual.year..":"..global.dyworld.time.actual.day..":"..global.dyworld.time.actual.hour..":"..global.dyworld.time.actual.minute..":"..global.dyworld.time.actual.second
 
-        for k,v in pairs(game.players) do
-            local player = v
-            local id = k
-            if global.dyworld.players[id].alive then
-                Vitals_Change(k, v)
+        for id,player in pairs(game.players) do
+            if Player_Check(id) then
+                Vitals_Change(id, player)
                 Distance_Calc(id)
                 Refresh_Personal_GUI(player, id)
             end
@@ -35,10 +33,8 @@ function Event_on_tick(event)
     end
     
     if event.tick%(60*60*1)==1 then -- Every Minute --
-        for k,v in pairs(game.players) do
-            local player = v
-            local id = k
-            if global.dyworld.players[id].alive then
+        for id,player in pairs(game.players) do
+            if Player_Check(id) then
                 DIS_Init(id)
                 if settings.get_player_settings(id)["DyWorld_DIS_Trash"].value then
                     DIS_Personal_Trash(id)

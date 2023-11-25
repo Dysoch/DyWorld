@@ -19,12 +19,12 @@ data:extend(
     minable = {hardness = 0.2, mining_time = 0.5, result = "caster"},
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    max_health = 2500,
+    max_health = Dy_Diff(2500, 0, nil),
+    crafting_speed = Dy_Diff(1, 1, "crafting"),
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     fast_replaceable_group = "caster",
     crafting_categories = {DyDs.."casting"},
-    crafting_speed = 1,
     energy_source =
     {
       type = "electric",
@@ -50,6 +50,7 @@ data:extend(
         base_level = -1,
         pipe_connections = {{ type="input", position = {0, -2} }}
       },
+      off_when_no_fluid_recipe = true,
     },
     module_specification =
     {

@@ -24,6 +24,7 @@ end
 if data.raw.boiler.boiler then
     data.raw.boiler.boiler.fluid_box.filter = nil
     data.raw.boiler.boiler.target_temperature = 250
+    data.raw.boiler.boiler.energy_source.effectivity = 8
 end
 
 if data.raw.generator["steam-engine"] then

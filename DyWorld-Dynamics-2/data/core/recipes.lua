@@ -82,7 +82,7 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
         data:extend({
             {
               type = "recipe",
-              name = k.."-to-ground",
+              name = k.."-to-ground-1",
               category = DyDs.."grinding",
               main_product = k.."-ground",
               Add_To_Tech = k.."-processing-1",
@@ -90,15 +90,59 @@ for k,v in pairs(DyWorld_2_Ore_Table_Main) do
               {
                 ingredients =
                 {
-                    {type = "item", name = k, amount = 100},
+                    {type = "item", name = k, amount = 15},
                 },
                 results =
                 {
-                  {type = "item", name = k.."-ground", amount_min = 100, amount_max = 110},
-                  {type = "item", name = k.."-ground", amount_min = 100, amount_max = 200, probability = 0.01},
+                  {type = "item", name = k.."-ground", amount_min = 12, amount_max = 18},
+                  {type = "item", name = k.."-ground", amount_min = 10, amount_max = 15, probability = 0.01},
                 },
                 main_product = k.."-ground",
                 energy_required = 2.5,
+                enabled = false,
+              },
+            },
+            {
+              type = "recipe",
+              name = k.."-to-ground-2",
+              category = DyDs.."grinding",
+              main_product = k.."-ground",
+              Add_To_Tech = k.."-processing-2",
+              normal =
+              {
+                ingredients =
+                {
+                    {type = "item", name = k, amount = 30},
+                },
+                results =
+                {
+                  {type = "item", name = k.."-ground", amount_min = 25, amount_max = 45},
+                  {type = "item", name = k.."-ground", amount_min = 10, amount_max = 15, probability = 0.01},
+                },
+                main_product = k.."-ground",
+                energy_required = 4,
+                enabled = false,
+              },
+            },
+            {
+              type = "recipe",
+              name = k.."-to-ground-3",
+              category = DyDs.."grinding",
+              main_product = k.."-ground",
+              Add_To_Tech = k.."-processing-3",
+              normal =
+              {
+                ingredients =
+                {
+                    {type = "item", name = k, amount = 50},
+                },
+                results =
+                {
+                  {type = "item", name = k.."-ground", amount_min = 70, amount_max = 80},
+                  {type = "item", name = k.."-ground", amount_min = 10, amount_max = 15, probability = 0.01},
+                },
+                main_product = k.."-ground",
+                energy_required = 10,
                 enabled = false,
               },
             },

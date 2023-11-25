@@ -11,7 +11,8 @@ data:extend(
     icon_size = 64,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 1, result = "grinder"},
-    max_health = 500,
+    max_health = Dy_Diff(500, 0, nil),
+    crafting_speed = Dy_Diff(1, 1, "crafting"),
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
 	--resistances = Resist_Tier_1(1.4),
@@ -34,6 +35,7 @@ data:extend(
         base_level = -1,
         pipe_connections = {{ type = "input", position = {0, -2} }}
       },
+      off_when_no_fluid_recipe = true,
     },
     module_specification =
     {
@@ -43,7 +45,6 @@ data:extend(
     allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {DyDs.."grinding"},
     result_inventory_size = 1,
-    crafting_speed = 1,
     energy_usage = "150kW",
     ingredient_count = 25,
     energy_source =

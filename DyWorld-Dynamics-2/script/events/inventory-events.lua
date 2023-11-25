@@ -1,7 +1,7 @@
 
 
 function Event_on_player_inventory_changed_armor(event)
-	if not game.players[event.player_index].cheat_mode then
+	if not game.players[event.player_index].cheat_mode and Player_Check(event.player_index) then
         local ID = event.player_index
         if not global.dyworld.players[ID].stats.changes then global.dyworld.players[ID].stats.changes = {} end
         if global.dyworld.players[ID].stats.changes.armor then
@@ -45,7 +45,7 @@ function Event_on_player_inventory_changed_armor(event)
 end
 
 function Event_on_player_inventory_changed_ammo(event)
-	if not game.players[event.player_index].cheat_mode then
+	if not game.players[event.player_index].cheat_mode and Player_Check(event.player_index) then
         local ID = event.player_index
         if not global.dyworld.players[ID].stats.changes then global.dyworld.players[ID].stats.changes = {} end
         if global.dyworld.players[ID].stats.changes.ammo then
@@ -57,7 +57,7 @@ function Event_on_player_inventory_changed_ammo(event)
 end
 
 function Event_on_player_inventory_changed_gun(event)
-	if not game.players[event.player_index].cheat_mode then
+	if not game.players[event.player_index].cheat_mode and Player_Check(event.player_index) then
         local ID = event.player_index
         if not global.dyworld.players[ID].stats.changes then global.dyworld.players[ID].stats.changes = {} end
         if global.dyworld.players[ID].stats.changes.gun then
@@ -69,7 +69,7 @@ function Event_on_player_inventory_changed_gun(event)
 end
 
 function Event_on_player_inventory_changed_main(event)
-	if not game.players[event.player_index].cheat_mode then
+	if not game.players[event.player_index].cheat_mode and Player_Check(event.player_index) then
         local ID = event.player_index
         if not global.dyworld.players[ID].stats.changes then global.dyworld.players[ID].stats.changes = {} end
         if global.dyworld.players[ID].stats.changes.main then
@@ -81,7 +81,7 @@ function Event_on_player_inventory_changed_main(event)
 end
 
 function Event_on_player_inventory_changed_trash(event)
-	if not game.players[event.player_index].cheat_mode then
+	if not game.players[event.player_index].cheat_mode and Player_Check(event.player_index) then
         local ID = event.player_index
         if not global.dyworld.players[ID].stats.changes then global.dyworld.players[ID].stats.changes = {} end
         if global.dyworld.players[ID].stats.changes.trash then

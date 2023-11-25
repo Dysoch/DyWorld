@@ -19,6 +19,14 @@ data:extend({
 		setting_type = "startup",
 		default_value = true,
 	},
+	{
+		type = "int-setting",
+		name = "DyWorld_Fire_Setting",
+		setting_type = "startup",
+		default_value = 60000,
+        maximum_value = 60000,
+        minimum_value = 100,
+	},
 	
 	----- Game Altering Settings -----
 	--[[{
@@ -33,12 +41,12 @@ data:extend({
 		setting_type = "startup",
 		default_value = false,
 	},]]--
-	--[[{
+	{
 		type = "bool-setting",
 		name = "DyWorld_Show_Resistances",
 		setting_type = "startup",
 		default_value = false,
-	},]]--
+	},
 	--[[{
 		type = "bool-setting",
 		name = "DyWorld_Tech_Upgrade",
@@ -67,13 +75,13 @@ data:extend({
         maximum_value = 100000,
         minimum_value = 0.1,
 	},]]--
-	--[[{
+	{
 		type = "string-setting",
 		name = "DyWorld_Difficulty",
 		setting_type = "startup",
-		default_value = "Easy",
-		allowed_values = {"Easy", "Normal", "Hard"},
-	},]]--
+		default_value = "Normal",
+		allowed_values = {"Very Easy", "Easy", "Normal", "Hard", "Insane", "Death"},
+	},
 	----- Map Settings -----
     --[[{
         type = "bool-setting",

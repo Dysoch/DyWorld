@@ -8,7 +8,7 @@ function Event_on_gui_click(event)
 	local force = player.force
 	local gui = event.element
     if gui.type == "checkbox" then
-        game.players[id].print("toggled: "..gui.name.." to "..tostring(gui.state))
+        --game.players[id].print("toggled: "..gui.name.." to "..tostring(gui.state))
     end
     
     if gui.name == "DyDs_PG_close_button" then
@@ -49,7 +49,7 @@ function Event_on_gui_checked_state_changed(event)
 	local player = game.players[id]
 	local force = player.force
 	local gui = event.element
-    game.players[id].print("toggled: "..gui.name.." to "..gui.state)
+    --game.players[id].print("toggled: "..gui.name.." to "..gui.state)
 
 end
 

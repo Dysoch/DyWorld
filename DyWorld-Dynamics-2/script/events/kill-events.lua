@@ -41,7 +41,7 @@ function Event_on_entity_died(event)
 	if killer and killer.valid and killer.type == "character" then
 	    if killer.player and killer.player.index then
             local id = killer.player.index
-            if global.dyworld.players[id] then
+            if global.dyworld.players[id] and Player_Check(id) then
                 global.dyworld.players[id].stats.total.killed = global.dyworld.players[id].stats.total.killed + 1
 
                 -- xp --

@@ -12,18 +12,6 @@ local function debug(str)
     end
 end
 
-function Event_on_raised_revive(event)
-	--local id = event.player_index
-	--local entity = event.entity
-	
-end
-
-function Event_script_raised_destroy(event)
-	--local id = event.player_index
-	--local entity = event.entity
-	
-end
-
 function Event_on_player_created(event)
 	local id = event.player_index
 	local player = game.players[id]
@@ -73,6 +61,7 @@ function Event_on_player_joined_game(event)
 	local force = player.force
 
     Dy_Player_init(event)
+	global.dyworld.players[id].joined = true
     
 end
 
@@ -82,6 +71,7 @@ function Event_on_player_left_game(event)
 	local force = player.force
 
     Dy_Player_init(event)
+	global.dyworld.players[id].joined = false
     
 end
 
@@ -91,7 +81,7 @@ function Event_on_player_changed_force(event)
 	local force = player.force
 
     Dy_Player_init(event)
-	
+	global.dyworld.players[id].force = force.name
 end
 
 function Event_on_player_respawned_script(event)
@@ -106,7 +96,18 @@ function Event_on_player_respawned_script(event)
 	global.dyworld.players[id].survival.pollution.stored = 0
 	global.dyworld.players[id].survival.radiation.stored = 0
     Codia_Calc(id, true, 0)
-    
+end
+
+function Event_on_player_toggled_map_editor(event)
+	local id = event.player_index
+	local player = game.players[id]
+	local force = player.force
+
+    if not global.dyworld.players[id].editor then
+        global.dyworld.players[id].editor = true
+    else
+        global.dyworld.players[id].editor = false
+    end
 end
 
 function Dy_Player_init(event)
@@ -126,6 +127,8 @@ function Dy_Player_init(event)
             name = name,
             alive = true,
             joined = true,
+            editor = false,
+            sandbox = false,
             banned = false,
             force = force.name,
             coords = {x = 0, y = 0, surface = "nauvis", x2 = 0, y2 = 0, Cx = 0, Cy = 0},

@@ -126,3 +126,21 @@ end
 	for _ in pairs(T) do count = count + 1 end
 	return count
 end]]
+
+	----- Ingredient changes -----
+DyW.Tech.Ingr = {}
+
+function DyW.Tech.Ingr.Change(TECH, TABLE, AMOUNT, TIME)
+    if data.raw.technology[TECH] then
+        if data.raw.technology[TECH].unit and data.raw.technology[TECH].unit.ingredients and TABLE then
+            data.raw.technology[TECH].unit.ingredients = TABLE
+        end
+        if data.raw.technology[TECH].unit and data.raw.technology[TECH].unit.count and AMOUNT then
+            data.raw.technology[TECH].unit.count = AMOUNT
+        end
+        if data.raw.technology[TECH].unit and data.raw.technology[TECH].unit.time and TIME then
+            data.raw.technology[TECH].unit.time = TIME
+        end
+        DyW.Fx.Edited("technology", TECH, "Tech_Ingr_Change")
+    end
+end

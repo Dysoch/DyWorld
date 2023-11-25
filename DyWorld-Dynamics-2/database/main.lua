@@ -15,6 +15,7 @@ Dy_entity = "__DyWorld-Dynamics-2__/graphics/entity/"
 
 require(db.."colors")
 require(db.."tables")
+require(db.."material-system")
 
 -- Resources --
 require(db.."resources.ores")
@@ -28,9 +29,10 @@ require(db.."fluids.main")
 
 -- Tech --
 require(db.."tech.main")
-require(db.."tech.biological")
-require(db.."tech.combat")
-require(db.."tech.infrastructure")
-require(db.."tech.intermediates")
-require(db.."tech.metallurgy")
-require(db.."tech.space")
+require(db.."tech.unit")
+--require(db.."tech.biological")
+--require(db.."tech.combat")
+--require(db.."tech.infrastructure")
+--require(db.."tech.intermediates")
+--require(db.."tech.metallurgy")
+--require(db.."tech.space")

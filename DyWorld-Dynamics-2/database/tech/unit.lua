@@ -1,197 +1,235 @@
-local red = "automation-science-pack"
-local green = "logistic-science-pack"
-local black = "chemical-science-pack"
-local grey = "military-science-pack"
-local purple = "production-science-pack"
-local yellow = "utility-science-pack"
-local white = "space-science-pack"
+local t1a = "automation-science-pack"
+local t1b = "advanced-automation-science-pack"
+local t2a = "logistic-science-pack"
+local t2b = "advanced-logistic-science-pack"
+local t3a = "chemical-science-pack"
+local t3b = "advanced-chemical-science-pack"
+local t4a = "military-science-pack"
+local t4b = "advanced-military-science-pack"
+local t5a = "production-science-pack"
+local t5b = "advanced-production-science-pack"
+local t6a = "utility-science-pack"
+local t6b = "advanced-utility-science-pack"
+local t7a = "space-science-pack"
+local t7b = "advanced-space-science-pack"
 
 DyWorld_2_Tech_Unit = {
     --[""] = {},
 
     -- Start of the game --
     ["combat"] = {
-        table = {{red, 100},},
+        table = {{t1a, 100},},
         time = 50,
         amount = 1,
     },
     ["metallurgy"] = {
-        table = {{red, 100},},
+        table = {{t1a, 100},},
         time = 50,
         amount = 1,
     },
     ["biological"] = {
-        table = {{red, 100},},
+        table = {{t1a, 100},},
         time = 50,
         amount = 1,
     },
     ["production-1"] = {
-        table = {{red, 100},},
+        table = {{t1a, 100},},
         time = 50,
         amount = 1,
     },
     ["infrastructure"] = {
-        table = {{red, 100},},
+        table = {{t1a, 100},},
         time = 50,
         amount = 1,
     },
     ["automation"] = {
-        table = {{red, 100},},
+        table = {{t1a, 100},},
         time = 50,
         amount = 1,
+    },
+    -- Science Packs --
+    ["logistic-science-pack"] = {
+        table = {{t1a, 100},},
+        time = 50,
+        amount = 1,
+    },
+    ["chemical-science-pack"] = {
+        table = {{t1a, 100},{t2a, 100},},
+        time = 50,
+        amount = 2,
+    },
+    ["military-science-pack"] = {
+        table = {{t1a, 100},{t2a, 100},{t3a, 100},},
+        time = 50,
+        amount = 4,
+    },
+    ["production-science-pack"] = {
+        table = {{t1a, 100},{t2a, 100},{t3a, 100},{t4a, 100},},
+        time = 50,
+        amount = 8,
+    },
+    ["utility-science-pack"] = {
+        table = {{t1a, 100},{t2a, 100},{t3a, 100},{t4a, 100},{t5a, 100},},
+        time = 50,
+        amount = 16,
+    },
+    ["space-science-pack"] = {
+        table = {{t1a, 100},{t2a, 100},{t3a, 100},{t4a, 100},{t5a, 100},{t6a, 100},},
+        time = 50,
+        amount = 32,
     },
     -- Metallurgy --
     --- Ore Processing ---
     ["ore-processing-1"] = {
-        table = {{red, 100},},
+        table = {{t1a, 100},},
         time = 50,
         amount = 1,
     },
     ["ore-processing-2"] = {
-        table = {{red, 150},{purple, 150},},
+        table = {{t1a, 150},{t2a, 150},{t3a, 200},},
         time = 100,
         amount = 2,
     },
     ["ore-processing-3"] = {
-        table = {{red, 200},{purple, 200},},
+        table = {{t1a, 200},{t2a, 200},{t3a, 200},{t4a, 200},{t5a, 200},{t6a, 200},},
         time = 200,
         amount = 3,
     },
     ["ore-processing-4"] = {
-        table = {{red, 300},{purple, 300},{yellow, 300},},
+        table = {{t1b, 300},{t2b, 300},{t3b, 300},},
         time = 400,
         amount = 4,
     },
     ["ore-processing-5"] = {
-        table = {{red, 500},{purple, 500},{yellow, 500},{white, 500},},
+        table = {{t1b, 300},{t2b, 300},{t3b, 300},{t4b, 300},{t5b, 300},{t6b, 300},},
         time = 800,
         amount = 5,
     },
     --- Metal Processing ---
     ["metal-processing-1"] = {
-        table = {{red, 150},},
+        table = {{t1a, 150},},
         time = 150,
         amount = 1,
     },
     ["metal-processing-2"] = {
-        table = {{red, 300},{purple, 300},},
+        table = {{t1a, 300},{t5a, 300},},
         time = 200,
         amount = 2,
     },
     ["metal-processing-3"] = {
-        table = {{red, 500},{purple, 500},},
+        table = {{t1a, 500},{t5a, 500},},
         time = 350,
         amount = 3,
     },
     ["metal-processing-4"] = {
-        table = {{red, 750},{purple, 750},{yellow, 750},},
+        table = {{t1a, 750},{t5a, 750},{t6a, 750},},
         time = 750,
         amount = 4,
     },
     ["metal-processing-5"] = {
-        table = {{red, 1250},{purple, 1250},{yellow, 1250},{white, 1250},},
+        table = {{t1a, 1250},{t5a, 1250},{t6a, 1250},{t7a, 1250},},
         time = 1200,
         amount = 5,
     },
     --- Alloying ---
     ["alloying-1"] = {
-        table = {{red, 200},},
+        table = {{t1a, 200},},
         time = 250,
         amount = 1,
     },
     ["alloying-2"] = {
-        table = {{red, 400},{purple, 400},},
+        table = {{t1a, 400},{t5a, 400},},
         time = 400,
         amount = 2,
     },
     ["alloying-3"] = {
-        table = {{red, 750},{purple, 750},},
+        table = {{t1a, 750},{t5a, 750},},
         time = 750,
         amount = 3,
     },
     ["alloying-4"] = {
-        table = {{red, 1250},{purple, 1250},{yellow, 1250},},
+        table = {{t1a, 1250},{t5a, 1250},{t6a, 1250},},
         time = 1250,
         amount = 4,
     },
     ["alloying-5"] = {
-        table = {{red, 2000},{purple, 2000},{yellow, 2000},{white, 2000},},
+        table = {{t1a, 2000},{t5a, 2000},{t6a, 2000},{t7a, 2000},},
         time = 1800,
         amount = 5,
     },
     --- Main Ore Processing ---
     ["carbon-processing-1"] = {
-        table = {{red, 200},},
+        table = {{t1a, 200},},
         time = 250,
         amount = 1,
     },
     ["carbon-processing-2"] = {
-        table = {{red, 400},{purple, 400},},
+        table = {{t1a, 400},{t5a, 400},},
         time = 400,
         amount = 2,
     },
     ["carbon-processing-3"] = {
-        table = {{red, 750},{purple, 750},},
+        table = {{t1a, 750},{t5a, 750},},
         time = 750,
         amount = 3,
     },
     ["carbon-processing-4"] = {
-        table = {{red, 1250},{purple, 1250},{yellow, 1250},},
+        table = {{t1a, 1250},{t5a, 1250},{t6a, 1250},},
         time = 1250,
         amount = 4,
     },
     ["carbon-processing-5"] = {
-        table = {{red, 2000},{purple, 2000},{yellow, 2000},{white, 2000},},
+        table = {{t1a, 2000},{t5a, 2000},{t6a, 2000},{t7a, 2000},},
         time = 1800,
         amount = 5,
     },
     ["hematite-processing-1"] = {
-        table = {{red, 200},},
+        table = {{t1a, 200},},
         time = 250,
         amount = 1,
     },
     ["hematite-processing-2"] = {
-        table = {{red, 400},{purple, 400},},
+        table = {{t1a, 400},{t5a, 400},},
         time = 400,
         amount = 2,
     },
     ["hematite-processing-3"] = {
-        table = {{red, 750},{purple, 750},},
+        table = {{t1a, 750},{t5a, 750},},
         time = 750,
         amount = 3,
     },
     ["hematite-processing-4"] = {
-        table = {{red, 1250},{purple, 1250},{yellow, 1250},},
+        table = {{t1a, 1250},{t5a, 1250},{t6a, 1250},},
         time = 1250,
         amount = 4,
     },
     ["hematite-processing-5"] = {
-        table = {{red, 2000},{purple, 2000},{yellow, 2000},{white, 2000},},
+        table = {{t1a, 2000},{t5a, 2000},{t6a, 2000},{t7a, 2000},},
         time = 1800,
         amount = 5,
     },
     ["chalcopyrite-processing-1"] = {
-        table = {{red, 200},},
+        table = {{t1a, 200},},
         time = 250,
         amount = 1,
     },
     ["chalcopyrite-processing-2"] = {
-        table = {{red, 400},{purple, 400},},
+        table = {{t1a, 400},{t5a, 400},},
         time = 400,
         amount = 2,
     },
     ["chalcopyrite-processing-3"] = {
-        table = {{red, 750},{purple, 750},},
+        table = {{t1a, 750},{t5a, 750},},
         time = 750,
         amount = 3,
     },
     ["chalcopyrite-processing-4"] = {
-        table = {{red, 1250},{purple, 1250},{yellow, 1250},},
+        table = {{t1a, 1250},{t5a, 1250},{t6a, 1250},},
         time = 1250,
         amount = 4,
     },
     ["chalcopyrite-processing-5"] = {
-        table = {{red, 2000},{purple, 2000},{yellow, 2000},{white, 2000},},
+        table = {{t1a, 2000},{t5a, 2000},{t6a, 2000},{t7a, 2000},},
         time = 1800,
         amount = 5,
     },

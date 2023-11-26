@@ -10,6 +10,13 @@ DyWorld_2_Main_Tech = {
     ["infrastructure"] = {},
     ["automation"] = {},
 
+    -- Science Packs --
+    ["logistic-science-pack"] = {"automation"},
+    ["chemical-science-pack"] = {"logistic-science-pack"},
+    ["military-science-pack"] = {"chemical-science-pack"},
+    ["production-science-pack"] = {"military-science-pack"},
+    ["utility-science-pack"] = {"production-science-pack"},
+    ["space-science-pack"] = {"utility-science-pack"},
     -- Metallurgy --
     --- Ore Processing ---
     ["ore-processing-1"] = {"metallurgy"},

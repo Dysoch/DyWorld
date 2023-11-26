@@ -13,7 +13,7 @@ Date: 25. 11. 2023
     - Increased Water Heat Capacity: 0.2KJ > 0.25KJ
     - Increased Dirty Water Heat Capacity: 0.02KJ > 0.025KJ
     - Increased magazine size Nanobots: 1 > 1e32
-    - Changed stack size Nanobots: 100 > 1
+    - Reduced Stack Size Nanobots: 100 > 1
   Metallurgy:
     - Done: 3%
   Logistics:
@@ -40,6 +40,10 @@ Date: 25. 11. 2023
     - Done: 0%
   GUI:
     - Done: 10%
+  Technology:
+    - Done: 10%
+    - Added Advanced Science Packs variants. Gained by sending a normal Science Pack to Space
+    - Massively changed the structure of the technology tree
   Bugfixes:
     - NA
   Known Issues:
@@ -60,7 +64,6 @@ Date: 25. 11. 2023
     - Player no longer regenerate health
     - Player has smaller inventory size (60 > 30)
     - Player has more health: 250 > 1000
-    - Changed a few technologies and their science pack requirements
   Metallurgy:
     - Done: 3%
     - Adding in the Material System from DyWorld (the one before the first Dynamics). Will be used differently, only for (mostly) warfare related content and metallurgy
@@ -81,6 +84,9 @@ Date: 25. 11. 2023
     - Done: 0%
   GUI:
     - Done: 10%
+  Technology:
+    - Done: 5%
+    - Changed a few technologies and their science pack requirements
   Bugfixes:
     - Fixed missing mod dependency of Factorio Library which caused
     - Fixed Crash to Desktop caused by Big Defense main menu Simulation

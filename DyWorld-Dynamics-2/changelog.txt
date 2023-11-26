@@ -8,6 +8,12 @@ Date: 25. 11. 2023
     - Added check for scripted recipes to check if they exist. Used when creating handmade recipes
     - Added crafting categories. Old categories are still used in machines as well, to provide compatibility
     - Added fuel categories. Old categories are still used in machines as well, to provide compatibility. DyWorld items have the correct fuel category now if they should have one
+    - Increased Steam Heat Capacity: 0.2KJ > 0.5KJ
+    - Increased Dirty Steam Heat Capacity: 0.02KJ > 0.05KJ
+    - Increased Water Heat Capacity: 0.2KJ > 0.25KJ
+    - Increased Dirty Water Heat Capacity: 0.02KJ > 0.025KJ
+    - Increased magazine size Nanobots: 1 > 1e32
+    - Reduced Stack Size Nanobots: 100 > 1
   Metallurgy:
     - Done: 3%
   Logistics:
@@ -18,7 +24,14 @@ Date: 25. 11. 2023
     - Done: 2%
     - Added 2 more Boilers
     - Added 2 more Steam Engines
-    - Steam Engines use less fluid: 30/s > 1/s (tier 2: 2/s, tier 3: 4/s)
+    - Added 2 more Solar Panels
+    - Steam Engines use less fluid: Tier 1: 30/s > 4/s (Tier 2: 8/s, Tier 3: 16/s)
+    - Steam Engines create more power: Tier 1: 300kW, Tier 2: 1,5MW, Tier 3: 4,5MW
+    - Steam Engines have higher max temperature: Tier 1: 250, Tier 2: 500, Tier 3: 1000
+    - Boilers have higher max temperature: Tier 1: 250, Tier 2: 500, Tier 3: 1000
+    - Boilers have other fuel consumptions: Tier 1: 1MW, Tier 2: 2MW, Tier 3: 4MW
+    - New ratio for Boiler to Steam Engine: Tier 1: 1:4, Tier 2: 1:2, Tier 3: 1:1
+    - Solar Panel Power output: Tier 1: 60kW > 100kW, Tier 2: 500kW, Tier 3: 2.5MW
   Warfare:
     - Done: 0%
   Survival/RPG:
@@ -27,6 +40,10 @@ Date: 25. 11. 2023
     - Done: 0%
   GUI:
     - Done: 10%
+  Technology:
+    - Done: 10%
+    - Added Advanced Science Packs variants. Gained by sending a normal Science Pack to Space
+    - Massively changed the structure of the technology tree
   Bugfixes:
     - NA
   Known Issues:
@@ -47,7 +64,6 @@ Date: 25. 11. 2023
     - Player no longer regenerate health
     - Player has smaller inventory size (60 > 30)
     - Player has more health: 250 > 1000
-    - Changed a few technologies and their science pack requirements
   Metallurgy:
     - Done: 3%
     - Adding in the Material System from DyWorld (the one before the first Dynamics). Will be used differently, only for (mostly) warfare related content and metallurgy
@@ -68,6 +84,9 @@ Date: 25. 11. 2023
     - Done: 0%
   GUI:
     - Done: 10%
+  Technology:
+    - Done: 5%
+    - Changed a few technologies and their science pack requirements
   Bugfixes:
     - Fixed missing mod dependency of Factorio Library which caused
     - Fixed Crash to Desktop caused by Big Defense main menu Simulation

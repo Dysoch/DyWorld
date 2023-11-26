@@ -16,6 +16,9 @@ require(core.."entities.bloomery")
 require(core.."entities.caster")
 require(core.."entities.grinder")
 
+-- Items --
+require(core.."items.science")
+
 -- Recipes --
 require(core.."recipes") -- Recipes
 

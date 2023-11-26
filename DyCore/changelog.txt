@@ -23,7 +23,7 @@ Date: 19. 11. 2023
   Tool:
     - No Changes
   Locale:
-    - No Changes
+    - Added locale for: Steam Engines (tier 1,2,3), Boilers (tier 1,2,3), Solar Panels (tier 1,2,3)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 19. 11. 2023

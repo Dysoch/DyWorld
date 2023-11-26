@@ -112,6 +112,7 @@ local core = "data.core."
 local logistics = "data.logistics."
 local warfare = "data.warfare."
 local machine = "data.machines."
+local power = "data.power."
 
 
 -- Core --
@@ -122,6 +123,9 @@ require(logistics.."data")
 
 -- Machines --
 require(machine.."data")
+
+-- Power --
+require(power.."data")
 
 -- Warfare --
 require(warfare.."data")

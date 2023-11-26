@@ -7,7 +7,7 @@ data:extend({
     {
         type = "recipe",
         name = k.."-"..Name,
-        --category = "centrifuging",
+        category = DyDs.."assembling-1",
         main_product = k.."-"..Name,
         Add_To_Tech = v >= 2 and k.."-processing-1" or nil,
         normal = {

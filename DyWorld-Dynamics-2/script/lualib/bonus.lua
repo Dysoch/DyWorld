@@ -288,6 +288,8 @@ function Bonus_Calc(id)
             if v.enabled and v.toggled then
                 game.players[id][v.callback] = math.min(Round(v.total, v.min_max.rounded), v.min_max.max)
                 --LOG("("..id..") Bonus_Calc: enabled and toggled "..k..", it is now "..math.min(Round(v.total, v.min_max.rounded), v.min_max.max))
+            else
+                game.players[id][v.callback] = v.native
             end
         end
     end

@@ -1,4 +1,5 @@
 
+-- TODO Implement Material System for more materials
 Dy_Material_System = {
 	["stone"] = {
 		tier = 1,

@@ -4,7 +4,7 @@ data:extend({
     {
         type = "recipe",
         name = "log-wood-1a",
-        --category = "centrifuging",
+        category = DyDs.."assembling-1",
         main_product = "wood",
         normal = {
             ingredients = {
@@ -21,7 +21,7 @@ data:extend({
     {
         type = "recipe",
         name = "log-wood-1b",
-        --category = "centrifuging",
+        category = DyDs.."assembling-1",
         main_product = "wood-sulfur",
         normal = {
             ingredients = {
@@ -39,7 +39,7 @@ data:extend({
     {
         type = "recipe",
         name = "log-wood-1c",
-        --category = "centrifuging",
+        category = DyDs.."assembling-1",
         main_product = "wood",
         normal = {
             ingredients = {

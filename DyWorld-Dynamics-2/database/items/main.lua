@@ -15,7 +15,7 @@ DyWorld_2_Main_Items = {
         order = "1-1",
         stack_size = 50,
         fuel_value = "2MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["log-sulfur"] = {
         icons = {
@@ -27,7 +27,7 @@ DyWorld_2_Main_Items = {
         order = "1-2",
         stack_size = 50,
         fuel_value = "0.5MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["log-dead"] = {
         icons = {
@@ -39,7 +39,7 @@ DyWorld_2_Main_Items = {
         order = "1-3",
         stack_size = 50,
         fuel_value = "0.2MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["wood"] = {
         icons = {
@@ -51,7 +51,7 @@ DyWorld_2_Main_Items = {
         order = "2-1",
         stack_size = 200,
         fuel_value = "2MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["wood-sulfur"] = {
         icons = {
@@ -63,7 +63,7 @@ DyWorld_2_Main_Items = {
         order = "2-2",
         stack_size = 200,
         fuel_value = "0.5MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["bark"] = {
         icons = {
@@ -75,7 +75,7 @@ DyWorld_2_Main_Items = {
         order = "4-1",
         stack_size = 500,
         fuel_value = "0.02MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["sap"] = {
         icons = {
@@ -97,7 +97,7 @@ DyWorld_2_Main_Items = {
         order = "0-1",
         stack_size = 500,
         fuel_value = "0.2MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["sapling-sulfur"] = {
         icons = {
@@ -109,7 +109,7 @@ DyWorld_2_Main_Items = {
         order = "0-1",
         stack_size = 500,
         fuel_value = "0.2MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
 
     ----- Main Ores -----
@@ -273,7 +273,7 @@ DyWorld_2_Main_Items = {
         order = "1",
         stack_size = 200,
         fuel_value = "4MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["hematite-ground"] = {
         icons = {
@@ -435,7 +435,7 @@ DyWorld_2_Main_Items = {
         order = "1",
         stack_size = 200,
         fuel_value = "0.8MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["coal"] = {
         icons = {
@@ -447,7 +447,7 @@ DyWorld_2_Main_Items = {
         order = "1",
         stack_size = 200,
         fuel_value = "8MJ",
-        fuel_category = "chemical",
+        fuel_category = DyDs.."carbon",
     },
     ["stone-ground"] = {
         icons = {

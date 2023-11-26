@@ -4,7 +4,7 @@ data:extend({
 {
     type = "recipe",
     name = "limestone-stone-1a",
-    --category = "centrifuging",
+    category = DyDs.."assembling-1",
     main_product = "stone",
     normal = {
         ingredients = {

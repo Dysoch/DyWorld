@@ -1,6 +1,6 @@
 
 for k,v in pairs(DyWorld_2_Ore_Table_Main) do
-    if Dy_Metal_Table[v.type] and data.raw.item[k.."-ground"] then
+    if Dy_Metal_Table[v.type] and data.raw.item[k.."-ground"] and not data.raw.recipe[k.."-ground-to-"..v.ore] then
         data:extend({
             {
                 type = "recipe",

@@ -3,7 +3,7 @@ data:extend({
     {
         type = "recipe",
         name = "basic-circuit",
-        --category = "centrifuging",
+        category = DyDs.."assembling-1",
         main_product = "basic-circuit",
         Add_To_Tech = nil,
         normal = {
@@ -22,7 +22,7 @@ data:extend({
     {
         type = "recipe",
         name = "electronic-circuit",
-        --category = "centrifuging",
+        category = DyDs.."assembling-1",
         main_product = "electronic-circuit",
         Add_To_Tech = nil,
         normal = {
@@ -41,7 +41,7 @@ data:extend({
     --[[{
         type = "recipe",
         name = "advanced-circuit",
-        --category = "centrifuging",
+        category = DyDs.."assembling-2",
         main_product = "electronic-circuit",
         Add_To_Tech = nil,
         normal = {

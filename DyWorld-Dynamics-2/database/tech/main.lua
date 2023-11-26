@@ -1,3 +1,5 @@
+
+-- TODO Finish technology a-number removal
 local a8 = "automation"
 local a9 = "space-technology"
 local a24 = "iron-processing-1"
@@ -342,6 +344,7 @@ DyWorld_2_Main_Tech = {
     
 }
 
+-- TODO Add all technology icons
 DyWorld_2_Main_Tech_Icons = {
     -- Stuff will be added automatically below here if it is not already present --
     --[""] = {},

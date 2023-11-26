@@ -2,21 +2,3 @@ LaureenLlama's Carrot Cake = obviously the cake
 JD's Flashlight = the flamethrower
 JD's Boomstick = shotgun
 
-/c remote.call("space-exploration", "begin_meteor_shower", {zone_name = "Nauvis", position = {x=0,y=0}, range = 1, meteors = 100})
-natives send meteors
-
- /c remote.call("space-exploration", "begin_solar_flare", {zone_name = "Nauvis", targeting="basic"})
-
-TODO Update guis only when they require Update
-
-TODO add gui update script (seperate for each one)
-
-TODO add story mode technologies based on pull request from Maximus
-BODY requires some alteration to fit nicely into DyWorld and the vision i have for this feature
-
-TODO add advanced science sprites from old archive to make them different
-
-TODO add NG+ script
-
-TODO add NG+ take stats from current game
-BODY will probably require manual adding of a file into the dyworld script to take affect, but will do some research if there is any other way

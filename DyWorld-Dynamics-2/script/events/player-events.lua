@@ -528,8 +528,8 @@ function Dy_Player_init(event)
                     type = "personal",
                 },
                 stats = {
-                    item = {max = 500, amount = 0, max2 = 500},
-                    total = {max = 500, amount = 0},
+                    item = {max = debugger and 500000 or 500, amount = 0, max2 = debugger and 500000 or 500},
+                    total = {max = debugger and 500000 or 500, amount = 0},
                     item_used = {},
                     item_used_total = 0,
                 },

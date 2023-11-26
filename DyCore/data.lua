@@ -51,5 +51,6 @@ require("data.tool.add")
 require("data.tool.change")
 require("data.tool.remove")
 
+require("data.additions.fuel-groups")
 require("data.additions.item-groups")
 require("data.additions.crafting-groups")

@@ -1,7 +1,7 @@
 
 
 
-
+-- TODO rework wreckages loot
 for k,v in pairs(data.raw["simple-entity"]) do
 	if (string.find(v.name, "wreck", 1, true) or string.find(v.name, "wreckage", 1, true)) then
 		if v.minable then

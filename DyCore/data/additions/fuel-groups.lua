@@ -8,6 +8,7 @@ local Table = {
     "oil",
     "water",
     "nuclear",
+    "energy",
     --"hidden",
 }
 

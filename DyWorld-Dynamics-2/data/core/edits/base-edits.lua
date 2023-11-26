@@ -34,3 +34,8 @@ if data.raw.recipe["copper-plate"] then
     data.raw.recipe["copper-plate"].hidden = true
     data.raw.recipe["copper-plate"].category = DyDs.."hidden"
 end
+
+if data.raw.ammo["ammo-nano-constructors"] then
+    data.raw.ammo["ammo-nano-constructors"].magazine_size = 100000000000000000000000000000000
+    data.raw.ammo["ammo-nano-constructors"].stack_size = 1
+end

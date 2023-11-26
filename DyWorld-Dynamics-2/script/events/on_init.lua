@@ -9,6 +9,7 @@ local created_items = function()
             ["firearm-magazine"] = 100,
             ["burner-mining-drill"] = 10,
             ["stone-furnace"] = 10,
+            ["solar-panel-3"] = 10,
         }
     else
         return
